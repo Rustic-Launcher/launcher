@@ -49,6 +49,8 @@ pub struct AppState {
     pub known_hosts: Arc<rusticmc_hosting::KnownHosts>,
     pub hosting_secrets: Arc<dyn rusticmc_hosting::SecretStore>,
     pub remotes: Mutex<HashMap<String, Arc<rusticmc_hosting::RemoteSshProvider>>>,
+    /// Discord Rich Presence.
+    pub discord: crate::discord::Discord,
 }
 
 /// What the launcher shows of a VPS server (the registry keeps only its reference).
@@ -110,6 +112,8 @@ fn default_settings(paths: &LauncherPaths, config: &LauncherConfig) -> Settings 
             performance_reports: false,
             share_activity_with_friends: false,
             friend_requests_from: "friends_of_friends".into(),
+            discord_presence: true,
+            discord_show_server: true,
         },
         onboarding_completed: false,
     }
@@ -183,7 +187,9 @@ impl AppState {
             .ok()
             .flatten()
             .unwrap_or_else(|| default_settings(&paths, &config));
+        let discord = crate::discord::Discord::start(settings.privacy.discord());
         Ok(Self {
+            discord,
             tasks: Arc::new(Tasks::new(app.clone())),
             app,
             paths,

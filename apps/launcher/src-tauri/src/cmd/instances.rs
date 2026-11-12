@@ -1009,6 +1009,9 @@ pub fn forward_game_events(state: Arc<AppState>) {
         while let Ok(e) = rx.recv().await {
             match e.event {
                 GameEvent::Log { stream, line } => {
+                    if let Some(place) = crate::discord::place_from_game_line(&line) {
+                        state.discord.set_place(place);
+                    }
                     let lower = line.to_ascii_lowercase();
                     let level = if lower.contains("error") || lower.contains("panicked") {
                         "error"
@@ -1058,6 +1061,11 @@ pub fn forward_game_events(state: Arc<AppState>) {
                             None,
                         ),
                     );
+                    state.discord.set(crate::discord::Presence {
+                        place: crate::discord::Place::Launcher,
+                        game: None,
+                        since: rusticmc_launcher_core::time::now(),
+                    });
                     let st = state.clone();
                     // The playtime is written by the exit task; refresh the list after it.
                     tauri::async_runtime::spawn(async move {
@@ -1075,7 +1083,25 @@ pub fn forward_game_events(state: Arc<AppState>) {
                         },
                     );
                 }
-                GameEvent::Started { .. } => {}
+                GameEvent::Started { .. } => {
+                    // "Horizon 26.3": the game version the instance's build is pinned to.
+                    let game = state
+                        .instances
+                        .store
+                        .get(&e.instance_id)
+                        .and_then(|i| state.instances.build_for(&i))
+                        .ok()
+                        .and_then(|b| rusticmc_instances::game_files::Pins::of_build(&b.dir))
+                        .map_or_else(
+                            || "Horizon".to_owned(),
+                            |p| format!("Horizon {}", p.version),
+                        );
+                    state.discord.set(crate::discord::Presence {
+                        place: crate::discord::Place::Menu,
+                        game: Some(game),
+                        since: rusticmc_launcher_core::time::now(),
+                    });
+                }
             }
         }
     });

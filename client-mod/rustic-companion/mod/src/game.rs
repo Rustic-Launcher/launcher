@@ -300,6 +300,14 @@ fn client_tick(host: &mut dyn Host) {
         return;
     };
     let now = Instant::now();
+    // Discord Rich Presence: the launcher reads this line from the game's output.
+    let place = rusticmc_companion_core::presence::Place::of(
+        cs.world.is_some(),
+        cs.server_address.as_deref(),
+    );
+    if let Some(line) = lock().presence.report(place) {
+        println!("{line}");
+    }
     if !lock().started {
         let text = host.config_dir().ok().and_then(|d| {
             std::fs::read_to_string(d.join(rusticmc_companion_core::config::FILE)).ok()

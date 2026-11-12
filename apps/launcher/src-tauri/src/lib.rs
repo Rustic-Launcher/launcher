@@ -4,6 +4,7 @@
 
 mod cloud_link;
 mod cmd;
+mod discord;
 mod dto;
 mod relay;
 mod state;
@@ -178,6 +179,11 @@ pub fn run() {
                     handle_deep_link(&handle, url.as_str());
                 }
             }
+            state.discord.set(discord::Presence {
+                place: discord::Place::Launcher,
+                game: None,
+                since: rusticmc_launcher_core::time::now(),
+            });
             tracing::info!(data = %state.paths.data().display(), "ready");
             Ok(())
         })

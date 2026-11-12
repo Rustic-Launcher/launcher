@@ -43,6 +43,8 @@ pub struct OwnEmote {
 #[derive(Default)]
 pub struct State {
     pub cfg: CompanionConfig,
+    /// Where the player is, told to the launcher for Discord (`presence`).
+    pub presence: rusticmc_companion_core::presence::Reporter,
     pub started: bool,
     pub worn: WornCache,
     pub store: CosmeticStore,

@@ -326,7 +326,11 @@
       "discoverable": "Appear in suggestions of players I meet",
       "discoverableHint": "Players you shared a party with or met on a server you share in your activity can see you in “Add a friend”, and you see them. Kept 30 days; turning this off deletes it.",
       "discoverableMinor": "Not available for accounts under 18.",
-      "discoverableFailed": "This setting could not be saved."
+      "discoverableFailed": "This setting could not be saved.",
+      "discord": "Show my activity on Discord",
+      "discordHint": "\"Playing Rustic\" on your Discord profile: in the launcher, on the main menu, in singleplayer or on a server, with your play time.",
+      "discordServer": "Show the server address on Discord",
+      "discordServerHint": "Otherwise Discord shows \"Multiplayer\". Private addresses (LAN, this PC) are never shown."
     },
     "data": {
       "title": "Your data",

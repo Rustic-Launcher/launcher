@@ -314,6 +314,10 @@ export interface PrivacySettings {
   performance_reports?: boolean;
   share_activity_with_friends: boolean;
   friend_requests_from: 'everyone' | 'friends_of_friends' | 'nobody';
+  /** Discord Rich Presence ("Playing Rustic" in the player's Discord profile). On by default. */
+  discord_presence?: boolean;
+  /** The server's address in that presence; private addresses are never shown. On by default. */
+  discord_show_server?: boolean;
 }
 
 export interface Settings {

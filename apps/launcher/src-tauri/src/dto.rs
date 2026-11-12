@@ -73,6 +73,25 @@ pub struct PrivacySettings {
     pub performance_reports: bool,
     pub share_activity_with_friends: bool,
     pub friend_requests_from: String,
+    /// Discord Rich Presence: "Playing Rustic" in the player's Discord profile.
+    #[serde(default = "yes")]
+    pub discord_presence: bool,
+    /// The server's address in that presence (private addresses are never shown).
+    #[serde(default = "yes")]
+    pub discord_show_server: bool,
+}
+
+fn yes() -> bool {
+    true
+}
+
+impl PrivacySettings {
+    pub fn discord(&self) -> crate::discord::Options {
+        crate::discord::Options {
+            enabled: self.discord_presence,
+            show_server: self.discord_show_server,
+        }
+    }
 }
 
 #[derive(Clone, Serialize, Deserialize)]

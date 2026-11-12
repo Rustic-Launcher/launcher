@@ -326,7 +326,11 @@
       "discoverable": "Apparaître dans les suggestions des joueurs que je croise",
       "discoverableHint": "Les joueurs avec qui vous étiez en groupe ou que vous avez croisés sur un serveur partagé dans votre activité peuvent vous voir dans « Ajouter un ami », et vous les voyez. Conservé 30 jours ; désactiver l’efface.",
       "discoverableMinor": "Non disponible pour les comptes de moins de 18 ans.",
-      "discoverableFailed": "Ce réglage n’a pas pu être enregistré."
+      "discoverableFailed": "Ce réglage n’a pas pu être enregistré.",
+      "discord": "Afficher mon activité sur Discord",
+      "discordHint": "« Joue à Rustic » sur votre profil Discord : dans le launcher, au menu, en solo ou sur un serveur, avec le temps de jeu.",
+      "discordServer": "Montrer l’adresse du serveur sur Discord",
+      "discordServerHint": "Sinon Discord affiche « Multiplayer ». Les adresses privées (LAN, ce PC) ne sont jamais montrées."
     },
     "data": {
       "title": "Vos données",

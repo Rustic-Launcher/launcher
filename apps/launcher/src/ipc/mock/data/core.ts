@@ -307,6 +307,8 @@ export const defaultSettings: Settings = {
     crash_reports: false,
     share_activity_with_friends: true,
     friend_requests_from: 'everyone',
+    discord_presence: true,
+    discord_show_server: true,
   },
   onboarding_completed: false,
 };

@@ -85,6 +85,29 @@ export function PrivacySection() {
           />
         </SettingRow>
         <DiscoverableRow />
+        <SettingRow
+          label={t('privacy.social.discord')}
+          description={t('privacy.social.discordHint')}
+          htmlFor="p-discord"
+        >
+          <Switch
+            id="p-discord"
+            checked={p.discord_presence ?? true}
+            onCheckedChange={(v) => patch({ discord_presence: v })}
+          />
+        </SettingRow>
+        <SettingRow
+          label={t('privacy.social.discordServer')}
+          description={t('privacy.social.discordServerHint')}
+          htmlFor="p-discord-server"
+        >
+          <Switch
+            id="p-discord-server"
+            checked={p.discord_show_server ?? true}
+            disabled={!(p.discord_presence ?? true)}
+            onCheckedChange={(v) => patch({ discord_show_server: v })}
+          />
+        </SettingRow>
         <SettingRow label={t('privacy.social.requests')} htmlFor="p-requests">
           <Select
             id="p-requests"

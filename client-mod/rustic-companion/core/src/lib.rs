@@ -21,6 +21,7 @@ pub mod badge;
 pub mod config;
 pub mod notify;
 pub mod overlay;
+pub mod presence;
 pub mod protocol;
 pub mod social;
 pub mod store;

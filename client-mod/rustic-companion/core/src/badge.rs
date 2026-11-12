@@ -168,7 +168,7 @@ pub fn side_for(scale: f32) -> u32 {
 /// height) kept, centred in the box both ways (as Horizon's mark sits in the row).
 pub fn logo_rect(side: u32, aspect: f32) -> [u32; 4] {
     let u = side as f32 / BOX as f32;
-    let (bx, by, bw, bh) = (1.0, u + 1.0, 7.0 * u - 2.0, 7.0 * u - 2.0);
+    let (bx, bw, bh) = (1.0, 7.0 * u - 2.0, 7.0 * u - 2.0);
     let aspect = if aspect.is_finite() && aspect > 0.0 {
         aspect
     } else {
