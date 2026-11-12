@@ -1,0 +1,26 @@
+[package]
+name = "rusticmc-cosmetics-format"
+description = "Rustic cosmetic format: model, validation, budgets, baking, JSON Schema and conversion to/from Horizon's cosmetics JSON"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[features]
+default = ["gltf"]
+# Importing glTF 2.0 meshes (Blockbench's glTF export) as `mesh` models. The in-game companion
+# turns it off: it only reads self-contained bundles, whose triangles are inline.
+gltf = ["dep:gltf"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+schemars = "1.2"
+base64 = "0.22"
+png = "0.18"
+thiserror = "2"
+gltf = { version = "1.4", default-features = false, features = ["utils", "names"], optional = true }
+
+[lints]
+workspace = true

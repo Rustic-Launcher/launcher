@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800" role="img" aria-label="02-instances wireframe">
+<title>02-instances</title>
+<rect width="1280" height="800" fill="#1b1b1b"/>
+<rect x="14" y="12" width="20" height="20" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="24" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#e6e6e6" text-anchor="middle">R</text>
+<text x="42" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#e6e6e6" text-anchor="start">Rustic ▾</text>
+<text x="110" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">‹  ›</text>
+<text x="150" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#e6e6e6" text-anchor="start">Versions / Horizon</text>
+<rect x="810" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="823" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">⌕</text>
+<rect x="842" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="855" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">!</text>
+<rect x="874" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="887" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">☺</text>
+<rect x="910" y="10" width="112" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<circle cx="924" cy="22" r="7" fill="#4a4a4a"/>
+<text x="936" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#e6e6e6" text-anchor="start">Alex ▾</text>
+<rect x="1030" y="10" width="132" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="1096" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#9a9a9a" text-anchor="middle">0 instances running</text>
+<text x="1260" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#9a9a9a" text-anchor="end">–  ▢  ✕</text>
+<rect x="22.0" y="64" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="0" y="112" width="3" height="28" rx="1.5" fill="#bdbdbd"/>
+<rect x="22.0" y="116" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="168" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="220" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="272" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="324" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<line x1="18.0" y1="672" x2="46.0" y2="672" stroke="#4a4a4a"/>
+<text x="32.0" y="712" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="500" fill="#9a9a9a" text-anchor="middle">+</text>
+<circle cx="32.0" cy="752" r="9" fill="none" stroke="#9a9a9a" stroke-width="2"/>
+<rect x="64" y="44" width="1208" height="748" rx="16" fill="#232323" stroke="#4a4a4a"/>
+<rect x="88" y="64" width="510" height="40" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="102" y="89" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">Horizon ▾  |  Search your Horizon profiles…</text>
+<rect x="610" y="64" width="160" height="40" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="624" y="89" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#e6e6e6" text-anchor="start">Last played ▾</text>
+<rect x="782" y="64" width="146" height="40" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="855.0" y="89.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">+ New profile</text>
+<rect x="88.0" y="124" width="198.0" height="264.0" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="187.0" y="152" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#9a9a9a" text-anchor="middle">HORIZON 0.2.15</text>
+<text x="88.0" y="410.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Survie entre amis</text>
+<text x="286.0" y="410.0" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#bdbdbd" text-anchor="end">▶</text>
+<rect x="302.0" y="124" width="198.0" height="264.0" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="401.0" y="152" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#9a9a9a" text-anchor="middle">HORIZON 0.2.15</text>
+<text x="302.0" y="410.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">PvP Practice</text>
+<text x="500.0" y="410.0" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#bdbdbd" text-anchor="end">▶</text>
+<rect x="516.0" y="124" width="198.0" height="264.0" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="615.0" y="152" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#9a9a9a" text-anchor="middle">HORIZON 0.2.15</text>
+<text x="516.0" y="410.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Horizon Essentials</text>
+<text x="714.0" y="410.0" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#bdbdbd" text-anchor="end">▶</text>
+<rect x="730.0" y="124" width="198.0" height="264.0" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="829.0" y="152" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#9a9a9a" text-anchor="middle">HORIZON 0.2.15</text>
+<text x="730.0" y="410.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Creative Builds</text>
+<text x="928.0" y="410.0" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#bdbdbd" text-anchor="end">▶</text>
+<rect x="88.0" y="424" width="198.0" height="264.0" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="187.0" y="452" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#9a9a9a" text-anchor="middle">HORIZON 0.2.15</text>
+<text x="88.0" y="710.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Survie entre amis</text>
+<text x="286.0" y="710.0" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#bdbdbd" text-anchor="end">▶</text>
+<rect x="302.0" y="424" width="198.0" height="264.0" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="401.0" y="452" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#9a9a9a" text-anchor="middle">HORIZON 0.2.15</text>
+<text x="302.0" y="710.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">PvP Practice</text>
+<text x="500.0" y="710.0" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#bdbdbd" text-anchor="end">▶</text>
+<rect x="516.0" y="424" width="198.0" height="264.0" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="615.0" y="452" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#9a9a9a" text-anchor="middle">HORIZON 0.2.15</text>
+<text x="516.0" y="710.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Horizon Essentials</text>
+<text x="714.0" y="710.0" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#bdbdbd" text-anchor="end">▶</text>
+<rect x="730.0" y="424" width="198.0" height="264.0" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="829.0" y="452" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#9a9a9a" text-anchor="middle">HORIZON 0.2.15</text>
+<text x="730.0" y="710.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Creative Builds</text>
+<text x="928.0" y="710.0" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#bdbdbd" text-anchor="end">▶</text>
+<rect x="948" y="64" width="300" height="168" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="960" y="220" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#9a9a9a" text-anchor="start">Media carousel</text>
+<text x="948" y="260" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#e6e6e6" text-anchor="start">Survie entre amis</text>
+<text x="948" y="282" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#9a9a9a" text-anchor="start">Horizon 0.2.14 (Rustic edition) with 14 mods…</text>
+<text x="948" y="302" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#e6e6e6" text-anchor="start">Read more</text>
+<rect x="948" y="320" width="300" height="36" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="960" y="343" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">Version</text>
+<text x="1236" y="343" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#e6e6e6" text-anchor="end">Horizon 0.2.14 ▾</text>
+<rect x="948" y="360" width="300" height="36" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="960" y="383" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">Build</text>
+<text x="1236" y="383" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#e6e6e6" text-anchor="end">Release</text>
+<rect x="948" y="400" width="300" height="36" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="960" y="423" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">Edition</text>
+<text x="1236" y="423" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#e6e6e6" text-anchor="end">Rustic edition</text>
+<rect x="948" y="440" width="300" height="36" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="960" y="463" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">Content</text>
+<text x="1236" y="463" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#e6e6e6" text-anchor="end">14 mods · 2 packs</text>
+<rect x="948" y="494" width="300" height="44" rx="12" fill="#bdbdbd" stroke="#4a4a4a"/>
+<text x="1098.0" y="521.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#111" text-anchor="middle">LAUNCH GAME</text>
+<text x="16" y="794" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="400" fill="#9a9a9a" text-anchor="start">Versions (1b): fused source/search, sort, New profile; portrait covers with play icon; right detail panel. No loader concept.</text>
+</svg>

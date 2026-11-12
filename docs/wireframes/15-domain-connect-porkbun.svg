@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800" role="img" aria-label="15-domain-connect-porkbun wireframe">
+<title>15-domain-connect-porkbun</title>
+<rect width="1280" height="800" fill="#1b1b1b"/>
+<rect x="14" y="12" width="20" height="20" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="24" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#e6e6e6" text-anchor="middle">R</text>
+<text x="42" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#e6e6e6" text-anchor="start">Rustic ▾</text>
+<text x="110" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">‹  ›</text>
+<text x="150" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#e6e6e6" text-anchor="start">Access › Connect Porkbun</text>
+<rect x="810" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="823" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">⌕</text>
+<rect x="842" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="855" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">!</text>
+<rect x="874" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="887" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">☺</text>
+<rect x="910" y="10" width="112" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<circle cx="924" cy="22" r="7" fill="#4a4a4a"/>
+<text x="936" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#e6e6e6" text-anchor="start">Alex ▾</text>
+<rect x="1030" y="10" width="132" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="1096" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#9a9a9a" text-anchor="middle">0 instances running</text>
+<text x="1260" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#9a9a9a" text-anchor="end">–  ▢  ✕</text>
+<rect x="22.0" y="64" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="116" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="168" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="0" y="216" width="3" height="28" rx="1.5" fill="#bdbdbd"/>
+<rect x="22.0" y="220" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="272" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="324" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<line x1="18.0" y1="672" x2="46.0" y2="672" stroke="#4a4a4a"/>
+<text x="32.0" y="712" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="500" fill="#9a9a9a" text-anchor="middle">+</text>
+<circle cx="32.0" cy="752" r="9" fill="none" stroke="#9a9a9a" stroke-width="2"/>
+<rect x="64" y="44" width="1208" height="748" rx="16" fill="#232323" stroke="#4a4a4a"/>
+<rect x="88" y="64" width="560" height="560" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="100" y="86" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Connect your Porkbun account</text>
+<text x="104" y="120" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#e6e6e6" text-anchor="start">1. porkbun.com › Account › API Access: create a key</text>
+<text x="104" y="144" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#e6e6e6" text-anchor="start">2. Turn on &#x27;API Access&#x27; for your domain</text>
+<rect x="104" y="164" width="528" height="48" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="116" y="186" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">API key</text>
+<text x="116" y="204" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#9a9a9a" text-anchor="start">pk1_••••</text>
+<rect x="104" y="224" width="528" height="48" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="116" y="246" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Secret API key</text>
+<text x="116" y="264" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#9a9a9a" text-anchor="start">sk1_•••• (stored in your OS keychain)</text>
+<rect x="104" y="286" width="160" height="40" rx="12" fill="#bdbdbd" stroke="#4a4a4a"/>
+<text x="184.0" y="311.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#111" text-anchor="middle">Connect</text>
+<rect x="104" y="344" width="528" height="120" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="116" y="366" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Domain</text>
+<text x="116" y="384" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#9a9a9a" text-anchor="start">loucraft.net ▾ · subdomain: play</text>
+<rect x="104" y="476" width="528" height="130" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="116" y="498" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Changes we will make (preview)</text>
+<text x="116" y="516" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#9a9a9a" text-anchor="start">CNAME play → r-7f3a.relay… · TXT _rustic-challenge.play</text>
+<rect x="664" y="64" width="552" height="560" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="676" y="86" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Other paths</text>
+<text x="676" y="104" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#9a9a9a" text-anchor="start">Buy a domain at Porkbun · Use a domain from any registrar</text>
+<text x="16" y="794" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="400" fill="#9a9a9a" text-anchor="start">Connect Porkbun: keys go to the OS keychain; dry-run preview of records before applying.</text>
+</svg>

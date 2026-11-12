@@ -1,0 +1,84 @@
+{
+  "title": "Locker",
+  "subtitle": "Purely visual items. Seen in game by players using the Rustic edition.",
+  "horizonNote": {
+    "badge": "Horizon cosmetics stay available",
+    "detail": "Your Horizon cosmetics are kept in the Rustic edition client. Manage them in game; they work alongside your Rustic items."
+  },
+  "empty": {
+    "title": "You don’t own any cosmetics yet.",
+    "description": "Items you buy or receive appear here, ready to wear.",
+    "browse": "Browse the Store",
+    "categoryTitle": "No {{category}} yet",
+    "categoryDescription": "Items of this kind you own will show up here."
+  },
+  "viewer": {
+    "region": "Your character",
+    "label_one": "Your character wearing {{count}} item. Drag or use arrow keys to turn, plus and minus to zoom.",
+    "label_other": "Your character wearing {{count}} items. Drag or use arrow keys to turn, plus and minus to zoom.",
+    "hint": "Drag to turn · scroll to zoom",
+    "animation": "Animation",
+    "playEmote": "Play {{name}}",
+    "noEmote": "No emote equipped",
+    "reset": "Reset view"
+  },
+  "animations": {
+    "idle": "Idle",
+    "walk": "Walk",
+    "wave": "Wave",
+    "dance": "Dance"
+  },
+  "items": {
+    "region": "Your items",
+    "nothing": "Nothing",
+    "equipped": "Equipped"
+  },
+  "categories": {
+    "label": "Categories",
+    "all": "All",
+    "head": "Hats",
+    "back": "Back",
+    "top": "Torso",
+    "shoulder": "Shoulder",
+    "nametag": "Name tags",
+    "emote": "Emotes",
+    "companion": "Companions",
+    "trail": "Trails",
+    "aura": "Auras"
+  },
+  "rarity": {
+    "common": "Common",
+    "rare": "Rare",
+    "epic": "Epic",
+    "legendary": "Legendary"
+  },
+  "toast": {
+    "equipped": "{{name}} equipped",
+    "unequipped": "{{name}} removed",
+    "cleared": "{{slot}}: nothing equipped",
+    "outfitWorn": "Outfit on",
+    "outfitSaved": "Outfit “{{name}}” saved",
+    "equipFailed": "Could not change your look. Try again."
+  },
+  "outfits": {
+    "title": "Outfits",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Name this look",
+    "save": "Save current look",
+    "full": "You can keep up to {{max}} outfits. Delete one to save a new look.",
+    "empty": "Save your current look to wear it again in one click.",
+    "items_one": "{{count}} item",
+    "items_other": "{{count}} items",
+    "wearing": "Wearing",
+    "wear": "Wear",
+    "delete": "Delete outfit {{name}}"
+  },
+  "switches": {
+    "showMine": "Show my cosmetics",
+    "showMineHint": "Other Rustic edition players see what you wear.",
+    "hideOthers": "Hide other players’ cosmetics",
+    "hideTrailsAuras": "Hide trails and auras"
+  },
+  "heading": "Your *locker*",
+  "eyebrow": "Cosmetics"
+}

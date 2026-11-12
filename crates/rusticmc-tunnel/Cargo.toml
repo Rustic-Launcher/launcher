@@ -1,0 +1,27 @@
+[package]
+name = "rusticmc-tunnel"
+description = "Rustic Relay tunnel client: exposes a local server at <name>.<domain> through an outbound TLS tunnel"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+futures = { version = "0.3", default-features = false, features = ["std"] }
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12", "logging"] }
+rustls-native-certs = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1.47", features = ["rt", "net", "io-util", "time", "sync", "macros"] }
+tokio-rustls = { version = "0.26", default-features = false, features = ["ring", "logging", "tls12"] }
+tokio-util = { version = "0.7", features = ["compat", "rt"] }
+tracing = "0.1"
+yamux = "0.13"
+
+[dev-dependencies]
+tokio = { version = "1.47", features = ["rt-multi-thread", "macros", "test-util"] }
+
+[lints]
+workspace = true

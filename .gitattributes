@@ -1,0 +1,16 @@
+* text=auto eol=lf
+*.png binary
+*.webp binary
+*.wasm binary
+*.rplugin binary
+*.jar binary
+*.webm binary
+*.mp4 binary
+*.avif binary
+*.ico binary
+*.icns binary
+*.ttf binary
+*.woff2 binary
+*.hmod binary
+*.hpack binary
+*.hshader binary

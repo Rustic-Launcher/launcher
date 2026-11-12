@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800" role="img" aria-label="03-content-browse wireframe">
+<title>03-content-browse</title>
+<rect width="1280" height="800" fill="#1b1b1b"/>
+<rect x="14" y="12" width="20" height="20" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="24" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#e6e6e6" text-anchor="middle">R</text>
+<text x="42" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#e6e6e6" text-anchor="start">Rustic ▾</text>
+<text x="110" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">‹  ›</text>
+<text x="150" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#e6e6e6" text-anchor="start">Explore / Mods</text>
+<rect x="810" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="823" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">⌕</text>
+<rect x="842" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="855" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">!</text>
+<rect x="874" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="887" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">☺</text>
+<rect x="910" y="10" width="112" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<circle cx="924" cy="22" r="7" fill="#4a4a4a"/>
+<text x="936" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#e6e6e6" text-anchor="start">Alex ▾</text>
+<rect x="1030" y="10" width="132" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="1096" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#9a9a9a" text-anchor="middle">0 instances running</text>
+<text x="1260" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#9a9a9a" text-anchor="end">–  ▢  ✕</text>
+<rect x="22.0" y="64" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="116" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="0" y="164" width="3" height="28" rx="1.5" fill="#bdbdbd"/>
+<rect x="22.0" y="168" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="220" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="272" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="324" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<line x1="18.0" y1="672" x2="46.0" y2="672" stroke="#4a4a4a"/>
+<text x="32.0" y="712" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="500" fill="#9a9a9a" text-anchor="middle">+</text>
+<circle cx="32.0" cy="752" r="9" fill="none" stroke="#9a9a9a" stroke-width="2"/>
+<rect x="64" y="44" width="1208" height="748" rx="16" fill="#232323" stroke="#4a4a4a"/>
+<rect x="88" y="64" width="660" height="40" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="102" y="89" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">Mods ▾  |  Search mods on Horizon, Modrinth, Rustic…</text>
+<rect x="760" y="64" width="168" height="40" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="774" y="89" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#e6e6e6" text-anchor="start">Relevance ▾</text>
+<text x="88" y="134" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">Installing into: Survie entre amis ▾</text>
+<line x1="88" y1="246" x2="928" y2="246" stroke="#4a4a4a"/>
+<rect x="88" y="166" width="64" height="64" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="168" y="186" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#e6e6e6" text-anchor="start">Lumen Renderer</text>
+<text x="168" y="206" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">One-line description</text>
+<rect x="168" y="214" width="237" height="24" rx="12" fill="#232323" stroke="#4a4a4a"/>
+<text x="286.5" y="230" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">author · Builds on your Horizon</text>
+<text x="928" y="184" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="end">↓ 1.8M · ◷ 3 days ago</text>
+<rect x="732" y="196" width="84" height="32" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="774.0" y="217.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">View</text>
+<rect x="824" y="196" width="104" height="32" rx="12" fill="#bdbdbd" stroke="#4a4a4a"/>
+<text x="876.0" y="217.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#111" text-anchor="middle">Install</text>
+<line x1="88" y1="346" x2="928" y2="346" stroke="#4a4a4a"/>
+<rect x="88" y="266" width="64" height="64" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="168" y="286" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#e6e6e6" text-anchor="start">Atlas Minimap</text>
+<text x="168" y="306" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">One-line description</text>
+<rect x="168" y="314" width="237" height="24" rx="12" fill="#232323" stroke="#4a4a4a"/>
+<text x="286.5" y="330" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">author · Builds on your Horizon</text>
+<text x="928" y="284" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="end">↓ 1.8M · ◷ 3 days ago</text>
+<rect x="732" y="296" width="84" height="32" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="774.0" y="317.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">View</text>
+<rect x="824" y="296" width="104" height="32" rx="12" fill="#bdbdbd" stroke="#4a4a4a"/>
+<text x="876.0" y="317.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#111" text-anchor="middle">Install</text>
+<line x1="88" y1="446" x2="928" y2="446" stroke="#4a4a4a"/>
+<rect x="88" y="366" width="64" height="64" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="168" y="386" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#e6e6e6" text-anchor="start">Clean HUD</text>
+<text x="168" y="406" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">One-line description</text>
+<rect x="168" y="414" width="237" height="24" rx="12" fill="#232323" stroke="#4a4a4a"/>
+<text x="286.5" y="430" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">author · Builds on your Horizon</text>
+<text x="928" y="384" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="end">↓ 1.8M · ◷ 3 days ago</text>
+<rect x="732" y="396" width="84" height="32" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="774.0" y="417.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">View</text>
+<rect x="824" y="396" width="104" height="32" rx="12" fill="#bdbdbd" stroke="#4a4a4a"/>
+<text x="876.0" y="417.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#111" text-anchor="middle">Install</text>
+<line x1="88" y1="546" x2="928" y2="546" stroke="#4a4a4a"/>
+<rect x="88" y="466" width="64" height="64" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="168" y="486" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#e6e6e6" text-anchor="start">Recipe Lens</text>
+<text x="168" y="506" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">One-line description</text>
+<rect x="168" y="514" width="153" height="24" rx="12" fill="#232323" stroke="#4a4a4a"/>
+<text x="244.5" y="530" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">author · Compatible</text>
+<text x="928" y="484" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="end">↓ 1.8M · ◷ 3 days ago</text>
+<rect x="732" y="496" width="84" height="32" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="774.0" y="517.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">View</text>
+<rect x="824" y="496" width="104" height="32" rx="12" fill="#bdbdbd" stroke="#4a4a4a"/>
+<text x="876.0" y="517.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#111" text-anchor="middle">Install</text>
+<line x1="88" y1="646" x2="928" y2="646" stroke="#4a4a4a"/>
+<rect x="88" y="566" width="64" height="64" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="168" y="586" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#e6e6e6" text-anchor="start">Tech Mod (Java)</text>
+<text x="168" y="606" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">One-line description</text>
+<rect x="168" y="614" width="244" height="24" rx="12" fill="#232323" stroke="#4a4a4a"/>
+<text x="290.0" y="630" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">author · Incompatible: Java only</text>
+<text x="928" y="584" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="end">↓ 1.8M · ◷ 3 days ago</text>
+<rect x="732" y="596" width="84" height="32" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="774.0" y="617.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">View</text>
+<rect x="824" y="596" width="104" height="32" rx="12" fill="#bdbdbd" stroke="#4a4a4a"/>
+<text x="876.0" y="617.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#111" text-anchor="middle">Install</text>
+<rect x="948" y="64" width="96" height="40" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="996.0" y="89.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">Horizon</text>
+<rect x="1050" y="64" width="96" height="40" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="1098.0" y="89.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">Modrinth</text>
+<rect x="1152" y="64" width="96" height="40" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="1200.0" y="89.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">Rustic</text>
+<text x="948" y="136" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Categories</text>
+<rect x="948" y="148" width="146" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="1102" y="148" width="146" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="948" y="188" width="146" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="1102" y="188" width="146" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="948" y="228" width="146" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="1102" y="228" width="146" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="1098" y="286" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">▾ View 5 more</text>
+<text x="948" y="320" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Compatibility</text>
+<rect x="948" y="332" width="300" height="40" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="960" y="354" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Compatible with this instance  ●</text>
+<text x="948" y="404" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Horizon versions</text>
+<rect x="948" y="416" width="62" height="24" rx="12" fill="#232323" stroke="#4a4a4a"/>
+<text x="979.0" y="432" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">0.2.15</text>
+<rect x="1018" y="416" width="62" height="24" rx="12" fill="#232323" stroke="#4a4a4a"/>
+<text x="1049.0" y="432" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">0.2.14</text>
+<rect x="1088" y="416" width="62" height="24" rx="12" fill="#232323" stroke="#4a4a4a"/>
+<text x="1119.0" y="432" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">0.2.13</text>
+<rect x="1158" y="416" width="69" height="24" rx="12" fill="#232323" stroke="#4a4a4a"/>
+<text x="1192.5" y="432" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">Nightly</text>
+<text x="16" y="794" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="400" fill="#9a9a9a" text-anchor="start">Explore (1b): type dropdown fused with search, rows with View/Install; right column: sources, categories, compatibility, versions.</text>
+</svg>

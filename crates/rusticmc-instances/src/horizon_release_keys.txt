@@ -1,0 +1,4 @@
+# Copied from horizon/crates/horizon-release-sign/release-keys.txt (Horizon a84f637d, MIT).
+# The public keys Horizon's releases are signed with: one base64 Ed25519 key per line.
+# Keep in step with Horizon when it rotates its key (docs/release-flow.md, "Rotating the key").
+MU4oiIQcCxkZvbwSjjXs7SySCuM6ywRQ3nGaJYZG0gw=

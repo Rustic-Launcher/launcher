@@ -1,0 +1,40 @@
+[package]
+name = "rusticmc-auth"
+description = "Rustic Launcher accounts: Microsoft sign-in, Xbox Live, Minecraft services, ownership gate, keychain"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[features]
+# Lets other crates' tests build a VerifiedOwner without a real sign-in.
+test-support = []
+
+[dependencies]
+async-trait = "0.1"
+base64 = "0.22"
+rand = "0.9"
+rusticmc-launcher-core = { path = "../rusticmc-launcher-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "io-util", "sync", "time"] }
+tracing = "0.1"
+url = "2"
+uuid = { version = "1", features = ["v4"] }
+
+[target.'cfg(windows)'.dependencies]
+keyring = { version = "3.6", features = ["windows-native"] }
+[target.'cfg(target_os = "macos")'.dependencies]
+keyring = { version = "3.6", features = ["apple-native"] }
+[target.'cfg(all(unix, not(target_os = "macos")))'.dependencies]
+keyring = { version = "3.6", features = ["sync-secret-service", "crypto-rust"] }
+
+[dev-dependencies]
+tempfile = "3"
+wiremock = "0.6"
+
+[lints]
+workspace = true

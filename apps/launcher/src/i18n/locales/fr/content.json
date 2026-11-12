@@ -1,0 +1,248 @@
+{
+  "title": "Explorer",
+  "subtitle": "Mods, packs, shaders et plugins d’Horizon, Modrinth et Rustic, vérifiés pour votre instance.",
+  "kindsLabel": "Types de contenu",
+  "kinds": {
+    "mod": "Mods",
+    "modpack": "Modpacks",
+    "resourcepack": "Packs de ressources",
+    "shader": "Shaders",
+    "datapack": "Datapacks",
+    "plugin": "Plugins"
+  },
+  "searchPlaceholder": "Rechercher des {{kind}}…",
+  "searchLabel": "Rechercher du contenu",
+  "clear": "Effacer la recherche",
+  "by": "par {{author}}",
+  "featured": "À la une",
+  "downloads": "{{value}} téléchargements",
+  "updated": "mis à jour {{when}}",
+  "results_one": "{{count}} résultat",
+  "results_many": "{{count}} résultats",
+  "results_other": "{{count}} résultats",
+  "loadMore": "Afficher plus ({{shown}} sur {{total}})",
+  "target": {
+    "label": "Installer dans",
+    "none": "Choisir une cible",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Serveur Horizon",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "Ce PC",
+    "vps": "Votre VPS",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Trier par",
+    "relevance": "Pertinence",
+    "downloads": "Les plus téléchargés",
+    "updated": "Mis à jour récemment",
+    "newest": "Nouveautés"
+  },
+  "sources": {
+    "label": "Sources",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Registre Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Catalogue Rustic"
+  },
+  "filters": {
+    "category": "Catégorie",
+    "allCategories": "Toutes les catégories",
+    "compatibleInstance": "Compatible avec cette instance",
+    "compatibleServer": "Compatible avec ce serveur",
+    "worksNow": "Compilé pour l’Horizon actuel",
+    "categories": "Catégories",
+    "viewMore_one": "Voir {{count}} de plus",
+    "viewMore_many": "Voir {{count}} de plus",
+    "viewMore_other": "Voir {{count}} de plus",
+    "viewLess": "Voir moins",
+    "compatibility": "Compatibilité",
+    "pluginHint": "Les plugins tournent isolés, uniquement sur Rustic Server.",
+    "fairPlayHint": "Seul le contenu fair-play est listé.",
+    "versions": "Versions d’Horizon",
+    "targetVersion": "Votre instance ou serveur sélectionné",
+    "checkingAgainst": "La compatibilité est vérifiée par rapport au build en surbrillance."
+  },
+  "categories": {
+    "performance": "Performances",
+    "utility": "Utilitaire",
+    "ui": "Interface",
+    "pvp": "PvP",
+    "adventure": "Aventure",
+    "decoration": "Décoration",
+    "storage": "Rangement",
+    "worldgen": "Génération du monde",
+    "library": "Bibliothèque",
+    "tech": "Technologie",
+    "cozy": "Douillet",
+    "multiplayer": "Multijoueur",
+    "realistic": "Réaliste",
+    "simple": "Fidèle à l’original",
+    "lightweight": "Léger",
+    "cinematic": "Cinématique",
+    "qol": "Confort de jeu",
+    "admin": "Administration",
+    "chat": "Chat",
+    "minigames": "Mini-jeux",
+    "protection": "Protection",
+    "integration": "Intégrations"
+  },
+  "empty": {
+    "title": "Aucun résultat",
+    "hint": "Essayez un autre mot, une autre source ou catégorie.",
+    "compatibleHint": "Seul le contenu qui fonctionne sur cette cible est affiché. Désactivez le filtre pour tout voir.",
+    "showAll": "Afficher les résultats incompatibles"
+  },
+  "banners": {
+    "mod": "Seuls les mods fair-play sont listés : pas de X-ray, d’auto-clicker ni d’autre avantage déloyal.",
+    "modpack": "Un modpack devient une nouvelle instance avec ses propres mods et réglages.",
+    "resourcepack": "Les packs s’empilent : celui en haut de l’ordre de chargement l’emporte.",
+    "shader": "Horizon fait tourner ses propres packs WGSL (.hshader, API de shaders 0.1, expérimentale) et les packs au format Iris/OptiFine du registre Horizon. Choisissez-en un en jeu dans Paramètres vidéo › Packs de shaders.",
+    "datapack": "Un datapack appartient à un monde : vous choisirez le monde à l’installation.",
+    "plugin": "Les plugins (.rplugin) tournent isolés sur les serveurs qui utilisent le moteur Rustic Server. Un plugin défaillant est désactivé ; le serveur continue de tourner."
+  },
+  "resourcepacks": {
+    "manageOrder": "Gérer l’ordre de chargement"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "WGSL Horizon",
+      "shaders_dir": "Format Iris/OptiFine"
+    },
+    "formatHint": {
+      "horizon": "Le format propre d’Horizon (.hshader), API de shaders 0.1 (expérimentale). Vérifié avant de tourner.",
+      "shaders_dir": "Un pack shaders/ au format Iris/OptiFine, exécuté par le chargeur séparé d’Horizon."
+    }
+  },
+  "side": {
+    "client": "Client",
+    "server": "Serveur",
+    "both": "Client et serveur"
+  },
+  "install": {
+    "install": "Installer",
+    "installAria": "Installer {{name}} dans {{target}}",
+    "installed": "Installé",
+    "installing": "Installation…",
+    "installingPct": "Installation {{pct}}",
+    "createInstance": "Créer l’instance",
+    "chooseWorld": "Installer dans un monde",
+    "noTarget": "Choisissez d’abord où installer.",
+    "started": "Installation de {{name}} dans {{target}}",
+    "withDeps_one": "Ainsi que {{count}} dépendance requise.",
+    "withDeps_many": "Ainsi que {{count}} dépendances requises.",
+    "withDeps_other": "Ainsi que {{count}} dépendances requises.",
+    "failed": "Impossible d’installer {{name}}"
+  },
+  "modpack": {
+    "created": "Création de l’instance {{name}}",
+    "createdHint": "Téléchargement en cours. Elle apparaîtra dans Jouer une fois prête."
+  },
+  "datapacks": {
+    "pickWorld": "Choisir un monde",
+    "noWorlds": "Cette instance n’a pas encore de monde. Lancez une partie pour en créer un.",
+    "count_one": "{{count}} datapack",
+    "count_many": "{{count}} datapacks",
+    "count_other": "{{count}} datapacks"
+  },
+  "plugins": {
+    "badge": "Plugin Rustic Server · API {{api}}",
+    "noServerTitle": "Pas encore de serveur Rustic Server",
+    "noServerBody": "Les plugins ne tournent que sur les serveurs qui utilisent le moteur Rustic Server. Créez-en un en quelques étapes, puis revenez y installer des plugins.",
+    "createServer": "Créer un serveur"
+  },
+  "detail": {
+    "breadcrumb": "Fil d’Ariane",
+    "sections": "Sections du projet",
+    "tabs": {
+      "description": "Description",
+      "gallery": "Galerie",
+      "versions": "Versions",
+      "changelog": "Nouveautés",
+      "dependencies": "Dépendances",
+      "compatibility": "Compatibilité"
+    },
+    "galleryLabel": "Galerie de {{name}}",
+    "prev": "Image précédente",
+    "next": "Image suivante",
+    "slide": "Image {{index}} sur {{total}}",
+    "about": "À propos de ce projet",
+    "categories": "Catégories",
+    "links": "Liens",
+    "link": {
+      "source": "Code source",
+      "issues": "Signaler un bug",
+      "website": "Site web"
+    }
+  },
+  "report": {
+    "button": "Signaler",
+    "title": "Signaler {{name}}",
+    "sent": "Signalement envoyé",
+    "sentBody": "Merci. Nos modérateurs vont l’examiner.",
+    "reasons": {
+      "fair_play": "Enfreint la politique de fair-play",
+      "malware": "Logiciel malveillant ou vol de données",
+      "copyright": "Violation de droits d’auteur",
+      "other": "Autre chose"
+    }
+  },
+  "versions": {
+    "version": "Version",
+    "horizon": "Builds Horizon",
+    "published": "Publiée",
+    "downloads": "Téléchargements",
+    "compatibility": "Compatibilité",
+    "actions": "Actions",
+    "none": "Aucun",
+    "channel": {
+      "release": "Stable",
+      "beta": "Bêta",
+      "alpha": "Alpha"
+    }
+  },
+  "deps": {
+    "none": "Aucune dépendance.",
+    "relation": {
+      "required": "Requise",
+      "optional": "Optionnelle",
+      "incompatible": "Incompatible"
+    },
+    "installed": "Installée",
+    "willInstall": "Installée automatiquement",
+    "notInstalled": "Non installée"
+  },
+  "compatTab": {
+    "for": "pour {{target}}",
+    "builds": "L’auteur publie un build compilé pour cette version d’Horizon.",
+    "format": "Ce contenu n’est que des données (textures, shaders, datapacks) : il ne dépend pas d’un build Horizon.",
+    "unknown": "Choisissez une instance ou un serveur pour vérifier la compatibilité.",
+    "fairPlay": "Rustic ne met en avant que du contenu fair-play. Tout ce qui donne un avantage déloyal n’est jamais listé."
+  },
+  "permissions": {
+    "title": "Permissions",
+    "network": "Accès réseau : {{value}}",
+    "none": "aucun",
+    "files": "Fichiers : uniquement son propre dossier de données."
+  },
+  "stats": {
+    "downloads": "Téléchargements",
+    "follows": "Abonnés",
+    "updated": "Mis à jour",
+    "license": "Licence",
+    "size": "Taille"
+  },
+  "searchSources": "Rechercher des {{kind}} sur {{sources}}…",
+  "filtersLabel": "Filtres",
+  "view": "Voir",
+  "heading": "Trouvez votre prochain *mod*",
+  "eyebrow": "Explorer"
+}

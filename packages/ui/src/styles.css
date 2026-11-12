@@ -1,0 +1,248 @@
+/*
+ * Rustic design system stylesheet. Import it after `tailwindcss` in an app:
+ *   @import 'tailwindcss';
+ *   @import '@rustic/ui/styles.css';
+ *   @source '<path-to>/packages/ui/src';
+ * Colours are CSS variables set by `applyTheme()` (src/tokens/palettes.ts); the fallbacks below are
+ * the default Ember / dark values so the first paint is already right.
+ */
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+@import './tokens/tokens.css';
+@import './premium-card.css';
+@import './language.css';
+@import '@fontsource/instrument-serif/latin-400-italic.css';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+@custom-variant light (&:where([data-theme='light'], [data-theme='light'] *));
+
+@theme inline {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-bg: var(--rl-bg);
+  --color-bg-elevated: var(--rl-bg-elevated);
+  --color-surface: var(--rl-surface);
+  --color-surface-2: var(--rl-surface-2);
+  --color-surface-3: var(--rl-surface-3);
+  --color-border: var(--rl-border);
+  --color-border-default: var(--rl-border-default);
+  --color-border-strong: var(--rl-border-strong);
+  --color-fg: var(--rl-fg);
+  --color-fg-muted: var(--rl-fg-muted);
+  --color-fg-subtle: var(--rl-fg-subtle);
+  --color-fg-disabled: var(--rl-fg-disabled);
+  --color-accent: var(--rl-accent);
+  --color-accent-hover: var(--rl-accent-hover);
+  --color-accent-active: var(--rl-accent-active);
+  --color-focus: var(--rl-focus);
+  --color-accent-fg: var(--rl-accent-fg);
+  --color-accent-text: var(--rl-accent-text);
+  --color-accent-soft: var(--rl-accent-soft);
+  --color-success: var(--rl-success);
+  --color-warning: var(--rl-warning);
+  --color-danger: var(--rl-danger);
+  --color-info: var(--rl-info);
+  --color-success-text: var(--rl-success-text);
+  --color-warning-text: var(--rl-warning-text);
+  --color-danger-text: var(--rl-danger-text);
+  --color-info-text: var(--rl-info-text);
+  --color-glass: var(--rl-glass);
+  --color-glass-strong: var(--rl-glass-strong);
+  --color-glass-border: var(--rl-glass-border);
+  --color-overlay: var(--rl-overlay);
+
+  --font-sans: var(--rl-font-sans);
+  --font-mono: var(--rl-font-mono);
+  --font-serif: var(--rl-font-serif);
+  --color-amber: var(--rl-amber);
+
+  --text-2xs: var(--rl-text-2xs);
+  --text-2xs--line-height: 1rem;
+  --text-xs: var(--rl-text-xs);
+  --text-xs--line-height: 1.125rem;
+  --text-sm: var(--rl-text-sm);
+  --text-sm--line-height: 1.25rem;
+  --text-base: var(--rl-text-base);
+  --text-base--line-height: 1.5rem;
+  --text-lg: var(--rl-text-lg);
+  --text-lg--line-height: 1.625rem;
+  --text-xl: var(--rl-text-xl);
+  --text-xl--line-height: 1.75rem;
+  --text-2xl: var(--rl-text-2xl);
+  --text-2xl--line-height: 2rem;
+  --text-3xl: var(--rl-text-3xl);
+  --text-3xl--line-height: 2.375rem;
+  --text-4xl: var(--rl-text-4xl);
+  --text-4xl--line-height: 2.75rem;
+
+  --radius-xs: var(--rl-radius-xs);
+  --radius-sm: var(--rl-radius-sm);
+  --radius-md: var(--rl-radius-md);
+  --radius-lg: var(--rl-radius-lg);
+  --radius-xl: var(--rl-radius-xl);
+  --radius-2xl: var(--rl-radius-2xl);
+
+  --shadow-sm: var(--rl-shadow-sm);
+  --shadow-md: var(--rl-shadow-md);
+  --shadow-lg: var(--rl-shadow-lg);
+  --shadow-glow: 0 0 0 1px var(--rl-accent), 0 8px 32px -4px var(--rl-accent-glow);
+
+  --ease-out: var(--rl-ease-out);
+  --ease-in-out: var(--rl-ease-in-out);
+
+  --animate-shimmer: rx-shimmer 1.6s var(--rl-ease-in-out) infinite;
+  --animate-pulse-soft: rx-pulse 2s var(--rl-ease-in-out) infinite;
+  --animate-indeterminate: rx-indeterminate 1.4s var(--rl-ease-in-out) infinite;
+}
+
+@keyframes rx-shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+@keyframes rx-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+@keyframes rx-indeterminate {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+
+@layer base {
+  /* Fixed app shell (the launcher puts `rx-app-shell` on <html>): the window never scrolls, panes do.
+     Documents such as the website keep normal page scrolling. */
+  html.rx-app-shell,
+  html.rx-app-shell body,
+  html.rx-app-shell #root {
+    height: 100%;
+  }
+  html.rx-app-shell body {
+    overflow: hidden;
+  }
+  html {
+    font-family: var(--rl-font-sans);
+    font-size: 16px;
+    background: var(--rl-bg);
+    color: var(--rl-fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  .tabular-nums,
+  [data-numeric] {
+    font-feature-settings: 'cv11', 'ss01', 'tnum';
+  }
+  body {
+    margin: 0;
+    background: var(--rl-bg);
+    color: var(--rl-fg);
+  }
+  ::selection {
+    background: var(--rl-accent-soft);
+    color: var(--rl-fg);
+  }
+  :focus-visible {
+    outline: 2px solid var(--rl-focus);
+    outline-offset: 2px;
+  }
+  /* Scrollbars (launcher and website): thin, neutral thumb, Ember on hover, both themes.
+     Chromium/WebKit (WebView2 included) use the pseudo-elements; setting the standard properties
+     there would disable them, so those are only for engines without ::-webkit-scrollbar (Firefox). */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--rl-surface-3);
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--rl-accent);
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background-color: var(--rl-accent-active);
+  }
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--rl-surface-3) transparent;
+    }
+    *:hover {
+      scrollbar-color: var(--rl-accent) transparent;
+    }
+  }
+  button,
+  [role='button'] {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@layer components {
+  /* Strong glass: modals, toasts, context menus. */
+  .rx-glass-strong {
+    background: var(--rl-glass-strong);
+    border: 1px solid var(--rl-glass-border);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    backdrop-filter: blur(16px) saturate(1.2);
+  }
+  /* Frosted glass panel. */
+  .rx-glass {
+    background: var(--rl-glass);
+    border: 1px solid var(--rl-glass-border);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    backdrop-filter: blur(16px) saturate(1.2);
+  }
+  .rx-skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--rl-surface-2) 0%,
+      var(--rl-surface-3) 50%,
+      var(--rl-surface-2) 100%
+    );
+    background-size: 200% 100%;
+  }
+  .rx-focus-ring {
+    outline: none;
+  }
+  .rx-focus-ring:focus-visible {
+    box-shadow:
+      0 0 0 2px var(--rl-bg),
+      0 0 0 4px var(--rl-focus);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

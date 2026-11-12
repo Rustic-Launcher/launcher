@@ -1,0 +1,262 @@
+{
+  "title": "Versions",
+  "description": "Each instance has its own Horizon build, content and worlds.",
+  "summary_one": "{{count}} instance · {{playtime}} played",
+  "summary_other": "{{count}} instances · {{playtime}} played",
+  "search": "Filter instances",
+  "sort": {
+    "label": "Sort instances",
+    "recent": "Last played",
+    "name": "Name",
+    "playtime": "Play time"
+  },
+  "empty": {
+    "title": "No instance yet",
+    "description": "Create one with the recommended Horizon build, or import a modpack."
+  },
+  "noMatch": {
+    "title": "No instance matches",
+    "description": "Nothing matches “{{query}}”."
+  },
+  "errors": {
+    "action": "That did not work"
+  },
+  "card": {
+    "more": "More actions for {{name}}",
+    "pin": "Pin",
+    "unpin": "Unpin",
+    "pinned": "Pinned",
+    "duplicate": "Duplicate",
+    "duplicated": "{{name}} created",
+    "mods": "Mods",
+    "playtime": "Play time",
+    "lastPlayed": "Last played",
+    "never": "Never",
+    "fromModpack": "Modpack {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Running",
+    "installing": "Installing",
+    "broken": "Needs repair"
+  },
+  "delete": {
+    "title": "Delete {{name}}?",
+    "body": "Its mods, settings and worlds are deleted from this computer. This cannot be undone.",
+    "confirm": "Delete instance",
+    "done": "{{name}} deleted"
+  },
+  "new": {
+    "button": "New instance",
+    "title": "New instance",
+    "description": "Start fresh or bring an existing pack.",
+    "tabs": {
+      "create": "Create",
+      "import": "Import"
+    },
+    "name": "Name",
+    "namePlaceholder": "My survival world",
+    "nameRequired": "Give the instance a name.",
+    "icon": "Icon",
+    "color": "Colour",
+    "colorN": "Colour {{n}}",
+    "version": "Horizon build",
+    "versionHint": "The Rustic edition adds cosmetics and friends in game. No Java or RAM settings needed.",
+    "recommended": "Recommended",
+    "release": "Release",
+    "nightly": "Nightly",
+    "installed": "Installed",
+    "submit": "Create instance",
+    "created": "{{name}} is ready"
+  },
+  "icons": {
+    "grass": "Sprout",
+    "sword": "Swords",
+    "pickaxe": "Pickaxe",
+    "castle": "Castle",
+    "rocket": "Rocket",
+    "gem": "Gem",
+    "flame": "Flame",
+    "leaf": "Leaf",
+    "star": "Star",
+    "compass": "Compass"
+  },
+  "import": {
+    "folder": {
+      "title": "Instance folder",
+      "description": "A Prism or MultiMC instance folder, ported as Horizon does."
+    },
+    "mrpack": {
+      "title": "Modrinth pack (.mrpack)",
+      "description": "Mods are matched to their Horizon builds when available."
+    },
+    "curseforge_zip": {
+      "title": "CurseForge zip",
+      "description": "An exported CurseForge modpack."
+    },
+    "modpack": {
+      "title": "From a modpack",
+      "description": "Browse Horizon, Modrinth and Rustic modpacks."
+    },
+    "started": "Importing {{name}}",
+    "background": "It continues in the background; you can keep using the launcher.",
+    "note": "Only content that works on Horizon is installed; the rest is listed with the reason."
+  },
+  "detail": {
+    "notFound": "This instance does not exist anymore",
+    "backToList": "Back to instances",
+    "tabsLabel": "Instance sections",
+    "tabs": {
+      "overview": "Overview",
+      "content": "Content",
+      "resourcepacks": "Resource packs",
+      "worlds": "Worlds",
+      "settings": "Settings"
+    }
+  },
+  "overview": {
+    "mods": "Mods",
+    "resourcePacks": "Resource packs",
+    "shaders": "Shader packs",
+    "version": "Horizon build",
+    "updateAvailable": "Update available",
+    "upToDate": "Up to date",
+    "updateNow": "Update now",
+    "changeVersion": "Choose a Horizon build",
+    "applyVersion": "Switch build",
+    "versionChanging": "Switching to {{version}}",
+    "lastSession": "Last session",
+    "lastPlayed": "Played {{when}}",
+    "neverPlayed": "Not played yet",
+    "rejoin": "Rejoin",
+    "noServer": "No server joined from this instance yet.",
+    "created": "Created",
+    "folder": "Folder"
+  },
+  "content": {
+    "filter": "Filter by type",
+    "kinds": {
+      "all": "All",
+      "mod": "Mods",
+      "resourcepack": "Resource packs",
+      "shader": "Shaders"
+    },
+    "search": "Search installed content",
+    "updateAll_one": "Update {{count}} item",
+    "updateAll_other": "Update {{count}} items",
+    "browse": "Browse content",
+    "noMatch": "Nothing installed matches your search.",
+    "empty": {
+      "title": "Nothing installed yet",
+      "description": "Find mods, resource packs and shaders that work with this instance."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Local file"
+    },
+    "updateTo": "Update: {{version}}",
+    "incompatible": "Incompatible: {{reason}}",
+    "updateOne": "Update {{name}}",
+    "toggle": "Enable {{name}}",
+    "remove": "Remove {{name}}",
+    "removeTitle": "Remove {{name}}?",
+    "removeBody": "The file is deleted from this instance. You can install it again from Content."
+  },
+  "packs": {
+    "hint": "Packs at the top win when two packs change the same thing.",
+    "listLabel": "Resource pack load order",
+    "top": "Highest priority",
+    "up": "Move {{name}} up",
+    "down": "Move {{name}} down",
+    "moved": "{{name}} moved to position {{position}} of {{total}}",
+    "browse": "Find resource packs",
+    "empty": {
+      "title": "No resource pack",
+      "description": "Add packs to change textures, sounds and the interface."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "No world yet",
+      "description": "Worlds you create in game appear here."
+    },
+    "openSaves": "Open saves folder",
+    "lastPlayed": "Played {{when}}",
+    "modes": {
+      "survival": "Survival",
+      "creative": "Creative",
+      "adventure": "Adventure",
+      "hardcore": "Hardcore",
+      "spectator": "Spectator"
+    },
+    "datapacks_one": "{{count}} datapack",
+    "datapacks_other": "{{count}} datapacks",
+    "play": "Play this world",
+    "addDatapacks": "Add datapacks"
+  },
+  "settings": {
+    "general": "General",
+    "display": "Window",
+    "useDefaultResolution": "Use the default window size",
+    "defaultIs": "Default: {{width}} × {{height}}",
+    "width": "Width",
+    "height": "Height",
+    "fullscreen": "Start in full screen",
+    "resolutionError": "Use whole numbers, at least 640 × 360.",
+    "launch": "Launch options",
+    "launchHint": "Horizon instances only pin a build: there is no Java, RAM or loader to set.",
+    "gameArgs": "Extra game arguments",
+    "gameArgsHint": "Advanced. Passed to Horizon as is.",
+    "folders": "Folders",
+    "folder": {
+      "root": "Instance",
+      "mods": "Mods",
+      "resourcepacks": "Resource packs",
+      "shaderpacks": "Shader packs",
+      "saves": "Worlds",
+      "screenshots": "Screenshots",
+      "logs": "Logs"
+    },
+    "unsaved": "You have unsaved changes.",
+    "allSaved": "All changes saved.",
+    "saved": "Instance settings saved"
+  },
+  "versions": {
+    "noSelection": "Select a profile to see its details, or create one to get started.",
+    "source": "Source",
+    "sources": {
+      "all": "Horizon",
+      "custom": "My profiles",
+      "modpack": "Modpacks"
+    },
+    "search": "Search your Horizon profiles…",
+    "clear": "Clear the search",
+    "newProfile": "New profile",
+    "update": "Update",
+    "running": "Running",
+    "details": "Profile details",
+    "media": "Profile media",
+    "slide": "Picture {{index}} of {{total}}",
+    "slides": {
+      "0": "{{name}}",
+      "1": "Worlds of {{name}}",
+      "2": "Builds in {{name}}"
+    },
+    "blurb": "{{version}} with {{mods}} mods. {{playtime}} played so far.",
+    "fromModpack": "Installed from the {{name}} modpack ({{version}}).",
+    "created": "Created on {{date}}.",
+    "lastPlayed": "Last played {{when}}.",
+    "readMore": "Read more",
+    "readLess": "Show less",
+    "version": "Version",
+    "build": "Build",
+    "edition": "Edition",
+    "content": "Content",
+    "contentCount": "{{mods}} mods · {{packs}} packs · {{shaders}} shaders",
+    "manage": "Manage content, worlds and settings",
+    "plainHorizon": "Horizon (vanilla)"
+  },
+  "heading": "Your *profiles*",
+  "eyebrow": "Versions"
+}

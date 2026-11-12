@@ -1,0 +1,42 @@
+{
+  "name": "rustic-launcher-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT OR Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @rustic/launcher dev",
+    "build": "pnpm --filter @rustic/launcher build",
+    "preview": "pnpm --filter @rustic/launcher preview",
+    "storybook": "pnpm --filter @rustic/ui storybook",
+    "build-storybook": "pnpm --filter @rustic/ui build-storybook",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "pnpm -r --parallel typecheck",
+    "test": "pnpm -r test",
+    "e2e": "pnpm --filter @rustic/launcher e2e",
+    "screenshots": "pnpm --filter @rustic/launcher screenshots",
+    "tauri:dev": "cd apps/launcher && tauri dev",
+    "tauri:build": "cd apps/launcher && tauri build"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@tauri-apps/cli": "2.12.4",
+    "eslint": "9.39.5",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.7",
+    "eslint-plugin-storybook": "10.6.6",
+    "globals": "17.14.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-tailwindcss": "0.8.1",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.2"
+  }
+}

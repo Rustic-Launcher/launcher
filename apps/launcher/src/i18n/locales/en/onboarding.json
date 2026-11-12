@@ -1,0 +1,113 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Step {{current}} of {{total}}",
+  "back": "Back",
+  "continue": "Continue",
+  "skip": "Skip for now",
+  "steps": {
+    "welcome": "Welcome",
+    "microsoft": "Microsoft",
+    "rustic": "Rustic account",
+    "privacy": "Privacy",
+    "game": "Game files",
+    "ready": "Ready"
+  },
+  "welcome": {
+    "title": "Welcome to Rustic",
+    "subtitle": "A fast, social launcher for Horizon. A few choices and you are in the game.",
+    "language": "Language",
+    "theme": "Theme",
+    "palette": "Palette"
+  },
+  "microsoft": {
+    "title": "Sign in with Microsoft",
+    "subtitle": "Rustic checks with Microsoft that you own the game. Your password never touches Rustic.",
+    "signedInAs": "Signed in as {{name}}",
+    "ownershipOk": "Ownership confirmed: you can play.",
+    "notOwnedTitle": "You need Minecraft: Java Edition",
+    "notOwnedBody": "This Microsoft account does not own the game. Rustic never launches the game without a licence.",
+    "buyGame": "Get the game",
+    "whyTitle": "Why?",
+    "whyBody": "Owning the game is mandatory. Horizon prepares the game files from your own installation, and offline profiles are only unlocked after this check."
+  },
+  "rustic": {
+    "title": "Your Rustic account",
+    "subtitle": "Optional. The game works without it; you can sign in later from Settings.",
+    "perks": {
+      "friends": {
+        "title": "Friends and parties",
+        "body": "See who is online and join them in one click."
+      },
+      "locker": {
+        "title": "Locker",
+        "body": "Cosmetics on your player, purely visual."
+      },
+      "servers": {
+        "title": "Your servers online",
+        "body": "A free address and domains for the servers you host."
+      }
+    },
+    "signedInAs": "Signed in as {{name}}",
+    "signIn": "Sign in or create an account",
+    "skipHint": "Or press Continue to skip for now.",
+    "age": "Rustic accounts are for ages {{min}} and up. Under {{consent}}, a parent must agree to data processing; under 18, purchases need a parent’s approval."
+  },
+  "privacy": {
+    "title": "Your privacy choices",
+    "subtitle": "Everything is off. Turn on only what you are happy to share; you can change it any time in Settings.",
+    "usage": {
+      "title": "Usage analytics",
+      "body": "Which pages and features are used, without content or identifiers."
+    },
+    "performance": {
+      "title": "Performance reports",
+      "body": "Launch and frame times, to find slow spots."
+    },
+    "crash": {
+      "title": "Crash reports",
+      "body": "Sent automatically when the game or launcher crashes. When off, Rustic asks each time."
+    },
+    "note": "We never sell data and never share it for advertising.",
+    "policy": "Read the privacy policy"
+  },
+  "game": {
+    "title": "Get the game ready",
+    "subtitle": "Rustic uses the game files from your own installation (or downloads what is missing from Mojang), then prepares them for Horizon.",
+    "detecting": "Looking for your game installation…",
+    "found": "Game found ({{versions}})",
+    "notFound": "No installation found",
+    "notFoundBody": "Rustic will download the game files from Mojang for your account.",
+    "prepareTitle": "Prepare game files",
+    "alreadyReady": "Already prepared",
+    "done": "Prepared",
+    "prepareAgain": "Prepare again",
+    "prepare": "Prepare",
+    "steps": {
+      "detect": "Detect",
+      "download": "Download",
+      "verify": "Verify",
+      "compile_exporters": "Exporters",
+      "export": "Export",
+      "index": "Index"
+    },
+    "explain": "Missing game files come from Mojang's own servers, nothing from third parties: the prepared files stay on this computer.",
+    "background": "You can continue: preparation goes on in the background.",
+    "prepareFailed": "The game files could not be prepared: {{reason}}"
+  },
+  "ready": {
+    "title": "You are all set",
+    "subtitle": "Create your first instance now, or skip and do it later.",
+    "finish": "Open Rustic",
+    "defaultName": "My first world",
+    "createTitle": "Create my first instance",
+    "recommended": "Recommended",
+    "nameLabel": "Instance name",
+    "existing_one": "You already have {{count}} instance.",
+    "existing_other": "You already have {{count}} instances.",
+    "tips": {
+      "play": "PLAY is always at the bottom right.",
+      "friends": "Your friends are on the right; Join takes one click.",
+      "servers": "Host a server for your friends from the Servers page."
+    }
+  }
+}

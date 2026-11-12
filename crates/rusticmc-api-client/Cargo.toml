@@ -1,0 +1,30 @@
+[package]
+name = "rusticmc-api-client"
+description = "Typed Rust client for the Rustic Cloud API (types shared with the server, methods generated from openapi.json)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[features]
+default = ["client"]
+# HTTP client methods (reqwest). Disable to use only the wire types (the server does this).
+client = ["dep:reqwest"]
+# Derive utoipa::ToSchema on the wire types (used by the server to produce openapi.json).
+openapi = ["dep:utoipa"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["serde", "v4"] }
+chrono = { version = "0.4.41", default-features = false, features = ["serde", "clock", "std"] }
+thiserror = "2"
+reqwest = { version = "0.12.28", default-features = false, features = ["json", "rustls-tls"], optional = true }
+utoipa = { version = "5.4", features = ["uuid", "chrono"], optional = true }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+[lints]
+workspace = true

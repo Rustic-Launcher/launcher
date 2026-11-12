@@ -1,0 +1,58 @@
+# The in-game companion and the "Rustic edition" client (ADR 0070). Its own workspace: it links
+# Horizon's game (horizon-client and friends, by path) and must build with Horizon's [patch] and
+# lockfile, which the launcher workspace must not inherit.
+#
+# Horizon is found at ../../../server/horizon from this folder: clone https://github.com/Rustic-Launcher/server next to
+# this repository as `server`, `git submodule update --init` (Horizon pinned at a84f637d) and
+# `python scripts/patches.py apply` there (the companion uses Rustic's Horizon patches). Cargo.lock was seeded from
+# horizon/Cargo.lock so every crate the game uses resolves to Horizon's exact versions.
+[workspace]
+resolver = "2"
+members = ["core", "mod", "edition"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+rust-version = "1.95"
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+
+# Horizon's own [patch.crates-io] (horizon/Cargo.toml), paths adjusted: the game builds only with
+# these (wgpu-hal and naga fixes, libmimalloc-sys without POPCNT).
+[patch.crates-io]
+wgpu-hal = { path = "../../../server/horizon/third_party/wgpu-hal" }
+naga = { path = "../../../server/horizon/third_party/naga" }
+libmimalloc-sys = { path = "../../../server/horizon/third_party/libmimalloc-sys" }
+
+# Horizon's profiles (horizon/Cargo.toml): the mod API generator optimized even in dev builds.
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package.horizon-mod-api-gen]
+opt-level = 3
+[profile.dev.package.syn]
+opt-level = 3
+[profile.dev.package.proc-macro2]
+opt-level = 3
+[profile.release.package.horizon-mod-api-gen]
+opt-level = 3
+[profile.release.package.syn]
+opt-level = 3
+[profile.release.package.proc-macro2]
+opt-level = 3
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+# Horizon's iteration profile, which its launcher's native builds use too.
+[profile.fast]
+inherits = "release"
+lto = false
+codegen-units = 16
+incremental = true

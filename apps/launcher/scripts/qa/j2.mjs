@@ -1,0 +1,23 @@
+import { connect, go, ipc, shot } from './cdp.mjs';
+const { browser, page } = await connect();
+await page.waitForTimeout(1500);
+// Microsoft sign-in is gated (no Azure client id): skip the rest of onboarding for QA.
+await ipc(page, 'settings_set', { onboarding_completed: true });
+await page.reload();
+await page.waitForTimeout(2000);
+await go(page, '#/settings?section=accounts');
+await page.waitForSelector('[data-testid="rustic-auth-form"]');
+const form = page.getByTestId('rustic-auth-form');
+await form.getByRole('radio', { name: 'Create an account' }).click();
+const email = process.env.QA_EMAIL ?? 'qa.sam@example.com';
+await page.getByTestId('rustic-email').fill(email);
+await page.getByTestId('rustic-password').fill('Rustic-QA-pass-2026');
+await page.getByTestId('rustic-username').fill(process.env.QA_USER ?? 'QaSam');
+await page.getByTestId('rustic-dob').fill('1998-04-12');
+await page.getByTestId('rustic-privacy').click();
+await shot(page, '71-rustic-signup-form');
+await page.getByTestId('rustic-auth-submit').click();
+await page.waitForSelector('[data-testid="rustic-verify-sent"], [data-testid="rustic-auth-error"]');
+await shot(page, '71-rustic-signup-sent');
+console.log((await form.innerText()).slice(0, 400));
+await browser.close();

@@ -1,0 +1,376 @@
+{
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "notifications": "Notifications"
+  },
+  "actions": {
+    "retry": "Retry",
+    "back": "Back",
+    "forward": "Forward",
+    "cancel": "Cancel",
+    "close": "Close",
+    "clear": "Clear",
+    "save": "Save",
+    "saved": "Saved",
+    "delete": "Delete",
+    "edit": "Edit",
+    "open": "Open",
+    "install": "Install",
+    "installed": "Installed",
+    "remove": "Remove",
+    "confirm": "Confirm",
+    "continue": "Continue",
+    "next": "Next",
+    "previous": "Previous",
+    "done": "Done",
+    "copy": "Copy",
+    "copied": "Copied",
+    "learnMore": "Learn more",
+    "seeAll": "See all",
+    "create": "Create",
+    "import": "Import",
+    "browse": "Browse…",
+    "apply": "Apply",
+    "reset": "Reset",
+    "enable": "Enable",
+    "disable": "Disable",
+    "update": "Update",
+    "add": "Add",
+    "refresh": "Refresh",
+    "openFolder": "Open folder",
+    "skip": "Skip",
+    "more": "More"
+  },
+  "errors": {
+    "generic": "Something went wrong. Try again in a moment.",
+    "page": {
+      "title": "This page could not be displayed"
+    },
+    "load": {
+      "title": "Could not load this"
+    },
+    "notFound": {
+      "title": "Nothing here",
+      "description": "This page does not exist or has moved."
+    }
+  },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Launchpad",
+    "instances": "Versions",
+    "content": "Explore",
+    "servers": "Servers",
+    "locker": "Locker",
+    "store": "Store",
+    "settings": "Settings",
+    "newInstance": "New profile"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search content, friends, servers, settings…",
+    "empty": "No results. Try another word.",
+    "loading": "Searching…",
+    "hintNavigate": "navigate",
+    "hintOpen": "open",
+    "hintClose": "close",
+    "open": "Open",
+    "myServer": "My server",
+    "playInstance": "Play {{name}}",
+    "groups": {
+      "pages": "Pages",
+      "actions": "Actions",
+      "instances": "Instances",
+      "content": "Content",
+      "friends": "Friends",
+      "servers": "Servers",
+      "settings": "Settings",
+      "play": "Play"
+    },
+    "actions": {
+      "newInstance": "Create an instance",
+      "newServer": "Create a server",
+      "addFriend": "Add a friend",
+      "darkTheme": "Switch to dark theme",
+      "lightTheme": "Switch to light theme"
+    },
+    "settings": {
+      "accounts": "Accounts",
+      "game": "Game",
+      "launcher": "Launcher",
+      "appearance": "Appearance",
+      "privacy": "Privacy & data",
+      "parental": "Parental controls",
+      "about": "About"
+    }
+  },
+  "friends": {
+    "title": "Friends",
+    "onlineCount_one": "{{count}} online",
+    "onlineCount_other": "{{count}} online",
+    "add": "Add a friend",
+    "search": "Search friends",
+    "requests_one": "Request · {{count}}",
+    "requests_other": "Requests · {{count}}",
+    "incoming": "Wants to be friends",
+    "outgoing": "Request sent",
+    "accept": "Accept",
+    "decline": "Decline",
+    "cancelRequest": "Cancel request",
+    "requestSent": "Friend request sent to {{name}}",
+    "error": "Friends could not be loaded.",
+    "empty": "No friends yet. Add one with their Rustic username.",
+    "online_one": "Online · {{count}}",
+    "online_other": "Online · {{count}}",
+    "offline_one": "Offline · {{count}}",
+    "offline_other": "Offline · {{count}}",
+    "lastSeen": "Seen {{when}}",
+    "activity": {
+      "server": "Playing on {{server}}",
+      "singleplayer": "Playing solo",
+      "hosting": "Hosting {{server}}",
+      "launcher": "In the launcher"
+    },
+    "favorite": "Favourite",
+    "makeFavorite": "Add to favourites",
+    "unfavorite": "Remove from favourites",
+    "join": "Join",
+    "joinAria": "Join {{name}}",
+    "joining": "Joining {{server}}…",
+    "more": "More actions for {{name}}",
+    "remove": "Remove friend",
+    "removeTitle": "Remove {{name}} from your friends?",
+    "removeBody": "You will no longer see each other’s activity. You can send a new request later."
+  },
+  "addFriend": {
+    "title": "Add a friend",
+    "description": "Find a player by their Rustic name or the Minecraft name they linked, or pick someone you played with.",
+    "kind": "Search by",
+    "kindRustic": "Rustic name",
+    "kindMinecraft": "Minecraft name",
+    "rusticLabel": "Rustic username",
+    "minecraftLabel": "Minecraft username",
+    "rusticPlaceholder": "e.g. lea_builds",
+    "minecraftPlaceholder": "e.g. LeaBuilds",
+    "rusticHint": "The exact name on their Rustic profile.",
+    "minecraftHint": "The exact in-game name of a player who signed in to Rustic with that Minecraft profile.",
+    "find": "Find",
+    "send": "Send request",
+    "sent": "Request sent",
+    "friends": "Already friends",
+    "pending": "Request pending",
+    "incoming": "They already asked to be your friend: accept their request.",
+    "minecraftName": "Minecraft name:",
+    "add": "Add",
+    "addAria": "Send a friend request to {{name}}",
+    "playedWith": "Played with recently",
+    "playedWithEmpty": "Nobody yet. Players from your parties and from shared servers (10 minutes or more together) show up here.",
+    "crossed": "Seen recently",
+    "crossedEmpty": "No one crossed recently on a shared server.",
+    "reasonParty": "In your party",
+    "reasonServer": "On {{server}}",
+    "reasonSameServer": "On the same server",
+    "suggestionsError": "Suggestions could not be loaded.",
+    "suggestionsOff": "Suggestions are off. Turn on “Appear in suggestions of players I meet” in Settings › Privacy & data to see the players you meet.",
+    "suggestionsMinor": "Suggestions of players you meet are not available for your account.",
+    "privacyNote": "Suggestions come from your parties and the servers you share in your activity, over the last 14 days. Only people who also allow it appear.",
+    "errors": {
+      "notFoundRustic": "No Rustic account has this name.",
+      "notFoundMinecraft": "No Rustic player has linked this Minecraft name.",
+      "invalidRustic": "Rustic names are 3 to 20 letters, digits or _.",
+      "invalidMinecraft": "Minecraft names are 3 to 16 letters, digits or _.",
+      "cannot_add_friend": "This player can’t receive friend requests.",
+      "friend_requests_disabled": "Friend requests are turned off for your account (parental controls).",
+      "cannot_add_self": "That’s you!",
+      "already_friends": "You are already friends.",
+      "request_pending": "A request is already pending.",
+      "incoming_request_exists": "They already sent you a request: accept it.",
+      "rate_limited": "Too many searches. Wait a minute, then try again.",
+      "generic": "Something went wrong. Try again."
+    }
+  },
+  "party": {
+    "title": "Party",
+    "leave": "Leave",
+    "leader": "Party leader",
+    "pending": "{{name}} (invited)",
+    "invite": "Invite to party",
+    "invited": "{{name}} was invited to your party"
+  },
+  "presence": {
+    "online": "Online",
+    "in-game": "In game",
+    "away": "Away",
+    "busy": "Busy",
+    "offline": "Offline"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all as read",
+    "empty": "You are all caught up.",
+    "kinds": {
+      "friend_request": "sent you a friend request",
+      "update_available": "is available for your instances",
+      "backup_done": "Scheduled backup completed",
+      "store_new": "New in the store"
+    }
+  },
+  "account": {
+    "switcher": "Accounts",
+    "none": "No account",
+    "rustic": "Rustic account",
+    "signInRustic": "Sign in to Rustic",
+    "signOutRustic": "Sign out of Rustic",
+    "gameProfiles": "Game profiles",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Offline"
+    },
+    "add": "Add an account",
+    "manage": "Manage accounts"
+  },
+  "downloads": {
+    "title": "Downloads",
+    "global": "Background downloads",
+    "working": "Working…",
+    "summary_one": "{{count}} download in progress",
+    "summary_other": "{{count}} downloads in progress",
+    "kind": {
+      "game": "Horizon",
+      "content": "Content",
+      "modpack": "Modpack",
+      "server": "Server",
+      "java": "Java runtime",
+      "update": "Launcher update",
+      "prepare": "Preparing game files"
+    }
+  },
+  "play": {
+    "play": "Play",
+    "update": "Update",
+    "cancel": "Cancel",
+    "stop": "Stop",
+    "selectInstance": "Choose the instance to play",
+    "instances": "Instances",
+    "manageInstances": "Manage instances",
+    "newVersion": "{{version}} available",
+    "cancelled": "Launch cancelled",
+    "status": {
+      "ready": "Ready to play",
+      "noInstance": "No instance",
+      "running": "Game running",
+      "update": "Update required",
+      "broken": "Repair required"
+    },
+    "progress": {
+      "downloading": "Downloading {{pct}}",
+      "checking": "Checking files…",
+      "preparing": "Preparing…",
+      "launching": "Launching…",
+      "stopping": "Stopping…",
+      "preparingFiles": "Preparing game files {{pct}}"
+    },
+    "errors": {
+      "launch": "The game could not start"
+    },
+    "refusals": {
+      "auth_no_account": "Sign in with a Microsoft account that owns the game to play.",
+      "auth_not_owned": "This Microsoft account does not own the game.",
+      "auth_not_approved": "Microsoft sign-in is not available for this launcher yet.",
+      "auth_reauth_required": "Sign in to your Microsoft account again to play.",
+      "auth_offline_not_allowed": "Sign in once with a Microsoft account that owns the game, then you can play offline.",
+      "auth_network": "Could not reach Microsoft to check the account. Check your connection.",
+      "build_not_installed": "Install a Horizon build first.",
+      "prepare_needed": "The game files for this build are not prepared yet.",
+      "prepare_failed": "The game files could not be prepared: try again, or prepare them in Settings › Game & instances.",
+      "prepare_no_java": "Java was not found: install it or choose it in Settings › Game & instances.",
+      "prepare_no_minecraft_dir": "Your game install was not found: choose its folder in Settings › Game & instances.",
+      "launch_already_running": "This instance is already running."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (Rustic edition)",
+    "rusticEdition": "Rustic edition"
+  },
+  "compat": {
+    "buildsOnHorizon": "Builds on your Horizon",
+    "compatible": "Compatible",
+    "incompatible": "Incompatible: {{reason}}",
+    "unknown": "Compatibility unknown",
+    "reasons": {
+      "horizon_version": "Horizon version",
+      "java_only": "Java Edition only",
+      "side": "server side only",
+      "conflict": "conflicts with an installed mod",
+      "unsupported_format": "format not supported",
+      "needs_rustic_server": "needs Rustic Server",
+      "not_fair_play": "not allowed (fair play)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Switch product",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Rustic Server docs"
+  },
+  "crumbs": {
+    "label": "Breadcrumb",
+    "horizon": "Horizon",
+    "details": "Details",
+    "create": "Create",
+    "kinds": {
+      "mod": "Mods",
+      "modpack": "Modpacks",
+      "resourcepack": "Resource packs",
+      "shader": "Shaders",
+      "datapack": "Datapacks",
+      "plugin": "Plugins"
+    },
+    "servers": {
+      "featured": "Featured",
+      "mine": "My servers",
+      "multiplayer": "Multiplayer list",
+      "discover": "Featured",
+      "joined": "Multiplayer list"
+    }
+  },
+  "social": {
+    "title": "Social",
+    "description": "Friends, chats and your party.",
+    "open": "Open social",
+    "friends": "Friends",
+    "chats": "Chats",
+    "message": "Send a message",
+    "searchChats": "Search chats…",
+    "noChats": "No conversations yet. Message a friend from the Friends tab.",
+    "sayHello": "Say hello",
+    "selectTitle": "Select a conversation",
+    "selectBody": "Choose a friend to start chatting.",
+    "messagePlaceholder": "Message {{name}}",
+    "send": "Send"
+  },
+  "window": {
+    "minimize": "Minimize",
+    "maximize": "Maximize",
+    "restore": "Restore",
+    "close": "Close"
+  },
+  "running": {
+    "title": "Running instances",
+    "none": "No game running.",
+    "count_one": "{{count}} instance running",
+    "count_other": "{{count}} instances running",
+    "downloading": "Downloading {{pct}}"
+  },
+  "launch": {
+    "launch": "Launch game",
+    "update": "Update & launch",
+    "stop": "Stop game"
+  },
+  "deepLink": {
+    "authOk": "Signed in to Rustic",
+    "authFailed": "Rustic sign-in failed",
+    "joining": "Joining {{target}}…"
+  }
+}

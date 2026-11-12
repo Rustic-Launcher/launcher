@@ -1,0 +1,257 @@
+/*
+ * Premium card (PremiumCard.tsx). Layers, bottom to top: glass (blur, gradient, grain, inner
+ * highlight), spotlight (+ accent bloom outside), gradient edge (1 px ring with a rotating conic
+ * sweep and a pointer-lit hot spot), body. Hover effects only animate opacity and transform.
+ * In the components layer, so Tailwind utilities on a card still win.
+ */
+@layer components {
+  @keyframes rx-pcard-sweep {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .rx-pcard {
+    --mx: 50%;
+    --my: -400px;
+    --rx: 0deg;
+    --ry: 0deg;
+    --pc-radius: var(--rl-radius-xl);
+    --pc-edge-a: color-mix(in srgb, var(--rl-accent) 55%, transparent);
+    --pc-edge-b: color-mix(in srgb, var(--rl-amber) 22%, transparent);
+    --pc-edge-c: rgb(255 255 255 / 0.07);
+    --pc-spot: color-mix(in srgb, var(--rl-accent) 13%, transparent);
+    --pc-hot: color-mix(in srgb, var(--rl-amber) 90%, transparent);
+    --pc-highlight: rgb(255 255 255 / 0.07);
+    --pc-shadow: 0 24px 60px -28px rgb(0 0 0 / 0.75);
+    position: relative;
+    z-index: 0;
+    display: block;
+    border-radius: var(--pc-radius);
+    color: var(--rl-fg);
+    transform: perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));
+    transform-style: preserve-3d;
+    /* Mechanical settle: a short overshoot back to rest (back.out-like). */
+    transition: transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: var(--pc-shadow);
+  }
+  .rx-pcard[data-tilting] {
+    transition: transform 140ms linear;
+  }
+
+  .rx-pcard-glass,
+  .rx-pcard-spot,
+  .rx-pcard-edge {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .rx-pcard-glass {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--rl-surface-2) 80%, transparent) 0%,
+      color-mix(in srgb, var(--rl-surface) 74%, transparent) 100%
+    );
+    -webkit-backdrop-filter: blur(14px) saturate(1.15);
+    backdrop-filter: blur(14px) saturate(1.15);
+    box-shadow:
+      inset 0 1px 0 var(--pc-highlight),
+      inset 0 0 0 1px rgb(255 255 255 / 0.02);
+    overflow: hidden;
+  }
+  /* Film grain: a tiny fractal-noise tile at very low opacity. */
+  .rx-pcard-glass::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Spotlight inside, bloom outside: both fade in with opacity. */
+  .rx-pcard-spot {
+    opacity: 0;
+    background: radial-gradient(
+      460px circle at var(--mx) var(--my),
+      var(--pc-spot),
+      transparent 62%
+    );
+    box-shadow: 0 18px 70px -22px var(--rl-accent-glow);
+    transition: opacity 450ms var(--rl-ease-out, ease-out);
+  }
+
+  /* 1 px gradient ring (mask keeps only the border box minus the content box). */
+  .rx-pcard-edge {
+    padding: 1px;
+    overflow: hidden;
+    background: linear-gradient(
+      135deg,
+      var(--pc-edge-a) 0%,
+      var(--pc-edge-b) 28%,
+      var(--pc-edge-c) 55%,
+      rgb(255 255 255 / 0.03) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box exclude,
+      linear-gradient(#000 0 0);
+  }
+  /* Conic sweep: a large square rotating behind the ring (transform only). */
+  .rx-pcard-edge::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300%;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg 250deg,
+      color-mix(in srgb, var(--rl-amber) 70%, transparent) 300deg,
+      var(--rl-accent) 335deg,
+      transparent 360deg
+    );
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+    animation: rx-pcard-sweep 3.6s linear infinite paused;
+  }
+  /* Hot spot on the ring near the pointer (shared across a PremiumGrid). */
+  .rx-pcard-edge::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      220px circle at var(--mx) var(--my),
+      var(--pc-hot),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 450ms ease-out;
+  }
+
+  .rx-pcard-body {
+    position: relative;
+    transform-style: preserve-3d;
+    padding: var(--pc-pad, 1.5rem);
+    height: 100%;
+    border-radius: inherit;
+  }
+  .rx-pcard [data-depth] {
+    transition: transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .rx-pcard[data-tilting] [data-depth='1'] {
+    transform: translateZ(16px);
+  }
+  .rx-pcard[data-tilting] [data-depth='2'] {
+    transform: translateZ(32px);
+  }
+  .rx-pcard[data-tilting] [data-depth='3'] {
+    transform: translateZ(52px);
+  }
+
+  @media (hover: hover) {
+    .rx-pcard[data-interactive]:hover .rx-pcard-spot,
+    .rx-pcard[data-interactive]:hover .rx-pcard-edge::after,
+    .rx-pcard[data-interactive]:hover .rx-pcard-edge::before {
+      opacity: 1;
+    }
+    .rx-pcard[data-interactive]:hover .rx-pcard-edge::before {
+      animation-play-state: running;
+    }
+    .rx-pgrid[data-lit] .rx-pcard[data-interactive] .rx-pcard-edge::after {
+      opacity: 0.7;
+    }
+  }
+
+  /* Keyboard focus: an amber glow ring and the spotlight on. */
+  .rx-pcard:focus-visible,
+  .rx-pcard:has(:focus-visible) {
+    outline: 2px solid var(--rl-focus);
+    outline-offset: 3px;
+  }
+  .rx-pcard:has(:focus-visible) .rx-pcard-spot {
+    opacity: 1;
+  }
+
+  /* Variants. */
+  .rx-pcard[data-variant='featured'] {
+    --pc-edge-a: var(--rl-accent);
+    --pc-edge-b: color-mix(in srgb, var(--rl-amber) 55%, transparent);
+    --pc-edge-c: rgb(255 255 255 / 0.1);
+    --pc-spot: color-mix(in srgb, var(--rl-accent) 18%, transparent);
+  }
+  .rx-pcard[data-variant='featured'] .rx-pcard-glass {
+    background:
+      radial-gradient(
+        120% 80% at 0% 0%,
+        color-mix(in srgb, var(--rl-accent) 10%, transparent),
+        transparent 60%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--rl-surface-2) 84%, transparent),
+        color-mix(in srgb, var(--rl-surface) 78%, transparent)
+      );
+  }
+  .rx-pcard[data-variant='accent'] {
+    --pc-edge-a: rgb(255 255 255 / 0.55);
+    --pc-edge-b: rgb(255 255 255 / 0.18);
+    --pc-edge-c: rgb(255 255 255 / 0.06);
+    --pc-spot: rgb(255 255 255 / 0.2);
+    --pc-hot: rgb(255 255 255 / 0.85);
+    --pc-highlight: rgb(255 255 255 / 0.35);
+    color: var(--rl-accent-fg);
+  }
+  .rx-pcard[data-variant='accent'] .rx-pcard-glass {
+    background: linear-gradient(
+      135deg,
+      var(--rl-accent) 0%,
+      color-mix(in srgb, var(--rl-accent) 70%, var(--rl-amber)) 100%
+    );
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .rx-pcard[data-variant='compact'] {
+    --pc-radius: var(--rl-radius-lg);
+    --pc-pad: 0.875rem;
+  }
+
+  [data-theme='light'] .rx-pcard {
+    --pc-edge-c: rgb(0 0 0 / 0.06);
+    --pc-highlight: rgb(255 255 255 / 0.9);
+    --pc-shadow: 0 18px 44px -26px rgb(40 24 8 / 0.35);
+  }
+  [data-theme='light'] .rx-pcard-glass::after {
+    opacity: 0.05;
+  }
+
+  /* Software rendering (the website marks it): no backdrop blur, a denser glass instead. */
+  [data-gpu='software'] .rx-pcard-glass {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: linear-gradient(180deg, var(--rl-surface-2), var(--rl-surface));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rx-pcard,
+    .rx-pcard [data-depth] {
+      transform: none !important;
+      transition: none;
+    }
+    .rx-pcard-edge::before {
+      display: none;
+    }
+  }
+  @media (max-width: 899px) {
+    .rx-pcard {
+      transform: none;
+    }
+  }
+}

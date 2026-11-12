@@ -1,0 +1,39 @@
+[package]
+name = "rusticmc-instances"
+description = "Rustic Launcher instances: Horizon builds (signed installs), preparation, launch, playtime"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[[bin]]
+# A stand-in for horizon-client / horizon-prepare in this crate's tests (role by file name).
+name = "rusticmc-fake-horizon"
+path = "src/bin/fake_horizon.rs"
+test = false
+doc = false
+
+[dependencies]
+base64 = "0.22"
+directories = "6"
+flate2 = "1"
+ring = "0.17"
+rusticmc-auth = { path = "../rusticmc-auth" }
+rusticmc-launcher-core = { path = "../rusticmc-launcher-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tar = "0.4"
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "process", "io-util", "fs", "sync", "time"] }
+tracing = "0.1"
+uuid = { version = "1", features = ["v4"] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+rusticmc-auth = { path = "../rusticmc-auth", features = ["test-support"] }
+tempfile = "3"
+wiremock = "0.6"
+
+[lints]
+workspace = true

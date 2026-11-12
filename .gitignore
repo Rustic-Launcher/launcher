@@ -1,0 +1,13 @@
+/target
+**/target
+node_modules/
+**/dist
+**/storybook-static
+**/playwright-report
+**/test-results
+.env
+.env.local
+.env.*.local
+/.local
+/docs/references/*
+!/docs/references/.gitignore

@@ -1,0 +1,20 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "The main window: the app's own commands, logging, reading the launch deep link, and the frameless-window chrome (ADR 0028). Least privilege: no fs, shell, http, opener or dialog from the webview (the Rust side opens links, files and dialogs through its own checked commands). Window permissions are limited to what the custom title bar needs; creating webviews is limited to the Social window, whose label is checked by the social capability.",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "log:default",
+    "deep-link:default",
+    "core:window:allow-minimize",
+    "core:window:allow-toggle-maximize",
+    "core:window:allow-close",
+    "core:window:allow-start-dragging",
+    "core:webview:allow-create-webview-window",
+    "core:window:allow-unminimize",
+    "core:window:allow-set-focus"
+  ]
+}

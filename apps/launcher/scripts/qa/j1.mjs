@@ -1,0 +1,13 @@
+import { connect, shot } from './cdp.mjs';
+const { browser, page } = await connect();
+console.log('url', page.url());
+await page.waitForSelector('[data-testid="onboarding-step-welcome"]');
+await page.getByText('English', { exact: true }).click();
+await shot(page, '70-onboarding-1-welcome');
+await page.getByTestId('onboarding-next').click();
+await page.waitForSelector('[data-testid="onboarding-step-microsoft"]');
+await page.waitForTimeout(1500);
+await shot(page, '70-onboarding-2-microsoft');
+console.log('next enabled?', await page.getByTestId('onboarding-next').isEnabled());
+console.log((await page.locator('main').innerText()).slice(0, 600));
+await browser.close();

@@ -1,0 +1,15 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "social",
+  "description": "The detachable Social window (label 'social', ADR 0028): the app's own commands for friends/chats data, plus its own frameless chrome. No webview creation, no deep link handling.",
+  "windows": [
+    "social"
+  ],
+  "permissions": [
+    "core:default",
+    "core:window:allow-minimize",
+    "core:window:allow-toggle-maximize",
+    "core:window:allow-close",
+    "core:window:allow-start-dragging"
+  ]
+}

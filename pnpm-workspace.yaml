@@ -1,0 +1,8 @@
+packages:
+  - packages/ui
+  - apps/launcher
+  # Rust-side packages (cosmetics-format, services) are not JS packages.
+
+# Only these packages may run install scripts (esbuild binary download).
+onlyBuiltDependencies:
+  - esbuild

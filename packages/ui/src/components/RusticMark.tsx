@@ -1,0 +1,48 @@
+import { cn } from '../lib/cn';
+
+/** The orange of the logo's bar (fixed in both themes). */
+export const RUSTIC_ORANGE = '#FF6A00';
+
+/**
+ * The official Rustic logo: a geometric "R" with an orange parallelogram (source of truth:
+ * `launcher/assets/brand/rustic-mark.svg`, paths copied as is, never redrawn). The "R" uses
+ * `currentColor`: white on dark surfaces, `#15161A` on light ones (`rustic-mark-dark.svg`).
+ */
+export function RusticLogo({
+  size = 36,
+  title,
+  className,
+}: {
+  size?: number;
+  title?: string;
+  className?: string;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 512 512"
+      role={title ? 'img' : undefined}
+      aria-label={title}
+      aria-hidden={title ? undefined : true}
+      className={cn('light:text-[#15161A] shrink-0 text-white', className)}
+      data-rustic-logo
+    >
+      <path
+        fill="currentColor"
+        d="M30.4 59.1 L360.4 59.1 L367.7 59.9 L377.7 62.2 L383.8 64.6 L390.5 68.1 L396.1 71.7 L401.0 75.6 L451.5 126.9 L462.7 138.9 L472.2 150.5 L476.7 157.8 L479.8 164.1 L482.2 170.6 L483.8 177.7 L484.6 184.4 L484.6 192.3 L483.0 203.4 L480.6 212.0 L478.3 218.7 L473.5 228.6 L464.1 243.8 L453.4 256.6 L446.1 263.9 L434.7 273.5 L421.7 282.6 L416.2 285.8 L397.4 294.4 L381.3 299.2 L370.4 300.7 L365.3 300.9 L285.3 214.2 L285.5 213.6 L350.3 213.6 L357.8 211.3 L362.2 208.1 L374.8 194.3 L375.4 193.1 L375.2 190.2 L345.8 160.8 L340.1 157.6 L333.2 155.9 L121.1 156.1 L119.3 154.9 L115.2 149.9 L60.2 91.8 L30.6 60.1Z"
+      />
+      <path
+        fill="currentColor"
+        d="M39.1 213.6 L247.8 213.8 L420.9 416.7 L450.7 451.9 L450.9 452.9 L323.9 452.9 L191.8 298.8 L116.1 298.4 L60.7 238.7 L39.5 215.0 L38.9 214.2Z"
+      />
+      <path
+        fill={RUSTIC_ORANGE}
+        d="M105.7 326.8 L197.7 326.8 L203.1 327.0 L203.1 327.8 L124.8 452.7 L27.6 452.7 L27.4 452.1 L39.7 431.8 L77.1 370.9 L102.7 328.1 L103.7 327.0Z"
+      />
+    </svg>
+  );
+}
+
+/** Kept as the historical name used across the launcher. */
+export const RusticMark = RusticLogo;

@@ -1,0 +1,14 @@
+import { connect, go, shot } from './cdp.mjs';
+const { browser, page } = await connect();
+await go(page, '#/instances');
+await page.getByTestId('new-instance').click();
+const dialog = page.getByRole('dialog', { name: 'New instance' });
+await dialog.waitFor();
+await dialog.getByTestId('new-instance-name').fill('QA Survie');
+await page.waitForTimeout(1500);
+await shot(page, '73-instance-new');
+await dialog.getByTestId('create-instance-submit').click();
+await page.waitForTimeout(3000);
+await shot(page, '73-instance-installing');
+console.log(page.url());
+await browser.close();

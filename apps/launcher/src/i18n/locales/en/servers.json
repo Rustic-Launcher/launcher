@@ -1,0 +1,894 @@
+{
+  "list": {
+    "title": "Servers",
+    "description": "Host a world for your friends, here or on your own VPS, and keep your favourite servers at hand.",
+    "create": "Create server",
+    "tabs": {
+      "mine": "My servers",
+      "joined": "Joined",
+      "discover": "Discover"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Vanilla Horizon"
+    },
+    "hosting": {
+      "local": "This PC",
+      "remote": "Remote: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "State",
+    "states": {
+      "running": "Running",
+      "starting": "Starting…",
+      "stopping": "Stopping…",
+      "stopped": "Stopped",
+      "crashed": "Crashed",
+      "installing": "Installing…",
+      "unreachable": "Unreachable"
+    },
+    "players": "Players",
+    "playersCount": "{{online}}/{{max}} players",
+    "version": "Version",
+    "copyAddress": "Copy address",
+    "copyFailed": "Could not copy to the clipboard",
+    "notShared": "Not shared yet",
+    "notSharedHint": "Turn on a temporary address, an invite code or a domain in the server’s Access tab.",
+    "start": "Start",
+    "stop": "Stop",
+    "startAria": "Start {{name}}",
+    "stopAria": "Stop {{name}}",
+    "powerFailed": "The server did not respond",
+    "empty": {
+      "title": "Host a world for your friends in 3 steps",
+      "description": "Run it on this PC for free, or let Rustic install it on your own VPS."
+    },
+    "featured": {
+      "description": "Servers picked by the Rustic team: fair play, Horizon-ready, moderated.",
+      "empty": "No featured servers right now.",
+      "verified": "Verified by Rustic",
+      "save": "Add to list",
+      "inList": "In your list",
+      "online_one": "{{value}} online",
+      "online_other": "{{value}} online",
+      "view": "About {{name}}"
+    },
+    "viewLabel": "View",
+    "views": {
+      "discover": "Discover",
+      "mine": "My servers"
+    },
+    "searchPlaceholder": {
+      "discover": "Search featured servers…",
+      "mine": "Search your servers…"
+    },
+    "clearSearch": "Clear the search",
+    "sortLabel": "Sort",
+    "sorts": {
+      "recommended": "Recommended",
+      "players": "Most players",
+      "name": "Name"
+    },
+    "refreshPing": "Refresh ping and status",
+    "layoutList": "Show as a list",
+    "layoutGrid": "Show as a grid",
+    "createHint": "Here, on your VPS, or soon in the cloud",
+    "heading": "Play on *servers*",
+    "eyebrow": "Servers",
+    "sections": {
+      "hosted": "Hosted by you",
+      "joined": "Joined servers"
+    }
+  },
+  "multiplayer": {
+    "description": "The game’s server list, shared by all your instances.",
+    "add": "Add a server",
+    "added": "{{name}} added to your list",
+    "addFailed": "Could not add this server",
+    "name": "Server name",
+    "namePlaceholder": "Name",
+    "address": "Server address",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Use a host name or IP, with an optional :port.",
+    "refreshPings": "Refresh",
+    "favorites_one": "Favourite · {{count}}",
+    "favorites_other": "Favourites · {{count}}",
+    "others_one": "Other server · {{count}}",
+    "others_other": "Other servers · {{count}}",
+    "favorite": "Add {{name}} to favourites",
+    "unfavorite": "Remove {{name}} from favourites",
+    "offline": "Offline",
+    "unreachable": "Can’t reach this server right now",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Join",
+    "joinAria": "Join {{name}}",
+    "joinWith": "Joins with {{instance}}",
+    "noInstance": "Create an instance to join servers",
+    "joining": "Launching and joining {{name}}…",
+    "more": "More actions for {{name}}",
+    "copyAddress": "Copy address",
+    "removed": "{{name}} removed",
+    "undo": "Undo",
+    "empty": {
+      "title": "No servers yet",
+      "description": "Add one with its address, or pick one in Discover."
+    }
+  },
+  "wizard": {
+    "title": "Create a server",
+    "subtitle": "Three steps: what to run, where to host it, how friends join.",
+    "creatingTitle": "Setting up {{name}}",
+    "stepOf": "Step {{index}} of {{total}}",
+    "steps": {
+      "basics": "Basics",
+      "hosting": "Where to host",
+      "access": "Access"
+    },
+    "create": "Create server",
+    "installOn": "Install on {{host}}",
+    "createFailed": "The server could not be created",
+    "noRusticServer": "The rustic-server program was not found. Choose it in Settings › Game & instances › Rustic Server, or install a Rustic edition build that ships it.",
+    "openRusticServerSettings": "Open settings",
+    "fixErrors": "Check the highlighted fields to continue.",
+    "discard": {
+      "title": "Discard this server?",
+      "body": "What you entered in the wizard will be lost.",
+      "keep": "Keep editing",
+      "confirm": "Discard"
+    },
+    "basics": {
+      "name": "Server name",
+      "namePlaceholder": "Lou’s SMP",
+      "icon": "Icon",
+      "icons": {
+        "grass": "Grass",
+        "sword": "Sword",
+        "pickaxe": "Pickaxe",
+        "castle": "Castle",
+        "rocket": "Rocket",
+        "gem": "Gem",
+        "flame": "Flame",
+        "leaf": "Leaf",
+        "star": "Star",
+        "compass": "Compass"
+      },
+      "color": "Colour",
+      "colorN": "Colour {{n}}",
+      "type": "Type",
+      "recommended": "Recommended",
+      "nightly": "Nightly",
+      "rusticDesc": "Plugins (.rplugin), sandboxed: a plugin can never crash your server.",
+      "horizonDesc": "Horizon’s own server, no plugins.",
+      "version": "Horizon version",
+      "maxPlayers": "Max players",
+      "versionLineRustic": "Rustic Server 0.1 on Horizon {{version}}",
+      "versionLineHorizon": "Horizon server {{version}}",
+      "sameAsClient": "(same as your client)",
+      "starterPlugins": "Starter plugins",
+      "starterHint": "Official plugins, with what they are allowed to do.",
+      "capNetwork": "Network",
+      "capNoNetwork": "No network",
+      "capNoFiles": "No files",
+      "capDataFolder": "Own data folder",
+      "eula": "I accept the Minecraft EULA",
+      "eulaHint": "Running a server requires it. You accept it yourself; Rustic does not accept it for you.",
+      "eulaRead": "Read the EULA"
+    },
+    "world": {
+      "title": "World",
+      "new": "New world",
+      "import": "Import a folder",
+      "fromInstance": "From an instance",
+      "seed": "Seed",
+      "seedHint": "Leave empty for a random world.",
+      "seedPlaceholder": "Optional",
+      "randomSeed": "Random seed",
+      "levelType": "World type",
+      "levelTypes": {
+        "default": "Default",
+        "flat": "Superflat",
+        "large_biomes": "Large biomes",
+        "amplified": "Amplified"
+      },
+      "gamemode": "Game mode",
+      "gamemodes": {
+        "survival": "Survival",
+        "creative": "Creative",
+        "adventure": "Adventure"
+      },
+      "difficulty": "Difficulty",
+      "difficulties": {
+        "peaceful": "Peaceful",
+        "easy": "Easy",
+        "normal": "Normal",
+        "hard": "Hard"
+      },
+      "structures": "Generate structures",
+      "hardcore": "Hardcore",
+      "folder": "World folder",
+      "instance": "Instance",
+      "pickInstance": "Choose an instance",
+      "world": "World",
+      "pickWorld": "Choose a world",
+      "noWorlds": "No worlds in this instance"
+    },
+    "type": {
+      "memory": "Server memory (RAM)",
+      "memoryHint": "4 GB fits most friend groups. More helps with many players or big modpacks."
+    },
+    "access": {
+      "intro": "How your friends join. Several can be on at once; you can change them later.",
+      "lan": "Friends on my network (LAN)",
+      "lanDetail": "This PC’s local address, shown once the server exists.",
+      "publicIp": "Public address",
+      "publicIpDetail": "your VPS’s IP",
+      "alwaysOn": "Always on",
+      "relay": "Temporary address",
+      "relayDetail": "free, while the server runs; no port to open",
+      "invite": "Invite code",
+      "inviteDetail": "A code friends paste in Rustic Launcher to join.",
+      "domain": "My own domain",
+      "domainDetail": "Connect Porkbun · Buy at Porkbun · Use any registrar",
+      "domainAfter": "Set up after creation",
+      "safety": "Online mode on: only players who own the game can join. Whitelist on."
+    },
+    "summary": {
+      "title": "Summary",
+      "version": "Version",
+      "host": "Hosting",
+      "world": "World",
+      "memory": "Memory",
+      "players": "Max players",
+      "plugins": "Plugins",
+      "none": "None",
+      "eulaAccepted": "You accepted the Minecraft EULA on step 1."
+    },
+    "errors": {
+      "nameRequired": "Give your server a name.",
+      "nameTooLong": "Use 40 characters at most.",
+      "version": "Choose a Horizon version.",
+      "maxPlayers": "Between 1 and 1000 players.",
+      "importPath": "Choose the world folder to import.",
+      "world": "Choose an instance and one of its worlds.",
+      "seed": "Seeds are 64 characters at most.",
+      "eula": "Accept the EULA to run a server.",
+      "cloudUnavailable": "Rustic Cloud is not available yet.",
+      "vpsNotReady": "Connect your VPS and pass the checks first.",
+      "memory": "At least 1 GB of memory.",
+      "host": "Enter an IP address or a host name.",
+      "port": "Port between 1 and 65535.",
+      "username": "Enter the Linux user name.",
+      "keyPath": "Choose your private key file.",
+      "generateKey": "Generate a key first, then add it to your VPS.",
+      "password": "Enter the password."
+    },
+    "heading": "Create a *server*"
+  },
+  "hosting": {
+    "local": {
+      "title": "This PC (Local)",
+      "free": "Free",
+      "description": "Your PC must stay on while friends play.",
+      "settings": "On this PC",
+      "reach": "Friends reach it on your network, through a temporary Rustic address or with an invite code. No router setup needed.",
+      "startWithLauncher": "Start with the launcher",
+      "startWithLauncherHint": "The server starts when Rustic Launcher opens."
+    },
+    "vps": {
+      "title": "Your VPS (SSH)",
+      "description": "Your Linux server. We install and run it for you.",
+      "which": "VPS",
+      "existing_one": "Saved VPS ({{count}})",
+      "existing_other": "Saved VPS ({{count}})",
+      "new": "Add a VPS",
+      "pinned": "Host key pinned",
+      "host": "Host",
+      "port": "Port",
+      "user": "User",
+      "userPlaceholder": "root or a sudo user",
+      "auth": "Sign-in",
+      "authGenerate": "Generate a key for me",
+      "authKey": "Existing key file",
+      "authPassword": "Password (once)",
+      "generateHint": "Recommended. Rustic creates a key pair; the private key never leaves this PC.",
+      "generate": "Generate a key",
+      "addKeyCommand": "Run this once in your VPS console to authorise the key:",
+      "keyStored": "Private key saved in your system keychain ({{path}})",
+      "openFirewall": "Open the game port in the VPS firewall",
+      "openFirewallHint": "Allows TCP to the server's port in ufw or firewalld. Your provider's own firewall may also need it.",
+      "keyFile": "Private key",
+      "passphrase": "Passphrase",
+      "optional": "Optional",
+      "password": "Password",
+      "passwordHint": "Used once to install a key. It is not stored.",
+      "test": "Test connection",
+      "reachable": "Connected · {{ms}} ms",
+      "unreachable": "We couldn’t reach this VPS",
+      "authFailed": "The VPS refused the sign-in"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Coming soon",
+      "description": "Servers on Rustic’s machines, always on.",
+      "waitlist": "Get an email when Rustic Cloud opens.",
+      "email": "Email address",
+      "join": "Join the waitlist",
+      "joined": "You’re on the list (#{{position}}). We’ll email you.",
+      "invalidEmail": "Enter a valid email address."
+    },
+    "requirements": {
+      "title": "Requirements check",
+      "ram": "Memory ({{free}} free)",
+      "gameFiles": "Game files prepared",
+      "port": "Port 25565 free",
+      "hint": "Disk space is checked when the server files download."
+    },
+    "fingerprint": {
+      "title": "Trust {{host}}?",
+      "description": "First connection to this VPS. Compare this fingerprint with the one in your provider’s console before trusting it.",
+      "warning": "If it doesn’t match, cancel: someone may be intercepting the connection. Rustic will block any later change of this key.",
+      "trust": "Trust and continue"
+    },
+    "testFailed": "The connection test failed",
+    "checkFailed": "The VPS check failed",
+    "preflight": {
+      "running": "Checking your VPS…",
+      "ok": "Your VPS is ready",
+      "notOk": "Your VPS doesn’t meet the requirements",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_other": "{{count}} vCPU",
+      "memory": "{{memory}} memory",
+      "disk": "{{disk}} free disk",
+      "systemd": "systemd available",
+      "ip": "Public IP"
+    },
+    "problems": {
+      "memory": "Memory",
+      "disk": "Disk",
+      "arch": "Architecture",
+      "os": "Operating system",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Installing on {{host}}",
+      "steps": {
+        "connect": "Connect over SSH",
+        "check": "Preflight checks",
+        "user": "Create the user ‘rustic’",
+        "download": "Upload signed server files",
+        "engine": "Configure the Rustic engine",
+        "service": "Install the service",
+        "firewall": "Open port 25565",
+        "world": "Prepare the world",
+        "start": "Start and check"
+      },
+      "state": {
+        "pending": "waiting",
+        "running": "in progress",
+        "done": "done",
+        "failed": "failed",
+        "skipped": "skipped"
+      },
+      "skippedVanilla": "Not needed for vanilla Horizon",
+      "log_one": "Show log ({{count}} line)",
+      "log_other": "Show log ({{count}} lines)",
+      "vpsDone": "{{name}} is running on {{host}}",
+      "vpsDoneBody": "Manage it from the launcher like a local server: console, players, plugins, backups.",
+      "localDownload": "Download {{engine}}",
+      "localInit": "Prepare the world and settings",
+      "localStart": "First start",
+      "localReady": "Ready to start",
+      "localDone": "{{name}} is running",
+      "localDoneBody": "Share its address from the Access tab, or invite friends from the friends panel.",
+      "open": "Open server",
+      "backToList": "Back to servers",
+      "retry": "Retry",
+      "failed": "The install failed",
+      "crashed": "The server stopped during its first start. Check the console."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Server sections",
+    "tabs": {
+      "overview": "Overview",
+      "console": "Console",
+      "players": "Players",
+      "plugins": "Plugins",
+      "config": "Config",
+      "datapacks": "Data packs",
+      "backups": "Backups",
+      "access": "Access",
+      "danger": "Danger zone"
+    },
+    "state": {
+      "stopped": "Stopped",
+      "starting": "Starting…",
+      "running": "Running",
+      "stopping": "Stopping…",
+      "crashed": "Crashed",
+      "installing": "Installing…",
+      "unreachable": "Unreachable"
+    },
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "remove": "Remove",
+    "done": "Done",
+    "header": {
+      "back": "Servers",
+      "players": "{{online}}/{{max}} players",
+      "uptime": "up {{duration}}",
+      "start": "Start",
+      "stop": "Stop",
+      "restart": "Restart",
+      "join": "Join",
+      "address": "Address",
+      "copyAddress": "Copy the server address",
+      "powerFailed": "The server could not change state"
+    },
+    "overview": {
+      "stoppedTitle": "The server is stopped",
+      "stoppedBody": "Start it to see live CPU, memory, TPS and tick time.",
+      "cpu": "CPU",
+      "cpuChart": "CPU usage over the last two minutes",
+      "ram": "Memory",
+      "ramChart": "Memory used over the last two minutes",
+      "of": "of {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Ticks per second over the last two minutes",
+      "mspt": "Tick time",
+      "msptChart": "Milliseconds per tick over the last two minutes, 50 ms budget line",
+      "msptBudget": "budget 50 ms",
+      "health": {
+        "good": "Smooth",
+        "busy": "Busy",
+        "lagging": "Lagging"
+      },
+      "onlineTitle_one": "{{count}} player online",
+      "onlineTitle_other": "{{count}} players online",
+      "onlineStopped": "Nobody can join while the server is stopped.",
+      "nobody": "Nobody is playing right now.",
+      "infoTitle": "Details",
+      "world": "World",
+      "version": "Horizon",
+      "port": "Port",
+      "memory": "Memory",
+      "created": "Created",
+      "folder": "Folder"
+    },
+    "console": {
+      "filter": "Filter lines",
+      "filters": {
+        "all": "All",
+        "info": "Info",
+        "warn": "Warnings",
+        "error": "Errors",
+        "chat": "Chat"
+      },
+      "levels": {
+        "info": "info",
+        "warn": "warn",
+        "error": "error",
+        "command": "cmd",
+        "chat": "chat"
+      },
+      "autoScroll": "Follow new lines",
+      "logLabel": "Server console",
+      "empty": "No lines yet.",
+      "suggestions": "Command suggestions",
+      "inputLabel": "Server command",
+      "placeholder": "Type a command (Tab completes, ↑ history)",
+      "offline": "Start the server to send commands",
+      "send": "Send",
+      "sendFailed": "The command could not be sent",
+      "hint": "Commands run as the server console, with every permission. No leading slash needed."
+    },
+    "players": {
+      "whitelist": "Whitelist",
+      "whitelistHint": "Only players on the list can join. Recommended when the server is reachable from the internet.",
+      "view": "Show players",
+      "views": {
+        "online": "Online",
+        "all": "All",
+        "ops": "Operators",
+        "whitelist": "Whitelisted",
+        "banned": "Banned"
+      },
+      "search": "Find a player",
+      "emptyOnline": "Nobody is online",
+      "empty": "No players here",
+      "stoppedHint": "Start the server to see who is playing.",
+      "online": "Online",
+      "offline": "Offline",
+      "op": "Operator",
+      "whitelisted": "Whitelisted",
+      "banned": "Banned",
+      "playtime": "{{duration}} played",
+      "kick": "Kick",
+      "kickAria": "Kick {{name}}",
+      "more": "More actions for {{name}}",
+      "makeOp": "Make operator",
+      "deop": "Remove operator",
+      "whitelistAdd": "Add to whitelist",
+      "whitelistRemove": "Remove from whitelist",
+      "ban": "Ban",
+      "pardon": "Unban",
+      "banTitle": "Ban {{name}}?",
+      "banBody": "They are disconnected and cannot join again until you unban them.",
+      "reason": "Reason (optional, shown to the player)",
+      "failed": "The action failed",
+      "done": {
+        "kick": "{{name}} was kicked",
+        "ban": "{{name}} was banned",
+        "pardon": "{{name}} was unbanned",
+        "op": "{{name}} is now an operator",
+        "deop": "{{name}} is no longer an operator",
+        "whitelist_add": "{{name}} was added to the whitelist",
+        "whitelist_remove": "{{name}} was removed from the whitelist"
+      }
+    },
+    "config": {
+      "mode": "Editing mode",
+      "form": "Settings",
+      "raw": "Raw file",
+      "groups": {
+        "general": "General",
+        "world": "World",
+        "players": "Players",
+        "network": "Network",
+        "performance": "Performance"
+      },
+      "keys": {
+        "motd": "Message of the day",
+        "max-players": "Maximum players",
+        "white-list": "Whitelist",
+        "online-mode": "Online mode (account check)",
+        "pvp": "Player versus player",
+        "gamemode": "Default game mode",
+        "difficulty": "Difficulty",
+        "level-seed": "World seed",
+        "spawn-protection": "Spawn protection radius",
+        "server-port": "Port",
+        "enable-rcon": "Remote console (RCON)",
+        "view-distance": "View distance",
+        "simulation-distance": "Simulation distance"
+      },
+      "restart": "Restart",
+      "restartNeeded": "Restart the server to apply some changes",
+      "unsaved_one": "{{count}} unsaved change",
+      "unsaved_other": "{{count}} unsaved changes",
+      "noChanges": "No changes",
+      "discard": "Discard",
+      "saved": "Configuration saved",
+      "saveFailed": "The configuration could not be saved",
+      "rawTitle": "server.toml",
+      "rawWarning": "Advanced: a typo can stop the server from starting. Values are checked when you save."
+    },
+    "plugins": {
+      "vanillaTitle": "Plugins need Rustic Server",
+      "vanillaBody": "This server runs vanilla Horizon. Rustic Server adds sandboxed .rplugin plugins that can never crash it. Create a Rustic Server and import this world to use plugins.",
+      "createRustic": "Create a Rustic Server",
+      "intro": "Plugins run sandboxed: a plugin that fails is disabled with a log line, the server keeps going. Each one declares what it may access.",
+      "upload": "Add a file…",
+      "uploadTitle": "Choose a .rplugin file",
+      "find": "Find plugins",
+      "empty": "No plugins yet",
+      "emptyBody": "Browse Content › Plugins to add one in a click.",
+      "errored": "Disabled after an error",
+      "disabled": "Off",
+      "noDescription": "No description",
+      "toggle": "Enable {{name}}",
+      "capabilities": "Access",
+      "noNetwork": "No network",
+      "network": "Network: {{domains}}",
+      "fs": {
+        "none": "No files",
+        "data-folder": "Own data folder"
+      },
+      "update": "Update to {{version}}",
+      "updated": "{{name}} updated to {{version}}",
+      "installed": "{{name}} installed and enabled",
+      "removeTitle": "Remove {{name}}?",
+      "removeBody": "The plugin is unloaded and its file deleted. Its data folder is kept.",
+      "failed": "The plugin action failed"
+    },
+    "datapacks": {
+      "intro": "Data packs of the world “{{world}}”.",
+      "find": "Find data packs",
+      "empty": "No data packs in this world",
+      "toggle": "Enable {{name}}",
+      "remove": "Remove {{name}}",
+      "reloadHint": "Changes apply after /reload or a restart.",
+      "failed": "The data pack action failed"
+    },
+    "backups": {
+      "nowTitle": "Back up now",
+      "nowBody": "A copy of the world and the configuration. The server keeps running.",
+      "note": "Note",
+      "notePlaceholder": "Optional note, e.g. “before the update”",
+      "now": "Back up now",
+      "created": "Backup created",
+      "empty": "No backups yet",
+      "kinds": {
+        "manual": "Manual",
+        "scheduled": "Scheduled",
+        "pre_restore": "Before restore"
+      },
+      "restore": "Restore",
+      "restoreTitle": "Restore this backup?",
+      "restoreBody": "The world goes back to {{date}}. Everything built since is replaced. A backup of the current world is made first.",
+      "restored": "Backup restored",
+      "delete": "Delete backup",
+      "deleteTitle": "Delete this backup?",
+      "deleteBody": "This backup is removed for good.",
+      "failed": "The backup action failed",
+      "scheduleTitle": "Automatic backups",
+      "scheduleBody": "The oldest automatic backups are removed when the limit is reached.",
+      "scheduleEnabled": "Back up automatically",
+      "every": "Every",
+      "hours_one": "{{count}} hour",
+      "hours_other": "{{count}} hours",
+      "keep": "Keep",
+      "keepCount_one": "the last {{count}} backup",
+      "keepCount_other": "the last {{count}} backups",
+      "scheduleSaved": "Backup schedule saved"
+    },
+    "danger": {
+      "deleteTitle": "Delete this server",
+      "deleteBody": "Stops the server and removes it from the launcher. You can keep its files.",
+      "delete": "Delete server",
+      "removeVpsTitle": "Remove from your VPS",
+      "removeVpsBody": "Stops the service on {{host}} and uninstalls Rustic from it. Your VPS stays yours.",
+      "removeVps": "Remove from VPS",
+      "confirmTitle": "Delete “{{name}}”?",
+      "confirmBody": "This cannot be undone. Make a backup first if you may need the world again.",
+      "deleteFiles": "Also delete the world and all server files",
+      "typeName": "Type “{{name}}” to confirm",
+      "deleted": "{{name}} was deleted",
+      "failed": "The server could not be deleted"
+    }
+  },
+  "access": {
+    "intro": "Choose how friends reach your server. You can turn on several at once.",
+    "optional": "Optional",
+    "lan": {
+      "title": "On your network",
+      "body": "Players on the same Wi-Fi or network join with this address.",
+      "copy": "Copy the local address"
+    },
+    "public": {
+      "title": "Public address",
+      "body": "Your VPS’s IP and port. Anyone can join with it; a domain is easier to share.",
+      "copy": "Copy the public address"
+    },
+    "relay": {
+      "title": "Temporary address",
+      "body": "A free address on the Rustic Relay while the server runs. No router setup, your IP stays hidden.",
+      "toggle": "Temporary address",
+      "copy": "Copy the temporary address",
+      "off": "Off. Turn it on to get an address you can share.",
+      "label": "Name in the address",
+      "apply": "Apply",
+      "status": {
+        "off": "Off",
+        "connecting": "Waiting for the server to start",
+        "online": "Reachable now",
+        "error": "Relay unreachable"
+      },
+      "failed": "The temporary address could not be changed",
+      "taken": "This name is taken. Try another one.",
+      "invalid": "Use 3 to 32 lowercase letters, digits or dashes."
+    },
+    "invite": {
+      "title": "Invite code",
+      "body": "Friends using Rustic Launcher paste this code to join, like Horizon’s Play with Friends.",
+      "create": "Create a code",
+      "copy": "Copy the invite code",
+      "expires": "Expires {{when}}",
+      "revoke": "Revoke"
+    },
+    "advanced": "Advanced: open a port on your router (UPnP)",
+    "upnp": {
+      "title": "UPnP port mapping",
+      "warning": "This asks your router to open the server’s port to the internet. Your public IP address becomes visible to every player, which exposes your home connection (attacks, location). Prefer the temporary address or a domain.",
+      "status": {
+        "off": "Off",
+        "mapping": "Asking the router…",
+        "mapped": "Port open",
+        "failed": "The router refused (UPnP may be turned off)"
+      },
+      "mapped": "Port open: {{address}}",
+      "copy": "Copy the public address",
+      "failed": "The port could not be opened",
+      "prefer": "The temporary address and domains work without opening any port."
+    }
+  },
+  "domains": {
+    "title": "My own domain",
+    "intro": "A domain is your server’s address, like play.yourname.net. You can connect one you already have, buy one at Porkbun without leaving the launcher, or use any registrar: we show you exactly what to add.",
+    "automatic": "Automatic",
+    "anyRegistrar": "Any registrar",
+    "otherPaths": "Other ways",
+    "paths": {
+      "porkbun": {
+        "title": "Connect Porkbun",
+        "body": "Already have a domain at Porkbun? Connect your account and we create the records for you."
+      },
+      "buy": {
+        "title": "Buy a domain at Porkbun",
+        "body": "Find a free name, buy it on your own Porkbun account, and it is set up automatically."
+      },
+      "manual": {
+        "title": "Use a domain from any registrar",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: we show what to add and check it for you."
+      }
+    },
+    "subdomain": "Subdomain",
+    "subdomainHint": "play is a good default.",
+    "apexHint": "Empty: the domain itself (needs ALIAS/ANAME at some registrars).",
+    "invalidSubdomain": "Letters, digits and dashes only.",
+    "invalidDomain": "This does not look like a domain (example.net).",
+    "copyAddress": "Copy the domain address",
+    "configureFailed": "The domain could not be configured",
+    "boundBody": "Players join with this address.",
+    "remove": "Remove domain",
+    "removeTitle": "Stop using {{domain}}?",
+    "removeBody": "The address stops pointing to this server once the records are removed. The domain stays yours.",
+    "status": {
+      "pending": "Pending",
+      "propagating": "Propagating",
+      "verified": "Connected",
+      "error": "Error"
+    },
+    "provider": {
+      "porkbun": "Managed through Porkbun",
+      "manual": "Managed at your registrar"
+    },
+    "connected": "Domain connected",
+    "connectedBody": "Rustic Cloud verifies the TXT record, then your address starts working. You can close this; we’ll notify you.",
+    "porkbun": {
+      "step1": "On porkbun.com › Account › API Access, create an API key.",
+      "openApi": "Open Porkbun API Access",
+      "step2": "On the domain’s page at Porkbun, turn on “API Access”.",
+      "apiKey": "API key",
+      "secret": "Secret API key",
+      "keychain": "Stored in your computer’s keychain, never sent to Rustic.",
+      "connect": "Connect",
+      "badApiKey": "An API key starts with pk1_.",
+      "badSecret": "A secret API key starts with sk1_.",
+      "rejected": "Porkbun refused these keys. Check them, or create a new pair.",
+      "connected": "Porkbun connected",
+      "disconnect": "Disconnect",
+      "domain": "Domain",
+      "pickDomain": "Choose one of your domains",
+      "apiAccessOff": "API Access is off for this domain at Porkbun",
+      "apiAccessHint": "Greyed-out domains need “API Access” turned on at Porkbun.",
+      "preview": "Changes we will make",
+      "dryRun": "Preview",
+      "previewBody": "These records are added or replaced on your domain so that {{fqdn}} reaches this server. Nothing changes until you apply.",
+      "apply": "Configure automatically"
+    },
+    "buy": {
+      "intro": "The domain is registered on your own Porkbun account and paid there. Rustic never takes payment for it.",
+      "needsAccount": "Buying needs your Porkbun account: connect it first (you can create one for free at porkbun.com).",
+      "search": "Name you want",
+      "searchPlaceholder": "e.g. loucraft",
+      "searchButton": "Search",
+      "noResults": "No results for this name.",
+      "premium": "Premium",
+      "price": "{{price}} first year · renews {{renewal}}",
+      "taken": "Taken",
+      "select": "Select",
+      "overLimit": "Over $100: buy it on porkbun.com",
+      "pricesNote": "Prices are Porkbun’s, in US dollars, as quoted now. Taxes may apply at Porkbun.",
+      "confirmTitle": "Confirm purchase at Porkbun",
+      "seller": "Seller: Porkbun LLC, not Rustic. Their terms, prices, renewals and refunds apply.",
+      "domain": "Domain",
+      "address": "Server address",
+      "registrar": "Registrar",
+      "registrarValue": "Porkbun, on your account",
+      "firstYear": "First year",
+      "renewal": "Renews yearly at",
+      "payment": "Paid with your Porkbun account credit or saved card: {{price}} now; renews yearly at {{renewal}} unless you turn off auto-renew at Porkbun.",
+      "agreeTerms": "I agree to Porkbun’s registration agreement and terms",
+      "termsLink": "(read them)",
+      "agreeOrder": "I understand Rustic only sends this order to Porkbun on my behalf",
+      "refunds": "Refunds and cancellation for domains are handled by Porkbun under its terms.",
+      "buyButton": "Buy at Porkbun · {{price}}",
+      "bought": "{{domain}} is yours",
+      "boughtBody": "Charged by Porkbun: {{price}}. Setting it up now…",
+      "configuring": "Configuring your new domain…",
+      "failed": "The purchase did not go through",
+      "errors": {
+        "price_changed": "The price changed at Porkbun. Check the new price and try again.",
+        "not_available": "This domain was just taken.",
+        "over_limit": "Over $100: buy it on porkbun.com.",
+        "porkbun_not_connected": "Connect your Porkbun account first.",
+        "consent_required": "Both boxes must be ticked."
+      }
+    },
+    "manual": {
+      "intro": "Add these records in your registrar’s DNS zone. We check them every 10 seconds and tell you when it works.",
+      "domain": "Your domain",
+      "registrar": "Registrar",
+      "show": "Show the records",
+      "guideTitle": "At {{registrar}}",
+      "allGuides": "Guides for every registrar"
+    },
+    "records": {
+      "caption": "DNS records to add",
+      "type": "Type",
+      "name": "Name / host",
+      "value": "Value / target",
+      "ttl": "TTL",
+      "status": "Status",
+      "optional": "optional",
+      "emptyHost": "(leave empty)",
+      "copyName": "Copy the {{type}} name",
+      "copyValue": "Copy the {{type}} value",
+      "srvFields": "priority {{priority}} · weight {{weight}} · port {{port}}"
+    },
+    "check": {
+      "pending": "Not checked",
+      "notNeeded": "Not needed",
+      "ok": "OK",
+      "propagating": "Propagating ({{ok}}/{{total}})",
+      "wrong": "Wrong value",
+      "found": "Found:",
+      "expected": "Expected:",
+      "missing": "Missing",
+      "first": "First check…",
+      "progress": "{{ok}} of {{total}} records OK",
+      "progressLabel": "Records verified",
+      "auto": "Checking automatically every 10 s",
+      "lastCheck": "last check {{seconds}} s ago",
+      "now": "Check now"
+    },
+    "help": {
+      "txt": "Why a TXT record? It proves the domain is yours, so nobody else can point it at their server.",
+      "propagation": "Changes can take from a minute to a few hours to reach everyone. We keep checking; you don’t need to stay here.",
+      "apex": "Apex domains (yourname.net without “play.”) need an ALIAS/ANAME record; not every registrar has one. A subdomain always works."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › your domain › DNS zone.\nClick “Add an entry” and pick the type (CNAME, SRV, A or TXT).\nSub-domain = the Name below (leave empty for the domain itself), Target = the Value.\nRepeat for each record, then confirm. OVH applies changes within minutes."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › your domain › DNS records.\nClick “Add record”, choose the type.\nName = the Name below, Value = the Value (keep the final dot for CNAME/SRV targets).\nSave each record."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nUnder Host records, “Add new record”.\nHost = the Name below (@ for the domain itself), Value/Target = the Value.\nClick the green tick to save each one."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › your domain › DNS › Manage DNS.\nClick “Add new record”, pick the type.\nName = the Name below (@ for the domain itself), Value = the Value.\nFor SRV, fill Service _minecraft, Protocol _tcp, then priority, weight and port. Save."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Select your site › DNS › Records › Add record.\nPick the type, Name = the Name below, Target/Content = the Value.\nSet Proxy status to “DNS only” (grey cloud): the game traffic cannot go through Cloudflare’s proxy.\nSave each record."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › your domain › DNS.\nClick “Add record” and pick the type.\nHost name = the Name below, Points to / Value = the Value.\nSave; IONOS may ask to confirm replacing a default record."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › your domain › DNS / Nameservers.\nUnder “Manage DNS records”, choose the type.\nName = the Name below, Points to / Value = the Value, TTL as shown.\nClick “Add record” for each one."
+      },
+      "porkbun": {
+        "name": "Porkbun (by hand)",
+        "steps": "Domain Management › your domain › DNS.\nPick the type, Host = the Name below (empty for the domain itself), Answer = the Value.\nClick “Add” for each record.\nTip: the Connect Porkbun path does all of this for you."
+      },
+      "generic": {
+        "name": "Other registrar",
+        "steps": "Open your domain’s DNS zone (sometimes called DNS records or Zone editor).\nAdd each record below with the same type, name and value.\nIf your registrar asks for the full name, add your domain after the Name.\nSave, then come back: we check automatically."
+      }
+    }
+  }
+}

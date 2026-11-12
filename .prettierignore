@@ -1,0 +1,13 @@
+node_modules
+dist
+storybook-static
+target
+crates
+packages/cosmetics-format
+apps/launcher/src-tauri
+docs
+pnpm-lock.yaml
+playwright-report
+test-results
+*.md
+apps/launcher/src/cloud/generated

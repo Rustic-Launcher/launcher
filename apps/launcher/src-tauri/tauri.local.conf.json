@@ -1,0 +1,9 @@
+{
+  "app": {
+    "security": {
+      "csp": {
+        "connect-src": "'self' ipc: http://ipc.localhost http://localhost:8080 ws://localhost:8081 https://api.rustic-launcher.com wss://realtime.rustic-launcher.com https://cdn.rustic-launcher.com"
+      }
+    }
+  }
+}

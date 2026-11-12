@@ -1,0 +1,265 @@
+{
+  "title": "Versions",
+  "description": "Chaque instance a sa version d’Horizon, son contenu et ses mondes.",
+  "summary_one": "{{count}} instance · {{playtime}} de jeu",
+  "summary_many": "{{count}} instances · {{playtime}} de jeu",
+  "summary_other": "{{count}} instances · {{playtime}} de jeu",
+  "search": "Filtrer les instances",
+  "sort": {
+    "label": "Trier les instances",
+    "recent": "Dernière partie",
+    "name": "Nom",
+    "playtime": "Temps de jeu"
+  },
+  "empty": {
+    "title": "Aucune instance",
+    "description": "Créez-en une avec la version d’Horizon recommandée, ou importez un modpack."
+  },
+  "noMatch": {
+    "title": "Aucune instance ne correspond",
+    "description": "Rien ne correspond à « {{query}} »."
+  },
+  "errors": {
+    "action": "Cela n’a pas fonctionné"
+  },
+  "card": {
+    "more": "Plus d’actions pour {{name}}",
+    "pin": "Épingler",
+    "unpin": "Désépingler",
+    "pinned": "Épinglée",
+    "duplicate": "Dupliquer",
+    "duplicated": "{{name}} créée",
+    "mods": "Mods",
+    "playtime": "Temps de jeu",
+    "lastPlayed": "Dernière partie",
+    "never": "Jamais",
+    "fromModpack": "Modpack {{name}} {{version}}"
+  },
+  "state": {
+    "running": "En cours",
+    "installing": "Installation",
+    "broken": "À réparer"
+  },
+  "delete": {
+    "title": "Supprimer {{name}} ?",
+    "body": "Ses mods, réglages et mondes seront supprimés de cet ordinateur. C’est définitif.",
+    "confirm": "Supprimer l’instance",
+    "done": "{{name}} supprimée"
+  },
+  "new": {
+    "button": "Nouvelle instance",
+    "title": "Nouvelle instance",
+    "description": "Partez de zéro ou reprenez un pack existant.",
+    "tabs": {
+      "create": "Créer",
+      "import": "Importer"
+    },
+    "name": "Nom",
+    "namePlaceholder": "Mon monde survie",
+    "nameRequired": "Donnez un nom à l’instance.",
+    "icon": "Icône",
+    "color": "Couleur",
+    "colorN": "Couleur {{n}}",
+    "version": "Version d’Horizon",
+    "versionHint": "L’édition Rustic ajoute les cosmétiques et les amis en jeu. Aucun réglage Java ou RAM nécessaire.",
+    "recommended": "Recommandée",
+    "release": "Version stable",
+    "nightly": "Nightly",
+    "installed": "Installée",
+    "submit": "Créer l’instance",
+    "created": "{{name}} est prête"
+  },
+  "icons": {
+    "grass": "Pousse",
+    "sword": "Épées",
+    "pickaxe": "Pioche",
+    "castle": "Château",
+    "rocket": "Fusée",
+    "gem": "Gemme",
+    "flame": "Flamme",
+    "leaf": "Feuille",
+    "star": "Étoile",
+    "compass": "Boussole"
+  },
+  "import": {
+    "folder": {
+      "title": "Dossier d’instance",
+      "description": "Un dossier d’instance Prism ou MultiMC, porté comme le fait Horizon."
+    },
+    "mrpack": {
+      "title": "Pack Modrinth (.mrpack)",
+      "description": "Les mods sont associés à leurs versions Horizon quand elles existent."
+    },
+    "curseforge_zip": {
+      "title": "Zip CurseForge",
+      "description": "Un modpack CurseForge exporté."
+    },
+    "modpack": {
+      "title": "Depuis un modpack",
+      "description": "Parcourez les modpacks Horizon, Modrinth et Rustic."
+    },
+    "started": "Import de {{name}}",
+    "background": "L’opération continue en arrière-plan ; vous pouvez continuer à utiliser le launcher.",
+    "note": "Seul le contenu qui fonctionne sur Horizon est installé ; le reste est listé avec la raison."
+  },
+  "detail": {
+    "notFound": "Cette instance n’existe plus",
+    "backToList": "Retour aux instances",
+    "tabsLabel": "Sections de l’instance",
+    "tabs": {
+      "overview": "Aperçu",
+      "content": "Contenu",
+      "resourcepacks": "Packs de ressources",
+      "worlds": "Mondes",
+      "settings": "Réglages"
+    }
+  },
+  "overview": {
+    "mods": "Mods",
+    "resourcePacks": "Packs de ressources",
+    "shaders": "Shaders",
+    "version": "Version d’Horizon",
+    "updateAvailable": "Mise à jour disponible",
+    "upToDate": "À jour",
+    "updateNow": "Mettre à jour",
+    "changeVersion": "Choisir une version d’Horizon",
+    "applyVersion": "Changer de version",
+    "versionChanging": "Passage à {{version}}",
+    "lastSession": "Dernière session",
+    "lastPlayed": "Joué {{when}}",
+    "neverPlayed": "Pas encore lancée",
+    "rejoin": "Rejoindre",
+    "noServer": "Aucun serveur rejoint depuis cette instance.",
+    "created": "Créée le",
+    "folder": "Dossier"
+  },
+  "content": {
+    "filter": "Filtrer par type",
+    "kinds": {
+      "all": "Tout",
+      "mod": "Mods",
+      "resourcepack": "Packs de ressources",
+      "shader": "Shaders"
+    },
+    "search": "Rechercher dans le contenu installé",
+    "updateAll_one": "Mettre à jour {{count}} élément",
+    "updateAll_many": "Mettre à jour {{count}} éléments",
+    "updateAll_other": "Mettre à jour {{count}} éléments",
+    "browse": "Parcourir le contenu",
+    "noMatch": "Aucun contenu installé ne correspond.",
+    "empty": {
+      "title": "Rien d’installé",
+      "description": "Trouvez des mods, packs de ressources et shaders compatibles avec cette instance."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Fichier local"
+    },
+    "updateTo": "Mise à jour : {{version}}",
+    "incompatible": "Incompatible : {{reason}}",
+    "updateOne": "Mettre à jour {{name}}",
+    "toggle": "Activer {{name}}",
+    "remove": "Retirer {{name}}",
+    "removeTitle": "Retirer {{name}} ?",
+    "removeBody": "Le fichier est supprimé de cette instance. Vous pourrez le réinstaller depuis Contenu."
+  },
+  "packs": {
+    "hint": "Les packs du haut l’emportent quand deux packs modifient la même chose.",
+    "listLabel": "Ordre de chargement des packs de ressources",
+    "top": "Priorité maximale",
+    "up": "Monter {{name}}",
+    "down": "Descendre {{name}}",
+    "moved": "{{name}} déplacé en position {{position}} sur {{total}}",
+    "browse": "Trouver des packs",
+    "empty": {
+      "title": "Aucun pack de ressources",
+      "description": "Ajoutez des packs pour changer les textures, les sons et l’interface."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Aucun monde",
+      "description": "Les mondes créés en jeu apparaissent ici."
+    },
+    "openSaves": "Ouvrir le dossier des mondes",
+    "lastPlayed": "Joué {{when}}",
+    "modes": {
+      "survival": "Survie",
+      "creative": "Créatif",
+      "adventure": "Aventure",
+      "hardcore": "Hardcore",
+      "spectator": "Spectateur"
+    },
+    "datapacks_one": "{{count}} datapack",
+    "datapacks_many": "{{count}} datapacks",
+    "datapacks_other": "{{count}} datapacks",
+    "play": "Jouer ce monde",
+    "addDatapacks": "Ajouter des datapacks"
+  },
+  "settings": {
+    "general": "Général",
+    "display": "Fenêtre",
+    "useDefaultResolution": "Utiliser la taille de fenêtre par défaut",
+    "defaultIs": "Par défaut : {{width}} × {{height}}",
+    "width": "Largeur",
+    "height": "Hauteur",
+    "fullscreen": "Démarrer en plein écran",
+    "resolutionError": "Nombres entiers, au moins 640 × 360.",
+    "launch": "Options de lancement",
+    "launchHint": "Une instance Horizon fixe seulement une version : pas de Java, de RAM ni de loader à régler.",
+    "gameArgs": "Arguments de jeu supplémentaires",
+    "gameArgsHint": "Avancé. Transmis tels quels à Horizon.",
+    "folders": "Dossiers",
+    "folder": {
+      "root": "Instance",
+      "mods": "Mods",
+      "resourcepacks": "Packs de ressources",
+      "shaderpacks": "Shaders",
+      "saves": "Mondes",
+      "screenshots": "Captures d’écran",
+      "logs": "Journaux"
+    },
+    "unsaved": "Modifications non enregistrées.",
+    "allSaved": "Tout est enregistré.",
+    "saved": "Réglages de l’instance enregistrés"
+  },
+  "versions": {
+    "noSelection": "Sélectionnez un profil pour voir ses détails, ou créez-en un pour commencer.",
+    "source": "Source",
+    "sources": {
+      "all": "Horizon",
+      "custom": "Mes profils",
+      "modpack": "Modpacks"
+    },
+    "search": "Rechercher dans vos profils Horizon…",
+    "clear": "Effacer la recherche",
+    "newProfile": "Nouveau profil",
+    "update": "Mise à jour",
+    "running": "En cours",
+    "details": "Détails du profil",
+    "media": "Images du profil",
+    "slide": "Image {{index}} sur {{total}}",
+    "slides": {
+      "0": "{{name}}",
+      "1": "Les mondes de {{name}}",
+      "2": "Constructions de {{name}}"
+    },
+    "blurb": "{{version}} avec {{mods}} mods. {{playtime}} de jeu jusqu’ici.",
+    "fromModpack": "Installé depuis le modpack {{name}} ({{version}}).",
+    "created": "Créé le {{date}}.",
+    "lastPlayed": "Joué {{when}}.",
+    "readMore": "Lire la suite",
+    "readLess": "Réduire",
+    "version": "Version",
+    "build": "Build",
+    "edition": "Édition",
+    "content": "Contenu",
+    "contentCount": "{{mods}} mods · {{packs}} packs · {{shaders}} shaders",
+    "manage": "Gérer le contenu, les mondes et les réglages",
+    "plainHorizon": "Horizon (vanilla)"
+  },
+  "heading": "Vos *profils*",
+  "eyebrow": "Versions"
+}

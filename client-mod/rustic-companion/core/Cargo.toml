@@ -1,0 +1,17 @@
+[package]
+name = "rusticmc-companion-core"
+description = "The Rustic companion's logic without the game: cloud protocol, caches, social overlay and emote wheel models, cosmetic meshes"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+rusticmc-cosmetics-format = { path = "../../../packages/cosmetics-format", default-features = false }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+
+[lints]
+workspace = true

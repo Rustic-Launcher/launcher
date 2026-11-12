@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+@import '@rustic/ui/styles.css';
+
+/* Scan the design system's sources for class names. */
+@source '../../../packages/ui/src';

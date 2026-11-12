@@ -1,0 +1,794 @@
+{
+  "$defs": {
+    "Attachment": {
+      "additionalProperties": false,
+      "description": "Where a worn cosmetic sits: the point, then an offset, rotation and uniform scale.",
+      "properties": {
+        "offset": {
+          "description": "Pixels from the point.",
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "point": {
+          "$ref": "#/$defs/AttachmentPoint"
+        },
+        "rotation": {
+          "description": "Degrees, Z then Y then X.",
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "scale": {
+          "description": "Uniform scale in (0, 2].",
+          "format": "float",
+          "type": "number"
+        }
+      },
+      "required": [
+        "point"
+      ],
+      "type": "object"
+    },
+    "AttachmentPoint": {
+      "description": "A named place on the player skeleton. Each is a bone plus a base offset in pixels: the\ncosmetic's own `offset` is added to it.",
+      "oneOf": [
+        {
+          "enum": [
+            "left_arm",
+            "right_arm",
+            "left_leg",
+            "right_leg"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "head",
+          "description": "The head's pivot (the neck), turning with the head.",
+          "type": "string"
+        },
+        {
+          "const": "body",
+          "description": "The body's pivot (the neck), swaying with the body.",
+          "type": "string"
+        },
+        {
+          "const": "back",
+          "description": "The middle of the back's top edge: body + (0, 0, 2).",
+          "type": "string"
+        },
+        {
+          "const": "left_shoulder",
+          "description": "On top of the left shoulder: body + (6, 0, 0).",
+          "type": "string"
+        },
+        {
+          "const": "right_shoulder",
+          "description": "On top of the right shoulder: body + (-6, 0, 0).",
+          "type": "string"
+        }
+      ]
+    },
+    "AuraFx": {
+      "additionalProperties": false,
+      "description": "An aura: a see-through model at the feet or around the body.",
+      "properties": {
+        "alpha": {
+          "description": "At most 0.6 at the feet, 0.35 around the body.",
+          "format": "float",
+          "type": "number"
+        },
+        "at": {
+          "$ref": "#/$defs/FxAnchor"
+        },
+        "glow": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "alpha"
+      ],
+      "type": "object"
+    },
+    "Axis": {
+      "enum": [
+        "x",
+        "y",
+        "z"
+      ],
+      "type": "string"
+    },
+    "Bone": {
+      "description": "A bone of the player model (vanilla `PlayerModel`'s parts).",
+      "enum": [
+        "head",
+        "body",
+        "left_arm",
+        "right_arm",
+        "left_leg",
+        "right_leg"
+      ],
+      "type": "string"
+    },
+    "Category": {
+      "description": "What kind of cosmetic it is; a player wears at most one per category (and plays emotes).\nThere is no cape category, on purpose: capes are Mojang's (launcher/docs/LEGAL.md).",
+      "oneOf": [
+        {
+          "const": "head",
+          "description": "A hat, a crown, ears.",
+          "type": "string"
+        },
+        {
+          "const": "back",
+          "description": "A backpack, wings that never act like an elytra. Never a cape.",
+          "type": "string"
+        },
+        {
+          "const": "top",
+          "description": "Over the body: a shirt, its sleeves may ride the arms.",
+          "type": "string"
+        },
+        {
+          "const": "shoulder_companion",
+          "description": "A small pet sitting on a shoulder.",
+          "type": "string"
+        },
+        {
+          "const": "companion",
+          "description": "A small creature floating beside the player, on no bone.",
+          "type": "string"
+        },
+        {
+          "const": "trail",
+          "description": "Particles left behind while walking.",
+          "type": "string"
+        },
+        {
+          "const": "aura",
+          "description": "A see-through model around the feet or body.",
+          "type": "string"
+        },
+        {
+          "const": "emote",
+          "description": "A short body animation, played from the emote wheel.",
+          "type": "string"
+        },
+        {
+          "const": "nametag",
+          "description": "A badge after the name and a coloured line under it.",
+          "type": "string"
+        }
+      ]
+    },
+    "CompanionFx": {
+      "additionalProperties": false,
+      "description": "A companion's float: where it rests beside the player and how it follows.",
+      "properties": {
+        "anchor": {
+          "description": "Pixels from the neck in the wearer's body space: y down, +x the wearer's left, +z behind.",
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "glow": {
+          "type": "boolean"
+        },
+        "lag": {
+          "description": "Follow time constant in ticks, 1 to 40.",
+          "format": "float",
+          "type": "number"
+        },
+        "look": {
+          "description": "A part that turns to look where the wearer looks.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "anchor"
+      ],
+      "type": "object"
+    },
+    "Cube": {
+      "additionalProperties": false,
+      "description": "A box with Minecraft's box UV (`ModelPart.Cube`): the unfolded box spans `2(d + w)` by\n`d + h` texels from `uv`.",
+      "properties": {
+        "inflate": {
+          "description": "Grows the box on every side, 0 to 4 pixels, over the same texels.",
+          "format": "float",
+          "type": "number"
+        },
+        "mirror": {
+          "type": "boolean"
+        },
+        "origin": {
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "size": {
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "uv": {
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        }
+      },
+      "required": [
+        "origin",
+        "size",
+        "uv"
+      ],
+      "type": "object"
+    },
+    "Ease": {
+      "enum": [
+        "smooth",
+        "linear",
+        "in_out",
+        "step"
+      ],
+      "type": "string"
+    },
+    "Emote": {
+      "additionalProperties": false,
+      "description": "A keyframed body animation (Horizon's emote format).",
+      "properties": {
+        "blend": {
+          "description": "Fade-in/out ticks, at most half the length.",
+          "format": "float",
+          "type": "number"
+        },
+        "length": {
+          "description": "Ticks, 4 to 200.",
+          "format": "float",
+          "type": "number"
+        },
+        "loop": {
+          "type": "boolean"
+        },
+        "tracks": {
+          "items": {
+            "$ref": "#/$defs/Track"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "length",
+        "tracks"
+      ],
+      "type": "object"
+    },
+    "FxAnchor": {
+      "description": "Where a trail starts or an aura sits.",
+      "enum": [
+        "feet",
+        "body"
+      ],
+      "type": "string"
+    },
+    "Key": {
+      "additionalProperties": false,
+      "properties": {
+        "ease": {
+          "$ref": "#/$defs/Ease"
+        },
+        "offset": {
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "rotation": {
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "scale": {
+          "description": "Props only, 0 to 2.",
+          "format": "float",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "t": {
+          "format": "float",
+          "type": "number"
+        }
+      },
+      "required": [
+        "t"
+      ],
+      "type": "object"
+    },
+    "LoopAnimation": {
+      "additionalProperties": false,
+      "description": "A looping motion of one part on top of its rest pose: a sine of `period` ticks started\n`phase` periods in. Deterministic: it depends on the model's age only.",
+      "properties": {
+        "amplitude": {
+          "description": "Degrees for `swing` (at most 45), pixels for `bob` (at most 4); unused by `spin`.",
+          "format": "float",
+          "type": "number"
+        },
+        "axis": {
+          "$ref": "#/$defs/Axis"
+        },
+        "motion": {
+          "$ref": "#/$defs/LoopMotion"
+        },
+        "part": {
+          "type": "string"
+        },
+        "period": {
+          "description": "Ticks, 4 to 1200.",
+          "format": "float",
+          "type": "number"
+        },
+        "phase": {
+          "format": "float",
+          "type": "number"
+        }
+      },
+      "required": [
+        "part",
+        "motion",
+        "axis",
+        "period"
+      ],
+      "type": "object"
+    },
+    "LoopMotion": {
+      "enum": [
+        "swing",
+        "bob",
+        "spin"
+      ],
+      "type": "string"
+    },
+    "MeshGroup": {
+      "additionalProperties": false,
+      "description": "Triangles of a mesh that move together.",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "pivot": {
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "triangles": {
+          "description": "Each vertex: x, y, z (pixels, y down), u, v (0 to 1 across the texture).",
+          "items": {
+            "items": {
+              "items": {
+                "format": "float",
+                "type": "number"
+              },
+              "maxItems": 5,
+              "minItems": 5,
+              "type": "array"
+            },
+            "maxItems": 3,
+            "minItems": 3,
+            "type": "array"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "triangles"
+      ],
+      "type": "object"
+    },
+    "Model": {
+      "description": "The geometry: boxes (Blockbench's Java models; convertible to Horizon) or a triangle mesh\n(glTF 2.0; drawn by Rustic's companion, not convertible to Horizon's box format).",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "cubes",
+              "type": "string"
+            },
+            "parts": {
+              "items": {
+                "$ref": "#/$defs/Part"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "kind",
+            "parts"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "description": "A triangle mesh: authored as glTF 2.0 (`source`), served with its triangles inline.",
+          "properties": {
+            "groups": {
+              "description": "Named groups of triangles; each may be animated by name like a part.",
+              "items": {
+                "$ref": "#/$defs/MeshGroup"
+              },
+              "type": "array"
+            },
+            "kind": {
+              "const": "mesh",
+              "type": "string"
+            },
+            "source": {
+              "description": "A `.glb` or `.gltf` (embedded buffers) inside the package; the pipeline reads it into\n`triangles` and drops it.",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "units_to_pixels": {
+              "description": "Glb units to pixels (Blockbench exports 1 unit = 1 block: 16).",
+              "format": "float",
+              "type": "number"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "NametagStyle": {
+      "additionalProperties": false,
+      "description": "A name tag style: the texture is a square badge (at most 16x16) after the name.",
+      "properties": {
+        "line": {
+          "description": "`#rrggbb`: the line under the name.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "line"
+      ],
+      "type": "object"
+    },
+    "Part": {
+      "additionalProperties": false,
+      "description": "A part of a box model: a pivot, a rotation, boxes and children.",
+      "properties": {
+        "bone": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Bone"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Top-level parts only: ride this bone instead of the attachment's (a shirt's sleeves)."
+        },
+        "children": {
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "type": "array"
+        },
+        "cubes": {
+          "items": {
+            "$ref": "#/$defs/Cube"
+          },
+          "type": "array"
+        },
+        "name": {
+          "description": "Unique in the cosmetic; never starts with `cosmetic`.",
+          "type": "string"
+        },
+        "pivot": {
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "rotation": {
+          "description": "Degrees, Z then Y then X.",
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
+    "TextureSource": {
+      "additionalProperties": false,
+      "description": "The texture: a PNG file in the package (`path`) or embedded as base64 (`png`). A\nself-contained bundle (what the CDN serves) always embeds it.",
+      "properties": {
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "png": {
+          "description": "Base64 (standard alphabet) PNG bytes.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "Track": {
+      "additionalProperties": false,
+      "description": "The keys of one bone (`head`, `body`, `right_arm`, `left_arm`, `right_leg`, `left_leg`), of\n`root` (the whole body about the feet) or of a prop part.",
+      "properties": {
+        "keys": {
+          "items": {
+            "$ref": "#/$defs/Key"
+          },
+          "type": "array"
+        },
+        "part": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "part",
+        "keys"
+      ],
+      "type": "object"
+    },
+    "TrailFx": {
+      "additionalProperties": false,
+      "description": "A trail: particles spawned by distance walked (never by time or chance), each one a sprite of\nthe texture's row.",
+      "properties": {
+        "drift": {
+          "format": "float",
+          "type": "number"
+        },
+        "fade": {
+          "type": "boolean"
+        },
+        "from": {
+          "$ref": "#/$defs/FxAnchor"
+        },
+        "glow": {
+          "type": "boolean"
+        },
+        "gravity": {
+          "format": "float",
+          "type": "number"
+        },
+        "lifetime": {
+          "description": "Ticks, at most 40.",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "rate": {
+          "description": "Particles per block moved, at most 4.",
+          "format": "float",
+          "type": "number"
+        },
+        "size": {
+          "description": "Smallest and largest side in pixels, at most 4.",
+          "items": {
+            "format": "float",
+            "type": "number"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "spin": {
+          "format": "float",
+          "type": "number"
+        },
+        "sprites": {
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "rate",
+        "lifetime",
+        "size"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One cosmetic: metadata, where it sits on the player, its model, texture and motion.",
+  "properties": {
+    "attachment": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Attachment"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Where it sits on the player: required for categories worn on a bone (head, back, top,\nshoulder companion), optional for an emote's props, absent otherwise."
+    },
+    "aura": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AuraFx"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Category `aura` only."
+    },
+    "authors": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "category": {
+      "$ref": "#/$defs/Category"
+    },
+    "companion": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CompanionFx"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Category `companion` only."
+    },
+    "description": {
+      "type": "string"
+    },
+    "emote": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Emote"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Category `emote` only: keyframed body animation."
+    },
+    "format": {
+      "description": "Always [`FORMAT`] (1). A reader refuses a higher number.",
+      "format": "uint32",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "id": {
+      "description": "`[a-z0-9_]{1,64}`: the catalogue id, also the Horizon item id when converted.",
+      "type": "string"
+    },
+    "loops": {
+      "description": "Looping motions of named parts on top of their rest pose.",
+      "items": {
+        "$ref": "#/$defs/LoopAnimation"
+      },
+      "type": "array"
+    },
+    "model": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Model"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "The geometry. Absent for a trail and a name tag style (no model) and an emote without\nprops."
+    },
+    "name": {
+      "description": "Display name (English); translations live in the catalogue, not here.",
+      "type": "string"
+    },
+    "nametag": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/NametagStyle"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Category `nametag` only."
+    },
+    "texture": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TextureSource"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "The one texture (PNG), by file path inside the package or embedded. An emote without\nprops has none."
+    },
+    "trail": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TrailFx"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Category `trail` only."
+    },
+    "version": {
+      "description": "Semantic version of this cosmetic's file (`1.0.0`). Every published change bumps it.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "format",
+    "id",
+    "version",
+    "name",
+    "category"
+  ],
+  "title": "Cosmetic",
+  "type": "object"
+}

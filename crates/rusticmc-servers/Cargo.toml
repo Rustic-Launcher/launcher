@@ -1,0 +1,45 @@
+[package]
+name = "rusticmc-servers"
+description = "Rustic Launcher local servers: horizon-server supervision, Rustic Server plugins, access (LAN, UPnP, relay, invites), domains"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[[bin]]
+# A stand-in for `horizon-server` in this crate's tests (CLI + control API); not shipped.
+name = "rusticmc-fake-horizon-server"
+path = "src/bin/fake_horizon_server.rs"
+test = false
+doc = false
+
+[dependencies]
+async-trait = "0.1"
+futures-util = { version = "0.3", default-features = false, features = ["std"] }
+hickory-resolver = { version = "0.26", default-features = false, features = ["tokio"] }
+igd-next = { version = "0.18", default-features = false, features = ["aio_tokio"] }
+netdev = { version = "0.47", default-features = false, features = ["gateway"] }
+rand = "0.9"
+rusticmc-auth = { path = "../rusticmc-auth" }
+rusticmc-hosting = { path = "../rusticmc-hosting" }
+rusticmc-instances = { path = "../rusticmc-instances" }
+rusticmc-launcher-core = { path = "../rusticmc-launcher-core" }
+rusticmc-tunnel = { path = "../rusticmc-tunnel" }
+semver = { version = "1", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "process", "io-util", "fs", "sync", "time"] }
+toml = "0.9"
+tracing = "0.1"
+uuid = { version = "1", features = ["v4"] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+tempfile = "3"
+wiremock = "0.6"
+
+[lints]
+workspace = true

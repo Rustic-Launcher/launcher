@@ -1,0 +1,114 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Étape {{current}} sur {{total}}",
+  "back": "Retour",
+  "continue": "Continuer",
+  "skip": "Passer pour l'instant",
+  "steps": {
+    "welcome": "Bienvenue",
+    "microsoft": "Microsoft",
+    "rustic": "Compte Rustic",
+    "privacy": "Confidentialité",
+    "game": "Fichiers du jeu",
+    "ready": "Prêt"
+  },
+  "welcome": {
+    "title": "Bienvenue sur Rustic",
+    "subtitle": "Un launcher rapide et social pour Horizon. Quelques choix et vous êtes en jeu.",
+    "language": "Langue",
+    "theme": "Thème",
+    "palette": "Palette"
+  },
+  "microsoft": {
+    "title": "Connexion avec Microsoft",
+    "subtitle": "Rustic vérifie auprès de Microsoft que vous possédez le jeu. Votre mot de passe ne passe jamais par Rustic.",
+    "signedInAs": "Connecté en tant que {{name}}",
+    "ownershipOk": "Possession confirmée : vous pouvez jouer.",
+    "notOwnedTitle": "Il vous faut Minecraft: Java Edition",
+    "notOwnedBody": "Ce compte Microsoft ne possède pas le jeu. Rustic ne lance jamais le jeu sans licence.",
+    "buyGame": "Obtenir le jeu",
+    "whyTitle": "Pourquoi ?",
+    "whyBody": "Posséder le jeu est obligatoire. Horizon prépare les fichiers du jeu à partir de votre propre installation, et les profils hors ligne ne sont débloqués qu’après cette vérification."
+  },
+  "rustic": {
+    "title": "Votre compte Rustic",
+    "subtitle": "Facultatif. Le jeu fonctionne sans ; vous pourrez vous connecter plus tard depuis les Paramètres.",
+    "perks": {
+      "friends": {
+        "title": "Amis et groupes",
+        "body": "Voyez qui est en ligne et rejoignez-les en un clic."
+      },
+      "locker": {
+        "title": "Vestiaire",
+        "body": "Des cosmétiques sur votre joueur, purement visuels."
+      },
+      "servers": {
+        "title": "Vos serveurs en ligne",
+        "body": "Une adresse gratuite et des domaines pour les serveurs que vous hébergez."
+      }
+    },
+    "signedInAs": "Connecté en tant que {{name}}",
+    "signIn": "Se connecter ou créer un compte",
+    "skipHint": "Ou appuyez sur Continuer pour passer cette étape.",
+    "age": "Les comptes Rustic sont ouverts à partir de {{min}} ans. Avant {{consent}} ans, un parent doit consentir au traitement des données ; avant 18 ans, les achats demandent l’accord d’un parent."
+  },
+  "privacy": {
+    "title": "Vos choix de confidentialité",
+    "subtitle": "Tout est désactivé. N’activez que ce que vous acceptez de partager ; vous pouvez changer d’avis à tout moment dans les Paramètres.",
+    "usage": {
+      "title": "Statistiques d’utilisation",
+      "body": "Quelles pages et fonctions sont utilisées, sans contenu ni identifiant."
+    },
+    "performance": {
+      "title": "Rapports de performances",
+      "body": "Temps de lancement et d’image, pour trouver les lenteurs."
+    },
+    "crash": {
+      "title": "Rapports de plantage",
+      "body": "Envoyés automatiquement si le jeu ou le launcher plante. Désactivé, Rustic vous demande à chaque fois."
+    },
+    "note": "Nous ne vendons jamais de données et ne les partageons jamais à des fins publicitaires.",
+    "policy": "Lire la politique de confidentialité"
+  },
+  "game": {
+    "title": "Préparer le jeu",
+    "subtitle": "Rustic utilise les fichiers du jeu de votre propre installation (ou télécharge ceux qui manquent depuis Mojang), puis les prépare pour Horizon.",
+    "detecting": "Recherche de votre installation du jeu…",
+    "found": "Jeu trouvé ({{versions}})",
+    "notFound": "Aucune installation trouvée",
+    "notFoundBody": "Rustic téléchargera les fichiers du jeu depuis Mojang pour votre compte.",
+    "prepareTitle": "Préparer les fichiers du jeu",
+    "alreadyReady": "Déjà préparés",
+    "done": "Préparés",
+    "prepareAgain": "Préparer de nouveau",
+    "prepare": "Préparer",
+    "steps": {
+      "detect": "Détection",
+      "download": "Téléchargement",
+      "verify": "Vérification",
+      "compile_exporters": "Exporteurs",
+      "export": "Export",
+      "index": "Index"
+    },
+    "explain": "Les fichiers manquants viennent des serveurs de Mojang, jamais de tiers : les fichiers préparés restent sur cet ordinateur.",
+    "background": "Vous pouvez continuer : la préparation se poursuit en arrière-plan.",
+    "prepareFailed": "Les fichiers du jeu n’ont pas pu être préparés : {{reason}}"
+  },
+  "ready": {
+    "title": "Tout est prêt",
+    "subtitle": "Créez votre première instance maintenant, ou plus tard.",
+    "finish": "Ouvrir Rustic",
+    "defaultName": "Mon premier monde",
+    "createTitle": "Créer ma première instance",
+    "recommended": "Recommandée",
+    "nameLabel": "Nom de l’instance",
+    "existing_one": "Vous avez déjà {{count}} instance.",
+    "existing_many": "Vous avez déjà {{count}} instances.",
+    "existing_other": "Vous avez déjà {{count}} instances.",
+    "tips": {
+      "play": "JOUER est toujours en bas à droite.",
+      "friends": "Vos amis sont à droite ; Rejoindre ne prend qu’un clic.",
+      "servers": "Hébergez un serveur pour vos amis depuis la page Serveurs."
+    }
+  }
+}

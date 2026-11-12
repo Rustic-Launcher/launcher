@@ -1,0 +1,94 @@
+/* Non-colour design tokens (ADR 0021). Colours live in palettes.ts and are applied at runtime. */
+:root {
+  /* Default palette (Ember: logo orange on warm near-black, 2026-11-10) so the first paint matches. */
+  --rl-bg: #050505;
+  --rl-bg-elevated: #090908;
+  --rl-surface: #0d0d0c;
+  --rl-surface-2: #151412;
+  --rl-surface-3: #1e1c1a;
+  --rl-border: #1a1917;
+  --rl-border-default: #262421;
+  --rl-border-strong: #6a665f;
+  --rl-fg: #f3f1ee;
+  --rl-fg-muted: #8c8882;
+  --rl-fg-subtle: #85817b;
+  --rl-fg-disabled: #4c4844;
+  --rl-accent: #ff6a00;
+  --rl-accent-hover: #ff8124;
+  --rl-accent-active: #e05a00;
+  --rl-accent-fg: #0b0603;
+  --rl-accent-text: #ff8a3d;
+  --rl-accent-soft: rgba(255, 106, 0, 0.14);
+  --rl-accent-glow: rgba(255, 106, 0, 0.35);
+  --rl-focus: #ffb020;
+  /* Secondary accent: light and highlights only (light stream, gauges, focus). */
+  --rl-amber: #ffb020;
+  --rl-success: #4cc38a;
+  --rl-warning: #e5b53e;
+  --rl-danger: #f0645a;
+  --rl-info: #5aa9e6;
+  --rl-success-text: #4cc38a;
+  --rl-warning-text: #e5b53e;
+  --rl-danger-text: #f0645a;
+  --rl-info-text: #5aa9e6;
+  --rl-glass: rgba(13, 13, 12, 0.7);
+  --rl-glass-strong: rgba(21, 20, 18, 0.94);
+  --rl-glass-border: rgba(255, 255, 255, 0.07);
+  --rl-overlay: rgba(0, 0, 0, 0.66);
+  --rl-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --rl-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --rl-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+
+  /* Typography: Inter variable + JetBrains Mono variable (both OFL-1.1, bundled). */
+  --rl-font-sans: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+  /* One emphasised word per title (Instrument Serif italic, OFL-1.1, bundled by the apps). */
+  --rl-font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+  --rl-font-mono:
+    'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Menlo, Consolas,
+    monospace;
+  --rl-text-2xs: 0.6875rem; /* 11 */
+  --rl-text-xs: 0.75rem; /* 12 */
+  --rl-text-sm: 0.8125rem; /* 13 */
+  --rl-text-base: 0.875rem; /* 14: desktop app body */
+  --rl-text-lg: 1rem; /* 16 */
+  --rl-text-xl: 1.25rem; /* 20 */
+  --rl-text-2xl: 1.5rem; /* 24 */
+  --rl-text-3xl: 1.875rem; /* 30 */
+  --rl-text-4xl: 2.25rem; /* 36 */
+
+  /* Spacing follows Tailwind's 4 px grid (--spacing: 0.25rem). */
+
+  /* Radii: 12-16 for panels and cards, 8 for small controls. */
+  --rl-radius-xs: 6px;
+  --rl-radius-sm: 8px;
+  --rl-radius-md: 12px;
+  --rl-radius-lg: 14px;
+  --rl-radius-xl: 18px; /* cards */
+  --rl-radius-2xl: 20px;
+
+  /* Motion: 150-250 ms, ease-out for entrances. */
+  --rl-dur-fast: 150ms;
+  --rl-dur-base: 200ms;
+  --rl-dur-slow: 250ms;
+  --rl-ease-out: cubic-bezier(0.2, 0, 0, 1); /* ease.standard */
+  --rl-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --rl-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Layers. */
+  --rl-z-base: 0;
+  --rl-z-rail: 10;
+  --rl-z-sticky: 20;
+  --rl-z-panel: 30;
+  --rl-z-dropdown: 40;
+  --rl-z-overlay: 50;
+  --rl-z-modal: 60;
+  --rl-z-popover: 70;
+  --rl-z-toast: 80;
+  --rl-z-tooltip: 90;
+
+  /* Shell metrics. */
+  --rl-rail-width: 64px;
+  --rl-topbar-height: 44px;
+  --rl-bottombar-height: 72px;
+  --rl-friends-width: 296px;
+}

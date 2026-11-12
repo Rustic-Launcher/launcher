@@ -1,0 +1,38 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/rusticmc-launcher-core",
+    "crates/rusticmc-auth",
+    "crates/rusticmc-instances",
+    "crates/rusticmc-content",
+    "crates/rusticmc-servers",
+    "crates/rusticmc-tunnel",
+    "crates/rusticmc-api-client",
+    "crates/rusticmc-hosting",
+    "packages/cosmetics-format",
+    "apps/launcher/src-tauri",
+]
+# The in-game companion links horizon-client and needs Horizon's [patch] + lockfile: own workspace.
+exclude = ["client-mod/rustic-companion"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+rust-version = "1.95"
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+
+# Disk is tight on the dev machine: no debug info, no incremental cache for dependencies.
+[profile.dev]
+debug = 0
+incremental = false
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true

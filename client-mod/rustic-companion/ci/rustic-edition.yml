@@ -1,0 +1,136 @@
+# Sketch of the GitHub Actions workflow that builds and signs the Rustic edition client (ADRs 0006, 0070)
+# and the Rustic Server engine shipped beside it (ADR 0152).
+# Copy to the repository's .github/workflows/ when the lead sets up CI. Secrets are listed in
+# launcher/docs/TODO_HUMAN.md (signing keys, Apple notarisation, CDN upload).
+name: rustic-edition
+
+on:
+  workflow_dispatch:
+    inputs:
+      horizon_commit:
+        description: "Horizon commit to build on (a Nightly's or a release's); Rustic-MC main must pin the same one"
+        required: true
+      horizon_release:
+        description: 'Horizon release/Nightly tag whose folder (prepared files, research-lock.json, exporters/) ships beside rustic-client'
+        required: true
+  push:
+    tags: ['rustic-edition-v*']
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: windows-latest, target: x86_64-pc-windows-msvc, exe: rustic-client.exe }
+          - { os: windows-11-arm, target: aarch64-pc-windows-msvc, exe: rustic-client.exe }
+          - { os: macos-14, target: aarch64-apple-darwin, exe: rustic-client }
+          - { os: macos-13, target: x86_64-apple-darwin, exe: rustic-client }
+          - { os: ubuntu-22.04, target: x86_64-unknown-linux-gnu, exe: rustic-client }
+    runs-on: ${{ matrix.os }}
+    env:
+      SERVER_EXE: ${{ startsWith(matrix.os, 'windows') && 'rustic-server.exe' || 'rustic-server' }}
+    steps:
+      # Layout the workspaces expect: <root>/Rustic-MC-launcher (this repo, launcher branch) and
+      # <root>/Rustic-MC (Rustic Server's main branch: patches/, crates/rusticmc-server and what it
+      # links) with Horizon at <root>/Rustic-MC/horizon. Rustic-MC first: checking it out empties the
+      # folder Horizon then goes into.
+      - uses: actions/checkout@v4
+        with:
+          path: Rustic-MC-launcher
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: main
+          path: Rustic-MC
+      # rustic-server reads the build's prepared resources: it must be built from the same Horizon
+      # commit as everything else in the bundle (ADR 0152), and Rustic's patches and crates are
+      # written against the commit main pins.
+      - name: Check main pins the requested Horizon commit
+        shell: bash
+        working-directory: Rustic-MC
+        run: |
+          pinned=$(git ls-tree HEAD horizon | awk '{print $3}')
+          case "$pinned" in
+            "${{ inputs.horizon_commit }}"*) echo "Horizon $pinned" ;;
+            *) echo "::error::Rustic-MC main pins Horizon $pinned, not ${{ inputs.horizon_commit }}"; exit 1 ;;
+          esac
+      - uses: actions/checkout@v4
+        with:
+          repository: horizon-rust/horizon
+          ref: ${{ inputs.horizon_commit }}
+          path: Rustic-MC/horizon
+      # The edition needs Rustic's Horizon patches (U13, the title screen helpers its main menu calls,
+      # ADR 0148; U14, the name_picture hook of the Rustic badge, ADR 0072: Rustic-MC docs/PATCHES.md),
+      # rustic-server the server ones (U1-U12):
+      # applied on the checked-out commit, used by both builds below.
+      - name: Apply Rustic's Horizon patches
+        shell: bash
+        working-directory: Rustic-MC/horizon
+        run: |
+          git -c user.name=ci -c user.email=ci@invalid am --3way --keep-cr ../patches/*.patch
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: '1.99'
+          targets: ${{ matrix.target }}
+      - name: Linux build dependencies (as Horizon's own CI)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y build-essential pkg-config libasound2-dev libudev-dev
+      - name: Test the companion's core
+        working-directory: Rustic-MC-launcher/launcher/client-mod/rustic-companion
+        run: cargo test -p rusticmc-companion-core
+      - name: Build rustic-client
+        working-directory: Rustic-MC-launcher/launcher/client-mod/rustic-companion
+        run: cargo build --release --locked -p rustic-edition --target ${{ matrix.target }}
+      # Rustic Server: Horizon's dedicated engine with Rustic's trait mod (Rustic-MC
+      # crates/rusticmc-server, its own workspace locked to Horizon's versions; Windows gets its
+      # 8 MB main-thread stack from that crate's build.rs). The launcher runs it for Rustic Server
+      # servers of this build (`<build>/rustic-server[.exe]`, ADR 0152).
+      - name: Build rustic-server
+        working-directory: Rustic-MC
+        shell: bash
+        run: |
+          "$(command -v python3 || command -v python)" scripts/sync_horizon.py --check
+          cargo build --release --locked --manifest-path crates/rusticmc-server/Cargo.toml --target ${{ matrix.target }}
+          "crates/rusticmc-server/target/${{ matrix.target }}/release/$SERVER_EXE" --rustic-version
+      - name: Fetch the Horizon release folder of the same commit
+        run: echo "download ${{ inputs.horizon_release }} for ${{ matrix.target }} from horizon-rust/horizon releases, check SHA256SUMS.sig with Horizon's release key, unpack to bundle/"
+      - name: Assemble the bundle
+        shell: bash
+        run: |
+          mkdir -p bundle
+          cp "Rustic-MC-launcher/launcher/client-mod/rustic-companion/target/${{ matrix.target }}/release/${{ matrix.exe }}" bundle/
+          cp "Rustic-MC/crates/rusticmc-server/target/${{ matrix.target }}/release/$SERVER_EXE" bundle/
+          cp Rustic-MC/horizon/LICENSE bundle/HORIZON-LICENSE
+          cp Rustic-MC/horizon/THIRD_PARTY_NOTICES.md bundle/ || true
+          cp Rustic-MC-launcher/launcher/client-mod/rustic-companion/mod/assets/Inter-LICENSE.txt bundle/INTER-LICENSE.txt
+          cat > bundle/rustic-build.json <<JSON
+          { "horizon": "${{ inputs.horizon_commit }}", "horizon_release": "${{ inputs.horizon_release }}",
+            "companion": "${{ github.ref_name }}", "rustic_server": "$(git -C Rustic-MC rev-parse HEAD)",
+            "target": "${{ matrix.target }}" }
+          JSON
+      - name: Sign (Authenticode / Developer ID + notarisation)
+        run: echo "sign bundle/${{ matrix.exe }} and bundle/${{ env.SERVER_EXE }} with the platform key (secrets in TODO_HUMAN)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rustic-edition-${{ matrix.target }}
+          path: bundle/
+
+  publish:
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+      - name: Archive, SHA256SUMS, Ed25519 signature
+        run: |
+          cd dist
+          for d in */; do tar -C "$d" -czf "${d%/}.tar.gz" .; done
+          sha256sum *.tar.gz > SHA256SUMS
+          echo "sign SHA256SUMS with Rustic's Ed25519 release key (minisign), never Horizon's"
+      - name: Upload to the CDN (kept 90 days or more)
+        run: echo "upload dist/* to the Rustic edition bucket; the launcher reads its manifest"

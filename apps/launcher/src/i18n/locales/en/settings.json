@@ -1,0 +1,466 @@
+{
+  "title": "Settings",
+  "subtitle": "Accounts, game, launcher, appearance and your data.",
+  "sectionsLabel": "Settings sections",
+  "saving": "Saving…",
+  "saved": "All changes saved",
+  "close": "Close",
+  "cancel": "Cancel",
+  "languages": {
+    "en": "English",
+    "fr": "Français"
+  },
+  "sections": {
+    "accounts": "Accounts & security",
+    "game": "Game & instances",
+    "launcher": "Launcher",
+    "appearance": "Appearance",
+    "privacy": "Privacy & data",
+    "parental": "Parental controls",
+    "about": "About & legal"
+  },
+  "accounts": {
+    "active": "Active",
+    "useThis": "Use this profile",
+    "signOut": "Sign out",
+    "signedOut": "{{name}} was signed out",
+    "ownership": {
+      "valid": "Owns the game",
+      "expired": "Check expired",
+      "never": "Never checked",
+      "failed": "Check failed",
+      "lastChecked": "Checked {{when}}",
+      "nextCheck": "next check by {{date}}",
+      "checkNow": "Check now",
+      "checkedToast": "Ownership confirmed",
+      "checkFailed": "Microsoft could not be reached. Try again later."
+    },
+    "microsoft": {
+      "title": "Microsoft accounts",
+      "description": "Owning the game is required to play. Rustic checks it with Microsoft and never sees your password.",
+      "add": "Add a Microsoft account",
+      "keychain": "Sign-in tokens are stored in your system keychain, never in a file or on a command line.",
+      "signIn": "Sign in with Microsoft",
+      "step1": "Open the Microsoft page in your browser (or on another device).",
+      "step2": "Enter the code below and sign in.",
+      "step3": "Come back here: the launcher continues by itself.",
+      "codeLabel": "Sign-in code",
+      "copyCode": "Copy code",
+      "copied": "Code copied",
+      "openPage": "Open microsoft.com/link",
+      "waiting": "Waiting for you to sign in in the browser…",
+      "cancel": "Cancel",
+      "signedInAs": "Signed in as {{name}}",
+      "ownershipOk": "Ownership confirmed: you can play.",
+      "ownershipMissing": "This account does not own the game.",
+      "tryAgain": "Try again",
+      "failed": {
+        "expired": {
+          "title": "The code expired",
+          "body": "Codes are valid for 15 minutes. Start again to get a new one."
+        },
+        "denied": {
+          "title": "Sign-in was cancelled",
+          "body": "Microsoft reported that the sign-in was refused."
+        },
+        "no_ownership": {
+          "title": "This account does not own the game",
+          "body": "Rustic only launches the game for accounts that own Minecraft: Java Edition."
+        },
+        "error": {
+          "title": "Sign-in failed",
+          "body": "Rustic could not finish the sign-in. Try again; if it keeps failing, the detail below tells why."
+        },
+        "not_configured": {
+          "title": "Microsoft sign-in is not set up in this build",
+          "body": "This build has no Azure application id, so it cannot ask Microsoft to verify the game licence. Official builds include it."
+        },
+        "not_approved": {
+          "title": "The launcher is waiting for Mojang’s approval",
+          "body": "Your Microsoft account signed in, but the game services do not accept this launcher yet: Mojang must first approve its application id. Nothing to do on your side; try again once it is approved."
+        },
+        "xbox": {
+          "title": "Xbox Live refused the sign-in",
+          "body": "The reason is below (child account without parental permission, Xbox profile to create, unsupported region…)."
+        },
+        "rate_limited": {
+          "title": "Too many attempts",
+          "body": "The services received too many sign-ins in a short time. Wait a minute and try again."
+        },
+        "network": {
+          "title": "Could not reach the services",
+          "body": "Check your internet connection and try again."
+        },
+        "detail": "Detail: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Rustic account",
+      "description": "Your Rustic identity for friends, the Locker, purchases and servers.",
+      "signedOut": "Not signed in. The game works without it; social features, the Locker and the Store need it.",
+      "signIn": "Sign in or create an account",
+      "licenceNote": "A Rustic account is a platform identity. It never replaces the game licence: you still need a Microsoft account that owns the game."
+    },
+    "offline": {
+      "title": "Offline play",
+      "description": "For LAN parties and playing without internet: you play with your Microsoft account, under your official name and UUID. Available for {{days}} days after the last successful ownership check, then Rustic asks Microsoft again.",
+      "until": "Offline play available until {{date}}",
+      "locked": "Sign in with a Microsoft account that owns the game first: offline play opens after a successful ownership check."
+    },
+    "connections": {
+      "title": "Connections",
+      "description": "Services the launcher uses on your behalf. Keys and host fingerprints stay in your system keychain.",
+      "porkbun": "Porkbun (domains)",
+      "porkbunHint": "Used to create DNS records for your servers on your own Porkbun account.",
+      "porkbunRemoved": "Porkbun keys removed from this computer",
+      "connected": "Connected",
+      "notConnected": "Not connected",
+      "remove": "Remove keys",
+      "vps": "VPS hosts",
+      "vpsHint": "Servers you host on your own VPS over SSH. Forgetting a host removes its pinned key.",
+      "noVps": "None",
+      "fingerprint": "{{fp}} · trusted on {{date}}",
+      "forget": "Forget"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Linked",
+      "notLinked": "Not linked: sign in to Rustic with your Microsoft account too.",
+      "link": "Link on the website",
+      "unlink": "Unlink",
+      "unlinked": "Microsoft unlinked",
+      "unlinkFailed": "Could not unlink Microsoft",
+      "lastMethod": "Add a password first (on the website): Microsoft is your only way to sign in."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Memory (RAM)",
+      "description": "Default memory given to the game. Each instance can override it.",
+      "system": "{{total}} installed · {{free}} free now",
+      "warn": "This leaves little memory to your system and may slow everything down.",
+      "perInstance": "Tip: 4 GB is plenty for most instances; large modpacks may want 6 to 8 GB."
+    },
+    "prepare": {
+      "title": "Game files",
+      "description": "Horizon prepares the game's resources from your own installation of the game. Nothing is downloaded from third parties.",
+      "status": "Status",
+      "states": {
+        "missing": "Not prepared",
+        "preparing": "Preparing",
+        "ready": "Ready",
+        "outdated": "Needs preparing again"
+      },
+      "gameVersion": "Game {{version}}",
+      "source": "Source installation",
+      "sourceHint": "The official launcher's game folder found on this computer.",
+      "doneToast": "Game files are ready",
+      "steps": {
+        "detect": "Looking for your installation…",
+        "download": "Downloading the game files from Mojang…",
+        "verify": "Verifying game files…",
+        "compile_exporters": "Building exporters…",
+        "export": "Exporting resources…",
+        "index": "Indexing…",
+        "done": "Done"
+      },
+      "legal": "The prepared files stay on this computer and are never shared.",
+      "again": "Prepare again",
+      "failed": "Preparation failed"
+    },
+    "java": {
+      "label": "Java for preparation",
+      "description": "Only used to prepare game files (horizon-prepare). Horizon itself does not need Java to run.",
+      "pickTitle": "Choose a Java executable",
+      "source": {
+        "bundled": "Bundled with Rustic",
+        "system": "Installed on this computer",
+        "custom": "Custom"
+      },
+      "custom": "Custom path…",
+      "customHint": "Pick a Java 21+ executable"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "The rustic-server program your Rustic Server servers run (Horizon’s engine with Rustic plugins). It must come from the same Horizon commit as the server’s game version: a Rustic edition build ships it in its folder.",
+      "program": "Program in use",
+      "notFound": "Not found",
+      "notFoundHint": "Install a Rustic edition build that ships it, or choose the rustic-server file. Without it, creating a Rustic Server fails.",
+      "configuredMissing": "The chosen file no longer exists: {{path}}",
+      "origin": {
+        "server": "The server’s own",
+        "configured": "Chosen manually",
+        "build": "Shipped with build {{build}}",
+        "beside_launcher": "Beside the launcher",
+        "path": "Found on the PATH"
+      },
+      "choose": "Choose…",
+      "pickTitle": "Choose the rustic-server program",
+      "automatic": "Use automatic",
+      "saved": "rustic-server program saved",
+      "automaticSaved": "Automatic detection restored",
+      "invalid": "This file is not a rustic-server program (it does not answer --rustic-version).",
+      "failed": "This program could not be saved",
+      "order": "Lookup order: your choice, then the game version’s folder, then beside the launcher, then the PATH."
+    },
+    "folders": {
+      "title": "Folders",
+      "description": "Where the launcher keeps its data, your instances and your servers.",
+      "data": "Launcher data",
+      "instances": "Instances",
+      "servers": "Servers",
+      "open": "Open",
+      "change": "Change",
+      "changed": "Folder changed",
+      "moveNote": "Existing files are not moved automatically."
+    },
+    "resolution": {
+      "title": "Game window",
+      "description": "Default window size for new instances.",
+      "size": "Size",
+      "width": "Width",
+      "height": "Height",
+      "fullscreen": "Start in fullscreen",
+      "hint": "Minimum 640 × 480."
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Language",
+      "description": "Applies at once to the whole launcher.",
+      "label": "Language"
+    },
+    "startup": {
+      "title": "Startup",
+      "onBoot": "Open Rustic when the computer starts",
+      "onBootHint": "Friends see you online sooner and updates download in the background.",
+      "minimized": "Start minimized"
+    },
+    "behaviour": {
+      "title": "While playing",
+      "onLaunch": "When the game starts",
+      "launchOptions": {
+        "keep_open": "Keep the launcher open",
+        "minimize": "Minimize the launcher",
+        "hide": "Hide to the tray",
+        "close": "Close the launcher"
+      },
+      "onClose": "When I close the window",
+      "onCloseHint": "Keeping it in the tray lets friends invite you and servers keep running.",
+      "closeOptions": {
+        "tray": "Keep running in the tray",
+        "quit": "Quit Rustic"
+      }
+    },
+    "updates": {
+      "title": "Updates",
+      "auto": "Install updates automatically",
+      "autoHint": "Updates are signed and verified before installing.",
+      "check": "Rustic Launcher",
+      "checkNow": "Check for updates",
+      "available": "Version {{version}} available",
+      "upToDate": "You are up to date",
+      "failed": "Could not check for updates"
+    },
+    "performance": {
+      "title": "Downloads & performance",
+      "downloads": "Parallel downloads",
+      "downloadsHint": "Lower it on a slow connection.",
+      "hardware": "Hardware acceleration",
+      "hardwareHint": "Turn off if the launcher flickers. Takes effect after a restart."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Theme",
+      "description": "Rustic is designed dark first; the light theme is there for bright rooms.",
+      "label": "Theme",
+      "dark": "Dark",
+      "light": "Light",
+      "system": "System"
+    },
+    "palette": {
+      "title": "Palette",
+      "description": "The accent colour used for PLAY, selection and progress.",
+      "label": "Palette",
+      "play": "Play",
+      "default": "Default",
+      "names": {
+        "ember": "Ember",
+        "verdigris": "Verdigris",
+        "heather": "Heather"
+      },
+      "descriptions": {
+        "ember": "Warm copper on anthracite",
+        "verdigris": "Patina green, like oxidised copper",
+        "heather": "Muted heather rose"
+      }
+    },
+    "motion": {
+      "title": "Motion",
+      "body": "Rustic follows your system’s “reduce motion” setting: animations, the carousel and the 3D preview become still."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "What you share with us",
+      "description": "Everything here is off by default. Turning something on helps us improve Rustic; you can change your mind at any time.",
+      "usage": "Usage analytics",
+      "usageHint": "Which pages and features are used, without content or identifiers.",
+      "performance": "Performance reports",
+      "performanceHint": "Launch times and frame times, to find slow spots.",
+      "crash": "Crash reports",
+      "crashHint": "When off, Rustic asks you each time a crash happens."
+    },
+    "policyLink": "Read the privacy policy",
+    "social": {
+      "title": "Friends and presence",
+      "activity": "Show what I play to my friends",
+      "activityHint": "Lets friends see your server and join you in one click.",
+      "requests": "Who can send me friend requests",
+      "requestsOptions": {
+        "everyone": "Everyone",
+        "friends_of_friends": "Friends of friends",
+        "nobody": "Nobody"
+      },
+      "discoverable": "Appear in suggestions of players I meet",
+      "discoverableHint": "Players you shared a party with or met on a server you share in your activity can see you in “Add a friend”, and you see them. Kept 30 days; turning this off deletes it.",
+      "discoverableMinor": "Not available for accounts under 18.",
+      "discoverableFailed": "This setting could not be saved."
+    },
+    "data": {
+      "title": "Your data",
+      "description": "Your rights under the GDPR: access, portability and erasure.",
+      "export": "Export my data",
+      "exportHint": "A JSON archive of your account, friends, purchases and settings.",
+      "exportButton": "Prepare export",
+      "exportReady": "Your export is ready",
+      "exportFailed": "The export could not be prepared",
+      "download": "Download (link valid until {{date}})",
+      "delete": "Delete my account",
+      "deleteHint": "30-day grace period during which you can cancel, then permanent deletion.",
+      "deleteButton": "Delete account",
+      "deleteScheduled": "Deletion scheduled for {{date}}. Sign in before then to cancel.",
+      "deleteFailed": "The account could not be deleted",
+      "rights": "Questions or complaints: contact us, or the CNIL (the French data protection authority).",
+      "confirmTitle": "Delete your Rustic account?",
+      "confirmBody": "Your friends, cosmetics and purchases will be removed after 30 days. Your game licence and Microsoft account are not affected.",
+      "confirmButton": "Delete my account",
+      "typeUsername": "Type {{name}} to confirm"
+    }
+  },
+  "parental": {
+    "title": "Parental controls",
+    "description": "Rustic accounts are for ages {{age}} and up. For players under 18, purchases need a parent’s approval by default.",
+    "minorNote": "This account belongs to a minor: purchases ask for a parent’s approval.",
+    "enable": "Turn on parental controls",
+    "enableHint": "Changes below then require the PIN.",
+    "pinFirst": "Create a PIN first to turn parental controls on.",
+    "saveFailed": "The change could not be saved",
+    "lockAgain": "Lock again",
+    "rules": {
+      "title": "Rules",
+      "purchases": "Purchases",
+      "purchasesHint": "Store purchases are cosmetic only. No loot boxes, ever.",
+      "purchaseOptions": {
+        "blocked": "Off",
+        "pin": "Ask a parent",
+        "allowed": "Allowed"
+      },
+      "limit": "Monthly spending limit",
+      "limitHint": "Spent this month: {{spent}}. Leave empty for no limit.",
+      "noLimit": "No limit",
+      "limitInvalid": "Enter an amount like 10 or 9.99.",
+      "chat": "Chat",
+      "chatOptions": {
+        "off": "Off",
+        "friends": "Friends only",
+        "everyone": "Everyone"
+      },
+      "friendRequests": "Friend requests",
+      "friendRequestsHint": "Allow others to send friend requests."
+    },
+    "pin": {
+      "title": "Parental PIN",
+      "set": "A PIN is set. It is needed to change these settings and approve purchases.",
+      "notSet": "No PIN yet.",
+      "change": "Change PIN",
+      "create": "Create a PIN",
+      "saved": "PIN saved",
+      "new": "New PIN",
+      "confirm": "Confirm PIN",
+      "save": "Save PIN",
+      "hint": "4 to 6 digits, not a simple sequence.",
+      "errors": {
+        "format": "Use 4 to 6 digits.",
+        "mismatch": "The two PINs differ.",
+        "weak": "Too easy to guess: avoid 1234 or 0000."
+      }
+    },
+    "unlock": {
+      "title": "Locked",
+      "description": "Enter the parental PIN to change these settings.",
+      "label": "Parental PIN",
+      "wrong": "Wrong PIN.",
+      "button": "Unlock"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Version {{version}}",
+    "channel": {
+      "stable": "Stable",
+      "beta": "Beta"
+    },
+    "browserMock": "Browser preview (mock data)",
+    "horizon": "Horizon",
+    "horizonHint": "Recommended game build.",
+    "licence": "Licence",
+    "platform": "Platform",
+    "legalTitle": "Legal",
+    "legalDescription": "Policies and notices.",
+    "links": {
+      "privacy": "Privacy policy",
+      "terms": "Terms of use and sale",
+      "legalNotice": "Legal notice",
+      "fairPlay": "Fair-play policy",
+      "thirdParty": "Open source notices",
+      "horizon": "Horizon project (MIT)"
+    },
+    "notAffiliated": "Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.",
+    "horizonCredit": "Built on Horizon, an MIT-licensed Rust rewrite of the game, by its contributors.",
+    "company": "Published by [company name], a French company (SIREN [number], [address]). Payments by Stripe; the company is the seller."
+  },
+  "rusticAuth": {
+    "mode": "Sign in or create an account",
+    "signIn": "Sign in",
+    "signUp": "Create an account",
+    "create": "Create my account",
+    "verify": "Verify",
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "dateOfBirth": "Date of birth",
+    "country": "Country",
+    "acceptPrivacy": "I have read and accept the privacy policy.",
+    "code": "Code from your authenticator app",
+    "checkInbox": "We sent a verification link to {{email}}. Open it, then sign in.",
+    "resend": "Resend",
+    "resent": "Verification email sent again",
+    "signedIn": "Signed in to Rustic",
+    "problems": {
+      "email": "Enter a valid email address.",
+      "password": "Password: at least 10 characters.",
+      "username": "Username: 3 to 20 letters, digits or underscore.",
+      "dateOfBirth": "Enter your date of birth.",
+      "tooYoung": "Rustic accounts are for ages 13 and up.",
+      "privacy": "Accept the privacy policy to continue."
+    },
+    "microsoft": "Continue with Microsoft",
+    "orEmail": "or with an email",
+    "microsoftWaiting": "Finish signing in in your browser: the launcher picks up your session automatically."
+  },
+  "heading": "Your *settings*",
+  "eyebrow": "Launcher"
+}

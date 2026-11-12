@@ -1,0 +1,86 @@
+{
+  "title": "Vestiaire",
+  "subtitle": "Objets purement visuels. Visibles en jeu par les joueurs de l’édition Rustic.",
+  "horizonNote": {
+    "badge": "Les cosmétiques Horizon restent disponibles",
+    "detail": "Vos cosmétiques Horizon sont conservés dans le client édition Rustic. Gérez-les en jeu ; ils fonctionnent avec vos objets Rustic."
+  },
+  "empty": {
+    "title": "Vous n’avez pas encore de cosmétiques.",
+    "description": "Les objets achetés ou reçus apparaissent ici, prêts à porter.",
+    "browse": "Parcourir la boutique",
+    "categoryTitle": "Aucun objet « {{category}} » pour l’instant",
+    "categoryDescription": "Les objets de ce type que vous possédez apparaîtront ici."
+  },
+  "viewer": {
+    "region": "Votre personnage",
+    "label_one": "Votre personnage porte {{count}} objet. Glissez ou utilisez les flèches pour le tourner, plus et moins pour zoomer.",
+    "label_many": "Votre personnage porte {{count}} objets. Glissez ou utilisez les flèches pour le tourner, plus et moins pour zoomer.",
+    "label_other": "Votre personnage porte {{count}} objets. Glissez ou utilisez les flèches pour le tourner, plus et moins pour zoomer.",
+    "hint": "Glissez pour tourner · molette pour zoomer",
+    "animation": "Animation",
+    "playEmote": "Jouer {{name}}",
+    "noEmote": "Aucune emote équipée",
+    "reset": "Réinitialiser la vue"
+  },
+  "animations": {
+    "idle": "Repos",
+    "walk": "Marche",
+    "wave": "Salut",
+    "dance": "Danse"
+  },
+  "items": {
+    "region": "Vos objets",
+    "nothing": "Rien",
+    "equipped": "Équipé"
+  },
+  "categories": {
+    "label": "Catégories",
+    "all": "Tout",
+    "head": "Chapeaux",
+    "back": "Dos",
+    "top": "Torse",
+    "shoulder": "Épaule",
+    "nametag": "Étiquettes",
+    "emote": "Emotes",
+    "companion": "Compagnons",
+    "trail": "Traînées",
+    "aura": "Auras"
+  },
+  "rarity": {
+    "common": "Commun",
+    "rare": "Rare",
+    "epic": "Épique",
+    "legendary": "Légendaire"
+  },
+  "toast": {
+    "equipped": "{{name}} équipé",
+    "unequipped": "{{name}} retiré",
+    "cleared": "{{slot}} : rien d’équipé",
+    "outfitWorn": "Tenue enfilée",
+    "outfitSaved": "Tenue « {{name}} » enregistrée",
+    "equipFailed": "Impossible de changer votre tenue. Réessayez."
+  },
+  "outfits": {
+    "title": "Tenues",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Nommer cette tenue",
+    "save": "Enregistrer la tenue",
+    "full": "Vous pouvez garder jusqu’à {{max}} tenues. Supprimez-en une pour en enregistrer une nouvelle.",
+    "empty": "Enregistrez votre tenue actuelle pour la remettre en un clic.",
+    "items_one": "{{count}} objet",
+    "items_many": "{{count}} objets",
+    "items_other": "{{count}} objets",
+    "wearing": "Portée",
+    "wear": "Porter",
+    "delete": "Supprimer la tenue {{name}}"
+  },
+  "switches": {
+    "showMine": "Afficher mes cosmétiques",
+    "showMineHint": "Les autres joueurs de l’édition Rustic voient ce que vous portez.",
+    "hideOthers": "Masquer les cosmétiques des autres joueurs",
+    "hideTrailsAuras": "Masquer les traînées et les auras"
+  },
+  "heading": "Votre *casier*",
+  "eyebrow": "Cosmétiques"
+}

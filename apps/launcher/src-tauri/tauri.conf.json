@@ -1,0 +1,90 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Rustic Launcher",
+  "mainBinaryName": "rustic-launcher",
+  "version": "0.1.0",
+  "identifier": "gg.rustic.launcher",
+  "build": {
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist",
+    "beforeDevCommand": "pnpm --filter @rustic/launcher dev",
+    "beforeBuildCommand": "pnpm --filter @rustic/launcher build"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Rustic Launcher",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 1024,
+        "minHeight": 640,
+        "center": true,
+        "decorations": false,
+        "resizable": true,
+        "transparent": false,
+        "shadow": true
+      }
+    ],
+    "withGlobalTauri": false,
+    "security": {
+      "csp": {
+        "default-src": "'self'",
+        "script-src": "'self'",
+        "style-src": "'self' 'unsafe-inline'",
+        "img-src": "'self' asset: http://asset.localhost data: blob: https://textures.minecraft.net https://crafatar.com https://cdn.modrinth.com https://cdn.rustic-launcher.com",
+        "font-src": "'self' data:",
+        "connect-src": "'self' ipc: http://ipc.localhost https://api.rustic-launcher.com wss://realtime.rustic-launcher.com https://cdn.rustic-launcher.com",
+        "media-src": "'self' https://cdn.rustic-launcher.com",
+        "object-src": "'none'",
+        "base-uri": "'self'",
+        "form-action": "'none'",
+        "frame-ancestors": "'none'"
+      },
+      "freezePrototype": true,
+      "assetProtocol": {
+        "enable": false,
+        "scope": []
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "category": "Game",
+    "shortDescription": "A launcher for Horizon, with Rustic servers, friends and cosmetics",
+    "copyright": "Rustic contributors, MIT OR Apache-2.0",
+    "licenseFile": "../../../LICENSE-MIT",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico",
+      "icons/icon.icns"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "REPLACE_WITH_TAURI_UPDATER_PUBLIC_KEY (see launcher/docs/TODO_HUMAN.md)",
+      "endpoints": [
+        "https://cdn.rustic-launcher.com/releases/launcher/{{target}}/{{arch}}/{{current_version}}"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    },
+    "deep-link": {
+      "desktop": {
+        "schemes": [
+          "rustic"
+        ]
+      }
+    }
+  }
+}

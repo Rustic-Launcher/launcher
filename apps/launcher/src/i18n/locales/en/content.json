@@ -1,0 +1,244 @@
+{
+  "title": "Explore",
+  "subtitle": "Mods, packs, shaders and plugins from Horizon, Modrinth and Rustic, checked against your instance.",
+  "kindsLabel": "Content types",
+  "kinds": {
+    "mod": "Mods",
+    "modpack": "Modpacks",
+    "resourcepack": "Resource packs",
+    "shader": "Shaders",
+    "datapack": "Datapacks",
+    "plugin": "Plugins"
+  },
+  "searchPlaceholder": "Search {{kind}}…",
+  "searchLabel": "Search content",
+  "clear": "Clear search",
+  "by": "by {{author}}",
+  "featured": "Featured",
+  "downloads": "{{value}} downloads",
+  "updated": "updated {{when}}",
+  "results_one": "{{count}} result",
+  "results_other": "{{count}} results",
+  "loadMore": "Load more ({{shown}} of {{total}})",
+  "target": {
+    "label": "Installing into",
+    "none": "Choose a target",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Horizon server",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "This PC",
+    "vps": "Your VPS",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Sort by",
+    "relevance": "Relevance",
+    "downloads": "Most downloaded",
+    "updated": "Recently updated",
+    "newest": "Newest"
+  },
+  "sources": {
+    "label": "Sources",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Horizon registry",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic catalogue"
+  },
+  "filters": {
+    "category": "Category",
+    "allCategories": "All categories",
+    "compatibleInstance": "Compatible with this instance",
+    "compatibleServer": "Compatible with this server",
+    "worksNow": "Builds on the current Horizon",
+    "categories": "Categories",
+    "viewMore_one": "View {{count}} more",
+    "viewMore_other": "View {{count}} more",
+    "viewLess": "View less",
+    "compatibility": "Compatibility",
+    "pluginHint": "Plugins run sandboxed on Rustic Server only.",
+    "fairPlayHint": "Only fair-play content is listed.",
+    "versions": "Horizon versions",
+    "targetVersion": "Your selected instance or server",
+    "checkingAgainst": "Compatibility is checked against the highlighted build."
+  },
+  "categories": {
+    "performance": "Performance",
+    "utility": "Utility",
+    "ui": "Interface",
+    "pvp": "PvP",
+    "adventure": "Adventure",
+    "decoration": "Decoration",
+    "storage": "Storage",
+    "worldgen": "World generation",
+    "library": "Library",
+    "tech": "Technology",
+    "cozy": "Cozy",
+    "multiplayer": "Multiplayer",
+    "realistic": "Realistic",
+    "simple": "Faithful",
+    "lightweight": "Lightweight",
+    "cinematic": "Cinematic",
+    "qol": "Quality of life",
+    "admin": "Administration",
+    "chat": "Chat",
+    "minigames": "Mini-games",
+    "protection": "Protection",
+    "integration": "Integrations"
+  },
+  "empty": {
+    "title": "Nothing matches",
+    "hint": "Try another word, source or category.",
+    "compatibleHint": "Only content that runs on this target is shown. Turn the filter off to see everything.",
+    "showAll": "Show incompatible results"
+  },
+  "banners": {
+    "mod": "Only fair-play mods are listed: no X-ray, auto-clickers or other unfair advantages.",
+    "modpack": "A modpack becomes a new instance with its own mods and settings.",
+    "resourcepack": "Packs stack: the one at the top of the load order wins.",
+    "shader": "Horizon runs its own WGSL shader packs (.hshader, shader API 0.1, experimental) and Iris/OptiFine-format packs from the Horizon registry. Pick one in game under Video Settings › Shader Packs.",
+    "datapack": "Datapacks belong to a world: you will pick the world when installing.",
+    "plugin": "Plugins (.rplugin) run sandboxed on servers using the Rustic Server engine. A faulty plugin is disabled; the server keeps running."
+  },
+  "resourcepacks": {
+    "manageOrder": "Manage load order"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Iris/OptiFine format"
+    },
+    "formatHint": {
+      "horizon": "Horizon’s own format (.hshader), shader API 0.1 (experimental). Checked before it runs.",
+      "shaders_dir": "A shaders/ pack in the Iris/OptiFine format, run by Horizon’s separate loader."
+    }
+  },
+  "side": {
+    "client": "Client",
+    "server": "Server",
+    "both": "Client & server"
+  },
+  "install": {
+    "install": "Install",
+    "installAria": "Install {{name}} into {{target}}",
+    "installed": "Installed",
+    "installing": "Installing…",
+    "installingPct": "Installing {{pct}}",
+    "createInstance": "Create instance",
+    "chooseWorld": "Install in a world",
+    "noTarget": "Choose where to install first.",
+    "started": "Installing {{name}} into {{target}}",
+    "withDeps_one": "Plus {{count}} required dependency.",
+    "withDeps_other": "Plus {{count}} required dependencies.",
+    "failed": "{{name}} could not be installed"
+  },
+  "modpack": {
+    "created": "Creating the instance {{name}}",
+    "createdHint": "Download in progress. It will appear in Play when ready."
+  },
+  "datapacks": {
+    "pickWorld": "Choose a world",
+    "noWorlds": "This instance has no world yet. Play once to create one.",
+    "count_one": "{{count}} datapack",
+    "count_other": "{{count}} datapacks"
+  },
+  "plugins": {
+    "badge": "Rustic Server plugin · API {{api}}",
+    "noServerTitle": "No Rustic Server server yet",
+    "noServerBody": "Plugins only run on servers using the Rustic Server engine. Create one in a few steps, then come back to install plugins on it.",
+    "createServer": "Create a server"
+  },
+  "detail": {
+    "breadcrumb": "Breadcrumb",
+    "sections": "Project sections",
+    "tabs": {
+      "description": "Description",
+      "gallery": "Gallery",
+      "versions": "Versions",
+      "changelog": "Changelog",
+      "dependencies": "Dependencies",
+      "compatibility": "Compatibility"
+    },
+    "galleryLabel": "Gallery of {{name}}",
+    "prev": "Previous image",
+    "next": "Next image",
+    "slide": "Image {{index}} of {{total}}",
+    "about": "About this project",
+    "categories": "Categories",
+    "links": "Links",
+    "link": {
+      "source": "Source code",
+      "issues": "Report a bug",
+      "website": "Website"
+    }
+  },
+  "report": {
+    "button": "Report",
+    "title": "Report {{name}}",
+    "sent": "Report sent",
+    "sentBody": "Thank you. Our moderators will review it.",
+    "reasons": {
+      "fair_play": "Breaks the fair-play policy",
+      "malware": "Malware or data theft",
+      "copyright": "Copyright infringement",
+      "other": "Something else"
+    }
+  },
+  "versions": {
+    "version": "Version",
+    "horizon": "Horizon builds",
+    "published": "Published",
+    "downloads": "Downloads",
+    "compatibility": "Compatibility",
+    "actions": "Actions",
+    "none": "None",
+    "channel": {
+      "release": "Release",
+      "beta": "Beta",
+      "alpha": "Alpha"
+    }
+  },
+  "deps": {
+    "none": "No dependencies.",
+    "relation": {
+      "required": "Required",
+      "optional": "Optional",
+      "incompatible": "Incompatible"
+    },
+    "installed": "Installed",
+    "willInstall": "Installed automatically",
+    "notInstalled": "Not installed"
+  },
+  "compatTab": {
+    "for": "for {{target}}",
+    "builds": "The author publishes a build made for this Horizon version.",
+    "format": "This content is data only (textures, shaders, datapacks): it does not depend on a Horizon build.",
+    "unknown": "Choose an instance or a server to check compatibility.",
+    "fairPlay": "Rustic only promotes fair-play content. Anything that gives an unfair advantage is never listed."
+  },
+  "permissions": {
+    "title": "Permissions",
+    "network": "Network access: {{value}}",
+    "none": "none",
+    "files": "Files: its own data folder only."
+  },
+  "stats": {
+    "downloads": "Downloads",
+    "follows": "Followers",
+    "updated": "Updated",
+    "license": "Licence",
+    "size": "Size"
+  },
+  "searchSources": "Search {{kind}} on {{sources}}…",
+  "filtersLabel": "Filters",
+  "view": "View",
+  "heading": "Find your next *mod*",
+  "eyebrow": "Explore"
+}

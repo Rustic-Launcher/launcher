@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800" role="img" aria-label="01-home wireframe">
+<title>01-home</title>
+<rect width="1280" height="800" fill="#1b1b1b"/>
+<rect x="14" y="12" width="20" height="20" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="24" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#e6e6e6" text-anchor="middle">R</text>
+<text x="42" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#e6e6e6" text-anchor="start">Rustic ▾</text>
+<text x="110" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#9a9a9a" text-anchor="start">‹  ›</text>
+<text x="150" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#e6e6e6" text-anchor="start">Launchpad</text>
+<rect x="810" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="823" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">⌕</text>
+<rect x="842" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="855" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">!</text>
+<rect x="874" y="10" width="26" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="887" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#9a9a9a" text-anchor="middle">☺</text>
+<rect x="910" y="10" width="112" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<circle cx="924" cy="22" r="7" fill="#4a4a4a"/>
+<text x="936" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#e6e6e6" text-anchor="start">Alex ▾</text>
+<rect x="1030" y="10" width="132" height="24" rx="6" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="1096" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#9a9a9a" text-anchor="middle">0 instances running</text>
+<text x="1260" y="27" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#9a9a9a" text-anchor="end">–  ▢  ✕</text>
+<rect x="0" y="60" width="3" height="28" rx="1.5" fill="#bdbdbd"/>
+<rect x="22.0" y="64" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="116" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="168" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="220" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="272" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<rect x="22.0" y="324" width="20" height="20" rx="5" fill="none" stroke="#4a4a4a"/>
+<line x1="18.0" y1="672" x2="46.0" y2="672" stroke="#4a4a4a"/>
+<text x="32.0" y="712" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="500" fill="#9a9a9a" text-anchor="middle">+</text>
+<circle cx="32.0" cy="752" r="9" fill="none" stroke="#9a9a9a" stroke-width="2"/>
+<rect x="64" y="44" width="1208" height="748" rx="16" fill="#232323" stroke="#4a4a4a"/>
+<text x="88" y="84" font-family="Inter, Segoe UI, sans-serif" font-size="16" font-weight="600" fill="#e6e6e6" text-anchor="start">Welcome back,  Alex ▾</text>
+<text x="908" y="84" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#9a9a9a" text-anchor="end">● 395 online</text>
+<rect x="88" y="100" width="820" height="300" rx="16" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="112" y="134" width="150" height="240" rx="10" fill="#232323" stroke="#4a4a4a" stroke-dasharray="6 5"/>
+<text x="187" y="259" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">3D player</text>
+<rect x="348.0" y="214" width="300" height="64" rx="12" fill="#bdbdbd" stroke="#4a4a4a"/>
+<text x="498.0" y="251.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#111" text-anchor="middle">LAUNCH GAME ▾</text>
+<text x="498.0" y="296" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="500" fill="#9a9a9a" text-anchor="middle">Horizon 0.2.15 (Rustic edition) · caret = switch instance</text>
+<rect x="864" y="356" width="32" height="32" rx="8" fill="#232323" stroke="#4a4a4a"/>
+<text x="880" y="377" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#9a9a9a" text-anchor="middle">⚙</text>
+<text x="88" y="438" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#e6e6e6" text-anchor="start">Latest news (4 unread)</text>
+<text x="908" y="438" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#9a9a9a" text-anchor="end">Explore sources ▾</text>
+<rect x="88.0" y="452" width="402.0" height="200" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<circle cx="92.0" cy="456" r="6" fill="#bdbdbd"/>
+<text x="104.0" y="630" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#e6e6e6" text-anchor="start">Rustic Launcher 0.1 beta</text>
+<rect x="506.0" y="452" width="402.0" height="200" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<circle cx="510.0" cy="456" r="6" fill="#bdbdbd"/>
+<text x="522.0" y="630" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#e6e6e6" text-anchor="start">Horizon 0.2.15</text>
+<rect x="932" y="68" width="316" height="56" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="952" y="78" width="36" height="36" rx="8" fill="#232323" stroke="#4a4a4a"/>
+<rect x="1026" y="78" width="36" height="36" rx="8" fill="#232323" stroke="#4a4a4a"/>
+<rect x="1100" y="78" width="36" height="36" rx="8" fill="#232323" stroke="#4a4a4a"/>
+<rect x="1174" y="78" width="36" height="36" rx="8" fill="#232323" stroke="#4a4a4a"/>
+<text x="932" y="156" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#e6e6e6" text-anchor="start">Friends (5 online)</text>
+<text x="1248" y="156" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#9a9a9a" text-anchor="end">Open social ↗</text>
+<rect x="932" y="170" width="32" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="972" y="170" width="32" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="1012" y="170" width="32" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="1052" y="170" width="32" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="1092" y="170" width="32" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<rect x="1132" y="170" width="32" height="32" rx="8" fill="#2e2e2e" stroke="#4a4a4a"/>
+<circle cx="948" cy="240" r="14" fill="#4a4a4a"/>
+<text x="972" y="236" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Léa</text>
+<text x="972" y="252" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#9a9a9a" text-anchor="start">Playing on Les Copains</text>
+<rect x="1216" y="226" width="30" height="28" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="1231.0" y="245.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">→</text>
+<circle cx="948" cy="288" r="14" fill="#4a4a4a"/>
+<text x="972" y="284" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Noah</text>
+<text x="972" y="300" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#9a9a9a" text-anchor="start">Playing on Arena Nord</text>
+<rect x="1216" y="274" width="30" height="28" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="1231.0" y="293.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">→</text>
+<circle cx="948" cy="336" r="14" fill="#4a4a4a"/>
+<text x="972" y="332" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="start">Tom</text>
+<text x="972" y="348" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#9a9a9a" text-anchor="start">Hosting Tom&#x27;s Modded</text>
+<rect x="1216" y="322" width="30" height="28" rx="12" fill="#2e2e2e" stroke="#4a4a4a"/>
+<text x="1231.0" y="341.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#e6e6e6" text-anchor="middle">→</text>
+<text x="16" y="794" font-family="Inter, Segoe UI, sans-serif" font-size="10" font-weight="400" fill="#9a9a9a" text-anchor="start">Launchpad (1b): greeting + online pill, hero with centred two-line LAUNCH, news grid; friends column (home only).</text>
+</svg>

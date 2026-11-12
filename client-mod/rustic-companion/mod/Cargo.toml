@@ -1,0 +1,31 @@
+[package]
+name = "rusticmc-companion"
+description = "The Rustic companion inside Horizon: a trait mod (horizon_client::mod_api::Hooks) plus the platform player hooks (horizon_hooks) that draw Rustic cosmetics"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+rusticmc-companion-core = { path = "../core" }
+rusticmc-cosmetics-format = { path = "../../../packages/cosmetics-format", default-features = false }
+# Horizon's game library (trait mod API) and its platform hooks (player layers, sprites).
+horizon-client = { path = "../../../../server/horizon/crates/horizon-client" }
+horizon-hooks = { path = "../../../../server/horizon/crates/horizon-hooks" }
+# The game's version for the title menu's footer.
+horizon-core = { path = "../../../../server/horizon/crates/horizon-core" }
+# In Horizon's Cargo.lock already (the game's own PNG decoder): the logo and the player's skin.
+png = "0.18"
+# In Horizon's Cargo.lock already (the game opens links with it): the website's store.
+open = "5"
+# In Horizon's Cargo.lock already: the title menu's text, set smooth in Inter (assets/).
+ab_glyph = "0.2"
+# In Horizon's Cargo.lock already (the game's own HTTP client).
+ureq = { version = "2", default-features = false, features = ["tls"] }
+serde = "1"
+serde_json = "1"
+log = "0.4"
+
+[lints]
+workspace = true
