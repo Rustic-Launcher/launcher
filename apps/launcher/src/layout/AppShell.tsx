@@ -1,11 +1,12 @@
 import { installSurfaceSpotlight, toast } from '@rustic/ui';
 import { useQueryClient } from '@tanstack/react-query';
-import { Outlet, useRouterState } from '@tanstack/react-router';
-import { useEffect, useRef } from 'react';
+import { Outlet, useNavigate, useRouterState } from '@tanstack/react-router';
+import { useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AddFriendHost } from '@/features/social/AddFriendDialog';
 import { SocialOverlay } from '@/features/social/SocialHosts';
 import { invoke, listen } from '@/ipc';
+import type { PageDeepLink } from '@/ipc/types/auth';
 import type { Instance } from '@/ipc/types/instances';
 import { pickActiveInstance, qk } from '@/queries/core';
 import { usePrefs } from '@/stores/prefs';
@@ -27,6 +28,7 @@ export function AppShell() {
   const mainRef = useRef<HTMLElement>(null);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const setCommandOpen = useUi((s) => s.setCommandOpen);
+  const navigate = useNavigate();
 
   useEffect(() => {
     mainRef.current?.scrollTo({ top: 0 });
@@ -57,10 +59,41 @@ export function AppShell() {
     return () => window.removeEventListener('keydown', onKey);
   }, [setCommandOpen]);
 
+  // `rustic://content/rustic/<project>`: the project's page with the install prompt (the desktop
+  // side parsed it strictly; nothing installs without the player's confirmation there).
+  // `rustic://server/<slug>`: the server's page in the directory (nothing joins from the link).
+  const openContentLink = useCallback(
+    (link: PageDeepLink) => {
+      if (link.action === 'server') {
+        void navigate({ to: '/servers/listing/$slug', params: { slug: link.listing } });
+        return;
+      }
+      toast({ tone: 'info', title: t('deepLink.content', { project: link.project }) });
+      void navigate({
+        to: '/content/$projectId',
+        params: { projectId: `rustic:${link.project}` },
+        search: { install: true, version: link.version ?? undefined },
+      });
+    },
+    [navigate, t],
+  );
+  // A link that started the launcher arrived before this listener: the desktop side kept it.
+  useEffect(() => {
+    invoke('app_take_deep_link')
+      .then((link) => link && openContentLink(link))
+      .catch(() => undefined);
+  }, [openContentLink]);
+
   // rustic:// deep links forwarded by the desktop side.
   useEffect(
     () =>
       listen('deep-link', (e) => {
+        if (e.action === 'content' || e.action === 'server') {
+          // Taken here: it must not open again from the pending slot.
+          void invoke('app_take_deep_link').catch(() => undefined);
+          openContentLink(e);
+          return;
+        }
         if (e.action === 'auth') {
           void qc.invalidateQueries({ queryKey: qk.rustic });
           toast({
@@ -79,7 +112,7 @@ export function AppShell() {
           options: { join: { address: e.target } },
         });
       }),
-    [qc, t],
+    [qc, t, openContentLink],
   );
 
   return (

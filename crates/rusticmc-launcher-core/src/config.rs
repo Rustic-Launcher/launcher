@@ -34,6 +34,7 @@ pub struct LauncherConfig {
     pub logging: LoggingConfig,
     pub network: NetworkConfig,
     pub dns: DnsConfig,
+    pub native: NativeConfig,
 }
 
 impl Default for LauncherConfig {
@@ -52,6 +53,7 @@ impl Default for LauncherConfig {
             logging: LoggingConfig::default(),
             network: NetworkConfig::default(),
             dns: DnsConfig::default(),
+            native: NativeConfig::default(),
         }
     }
 }
@@ -318,6 +320,56 @@ impl Default for DnsConfig {
     }
 }
 
+/// Native mods compiled on the player's computer (ADR 0157).
+#[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
+#[serde(default)]
+pub struct NativeConfig {
+    /// The compile cache (`<data>/native/target`) is cleared after a build when it exceeds this
+    /// many GiB (Horizon's default: 30); 0 never clears it automatically.
+    pub cache_limit_gib: u64,
+    /// Development: build from these checkouts instead of the edition's source archive
+    /// (`RUSTIC_NATIVE_HORIZON` and `RUSTIC_NATIVE_LAUNCHER` override them).
+    pub local_source: Option<NativeLocalSource>,
+}
+
+impl Default for NativeConfig {
+    fn default() -> Self {
+        Self {
+            cache_limit_gib: 30,
+            local_source: None,
+        }
+    }
+}
+
+/// Checkouts a development build of native mods compiles from.
+#[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
+pub struct NativeLocalSource {
+    /// `Rustic-MC/horizon` with Rustic's patches applied.
+    pub horizon: PathBuf,
+    /// `Rustic-MC-launcher/launcher`.
+    pub launcher: PathBuf,
+    /// The upstream Horizon commit (default: the edition's pin).
+    #[serde(default)]
+    pub horizon_commit: Option<String>,
+}
+
+impl NativeConfig {
+    /// The local source, the environment's first.
+    pub fn local_source(&self) -> Option<NativeLocalSource> {
+        match (
+            std::env::var_os("RUSTIC_NATIVE_HORIZON"),
+            std::env::var_os("RUSTIC_NATIVE_LAUNCHER"),
+        ) {
+            (Some(h), Some(l)) => Some(NativeLocalSource {
+                horizon: h.into(),
+                launcher: l.into(),
+                horizon_commit: std::env::var("RUSTIC_NATIVE_HORIZON_COMMIT").ok(),
+            }),
+            _ => self.local_source.clone(),
+        }
+    }
+}
+
 impl LauncherConfig {
     /// Reads `path`, migrating older versions; the defaults when it doesn't exist.
     pub fn load(path: &Path) -> Result<Self> {
@@ -408,6 +460,20 @@ mod tests {
         .unwrap();
         assert_eq!(config.ownership.revalidation_days, 10);
         assert_eq!(config.downloads.concurrency, 6);
+        assert_eq!(config.native.cache_limit_gib, 30);
+    }
+
+    #[test]
+    fn native_settings_round_trip() {
+        let config = LauncherConfig::parse(
+            Path::new("x"),
+            "version = 1\n[native]\ncache_limit_gib = 12\n[native.local_source]\nhorizon = \"h\"\nlauncher = \"l\"\n",
+        )
+        .unwrap();
+        assert_eq!(config.native.cache_limit_gib, 12);
+        let local = config.native.local_source.clone().unwrap();
+        assert_eq!(local.horizon, PathBuf::from("h"));
+        assert!(local.horizon_commit.is_none());
     }
 
     #[test]

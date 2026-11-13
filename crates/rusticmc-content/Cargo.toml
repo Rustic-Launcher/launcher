@@ -25,6 +25,10 @@ tracing = "0.1"
 zip = { version = "4", default-features = false, features = ["deflate"] }
 
 [dev-dependencies]
+# The API's own wire types (no HTTP client): the Rustic source is tested against their JSON.
+rusticmc-api-client = { path = "../rusticmc-api-client", default-features = false }
+chrono = { version = "0.4.41", default-features = false, features = ["serde", "clock", "std"] }
+uuid = { version = "1", features = ["serde", "v4"] }
 tempfile = "3"
 tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
 wiremock = "0.6"

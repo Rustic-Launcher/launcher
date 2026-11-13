@@ -122,6 +122,68 @@ export interface FeaturedServer {
   hue: number;
 }
 
+/** What a listed server runs (ADR 0158). */
+export type ServerEngine = 'horizon' | 'rustic';
+export type ListingSort = 'trending' | 'players' | 'new' | 'name' | 'featured';
+
+/** The cloud's last server list ping of a listed server (public addresses, every ~10 min). */
+export interface ServerListingStatus {
+  online: boolean;
+  players_online: number | null;
+  players_max: number | null;
+  motd: string | null;
+  version: string | null;
+  checked_at: string;
+}
+
+/**
+ * A server of the directory (`GET /v1/server-listings`, ADR 0158): published by its owner from
+ * the website, verified and featured by staff. Lists leave `description` null.
+ */
+export interface ServerListing {
+  id: string;
+  slug: string;
+  name: string;
+  address: string;
+  summary: string;
+  description: string | null;
+  tags: string[];
+  languages: string[];
+  engine: ServerEngine;
+  game_version: string | null;
+  requires_rustic_edition: boolean;
+  website: string | null;
+  discord: string | null;
+  icon_url: string | null;
+  banner_url: string | null;
+  verified: boolean;
+  featured: boolean;
+  owner: { id: string; username: string; display_name: string } | null;
+  status: ServerListingStatus | null;
+  /** "Play" presses from launchers over the last 7 days (the trending signal). */
+  plays_7d: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ServerListingQuery {
+  q?: string;
+  tag?: string;
+  language?: string;
+  engine?: ServerEngine;
+  verified?: boolean;
+  featured?: boolean;
+  sort?: ListingSort;
+  offset?: number;
+  limit?: number;
+}
+
+export interface ServerListingPage {
+  items: ServerListing[];
+  has_more: boolean;
+  total: number;
+}
+
 export type Rarity = 'common' | 'rare' | 'epic' | 'legendary';
 
 export interface Cosmetic {
@@ -238,3 +300,57 @@ export type RealtimeEvent =
   | { type: 'message'; message: ChatMessage }
   | { type: 'messages-read'; reader_id: string; read_at: string }
   | { type: 'join-server'; address: string };
+
+// ---- content marketplace (ADR 0155) ----
+
+/** The API's content kinds (`native_mod` and both shader formats are their own kinds there). */
+export type MarketplaceKind =
+  | 'mod'
+  | 'native_mod'
+  | 'modpack'
+  | 'resourcepack'
+  | 'shader'
+  | 'shaderpack'
+  | 'datapack'
+  | 'plugin';
+
+/** A Rustic catalogue project as the signed-in pages show it (library, own creations). */
+export interface MarketplaceProject {
+  id: string;
+  slug: string;
+  kind: MarketplaceKind;
+  name: string;
+  summary: string;
+  author: string;
+  icon_url: string | null;
+  /** The first screenshot. */
+  banner_url: string | null;
+  downloads: number;
+  verified: boolean;
+  /** Null when free. Paid projects are shown, not sold yet (creator sales are off). */
+  price: Money | null;
+  visibility: 'public' | 'unlisted' | 'private';
+  /** `pending` while a native mod waits for an admin. */
+  review: 'not_required' | 'pending' | 'approved' | 'rejected';
+  /** Owner view: taken down by a moderator. */
+  taken_down: boolean;
+  updated_at: string | null;
+  latest_version: string | null;
+}
+
+export interface LibraryItem {
+  project: MarketplaceProject;
+  source: 'free' | 'purchase' | 'grant';
+  added_at: string;
+}
+
+/** Report reasons the API takes (`POST /v1/content/projects/{id}/reports`). */
+export type ContentReportReason =
+  | 'spam'
+  | 'harassment'
+  | 'inappropriate_content'
+  | 'cheating'
+  | 'impersonation'
+  | 'copyright'
+  | 'malware'
+  | 'other';

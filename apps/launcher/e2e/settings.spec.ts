@@ -72,6 +72,29 @@ test.describe('settings', () => {
     await expect(card.getByRole('button', { name: 'Use automatic' })).toBeHidden();
   });
 
+  test('Native mods: Rust, the compile cache and its limit', async ({ app }) => {
+    await app.goto('/#/settings?section=game');
+    const card = app.getByTestId('settings-native');
+    await expect(card).toContainText('Native mods');
+    await expect(card.getByTestId('native-rust-state')).toHaveText('Not installed');
+    await expect(card.getByTestId('native-cache-clear')).toBeDisabled();
+    const limit = card.getByTestId('native-cache-limit');
+    await expect(limit).toHaveValue('30');
+    await limit.fill('12');
+    await limit.press('Enter');
+    await expect(app.getByText('Cache limit saved', { exact: true })).toBeVisible();
+    await limit.fill('9999');
+    await limit.press('Enter');
+    await expect(
+      app.getByText('The limit is a whole number of GiB from 0 to 4096.', { exact: true }),
+    ).toBeVisible();
+    await expect(limit).toHaveValue('12');
+    // Installing Rust from Settings.
+    await card.getByRole('button', { name: 'Install Rust' }).click();
+    await app.getByTestId('native-toolchain-install').click();
+    await expect(card.getByTestId('native-rust-state')).toHaveText('Ready', { timeout: 15_000 });
+  });
+
   test('sub-navigation is deep-linkable and keyboard navigable', async ({ app }) => {
     await app.goto('/#/settings?section=privacy');
     await expect(app.getByTestId('settings-nav-privacy')).toHaveAttribute('aria-current', 'page');

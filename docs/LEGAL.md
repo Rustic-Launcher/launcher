@@ -190,6 +190,13 @@ Rules (decision):
 - **Horizon registry**: MIT code; content under each project's SPDX licence; ratings API is Horizon's (read-only use).
 - **Horizon project**: MIT allows redistribution of the modified client (Rustic edition) with the notice; we must not
   present it as an official Horizon build, nor use Horizon's MSA client id (`horizon/docs/forking.md`).
+- **Native mods built on the player's PC** (ADR 0157): the launcher downloads, never redistributes, the tools it
+  builds with: Rust (rustup-init and the toolchain from static.rust-lang.org, MIT/Apache-2.0), WinLibs' GCC/binutils
+  on Windows (GPL with the GCC runtime exception, from its GitHub release, pinned by SHA-256 as Horizon's launcher
+  does), horizon-mixins (MIT, built from its repository) and crates.io crates of the edition's lockfile. The edition
+  source archive Rustic publishes is Horizon (MIT, with its notices) + Rustic's patches and companion (MIT OR
+  Apache-2.0). `crates/rusticmc-native` follows rules of Horizon's launcher (`native_mods*.rs`, `rust_toolchain.rs`,
+  MIT, the Horizon contributors), rewritten, credited in its documentation. A mod's own licence is the registry's.
 - **Porkbun** (domains): the user's contract is **with Porkbun**. Rustic acts only as a technical tool using the user's
   own API keys. Purchase screen states: seller = Porkbun; Porkbun's registration agreement and terms apply; prices and
   renewals are Porkbun's; refunds/withdrawal for domains are handled by Porkbun under its terms; Rustic receives no

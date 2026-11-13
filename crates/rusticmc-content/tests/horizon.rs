@@ -79,7 +79,7 @@ fn native_mod_badges_use_hooks_and_broken_on() {
     assert!(
         c.reasons
             .iter()
-            .any(|r| r.contains("horizon-launcher native-build"))
+            .any(|r| r.contains("compiles it into this instance"))
     );
     env.native_hooks = Some(300);
     assert_eq!(

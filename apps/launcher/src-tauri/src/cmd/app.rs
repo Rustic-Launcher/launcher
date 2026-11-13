@@ -155,6 +155,14 @@ pub fn app_open_url(app: AppHandle, args: UrlArgs) -> Res<()> {
         .map_err(|e| IpcError::internal(e.to_string()))
 }
 
+/// The `rustic://content/...` or `rustic://server/...` link that started (or reached) the launcher
+/// before the UI listened, taken once: the UI opens the project's page with the install prompt,
+/// or the server's page in the directory.
+#[tauri::command]
+pub fn app_take_deep_link() -> Option<serde_json::Value> {
+    crate::take_pending_content_link()
+}
+
 /// What the Settings row shows: the `rustic-server` a new Rustic Server of the default build
 /// would run, where it comes from, and its version line.
 async fn rustic_server_status_of(state: &AppState) -> RusticServerStatus {

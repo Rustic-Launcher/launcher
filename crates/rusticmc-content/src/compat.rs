@@ -2,11 +2,11 @@
 //! reasons. Facts behind each rule (horizon docs, pinned at a84f637d):
 //!
 //! - Content mods (`.hmod`) load when their manifest `api` is one the build lists (`mod.api`).
-//! - Native mods (`.hnmod`) run only in a game *compiled with them* by Horizon's launcher
-//!   (`horizon-launcher native-build`, horizon-mixins, Rust 1.99.1 downloaded by that launcher);
-//!   a launcher that doesn't build Horizon "doesn't offer them" (docs/api/content.md). Rustic
-//!   reports whether one *would* build on the player's Horizon: its `hooks` against the build's
-//!   `NATIVE_HOOKS_API`, its pin against the commit, and the registry's `broken_on`.
+//! - Native mods (`.hnmod`) run only in a game *compiled with them*. Rustic Launcher compiles the
+//!   Rustic edition client with an instance's native mods on the player's computer (ADR 0157,
+//!   `rusticmc-native`), on the edition's own Horizon commit: a mod fits when its `hooks` are at
+//!   most the build's `NATIVE_HOOKS_API`; a mod pinned to another commit may not apply there (the
+//!   build then leaves it out); the registry's `broken_on` rules it out.
 //! - Java mods (Fabric, Forge, NeoForge, Quilt jars) never run: Horizon has no JVM. Their data
 //!   and assets can be carried over by `horizon-port-pack` (docs/modpacks.md).
 //! - Resource packs always load; outside the build's format they are marked too old or too new.
@@ -180,10 +180,9 @@ pub fn check(v: &ContentVersion, target: Option<&Target>, env: &HorizonEnv) -> C
 }
 
 fn native(facts: &HorizonFacts, env: &HorizonEnv) -> Compatibility {
-    let build_note = "native mods are compiled into the game by Horizon's launcher \
-                      (`horizon-launcher native-build --trust-native-code`, the player's decision); \
-                      Rustic Launcher doesn't compile Horizon and its Rustic edition client is \
-                      prebuilt without them";
+    let build_note = "native code: Rustic Launcher compiles it into this instance's own client \
+                      on your computer, after you accept the trust notice (native mods are not \
+                      sandboxed)";
     if !env.native_rebuild {
         return c(
             Verdict::Incompatible,
@@ -241,7 +240,8 @@ fn native(facts: &HorizonFacts, env: &HorizonEnv) -> Compatibility {
                         "pinned to your Horizon's commit".to_owned()
                     } else {
                         format!(
-                            "pinned to Horizon commit {}: a build moves the game to it",
+                            "made for Horizon commit {}: Rustic builds it on its own Horizon, \
+                             where it may not apply (the build then leaves it out)",
                             if pin.is_empty() { "?" } else { &pin }
                         )
                     },

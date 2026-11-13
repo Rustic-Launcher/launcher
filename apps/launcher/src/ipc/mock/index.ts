@@ -5,6 +5,7 @@ import { contentHandlers } from './handlers/content';
 import { dnsHandlers } from './handlers/dns';
 import { hostingHandlers } from './handlers/hosting';
 import { multiplayerHandlers } from './handlers/multiplayer';
+import { nativeHandlers } from './handlers/native';
 import { serverAdminHandlers } from './handlers/serverAdmin';
 import { serversHandlers } from './handlers/servers';
 import { fail, on, type MockHandler, type MockHandlers } from './runtime';
@@ -13,6 +14,7 @@ import type { CommandName } from '../commands';
 const handlers: MockHandlers = {
   ...coreHandlers,
   ...contentHandlers,
+  ...nativeHandlers,
   ...multiplayerHandlers,
   ...serversHandlers,
   ...serverAdminHandlers,

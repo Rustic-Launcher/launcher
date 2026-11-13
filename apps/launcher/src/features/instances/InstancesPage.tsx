@@ -1,442 +1,445 @@
+import { Button, cn } from '@rustic/ui';
+import { useNavigate } from '@tanstack/react-router';
 import {
-  Badge,
-  Button,
-  Carousel,
-  cn,
-  Dropdown,
-  DropdownCheckboxItem,
-  DropdownContent,
-  DropdownLabel,
-  DropdownTrigger,
-  EmptyState,
-  IconButton,
-  Select,
-  Skeleton,
-} from '@rustic/ui';
-import { Link, useNavigate } from '@tanstack/react-router';
-import {
-  ArrowDownWideNarrow,
-  ChevronDown,
-  Download,
+  Cpu,
+  FolderInput,
   Gamepad2,
-  Play,
+  History,
+  Layers3,
+  PackageOpen,
   Plus,
-  Search,
-  Square,
+  SearchX,
+  UserRound,
   X,
 } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useHorizonVersionLabel } from '@/components/HorizonVersion';
-import { QueryError } from '@/components/RouteError';
-import { usePlay } from '@/features/play/usePlay';
-import { invoke } from '@/ipc';
-import type { Instance } from '@/ipc/types/instances';
-import { formatDate, formatDuration, formatRelative } from '@/lib/format';
-import { useHorizonVersions, useInstances } from '@/queries/core';
-import { usePrefs } from '@/stores/prefs';
-import { InstanceActions } from './InstanceActions';
-import { InstanceCover } from './InstanceCover';
-import { filterInstances, sortInstances, type InstanceSort } from './logic';
-import { NewInstanceSheet } from './NewInstanceSheet';
-import { instancesRoute } from './routes';
+import {
+  CardRow,
+  CatalogEmpty,
+  CatalogError,
+  CatalogSearch,
+  CatalogToolbar,
+  FilterChip,
+  FilterPopover,
+  FilterSection,
+  FilterSwitch,
+  GridSkeletonCards,
+  LayoutToggle,
+  ListSkeletonRows,
+  ResultCount,
+  ScopeMenu,
+  SortSelect,
+  type ScopeOption,
+} from '@/components/catalog';
+import { isRusticEdition } from '@/components/HorizonVersion';
 import { PageTitle } from '@/components/Page';
+import { formatDuration, shortVersion } from '@/lib/format';
+import { useActiveInstance, useHorizonVersions, useInstances } from '@/queries/core';
+import { usePrefs } from '@/stores/prefs';
+import { CreateTile, ProfileCard, ProfileRow, RecentCard } from './cards';
+import {
+  activeFilterCount,
+  buildsInUse,
+  filterProfiles,
+  PROFILE_SORTS,
+  recentlyPlayed,
+  sortInstances,
+  totalPlaytime,
+  type ProfileSource,
+} from './logic';
+import { NewInstanceSheet } from './NewInstanceSheet';
+import { useNativeOverview } from './queries';
+import { instancesRoute, type InstancesSearch } from './routes';
 
-type Source = 'all' | 'custom' | 'modpack';
+const GRID = 'grid-cols-[repeat(auto-fill,minmax(248px,1fr))]';
 
-/** Versions (step 1b): portrait cover grid + right detail panel for the selected profile. */
+/**
+ * Profiles (ADR 0159), in the Explore / Servers design: a search with the source fused on its
+ * left, Create and Import, a "Jump back in" row, then every profile as a visual card (or a dense
+ * row) with its build, content, native mods and a Play button on hover. The URL holds the search,
+ * sort and filters; the grid/list choice is a preference.
+ */
 export function InstancesPage() {
-  const { t } = useTranslation('instances');
-  const navigate = useNavigate();
+  const { t, i18n } = useTranslation('instances');
+  const { t: tc } = useTranslation();
+  const navigate = useNavigate({ from: '/instances' });
   const search = instancesRoute.useSearch();
-  const { data, isLoading, isError, refetch } = useInstances();
-  const activeId = usePrefs((s) => s.activeInstanceId);
-  const [query, setQuery] = useState('');
-  const [sort, setSort] = useState<InstanceSort>('recent');
-  const [source, setSource] = useState<Source>('all');
-  const [selected, setSelected] = useState<string | null>(search.selected ?? null);
-  const creating = search.new === '1';
-  const setCreating = (open: boolean) =>
+  const instances = useInstances();
+  const { data: versions } = useHorizonVersions();
+  const native = useNativeOverview();
+  const activeId = useActiveInstance().instance?.id;
+  const layout = usePrefs((s) => s.profilesLayout);
+  const setLayout = usePrefs((s) => s.setProfilesLayout);
+  const [text, setText] = useState(search.q ?? '');
+  const sort = search.sort ?? 'recent';
+
+  const setSearch = (patch: Partial<InstancesSearch>) =>
+    void navigate({ to: '/instances', search: (prev) => ({ ...prev, ...patch }), replace: true });
+
+  // The URL follows the text a moment after typing (filtering itself is instant).
+  useEffect(() => {
+    const q = text.trim() || undefined;
+    if (q === search.q) return;
+    const id = setTimeout(
+      () => void navigate({ to: '/instances', search: (prev) => ({ ...prev, q }), replace: true }),
+      250,
+    );
+    return () => clearTimeout(id);
+  }, [text, search.q, navigate]);
+
+  const sheet = search.new === 'import' ? 'import' : search.new ? 'create' : null;
+  const openSheet = (tab: 'create' | 'import' | null) =>
     void navigate({
       to: '/instances',
-      search: (s) => ({ ...s, new: open ? '1' : undefined }),
+      search: (prev) => ({ ...prev, new: tab === 'import' ? 'import' : tab ? '1' : undefined }),
       replace: true,
     });
 
-  const list = useMemo(() => {
-    const bySource = (data ?? []).filter((i) =>
-      source === 'all' ? true : source === 'modpack' ? !!i.source : !i.source,
-    );
-    return sortInstances(filterInstances(bySource, query), sort);
-  }, [data, query, sort, source]);
-  const current =
-    data?.find((i) => i.id === selected) ?? data?.find((i) => i.id === activeId) ?? list[0];
+  const all = useMemo(() => instances.data ?? [], [instances.data]);
+  const nativeIds = useMemo(() => new Set(native.byId.keys()), [native.byId]);
+  const filters = useMemo(
+    () => ({
+      q: text,
+      source: search.source,
+      version: search.version,
+      edition: search.edition,
+      native: search.native,
+    }),
+    [text, search.source, search.version, search.edition, search.native],
+  );
+  const list = useMemo(
+    () =>
+      sortInstances(
+        filterProfiles(all, filters, {
+          isRustic: (v) => isRusticEdition(v, versions),
+          native: nativeIds,
+        }),
+        sort,
+      ),
+    [all, filters, versions, nativeIds, sort],
+  );
+  const activeFilters = activeFilterCount(filters);
+  const narrowed = activeFilters > 0 || !!text.trim() || !!search.source;
+  const recent = narrowed ? [] : recentlyPlayed(all);
+  const resetFilters = () =>
+    setSearch({ version: undefined, edition: undefined, native: undefined });
+  const resetAll = () => {
+    setText('');
+    setSearch({
+      q: undefined,
+      source: undefined,
+      version: undefined,
+      edition: undefined,
+      native: undefined,
+    });
+  };
 
+  // Older links (`?selected=<id>`) land on that profile.
   useEffect(() => {
-    if (search.selected) setSelected(search.selected);
-  }, [search.selected]);
+    if (!search.selected || !instances.data) return;
+    document
+      .querySelector(`[data-testid="instance-card-${CSS.escape(search.selected)}"]`)
+      ?.scrollIntoView({ block: 'center' });
+  }, [search.selected, instances.data]);
+
+  const sources: ScopeOption<ProfileSource | 'all'>[] = [
+    { value: 'all', label: t('profiles.source.all'), icon: <Layers3 /> },
+    { value: 'custom', label: t('profiles.source.custom'), icon: <UserRound /> },
+    { value: 'modpack', label: t('profiles.source.modpack'), icon: <PackageOpen /> },
+  ];
 
   return (
-    <div className="rx-page-enter grid min-h-full grid-cols-[minmax(0,1fr)_minmax(300px,340px)] gap-4 p-4">
-      <div className="flex min-w-0 flex-col gap-4">
+    <div className="rx-page-enter flex min-h-full flex-col gap-4 p-4">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <PageTitle title={t('heading')} />
-        <div className="flex items-center gap-2">
-          <div className="bg-surface-2 border-border flex h-11 flex-1 items-center rounded-xl border">
-            <Dropdown>
-              <DropdownTrigger asChild>
-                <button
-                  type="button"
-                  className="rx-focus-ring flex h-full items-center gap-1.5 rounded-l-xl px-3.5 text-sm font-semibold"
-                  aria-label={t('versions.source')}
-                >
-                  {t(`versions.sources.${source}`)}
-                  <ChevronDown className="text-fg-subtle size-3.5" />
-                </button>
-              </DropdownTrigger>
-              <DropdownContent align="start">
-                <DropdownLabel>{t('versions.source')}</DropdownLabel>
-                {(['all', 'custom', 'modpack'] as const).map((s) => (
-                  <DropdownCheckboxItem
-                    key={s}
-                    checked={source === s}
-                    onCheckedChange={() => setSource(s)}
-                  >
-                    {t(`versions.sources.${s}`)}
-                  </DropdownCheckboxItem>
-                ))}
-              </DropdownContent>
-            </Dropdown>
-            <span className="bg-border-default h-5 w-px" />
-            <Search className="text-fg-subtle ml-3 size-4" aria-hidden />
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder={t('versions.search')}
-              aria-label={t('versions.search')}
-              className="placeholder:text-fg-subtle h-full flex-1 bg-transparent px-2.5 text-sm outline-none"
-            />
-            {query && (
-              <IconButton
-                size="sm"
-                label={t('versions.clear')}
-                icon={<X />}
-                onClick={() => setQuery('')}
-                className="mr-1.5"
-              />
-            )}
-          </div>
-          <Select
-            value={sort}
-            onValueChange={(v) => setSort(v as InstanceSort)}
-            aria-label={t('sort.label')}
-            className="bg-surface-2 h-11 w-44 rounded-xl"
-            options={[
-              { value: 'recent', label: t('sort.recent'), icon: <ArrowDownWideNarrow /> },
-              { value: 'name', label: t('sort.name'), icon: <ArrowDownWideNarrow /> },
-              { value: 'playtime', label: t('sort.playtime'), icon: <ArrowDownWideNarrow /> },
-            ]}
-          />
-          <Button
-            variant="soft"
-            size="lg"
-            className="h-11 rounded-xl"
-            leftIcon={<Plus />}
-            onClick={() => setCreating(true)}
-            data-testid="new-instance"
+        {all.length > 0 && (
+          <p
+            className="bg-surface-2 border-border text-fg-muted rounded-full border px-3 py-1.5 text-xs tabular-nums"
+            data-testid="profiles-summary"
           >
-            {t('versions.newProfile')}
-          </Button>
-        </div>
-
-        {isError && <QueryError onRetry={() => void refetch()} />}
-        {data && data.length === 0 && (
-          <EmptyState
-            icon={<Gamepad2 />}
-            title={t('empty.title')}
-            description={t('empty.description')}
-            action={
-              <Button variant="primary" leftIcon={<Plus />} onClick={() => setCreating(true)}>
-                {t('versions.newProfile')}
-              </Button>
+            {t('profiles.summary', {
+              count: all.length,
+              playtime: formatDuration(totalPlaytime(all), i18n.language),
+            })}
+          </p>
+        )}
+      </div>
+      <CatalogToolbar
+        start={
+          <CatalogSearch
+            value={text}
+            onChange={setText}
+            testId="profiles-search"
+            label={t('profiles.searchLabel')}
+            clearLabel={tc('actions.clear')}
+            placeholder={t('profiles.searchPlaceholder')}
+            scope={
+              <ScopeMenu
+                value={search.source ?? 'all'}
+                options={sources}
+                label={t('profiles.source.label')}
+                onChange={(v) => setSearch({ source: v === 'all' ? undefined : v })}
+                testId="profiles-source"
+                itemTestIdPrefix="profiles-source"
+              />
             }
           />
-        )}
-        {data && data.length > 0 && list.length === 0 && (
-          <EmptyState
-            icon={<Gamepad2 />}
-            title={t('noMatch.title')}
-            description={t('noMatch.description', { query })}
-          />
-        )}
-        <ul
-          className="grid grid-cols-[repeat(auto-fill,minmax(176px,1fr))] gap-x-4 gap-y-5"
-          aria-label={t('title')}
+        }
+        end={
+          <>
+            <Button
+              variant="secondary"
+              className="h-11 rounded-xl"
+              leftIcon={<FolderInput />}
+              onClick={() => openSheet('import')}
+              data-testid="import-profile"
+            >
+              {t('profiles.import')}
+            </Button>
+            <button
+              type="button"
+              onClick={() => openSheet('create')}
+              data-testid="new-instance"
+              className="rx-focus-ring border-accent/50 bg-accent-soft text-accent-text hover:bg-accent/20 flex h-11 items-center gap-2.5 rounded-xl border px-4 text-left text-sm font-semibold transition-colors"
+            >
+              <Plus className="size-4" aria-hidden />
+              <span className="flex flex-col leading-tight">
+                {t('profiles.create')}
+                <span className="text-fg-muted text-2xs font-medium max-[1100px]:hidden">
+                  {t('profiles.createHint')}
+                </span>
+              </span>
+            </button>
+          </>
+        }
+      />
+
+      {recent.length > 0 && (
+        <CardRow
+          title={t('profiles.recent')}
+          subtitle={t('profiles.recentHint')}
+          icon={<History />}
+          testId="profiles-recent"
         >
-          {isLoading &&
-            Array.from({ length: 6 }, (_, i) => (
-              <li key={i} className="flex flex-col gap-2">
-                <Skeleton className="aspect-[3/4] rounded-xl" />
-                <Skeleton className="h-5 w-2/3" />
-              </li>
-            ))}
-          {list.map((i) => (
-            <li key={i.id}>
-              <CoverCard
-                instance={i}
-                selected={current?.id === i.id}
-                onSelect={() => setSelected(i.id)}
-              />
-            </li>
+          {recent.map((i) => (
+            <RecentCard key={i.id} instance={i} active={i.id === activeId} />
           ))}
-        </ul>
-      </div>
-      {current ? (
-        <DetailPanel instance={current} />
-      ) : isLoading ? (
-        <Skeleton className="rounded-xl" />
-      ) : (
-        <aside
-          className="border-border text-fg-muted flex items-center justify-center rounded-xl border border-dashed p-6 text-center text-sm"
-          data-testid="instance-detail-empty"
-        >
-          {t('versions.noSelection')}
-        </aside>
+        </CardRow>
       )}
-      <NewInstanceSheet open={creating} onOpenChange={setCreating} />
+
+      {instances.data && all.length === 0 ? (
+        <CatalogEmpty
+          icon={<Gamepad2 />}
+          testId="profiles-empty"
+          title={t('profiles.empty.title')}
+          description={t('profiles.empty.description')}
+          action={
+            <div className="flex flex-wrap justify-center gap-2">
+              <Button variant="primary" leftIcon={<Plus />} onClick={() => openSheet('create')}>
+                {t('profiles.create')}
+              </Button>
+              <Button leftIcon={<FolderInput />} onClick={() => openSheet('import')}>
+                {t('profiles.import')}
+              </Button>
+            </div>
+          }
+        />
+      ) : (
+        <section aria-labelledby="profiles-all" className="flex flex-col gap-4">
+          <CatalogToolbar
+            start={
+              <div className="flex items-baseline gap-3">
+                <h2 id="profiles-all" className="text-base font-semibold">
+                  {t('profiles.all')}
+                </h2>
+                {instances.data && <ResultCount count={list.length} />}
+              </div>
+            }
+            end={
+              <>
+                <SortSelect
+                  value={sort}
+                  onChange={(s) => setSearch({ sort: s === 'recent' ? undefined : s })}
+                  options={PROFILE_SORTS.map((s) => ({
+                    value: s,
+                    label: t(`profiles.sorts.${s}`),
+                  }))}
+                />
+                <FilterPopover
+                  active={activeFilters}
+                  onReset={resetFilters}
+                  testId="profiles-filters"
+                >
+                  <FilterSection title={t('profiles.filters.version')}>
+                    <div className="flex flex-wrap gap-1.5" role="group">
+                      {buildsInUse(all).map((v) => (
+                        <FilterChip
+                          key={v}
+                          on={search.version === v}
+                          onToggle={() =>
+                            setSearch({ version: search.version === v ? undefined : v })
+                          }
+                          testId={`profiles-version-${v}`}
+                        >
+                          {shortVersion(v)}
+                        </FilterChip>
+                      ))}
+                    </div>
+                  </FilterSection>
+                  <FilterSection title={t('profiles.filters.edition')}>
+                    <div className="flex flex-wrap gap-1.5" role="group">
+                      {(['rustic', 'horizon'] as const).map((e) => (
+                        <FilterChip
+                          key={e}
+                          on={search.edition === e}
+                          onToggle={() =>
+                            setSearch({ edition: search.edition === e ? undefined : e })
+                          }
+                          testId={`profiles-edition-${e}`}
+                        >
+                          {t(`profiles.filters.editions.${e}`)}
+                        </FilterChip>
+                      ))}
+                    </div>
+                  </FilterSection>
+                  <FilterSection
+                    title={t('profiles.filters.native')}
+                    hint={t('profiles.filters.nativeHint')}
+                  >
+                    <FilterSwitch
+                      checked={!!search.native}
+                      onCheckedChange={(v) => setSearch({ native: v || undefined })}
+                      label={t('profiles.filters.nativeOnly')}
+                      icon={<Cpu className="text-info-text" />}
+                      testId="profiles-native-only"
+                    />
+                  </FilterSection>
+                </FilterPopover>
+                <LayoutToggle value={layout} onChange={setLayout} />
+              </>
+            }
+          />
+          <ActiveFilters search={search} onChange={setSearch} />
+
+          {instances.isError ? (
+            <CatalogError
+              onRetry={() => void instances.refetch()}
+              message={(instances.error as Error | null)?.message}
+            />
+          ) : instances.isLoading ? (
+            layout === 'grid' ? (
+              <GridSkeletonCards count={4} className={GRID} />
+            ) : (
+              <ListSkeletonRows rows={4} />
+            )
+          ) : list.length === 0 ? (
+            <CatalogEmpty
+              icon={<SearchX />}
+              testId="profiles-no-match"
+              title={t('profiles.noMatch.title')}
+              description={t('profiles.noMatch.description')}
+              action={
+                <Button size="sm" onClick={resetAll}>
+                  {t('profiles.filters.reset')}
+                </Button>
+              }
+            />
+          ) : layout === 'grid' ? (
+            <ul
+              className={cn('grid gap-4', GRID)}
+              aria-label={t('profiles.listLabel')}
+              data-testid="profiles-grid"
+            >
+              {list.map((i) => (
+                <li key={i.id}>
+                  <ProfileCard
+                    instance={i}
+                    active={i.id === activeId}
+                    overview={native.byId.get(i.id)}
+                  />
+                </li>
+              ))}
+              {!narrowed && (
+                <li>
+                  <CreateTile
+                    onCreate={() => openSheet('create')}
+                    onImport={() => openSheet('import')}
+                  />
+                </li>
+              )}
+            </ul>
+          ) : (
+            <ul
+              className="flex flex-col"
+              aria-label={t('profiles.listLabel')}
+              data-testid="profiles-list"
+            >
+              {list.map((i) => (
+                <li key={i.id}>
+                  <ProfileRow
+                    instance={i}
+                    active={i.id === activeId}
+                    overview={native.byId.get(i.id)}
+                  />
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+      <NewInstanceSheet
+        open={sheet !== null}
+        initialTab={sheet ?? 'create'}
+        onOpenChange={(open) => openSheet(open ? (sheet ?? 'create') : null)}
+      />
     </div>
   );
 }
 
-function CardPlay({ instance }: { instance: Instance }) {
-  const { t } = useTranslation();
-  const play = usePlay(instance);
-  const setActive = usePrefs((s) => s.setActiveInstance);
-  const map = {
-    play: { label: t('play.play'), icon: <Play className="fill-current" /> },
-    update: { label: t('play.update'), icon: <Download /> },
-    running: { label: t('play.stop'), icon: <Square /> },
-    progress: { label: t('play.cancel'), icon: <X /> },
-    disabled: { label: t('play.play'), icon: <Play /> },
-  } as const;
-  const m = map[play.state];
-  return (
-    <IconButton
-      size="sm"
-      label={`${m.label} — ${instance.name}`}
-      icon={m.icon}
-      data-testid={`play-${instance.id}`}
-      data-state={play.state}
-      disabled={play.state === 'disabled'}
-      className={cn(
-        play.state === 'running' || play.state === 'progress'
-          ? 'text-accent-text'
-          : 'text-accent-text hover:bg-accent-soft hover:text-accent-text',
-      )}
-      onClick={(e) => {
-        e.stopPropagation();
-        setActive(instance.id);
-        play.primary();
-      }}
-    />
-  );
-}
-
-function CoverCard({
-  instance,
-  selected,
-  onSelect,
+/** Removable chips for the filters that are set. */
+function ActiveFilters({
+  search,
+  onChange,
 }: {
-  instance: Instance;
-  selected: boolean;
-  onSelect: () => void;
+  search: InstancesSearch;
+  onChange: (patch: Partial<InstancesSearch>) => void;
 }) {
   const { t } = useTranslation('instances');
-  const play = usePlay(instance);
+  const chips: { key: string; label: string; clear: () => void }[] = [];
+  if (search.version)
+    chips.push({
+      key: 'version',
+      label: `${t('profiles.filters.version')} ${shortVersion(search.version)}`,
+      clear: () => onChange({ version: undefined }),
+    });
+  if (search.edition)
+    chips.push({
+      key: 'edition',
+      label: t(`profiles.filters.editions.${search.edition}`),
+      clear: () => onChange({ edition: undefined }),
+    });
+  if (search.native)
+    chips.push({
+      key: 'native',
+      label: t('profiles.filters.nativeOnly'),
+      clear: () => onChange({ native: undefined }),
+    });
+  if (chips.length === 0) return null;
   return (
-    <div className="flex flex-col gap-2" data-testid={`instance-card-${instance.id}`}>
-      <button
-        type="button"
-        onClick={onSelect}
-        aria-pressed={selected}
-        aria-label={instance.name}
-        className={cn(
-          'rx-focus-ring relative aspect-[3/4] overflow-hidden rounded-xl transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5',
-          selected ? 'ring-accent ring-offset-surface ring-2 ring-offset-2' : 'ring-border ring-1',
-        )}
-      >
-        <InstanceCover instance={instance} className="size-full" />
-        <span className="absolute inset-x-2 bottom-2 flex flex-wrap gap-1">
-          {instance.pinned && (
-            <Badge variant="neutral" className="bg-black/50 text-white">
-              {t('card.pinned')}
-            </Badge>
-          )}
-          {instance.update_available && (
-            <Badge variant="warning" className="bg-black/50">
-              {t('versions.update')}
-            </Badge>
-          )}
-          {play.state === 'running' && <Badge variant="solid">{t('versions.running')}</Badge>}
-        </span>
-        {play.state === 'progress' && play.progress != null && (
-          <span className="absolute inset-x-0 bottom-0 h-1 bg-black/40">
-            <span className="bg-accent block h-full" style={{ width: `${play.progress * 100}%` }} />
-          </span>
-        )}
-      </button>
-      <div className="flex items-center justify-between gap-1">
-        <span className="truncate text-base font-semibold">{instance.name}</span>
-        <CardPlay instance={instance} />
-      </div>
-    </div>
-  );
-}
-
-function DetailPanel({ instance }: { instance: Instance }) {
-  const { t, i18n } = useTranslation('instances');
-  const { t: tc } = useTranslation();
-  const versionLabel = useHorizonVersionLabel();
-  const { data: versions } = useHorizonVersions();
-  const play = usePlay(instance);
-  const setActive = usePrefs((s) => s.setActiveInstance);
-  const [more, setMore] = useState(false);
-  const color = instance.icon.kind === 'preset' ? instance.icon.color : '#5b6070';
-  const slides = [0, 1, 2].map((i) => ({ id: `${instance.id}-${i}`, i }));
-  const version = versions?.find((v) => v.id === instance.horizon_version);
-
-  return (
-    <aside
-      className="flex min-w-0 flex-col gap-4"
-      aria-label={t('versions.details')}
-      data-testid="instance-detail-panel"
-    >
-      <Carousel
-        items={slides}
-        getKey={(s) => s.id}
-        label={t('versions.media')}
-        prevLabel={tc('actions.previous')}
-        nextLabel={tc('actions.next')}
-        slideLabel={(i, n) => t('versions.slide', { index: i, total: n })}
-        className="border-border aspect-video border"
-        renderItem={(s) => (
-          <div
-            className="relative h-full overflow-hidden"
-            style={{
-              background: `linear-gradient(${120 + s.i * 50}deg, ${color}, color-mix(in oklab, ${color} 30%, #07080b))`,
-            }}
-          >
-            <InstanceCover
-              instance={instance}
-              className="absolute -right-6 -bottom-10 h-[150%] w-1/2 rotate-6 rounded-xl opacity-90"
-            />
-            <span className="absolute bottom-3 left-3 text-sm font-semibold text-white drop-shadow">
-              {t(`versions.slides.${s.i}` as 'versions.slides.0', { name: instance.name })}
-            </span>
-          </div>
-        )}
-      />
-      <div className="flex flex-col gap-1.5">
-        <h2 className="text-xl font-bold">{instance.name}</h2>
-        <p className={cn('text-fg-muted text-sm', !more && 'line-clamp-3')}>
-          {t('versions.blurb', {
-            version: versionLabel(instance.horizon_version),
-            mods: instance.mod_count,
-            playtime: formatDuration(instance.playtime_s, i18n.language),
-          })}{' '}
-          {more && (
-            <>
-              {instance.source &&
-                t('versions.fromModpack', {
-                  name: instance.source.name,
-                  version: instance.source.version,
-                })}{' '}
-              {t('versions.created', { date: formatDate(instance.created_at, i18n.language) })}{' '}
-              {instance.last_played_at &&
-                t('versions.lastPlayed', {
-                  when: formatRelative(instance.last_played_at, i18n.language),
-                })}
-            </>
-          )}
-        </p>
+    <div className="flex flex-wrap items-center gap-1.5" data-testid="profiles-active-filters">
+      {chips.map((c) => (
         <button
+          key={c.key}
           type="button"
-          className="text-fg w-fit text-sm font-semibold hover:underline"
-          onClick={() => setMore((m) => !m)}
+          onClick={c.clear}
+          aria-label={t('profiles.filters.remove', { filter: c.label })}
+          className="rx-focus-ring border-accent/40 bg-accent-soft text-accent-text hover:bg-accent/20 inline-flex h-7 items-center gap-1 rounded-full border px-2.5 text-xs font-medium"
         >
-          {more ? t('versions.readLess') : t('versions.readMore')}
+          {c.label}
+          <X className="size-3" aria-hidden />
         </button>
-      </div>
-      <dl className="bg-surface-2 border-border flex flex-col divide-y divide-[var(--rl-border)] rounded-xl border text-sm">
-        <div className="flex items-center justify-between gap-3 px-3 py-2.5">
-          <dt className="text-fg-muted">{t('versions.version')}</dt>
-          <dd>
-            <Select
-              size="sm"
-              className="w-48"
-              aria-label={t('versions.version')}
-              value={instance.horizon_version}
-              onValueChange={(v) =>
-                void invoke('instance_set_version', { id: instance.id, horizon_version: v })
-              }
-              options={(versions ?? []).map((v) => ({
-                value: v.id,
-                label: versionLabel(v.id, false),
-              }))}
-            />
-          </dd>
-        </div>
-        <div className="flex items-center justify-between gap-3 px-3 py-2.5">
-          <dt className="text-fg-muted">{t('versions.build')}</dt>
-          <dd>{version ? t(`new.${version.channel}`) : '—'}</dd>
-        </div>
-        <div className="flex items-center justify-between gap-3 px-3 py-2.5">
-          <dt className="text-fg-muted">{t('versions.edition')}</dt>
-          <dd>
-            {version?.rustic_edition ? (
-              <Badge variant="accent">{tc('horizon.rusticEdition')}</Badge>
-            ) : (
-              <Badge variant="neutral">{t('versions.plainHorizon')}</Badge>
-            )}
-          </dd>
-        </div>
-        <div className="flex items-center justify-between gap-3 px-3 py-2.5">
-          <dt className="text-fg-muted">{t('versions.content')}</dt>
-          <dd className="tabular-nums">
-            {t('versions.contentCount', {
-              mods: instance.mod_count,
-              packs: instance.resource_pack_count,
-              shaders: instance.shader_count,
-            })}
-          </dd>
-        </div>
-      </dl>
-      <div className="flex items-center gap-2">
-        <Button
-          variant={play.state === 'running' ? 'secondary' : 'primary'}
-          size="lg"
-          className="flex-1 font-bold uppercase"
-          disabled={play.state === 'disabled'}
-          data-testid="detail-play"
-          onClick={() => {
-            setActive(instance.id);
-            play.primary();
-          }}
-        >
-          {play.state === 'update'
-            ? tc('launch.update')
-            : play.state === 'running'
-              ? tc('launch.stop')
-              : play.state === 'progress'
-                ? play.progressLabel || tc('play.cancel')
-                : tc('launch.launch')}
-        </Button>
-        <InstanceActions instance={instance} />
-      </div>
-      <Button asChild variant="ghost" size="sm" className="w-fit">
-        <Link to="/instances/$instanceId" params={{ instanceId: instance.id }}>
-          {t('versions.manage')}
-        </Link>
-      </Button>
-    </aside>
+      ))}
+    </div>
   );
 }

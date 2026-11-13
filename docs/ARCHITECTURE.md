@@ -148,10 +148,18 @@ Horizon's 7-day Nightly deletion does not break pinned instances (HF A9).
    size cap, SHA-256/512 check, minisign signature when the index gives a key, then unpack into the instance
    (`horizon-mods/`, `resourcepacks/`, `shaderpacks/`, `<world>/datapacks/`) or the server (`plugins/` for
    `.rplugin`). State recorded in the instance's `rustic-content.json` (source, id, version, hash).
-4. Native mods (`.hnmod`) are **not installable in v1** (they require recompiling the client: HF §3.1). Curated
-   native features ship inside the Rustic edition (ADR 0006). Shown as "Needs a native build (not supported yet)".
+4. Native mods (`.hnmod`) recompile the client: an instance that has any plays the Rustic edition compiled for it
+   on the player's PC (`crates/rusticmc-native`, ADR 0157: trust notice, Rust, edition source archive, horizon-mixins,
+   `cargo build --profile fast`, client in `<instance>/native/bin/`); the others keep the prebuilt client.
 
 ## 6. Servers
+
+**Server directory (ADR 0158).** Besides the servers players host, the cloud keeps a public directory of
+servers their owners publish from the website (`/v1/server-listings`, migration 0011): automatic checks then
+published, verified badge, staff picks (the former featured servers), take-downs and reports, a status ping
+from the cloud (public addresses only) and an anonymous "Play" counter for trending. The launcher's Servers page
+(My servers / Discover / Browse, a server page, `rustic://server/<slug>`) and the website's `/servers` read it;
+the in-game Discover screen will too.
 
 ### 6.1 Hosting modes (`HostingProvider`)
 
@@ -298,7 +306,7 @@ verified email/phone, $100 cap per API registration, 1 registration attempt/s.
 | Launcher ↔ VPS | User's machine | SSH key in keychain, pinned host key, control API only via SSH port-forward |
 | Launcher ↔ Porkbun | Third party | User's keys in keychain, used only from the user's machine, never sent to Rustic Cloud |
 | Plugins (`.rplugin`) | Untrusted code | Rustic Server's wasmtime sandbox with declared capabilities (root repo) |
-| Content mods/packs | Data | Hash + source allow-list; no code execution (native mods unsupported in v1) |
+| Content mods/packs | Data | Hash + source allow-list; no code execution (native mods: trust notice + local build, ADR 0157) |
 
 ## 10. Deployment
 

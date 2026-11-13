@@ -47,8 +47,12 @@ dependency.
   'self' ipc: https://api.<rustic> wss://rt.<rustic>; script-src 'self'; style-src 'self' 'unsafe-inline'` (Tailwind
   runtime styles, revisit); no remote scripts; Markdown from content sources sanitised (no raw HTML, links rewritten to
   open externally).
-- Deep links `rustic://join/<code>`, `rustic://content/<source>/<id>`: parsed strictly, always lead to a confirmation UI,
-  never perform an action directly (no install, no purchase, no server change).
+- Deep links `rustic://join/<code>`, `rustic://content/<source>/<id>`, `rustic://server/<slug>` (ADR 0158): parsed
+  strictly, always lead to a confirmation UI, never perform an action directly (no install, no purchase, no server
+  change, no join from a server link).
+- Server directory pings (ADR 0158): the cloud only connects to listed servers whose every resolved address is
+  public (no private, loopback, link-local, CGNAT, multicast, documentation or reserved range, IPv4 or IPv6), on
+  ports 1024 and up, to the address it checked (no second DNS lookup), with a 4 s budget and a 64 KiB answer cap.
 
 ### 2.3 Updates and downloads
 
@@ -71,9 +75,13 @@ dependency.
 
 ### 2.5 Mods, packs, plugins trust
 
-- Content mods/packs are data; native mods are not installable in v1 (they are unsandboxed native code:
-  `horizon/docs/native-mods.md:19`). If enabled later: explicit trust dialog per mod, signature from the registry key,
-  never an agent's decision (same stance as Horizon).
+- Content mods/packs are data. Native mods are unsandboxed native code (`horizon/docs/native-mods.md:19`), compiled
+  on the player's PC since ADR 0157: a trust notice per instance the player ticks and accepts (versioned, stored in
+  `<instance>/native/consent.json`; no command, deep link or agent can accept it), only Horizon's registry (SHA-256,
+  minisign key, `revoked.toml`, its review) or admin-approved marketplace versions, the `.hnmod` re-checked by the
+  builder (Rust/TOML/data files under `mixins/<id>/` only, limits, no links), rustup-init checked against its
+  published SHA-256, WinLibs and the edition source pinned by SHA-256, `cargo build --locked` (only the edition
+  lockfile's crates), the player's Cargo/rustc settings dropped. The built game itself is not sandboxed.
 - `.rplugin` plugins run in Rustic Server's wasmtime sandbox with fuel/epoch/memory limits and declared capabilities
   (`network` domains, `filesystem` data folder); the launcher shows capabilities before install and on update when they
   grow.

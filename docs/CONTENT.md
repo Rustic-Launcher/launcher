@@ -35,8 +35,11 @@ pack format `[121, 0]`, `.hpack` format 1, index schema 1. Verdicts never guess 
   own manifest matches the entry (`horizon-mod.toml`, `horizon-native.json`, `horizon-modpack.toml`,
   `horizon-shaders.toml`, `pack.mcmeta`).
 - **Rustic registry** (Rustic's catalogue): a `RusticRegistry` trait; `HttpRusticRegistry` over
-  `GET /v1/content/search` and `GET /v1/content/projects/{id}/versions` at the endpoint from config;
-  `DisabledRusticRegistry` when none is set. See "Rustic catalogue and marketplace" below.
+  `GET /v1/content/search` (all the marketplace filters, `has_more`/`total`), `GET /v1/content/projects/{id}`
+  and `.../versions` at the endpoint from config, reading the API's wire JSON (`RusticProject` =
+  `ProjectSummary` + marketplace fields, `RusticVersion` = `ContentVersion` + channel, changelog, downloads;
+  ids checked `[a-z0-9_-]{1,64}` before any request); `DisabledRusticRegistry` when none is set. Contract tests
+  (`tests/rustic.rs`) serve JSON serialized from the API's own types. See "Rustic catalogue and marketplace".
 
 ## What runs on Horizon (badges)
 
@@ -54,16 +57,17 @@ pack format `[121, 0]`, `.hpack` format 1, index schema 1. Verdicts never guess 
 | Rustic Server plugin | **Works** on a Rustic Server, **Wrong target** elsewhere | engine `rustic-server` |
 | Bukkit/Paper plugin (Modrinth) | **Doesn't run** | Java |
 
-### Native mods and a third-party launcher
+### Native mods: built on the player's PC (ADR 0157)
 
-Horizon's native mods are Rust source compiled *into the game* by Horizon's own launcher (`horizon-launcher
-native-build --trust-native-code`: it downloads Rust 1.99.1, horizon-mixins and the Horizon source of the pinned
-commit, then builds a `native-<commit>-<key>` version; 1.5 to 30 minutes, about 2 GB). Horizon's Content API says a
-launcher that doesn't build Horizon "doesn't offer them". Rustic Launcher does not compile Horizon (ADR 0006: the
-Rustic edition is prebuilt by CI), so it shows native mods with the badge their `hooks` earns against the instance's
-`NATIVE_HOOKS_API` and the reason, and installs their file into `horizon-native-mods/` only with `allow_native`
-(an expert's choice): they run only after the player builds them with Horizon's launcher. The Rustic edition client
-itself never contains third-party native mods (v1).
+Horizon's native mods are Rust source compiled *into the game* (horizon-mixins bundles). Rustic Launcher compiles
+the Rustic edition client with an instance's native mods on the player's PC (`crates/rusticmc-native`), as Horizon's
+own launcher does: a trust notice per instance first, Rust 1.99.1 (found, or installed by the launcher with the
+player's agreement), the edition's own source (the archive its bundle names in `rustic-source.json`), horizon-mixins
+at Horizon's launcher pin, `cargo build --locked --profile fast`, the client in `<instance>/native/bin/`. Verdict
+`needs_build` maps to an installable status (`compatible`, `needs_build: true`); installs need the notice accepted
+(`native.consent_required`) and an instance of the Rustic edition. Mods are built on the edition's commit (re-pinned):
+one that doesn't apply there is left out of the build with the reason. Instances without native mods keep the
+prebuilt client.
 
 ## Where content goes (Horizon's Content API)
 
@@ -123,8 +127,14 @@ publish from the website: mods (`.hmod`), native mods (`.hnmod`, or a native `.h
   mods are reviewed by an admin before they become public.
 - **Unlisted** projects are reachable by id (`GET /v1/content/projects/{id}`, `.../versions`) but never
   searched; **private** ones answer 404 to the launcher (it sends no token).
-- **Install link** from the website: `rustic://content/rustic/<project>[?version=<version id>]`
-  (spec for the launcher in `HANDOFF.md`).
+- **Install link** from the website: `rustic://content/rustic/<project>[?version=<version id>]`, parsed strictly
+  by the desktop side (`lib.rs` `content_link`) and opened on the project page with an install prompt (ADR 0156);
+  nothing installs without the player's click.
+- **In the launcher** (`cmd/content.rs`): each search hit is judged from its versions' facts (cached two minutes;
+  native mods get `needs_build`), the stricter of the API's and the launcher's fair-play verdicts is kept, installs
+  take the asked version or the newest compatible one with its Rustic dependencies, and paid projects are refused
+  (`content.paid`: creator sales are off). Paid and verified filters leave Horizon and Modrinth out (they have
+  neither).
 
 ## Fair play
 
@@ -199,7 +209,7 @@ the server would not load, replaces an older version, and returns the load order
 
 | Command (docs/IPC.md) | What it does |
 |---|---|
-| `content_search` | Horizon registry (index fetched at most every 10 min, searched locally), Modrinth (live search with facets), Rustic catalogue (Rustic Cloud `/v1/content`, empty until the cloud serves it); verdicts against the target's `--launch-api` (Horizon defaults without a target); fair-play **blocked** projects never listed, **featured** only for clean projects; `installed_in` from the target's ledger. Ids: `horizon:<id>`, `rustic:<id>`, Modrinth ids bare. |
+| `content_search` | Horizon registry (index fetched at most every 10 min, searched locally), Modrinth (live search with facets), Rustic catalogue and marketplace (Rustic Cloud `/v1/content`, one query per API kind of the UI's kind, `price`/`verified` filters, `has_more`); verdicts against the target's `--launch-api` (Horizon defaults without a target); fair-play **blocked** projects never listed, **featured** only for clean projects; `installed_in` from the target's ledger. Ids: `horizon:<id>`, `rustic:<id>`, Modrinth ids bare. |
 | `content_get` | Details per source: versions with verdicts, dependencies with names and installed state, gallery, links, side, changelog (Horizon). |
 | `content_install` | Resolves dependencies, installs through `Installer` (all checks) into an instance, a world, new worlds (a data pack aimed at an instance) or a server; a Modrinth modpack is downloaded and imported as an `.mrpack`; a Horizon `.hpack` through the index; a Rustic `.rplugin` through the server's plugin manager after `plugins::read_rplugin`. |
 | `instance_import { modpack }` | A catalogue modpack into a new instance (same path). |

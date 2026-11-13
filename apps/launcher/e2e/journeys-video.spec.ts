@@ -53,10 +53,10 @@ test('journey: install a mod from Explore', async ({ page }) => {
   await r.click(page.getByTestId('rail-content'));
   await expect(page.getByTestId('content-search')).toBeVisible();
   await r.hold(900);
-  await r.hover(page.getByTestId('compatible-only'), 800);
   await r.type(page.getByTestId('content-search'), 'shulker');
   const row = page.getByTestId('content-row-p_shulker');
   await expect(row).toBeVisible();
+  await r.hover(page.getByTestId('content-filters'), 800);
   await r.hover(row.getByText('Builds on your Horizon'), 800);
   await r.click(row.getByRole('button', { name: /Install Shulker Peek/ }));
   await expect(row.getByRole('button', { name: 'Installed' })).toBeVisible({ timeout: 20_000 });

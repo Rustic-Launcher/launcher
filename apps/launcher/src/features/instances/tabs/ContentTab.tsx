@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next';
 import { ListSkeleton } from '@/components/PageSkeleton';
 import { QueryError } from '@/components/RouteError';
 import type { Instance, InstalledContent } from '@/ipc/types/instances';
+import { NativeBuildPanel } from '@/features/native/NativeBuildPanel';
 import { initials } from '../logic';
 import { useContentMutations, useInstanceContent } from '../queries';
 
@@ -53,6 +54,7 @@ export function ContentTab({ instance }: { instance: Instance }) {
 
   return (
     <div className="flex flex-col gap-4">
+      <NativeBuildPanel instance={instance} />
       <div className="flex flex-wrap items-center gap-3">
         <SegmentedControl
           label={t('content.filter')}

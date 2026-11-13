@@ -23,6 +23,7 @@ rusticmc-content = { path = "../../../crates/rusticmc-content" }
 rusticmc-hosting = { path = "../../../crates/rusticmc-hosting" }
 rusticmc-instances = { path = "../../../crates/rusticmc-instances" }
 rusticmc-launcher-core = { path = "../../../crates/rusticmc-launcher-core" }
+rusticmc-native = { path = "../../../crates/rusticmc-native" }
 rusticmc-servers = { path = "../../../crates/rusticmc-servers" }
 rusticmc-tunnel = { path = "../../../crates/rusticmc-tunnel" }
 base64 = "0.22"

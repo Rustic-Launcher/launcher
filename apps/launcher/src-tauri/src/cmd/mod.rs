@@ -5,4 +5,5 @@ pub mod dns;
 pub mod hosting;
 pub mod instances;
 pub mod multiplayer;
+pub mod native;
 pub mod servers;

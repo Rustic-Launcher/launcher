@@ -18,14 +18,18 @@ use rusticmc_content::sources::horizon::{HorizonRegistry, Index, IndexSource};
 use rusticmc_content::sources::modrinth::{
     Modrinth, ModrinthConfig, SearchQuery, kind_of as mr_kind,
 };
-use rusticmc_content::sources::rustic::{HttpRusticRegistry, RusticRegistry};
+use rusticmc_content::sources::rustic::{
+    HttpRusticRegistry, PriceFilter, RusticProject, RusticRegistry, RusticSearch, RusticSort,
+    RusticVersion,
+};
 use rusticmc_content::{
-    Badge, Compatibility, ContentKind, ContentVersion, DependencyKind, FairPlay, HorizonEnv,
-    ProjectSummary, SourceKind, Target, Verdict, compat, updates,
+    Badge, Compatibility, ContentKind, ContentVersion, Dependency, DependencyKind, FairPlay,
+    HorizonEnv, ProjectSummary, SourceKind, Target, Verdict, compat, updates,
 };
 use rusticmc_launcher_core::{IpcError, IpcErrorCode};
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
+use std::collections::HashMap;
 use std::path::{Path, PathBuf};
 use std::sync::{Arc, LazyLock};
 use std::time::{Duration, Instant};
@@ -62,6 +66,12 @@ pub struct ContentSearchQuery {
     pub category: Option<String>,
     #[serde(default)]
     pub sort: Option<String>,
+    /// `free` or `paid` (only Rustic's marketplace has paid projects).
+    #[serde(default)]
+    pub price: Option<String>,
+    /// Only projects a Rustic admin verified (Rustic's catalogue only).
+    #[serde(default)]
+    pub verified: bool,
     #[serde(default)]
     pub offset: u32,
     #[serde(default)]
@@ -184,9 +194,120 @@ fn modrinth() -> Res<Modrinth> {
     .map_err(content_err)
 }
 
-fn rustic_registry(state: &AppState) -> Res<HttpRusticRegistry> {
+fn rustic_registry(state: &AppState) -> Res<Arc<HttpRusticRegistry>> {
     HttpRusticRegistry::new(crate::cloud_link::api_base(&state.config().cloud.api_base))
+        .map(Arc::new)
         .map_err(content_err)
+}
+
+/// A Rustic project the API does not show (private, pending, taken down, or no such id).
+fn rustic_not_found(e: rusticmc_content::ContentError) -> IpcError {
+    match e {
+        rusticmc_content::ContentError::NotFound(_) => IpcError::with_reason(
+            IpcErrorCode::NotFound,
+            "This project is not available",
+            "content.not_available",
+        ),
+        other => content_err(other),
+    }
+}
+
+/// Rustic versions per project, kept two minutes (search verdicts ask for every hit's).
+type VersionCache = HashMap<String, (Instant, Arc<Vec<RusticVersion>>)>;
+
+static RUSTIC_VERSIONS: LazyLock<tokio::sync::Mutex<VersionCache>> =
+    LazyLock::new(|| tokio::sync::Mutex::new(HashMap::new()));
+
+async fn rustic_versions(
+    reg: &HttpRusticRegistry,
+    id: &str,
+    fresh: bool,
+) -> rusticmc_content::Result<Arc<Vec<RusticVersion>>> {
+    if !fresh
+        && let Some((at, v)) = RUSTIC_VERSIONS.lock().await.get(id)
+        && at.elapsed() < Duration::from_secs(120)
+    {
+        return Ok(v.clone());
+    }
+    let v = Arc::new(reg.versions(id).await?);
+    let mut cache = RUSTIC_VERSIONS.lock().await;
+    if cache.len() > 512 {
+        cache.retain(|_, (at, _)| at.elapsed() < Duration::from_secs(120));
+    }
+    cache.insert(id.to_owned(), (Instant::now(), v.clone()));
+    Ok(v)
+}
+
+/// The newest version that installs on `t`, else the newest one.
+fn best_version<'a>(
+    versions: &'a [RusticVersion],
+    t: Option<&Target>,
+    env: &HorizonEnv,
+) -> Option<&'a RusticVersion> {
+    versions
+        .iter()
+        .find(|v| {
+            let c = compat::check(&v.version, t, env);
+            // A native mod that builds here counts: the launcher compiles it (ADR 0157).
+            c.installable() || c.verdict == Verdict::NeedsBuild
+        })
+        .or_else(|| versions.first())
+}
+
+/// The stricter of two fair-play standings (the API's and this launcher's policy).
+fn stricter(a: FairPlay, b: FairPlay) -> FairPlay {
+    let rank = |f: &FairPlay| match f {
+        FairPlay::Clean => 0,
+        FairPlay::Flagged { .. } => 1,
+        FairPlay::Blocked { .. } => 2,
+    };
+    if rank(&b) > rank(&a) { b } else { a }
+}
+
+/// The verdict a Rustic project gets on `t`: from its best version's manifest facts.
+fn rustic_compat(
+    p: &RusticProject,
+    versions: Option<&[RusticVersion]>,
+    t: Option<&Target>,
+    env: &HorizonEnv,
+) -> Value {
+    let off_server = !matches!(t, Some(Target::Server { .. }) | None);
+    if p.summary.kind == ContentKind::Plugin && off_server {
+        return json!({ "status": "incompatible", "reason": "needs_rustic_server",
+                       "detail": "A plugin goes into a Rustic Server server." });
+    }
+    match versions.and_then(|v| best_version(v, t, env)) {
+        Some(v) => compatibility(
+            &compat::check(&v.version, t, env),
+            matches!(
+                p.summary.kind,
+                ContentKind::Mod
+                    | ContentKind::NativeMod
+                    | ContentKind::Modpack
+                    | ContentKind::Plugin
+            ),
+        ),
+        None => json!({ "status": "unknown" }),
+    }
+}
+
+/// The marketplace's card fields on a summary (`verified`, `price`, banner, size...).
+fn rustic_extras(v: &mut Value, p: &RusticProject) {
+    v["author"] = json!(p.author());
+    v["verified"] = json!(p.verified);
+    v["price"] = match &p.price {
+        Some(pr) if pr.is_paid() => {
+            json!({ "amount_minor": pr.amount_cents, "currency": pr.currency })
+        }
+        _ => Value::Null,
+    };
+    v["banner_url"] = json!(p.gallery.first().map(|g| g.url.clone()));
+    v["size_bytes"] = json!(p.size);
+    v["latest_version"] = json!(p.latest_version);
+    v["created_at"] = json!(p.created_at);
+    if let Some(u) = &p.updated_at {
+        v["updated_at"] = json!(u);
+    }
 }
 
 /// Horizon's registry index, fetched at most every 10 minutes.
@@ -290,7 +411,14 @@ fn compatibility(c: &Compatibility, ships_horizon_build: bool) -> Value {
             json!({ "status": "compatible", "builds_on_horizon": ships_horizon_build })
         }
         Verdict::Partial => json!({ "status": "compatible", "builds_on_horizon": false }),
-        Verdict::NeedsBuild | Verdict::Incompatible | Verdict::Blocked => {
+        // A native mod that fits the instance's Horizon: compiled on the player's PC (ADR 0157).
+        Verdict::NeedsBuild => json!({
+            "status": "compatible",
+            "builds_on_horizon": false,
+            "needs_build": true,
+            "detail": c.reasons.join("; "),
+        }),
+        Verdict::Incompatible | Verdict::Blocked => {
             let reason = match c.badge {
                 Badge::NeedsPort => "java_only",
                 Badge::NeedsNewerHorizon | Badge::DoesntBuildOnYourHorizon => "horizon_version",
@@ -364,7 +492,10 @@ fn summary_json(h: &ProjectSummary, compat: Value, installed: Vec<String>, updat
         "author": h.authors.first().cloned().unwrap_or_default(),
         "icon_url": h.icon_url, "downloads": h.downloads, "follows": 0,
         "updated_at": updated, "categories": h.categories, "compatibility": compat,
-        "installed_in": installed, "featured": featured(h)
+        "installed_in": installed, "featured": featured(h),
+        "game_versions": h.game_versions, "native": h.kind == ContentKind::NativeMod,
+        "flagged": matches!(h.fair_play, FairPlay::Flagged { .. }),
+        "verified": false, "price": null
     });
     if let Some(f) = shader_format(h.kind) {
         v["shader_format"] = json!(f);
@@ -394,9 +525,16 @@ pub async fn content_search(state: State<'_>, args: ContentSearchQuery) -> Res<V
     // Whether any source has results past this page (the UI's "Load more").
     let mut more = false;
     let incompatible = |c: &Value| c["status"] == "incompatible";
+    let price = match args.price.as_deref() {
+        Some("free") => Some(PriceFilter::Free),
+        Some("paid") => Some(PriceFilter::Paid),
+        _ => None,
+    };
+    // Paid and verified projects exist only in Rustic's catalogue: the others hold nothing then.
+    let rustic_only = price == Some(PriceFilter::Paid) || args.verified;
 
     // Horizon's registry: one small index, searched locally (on the first page).
-    if want("horizon") && kind != ContentKind::Plugin {
+    if want("horizon") && kind != ContentKind::Plugin && !rustic_only {
         match horizon_index(&env).await {
             Ok(index) => {
                 let filters: Vec<String> = args.category.iter().cloned().collect();
@@ -434,6 +572,10 @@ pub async fn content_search(state: State<'_>, args: ContentSearchQuery) -> Res<V
                 if args.compatible_only {
                     judged.retain(|(_, c, _)| !incompatible(c));
                 }
+                if matches!(args.sort.as_deref(), Some("updated" | "newest")) {
+                    // RFC 3339 dates sort as text; the newest first.
+                    judged.sort_by(|a, b| b.2.cmp(&a.2));
+                }
                 total += judged.len() as u64;
                 let (start, end) = page_bounds(judged.len(), args.offset, limit);
                 more |= end < judged.len();
@@ -448,7 +590,7 @@ pub async fn content_search(state: State<'_>, args: ContentSearchQuery) -> Res<V
 
     // Modrinth: Java mods are listed as not running; packs, shaders, data packs and modpacks
     // are judged by kind. Bukkit-family plugins are not searched (they are not Rustic plugins).
-    if want("modrinth") && kind != ContentKind::Plugin {
+    if want("modrinth") && kind != ContentKind::Plugin && !rustic_only {
         let page = modrinth()?
             .search(&SearchQuery {
                 query: args.query.clone(),
@@ -495,34 +637,70 @@ pub async fn content_search(state: State<'_>, args: ContentSearchQuery) -> Res<V
         }
     }
 
-    // Rustic's catalogue (plugins and curated content): served by Rustic Cloud once its
-    // `/v1/content` routes exist (HANDOFF); until then it answers nothing.
+    // Rustic's catalogue: curated entries and creators' marketplace projects (ADR 0155). The
+    // UI's kind may cover two of the API's (mods and native mods, both shader formats): one
+    // query each, paged alike, as the sources are. Each hit is judged from its versions' manifest
+    // facts (cached), as Horizon's registry hits are.
     if want("rustic") {
-        match rustic_registry(&state)?
-            .search(&args.query, Some(kind), args.offset, limit)
-            .await
-        {
-            Ok(mut found) => {
-                more |= found.len() >= limit as usize;
-                policy.apply(&mut found);
-                found.retain(|p| !blocked(p));
-                for p in &found {
-                    let inst = installed_in(target.as_ref(), SourceKind::Rustic, &p.id);
-                    let off_server = !matches!(t, Some(Target::Server { .. }) | None);
-                    let c = if p.kind == ContentKind::Plugin && off_server {
-                        json!({ "status": "incompatible", "reason": "needs_rustic_server",
-                                "detail": "A plugin goes into a Rustic Server server." })
-                    } else {
-                        json!({ "status": "compatible", "builds_on_horizon": true })
-                    };
-                    if args.compatible_only && incompatible(&c) {
-                        continue;
-                    }
-                    total += 1;
-                    hits.push(summary_json(p, c, inst, ""));
+        let reg = rustic_registry(&state)?;
+        let mut pages = tokio::task::JoinSet::new();
+        for k in kinds_for(kind) {
+            let reg = reg.clone();
+            let q = RusticSearch {
+                query: args.query.clone(),
+                kind: Some(k),
+                category: args.category.clone(),
+                tag: None,
+                sort: RusticSort::parse(args.sort.as_deref().unwrap_or("relevance")),
+                price,
+                verified: args.verified,
+                offset: args.offset,
+                limit,
+            };
+            pages.spawn(async move { reg.search(&q).await });
+        }
+        let mut found: Vec<RusticProject> = Vec::new();
+        while let Some(page) = pages.join_next().await {
+            match page {
+                Ok(Ok(page)) => {
+                    more |= page.has_more;
+                    total += page.total;
+                    found.extend(page.hits);
                 }
+                Ok(Err(e)) => tracing::debug!("Rustic catalogue: {e}"),
+                Err(e) => tracing::warn!("Rustic catalogue search task: {e}"),
             }
-            Err(e) => tracing::debug!("Rustic catalogue: {e}"),
+        }
+        for p in &mut found {
+            let local = policy.judge(&p.summary);
+            p.summary.fair_play = stricter(std::mem::take(&mut p.summary.fair_play), local);
+        }
+        let before = found.len();
+        found.retain(|p| !blocked(&p.summary));
+        total = total.saturating_sub((before - found.len()) as u64);
+        let mut versions = tokio::task::JoinSet::new();
+        for (i, p) in found.iter().enumerate() {
+            let reg = reg.clone();
+            let id = p.summary.id.clone();
+            versions.spawn(async move { (i, rustic_versions(&reg, &id, false).await) });
+        }
+        let mut judged: Vec<Option<Arc<Vec<RusticVersion>>>> = vec![None; found.len()];
+        while let Some(Ok((i, v))) = versions.join_next().await {
+            match v {
+                Ok(v) => judged[i] = Some(v),
+                Err(e) => tracing::debug!("Rustic versions: {e}"),
+            }
+        }
+        for (p, v) in found.iter().zip(&judged) {
+            let c = rustic_compat(p, v.as_deref().map(Vec::as_slice), t, &env);
+            if args.compatible_only && incompatible(&c) {
+                total = total.saturating_sub(1);
+                continue;
+            }
+            let inst = installed_in(target.as_ref(), SourceKind::Rustic, &p.summary.id);
+            let mut v = summary_json(&p.summary, c, inst, "");
+            rustic_extras(&mut v, p);
+            hits.push(v);
         }
     }
 
@@ -749,27 +927,112 @@ pub async fn content_get(state: State<'_>, args: ContentGetArgs) -> Res<Value> {
             Ok(v)
         }
         Src::Rustic(id) => {
-            let versions = rustic_registry(&state)?
-                .versions(id)
+            let reg = rustic_registry(&state)?;
+            let mut p = reg.project(id).await.map_err(rustic_not_found)?;
+            let local = FairPlayPolicy::default().judge(&p.summary);
+            p.summary.fair_play = stricter(std::mem::take(&mut p.summary.fair_play), local);
+            if let FairPlay::Blocked { reason } = &p.summary.fair_play {
+                return Err(IpcError::with_reason(
+                    IpcErrorCode::Conflict,
+                    format!("Not offered by Rustic: {reason}"),
+                    "not_fair_play",
+                ));
+            }
+            // The page's id may be a slug: versions and the ledger use the id.
+            let pid = p.summary.id.clone();
+            let versions = rustic_versions(&reg, &pid, true)
                 .await
-                .map_err(|_| not_available_yet("Rustic's content catalogue"))?;
-            let first = versions
-                .first()
-                .ok_or_else(|| IpcError::not_found("this project has no version"))?;
+                .map_err(rustic_not_found)?;
+            let builds = matches!(
+                p.summary.kind,
+                ContentKind::Mod
+                    | ContentKind::NativeMod
+                    | ContentKind::Modpack
+                    | ContentKind::Plugin
+            );
             let version_dtos: Vec<Value> = versions
                 .iter()
-                .map(|v| version_json(v, compatibility(&compat::check(v, t, &env), true)))
+                .map(|v| {
+                    let mut j = version_json(
+                        &v.version,
+                        compatibility(&compat::check(&v.version, t, &env), builds),
+                    );
+                    j["channel"] = json!(v.channel.as_str());
+                    j["downloads"] = json!(v.downloads);
+                    j
+                })
                 .collect();
-            Ok(json!({
-                "id": format!("rustic:{id}"), "slug": id, "kind": kind_name(first.kind),
-                "source": "rustic", "name": first.name, "summary": "", "author": "",
-                "icon_url": null, "downloads": 0, "follows": 0, "updated_at": first.published,
-                "categories": [], "compatibility": compatibility(&compat::check(first, t, &env), true),
-                "installed_in": installed_in(target.as_ref(), SourceKind::Rustic, id),
-                "featured": false, "description_md": "", "license": "", "side": "server",
-                "gallery": [], "versions": version_dtos, "dependencies": [], "changelog": [],
-                "links": {}
-            }))
+            let top = rustic_compat(&p, Some(&versions), t, &env);
+            // The newest version's dependencies (Rustic project ids), with their names.
+            let deps: Vec<Dependency> = versions
+                .first()
+                .map(|v| v.version.dependencies.clone())
+                .unwrap_or_default();
+            let mut dep_dtos = Vec::new();
+            for d in deps.iter().filter(|d| d.kind != DependencyKind::Embedded) {
+                let Some(dep) = d.project_id.clone() else {
+                    continue;
+                };
+                let name = match reg.project(&dep).await {
+                    Ok(x) => x.summary.name,
+                    Err(_) => dep.clone(),
+                };
+                let relation = match d.kind {
+                    DependencyKind::Required => "required",
+                    DependencyKind::Incompatible => "incompatible",
+                    _ => "optional",
+                };
+                dep_dtos.push(json!({
+                    "project_id": format!("rustic:{dep}"), "name": name, "relation": relation,
+                    "installed": has(SourceKind::Rustic, &dep)
+                }));
+            }
+            let side = match versions
+                .first()
+                .and_then(|v| v.version.horizon.as_ref())
+                .and_then(|h| h.side.as_deref())
+            {
+                Some("server") => "server",
+                Some("both") => "both",
+                Some("client") => "client",
+                _ if p.summary.kind == ContentKind::Plugin => "server",
+                _ => "client",
+            };
+            let updated = versions
+                .first()
+                .map(|v| v.version.published.clone())
+                .unwrap_or_default();
+            let mut v = summary_json(
+                &p.summary,
+                top,
+                installed_in(target.as_ref(), SourceKind::Rustic, &pid),
+                &updated,
+            );
+            rustic_extras(&mut v, &p);
+            v["description_md"] = json!(p.description.clone().unwrap_or_default());
+            v["license"] = json!(p.summary.license.clone().unwrap_or_default());
+            v["side"] = json!(side);
+            v["gallery"] = gallery(
+                p.gallery
+                    .iter()
+                    .enumerate()
+                    .map(|(i, g)| (g.url.clone(), format!("{} {}", p.summary.name, i + 1))),
+            );
+            v["versions"] = json!(version_dtos);
+            v["dependencies"] = json!(dep_dtos);
+            v["changelog"] = json!(
+                versions
+                    .iter()
+                    .filter(|x| !x.changelog.is_empty())
+                    .map(|x| json!({ "version": x.version.version, "published_at": x.version.published, "notes": x.changelog }))
+                    .collect::<Vec<_>>()
+            );
+            v["links"] = json!({
+                "source": p.links.source, "issues": p.links.issues, "website": p.links.website,
+                "wiki": p.links.wiki, "discord": p.links.discord
+            });
+            v["marketplace"] = json!(p.marketplace);
+            Ok(v)
         }
     }
 }
@@ -862,6 +1125,33 @@ impl DependencySource for ModrinthDeps {
     }
 }
 
+/// Rustic dependencies: other Rustic projects (by id), the newest version that installs.
+struct RusticDeps {
+    reg: Arc<HttpRusticRegistry>,
+    env: HorizonEnv,
+}
+
+#[async_trait::async_trait]
+impl DependencySource for RusticDeps {
+    async fn by_version_id(&self, id: &str) -> rusticmc_content::Result<ContentVersion> {
+        let project = id.split('@').next().unwrap_or(id);
+        rustic_versions(&self.reg, project, false)
+            .await?
+            .iter()
+            .find(|v| v.version.id == id)
+            .map(|v| v.version.clone())
+            .ok_or_else(|| rusticmc_content::ContentError::NotFound(id.to_owned()))
+    }
+    async fn best_for_project(
+        &self,
+        project: &str,
+        _ctx: &ResolveContext,
+    ) -> rusticmc_content::Result<Option<ContentVersion>> {
+        let versions = rustic_versions(&self.reg, project, false).await?;
+        Ok(best_version(&versions, None, &self.env).map(|v| v.version.clone()))
+    }
+}
+
 fn downloader(state: &AppState) -> CoreDownloader {
     CoreDownloader {
         manager: state.downloads.clone(),
@@ -907,6 +1197,45 @@ pub struct InstalledItem {
     pub project_id: String,
     pub name: String,
     pub version: String,
+}
+
+/// What a native mod install needs before anything is downloaded (see `install_project`).
+fn native_install_gate(
+    state: &AppState,
+    versions: &[ContentVersion],
+    ui_target: &InstallTarget,
+) -> Res<()> {
+    if let Some(v) = versions.iter().find(|v| {
+        v.kind == ContentKind::NativeMod
+            && !matches!(v.source, SourceKind::Horizon | SourceKind::Rustic)
+    }) {
+        return Err(IpcError::with_reason(
+            IpcErrorCode::Conflict,
+            format!(
+                "{}: native mods install only from Horizon's registry or Rustic's marketplace",
+                v.name
+            ),
+            "native.source",
+        ));
+    }
+    let InstallTarget::Instance { instance_id } = ui_target else {
+        return Err(IpcError::invalid("a native mod goes into an instance"));
+    };
+    let instance = state.instances.store.get(instance_id)?;
+    let build = state.instances.build_for(&instance)?;
+    if build.source != "rustic-edition" {
+        return Err(IpcError::with_reason(
+            IpcErrorCode::Unavailable,
+            "Native mods are built into the Rustic edition: switch this instance to it first.",
+            "native.not_edition",
+        ));
+    }
+    if rusticmc_native::Consent::load(&state.instances.store.dir(instance_id)).is_none() {
+        return Err(crate::cmd::native::native_err(
+            rusticmc_native::NativeError::ConsentRequired,
+        ));
+    }
+    Ok(())
 }
 
 /// Installs `project_id` (any source) into `target`: the shared path of `content_install`, the
@@ -1016,24 +1345,53 @@ pub async fn install_project(
             (versions, None)
         }
         Src::Rustic(id) => {
-            let versions = rustic_registry(state)?
-                .versions(id)
+            let reg = rustic_registry(state)?;
+            let p = reg.project(id).await.map_err(rustic_not_found)?;
+            // Creator sales are off (ADR 0155): a paid project is shown, never installed.
+            if p.is_paid() {
+                return Err(IpcError::with_reason(
+                    IpcErrorCode::Conflict,
+                    format!(
+                        "{} is a paid project: buying it is not available yet",
+                        p.summary.name
+                    ),
+                    "content.paid",
+                ));
+            }
+            let pid = p.summary.id.clone();
+            let versions = rustic_versions(&reg, &pid, true)
                 .await
-                .map_err(|_| not_available_yet("Rustic's content catalogue"))?;
+                .map_err(rustic_not_found)?;
             let version = match version_id {
                 Some(v) => {
                     let v = v.strip_prefix("rustic:").unwrap_or(v);
                     versions
-                        .into_iter()
-                        .find(|x| x.id == v)
-                        .ok_or_else(|| IpcError::not_found(v.to_owned()))?
+                        .iter()
+                        .find(|x| x.version.id == v)
+                        .map(|x| x.version.clone())
+                        .ok_or_else(|| IpcError::not_found(format!("{v} is not listed")))?
                 }
-                None => versions
-                    .into_iter()
-                    .next()
+                None => best_version(&versions, Some(&target), &env)
+                    .map(|x| x.version.clone())
                     .ok_or_else(|| IpcError::not_found("this project has no version"))?,
             };
-            (vec![version], None)
+            let versions = if with_dependencies {
+                let ledger = Ledger::load(target.root()).map_err(content_err)?;
+                resolve::resolve(
+                    version,
+                    &RusticDeps {
+                        reg,
+                        env: env.clone(),
+                    },
+                    &ledger,
+                    &ctx,
+                )
+                .await
+                .map_err(content_err)?
+            } else {
+                vec![version]
+            };
+            (versions, None)
         }
     };
     // A data pack aimed at an instance goes into the packs its new worlds start with.
@@ -1083,6 +1441,14 @@ pub async fn install_project(
             version: p.manifest.version.to_string(),
         }]);
     }
+    // Native mods (ADR 0157): only from Horizon's registry (reviewed, its files pinned) or Rustic's
+    // marketplace (admin-approved versions only), into an instance of the Rustic edition, once
+    // the player accepted the trust notice for it. The build runs next (`native_build`, or the
+    // next launch).
+    let native = versions.iter().any(|v| v.kind == ContentKind::NativeMod);
+    if native {
+        native_install_gate(state, &versions, ui_target)?;
+    }
     let installer = Installer {
         downloader: &dl,
         env: &env,
@@ -1095,11 +1461,25 @@ pub async fn install_project(
             &target,
             &InstallOptions {
                 enable: true,
-                allow_native: false,
+                allow_native: native,
             },
         )
         .await
         .map_err(content_err)?;
+    // A native mod's package passes the builder's own checks (only Rust, TOML and data files
+    // under `mixins/<id>/`, sizes, no links) before it stays: else it is removed again.
+    for d in &done {
+        if d.path.extension().is_some_and(|e| e == "hnmod")
+            && let Err(e) = rusticmc_native::bundle::Bundle::read(&d.path)
+        {
+            let _ = std::fs::remove_file(&d.path);
+            return Err(IpcError::with_reason(
+                IpcErrorCode::Conflict,
+                format!("refused: {e}"),
+                "native.bundle",
+            ));
+        }
+    }
     Ok(done
         .iter()
         .map(|d| {
@@ -1281,7 +1661,114 @@ pub async fn update_instance(
 
 #[cfg(test)]
 mod tests {
-    use super::page_bounds;
+    use super::*;
+
+    #[test]
+    fn a_native_mod_that_fits_is_installable_and_says_it_builds() {
+        let c = Compatibility {
+            verdict: Verdict::NeedsBuild,
+            badge: Badge::BuildsOnYourHorizon,
+            reasons: vec!["needs hook points 1, your Horizon has 415".into()],
+        };
+        let v = compatibility(&c, false);
+        assert_eq!(v["status"], "compatible");
+        assert_eq!(v["needs_build"], true);
+        assert!(v["detail"].as_str().unwrap().contains("hook points"));
+        let refused = Compatibility {
+            verdict: Verdict::Incompatible,
+            badge: Badge::NeedsNewerHorizon,
+            reasons: vec!["update Horizon".into()],
+        };
+        assert_eq!(compatibility(&refused, false)["reason"], "horizon_version");
+    }
+
+    fn rustic_project(kind: &str, price: i64) -> RusticProject {
+        serde_json::from_value(json!({
+            "source": "rustic", "id": "sky", "slug": "sky", "kind": kind, "name": "Sky",
+            "summary": "s", "authors": ["lea"], "downloads": 3, "fair_play": { "status": "clean" },
+            "verified": true, "price": { "amount_cents": price, "currency": "EUR" },
+            "gallery": [{ "url": "https://cdn.rustic-launcher.com/a.png", "width": 1, "height": 1 }],
+            "owner": { "id": "u", "username": "lea_b", "display_name": "Léa" },
+            "updated_at": "2026-11-12T10:00:00Z", "size": 42, "latest_version": "1.0.0"
+        }))
+        .unwrap()
+    }
+
+    fn rustic_version(v: &str, api: &str) -> RusticVersion {
+        serde_json::from_value(json!({
+            "source": "rustic", "project_id": "sky", "id": format!("sky@{v}"), "name": "Sky",
+            "version": v, "kind": "mod", "game_versions": [], "loaders": [], "files": [],
+            "dependencies": [], "published": "2026-11-12T10:00:00Z",
+            "horizon": { "api": api, "hooks": null, "side": null, "capabilities": [],
+                         "broken_on": [], "key": null },
+            "channel": "beta", "downloads": 7
+        }))
+        .unwrap()
+    }
+
+    #[test]
+    fn marketplace_cards_carry_price_banner_and_author() {
+        let p = rustic_project("mod", 499);
+        let mut v = summary_json(&p.summary, json!({ "status": "unknown" }), vec![], "");
+        rustic_extras(&mut v, &p);
+        assert_eq!(v["id"], "rustic:sky");
+        assert_eq!(v["author"], "Léa");
+        assert_eq!(v["verified"], true);
+        assert_eq!(
+            v["price"],
+            json!({ "amount_minor": 499, "currency": "EUR" })
+        );
+        assert_eq!(v["banner_url"], "https://cdn.rustic-launcher.com/a.png");
+        assert_eq!(v["size_bytes"], 42);
+        assert_eq!(v["updated_at"], "2026-11-12T10:00:00Z");
+        assert_eq!(v["native"], false);
+        assert_eq!(v["flagged"], false);
+        let free = rustic_project("native_mod", 0);
+        let mut v = summary_json(&free.summary, json!({ "status": "unknown" }), vec![], "");
+        rustic_extras(&mut v, &free);
+        assert_eq!(v["price"], Value::Null);
+        assert_eq!(v["kind"], "mod");
+        assert_eq!(v["native"], true);
+    }
+
+    #[test]
+    fn the_newest_installable_version_is_preferred() {
+        let env = HorizonEnv::default();
+        let list = vec![
+            rustic_version("2.0.0", "9.9"),
+            rustic_version("1.0.0", "0.2"),
+        ];
+        assert_eq!(
+            best_version(&list, None, &env).unwrap().version.version,
+            "1.0.0"
+        );
+        let none = vec![rustic_version("2.0.0", "9.9")];
+        assert_eq!(
+            best_version(&none, None, &env).unwrap().version.version,
+            "2.0.0"
+        );
+        assert!(best_version(&[], None, &env).is_none());
+        let p = rustic_project("mod", 0);
+        assert_eq!(
+            rustic_compat(&p, Some(&list), None, &env)["status"],
+            "compatible"
+        );
+        assert_eq!(
+            rustic_compat(&p, Some(&none), None, &env)["status"],
+            "incompatible"
+        );
+        assert_eq!(rustic_compat(&p, None, None, &env)["status"], "unknown");
+    }
+
+    #[test]
+    fn fair_play_keeps_the_stricter_verdict() {
+        let flagged = FairPlay::Flagged { reason: "r".into() };
+        let blocked = FairPlay::Blocked { reason: "b".into() };
+        assert_eq!(stricter(FairPlay::Clean, flagged.clone()), flagged);
+        assert_eq!(stricter(flagged.clone(), FairPlay::Clean), flagged);
+        assert_eq!(stricter(flagged, blocked.clone()), blocked);
+        assert_eq!(stricter(blocked.clone(), FairPlay::Clean), blocked);
+    }
 
     #[test]
     fn local_results_page_past_the_first() {

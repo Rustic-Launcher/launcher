@@ -4,7 +4,7 @@ Owners: frontend (TypeScript client + browser mock, ADR 0024) and desktop (Rust 
 `apps/launcher/src-tauri`). **Generated** from `apps/launcher/src/ipc/commands.ts` and
 `src/ipc/types/*.ts` by `pnpm --filter @rustic/launcher gen:ipc-doc`: edit the TypeScript, then regenerate.
 
-120 commands, 16 events.
+129 commands, 18 events.
 
 ## Conventions
 
@@ -58,6 +58,7 @@ type InstanceId = { instance_id: string };
 | `rustic_server_set`<br>Sets the manual override after checking the file answers `--rustic-version` (`invalid_argument`, reason `server.not_rustic_server`, otherwise); `path: null` clears it (automatic). | `{ path: string \| null }` | `RusticServerStatus` |
 | `app_open_path` | `{ path: string }` | `void` |
 | `app_open_url` | `{ url: string }` | `void` |
+| `app_take_deep_link`<br>The `rustic://content/...` or `rustic://server/...` link that started (or reached) the launcher before the UI listened, taken once (null when none). | — | `PageDeepLink \| null` |
 | `player_skin_url`<br>A player's skin URL (Mojang's session service, cached); `null` without one. | `{ uuid: string }` | `string \| null` |
 | `app_pick_path` | `PickPathRequest` | `string \| null` |
 | `app_check_update` | — | `LauncherUpdate` |
@@ -125,7 +126,20 @@ type InstanceId = { instance_id: string };
 | `content_search` | `ContentSearchQuery` | `ContentSearchResult` |
 | `content_get` | `{ project_id: string; target?: InstallTarget }` | `ContentDetail` |
 | `content_categories` | `{ kind: ContentKind }` | `ContentCategory[]` |
-| `content_install` | `InstallRequest` | `InstallResult` |
+| `content_install`<br>A native mod needs the trust notice accepted for the instance first (`unauthorized`, reason `native.consent_required`), Horizon's registry or Rustic's marketplace as source (`native.source`) and a Rustic edition instance (`native.not_edition`). | `InstallRequest` | `InstallResult` |
+
+### Native mods (compiled on the player's PC, ADR 0157)
+
+| Command | `args` (Rust: `<Name>Args`) | Result |
+|---|---|---|
+| `native_status`<br>An instance's native mods, its build, the trust notice and Rust. | `InstanceId` | `NativeStatus` |
+| `native_overview`<br>Every instance with native mods, read from disk only (no Rust detection): the Profiles page's cards (ADR 0159). Instances without native mods are left out. | — | `NativeOverview[]` |
+| `native_consent`<br>The player's click on the trust notice: `accept: false` withdraws it. | `InstanceId & { accept: boolean }` | `NativeStatus` |
+| `native_toolchain_install`<br>Installs the launcher's own Rust (rustup-init, checked against its published SHA-256) as a task (`native-toolchain`). | — | `{ task_id: string }` |
+| `native_build`<br>Compiles the instance's client with its native mods as a task (`native-build`, cancellable with `download_cancel`); refuses with `native.consent_required`, `native.toolchain_missing`, `native.not_edition`, `native.running`. | `InstanceId` | `{ task_id: string }` |
+| `native_cache_info` | — | `NativeCacheInfo` |
+| `native_cache_clear`<br>Clears the compile cache; the bytes freed (`conflict`, `native.busy`, while a build runs). | — | `number` |
+| `native_cache_set_limit` | `{ cache_limit_gib: number }` | `NativeCacheInfo` |
 
 ### Multiplayer list
 
@@ -230,6 +244,8 @@ type InstanceId = { instance_id: string };
 | `dns-status` | `DomainBinding` |
 | `accounts-changed` | `Account[]` |
 | `deep-link` | `DeepLinkEvent` |
+| `native-build-progress` | `NativeBuildProgress` |
+| `native-changed` | `{ instance_id?: string }` |
 
 ## Types
 
@@ -336,7 +352,15 @@ export type SettingsPatch = {
 };
 
 export type DownloadKind =
-  'game' | 'content' | 'modpack' | 'server' | 'java' | 'update' | 'prepare';
+  | 'game'
+  | 'content'
+  | 'modpack'
+  | 'server'
+  | 'java'
+  | 'update'
+  | 'prepare'
+  | 'native-build'
+  | 'native-toolchain';
 
 export interface DownloadTask {
   id: string;
@@ -350,6 +374,8 @@ export interface DownloadTask {
   speed_bps: number;
   state: 'queued' | 'running' | 'paused' | 'done' | 'failed' | 'cancelled';
   error?: string;
+  /** What a long task is doing now (a native build's step), in English. */
+  detail?: string;
 }
 
 export interface GameInstallDetection {
@@ -452,10 +478,40 @@ export interface MicrosoftBrowserLoginStart {
   authorize_url: string;
 }
 
-/** Payload of the `deep-link` event (`rustic://join/<target>`, `rustic://auth?ticket=…`). */
+/**
+ * `rustic://content/rustic/<project>[?version=<project>@<version>]`, parsed strictly by the desktop
+ * side: opens the project's page with an install prompt, never installs by itself.
+ */
+export interface ContentDeepLink {
+  action: 'content';
+  source: 'rustic';
+  /** `[a-z0-9_-]{1,64}`. */
+  project: string;
+  /** `<project>@<version>`, or null for the newest compatible one. */
+  version: string | null;
+  url: string;
+}
+
+/**
+ * `rustic://server/<slug>` (ADR 0158), parsed strictly by the desktop side: opens the server's
+ * page in the directory, never joins by itself.
+ */
+export interface ServerDeepLink {
+  action: 'server';
+  /** A directory slug `[a-z0-9-]{3,48}` or a listing id (UUID). */
+  listing: string;
+  url: string;
+}
+
+/** A link that opens a page (kept for the UI when it arrives before the UI listens). */
+export type PageDeepLink = ContentDeepLink | ServerDeepLink;
+
+/** Payload of the `deep-link` event (`rustic://join/<target>`, `rustic://auth?ticket=…`, `rustic://content/…`, `rustic://server/…`). */
 export type DeepLinkEvent =
   | { action: 'join'; target: string; url: string }
-  | { action: 'auth'; ok: boolean; error?: string | null };
+  | { action: 'auth'; ok: boolean; error?: string | null }
+  | ContentDeepLink
+  | ServerDeepLink;
 
 /** Rustic platform identity (friends, cosmetics, purchases). Never replaces the game licence. */
 export interface RusticSession {
@@ -493,9 +549,13 @@ export interface RusticLoginResult {
 
 ```ts
 import type { IsoDate } from './app';
+import type { Money } from './dns';
 
 export type ContentKind = 'mod' | 'modpack' | 'resourcepack' | 'shader' | 'datapack' | 'plugin';
 export type ContentSource = 'horizon' | 'modrinth' | 'rustic';
+export type ContentSort = 'relevance' | 'downloads' | 'updated' | 'newest';
+/** Rustic's marketplace: free or paid projects (only Rustic has paid ones). */
+export type PriceFilter = 'free' | 'paid';
 
 export type IncompatibilityReason =
   | 'horizon_version'
@@ -511,6 +571,9 @@ export type Compatibility =
       status: 'compatible';
       /** The project ships a build made for the target's Horizon version. */
       builds_on_horizon: boolean;
+      /** A native mod that fits: the launcher compiles it into the instance's own client. */
+      needs_build?: boolean;
+      detail?: string;
     }
   | { status: 'incompatible'; reason: IncompatibilityReason; detail: string }
   | { status: 'unknown' };
@@ -536,6 +599,22 @@ export interface ContentSummary {
   installed_in: string[];
   featured: boolean;
   shader_format?: ShaderFormat;
+  /** Flagged by the fair-play policy: installable with a notice, never promoted. */
+  flagged?: boolean;
+  /** Rustic: an admin confirmed the project matches its description. */
+  verified?: boolean;
+  /** A paid Rustic project (creator sales are not open yet: shown, never sold); null when free. */
+  price?: Money | null;
+  /** A wide image for cards (the first screenshot), from an allowed CDN. */
+  banner_url?: string | null;
+  /** Bytes of the newest version's file, when the source says. */
+  size_bytes?: number | null;
+  latest_version?: string | null;
+  created_at?: IsoDate | null;
+  /** Game versions the source lists (`26.3`...). */
+  game_versions?: string[];
+  /** A Horizon native mod: Rust source compiled into the game on the player's PC. */
+  native?: boolean;
 }
 
 export interface ContentVersion {
@@ -564,7 +643,15 @@ export interface ContentDetail extends ContentSummary {
   versions: ContentVersion[];
   dependencies: ContentDependency[];
   changelog: { version: string; published_at: IsoDate; notes: string }[];
-  links: { source?: string; issues?: string; website?: string };
+  links: {
+    source?: string | null;
+    issues?: string | null;
+    website?: string | null;
+    wiki?: string | null;
+    discord?: string | null;
+  };
+  /** Rustic: uploaded by its creator on the website's marketplace (not curated). */
+  marketplace?: boolean;
 }
 
 export interface ContentSearchQuery {
@@ -575,7 +662,11 @@ export interface ContentSearchQuery {
   target?: InstallTarget;
   compatible_only: boolean;
   category?: string;
-  sort: 'relevance' | 'downloads' | 'updated' | 'newest';
+  sort: ContentSort;
+  /** Rustic only has paid projects; `paid` leaves the other sources out. */
+  price?: PriceFilter;
+  /** Only projects verified by Rustic (Rustic's catalogue only). */
+  verified?: boolean;
   offset: number;
   limit: number;
 }
@@ -940,6 +1031,8 @@ export type LaunchPhase =
   | 'checking'
   | 'downloading'
   | 'preparing'
+  /** Compiling the instance's native mods before it starts (ADR 0157). */
+  | 'building'
   | 'launching'
   | 'running'
   | 'stopping'
@@ -992,6 +1085,114 @@ export interface MultiplayerEntry {
   address: string;
   favorite: boolean;
   last_joined_at: IsoDate | null;
+}
+```
+
+### native.ts
+
+```ts
+/** Native mods compiled on the player's PC (ADR 0157, `cmd/native.rs`). */
+
+/** `not_needed`: no native mod turned on (the prebuilt client plays). */
+export type NativeBuildState = 'not_needed' | 'not_built' | 'needs_rebuild' | 'up_to_date';
+
+export interface NativeMod {
+  id: string;
+  version: string;
+  enabled: boolean;
+}
+
+export interface NativeLeftOut {
+  id: string;
+  version: string;
+  /** `other_version` (doesn't apply to or compile on this Horizon) or `unsupported`. */
+  why: string;
+  detail: string;
+}
+
+export interface NativeBuildInfo {
+  /** Unix seconds. */
+  built_at: number;
+  seconds: number;
+  /** Crates compiled (0: nothing changed). */
+  compiled: number;
+  mods: NativeMod[];
+  left_out: NativeLeftOut[];
+  client_bytes: number;
+  base_build: string;
+  rust_version: string;
+}
+
+export interface NativeToolchain {
+  state: 'ready' | 'missing';
+  /** Where the Rust found comes from, when ready. */
+  kind: 'managed' | 'rustup' | 'system' | null;
+  version: string;
+  reason: string | null;
+  /** The launcher can install its own Rust (after the player agreed). */
+  installable: boolean;
+  /** What the player installs first (Linux and macOS system packages). */
+  prerequisites: string[];
+}
+
+export interface NativeStatus {
+  instance_id: string;
+  state: NativeBuildState;
+  /** False when the instance plays a build native mods can't go into (a plain Horizon build). */
+  supported: boolean;
+  mods: NativeMod[];
+  /** The player accepted the trust notice for this instance. */
+  consent: boolean;
+  consent_at: number | null;
+  build: NativeBuildInfo | null;
+  /** The running build's task. */
+  task_id: string | null;
+  toolchain: NativeToolchain;
+}
+
+/** One instance's native mods at a glance (`native_overview`, ADR 0159). */
+export interface NativeOverview {
+  instance_id: string;
+  state: NativeBuildState;
+  /** Native mods installed. */
+  mods: number;
+  /** Of which turned on. */
+  enabled: number;
+  /** False when the instance plays a plain Horizon build. */
+  supported: boolean;
+  /** A build of this instance is running. */
+  building: boolean;
+}
+
+export interface NativeCacheUsage {
+  cache_bytes: number;
+  toolchain_bytes: number;
+  crates_bytes: number;
+  source_bytes: number;
+  limit_bytes: number;
+  path: string;
+}
+
+export interface NativeCacheInfo {
+  usage: NativeCacheUsage;
+  /** 0: never cleared automatically. */
+  limit_gib: number;
+  toolchain: NativeToolchain;
+  building: boolean;
+}
+
+export type NativePhase =
+  'toolchain' | 'source' | 'tool' | 'mixins' | 'compile' | 'install' | 'cleanup' | 'done';
+
+export interface NativeBuildProgress {
+  instance_id: string;
+  task_id: string;
+  phase: NativePhase;
+  /** 0..1 over the whole build. */
+  fraction: number;
+  message: string;
+  /** While compiling: crates done and in all. */
+  units: [number, number] | null;
 }
 ```
 
@@ -1239,6 +1440,15 @@ export interface CloudClient {
   // content feeds
   news(): Promise<NewsItem[]>;
   featuredServers(): Promise<FeaturedServer[]>;
+  // server directory (public; ADR 0158)
+  /** `GET /v1/server-listings`: search, filters, sorts, paging. */
+  serverListings(query: ServerListingQuery): Promise<ServerListingPage>;
+  /** `GET /v1/server-listings/{id}`: one server by id or slug, with its description. */
+  serverListing(idOrSlug: string): Promise<ServerListing>;
+  /** `POST /v1/server-listings/{id}/plays`: one anonymous "Play" press (the trending signal). */
+  recordServerPlay(id: string): Promise<void>;
+  /** `POST /v1/server-listings/{id}/reports` (signed in). */
+  reportServerListing(id: string, reason: ContentReportReason, details?: string): Promise<void>;
   notifications(): Promise<AppNotification[]>;
   markNotificationsRead(ids: string[]): Promise<void>;
   // cosmetics & store
@@ -1251,6 +1461,15 @@ export interface CloudClient {
   catalog(currency: Currency): Promise<StoreCatalog>;
   product(id: string, currency: Currency): Promise<StoreProduct>;
   purchase(req: PurchaseRequest): Promise<PurchaseResult>;
+  // content marketplace (signed in; ADR 0155)
+  /** `GET /v1/me/library`: free projects added, purchases and grants. */
+  contentLibrary(): Promise<LibraryItem[]>;
+  /** `PUT /v1/me/library/{id}`: a free project (paid ones answer `paid_content`). */
+  libraryAdd(projectId: string): Promise<void>;
+  libraryRemove(projectId: string): Promise<void>;
+  /** `GET /v1/me/content`: the projects this account publishes, whatever their state. */
+  myContent(): Promise<MarketplaceProject[]>;
+  reportContent(projectId: string, reason: ContentReportReason, details?: string): Promise<void>;
   // account & compliance
   parental(): Promise<ParentalControls>;
   setParental(patch: Partial<ParentalControls> & { pin?: string }): Promise<ParentalControls>;
@@ -1392,6 +1611,68 @@ export interface FeaturedServer {
   hue: number;
 }
 
+/** What a listed server runs (ADR 0158). */
+export type ServerEngine = 'horizon' | 'rustic';
+export type ListingSort = 'trending' | 'players' | 'new' | 'name' | 'featured';
+
+/** The cloud's last server list ping of a listed server (public addresses, every ~10 min). */
+export interface ServerListingStatus {
+  online: boolean;
+  players_online: number | null;
+  players_max: number | null;
+  motd: string | null;
+  version: string | null;
+  checked_at: string;
+}
+
+/**
+ * A server of the directory (`GET /v1/server-listings`, ADR 0158): published by its owner from
+ * the website, verified and featured by staff. Lists leave `description` null.
+ */
+export interface ServerListing {
+  id: string;
+  slug: string;
+  name: string;
+  address: string;
+  summary: string;
+  description: string | null;
+  tags: string[];
+  languages: string[];
+  engine: ServerEngine;
+  game_version: string | null;
+  requires_rustic_edition: boolean;
+  website: string | null;
+  discord: string | null;
+  icon_url: string | null;
+  banner_url: string | null;
+  verified: boolean;
+  featured: boolean;
+  owner: { id: string; username: string; display_name: string } | null;
+  status: ServerListingStatus | null;
+  /** "Play" presses from launchers over the last 7 days (the trending signal). */
+  plays_7d: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ServerListingQuery {
+  q?: string;
+  tag?: string;
+  language?: string;
+  engine?: ServerEngine;
+  verified?: boolean;
+  featured?: boolean;
+  sort?: ListingSort;
+  offset?: number;
+  limit?: number;
+}
+
+export interface ServerListingPage {
+  items: ServerListing[];
+  has_more: boolean;
+  total: number;
+}
+
 export type Rarity = 'common' | 'rare' | 'epic' | 'legendary';
 
 export interface Cosmetic {
@@ -1508,4 +1789,58 @@ export type RealtimeEvent =
   | { type: 'message'; message: ChatMessage }
   | { type: 'messages-read'; reader_id: string; read_at: string }
   | { type: 'join-server'; address: string };
+
+// ---- content marketplace (ADR 0155) ----
+
+/** The API's content kinds (`native_mod` and both shader formats are their own kinds there). */
+export type MarketplaceKind =
+  | 'mod'
+  | 'native_mod'
+  | 'modpack'
+  | 'resourcepack'
+  | 'shader'
+  | 'shaderpack'
+  | 'datapack'
+  | 'plugin';
+
+/** A Rustic catalogue project as the signed-in pages show it (library, own creations). */
+export interface MarketplaceProject {
+  id: string;
+  slug: string;
+  kind: MarketplaceKind;
+  name: string;
+  summary: string;
+  author: string;
+  icon_url: string | null;
+  /** The first screenshot. */
+  banner_url: string | null;
+  downloads: number;
+  verified: boolean;
+  /** Null when free. Paid projects are shown, not sold yet (creator sales are off). */
+  price: Money | null;
+  visibility: 'public' | 'unlisted' | 'private';
+  /** `pending` while a native mod waits for an admin. */
+  review: 'not_required' | 'pending' | 'approved' | 'rejected';
+  /** Owner view: taken down by a moderator. */
+  taken_down: boolean;
+  updated_at: string | null;
+  latest_version: string | null;
+}
+
+export interface LibraryItem {
+  project: MarketplaceProject;
+  source: 'free' | 'purchase' | 'grant';
+  added_at: string;
+}
+
+/** Report reasons the API takes (`POST /v1/content/projects/{id}/reports`). */
+export type ContentReportReason =
+  | 'spam'
+  | 'harassment'
+  | 'inappropriate_content'
+  | 'cheating'
+  | 'impersonation'
+  | 'copyright'
+  | 'malware'
+  | 'other';
 ```

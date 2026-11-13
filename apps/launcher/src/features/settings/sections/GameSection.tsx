@@ -19,6 +19,7 @@ import { invoke, IpcFailure, listen } from '@/ipc';
 import type { GameSettings, PrepareProgress, Settings } from '@/ipc/types/app';
 import { formatDate, formatMemory } from '@/lib/format';
 import { qk, useSettings, useSystemInfo } from '@/queries/core';
+import { NativeSettingsCard } from '@/features/native/NativeSettingsCard';
 import { RUSTIC_SERVER_ANCHOR } from '../anchors';
 import { settingsRoute } from '../routes';
 import { SettingRow, SettingsCard, SectionSkeleton, useSaveSettings } from '../components';
@@ -33,6 +34,7 @@ export function GameSection() {
       <MemoryCard settings={settings} />
       <PreparationCard settings={settings} />
       <RusticServerCard />
+      <NativeSettingsCard />
       <FoldersCard game={settings.game} />
       <ResolutionCard game={settings.game} />
     </div>

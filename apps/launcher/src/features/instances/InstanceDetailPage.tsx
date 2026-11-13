@@ -25,7 +25,8 @@ import { Page } from '@/components/Page';
 import { QueryError } from '@/components/RouteError';
 import { shortVersion } from '@/lib/format';
 import { InstanceActions } from './InstanceActions';
-import { InstancePlayControl } from './InstanceCard';
+import { InstanceCover } from './InstanceCover';
+import { InstancePlayControl } from './InstancePlayControl';
 import { useInstance } from './queries';
 import { ContentTab } from './tabs/ContentTab';
 import { OverviewTab } from './tabs/OverviewTab';
@@ -99,39 +100,41 @@ export function InstanceDetailPage() {
       >
         <ChevronLeft className="size-3.5" /> {t('title')}
       </Link>
-      <header className="rx-surface relative flex flex-wrap items-center gap-5 overflow-hidden rounded-2xl p-5">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-60"
-          style={{
-            background:
-              inst.icon.kind === 'preset'
-                ? `radial-gradient(80% 140% at 0% 0%, color-mix(in oklab, ${inst.icon.color} 35%, transparent), transparent 70%)`
-                : undefined,
-          }}
-        />
-        <InstanceIcon icon={inst.icon} size="xl" className="relative" />
-        <div className="relative flex min-w-0 flex-1 flex-col gap-1.5">
-          <h1 className="truncate text-2xl font-bold tracking-tight">{inst.name}</h1>
-          <HorizonVersion id={inst.horizon_version} badge className="text-fg-muted text-sm" />
-          <div className="flex flex-wrap gap-1.5">
-            {inst.update_available && (
-              <Badge variant="warning">
-                {tc('play.newVersion', { version: shortVersion(inst.update_available) })}
-              </Badge>
-            )}
-            {inst.source && (
-              <Badge variant="info">
-                {t('card.fromModpack', { name: inst.source.name, version: inst.source.version })}
-              </Badge>
-            )}
-            {inst.state === 'running' && <Badge variant="accent">{t('state.running')}</Badge>}
-            {inst.state === 'installing' && <Badge variant="info">{t('state.installing')}</Badge>}
-          </div>
+      <header
+        className="rx-surface relative overflow-hidden rounded-2xl"
+        data-testid="instance-header"
+      >
+        <div className="relative h-36">
+          <InstanceCover instance={inst} />
+          <span
+            aria-hidden
+            className="from-surface absolute inset-0 bg-gradient-to-t via-black/10 to-transparent"
+          />
         </div>
-        <div className="relative flex items-center gap-2">
-          <InstancePlayControl instance={inst} className="h-10 px-5 text-sm" />
-          <InstanceActions instance={inst} />
+        <div className="relative -mt-14 flex flex-wrap items-end gap-5 px-5 pb-5">
+          <InstanceIcon icon={inst.icon} size="xl" className="ring-surface relative ring-4" />
+          <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+            <h1 className="truncate text-2xl font-bold tracking-tight">{inst.name}</h1>
+            <HorizonVersion id={inst.horizon_version} badge className="text-fg-muted text-sm" />
+            <div className="flex flex-wrap gap-1.5">
+              {inst.update_available && (
+                <Badge variant="warning">
+                  {tc('play.newVersion', { version: shortVersion(inst.update_available) })}
+                </Badge>
+              )}
+              {inst.source && (
+                <Badge variant="info">
+                  {t('card.fromModpack', { name: inst.source.name, version: inst.source.version })}
+                </Badge>
+              )}
+              {inst.state === 'running' && <Badge variant="accent">{t('state.running')}</Badge>}
+              {inst.state === 'installing' && <Badge variant="info">{t('state.installing')}</Badge>}
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <InstancePlayControl instance={inst} className="h-10 px-5 text-sm" />
+            <InstanceActions instance={inst} edit={current !== 'settings'} />
+          </div>
         </div>
       </header>
 

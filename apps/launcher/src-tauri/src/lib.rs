@@ -17,7 +17,12 @@ use std::sync::Arc;
 use tauri::{Emitter, Manager};
 
 /// Handles `rustic://...` links: `rustic://join/<address-or-invite>` opens the join flow,
-/// `rustic://auth?code=...` completes a Rustic account login (the website's handoff, ADR 0090).
+/// `rustic://auth?code=...` completes a Rustic account login (the website's handoff, ADR 0090),
+/// `rustic://content/rustic/<project>[?version=<project>@<version>]` opens the project's page with
+/// an install prompt (never an install: docs/SECURITY.md), `rustic://server/<slug>` opens a server
+/// of the directory (ADR 0158; never joins from the link alone). A content or server link that
+/// arrives before the webview listens (the launcher started by the link) waits in
+/// `PENDING_CONTENT` until the UI takes it (`app_take_deep_link`).
 /// A link can arrive twice (the single-instance plugin forwards it to the deep-link plugin, then to
 /// its own callback): each sign-in code is exchanged once.
 fn handle_deep_link(app: &tauri::AppHandle, url: &str) {
@@ -32,6 +37,36 @@ fn handle_deep_link(app: &tauri::AppHandle, url: &str) {
             "deep-link",
             serde_json::json!({ "action": "join", "target": target, "url": url }),
         );
+    } else if rest.starts_with("content/") || rest == "content" {
+        match content_link(rest) {
+            Ok(link) if repeated_content_link(url) => {
+                tracing::debug!(project = %link.project, "deep link: content (repeat ignored)");
+            }
+            Ok(link) => {
+                tracing::info!(project = %link.project, "deep link: content");
+                let payload = serde_json::json!({
+                    "action": "content", "source": link.source, "project": link.project,
+                    "version": link.version, "url": url
+                });
+                *PENDING_CONTENT.lock().unwrap_or_else(|e| e.into_inner()) = Some(payload.clone());
+                let _ = app.emit("deep-link", payload);
+            }
+            Err(why) => tracing::warn!("ignored a rustic://content link: {why}"),
+        }
+    } else if rest.starts_with("server/") || rest == "server" {
+        match server_link(rest) {
+            Ok(listing) if repeated_content_link(url) => {
+                tracing::debug!(%listing, "deep link: server (repeat ignored)");
+            }
+            Ok(listing) => {
+                tracing::info!(%listing, "deep link: server");
+                let payload =
+                    serde_json::json!({ "action": "server", "listing": listing, "url": url });
+                *PENDING_CONTENT.lock().unwrap_or_else(|e| e.into_inner()) = Some(payload.clone());
+                let _ = app.emit("deep-link", payload);
+            }
+            Err(why) => tracing::warn!("ignored a rustic://server link: {why}"),
+        }
     } else if let Some(code) = auth_code(rest) {
         static SEEN: std::sync::Mutex<Vec<String>> = std::sync::Mutex::new(Vec::new());
         {
@@ -71,6 +106,130 @@ fn handle_deep_link(app: &tauri::AppHandle, url: &str) {
     if let Some(w) = app.get_webview_window("main") {
         let _ = w.unminimize();
         let _ = w.set_focus();
+    }
+}
+
+/// The newest content or server link not taken by the UI yet.
+static PENDING_CONTENT: std::sync::Mutex<Option<serde_json::Value>> = std::sync::Mutex::new(None);
+
+/// Takes the content link waiting for the UI, if any (once).
+pub(crate) fn take_pending_content_link() -> Option<serde_json::Value> {
+    PENDING_CONTENT
+        .lock()
+        .unwrap_or_else(|e| e.into_inner())
+        .take()
+}
+
+/// The same content link again within a few seconds: the single-instance plugin and the
+/// deep-link plugin both forward it, and the page must open (and toast) once.
+fn repeated_content_link(url: &str) -> bool {
+    static LAST: std::sync::Mutex<Option<(String, std::time::Instant)>> =
+        std::sync::Mutex::new(None);
+    let mut last = LAST.lock().unwrap_or_else(|e| e.into_inner());
+    let repeated = last
+        .as_ref()
+        .is_some_and(|(u, at)| u == url && at.elapsed() < std::time::Duration::from_secs(5));
+    *last = Some((url.to_owned(), std::time::Instant::now()));
+    repeated
+}
+
+/// A parsed `rustic://content/...` link.
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct ContentLink {
+    source: &'static str,
+    project: String,
+    /// `<project>@<version>`.
+    version: Option<String>,
+}
+
+/// Parses `content/<source>/<project>[?version=<project>@<version>]` (what follows `rustic://`)
+/// strictly: the `rustic` source only, a project id `[a-z0-9_-]{1,64}`, no other path segment,
+/// query key or fragment, and a version of that same project (`[0-9A-Za-z.+_-]{1,64}` after the
+/// `@`, percent-decoded: the website encodes `@` and `+`).
+fn content_link(rest: &str) -> Result<ContentLink, &'static str> {
+    let rest = rest.strip_prefix("content/").ok_or("not a content link")?;
+    if rest.contains('#') {
+        return Err("a fragment");
+    }
+    let (path, query) = match rest.split_once('?') {
+        Some((p, q)) => (p, Some(q)),
+        None => (rest, None),
+    };
+    // One trailing slash, as some browsers add it.
+    let path = path.strip_suffix('/').unwrap_or(path);
+    let mut parts = path.split('/');
+    let (Some(source), Some(project), None) = (parts.next(), parts.next(), parts.next()) else {
+        return Err("expected content/<source>/<project>");
+    };
+    let source = match source {
+        "rustic" => "rustic",
+        _ => return Err("unknown source"),
+    };
+    let decode = |s: &str| {
+        percent_encoding::percent_decode_str(s)
+            .decode_utf8()
+            .map(|c| c.into_owned())
+            .map_err(|_| "not UTF-8")
+    };
+    let project = decode(project)?;
+    if !rusticmc_content::sources::rustic::valid_project_id(&project) {
+        return Err("invalid project id");
+    }
+    let mut version = None;
+    if let Some(q) = query.filter(|q| !q.is_empty()) {
+        for kv in q.split('&') {
+            let Some(v) = kv.strip_prefix("version=") else {
+                return Err("unknown query key");
+            };
+            if version.is_some() {
+                return Err("version given twice");
+            }
+            let v = decode(v)?;
+            let (p, ver) = v
+                .split_once('@')
+                .ok_or("version is not <project>@<version>")?;
+            let ok = (1..=64).contains(&ver.len())
+                && ver
+                    .bytes()
+                    .all(|b| b.is_ascii_alphanumeric() || matches!(b, b'.' | b'+' | b'_' | b'-'));
+            if p != project || !ok {
+                return Err("invalid version");
+            }
+            version = Some(v);
+        }
+    }
+    Ok(ContentLink {
+        source,
+        project,
+        version,
+    })
+}
+
+/// Parses `server/<slug or id>` (what follows `rustic://`) strictly: a directory slug
+/// `[a-z0-9-]{3,48}` or a listing UUID, percent-decoded, one optional trailing slash, no other
+/// path segment, query or fragment.
+fn server_link(rest: &str) -> Result<String, &'static str> {
+    let rest = rest.strip_prefix("server/").ok_or("not a server link")?;
+    if rest.contains(['#', '?']) {
+        return Err("a query or fragment");
+    }
+    let path = rest.strip_suffix('/').unwrap_or(rest);
+    if path.contains('/') {
+        return Err("expected server/<slug>");
+    }
+    let id = percent_encoding::percent_decode_str(path)
+        .decode_utf8()
+        .map_err(|_| "not UTF-8")?;
+    let slug = (3..=48).contains(&id.len())
+        && id
+            .bytes()
+            .all(|b| b.is_ascii_lowercase() || b.is_ascii_digit() || b == b'-')
+        && !id.starts_with('-')
+        && !id.ends_with('-');
+    if slug || uuid::Uuid::parse_str(&id).is_ok_and(|u| u.hyphenated().to_string() == id) {
+        Ok(id.into_owned())
+    } else {
+        Err("invalid server slug")
     }
 }
 
@@ -207,6 +366,7 @@ pub fn run() {
             cmd::app::rustic_server_set,
             cmd::app::app_open_path,
             cmd::app::app_open_url,
+            cmd::app::app_take_deep_link,
             cmd::app::app_pick_path,
             cmd::app::app_check_update,
             cmd::app::app_install_update,
@@ -258,6 +418,15 @@ pub fn run() {
             cmd::content::content_get,
             cmd::content::content_categories,
             cmd::content::content_install,
+            // native mods (ADR 0157)
+            cmd::native::native_status,
+            cmd::native::native_overview,
+            cmd::native::native_consent,
+            cmd::native::native_toolchain_install,
+            cmd::native::native_build,
+            cmd::native::native_cache_info,
+            cmd::native::native_cache_clear,
+            cmd::native::native_cache_set_limit,
             // multiplayer
             cmd::multiplayer::multiplayer_list,
             cmd::multiplayer::multiplayer_add,
@@ -335,7 +504,124 @@ pub fn run() {
 
 #[cfg(test)]
 mod deep_link_tests {
-    use super::auth_code;
+    use super::{ContentLink, auth_code, content_link, server_link};
+
+    #[test]
+    fn reads_server_links() {
+        assert_eq!(
+            server_link("server/arena-nord").as_deref(),
+            Ok("arena-nord")
+        );
+        assert_eq!(
+            server_link("server/arena-nord/").as_deref(),
+            Ok("arena-nord")
+        );
+        assert_eq!(
+            server_link("server/arena%2Dnord").as_deref(),
+            Ok("arena-nord")
+        );
+        assert_eq!(
+            server_link("server/0190f0aa-0000-7000-8000-000000000001").as_deref(),
+            Ok("0190f0aa-0000-7000-8000-000000000001")
+        );
+        for bad in [
+            "server",
+            "server/",
+            "server/ab",
+            "server/Arena",
+            "server/arena_nord",
+            "server/-arena",
+            "server/arena/extra",
+            "server/arena?join=1",
+            "server/arena#x",
+            "server/..",
+            "server/%2E%2E",
+            "server/arena%2Fx",
+            "server/%FF",
+            "server/0190F0AA-0000-7000-8000-000000000001",
+        ] {
+            assert!(server_link(bad).is_err(), "{bad}");
+        }
+        assert!(server_link(&format!("server/{}", "a".repeat(49))).is_err());
+    }
+
+    fn link(project: &str, version: Option<&str>) -> ContentLink {
+        ContentLink {
+            source: "rustic",
+            project: project.into(),
+            version: version.map(Into::into),
+        }
+    }
+
+    #[test]
+    fn reads_content_links() {
+        assert_eq!(
+            content_link("content/rustic/sky_islands"),
+            Ok(link("sky_islands", None))
+        );
+        assert_eq!(
+            content_link("content/rustic/sky-islands/"),
+            Ok(link("sky-islands", None))
+        );
+        assert_eq!(
+            content_link("content/rustic/sky_islands?version=sky_islands%401.2.0%2Bb3"),
+            Ok(link("sky_islands", Some("sky_islands@1.2.0+b3")))
+        );
+        assert_eq!(
+            content_link("content/rustic/sky_islands?version=sky_islands@1.2.0"),
+            Ok(link("sky_islands", Some("sky_islands@1.2.0")))
+        );
+        assert_eq!(content_link("content/rustic/a?"), Ok(link("a", None)));
+        assert_eq!(
+            content_link(&format!("content/rustic/{}", "a".repeat(64))),
+            Ok(link(&"a".repeat(64), None))
+        );
+    }
+
+    #[test]
+    fn a_link_forwarded_twice_opens_once() {
+        let url = "rustic://content/rustic/twice_test";
+        assert!(!super::repeated_content_link(url));
+        assert!(super::repeated_content_link(url));
+        assert!(!super::repeated_content_link(
+            "rustic://content/rustic/other_test"
+        ));
+    }
+
+    #[test]
+    fn refuses_anything_else() {
+        for bad in [
+            "content",
+            "content/",
+            "content/rustic",
+            "content/rustic/",
+            "content/modrinth/AANobbMI",
+            "content/horizon/abelha_skull",
+            "content/Rustic/sky",
+            "content/rustic/Sky",
+            "content/rustic/sky/extra",
+            "content/rustic/sky//",
+            "content/rustic//sky",
+            "content/rustic/../sky",
+            "content/rustic/sky%2F..",
+            "content/rustic/sk%20y",
+            "content/rustic/sky.islands",
+            "content/rustic/sky#frag",
+            "content/rustic/sky?install=1",
+            "content/rustic/sky?version=sky@1.0&install=1",
+            "content/rustic/sky?version=sky@1.0&version=sky@1.1",
+            "content/rustic/sky?version=other@1.0",
+            "content/rustic/sky?version=1.0",
+            "content/rustic/sky?version=sky@",
+            "content/rustic/sky?version=sky@1.0%20rm",
+            "content/rustic/sky?version=sky@1.0/../x",
+            "content/rustic/%FF",
+        ] {
+            assert!(content_link(bad).is_err(), "{bad}");
+        }
+        assert!(content_link(&format!("content/rustic/{}", "a".repeat(65))).is_err());
+        assert!(content_link(&format!("content/rustic/a?version=a@{}", "1".repeat(65))).is_err());
+    }
 
     #[test]
     fn reads_the_sign_in_code_in_every_form() {

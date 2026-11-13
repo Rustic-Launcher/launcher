@@ -16,6 +16,7 @@ import { serversDb } from '../data/servers';
 import { startDownload } from '../downloads';
 import { daysAgo, emit, fail, latency, uid, type MockHandlers } from '../runtime';
 import { addInstanceContent, db, findInstance } from './core';
+import { addNativeMod, hasNativeConsent } from './native';
 
 /** Projects installed on mock servers (the server admin area keeps its own plugin list). */
 const serverInstalls = new Map<string, Set<string>>();
@@ -79,6 +80,15 @@ function toSummary(
     installed_in: installedIn(p.id),
     featured: !!p.featured && !p.fair_play_violation,
     shader_format: p.shader_format,
+    flagged: !!p.fair_play_violation,
+    verified: !!p.verified,
+    price: p.price_cents ? { amount_minor: p.price_cents, currency: 'EUR' } : null,
+    banner_url: p.banner ?? null,
+    size_bytes: Math.round(p.size_mb * 1024 ** 2),
+    latest_version: p.version,
+    created_at: daysAgo(p.created_days),
+    game_versions: ['26.3'],
+    native: !!p.native,
   };
 }
 
@@ -130,7 +140,9 @@ export const contentHandlers: MockHandlers = {
 
   content_get: async ({ project_id, target }) => {
     await latency(1.2);
-    const p = findProject(project_id) ?? fail('not_found', `project ${project_id}`);
+    const p =
+      findProject(project_id) ??
+      fail('not_found', 'This project is not available', { reason: 'content.not_available' });
     const ctx = contextFor(target);
     const versions = projectVersions(p, (horizon) => computeCompatibility(p, ctx, horizon));
     const detail = projectDetail(p, toSummary(p, computeCompatibility(p, ctx)), versions);
@@ -154,8 +166,23 @@ export const contentHandlers: MockHandlers = {
     if (p.kind === 'modpack') {
       fail('invalid_argument', 'Modpacks are installed as a new instance (instance_import).');
     }
+    if (p.price_cents) {
+      fail('conflict', `${p.name} is a paid project: buying it is not available yet`, {
+        reason: 'content.paid',
+      });
+    }
     const ctx = contextFor(target);
     if (ctx.installed.has(p.id)) fail('conflict', `${p.name} is already installed here.`);
+    // Native mods (ADR 0157): into an instance, once its trust notice was accepted.
+    if (p.native) {
+      if (target.kind !== 'instance')
+        fail('invalid_argument', 'a native mod goes into an instance');
+      if (!hasNativeConsent(target.instance_id)) {
+        fail('unauthorized', 'native mods run unsandboxed: accept the trust notice first', {
+          reason: 'native.consent_required',
+        });
+      }
+    }
     const versions = projectVersions(p, (h) => computeCompatibility(p, ctx, h));
     const version = versions.find((v) => v.id === version_id) ?? versions[0]!;
     if (version.compatibility.status === 'incompatible') {
@@ -206,6 +233,7 @@ export const contentHandlers: MockHandlers = {
             }
           }
           addInstanceContent(instanceId, item);
+          if (project.native) addNativeMod(instanceId, project.id.replace(/^\w+:/, ''), v);
         } else if (serverId) {
           installedOnServer(serverId).add(project.id);
           const srv = serversDb.servers.find((s) => s.id === serverId);

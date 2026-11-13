@@ -13,12 +13,21 @@ export interface PrefsState {
   currency: Currency;
   /** Content page: "Compatible with this instance" filter (on by default). */
   compatibleOnly: boolean;
+  /** Content page, Browse tab: dense list or visual grid. */
+  contentLayout: 'list' | 'grid';
+  /** Servers page, Browse tab: dense list or visual grid. */
+  serversLayout: 'list' | 'grid';
+  /** Profiles page: visual grid or dense list. */
+  profilesLayout: 'list' | 'grid';
   setTheme: (t: ThemePreference) => void;
   setPalette: (p: PaletteId) => void;
   setLanguage: (l: Language) => void;
   setActiveInstance: (id: string | null) => void;
   setCurrency: (c: Currency) => void;
   setCompatibleOnly: (v: boolean) => void;
+  setContentLayout: (v: 'list' | 'grid') => void;
+  setServersLayout: (v: 'list' | 'grid') => void;
+  setProfilesLayout: (v: 'list' | 'grid') => void;
 }
 
 export const usePrefs = create<PrefsState>()(
@@ -30,24 +39,43 @@ export const usePrefs = create<PrefsState>()(
       activeInstanceId: null,
       currency: 'EUR',
       compatibleOnly: true,
+      contentLayout: 'list',
+      serversLayout: 'grid',
+      profilesLayout: 'grid',
       setTheme: (theme) => set({ theme }),
       setPalette: (palette) => set({ palette }),
       setLanguage: (language) => set({ language }),
       setActiveInstance: (activeInstanceId) => set({ activeInstanceId }),
       setCurrency: (currency) => set({ currency }),
       setCompatibleOnly: (compatibleOnly) => set({ compatibleOnly }),
+      setContentLayout: (contentLayout) => set({ contentLayout }),
+      setServersLayout: (serversLayout) => set({ serversLayout }),
+      setProfilesLayout: (profilesLayout) => set({ profilesLayout }),
     }),
     {
       name: 'rustic.prefs',
       version: 1,
       storage: createJSONStorage(() => window.localStorage),
-      partialize: ({ theme, palette, language, activeInstanceId, currency, compatibleOnly }) => ({
+      partialize: ({
         theme,
         palette,
         language,
         activeInstanceId,
         currency,
         compatibleOnly,
+        contentLayout,
+        serversLayout,
+        profilesLayout,
+      }) => ({
+        theme,
+        palette,
+        language,
+        activeInstanceId,
+        currency,
+        compatibleOnly,
+        contentLayout,
+        serversLayout,
+        profilesLayout,
       }),
     },
   ),

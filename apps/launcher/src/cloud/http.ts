@@ -23,12 +23,14 @@ import type {
   Friend,
   FriendRequest,
   Loadout,
+  MarketplaceProject,
   Me,
   NewsItem,
   Outfit,
   Party,
   PresenceStatus,
   RealtimeEvent,
+  ServerListing,
   StoreProduct,
 } from './types';
 
@@ -281,6 +283,43 @@ export function mapNews(n: S['NewsItem']): NewsItem {
   };
 }
 
+/** A server of the directory (`GET /v1/server-listings`, ADR 0158): the API's shape, nulls kept. */
+export function mapListing(s: S['ServerListing']): ServerListing {
+  return {
+    id: s.id,
+    slug: s.slug,
+    name: s.name,
+    address: s.address,
+    summary: s.summary,
+    description: s.description ?? null,
+    tags: s.tags,
+    languages: s.languages,
+    engine: s.engine,
+    game_version: s.game_version ?? null,
+    requires_rustic_edition: s.requires_rustic_edition,
+    website: s.website ?? null,
+    discord: s.discord ?? null,
+    icon_url: s.icon_url ?? null,
+    banner_url: s.banner_url ?? null,
+    verified: s.verified,
+    featured: s.featured,
+    owner: s.owner ?? null,
+    status: s.status
+      ? {
+          online: s.status.online,
+          players_online: s.status.players_online ?? null,
+          players_max: s.status.players_max ?? null,
+          motd: s.status.motd ?? null,
+          version: s.status.version ?? null,
+          checked_at: s.status.checked_at,
+        }
+      : null,
+    plays_7d: s.plays_7d,
+    created_at: s.created_at,
+    updated_at: s.updated_at,
+  };
+}
+
 /** A featured server (`GET /v1/featured-servers`); player counts stay null until measured. */
 export function mapFeatured(f: S['FeaturedServer']): FeaturedServer {
   return {
@@ -295,6 +334,30 @@ export function mapFeatured(f: S['FeaturedServer']): FeaturedServer {
     language: f.language,
     verified: f.verified,
     hue: hueOf(f.id),
+  };
+}
+
+/** A catalogue project (`ContentProject`) as the launcher's library and creations lists show it. */
+export function mapMarketplaceProject(p: S['ContentProject']): MarketplaceProject {
+  const paid = (p.price?.amount_cents ?? 0) > 0;
+  return {
+    id: p.id,
+    slug: p.slug,
+    kind: p.kind,
+    name: p.name,
+    summary: p.summary,
+    author: p.owner?.display_name || p.authors[0] || '',
+    icon_url: p.icon_url ?? null,
+    banner_url: p.gallery?.[0]?.url ?? null,
+    downloads: p.downloads,
+    verified: p.verified ?? false,
+    price:
+      paid && p.price ? { amount_minor: p.price.amount_cents, currency: p.price.currency } : null,
+    visibility: p.visibility ?? 'public',
+    review: p.review ?? 'not_required',
+    taken_down: p.moderation?.taken_down ?? false,
+    updated_at: p.updated_at ?? null,
+    latest_version: p.latest_version ?? null,
   };
 }
 
@@ -565,6 +628,43 @@ export function createHttpCloud(baseUrl: string, fallback: CloudClient): CloudCl
     async featuredServers() {
       return (await data(api.GET('/v1/featured-servers'))).map(mapFeatured);
     },
+    // Server directory (ADR 0158): public reads, cacheable a minute by the API.
+    async serverListings(q) {
+      const page = await data(
+        api.GET('/v1/server-listings', {
+          params: {
+            query: {
+              q: q.q || undefined,
+              tag: q.tag || undefined,
+              language: q.language || undefined,
+              engine: q.engine,
+              verified: q.verified || undefined,
+              featured: q.featured || undefined,
+              sort: q.sort,
+              offset: q.offset,
+              limit: q.limit,
+            },
+          },
+        }),
+      );
+      return { items: page.items.map(mapListing), has_more: page.has_more, total: page.total };
+    },
+    async serverListing(id) {
+      return mapListing(
+        await data(api.GET('/v1/server-listings/{id}', { params: { path: { id } } })),
+      );
+    },
+    async recordServerPlay(id) {
+      await ok(api.POST('/v1/server-listings/{id}/plays', { params: { path: { id } } }));
+    },
+    async reportServerListing(id, reason, details) {
+      await ok(
+        api.POST('/v1/server-listings/{id}/reports', {
+          params: { path: { id } },
+          body: { reason, details: details ?? null },
+        }),
+      );
+    },
     async notifications() {
       return (await data(api.GET('/v1/notifications'))).map(mapNotification);
     },
@@ -726,6 +826,31 @@ export function createHttpCloud(baseUrl: string, fallback: CloudClient): CloudCl
     async joinWaitlist() {
       await data(api.POST('/v1/hosting/waitlist', { body: {} }));
       return { position: 0 };
+    },
+    async contentLibrary() {
+      const list = await data(api.GET('/v1/me/library'));
+      return list.map((e) => ({
+        project: mapMarketplaceProject(e.project),
+        source: e.source,
+        added_at: e.added_at,
+      }));
+    },
+    async libraryAdd(id) {
+      await ok(api.PUT('/v1/me/library/{id}', { params: { path: { id } } }));
+    },
+    async libraryRemove(id) {
+      await ok(api.DELETE('/v1/me/library/{id}', { params: { path: { id } } }));
+    },
+    async myContent() {
+      return (await data(api.GET('/v1/me/content'))).map(mapMarketplaceProject);
+    },
+    async reportContent(id, reason, details) {
+      await ok(
+        api.POST('/v1/content/projects/{id}/reports', {
+          params: { path: { id } },
+          body: { reason, details: details ?? null },
+        }),
+      );
     },
   };
   /**

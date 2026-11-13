@@ -130,6 +130,9 @@ pub struct DownloadTask {
     pub state: &'static str,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub error: Option<String>,
+    /// What a long task is doing now (a native build's step), in English.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub detail: Option<String>,
 }
 
 #[derive(Clone, Serialize)]

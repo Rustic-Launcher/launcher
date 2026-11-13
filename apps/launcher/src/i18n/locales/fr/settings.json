@@ -222,6 +222,35 @@
       "height": "Hauteur",
       "fullscreen": "Démarrer en plein écran",
       "hint": "Minimum 640 × 480."
+    },
+    "native": {
+      "title": "Mods natifs",
+      "description": "Les instances avec des mods natifs jouent un jeu compilé pour elles sur ce PC. Ici : le compilateur Rust et le cache de compilation qui accélère les compilations suivantes.",
+      "rust": "Compilateur Rust",
+      "rustReady": {
+        "managed": "Rust {{version}}, installé par le launcher",
+        "rustup": "Rust {{version}}, depuis votre rustup",
+        "system": "Rust {{version}}, installé sur ce PC"
+      },
+      "rustMissing": "Rust {{version}} est nécessaire pour la première compilation.",
+      "ready": "Prêt",
+      "missing": "Non installé",
+      "installing": "Installation…",
+      "installRust": "Installer Rust",
+      "rustInstalled": "Rust est installé",
+      "rustFailed": "Rust n’a pas pu être installé",
+      "cache": "Cache de compilation",
+      "cacheDetail": "Cache {{cache}} · crates téléchargées {{crates}} · Rust {{toolchain}} · source {{source}}. Le vider garde les jeux compilés ; la prochaine compilation recompile tout.",
+      "clear": "Vider",
+      "clearTitle": "Vider le cache de compilation ?",
+      "clearBody": "Les instances gardent leur jeu compilé. La prochaine compilation native recompile tout le jeu (10 à 15 minutes).",
+      "cleared": "Cache de compilation vidé ({{size}} libérés)",
+      "limit": "Limite du cache",
+      "limitHint": "Après une compilation, le cache est vidé s’il dépasse cette taille (0 : jamais).",
+      "gib": "Gio",
+      "limitSaved": "Limite du cache enregistrée",
+      "limitInvalid": "La limite est un nombre entier de Gio entre 0 et 4096.",
+      "folder": "Dossier : {{path}}"
     }
   },
   "launcher": {

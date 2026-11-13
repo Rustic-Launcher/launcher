@@ -1469,6 +1469,16 @@ wire! {
         /// A marketplace project report (the target is its owner).
         #[serde(default, skip_serializing_if = "Option::is_none")]
         pub content_project: Option<ReportedContent>,
+        /// A server listing report (the target is its owner). ADR 0158.
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub server_listing: Option<ReportedServer>,
+    }
+
+    pub struct ReportedServer {
+        pub id: Uuid,
+        pub slug: String,
+        pub name: String,
+        pub address: String,
     }
 
     pub struct ReportedContent {
@@ -1484,7 +1494,8 @@ wire! {
         Dismiss,
         ChatBan,
         Ban,
-        /// Content reports: takes the reported project down (the note is the reason).
+        /// Content and server listing reports: takes the reported project or listing down (the
+        /// note is the reason).
         TakeDown,
     }
 
@@ -1822,6 +1833,9 @@ wire! {
         Icon,
         /// A screenshot (PNG, JPEG or WebP; re-encoded).
         Gallery,
+        /// A server listing's banner (PNG, JPEG or WebP, 960x300 to 3840x2160; re-encoded, at
+        /// most 1920 px wide). ADR 0158.
+        Banner,
     }
 
     #[derive(Copy, Eq, Hash, Default)]
@@ -2228,6 +2242,190 @@ wire! {
         pub sort_order: i32,
         /// Shown to players (true) or hidden (false).
         pub active: bool,
+    }
+}
+
+// ---------------------------------------------------------------- server directory (ADR 0158)
+// Players publish their servers from the website; the launcher's Servers page, the website's
+// directory and (later) the in-game Discover screen read them. Staff "featured servers" are a flag
+// on listings (`GET /v1/featured-servers` keeps its shape for older clients).
+
+wire! {
+    /// Last status the cloud read with the server list ping (public addresses only, every ~10 min).
+    pub struct ServerListingStatus {
+        /// Answered the last ping.
+        pub online: bool,
+        pub players_online: Option<i32>,
+        pub players_max: Option<i32>,
+        /// Plain text of the MOTD (formatting codes removed, at most 200 characters).
+        pub motd: Option<String>,
+        /// The version name the server announced.
+        pub version: Option<String>,
+        pub checked_at: DateTime<Utc>,
+    }
+
+    /// What the owner and staff see besides the public page.
+    pub struct ServerListingModeration {
+        pub hidden: bool,
+        pub hidden_reason: Option<String>,
+        pub hidden_at: Option<DateTime<Utc>>,
+        pub verified_at: Option<DateTime<Utc>>,
+        /// Position among staff picks (lower first); `null` when not featured.
+        pub featured_rank: Option<i32>,
+    }
+
+    /// A server in the directory. Lists leave `description` out (`null`); the detail has it.
+    pub struct ServerListing {
+        pub id: Uuid,
+        /// `[a-z0-9-]{3,48}`, unique: `/servers/<slug>` on the website, `rustic://server/<slug>`.
+        pub slug: String,
+        pub name: String,
+        /// `host` or `host:port` players type in the game (lowercase).
+        pub address: String,
+        /// One line, 10-160 characters.
+        pub summary: String,
+        /// Markdown (the website's small subset; never raw HTML). Detail only.
+        pub description: Option<String>,
+        /// From `GET /v1/server-listings/catalog` (`survival`, `minigames`...), 1-6.
+        pub tags: Vec<String>,
+        /// Languages spoken (ISO 639-1, lowercase), 1-5.
+        pub languages: Vec<String>,
+        /// What the server runs: vanilla Horizon or Rustic Server (plugins).
+        pub engine: FeaturedEngine,
+        /// Game version players need (`26.3`), when the owner said.
+        pub game_version: Option<String>,
+        /// Players need the Rustic edition client (cosmetics, companion, native mods).
+        pub requires_rustic_edition: bool,
+        pub website: Option<String>,
+        /// A Discord invite (`https://discord.gg/...`).
+        pub discord: Option<String>,
+        /// Square icon on Rustic's CDN.
+        pub icon_url: Option<String>,
+        /// Wide banner on Rustic's CDN.
+        pub banner_url: Option<String>,
+        pub visibility: ContentVisibility,
+        /// Staff checked the owner and the rules.
+        pub verified: bool,
+        /// A staff pick (the Launchpad, the hero carousels).
+        pub featured: bool,
+        pub owner: Option<PublicUser>,
+        pub status: Option<ServerListingStatus>,
+        /// "Play" presses from the launcher over the last 7 days (anonymous, one per player and
+        /// 6 hours): the trending signal with the player count.
+        pub plays_7d: i64,
+        pub created_at: DateTime<Utc>,
+        pub updated_at: DateTime<Utc>,
+        /// Owner and staff only.
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub moderation: Option<ServerListingModeration>,
+    }
+
+    pub struct ServerListingPage {
+        pub items: Vec<ServerListing>,
+        /// More results after `offset + items.len()`.
+        pub has_more: bool,
+        /// Matching listings in all.
+        pub total: i64,
+    }
+
+    /// The directory's vocabulary and limits (the forms and filters read it).
+    pub struct ServerListingCatalog {
+        pub tags: Vec<String>,
+        /// Languages listings use most, most used first (filters).
+        pub languages: Vec<String>,
+        pub max_tags: i64,
+        pub max_languages: i64,
+        pub max_listings_per_user: i64,
+        pub max_image_bytes: i64,
+    }
+
+    /// Create (`POST`) a listing. Published at once after the automatic checks.
+    pub struct ServerListingRequest {
+        pub slug: String,
+        pub name: String,
+        pub address: String,
+        pub summary: String,
+        #[serde(default)]
+        pub description: String,
+        pub tags: Vec<String>,
+        pub languages: Vec<String>,
+        pub engine: FeaturedEngine,
+        #[serde(default)]
+        pub game_version: Option<String>,
+        #[serde(default)]
+        pub requires_rustic_edition: bool,
+        #[serde(default)]
+        pub website: Option<String>,
+        #[serde(default)]
+        pub discord: Option<String>,
+        #[serde(default)]
+        pub visibility: ContentVisibility,
+        /// A staged `icon` upload (`POST /v1/content/uploads?purpose=icon`).
+        #[serde(default)]
+        pub icon_upload: Option<Uuid>,
+        /// A staged `banner` upload.
+        #[serde(default)]
+        pub banner_upload: Option<Uuid>,
+        /// The owner accepts the server listing rules (no impersonation, honest description).
+        pub accept_rules: bool,
+    }
+
+    /// Edit (`PATCH`): absent fields stay as they are.
+    pub struct UpdateServerListingRequest {
+        #[serde(default)]
+        pub name: Option<String>,
+        #[serde(default)]
+        pub address: Option<String>,
+        #[serde(default)]
+        pub summary: Option<String>,
+        #[serde(default)]
+        pub description: Option<String>,
+        #[serde(default)]
+        pub tags: Option<Vec<String>>,
+        #[serde(default)]
+        pub languages: Option<Vec<String>>,
+        #[serde(default)]
+        pub engine: Option<FeaturedEngine>,
+        /// `""` clears it.
+        #[serde(default)]
+        pub game_version: Option<String>,
+        #[serde(default)]
+        pub requires_rustic_edition: Option<bool>,
+        /// `""` clears it.
+        #[serde(default)]
+        pub website: Option<String>,
+        /// `""` clears it.
+        #[serde(default)]
+        pub discord: Option<String>,
+        #[serde(default)]
+        pub visibility: Option<ContentVisibility>,
+        #[serde(default)]
+        pub icon_upload: Option<Uuid>,
+        #[serde(default)]
+        pub banner_upload: Option<Uuid>,
+        /// Removes the icon (ignored with `icon_upload`).
+        #[serde(default)]
+        pub remove_icon: bool,
+        /// Removes the banner (ignored with `banner_upload`).
+        #[serde(default)]
+        pub remove_banner: bool,
+    }
+
+    pub struct ServerListingReportRequest {
+        pub reason: ReportReason,
+        #[serde(default)]
+        pub details: Option<String>,
+    }
+
+    pub struct ServerListingHideRequest {
+        /// Shown to the owner (3-1000 characters).
+        pub reason: String,
+    }
+
+    pub struct ServerListingFeatureRequest {
+        /// Lower first (0-1000).
+        #[serde(default)]
+        pub rank: i32,
     }
 }
 

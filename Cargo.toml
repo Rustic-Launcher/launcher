@@ -9,6 +9,7 @@ members = [
     "crates/rusticmc-tunnel",
     "crates/rusticmc-api-client",
     "crates/rusticmc-hosting",
+    "crates/rusticmc-native",
     "packages/cosmetics-format",
     "apps/launcher/src-tauri",
 ]

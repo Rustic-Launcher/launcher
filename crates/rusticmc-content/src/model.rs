@@ -63,9 +63,15 @@ pub enum FairPlay {
     #[default]
     Clean,
     /// Not promoted (never in featured or recommended lists); installable with a notice.
-    Flagged { reason: String },
+    Flagged {
+        #[serde(default)]
+        reason: String,
+    },
     /// Never promoted and never installed through Rustic (X-ray, auto-clickers, hacks).
-    Blocked { reason: String },
+    Blocked {
+        #[serde(default)]
+        reason: String,
+    },
 }
 
 /// A search result.
@@ -76,16 +82,27 @@ pub struct ProjectSummary {
     pub slug: String,
     pub kind: ContentKind,
     pub name: String,
+    #[serde(default)]
     pub summary: String,
+    // Lists and counts default when a source leaves them out (Rustic's curated entries may).
+    #[serde(default)]
     pub authors: Vec<String>,
+    #[serde(default)]
     pub icon_url: Option<String>,
+    #[serde(default)]
     pub downloads: u64,
+    #[serde(default)]
     pub categories: Vec<String>,
+    #[serde(default)]
     pub tags: Vec<String>,
+    #[serde(default)]
     pub license: Option<String>,
     /// Java loaders (Modrinth), when it is a Java mod.
+    #[serde(default)]
     pub loaders: Vec<String>,
+    #[serde(default)]
     pub game_versions: Vec<String>,
+    #[serde(default)]
     pub fair_play: FairPlay,
 }
 
@@ -166,11 +183,16 @@ pub struct ContentVersion {
     pub name: String,
     pub version: String,
     pub kind: ContentKind,
+    #[serde(default)]
     pub game_versions: Vec<String>,
+    #[serde(default)]
     pub loaders: Vec<String>,
+    #[serde(default)]
     pub files: Vec<ContentFile>,
+    #[serde(default)]
     pub dependencies: Vec<Dependency>,
     /// RFC 3339 or a date.
+    #[serde(default)]
     pub published: String,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub horizon: Option<HorizonFacts>,

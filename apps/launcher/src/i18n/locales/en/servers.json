@@ -890,5 +890,137 @@
         "steps": "Open your domain’s DNS zone (sometimes called DNS records or Zone editor).\nAdd each record below with the same type, name and value.\nIf your registrar asks for the full name, add your domain after the Name.\nSave, then come back: we check automatically."
       }
     }
+  },
+  "directory": {
+    "tabsLabel": "Server views",
+    "tabs": {
+      "discover": "Discover",
+      "browse": "Browse"
+    },
+    "searchLabel": "Search servers",
+    "searchPlaceholder": "Search the server directory…",
+    "publish": "Publish my server",
+    "publishCta": {
+      "title": "Your server here",
+      "hint": "List your Horizon server in the directory from the website: it shows here and on rustic-launcher.com once the automatic checks pass."
+    },
+    "play": "Play",
+    "playAria": "Play on {{name}}",
+    "view": "View",
+    "verified": "Verified",
+    "featured": "Staff pick",
+    "verifiedHint": "Verified servers: the Rustic team checked the owner and the rules.",
+    "online_one": "{{value}} online",
+    "online_other": "{{value}} online",
+    "playersLabel": "Players online",
+    "languagesLabel": "Languages",
+    "playsLabel": "Launches this week",
+    "lastPlayed": "Last played",
+    "lastPlayedOn": "Played {{when}}",
+    "hero": {
+      "label": "Featured servers",
+      "eyebrow": "Verified"
+    },
+    "rows": {
+      "trending": "Trending",
+      "trendingHint": "Most launched from Rustic this week",
+      "players": "Most players now",
+      "playersHint": "From the cloud’s last check",
+      "new": "New in the directory",
+      "newHint": "Just listed by their owners",
+      "recent": "Recently played",
+      "recentHint": "From your server list"
+    },
+    "rowError": "This row could not load.",
+    "retry": "Retry",
+    "empty": {
+      "title": "No servers listed yet",
+      "hint": "Be the first: publish your server from the website."
+    },
+    "emptySearch": {
+      "title": "No server matches",
+      "hint": "Try other words or fewer filters."
+    },
+    "sorts": {
+      "trending": "Trending",
+      "players": "Most players",
+      "new": "Newest",
+      "name": "Name"
+    },
+    "filters": {
+      "tags": "Game style",
+      "language": "Language",
+      "engine": "Engine",
+      "rustic": "Rustic",
+      "verifiedOnly": "Verified only",
+      "reset": "Reset the filters",
+      "remove": "Remove the filter {{filter}}"
+    },
+    "tags": {
+      "survival": "Survival",
+      "smp": "SMP",
+      "creative": "Creative",
+      "minigames": "Minigames",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Roleplay",
+      "factions": "Factions",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Adventure",
+      "building": "Building",
+      "economy": "Economy",
+      "modded": "Modded",
+      "anarchy": "Anarchy",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Servers",
+      "status": "Live status",
+      "cloudSaw_one": "the cloud saw {{value}} player online {{when}}",
+      "cloudSaw_other": "the cloud saw {{value}} players online {{when}}",
+      "engine": "Engine",
+      "version": "Game version",
+      "languages": "Languages",
+      "plays": "Launches this week",
+      "about": "About",
+      "noDescription": "No description yet.",
+      "address": "Address",
+      "copy": "Copy",
+      "openSite": "Open on the website",
+      "website": "Website",
+      "discord": "Discord",
+      "by": "Listed by {{name}}",
+      "byStaff": "Listed by the Rustic team",
+      "report": "Report",
+      "rusticEdition": "Rustic edition required",
+      "missing": "This server is not available",
+      "missingHint": "It may be private, hidden by moderation, or deleted."
+    },
+    "report": {
+      "title": "Report {{name}}",
+      "lead": "Tell the moderation team what is wrong. Every report is reviewed.",
+      "reason": "Reason",
+      "reasons": {
+        "impersonation": "Impersonates another server",
+        "spam": "Spam or misleading",
+        "inappropriate_content": "Inappropriate content",
+        "cheating": "Cheating or malicious server",
+        "harassment": "Harassment",
+        "copyright": "Infringes my rights (trademark, name)",
+        "malware": "Malware",
+        "other": "Other"
+      },
+      "details": "Details",
+      "detailsHint": "Optional, at most 2,000 characters.",
+      "send": "Send the report",
+      "sent": "Thank you, your report went to the moderation team.",
+      "signIn": "Sign in to your Rustic account to report a server.",
+      "failed": "The report could not be sent."
+    }
   }
 }

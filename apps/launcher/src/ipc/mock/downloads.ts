@@ -19,6 +19,8 @@ export interface StartDownload {
   duration_ms: number;
   instance_id?: string;
   server_id?: string;
+  /** What the task is doing at progress `p` (native builds). */
+  detail?: (p: number) => string;
   onProgress?: (p: number) => void;
   onDone?: () => void;
   onCancel?: () => void;
@@ -53,6 +55,7 @@ export function startDownload(o: StartDownload): string {
       last = received;
       lastT = Date.now();
       t.received_bytes = received;
+      if (o.detail) t.detail = o.detail(p);
       emit('download-progress', { ...t });
       o.onProgress?.(p);
     },

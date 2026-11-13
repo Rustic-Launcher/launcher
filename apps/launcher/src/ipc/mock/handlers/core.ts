@@ -1,4 +1,5 @@
 /** Mock: app, settings, downloads, preparation, accounts, versions, instances, launch. */
+import { takeMockDeepLink } from '../deepLink';
 import type { Account, RusticSession } from '../../types/auth';
 import type { RusticServerStatus, Settings } from '../../types/app';
 import type { Instance, InstalledContent, LaunchStatus } from '../../types/instances';
@@ -44,7 +45,8 @@ export const db = {
         i === 0 ? { ...a, skin: persistGet<Account['skin']>('skin', null) } : a,
       ),
   rustic: clone(initialRusticSession),
-  instances: clone(initialInstances),
+  // `rustic.mock.no-instances`: no profile yet (the Profiles page's empty state).
+  instances: persistGet('no-instances', false) ? [] : clone(initialInstances),
   content: clone(initialInstanceContent),
   worlds: clone(initialWorlds),
   launches: new Map<string, LaunchStatus>(),
@@ -158,6 +160,7 @@ export const coreHandlers: MockHandlers = {
   app_open_url: ({ url }) => {
     window.open(url, '_blank', 'noopener');
   },
+  app_take_deep_link: () => takeMockDeepLink(),
   // The browser preview has no network to Mojang: players keep their initials.
   player_skin_url: () => null,
   app_pick_path: async ({ kind, title }) => {

@@ -4,10 +4,15 @@ test.describe('Content', () => {
   test('install a mod into the active instance', async ({ app }) => {
     await app.getByTestId('rail-content').click();
     await expect(app.getByTestId('breadcrumb')).toContainText('Explore/Mods');
-    // The compatibility filter is on by default.
-    await expect(app.getByTestId('compatible-only')).toHaveAttribute('aria-checked', 'true');
-
+    // Explore opens on Discover; typing a search moves to Browse.
+    await expect(app.getByTestId('explore-tab-discover')).toHaveAttribute('aria-selected', 'true');
     await app.getByTestId('content-search').fill('shulker');
+    await expect(app.getByTestId('explore-tab-browse')).toHaveAttribute('aria-selected', 'true');
+    // The compatibility filter is on by default.
+    await app.getByTestId('content-filters').click();
+    await expect(app.getByTestId('compatible-only')).toHaveAttribute('aria-checked', 'true');
+    await app.keyboard.press('Escape');
+
     const row = app.getByTestId('content-row-p_shulker');
     await expect(row).toBeVisible();
     await expect(row.getByText('Builds on your Horizon')).toBeVisible();
@@ -36,7 +41,7 @@ test.describe('Content', () => {
   });
 
   test('plugins can only target Rustic Server servers', async ({ app }) => {
-    await app.goto('/#/content?kind=plugin');
+    await app.goto('/#/content?kind=plugin&tab=browse');
     const picker = app.getByRole('combobox', { name: 'Installing into' });
     await expect(picker).toContainText('Les Copains SMP');
     await picker.click();
@@ -54,7 +59,7 @@ test.describe('Content', () => {
   });
 
   test('datapacks install into a chosen world', async ({ app }) => {
-    await app.goto('/#/content?kind=datapack&target=instance:inst_survival');
+    await app.goto('/#/content?kind=datapack&target=instance:inst_survival&tab=browse');
     const row = app.getByTestId('content-row-p_dp_graves');
     await row.getByRole('button', { name: 'Install in a world' }).click();
     await app.getByRole('button', { name: /Royaume du Nord/ }).click();
@@ -68,6 +73,7 @@ test.describe('Content', () => {
     await expect(app.getByText('Installed automatically')).toBeVisible();
     await app.getByRole('tab', { name: /Versions/ }).click();
     await expect(app.getByRole('table')).toBeVisible();
+    await expect(app.getByRole('table').getByText('Release').first()).toBeVisible();
     await app
       .getByRole('button', { name: /Install Crate & Barrel Storage into PvP Practice/ })
       .first()

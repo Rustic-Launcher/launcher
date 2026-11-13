@@ -76,6 +76,28 @@ jobs:
         with:
           toolchain: '1.99'
           targets: ${{ matrix.target }}
+      # The source the client below is built from, for native mods compiled on players' PCs (launcher
+      # ADR 0157): Horizon with the patches just applied, the companion and the edition crate, packed
+      # deterministically (no times, owners or modes) and named, with its SHA-256, by the bundle's
+      # rustic-source.json; the URL carries the hash, so runners whose checkouts differ (line endings)
+      # never overwrite each other. Packed before any build, from this very checkout.
+      - name: Pack the edition's source
+        shell: bash
+        run: |
+          pinned=$(git -C Rustic-MC ls-tree HEAD horizon | awk '{print $3}')
+          out="rustic-edition-source-${pinned:0:12}.tar.gz"
+          cargo run --release --locked --manifest-path Rustic-MC-launcher/launcher/Cargo.toml -p rusticmc-native -- \
+            pack-source --horizon Rustic-MC/horizon --launcher Rustic-MC-launcher/launcher \
+            --commit "$pinned" --out "$out"
+          sha=$(sha256sum "$out" | cut -d' ' -f1)
+          size=$(wc -c < "$out" | tr -d ' ')
+          mkdir -p bundle
+          cat > bundle/rustic-source.json <<JSON
+          { "format": 1, "horizon_commit": "$pinned",
+            "archive": { "url": "https://cdn.rustic-launcher.com/edition/source/${out%.tar.gz}-$sha.tar.gz",
+                         "sha256": "$sha", "size": $size } }
+          JSON
+          echo "upload $out to the CDN as edition/source/${out%.tar.gz}-$sha.tar.gz (once; kept while a bundle names it)"
       - name: Linux build dependencies (as Horizon's own CI)
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y build-essential pkg-config libasound2-dev libudev-dev

@@ -31,13 +31,19 @@ const PRESETS = Object.keys(PRESET_ICONS) as InstanceIconPreset[];
 export function NewInstanceSheet({
   open,
   onOpenChange,
+  initialTab = 'create',
 }: {
   open: boolean;
   onOpenChange: (o: boolean) => void;
+  /** The tab shown when the sheet opens (the Profiles page's "Import" opens on Import). */
+  initialTab?: 'create' | 'import';
 }) {
   const { t } = useTranslation('instances');
   const { t: tc } = useTranslation();
-  const [tab, setTab] = useState<'create' | 'import'>('create');
+  const [tab, setTab] = useState<'create' | 'import'>(initialTab);
+  useEffect(() => {
+    if (open) setTab(initialTab);
+  }, [open, initialTab]);
   return (
     <Sheet
       open={open}
@@ -49,8 +55,12 @@ export function NewInstanceSheet({
     >
       <Tabs variant="pill" value={tab} onValueChange={(v) => setTab(v as 'create' | 'import')}>
         <TabsList>
-          <TabsTrigger value="create">{t('new.tabs.create')}</TabsTrigger>
-          <TabsTrigger value="import">{t('new.tabs.import')}</TabsTrigger>
+          <TabsTrigger value="create" data-testid="new-tab-create">
+            {t('new.tabs.create')}
+          </TabsTrigger>
+          <TabsTrigger value="import" data-testid="new-tab-import">
+            {t('new.tabs.import')}
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="create">
           <CreateForm onDone={() => onOpenChange(false)} />

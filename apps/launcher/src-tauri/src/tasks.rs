@@ -63,6 +63,7 @@ impl Tasks {
                 speed_bps: 0,
                 state: "running",
                 error: None,
+                detail: None,
             },
             Some(cancel.clone()),
         );
@@ -110,6 +111,11 @@ impl Tasks {
             t.total_bytes = Some(1000);
             t.received_bytes = (fraction.clamp(0.0, 1.0) * 1000.0) as u64;
         });
+    }
+
+    /// What the task is doing now (shown under its bar).
+    pub fn detail(&self, id: &str, text: &str) {
+        self.update(id, |t| t.detail = Some(text.to_owned()));
     }
 
     pub fn bytes(&self, id: &str, received: u64, total: Option<u64>) {
@@ -188,6 +194,7 @@ impl Tasks {
                         speed_bps: 0,
                         state: "queued",
                         error: None,
+                        detail: None,
                     },
                     None,
                 );

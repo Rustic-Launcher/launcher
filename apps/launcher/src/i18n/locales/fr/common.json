@@ -57,7 +57,7 @@
   "nav": {
     "label": "Navigation principale",
     "home": "Accueil",
-    "instances": "Versions",
+    "instances": "Profils",
     "content": "Explorer",
     "servers": "Serveurs",
     "locker": "Vestiaire",
@@ -246,7 +246,9 @@
       "server": "Serveur",
       "java": "Runtime Java",
       "update": "Mise à jour du launcher",
-      "prepare": "Préparation des fichiers du jeu"
+      "prepare": "Préparation des fichiers du jeu",
+      "native-build": "Compilation de mods natifs",
+      "native-toolchain": "Rust pour les mods natifs"
     }
   },
   "play": {
@@ -272,7 +274,9 @@
       "preparing": "Préparation…",
       "launching": "Lancement…",
       "stopping": "Arrêt…",
-      "preparingFiles": "Préparation des fichiers du jeu {{pct}}"
+      "preparingFiles": "Préparation des fichiers du jeu {{pct}}",
+      "building": "Compilation des mods natifs…",
+      "buildingPct": "Compilation des mods natifs {{pct}}"
     },
     "errors": {
       "launch": "Le jeu n’a pas pu démarrer"
@@ -289,7 +293,12 @@
       "prepare_failed": "Les fichiers du jeu n’ont pas pu être préparés : réessayez, ou préparez-les dans Réglages › Jeu et instances.",
       "prepare_no_java": "Java est introuvable : installez-le ou choisissez-le dans Réglages › Jeu et instances.",
       "prepare_no_minecraft_dir": "Votre installation du jeu est introuvable : choisissez son dossier dans Réglages › Jeu et instances.",
-      "launch_already_running": "Cette instance est déjà lancée."
+      "launch_already_running": "Cette instance est déjà lancée.",
+      "native_consent": "Cette instance a des mods natifs : acceptez d’abord leur avertissement de confiance sur la page de l’instance (Contenu).",
+      "native_toolchain": "Les mods natifs ont besoin de Rust : installez-le depuis la page de l’instance (Contenu) ou Paramètres › Jeu et instances.",
+      "native_not_edition": "Les mods natifs ne se compilent que dans l’édition Rustic : passez cette instance dessus, ou désactivez ses mods natifs.",
+      "native_build_failed": "Les mods natifs n’ont pas pu être compilés",
+      "native_disk": "Pas assez d’espace disque libre pour compiler les mods natifs."
     }
   },
   "horizon": {
@@ -336,8 +345,9 @@
       "featured": "À la une",
       "mine": "Mes serveurs",
       "multiplayer": "Liste multijoueur",
-      "discover": "À la une",
-      "joined": "Liste multijoueur"
+      "discover": "Découvrir",
+      "joined": "Liste multijoueur",
+      "browse": "Parcourir"
     }
   },
   "social": {
@@ -377,6 +387,37 @@
   "deepLink": {
     "authOk": "Connecté à Rustic",
     "authFailed": "Échec de la connexion Rustic",
-    "joining": "Connexion à {{target}}…"
+    "joining": "Connexion à {{target}}…",
+    "content": "Ouverture de {{project}} depuis le site"
+  },
+  "catalog": {
+    "sort": "Trier par",
+    "results_one": "{{count}} résultat",
+    "results_other": "{{count}} résultats",
+    "loadMore": "Charger plus",
+    "loadMoreCount": "{{shown}} affichés sur {{total}}",
+    "carousel": {
+      "prev": "Précédent",
+      "next": "Suivant",
+      "slide": "{{index}} sur {{total}}",
+      "pause": "Mettre le diaporama en pause",
+      "play": "Relancer le diaporama"
+    },
+    "row": {
+      "seeAll": "Voir tout",
+      "seeAllAria": "Voir tout : {{title}}",
+      "scrollPrev": "Faire défiler vers la gauche",
+      "scrollNext": "Faire défiler vers la droite"
+    },
+    "filters": {
+      "button": "Filtres",
+      "buttonCount": "Filtres · {{count}}",
+      "reset": "Réinitialiser les filtres"
+    },
+    "layout": {
+      "label": "Affichage",
+      "list": "Liste",
+      "grid": "Grille"
+    }
   }
 }

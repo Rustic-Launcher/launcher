@@ -222,6 +222,35 @@
       "height": "Height",
       "fullscreen": "Start in fullscreen",
       "hint": "Minimum 640 × 480."
+    },
+    "native": {
+      "title": "Native mods",
+      "description": "Instances with native mods play a game compiled for them on this PC. Here: the Rust compiler and the compile cache that makes later builds fast.",
+      "rust": "Rust compiler",
+      "rustReady": {
+        "managed": "Rust {{version}}, installed by the launcher",
+        "rustup": "Rust {{version}}, from your rustup",
+        "system": "Rust {{version}}, installed on this PC"
+      },
+      "rustMissing": "Rust {{version}} is needed for the first build.",
+      "ready": "Ready",
+      "missing": "Not installed",
+      "installing": "Installing…",
+      "installRust": "Install Rust",
+      "rustInstalled": "Rust is installed",
+      "rustFailed": "Rust could not be installed",
+      "cache": "Compile cache",
+      "cacheDetail": "Cache {{cache}} · downloaded crates {{crates}} · Rust {{toolchain}} · source {{source}}. Clearing it keeps the built games; the next build recompiles everything.",
+      "clear": "Clear",
+      "clearTitle": "Clear the compile cache?",
+      "clearBody": "Instances keep their built game. The next native build compiles the whole game again (10 to 15 minutes).",
+      "cleared": "Compile cache cleared ({{size}} freed)",
+      "limit": "Cache limit",
+      "limitHint": "After a build, the cache is cleared when it is larger than this (0: never).",
+      "gib": "GiB",
+      "limitSaved": "Cache limit saved",
+      "limitInvalid": "The limit is a whole number of GiB from 0 to 4096.",
+      "folder": "Folder: {{path}}"
     }
   },
   "launcher": {

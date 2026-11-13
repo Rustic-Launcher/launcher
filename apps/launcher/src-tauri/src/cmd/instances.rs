@@ -947,6 +947,18 @@ async fn launch_inner(
             }
         }
     }
+    // Native mods: the instance's own client, compiled first when its mods changed (ADR 0157);
+    // none turned on, the build's prebuilt client.
+    let client = crate::cmd::native::client_for_launch(state, id, |f| {
+        set_launch(
+            state,
+            LaunchStatus {
+                progress: Some(f),
+                ..phase(id, "building", None)
+            },
+        );
+    })
+    .await?;
     set_launch(state, phase(id, "launching", None));
     let quick_play = match (options.join, options.world_id) {
         (Some(join), _) => {
@@ -965,7 +977,7 @@ async fn launch_inner(
     };
     state
         .instances
-        .launch_with(id, identity, quick_play)
+        .launch_with_client(id, identity, quick_play, client)
         .await
         .map_err(|e| {
             if matches!(e, rusticmc_instances::InstanceError::NotPrepared) {

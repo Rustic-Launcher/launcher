@@ -21,7 +21,7 @@ test.describe('instances', () => {
 
   test('create an instance', async ({ app }) => {
     await app.getByTestId('rail-instances').click();
-    await expect(app.getByTestId('breadcrumb')).toContainText('Versions');
+    await expect(app.getByTestId('breadcrumb')).toContainText('Profiles');
     await app.getByTestId('new-instance').click();
     const dialog = app.getByRole('dialog', { name: 'New instance' });
     await expect(dialog).toBeVisible();

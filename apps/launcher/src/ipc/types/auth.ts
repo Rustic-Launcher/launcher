@@ -43,10 +43,40 @@ export interface MicrosoftBrowserLoginStart {
   authorize_url: string;
 }
 
-/** Payload of the `deep-link` event (`rustic://join/<target>`, `rustic://auth?ticket=…`). */
+/**
+ * `rustic://content/rustic/<project>[?version=<project>@<version>]`, parsed strictly by the desktop
+ * side: opens the project's page with an install prompt, never installs by itself.
+ */
+export interface ContentDeepLink {
+  action: 'content';
+  source: 'rustic';
+  /** `[a-z0-9_-]{1,64}`. */
+  project: string;
+  /** `<project>@<version>`, or null for the newest compatible one. */
+  version: string | null;
+  url: string;
+}
+
+/**
+ * `rustic://server/<slug>` (ADR 0158), parsed strictly by the desktop side: opens the server's
+ * page in the directory, never joins by itself.
+ */
+export interface ServerDeepLink {
+  action: 'server';
+  /** A directory slug `[a-z0-9-]{3,48}` or a listing id (UUID). */
+  listing: string;
+  url: string;
+}
+
+/** A link that opens a page (kept for the UI when it arrives before the UI listens). */
+export type PageDeepLink = ContentDeepLink | ServerDeepLink;
+
+/** Payload of the `deep-link` event (`rustic://join/<target>`, `rustic://auth?ticket=…`, `rustic://content/…`, `rustic://server/…`). */
 export type DeepLinkEvent =
   | { action: 'join'; target: string; url: string }
-  | { action: 'auth'; ok: boolean; error?: string | null };
+  | { action: 'auth'; ok: boolean; error?: string | null }
+  | ContentDeepLink
+  | ServerDeepLink;
 
 /** Rustic platform identity (friends, cosmetics, purchases). Never replaces the game licence. */
 export interface RusticSession {

@@ -96,7 +96,15 @@ export type SettingsPatch = {
 };
 
 export type DownloadKind =
-  'game' | 'content' | 'modpack' | 'server' | 'java' | 'update' | 'prepare';
+  | 'game'
+  | 'content'
+  | 'modpack'
+  | 'server'
+  | 'java'
+  | 'update'
+  | 'prepare'
+  | 'native-build'
+  | 'native-toolchain';
 
 export interface DownloadTask {
   id: string;
@@ -110,6 +118,8 @@ export interface DownloadTask {
   speed_bps: number;
   state: 'queued' | 'running' | 'paused' | 'done' | 'failed' | 'cancelled';
   error?: string;
+  /** What a long task is doing now (a native build's step), in English. */
+  detail?: string;
 }
 
 export interface GameInstallDetection {

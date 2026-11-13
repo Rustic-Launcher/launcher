@@ -19,6 +19,7 @@ import type {
 } from './types/app';
 import type {
   Account,
+  PageDeepLink,
   DeepLinkEvent,
   MicrosoftBrowserLoginStart,
   MicrosoftLoginPoll,
@@ -75,6 +76,12 @@ import type {
 } from './types/instances';
 import type { MultiplayerEntry, ServerPing } from './types/multiplayer';
 import type {
+  NativeBuildProgress,
+  NativeCacheInfo,
+  NativeOverview,
+  NativeStatus,
+} from './types/native';
+import type {
   Backup,
   BackupSchedule,
   ConsoleLine,
@@ -111,6 +118,8 @@ export interface IpcCommands {
   rustic_server_set: [{ path: string | null }, RusticServerStatus];
   app_open_path: [{ path: string }, void];
   app_open_url: [{ url: string }, void];
+  /** The `rustic://content/...` or `rustic://server/...` link that started (or reached) the launcher before the UI listened, taken once (null when none). */
+  app_take_deep_link: [void, PageDeepLink | null];
   /** A player's skin URL (Mojang's session service, cached); `null` without one. */
   player_skin_url: [{ uuid: string }, string | null];
   app_pick_path: [PickPathRequest, string | null];
@@ -174,7 +183,24 @@ export interface IpcCommands {
   content_search: [ContentSearchQuery, ContentSearchResult];
   content_get: [{ project_id: string; target?: InstallTarget }, ContentDetail];
   content_categories: [{ kind: ContentKind }, ContentCategory[]];
+  /** A native mod needs the trust notice accepted for the instance first (`unauthorized`, reason `native.consent_required`), Horizon's registry or Rustic's marketplace as source (`native.source`) and a Rustic edition instance (`native.not_edition`). */
   content_install: [InstallRequest, InstallResult];
+
+  // ---- native mods (compiled on the player's PC, ADR 0157) ----
+  /** An instance's native mods, its build, the trust notice and Rust. */
+  native_status: [InstanceId, NativeStatus];
+  /** Every instance with native mods, read from disk only (no Rust detection): the Profiles page's cards (ADR 0159). Instances without native mods are left out. */
+  native_overview: [void, NativeOverview[]];
+  /** The player's click on the trust notice: `accept: false` withdraws it. */
+  native_consent: [InstanceId & { accept: boolean }, NativeStatus];
+  /** Installs the launcher's own Rust (rustup-init, checked against its published SHA-256) as a task (`native-toolchain`). */
+  native_toolchain_install: [void, { task_id: string }];
+  /** Compiles the instance's client with its native mods as a task (`native-build`, cancellable with `download_cancel`); refuses with `native.consent_required`, `native.toolchain_missing`, `native.not_edition`, `native.running`. */
+  native_build: [InstanceId, { task_id: string }];
+  native_cache_info: [void, NativeCacheInfo];
+  /** Clears the compile cache; the bytes freed (`conflict`, `native.busy`, while a build runs). */
+  native_cache_clear: [void, number];
+  native_cache_set_limit: [{ cache_limit_gib: number }, NativeCacheInfo];
 
   // ---- multiplayer list ----
   multiplayer_list: [void, MultiplayerEntry[]];
@@ -284,6 +310,10 @@ export interface IpcEvents {
   'dns-status': DomainBinding;
   'accounts-changed': Account[];
   'deep-link': DeepLinkEvent;
+  /** Each step of a native build (also mirrored in its task's fraction and `detail`). */
+  'native-build-progress': NativeBuildProgress;
+  /** A native build or Rust's installation ended: statuses may have changed. */
+  'native-changed': { instance_id?: string };
 }
 
 export type CommandName = keyof IpcCommands;

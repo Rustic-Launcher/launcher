@@ -164,12 +164,26 @@ impl InstanceManager {
         identity: LaunchIdentity,
         quick_play: Option<crate::launch::QuickPlay>,
     ) -> Result<Option<u32>> {
+        self.launch_with_client(id, identity, quick_play, None)
+            .await
+    }
+
+    /// [`Self::launch_with`] with another game program than the build's: the client compiled for
+    /// the instance with its native mods (ADR 0157), which reads the build's prepared resources.
+    pub async fn launch_with_client(
+        &self,
+        id: &str,
+        identity: LaunchIdentity,
+        quick_play: Option<crate::launch::QuickPlay>,
+        client: Option<PathBuf>,
+    ) -> Result<Option<u32>> {
         if self.running.lock().expect("running").contains_key(id) {
             return Err(InstanceError::AlreadyRunning);
         }
         let instance = self.store.get(id)?;
         let build = self.build_for(&instance)?;
-        let api = self.client_api(&build).await?;
+        let client = client.unwrap_or_else(|| build.client());
+        let api = probe_client(&client).await?;
         let resources = self.prepared_dir(&build.version);
         let check = prepare::check(&build.preparer(), &resources).await?;
         if !check.current {
@@ -177,7 +191,7 @@ impl InstanceManager {
         }
         let game_dir = self.store.game_dir(id);
         let req = LaunchRequest {
-            client: build.client(),
+            client,
             resources,
             game_dir: game_dir.clone(),
             home: game_dir,

@@ -1972,6 +1972,392 @@
         ]
       }
     },
+    "/v1/admin/server-listings": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_listings",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "`all` (default), `public`, `unlisted`, `private`, `hidden`, `verified`, `featured`,\n`reported` (open reports).",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "`new` (default), `trending`, `players`, `name`, `featured`.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListingPage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/server-listings/{id}/featured": {
+      "put": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_listing_feature",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServerListingFeatureRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListing"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_listing_unfeature",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListing"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/server-listings/{id}/hidden": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_listing_hide",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServerListingHideRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListing"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_listing_unhide",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListing"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/server-listings/{id}/verified": {
+      "put": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_listing_verify",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListing"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_listing_unverify",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListing"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/admin/store/trending": {
       "put": {
         "tags": [
@@ -3805,6 +4191,7 @@
         "tags": [
           "news"
         ],
+        "summary": "Staff picks: the featured server listings (ADR 0158) by rank, then any row still active in the\nlegacy table (older back-offices). Player counts come from the cloud's last ping.",
         "operationId": "featured_servers_list",
         "responses": {
           "200": {
@@ -5654,6 +6041,44 @@
         ]
       }
     },
+    "/v1/me/server-listings": {
+      "get": {
+        "tags": [
+          "servers"
+        ],
+        "operationId": "my_listings",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ServerListing"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/me/skin": {
       "get": {
         "tags": [
@@ -7165,6 +7590,443 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ReportRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportCreated"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/server-listings": {
+      "get": {
+        "tags": [
+          "servers"
+        ],
+        "operationId": "listings_search",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Free text (name, summary, address, tags).",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "One tag of the catalog.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "A two-letter language code.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "engine",
+            "in": "query",
+            "description": "`horizon` or `rustic`.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "verified",
+            "in": "query",
+            "description": "Only listings staff verified.",
+            "required": false,
+            "schema": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "featured",
+            "in": "query",
+            "description": "Only staff picks (ordered by their rank).",
+            "required": false,
+            "schema": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "`trending` (default), `players`, `new`, `name`.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "1-50, default 24.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListingPage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "servers"
+        ],
+        "operationId": "listings_create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServerListingRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListing"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/server-listings/catalog": {
+      "get": {
+        "tags": [
+          "servers"
+        ],
+        "operationId": "listings_catalog",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListingCatalog"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/server-listings/{id}": {
+      "get": {
+        "tags": [
+          "servers"
+        ],
+        "operationId": "listings_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListing"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "servers"
+        ],
+        "operationId": "listings_delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted with its images"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "servers"
+        ],
+        "operationId": "listings_update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateServerListingRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerListing"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/server-listings/{id}/plays": {
+      "post": {
+        "tags": [
+          "servers"
+        ],
+        "summary": "Counts one \"Play\" press from the launcher (the trending signal). Anonymous: only a per-day\ntotal is stored; the same player (account, else address) counts once per listing and 6 hours.",
+        "operationId": "listings_play",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Counted (or already counted recently)"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/server-listings/{id}/reports": {
+      "post": {
+        "tags": [
+          "moderation"
+        ],
+        "operationId": "listings_report",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServerListingReportRequest"
               }
             }
           },
@@ -10304,7 +11166,8 @@
         "enum": [
           "file",
           "icon",
-          "gallery"
+          "gallery",
+          "banner"
         ]
       },
       "ContentVersion": {
@@ -13894,6 +14757,17 @@
                 "description": "A marketplace project report (the target is its owner)."
               }
             ]
+          },
+          "server_listing": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ReportedServer",
+                "description": "A server listing report (the target is its owner). ADR 0158."
+              }
+            ]
           }
         }
       },
@@ -13979,6 +14853,30 @@
           },
           "kind": {
             "$ref": "#/components/schemas/ContentKind"
+          }
+        }
+      },
+      "ReportedServer": {
+        "type": "object",
+        "required": [
+          "id",
+          "slug",
+          "name",
+          "address"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
           }
         }
       },
@@ -14098,6 +14996,449 @@
               "null"
             ],
             "format": "uuid"
+          }
+        }
+      },
+      "ServerListing": {
+        "type": "object",
+        "description": "A server in the directory. Lists leave `description` out (`null`); the detail has it.",
+        "required": [
+          "id",
+          "slug",
+          "name",
+          "address",
+          "summary",
+          "tags",
+          "languages",
+          "engine",
+          "requires_rustic_edition",
+          "visibility",
+          "verified",
+          "featured",
+          "plays_7d",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "slug": {
+            "type": "string",
+            "description": "`[a-z0-9-]{3,48}`, unique: `/servers/<slug>` on the website, `rustic://server/<slug>`."
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string",
+            "description": "`host` or `host:port` players type in the game (lowercase)."
+          },
+          "summary": {
+            "type": "string",
+            "description": "One line, 10-160 characters."
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Markdown (the website's small subset; never raw HTML). Detail only."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "From `GET /v1/server-listings/catalog` (`survival`, `minigames`...), 1-6."
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Languages spoken (ISO 639-1, lowercase), 1-5."
+          },
+          "engine": {
+            "$ref": "#/components/schemas/FeaturedEngine",
+            "description": "What the server runs: vanilla Horizon or Rustic Server (plugins)."
+          },
+          "game_version": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Game version players need (`26.3`), when the owner said."
+          },
+          "requires_rustic_edition": {
+            "type": "boolean",
+            "description": "Players need the Rustic edition client (cosmetics, companion, native mods)."
+          },
+          "website": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "discord": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "A Discord invite (`https://discord.gg/...`)."
+          },
+          "icon_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Square icon on Rustic's CDN."
+          },
+          "banner_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Wide banner on Rustic's CDN."
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ContentVisibility"
+          },
+          "verified": {
+            "type": "boolean",
+            "description": "Staff checked the owner and the rules."
+          },
+          "featured": {
+            "type": "boolean",
+            "description": "A staff pick (the Launchpad, the hero carousels)."
+          },
+          "owner": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/PublicUser"
+              }
+            ]
+          },
+          "status": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ServerListingStatus"
+              }
+            ]
+          },
+          "plays_7d": {
+            "type": "integer",
+            "format": "int64",
+            "description": "\"Play\" presses from the launcher over the last 7 days (anonymous, one per player and\n6 hours): the trending signal with the player count."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "moderation": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ServerListingModeration",
+                "description": "Owner and staff only."
+              }
+            ]
+          }
+        }
+      },
+      "ServerListingCatalog": {
+        "type": "object",
+        "description": "The directory's vocabulary and limits (the forms and filters read it).",
+        "required": [
+          "tags",
+          "languages",
+          "max_tags",
+          "max_languages",
+          "max_listings_per_user",
+          "max_image_bytes"
+        ],
+        "properties": {
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Languages listings use most, most used first (filters)."
+          },
+          "max_tags": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "max_languages": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "max_listings_per_user": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "max_image_bytes": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ServerListingFeatureRequest": {
+        "type": "object",
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Lower first (0-1000)."
+          }
+        }
+      },
+      "ServerListingHideRequest": {
+        "type": "object",
+        "required": [
+          "reason"
+        ],
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "Shown to the owner (3-1000 characters)."
+          }
+        }
+      },
+      "ServerListingModeration": {
+        "type": "object",
+        "description": "What the owner and staff see besides the public page.",
+        "required": [
+          "hidden"
+        ],
+        "properties": {
+          "hidden": {
+            "type": "boolean"
+          },
+          "hidden_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "hidden_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "verified_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "featured_rank": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "description": "Position among staff picks (lower first); `null` when not featured."
+          }
+        }
+      },
+      "ServerListingPage": {
+        "type": "object",
+        "required": [
+          "items",
+          "has_more",
+          "total"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServerListing"
+            }
+          },
+          "has_more": {
+            "type": "boolean",
+            "description": "More results after `offset + items.len()`."
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Matching listings in all."
+          }
+        }
+      },
+      "ServerListingReportRequest": {
+        "type": "object",
+        "required": [
+          "reason"
+        ],
+        "properties": {
+          "reason": {
+            "$ref": "#/components/schemas/ReportReason"
+          },
+          "details": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "ServerListingRequest": {
+        "type": "object",
+        "description": "Create (`POST`) a listing. Published at once after the automatic checks.",
+        "required": [
+          "slug",
+          "name",
+          "address",
+          "summary",
+          "tags",
+          "languages",
+          "engine",
+          "accept_rules"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "engine": {
+            "$ref": "#/components/schemas/FeaturedEngine"
+          },
+          "game_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "requires_rustic_edition": {
+            "type": "boolean"
+          },
+          "website": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "discord": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ContentVisibility"
+          },
+          "icon_upload": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "A staged `icon` upload (`POST /v1/content/uploads?purpose=icon`)."
+          },
+          "banner_upload": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "A staged `banner` upload."
+          },
+          "accept_rules": {
+            "type": "boolean",
+            "description": "The owner accepts the server listing rules (no impersonation, honest description)."
+          }
+        }
+      },
+      "ServerListingStatus": {
+        "type": "object",
+        "description": "Last status the cloud read with the server list ping (public addresses only, every ~10 min).",
+        "required": [
+          "online",
+          "checked_at"
+        ],
+        "properties": {
+          "online": {
+            "type": "boolean",
+            "description": "Answered the last ping."
+          },
+          "players_online": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "players_max": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "motd": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Plain text of the MOTD (formatting codes removed, at most 200 characters)."
+          },
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The version name the server announced."
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -15149,6 +16490,123 @@
               "type": "string",
               "format": "uuid"
             }
+          }
+        }
+      },
+      "UpdateServerListingRequest": {
+        "type": "object",
+        "description": "Edit (`PATCH`): absent fields stay as they are.",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "address": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tags": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "engine": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/FeaturedEngine"
+              }
+            ]
+          },
+          "game_version": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "`\"\"` clears it."
+          },
+          "requires_rustic_edition": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "website": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "`\"\"` clears it."
+          },
+          "discord": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "`\"\"` clears it."
+          },
+          "visibility": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ContentVisibility"
+              }
+            ]
+          },
+          "icon_upload": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "banner_upload": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "remove_icon": {
+            "type": "boolean",
+            "description": "Removes the icon (ignored with `icon_upload`)."
+          },
+          "remove_banner": {
+            "type": "boolean",
+            "description": "Removes the banner (ignored with `banner_upload`)."
           }
         }
       },

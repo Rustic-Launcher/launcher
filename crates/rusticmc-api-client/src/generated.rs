@@ -332,6 +332,70 @@ impl Client {
         self.call(Method::POST, &path, &query, Some(body)).await
     }
 
+    /// `GET /v1/admin/server-listings`
+    pub async fn admin_listings(&self, q: Option<&str>, status: Option<&str>, sort: Option<&str>, offset: Option<i64>, limit: Option<i64>) -> Result<types::ServerListingPage, ClientError> {
+        let path = "/v1/admin/server-listings";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = status {
+            query.push(("status", v.to_string()));
+        }
+        if let Some(v) = sort {
+            query.push(("sort", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `PUT /v1/admin/server-listings/{id}/featured`
+    pub async fn admin_listing_feature(&self, id: &str, body: &types::ServerListingFeatureRequest) -> Result<types::ServerListing, ClientError> {
+        let path = format!("/v1/admin/server-listings/{}/featured", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, &path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/admin/server-listings/{id}/featured`
+    pub async fn admin_listing_unfeature(&self, id: &str) -> Result<types::ServerListing, ClientError> {
+        let path = format!("/v1/admin/server-listings/{}/featured", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/server-listings/{id}/hidden`
+    pub async fn admin_listing_hide(&self, id: &str, body: &types::ServerListingHideRequest) -> Result<types::ServerListing, ClientError> {
+        let path = format!("/v1/admin/server-listings/{}/hidden", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/admin/server-listings/{id}/hidden`
+    pub async fn admin_listing_unhide(&self, id: &str) -> Result<types::ServerListing, ClientError> {
+        let path = format!("/v1/admin/server-listings/{}/hidden", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `PUT /v1/admin/server-listings/{id}/verified`
+    pub async fn admin_listing_verify(&self, id: &str) -> Result<types::ServerListing, ClientError> {
+        let path = format!("/v1/admin/server-listings/{}/verified", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, &path, &query, None::<&()>).await
+    }
+
+    /// `DELETE /v1/admin/server-listings/{id}/verified`
+    pub async fn admin_listing_unverify(&self, id: &str) -> Result<types::ServerListing, ClientError> {
+        let path = format!("/v1/admin/server-listings/{}/verified", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
     /// `PUT /v1/admin/store/trending`
     pub async fn admin_set_trending(&self, body: &types::SetTrendingRequest) -> Result<(), ClientError> {
         let path = "/v1/admin/store/trending";
@@ -632,7 +696,7 @@ impl Client {
         self.call_empty(Method::POST, path, &query, Some(body)).await
     }
 
-    /// `GET /v1/featured-servers`
+    /// `GET /v1/featured-servers`: Staff picks: the featured server listings (ADR 0158) by rank, then any row still active in the legacy table (older back-offices). Player counts come from the cloud's last ping.
     pub async fn featured_servers_list(&self) -> Result<Vec<types::FeaturedServer>, ClientError> {
         let path = "/v1/featured-servers";
         let query: Vec<(&str, String)> = Vec::new();
@@ -954,6 +1018,13 @@ impl Client {
         self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/me/server-listings`
+    pub async fn my_listings(&self) -> Result<Vec<types::ServerListing>, ClientError> {
+        let path = "/v1/me/server-listings";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/messages/{user_id}`
     pub async fn messages_history(&self, user_id: uuid::Uuid, before: Option<chrono::DateTime<chrono::Utc>>, limit: Option<i64>) -> Result<Vec<types::Message>, ClientError> {
         let path = format!("/v1/messages/{}", seg(user_id));
@@ -1198,6 +1269,89 @@ impl Client {
         let path = "/v1/reports";
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::POST, path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/server-listings`
+    pub async fn listings_search(&self, q: Option<&str>, tag: Option<&str>, language: Option<&str>, engine: Option<&str>, verified: Option<bool>, featured: Option<bool>, sort: Option<&str>, offset: Option<i64>, limit: Option<i64>) -> Result<types::ServerListingPage, ClientError> {
+        let path = "/v1/server-listings";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = tag {
+            query.push(("tag", v.to_string()));
+        }
+        if let Some(v) = language {
+            query.push(("language", v.to_string()));
+        }
+        if let Some(v) = engine {
+            query.push(("engine", v.to_string()));
+        }
+        if let Some(v) = verified {
+            query.push(("verified", v.to_string()));
+        }
+        if let Some(v) = featured {
+            query.push(("featured", v.to_string()));
+        }
+        if let Some(v) = sort {
+            query.push(("sort", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/server-listings`
+    pub async fn listings_create(&self, body: &types::ServerListingRequest) -> Result<types::ServerListing, ClientError> {
+        let path = "/v1/server-listings";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/server-listings/catalog`
+    pub async fn listings_catalog(&self) -> Result<types::ServerListingCatalog, ClientError> {
+        let path = "/v1/server-listings/catalog";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/server-listings/{id}`
+    pub async fn listings_get(&self, id: &str) -> Result<types::ServerListing, ClientError> {
+        let path = format!("/v1/server-listings/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `PATCH /v1/server-listings/{id}`
+    pub async fn listings_update(&self, id: &str, body: &types::UpdateServerListingRequest) -> Result<types::ServerListing, ClientError> {
+        let path = format!("/v1/server-listings/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PATCH, &path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/server-listings/{id}`
+    pub async fn listings_delete(&self, id: &str) -> Result<(), ClientError> {
+        let path = format!("/v1/server-listings/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/server-listings/{id}/plays`: Counts one "Play" press from the launcher (the trending signal). Anonymous: only a per-day total is stored; the same player (account, else address) counts once per listing and 6 hours.
+    pub async fn listings_play(&self, id: &str) -> Result<(), ClientError> {
+        let path = format!("/v1/server-listings/{}/plays", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/server-listings/{id}/reports`
+    pub async fn listings_report(&self, id: &str, body: &types::ServerListingReportRequest) -> Result<types::ReportCreated, ClientError> {
+        let path = format!("/v1/server-listings/{}/reports", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
     }
 
     /// `GET /v1/servers`
@@ -1494,6 +1648,13 @@ pub const OPERATIONS: &[&str] = &[
     "admin_create_promo",
     "admin_reports",
     "admin_resolve_report",
+    "admin_listings",
+    "admin_listing_feature",
+    "admin_listing_unfeature",
+    "admin_listing_hide",
+    "admin_listing_unhide",
+    "admin_listing_verify",
+    "admin_listing_unverify",
     "admin_set_trending",
     "admin_user_bans",
     "handoff_create",
@@ -1579,6 +1740,7 @@ pub const OPERATIONS: &[&str] = &[
     "library_list",
     "library_add",
     "library_remove",
+    "my_listings",
     "messages_history",
     "messages_send",
     "messages_mark_read",
@@ -1612,6 +1774,14 @@ pub const OPERATIONS: &[&str] = &[
     "minecraft_lookup_batch",
     "minecraft_lookup",
     "reports_create",
+    "listings_search",
+    "listings_create",
+    "listings_catalog",
+    "listings_get",
+    "listings_update",
+    "listings_delete",
+    "listings_play",
+    "listings_report",
     "servers_list",
     "servers_create",
     "subdomain_availability",

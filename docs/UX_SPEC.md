@@ -129,36 +129,70 @@ the empty state **"Select a conversation"**. Skeletons while loading.
   options: pre-launch / wrapper / env as advanced).
 - Context menu: Play, Duplicate, Export (`.mrpack`/zip), Open folder, Delete (confirm with name typing if it has worlds).
 
-### 4.3 Explore (Content) — [03-content-browse.svg](wireframes/03-content-browse.svg), [04-content-detail.svg](wireframes/04-content-detail.svg)
+### 4.3 Explore (Content) — redesigned 2026-11-13 (ADR 0156); older wireframes: [03](wireframes/03-content-browse.svg), [04](wireframes/04-content-detail.svg)
 
-- Step 1b layout: a **type dropdown** (Mods / Modpacks / Resource packs / Shaders / Datapacks / Plugins) fused with the
-  search field ("Search mods on Horizon, Modrinth, Rustic…"), a sort dropdown, "Installing into ▾" under it; results
-  as **rows** (icon, title, one-line description, author + compatibility badge + source + category chips, downloads +
-  updated time, **View** and accent **Install**); **right column**: sources as three big tabs, **Categories** chips
-  grid with "View N more", **Compatibility** (on by default), **Horizon versions** (target build highlighted).
-
-- Tabs: **Mods · Modpacks · Resource packs · Shaders · Datapacks · Plugins**. Sources filter: **Horizon · Modrinth ·
-  Rustic** (CurseForge later). "Installing into: <instance> ▾" (Plugins: "Installing into: <server> ▾").
-- Search with debounce 250 ms, filters (category, side, "Works only" on by default, sort).
-- **Compatibility badges** (ADR 0016): **Works** (success), **Partly** (warning, tooltip lists what doesn't run),
-  **Doesn't run** (danger, install disabled, explanation "Java code can't run on Horizon"), **Needs native build**
-  (info, disabled in v1), **Client / Server / Both**, **Rustic Server plugin** (with API version check).
-- Row: icon, name, author, source, downloads, badges, primary button (Install / Installed ✓ / Update / Details).
-- Detail page: header (icon, name, author, licence, source, badges, version picker, Install), tabs Description
-  (sanitised Markdown, external links open in browser with a confirm for unknown hosts), Gallery, Versions (changelog,
-  game/build compatibility), Compatibility (why the badge), Permissions/capabilities (plugins: network domains,
-  filesystem), Report (fair play / malware / copyright).
-- Datapacks tab asks for a world (instance › world picker). Shaders tab notes "Horizon WGSL and Iris/OptiFine packs from
-  the Horizon registry" (Modrinth shader packs shown with "Doesn't run": HORIZON_FACTS A2).
+- **Header**: title, then the tabs **Discover · Browse · My content** (FR: Découvrir · Parcourir · Mes contenus);
+  one toolbar under it: the **kind selector** fused into the search field (Mods, Modpacks, Resource packs, Shaders,
+  Data packs; Plugins in a "For a Rustic Server" group) and **"Installing into: <instance or server> ▾"** (hidden
+  for modpacks: they become profiles). Everything is in the URL (`tab`, `kind`, `q`, `target`, Browse filters).
+  Search debounces 250 ms; typing on Discover moves to Browse; on My content it filters the lists.
+- **Discover**: a large **featured carousel** (picture or generated art, name, author, tags, summary, Install + View,
+  compatibility; visible arrows, dots, pause/play; rotation stops on hover/focus, while a game runs, and never starts
+  with reduced motion; Left/Right/Home/End), then **themed rows** of visual cards (picture, icon, name, author,
+  downloads, compatibility): New · Popular on Horizon · Verified by Rustic · For <target> · From the community, each
+  with **See all** (Browse with that row's filters). Flagged or refused (fair play) projects are never promoted; an
+  empty row is hidden.
+- **Browse**: result count; sort (relevance, downloads, newest, updated); **Filters** panel (sources Horizon /
+  Modrinth / Rustic, compatible only (on by default), verified by Rustic only, price all/free/paid, categories) with
+  removable chips for active filters; **list / grid** toggle (remembered). Rows: thumbnail, name, "by author",
+  verified, summary, compatibility badge (Builds on your Horizon / Compatible / Incompatible: reason; native mods:
+  **Builds on your PC**), source, price, category chips, downloads, updated, size, game and latest version; **View**
+  and **Install / Installed / Update / Coming soon (paid) / Build and install (native, disabled until the launcher
+  compiles them)**. **Load more** while a source has more (`has_more`). Data packs ask for a world on Install.
+- **My content**: installed on the target (enable switch, update, remove with confirmation; servers link to their
+  page), then, signed in, **My library** (Rustic library: View, Install, remove) and **My creations** (status:
+  public, unlisted, private, waiting for review, rejected, taken down; **Manage** and **Publish on the website** open
+  rustic-launcher.com). Signed out: one card to sign in.
+- **Project page**: banner hero (first screenshot or generated art), icon, name, verified, author · licence · source,
+  badges (compatibility, source, verified, side, shader format, price), target picker, Report, **Add to my library**
+  (free Rustic projects, signed in), Install. Paid: the price and "Coming soon", never a buy button. Tabs Description
+  (sanitised Markdown), Gallery, Versions (channel badges, Horizon builds, compatibility, per-version install),
+  Changelog, Dependencies, Compatibility (native mods explained); sidebar with stats, categories, links and the
+  project's page on the website. Unknown, private or taken-down projects: "This project is not available".
+- **Install link** `rustic://content/rustic/<project>[?version=…]`: the launcher comes forward on the project page
+  with an **install prompt** (target, version preselected, Install, Not now); nothing installs without the click.
+- Building blocks for the next pages (Servers, Profiles): `apps/launcher/src/components/catalog/`.
 
 ### 4.4 Servers — [05-servers-list.svg](wireframes/05-servers-list.svg), wizard [06](wireframes/06-wizard-1-basics.svg) · [07](wireframes/07-wizard-2-where-to-host.svg) · [08](wireframes/08-wizard-3-access.svg), manage [09](wireframes/09-server-manage.svg)
 
-- Step 1b layout: a **view dropdown** (Featured / My servers / Multiplayer list) fused with search, "Recommended"
-  sort, ping-refresh and grid/list icon buttons, and an accent **Create server** card at the top right. **Featured**
-  servers are large banner cards (original generated art) with icon, name, online count, view (details popover:
-  address, description, tags, save to list) and play (join) icon buttons. **My servers** keeps its cards (name,
-  type, hosting mode with "Remote: host", address, state, players; Manage, Start/Stop). **Multiplayer list**:
-  favourites, ping, MOTD, add/edit/remove, Join.
+- **Layout (ADR 0158, the Explore design of ADR 0156)**: title "Play on *servers*" and three tabs in the header,
+  **My servers** (with a count) / **Discover** / **Browse**; one toolbar with the search field, ping refresh,
+  **Publish my server** (opens the website's form) and the accent **Create server** card. The URL keeps the tab,
+  the text and the Browse filters (`?tab=browse&tag=pvp&language=fr&engine=rustic&sort=players&verified=true`);
+  older `?tab=joined|multiplayer` links open My servers. Breadcrumb `Servers / Discover|Browse|My servers`,
+  `Servers / Details` on a server page.
+- **My servers**: the game's multiplayer list as visual cards (generated cover, live ping badge, favourite star,
+  name, address, MOTD, players, last played, **Join**, menu Edit / Copy address / Remove with Undo), favourites
+  first; "Add a server" inline form. Below, **Hosted by you**: the hosted servers' cards (state, players,
+  address, Start/Stop) and the Create card.
+- **Discover**: a hero carousel of staff picks then verified servers (banner or generated art, badges, online
+  count, languages, **Play** and **View**); rows **Trending**, **Most players now**, **New in the directory**,
+  **Recently played** (from the multiplayer list), then one per game style (Survival, Minigames, PvP, Skyblock,
+  Roleplay, Creative) with "See all" into Browse; empty rows are left out; a "Your server here" card links to the
+  website's publishing form. A fresh, empty directory shows one empty state instead.
+- **Browse**: result count, sort (Trending / Most players / Newest / Name), **Filters** (game style chips,
+  language chips, engine chips, "Verified only"), grid/list toggle (remembered); removable chips for active
+  filters; grid of server cards or dense rows (icon, name, address, badges, summary, engine and tags, players
+  online, languages, launches this week, View, Play); "Load more".
+- **Server page** (`/servers/listing/<slug>`): banner with staff-pick/verified/engine badges, icon, name and
+  summary; tags and "Rustic edition required"; **Live status** pinged from this PC (players, latency, version,
+  MOTD; the cloud's last count when unreachable); engine, game version, languages, launches this week;
+  description (safe Markdown). Side panel: address with Copy, **Play** (adds the server to the multiplayer list
+  when missing, then launches the active profile and joins), **Add to list** / "In your list", **Open on the
+  website**, website and Discord links (opened in the browser), "Listed by …" and **Report** (reason + details).
+  Unknown, private or hidden servers: "This server is not available".
+- **Server link** `rustic://server/<slug>` (the website's "Open in Rustic Launcher"): the launcher comes forward on
+  the server page; nothing joins without the Play click.
 - **Create server wizard** (modal, 3 steps, `Esc` asks to discard):
   1. **Basics**: name; type **Rustic Server** (plugins) or **Vanilla Horizon**; world (new with seed / import from an
      instance world); game mode, difficulty; starter plugins (official ones with their declared capabilities); version
@@ -284,7 +318,7 @@ Joining a friend: **click 1: Join** in the Launchpad friends column or the Socia
 
 ### J3. Install a mod
 
-1. Content (or `Ctrl+K` "minimap") → Mods tab (Works only filter on).
+1. Explore (or `Ctrl+K` "minimap") → Discover's rows, or type to land in Browse (Mods, compatible-only filter on).
 2. Install on the row (target instance shown) → progress inline → "Installed ✓" + toast "Restart the game to use it"
    when the game is running.
 3. Badges explain anything not Works before the click; Doesn't run is disabled.

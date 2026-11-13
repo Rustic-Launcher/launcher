@@ -6,6 +6,7 @@
 import type {
   AppNotification,
   ChatMessage,
+  ContentReportReason,
   Conversation,
   Cosmetic,
   Currency,
@@ -14,7 +15,9 @@ import type {
   FriendRequest,
   FriendSuggestions,
   FriendTarget,
+  LibraryItem,
   Loadout,
+  MarketplaceProject,
   Me,
   NewsItem,
   Outfit,
@@ -23,6 +26,9 @@ import type {
   PurchaseRequest,
   PurchaseResult,
   RealtimeEvent,
+  ServerListing,
+  ServerListingPage,
+  ServerListingQuery,
   StoreCatalog,
   StoreProduct,
   UserLite,
@@ -59,6 +65,15 @@ export interface CloudClient {
   // content feeds
   news(): Promise<NewsItem[]>;
   featuredServers(): Promise<FeaturedServer[]>;
+  // server directory (public; ADR 0158)
+  /** `GET /v1/server-listings`: search, filters, sorts, paging. */
+  serverListings(query: ServerListingQuery): Promise<ServerListingPage>;
+  /** `GET /v1/server-listings/{id}`: one server by id or slug, with its description. */
+  serverListing(idOrSlug: string): Promise<ServerListing>;
+  /** `POST /v1/server-listings/{id}/plays`: one anonymous "Play" press (the trending signal). */
+  recordServerPlay(id: string): Promise<void>;
+  /** `POST /v1/server-listings/{id}/reports` (signed in). */
+  reportServerListing(id: string, reason: ContentReportReason, details?: string): Promise<void>;
   notifications(): Promise<AppNotification[]>;
   markNotificationsRead(ids: string[]): Promise<void>;
   // cosmetics & store
@@ -71,6 +86,15 @@ export interface CloudClient {
   catalog(currency: Currency): Promise<StoreCatalog>;
   product(id: string, currency: Currency): Promise<StoreProduct>;
   purchase(req: PurchaseRequest): Promise<PurchaseResult>;
+  // content marketplace (signed in; ADR 0155)
+  /** `GET /v1/me/library`: free projects added, purchases and grants. */
+  contentLibrary(): Promise<LibraryItem[]>;
+  /** `PUT /v1/me/library/{id}`: a free project (paid ones answer `paid_content`). */
+  libraryAdd(projectId: string): Promise<void>;
+  libraryRemove(projectId: string): Promise<void>;
+  /** `GET /v1/me/content`: the projects this account publishes, whatever their state. */
+  myContent(): Promise<MarketplaceProject[]>;
+  reportContent(projectId: string, reason: ContentReportReason, details?: string): Promise<void>;
   // account & compliance
   parental(): Promise<ParentalControls>;
   setParental(patch: Partial<ParentalControls> & { pin?: string }): Promise<ParentalControls>;

@@ -57,7 +57,7 @@
   "nav": {
     "label": "Main navigation",
     "home": "Launchpad",
-    "instances": "Versions",
+    "instances": "Profiles",
     "content": "Explore",
     "servers": "Servers",
     "locker": "Locker",
@@ -241,7 +241,9 @@
       "server": "Server",
       "java": "Java runtime",
       "update": "Launcher update",
-      "prepare": "Preparing game files"
+      "prepare": "Preparing game files",
+      "native-build": "Native mods build",
+      "native-toolchain": "Rust for native mods"
     }
   },
   "play": {
@@ -267,7 +269,9 @@
       "preparing": "Preparing…",
       "launching": "Launching…",
       "stopping": "Stopping…",
-      "preparingFiles": "Preparing game files {{pct}}"
+      "preparingFiles": "Preparing game files {{pct}}",
+      "building": "Compiling native mods…",
+      "buildingPct": "Compiling native mods {{pct}}"
     },
     "errors": {
       "launch": "The game could not start"
@@ -284,7 +288,12 @@
       "prepare_failed": "The game files could not be prepared: try again, or prepare them in Settings › Game & instances.",
       "prepare_no_java": "Java was not found: install it or choose it in Settings › Game & instances.",
       "prepare_no_minecraft_dir": "Your game install was not found: choose its folder in Settings › Game & instances.",
-      "launch_already_running": "This instance is already running."
+      "launch_already_running": "This instance is already running.",
+      "native_consent": "This instance has native mods: accept their trust notice on the instance page (Content) first.",
+      "native_toolchain": "Native mods need Rust: install it from the instance page (Content) or Settings › Game & instances.",
+      "native_not_edition": "Native mods only build into the Rustic edition: switch this instance to it, or turn its native mods off.",
+      "native_build_failed": "The native mods could not be built",
+      "native_disk": "Not enough free disk space to build the native mods."
     }
   },
   "horizon": {
@@ -331,8 +340,9 @@
       "featured": "Featured",
       "mine": "My servers",
       "multiplayer": "Multiplayer list",
-      "discover": "Featured",
-      "joined": "Multiplayer list"
+      "discover": "Discover",
+      "joined": "Multiplayer list",
+      "browse": "Browse"
     }
   },
   "social": {
@@ -371,6 +381,37 @@
   "deepLink": {
     "authOk": "Signed in to Rustic",
     "authFailed": "Rustic sign-in failed",
-    "joining": "Joining {{target}}…"
+    "joining": "Joining {{target}}…",
+    "content": "Opening {{project}} from the website"
+  },
+  "catalog": {
+    "sort": "Sort by",
+    "results_one": "{{count}} result",
+    "results_other": "{{count}} results",
+    "loadMore": "Load more",
+    "loadMoreCount": "Showing {{shown}} of {{total}}",
+    "carousel": {
+      "prev": "Previous",
+      "next": "Next",
+      "slide": "{{index}} of {{total}}",
+      "pause": "Pause the slideshow",
+      "play": "Play the slideshow"
+    },
+    "row": {
+      "seeAll": "See all",
+      "seeAllAria": "See all: {{title}}",
+      "scrollPrev": "Scroll left",
+      "scrollNext": "Scroll right"
+    },
+    "filters": {
+      "button": "Filters",
+      "buttonCount": "Filters · {{count}}",
+      "reset": "Reset filters"
+    },
+    "layout": {
+      "label": "Layout",
+      "list": "List",
+      "grid": "Grid"
+    }
   }
 }

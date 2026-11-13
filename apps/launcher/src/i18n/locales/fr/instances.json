@@ -1,24 +1,5 @@
 {
   "title": "Versions",
-  "description": "Chaque instance a sa version d’Horizon, son contenu et ses mondes.",
-  "summary_one": "{{count}} instance · {{playtime}} de jeu",
-  "summary_many": "{{count}} instances · {{playtime}} de jeu",
-  "summary_other": "{{count}} instances · {{playtime}} de jeu",
-  "search": "Filtrer les instances",
-  "sort": {
-    "label": "Trier les instances",
-    "recent": "Dernière partie",
-    "name": "Nom",
-    "playtime": "Temps de jeu"
-  },
-  "empty": {
-    "title": "Aucune instance",
-    "description": "Créez-en une avec la version d’Horizon recommandée, ou importez un modpack."
-  },
-  "noMatch": {
-    "title": "Aucune instance ne correspond",
-    "description": "Rien ne correspond à « {{query}} »."
-  },
   "errors": {
     "action": "Cela n’a pas fonctionné"
   },
@@ -26,12 +7,9 @@
     "more": "Plus d’actions pour {{name}}",
     "pin": "Épingler",
     "unpin": "Désépingler",
-    "pinned": "Épinglée",
     "duplicate": "Dupliquer",
     "duplicated": "{{name}} créée",
-    "mods": "Mods",
     "playtime": "Temps de jeu",
-    "lastPlayed": "Dernière partie",
     "never": "Jamais",
     "fromModpack": "Modpack {{name}} {{version}}"
   },
@@ -47,7 +25,6 @@
     "done": "{{name}} supprimée"
   },
   "new": {
-    "button": "Nouvelle instance",
     "title": "Nouvelle instance",
     "description": "Partez de zéro ou reprenez un pack existant.",
     "tabs": {
@@ -225,41 +202,130 @@
     "allSaved": "Tout est enregistré.",
     "saved": "Réglages de l’instance enregistrés"
   },
-  "versions": {
-    "noSelection": "Sélectionnez un profil pour voir ses détails, ou créez-en un pour commencer.",
-    "source": "Source",
-    "sources": {
-      "all": "Horizon",
-      "custom": "Mes profils",
-      "modpack": "Modpacks"
-    },
-    "search": "Rechercher dans vos profils Horizon…",
-    "clear": "Effacer la recherche",
-    "newProfile": "Nouveau profil",
-    "update": "Mise à jour",
-    "running": "En cours",
-    "details": "Détails du profil",
-    "media": "Images du profil",
-    "slide": "Image {{index}} sur {{total}}",
-    "slides": {
-      "0": "{{name}}",
-      "1": "Les mondes de {{name}}",
-      "2": "Constructions de {{name}}"
-    },
-    "blurb": "{{version}} avec {{mods}} mods. {{playtime}} de jeu jusqu’ici.",
-    "fromModpack": "Installé depuis le modpack {{name}} ({{version}}).",
-    "created": "Créé le {{date}}.",
-    "lastPlayed": "Joué {{when}}.",
-    "readMore": "Lire la suite",
-    "readLess": "Réduire",
-    "version": "Version",
-    "build": "Build",
-    "edition": "Édition",
-    "content": "Contenu",
-    "contentCount": "{{mods}} mods · {{packs}} packs · {{shaders}} shaders",
-    "manage": "Gérer le contenu, les mondes et les réglages",
-    "plainHorizon": "Horizon (vanilla)"
-  },
   "heading": "Vos *profils*",
-  "eyebrow": "Versions"
+  "native": {
+    "title": "Mods natifs",
+    "allOff": "Tous désactivés : l’instance joue le jeu précompilé.",
+    "state": {
+      "building": "Compilation…",
+      "up_to_date": "À jour",
+      "needs_rebuild": "À recompiler",
+      "not_built": "Pas compilé",
+      "not_needed": "Jeu précompilé"
+    },
+    "build": "Compiler",
+    "rebuild": "Recompiler",
+    "cancel": "Annuler",
+    "progress": "Progression de la compilation native",
+    "starting": "Démarrage…",
+    "firstBuildHint": "La première compilation compile tout le jeu (10 à 15 minutes) ; les suivantes seulement ce qui a changé. Vous pouvez continuer à utiliser le launcher.",
+    "failed": "La dernière compilation a échoué",
+    "built": "Compilé {{date}} en {{duration}} · jeu {{size}}",
+    "leftOut": {
+      "other": "{{name}} a été laissé de côté : il ne s’applique pas à ce Horizon.",
+      "unsupported": "{{name}} a été laissé de côté : Rustic ne sait pas encore compiler ce qu’il demande."
+    },
+    "notEdition": "Cette instance joue un build Horizon simple : les mods natifs ne se compilent que dans l’édition Rustic."
+  },
+  "profiles": {
+    "summary_one": "{{count}} profil · {{playtime}} de jeu",
+    "summary_other": "{{count}} profils · {{playtime}} de jeu",
+    "summary_many": "{{count}} profils · {{playtime}} de jeu",
+    "searchLabel": "Rechercher dans vos profils",
+    "searchPlaceholder": "Nom, version d’Horizon ou modpack…",
+    "source": {
+      "label": "Afficher",
+      "all": "Tous les profils",
+      "custom": "Mes profils",
+      "modpack": "Issus de modpacks"
+    },
+    "sorts": {
+      "recent": "Dernière partie",
+      "name": "Nom",
+      "created": "Créés récemment",
+      "version": "Version d’Horizon",
+      "playtime": "Temps de jeu"
+    },
+    "filters": {
+      "version": "Version d’Horizon",
+      "edition": "Édition",
+      "editions": {
+        "rustic": "Édition Rustic",
+        "horizon": "Horizon seul"
+      },
+      "native": "Mods natifs",
+      "nativeOnly": "Avec des mods natifs",
+      "nativeHint": "Les mods natifs sont compilés sur votre PC avant le lancement du jeu.",
+      "remove": "Retirer le filtre : {{filter}}",
+      "reset": "Réinitialiser les filtres"
+    },
+    "create": "Créer un profil",
+    "createHint": "Une version d’Horizon, une icône et un nom",
+    "import": "Importer",
+    "importHint": "Un dossier, un .mrpack ou un zip CurseForge",
+    "all": "Tous les profils",
+    "listLabel": "Profils",
+    "recent": "Reprendre",
+    "recentHint": "Vos derniers profils joués",
+    "card": {
+      "active": "Actif",
+      "activeHint": "Le Launchpad lance ce profil",
+      "running": "En cours",
+      "pinned": "Épinglé",
+      "update": "Mise à jour {{version}}",
+      "broken": "À réparer",
+      "modpack": "Modpack",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Joué {{when}}",
+      "neverPlayed": "Pas encore joué",
+      "created": "Créé le {{date}}",
+      "lastServer": "Dernier serveur : {{name}}",
+      "rejoin": "Rejoindre",
+      "rejoinAria": "Rejoindre {{server}} avec {{name}}",
+      "mods": "Mods",
+      "packs": "Packs de ressources",
+      "shaders": "Shaders",
+      "playtime": "Temps de jeu",
+      "contentCount": "{{mods}} mods · {{packs}} packs · {{shaders}} shaders",
+      "open": "Ouvrir {{name}}"
+    },
+    "native": {
+      "label": "Mods natifs",
+      "count_one": "{{count}} mod natif",
+      "count_other": "{{count}} mods natifs",
+      "count_many": "{{count}} mods natifs",
+      "building": "Compilation {{pct}}",
+      "buildingNoPct": "Compilation…",
+      "up_to_date": "Mods natifs prêts",
+      "needs_rebuild": "Natif : à recompiler",
+      "not_built": "Natif : pas encore compilé",
+      "off": "Mods natifs désactivés",
+      "unsupported": "Natif : édition Rustic requise",
+      "hint": {
+        "up_to_date": "Compilés sur ce PC pour cette version d’Horizon.",
+        "needs_rebuild": "Les mods ont changé depuis la dernière compilation : elle est refaite au lancement.",
+        "not_built": "Compilés sur votre PC au lancement (10 à 15 minutes la première fois).",
+        "off": "Tous les mods natifs sont désactivés : le jeu précompilé se lance.",
+        "unsupported": "Ce profil utilise une version d’Horizon seule : les mods natifs ne se compilent que dans l’édition Rustic.",
+        "building": "Compilation du jeu avec les mods natifs de ce profil."
+      }
+    },
+    "menu": {
+      "edit": "Modifier les réglages",
+      "activate": "Utiliser sur le Launchpad",
+      "isActive": "Utilisé sur le Launchpad",
+      "activated": "{{name}} est maintenant sur le Launchpad"
+    },
+    "empty": {
+      "title": "Aucun profil pour l’instant",
+      "description": "Un profil, c’est une version d’Horizon avec ses propres mods, packs et mondes. Créez-en un avec la version recommandée, ou importez un pack que vous avez déjà."
+    },
+    "noMatch": {
+      "title": "Aucun profil ne correspond",
+      "description": "Essayez une autre recherche ou retirez un filtre."
+    },
+    "detail": {
+      "banner": "Couverture de {{name}}"
+    }
+  }
 }

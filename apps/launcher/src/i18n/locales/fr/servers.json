@@ -900,5 +900,137 @@
         "steps": "Ouvrez la zone DNS de votre domaine (parfois appelée Enregistrements DNS ou Éditeur de zone).\nAjoutez chaque enregistrement ci-dessous avec le même type, nom et valeur.\nSi votre registrar demande le nom complet, ajoutez votre domaine après le Nom.\nEnregistrez puis revenez : nous vérifions automatiquement."
       }
     }
+  },
+  "directory": {
+    "tabsLabel": "Vues des serveurs",
+    "tabs": {
+      "discover": "Découvrir",
+      "browse": "Parcourir"
+    },
+    "searchLabel": "Rechercher un serveur",
+    "searchPlaceholder": "Rechercher dans l’annuaire des serveurs…",
+    "publish": "Publier mon serveur",
+    "publishCta": {
+      "title": "Votre serveur ici",
+      "hint": "Ajoutez votre serveur Horizon à l’annuaire depuis le site : il apparaît ici et sur rustic-launcher.com dès que les vérifications automatiques sont passées."
+    },
+    "play": "Jouer",
+    "playAria": "Jouer sur {{name}}",
+    "view": "Voir",
+    "verified": "Vérifié",
+    "featured": "Sélection",
+    "verifiedHint": "Serveurs vérifiés : l’équipe Rustic a contrôlé le propriétaire et les règles.",
+    "online_one": "{{value}} en ligne",
+    "online_other": "{{value}} en ligne",
+    "playersLabel": "Joueurs en ligne",
+    "languagesLabel": "Langues",
+    "playsLabel": "Lancements cette semaine",
+    "lastPlayed": "Dernière partie",
+    "lastPlayedOn": "Joué {{when}}",
+    "hero": {
+      "label": "Serveurs à la une",
+      "eyebrow": "Vérifié"
+    },
+    "rows": {
+      "trending": "Tendances",
+      "trendingHint": "Les plus lancés depuis Rustic cette semaine",
+      "players": "Les plus peuplés",
+      "playersHint": "Selon le dernier relevé du cloud",
+      "new": "Nouveaux dans l’annuaire",
+      "newHint": "Tout juste publiés par leurs propriétaires",
+      "recent": "Joués récemment",
+      "recentHint": "Depuis votre liste de serveurs"
+    },
+    "rowError": "Cette rangée n’a pas pu se charger.",
+    "retry": "Réessayer",
+    "empty": {
+      "title": "Aucun serveur dans l’annuaire",
+      "hint": "Soyez le premier : publiez votre serveur depuis le site."
+    },
+    "emptySearch": {
+      "title": "Aucun serveur ne correspond",
+      "hint": "Essayez d’autres mots ou moins de filtres."
+    },
+    "sorts": {
+      "trending": "Tendances",
+      "players": "Les plus peuplés",
+      "new": "Nouveautés",
+      "name": "Nom"
+    },
+    "filters": {
+      "tags": "Style de jeu",
+      "language": "Langue",
+      "engine": "Moteur",
+      "rustic": "Rustic",
+      "verifiedOnly": "Vérifiés uniquement",
+      "reset": "Réinitialiser les filtres",
+      "remove": "Retirer le filtre {{filter}}"
+    },
+    "tags": {
+      "survival": "Survie",
+      "smp": "SMP",
+      "creative": "Créatif",
+      "minigames": "Mini-jeux",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Roleplay",
+      "factions": "Factions",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Aventure",
+      "building": "Construction",
+      "economy": "Économie",
+      "modded": "Moddé",
+      "anarchy": "Anarchie",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Serveurs",
+      "status": "Statut en direct",
+      "cloudSaw_one": "le cloud a vu {{value}} joueur en ligne {{when}}",
+      "cloudSaw_other": "le cloud a vu {{value}} joueurs en ligne {{when}}",
+      "engine": "Moteur",
+      "version": "Version du jeu",
+      "languages": "Langues",
+      "plays": "Lancements cette semaine",
+      "about": "À propos",
+      "noDescription": "Pas encore de description.",
+      "address": "Adresse",
+      "copy": "Copier",
+      "openSite": "Ouvrir sur le site",
+      "website": "Site web",
+      "discord": "Discord",
+      "by": "Publié par {{name}}",
+      "byStaff": "Publié par l’équipe Rustic",
+      "report": "Signaler",
+      "rusticEdition": "Édition Rustic requise",
+      "missing": "Ce serveur n’est pas disponible",
+      "missingHint": "Il est peut-être privé, masqué par la modération ou supprimé."
+    },
+    "report": {
+      "title": "Signaler {{name}}",
+      "lead": "Dites à l’équipe de modération ce qui ne va pas. Chaque signalement est examiné.",
+      "reason": "Motif",
+      "reasons": {
+        "impersonation": "Usurpe un autre serveur",
+        "spam": "Spam ou trompeur",
+        "inappropriate_content": "Contenu inapproprié",
+        "cheating": "Triche ou serveur malveillant",
+        "harassment": "Harcèlement",
+        "copyright": "Atteinte à mes droits (marque, nom)",
+        "malware": "Logiciel malveillant",
+        "other": "Autre"
+      },
+      "details": "Détails",
+      "detailsHint": "Facultatif, 2 000 caractères au plus.",
+      "send": "Envoyer le signalement",
+      "sent": "Merci, votre signalement a été envoyé à la modération.",
+      "signIn": "Connectez-vous à votre compte Rustic pour signaler un serveur.",
+      "failed": "Le signalement n’a pas pu être envoyé."
+    }
   }
 }

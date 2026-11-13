@@ -1,7 +1,11 @@
 import type { IsoDate } from './app';
+import type { Money } from './dns';
 
 export type ContentKind = 'mod' | 'modpack' | 'resourcepack' | 'shader' | 'datapack' | 'plugin';
 export type ContentSource = 'horizon' | 'modrinth' | 'rustic';
+export type ContentSort = 'relevance' | 'downloads' | 'updated' | 'newest';
+/** Rustic's marketplace: free or paid projects (only Rustic has paid ones). */
+export type PriceFilter = 'free' | 'paid';
 
 export type IncompatibilityReason =
   | 'horizon_version'
@@ -17,6 +21,9 @@ export type Compatibility =
       status: 'compatible';
       /** The project ships a build made for the target's Horizon version. */
       builds_on_horizon: boolean;
+      /** A native mod that fits: the launcher compiles it into the instance's own client. */
+      needs_build?: boolean;
+      detail?: string;
     }
   | { status: 'incompatible'; reason: IncompatibilityReason; detail: string }
   | { status: 'unknown' };
@@ -42,6 +49,22 @@ export interface ContentSummary {
   installed_in: string[];
   featured: boolean;
   shader_format?: ShaderFormat;
+  /** Flagged by the fair-play policy: installable with a notice, never promoted. */
+  flagged?: boolean;
+  /** Rustic: an admin confirmed the project matches its description. */
+  verified?: boolean;
+  /** A paid Rustic project (creator sales are not open yet: shown, never sold); null when free. */
+  price?: Money | null;
+  /** A wide image for cards (the first screenshot), from an allowed CDN. */
+  banner_url?: string | null;
+  /** Bytes of the newest version's file, when the source says. */
+  size_bytes?: number | null;
+  latest_version?: string | null;
+  created_at?: IsoDate | null;
+  /** Game versions the source lists (`26.3`...). */
+  game_versions?: string[];
+  /** A Horizon native mod: Rust source compiled into the game on the player's PC. */
+  native?: boolean;
 }
 
 export interface ContentVersion {
@@ -70,7 +93,15 @@ export interface ContentDetail extends ContentSummary {
   versions: ContentVersion[];
   dependencies: ContentDependency[];
   changelog: { version: string; published_at: IsoDate; notes: string }[];
-  links: { source?: string; issues?: string; website?: string };
+  links: {
+    source?: string | null;
+    issues?: string | null;
+    website?: string | null;
+    wiki?: string | null;
+    discord?: string | null;
+  };
+  /** Rustic: uploaded by its creator on the website's marketplace (not curated). */
+  marketplace?: boolean;
 }
 
 export interface ContentSearchQuery {
@@ -81,7 +112,11 @@ export interface ContentSearchQuery {
   target?: InstallTarget;
   compatible_only: boolean;
   category?: string;
-  sort: 'relevance' | 'downloads' | 'updated' | 'newest';
+  sort: ContentSort;
+  /** Rustic only has paid projects; `paid` leaves the other sources out. */
+  price?: PriceFilter;
+  /** Only projects verified by Rustic (Rustic's catalogue only). */
+  verified?: boolean;
   offset: number;
   limit: number;
 }

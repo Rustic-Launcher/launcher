@@ -468,6 +468,70 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/v1/admin/server-listings': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['admin_listings'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/admin/server-listings/{id}/featured': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put: operations['admin_listing_feature'];
+    post?: never;
+    delete: operations['admin_listing_unfeature'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/admin/server-listings/{id}/hidden': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations['admin_listing_hide'];
+    delete: operations['admin_listing_unhide'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/admin/server-listings/{id}/verified': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put: operations['admin_listing_verify'];
+    post?: never;
+    delete: operations['admin_listing_unverify'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/v1/admin/store/trending': {
     parameters: {
       query?: never;
@@ -1063,6 +1127,10 @@ export interface paths {
       path?: never;
       cookie?: never;
     };
+    /**
+     * Staff picks: the featured server listings (ADR 0158) by rank, then any row still active in the
+     *     legacy table (older back-offices). Player counts come from the cloud's last ping.
+     */
     get: operations['featured_servers_list'];
     put?: never;
     post?: never;
@@ -1713,6 +1781,22 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/v1/me/server-listings': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['my_listings'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/v1/me/skin': {
     parameters: {
       query?: never;
@@ -2204,6 +2288,90 @@ export interface paths {
     get?: never;
     put?: never;
     post: operations['reports_create'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/server-listings': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['listings_search'];
+    put?: never;
+    post: operations['listings_create'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/server-listings/catalog': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['listings_catalog'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/server-listings/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['listings_get'];
+    put?: never;
+    post?: never;
+    delete: operations['listings_delete'];
+    options?: never;
+    head?: never;
+    patch: operations['listings_update'];
+    trace?: never;
+  };
+  '/v1/server-listings/{id}/plays': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /**
+     * Counts one "Play" press from the launcher (the trending signal). Anonymous: only a per-day
+     *     total is stored; the same player (account, else address) counts once per listing and 6 hours.
+     */
+    post: operations['listings_play'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/server-listings/{id}/reports': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations['listings_report'];
     delete?: never;
     options?: never;
     head?: never;
@@ -3130,7 +3298,7 @@ export interface components {
       expires_at: string;
     };
     /** @enum {string} */
-    ContentUploadPurpose: 'file' | 'icon' | 'gallery';
+    ContentUploadPurpose: 'file' | 'icon' | 'gallery' | 'banner';
     ContentVersion: {
       /** @description Always `rustic`. */
       source: string;
@@ -4272,6 +4440,7 @@ export interface components {
       created_at: string;
       resolution_note?: string | null;
       content_project?: null | components['schemas']['ReportedContent'];
+      server_listing?: null | components['schemas']['ReportedServer'];
     };
     ReportCreated: {
       /** Format: uuid */
@@ -4302,6 +4471,13 @@ export interface components {
       slug: string;
       name: string;
       kind: components['schemas']['ContentKind'];
+    };
+    ReportedServer: {
+      /** Format: uuid */
+      id: string;
+      slug: string;
+      name: string;
+      address: string;
     };
     ResetPasswordRequest: {
       token: string;
@@ -4338,6 +4514,151 @@ export interface components {
       address: string;
       /** Format: uuid */
       rustic_server_id?: string | null;
+    };
+    /** @description A server in the directory. Lists leave `description` out (`null`); the detail has it. */
+    ServerListing: {
+      /** Format: uuid */
+      id: string;
+      /** @description `[a-z0-9-]{3,48}`, unique: `/servers/<slug>` on the website, `rustic://server/<slug>`. */
+      slug: string;
+      name: string;
+      /** @description `host` or `host:port` players type in the game (lowercase). */
+      address: string;
+      /** @description One line, 10-160 characters. */
+      summary: string;
+      /** @description Markdown (the website's small subset; never raw HTML). Detail only. */
+      description?: string | null;
+      /** @description From `GET /v1/server-listings/catalog` (`survival`, `minigames`...), 1-6. */
+      tags: string[];
+      /** @description Languages spoken (ISO 639-1, lowercase), 1-5. */
+      languages: string[];
+      /** @description What the server runs: vanilla Horizon or Rustic Server (plugins). */
+      engine: components['schemas']['FeaturedEngine'];
+      /** @description Game version players need (`26.3`), when the owner said. */
+      game_version?: string | null;
+      /** @description Players need the Rustic edition client (cosmetics, companion, native mods). */
+      requires_rustic_edition: boolean;
+      website?: string | null;
+      /** @description A Discord invite (`https://discord.gg/...`). */
+      discord?: string | null;
+      /** @description Square icon on Rustic's CDN. */
+      icon_url?: string | null;
+      /** @description Wide banner on Rustic's CDN. */
+      banner_url?: string | null;
+      visibility: components['schemas']['ContentVisibility'];
+      /** @description Staff checked the owner and the rules. */
+      verified: boolean;
+      /** @description A staff pick (the Launchpad, the hero carousels). */
+      featured: boolean;
+      owner?: null | components['schemas']['PublicUser'];
+      status?: null | components['schemas']['ServerListingStatus'];
+      /**
+       * Format: int64
+       * @description "Play" presses from the launcher over the last 7 days (anonymous, one per player and
+       *     6 hours): the trending signal with the player count.
+       */
+      plays_7d: number;
+      /** Format: date-time */
+      created_at: string;
+      /** Format: date-time */
+      updated_at: string;
+      moderation?: null | components['schemas']['ServerListingModeration'];
+    };
+    /** @description The directory's vocabulary and limits (the forms and filters read it). */
+    ServerListingCatalog: {
+      tags: string[];
+      /** @description Languages listings use most, most used first (filters). */
+      languages: string[];
+      /** Format: int64 */
+      max_tags: number;
+      /** Format: int64 */
+      max_languages: number;
+      /** Format: int64 */
+      max_listings_per_user: number;
+      /** Format: int64 */
+      max_image_bytes: number;
+    };
+    ServerListingFeatureRequest: {
+      /**
+       * Format: int32
+       * @description Lower first (0-1000).
+       */
+      rank?: number;
+    };
+    ServerListingHideRequest: {
+      /** @description Shown to the owner (3-1000 characters). */
+      reason: string;
+    };
+    /** @description What the owner and staff see besides the public page. */
+    ServerListingModeration: {
+      hidden: boolean;
+      hidden_reason?: string | null;
+      /** Format: date-time */
+      hidden_at?: string | null;
+      /** Format: date-time */
+      verified_at?: string | null;
+      /**
+       * Format: int32
+       * @description Position among staff picks (lower first); `null` when not featured.
+       */
+      featured_rank?: number | null;
+    };
+    ServerListingPage: {
+      items: components['schemas']['ServerListing'][];
+      /** @description More results after `offset + items.len()`. */
+      has_more: boolean;
+      /**
+       * Format: int64
+       * @description Matching listings in all.
+       */
+      total: number;
+    };
+    ServerListingReportRequest: {
+      reason: components['schemas']['ReportReason'];
+      details?: string | null;
+    };
+    /** @description Create (`POST`) a listing. Published at once after the automatic checks. */
+    ServerListingRequest: {
+      slug: string;
+      name: string;
+      address: string;
+      summary: string;
+      description?: string;
+      tags: string[];
+      languages: string[];
+      engine: components['schemas']['FeaturedEngine'];
+      game_version?: string | null;
+      requires_rustic_edition?: boolean;
+      website?: string | null;
+      discord?: string | null;
+      visibility?: components['schemas']['ContentVisibility'];
+      /**
+       * Format: uuid
+       * @description A staged `icon` upload (`POST /v1/content/uploads?purpose=icon`).
+       */
+      icon_upload?: string | null;
+      /**
+       * Format: uuid
+       * @description A staged `banner` upload.
+       */
+      banner_upload?: string | null;
+      /** @description The owner accepts the server listing rules (no impersonation, honest description). */
+      accept_rules: boolean;
+    };
+    /** @description Last status the cloud read with the server list ping (public addresses only, every ~10 min). */
+    ServerListingStatus: {
+      /** @description Answered the last ping. */
+      online: boolean;
+      /** Format: int32 */
+      players_online?: number | null;
+      /** Format: int32 */
+      players_max?: number | null;
+      /** @description Plain text of the MOTD (formatting codes removed, at most 200 characters). */
+      motd?: string | null;
+      /** @description The version name the server announced. */
+      version?: string | null;
+      /** Format: date-time */
+      checked_at: string;
     };
     /** @description Server → client frames. */
     ServerMessage:
@@ -4640,6 +4961,32 @@ export interface components {
       featured?: boolean | null;
       prices?: components['schemas']['PriceInput'][] | null;
       item_ids?: string[] | null;
+    };
+    /** @description Edit (`PATCH`): absent fields stay as they are. */
+    UpdateServerListingRequest: {
+      name?: string | null;
+      address?: string | null;
+      summary?: string | null;
+      description?: string | null;
+      tags?: string[] | null;
+      languages?: string[] | null;
+      engine?: null | components['schemas']['FeaturedEngine'];
+      /** @description `""` clears it. */
+      game_version?: string | null;
+      requires_rustic_edition?: boolean | null;
+      /** @description `""` clears it. */
+      website?: string | null;
+      /** @description `""` clears it. */
+      discord?: string | null;
+      visibility?: null | components['schemas']['ContentVisibility'];
+      /** Format: uuid */
+      icon_upload?: string | null;
+      /** Format: uuid */
+      banner_upload?: string | null;
+      /** @description Removes the icon (ignored with `icon_upload`). */
+      remove_icon?: boolean;
+      /** @description Removes the banner (ignored with `banner_upload`). */
+      remove_banner?: boolean;
     };
     UserIdRequest: {
       /** Format: uuid */
@@ -6027,6 +6374,239 @@ export interface operations {
         };
         content: {
           'application/json': components['schemas']['Report'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_listings: {
+    parameters: {
+      query?: {
+        q?: string | null;
+        /**
+         * @description `all` (default), `public`, `unlisted`, `private`, `hidden`, `verified`, `featured`,
+         *     `reported` (open reports).
+         */
+        status?: string | null;
+        /** @description `new` (default), `trending`, `players`, `name`, `featured`. */
+        sort?: string | null;
+        offset?: number | null;
+        limit?: number | null;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListingPage'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_listing_feature: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['ServerListingFeatureRequest'];
+      };
+    };
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListing'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_listing_unfeature: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListing'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_listing_hide: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['ServerListingHideRequest'];
+      };
+    };
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListing'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_listing_unhide: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListing'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_listing_verify: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListing'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_listing_unverify: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListing'];
         };
       };
       /** @description Error (see `code`) */
@@ -8750,6 +9330,34 @@ export interface operations {
       };
     };
   };
+  my_listings: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListing'][];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
   me_skin: {
     parameters: {
       query?: never;
@@ -9799,6 +10407,273 @@ export interface operations {
     requestBody: {
       content: {
         'application/json': components['schemas']['ReportRequest'];
+      };
+    };
+    responses: {
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ReportCreated'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  listings_search: {
+    parameters: {
+      query?: {
+        /** @description Free text (name, summary, address, tags). */
+        q?: string | null;
+        /** @description One tag of the catalog. */
+        tag?: string | null;
+        /** @description A two-letter language code. */
+        language?: string | null;
+        /** @description `horizon` or `rustic`. */
+        engine?: string | null;
+        /** @description Only listings staff verified. */
+        verified?: boolean | null;
+        /** @description Only staff picks (ordered by their rank). */
+        featured?: boolean | null;
+        /** @description `trending` (default), `players`, `new`, `name`. */
+        sort?: string | null;
+        offset?: number | null;
+        /** @description 1-50, default 24. */
+        limit?: number | null;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListingPage'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  listings_create: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['ServerListingRequest'];
+      };
+    };
+    responses: {
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListing'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  listings_catalog: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListingCatalog'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  listings_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListing'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  listings_delete: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Deleted with its images */
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  listings_update: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['UpdateServerListingRequest'];
+      };
+    };
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ServerListing'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  listings_play: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Counted (or already counted recently) */
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  listings_report: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['ServerListingReportRequest'];
       };
     };
     responses: {

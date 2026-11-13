@@ -1,8 +1,9 @@
 /** Instance-area queries and mutations (IPC). */
 import { toast } from '@rustic/ui';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { invoke } from '@/ipc';
+import { invoke, listen } from '@/ipc';
 import type { ContentKind } from '@/ipc/types/content';
 import type {
   CreateInstanceRequest,
@@ -11,6 +12,7 @@ import type {
   InstanceFolder,
   InstancePatch,
 } from '@/ipc/types/instances';
+import type { NativeOverview } from '@/ipc/types/native';
 import { qk, useInstances } from '@/queries/core';
 
 /** One instance, read from the list cache (kept fresh by `instances-changed`). */
@@ -29,6 +31,28 @@ export function useInstance(id: string) {
     isError: list.isError || single.isError,
     refetch: () => void list.refetch(),
   };
+}
+
+/**
+ * Every instance's native mods at a glance (ADR 0159), by instance id. Under the `native` key, so
+ * a finished build refreshes it like the other native queries; installs refresh it too.
+ */
+export function useNativeOverview() {
+  const qc = useQueryClient();
+  useEffect(() => {
+    const refresh = () => void qc.invalidateQueries({ queryKey: ['native', 'overview'] });
+    const offs = [listen('native-changed', refresh), listen('instances-changed', refresh)];
+    return () => offs.forEach((off) => off());
+  }, [qc]);
+  const q = useQuery({
+    queryKey: ['native', 'overview'],
+    queryFn: () => invoke('native_overview'),
+  });
+  const byId = useMemo(
+    () => new Map<string, NativeOverview>((q.data ?? []).map((o) => [o.instance_id, o])),
+    [q.data],
+  );
+  return { ...q, byId };
 }
 
 export const useInstanceContent = (id: string, kind?: ContentKind) =>

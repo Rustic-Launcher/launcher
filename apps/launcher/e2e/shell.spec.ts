@@ -37,7 +37,7 @@ test.describe('app shell', () => {
     // Alt+digit shortcuts from anywhere.
     await app.keyboard.press('Alt+4');
     await expect(app).toHaveURL(/#\/servers/);
-    await expect(app.getByTestId('breadcrumb')).toContainText('Servers/Featured');
+    await expect(app.getByTestId('breadcrumb')).toContainText('Servers/Discover');
     await app.keyboard.press('Alt+1');
     await expect(app).toHaveURL(/#\/$/);
   });

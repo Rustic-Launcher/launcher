@@ -116,6 +116,8 @@ export type LaunchPhase =
   | 'checking'
   | 'downloading'
   | 'preparing'
+  /** Compiling the instance's native mods before it starts (ADR 0157). */
+  | 'building'
   | 'launching'
   | 'running'
   | 'stopping'

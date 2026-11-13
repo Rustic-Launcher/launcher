@@ -7,7 +7,7 @@
     "modpack": "Modpacks",
     "resourcepack": "Resource packs",
     "shader": "Shaders",
-    "datapack": "Datapacks",
+    "datapack": "Data packs",
     "plugin": "Plugins"
   },
   "searchPlaceholder": "Search {{kind}}…",
@@ -67,7 +67,18 @@
     "fairPlayHint": "Only fair-play content is listed.",
     "versions": "Horizon versions",
     "targetVersion": "Your selected instance or server",
-    "checkingAgainst": "Compatibility is checked against the highlighted build."
+    "checkingAgainst": "Compatibility is checked against the highlighted build.",
+    "rustic": "Rustic marketplace",
+    "rusticHint": "Paid and verified projects are on Rustic only.",
+    "verifiedOnly": "Verified by Rustic only",
+    "price": "Price",
+    "priceOptions": {
+      "all": "All",
+      "free": "Free",
+      "paid": "Paid"
+    },
+    "reset": "Reset filters",
+    "remove": "Remove the filter {{filter}}"
   },
   "categories": {
     "performance": "Performance",
@@ -104,7 +115,7 @@
     "modpack": "A modpack becomes a new instance with its own mods and settings.",
     "resourcepack": "Packs stack: the one at the top of the load order wins.",
     "shader": "Horizon runs its own WGSL shader packs (.hshader, shader API 0.1, experimental) and Iris/OptiFine-format packs from the Horizon registry. Pick one in game under Video Settings › Shader Packs.",
-    "datapack": "Datapacks belong to a world: you will pick the world when installing.",
+    "datapack": "Data packs belong to a world: you will pick the world when installing.",
     "plugin": "Plugins (.rplugin) run sandboxed on servers using the Rustic Server engine. A faulty plugin is disabled; the server keeps running."
   },
   "resourcepacks": {
@@ -137,7 +148,10 @@
     "started": "Installing {{name}} into {{target}}",
     "withDeps_one": "Plus {{count}} required dependency.",
     "withDeps_other": "Plus {{count}} required dependencies.",
-    "failed": "{{name}} could not be installed"
+    "failed": "{{name}} could not be installed",
+    "native": "Build and install",
+    "update": "Update",
+    "updateAria": "Update {{name}} to {{version}}"
   },
   "modpack": {
     "created": "Creating the instance {{name}}",
@@ -176,7 +190,17 @@
     "link": {
       "source": "Source code",
       "issues": "Report a bug",
-      "website": "Website"
+      "website": "Website",
+      "site": "On rustic-launcher.com",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "No changelog yet.",
+    "noGallery": "No screenshots yet.",
+    "notAvailable": {
+      "title": "This project is not available",
+      "body": "It may be private, waiting for review or removed by its creator or a moderator.",
+      "back": "Back to Explore"
     }
   },
   "report": {
@@ -189,7 +213,8 @@
       "malware": "Malware or data theft",
       "copyright": "Copyright infringement",
       "other": "Something else"
-    }
+    },
+    "failed": "The report could not be sent"
   },
   "versions": {
     "version": "Version",
@@ -203,7 +228,8 @@
       "release": "Release",
       "beta": "Beta",
       "alpha": "Alpha"
-    }
+    },
+    "empty": "No version is available yet."
   },
   "deps": {
     "none": "No dependencies.",
@@ -221,7 +247,8 @@
     "builds": "The author publishes a build made for this Horizon version.",
     "format": "This content is data only (textures, shaders, datapacks): it does not depend on a Horizon build.",
     "unknown": "Choose an instance or a server to check compatibility.",
-    "fairPlay": "Rustic only promotes fair-play content. Anything that gives an unfair advantage is never listed."
+    "fairPlay": "Rustic only promotes fair-play content. Anything that gives an unfair advantage is never listed.",
+    "native": "A native mod that fits this Horizon: Rustic Launcher compiles it into this instance’s own game on your PC."
   },
   "permissions": {
     "title": "Permissions",
@@ -234,11 +261,182 @@
     "follows": "Followers",
     "updated": "Updated",
     "license": "Licence",
-    "size": "Size"
+    "size": "Size",
+    "gameVersion": "Game version",
+    "version": "Latest version",
+    "author": "Author",
+    "created": "Published"
   },
-  "searchSources": "Search {{kind}} on {{sources}}…",
+  "searchSources": "Search {{kind}} on Horizon, Modrinth and Rustic…",
   "filtersLabel": "Filters",
   "view": "View",
   "heading": "Find your next *mod*",
-  "eyebrow": "Explore"
+  "eyebrow": "Explore",
+  "kindsServer": "For a Rustic Server",
+  "tabs": {
+    "label": "Explore sections",
+    "discover": "Discover",
+    "browse": "Browse",
+    "mine": "My content"
+  },
+  "hero": {
+    "eyebrow": "Featured"
+  },
+  "discover": {
+    "heroLabel": "Featured {{kind}}",
+    "rows": {
+      "new": "New",
+      "newHint": "Just published or updated",
+      "horizon": "Popular on Horizon",
+      "horizonHint": "The most downloaded from Horizon’s registry",
+      "verified": "Verified by Rustic",
+      "verifiedHint": "Checked by Rustic’s team: they do what they say",
+      "yours": "For {{target}}",
+      "yoursHint": "Runs on Horizon {{version}}",
+      "community": "From the community",
+      "communityHint": "Recently updated on Rustic’s marketplace"
+    },
+    "empty": {
+      "title": "Nothing to discover here yet",
+      "hint": "No content of this kind runs on your target yet. Browse everything instead.",
+      "browse": "Browse everything"
+    },
+    "rowError": "This selection could not be loaded.",
+    "retry": "Retry"
+  },
+  "verified": {
+    "label": "Verified",
+    "hint": "Verified by Rustic: a moderator checked that it does what its page says."
+  },
+  "price": {
+    "soon": "Coming soon",
+    "soonHint": "Creators will be able to sell their work soon. Buying is not available yet.",
+    "notOnSale": "Not on sale yet: creator sales open soon."
+  },
+  "native": {
+    "badge": "Builds on your PC",
+    "short": "Native",
+    "hint": "A native mod is Rust code compiled into the game on your PC before it runs.",
+    "title": "A native mod",
+    "body": "Native mods are Rust source code built into your game on this PC (it can take from a minute to half an hour). Admins review every version before it is public.",
+    "kind": "Native mod",
+    "how": "Rustic Launcher compiles them on your PC into this instance's own game, after you accept a trust notice. The first build takes 10 to 15 minutes; later ones only recompile what changed. Instances without native mods keep the prebuilt game.",
+    "instanceOnly": "Native mods go into an instance.",
+    "trust": {
+      "title": "Native code: read before you build",
+      "lead": "{{name}} is a native mod: Rust code compiled into the game of “{{instance}}” on this PC.",
+      "unsandboxed": "Native mods are not sandboxed. Once built, they run with your rights and can read, change or send anything your account can.",
+      "review": "Only mods from Horizon’s registry (reviewed by its maintainers) and admin-approved mods from Rustic’s marketplace can be installed. A review lowers the risk; it doesn’t remove it.",
+      "build": "Rust is installed if needed, then the game is compiled for this instance: about 10 to 15 minutes and a few GB the first time, faster afterwards.",
+      "scope": "Only this instance plays the built game. You won’t be asked again for its next native mods.",
+      "source": "Read the source code",
+      "check": "I understand that native mods run unsandboxed with my rights, and I trust this mod.",
+      "accept": "I trust it: install and build"
+    },
+    "toolchain": {
+      "title": "Install Rust {{version}}?",
+      "lead": "Building native mods needs the Rust compiler. Rustic Launcher can install it for you.",
+      "manual": "Building native mods needs the Rust compiler and system tools Rustic Launcher can’t install for you. Install these, then build again:",
+      "where": "From the official site (static.rust-lang.org), checked against its published SHA-256, into the launcher’s own folder: nothing changes elsewhere on your PC.",
+      "size": "About 1 to 2.5 GB (with a C compiler on Windows).",
+      "once": "Once for every instance; removing the launcher’s data removes it.",
+      "found": "Found: {{reason}}.",
+      "install": "Install Rust",
+      "started": "Installing Rust",
+      "startedHint": "The build starts as soon as it is ready. Follow it in the downloads panel.",
+      "failed": "Rust could not be installed"
+    },
+    "build": {
+      "started": "Building native mods for {{instance}}",
+      "startedHint": "Follow it on the instance page or in the downloads panel. The first build takes 10 to 15 minutes.",
+      "failed": "The native mods of {{instance}} could not be built"
+    },
+    "errors": {
+      "notEdition": "Native mods only build into the Rustic edition: switch this instance to it in its settings.",
+      "running": "Close the game first: its native mods are rebuilt while it is stopped.",
+      "disk": "Not enough free disk space. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "Incompatible",
+    "compatible": "Compatible"
+  },
+  "library": {
+    "add": "Add to my library",
+    "inLibrary": "In my library",
+    "added": "{{name}} added to your library",
+    "removed": "{{name}} removed from your library",
+    "remove": "Remove {{name}} from my library",
+    "failed": "Your library could not be updated"
+  },
+  "prompt": {
+    "title": "Install {{name}}?",
+    "body": "You opened this project from the website. Choose where to install it and which version, then confirm.",
+    "dismiss": "Not now",
+    "version": "Version",
+    "versionMissing": "Version {{version}} is not available any more: the newest compatible one is selected."
+  },
+  "mine": {
+    "searchPlaceholder": "Filter my content…",
+    "noMatch": "Nothing matches",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Added by hand"
+    },
+    "installed": {
+      "title": "Installed",
+      "titleOn": "Installed on {{target}}",
+      "hint": "The {{kind}} of this target: switch them on or off, update or remove them.",
+      "modpacksTitle": "Modpacks become profiles",
+      "modpacksHint": "Each installed modpack is a profile of its own.",
+      "openProfiles": "Open my profiles",
+      "noTarget": "Choose where to look first.",
+      "serverHint": "Plugins and data packs of a server are managed on its page.",
+      "manageServer": "Manage the server",
+      "updateAll_one": "Update {{count}} item",
+      "updateAll_other": "Update {{count}} items",
+      "openProfile": "Open the profile",
+      "empty": "Nothing installed here yet",
+      "emptyHint": "Find something in Discover or Browse.",
+      "discover": "Discover content",
+      "updateTo": "Update to {{version}}",
+      "incompatible": "Incompatible",
+      "update": "Update {{name}}",
+      "toggle": "Enable {{name}}",
+      "remove": "Remove {{name}}",
+      "removeTitle": "Remove {{name}}?",
+      "removeBody": "Its files are deleted from this profile. You can install it again any time."
+    },
+    "signIn": {
+      "title": "Your library and your creations",
+      "body": "Sign in to your Rustic account to find the projects you saved and the ones you publish.",
+      "action": "Sign in"
+    },
+    "library": {
+      "title": "My library",
+      "hint": "Projects saved to your Rustic account, on every PC.",
+      "empty": "Your library is empty",
+      "emptyHint": "Add a Rustic project from its page to find it here.",
+      "installAria": "Install {{name}}"
+    },
+    "creations": {
+      "title": "My creations",
+      "hint": "What you publish on Rustic’s marketplace.",
+      "publish": "Publish on the website",
+      "empty": "You haven’t published anything yet",
+      "emptyHint": "Share a mod, a pack or a shader with every Rustic player from the website.",
+      "manage": "Manage",
+      "manageAria": "Manage {{name}} on the website",
+      "status": {
+        "public": "Public",
+        "unlisted": "Unlisted",
+        "private": "Private",
+        "pending": "Waiting for review",
+        "rejected": "Rejected",
+        "takenDown": "Taken down"
+      }
+    }
+  }
 }

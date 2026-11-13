@@ -32,6 +32,11 @@ export function idleRefusal(
 /** Reasons the launcher words itself (`play.refusals.*`); any other shows the backend's message. */
 const REFUSAL_KEYS = {
   'auth.no_account': 'play.refusals.auth_no_account',
+  'native.consent_required': 'play.refusals.native_consent',
+  'native.toolchain_missing': 'play.refusals.native_toolchain',
+  'native.not_edition': 'play.refusals.native_not_edition',
+  'native.build_failed': 'play.refusals.native_build_failed',
+  'native.disk_space': 'play.refusals.native_disk',
   'auth.not_owned': 'play.refusals.auth_not_owned',
   'auth.not_approved': 'play.refusals.auth_not_approved',
   'auth.reauth_required': 'play.refusals.auth_reauth_required',
@@ -71,7 +76,14 @@ export function statusTone(
   return null;
 }
 
-const BUSY: LaunchPhase[] = ['checking', 'downloading', 'preparing', 'launching', 'stopping'];
+const BUSY: LaunchPhase[] = [
+  'checking',
+  'downloading',
+  'preparing',
+  'building',
+  'launching',
+  'stopping',
+];
 
 export interface PlayModel {
   state: PlayButtonState;
@@ -93,7 +105,11 @@ export function usePlay(instance: Instance | undefined): PlayModel {
   const { t, i18n } = useTranslation();
   const launch = useActivity((s) => (instance ? s.launches[instance.id] : undefined));
   const install = useActivity((s) =>
-    instance ? Object.values(s.downloads).find((d) => d.instance_id === instance.id) : undefined,
+    instance
+      ? Object.values(s.downloads).find(
+          (d) => d.instance_id === instance.id && (d.state === 'running' || d.state === 'queued'),
+        )
+      : undefined,
   );
   const phase: LaunchPhase = launch?.phase ?? 'idle';
 
@@ -107,13 +123,23 @@ export function usePlay(instance: Instance | undefined): PlayModel {
     status = t('play.status.noInstance');
   } else if (BUSY.includes(phase)) {
     state = 'progress';
-    progress = phase === 'downloading' || phase === 'preparing' ? (launch?.progress ?? null) : null;
+    progress =
+      phase === 'downloading' || phase === 'preparing' || phase === 'building'
+        ? (launch?.progress ?? null)
+        : null;
     progressLabel =
       progress != null
-        ? t(phase === 'preparing' ? 'play.progress.preparingFiles' : 'play.progress.downloading', {
-            pct: formatPercent(progress, i18n.language),
-          })
-        : t(`play.progress.${phase as 'checking' | 'preparing' | 'launching' | 'stopping'}`);
+        ? t(
+            phase === 'preparing'
+              ? 'play.progress.preparingFiles'
+              : phase === 'building'
+                ? 'play.progress.buildingPct'
+                : 'play.progress.downloading',
+            { pct: formatPercent(progress, i18n.language) },
+          )
+        : t(
+            `play.progress.${phase as 'checking' | 'preparing' | 'building' | 'launching' | 'stopping'}`,
+          );
     status = progressLabel;
   } else if (phase === 'running' || instance.state === 'running') {
     state = 'running';
@@ -122,10 +148,13 @@ export function usePlay(instance: Instance | undefined): PlayModel {
     state = 'progress';
     const total = install?.total_bytes;
     progress = install && total ? install.received_bytes / total : null;
+    const building = install?.kind === 'native-build';
     progressLabel =
       progress != null
-        ? t('play.progress.downloading', { pct: formatPercent(progress, i18n.language) })
-        : t('play.progress.preparing');
+        ? t(building ? 'play.progress.buildingPct' : 'play.progress.downloading', {
+            pct: formatPercent(progress, i18n.language),
+          })
+        : t(building ? 'play.progress.building' : 'play.progress.preparing');
     status = progressLabel;
   } else if (instance.state === 'needs_update' && instance.update_available) {
     state = 'update';

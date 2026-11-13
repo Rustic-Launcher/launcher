@@ -4,6 +4,7 @@
  * statuses follow horizon/docs/shaders.md and docs/HORIZON_FACTS.md A2 (Horizon .hshader packs: shader API
  * 0.1, experimental; Iris/OptiFine `shaders/` packs from the Horizon registry; Modrinth shader packs: not supported).
  */
+import { bannerArt } from './marketplace';
 import type {
   Compatibility,
   ContentDetail,
@@ -72,6 +73,17 @@ export interface CatalogProject {
   size_mb: number;
   /** Plugins: declared capabilities, shown in the description. */
   network?: string[];
+  // Rustic marketplace (ADR 0155)
+  /** A Rustic admin verified it. */
+  verified?: boolean;
+  /** Price in cents (EUR); paid projects are shown, never sold (creator sales are off). */
+  price_cents?: number;
+  /** A Horizon native mod (Rust compiled into the game on the player's PC). */
+  native?: boolean;
+  /** Banner art (the first screenshot). */
+  banner?: string;
+  /** Uploaded by its creator on the website. */
+  marketplace?: boolean;
 }
 
 const ALL = [...HORIZON_LINE];
@@ -796,6 +808,121 @@ export const catalog: CatalogProject[] = [
     size_mb: 0.7,
     network: ['discord.com'],
   }),
+  // ---------------- Rustic marketplace (creators, ADR 0155) ----------------
+  p({
+    id: 'rustic:sky_islands',
+    kind: 'mod',
+    source: 'rustic',
+    name: 'Sky Islands',
+    author: 'Léa',
+    summary: 'Floating islands with their own biomes, waterfalls and a sky village to find.',
+    hue: 200,
+    downloads: 48_200,
+    updated_days: 1,
+    created_days: 3,
+    categories: ['worldgen', 'adventure'],
+    horizon: ALL,
+    version: '1.2.0',
+    verified: true,
+    marketplace: true,
+    banner: bannerArt(200, 'islands'),
+    size_mb: 1.6,
+  }),
+  p({
+    id: 'rustic:fast_paths',
+    kind: 'mod',
+    source: 'rustic',
+    name: 'Fast Paths',
+    author: 'MaxRedstone',
+    summary: 'Gravel and dirt paths that speed you up a little. A native mod: built on your PC.',
+    hue: 96,
+    downloads: 12_400,
+    updated_days: 4,
+    created_days: 9,
+    categories: ['qol'],
+    horizon: ALL,
+    version: '0.3.0',
+    native: true,
+    marketplace: true,
+    banner: bannerArt(96, 'paths'),
+    size_mb: 0.3,
+  }),
+  p({
+    id: 'rustic:cozy_lanterns',
+    kind: 'resourcepack',
+    source: 'rustic',
+    name: 'Cozy Lanterns',
+    author: 'atelier-nox',
+    summary: 'Hand-painted lanterns, candles and campfires with a warm glow.',
+    hue: 32,
+    downloads: 9_800,
+    updated_days: 2,
+    created_days: 5,
+    categories: ['cozy', 'decoration'],
+    horizon: ALL,
+    version: '2.0',
+    price_cents: 299,
+    marketplace: true,
+    banner: bannerArt(32, 'lanterns'),
+    size_mb: 6,
+  }),
+  p({
+    id: 'rustic:arena_kit',
+    kind: 'datapack',
+    source: 'rustic',
+    name: 'Arena Kit',
+    author: 'noah.pvp',
+    summary: 'Duels, kits and a scoreboard for small PvP arenas, in one data pack.',
+    hue: 352,
+    downloads: 21_000,
+    updated_days: 6,
+    created_days: 20,
+    categories: ['pvp', 'minigames'],
+    horizon: ALL,
+    version: '1.4.0',
+    verified: true,
+    marketplace: true,
+    banner: bannerArt(352, 'arena'),
+    size_mb: 0.2,
+  }),
+  p({
+    id: 'rustic:golden_hour_plus',
+    kind: 'shader',
+    source: 'rustic',
+    name: 'Golden Hour+',
+    author: 'Léa',
+    summary: 'Long shadows and a soft bloom at sunset, tuned for Horizon’s WGSL pipeline.',
+    hue: 40,
+    downloads: 31_500,
+    updated_days: 3,
+    created_days: 14,
+    categories: ['cinematic', 'lightweight'],
+    horizon: ALL,
+    version: '1.1.0',
+    shader_format: 'horizon',
+    verified: true,
+    marketplace: true,
+    banner: bannerArt(40, 'sun'),
+    size_mb: 0.5,
+  }),
+  p({
+    id: 'rustic:cozy_village',
+    kind: 'modpack',
+    source: 'rustic',
+    name: 'Cozy Village',
+    author: 'Sam',
+    summary: 'A calm survival pack: farming, lanterns, sky islands and gentle mobs.',
+    hue: 18,
+    downloads: 3_100,
+    updated_days: 2,
+    created_days: 8,
+    categories: ['cozy', 'multiplayer'],
+    horizon: ALL,
+    version: '1.0.0',
+    marketplace: true,
+    banner: bannerArt(18, 'village'),
+    size_mb: 40,
+  }),
 ];
 
 export function findProject(id: string): CatalogProject | undefined {
@@ -836,6 +963,23 @@ export function computeCompatibility(
       status: 'incompatible',
       reason: 'needs_rustic_server',
       detail: 'Plugins (.rplugin) run on servers using the Rustic Server engine.',
+    };
+  }
+  if (project.native) {
+    // As the desktop side (ADR 0157): a native mod fits an instance and is compiled on the PC.
+    if (ctx.target === 'instance' || ctx.target === null) {
+      return {
+        status: 'compatible',
+        builds_on_horizon: false,
+        needs_build: true,
+        detail:
+          "needs hook points 1, your Horizon has 415; native code: Rustic Launcher compiles it into this instance's own client on your computer, after you accept the trust notice",
+      };
+    }
+    return {
+      status: 'incompatible',
+      reason: 'unsupported_format',
+      detail: 'A native mod goes into an instance.',
     };
   }
   if (project.java_only) {
@@ -937,7 +1081,16 @@ export function searchCatalog(
   list: CatalogProject[],
   q: Pick<
     ContentSearchQuery,
-    'query' | 'kind' | 'sources' | 'compatible_only' | 'category' | 'sort' | 'offset' | 'limit'
+    | 'query'
+    | 'kind'
+    | 'sources'
+    | 'compatible_only'
+    | 'category'
+    | 'sort'
+    | 'offset'
+    | 'limit'
+    | 'price'
+    | 'verified'
   >,
   compat: (p: CatalogProject) => Compatibility,
 ): { hits: { project: CatalogProject; compatibility: Compatibility }[]; total: number } {
@@ -945,6 +1098,11 @@ export function searchCatalog(
     .filter((x) => x.kind === q.kind)
     .filter((x) => q.sources.length === 0 || q.sources.includes(x.source))
     .filter((x) => !q.category || x.categories.includes(q.category as CategoryId))
+    .filter((x) => !q.verified || !!x.verified)
+    .filter(
+      (x) =>
+        !q.price || (q.price === 'paid' ? (x.price_cents ?? 0) > 0 : (x.price_cents ?? 0) === 0),
+    )
     .filter((x) => matchesQuery(x, q.query))
     .map((project) => ({ project, compatibility: compat(project) }))
     .filter((r) => !q.compatible_only || r.compatibility.status !== 'incompatible');
@@ -1076,7 +1234,7 @@ export function projectDetail(
     license: project.license,
     side: project.side,
     gallery: [0, 1, 2].map((i) => ({
-      url: null,
+      url: project.banner && i === 0 ? project.banner : null,
       title: [project.name, 'Settings', 'In game'][i]!,
       hue: (project.hue + i * 40) % 360,
     })),
@@ -1092,6 +1250,7 @@ export function projectDetail(
       issues: `https://example.org/${project.author}/${project.id}/issues`,
       website: project.source === 'rustic' ? 'https://rustic.example.invalid' : undefined,
     },
+    marketplace: !!project.marketplace,
   };
 }
 

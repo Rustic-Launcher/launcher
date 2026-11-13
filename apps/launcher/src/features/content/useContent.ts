@@ -3,6 +3,8 @@ import { toast } from '@rustic/ui';
 import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { create } from 'zustand';
+import { cloud } from '@/cloud/client';
+import type { ContentReportReason } from '@/cloud/types';
 import { invoke, type IpcFailure } from '@/ipc';
 import type {
   ContentKind,
@@ -21,9 +23,81 @@ export const ck = {
   detail: (id: string, target?: InstallTarget) =>
     ['content', 'detail', id, target ?? null] as const,
   categories: (kind: ContentKind) => ['content', 'categories', kind] as const,
+  list: (q: Omit<ContentSearchQuery, 'offset'>) => ['content', 'list', q] as const,
   servers: ['servers'] as const,
   worlds: (instanceId: string) => qk.instanceWorlds(instanceId),
+  library: ['content-library'] as const,
+  mine: ['content-mine'] as const,
 };
+
+/** One page of results (Discover's hero and rows). */
+export function useContentList(q: Omit<ContentSearchQuery, 'offset'>, enabled = true) {
+  return useQuery({
+    queryKey: ck.list(q),
+    queryFn: () => invoke('content_search', { ...q, offset: 0 }),
+    enabled,
+    staleTime: 60_000,
+  });
+}
+
+/** The signed-in Rustic account's library (`GET /v1/me/library`). */
+export function useContentLibrary(enabled: boolean) {
+  return useQuery({
+    queryKey: ck.library,
+    queryFn: async () => (await cloud()).contentLibrary(),
+    enabled,
+    retry: false,
+  });
+}
+
+/** The projects the signed-in account publishes (`GET /v1/me/content`). */
+export function useMyContent(enabled: boolean) {
+  return useQuery({
+    queryKey: ck.mine,
+    queryFn: async () => (await cloud()).myContent(),
+    enabled,
+    retry: false,
+  });
+}
+
+export function useLibraryMutations() {
+  const { t } = useTranslation('content');
+  const qc = useQueryClient();
+  const refresh = () => void qc.invalidateQueries({ queryKey: ck.library });
+  const onError = (e: Error) =>
+    toast({ tone: 'error', title: t('library.failed'), description: e.message });
+  return {
+    add: useMutation({
+      mutationFn: async (v: { id: string; name: string }) => (await cloud()).libraryAdd(v.id),
+      onSuccess: (_r, v) => {
+        toast({ tone: 'success', title: t('library.added', { name: v.name }) });
+        refresh();
+      },
+      onError,
+    }),
+    remove: useMutation({
+      mutationFn: async (v: { id: string; name: string }) => (await cloud()).libraryRemove(v.id),
+      onSuccess: (_r, v) => {
+        toast({ tone: 'success', title: t('library.removed', { name: v.name }) });
+        refresh();
+      },
+      onError,
+    }),
+  };
+}
+
+/** Reports a Rustic project to the moderators (signed in). */
+export function useReportContent() {
+  const { t } = useTranslation('content');
+  return useMutation({
+    mutationFn: async (v: { id: string; reason: ContentReportReason }) =>
+      (await cloud()).reportContent(v.id, v.reason),
+    onSuccess: () =>
+      toast({ tone: 'success', title: t('report.sent'), description: t('report.sentBody') }),
+    onError: (e: Error) =>
+      toast({ tone: 'error', title: t('report.failed'), description: e.message }),
+  });
+}
 
 export function useContentSearch(q: Omit<ContentSearchQuery, 'offset' | 'limit'>, enabled = true) {
   return useInfiniteQuery({
@@ -185,6 +259,11 @@ export function useCreateFromModpack() {
 }
 
 export const ALL_SOURCES: ContentSource[] = ['horizon', 'modrinth', 'rustic'];
+
+/** `rustic:<id>` → `<id>` (the catalogue's own id), else null. */
+export function rusticId(projectId: string): string | null {
+  return projectId.startsWith('rustic:') ? projectId.slice('rustic:'.length) : null;
+}
 export const KINDS: ContentKind[] = [
   'mod',
   'modpack',

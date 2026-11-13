@@ -1,0 +1,37 @@
+[package]
+name = "rusticmc-native"
+description = "Rustic Launcher native mods: builds the Rustic edition client with Horizon native mods (horizon-mixins bundles) on the player's computer (ADR 0157)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[[bin]]
+# Developer and CI tool: pack the edition's source archive, build an instance's client from the
+# command line (the same pipeline as the launcher), report the toolchain.
+name = "rusticmc-native"
+path = "src/bin/rusticmc-native.rs"
+test = false
+doc = false
+
+[dependencies]
+flate2 = "1"
+hex = "0.4"
+rusticmc-launcher-core = { path = "../rusticmc-launcher-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+sysinfo = { version = "0.37", default-features = false, features = ["disk"] }
+tar = "0.4"
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "process", "io-util", "fs", "sync", "time", "signal"] }
+toml = "0.9"
+tracing = "0.1"
+zip = { version = "4", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[lints]
+workspace = true

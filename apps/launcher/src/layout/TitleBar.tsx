@@ -186,9 +186,14 @@ function Breadcrumb() {
     case 'servers':
       crumbs.push(t('nav.servers'));
       if (parts[1] === 'new') crumbs.push(t('crumbs.create'));
+      else if (parts[1] === 'listing') crumbs.push(t('crumbs.details'));
       else if (parts[1]) crumbs.push(servers.data?.find((s) => s.id === parts[1])?.name ?? '…');
       else
-        crumbs.push(t(`crumbs.servers.${search.tab ?? 'featured'}` as 'crumbs.servers.featured'));
+        crumbs.push(
+          t(
+            `crumbs.servers.${search.tab ?? (search.q ? 'browse' : 'discover')}` as 'crumbs.servers.discover',
+          ),
+        );
       break;
     case 'locker':
       crumbs.push(t('nav.locker'));
