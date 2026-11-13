@@ -7,8 +7,8 @@ use crate::state::{MOD_ID, Mode, OwnEmote, guard, guard_or, lock, net};
 use horizon_client::mod_api::{
     ClientChatReceivedEvent, ClientDisconnectingEvent, ClientResourcesReloadedEvent,
     ClientTickPostEvent, Corner, Flow, FrameEvent, Hooks, Host, HudEvent, KeyEvent,
-    NativeScreenKind, ScreenClosingEvent, ScreenKeyPressedPreEvent,
-    ScreenMouseButtonPressedPreEvent, ScreenRenderPostEvent, Text,
+    NativeScreenKind, ScreenCharTypedPreEvent, ScreenClosingEvent, ScreenKeyPressedPreEvent,
+    ScreenMouseButtonPressedPreEvent, ScreenMouseScrolledPreEvent, ScreenRenderPostEvent, Text,
 };
 use rusticmc_companion_core::overlay::{self, Action, Draw, View};
 use rusticmc_companion_core::protocol::WornItem;
@@ -29,6 +29,8 @@ impl Hooks for Companion {
     }
 
     fn frame(&self, host: &mut dyn Host, _event: &mut FrameEvent) {
+        let theme = lock().cfg.rustic_theme;
+        crate::skin::ON.store(theme, std::sync::atomic::Ordering::Relaxed);
         crate::title_menu::frame(host);
     }
 
@@ -76,6 +78,7 @@ impl Hooks for Companion {
 
     fn screen_render_post(&self, host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
         crate::title_menu::render(host, event);
+        crate::screens::render(host, event);
         guard("screen_render_post", || {
             if event.screen.id != "mod" || !ours(host) {
                 return;
@@ -155,7 +158,9 @@ impl Hooks for Companion {
         host: &dyn Host,
         event: &mut ScreenMouseButtonPressedPreEvent<'_>,
     ) -> Flow {
-        if crate::title_menu::mouse(host, event) == Flow::Cancel {
+        if crate::title_menu::mouse(host, event) == Flow::Cancel
+            || crate::screens::mouse(host, event) == Flow::Cancel
+        {
             return Flow::Cancel;
         }
         guard_or("screen_mouse_button_pressed_pre", Flow::Continue, || {
@@ -205,7 +210,9 @@ impl Hooks for Companion {
         host: &dyn Host,
         event: &mut ScreenKeyPressedPreEvent<'_>,
     ) -> Flow {
-        if crate::title_menu::key(host, event) == Flow::Cancel {
+        if crate::title_menu::key(host, event) == Flow::Cancel
+            || crate::screens::key(host, event) == Flow::Cancel
+        {
             return Flow::Cancel;
         }
         guard_or("screen_key_pressed_pre", Flow::Continue, || {
@@ -223,6 +230,28 @@ impl Hooks for Companion {
             }
             Flow::Continue
         })
+    }
+
+    fn screen_char_typed_pre(
+        &self,
+        host: &dyn Host,
+        event: &mut ScreenCharTypedPreEvent<'_>,
+    ) -> Flow {
+        if crate::title_menu::chars(host, event) == Flow::Cancel {
+            return Flow::Cancel;
+        }
+        crate::screens::chars(host, event)
+    }
+
+    fn screen_mouse_scrolled_pre(
+        &self,
+        host: &dyn Host,
+        event: &mut ScreenMouseScrolledPreEvent<'_>,
+    ) -> Flow {
+        if crate::title_menu::scroll(host, event) == Flow::Cancel {
+            return Flow::Cancel;
+        }
+        crate::screens::scroll(host, event)
     }
 
     fn screen_closing(&self, host: &dyn Host, event: &mut ScreenClosingEvent<'_>) {

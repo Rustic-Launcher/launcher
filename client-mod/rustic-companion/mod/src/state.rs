@@ -64,6 +64,11 @@ pub struct State {
     pub title: crate::title_menu::TitleMenu,
     /// Who uses Rustic, and the badge's sprite (ADR 0072).
     pub badges: crate::badge::Badges,
+    /// Rustic's language screen over the title (ADR 0160).
+    pub languages: crate::screens::language::LangScreen,
+    /// The multiplayer screen's Discover tab and the server directory (ADR 0160).
+    pub discover: crate::screens::DiscoverUi,
+    pub directory: crate::directory::Directory,
 }
 
 pub struct Shared {

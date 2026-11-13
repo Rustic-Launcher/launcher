@@ -12,6 +12,10 @@
 //! - [`social`], [`overlay`]: friends, invites and messages, and the overlay's layout and clicks.
 //! - [`wheel`]: the emote wheel's slices and pick.
 //! - [`title`]: the Rustic main menu over the title screen's panorama (logo, buttons, footer).
+//! - [`skin`]: the Rustic look of every screen's widgets (Horizon patch U15), [`paint`] and
+//!   [`kit`] the pieces Rustic's own screens are drawn with.
+//! - [`langs`] and [`flags`]: the language screen (flags drawn in code); [`discover`]: the server
+//!   directory screen; [`i18n`]: Rustic's in-game texts (English, French; English fallback).
 //! - [`notify`]: discreet notifications (at most a few, deduplicated, rate-limited).
 //! - [`trail`]: trail particles placed from distance walked and age only (deterministic).
 #![forbid(unsafe_code)]
@@ -19,10 +23,17 @@
 pub mod backoff;
 pub mod badge;
 pub mod config;
+pub mod discover;
+pub mod flags;
+pub mod i18n;
+pub mod kit;
+pub mod langs;
 pub mod notify;
 pub mod overlay;
+pub mod paint;
 pub mod presence;
 pub mod protocol;
+pub mod skin;
 pub mod social;
 pub mod store;
 pub mod title;

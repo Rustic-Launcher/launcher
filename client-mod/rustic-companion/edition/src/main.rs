@@ -27,6 +27,8 @@ fn main() {
     }
     // Rustic's player drawing, before the game seals the hook list.
     rusticmc_companion::register_platform_hooks();
+    // Rustic's look for every screen's widgets, before the first frame.
+    rusticmc_companion::install_skin();
     let mods: horizon_client::mod_api::Mods = vec![rusticmc_companion::hooks()].into();
     horizon_client::mod_api::name_mods(&[rusticmc_companion::MOD_ID]);
     horizon_client::entry::main_with(mods);

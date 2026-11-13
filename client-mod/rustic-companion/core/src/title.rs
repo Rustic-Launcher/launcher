@@ -10,8 +10,8 @@
 //! screen's own pixels and hands GUI pixels to the game. Layout:
 //!
 //! - top left: the account (the player's face and name; not a button);
-//! - centre: the Rustic logo, Singleplayer and Multiplayer (400x40), then Realms and the Store
-//!   (195x40 each, the Store in the accent);
+//! - centre: the Rustic logo, Singleplayer, Multiplayer and Realms (340x32, stacked), then
+//!   Discover (the server directory) and the Store (167x32 each, the Store in the accent);
 //! - bottom centre: square icon buttons (36x36: Options, Language, Accessibility, Quit), the
 //!   hovered or focused one's name above them;
 //! - bottom right: the store's newest products (a card that turns every few seconds, with bars
@@ -25,6 +25,8 @@ pub enum Button {
     Singleplayer,
     Multiplayer,
     Realms,
+    /// The server directory (the multiplayer screen's Discover tab).
+    Discover,
     /// The centre's Store box: the website's store.
     Store,
     Options,
@@ -54,7 +56,7 @@ impl Button {
             Button::Language => "language",
             Button::Accessibility => "accessibility",
             Button::Quit => "quit",
-            Button::Store | Button::StoreCard => return None,
+            Button::Discover | Button::Store | Button::StoreCard => return None,
         })
     }
 
@@ -69,7 +71,7 @@ impl Button {
             Button::Language => ("options.language", "Language"),
             Button::Accessibility => ("options.accessibility", "Accessibility Settings"),
             Button::Quit => ("menu.quit", "Quit Game"),
-            Button::Store | Button::StoreCard => return None,
+            Button::Discover | Button::Store | Button::StoreCard => return None,
         })
     }
 
@@ -78,6 +80,7 @@ impl Button {
             Button::Singleplayer => Glyph::Person,
             Button::Multiplayer => Glyph::People,
             Button::Realms => Glyph::Realms,
+            Button::Discover => Glyph::Sparkle,
             Button::Store | Button::StoreCard => Glyph::Bag,
             Button::Options => Glyph::Gear,
             Button::Language => Glyph::Globe,
@@ -87,14 +90,13 @@ impl Button {
     }
 }
 
-/// Rustic's own texts, in the game's language (French for `fr_*`, English otherwise).
+/// Rustic's own texts of the menu, in the game's language ([`crate::i18n`]).
 pub fn rustic_text(key: RusticText, lang: &str) -> &'static str {
-    let fr = lang.starts_with("fr");
-    match (key, fr) {
-        (RusticText::Store, true) => "Boutique",
-        (RusticText::Store, false) => "Store",
-        (RusticText::StoreNews, true) => "Nouveautés boutique",
-        (RusticText::StoreNews, false) => "Store news",
+    use crate::i18n::{T, t};
+    match key {
+        RusticText::Store => t(T::Store, lang),
+        RusticText::StoreNews => t(T::StoreNews, lang),
+        RusticText::Discover => t(T::Discover, lang),
     }
 }
 
@@ -102,6 +104,7 @@ pub fn rustic_text(key: RusticText, lang: &str) -> &'static str {
 pub enum RusticText {
     Store,
     StoreNews,
+    Discover,
 }
 
 /// A translated label made short for a button: the game's "Options..." loses its dots and
@@ -588,7 +591,7 @@ pub fn layout(v: &View<'_>) -> Layout {
     };
     let mut order = Vec::new();
     let lit = |button: Button, r: [f32; 4]| v.focus == Some(button) || inside(r, mouse);
-    let (radius, t) = (px(8.0), 1.0);
+    let (radius, t) = (px(7.0), 1.0);
     let margin = px(20.0);
 
     // The panorama, darker, and darker still towards the top and the bottom (a soft vignette,
@@ -703,21 +706,21 @@ pub fn layout(v: &View<'_>) -> Layout {
     // The centre block: the logo, then the buttons, in the middle of the room between the top
     // row and the bottom row.
     let logo_h = px(56.0);
-    let button_h = px(40.0);
-    let bgap = px(8.0);
-    let column_w = px(400.0).min(w - 2.0 * margin);
+    let button_h = px(32.0);
+    let bgap = px(6.0);
+    let column_w = px(340.0).min(w - 2.0 * margin);
     let half = ((column_w - bgap) / 2.0).floor();
-    let block_h = logo_h + px(32.0) + 3.0 * button_h + 2.0 * bgap;
+    let block_h = logo_h + px(28.0) + 4.0 * button_h + 3.0 * bgap;
     let top = margin + top_h + px(16.0);
     let bottom = row_y - px(16.0);
     let mut y = (top + (bottom - top - block_h).max(0.0) * 0.45).round();
     let logo_w = (logo_h * v.logo_aspect).round();
     let logo = [(cx - logo_w / 2.0).round(), y, logo_w, logo_h];
     b.image(Image::Logo, logo);
-    y += logo_h + px(32.0);
+    y += logo_h + px(28.0);
     let x0 = (cx - column_w / 2.0).round();
-    let label_size = px(15.0);
-    let icon_side = px(18.0);
+    let label_size = px(13.5);
+    let icon_side = px(16.0);
     let wide = [
         (Button::Singleplayer, [x0, y, column_w, button_h], false),
         (
@@ -727,14 +730,19 @@ pub fn layout(v: &View<'_>) -> Layout {
         ),
         (
             Button::Realms,
-            [x0, y + 2.0 * (button_h + bgap), half, button_h],
+            [x0, y + 2.0 * (button_h + bgap), column_w, button_h],
+            false,
+        ),
+        (
+            Button::Discover,
+            [x0, y + 3.0 * (button_h + bgap), half, button_h],
             false,
         ),
         (
             Button::Store,
             [
                 x0 + column_w - half,
-                y + 2.0 * (button_h + bgap),
+                y + 3.0 * (button_h + bgap),
                 half,
                 button_h,
             ],
@@ -1295,6 +1303,7 @@ mod tests {
                 Button::Singleplayer,
                 Button::Multiplayer,
                 Button::Realms,
+                Button::Discover,
                 Button::Store,
                 Button::Options,
                 Button::Language,
@@ -1337,14 +1346,23 @@ mod tests {
         let px = |r: [f32; 4]| [r[2] * 2.0, r[3] * 2.0];
         assert_eq!(
             px(hit_rect(&l, Button::Singleplayer).unwrap()),
-            [400.0, 40.0]
+            [340.0, 32.0]
         );
-        assert_eq!(px(hit_rect(&l, Button::Store).unwrap()), [196.0, 40.0]);
+        assert_eq!(px(hit_rect(&l, Button::Realms).unwrap()), [340.0, 32.0]);
+        assert_eq!(px(hit_rect(&l, Button::Discover).unwrap()), [167.0, 32.0]);
+        assert_eq!(px(hit_rect(&l, Button::Store).unwrap()), [167.0, 32.0]);
+        // Discover and Store share the row under Realms.
+        let (d, s) = (
+            hit_rect(&l, Button::Discover).unwrap(),
+            hit_rect(&l, Button::Store).unwrap(),
+        );
+        assert_eq!(d[1], s[1]);
+        assert!(d[1] > hit_rect(&l, Button::Realms).unwrap()[1]);
         assert_eq!(px(hit_rect(&l, Button::Quit).unwrap()), [36.0, 36.0]);
         // And proportionally smaller in 854x480.
         let small = layout(&view([854.0, 480.0], 2.0, &[]));
         let w = hit_rect(&small, Button::Singleplayer).unwrap()[2] * 2.0;
-        assert!((w - 400.0 * 480.0 / 720.0).abs() <= 1.0, "{w}");
+        assert!((w - 340.0 * 480.0 / 720.0).abs() <= 1.0, "{w}");
     }
 
     #[test]
@@ -1464,6 +1482,10 @@ mod tests {
         );
         assert_eq!(
             key(&order, Some(Button::Realms), "key.keyboard.down", false),
+            KeyOutcome::Focus(Button::Discover)
+        );
+        assert_eq!(
+            key(&order, Some(Button::Discover), "key.keyboard.right", false),
             KeyOutcome::Focus(Button::Store)
         );
         assert_eq!(

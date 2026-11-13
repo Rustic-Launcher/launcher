@@ -14,14 +14,31 @@
 #![forbid(unsafe_code)]
 
 mod badge;
+mod canvas;
+mod directory;
 mod game;
 mod net;
 mod players;
+mod screens;
+mod skin;
 mod state;
 mod title_menu;
 
 pub use state::MOD_ID;
 pub use title_menu::ICON_PNG;
+
+/// Installs the Rustic look of every screen's widgets (Rustic's Horizon patch U15, ADR 0160).
+/// Call it before the game starts (from `main`); a second skin is refused.
+pub fn install_skin() {
+    if !horizon_client::ui::skin::install(&skin::SKIN) {
+        log::error!("Rustic: another widget skin is installed");
+    }
+    // Horizon's own settings pages and overlays in Rustic's palette (before the game gives
+    // Horizon's: the first look given is kept).
+    if !horizon_client::menu_style::install(skin::menu_style()) {
+        log::error!("Rustic: the menus' look was given before Rustic's");
+    }
+}
 
 /// The game window's title: "Rustic · Horizon 26.3".
 pub fn window_title() -> String {

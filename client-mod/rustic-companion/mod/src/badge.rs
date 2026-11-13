@@ -27,7 +27,7 @@ const SENDERS_MAX: usize = 64;
 
 /// The mark alone, from the wordmark.
 static MARK: LazyLock<Option<Rgba>> = LazyLock::new(|| {
-    crate::title_menu::LOGO
+    crate::canvas::LOGO
         .as_ref()
         .and_then(badge::mark_of_wordmark)
 });

@@ -21,8 +21,11 @@ pub struct CompanionConfig {
     pub notifications: bool,
     /// Hide other players' trails and auras.
     pub hide_effects: bool,
-    /// Draw the Rustic main menu over the title screen (false: the game's own title).
+    /// Draw the Rustic main menu over the title screen, Rustic's language screen and the
+    /// multiplayer screen's Discover tab (false: the game's own).
     pub title_menu: bool,
+    /// Draw every screen's widgets in the Rustic theme (false: the game's own look).
+    pub rustic_theme: bool,
 }
 
 impl Default for CompanionConfig {
@@ -37,6 +40,7 @@ impl Default for CompanionConfig {
             notifications: true,
             hide_effects: false,
             title_menu: true,
+            rustic_theme: true,
         }
     }
 }
