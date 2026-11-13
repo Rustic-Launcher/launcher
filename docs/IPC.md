@@ -4,7 +4,7 @@ Owners: frontend (TypeScript client + browser mock, ADR 0024) and desktop (Rust 
 `apps/launcher/src-tauri`). **Generated** from `apps/launcher/src/ipc/commands.ts` and
 `src/ipc/types/*.ts` by `pnpm --filter @rustic/launcher gen:ipc-doc`: edit the TypeScript, then regenerate.
 
-119 commands, 16 events.
+120 commands, 16 events.
 
 ## Conventions
 
@@ -58,6 +58,7 @@ type InstanceId = { instance_id: string };
 | `rustic_server_set`<br>Sets the manual override after checking the file answers `--rustic-version` (`invalid_argument`, reason `server.not_rustic_server`, otherwise); `path: null` clears it (automatic). | `{ path: string \| null }` | `RusticServerStatus` |
 | `app_open_path` | `{ path: string }` | `void` |
 | `app_open_url` | `{ url: string }` | `void` |
+| `player_skin_url`<br>A player's skin URL (Mojang's session service, cached); `null` without one. | `{ uuid: string }` | `string \| null` |
 | `app_pick_path` | `PickPathRequest` | `string \| null` |
 | `app_check_update` | — | `LauncherUpdate` |
 | `app_install_update` | — | `void` |

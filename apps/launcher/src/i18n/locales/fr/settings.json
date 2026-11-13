@@ -434,7 +434,8 @@
     },
     "notAffiliated": "Produit non officiel de Minecraft. Non approuvé par Mojang ou Microsoft et sans lien avec eux.",
     "horizonCredit": "Basé sur Horizon, une réécriture du jeu en Rust sous licence MIT, par ses contributeurs.",
-    "company": "Édité par [nom de la société], société française (SIREN [numéro], [adresse]). Paiements par Stripe ; la société est le vendeur."
+    "company": "Édité par [nom de la société], société française (SIREN [numéro], [adresse]). Paiements par Stripe ; la société est le vendeur.",
+    "tagline": "Rustic est une plateforme de jeu social, propulsée par le moteur Horizon"
   },
   "rusticAuth": {
     "mode": "Se connecter ou créer un compte",

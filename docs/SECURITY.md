@@ -186,3 +186,17 @@ are marked **(deviation)**.
   launcher never runs anything the VPS sends, and console text is rendered as text. A user with passwordless sudo
   gives the launcher (and anyone with their SSH key) root on the VPS; the key is per-VPS and revocable by removing
   its `authorized_keys` line.
+
+## Marketplace uploads (ADR 0155)
+
+Creator uploads are untrusted input that ends up in players' games. The API never trusts the client:
+it streams the bytes to a private staging folder (size counted while streaming), reads the archive
+entry by entry counting the real unpacked sizes (decompression bombs, entry counts), refuses unsafe
+paths (traversal, absolute, `\`, `:`, links, devices, encryption), refuses programs in every kind
+(extensions and executable magic bytes; native mods carry Rust source only), parses each kind's
+manifest as Horizon does, sniffs and re-encodes images (metadata and appended data dropped), and runs
+the fair-play policy. Native mods (code compiled on the player's PC) are private until an admin has
+read and approved each version. Private, pending and taken-down files never sit in the CDN folder;
+the API streams them to their owner or an admin (bearer token or a 10-minute HMAC-signed link derived
+from `DATA_ENCRYPTION_KEY`). Not done server side: compiling native mods, the full content reader and
+the naga shader validation (the game runs them before loading content).

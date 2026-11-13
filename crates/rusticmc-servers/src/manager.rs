@@ -59,6 +59,10 @@ pub struct ServerProfile {
     /// The temporary relay label asked for, if any.
     #[serde(default)]
     pub relay_label: Option<String>,
+    /// This server's id in Rustic Cloud, once registered there (the relay's tokens are signed
+    /// for it).
+    #[serde(default)]
+    pub cloud_id: Option<String>,
     /// A `rustic-server` program for this server only (an uploaded or downloaded engine), else
     /// the launcher's configured one.
     #[serde(default)]
@@ -271,6 +275,7 @@ impl ServerManager {
             last_started_at: None,
             relay: false,
             relay_label: None,
+            cloud_id: None,
             engine: req.engine_path.clone(),
         };
         let engine = self.engine_settings(&profile)?;

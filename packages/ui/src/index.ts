@@ -31,4 +31,5 @@ export * from './components/Carousel';
 export * from './components/Misc';
 export * from './components/RusticMark';
 export * from './components/RusticWordmark';
+export * from './components/PoweredByHorizon';
 export * from './components/MicrosoftButton';

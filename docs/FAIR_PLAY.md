@@ -42,6 +42,10 @@ remove plugins that harm players (data harvesting, backdoors, scams).
 ## Reporting and enforcement
 
 - Report content in the launcher (Content › item › Report) or a player (friends panel / profile › Report).
+- Content published on the Rustic marketplace is checked against this policy when it is uploaded (names,
+  tags and categories that name a cheat are refused; single-player-only features are published with a notice
+  and never promoted). Native mods are read by a person before they are public. Every project page has a
+  Report button.
 - Content that breaks this policy is removed from the catalogue; a version that hides cheating features is removed
   with all its versions.
 - Accounts that distribute cheats through Rustic or abuse other players can be warned, restricted or banned, with a

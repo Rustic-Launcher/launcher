@@ -25,6 +25,7 @@ rusticmc-instances = { path = "../../../crates/rusticmc-instances" }
 rusticmc-launcher-core = { path = "../../../crates/rusticmc-launcher-core" }
 rusticmc-servers = { path = "../../../crates/rusticmc-servers" }
 rusticmc-tunnel = { path = "../../../crates/rusticmc-tunnel" }
+base64 = "0.22"
 percent-encoding = "2.3"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"

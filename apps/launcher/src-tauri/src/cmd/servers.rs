@@ -1591,16 +1591,11 @@ pub fn server_access_get(state: State<'_>, args: ServerIdArgs) -> Res<ServerAcce
 pub async fn server_relay_set(state: State<'_>, args: RelaySetArgs) -> Res<ServerAccess> {
     let id = local_only(&args.server_id)?;
     if args.enabled {
-        // Tunnel tokens come from Rustic Cloud (HANDOFF relay → cloud); its client isn't wired.
-        let tokens = crate::relay::token_source(&state)?;
-        let relay_addr = state
-            .config()
-            .cloud
-            .relay_base
-            .trim_start_matches("https://")
-            .to_owned();
-        let provider = rusticmc_tunnel::RelayTunnelProvider::new(format!("{relay_addr}:7443"));
-        state.servers.start_relay(&id, &provider, tokens)?;
+        // Registers the server in Rustic Cloud once, reserves its temporary hostname and
+        // signs tokens for the relay (relay.rs).
+        let session = crate::relay::session(state.inner(), &id).await?;
+        let provider = rusticmc_tunnel::RelayTunnelProvider::new(session.relay_addr);
+        state.servers.start_relay(&id, &provider, session.tokens)?;
     } else {
         state.servers.stop_relay(&id).await;
     }

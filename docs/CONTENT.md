@@ -34,9 +34,9 @@ pack format `[121, 0]`, `.hpack` format 1, index schema 1. Verdicts never guess 
   every version of an id); minisign signature verified with the project's key (unsigned projects say so); the file's
   own manifest matches the entry (`horizon-mod.toml`, `horizon-native.json`, `horizon-modpack.toml`,
   `horizon-shaders.toml`, `pack.mcmeta`).
-- **Rustic registry**: a `RusticRegistry` trait; `HttpRusticRegistry` over a proposed shape (`GET
-  /v1/content/search`, `GET /v1/content/projects/{id}/versions`, HANDOFF) at the endpoint from config;
-  `DisabledRusticRegistry` when none is set.
+- **Rustic registry** (Rustic's catalogue): a `RusticRegistry` trait; `HttpRusticRegistry` over
+  `GET /v1/content/search` and `GET /v1/content/projects/{id}/versions` at the endpoint from config;
+  `DisabledRusticRegistry` when none is set. See "Rustic catalogue and marketplace" below.
 
 ## What runs on Horizon (badges)
 
@@ -94,6 +94,37 @@ disable, update checks and Rustic pack export read it; the game never does.
 Downloads go through the `Downloader` trait: `CoreDownloader` wraps the desktop owner's `DownloadManager`
 (`rusticmc-launcher-core`: resumable, cached, verifying the strongest hash) and then verifies every other hash the
 source listed; `MemoryDownloader` serves tests.
+
+## Rustic catalogue and marketplace (ADR 0155)
+
+Rustic Cloud's catalogue holds admin-curated entries and, since the marketplace, projects creators
+publish from the website: mods (`.hmod`), native mods (`.hnmod`, or a native `.hmod`), modpacks
+(`.hpack` or `.rusticpack`), resource packs, Horizon shader packs (`.hshader`) and data packs.
+(`shaderpack` and `plugin` stay curated.) What the launcher sees:
+
+- **Search** (`GET /v1/content/search`) lists public, published projects only; it also takes
+  `category`, `tag`, `sort` (`relevance`, `downloads`, `newest`, `updated`), `price` (`free`,
+  `paid`), `verified=true`, and answers `has_more` and `total`. Hits keep the `ProjectSummary` JSON;
+  extra card fields (`icon_url`, `gallery`, `owner`, `updated_at`, `size`, `verified`, `price`,
+  `latest_version`) are optional on the wire.
+- **Versions** keep the `ContentVersion` JSON and add `horizon` (the manifest facts as
+  `HorizonFacts`: a content mod's API line, a native mod's `native-1/<horizon>/<mixins>` and
+  `hooks`, a modpack's format, a shader pack's shader API, a pack's pack format), so `compat::check`
+  gives real verdicts for Rustic content. Pending (native, under review), rejected and yanked versions
+  are never listed to the launcher.
+- **Files**: `files[].url` is the API's download address (`https://api.rustic-launcher.com/v1/content/
+  files/<version id>/<file>`), which counts the download and redirects to
+  `https://cdn.rustic-launcher.com/marketplace/files/...`; `size`, `sha256` and `sha512` are given, so
+  the downloader's checks apply as for any source (https only, size, hash).
+- **Checks before anything is published**, server side: archive safety (size, entries, real unpacked
+  size, decompression bombs, traversal, links, encryption), no programs in any kind, the kind's
+  manifest parsed as Horizon parses it, id and version consistent with the form, images sniffed and
+  re-encoded, and the same fair-play policy as `FairPlayPolicy` (the API links this crate). Native
+  mods are reviewed by an admin before they become public.
+- **Unlisted** projects are reachable by id (`GET /v1/content/projects/{id}`, `.../versions`) but never
+  searched; **private** ones answer 404 to the launcher (it sends no token).
+- **Install link** from the website: `rustic://content/rustic/<project>[?version=<version id>]`
+  (spec for the launcher in `HANDOFF.md`).
 
 ## Fair play
 

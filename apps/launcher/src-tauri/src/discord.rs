@@ -18,6 +18,9 @@ use tokio::sync::watch;
 pub const APP_ID: &str = "1570549155250573444";
 /// The art asset uploaded to that application (Rich Presence > Art Assets).
 const LARGE_IMAGE: &str = "rustic";
+/// The small images for a place without its own icon (Rich Presence > Art Assets).
+const SMALL_SINGLEPLAYER: &str = "rustic_singleplayer";
+const SMALL_MULTIPLAYER: &str = "rustic_multiplayer";
 const WEBSITE: &str = "https://rustic-launcher.com";
 
 /// Where the player is.
@@ -39,6 +42,25 @@ pub struct Presence {
     pub game: Option<String>,
     /// When this activity began (unix seconds): the launcher's start, then the game's.
     pub since: u64,
+}
+
+/// The small image: the place's own icon (an https URL: the server's or the world's icon,
+/// hosted by Rustic) when there is one, else the generic one of the place.
+pub fn small_image(place: &Place, icon: Option<&str>) -> Option<(String, String)> {
+    let own = icon
+        .filter(|u| u.starts_with("https://"))
+        .map(str::to_owned);
+    match place {
+        Place::Singleplayer => Some((
+            own.unwrap_or_else(|| SMALL_SINGLEPLAYER.into()),
+            "Singleplayer".into(),
+        )),
+        Place::Server(_) => Some((
+            own.unwrap_or_else(|| SMALL_MULTIPLAYER.into()),
+            "Multiplayer".into(),
+        )),
+        Place::Launcher | Place::Menu => None,
+    }
 }
 
 /// The player's choices (Settings > Privacy).
@@ -63,11 +85,16 @@ pub fn activity(p: &Presence, o: Options) -> Value {
     let mut a = json!({
         "details": details,
         "timestamps": { "start": p.since },
-        "assets": { "large_image": LARGE_IMAGE, "large_text": "Rustic" },
+        // A click on the large image opens the website (Discord's `large_url`).
+        "assets": { "large_image": LARGE_IMAGE, "large_text": "Rustic", "large_url": WEBSITE },
         "buttons": [ { "label": "Get Rustic", "url": WEBSITE } ],
     });
     if let Some(state) = state {
         a["state"] = state.into();
+    }
+    if let Some((image, text)) = small_image(&p.place, None) {
+        a["assets"]["small_image"] = image.into();
+        a["assets"]["small_text"] = text.into();
     }
     a
 }
@@ -106,6 +133,8 @@ pub fn place_from_game_line(line: &str) -> Option<Place> {
         return match r.place.as_str() {
             "menu" => Some(Place::Menu),
             "singleplayer" => Some(Place::Singleplayer),
+            // Horizon's integrated (singleplayer) server is a session at "local".
+            "server" if r.server.as_deref() == Some("local") => Some(Place::Singleplayer),
             "server" => Some(Place::Server(r.server.filter(|s| !s.is_empty())?)),
             _ => None,
         };
@@ -335,6 +364,7 @@ mod tests {
         assert!(a.get("state").is_none());
         assert_eq!(a["timestamps"]["start"], 7);
         assert_eq!(a["assets"]["large_image"], "rustic");
+        assert_eq!(a["assets"]["large_url"], "https://rustic-launcher.com");
         assert_eq!(activity(&at(Place::Menu), ON)["state"], "Main menu");
         assert_eq!(
             activity(&at(Place::Menu), ON)["details"],
@@ -346,6 +376,31 @@ mod tests {
         );
         let server = at(Place::Server("play.example.com".into()));
         assert_eq!(activity(&server, ON)["state"], "On play.example.com");
+        assert_eq!(
+            activity(&server, ON)["assets"]["small_image"],
+            "rustic_multiplayer"
+        );
+        assert_eq!(
+            activity(&at(Place::Singleplayer), ON)["assets"]["small_image"],
+            "rustic_singleplayer"
+        );
+        assert!(
+            activity(&at(Place::Menu), ON)["assets"]
+                .get("small_image")
+                .is_none()
+        );
+        // A hosted icon wins over the generic one; anything but https is ignored.
+        let p = Place::Server("x".into());
+        assert_eq!(
+            small_image(&p, Some("https://cdn.example/i.png"))
+                .unwrap()
+                .0,
+            "https://cdn.example/i.png"
+        );
+        assert_eq!(
+            small_image(&p, Some("data:image/png;base64,AA")).unwrap().0,
+            "rustic_multiplayer"
+        );
     }
 
     #[test]
@@ -389,6 +444,11 @@ mod tests {
         assert_eq!(
             place_from_game_line(r#"rustic-presence {"place":"server"}"#),
             None
+        );
+        // Regression: singleplayer showed "Multiplayer".
+        assert_eq!(
+            place_from_game_line(r#"rustic-presence {"place":"server","server":"local"}"#),
+            Some(Place::Singleplayer)
         );
         assert_eq!(place_from_game_line("rustic-presence nonsense"), None);
         assert_eq!(

@@ -158,6 +158,8 @@ export const coreHandlers: MockHandlers = {
   app_open_url: ({ url }) => {
     window.open(url, '_blank', 'noopener');
   },
+  // The browser preview has no network to Mojang: players keep their initials.
+  player_skin_url: () => null,
   app_pick_path: async ({ kind, title }) => {
     await latency(0.5);
     if (kind === 'folder') return 'C:/Users/Sam/Documents/Rustic';

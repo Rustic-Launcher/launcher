@@ -139,10 +139,42 @@ export interface paths {
       path?: never;
       cookie?: never;
     };
-    get?: never;
+    get: operations['admin_content_list'];
     put?: never;
     post: operations['admin_content_create_project'];
     delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/admin/content/projects/{id}/takedown': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations['admin_content_takedown'];
+    delete: operations['admin_content_restore'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/admin/content/projects/{id}/verified': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put: operations['admin_content_verify'];
+    post?: never;
+    delete: operations['admin_content_unverify'];
     options?: never;
     head?: never;
     patch?: never;
@@ -158,6 +190,38 @@ export interface paths {
     get?: never;
     put?: never;
     post: operations['admin_content_create_version'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/admin/content/review': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['admin_content_review_queue'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/admin/content/versions/{id}/review': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations['admin_content_review'];
     delete?: never;
     options?: never;
     head?: never;
@@ -724,6 +788,22 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/v1/content/catalog': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['content_catalog'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/v1/content/fair-play/denylist': {
     parameters: {
       query?: never;
@@ -740,6 +820,42 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/v1/content/files/{version_id}/{filename}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /**
+     * A marketplace file. Public ones: counted, then redirected to the CDN. Private, pending or
+     *     taken-down ones: streamed to their owner or an admin (bearer token or a signed link).
+     */
+    get: operations['content_file'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/content/projects': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations['content_publish'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/v1/content/projects/{id}': {
     parameters: {
       query?: never;
@@ -750,6 +866,42 @@ export interface paths {
     get: operations['content_project'];
     put?: never;
     post?: never;
+    delete: operations['content_delete'];
+    options?: never;
+    head?: never;
+    patch: operations['content_update'];
+    trace?: never;
+  };
+  '/v1/content/projects/{id}/checkout': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /**
+     * Paid creator content: refused while creator sales are off (`CREATOR_SALES_ENABLED`, default
+     *     off, no Stripe Connect yet). Free content goes to the library instead.
+     */
+    post: operations['content_checkout'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/content/projects/{id}/reports': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations['content_report'];
     delete?: never;
     options?: never;
     head?: never;
@@ -765,7 +917,7 @@ export interface paths {
     };
     get: operations['content_versions'];
     put?: never;
-    post?: never;
+    post: operations['content_add_version'];
     delete?: never;
     options?: never;
     head?: never;
@@ -782,6 +934,58 @@ export interface paths {
     get: operations['content_search'];
     put?: never;
     post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/content/uploads': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /**
+     * Uploads one file, checked before it is kept (staged for 24 h until a publish request uses
+     *     it). The body is the raw bytes (`Content-Type: application/octet-stream`).
+     */
+    post: operations['content_upload'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/content/versions/{id}/download-link': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations['content_download_link'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/content/versions/{id}/yank': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations['content_yank'];
     delete?: never;
     options?: never;
     head?: never;
@@ -1349,6 +1553,22 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/v1/me/content': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['my_content'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/v1/me/delete': {
     parameters: {
       query?: never;
@@ -1456,6 +1676,55 @@ export interface paths {
     put?: never;
     post?: never;
     delete: operations['identities_unlink'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/me/library': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['library_list'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/me/library/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put: operations['library_add'];
+    post?: never;
+    delete: operations['library_remove'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/me/skin': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /** Skin PNG of the signed-in user's linked Minecraft profile. */
+    get: operations['me_skin'];
+    put?: never;
+    post?: never;
+    delete?: never;
     options?: never;
     head?: never;
     patch?: never;
@@ -2415,6 +2684,12 @@ export interface components {
       /** Format: date-time */
       created_at: string;
     };
+    AdminContentList: {
+      items: components['schemas']['ContentProject'][];
+      has_more: boolean;
+      /** Format: int64 */
+      total: number;
+    };
     /** @description A featured server as staff see it. */
     AdminFeaturedServer: {
       server: components['schemas']['FeaturedServer'];
@@ -2608,6 +2883,20 @@ export interface components {
       privacy_policy_accepted_at?: string | null;
       current_privacy_policy_version: string;
     };
+    /** @description The kinds open to creators, their categories and the upload limits. */
+    ContentCatalogInfo: {
+      kinds: components['schemas']['ContentKindCategories'][];
+      /** Format: int64 */
+      max_file_bytes: number;
+      /** Format: int64 */
+      max_image_bytes: number;
+      /** Format: int64 */
+      max_gallery: number;
+      /** @description False until creator sales open (Stripe Connect): paid projects are shown, not sold. */
+      creator_sales_enabled: boolean;
+    };
+    /** @enum {string} */
+    ContentChannel: 'release' | 'beta' | 'alpha';
     ContentDependency: {
       project_id?: string | null;
       version_id?: string | null;
@@ -2618,6 +2907,12 @@ export interface components {
     };
     /** @enum {string} */
     ContentDependencyKind: 'required' | 'optional' | 'incompatible' | 'embedded';
+    /** @description A short-lived link to a version's file (private files need one in a browser). */
+    ContentDownloadLink: {
+      url: string;
+      /** Format: date-time */
+      expires_at: string;
+    };
     /** @description Same JSON as `rusticmc_content::model::FairPlay` (`{"status": "clean"}`). */
     ContentFairPlay: {
       status: components['schemas']['FairPlayStatus'];
@@ -2632,10 +2927,60 @@ export interface components {
       primary: boolean;
       signature?: string | null;
     };
+    /** @description What a checked file says about itself (its manifest). */
+    ContentFileFacts: {
+      kind: components['schemas']['ContentKind'];
+      /** @description The manifest's id (content mods, native mods, `.hpack`, `.hshader`). */
+      id?: string | null;
+      name?: string | null;
+      version?: string | null;
+      /** @description See [`ContentHorizonFacts::api`]. */
+      api: string;
+      /** @description The game version it is for, when the manifest names one. */
+      game?: string | null;
+      /** Format: int32 */
+      hooks?: number | null;
+      side?: string | null;
+      capabilities: string[];
+      /**
+       * Format: int64
+       * @description Files in the archive.
+       */
+      entries: number;
+      /**
+       * Format: int64
+       * @description Unpacked size in bytes.
+       */
+      unpacked_size: number;
+    };
     ContentHashes: {
       sha1?: string | null;
       sha256?: string | null;
       sha512?: string | null;
+    };
+    /** @description The JSON of `rusticmc_content::model::HorizonFacts` (every key present). */
+    ContentHorizonFacts: {
+      /**
+       * @description A content mod's API line (`0.2`), a native mod's `native-1/<horizon>/<mixins>`, a
+       *     modpack's format, a shader pack's shader API, a resource/data pack's pack format.
+       */
+      api: string;
+      /**
+       * Format: int32
+       * @description A native mod's hook points version.
+       */
+      hooks?: number | null;
+      side?: string | null;
+      capabilities: string[];
+      broken_on: string[];
+      key?: string | null;
+    };
+    ContentImage: {
+      url: string;
+      /** Format: int32 */
+      width: number;
+      /** Format: int32 */
+      height: number;
     };
     /** @enum {string} */
     ContentKind:
@@ -2647,6 +2992,43 @@ export interface components {
       | 'shaderpack'
       | 'datapack'
       | 'plugin';
+    ContentKindCategories: {
+      kind: components['schemas']['ContentKind'];
+      categories: string[];
+    };
+    /** @description Links shown on the project page (`https://` only). */
+    ContentLinks: {
+      source?: string | null;
+      issues?: string | null;
+      wiki?: string | null;
+      discord?: string | null;
+      website?: string | null;
+    };
+    /** @description Owner and staff view of a project's moderation state. */
+    ContentModeration: {
+      taken_down: boolean;
+      takedown_reason?: string | null;
+      /** Format: date-time */
+      taken_down_at?: string | null;
+      /** Format: date-time */
+      verified_at?: string | null;
+      /**
+       * Format: int64
+       * @description Versions waiting for an admin (native mods).
+       */
+      pending_versions: number;
+      /** @description The newest reviewer note on a rejected version. */
+      review_note?: string | null;
+    };
+    /**
+     * @description `amount_cents` 0 = free. Paid creator content is shown with its price; buying it is not
+     *     available yet (ADR 0155).
+     */
+    ContentPrice: {
+      /** Format: int64 */
+      amount_cents: number;
+      currency: components['schemas']['Currency'];
+    };
     ContentProject: {
       /** @description Always `rustic`. */
       source: string;
@@ -2665,10 +3047,90 @@ export interface components {
       loaders: string[];
       game_versions: string[];
       fair_play: components['schemas']['ContentFairPlay'];
+      /** @description Markdown page; only in `GET /v1/content/projects/{id}` (not in search hits). */
+      description?: string | null;
+      /** @description Screenshots, in order (re-encoded on upload, served from Rustic's CDN). */
+      gallery?: components['schemas']['ContentImage'][];
+      links?: components['schemas']['ContentLinks'];
+      owner?: null | components['schemas']['PublicUser'];
+      visibility?: components['schemas']['ContentVisibility'];
+      /** @description An admin confirmed the project matches its description. */
+      verified?: boolean;
+      price?: components['schemas']['ContentPrice'];
+      /** Format: date-time */
+      created_at?: string | null;
+      /** Format: date-time */
+      updated_at?: string | null;
+      /** @description Newest version visible to the caller. */
+      latest_version?: string | null;
+      /**
+       * Format: int64
+       * @description Size in bytes of the newest version's primary file.
+       */
+      size?: number | null;
+      /**
+       * @description `pending` while a native mod waits for an admin (it is then private whatever its
+       *     visibility says).
+       */
+      review?: components['schemas']['ContentReviewStatus'];
+      /** @description Hosted by Rustic's marketplace (uploaded by its creator) rather than curated. */
+      marketplace?: boolean;
+      moderation?: null | components['schemas']['ContentModeration'];
     };
+    ContentReportRequest: {
+      reason: components['schemas']['ReportReason'];
+      details?: string | null;
+    };
+    ContentReviewItem: {
+      project: components['schemas']['ContentProject'];
+      version: components['schemas']['ContentVersion'];
+    };
+    ContentReviewRequest: {
+      /**
+       * @description `true` approves the version (the project becomes visible as its owner chose), `false`
+       *     rejects it with `note` as the reason.
+       */
+      approve: boolean;
+      note?: string | null;
+    };
+    /** @enum {string} */
+    ContentReviewStatus: 'not_required' | 'pending' | 'approved' | 'rejected';
     ContentSearchResponse: {
       hits: components['schemas']['ContentProject'][];
+      /** @description More results after `offset + hits.len()`. */
+      has_more?: boolean;
+      /**
+       * Format: int64
+       * @description Matching projects in all.
+       */
+      total?: number;
     };
+    ContentTakedownRequest: {
+      reason: string;
+    };
+    /** @description A staged upload, checked and kept until a publish request uses it (or it expires). */
+    ContentUpload: {
+      /** Format: uuid */
+      id: string;
+      purpose: components['schemas']['ContentUploadPurpose'];
+      filename: string;
+      /** Format: int64 */
+      size: number;
+      sha256: string;
+      sha512: string;
+      facts?: null | components['schemas']['ContentFileFacts'];
+      /**
+       * Format: int32
+       * @description Images.
+       */
+      width?: number | null;
+      /** Format: int32 */
+      height?: number | null;
+      /** Format: date-time */
+      expires_at: string;
+    };
+    /** @enum {string} */
+    ContentUploadPurpose: 'file' | 'icon' | 'gallery';
     ContentVersion: {
       /** @description Always `rustic`. */
       source: string;
@@ -2684,7 +3146,20 @@ export interface components {
       dependencies: components['schemas']['ContentDependency'][];
       /** @description RFC 3339. */
       published: string;
+      horizon?: null | components['schemas']['ContentHorizonFacts'];
+      changelog?: string;
+      channel?: components['schemas']['ContentChannel'];
+      /** @description Yanked versions are listed to their owner and staff only. */
+      yanked?: boolean;
+      yanked_reason?: string | null;
+      /** Format: int64 */
+      downloads?: number;
+      review?: components['schemas']['ContentReviewStatus'];
+      /** @description Owner and staff only: the reviewer's note. */
+      review_note?: string | null;
     };
+    /** @enum {string} */
+    ContentVisibility: 'public' | 'unlisted' | 'private';
     /** @description One direct-message conversation (most recent first in `GET /v1/conversations`). */
     Conversation: {
       peer: components['schemas']['PublicUser'];
@@ -3052,6 +3527,12 @@ export interface components {
       /** @description Same server at overlapping times in the last 14 days (not already in `played_with`). */
       crossed: components['schemas']['FriendSuggestion'][];
     };
+    /** @description One gallery image to keep: an existing one by `url`, or a staged upload. */
+    GalleryRef: {
+      url?: string | null;
+      /** Format: uuid */
+      upload_id?: string | null;
+    };
     GiftCardCreated: {
       /** Format: uuid */
       id: string;
@@ -3194,6 +3675,14 @@ export interface components {
       /** Format: date-time */
       expires_at: string;
     };
+    LibraryEntry: {
+      project: components['schemas']['ContentProject'];
+      source: components['schemas']['LibrarySource'];
+      /** Format: date-time */
+      added_at: string;
+    };
+    /** @enum {string} */
+    LibrarySource: 'free' | 'purchase' | 'grant';
     LoginRequest: {
       email: string;
       password: string;
@@ -3330,12 +3819,29 @@ export interface components {
       player?: null | components['schemas']['PublicPlayer'];
     };
     /** @enum {string} */
-    ModerationAction: 'dismiss' | 'chat_ban' | 'ban';
+    ModerationAction: 'dismiss' | 'chat_ban' | 'ban' | 'take_down';
     NameAvailability: {
       label: string;
       available: boolean;
       reason?: string | null;
       feature_enabled: boolean;
+    };
+    /** @description The first (or a new) version of a project. */
+    NewContentVersion: {
+      /**
+       * Format: uuid
+       * @description A staged `file` upload.
+       */
+      file_upload: string;
+      /** @description Must equal the version in the file's manifest when it has one. */
+      version: string;
+      /** @description Display name; the version when empty. */
+      name?: string | null;
+      /** @description Markdown. */
+      changelog?: string;
+      channel?: components['schemas']['ContentChannel'];
+      /** @description Game versions it is for (`26.3`); the manifest's when empty. */
+      game_versions?: string[];
     };
     /** @description A published news item (public). */
     NewsItem: {
@@ -3584,6 +4090,51 @@ export interface components {
       username: string;
       display_name: string;
     };
+    /** @description Publishes a new project with its first version (multi-step form of the website). */
+    PublishContentRequest: {
+      kind: components['schemas']['ContentKind'];
+      /**
+       * @description `[a-z0-9_-]{2,64}`; the project id. For a content mod, native mod, `.hpack` or
+       *     `.hshader`, it must be the manifest's id (`-` read as `_`).
+       */
+      slug: string;
+      name: string;
+      /** @description One line, at most 160 characters. */
+      summary: string;
+      /** @description Markdown, at most 10,000 characters. */
+      description?: string;
+      /** @description 1 to 3 of the kind's categories (`GET /v1/content/catalog`). */
+      categories: string[];
+      /** @description At most 10, `[a-z0-9][a-z0-9-]{0,23}`. */
+      tags?: string[];
+      /** @description An SPDX expression or `All-Rights-Reserved`. */
+      license: string;
+      links?: components['schemas']['ContentLinks'];
+      visibility: components['schemas']['ContentVisibility'];
+      /**
+       * Format: int64
+       * @description 0 = free.
+       */
+      price_cents?: number;
+      currency?: null | components['schemas']['Currency'];
+      /**
+       * Format: uuid
+       * @description A staged `icon` upload.
+       */
+      icon_upload?: string | null;
+      /** @description Staged `gallery` uploads, in order (at most 8). */
+      gallery_uploads?: string[];
+      version: components['schemas']['NewContentVersion'];
+      /**
+       * @description The publishing agreement: the creator owns the rights, the content follows the rules
+       *     and the fair-play policy. Must be `true`.
+       */
+      accept_terms: boolean;
+    };
+    PublishContentResponse: {
+      project: components['schemas']['ContentProject'];
+      version: components['schemas']['ContentVersion'];
+    };
     PurchaseApproval: {
       /** Format: uuid */
       id: string;
@@ -3720,6 +4271,7 @@ export interface components {
       /** Format: date-time */
       created_at: string;
       resolution_note?: string | null;
+      content_project?: null | components['schemas']['ReportedContent'];
     };
     ReportCreated: {
       /** Format: uuid */
@@ -3727,7 +4279,14 @@ export interface components {
     };
     /** @enum {string} */
     ReportReason:
-      'spam' | 'harassment' | 'inappropriate_content' | 'cheating' | 'impersonation' | 'other';
+      | 'spam'
+      | 'harassment'
+      | 'inappropriate_content'
+      | 'cheating'
+      | 'impersonation'
+      | 'copyright'
+      | 'malware'
+      | 'other';
     ReportRequest: {
       /** Format: uuid */
       target_user_id: string;
@@ -3738,6 +4297,12 @@ export interface components {
     };
     /** @enum {string} */
     ReportStatus: 'open' | 'actioned' | 'dismissed';
+    ReportedContent: {
+      id: string;
+      slug: string;
+      name: string;
+      kind: components['schemas']['ContentKind'];
+    };
     ResetPasswordRequest: {
       token: string;
       new_password: string;
@@ -3931,6 +4496,11 @@ export interface components {
        */
       guardian_required: boolean;
     };
+    /**
+     * Format: binary
+     * @description OpenAPI schema of the binary PNG body.
+     */
+    SkinPng: string;
     SocialSnapshot: {
       friends: components['schemas']['CompanionFriend'][];
       invites: components['schemas']['CompanionInvite'][];
@@ -4015,6 +4585,27 @@ export interface components {
       /** Format: int32 */
       sort?: number | null;
       product_ids?: string[] | null;
+    };
+    /** @description Every field optional: only the ones sent change. */
+    UpdateContentProjectRequest: {
+      name?: string | null;
+      summary?: string | null;
+      description?: string | null;
+      categories?: string[] | null;
+      tags?: string[] | null;
+      license?: string | null;
+      links?: null | components['schemas']['ContentLinks'];
+      visibility?: null | components['schemas']['ContentVisibility'];
+      /** Format: int64 */
+      price_cents?: number | null;
+      currency?: null | components['schemas']['Currency'];
+      /**
+       * Format: uuid
+       * @description A staged `icon` upload.
+       */
+      icon_upload?: string | null;
+      /** @description The whole gallery, in order. */
+      gallery?: components['schemas']['GalleryRef'][] | null;
     };
     UpdateEquippedRequest: {
       items: components['schemas']['EquippedSlot'][];
@@ -4124,6 +4715,11 @@ export interface components {
     WornRequest: {
       /** @description Up to 64 Minecraft UUIDs (hex, dashes accepted). */
       players: string[];
+    };
+    YankContentVersionRequest: {
+      /** @description `false` restores a yanked version. */
+      yanked: boolean;
+      reason?: string | null;
     };
   };
   responses: never;
@@ -4481,6 +5077,46 @@ export interface operations {
       };
     };
   };
+  admin_content_list: {
+    parameters: {
+      query?: {
+        q?: string | null;
+        kind?: string | null;
+        /**
+         * @description `all` (default), `public`, `unlisted`, `private`, `pending`, `taken_down`, `verified`,
+         *     `flagged`, `marketplace`.
+         */
+        status?: string | null;
+        /** @description `updated` (default), `newest`, `downloads`, `relevance`. */
+        sort?: string | null;
+        offset?: number | null;
+        limit?: number | null;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['AdminContentList'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
   admin_content_create_project: {
     parameters: {
       query?: never;
@@ -4495,6 +5131,134 @@ export interface operations {
     };
     responses: {
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentProject'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_content_takedown: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['ContentTakedownRequest'];
+      };
+    };
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentProject'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_content_restore: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentProject'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_content_verify: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentProject'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_content_unverify: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
         headers: {
           [name: string]: unknown;
         };
@@ -4530,6 +5294,69 @@ export interface operations {
     };
     responses: {
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentVersion'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_content_review_queue: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentReviewItem'][];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  admin_content_review: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Version id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['ContentReviewRequest'];
+      };
+    };
+    responses: {
+      200: {
         headers: {
           [name: string]: unknown;
         };
@@ -5860,6 +6687,34 @@ export interface operations {
       };
     };
   };
+  content_catalog: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentCatalogInfo'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
   content_denylist: {
     parameters: {
       query?: never;
@@ -5875,6 +6730,83 @@ export interface operations {
         };
         content: {
           'application/json': components['schemas']['FairPlayDenyList'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  content_file: {
+    parameters: {
+      query?: {
+        /** @description Unix expiry of a signed link (`POST /v1/content/versions/{id}/download-link`). */
+        exp?: number | null;
+        sig?: string | null;
+      };
+      header?: never;
+      path: {
+        /** @description Version id (`<project>@<version>`) */
+        version_id: string;
+        /** @description File name */
+        filename: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description The file (private files) */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/octet-stream': unknown;
+        };
+      };
+      /** @description Redirect to the file on the CDN */
+      302: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  content_publish: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['PublishContentRequest'];
+      };
+    };
+    responses: {
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['PublishContentResponse'];
         };
       };
       /** @description Error (see `code`) */
@@ -5919,6 +6851,137 @@ export interface operations {
       };
     };
   };
+  content_delete: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Deleted with its files */
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  content_update: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['UpdateContentProjectRequest'];
+      };
+    };
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentProject'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  content_checkout: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['CheckoutResponse'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  content_report: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['ContentReportRequest'];
+      };
+    };
+    responses: {
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ReportCreated'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
   content_versions: {
     parameters: {
       query?: never;
@@ -5950,6 +7013,41 @@ export interface operations {
       };
     };
   };
+  content_add_version: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['NewContentVersion'];
+      };
+    };
+    responses: {
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['PublishContentResponse'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
   content_search: {
     parameters: {
       query?: {
@@ -5957,6 +7055,16 @@ export interface operations {
         q?: string | null;
         /** @description `mod`, `native_mod`, `modpack`, `resourcepack`, `shader`, `shaderpack`, `datapack`, `plugin`. */
         kind?: string | null;
+        /** @description One of the kind's categories. */
+        category?: string | null;
+        /** @description A tag. */
+        tag?: string | null;
+        /** @description `relevance` (default), `downloads`, `newest`, `updated`. */
+        sort?: string | null;
+        /** @description `free` or `paid`. */
+        price?: string | null;
+        /** @description Only projects an admin verified. */
+        verified?: boolean | null;
         offset?: number | null;
         /** @description 1-100, default 20. */
         limit?: number | null;
@@ -5973,6 +7081,112 @@ export interface operations {
         };
         content: {
           'application/json': components['schemas']['ContentSearchResponse'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  content_upload: {
+    parameters: {
+      query: {
+        /** @description `file`, `icon` or `gallery`. */
+        purpose: string;
+        /** @description The project's kind (`file` uploads). */
+        kind?: string | null;
+        /** @description The file's name (a plain name with the kind's extension). */
+        filename: string;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /** @description The file's bytes */
+    requestBody: {
+      content: {
+        'application/octet-stream': string;
+      };
+    };
+    responses: {
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentUpload'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  content_download_link: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Version id (`<project>@<version>`) */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentDownloadLink'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  content_yank: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Version id (`<project>@<version>`) */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['YankContentVersionRequest'];
+      };
+    };
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentVersion'];
         };
       };
       /** @description Error (see `code`) */
@@ -7217,6 +8431,34 @@ export interface operations {
       };
     };
   };
+  my_content: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentProject'][];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
   gdpr_delete: {
     parameters: {
       query?: never;
@@ -7404,6 +8646,141 @@ export interface operations {
     responses: {
       /** @description Unlinked */
       204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  library_list: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['LibraryEntry'][];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  library_add: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description In the library */
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  library_remove: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Removed */
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  me_skin: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description The skin PNG (64x64 or legacy 64x32), proxied from Mojang */
+      200: {
+        headers: {
+          /** @description `private, max-age=600` */
+          'cache-control'?: string;
+          /** @description Arm model: `slim` or `classic` */
+          'x-skin-model'?: string;
+          [name: string]: unknown;
+        };
+        content: {
+          'image/png': components['schemas']['SkinPng'];
+        };
+      };
+      /** @description `no_minecraft_profile`: no linked Minecraft profile; `no_skin`: the profile uses a default skin */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description `skin_upstream_unavailable`, `skin_upstream_invalid`, `skin_url_rejected`, `skin_too_large`, `skin_not_png`: Mojang's services failed or sent something unexpected */
+      502: {
         headers: {
           [name: string]: unknown;
         };

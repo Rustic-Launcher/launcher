@@ -95,6 +95,31 @@ impl Client {
         self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/admin/content/projects`
+    pub async fn admin_content_list(&self, q: Option<&str>, kind: Option<&str>, status: Option<&str>, sort: Option<&str>, offset: Option<i64>, limit: Option<i64>) -> Result<types::AdminContentList, ClientError> {
+        let path = "/v1/admin/content/projects";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = kind {
+            query.push(("kind", v.to_string()));
+        }
+        if let Some(v) = status {
+            query.push(("status", v.to_string()));
+        }
+        if let Some(v) = sort {
+            query.push(("sort", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
     /// `POST /v1/admin/content/projects`
     pub async fn admin_content_create_project(&self, body: &types::CreateContentProjectRequest) -> Result<types::ContentProject, ClientError> {
         let path = "/v1/admin/content/projects";
@@ -102,9 +127,51 @@ impl Client {
         self.call(Method::POST, path, &query, Some(body)).await
     }
 
+    /// `POST /v1/admin/content/projects/{id}/takedown`
+    pub async fn admin_content_takedown(&self, id: &str, body: &types::ContentTakedownRequest) -> Result<types::ContentProject, ClientError> {
+        let path = format!("/v1/admin/content/projects/{}/takedown", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/admin/content/projects/{id}/takedown`
+    pub async fn admin_content_restore(&self, id: &str) -> Result<types::ContentProject, ClientError> {
+        let path = format!("/v1/admin/content/projects/{}/takedown", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `PUT /v1/admin/content/projects/{id}/verified`
+    pub async fn admin_content_verify(&self, id: &str) -> Result<types::ContentProject, ClientError> {
+        let path = format!("/v1/admin/content/projects/{}/verified", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, &path, &query, None::<&()>).await
+    }
+
+    /// `DELETE /v1/admin/content/projects/{id}/verified`
+    pub async fn admin_content_unverify(&self, id: &str) -> Result<types::ContentProject, ClientError> {
+        let path = format!("/v1/admin/content/projects/{}/verified", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
     /// `POST /v1/admin/content/projects/{id}/versions`
     pub async fn admin_content_create_version(&self, id: &str, body: &types::CreateContentVersionRequest) -> Result<types::ContentVersion, ClientError> {
         let path = format!("/v1/admin/content/projects/{}/versions", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/admin/content/review`
+    pub async fn admin_content_review_queue(&self) -> Result<Vec<types::ContentReviewItem>, ClientError> {
+        let path = "/v1/admin/content/review";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/content/versions/{id}/review`
+    pub async fn admin_content_review(&self, id: &str, body: &types::ContentReviewRequest) -> Result<types::ContentVersion, ClientError> {
+        let path = format!("/v1/admin/content/versions/{}/review", seg(id));
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::POST, &path, &query, Some(body)).await
     }
@@ -412,11 +479,25 @@ impl Client {
         self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/content/catalog`
+    pub async fn content_catalog(&self) -> Result<types::ContentCatalogInfo, ClientError> {
+        let path = "/v1/content/catalog";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/content/fair-play/denylist`
     pub async fn content_denylist(&self) -> Result<types::FairPlayDenyList, ClientError> {
         let path = "/v1/content/fair-play/denylist";
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/content/projects`
+    pub async fn content_publish(&self, body: &types::PublishContentRequest) -> Result<types::PublishContentResponse, ClientError> {
+        let path = "/v1/content/projects";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
     }
 
     /// `GET /v1/content/projects/{id}`
@@ -426,6 +507,34 @@ impl Client {
         self.call(Method::GET, &path, &query, None::<&()>).await
     }
 
+    /// `PATCH /v1/content/projects/{id}`
+    pub async fn content_update(&self, id: &str, body: &types::UpdateContentProjectRequest) -> Result<types::ContentProject, ClientError> {
+        let path = format!("/v1/content/projects/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PATCH, &path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/content/projects/{id}`
+    pub async fn content_delete(&self, id: &str) -> Result<(), ClientError> {
+        let path = format!("/v1/content/projects/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/content/projects/{id}/checkout`: Paid creator content: refused while creator sales are off (`CREATOR_SALES_ENABLED`, default off, no Stripe Connect yet). Free content goes to the library instead.
+    pub async fn content_checkout(&self, id: &str) -> Result<types::CheckoutResponse, ClientError> {
+        let path = format!("/v1/content/projects/{}/checkout", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/content/projects/{id}/reports`
+    pub async fn content_report(&self, id: &str, body: &types::ContentReportRequest) -> Result<types::ReportCreated, ClientError> {
+        let path = format!("/v1/content/projects/{}/reports", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
     /// `GET /v1/content/projects/{id}/versions`
     pub async fn content_versions(&self, id: &str) -> Result<Vec<types::ContentVersion>, ClientError> {
         let path = format!("/v1/content/projects/{}/versions", seg(id));
@@ -433,8 +542,15 @@ impl Client {
         self.call(Method::GET, &path, &query, None::<&()>).await
     }
 
+    /// `POST /v1/content/projects/{id}/versions`
+    pub async fn content_add_version(&self, id: &str, body: &types::NewContentVersion) -> Result<types::PublishContentResponse, ClientError> {
+        let path = format!("/v1/content/projects/{}/versions", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
     /// `GET /v1/content/search`
-    pub async fn content_search(&self, q: Option<&str>, kind: Option<&str>, offset: Option<i64>, limit: Option<i64>) -> Result<types::ContentSearchResponse, ClientError> {
+    pub async fn content_search(&self, q: Option<&str>, kind: Option<&str>, category: Option<&str>, tag: Option<&str>, sort: Option<&str>, price: Option<&str>, verified: Option<bool>, offset: Option<i64>, limit: Option<i64>) -> Result<types::ContentSearchResponse, ClientError> {
         let path = "/v1/content/search";
         let mut query: Vec<(&str, String)> = Vec::new();
         if let Some(v) = q {
@@ -443,6 +559,21 @@ impl Client {
         if let Some(v) = kind {
             query.push(("kind", v.to_string()));
         }
+        if let Some(v) = category {
+            query.push(("category", v.to_string()));
+        }
+        if let Some(v) = tag {
+            query.push(("tag", v.to_string()));
+        }
+        if let Some(v) = sort {
+            query.push(("sort", v.to_string()));
+        }
+        if let Some(v) = price {
+            query.push(("price", v.to_string()));
+        }
+        if let Some(v) = verified {
+            query.push(("verified", v.to_string()));
+        }
         if let Some(v) = offset {
             query.push(("offset", v.to_string()));
         }
@@ -450,6 +581,20 @@ impl Client {
             query.push(("limit", v.to_string()));
         }
         self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/content/versions/{id}/download-link`
+    pub async fn content_download_link(&self, id: &str) -> Result<types::ContentDownloadLink, ClientError> {
+        let path = format!("/v1/content/versions/{}/download-link", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/content/versions/{id}/yank`
+    pub async fn content_yank(&self, id: &str, body: &types::YankContentVersionRequest) -> Result<types::ContentVersion, ClientError> {
+        let path = format!("/v1/content/versions/{}/yank", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
     }
 
     /// `GET /v1/conversations`
@@ -732,6 +877,13 @@ impl Client {
         self.call(Method::PUT, path, &query, Some(body)).await
     }
 
+    /// `GET /v1/me/content`
+    pub async fn my_content(&self) -> Result<Vec<types::ContentProject>, ClientError> {
+        let path = "/v1/me/content";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
     /// `POST /v1/me/delete`
     pub async fn gdpr_delete(&self, body: &types::ReauthRequest) -> Result<types::DeletionStatus, ClientError> {
         let path = "/v1/me/delete";
@@ -777,6 +929,27 @@ impl Client {
     /// `DELETE /v1/me/identities/{provider}`
     pub async fn identities_unlink(&self, provider: &str) -> Result<(), ClientError> {
         let path = format!("/v1/me/identities/{}", seg(provider));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/me/library`
+    pub async fn library_list(&self) -> Result<Vec<types::LibraryEntry>, ClientError> {
+        let path = "/v1/me/library";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `PUT /v1/me/library/{id}`
+    pub async fn library_add(&self, id: &str) -> Result<(), ClientError> {
+        let path = format!("/v1/me/library/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::PUT, &path, &query, None::<&()>).await
+    }
+
+    /// `DELETE /v1/me/library/{id}`
+    pub async fn library_remove(&self, id: &str) -> Result<(), ClientError> {
+        let path = format!("/v1/me/library/{}", seg(id));
         let query: Vec<(&str, String)> = Vec::new();
         self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
     }
@@ -1291,8 +1464,15 @@ pub const OPERATIONS: &[&str] = &[
     "admin_delete_collection",
     "admin_content_deny",
     "admin_content_undeny",
+    "admin_content_list",
     "admin_content_create_project",
+    "admin_content_takedown",
+    "admin_content_restore",
+    "admin_content_verify",
+    "admin_content_unverify",
     "admin_content_create_version",
+    "admin_content_review_queue",
+    "admin_content_review",
     "admin_create_creator_code",
     "admin_daily_offers_list",
     "admin_set_daily_offers",
@@ -1335,10 +1515,19 @@ pub const OPERATIONS: &[&str] = &[
     "blocks_list",
     "blocks_add",
     "blocks_remove",
+    "content_catalog",
     "content_denylist",
+    "content_publish",
     "content_project",
+    "content_update",
+    "content_delete",
+    "content_checkout",
+    "content_report",
     "content_versions",
+    "content_add_version",
     "content_search",
+    "content_download_link",
+    "content_yank",
     "conversations_list",
     "equipped_get",
     "equipped_set",
@@ -1379,6 +1568,7 @@ pub const OPERATIONS: &[&str] = &[
     "consents_get",
     "consents_accept_privacy",
     "consents_set_telemetry",
+    "my_content",
     "gdpr_delete",
     "gdpr_delete_cancel",
     "gdpr_export",
@@ -1386,6 +1576,9 @@ pub const OPERATIONS: &[&str] = &[
     "guardian_invite_create",
     "identities_list",
     "identities_unlink",
+    "library_list",
+    "library_add",
+    "library_remove",
     "messages_history",
     "messages_send",
     "messages_mark_read",

@@ -1,6 +1,8 @@
 # Rustic Launcher
 
-A desktop launcher for **[Horizon](https://github.com/horizon-rust/horizon)** (the MIT-licensed Rust
+> **Rustic is a social game platform, powered by the Horizon engine** <img src="https://raw.githubusercontent.com/horizon-rust/horizon/main/docs/media/logo.png" alt="Horizon" width="16" height="16">
+
+The desktop app of Rustic, built on **[Horizon](https://github.com/horizon-rust/horizon)** (the MIT-licensed Rust
 rewrite of the 26.3 Java game) with a social, cosmetics-first experience: instances and content
 (mods, packs, shaders), Microsoft sign-in with an ownership check, friends and parties, cosmetics,
 and creating and managing **Rustic Server** servers (local, on your own VPS over SSH, or through the

@@ -341,10 +341,32 @@ pub async fn auth_rustic_login_password(
         .map_err(cloud_ipc)?;
     let mfa_required = mfa.is_some();
     *state.rustic_mfa.lock().expect("mfa") = mfa;
+    if !mfa_required {
+        let st = state.inner().clone();
+        tauri::async_runtime::spawn(async move { autolink_minecraft(&st).await });
+    }
     Ok(RusticLoginResult {
         mfa_required,
         session: session(&state).await?,
     })
+}
+
+/// Links the active Microsoft account's game profile to the signed-in Rustic account, quietly
+/// (the Rustic badge in game, the name friends see). Nothing without both, or offline.
+pub async fn autolink_minecraft(state: &Arc<AppState>) {
+    if state.rustic.access_token().await.is_err() {
+        return;
+    }
+    let session = match state.accounts.launch_session(None).await {
+        Ok(rusticmc_auth::LaunchAuth::Online(s)) => s,
+        _ => return,
+    };
+    match state.rustic.link_minecraft(&session).await {
+        Ok(l) => {
+            tracing::info!(username = %l.username, "game profile linked to the Rustic account")
+        }
+        Err(e) => tracing::info!(error = %e, "game profile not linked to the Rustic account"),
+    }
 }
 
 #[derive(serde::Deserialize)]
@@ -371,6 +393,8 @@ pub async fn auth_rustic_login_mfa(state: State<'_>, args: RusticMfaArgs) -> Res
         .login_mfa(&token, args.code.trim())
         .await
         .map_err(cloud_ipc)?;
+    let st = state.inner().clone();
+    tauri::async_runtime::spawn(async move { autolink_minecraft(&st).await });
     session(&state).await
 }
 

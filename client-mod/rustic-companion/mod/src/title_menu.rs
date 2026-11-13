@@ -84,8 +84,12 @@ pub struct TitleMenu {
 }
 
 /// The logo and the icon strip (launcher/assets/brand, `assets/make_assets.py`), decoded once.
+/// `LOGO` is the mark the badge is cut from; the menu shows `BANNER`, the official banner
+/// (launcher/assets/brand/rustic-wordmark.png, the mark and the brand lettering).
 pub(crate) static LOGO: LazyLock<Option<Rgba>> =
     LazyLock::new(|| decode_png(include_bytes!("../assets/rustic-wordmark.png")));
+static BANNER: LazyLock<Option<Rgba>> =
+    LazyLock::new(|| decode_png(include_bytes!("../assets/rustic-banner.png")));
 static ICONS: LazyLock<Option<Rgba>> =
     LazyLock::new(|| decode_png(include_bytes!("../assets/rustic-icons.png")));
 /// Inter Medium and SemiBold (`assets/make_fonts.py`).
@@ -259,7 +263,7 @@ pub fn render(host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
             store: &menu.store,
             store_title,
             time: menu.since.map_or(0.0, |s| (now - s).as_secs_f32()),
-            logo_aspect: LOGO
+            logo_aspect: BANNER
                 .as_ref()
                 .map_or(4.0, |l| l.width as f32 / l.height as f32),
             version: &version,
@@ -335,7 +339,7 @@ fn render_key(key: &Key) -> Option<Rgba> {
             .map(|s| s.crop([g.index() * side, 0, side, side]))
     };
     match key {
-        Key::Image(Image::Logo, [w, h]) => LOGO.as_ref().map(|l| title::resample(l, *w, *h)),
+        Key::Image(Image::Logo, [w, h]) => BANNER.as_ref().map(|l| title::resample(l, *w, *h)),
         Key::Image(Image::Icon(g, rgb), [w, h]) => {
             glyph(*g).map(|im| title::resample(&im, *w, *h).tinted(*rgb))
         }
@@ -642,6 +646,9 @@ mod tests {
         let logo = LOGO.as_ref().expect("the wordmark decodes");
         assert_eq!(logo.height, 256);
         assert!(logo.width > logo.height * 3);
+        let banner = BANNER.as_ref().expect("the banner decodes");
+        assert_eq!(banner.height, 256);
+        assert!(banner.width > banner.height * 3);
         let icons = ICONS.as_ref().expect("the icons decode");
         assert_eq!(
             (icons.width, icons.height),

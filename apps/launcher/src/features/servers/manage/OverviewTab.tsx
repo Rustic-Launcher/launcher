@@ -1,8 +1,9 @@
-import { Avatar, EmptyState, LineChart, Skeleton } from '@rustic/ui';
+import { EmptyState, LineChart, Skeleton } from '@rustic/ui';
 import { Activity, Cpu, Gauge, MemoryStick, Timer } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Server, ServerStats } from '@/ipc/types/servers';
+import { PlayerAvatar } from '@/components/PlayerAvatar';
 import { formatDate, formatMemory, formatNumber, shortVersion } from '@/lib/format';
 import { useLiveStats, usePlayers } from './queries';
 import { Panel } from './shared';
@@ -176,7 +177,8 @@ export function OverviewTab({ server }: { server: Server }) {
                   key={p.uuid}
                   className="border-border bg-surface-2 flex items-center gap-2 rounded-full border py-1 pr-3 pl-1"
                 >
-                  <Avatar
+                  <PlayerAvatar
+                    uuid={p.uuid}
                     name={p.name}
                     size="xs"
                     shape="circle"

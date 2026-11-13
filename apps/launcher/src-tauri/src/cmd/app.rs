@@ -397,6 +397,18 @@ pub async fn game_prepare_status(state: State<'_>) -> Res<GamePreparation> {
     })
 }
 
+#[derive(serde::Deserialize)]
+pub struct PlayerSkinArgs {
+    pub uuid: String,
+}
+
+/// A player's skin URL (Mojang's session service, cached), for their head in lists; `null` for
+/// an offline profile, no custom skin or no network.
+#[tauri::command]
+pub async fn player_skin_url(state: State<'_>, args: PlayerSkinArgs) -> Res<Option<String>> {
+    Ok(state.skins.skin_url(&state.http, &args.uuid).await)
+}
+
 /// Prepares the default build's game files from the player's own install. The first
 /// preparation needs the server jar, downloaded only for a signed-in owner (Horizon launch.md).
 #[tauri::command]

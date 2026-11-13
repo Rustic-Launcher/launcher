@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Badge,
   Button,
   Dialog,
@@ -30,6 +29,7 @@ import {
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ListSkeleton } from '@/components/PageSkeleton';
+import { PlayerAvatar } from '@/components/PlayerAvatar';
 import { QueryError } from '@/components/RouteError';
 import { invoke } from '@/ipc';
 import type { PlayerAction, Server, ServerPlayer } from '@/ipc/types/servers';
@@ -151,7 +151,8 @@ export function PlayersTab({ server }: { server: Server }) {
               className="flex items-center gap-3 px-4 py-2.5"
               data-testid={`player-${p.name}`}
             >
-              <Avatar
+              <PlayerAvatar
+                uuid={p.uuid}
                 name={p.name}
                 size="sm"
                 presence={p.online ? 'in-game' : 'offline'}

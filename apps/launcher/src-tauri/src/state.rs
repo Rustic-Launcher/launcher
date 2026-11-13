@@ -51,6 +51,10 @@ pub struct AppState {
     pub remotes: Mutex<HashMap<String, Arc<rusticmc_hosting::RemoteSshProvider>>>,
     /// Discord Rich Presence.
     pub discord: crate::discord::Discord,
+    /// Other players' skin URLs (their heads in lists).
+    pub skins: crate::skins::SkinCache,
+    /// The launcher's HTTP client (proxy, TLS and user agent settings).
+    pub http: rusticmc_launcher_core::reqwest::Client,
 }
 
 /// What the launcher shows of a VPS server (the registry keeps only its reference).
@@ -190,6 +194,8 @@ impl AppState {
         let discord = crate::discord::Discord::start(settings.privacy.discord());
         Ok(Self {
             discord,
+            skins: Default::default(),
+            http: http.clone(),
             tasks: Arc::new(Tasks::new(app.clone())),
             app,
             paths,

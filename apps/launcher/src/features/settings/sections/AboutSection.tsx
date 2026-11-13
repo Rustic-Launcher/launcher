@@ -1,4 +1,4 @@
-import { Badge, Button, Skeleton } from '@rustic/ui';
+import { Badge, Button, PoweredByHorizon, Skeleton } from '@rustic/ui';
 import { ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { HorizonVersion } from '@/components/HorizonVersion';
@@ -42,6 +42,7 @@ export function AboutSection() {
                 </span>
               )
             )}
+            <PoweredByHorizon text={t('about.tagline')} className="mt-1" />
           </div>
         </div>
         <div className="mt-4">

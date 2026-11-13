@@ -7,6 +7,7 @@ mod cmd;
 mod discord;
 mod dto;
 mod relay;
+mod skins;
 mod state;
 mod tasks;
 mod util;
@@ -53,6 +54,7 @@ fn handle_deep_link(app: &tauri::AppHandle, url: &str) {
                 tracing::warn!(error = %e, "Rustic sign-in from the website failed");
             } else {
                 tracing::info!("Rustic sign-in from the website completed");
+                crate::cmd::auth::autolink_minecraft(&state).await;
             }
             let _ = app.emit(
                 "deep-link",
@@ -184,12 +186,19 @@ pub fn run() {
                 game: None,
                 since: rusticmc_launcher_core::time::now(),
             });
+            {
+                let st = state.clone();
+                tauri::async_runtime::spawn(async move {
+                    cmd::auth::autolink_minecraft(&st).await;
+                });
+            }
             tracing::info!(data = %state.paths.data().display(), "ready");
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
             // app / system
             cmd::app::app_info,
+            cmd::app::player_skin_url,
             cmd::app::system_info,
             cmd::app::settings_get,
             cmd::app::settings_set,

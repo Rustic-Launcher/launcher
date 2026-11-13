@@ -61,12 +61,13 @@ pub trait CloudLink: Send + Sync {
     async fn refresh(&self, refresh_token: &Secret) -> Result<CloudTokens>;
     async fn logout(&self, access_token: &Secret) -> Result<()>;
     async fn me(&self, access_token: &Secret) -> Result<CloudUser>;
-    /// Links a Minecraft account: the cloud checks profile and entitlements itself with the
-    /// Minecraft token (`MinecraftLinkRequest`: sent once over TLS, never stored by the cloud).
+    /// Links the game profile of `minecraft` to the Rustic account: the cloud hands a challenge,
+    /// the game session "joins" it at Mojang (as a client joining a server), the cloud checks
+    /// `hasJoined`. The game token goes to Mojang only, never to the cloud.
     async fn link_minecraft(
         &self,
         access_token: &Secret,
-        minecraft_token: &Secret,
+        minecraft: &crate::session::GameSession,
     ) -> Result<LinkedMinecraft>;
 }
 
@@ -102,7 +103,11 @@ impl CloudLink for UnavailableCloud {
     async fn me(&self, _: &Secret) -> Result<CloudUser> {
         unavailable()
     }
-    async fn link_minecraft(&self, _: &Secret, _: &Secret) -> Result<LinkedMinecraft> {
+    async fn link_minecraft(
+        &self,
+        _: &Secret,
+        _: &crate::session::GameSession,
+    ) -> Result<LinkedMinecraft> {
         unavailable()
     }
 }
@@ -252,9 +257,7 @@ impl RusticAccount {
         minecraft: &crate::session::GameSession,
     ) -> Result<LinkedMinecraft> {
         let token = self.access_token().await?;
-        self.link
-            .link_minecraft(&token, &minecraft.access_token)
-            .await
+        self.link.link_minecraft(&token, minecraft).await
     }
 }
 
@@ -319,7 +322,11 @@ mod tests {
                 display_name: "Sam".into(),
             })
         }
-        async fn link_minecraft(&self, _: &Secret, _: &Secret) -> Result<LinkedMinecraft> {
+        async fn link_minecraft(
+            &self,
+            _: &Secret,
+            _: &crate::session::GameSession,
+        ) -> Result<LinkedMinecraft> {
             unavailable()
         }
     }

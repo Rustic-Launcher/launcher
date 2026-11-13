@@ -635,6 +635,10 @@ wire! {
         InappropriateContent,
         Cheating,
         Impersonation,
+        /// Content that infringes someone's rights (copyright, trademark).
+        Copyright,
+        /// Content that harms players' computers or accounts.
+        Malware,
         Other,
     }
 
@@ -1462,6 +1466,16 @@ wire! {
         pub status: ReportStatus,
         pub created_at: DateTime<Utc>,
         pub resolution_note: Option<String>,
+        /// A marketplace project report (the target is its owner).
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub content_project: Option<ReportedContent>,
+    }
+
+    pub struct ReportedContent {
+        pub id: String,
+        pub slug: String,
+        pub name: String,
+        pub kind: ContentKind,
     }
 
     #[derive(Copy, Eq, Hash)]
@@ -1470,6 +1484,8 @@ wire! {
         Dismiss,
         ChatBan,
         Ban,
+        /// Content reports: takes the reported project down (the note is the reason).
+        TakeDown,
     }
 
     pub struct ResolveReportRequest {
@@ -1578,10 +1594,56 @@ wire! {
         pub loaders: Vec<String>,
         pub game_versions: Vec<String>,
         pub fair_play: ContentFairPlay,
+        // Marketplace fields (ADR 0155). Optional on the wire: older readers ignore them, and
+        // `rusticmc_content::model::ProjectSummary` reads the fields above only.
+        /// Markdown page; only in `GET /v1/content/projects/{id}` (not in search hits).
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub description: Option<String>,
+        /// Screenshots, in order (re-encoded on upload, served from Rustic's CDN).
+        #[serde(default)]
+        pub gallery: Vec<ContentImage>,
+        #[serde(default)]
+        pub links: ContentLinks,
+        /// The Rustic account that publishes it (`None` for curated entries of a deleted admin).
+        #[serde(default)]
+        pub owner: Option<PublicUser>,
+        #[serde(default)]
+        pub visibility: ContentVisibility,
+        /// An admin confirmed the project matches its description.
+        #[serde(default)]
+        pub verified: bool,
+        #[serde(default)]
+        pub price: ContentPrice,
+        #[serde(default)]
+        pub created_at: Option<DateTime<Utc>>,
+        #[serde(default)]
+        pub updated_at: Option<DateTime<Utc>>,
+        /// Newest version visible to the caller.
+        #[serde(default)]
+        pub latest_version: Option<String>,
+        /// Size in bytes of the newest version's primary file.
+        #[serde(default)]
+        pub size: Option<i64>,
+        /// `pending` while a native mod waits for an admin (it is then private whatever its
+        /// visibility says).
+        #[serde(default)]
+        pub review: ContentReviewStatus,
+        /// Hosted by Rustic's marketplace (uploaded by its creator) rather than curated.
+        #[serde(default)]
+        pub marketplace: bool,
+        /// Owner and staff only: why it is under review, rejected or taken down.
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub moderation: Option<ContentModeration>,
     }
 
     pub struct ContentSearchResponse {
         pub hits: Vec<ContentProject>,
+        /// More results after `offset + hits.len()`.
+        #[serde(default)]
+        pub has_more: bool,
+        /// Matching projects in all.
+        #[serde(default)]
+        pub total: i64,
     }
 
     pub struct ContentHashes {
@@ -1640,6 +1702,26 @@ wire! {
         pub dependencies: Vec<ContentDependency>,
         /// RFC 3339.
         pub published: String,
+        /// What the file's manifest says, in the JSON of `rusticmc_content::model::HorizonFacts`
+        /// (the launcher's compatibility verdicts read it). Marketplace versions only.
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub horizon: Option<ContentHorizonFacts>,
+        #[serde(default)]
+        pub changelog: String,
+        #[serde(default)]
+        pub channel: ContentChannel,
+        /// Yanked versions are listed to their owner and staff only.
+        #[serde(default)]
+        pub yanked: bool,
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub yanked_reason: Option<String>,
+        #[serde(default)]
+        pub downloads: i64,
+        #[serde(default)]
+        pub review: ContentReviewStatus,
+        /// Owner and staff only: the reviewer's note.
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub review_note: Option<String>,
     }
 
     pub struct FairPlayDenyEntry {
@@ -1689,6 +1771,333 @@ wire! {
 
     pub struct DenyEntryRequest {
         pub reason: String,
+    }
+}
+
+// ---------------------------------------------------------------- marketplace (ADR 0155)
+// Creators publish from the website; the launcher lists and installs public content through the
+// content registry types above. Uploads are checked server side before anything is published.
+
+wire! {
+    #[derive(Copy, Eq, Hash, Default)]
+    #[serde(rename_all = "snake_case")]
+    pub enum ContentVisibility {
+        /// Listed, searchable and installable.
+        #[default]
+        Public,
+        /// Not listed; reachable and installable through its link.
+        Unlisted,
+        /// Its owner (and admins) only.
+        Private,
+    }
+
+    #[derive(Copy, Eq, Hash, Default)]
+    #[serde(rename_all = "snake_case")]
+    pub enum ContentReviewStatus {
+        /// Data content: published after the automatic checks.
+        #[default]
+        NotRequired,
+        /// A native mod waiting for an admin: private until approved.
+        Pending,
+        Approved,
+        Rejected,
+    }
+
+    #[derive(Copy, Eq, Hash, Default)]
+    #[serde(rename_all = "snake_case")]
+    pub enum ContentChannel {
+        #[default]
+        Release,
+        Beta,
+        Alpha,
+    }
+
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum ContentUploadPurpose {
+        /// The content file of a version (`.hmod`, `.hnmod`, `.hpack`, `.rusticpack`, `.hshader`,
+        /// a resource or data pack `.zip`).
+        File,
+        /// The project's icon (square PNG, JPEG or WebP; re-encoded as PNG).
+        Icon,
+        /// A screenshot (PNG, JPEG or WebP; re-encoded).
+        Gallery,
+    }
+
+    #[derive(Copy, Eq, Hash, Default)]
+    #[serde(rename_all = "snake_case")]
+    pub enum LibrarySource {
+        /// A free project the user added.
+        #[default]
+        Free,
+        /// Bought (creator sales: not available yet).
+        Purchase,
+        /// Given by staff.
+        Grant,
+    }
+
+    pub struct ContentImage {
+        pub url: String,
+        pub width: i32,
+        pub height: i32,
+    }
+
+    /// Links shown on the project page (`https://` only).
+    #[derive(Default)]
+    pub struct ContentLinks {
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub source: Option<String>,
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub issues: Option<String>,
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub wiki: Option<String>,
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub discord: Option<String>,
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub website: Option<String>,
+    }
+
+    /// `amount_cents` 0 = free. Paid creator content is shown with its price; buying it is not
+    /// available yet (ADR 0155).
+    pub struct ContentPrice {
+        pub amount_cents: i64,
+        pub currency: Currency,
+    }
+
+    /// Owner and staff view of a project's moderation state.
+    pub struct ContentModeration {
+        pub taken_down: bool,
+        pub takedown_reason: Option<String>,
+        pub taken_down_at: Option<DateTime<Utc>>,
+        pub verified_at: Option<DateTime<Utc>>,
+        /// Versions waiting for an admin (native mods).
+        pub pending_versions: i64,
+        /// The newest reviewer note on a rejected version.
+        pub review_note: Option<String>,
+    }
+
+    /// The JSON of `rusticmc_content::model::HorizonFacts` (every key present).
+    pub struct ContentHorizonFacts {
+        /// A content mod's API line (`0.2`), a native mod's `native-1/<horizon>/<mixins>`, a
+        /// modpack's format, a shader pack's shader API, a resource/data pack's pack format.
+        pub api: String,
+        /// A native mod's hook points version.
+        pub hooks: Option<u32>,
+        pub side: Option<String>,
+        pub capabilities: Vec<String>,
+        pub broken_on: Vec<String>,
+        pub key: Option<String>,
+    }
+
+    /// What a checked file says about itself (its manifest).
+    pub struct ContentFileFacts {
+        pub kind: ContentKind,
+        /// The manifest's id (content mods, native mods, `.hpack`, `.hshader`).
+        pub id: Option<String>,
+        pub name: Option<String>,
+        pub version: Option<String>,
+        /// See [`ContentHorizonFacts::api`].
+        pub api: String,
+        /// The game version it is for, when the manifest names one.
+        pub game: Option<String>,
+        pub hooks: Option<u32>,
+        pub side: Option<String>,
+        pub capabilities: Vec<String>,
+        /// Files in the archive.
+        pub entries: i64,
+        /// Unpacked size in bytes.
+        pub unpacked_size: i64,
+    }
+
+    /// A staged upload, checked and kept until a publish request uses it (or it expires).
+    pub struct ContentUpload {
+        pub id: Uuid,
+        pub purpose: ContentUploadPurpose,
+        pub filename: String,
+        pub size: i64,
+        pub sha256: String,
+        pub sha512: String,
+        /// Content files.
+        pub facts: Option<ContentFileFacts>,
+        /// Images.
+        pub width: Option<i32>,
+        pub height: Option<i32>,
+        pub expires_at: DateTime<Utc>,
+    }
+
+    /// The first (or a new) version of a project.
+    pub struct NewContentVersion {
+        /// A staged `file` upload.
+        pub file_upload: Uuid,
+        /// Must equal the version in the file's manifest when it has one.
+        pub version: String,
+        /// Display name; the version when empty.
+        #[serde(default)]
+        pub name: Option<String>,
+        /// Markdown.
+        #[serde(default)]
+        pub changelog: String,
+        #[serde(default)]
+        pub channel: ContentChannel,
+        /// Game versions it is for (`26.3`); the manifest's when empty.
+        #[serde(default)]
+        pub game_versions: Vec<String>,
+    }
+
+    /// Publishes a new project with its first version (multi-step form of the website).
+    pub struct PublishContentRequest {
+        pub kind: ContentKind,
+        /// `[a-z0-9_-]{2,64}`; the project id. For a content mod, native mod, `.hpack` or
+        /// `.hshader`, it must be the manifest's id (`-` read as `_`).
+        pub slug: String,
+        pub name: String,
+        /// One line, at most 160 characters.
+        pub summary: String,
+        /// Markdown, at most 10,000 characters.
+        #[serde(default)]
+        pub description: String,
+        /// 1 to 3 of the kind's categories (`GET /v1/content/catalog`).
+        pub categories: Vec<String>,
+        /// At most 10, `[a-z0-9][a-z0-9-]{0,23}`.
+        #[serde(default)]
+        pub tags: Vec<String>,
+        /// An SPDX expression or `All-Rights-Reserved`.
+        pub license: String,
+        #[serde(default)]
+        pub links: ContentLinks,
+        pub visibility: ContentVisibility,
+        /// 0 = free.
+        #[serde(default)]
+        pub price_cents: i64,
+        #[serde(default)]
+        pub currency: Option<Currency>,
+        /// A staged `icon` upload.
+        #[serde(default)]
+        pub icon_upload: Option<Uuid>,
+        /// Staged `gallery` uploads, in order (at most 8).
+        #[serde(default)]
+        pub gallery_uploads: Vec<Uuid>,
+        pub version: NewContentVersion,
+        /// The publishing agreement: the creator owns the rights, the content follows the rules
+        /// and the fair-play policy. Must be `true`.
+        pub accept_terms: bool,
+    }
+
+    pub struct PublishContentResponse {
+        pub project: ContentProject,
+        pub version: ContentVersion,
+    }
+
+    /// One gallery image to keep: an existing one by `url`, or a staged upload.
+    pub struct GalleryRef {
+        #[serde(default)]
+        pub url: Option<String>,
+        #[serde(default)]
+        pub upload_id: Option<Uuid>,
+    }
+
+    /// Every field optional: only the ones sent change.
+    pub struct UpdateContentProjectRequest {
+        #[serde(default)]
+        pub name: Option<String>,
+        #[serde(default)]
+        pub summary: Option<String>,
+        #[serde(default)]
+        pub description: Option<String>,
+        #[serde(default)]
+        pub categories: Option<Vec<String>>,
+        #[serde(default)]
+        pub tags: Option<Vec<String>>,
+        #[serde(default)]
+        pub license: Option<String>,
+        #[serde(default)]
+        pub links: Option<ContentLinks>,
+        #[serde(default)]
+        pub visibility: Option<ContentVisibility>,
+        #[serde(default)]
+        pub price_cents: Option<i64>,
+        #[serde(default)]
+        pub currency: Option<Currency>,
+        /// A staged `icon` upload.
+        #[serde(default)]
+        pub icon_upload: Option<Uuid>,
+        /// The whole gallery, in order.
+        #[serde(default)]
+        pub gallery: Option<Vec<GalleryRef>>,
+    }
+
+    pub struct YankContentVersionRequest {
+        /// `false` restores a yanked version.
+        pub yanked: bool,
+        #[serde(default)]
+        pub reason: Option<String>,
+    }
+
+    pub struct ContentReportRequest {
+        pub reason: ReportReason,
+        #[serde(default)]
+        pub details: Option<String>,
+    }
+
+    /// A short-lived link to a version's file (private files need one in a browser).
+    pub struct ContentDownloadLink {
+        pub url: String,
+        pub expires_at: DateTime<Utc>,
+    }
+
+    pub struct LibraryEntry {
+        pub project: ContentProject,
+        pub source: LibrarySource,
+        pub added_at: DateTime<Utc>,
+    }
+
+    pub struct ContentKindCategories {
+        pub kind: ContentKind,
+        pub categories: Vec<String>,
+    }
+
+    /// The kinds open to creators, their categories and the upload limits.
+    pub struct ContentCatalogInfo {
+        pub kinds: Vec<ContentKindCategories>,
+        pub max_file_bytes: i64,
+        pub max_image_bytes: i64,
+        pub max_gallery: i64,
+        /// False until creator sales open (Stripe Connect): paid projects are shown, not sold.
+        pub creator_sales_enabled: bool,
+    }
+
+    // admin
+
+    pub struct AdminContentList {
+        pub items: Vec<ContentProject>,
+        pub has_more: bool,
+        pub total: i64,
+    }
+
+    pub struct ContentReviewItem {
+        pub project: ContentProject,
+        pub version: ContentVersion,
+    }
+
+    pub struct ContentReviewRequest {
+        /// `true` approves the version (the project becomes visible as its owner chose), `false`
+        /// rejects it with `note` as the reason.
+        pub approve: bool,
+        #[serde(default)]
+        pub note: Option<String>,
+    }
+
+    pub struct ContentTakedownRequest {
+        pub reason: String,
+    }
+}
+
+impl Default for ContentPrice {
+    fn default() -> Self {
+        Self {
+            amount_cents: 0,
+            currency: Currency::Eur,
+        }
     }
 }
 

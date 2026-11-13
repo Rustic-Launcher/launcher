@@ -111,6 +111,8 @@ export interface IpcCommands {
   rustic_server_set: [{ path: string | null }, RusticServerStatus];
   app_open_path: [{ path: string }, void];
   app_open_url: [{ url: string }, void];
+  /** A player's skin URL (Mojang's session service, cached); `null` without one. */
+  player_skin_url: [{ uuid: string }, string | null];
   app_pick_path: [PickPathRequest, string | null];
   app_check_update: [void, LauncherUpdate];
   app_install_update: [void, void];

@@ -502,6 +502,111 @@
       }
     },
     "/v1/admin/content/projects": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_content_list",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "kind",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "`all` (default), `public`, `unlisted`, `private`, `pending`, `taken_down`, `verified`,\n`flagged`, `marketplace`.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "`updated` (default), `newest`, `downloads`, `relevance`.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminContentList"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
       "post": {
         "tags": [
           "admin"
@@ -519,6 +624,196 @@
         },
         "responses": {
           "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentProject"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/content/projects/{id}/takedown": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_content_takedown",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentTakedownRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentProject"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_content_restore",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentProject"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/content/projects/{id}/verified": {
+      "put": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_content_verify",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentProject"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_content_unverify",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
             "description": "",
             "content": {
               "application/json": {
@@ -575,6 +870,100 @@
         },
         "responses": {
           "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentVersion"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/content/review": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_content_review_queue",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ContentReviewItem"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/content/versions/{id}/review": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_content_review",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Version id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentReviewRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
             "description": "",
             "content": {
               "application/json": {
@@ -2383,6 +2772,36 @@
         ]
       }
     },
+    "/v1/content/catalog": {
+      "get": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "content_catalog",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentCatalogInfo"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/content/fair-play/denylist": {
       "get": {
         "tags": [
@@ -2411,6 +2830,125 @@
             }
           }
         }
+      }
+    },
+    "/v1/content/files/{version_id}/{filename}": {
+      "get": {
+        "tags": [
+          "content"
+        ],
+        "summary": "A marketplace file. Public ones: counted, then redirected to the CDN. Private, pending or\ntaken-down ones: streamed to their owner or an admin (bearer token or a signed link).",
+        "operationId": "content_file",
+        "parameters": [
+          {
+            "name": "version_id",
+            "in": "path",
+            "description": "Version id (`<project>@<version>`)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filename",
+            "in": "path",
+            "description": "File name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "exp",
+            "in": "query",
+            "description": "Unix expiry of a signed link (`POST /v1/content/versions/{id}/download-link`).",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "sig",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The file (private files)",
+            "content": {
+              "application/octet-stream": {}
+            }
+          },
+          "302": {
+            "description": "Redirect to the file on the CDN"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/content/projects": {
+      "post": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "content_publish",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublishContentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublishContentResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/v1/content/projects/{id}": {
@@ -2452,6 +2990,200 @@
             }
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "content_delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted with its files"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "content_update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateContentProjectRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentProject"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/content/projects/{id}/checkout": {
+      "post": {
+        "tags": [
+          "content"
+        ],
+        "summary": "Paid creator content: refused while creator sales are off (`CREATOR_SALES_ENABLED`, default\noff, no Stripe Connect yet). Free content goes to the library instead.",
+        "operationId": "content_checkout",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/content/projects/{id}/reports": {
+      "post": {
+        "tags": [
+          "moderation"
+        ],
+        "operationId": "content_report",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentReportRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportCreated"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/v1/content/projects/{id}/versions": {
@@ -2496,6 +3228,60 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "content_add_version",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewContentVersion"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublishContentResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/v1/content/search": {
@@ -2525,6 +3311,66 @@
             "schema": {
               "type": [
                 "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "description": "One of the kind's categories.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "A tag.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "`relevance` (default), `downloads`, `newest`, `updated`.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "price",
+            "in": "query",
+            "description": "`free` or `paid`.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "verified",
+            "in": "query",
+            "description": "Only projects an admin verified.",
+            "required": false,
+            "schema": {
+              "type": [
+                "boolean",
                 "null"
               ]
             }
@@ -2577,6 +3423,187 @@
             }
           }
         }
+      }
+    },
+    "/v1/content/uploads": {
+      "post": {
+        "tags": [
+          "content"
+        ],
+        "summary": "Uploads one file, checked before it is kept (staged for 24 h until a publish request uses\nit). The body is the raw bytes (`Content-Type: application/octet-stream`).",
+        "operationId": "content_upload",
+        "parameters": [
+          {
+            "name": "purpose",
+            "in": "query",
+            "description": "`file`, `icon` or `gallery`.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kind",
+            "in": "query",
+            "description": "The project's kind (`file` uploads).",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "filename",
+            "in": "query",
+            "description": "The file's name (a plain name with the kind's extension).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The file's bytes",
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentUpload"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/content/versions/{id}/download-link": {
+      "post": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "content_download_link",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Version id (`<project>@<version>`)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentDownloadLink"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/content/versions/{id}/yank": {
+      "post": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "content_yank",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Version id (`<project>@<version>`)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/YankContentVersionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentVersion"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/v1/conversations": {
@@ -4216,6 +5243,44 @@
         ]
       }
     },
+    "/v1/me/content": {
+      "get": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "my_content",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ContentProject"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/me/delete": {
       "post": {
         "tags": [
@@ -4456,6 +5521,120 @@
         "responses": {
           "204": {
             "description": "Unlinked"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/me/library": {
+      "get": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "library_list",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LibraryEntry"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/me/library/{id}": {
+      "put": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "library_add",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "In the library"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "library_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Removed"
           },
           "default": {
             "description": "Error (see `code`)",
@@ -7650,6 +8829,29 @@
           }
         }
       },
+      "AdminContentList": {
+        "type": "object",
+        "required": [
+          "items",
+          "has_more",
+          "total"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentProject"
+            }
+          },
+          "has_more": {
+            "type": "boolean"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
       "AdminFeaturedServer": {
         "type": "object",
         "description": "A featured server as staff see it.",
@@ -8309,6 +9511,49 @@
           }
         }
       },
+      "ContentCatalogInfo": {
+        "type": "object",
+        "description": "The kinds open to creators, their categories and the upload limits.",
+        "required": [
+          "kinds",
+          "max_file_bytes",
+          "max_image_bytes",
+          "max_gallery",
+          "creator_sales_enabled"
+        ],
+        "properties": {
+          "kinds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentKindCategories"
+            }
+          },
+          "max_file_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "max_image_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "max_gallery": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "creator_sales_enabled": {
+            "type": "boolean",
+            "description": "False until creator sales open (Stripe Connect): paid projects are shown, not sold."
+          }
+        }
+      },
+      "ContentChannel": {
+        "type": "string",
+        "enum": [
+          "release",
+          "beta",
+          "alpha"
+        ]
+      },
       "ContentDependency": {
         "type": "object",
         "required": [
@@ -8353,6 +9598,23 @@
           "incompatible",
           "embedded"
         ]
+      },
+      "ContentDownloadLink": {
+        "type": "object",
+        "description": "A short-lived link to a version's file (private files need one in a browser).",
+        "required": [
+          "url",
+          "expires_at"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
       },
       "ContentFairPlay": {
         "type": "object",
@@ -8408,6 +9670,82 @@
           }
         }
       },
+      "ContentFileFacts": {
+        "type": "object",
+        "description": "What a checked file says about itself (its manifest).",
+        "required": [
+          "kind",
+          "api",
+          "capabilities",
+          "entries",
+          "unpacked_size"
+        ],
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/ContentKind"
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The manifest's id (content mods, native mods, `.hpack`, `.hshader`)."
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "api": {
+            "type": "string",
+            "description": "See [`ContentHorizonFacts::api`]."
+          },
+          "game": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The game version it is for, when the manifest names one."
+          },
+          "hooks": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "minimum": 0
+          },
+          "side": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "entries": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Files in the archive."
+          },
+          "unpacked_size": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Unpacked size in bytes."
+          }
+        }
+      },
       "ContentHashes": {
         "type": "object",
         "properties": {
@@ -8431,6 +9769,75 @@
           }
         }
       },
+      "ContentHorizonFacts": {
+        "type": "object",
+        "description": "The JSON of `rusticmc_content::model::HorizonFacts` (every key present).",
+        "required": [
+          "api",
+          "capabilities",
+          "broken_on"
+        ],
+        "properties": {
+          "api": {
+            "type": "string",
+            "description": "A content mod's API line (`0.2`), a native mod's `native-1/<horizon>/<mixins>`, a\nmodpack's format, a shader pack's shader API, a resource/data pack's pack format."
+          },
+          "hooks": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "description": "A native mod's hook points version.",
+            "minimum": 0
+          },
+          "side": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "broken_on": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "ContentImage": {
+        "type": "object",
+        "required": [
+          "url",
+          "width",
+          "height"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "width": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
       "ContentKind": {
         "type": "string",
         "enum": [
@@ -8443,6 +9850,122 @@
           "datapack",
           "plugin"
         ]
+      },
+      "ContentKindCategories": {
+        "type": "object",
+        "required": [
+          "kind",
+          "categories"
+        ],
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/ContentKind"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ContentLinks": {
+        "type": "object",
+        "description": "Links shown on the project page (`https://` only).",
+        "properties": {
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "issues": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "wiki": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "discord": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "website": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "ContentModeration": {
+        "type": "object",
+        "description": "Owner and staff view of a project's moderation state.",
+        "required": [
+          "taken_down",
+          "pending_versions"
+        ],
+        "properties": {
+          "taken_down": {
+            "type": "boolean"
+          },
+          "takedown_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "taken_down_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "verified_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "pending_versions": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Versions waiting for an admin (native mods)."
+          },
+          "review_note": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The newest reviewer note on a rejected version."
+          }
+        }
+      },
+      "ContentPrice": {
+        "type": "object",
+        "description": "`amount_cents` 0 = free. Paid creator content is shown with its price; buying it is not\navailable yet (ADR 0155).",
+        "required": [
+          "amount_cents",
+          "currency"
+        ],
+        "properties": {
+          "amount_cents": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "currency": {
+            "$ref": "#/components/schemas/Currency"
+          }
+        }
       },
       "ContentProject": {
         "type": "object",
@@ -8529,8 +10052,153 @@
           },
           "fair_play": {
             "$ref": "#/components/schemas/ContentFairPlay"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Markdown page; only in `GET /v1/content/projects/{id}` (not in search hits)."
+          },
+          "gallery": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentImage"
+            },
+            "description": "Screenshots, in order (re-encoded on upload, served from Rustic's CDN)."
+          },
+          "links": {
+            "$ref": "#/components/schemas/ContentLinks"
+          },
+          "owner": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/PublicUser",
+                "description": "The Rustic account that publishes it (`None` for curated entries of a deleted admin)."
+              }
+            ]
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ContentVisibility"
+          },
+          "verified": {
+            "type": "boolean",
+            "description": "An admin confirmed the project matches its description."
+          },
+          "price": {
+            "$ref": "#/components/schemas/ContentPrice"
+          },
+          "created_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "latest_version": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Newest version visible to the caller."
+          },
+          "size": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Size in bytes of the newest version's primary file."
+          },
+          "review": {
+            "$ref": "#/components/schemas/ContentReviewStatus",
+            "description": "`pending` while a native mod waits for an admin (it is then private whatever its\nvisibility says)."
+          },
+          "marketplace": {
+            "type": "boolean",
+            "description": "Hosted by Rustic's marketplace (uploaded by its creator) rather than curated."
+          },
+          "moderation": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ContentModeration",
+                "description": "Owner and staff only: why it is under review, rejected or taken down."
+              }
+            ]
           }
         }
+      },
+      "ContentReportRequest": {
+        "type": "object",
+        "required": [
+          "reason"
+        ],
+        "properties": {
+          "reason": {
+            "$ref": "#/components/schemas/ReportReason"
+          },
+          "details": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "ContentReviewItem": {
+        "type": "object",
+        "required": [
+          "project",
+          "version"
+        ],
+        "properties": {
+          "project": {
+            "$ref": "#/components/schemas/ContentProject"
+          },
+          "version": {
+            "$ref": "#/components/schemas/ContentVersion"
+          }
+        }
+      },
+      "ContentReviewRequest": {
+        "type": "object",
+        "required": [
+          "approve"
+        ],
+        "properties": {
+          "approve": {
+            "type": "boolean",
+            "description": "`true` approves the version (the project becomes visible as its owner chose), `false`\nrejects it with `note` as the reason."
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "ContentReviewStatus": {
+        "type": "string",
+        "enum": [
+          "not_required",
+          "pending",
+          "approved",
+          "rejected"
+        ]
       },
       "ContentSearchResponse": {
         "type": "object",
@@ -8543,8 +10211,101 @@
             "items": {
               "$ref": "#/components/schemas/ContentProject"
             }
+          },
+          "has_more": {
+            "type": "boolean",
+            "description": "More results after `offset + hits.len()`."
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Matching projects in all."
           }
         }
+      },
+      "ContentTakedownRequest": {
+        "type": "object",
+        "required": [
+          "reason"
+        ],
+        "properties": {
+          "reason": {
+            "type": "string"
+          }
+        }
+      },
+      "ContentUpload": {
+        "type": "object",
+        "description": "A staged upload, checked and kept until a publish request uses it (or it expires).",
+        "required": [
+          "id",
+          "purpose",
+          "filename",
+          "size",
+          "sha256",
+          "sha512",
+          "expires_at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "purpose": {
+            "$ref": "#/components/schemas/ContentUploadPurpose"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "sha512": {
+            "type": "string"
+          },
+          "facts": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ContentFileFacts",
+                "description": "Content files."
+              }
+            ]
+          },
+          "width": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "description": "Images."
+          },
+          "height": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ContentUploadPurpose": {
+        "type": "string",
+        "enum": [
+          "file",
+          "icon",
+          "gallery"
+        ]
       },
       "ContentVersion": {
         "type": "object",
@@ -8609,8 +10370,57 @@
           "published": {
             "type": "string",
             "description": "RFC 3339."
+          },
+          "horizon": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ContentHorizonFacts",
+                "description": "What the file's manifest says, in the JSON of `rusticmc_content::model::HorizonFacts`\n(the launcher's compatibility verdicts read it). Marketplace versions only."
+              }
+            ]
+          },
+          "changelog": {
+            "type": "string"
+          },
+          "channel": {
+            "$ref": "#/components/schemas/ContentChannel"
+          },
+          "yanked": {
+            "type": "boolean",
+            "description": "Yanked versions are listed to their owner and staff only."
+          },
+          "yanked_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "downloads": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "review": {
+            "$ref": "#/components/schemas/ContentReviewStatus"
+          },
+          "review_note": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Owner and staff only: the reviewer's note."
           }
         }
+      },
+      "ContentVisibility": {
+        "type": "string",
+        "enum": [
+          "public",
+          "unlisted",
+          "private"
+        ]
       },
       "Conversation": {
         "type": "object",
@@ -9753,6 +11563,25 @@
           }
         }
       },
+      "GalleryRef": {
+        "type": "object",
+        "description": "One gallery image to keep: an existing one by `url`, or a staged upload.",
+        "properties": {
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "upload_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          }
+        }
+      },
       "GiftCardCreated": {
         "type": "object",
         "required": [
@@ -10202,6 +12031,34 @@
           }
         }
       },
+      "LibraryEntry": {
+        "type": "object",
+        "required": [
+          "project",
+          "source",
+          "added_at"
+        ],
+        "properties": {
+          "project": {
+            "$ref": "#/components/schemas/ContentProject"
+          },
+          "source": {
+            "$ref": "#/components/schemas/LibrarySource"
+          },
+          "added_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "LibrarySource": {
+        "type": "string",
+        "enum": [
+          "free",
+          "purchase",
+          "grant"
+        ]
+      },
       "LoginRequest": {
         "type": "object",
         "required": [
@@ -10632,7 +12489,8 @@
         "enum": [
           "dismiss",
           "chat_ban",
-          "ban"
+          "ban",
+          "take_down"
         ]
       },
       "NameAvailability": {
@@ -10657,6 +12515,46 @@
           },
           "feature_enabled": {
             "type": "boolean"
+          }
+        }
+      },
+      "NewContentVersion": {
+        "type": "object",
+        "description": "The first (or a new) version of a project.",
+        "required": [
+          "file_upload",
+          "version"
+        ],
+        "properties": {
+          "file_upload": {
+            "type": "string",
+            "format": "uuid",
+            "description": "A staged `file` upload."
+          },
+          "version": {
+            "type": "string",
+            "description": "Must equal the version in the file's manifest when it has one."
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Display name; the version when empty."
+          },
+          "changelog": {
+            "type": "string",
+            "description": "Markdown."
+          },
+          "channel": {
+            "$ref": "#/components/schemas/ContentChannel"
+          },
+          "game_versions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Game versions it is for (`26.3`); the manifest's when empty."
           }
         }
       },
@@ -11429,6 +13327,118 @@
           }
         }
       },
+      "PublishContentRequest": {
+        "type": "object",
+        "description": "Publishes a new project with its first version (multi-step form of the website).",
+        "required": [
+          "kind",
+          "slug",
+          "name",
+          "summary",
+          "categories",
+          "license",
+          "visibility",
+          "version",
+          "accept_terms"
+        ],
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/ContentKind"
+          },
+          "slug": {
+            "type": "string",
+            "description": "`[a-z0-9_-]{2,64}`; the project id. For a content mod, native mod, `.hpack` or\n`.hshader`, it must be the manifest's id (`-` read as `_`)."
+          },
+          "name": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "description": "One line, at most 160 characters."
+          },
+          "description": {
+            "type": "string",
+            "description": "Markdown, at most 10,000 characters."
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "1 to 3 of the kind's categories (`GET /v1/content/catalog`)."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "At most 10, `[a-z0-9][a-z0-9-]{0,23}`."
+          },
+          "license": {
+            "type": "string",
+            "description": "An SPDX expression or `All-Rights-Reserved`."
+          },
+          "links": {
+            "$ref": "#/components/schemas/ContentLinks"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ContentVisibility"
+          },
+          "price_cents": {
+            "type": "integer",
+            "format": "int64",
+            "description": "0 = free."
+          },
+          "currency": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Currency"
+              }
+            ]
+          },
+          "icon_upload": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "A staged `icon` upload."
+          },
+          "gallery_uploads": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Staged `gallery` uploads, in order (at most 8)."
+          },
+          "version": {
+            "$ref": "#/components/schemas/NewContentVersion"
+          },
+          "accept_terms": {
+            "type": "boolean",
+            "description": "The publishing agreement: the creator owns the rights, the content follows the rules\nand the fair-play policy. Must be `true`."
+          }
+        }
+      },
+      "PublishContentResponse": {
+        "type": "object",
+        "required": [
+          "project",
+          "version"
+        ],
+        "properties": {
+          "project": {
+            "$ref": "#/components/schemas/ContentProject"
+          },
+          "version": {
+            "$ref": "#/components/schemas/ContentVersion"
+          }
+        }
+      },
       "PurchaseApproval": {
         "type": "object",
         "required": [
@@ -11873,6 +13883,17 @@
               "string",
               "null"
             ]
+          },
+          "content_project": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ReportedContent",
+                "description": "A marketplace project report (the target is its owner)."
+              }
+            ]
           }
         }
       },
@@ -11896,6 +13917,8 @@
           "inappropriate_content",
           "cheating",
           "impersonation",
+          "copyright",
+          "malware",
           "other"
         ]
       },
@@ -11935,6 +13958,29 @@
           "actioned",
           "dismissed"
         ]
+      },
+      "ReportedContent": {
+        "type": "object",
+        "required": [
+          "id",
+          "slug",
+          "name",
+          "kind"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/ContentKind"
+          }
+        }
       },
       "ResetPasswordRequest": {
         "type": "object",
@@ -12871,6 +14917,109 @@
           }
         }
       },
+      "UpdateContentProjectRequest": {
+        "type": "object",
+        "description": "Every field optional: only the ones sent change.",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "categories": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "license": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "links": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ContentLinks"
+              }
+            ]
+          },
+          "visibility": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ContentVisibility"
+              }
+            ]
+          },
+          "price_cents": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64"
+          },
+          "currency": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Currency"
+              }
+            ]
+          },
+          "icon_upload": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "A staged `icon` upload."
+          },
+          "gallery": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/GalleryRef"
+            },
+            "description": "The whole gallery, in order."
+          }
+        }
+      },
       "UpdateEquippedRequest": {
         "type": "object",
         "required": [
@@ -13230,6 +15379,24 @@
               "type": "string"
             },
             "description": "Up to 64 Minecraft UUIDs (hex, dashes accepted)."
+          }
+        }
+      },
+      "YankContentVersionRequest": {
+        "type": "object",
+        "required": [
+          "yanked"
+        ],
+        "properties": {
+          "yanked": {
+            "type": "boolean",
+            "description": "`false` restores a yanked version."
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         }
       }

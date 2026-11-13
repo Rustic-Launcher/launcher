@@ -18,6 +18,8 @@ impl Place {
             in_world,
             server_address.map(str::trim).filter(|a| !a.is_empty()),
         ) {
+            // Horizon's own integrated server (singleplayer) is a session at the address "local".
+            (true, Some(INTEGRATED)) => Place::Singleplayer,
             (true, Some(address)) => Place::Server(host_of(address).to_owned()),
             (true, None) => Place::Singleplayer,
             (false, _) => Place::Menu,
@@ -33,6 +35,9 @@ impl Place {
         format!("rustic-presence {json}")
     }
 }
+
+/// The session address Horizon gives its integrated (singleplayer) server.
+const INTEGRATED: &str = "local";
 
 /// The host of an address as typed (`play.example.com:25566` → `play.example.com`; IPv6 kept).
 fn host_of(address: &str) -> &str {
@@ -75,6 +80,8 @@ mod tests {
         assert_eq!(Place::of(false, Some("play.example.com")), Place::Menu);
         assert_eq!(Place::of(true, None), Place::Singleplayer);
         assert_eq!(Place::of(true, Some("  ")), Place::Singleplayer);
+        // Regression: singleplayer showed "Multiplayer" on Discord.
+        assert_eq!(Place::of(true, Some("local")), Place::Singleplayer);
         assert_eq!(
             Place::of(true, Some("play.example.com:25566")),
             Place::Server("play.example.com".into())

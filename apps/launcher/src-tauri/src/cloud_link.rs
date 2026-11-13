@@ -9,7 +9,8 @@
 use async_trait::async_trait;
 use rusticmc_api_client::types::{
     ClientKind, EmailRequest, ErrorBody, HandoffExchangeRequest, LoginRequest, LoginResponse,
-    LoginStatus, Me, MfaLoginRequest, RefreshRequest, SignupRequest, SignupResponse, TokenPair,
+    LoginStatus, Me, MfaLoginRequest, MinecraftAccount, MinecraftLinkChallenge,
+    MinecraftLinkFinishRequest, RefreshRequest, SignupRequest, SignupResponse, TokenPair,
 };
 use rusticmc_auth::cloud::{CloudLink, CloudLogin, CloudTokens, CloudUser, LinkedMinecraft};
 use rusticmc_auth::error::{AuthError, Result};
@@ -28,6 +29,9 @@ pub const PRIVACY_POLICY_VERSION: &str = "2026-11-01";
 /// The website (apps/web): "Continue with Microsoft" runs there and hands back
 /// `rustic://auth?code=` (ADR 0090). `RUSTIC_WEB_URL` overrides; otherwise derived from the API.
 pub const WEB_URL_ENV: &str = "RUSTIC_WEB_URL";
+
+/// Mojang's session service: a client "joins" a server id here (the profile link's proof).
+const MOJANG_JOIN: &str = "https://sessionserver.mojang.com/session/minecraft/join";
 
 pub fn web_base(api: &str) -> String {
     if let Ok(v) = std::env::var(WEB_URL_ENV)
@@ -128,6 +132,59 @@ impl ApiCloud {
         resp.json::<R>()
             .await
             .map_err(|e| AuthError::Unexpected(format!("Rustic Cloud answer: {e}")))
+    }
+
+    /// Registers a server of this account (the relay's tokens are signed for it).
+    pub async fn create_server(
+        &self,
+        access: &Secret,
+        name: &str,
+    ) -> Result<rusticmc_api_client::types::RelayServer> {
+        let body = rusticmc_api_client::types::CreateServerRequest {
+            name: name.to_owned(),
+            subdomain_label: None,
+        };
+        self.json(
+            reqwest::Method::POST,
+            "/v1/servers",
+            Some(access),
+            &[],
+            Some(&body),
+        )
+        .await
+    }
+
+    /// The server's temporary hostname (reserved now, or the one it holds), with a relay token.
+    pub async fn temp_hostname(
+        &self,
+        access: &Secret,
+        server: &str,
+    ) -> Result<rusticmc_api_client::types::TempHostnameLease> {
+        let path = format!("/v1/servers/{server}/temp-hostname");
+        self.json(reqwest::Method::POST, &path, Some(access), &[], None::<&()>)
+            .await
+    }
+
+    /// Keeps the temporary hostname another lease, with a fresh relay token.
+    pub async fn temp_hostname_renew(
+        &self,
+        access: &Secret,
+        server: &str,
+    ) -> Result<rusticmc_api_client::types::TempHostnameLease> {
+        let path = format!("/v1/servers/{server}/temp-hostname/renew");
+        self.json(reqwest::Method::POST, &path, Some(access), &[], None::<&()>)
+            .await
+    }
+
+    /// A relay tunnel token for the server.
+    pub async fn tunnel_token(
+        &self,
+        access: &Secret,
+        server: &str,
+    ) -> Result<rusticmc_api_client::types::RelayToken> {
+        let path = format!("/v1/servers/{server}/tunnel-token");
+        self.json(reqwest::Method::POST, &path, Some(access), &[], None::<&()>)
+            .await
     }
 
     /// Creates a Rustic account (the verification mail is sent by the cloud).
@@ -304,13 +361,60 @@ impl CloudLink for ApiCloud {
         })
     }
 
-    async fn link_minecraft(&self, _: &Secret, _: &Secret) -> Result<LinkedMinecraft> {
-        // The cloud links through a join/hasJoined challenge (`/v1/minecraft/link/start|finish`),
-        // which needs a signed-in Microsoft game session: gated until the Azure app exists.
-        Err(AuthError::Cloud(
-            "Linking a Minecraft account needs Microsoft sign-in (not configured in this build)."
-                .into(),
-        ))
+    async fn link_minecraft(
+        &self,
+        access_token: &Secret,
+        minecraft: &rusticmc_auth::session::GameSession,
+    ) -> Result<LinkedMinecraft> {
+        // 1. A challenge (a server id) from the cloud.
+        let challenge: MinecraftLinkChallenge = self
+            .json(
+                reqwest::Method::POST,
+                "/v1/minecraft/link/start",
+                Some(access_token),
+                &[],
+                None::<&()>,
+            )
+            .await?;
+        // 2. The game session "joins" it at Mojang, as a client joining a server does.
+        let join = serde_json::json!({
+            "accessToken": minecraft.access_token.expose(),
+            "selectedProfile": minecraft.uuid,
+            "serverId": challenge.server_id,
+        });
+        let resp = self
+            .http
+            .post(MOJANG_JOIN)
+            .json(&join)
+            .send()
+            .await
+            .map_err(|e| AuthError::Network {
+                service: "Mojang session",
+                message: e.to_string(),
+            })?;
+        if !resp.status().is_success() {
+            return Err(AuthError::Cloud(format!(
+                "Mojang's session service refused the profile check ({}).",
+                resp.status()
+            )));
+        }
+        // 3. The cloud asks Mojang `hasJoined` and binds the profile.
+        let account: MinecraftAccount = self
+            .json(
+                reqwest::Method::POST,
+                "/v1/minecraft/link/finish",
+                Some(access_token),
+                &[],
+                Some(&MinecraftLinkFinishRequest {
+                    username: minecraft.name.clone(),
+                }),
+            )
+            .await?;
+        Ok(LinkedMinecraft {
+            uuid: account.uuid.simple().to_string(),
+            username: account.username,
+            last_verified_at: account.last_verified_at.timestamp().max(0) as u64,
+        })
     }
 }
 
