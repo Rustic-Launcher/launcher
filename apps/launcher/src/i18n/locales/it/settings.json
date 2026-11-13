@@ -1,0 +1,504 @@
+{
+  "title": "Impostazioni",
+  "subtitle": "Account, gioco, launcher, aspetto e i tuoi dati.",
+  "sectionsLabel": "Sezioni delle impostazioni",
+  "saving": "Salvataggio…",
+  "saved": "Tutte le modifiche sono salvate",
+  "close": "Chiudi",
+  "cancel": "Annulla",
+  "sections": {
+    "accounts": "Account e sicurezza",
+    "game": "Gioco e istanze",
+    "launcher": "Launcher",
+    "appearance": "Aspetto",
+    "privacy": "Privacy e dati",
+    "parental": "Controllo parentale",
+    "about": "Informazioni e note legali"
+  },
+  "accounts": {
+    "active": "Attivo",
+    "useThis": "Usa questo profilo",
+    "signOut": "Esci",
+    "signedOut": "{{name}} è stato disconnesso",
+    "ownership": {
+      "valid": "Possiede il gioco",
+      "expired": "Verifica scaduta",
+      "never": "Mai verificato",
+      "failed": "Verifica non riuscita",
+      "lastChecked": "Verificato {{when}}",
+      "nextCheck": "prossima verifica entro il {{date}}",
+      "checkNow": "Verifica ora",
+      "checkedToast": "Possesso confermato",
+      "checkFailed": "Impossibile contattare Microsoft. Riprova più tardi."
+    },
+    "microsoft": {
+      "title": "Account Microsoft",
+      "description": "Per giocare è necessario possedere il gioco. Rustic lo verifica con Microsoft e non vede mai la tua password.",
+      "add": "Aggiungi un account Microsoft",
+      "keychain": "I token di accesso sono conservati nel portachiavi di sistema, mai in un file o in una riga di comando.",
+      "signIn": "Accedi con Microsoft",
+      "step1": "Apri la pagina Microsoft nel browser (o su un altro dispositivo).",
+      "step2": "Inserisci il codice qui sotto e accedi.",
+      "step3": "Torna qui: il launcher prosegue da solo.",
+      "codeLabel": "Codice di accesso",
+      "copyCode": "Copia codice",
+      "copied": "Codice copiato",
+      "openPage": "Apri microsoft.com/link",
+      "waiting": "In attesa dell'accesso nel browser…",
+      "cancel": "Annulla",
+      "signedInAs": "Accesso effettuato come {{name}}",
+      "ownershipOk": "Possesso confermato: puoi giocare.",
+      "ownershipMissing": "Questo account non possiede il gioco.",
+      "tryAgain": "Riprova",
+      "failed": {
+        "expired": {
+          "title": "Il codice è scaduto",
+          "body": "I codici sono validi per 15 minuti. Ricomincia per riceverne uno nuovo."
+        },
+        "denied": {
+          "title": "L'accesso è stato annullato",
+          "body": "Microsoft ha segnalato che l'accesso è stato rifiutato."
+        },
+        "no_ownership": {
+          "title": "Questo account non possiede il gioco",
+          "body": "Rustic avvia il gioco solo per gli account che possiedono Minecraft: Java Edition."
+        },
+        "error": {
+          "title": "Accesso non riuscito",
+          "body": "Rustic non è riuscito a completare l'accesso. Riprova; se continua a non funzionare, il dettaglio qui sotto spiega perché."
+        },
+        "not_configured": {
+          "title": "L'accesso con Microsoft non è configurato in questa build",
+          "body": "Questa build non ha un ID applicazione Azure, quindi non può chiedere a Microsoft di verificare la licenza del gioco. Le build ufficiali lo includono."
+        },
+        "not_approved": {
+          "title": "Il launcher è in attesa dell'approvazione di Mojang",
+          "body": "Il tuo account Microsoft ha effettuato l'accesso, ma i servizi del gioco non accettano ancora questo launcher: Mojang deve prima approvarne l'ID applicazione. Non devi fare nulla; riprova quando sarà approvato."
+        },
+        "xbox": {
+          "title": "Xbox Live ha rifiutato l'accesso",
+          "body": "Il motivo è indicato qui sotto (account per bambini senza autorizzazione dei genitori, profilo Xbox da creare, area geografica non supportata…)."
+        },
+        "rate_limited": {
+          "title": "Troppi tentativi",
+          "body": "I servizi hanno ricevuto troppi accessi in poco tempo. Attendi un minuto e riprova."
+        },
+        "network": {
+          "title": "Impossibile contattare i servizi",
+          "body": "Controlla la connessione a Internet e riprova."
+        },
+        "detail": "Dettaglio: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Account Rustic",
+      "description": "La tua identità Rustic per amici, Armadietto, acquisti e server.",
+      "signedOut": "Accesso non effettuato. Il gioco funziona anche senza; le funzioni social, l'Armadietto e il Negozio lo richiedono.",
+      "signIn": "Accedi o crea un account",
+      "licenceNote": "Un account Rustic è un'identità della piattaforma. Non sostituisce mai la licenza del gioco: ti serve comunque un account Microsoft che possiede il gioco."
+    },
+    "offline": {
+      "title": "Gioco offline",
+      "description": "Per i LAN party e per giocare senza Internet: giochi con il tuo account Microsoft, con il tuo nome e UUID ufficiali. Disponibile per {{days}} giorni dopo l'ultima verifica del possesso riuscita, poi Rustic interpella di nuovo Microsoft.",
+      "until": "Gioco offline disponibile fino al {{date}}",
+      "locked": "Accedi prima con un account Microsoft che possiede il gioco: il gioco offline si sblocca dopo una verifica del possesso riuscita."
+    },
+    "connections": {
+      "title": "Connessioni",
+      "description": "Servizi che il launcher usa per conto tuo. Le chiavi e le impronte degli host restano nel portachiavi di sistema.",
+      "porkbun": "Porkbun (domini)",
+      "porkbunHint": "Usato per creare i record DNS dei tuoi server sul tuo account Porkbun.",
+      "porkbunRemoved": "Chiavi Porkbun rimosse da questo computer",
+      "connected": "Connesso",
+      "notConnected": "Non connesso",
+      "remove": "Rimuovi chiavi",
+      "vps": "Host VPS",
+      "vpsHint": "Server che ospiti sul tuo VPS via SSH. Dimenticando un host si rimuove la sua chiave fissata.",
+      "noVps": "Nessuno",
+      "fingerprint": "{{fp}} · attendibile dal {{date}}",
+      "forget": "Dimentica"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Collegato",
+      "notLinked": "Non collegato: accedi a Rustic anche con il tuo account Microsoft.",
+      "link": "Collega sul sito web",
+      "unlink": "Scollega",
+      "unlinked": "Microsoft scollegato",
+      "unlinkFailed": "Impossibile scollegare Microsoft",
+      "lastMethod": "Aggiungi prima una password (sul sito web): Microsoft è il tuo unico metodo di accesso."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Memoria (RAM)",
+      "description": "Memoria predefinita assegnata al gioco. Ogni istanza può modificarla.",
+      "system": "{{total}} installati · {{free}} liberi ora",
+      "warn": "Così resta poca memoria al sistema e tutto potrebbe rallentare.",
+      "perInstance": "Suggerimento: 4 GB bastano per la maggior parte delle istanze; i modpack grandi possono richiedere da 6 a 8 GB."
+    },
+    "prepare": {
+      "title": "File di gioco",
+      "description": "Horizon prepara le risorse del gioco dalla tua installazione del gioco. Niente viene scaricato da terze parti.",
+      "status": "Stato",
+      "states": {
+        "missing": "Non preparati",
+        "preparing": "Preparazione",
+        "ready": "Pronti",
+        "outdated": "Da preparare di nuovo"
+      },
+      "gameVersion": "Gioco {{version}}",
+      "source": "Installazione di origine",
+      "sourceHint": "La cartella del gioco del launcher ufficiale trovata su questo computer.",
+      "doneToast": "I file di gioco sono pronti",
+      "steps": {
+        "detect": "Ricerca dell'installazione…",
+        "download": "Download dei file di gioco da Mojang…",
+        "verify": "Verifica dei file di gioco…",
+        "compile_exporters": "Compilazione degli esportatori…",
+        "export": "Esportazione delle risorse…",
+        "index": "Indicizzazione…",
+        "done": "Fatto"
+      },
+      "legal": "I file preparati restano su questo computer e non vengono mai condivisi.",
+      "again": "Prepara di nuovo",
+      "failed": "Preparazione non riuscita"
+    },
+    "java": {
+      "label": "Java per la preparazione",
+      "description": "Usato solo per preparare i file di gioco (horizon-prepare). Horizon stesso non ha bisogno di Java per funzionare.",
+      "pickTitle": "Scegli un eseguibile Java",
+      "source": {
+        "bundled": "Incluso in Rustic",
+        "system": "Installato su questo computer",
+        "custom": "Personalizzato"
+      },
+      "custom": "Percorso personalizzato…",
+      "customHint": "Scegli un eseguibile Java 21+"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "Il programma rustic-server eseguito dai tuoi server Rustic Server (il motore di Horizon con i plugin Rustic). Deve provenire dallo stesso commit di Horizon della versione di gioco del server: una build dell'edizione Rustic lo include nella sua cartella.",
+      "program": "Programma in uso",
+      "notFound": "Non trovato",
+      "notFoundHint": "Installa una build dell'edizione Rustic che lo include oppure scegli il file rustic-server. Senza di esso, la creazione di un Rustic Server non riesce.",
+      "configuredMissing": "Il file scelto non esiste più: {{path}}",
+      "origin": {
+        "server": "Quello del server",
+        "configured": "Scelto manualmente",
+        "build": "Incluso nella build {{build}}",
+        "beside_launcher": "Accanto al launcher",
+        "path": "Trovato nel PATH"
+      },
+      "choose": "Scegli…",
+      "pickTitle": "Scegli il programma rustic-server",
+      "automatic": "Usa il rilevamento automatico",
+      "saved": "Programma rustic-server salvato",
+      "automaticSaved": "Rilevamento automatico ripristinato",
+      "invalid": "Questo file non è un programma rustic-server (non risponde a --rustic-version).",
+      "failed": "Impossibile salvare questo programma",
+      "order": "Ordine di ricerca: la tua scelta, poi la cartella della versione di gioco, poi accanto al launcher, poi il PATH."
+    },
+    "folders": {
+      "title": "Cartelle",
+      "description": "Dove il launcher conserva i suoi dati, le tue istanze e i tuoi server.",
+      "data": "Dati del launcher",
+      "instances": "Istanze",
+      "servers": "Server",
+      "open": "Apri",
+      "change": "Cambia",
+      "changed": "Cartella cambiata",
+      "moveNote": "I file esistenti non vengono spostati automaticamente."
+    },
+    "resolution": {
+      "title": "Finestra di gioco",
+      "description": "Dimensione predefinita della finestra per le nuove istanze.",
+      "size": "Dimensione",
+      "width": "Larghezza",
+      "height": "Altezza",
+      "fullscreen": "Avvia a schermo intero",
+      "hint": "Minimo 640 × 480."
+    },
+    "native": {
+      "title": "Mod nativi",
+      "description": "Le istanze con mod nativi usano un gioco compilato apposta per loro su questo PC. Qui trovi il compilatore Rust e la cache di compilazione che velocizza le compilazioni successive.",
+      "rust": "Compilatore Rust",
+      "rustReady": {
+        "managed": "Rust {{version}}, installato dal launcher",
+        "rustup": "Rust {{version}}, dal tuo rustup",
+        "system": "Rust {{version}}, installato su questo PC"
+      },
+      "rustMissing": "Rust {{version}} è necessario per la prima compilazione.",
+      "ready": "Pronto",
+      "missing": "Non installato",
+      "installing": "Installazione…",
+      "installRust": "Installa Rust",
+      "rustInstalled": "Rust è installato",
+      "rustFailed": "Impossibile installare Rust",
+      "cache": "Cache di compilazione",
+      "cacheDetail": "Cache {{cache}} · crate scaricati {{crates}} · Rust {{toolchain}} · sorgente {{source}}. Svuotandola si conservano i giochi compilati; la prossima compilazione ricompila tutto.",
+      "clear": "Svuota",
+      "clearTitle": "Svuotare la cache di compilazione?",
+      "clearBody": "Le istanze conservano il loro gioco compilato. La prossima compilazione nativa ricompila tutto il gioco (da 10 a 15 minuti).",
+      "cleared": "Cache di compilazione svuotata ({{size}} liberati)",
+      "limit": "Limite della cache",
+      "limitHint": "Dopo una compilazione, la cache viene svuotata se supera questa dimensione (0: mai).",
+      "gib": "GiB",
+      "limitSaved": "Limite della cache salvato",
+      "limitInvalid": "Il limite è un numero intero di GiB da 0 a 4096.",
+      "folder": "Cartella: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Lingua",
+      "description": "Si applica subito a tutto il launcher.",
+      "label": "Lingua",
+      "search": "Cerca una lingua",
+      "empty": "Nessuna lingua corrisponde",
+      "translated": "Tradotte",
+      "others": "Altre lingue",
+      "partial": "Parziale",
+      "english": "per ora in inglese",
+      "via": "per ora in {{lang}}",
+      "help": "I testi non ancora tradotti appaiono in inglese. Le traduzioni arrivano dalla community."
+    },
+    "startup": {
+      "title": "Avvio",
+      "onBoot": "Apri Rustic all'avvio del computer",
+      "onBootHint": "Gli amici ti vedono online prima e gli aggiornamenti si scaricano in background.",
+      "minimized": "Avvia ridotto a icona"
+    },
+    "behaviour": {
+      "title": "Durante il gioco",
+      "onLaunch": "All'avvio del gioco",
+      "launchOptions": {
+        "keep_open": "Lascia aperto il launcher",
+        "minimize": "Riduci a icona il launcher",
+        "hide": "Nascondi nell'area di notifica",
+        "close": "Chiudi il launcher"
+      },
+      "onClose": "Quando chiudo la finestra",
+      "onCloseHint": "Restando nell'area di notifica, gli amici possono invitarti e i server continuano a funzionare.",
+      "closeOptions": {
+        "tray": "Resta attivo nell'area di notifica",
+        "quit": "Esci da Rustic"
+      }
+    },
+    "updates": {
+      "title": "Aggiornamenti",
+      "auto": "Installa gli aggiornamenti automaticamente",
+      "autoHint": "Gli aggiornamenti sono firmati e verificati prima dell'installazione.",
+      "check": "Rustic Launcher",
+      "checkNow": "Cerca aggiornamenti",
+      "available": "Versione {{version}} disponibile",
+      "upToDate": "Hai l'ultima versione",
+      "failed": "Impossibile cercare aggiornamenti"
+    },
+    "performance": {
+      "title": "Download e prestazioni",
+      "downloads": "Download paralleli",
+      "downloadsHint": "Riducili se la connessione è lenta.",
+      "hardware": "Accelerazione hardware",
+      "hardwareHint": "Disattivala se il launcher sfarfalla. Ha effetto dopo il riavvio."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Tema",
+      "description": "Rustic è pensato prima di tutto per il tema scuro; il tema chiaro è disponibile per gli ambienti luminosi.",
+      "label": "Tema",
+      "dark": "Scuro",
+      "light": "Chiaro",
+      "system": "Sistema"
+    },
+    "palette": {
+      "title": "Palette",
+      "description": "Il colore d'accento usato per GIOCA, la selezione e l'avanzamento.",
+      "label": "Palette",
+      "play": "Gioca",
+      "default": "Predefinita",
+      "names": {
+        "ember": "Brace",
+        "verdigris": "Verderame",
+        "heather": "Erica"
+      },
+      "descriptions": {
+        "ember": "Rame caldo su antracite",
+        "verdigris": "Verde patina, come il rame ossidato",
+        "heather": "Rosa erica tenue"
+      }
+    },
+    "motion": {
+      "title": "Movimento",
+      "body": "Rustic segue l'impostazione «riduci movimento» del sistema: le animazioni, il carosello e l'anteprima 3D diventano statici."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "Cosa condividi con noi",
+      "description": "Qui è tutto disattivato per impostazione predefinita. Attivando qualcosa ci aiuti a migliorare Rustic; puoi cambiare idea in qualsiasi momento.",
+      "usage": "Statistiche di utilizzo",
+      "usageHint": "Quali pagine e funzioni vengono usate, senza contenuti né identificatori.",
+      "performance": "Report sulle prestazioni",
+      "performanceHint": "Tempi di avvio e dei frame, per trovare i punti lenti.",
+      "crash": "Report degli arresti anomali",
+      "crashHint": "Se disattivato, Rustic te lo chiede ogni volta che si verifica un arresto anomalo."
+    },
+    "policyLink": "Leggi l'informativa sulla privacy",
+    "social": {
+      "title": "Amici e presenza",
+      "activity": "Mostra ai miei amici a cosa gioco",
+      "activityHint": "Permette agli amici di vedere il tuo server e raggiungerti con un clic.",
+      "requests": "Chi può inviarmi richieste di amicizia",
+      "requestsOptions": {
+        "everyone": "Tutti",
+        "friends_of_friends": "Amici degli amici",
+        "nobody": "Nessuno"
+      },
+      "discoverable": "Compari nei suggerimenti dei giocatori che incontro",
+      "discoverableHint": "I giocatori con cui sei stato in un gruppo o che hai incontrato su un server che condividi nella tua attività possono vederti in «Aggiungi un amico», e tu vedi loro. Conservato 30 giorni; disattivandolo viene eliminato.",
+      "discoverableMinor": "Non disponibile per gli account di minori di 18 anni.",
+      "discoverableFailed": "Impossibile salvare questa impostazione.",
+      "discord": "Mostra la mia attività su Discord",
+      "discordHint": "«Sta giocando a Rustic» sul tuo profilo Discord: nel launcher, nel menu principale, in single player o su un server, con il tuo tempo di gioco.",
+      "discordServer": "Mostra l'indirizzo del server su Discord",
+      "discordServerHint": "Altrimenti Discord mostra «Multigiocatore». Gli indirizzi privati (LAN, questo PC) non vengono mai mostrati."
+    },
+    "data": {
+      "title": "I tuoi dati",
+      "description": "I tuoi diritti secondo il GDPR: accesso, portabilità e cancellazione.",
+      "export": "Esporta i miei dati",
+      "exportHint": "Un archivio JSON del tuo account, degli amici, degli acquisti e delle impostazioni.",
+      "exportButton": "Prepara l'esportazione",
+      "exportReady": "La tua esportazione è pronta",
+      "exportFailed": "Impossibile preparare l'esportazione",
+      "download": "Scarica (link valido fino al {{date}})",
+      "delete": "Elimina il mio account",
+      "deleteHint": "Periodo di 30 giorni durante il quale puoi annullare, poi cancellazione definitiva.",
+      "deleteButton": "Elimina account",
+      "deleteScheduled": "Eliminazione programmata per il {{date}}. Accedi prima di allora per annullarla.",
+      "deleteFailed": "Impossibile eliminare l'account",
+      "rights": "Domande o reclami: contattaci, oppure contatta la CNIL (l'autorità francese per la protezione dei dati).",
+      "confirmTitle": "Eliminare il tuo account Rustic?",
+      "confirmBody": "I tuoi amici, cosmetici e acquisti verranno rimossi dopo 30 giorni. La licenza del gioco e l'account Microsoft non vengono toccati.",
+      "confirmButton": "Elimina il mio account",
+      "typeUsername": "Digita {{name}} per confermare"
+    }
+  },
+  "parental": {
+    "title": "Controllo parentale",
+    "description": "Gli account Rustic sono riservati a chi ha almeno {{age}} anni. Per i giocatori sotto i 18 anni, gli acquisti richiedono di default l'approvazione di un genitore.",
+    "minorNote": "Questo account appartiene a un minore: gli acquisti richiedono l'approvazione di un genitore.",
+    "enable": "Attiva il controllo parentale",
+    "enableHint": "Le modifiche qui sotto richiederanno il PIN.",
+    "pinFirst": "Crea prima un PIN per attivare il controllo parentale.",
+    "saveFailed": "Impossibile salvare la modifica",
+    "lockAgain": "Blocca di nuovo",
+    "rules": {
+      "title": "Regole",
+      "purchases": "Acquisti",
+      "purchasesHint": "Gli acquisti nel Negozio sono solo cosmetici. Mai loot box.",
+      "purchaseOptions": {
+        "blocked": "Disattivati",
+        "pin": "Chiedi a un genitore",
+        "allowed": "Consentiti"
+      },
+      "limit": "Limite di spesa mensile",
+      "limitHint": "Speso questo mese: {{spent}}. Lascia vuoto per nessun limite.",
+      "noLimit": "Nessun limite",
+      "limitInvalid": "Inserisci un importo come 10 o 9,99.",
+      "chat": "Chat",
+      "chatOptions": {
+        "off": "Disattivata",
+        "friends": "Solo amici",
+        "everyone": "Tutti"
+      },
+      "friendRequests": "Richieste di amicizia",
+      "friendRequestsHint": "Consenti agli altri di inviare richieste di amicizia."
+    },
+    "pin": {
+      "title": "PIN parentale",
+      "set": "Un PIN è impostato. Serve per modificare queste impostazioni e approvare gli acquisti.",
+      "notSet": "Ancora nessun PIN.",
+      "change": "Cambia PIN",
+      "create": "Crea un PIN",
+      "saved": "PIN salvato",
+      "new": "Nuovo PIN",
+      "confirm": "Conferma PIN",
+      "save": "Salva PIN",
+      "hint": "Da 4 a 6 cifre, non una sequenza semplice.",
+      "errors": {
+        "format": "Usa da 4 a 6 cifre.",
+        "mismatch": "I due PIN non coincidono.",
+        "weak": "Troppo facile da indovinare: evita 1234 o 0000."
+      }
+    },
+    "unlock": {
+      "title": "Bloccato",
+      "description": "Inserisci il PIN parentale per modificare queste impostazioni.",
+      "label": "PIN parentale",
+      "wrong": "PIN errato.",
+      "button": "Sblocca"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Versione {{version}}",
+    "channel": {
+      "stable": "Stabile",
+      "beta": "Beta"
+    },
+    "browserMock": "Anteprima nel browser (dati fittizi)",
+    "horizon": "Horizon",
+    "horizonHint": "Build di gioco consigliata.",
+    "licence": "Licenza",
+    "platform": "Piattaforma",
+    "legalTitle": "Note legali",
+    "legalDescription": "Informative e avvisi.",
+    "links": {
+      "privacy": "Informativa sulla privacy",
+      "terms": "Condizioni d'uso e di vendita",
+      "legalNotice": "Note legali",
+      "fairPlay": "Regole del fair play",
+      "thirdParty": "Avvisi open source",
+      "horizon": "Progetto Horizon (MIT)"
+    },
+    "notAffiliated": "Non è un prodotto ufficiale di Minecraft. Non approvato da Mojang o Microsoft né associato a essi.",
+    "horizonCredit": "Basato su Horizon, una riscrittura del gioco in Rust con licenza MIT, realizzata dai suoi contributori.",
+    "company": "Pubblicato da [company name], società francese (SIREN [number], [address]). Pagamenti tramite Stripe; la società è il venditore.",
+    "tagline": "Rustic è una piattaforma di gioco social, basata sul motore Horizon"
+  },
+  "rusticAuth": {
+    "mode": "Accedi o crea un account",
+    "signIn": "Accedi",
+    "signUp": "Crea un account",
+    "create": "Crea il mio account",
+    "verify": "Verifica",
+    "email": "Email",
+    "password": "Password",
+    "username": "Nome utente",
+    "dateOfBirth": "Data di nascita",
+    "country": "Paese",
+    "acceptPrivacy": "Ho letto e accetto l'informativa sulla privacy.",
+    "code": "Codice della tua app di autenticazione",
+    "checkInbox": "Abbiamo inviato un link di verifica a {{email}}. Aprilo, poi accedi.",
+    "resend": "Invia di nuovo",
+    "resent": "Email di verifica inviata di nuovo",
+    "signedIn": "Accesso a Rustic effettuato",
+    "problems": {
+      "email": "Inserisci un indirizzo email valido.",
+      "password": "Password: almeno 10 caratteri.",
+      "username": "Nome utente: da 3 a 20 lettere, cifre o trattino basso.",
+      "dateOfBirth": "Inserisci la tua data di nascita.",
+      "tooYoung": "Gli account Rustic sono riservati a chi ha almeno 13 anni.",
+      "privacy": "Accetta l'informativa sulla privacy per continuare."
+    },
+    "microsoft": "Continua con Microsoft",
+    "orEmail": "oppure con un'email",
+    "microsoftWaiting": "Completa l'accesso nel browser: il launcher riprende la tua sessione automaticamente."
+  },
+  "heading": "Le tue *impostazioni*",
+  "eyebrow": "Launcher"
+}

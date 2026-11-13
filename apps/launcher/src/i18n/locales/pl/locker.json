@@ -1,0 +1,88 @@
+{
+  "title": "Szafka",
+  "subtitle": "Przedmioty czysto wizualne. Widoczne w grze dla graczy korzystających z edycji Rustic.",
+  "horizonNote": {
+    "badge": "Kosmetyki Horizon pozostają dostępne",
+    "detail": "Twoje kosmetyki Horizon są zachowane w kliencie edycji Rustic. Zarządzaj nimi w grze; działają razem z przedmiotami Rustic."
+  },
+  "empty": {
+    "title": "Nie masz jeszcze żadnych kosmetyków.",
+    "description": "Tutaj pojawią się kupione lub otrzymane przedmioty, gotowe do założenia.",
+    "browse": "Przeglądaj sklep",
+    "categoryTitle": "Brak przedmiotów: {{category}}",
+    "categoryDescription": "Tutaj pojawią się posiadane przedmioty tego rodzaju."
+  },
+  "viewer": {
+    "region": "Twoja postać",
+    "label_one": "Twoja postać ma na sobie {{count}} przedmiot. Przeciągnij lub użyj strzałek, aby obrócić, plusa i minusa, aby przybliżyć.",
+    "label_few": "Twoja postać ma na sobie {{count}} przedmioty. Przeciągnij lub użyj strzałek, aby obrócić, plusa i minusa, aby przybliżyć.",
+    "label_many": "Twoja postać ma na sobie {{count}} przedmiotów. Przeciągnij lub użyj strzałek, aby obrócić, plusa i minusa, aby przybliżyć.",
+    "label_other": "Twoja postać ma na sobie {{count}} przedmiotu. Przeciągnij lub użyj strzałek, aby obrócić, plusa i minusa, aby przybliżyć.",
+    "hint": "Przeciągnij, aby obrócić · przewiń, aby przybliżyć",
+    "animation": "Animacja",
+    "playEmote": "Odtwórz: {{name}}",
+    "noEmote": "Brak założonej emotki",
+    "reset": "Resetuj widok"
+  },
+  "animations": {
+    "idle": "Bezruch",
+    "walk": "Chód",
+    "wave": "Machanie",
+    "dance": "Taniec"
+  },
+  "items": {
+    "region": "Twoje przedmioty",
+    "nothing": "Nic",
+    "equipped": "Założone"
+  },
+  "categories": {
+    "label": "Kategorie",
+    "all": "Wszystkie",
+    "head": "Czapki",
+    "back": "Plecy",
+    "top": "Tułów",
+    "shoulder": "Ramię",
+    "nametag": "Plakietki z nazwą",
+    "emote": "Emotki",
+    "companion": "Towarzysze",
+    "trail": "Smugi",
+    "aura": "Aury"
+  },
+  "rarity": {
+    "common": "Pospolity",
+    "rare": "Rzadki",
+    "epic": "Epicki",
+    "legendary": "Legendarny"
+  },
+  "toast": {
+    "equipped": "Założono: {{name}}",
+    "unequipped": "Zdjęto: {{name}}",
+    "cleared": "{{slot}}: nic nie założono",
+    "outfitWorn": "Strój założony",
+    "outfitSaved": "Zapisano strój „{{name}}”",
+    "equipFailed": "Nie udało się zmienić wyglądu. Spróbuj ponownie."
+  },
+  "outfits": {
+    "title": "Stroje",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Nazwij ten wygląd",
+    "save": "Zapisz obecny wygląd",
+    "full": "Limit strojów: {{max}}. Usuń jeden, aby zapisać nowy wygląd.",
+    "empty": "Zapisz obecny wygląd, aby założyć go ponownie jednym kliknięciem.",
+    "items_one": "{{count}} przedmiot",
+    "items_few": "{{count}} przedmioty",
+    "items_many": "{{count}} przedmiotów",
+    "items_other": "{{count}} przedmiotu",
+    "wearing": "Założony",
+    "wear": "Załóż",
+    "delete": "Usuń strój {{name}}"
+  },
+  "switches": {
+    "showMine": "Pokazuj moje kosmetyki",
+    "showMineHint": "Inni gracze edycji Rustic widzą, co nosisz.",
+    "hideOthers": "Ukryj kosmetyki innych graczy",
+    "hideTrailsAuras": "Ukryj smugi i aury"
+  },
+  "heading": "Twoja *szafka*",
+  "eyebrow": "Kosmetyki"
+}

@@ -1,9 +1,9 @@
-import { SegmentedControl, type ThemePreference } from '@rustic/ui';
+import { LanguageSelect, SegmentedControl, type ThemePreference } from '@rustic/ui';
 import { Monitor, Moon, Sun } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import type { Language } from '@/i18n';
 import { usePrefs } from '@/stores/prefs';
-import i18n from '@/i18n';
+import { bundleName, resolveBundle } from '@rustic/locales';
+import { BUNDLES, currentLanguage, languageStatus } from '@/i18n';
 
 export function ThemeControl() {
   const { t } = useTranslation('settings');
@@ -24,20 +24,33 @@ export function ThemeControl() {
   );
 }
 
+/**
+ * The launcher's language: every game locale with its flag, translated ones first (ADR 0161).
+ * Applies at once (main.tsx follows the stored choice).
+ */
 export function LanguageControl() {
   const { t } = useTranslation('settings');
-  const language = usePrefs((s) => s.language) ?? (i18n.language as Language);
+  const language = usePrefs((s) => s.language) ?? currentLanguage();
   const setLanguage = usePrefs((s) => s.setLanguage);
   return (
-    <SegmentedControl
-      className="isolate"
-      label={t('launcher.language.label')}
+    <LanguageSelect
       value={language}
-      onValueChange={(v) => setLanguage(v as Language)}
-      options={[
-        { value: 'en', label: t('languages.en') },
-        { value: 'fr', label: t('languages.fr') },
-      ]}
+      onChange={setLanguage}
+      status={languageStatus}
+      testId="language-select"
+      className="max-w-sm"
+      labels={{
+        label: t('launcher.language.label'),
+        search: t('launcher.language.search'),
+        empty: t('launcher.language.empty'),
+        translated: t('launcher.language.translated'),
+        others: t('launcher.language.others'),
+        partial: t('launcher.language.partial'),
+        english: t('launcher.language.english'),
+        via: (code) =>
+          t('launcher.language.via', { lang: bundleName(resolveBundle(code, BUNDLES)) }),
+        footer: t('launcher.language.help'),
+      }}
     />
   );
 }

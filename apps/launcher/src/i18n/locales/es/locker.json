@@ -1,0 +1,86 @@
+{
+  "title": "Taquilla",
+  "subtitle": "Objetos puramente visuales. Los ven en el juego los jugadores que usan la edición Rustic.",
+  "horizonNote": {
+    "badge": "Los cosméticos de Horizon siguen disponibles",
+    "detail": "Tus cosméticos de Horizon se conservan en el cliente de la edición Rustic. Gestiónalos en el juego; funcionan junto con tus objetos de Rustic."
+  },
+  "empty": {
+    "title": "Aún no tienes ningún cosmético.",
+    "description": "Los objetos que compres o recibas aparecerán aquí, listos para ponértelos.",
+    "browse": "Ver la tienda",
+    "categoryTitle": "Aún no hay {{category}}",
+    "categoryDescription": "Aquí aparecerán los objetos de este tipo que tengas."
+  },
+  "viewer": {
+    "region": "Tu personaje",
+    "label_one": "Tu personaje con {{count}} objeto. Arrastra o usa las flechas para girarlo, más y menos para hacer zoom.",
+    "label_many": "Tu personaje con {{count}} de objetos. Arrastra o usa las flechas para girarlo, más y menos para hacer zoom.",
+    "label_other": "Tu personaje con {{count}} objetos. Arrastra o usa las flechas para girarlo, más y menos para hacer zoom.",
+    "hint": "Arrastra para girar · rueda para hacer zoom",
+    "animation": "Animación",
+    "playEmote": "Reproducir {{name}}",
+    "noEmote": "Ningún gesto equipado",
+    "reset": "Restablecer vista"
+  },
+  "animations": {
+    "idle": "En reposo",
+    "walk": "Caminar",
+    "wave": "Saludar",
+    "dance": "Bailar"
+  },
+  "items": {
+    "region": "Tus objetos",
+    "nothing": "Nada",
+    "equipped": "Equipado"
+  },
+  "categories": {
+    "label": "Categorías",
+    "all": "Todo",
+    "head": "Sombreros",
+    "back": "Espalda",
+    "top": "Torso",
+    "shoulder": "Hombro",
+    "nametag": "Etiquetas de nombre",
+    "emote": "Gestos",
+    "companion": "Compañeros",
+    "trail": "Estelas",
+    "aura": "Auras"
+  },
+  "rarity": {
+    "common": "Común",
+    "rare": "Raro",
+    "epic": "Épico",
+    "legendary": "Legendario"
+  },
+  "toast": {
+    "equipped": "{{name}} equipado",
+    "unequipped": "{{name}} quitado",
+    "cleared": "{{slot}}: nada equipado",
+    "outfitWorn": "Conjunto puesto",
+    "outfitSaved": "Conjunto «{{name}}» guardado",
+    "equipFailed": "No se ha podido cambiar tu aspecto. Vuelve a intentarlo."
+  },
+  "outfits": {
+    "title": "Conjuntos",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Ponle nombre a este aspecto",
+    "save": "Guardar el aspecto actual",
+    "full": "Puedes guardar hasta {{max}} conjuntos. Elimina uno para guardar un aspecto nuevo.",
+    "empty": "Guarda tu aspecto actual para volver a ponértelo con un clic.",
+    "items_one": "{{count}} objeto",
+    "items_many": "{{count}} de objetos",
+    "items_other": "{{count}} objetos",
+    "wearing": "Puesto",
+    "wear": "Ponerse",
+    "delete": "Eliminar el conjunto {{name}}"
+  },
+  "switches": {
+    "showMine": "Mostrar mis cosméticos",
+    "showMineHint": "Los demás jugadores de la edición Rustic ven lo que llevas.",
+    "hideOthers": "Ocultar los cosméticos de otros jugadores",
+    "hideTrailsAuras": "Ocultar estelas y auras"
+  },
+  "heading": "Tu *taquilla*",
+  "eyebrow": "Cosméticos"
+}

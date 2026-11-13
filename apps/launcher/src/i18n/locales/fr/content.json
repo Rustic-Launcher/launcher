@@ -400,6 +400,7 @@
       "serverHint": "Les plugins et packs de données d’un serveur se gèrent depuis sa page.",
       "manageServer": "Gérer le serveur",
       "updateAll_one": "Mettre à jour {{count}} élément",
+      "updateAll_many": "Mettre à jour {{count}} éléments",
       "updateAll_other": "Mettre à jour {{count}} éléments",
       "openProfile": "Ouvrir le profil",
       "empty": "Rien d’installé ici pour l’instant",

@@ -610,6 +610,196 @@ pub fn flag_for(code: &str) -> Option<&'static [Layer]> {
     design(&code.to_ascii_lowercase())
 }
 
+/// The 26.3 game's languages (its `pack.mcmeta`), by code: the source of truth for the locale
+/// registry the launcher and the website share (`launcher/packages/locales`, ADR 0161).
+pub const GAME_LANGUAGES: &[&str] = &[
+    "af_za", "ar_sa", "ast_es", "az_az", "ba_ru", "bar", "be_by", "be_latn", "bg_bg", "br_fr",
+    "brb", "bs_ba", "ca_es", "cs_cz", "cv_cu", "cy_gb", "da_dk", "de_at", "de_ch", "de_de",
+    "el_gr", "en_au", "en_ca", "en_gb", "en_nz", "en_pt", "en_ud", "en_us", "enp", "enws", "eo_uy",
+    "es_ar", "es_cl", "es_ec", "es_es", "es_mx", "es_uy", "es_ve", "esan", "et_ee", "eu_es",
+    "fa_ir", "fi_fi", "fil_ph", "fo_fo", "fr_ca", "fr_ch", "fr_fr", "fra_de", "fur_it", "fy_nl",
+    "ga_ie", "gd_gb", "gl_es", "go_fr", "got_de", "hal_ua", "haw_us", "he_il", "hi_in", "hn_no",
+    "hr_hr", "hu_hu", "hy_am", "id_id", "ig_ng", "io_en", "is_is", "isv", "it_it", "ja_jp",
+    "jbo_en", "ka_ge", "kk_kz", "kn_in", "ko_kr", "ksh", "kw_gb", "ky_kg", "la_la", "lb_lu",
+    "li_li", "lmo", "lo_la", "lol_us", "lt_lt", "lv_lv", "lzh", "mk_mk", "mn_mn", "ms_my", "mt_mt",
+    "nah", "nds_de", "nl_be", "nl_nl", "nn_no", "no_no", "oc_fr", "ovd", "pl_pl", "pls", "pt_br",
+    "pt_pt", "qcb_es", "qid", "qya_aa", "ro_ro", "rpr", "ru_ru", "ry_ua", "sah_sah", "se_no",
+    "sk_sk", "sl_si", "so_so", "sq_al", "sr_cs", "sr_sp", "sv_se", "sxu", "szl", "ta_in", "th_th",
+    "tl_ph", "tlh_aa", "tok", "tr_tr", "tt_ru", "tzo_mx", "uk_ua", "uz_uz", "val_es", "vec_it",
+    "vi_vn", "vp_vl", "vro", "yi_de", "yo_ng", "zh_cn", "zh_hk", "zh_tw", "zlm_arab",
+];
+
+/// Width and height of the box [`shapes`] draws in (3:2, as the language screen shows flags).
+pub const SHAPES_SIZE: [f32; 2] = [30.0, 20.0];
+
+/// Flag `code` as plain shapes for an SVG in a [`SHAPES_SIZE`] box: the same flag the game draws,
+/// for the launcher and the website (`packages/locales/src/flags.json`). Each shape is
+/// `["r", x, y, w, h, colour]`, `["c", cx, cy, r, colour]`, `["p", "x,y x,y …", colour]`,
+/// `["l", x1, y1, x2, y2, width, colour]` (a stroke, clipped by the box) or
+/// `["s", x, y, w, h, [shapes]]` (another flag in that box, in its own `w` x `h` units).
+/// `"f": 1` turns it over (Upside Down English). None for the neutral tile.
+pub fn shapes(code: &str) -> Option<serde_json::Value> {
+    let layers = flag_for(code)?;
+    let [w, h] = SHAPES_SIZE;
+    let mut out = serde_json::json!({ "s": layer_shapes(layers, w, h) });
+    if code.eq_ignore_ascii_case("en_ud") {
+        out["f"] = 1.into();
+    }
+    Some(out)
+}
+
+/// A number with at most two decimals, written as an integer when it is one.
+fn num(v: f32) -> serde_json::Value {
+    let r = (f64::from(v) * 100.0).round() / 100.0;
+    if r.fract() == 0.0 {
+        serde_json::json!(r as i64)
+    } else {
+        serde_json::json!(r)
+    }
+}
+
+fn colour(c: u32) -> String {
+    format!("#{:06x}", c & 0x00FF_FFFF)
+}
+
+fn rect(x: f32, y: f32, w: f32, h: f32, c: u32) -> serde_json::Value {
+    serde_json::json!(["r", num(x), num(y), num(w), num(h), colour(c)])
+}
+
+fn poly(points: &[(f32, f32)], c: u32) -> serde_json::Value {
+    let p: Vec<String> = points
+        .iter()
+        .map(|(x, y)| format!("{},{}", num(*x), num(*y)))
+        .collect();
+    serde_json::json!(["p", p.join(" "), colour(c)])
+}
+
+/// A band `t` thick along a diagonal (from the top left when `down`), drawn long enough for its
+/// ends to leave the box, as the sampler covers the whole diagonal.
+fn diagonal(down: bool, t: f32, c: u32, w: f32, h: f32) -> serde_json::Value {
+    let (y0, y1) = if down { (-h, 2.0 * h) } else { (2.0 * h, -h) };
+    serde_json::json!([
+        "l",
+        num(-w),
+        num(y0),
+        num(2.0 * w),
+        num(y1),
+        num(t * h),
+        colour(c)
+    ])
+}
+
+fn layer_shapes(layers: &[Layer], w: f32, h: f32) -> Vec<serde_json::Value> {
+    let mut out = Vec::new();
+    for layer in layers {
+        match *layer {
+            Layer::Fill(c) => out.push(rect(0.0, 0.0, w, h, c)),
+            Layer::H(bands) | Layer::V(bands) => {
+                let total: f32 = bands.iter().map(|b| b.1).sum();
+                let horizontal = matches!(layer, Layer::H(_));
+                let mut acc = 0.0;
+                for (c, weight) in bands {
+                    let (from, to) = (acc / total, (acc + weight) / total);
+                    acc += weight;
+                    out.push(if horizontal {
+                        rect(0.0, from * h, w, (to - from) * h, *c)
+                    } else {
+                        rect(from * w, 0.0, (to - from) * w, h, *c)
+                    });
+                }
+            }
+            Layer::Rect([rx, ry, rw, rh], c) => out.push(rect(rx * w, ry * h, rw * w, rh * h, c)),
+            Layer::Disc([cx, cy], r, c) => out.push(serde_json::json!([
+                "c",
+                num(cx * w),
+                num(cy * h),
+                num(r * h),
+                colour(c)
+            ])),
+            Layer::Cross(t, c) => {
+                let half = t * h / 2.0;
+                out.push(rect(w / 2.0 - half, 0.0, 2.0 * half, h, c));
+                out.push(rect(0.0, h / 2.0 - half, w, 2.0 * half, c));
+            }
+            Layer::Plus(t, len, c) => {
+                let (half, reach) = (t * h / 2.0, len * h / 2.0);
+                out.push(rect(
+                    w / 2.0 - half,
+                    h / 2.0 - reach,
+                    2.0 * half,
+                    2.0 * reach,
+                    c,
+                ));
+                out.push(rect(
+                    w / 2.0 - reach,
+                    h / 2.0 - half,
+                    2.0 * reach,
+                    2.0 * half,
+                    c,
+                ));
+            }
+            Layer::Nordic(cx, t, c) => {
+                let half = t * h / 2.0;
+                out.push(rect(cx * w - half, 0.0, 2.0 * half, h, c));
+                out.push(rect(0.0, h / 2.0 - half, w, 2.0 * half, c));
+            }
+            Layer::Saltire(t, c) => {
+                out.push(diagonal(true, t, c, w, h));
+                out.push(diagonal(false, t, c, w, h));
+            }
+            Layer::Diagonal(t, c) => out.push(diagonal(true, t, c, w, h)),
+            Layer::Triangle(depth, c) => {
+                out.push(poly(&[(0.0, 0.0), (depth * w, h / 2.0), (0.0, h)], c))
+            }
+            Layer::Diamond(inset, c) => {
+                let (hw, hh) = (w / 2.0 - inset * h, h / 2.0 - inset * h);
+                out.push(poly(
+                    &[
+                        (w / 2.0 - hw, h / 2.0),
+                        (w / 2.0, h / 2.0 - hh),
+                        (w / 2.0 + hw, h / 2.0),
+                        (w / 2.0, h / 2.0 + hh),
+                    ],
+                    c,
+                ));
+            }
+            Layer::Sub([rx, ry, rw, rh], inner) => {
+                let (sw, sh) = (rw * w, rh * h);
+                out.push(serde_json::json!([
+                    "s",
+                    num(rx * w),
+                    num(ry * h),
+                    num(sw),
+                    num(sh),
+                    layer_shapes(inner, sw, sh)
+                ]));
+            }
+        }
+    }
+    out
+}
+
+/// Every game language's flag shapes (`null` for the neutral tile), as
+/// `packages/locales/src/flags.json` holds them.
+pub fn shapes_document() -> String {
+    let mut flags = serde_json::Map::new();
+    for &code in GAME_LANGUAGES {
+        flags.insert(
+            code.to_owned(),
+            shapes(code).unwrap_or(serde_json::Value::Null),
+        );
+    }
+    let doc = serde_json::json!({
+        "generated": "rusticmc-companion-core flags.rs; update: RUSTIC_BLESS=1 cargo test -p rusticmc-companion-core flags",
+        "size": SHAPES_SIZE,
+        "codes": GAME_LANGUAGES,
+        "flags": flags,
+    });
+    let mut text = serde_json::to_string_pretty(&doc).unwrap_or_default();
+    text.push('\n');
+    text
+}
+
 /// The coverage (0-1) of `layer` at the point `(x, y)` of a `w` x `h` flag, its colour.
 fn sample(layers: &[Layer], x: f32, y: f32, w: f32, h: f32) -> Option<u32> {
     let mut out = None;
@@ -747,19 +937,10 @@ mod tests {
 
     #[test]
     fn every_game_language_has_a_flag_or_the_neutral_tile() {
-        // The 26.3 game's languages (pack.mcmeta), all drawable.
-        let all = "af_za ar_sa ast_es az_az ba_ru bar be_by be_latn bg_bg br_fr brb bs_ba ca_es \
-            cs_cz cv_cu cy_gb da_dk de_at de_ch de_de el_gr en_au en_ca en_gb en_nz en_pt en_ud \
-            en_us enp enws eo_uy es_ar es_cl es_ec es_es es_mx es_uy es_ve esan et_ee eu_es fa_ir \
-            fi_fi fil_ph fo_fo fr_ca fr_ch fr_fr fra_de fur_it fy_nl ga_ie gd_gb gl_es go_fr got_de \
-            hal_ua haw_us he_il hi_in hn_no hr_hr hu_hu hy_am id_id ig_ng io_en is_is isv it_it \
-            ja_jp jbo_en ka_ge kk_kz kn_in ko_kr ksh kw_gb ky_kg la_la lb_lu li_li lmo lo_la lol_us \
-            lt_lt lv_lv lzh mk_mk mn_mn ms_my mt_mt nah nds_de nl_be nl_nl nn_no no_no oc_fr ovd \
-            pl_pl pls pt_br pt_pt qcb_es qid qya_aa ro_ro rpr ru_ru ry_ua sah_sah se_no sk_sk sl_si \
-            so_so sq_al sr_cs sr_sp sv_se sxu szl ta_in th_th tl_ph tlh_aa tok tr_tr tt_ru tzo_mx \
-            uk_ua uz_uz val_es vec_it vi_vn vp_vl vro yi_de yo_ng zh_cn zh_hk zh_tw zlm_arab";
+        // The 26.3 game's languages, all drawable.
+        let all = GAME_LANGUAGES;
         let mut known = 0;
-        for code in all.split_whitespace() {
+        for &code in all {
             let im = render(code, 24, 16, 2.0);
             assert_eq!((im.width, im.height), (24, 16));
             // The middle is drawn, the corner rounded off.
@@ -789,5 +970,45 @@ mod tests {
         let gb = render("en_gb", 32, 16, 0.0);
         let ud = render("en_ud", 32, 16, 0.0);
         assert_eq!(px(&gb, 3, 2), px(&ud, 3, 13));
+    }
+
+    #[test]
+    fn the_shared_flag_file_is_current() {
+        // launcher/packages/locales/src/flags.json, from this crate's folder.
+        let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+            .join("../../../packages/locales/src/flags.json");
+        let want = shapes_document();
+        // A source tree without the launcher's packages (an edition source archive) has no copy.
+        if !path.parent().is_some_and(std::path::Path::exists) {
+            return;
+        }
+        if std::env::var_os("RUSTIC_BLESS").is_some() {
+            std::fs::write(&path, &want).expect("write flags.json");
+        }
+        let have = std::fs::read_to_string(&path)
+            .unwrap_or_default()
+            .replace("\r\n", "\n");
+        assert!(
+            have == want,
+            "{} is stale: run `RUSTIC_BLESS=1 cargo test -p rusticmc-companion-core flags`",
+            path.display()
+        );
+        assert_eq!(GAME_LANGUAGES.len(), 143);
+    }
+
+    #[test]
+    fn shapes_follow_the_layers() {
+        let fr = shapes("fr_fr").expect("France");
+        assert_eq!(
+            fr["s"][0],
+            serde_json::json!(["r", 0, 0, 10, 20, "#0055a4"])
+        );
+        assert!(shapes("tok").is_none());
+        assert_eq!(shapes("en_ud").expect("flag")["f"], 1);
+        // The canton of Hawaii's flag is the Union flag in its own box.
+        let haw = shapes("haw_us").expect("Hawaii");
+        let sub = haw["s"].as_array().and_then(|a| a.last()).expect("sub");
+        assert_eq!(sub[0], "s");
+        assert_eq!(sub[3], 15);
     }
 }

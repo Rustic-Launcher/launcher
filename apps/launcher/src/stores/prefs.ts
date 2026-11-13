@@ -2,7 +2,7 @@
 import { applyTheme, DEFAULT_PALETTE, type PaletteId, type ThemePreference } from '@rustic/ui';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import type { Language } from '@/i18n';
+import { normaliseLanguage, type Language } from '@/i18n';
 import type { Currency } from '@/ipc/types/dns';
 
 export interface PrefsState {
@@ -54,7 +54,12 @@ export const usePrefs = create<PrefsState>()(
     }),
     {
       name: 'rustic.prefs',
-      version: 1,
+      // 2: the language is a game locale (`fr_fr`), no longer `en` / `fr` (ADR 0161).
+      version: 2,
+      migrate: (persisted) => {
+        const p = (persisted ?? {}) as Partial<PrefsState>;
+        return { ...p, language: normaliseLanguage(p.language) } as PrefsState;
+      },
       storage: createJSONStorage(() => window.localStorage),
       partialize: ({
         theme,

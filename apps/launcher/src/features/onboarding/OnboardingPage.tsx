@@ -15,7 +15,7 @@ import { RusticMark } from '@/layout/Logo';
 import { WindowControls } from '@/layout/WindowControls';
 import { qk } from '@/queries/core';
 import { usePrefs } from '@/stores/prefs';
-import i18n, { type Language } from '@/i18n';
+import { currentLanguage } from '@/i18n';
 import {
   GameStep,
   MicrosoftStep,
@@ -73,7 +73,7 @@ export function OnboardingPage() {
 
   // Make sure the detected language is stored, so the choice is explicit from the first screen.
   useEffect(() => {
-    if (!usePrefs.getState().language) usePrefs.getState().setLanguage(i18n.language as Language);
+    if (!usePrefs.getState().language) usePrefs.getState().setLanguage(currentLanguage());
   }, []);
 
   const go = (d: number) => {

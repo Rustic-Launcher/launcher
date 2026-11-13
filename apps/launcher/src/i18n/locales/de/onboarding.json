@@ -1,0 +1,113 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Schritt {{current}} von {{total}}",
+  "back": "Zurück",
+  "continue": "Weiter",
+  "skip": "Vorerst überspringen",
+  "steps": {
+    "welcome": "Willkommen",
+    "microsoft": "Microsoft",
+    "rustic": "Rustic-Konto",
+    "privacy": "Datenschutz",
+    "game": "Spieldateien",
+    "ready": "Fertig"
+  },
+  "welcome": {
+    "title": "Willkommen bei Rustic",
+    "subtitle": "Ein schneller, sozialer Launcher für Horizon. Ein paar Entscheidungen, und du bist im Spiel.",
+    "language": "Sprache",
+    "theme": "Design",
+    "palette": "Farbpalette"
+  },
+  "microsoft": {
+    "title": "Mit Microsoft anmelden",
+    "subtitle": "Rustic prüft bei Microsoft, dass du das Spiel besitzt. Dein Passwort erreicht Rustic nie.",
+    "signedInAs": "Angemeldet als {{name}}",
+    "ownershipOk": "Besitz bestätigt: Du kannst spielen.",
+    "notOwnedTitle": "Du brauchst Minecraft: Java Edition",
+    "notOwnedBody": "Dieses Microsoft-Konto besitzt das Spiel nicht. Rustic startet das Spiel nie ohne Lizenz.",
+    "buyGame": "Spiel kaufen",
+    "whyTitle": "Warum?",
+    "whyBody": "Der Besitz des Spiels ist Pflicht. Horizon bereitet die Spieldateien aus deiner eigenen Installation vor, und Offline-Profile werden erst nach dieser Prüfung freigeschaltet."
+  },
+  "rustic": {
+    "title": "Dein Rustic-Konto",
+    "subtitle": "Optional. Das Spiel funktioniert auch ohne; du kannst dich später in den Einstellungen anmelden.",
+    "perks": {
+      "friends": {
+        "title": "Freunde und Gruppen",
+        "body": "Sieh, wer online ist, und tritt mit einem Klick bei."
+      },
+      "locker": {
+        "title": "Spind",
+        "body": "Kosmetik für deinen Spieler, rein optisch."
+      },
+      "servers": {
+        "title": "Deine Server online",
+        "body": "Eine kostenlose Adresse und Domains für die Server, die du hostest."
+      }
+    },
+    "signedInAs": "Angemeldet als {{name}}",
+    "signIn": "Anmelden oder Konto erstellen",
+    "skipHint": "Oder klicke auf „Weiter“, um vorerst zu überspringen.",
+    "age": "Rustic-Konten sind ab {{min}} Jahren. Unter {{consent}} muss ein Elternteil der Datenverarbeitung zustimmen; unter 18 brauchen Käufe die Zustimmung eines Elternteils."
+  },
+  "privacy": {
+    "title": "Deine Datenschutzeinstellungen",
+    "subtitle": "Alles ist aus. Aktiviere nur, was du gern teilst; du kannst es jederzeit in den Einstellungen ändern.",
+    "usage": {
+      "title": "Nutzungsanalyse",
+      "body": "Welche Seiten und Funktionen genutzt werden, ohne Inhalte oder Kennungen."
+    },
+    "performance": {
+      "title": "Leistungsberichte",
+      "body": "Start- und Framezeiten, um langsame Stellen zu finden."
+    },
+    "crash": {
+      "title": "Absturzberichte",
+      "body": "Werden automatisch gesendet, wenn das Spiel oder der Launcher abstürzt. Wenn aus, fragt Rustic jedes Mal."
+    },
+    "note": "Wir verkaufen nie Daten und teilen sie nie für Werbung.",
+    "policy": "Datenschutzerklärung lesen"
+  },
+  "game": {
+    "title": "Spiel startklar machen",
+    "subtitle": "Rustic nutzt die Spieldateien aus deiner eigenen Installation (oder lädt Fehlendes von Mojang herunter) und bereitet sie dann für Horizon vor.",
+    "detecting": "Suche nach deiner Spielinstallation…",
+    "found": "Spiel gefunden ({{versions}})",
+    "notFound": "Keine Installation gefunden",
+    "notFoundBody": "Rustic lädt die Spieldateien für dein Konto von Mojang herunter.",
+    "prepareTitle": "Spieldateien vorbereiten",
+    "alreadyReady": "Bereits vorbereitet",
+    "done": "Vorbereitet",
+    "prepareAgain": "Erneut vorbereiten",
+    "prepare": "Vorbereiten",
+    "steps": {
+      "detect": "Erkennen",
+      "download": "Herunterladen",
+      "verify": "Prüfen",
+      "compile_exporters": "Exporter",
+      "export": "Exportieren",
+      "index": "Indexieren"
+    },
+    "explain": "Fehlende Spieldateien kommen von Mojangs eigenen Servern, nichts von Dritten: Die vorbereiteten Dateien bleiben auf diesem Computer.",
+    "background": "Du kannst weitermachen: Die Vorbereitung läuft im Hintergrund weiter.",
+    "prepareFailed": "Die Spieldateien konnten nicht vorbereitet werden: {{reason}}"
+  },
+  "ready": {
+    "title": "Alles bereit",
+    "subtitle": "Erstelle jetzt deine erste Instanz oder überspring das und mach es später.",
+    "finish": "Rustic öffnen",
+    "defaultName": "Meine erste Welt",
+    "createTitle": "Meine erste Instanz erstellen",
+    "recommended": "Empfohlen",
+    "nameLabel": "Name der Instanz",
+    "existing_one": "Du hast bereits {{count}} Instanz.",
+    "existing_other": "Du hast bereits {{count}} Instanzen.",
+    "tips": {
+      "play": "SPIELEN ist immer unten rechts.",
+      "friends": "Deine Freunde sind rechts; Beitreten braucht nur einen Klick.",
+      "servers": "Hoste auf der Seite „Server“ einen Server für deine Freunde."
+    }
+  }
+}

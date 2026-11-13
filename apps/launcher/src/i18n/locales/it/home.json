@@ -1,0 +1,109 @@
+{
+  "hero": {
+    "greeting": "Ciao di nuovo, {{name}}",
+    "greetingAnon": "Ti diamo il benvenuto su Rustic",
+    "continue": "Continua: {{name}} · giocato {{when}}",
+    "continueNew": "Tutto pronto: {{name}}",
+    "firstRun": "Prepara il gioco in tre passaggi.",
+    "playNow": "Gioca ora",
+    "updateAndPlay": "Aggiorna e gioca",
+    "resumeServer": "Rientra in {{server}}",
+    "switch": "Cambia istanza",
+    "stats": {
+      "playtime": "{{time}} di gioco",
+      "mods_one": "{{count}} mod",
+      "mods_many": "{{count}} mod",
+      "mods_other": "{{count}} mod",
+      "friends_one": "{{count}} amico online",
+      "friends_many": "{{count}} amici online",
+      "friends_other": "{{count}} amici online"
+    },
+    "steps": {
+      "signIn": "Accedi con l'account Microsoft che possiede il gioco",
+      "prepare": "Prepara i file di gioco dalla tua installazione",
+      "create": "Crea la tua prima istanza"
+    },
+    "getReady": "Prepara il gioco",
+    "openLocker": "Armadietto",
+    "player": "Il tuo personaggio, fermo, senza cosmetici equipaggiati",
+    "playerWearing": "Il tuo personaggio, fermo, con: {{items}}"
+  },
+  "recent": {
+    "title": "Server e mondi recenti",
+    "unknown": "Stato sconosciuto",
+    "online": "Online · {{online}}/{{max}}",
+    "offline": "Offline",
+    "world": "Mondo · locale",
+    "joining": "Connessione a {{name}}…",
+    "opening": "Apertura di {{name}}…",
+    "removed": "{{name}} rimosso dai tuoi server",
+    "playAria": "Gioca a {{name}}",
+    "more": "Altre azioni per {{name}}",
+    "copyAddress": "Copia indirizzo",
+    "addServer": "Aggiungi server",
+    "empty": "Qui compaiono i server in cui entri e i mondi in cui giochi."
+  },
+  "news": {
+    "title": "Novità e aggiornamenti",
+    "empty": "Nessuna novità al momento.",
+    "slide": "Notizia {{index}} di {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Note di rilascio",
+      "event": "Evento",
+      "blog": "Articolo"
+    },
+    "readNotes": "Leggi le note di rilascio",
+    "read": "Leggi"
+  },
+  "friends": {
+    "title": "Amici adesso",
+    "empty": "Nessuno dei tuoi amici sta giocando adesso.",
+    "since": "da {{when}}",
+    "activity": {
+      "server": "gioca su {{server}}",
+      "hosting": "ospita {{server}}",
+      "singleplayer": "gioca in single player",
+      "launcher": "è nel launcher"
+    }
+  },
+  "featured": {
+    "title": "Server in evidenza",
+    "verified": "Server verificato",
+    "players": "{{online}} / {{max}} giocatori",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Nuovi cosmetici",
+    "owned": "Posseduto"
+  },
+  "launchpad": {
+    "welcome": "Ciao di *nuovo*,",
+    "playAs": "Gioca come",
+    "online": "online sui server in evidenza",
+    "heroLabel": "Avvia",
+    "instanceSettings": "Impostazioni istanza",
+    "news": "Ultime novità",
+    "unread_one": "({{count}} non letta)",
+    "unread_many": "({{count}} non lette)",
+    "unread_other": "({{count}} non lette)",
+    "unreadDot": "Non letta",
+    "explore": "Esplora le fonti",
+    "aside": "Server e amici",
+    "joinServer": "Entra in {{name}}",
+    "friendsOnline_one": "({{count}} online)",
+    "friendsOnline_many": "({{count}} online)",
+    "friendsOnline_other": "({{count}} online)",
+    "openSocial": "Apri Social",
+    "noNews": "Ancora nessuna novità.",
+    "noFriendsOnline": "Nessun amico online adesso.",
+    "socialHint": "Chat, inviti e il tuo gruppo si trovano nella finestra Social.",
+    "eyebrow": "Launchpad"
+  }
+}

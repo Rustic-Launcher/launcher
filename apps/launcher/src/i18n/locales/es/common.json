@@ -1,0 +1,424 @@
+{
+  "a11y": {
+    "skipToContent": "Saltar al contenido",
+    "notifications": "Notificaciones"
+  },
+  "actions": {
+    "retry": "Reintentar",
+    "back": "Atrás",
+    "forward": "Adelante",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "clear": "Borrar",
+    "save": "Guardar",
+    "saved": "Guardado",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "open": "Abrir",
+    "install": "Instalar",
+    "installed": "Instalado",
+    "remove": "Quitar",
+    "confirm": "Confirmar",
+    "continue": "Continuar",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "done": "Listo",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "learnMore": "Más información",
+    "seeAll": "Ver todo",
+    "create": "Crear",
+    "import": "Importar",
+    "browse": "Examinar…",
+    "apply": "Aplicar",
+    "reset": "Restablecer",
+    "enable": "Activar",
+    "disable": "Desactivar",
+    "update": "Actualizar",
+    "add": "Añadir",
+    "refresh": "Recargar",
+    "openFolder": "Abrir carpeta",
+    "skip": "Omitir",
+    "more": "Más"
+  },
+  "errors": {
+    "generic": "Algo ha fallado. Vuelve a intentarlo en un momento.",
+    "page": {
+      "title": "No se ha podido mostrar esta página"
+    },
+    "load": {
+      "title": "No se ha podido cargar"
+    },
+    "notFound": {
+      "title": "Aquí no hay nada",
+      "description": "Esta página no existe o se ha movido."
+    }
+  },
+  "nav": {
+    "label": "Navegación principal",
+    "home": "Inicio",
+    "instances": "Perfiles",
+    "content": "Explorar",
+    "servers": "Servidores",
+    "locker": "Taquilla",
+    "store": "Tienda",
+    "settings": "Ajustes",
+    "newInstance": "Nuevo perfil"
+  },
+  "search": {
+    "title": "Buscar",
+    "placeholder": "Busca contenido, amigos, servidores, ajustes…",
+    "empty": "Sin resultados. Prueba con otra palabra.",
+    "loading": "Buscando…",
+    "hintNavigate": "navegar",
+    "hintOpen": "abrir",
+    "hintClose": "cerrar",
+    "open": "Abrir",
+    "myServer": "Mi servidor",
+    "playInstance": "Jugar con {{name}}",
+    "groups": {
+      "pages": "Páginas",
+      "actions": "Acciones",
+      "instances": "Instancias",
+      "content": "Contenido",
+      "friends": "Amigos",
+      "servers": "Servidores",
+      "settings": "Ajustes",
+      "play": "Jugar"
+    },
+    "actions": {
+      "newInstance": "Crear una instancia",
+      "newServer": "Crear un servidor",
+      "addFriend": "Añadir un amigo",
+      "darkTheme": "Cambiar al tema oscuro",
+      "lightTheme": "Cambiar al tema claro"
+    },
+    "settings": {
+      "accounts": "Cuentas",
+      "game": "Juego",
+      "launcher": "Launcher",
+      "appearance": "Apariencia",
+      "privacy": "Privacidad y datos",
+      "parental": "Control parental",
+      "about": "Acerca de"
+    }
+  },
+  "friends": {
+    "title": "Amigos",
+    "onlineCount_one": "{{count}} conectado",
+    "onlineCount_many": "{{count}} conectados",
+    "onlineCount_other": "{{count}} conectados",
+    "add": "Añadir un amigo",
+    "search": "Buscar amigos",
+    "requests_one": "Solicitud · {{count}}",
+    "requests_many": "Solicitudes · {{count}}",
+    "requests_other": "Solicitudes · {{count}}",
+    "incoming": "Quiere ser tu amigo",
+    "outgoing": "Solicitud enviada",
+    "accept": "Aceptar",
+    "decline": "Rechazar",
+    "cancelRequest": "Cancelar solicitud",
+    "requestSent": "Solicitud de amistad enviada a {{name}}",
+    "error": "No se han podido cargar tus amigos.",
+    "empty": "Todavía no tienes amigos. Añade uno con su nombre de usuario de Rustic.",
+    "online_one": "Conectado · {{count}}",
+    "online_many": "Conectados · {{count}}",
+    "online_other": "Conectados · {{count}}",
+    "offline_one": "Desconectado · {{count}}",
+    "offline_many": "Desconectados · {{count}}",
+    "offline_other": "Desconectados · {{count}}",
+    "lastSeen": "Visto {{when}}",
+    "activity": {
+      "server": "Jugando en {{server}}",
+      "singleplayer": "Jugando en solitario",
+      "hosting": "Alojando {{server}}",
+      "launcher": "En el launcher"
+    },
+    "favorite": "Favorito",
+    "makeFavorite": "Añadir a favoritos",
+    "unfavorite": "Quitar de favoritos",
+    "join": "Unirse",
+    "joinAria": "Unirse a {{name}}",
+    "joining": "Uniéndote a {{server}}…",
+    "more": "Más acciones para {{name}}",
+    "remove": "Eliminar amigo",
+    "removeTitle": "¿Eliminar a {{name}} de tus amigos?",
+    "removeBody": "Ninguno de los dos verá la actividad del otro. Podrás enviarle una nueva solicitud más adelante."
+  },
+  "addFriend": {
+    "title": "Añadir un amigo",
+    "description": "Busca a un jugador por su nombre de Rustic o por el nombre de Minecraft que ha vinculado, o elige a alguien con quien hayas jugado.",
+    "kind": "Buscar por",
+    "kindRustic": "Nombre de Rustic",
+    "kindMinecraft": "Nombre de Minecraft",
+    "rusticLabel": "Nombre de usuario de Rustic",
+    "minecraftLabel": "Nombre de usuario de Minecraft",
+    "rusticPlaceholder": "p. ej., lea_builds",
+    "minecraftPlaceholder": "p. ej., LeaBuilds",
+    "rusticHint": "El nombre exacto de su perfil de Rustic.",
+    "minecraftHint": "El nombre exacto en el juego de un jugador que ha iniciado sesión en Rustic con ese perfil de Minecraft.",
+    "find": "Buscar",
+    "send": "Enviar solicitud",
+    "sent": "Solicitud enviada",
+    "friends": "Ya es tu amigo",
+    "pending": "Solicitud pendiente",
+    "incoming": "Este jugador ya te ha enviado una solicitud: acéptala.",
+    "minecraftName": "Nombre de Minecraft:",
+    "add": "Añadir",
+    "addAria": "Enviar una solicitud de amistad a {{name}}",
+    "playedWith": "Compañeros de juego recientes",
+    "playedWithEmpty": "Nadie todavía. Aquí aparecen los jugadores de tus grupos y de servidores compartidos (10 minutos o más juntos).",
+    "crossed": "Vistos hace poco",
+    "crossedEmpty": "No te has cruzado con nadie hace poco en un servidor compartido.",
+    "reasonParty": "En tu grupo",
+    "reasonServer": "En {{server}}",
+    "reasonSameServer": "En el mismo servidor",
+    "suggestionsError": "No se han podido cargar las sugerencias.",
+    "suggestionsOff": "Las sugerencias están desactivadas. Activa «Aparecer en las sugerencias de los jugadores con los que me cruzo» en Ajustes › Privacidad y datos para ver a los jugadores con los que te cruzas.",
+    "suggestionsMinor": "Las sugerencias de jugadores con los que te cruzas no están disponibles para tu cuenta.",
+    "privacyNote": "Las sugerencias proceden de tus grupos y de los servidores que compartes en tu actividad durante los últimos 14 días. Solo aparecen las personas que también lo permiten.",
+    "errors": {
+      "notFoundRustic": "Ninguna cuenta de Rustic tiene este nombre.",
+      "notFoundMinecraft": "Ningún jugador de Rustic ha vinculado este nombre de Minecraft.",
+      "invalidRustic": "Los nombres de Rustic tienen de 3 a 20 letras, números o _.",
+      "invalidMinecraft": "Los nombres de Minecraft tienen de 3 a 16 letras, números o _.",
+      "cannot_add_friend": "Este jugador no puede recibir solicitudes de amistad.",
+      "friend_requests_disabled": "Las solicitudes de amistad están desactivadas en tu cuenta (control parental).",
+      "cannot_add_self": "¡Ese eres tú!",
+      "already_friends": "Ya es tu amigo.",
+      "request_pending": "Ya hay una solicitud pendiente.",
+      "incoming_request_exists": "Ya te ha enviado una solicitud: acéptala.",
+      "rate_limited": "Demasiadas búsquedas. Espera un minuto y vuelve a intentarlo.",
+      "generic": "Algo ha fallado. Vuelve a intentarlo."
+    }
+  },
+  "party": {
+    "title": "Grupo",
+    "leave": "Salir",
+    "leader": "Líder del grupo",
+    "pending": "{{name}} (invitado)",
+    "invite": "Invitar al grupo",
+    "invited": "{{name}} ha sido invitado a tu grupo"
+  },
+  "presence": {
+    "online": "Conectado",
+    "in-game": "En partida",
+    "away": "Ausente",
+    "busy": "Ocupado",
+    "offline": "Desconectado"
+  },
+  "notifications": {
+    "title": "Notificaciones",
+    "markAllRead": "Marcar todo como leído",
+    "empty": "Estás al día.",
+    "kinds": {
+      "friend_request": "te ha enviado una solicitud de amistad",
+      "update_available": "está disponible para tus instancias",
+      "backup_done": "Copia de seguridad programada completada",
+      "store_new": "Novedades en la tienda"
+    }
+  },
+  "account": {
+    "switcher": "Cuentas",
+    "none": "Sin cuenta",
+    "rustic": "Cuenta de Rustic",
+    "signInRustic": "Iniciar sesión en Rustic",
+    "signOutRustic": "Cerrar sesión en Rustic",
+    "gameProfiles": "Perfiles de juego",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Sin conexión"
+    },
+    "add": "Añadir una cuenta",
+    "manage": "Gestionar cuentas"
+  },
+  "downloads": {
+    "title": "Descargas",
+    "global": "Descargas en segundo plano",
+    "working": "Procesando…",
+    "summary_one": "{{count}} descarga en curso",
+    "summary_many": "{{count}} de descargas en curso",
+    "summary_other": "{{count}} descargas en curso",
+    "kind": {
+      "game": "Horizon",
+      "content": "Contenido",
+      "modpack": "Modpack",
+      "server": "Servidor",
+      "java": "Entorno de Java",
+      "update": "Actualización del launcher",
+      "prepare": "Preparando los archivos del juego",
+      "native-build": "Compilación de mods nativos",
+      "native-toolchain": "Rust para mods nativos"
+    }
+  },
+  "play": {
+    "play": "Jugar",
+    "update": "Actualizar",
+    "cancel": "Cancelar",
+    "stop": "Detener",
+    "selectInstance": "Elige la instancia con la que jugar",
+    "instances": "Instancias",
+    "manageInstances": "Gestionar instancias",
+    "newVersion": "{{version}} disponible",
+    "cancelled": "Inicio cancelado",
+    "status": {
+      "ready": "Listo para jugar",
+      "noInstance": "Sin instancia",
+      "running": "Juego en marcha",
+      "update": "Actualización necesaria",
+      "broken": "Reparación necesaria"
+    },
+    "progress": {
+      "downloading": "Descargando {{pct}}",
+      "checking": "Comprobando archivos…",
+      "preparing": "Preparando…",
+      "launching": "Iniciando…",
+      "stopping": "Deteniendo…",
+      "preparingFiles": "Preparando los archivos del juego {{pct}}",
+      "building": "Compilando mods nativos…",
+      "buildingPct": "Compilando mods nativos {{pct}}"
+    },
+    "errors": {
+      "launch": "No se ha podido iniciar el juego"
+    },
+    "refusals": {
+      "auth_no_account": "Inicia sesión con una cuenta de Microsoft que tenga el juego para jugar.",
+      "auth_not_owned": "Esta cuenta de Microsoft no tiene el juego.",
+      "auth_not_approved": "El inicio de sesión con Microsoft aún no está disponible para este launcher.",
+      "auth_reauth_required": "Vuelve a iniciar sesión en tu cuenta de Microsoft para jugar.",
+      "auth_offline_not_allowed": "Inicia sesión una vez con una cuenta de Microsoft que tenga el juego y luego podrás jugar sin conexión.",
+      "auth_network": "No se ha podido contactar con Microsoft para comprobar la cuenta. Revisa tu conexión.",
+      "build_not_installed": "Primero instala una compilación de Horizon.",
+      "prepare_needed": "Los archivos del juego de esta compilación aún no están preparados.",
+      "prepare_failed": "No se han podido preparar los archivos del juego: vuelve a intentarlo o prepáralos en Ajustes › Juego e instancias.",
+      "prepare_no_java": "No se ha encontrado Java: instálalo o elígelo en Ajustes › Juego e instancias.",
+      "prepare_no_minecraft_dir": "No se ha encontrado tu instalación del juego: elige su carpeta en Ajustes › Juego e instancias.",
+      "launch_already_running": "Esta instancia ya está en marcha.",
+      "native_consent": "Esta instancia tiene mods nativos: primero acepta su aviso de confianza en la página de la instancia (Contenido).",
+      "native_toolchain": "Los mods nativos necesitan Rust: instálalo desde la página de la instancia (Contenido) o en Ajustes › Juego e instancias.",
+      "native_not_edition": "Los mods nativos solo se compilan en la edición Rustic: cambia esta instancia a ella o desactiva sus mods nativos.",
+      "native_build_failed": "No se han podido compilar los mods nativos",
+      "native_disk": "No hay suficiente espacio libre en disco para compilar los mods nativos."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (edición Rustic)",
+    "rusticEdition": "Edición Rustic"
+  },
+  "compat": {
+    "buildsOnHorizon": "Se compila en tu Horizon",
+    "compatible": "Compatible",
+    "incompatible": "Incompatible: {{reason}}",
+    "unknown": "Compatibilidad desconocida",
+    "reasons": {
+      "horizon_version": "versión de Horizon",
+      "java_only": "solo Java Edition",
+      "side": "solo para el servidor",
+      "conflict": "en conflicto con un mod instalado",
+      "unsupported_format": "formato no compatible",
+      "needs_rustic_server": "requiere Rustic Server",
+      "not_fair_play": "no permitido (juego limpio)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Cambiar de producto",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Documentación de Rustic Server"
+  },
+  "crumbs": {
+    "label": "Ruta de navegación",
+    "horizon": "Horizon",
+    "details": "Detalles",
+    "create": "Crear",
+    "kinds": {
+      "mod": "Mods",
+      "modpack": "Modpacks",
+      "resourcepack": "Paquetes de recursos",
+      "shader": "Shaders",
+      "datapack": "Paquetes de datos",
+      "plugin": "Plugins"
+    },
+    "servers": {
+      "featured": "Destacados",
+      "mine": "Mis servidores",
+      "multiplayer": "Lista multijugador",
+      "discover": "Descubrir",
+      "joined": "Lista multijugador",
+      "browse": "Explorar todo"
+    }
+  },
+  "social": {
+    "title": "Social",
+    "description": "Amigos, chats y tu grupo.",
+    "open": "Abrir social",
+    "friends": "Amigos",
+    "chats": "Chats",
+    "message": "Enviar un mensaje",
+    "searchChats": "Buscar chats…",
+    "noChats": "Aún no hay conversaciones. Escribe a un amigo desde la pestaña Amigos.",
+    "sayHello": "Saluda",
+    "selectTitle": "Selecciona una conversación",
+    "selectBody": "Elige a un amigo para empezar a chatear.",
+    "messagePlaceholder": "Mensaje para {{name}}",
+    "send": "Enviar"
+  },
+  "window": {
+    "minimize": "Minimizar",
+    "maximize": "Maximizar",
+    "restore": "Restaurar",
+    "close": "Cerrar"
+  },
+  "running": {
+    "title": "Instancias en marcha",
+    "none": "Ningún juego en marcha.",
+    "count_one": "{{count}} instancia en marcha",
+    "count_many": "{{count}} de instancias en marcha",
+    "count_other": "{{count}} instancias en marcha",
+    "downloading": "Descargando {{pct}}"
+  },
+  "launch": {
+    "launch": "Iniciar el juego",
+    "update": "Actualizar e iniciar",
+    "stop": "Detener el juego"
+  },
+  "deepLink": {
+    "authOk": "Sesión iniciada en Rustic",
+    "authFailed": "No se ha podido iniciar sesión en Rustic",
+    "joining": "Uniéndote a {{target}}…",
+    "content": "Abriendo {{project}} desde la web"
+  },
+  "catalog": {
+    "sort": "Ordenar por",
+    "results_one": "{{count}} resultado",
+    "results_many": "{{count}} de resultados",
+    "results_other": "{{count}} resultados",
+    "loadMore": "Cargar más",
+    "loadMoreCount": "Mostrando {{shown}} de {{total}}",
+    "carousel": {
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "slide": "{{index}} de {{total}}",
+      "pause": "Pausar la presentación",
+      "play": "Reproducir la presentación"
+    },
+    "row": {
+      "seeAll": "Ver todo",
+      "seeAllAria": "Ver todo: {{title}}",
+      "scrollPrev": "Desplazar a la izquierda",
+      "scrollNext": "Desplazar a la derecha"
+    },
+    "filters": {
+      "button": "Filtros",
+      "buttonCount": "Filtros · {{count}}",
+      "reset": "Restablecer filtros"
+    },
+    "layout": {
+      "label": "Vista",
+      "list": "Lista",
+      "grid": "Cuadrícula"
+    }
+  }
+}

@@ -63,7 +63,8 @@ test.describe('app shell', () => {
     // A friend result opens their conversation in the Social view.
     await app.keyboard.press('Control+k');
     await app.getByPlaceholder('Search content, friends, servers, settings…').fill('Léa');
-    await app.getByRole('option', { name: /Léa/ }).click();
+    // A content result by Léa may arrive too: the friend's option starts with her name.
+    await app.getByRole('option', { name: /^Léa/ }).click();
     await expect(app.getByTestId('social-overlay')).toBeVisible();
     await expect(app.getByTestId('chat-pane')).toContainText('Léa');
   });

@@ -14,7 +14,8 @@ stack; this page holds the loading budget and how it is met.
 | Anton (condensed titles of the Rustic Server panels, ADR 0144) | n/a | 18.6 KB | with the home's lower sections, not preloaded |
 | Site backdrop (badlands scene: CSS sky first, canvases on idle) | ≤ 1 ms per frame | 0.13–0.35 ms average (Playwright, 1440 × 900 and 390 × 844) | lazy chunk after idle |
 | App JavaScript of the first screen (entry + shared + router + runtime) | ≤ 160 KB | **161.7 KB (over)** | phones: after the hero has painted; desktop: at once (the footer is its own chunk) |
-| One language (`en` or `fr`, never both) | ≤ 15 KB | 12.5 / 14.2 KB | with the app (preloaded by an inline script) |
+| One language (one of `en`, `fr`, `de`, `es`, `it`, `pt-BR`, `pl`, never two; ADR 0161) | ≤ 15 KB | en 13.9, fr 15.5, de 15.8, es 15.4, it 15.1, pt-BR 15.2, pl 15.9 KB (**fr, de, es, it, pt-BR, pl over** by up to 0.9 KB: the language menu's strings and longer languages; raise to 16 KB or move the account and back-office strings to their pages) | with the app (preloaded by an inline script) |
+| Language menu (registry of the game's 143 locales + `LanguageSelect`) and its flags | n/a | 4.5 KB + 4 KB (flags) | when idle (a globe button stands in), never on the first screen |
 | Below the hero (`home/Rest` + the Rustic Server parts it shares with /server) | ≤ 10 KB | 6.3 + 3.0 KB | when idle; its sections mount two screens ahead of the scroll |
 | GSAP + ScrollTrigger | ≤ 45 KB | 44 KB | desktop full show only (intro, pinned scenes), on demand |
 | Light stream (three.js) | ≤ 135 KB | not loaded any more (the home's background is the procedural scene, ADR 0150) | n/a |

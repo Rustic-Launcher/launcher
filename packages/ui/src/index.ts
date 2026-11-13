@@ -33,3 +33,4 @@ export * from './components/RusticMark';
 export * from './components/RusticWordmark';
 export * from './components/PoweredByHorizon';
 export * from './components/MicrosoftButton';
+export * from './components/LanguageSelect';

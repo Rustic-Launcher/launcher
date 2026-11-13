@@ -1,0 +1,22 @@
+{
+  "name": "@rustic/locales",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT OR Apache-2.0",
+  "type": "module",
+  "description": "The game's 143 locales for the launcher and the website: registry, bundle resolution, flags (ADR 0161).",
+  "exports": {
+    ".": "./src/index.ts",
+    "./complete": "./src/complete.ts",
+    "./flags.json": "./src/flags.json"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "vitest": "5.1.0"
+  }
+}

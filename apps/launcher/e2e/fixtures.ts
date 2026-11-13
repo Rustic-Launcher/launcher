@@ -7,7 +7,8 @@ export interface MockOptions {
   latency?: number;
   /** Speed multiplier for simulated downloads/installs (default 6). */
   speed?: number;
-  language?: 'en' | 'fr';
+  /** A game locale (`de_de`), or a short language of an older setting (`fr`, migrated). */
+  language?: string;
   /** A new machine: no account, game files not prepared (default false). */
   fresh?: boolean;
 }

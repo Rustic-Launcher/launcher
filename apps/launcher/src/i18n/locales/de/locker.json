@@ -1,0 +1,84 @@
+{
+  "title": "Spind",
+  "subtitle": "Rein optische Gegenstände. Im Spiel sichtbar für Spieler mit der Rustic-Edition.",
+  "horizonNote": {
+    "badge": "Horizon-Kosmetik bleibt verfügbar",
+    "detail": "Deine Horizon-Kosmetik bleibt im Client der Rustic-Edition erhalten. Verwalte sie im Spiel; sie funktioniert neben deinen Rustic-Gegenständen."
+  },
+  "empty": {
+    "title": "Du besitzt noch keine Kosmetik.",
+    "description": "Gegenstände, die du kaufst oder erhältst, erscheinen hier, bereit zum Tragen.",
+    "browse": "Shop durchsuchen",
+    "categoryTitle": "Noch keine {{category}}",
+    "categoryDescription": "Gegenstände dieser Art, die du besitzt, erscheinen hier."
+  },
+  "viewer": {
+    "region": "Deine Figur",
+    "label_one": "Deine Figur trägt {{count}} Gegenstand. Ziehen oder Pfeiltasten zum Drehen, Plus und Minus zum Zoomen.",
+    "label_other": "Deine Figur trägt {{count}} Gegenstände. Ziehen oder Pfeiltasten zum Drehen, Plus und Minus zum Zoomen.",
+    "hint": "Ziehen zum Drehen · Scrollen zum Zoomen",
+    "animation": "Animation",
+    "playEmote": "{{name}} abspielen",
+    "noEmote": "Kein Emote ausgerüstet",
+    "reset": "Ansicht zurücksetzen"
+  },
+  "animations": {
+    "idle": "Stehen",
+    "walk": "Gehen",
+    "wave": "Winken",
+    "dance": "Tanzen"
+  },
+  "items": {
+    "region": "Deine Gegenstände",
+    "nothing": "Nichts",
+    "equipped": "Ausgerüstet"
+  },
+  "categories": {
+    "label": "Kategorien",
+    "all": "Alle",
+    "head": "Hüte",
+    "back": "Rücken",
+    "top": "Oberkörper",
+    "shoulder": "Schulter",
+    "nametag": "Namensschilder",
+    "emote": "Emotes",
+    "companion": "Begleiter",
+    "trail": "Spuren",
+    "aura": "Auren"
+  },
+  "rarity": {
+    "common": "Gewöhnlich",
+    "rare": "Selten",
+    "epic": "Episch",
+    "legendary": "Legendär"
+  },
+  "toast": {
+    "equipped": "{{name}} ausgerüstet",
+    "unequipped": "{{name}} abgelegt",
+    "cleared": "{{slot}}: nichts ausgerüstet",
+    "outfitWorn": "Outfit angelegt",
+    "outfitSaved": "Outfit „{{name}}“ gespeichert",
+    "equipFailed": "Dein Look konnte nicht geändert werden. Versuch es erneut."
+  },
+  "outfits": {
+    "title": "Outfits",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Gib diesem Look einen Namen",
+    "save": "Aktuellen Look speichern",
+    "full": "Du kannst bis zu {{max}} Outfits behalten. Lösche eines, um einen neuen Look zu speichern.",
+    "empty": "Speichere deinen aktuellen Look, um ihn mit einem Klick wieder zu tragen.",
+    "items_one": "{{count}} Gegenstand",
+    "items_other": "{{count}} Gegenstände",
+    "wearing": "Getragen",
+    "wear": "Tragen",
+    "delete": "Outfit {{name}} löschen"
+  },
+  "switches": {
+    "showMine": "Meine Kosmetik anzeigen",
+    "showMineHint": "Andere Spieler mit der Rustic-Edition sehen, was du trägst.",
+    "hideOthers": "Kosmetik anderer Spieler ausblenden",
+    "hideTrailsAuras": "Spuren und Auren ausblenden"
+  },
+  "heading": "Dein *Spind*",
+  "eyebrow": "Kosmetik"
+}

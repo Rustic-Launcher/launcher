@@ -21,10 +21,50 @@ test.describe('settings', () => {
   test('switches the language to French at once', async ({ app }) => {
     await app.goto('/#/settings?section=launcher');
     await expect(app.getByTestId('rail-home')).toHaveAccessibleName('Launchpad');
-    await app.getByRole('radio', { name: 'Français' }).click();
+    await app.getByTestId('language-select').click();
+    await app.getByTestId('language-select-fr_fr').click();
     await expect(app.getByTestId('rail-home')).toHaveAccessibleName('Accueil');
     await expect(app.getByRole('heading', { level: 1, name: 'Paramètres' })).toBeVisible();
-    await expect(app.locator('html')).toHaveAttribute('lang', 'fr');
+    await expect(app.locator('html')).toHaveAttribute('lang', 'fr-FR');
+  });
+
+  test('lists every game language with flags, searchable, translated ones first', async ({
+    app,
+  }) => {
+    await app.goto('/#/settings?section=launcher');
+    const select = app.getByTestId('language-select');
+    await expect(select).toHaveAccessibleName(/English \(United States\)/);
+    await select.click();
+    const list = app.getByTestId('language-select-list');
+    await expect(list.getByRole('option')).toHaveCount(143);
+    // Translated first; a language shown in English says so.
+    const groups = list.locator('[cmdk-group-heading]');
+    await expect(groups).toHaveText(['Translated', 'Other languages']);
+    await expect(app.getByTestId('language-select-ja_jp')).toContainText('in English for now');
+    await expect(app.getByTestId('language-select-de_de').locator('[data-flag] svg')).toBeVisible();
+    // Search by English name, native name or code, accents ignored.
+    await app.getByTestId('language-select-search').fill('portugues');
+    await expect(list.getByRole('option')).toHaveCount(2);
+    await app.getByTestId('language-select-search').fill('german');
+    await app.keyboard.press('Enter');
+    await expect(app.getByTestId('rail-home')).toHaveAccessibleName('Startseite');
+    await expect(app.locator('html')).toHaveAttribute('lang', /^de/);
+    await expect(app.getByRole('heading', { level: 1, name: 'Einstellungen' })).toBeVisible();
+  });
+
+  test('a language without a translation shows English, right to left when it is written so', async ({
+    app,
+  }) => {
+    await app.goto('/#/settings?section=launcher');
+    await app.getByTestId('language-select').click();
+    await app.getByTestId('language-select-search').fill('arabic');
+    await app.getByTestId('language-select-ar_sa').click();
+    await expect(app.locator('html')).toHaveAttribute('dir', 'rtl');
+    await expect(app.locator('html')).toHaveAttribute('lang', 'ar-SA');
+    await expect(app.getByRole('heading', { level: 1, name: 'Settings' })).toBeVisible();
+    await app.getByTestId('language-select').click();
+    await app.getByTestId('language-select-en_us').click();
+    await expect(app.locator('html')).toHaveAttribute('dir', 'ltr');
   });
 
   test('offline play is the owner itself, under its official name', async ({ app }) => {

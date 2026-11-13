@@ -53,6 +53,9 @@ importers:
       '@react-three/fiber':
         specifier: 9.8.2
         version: 9.8.2(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(three@0.187.0)
+      '@rustic/locales':
+        specifier: workspace:*
+        version: link:../../packages/locales
       '@rustic/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -142,6 +145,15 @@ importers:
         specifier: 5.1.0
         version: 5.1.0(@types/node@22.20.5)(happy-dom@21.0.4)(vite@8.3.7(@types/node@22.20.5)(esbuild@0.28.2)(jiti@2.7.0))
 
+  packages/locales:
+    devDependencies:
+      '@types/node':
+        specifier: 22.20.5
+        version: 22.20.5
+      vitest:
+        specifier: 5.1.0
+        version: 5.1.0(@types/node@22.20.5)(happy-dom@21.0.4)(vite@8.3.7(@types/node@22.20.5)(esbuild@0.28.2)(jiti@2.7.0))
+
   packages/ui:
     dependencies:
       '@fontsource-variable/inter':
@@ -153,6 +165,9 @@ importers:
       '@fontsource/instrument-serif':
         specifier: 5.3.0
         version: 5.3.0
+      '@rustic/locales':
+        specifier: workspace:*
+        version: link:../locales
       class-variance-authority:
         specifier: 0.7.1
         version: 0.7.1

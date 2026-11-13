@@ -1,53 +1,58 @@
+import { COMPLETE, LOCALES, translationStatus, validateBundle } from '@rustic/locales';
 import { describe, expect, it } from 'vitest';
-import { NAMESPACES, resources } from './index';
+import { BUNDLES, bundleChain, NAMESPACES, normaliseLanguage, resources } from './index';
 
-function keys(obj: unknown, prefix = ''): string[] {
-  if (obj === null || typeof obj !== 'object') return [prefix];
-  return Object.entries(obj as Record<string, unknown>).flatMap(([k, v]) =>
-    keys(v, prefix ? `${prefix}.${k}` : k),
-  );
-}
+type Json = Record<string, unknown>;
+const FILES = import.meta.glob<Json>('./locales/*/*.json', { eager: true, import: 'default' });
 
-/** i18next plural suffixes differ per language (FR has _many in v21+ rules); normalise them. */
-function normalise(list: string[]): string[] {
-  return [...new Set(list.map((k) => k.replace(/_(zero|one|two|few|many|other)$/, '')))].sort();
-}
-
-function placeholders(s: string): string[] {
-  return [...s.matchAll(/\{\{\s*(\w+)[^}]*\}\}/g)].map((m) => m[1] ?? '').sort();
+function bundle(name: string): Partial<Record<string, Json>> {
+  const out: Partial<Record<string, Json>> = {};
+  for (const [p, res] of Object.entries(FILES)) {
+    const [, , b, file] = p.split('/');
+    if (b === name && file) out[file.replace(/\.json$/, '')] = res;
+  }
+  return out;
 }
 
 describe('locales', () => {
-  for (const ns of NAMESPACES) {
-    it(`fr and en have the same keys in ${ns}`, () => {
-      expect(normalise(keys(resources.fr[ns]))).toEqual(normalise(keys(resources.en[ns])));
-    });
+  it('finds every bundle on disk, English first', () => {
+    expect(BUNDLES[0]).toBe('en');
+    for (const b of COMPLETE) expect(BUNDLES, b).toContain(b);
+  });
 
-    it(`fr and en use the same placeholders in ${ns}`, () => {
-      const flat = (o: unknown, p = ''): [string, string][] =>
-        o && typeof o === 'object'
-          ? Object.entries(o as Record<string, unknown>).flatMap(([k, v]) =>
-              flat(v, p ? `${p}.${k}` : k),
-            )
-          : [[p, String(o)]];
-      const fr = new Map(flat(resources.fr[ns]));
-      for (const [k, v] of flat(resources.en[ns])) {
-        const other = fr.get(k);
-        if (other === undefined) continue; // plural forms checked above
-        // A singular form may say "the last backup" instead of "the last 1 backup".
-        const drop = (l: string[]) => (/_(one|zero)$/.test(k) ? l.filter((p) => p !== 'count') : l);
-        expect(drop(placeholders(other)), `${ns}:${k}`).toEqual(drop(placeholders(v)));
-      }
-    });
-
-    it(`${ns} has no empty strings`, () => {
-      const flat = (o: unknown): string[] =>
-        o && typeof o === 'object'
-          ? Object.values(o as Record<string, unknown>).flatMap(flat)
-          : [String(o)];
-      for (const lang of ['en', 'fr'] as const) {
-        expect(flat(resources[lang][ns]).filter((s) => s.trim() === '')).toEqual([]);
+  for (const b of BUNDLES.filter((x) => x !== 'en')) {
+    const files = bundle(b);
+    const complete = (COMPLETE as readonly string[]).includes(b);
+    it(`${b} is valid${complete ? ' and complete' : ''}`, () => {
+      // Only namespaces English has.
+      for (const ns of Object.keys(files)) expect(NAMESPACES, `${b}/${ns}.json`).toContain(ns);
+      for (const ns of NAMESPACES) {
+        const report = validateBundle(resources.en[ns], files[ns] ?? {}, b);
+        expect(report.issues, `${b}/${ns}`).toEqual([]);
+        if (complete) expect(report.missing, `${b}/${ns}`).toEqual([]);
       }
     });
   }
+
+  it('English is valid against itself, with no empty string', () => {
+    for (const ns of NAMESPACES) {
+      expect(validateBundle(resources.en[ns], resources.en[ns], 'en').issues).toEqual([]);
+    }
+  });
+
+  it('reads old settings and resolves every game locale', () => {
+    expect(normaliseLanguage('fr')).toBe('fr_fr');
+    expect(normaliseLanguage('en')).toBe('en_us');
+    expect(normaliseLanguage('de_AT')).toBe('de_at');
+    expect(normaliseLanguage('xx')).toBeNull();
+    for (const l of LOCALES) {
+      expect(['complete', 'partial', 'fallback', 'none']).toContain(
+        translationStatus(l.code, BUNDLES),
+      );
+    }
+    expect(bundleChain('pt_pt')).toEqual(['pt-BR', 'en']);
+    expect(bundleChain('de_ch')).toEqual(['de', 'en']);
+    expect(bundleChain('ja_jp')).toEqual(['en']);
+    expect(bundleChain('en_gb')).toEqual(['en']);
+  });
 });

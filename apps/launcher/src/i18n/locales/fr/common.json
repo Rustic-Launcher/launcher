@@ -393,6 +393,7 @@
   "catalog": {
     "sort": "Trier par",
     "results_one": "{{count}} résultat",
+    "results_many": "{{count}} résultats",
     "results_other": "{{count}} résultats",
     "loadMore": "Charger plus",
     "loadMoreCount": "{{shown}} affichés sur {{total}}",

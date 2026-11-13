@@ -1,7 +1,16 @@
-//! Rustic's own in-game texts (the game's own buttons keep the game's translations). One table per
-//! language, English first and complete; a translation step adds a table for another language
-//! (`("de", &[...])`) without touching the code. A text a table lacks falls back to the language
-//! without its region (`fr_ca` -> `fr`), then to English.
+//! Rustic's own in-game texts (the game's own buttons keep the game's translations). One JSON
+//! table per language in `core/i18n/<code>.json` (`en`, `fr`, `de`, `pt_br`...), embedded at build
+//! time (`build.rs`), so a translation batch only adds files (ADR 0161, docs/TRANSLATING.md). A
+//! text a table lacks falls back to the language without its region (`fr_ca` -> `fr`), to a table
+//! that `covers` the game's code or its language (`pt_pt` -> `pt_br`, `bar` -> `de`), then to
+//! English, which is complete (tested).
+//!
+//! A table: `{"language": "Deutsch", "covers": ["bar"], "digit_separator": ".",
+//! "texts": {"<key>": "…"}, "tags": {"<tag>": "…"}}`; keys are [`T::key`].
+use std::collections::HashMap;
+use std::sync::OnceLock;
+
+include!(concat!(env!("OUT_DIR"), "/i18n_files.rs"));
 
 /// A Rustic text.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
@@ -38,206 +47,9 @@ pub enum T {
     RusticEdition,
 }
 
-type Table = &'static [(T, &'static str)];
-
-const EN: Table = &[
-    (T::Store, "Store"),
-    (T::StoreNews, "Store news"),
-    (T::Discover, "Discover"),
-    (T::MyServers, "My servers"),
-    (T::LanguageTitle, "Language"),
-    (T::LanguageSearch, "Search languages"),
-    (T::LanguageNone, "No language matches"),
-    (T::Back, "Back"),
-    (T::Search, "Search servers"),
-    (T::Featured, "Featured"),
-    (T::Trending, "Trending"),
-    (T::RecentlyPlayed, "Recently played"),
-    (T::AllServers, "All servers"),
-    (T::Categories, "Categories"),
-    (T::All, "All"),
-    (T::Join, "Join"),
-    (T::AddToList, "Add to list"),
-    (T::Added, "In your list"),
-    (T::Verified, "Verified"),
-    (T::PlayersOnline, "{n} online"),
-    (T::Offline, "Offline"),
-    (T::Loading, "Loading servers…"),
-    (T::EmptyTitle, "No servers listed yet"),
-    (
-        T::EmptyBody,
-        "Servers published on rustic-launcher.com show up here.",
-    ),
-    (T::NoResults, "No server matches your search"),
-    (T::ErrorTitle, "The server directory can't be reached"),
-    (T::Retry, "Retry"),
-    (
-        T::PublishHint,
-        "Publish yours at rustic-launcher.com/servers",
-    ),
-    (T::RusticEdition, "Rustic edition"),
-];
-
-const FR: Table = &[
-    (T::Store, "Boutique"),
-    (T::StoreNews, "Nouveautés boutique"),
-    (T::Discover, "Découvrir"),
-    (T::MyServers, "Mes serveurs"),
-    (T::LanguageTitle, "Langue"),
-    (T::LanguageSearch, "Rechercher une langue"),
-    (T::LanguageNone, "Aucune langue ne correspond"),
-    (T::Back, "Retour"),
-    (T::Search, "Rechercher un serveur"),
-    (T::Featured, "À la une"),
-    (T::Trending, "Tendances"),
-    (T::RecentlyPlayed, "Joués récemment"),
-    (T::AllServers, "Tous les serveurs"),
-    (T::Categories, "Catégories"),
-    (T::All, "Tous"),
-    (T::Join, "Rejoindre"),
-    (T::AddToList, "Ajouter à la liste"),
-    (T::Added, "Dans ta liste"),
-    (T::Verified, "Vérifié"),
-    (T::PlayersOnline, "{n} en ligne"),
-    (T::Offline, "Hors ligne"),
-    (T::Loading, "Chargement des serveurs…"),
-    (T::EmptyTitle, "Aucun serveur pour l'instant"),
-    (
-        T::EmptyBody,
-        "Les serveurs publiés sur rustic-launcher.com apparaissent ici.",
-    ),
-    (T::NoResults, "Aucun serveur ne correspond à ta recherche"),
-    (T::ErrorTitle, "L'annuaire des serveurs est injoignable"),
-    (T::Retry, "Réessayer"),
-    (
-        T::PublishHint,
-        "Publie le tien sur rustic-launcher.com/servers",
-    ),
-    (T::RusticEdition, "Édition Rustic"),
-];
-
-/// Every table, by language code (`en`, `fr`, or a full `pt_br`). English must stay first.
-const TABLES: &[(&str, Table)] = &[("en", EN), ("fr", FR)];
-
-/// Tag names of the server directory (`GET /v1/server-listings/catalog`), by language; an unknown
-/// tag shows as itself, capitalised.
-const TAGS: &[(&str, &[(&str, &str)])] = &[
-    (
-        "en",
-        &[
-            ("survival", "Survival"),
-            ("smp", "SMP"),
-            ("creative", "Creative"),
-            ("minigames", "Minigames"),
-            ("pvp", "PvP"),
-            ("skyblock", "Skyblock"),
-            ("oneblock", "OneBlock"),
-            ("roleplay", "Roleplay"),
-            ("factions", "Factions"),
-            ("prison", "Prison"),
-            ("parkour", "Parkour"),
-            ("adventure", "Adventure"),
-            ("modded", "Modded"),
-            ("anarchy", "Anarchy"),
-            ("economy", "Economy"),
-            ("towny", "Towny"),
-            ("hardcore", "Hardcore"),
-            ("vanilla", "Vanilla"),
-            ("bedwars", "BedWars"),
-            ("building", "Building"),
-        ],
-    ),
-    (
-        "fr",
-        &[
-            ("survival", "Survie"),
-            ("creative", "Créatif"),
-            ("minigames", "Mini-jeux"),
-            ("roleplay", "Jeu de rôle"),
-            ("adventure", "Aventure"),
-            ("economy", "Économie"),
-            ("building", "Construction"),
-        ],
-    ),
-];
-
-/// The tables to look in for `lang` (a game code such as `fr_fr`), most specific first, English
-/// last.
-fn chain(lang: &str) -> impl Iterator<Item = &'static str> {
-    let lang = lang.to_ascii_lowercase();
-    let base = lang.split(['_', '-']).next().unwrap_or("").to_owned();
-    let mut out: Vec<&'static str> = Vec::new();
-    for want in [lang.as_str(), base.as_str(), "en"] {
-        if let Some((code, _)) = TABLES.iter().find(|(c, _)| *c == want)
-            && !out.contains(code)
-        {
-            out.push(code);
-        }
-    }
-    out.into_iter()
-}
-
-/// Text `key` in the game's language `lang` (English when no table has it).
-pub fn t(key: T, lang: &str) -> &'static str {
-    for code in chain(lang) {
-        let table = TABLES.iter().find(|(c, _)| *c == code).map(|(_, t)| *t);
-        if let Some(text) = table.and_then(|t| t.iter().find(|(k, _)| *k == key)) {
-            return text.1;
-        }
-    }
-    // English is complete (tested); never reached.
-    ""
-}
-
-/// [`T::PlayersOnline`] with its number.
-pub fn players_online(n: i64, lang: &str) -> String {
-    t(T::PlayersOnline, lang).replace("{n}", &group_digits(n, lang))
-}
-
-/// `12345` as `12,345` (English) or `12 345` (French, with a narrow no-break space).
-pub fn group_digits(n: i64, lang: &str) -> String {
-    let sep = if lang.starts_with("fr") {
-        '\u{202F}'
-    } else {
-        ','
-    };
-    let digits = n.unsigned_abs().to_string();
-    let mut out = String::new();
-    for (i, c) in digits.chars().enumerate() {
-        if i > 0 && (digits.len() - i).is_multiple_of(3) {
-            out.push(sep);
-        }
-        out.push(c);
-    }
-    if n < 0 { format!("-{out}") } else { out }
-}
-
-/// A directory tag's name in `lang`.
-pub fn tag_name(tag: &str, lang: &str) -> String {
-    let base = lang.split(['_', '-']).next().unwrap_or("");
-    for code in [lang, base, "en"] {
-        if let Some((_, names)) = TAGS.iter().find(|(c, _)| *c == code)
-            && let Some((_, name)) = names.iter().find(|(k, _)| *k == tag)
-        {
-            return (*name).to_owned();
-        }
-    }
-    let mut c = tag.chars();
-    match c.next() {
-        Some(f) => f
-            .to_uppercase()
-            .chain(c)
-            .collect::<String>()
-            .replace('-', " "),
-        None => String::new(),
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    const ALL: [T; 29] = [
+impl T {
+    /// Every text.
+    pub const ALL: [T; 29] = [
         T::Store,
         T::StoreNews,
         T::Discover,
@@ -269,13 +81,204 @@ mod tests {
         T::RusticEdition,
     ];
 
-    #[test]
-    fn english_and_french_are_complete() {
-        for key in ALL {
-            assert!(EN.iter().any(|(k, _)| *k == key), "{key:?} in English");
-            assert!(FR.iter().any(|(k, _)| *k == key), "{key:?} in French");
+    /// Its key in the JSON tables.
+    pub const fn key(self) -> &'static str {
+        match self {
+            T::Store => "store",
+            T::StoreNews => "store_news",
+            T::Discover => "discover",
+            T::MyServers => "my_servers",
+            T::LanguageTitle => "language_title",
+            T::LanguageSearch => "language_search",
+            T::LanguageNone => "language_none",
+            T::Back => "back",
+            T::Search => "search",
+            T::Featured => "featured",
+            T::Trending => "trending",
+            T::RecentlyPlayed => "recently_played",
+            T::AllServers => "all_servers",
+            T::Categories => "categories",
+            T::All => "all",
+            T::Join => "join",
+            T::AddToList => "add_to_list",
+            T::Added => "added",
+            T::Verified => "verified",
+            T::PlayersOnline => "players_online",
+            T::Offline => "offline",
+            T::Loading => "loading",
+            T::EmptyTitle => "empty_title",
+            T::EmptyBody => "empty_body",
+            T::NoResults => "no_results",
+            T::ErrorTitle => "error_title",
+            T::Retry => "retry",
+            T::PublishHint => "publish_hint",
+            T::RusticEdition => "rustic_edition",
         }
-        assert_eq!(TABLES[0].0, "en");
+    }
+}
+
+/// One language's table, as its JSON file says.
+#[derive(Debug, Default, serde::Deserialize)]
+#[serde(default)]
+struct Table {
+    /// Game codes or languages this table also serves (`pt` for `pt_br`, `bar` for `de`).
+    covers: Vec<String>,
+    /// Groups thousands (`,` in English, a narrow no-break space in French).
+    digit_separator: Option<String>,
+    texts: HashMap<String, String>,
+    tags: HashMap<String, String>,
+}
+
+/// Every table that parses, by code, English first; a broken file is left out (tested).
+fn tables() -> &'static [(&'static str, Table)] {
+    static TABLES: OnceLock<Vec<(&'static str, Table)>> = OnceLock::new();
+    TABLES.get_or_init(|| {
+        FILES
+            .iter()
+            .filter_map(|(code, json)| Some((*code, serde_json::from_str(json).ok()?)))
+            .collect()
+    })
+}
+
+/// The tables to look in for `lang` (a game code such as `fr_fr`), most specific first, English
+/// last.
+fn chain(lang: &str) -> Vec<&'static Table> {
+    let lang = lang.to_ascii_lowercase();
+    let base = lang.split(['_', '-']).next().unwrap_or("").to_owned();
+    let all = tables();
+    let mut out: Vec<&'static Table> = Vec::new();
+    let mut push = |t: &'static Table| {
+        if !out.iter().any(|o| std::ptr::eq(*o, t)) {
+            out.push(t);
+        }
+    };
+    for want in [lang.as_str(), base.as_str()] {
+        if want.is_empty() {
+            continue;
+        }
+        if let Some((_, t)) = all.iter().find(|(c, _)| *c == want) {
+            push(t);
+        }
+        for (_, t) in all
+            .iter()
+            .filter(|(_, t)| t.covers.iter().any(|c| c == want))
+        {
+            push(t);
+        }
+    }
+    if let Some((_, en)) = all.iter().find(|(c, _)| *c == "en") {
+        push(en);
+    }
+    out
+}
+
+/// Text `key` in the game's language `lang` (English when no table has it).
+pub fn t(key: T, lang: &str) -> &'static str {
+    chain(lang)
+        .into_iter()
+        .find_map(|t| t.texts.get(key.key()))
+        .map(String::as_str)
+        // English is complete (tested); never reached.
+        .unwrap_or("")
+}
+
+/// [`T::PlayersOnline`] with its number.
+pub fn players_online(n: i64, lang: &str) -> String {
+    t(T::PlayersOnline, lang).replace("{n}", &group_digits(n, lang))
+}
+
+/// `12345` as `12,345` (English), `12 345` (French, with a narrow no-break space), `12.345`
+/// (German): the separator of the first table in `lang`'s chain that names one.
+pub fn group_digits(n: i64, lang: &str) -> String {
+    let sep = chain(lang)
+        .into_iter()
+        .find_map(|t| t.digit_separator.as_deref())
+        .unwrap_or(",");
+    let digits = n.unsigned_abs().to_string();
+    let mut out = String::new();
+    for (i, c) in digits.chars().enumerate() {
+        if i > 0 && (digits.len() - i).is_multiple_of(3) {
+            out.push_str(sep);
+        }
+        out.push(c);
+    }
+    if n < 0 { format!("-{out}") } else { out }
+}
+
+/// A directory tag's name in `lang`; an unknown tag shows as itself, capitalised.
+pub fn tag_name(tag: &str, lang: &str) -> String {
+    if let Some(name) = chain(lang).into_iter().find_map(|t| t.tags.get(tag)) {
+        return name.clone();
+    }
+    let mut c = tag.chars();
+    match c.next() {
+        Some(f) => f
+            .to_uppercase()
+            .chain(c)
+            .collect::<String>()
+            .replace('-', " "),
+        None => String::new(),
+    }
+}
+
+/// The codes of the embedded tables, English first.
+pub fn languages() -> Vec<&'static str> {
+    tables().iter().map(|(c, _)| *c).collect()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Tables that must be complete: every text and every tag English names.
+    const COMPLETE: &[&str] = &["en", "fr", "de", "es", "it", "pt_br", "pl"];
+
+    fn placeholders(s: &str) -> Vec<String> {
+        let mut out: Vec<String> = s
+            .split('{')
+            .skip(1)
+            .filter_map(|p| p.split_once('}').map(|(name, _)| name.to_owned()))
+            .collect();
+        out.sort();
+        out
+    }
+
+    #[test]
+    fn every_file_parses_and_english_comes_first() {
+        assert_eq!(tables().len(), FILES.len(), "a table doesn't parse");
+        assert_eq!(FILES[0].0, "en");
+        for code in COMPLETE {
+            assert!(languages().contains(code), "{code} table");
+        }
+    }
+
+    #[test]
+    fn tables_know_only_real_keys_with_the_same_placeholders() {
+        let en = &tables()[0].1;
+        for key in T::ALL {
+            assert!(en.texts.contains_key(key.key()), "{key:?} in English");
+        }
+        assert_eq!(en.texts.len(), T::ALL.len(), "English has unused keys");
+        for (code, table) in tables() {
+            for (key, text) in &table.texts {
+                let english = en.texts.get(key);
+                assert!(english.is_some(), "{code}: unknown key {key}");
+                assert!(!text.trim().is_empty(), "{code}: {key} is empty");
+                assert_eq!(
+                    placeholders(text),
+                    placeholders(english.map(String::as_str).unwrap_or("")),
+                    "{code}: {key}"
+                );
+            }
+            for tag in table.tags.keys() {
+                assert!(en.tags.contains_key(tag), "{code}: unknown tag {tag}");
+            }
+            if COMPLETE.contains(code) {
+                for key in T::ALL {
+                    assert!(table.texts.contains_key(key.key()), "{code}: {key:?}");
+                }
+            }
+        }
     }
 
     #[test]
@@ -284,10 +287,15 @@ mod tests {
         assert_eq!(t(T::Discover, "fr_ca"), "Découvrir");
         assert_eq!(t(T::MyServers, "fr_fr"), "Mes serveurs");
         assert_eq!(t(T::Discover, "en_us"), "Discover");
-        assert_eq!(t(T::Discover, "de_de"), "Discover");
+        assert_eq!(t(T::Discover, "ja_jp"), "Discover");
         assert_eq!(t(T::Discover, ""), "Discover");
+        assert_eq!(t(T::Discover, "de_at"), t(T::Discover, "de_de"));
+        assert_eq!(t(T::Join, "pt_pt"), t(T::Join, "pt_br"));
+        assert_ne!(t(T::Join, "pt_br"), "Join");
+        assert_eq!(t(T::Back, "bar"), t(T::Back, "de_de"));
         assert_eq!(players_online(1234, "en_us"), "1,234 online");
         assert_eq!(players_online(5, "fr_fr"), "5 en ligne");
+        assert_eq!(group_digits(12_345, "de_de"), "12.345");
     }
 
     #[test]

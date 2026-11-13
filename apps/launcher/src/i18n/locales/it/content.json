@@ -1,0 +1,447 @@
+{
+  "title": "Esplora",
+  "subtitle": "Mod, pacchetti, shader e plugin da Horizon, Modrinth e Rustic, verificati per la tua istanza.",
+  "kindsLabel": "Tipi di contenuto",
+  "kinds": {
+    "mod": "Mod",
+    "modpack": "Modpack",
+    "resourcepack": "Pacchetti di risorse",
+    "shader": "Shader",
+    "datapack": "Pacchetti dati",
+    "plugin": "Plugin"
+  },
+  "searchPlaceholder": "Cerca {{kind}}…",
+  "searchLabel": "Cerca contenuti",
+  "clear": "Cancella ricerca",
+  "by": "di {{author}}",
+  "featured": "In evidenza",
+  "downloads": "{{value}} download",
+  "updated": "aggiornato {{when}}",
+  "results_one": "{{count}} risultato",
+  "results_many": "{{count}} risultati",
+  "results_other": "{{count}} risultati",
+  "loadMore": "Carica altri ({{shown}} di {{total}})",
+  "target": {
+    "label": "Installa in",
+    "none": "Scegli una destinazione",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Server Horizon",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "Questo PC",
+    "vps": "Il tuo VPS",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Ordina per",
+    "relevance": "Pertinenza",
+    "downloads": "Più scaricati",
+    "updated": "Aggiornati di recente",
+    "newest": "Più recenti"
+  },
+  "sources": {
+    "label": "Fonti",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Registro Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Catalogo Rustic"
+  },
+  "filters": {
+    "category": "Categoria",
+    "allCategories": "Tutte le categorie",
+    "compatibleInstance": "Compatibili con questa istanza",
+    "compatibleServer": "Compatibili con questo server",
+    "worksNow": "Si compila sull'Horizon attuale",
+    "categories": "Categorie",
+    "viewMore_one": "Mostra {{count}} in più",
+    "viewMore_many": "Mostra {{count}} in più",
+    "viewMore_other": "Mostra {{count}} in più",
+    "viewLess": "Mostra meno",
+    "compatibility": "Compatibilità",
+    "pluginHint": "I plugin girano in sandbox solo su Rustic Server.",
+    "fairPlayHint": "Sono elencati solo contenuti fair play.",
+    "versions": "Versioni di Horizon",
+    "targetVersion": "L'istanza o il server selezionato",
+    "checkingAgainst": "La compatibilità viene verificata con la build evidenziata.",
+    "rustic": "Marketplace di Rustic",
+    "rusticHint": "I progetti a pagamento e verificati sono solo su Rustic.",
+    "verifiedOnly": "Solo verificati da Rustic",
+    "price": "Prezzo",
+    "priceOptions": {
+      "all": "Tutti",
+      "free": "Gratis",
+      "paid": "A pagamento"
+    },
+    "reset": "Reimposta filtri",
+    "remove": "Rimuovi il filtro {{filter}}"
+  },
+  "categories": {
+    "performance": "Prestazioni",
+    "utility": "Utilità",
+    "ui": "Interfaccia",
+    "pvp": "PvP",
+    "adventure": "Avventura",
+    "decoration": "Decorazione",
+    "storage": "Archiviazione",
+    "worldgen": "Generazione del mondo",
+    "library": "Libreria",
+    "tech": "Tecnologia",
+    "cozy": "Rilassante",
+    "multiplayer": "Multigiocatore",
+    "realistic": "Realistico",
+    "simple": "Fedele",
+    "lightweight": "Leggero",
+    "cinematic": "Cinematografico",
+    "qol": "Qualità della vita",
+    "admin": "Amministrazione",
+    "chat": "Chat",
+    "minigames": "Minigiochi",
+    "protection": "Protezione",
+    "integration": "Integrazioni"
+  },
+  "empty": {
+    "title": "Nessun risultato",
+    "hint": "Prova un'altra parola, fonte o categoria.",
+    "compatibleHint": "Vengono mostrati solo i contenuti che funzionano su questa destinazione. Disattiva il filtro per vedere tutto.",
+    "showAll": "Mostra risultati incompatibili"
+  },
+  "banners": {
+    "mod": "Sono elencati solo mod fair play: niente X-ray, autoclicker o altri vantaggi sleali.",
+    "modpack": "Un modpack diventa una nuova istanza con i suoi mod e le sue impostazioni.",
+    "resourcepack": "I pacchetti si sovrappongono: vince quello in cima all'ordine di caricamento.",
+    "shader": "Horizon esegue i propri pacchetti shader WGSL (.hshader, shader API 0.1, sperimentale) e i pacchetti in formato Iris/OptiFine dal registro Horizon. Scegline uno in gioco in Impostazioni video › Pacchetti shader.",
+    "datapack": "I pacchetti dati appartengono a un mondo: sceglierai il mondo durante l'installazione.",
+    "plugin": "I plugin (.rplugin) girano in sandbox sui server che usano il motore Rustic Server. Un plugin difettoso viene disattivato; il server continua a funzionare."
+  },
+  "resourcepacks": {
+    "manageOrder": "Gestisci ordine di caricamento"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Formato Iris/OptiFine"
+    },
+    "formatHint": {
+      "horizon": "Il formato di Horizon (.hshader), shader API 0.1 (sperimentale). Verificato prima dell'esecuzione.",
+      "shaders_dir": "Un pacchetto shaders/ in formato Iris/OptiFine, eseguito dal loader separato di Horizon."
+    }
+  },
+  "side": {
+    "client": "Client",
+    "server": "Server",
+    "both": "Client e server"
+  },
+  "install": {
+    "install": "Installa",
+    "installAria": "Installa {{name}} in {{target}}",
+    "installed": "Installato",
+    "installing": "Installazione…",
+    "installingPct": "Installazione {{pct}}",
+    "createInstance": "Crea istanza",
+    "chooseWorld": "Installa in un mondo",
+    "noTarget": "Scegli prima dove installare.",
+    "started": "Installazione di {{name}} in {{target}}",
+    "withDeps_one": "Più {{count}} dipendenza richiesta.",
+    "withDeps_many": "Più {{count}} dipendenze richieste.",
+    "withDeps_other": "Più {{count}} dipendenze richieste.",
+    "failed": "Impossibile installare {{name}}",
+    "native": "Compila e installa",
+    "update": "Aggiorna",
+    "updateAria": "Aggiorna {{name}} alla {{version}}"
+  },
+  "modpack": {
+    "created": "Creazione dell'istanza {{name}}",
+    "createdHint": "Download in corso. Comparirà in Gioca quando sarà pronta."
+  },
+  "datapacks": {
+    "pickWorld": "Scegli un mondo",
+    "noWorlds": "Questa istanza non ha ancora un mondo. Gioca una volta per crearne uno.",
+    "count_one": "{{count}} pacchetto dati",
+    "count_many": "{{count}} pacchetti dati",
+    "count_other": "{{count}} pacchetti dati"
+  },
+  "plugins": {
+    "badge": "Plugin Rustic Server · API {{api}}",
+    "noServerTitle": "Ancora nessun server Rustic Server",
+    "noServerBody": "I plugin funzionano solo sui server che usano il motore Rustic Server. Creane uno in pochi passaggi, poi torna qui per installarci i plugin.",
+    "createServer": "Crea un server"
+  },
+  "detail": {
+    "breadcrumb": "Percorso",
+    "sections": "Sezioni del progetto",
+    "tabs": {
+      "description": "Descrizione",
+      "gallery": "Galleria",
+      "versions": "Versioni",
+      "changelog": "Changelog",
+      "dependencies": "Dipendenze",
+      "compatibility": "Compatibilità"
+    },
+    "galleryLabel": "Galleria di {{name}}",
+    "prev": "Immagine precedente",
+    "next": "Immagine successiva",
+    "slide": "Immagine {{index}} di {{total}}",
+    "about": "Informazioni sul progetto",
+    "categories": "Categorie",
+    "links": "Link",
+    "link": {
+      "source": "Codice sorgente",
+      "issues": "Segnala un bug",
+      "website": "Sito web",
+      "site": "Su rustic-launcher.com",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "Ancora nessun changelog.",
+    "noGallery": "Ancora nessuno screenshot.",
+    "notAvailable": {
+      "title": "Questo progetto non è disponibile",
+      "body": "Potrebbe essere privato, in attesa di revisione o rimosso dal suo creatore o da un moderatore.",
+      "back": "Torna a Esplora"
+    }
+  },
+  "report": {
+    "button": "Segnala",
+    "title": "Segnala {{name}}",
+    "sent": "Segnalazione inviata",
+    "sentBody": "Grazie. I nostri moderatori la esamineranno.",
+    "reasons": {
+      "fair_play": "Viola le regole del fair play",
+      "malware": "Malware o furto di dati",
+      "copyright": "Violazione del copyright",
+      "other": "Altro"
+    },
+    "failed": "Impossibile inviare la segnalazione"
+  },
+  "versions": {
+    "version": "Versione",
+    "horizon": "Build di Horizon",
+    "published": "Pubblicata",
+    "downloads": "Download",
+    "compatibility": "Compatibilità",
+    "actions": "Azioni",
+    "none": "Nessuna",
+    "channel": {
+      "release": "Release",
+      "beta": "Beta",
+      "alpha": "Alpha"
+    },
+    "empty": "Ancora nessuna versione disponibile."
+  },
+  "deps": {
+    "none": "Nessuna dipendenza.",
+    "relation": {
+      "required": "Richiesta",
+      "optional": "Facoltativa",
+      "incompatible": "Incompatibile"
+    },
+    "installed": "Installata",
+    "willInstall": "Installata automaticamente",
+    "notInstalled": "Non installata"
+  },
+  "compatTab": {
+    "for": "per {{target}}",
+    "builds": "L'autore pubblica una build fatta per questa versione di Horizon.",
+    "format": "Questo contenuto è composto solo da dati (texture, shader, pacchetti dati): non dipende da una build di Horizon.",
+    "unknown": "Scegli un'istanza o un server per verificare la compatibilità.",
+    "fairPlay": "Rustic promuove solo contenuti fair play. Ciò che dà un vantaggio sleale non viene mai elencato.",
+    "native": "Un mod nativo adatto a questo Horizon: Rustic Launcher lo compila nel gioco di questa istanza sul tuo PC."
+  },
+  "permissions": {
+    "title": "Permessi",
+    "network": "Accesso alla rete: {{value}}",
+    "none": "nessuno",
+    "files": "File: solo la propria cartella di dati."
+  },
+  "stats": {
+    "downloads": "Download",
+    "follows": "Follower",
+    "updated": "Aggiornato",
+    "license": "Licenza",
+    "size": "Dimensione",
+    "gameVersion": "Versione del gioco",
+    "version": "Ultima versione",
+    "author": "Autore",
+    "created": "Pubblicato"
+  },
+  "searchSources": "Cerca {{kind}} su Horizon, Modrinth e Rustic…",
+  "filtersLabel": "Filtri",
+  "view": "Visualizza",
+  "heading": "Trova il tuo prossimo *mod*",
+  "eyebrow": "Esplora",
+  "kindsServer": "Per un Rustic Server",
+  "tabs": {
+    "label": "Sezioni di Esplora",
+    "discover": "Scopri",
+    "browse": "Sfoglia",
+    "mine": "I miei contenuti"
+  },
+  "hero": {
+    "eyebrow": "In evidenza"
+  },
+  "discover": {
+    "heroLabel": "{{kind}} in evidenza",
+    "rows": {
+      "new": "Novità",
+      "newHint": "Appena pubblicati o aggiornati",
+      "horizon": "Popolari su Horizon",
+      "horizonHint": "I più scaricati dal registro di Horizon",
+      "verified": "Verificati da Rustic",
+      "verifiedHint": "Controllati dal team di Rustic: fanno ciò che dicono",
+      "yours": "Per {{target}}",
+      "yoursHint": "Funziona su Horizon {{version}}",
+      "community": "Dalla community",
+      "communityHint": "Aggiornati di recente sul marketplace di Rustic"
+    },
+    "empty": {
+      "title": "Ancora niente da scoprire qui",
+      "hint": "Nessun contenuto di questo tipo funziona ancora sulla tua destinazione. Sfoglia invece tutto il catalogo.",
+      "browse": "Sfoglia tutto"
+    },
+    "rowError": "Impossibile caricare questa selezione.",
+    "retry": "Riprova"
+  },
+  "verified": {
+    "label": "Verificato",
+    "hint": "Verificato da Rustic: un moderatore ha controllato che faccia ciò che dice la sua pagina."
+  },
+  "price": {
+    "soon": "Prossimamente",
+    "soonHint": "Presto i creatori potranno vendere le loro opere. Gli acquisti non sono ancora disponibili.",
+    "notOnSale": "Non ancora in vendita: le vendite dei creatori apriranno presto."
+  },
+  "native": {
+    "badge": "Si compila sul tuo PC",
+    "short": "Nativo",
+    "hint": "Un mod nativo è codice Rust compilato nel gioco sul tuo PC prima dell'avvio.",
+    "title": "Un mod nativo",
+    "body": "I mod nativi sono codice sorgente Rust compilato nel tuo gioco su questo PC (può richiedere da un minuto a mezz'ora). Gli amministratori esaminano ogni versione prima che diventi pubblica.",
+    "kind": "Mod nativo",
+    "how": "Rustic Launcher li compila sul tuo PC nel gioco di questa istanza, dopo che hai accettato un avviso di fiducia. La prima compilazione richiede da 10 a 15 minuti; le successive ricompilano solo ciò che è cambiato. Le istanze senza mod nativi mantengono il gioco precompilato.",
+    "instanceOnly": "I mod nativi vanno in un'istanza.",
+    "trust": {
+      "title": "Codice nativo: leggi prima di compilare",
+      "lead": "{{name}} è un mod nativo: codice Rust compilato nel gioco di «{{instance}}» su questo PC.",
+      "unsandboxed": "I mod nativi non sono in sandbox. Una volta compilati, girano con i tuoi permessi e possono leggere, modificare o inviare tutto ciò a cui ha accesso il tuo account.",
+      "review": "Si possono installare solo i mod del registro di Horizon (esaminati dai suoi manutentori) e i mod approvati dagli amministratori del marketplace di Rustic. Una revisione riduce il rischio, ma non lo elimina.",
+      "build": "Se serve, viene installato Rust, poi il gioco viene compilato per questa istanza: circa 10-15 minuti e qualche GB la prima volta, più veloce in seguito.",
+      "scope": "Solo questa istanza usa il gioco compilato. Non ti verrà chiesto di nuovo per i suoi prossimi mod nativi.",
+      "source": "Leggi il codice sorgente",
+      "check": "Ho capito che i mod nativi girano senza sandbox con i miei permessi e mi fido di questo mod.",
+      "accept": "Mi fido: installa e compila"
+    },
+    "toolchain": {
+      "title": "Installare Rust {{version}}?",
+      "lead": "Per compilare i mod nativi serve il compilatore Rust. Rustic Launcher può installarlo per te.",
+      "manual": "Per compilare i mod nativi servono il compilatore Rust e alcuni strumenti di sistema che Rustic Launcher non può installare per te. Installali, poi compila di nuovo:",
+      "where": "Dal sito ufficiale (static.rust-lang.org), verificato con il suo SHA-256 pubblicato, nella cartella del launcher: nient'altro cambia sul tuo PC.",
+      "size": "Circa da 1 a 2,5 GB (con un compilatore C su Windows).",
+      "once": "Una volta per tutte le istanze; eliminando i dati del launcher viene rimosso.",
+      "found": "Trovato: {{reason}}.",
+      "install": "Installa Rust",
+      "started": "Installazione di Rust",
+      "startedHint": "La compilazione parte appena è pronto. Seguila nel pannello dei download.",
+      "failed": "Impossibile installare Rust"
+    },
+    "build": {
+      "started": "Compilazione dei mod nativi per {{instance}}",
+      "startedHint": "Seguila nella pagina dell'istanza o nel pannello dei download. La prima compilazione richiede da 10 a 15 minuti.",
+      "failed": "Impossibile compilare i mod nativi di {{instance}}"
+    },
+    "errors": {
+      "notEdition": "I mod nativi si compilano solo nell'edizione Rustic: passa questa istanza all'edizione Rustic nelle sue impostazioni.",
+      "running": "Chiudi prima il gioco: i suoi mod nativi vengono ricompilati mentre è fermo.",
+      "disk": "Spazio libero su disco insufficiente. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "Incompatibile",
+    "compatible": "Compatibile"
+  },
+  "library": {
+    "add": "Aggiungi alla mia raccolta",
+    "inLibrary": "Nella mia raccolta",
+    "added": "{{name}} aggiunto alla tua raccolta",
+    "removed": "{{name}} rimosso dalla tua raccolta",
+    "remove": "Rimuovi {{name}} dalla mia raccolta",
+    "failed": "Impossibile aggiornare la tua raccolta"
+  },
+  "prompt": {
+    "title": "Installare {{name}}?",
+    "body": "Hai aperto questo progetto dal sito web. Scegli dove installarlo e quale versione, poi conferma.",
+    "dismiss": "Non ora",
+    "version": "Versione",
+    "versionMissing": "La versione {{version}} non è più disponibile: è selezionata la più recente compatibile."
+  },
+  "mine": {
+    "searchPlaceholder": "Filtra i miei contenuti…",
+    "noMatch": "Nessun risultato",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Aggiunto a mano"
+    },
+    "installed": {
+      "title": "Installati",
+      "titleOn": "Installati su {{target}}",
+      "hint": "{{kind}} di questa destinazione: attivali o disattivali, aggiornali o rimuovili.",
+      "modpacksTitle": "I modpack diventano profili",
+      "modpacksHint": "Ogni modpack installato è un profilo a sé.",
+      "openProfiles": "Apri i miei profili",
+      "noTarget": "Scegli prima dove cercare.",
+      "serverHint": "I plugin e i pacchetti dati di un server si gestiscono nella sua pagina.",
+      "manageServer": "Gestisci il server",
+      "updateAll_one": "Aggiorna {{count}} elemento",
+      "updateAll_many": "Aggiorna {{count}} elementi",
+      "updateAll_other": "Aggiorna {{count}} elementi",
+      "openProfile": "Apri il profilo",
+      "empty": "Ancora niente installato qui",
+      "emptyHint": "Trova qualcosa in Scopri o Sfoglia.",
+      "discover": "Scopri contenuti",
+      "updateTo": "Aggiorna alla {{version}}",
+      "incompatible": "Incompatibile",
+      "update": "Aggiorna {{name}}",
+      "toggle": "Attiva {{name}}",
+      "remove": "Rimuovi {{name}}",
+      "removeTitle": "Rimuovere {{name}}?",
+      "removeBody": "I suoi file vengono eliminati da questo profilo. Puoi reinstallarlo quando vuoi."
+    },
+    "signIn": {
+      "title": "La tua raccolta e le tue creazioni",
+      "body": "Accedi al tuo account Rustic per ritrovare i progetti che hai salvato e quelli che pubblichi.",
+      "action": "Accedi"
+    },
+    "library": {
+      "title": "La mia raccolta",
+      "hint": "Progetti salvati nel tuo account Rustic, su tutti i PC.",
+      "empty": "La tua raccolta è vuota",
+      "emptyHint": "Aggiungi un progetto Rustic dalla sua pagina per ritrovarlo qui.",
+      "installAria": "Installa {{name}}"
+    },
+    "creations": {
+      "title": "Le mie creazioni",
+      "hint": "Ciò che pubblichi sul marketplace di Rustic.",
+      "publish": "Pubblica sul sito web",
+      "empty": "Non hai ancora pubblicato niente",
+      "emptyHint": "Condividi un mod, un pacchetto o uno shader con tutti i giocatori Rustic dal sito web.",
+      "manage": "Gestisci",
+      "manageAria": "Gestisci {{name}} sul sito web",
+      "status": {
+        "public": "Pubblico",
+        "unlisted": "Non in elenco",
+        "private": "Privato",
+        "pending": "In attesa di revisione",
+        "rejected": "Rifiutato",
+        "takenDown": "Rimosso"
+      }
+    }
+  }
+}

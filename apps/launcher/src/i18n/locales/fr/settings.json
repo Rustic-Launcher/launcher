@@ -6,10 +6,6 @@
   "saved": "Modifications enregistrées",
   "close": "Fermer",
   "cancel": "Annuler",
-  "languages": {
-    "en": "English",
-    "fr": "Français"
-  },
   "sections": {
     "accounts": "Comptes et sécurité",
     "game": "Jeu et instances",
@@ -257,7 +253,15 @@
     "language": {
       "title": "Langue",
       "description": "S’applique immédiatement à tout le launcher.",
-      "label": "Langue"
+      "label": "Langue",
+      "search": "Rechercher une langue",
+      "empty": "Aucune langue ne correspond",
+      "translated": "Traduites",
+      "others": "Autres langues",
+      "partial": "Partielle",
+      "english": "en anglais pour l’instant",
+      "via": "en {{lang}} pour l’instant",
+      "help": "Les textes pas encore traduits s’affichent en anglais. Les traductions viennent de la communauté."
     },
     "startup": {
       "title": "Démarrage",

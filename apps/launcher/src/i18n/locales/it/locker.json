@@ -1,0 +1,86 @@
+{
+  "title": "Armadietto",
+  "subtitle": "Oggetti puramente estetici. Visibili in gioco ai giocatori che usano l'edizione Rustic.",
+  "horizonNote": {
+    "badge": "I cosmetici Horizon restano disponibili",
+    "detail": "I tuoi cosmetici Horizon vengono conservati nel client dell'edizione Rustic. Gestiscili in gioco: funzionano insieme ai tuoi oggetti Rustic."
+  },
+  "empty": {
+    "title": "Non possiedi ancora nessun cosmetico.",
+    "description": "Gli oggetti che acquisti o ricevi compaiono qui, pronti da indossare.",
+    "browse": "Sfoglia il Negozio",
+    "categoryTitle": "Ancora nessun elemento in {{category}}",
+    "categoryDescription": "Gli oggetti di questo tipo che possiedi compariranno qui."
+  },
+  "viewer": {
+    "region": "Il tuo personaggio",
+    "label_one": "Il tuo personaggio con {{count}} oggetto. Trascina o usa i tasti freccia per ruotarlo, più e meno per lo zoom.",
+    "label_many": "Il tuo personaggio con {{count}} oggetti. Trascina o usa i tasti freccia per ruotarlo, più e meno per lo zoom.",
+    "label_other": "Il tuo personaggio con {{count}} oggetti. Trascina o usa i tasti freccia per ruotarlo, più e meno per lo zoom.",
+    "hint": "Trascina per ruotare · scorri per lo zoom",
+    "animation": "Animazione",
+    "playEmote": "Riproduci {{name}}",
+    "noEmote": "Nessuna emote equipaggiata",
+    "reset": "Ripristina vista"
+  },
+  "animations": {
+    "idle": "Fermo",
+    "walk": "Camminata",
+    "wave": "Saluto",
+    "dance": "Ballo"
+  },
+  "items": {
+    "region": "I tuoi oggetti",
+    "nothing": "Niente",
+    "equipped": "Equipaggiato"
+  },
+  "categories": {
+    "label": "Categorie",
+    "all": "Tutto",
+    "head": "Cappelli",
+    "back": "Schiena",
+    "top": "Busto",
+    "shoulder": "Spalla",
+    "nametag": "Targhette",
+    "emote": "Emote",
+    "companion": "Compagni",
+    "trail": "Scie",
+    "aura": "Aure"
+  },
+  "rarity": {
+    "common": "Comune",
+    "rare": "Raro",
+    "epic": "Epico",
+    "legendary": "Leggendario"
+  },
+  "toast": {
+    "equipped": "{{name}} equipaggiato",
+    "unequipped": "{{name}} rimosso",
+    "cleared": "{{slot}}: niente equipaggiato",
+    "outfitWorn": "Outfit indossato",
+    "outfitSaved": "Outfit «{{name}}» salvato",
+    "equipFailed": "Impossibile cambiare il tuo aspetto. Riprova."
+  },
+  "outfits": {
+    "title": "Outfit",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Dai un nome a questo look",
+    "save": "Salva il look attuale",
+    "full": "Puoi tenere fino a {{max}} outfit. Eliminane uno per salvare un nuovo look.",
+    "empty": "Salva il tuo look attuale per indossarlo di nuovo con un clic.",
+    "items_one": "{{count}} oggetto",
+    "items_many": "{{count}} oggetti",
+    "items_other": "{{count}} oggetti",
+    "wearing": "Indossato",
+    "wear": "Indossa",
+    "delete": "Elimina l'outfit {{name}}"
+  },
+  "switches": {
+    "showMine": "Mostra i miei cosmetici",
+    "showMineHint": "Gli altri giocatori dell'edizione Rustic vedono ciò che indossi.",
+    "hideOthers": "Nascondi i cosmetici degli altri giocatori",
+    "hideTrailsAuras": "Nascondi scie e aure"
+  },
+  "heading": "Il tuo *armadietto*",
+  "eyebrow": "Cosmetici"
+}

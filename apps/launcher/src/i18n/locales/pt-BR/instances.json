@@ -1,0 +1,331 @@
+{
+  "title": "Versões",
+  "errors": {
+    "action": "Isso não funcionou"
+  },
+  "card": {
+    "more": "Mais ações para {{name}}",
+    "pin": "Fixar",
+    "unpin": "Desafixar",
+    "duplicate": "Duplicar",
+    "duplicated": "{{name}} criado",
+    "playtime": "Tempo de jogo",
+    "never": "Nunca",
+    "fromModpack": "Modpack {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Em execução",
+    "installing": "Instalando",
+    "broken": "Precisa de reparo"
+  },
+  "delete": {
+    "title": "Excluir {{name}}?",
+    "body": "Os mods, as configurações e os mundos dela são apagados deste computador. Isso não pode ser desfeito.",
+    "confirm": "Excluir instância",
+    "done": "{{name}} excluída"
+  },
+  "new": {
+    "title": "Nova instância",
+    "description": "Comece do zero ou traga um pacote que você já tem.",
+    "tabs": {
+      "create": "Criar",
+      "import": "Importar"
+    },
+    "name": "Nome",
+    "namePlaceholder": "Meu mundo de sobrevivência",
+    "nameRequired": "Dê um nome à instância.",
+    "icon": "Ícone",
+    "color": "Cor",
+    "colorN": "Cor {{n}}",
+    "version": "Build do Horizon",
+    "versionHint": "A edição Rustic adiciona cosméticos e amigos no jogo. Nada de configurar Java ou RAM.",
+    "recommended": "Recomendada",
+    "release": "Estável",
+    "nightly": "Nightly",
+    "installed": "Instalada",
+    "submit": "Criar instância",
+    "created": "{{name}} está pronta"
+  },
+  "icons": {
+    "grass": "Broto",
+    "sword": "Espadas",
+    "pickaxe": "Picareta",
+    "castle": "Castelo",
+    "rocket": "Foguete",
+    "gem": "Gema",
+    "flame": "Chama",
+    "leaf": "Folha",
+    "star": "Estrela",
+    "compass": "Bússola"
+  },
+  "import": {
+    "folder": {
+      "title": "Pasta de instância",
+      "description": "Uma pasta de instância do Prism ou do MultiMC, convertida como o Horizon faz."
+    },
+    "mrpack": {
+      "title": "Pacote do Modrinth (.mrpack)",
+      "description": "Os mods são associados às builds do Horizon quando disponíveis."
+    },
+    "curseforge_zip": {
+      "title": "Zip do CurseForge",
+      "description": "Um modpack exportado do CurseForge."
+    },
+    "modpack": {
+      "title": "De um modpack",
+      "description": "Navegue pelos modpacks do Horizon, do Modrinth e do Rustic."
+    },
+    "started": "Importando {{name}}",
+    "background": "Continua em segundo plano; você pode seguir usando o launcher.",
+    "note": "Só o conteúdo que funciona no Horizon é instalado; o resto é listado com o motivo."
+  },
+  "detail": {
+    "notFound": "Esta instância não existe mais",
+    "backToList": "Voltar para as instâncias",
+    "tabsLabel": "Seções da instância",
+    "tabs": {
+      "overview": "Visão geral",
+      "content": "Conteúdo",
+      "resourcepacks": "Pacotes de recursos",
+      "worlds": "Mundos",
+      "settings": "Configurações"
+    }
+  },
+  "overview": {
+    "mods": "Mods",
+    "resourcePacks": "Pacotes de recursos",
+    "shaders": "Pacotes de shaders",
+    "version": "Build do Horizon",
+    "updateAvailable": "Atualização disponível",
+    "upToDate": "Atualizada",
+    "updateNow": "Atualizar agora",
+    "changeVersion": "Escolher uma build do Horizon",
+    "applyVersion": "Trocar de build",
+    "versionChanging": "Trocando para {{version}}",
+    "lastSession": "Última sessão",
+    "lastPlayed": "Jogado {{when}}",
+    "neverPlayed": "Ainda não jogado",
+    "rejoin": "Entrar de novo",
+    "noServer": "Nenhum servidor acessado por esta instância ainda.",
+    "created": "Criada",
+    "folder": "Pasta"
+  },
+  "content": {
+    "filter": "Filtrar por tipo",
+    "kinds": {
+      "all": "Todos",
+      "mod": "Mods",
+      "resourcepack": "Pacotes de recursos",
+      "shader": "Shaders"
+    },
+    "search": "Pesquisar conteúdo instalado",
+    "updateAll_one": "Atualizar {{count}} item",
+    "updateAll_many": "Atualizar {{count}} itens",
+    "updateAll_other": "Atualizar {{count}} itens",
+    "browse": "Navegar pelo conteúdo",
+    "noMatch": "Nada instalado corresponde à sua pesquisa.",
+    "empty": {
+      "title": "Nada instalado ainda",
+      "description": "Encontre mods, pacotes de recursos e shaders que funcionam com esta instância."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Arquivo local"
+    },
+    "updateTo": "Atualizar: {{version}}",
+    "incompatible": "Incompatível: {{reason}}",
+    "updateOne": "Atualizar {{name}}",
+    "toggle": "Ativar {{name}}",
+    "remove": "Remover {{name}}",
+    "removeTitle": "Remover {{name}}?",
+    "removeBody": "O arquivo é apagado desta instância. Você pode instalá-lo de novo em Conteúdo."
+  },
+  "packs": {
+    "hint": "Os pacotes do topo vencem quando dois pacotes mudam a mesma coisa.",
+    "listLabel": "Ordem de carregamento dos pacotes de recursos",
+    "top": "Prioridade mais alta",
+    "up": "Mover {{name}} para cima",
+    "down": "Mover {{name}} para baixo",
+    "moved": "{{name}} movido para a posição {{position}} de {{total}}",
+    "browse": "Encontrar pacotes de recursos",
+    "empty": {
+      "title": "Nenhum pacote de recursos",
+      "description": "Adicione pacotes para mudar texturas, sons e a interface."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Nenhum mundo ainda",
+      "description": "Os mundos que você cria no jogo aparecem aqui."
+    },
+    "openSaves": "Abrir a pasta de mundos salvos",
+    "lastPlayed": "Jogado {{when}}",
+    "modes": {
+      "survival": "Sobrevivência",
+      "creative": "Criativo",
+      "adventure": "Aventura",
+      "hardcore": "Hardcore",
+      "spectator": "Espectador"
+    },
+    "datapacks_one": "{{count}} pacote de dados",
+    "datapacks_many": "{{count}} pacotes de dados",
+    "datapacks_other": "{{count}} pacotes de dados",
+    "play": "Jogar este mundo",
+    "addDatapacks": "Adicionar pacotes de dados"
+  },
+  "settings": {
+    "general": "Geral",
+    "display": "Janela",
+    "useDefaultResolution": "Usar o tamanho de janela padrão",
+    "defaultIs": "Padrão: {{width}} × {{height}}",
+    "width": "Largura",
+    "height": "Altura",
+    "fullscreen": "Iniciar em tela cheia",
+    "resolutionError": "Use números inteiros, no mínimo 640 × 360.",
+    "launch": "Opções de inicialização",
+    "launchHint": "As instâncias do Horizon só fixam uma build: não há Java, RAM nem loader para configurar.",
+    "gameArgs": "Argumentos extras do jogo",
+    "gameArgsHint": "Avançado. Repassados ao Horizon como estão.",
+    "folders": "Pastas",
+    "folder": {
+      "root": "Instância",
+      "mods": "Mods",
+      "resourcepacks": "Pacotes de recursos",
+      "shaderpacks": "Pacotes de shaders",
+      "saves": "Mundos",
+      "screenshots": "Capturas de tela",
+      "logs": "Logs"
+    },
+    "unsaved": "Você tem alterações não salvas.",
+    "allSaved": "Todas as alterações foram salvas.",
+    "saved": "Configurações da instância salvas"
+  },
+  "heading": "Seus *perfis*",
+  "native": {
+    "title": "Mods nativos",
+    "allOff": "Todos desativados: a instância joga o jogo pré-compilado.",
+    "state": {
+      "building": "Compilando…",
+      "up_to_date": "Atualizados",
+      "needs_rebuild": "Recompilação necessária",
+      "not_built": "Não compilados",
+      "not_needed": "Jogo pré-compilado"
+    },
+    "build": "Compilar",
+    "rebuild": "Recompilar",
+    "cancel": "Cancelar",
+    "progress": "Progresso da compilação nativa",
+    "starting": "Iniciando…",
+    "firstBuildHint": "A primeira compilação compila o jogo inteiro (10 a 15 minutos); as seguintes, só o que mudou. Você pode seguir usando o launcher.",
+    "failed": "A última compilação falhou",
+    "built": "Compilado {{date}} em {{duration}} · jogo {{size}}",
+    "leftOut": {
+      "other": "{{name}} ficou de fora: não se aplica a este Horizon.",
+      "unsupported": "{{name}} ficou de fora: o Rustic ainda não consegue compilar o que ele precisa."
+    },
+    "notEdition": "Esta instância joga uma build simples do Horizon: mods nativos só são compilados na edição Rustic."
+  },
+  "profiles": {
+    "summary_one": "{{count}} perfil · {{playtime}} jogados",
+    "summary_many": "{{count}} perfis · {{playtime}} jogados",
+    "summary_other": "{{count}} perfis · {{playtime}} jogados",
+    "searchLabel": "Pesquisar seus perfis",
+    "searchPlaceholder": "Pesquise por nome, build do Horizon ou modpack…",
+    "source": {
+      "label": "Mostrar",
+      "all": "Todos os perfis",
+      "custom": "Meus perfis",
+      "modpack": "De modpacks"
+    },
+    "sorts": {
+      "recent": "Jogados por último",
+      "name": "Nome",
+      "created": "Criados recentemente",
+      "version": "Build do Horizon",
+      "playtime": "Tempo de jogo"
+    },
+    "filters": {
+      "version": "Build do Horizon",
+      "edition": "Edição",
+      "editions": {
+        "rustic": "Edição Rustic",
+        "horizon": "Horizon simples"
+      },
+      "native": "Mods nativos",
+      "nativeOnly": "Com mods nativos",
+      "nativeHint": "Mods nativos são compilados no seu PC antes de o jogo iniciar.",
+      "remove": "Remover o filtro: {{filter}}",
+      "reset": "Redefinir filtros"
+    },
+    "create": "Criar perfil",
+    "createHint": "Uma build do Horizon, um ícone e um nome",
+    "import": "Importar",
+    "importHint": "Uma pasta, um .mrpack ou um zip do CurseForge",
+    "all": "Todos os perfis",
+    "listLabel": "Perfis",
+    "recent": "Continue jogando",
+    "recentHint": "Seus perfis jogados por último",
+    "card": {
+      "active": "Ativo",
+      "activeHint": "O Launchpad joga este perfil",
+      "running": "Em execução",
+      "pinned": "Fixado",
+      "update": "Atualizar {{version}}",
+      "broken": "Precisa de reparo",
+      "modpack": "Modpack",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Jogado {{when}}",
+      "neverPlayed": "Ainda não jogado",
+      "created": "Criado em {{date}}",
+      "lastServer": "Último: {{name}}",
+      "rejoin": "Entrar de novo",
+      "rejoinAria": "Voltar para {{server}} com {{name}}",
+      "mods": "Mods",
+      "packs": "Pacotes de recursos",
+      "shaders": "Shaders",
+      "playtime": "Tempo de jogo",
+      "contentCount": "{{mods}} mods · {{packs}} pacotes · {{shaders}} shaders",
+      "open": "Abrir {{name}}"
+    },
+    "native": {
+      "label": "Mods nativos",
+      "count_one": "{{count}} mod nativo",
+      "count_many": "{{count}} mods nativos",
+      "count_other": "{{count}} mods nativos",
+      "building": "Compilando {{pct}}",
+      "buildingNoPct": "Compilando…",
+      "up_to_date": "Mods nativos prontos",
+      "needs_rebuild": "Nativos: recompilação necessária",
+      "not_built": "Nativos: ainda não compilados",
+      "off": "Mods nativos desativados",
+      "unsupported": "Nativos: precisa da edição Rustic",
+      "hint": {
+        "up_to_date": "Compilados neste PC para esta build do Horizon.",
+        "needs_rebuild": "Os mods mudaram desde a última compilação: eles são recompilados quando você jogar.",
+        "not_built": "Compilados no seu PC quando você jogar (10 a 15 minutos na primeira vez).",
+        "off": "Todos os mods nativos estão desativados: o jogo pré-compilado é usado.",
+        "unsupported": "Este perfil joga uma build simples do Horizon: mods nativos só são compilados na edição Rustic.",
+        "building": "Compilando o jogo com os mods nativos deste perfil."
+      }
+    },
+    "menu": {
+      "edit": "Editar configurações",
+      "activate": "Usar no Launchpad",
+      "isActive": "Usado no Launchpad",
+      "activated": "{{name}} agora está no Launchpad"
+    },
+    "empty": {
+      "title": "Nenhum perfil ainda",
+      "description": "Um perfil é uma build do Horizon com seus próprios mods, pacotes e mundos. Crie um com a build recomendada ou importe um pacote que você já tem."
+    },
+    "noMatch": {
+      "title": "Nenhum perfil encontrado",
+      "description": "Tente outra pesquisa ou remova um filtro."
+    },
+    "detail": {
+      "banner": "Capa de {{name}}"
+    }
+  }
+}

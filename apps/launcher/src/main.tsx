@@ -7,7 +7,7 @@ import { MotionConfig } from 'motion/react';
 import { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { useTranslation } from 'react-i18next';
-import i18n from './i18n';
+import { changeLanguage, currentLanguage, i18nReady } from './i18n';
 import { bindCoreEvents, queryClient } from './queries/core';
 import { bindRealtime } from './queries/social';
 import { router } from './router';
@@ -16,10 +16,8 @@ import { bindTheme, usePrefs } from './stores/prefs';
 
 // Theme before first paint.
 bindTheme();
-const lang = usePrefs.getState().language;
-if (lang && lang !== i18n.language) void i18n.changeLanguage(lang);
 usePrefs.subscribe((s, prev) => {
-  if (s.language && s.language !== prev.language) void i18n.changeLanguage(s.language);
+  if (s.language && s.language !== prev.language) void changeLanguage(s.language);
 });
 
 function App() {
@@ -45,8 +43,15 @@ function App() {
   );
 }
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+// The starting language's bundle first (it is its own chunk), then the app.
+void i18nReady.then(() => {
+  const lang = usePrefs.getState().language;
+  const ready = lang && lang !== currentLanguage() ? changeLanguage(lang) : Promise.resolve();
+  return ready.finally(() =>
+    createRoot(document.getElementById('root')!).render(
+      <StrictMode>
+        <App />
+      </StrictMode>,
+    ),
+  );
+});
