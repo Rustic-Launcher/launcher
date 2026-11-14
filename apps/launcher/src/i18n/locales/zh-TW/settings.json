@@ -394,6 +394,23 @@
       "confirmBody": "你的好友、裝扮和購買內容會在 30 天後移除。你的遊戲授權和 Microsoft 帳戶不受影響。",
       "confirmButton": "刪除我的帳戶",
       "typeUsername": "輸入 {{name}} 以確認"
+    },
+    "profile": {
+      "title": "Rustic 個人頁面",
+      "description": "你在 rustic-launcher.com 上的頁面，與網站的設定共用。",
+      "visibility": "誰看得到我的個人頁面",
+      "visibilityHint": "其他人只看得到你的頭像和名字。",
+      "minor": "未滿 18 歲玩家的個人頁面絕不會公開。",
+      "options": {
+        "public": "所有人",
+        "friends": "僅限好友",
+        "private": "只有我"
+      },
+      "playStats": "分享遊戲統計",
+      "playStatsHint": "遊戲時數、版本和公開伺服器，用於你的個人頁面。世界名稱絕不會回報；區域網路和私人位址絕不會傳送。",
+      "signedOut": "登入 Rustic 即可選擇誰看得到你的個人頁面。",
+      "open": "開啟我的個人頁面",
+      "failed": "無法儲存此設定"
     }
   },
   "parental": {

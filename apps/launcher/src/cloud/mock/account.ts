@@ -1,5 +1,5 @@
 import type { CloudClient, LinkedIdentities } from '../client';
-import type { Me, ParentalControls } from '../types';
+import type { AccountSettings, Me, ParentalControls } from '../types';
 import { CloudError } from '../errors';
 import { daysAgo, fail, latency, persistGet, persistSet } from '../../ipc/mock/runtime';
 
@@ -38,6 +38,13 @@ const linked: LinkedIdentities = {
   identities: [{ provider: 'microsoft', email: 'sam@example.invalid', linked_at: daysAgo(40) }],
 };
 
+let settings: AccountSettings = persistGet<AccountSettings>('account_settings', {
+  visibility: 'friends',
+  effective_visibility: 'friends',
+  public_allowed: true,
+  play_stats: true,
+});
+
 let pin: string | null = persistGet<string | null>('parental_pin', null);
 
 export const accountMock: Partial<CloudClient> = {
@@ -53,6 +60,23 @@ export const accountMock: Partial<CloudClient> = {
     me.discoverable = on;
     persistSet('discoverable', on);
     return structuredClone(me);
+  },
+  async accountSettings() {
+    await latency(0.3);
+    return structuredClone(settings);
+  },
+  async updateAccountSettings(patch) {
+    await latency(0.3);
+    if (patch.visibility === 'public' && !settings.public_allowed) {
+      throw new CloudError('public_not_allowed', 'not available for this account', 403);
+    }
+    settings = { ...settings, ...patch };
+    settings.effective_visibility = settings.visibility;
+    persistSet('account_settings', settings);
+    return structuredClone(settings);
+  },
+  async setAccountLocale() {
+    await latency(0.2);
   },
   async parental() {
     await latency(0.5);

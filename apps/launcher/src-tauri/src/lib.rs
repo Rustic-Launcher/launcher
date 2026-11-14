@@ -6,6 +6,7 @@ mod cloud_link;
 mod cmd;
 mod discord;
 mod dto;
+mod play_stats;
 mod relay;
 mod skins;
 mod state;

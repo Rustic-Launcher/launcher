@@ -4,6 +4,7 @@
  * is local to this file.
  */
 import type {
+  AccountSettings,
   AppNotification,
   ChatMessage,
   ContentReportReason,
@@ -103,6 +104,14 @@ export interface CloudClient {
   identities(): Promise<LinkedIdentities>;
   /** Unlinks a sign-in provider; refused (`last_sign_in_method`) when it is the only way in. */
   unlinkIdentity(provider: 'microsoft'): Promise<void>;
+  /** `GET /v1/me/settings`: profile visibility and the play statistics switch (ADR 0168). */
+  accountSettings(): Promise<AccountSettings>;
+  /** `PATCH /v1/me/settings` (`public_not_allowed` for minors). */
+  updateAccountSettings(
+    patch: Partial<Pick<AccountSettings, 'visibility' | 'play_stats'>>,
+  ): Promise<AccountSettings>;
+  /** `PATCH /v1/me`: the account language, shared with the website. */
+  setAccountLocale(locale: string): Promise<void>;
   exportAccount(): Promise<{ url: string; expires_at: string }>;
   deleteAccount(confirmUsername: string): Promise<{ scheduled_for: string }>;
   joinWaitlist(email: string): Promise<{ position: number }>;

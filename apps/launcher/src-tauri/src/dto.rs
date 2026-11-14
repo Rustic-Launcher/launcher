@@ -79,6 +79,9 @@ pub struct PrivacySettings {
     /// The server's address in that presence (private addresses are never shown).
     #[serde(default = "yes")]
     pub discord_show_server: bool,
+    /// Play sessions reported to Rustic Cloud for the profile's statistics (ADR 0168).
+    #[serde(default = "yes")]
+    pub play_stats: bool,
 }
 
 fn yes() -> bool {

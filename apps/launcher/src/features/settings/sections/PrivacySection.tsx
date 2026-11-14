@@ -1,9 +1,10 @@
 import { Button, Dialog, Input, Select, Switch, toast } from '@rustic/ui';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Download, ExternalLink, ShieldCheck, Trash2 } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cloud } from '@/cloud/client';
+import type { AccountSettings, ProfileVisibility } from '@/cloud/types';
 import { QueryError } from '@/components/RouteError';
 import { invoke } from '@/ipc';
 import type { PrivacySettings } from '@/ipc/types/app';
@@ -11,7 +12,7 @@ import { formatDate } from '@/lib/format';
 import { useSettings } from '@/queries/core';
 import { useMe, useSetDiscoverable } from '@/queries/social';
 import { SettingRow, SettingsCard, SectionSkeleton, useSaveSettings } from '../components';
-import { LEGAL_URLS } from '../legal';
+import { LEGAL_URLS, WEB_BASE } from '../legal';
 
 export function PrivacySection() {
   const { t } = useTranslation('settings');
@@ -124,8 +125,100 @@ export function PrivacySection() {
         </SettingRow>
       </SettingsCard>
 
+      <ProfileCard playStats={p.play_stats ?? true} onPlayStats={(v) => patch({ play_stats: v })} />
+
       <DataCard />
     </div>
+  );
+}
+
+/**
+ * The Rustic profile (ADR 0168): who sees it, and the play statistics. Both are account settings
+ * shared with the website; the statistics switch is also kept here so the launcher stops
+ * reporting at once, signed in or not.
+ */
+function ProfileCard({
+  playStats,
+  onPlayStats,
+}: {
+  playStats: boolean;
+  onPlayStats: (v: boolean) => void;
+}) {
+  const { t } = useTranslation('settings');
+  const qc = useQueryClient();
+  const { data: me } = useMe();
+  const account = useQuery({
+    queryKey: ['account-settings'],
+    queryFn: async () => (await cloud()).accountSettings(),
+    enabled: !!me,
+    retry: false,
+  });
+  const update = useMutation({
+    mutationFn: async (patch: Partial<Pick<AccountSettings, 'visibility' | 'play_stats'>>) =>
+      (await cloud()).updateAccountSettings(patch),
+    onSuccess: (s) => qc.setQueryData(['account-settings'], s),
+    onError: () => toast({ tone: 'error', title: t('privacy.profile.failed') }),
+  });
+  const a = account.data;
+  // The account's value wins once known (it may have changed on the website).
+  useEffect(() => {
+    if (a && a.play_stats !== playStats) onPlayStats(a.play_stats);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [a?.play_stats]);
+  const username = me?.username;
+  return (
+    <SettingsCard
+      title={t('privacy.profile.title')}
+      description={t('privacy.profile.description')}
+      testId="settings-profile"
+    >
+      <SettingRow
+        label={t('privacy.profile.visibility')}
+        description={
+          a && !a.public_allowed ? t('privacy.profile.minor') : t('privacy.profile.visibilityHint')
+        }
+        htmlFor="p-visibility"
+      >
+        <Select
+          id="p-visibility"
+          className="w-60"
+          value={a?.visibility ?? 'friends'}
+          disabled={!a || update.isPending}
+          onValueChange={(v) => update.mutate({ visibility: v as ProfileVisibility })}
+          options={(['public', 'friends', 'private'] as const).map((v) => ({
+            value: v,
+            label: t(`privacy.profile.options.${v}`),
+            disabled: v === 'public' && a?.public_allowed === false,
+          }))}
+        />
+      </SettingRow>
+      <SettingRow
+        label={t('privacy.profile.playStats')}
+        description={t('privacy.profile.playStatsHint')}
+        htmlFor="p-play-stats"
+      >
+        <Switch
+          id="p-play-stats"
+          data-testid="settings-play-stats"
+          checked={playStats}
+          onCheckedChange={(v) => {
+            onPlayStats(v);
+            if (me) update.mutate({ play_stats: v });
+          }}
+        />
+      </SettingRow>
+      {!me && <p className="text-fg-subtle text-xs">{t('privacy.profile.signedOut')}</p>}
+      {username && (
+        <Button
+          variant="link"
+          size="sm"
+          rightIcon={<ExternalLink />}
+          onClick={() => void invoke('app_open_url', { url: `${WEB_BASE}/account/${username}` })}
+        >
+          {t('privacy.profile.open')}
+        </Button>
+      )}
+    </SettingsCard>
   );
 }
 

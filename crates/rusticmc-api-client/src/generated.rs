@@ -520,6 +520,13 @@ impl Client {
         self.call_empty(Method::POST, path, &query, Some(body)).await
     }
 
+    /// `POST /v1/auth/password/remove`
+    pub async fn password_remove(&self, body: &types::RemovePasswordRequest) -> Result<(), ClientError> {
+        let path = "/v1/auth/password/remove";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, path, &query, Some(body)).await
+    }
+
     /// `POST /v1/auth/password/reset`
     pub async fn auth_reset_password(&self, body: &types::ResetPasswordRequest) -> Result<(), ClientError> {
         let path = "/v1/auth/password/reset";
@@ -562,6 +569,13 @@ impl Client {
         self.call_empty(Method::POST, path, &query, Some(body)).await
     }
 
+    /// `GET /v1/avatars/defaults`
+    pub async fn avatars_defaults(&self) -> Result<Vec<types::DefaultAvatar>, ClientError> {
+        let path = "/v1/avatars/defaults";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/blocks`
     pub async fn blocks_list(&self) -> Result<Vec<types::PublicUser>, ClientError> {
         let path = "/v1/blocks";
@@ -581,6 +595,13 @@ impl Client {
         let path = format!("/v1/blocks/{}", seg(user_id));
         let query: Vec<(&str, String)> = Vec::new();
         self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/contact`
+    pub async fn contact_send(&self, body: &types::ContactRequest) -> Result<types::ContactAccepted, ClientError> {
+        let path = "/v1/contact";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
     }
 
     /// `GET /v1/content/catalog`
@@ -883,6 +904,13 @@ impl Client {
         self.call_empty(Method::DELETE, path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/integrations/discord/contact/{id}`: `GET /v1/integrations/discord/contact/{id}`: the notice the bot posts for the staff (no email address, a short excerpt only).
+    pub async fn discord_contact(&self, id: uuid::Uuid) -> Result<types::DiscordContactNotice, ClientError> {
+        let path = format!("/v1/integrations/discord/contact/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/integrations/discord/content/{id}`
     pub async fn discord_content(&self, id: &str) -> Result<types::DiscordContentSnapshot, ClientError> {
         let path = format!("/v1/integrations/discord/content/{}", seg(id));
@@ -1005,6 +1033,20 @@ impl Client {
         let path = "/v1/me/2fa/recovery-codes";
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::POST, path, &query, Some(body)).await
+    }
+
+    /// `PUT /v1/me/avatar`
+    pub async fn avatar_choose(&self, body: &types::ChooseAvatarRequest) -> Result<types::AvatarInfo, ClientError> {
+        let path = "/v1/me/avatar";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/me/avatar`
+    pub async fn avatar_reset(&self) -> Result<types::AvatarInfo, ClientError> {
+        let path = "/v1/me/avatar";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::DELETE, path, &query, None::<&()>).await
     }
 
     /// `GET /v1/me/consents`
@@ -1133,11 +1175,60 @@ impl Client {
         self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
     }
 
+    /// `POST /v1/me/play-sessions`
+    pub async fn play_session_report(&self, body: &types::PlaySessionReport) -> Result<types::PlaySessionState, ClientError> {
+        let path = "/v1/me/play-sessions";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/me/play-sessions/{id}/end`
+    pub async fn play_session_end(&self, id: uuid::Uuid) -> Result<(), ClientError> {
+        let path = format!("/v1/me/play-sessions/{}/end", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/me/play-sessions/{id}/heartbeat`
+    pub async fn play_session_heartbeat(&self, id: uuid::Uuid) -> Result<types::PlaySessionState, ClientError> {
+        let path = format!("/v1/me/play-sessions/{}/heartbeat", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/me/play-stats`
+    pub async fn my_play_stats(&self) -> Result<types::MyPlayStats, ClientError> {
+        let path = "/v1/me/play-stats";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `DELETE /v1/me/play-stats`
+    pub async fn my_play_stats_erase(&self) -> Result<(), ClientError> {
+        let path = "/v1/me/play-stats";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::DELETE, path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/me/server-listings`
     pub async fn my_listings(&self) -> Result<Vec<types::ServerListing>, ClientError> {
         let path = "/v1/me/server-listings";
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/me/settings`
+    pub async fn settings_get(&self) -> Result<types::AccountSettings, ClientError> {
+        let path = "/v1/me/settings";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `PATCH /v1/me/settings`
+    pub async fn settings_update(&self, body: &types::UpdateAccountSettingsRequest) -> Result<types::AccountSettings, ClientError> {
+        let path = "/v1/me/settings";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PATCH, path, &query, Some(body)).await
     }
 
     /// `GET /v1/messages/{user_id}`
@@ -1363,6 +1454,13 @@ impl Client {
         let path = "/v1/presence";
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::PUT, path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/profiles/{username}`
+    pub async fn profile_get(&self, username: &str) -> Result<types::PublicProfile, ClientError> {
+        let path = format!("/v1/profiles/{}", seg(username));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
     }
 
     /// `POST /v1/public/minecraft/lookup`
@@ -1787,15 +1885,18 @@ pub const OPERATIONS: &[&str] = &[
     "auth_microsoft_link",
     "auth_change_password",
     "auth_forgot_password",
+    "password_remove",
     "auth_reset_password",
     "password_set",
     "auth_refresh",
     "auth_signup",
     "auth_verify_email",
     "auth_resend_verification",
+    "avatars_defaults",
     "blocks_list",
     "blocks_add",
     "blocks_remove",
+    "contact_send",
     "content_catalog",
     "content_denylist",
     "content_publish",
@@ -1835,6 +1936,7 @@ pub const OPERATIONS: &[&str] = &[
     "hosting_waitlist_get",
     "hosting_waitlist_join",
     "hosting_waitlist_leave",
+    "discord_contact",
     "discord_content",
     "discord_link_state",
     "discord_profile",
@@ -1851,6 +1953,8 @@ pub const OPERATIONS: &[&str] = &[
     "totp_disable",
     "totp_enroll",
     "totp_regenerate_recovery",
+    "avatar_choose",
+    "avatar_reset",
     "consents_get",
     "consents_accept_privacy",
     "consents_set_telemetry",
@@ -1869,7 +1973,14 @@ pub const OPERATIONS: &[&str] = &[
     "library_list",
     "library_add",
     "library_remove",
+    "play_session_report",
+    "play_session_end",
+    "play_session_heartbeat",
+    "my_play_stats",
+    "my_play_stats_erase",
     "my_listings",
+    "settings_get",
+    "settings_update",
     "messages_history",
     "messages_send",
     "messages_mark_read",
@@ -1900,6 +2011,7 @@ pub const OPERATIONS: &[&str] = &[
     "party_transfer_leader",
     "party_leave",
     "presence_update",
+    "profile_get",
     "minecraft_lookup_batch",
     "minecraft_lookup",
     "reports_create",

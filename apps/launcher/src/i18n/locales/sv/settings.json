@@ -394,6 +394,23 @@
       "confirmBody": "Dina vänner, din kosmetika och dina köp tas bort efter 30 dagar. Din spellicens och ditt Microsoft-konto påverkas inte.",
       "confirmButton": "Radera mitt konto",
       "typeUsername": "Skriv {{name}} för att bekräfta"
+    },
+    "profile": {
+      "title": "Rustic-profil",
+      "description": "Din sida på rustic-launcher.com, delad med webbplatsens inställningar.",
+      "visibility": "Vem som ser min profil",
+      "visibilityHint": "Alla andra ser bara ditt huvud och ditt namn.",
+      "minor": "Profiler för spelare under 18 är aldrig offentliga.",
+      "options": {
+        "public": "Alla",
+        "friends": "Bara vänner",
+        "private": "Bara jag"
+      },
+      "playStats": "Dela spelstatistik",
+      "playStatsHint": "Spelade timmar, utgåva och offentliga servrar, för din profil. Världar namnges aldrig; LAN- och privata adresser skickas aldrig.",
+      "signedOut": "Logga in på Rustic för att välja vem som ser din profil.",
+      "open": "Öppna min profil",
+      "failed": "Inställningen kunde inte sparas"
     }
   },
   "parental": {

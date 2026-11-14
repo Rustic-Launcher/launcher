@@ -394,6 +394,23 @@
       "confirmBody": "Bạn bè, vật phẩm trang trí và giao dịch mua của bạn sẽ bị xóa sau 30 ngày. Giấy phép trò chơi và tài khoản Microsoft của bạn không bị ảnh hưởng.",
       "confirmButton": "Xóa tài khoản của tôi",
       "typeUsername": "Nhập {{name}} để xác nhận"
+    },
+    "profile": {
+      "title": "Hồ sơ Rustic",
+      "description": "Trang của bạn trên rustic-launcher.com, dùng chung cài đặt với trang web.",
+      "visibility": "Ai thấy hồ sơ của tôi",
+      "visibilityHint": "Những người khác chỉ thấy đầu và tên của bạn.",
+      "minor": "Hồ sơ của người chơi dưới 18 tuổi không bao giờ công khai.",
+      "options": {
+        "public": "Mọi người",
+        "friends": "Chỉ bạn bè",
+        "private": "Chỉ mình tôi"
+      },
+      "playStats": "Chia sẻ thống kê chơi",
+      "playStatsHint": "Số giờ đã chơi, phiên bản và máy chủ công khai, cho hồ sơ của bạn. Tên thế giới không bao giờ được gửi; địa chỉ LAN và địa chỉ riêng không bao giờ được gửi.",
+      "signedOut": "Đăng nhập vào Rustic để chọn ai thấy hồ sơ của bạn.",
+      "open": "Mở hồ sơ của tôi",
+      "failed": "Không thể lưu cài đặt"
     }
   },
   "parental": {

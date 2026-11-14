@@ -44,6 +44,11 @@ wire! {
         /// Rustic's own content and never signs in.
         #[serde(default)]
         pub official: bool,
+        /// The account's avatar (a 64x64 PNG on the CDN, ADR 0168): a chosen default head, the
+        /// head of an uploaded skin, or the default head assigned from the account id. `None`
+        /// only from services that cannot build CDN URLs.
+        #[serde(default)]
+        pub avatar_url: Option<String>,
     }
 }
 
@@ -206,6 +211,18 @@ wire! {
         /// Whether the account can sign in with an email and password.
         pub has_password: bool,
         pub identities: Vec<ExternalIdentity>,
+        /// The account has an email address (needed to sign in with a password).
+        #[serde(default)]
+        pub has_email: bool,
+        /// That address is verified (a password can only be set on a verified address).
+        #[serde(default)]
+        pub email_verified: bool,
+    }
+
+    /// Removes the password (ADR 0168): allowed only while another sign-in method (Microsoft)
+    /// stays linked.
+    pub struct RemovePasswordRequest {
+        pub current_password: String,
     }
 
     /// First password of an account created with Microsoft.
@@ -313,6 +330,9 @@ wire! {
         /// `capabilities.discoverable_allowed` (always off for minors). ADR 0145.
         #[serde(default)]
         pub discoverable: bool,
+        /// The account's avatar (ADR 0168), as others see it.
+        #[serde(default)]
+        pub avatar_url: Option<String>,
     }
 
     pub struct UpdateMeRequest {
@@ -2689,6 +2709,27 @@ wire! {
         pub projects: Vec<DiscordProjectSummary>,
         /// Public server listings (at most 5).
         pub servers: Vec<DiscordServerSummary>,
+        /// What the asking member may see of the Rustic profile (ADR 0168): the profile's
+        /// visibility and section settings apply as on the website, the asking member being
+        /// whoever their Discord account is linked to. `None` from an older API.
+        #[serde(default)]
+        pub access: Option<ProfileAccess>,
+        /// `rustic-launcher.com/account/<username>`.
+        #[serde(default)]
+        pub profile_url: Option<String>,
+        #[serde(default)]
+        pub member_since: Option<DateTime<Utc>>,
+        #[serde(default)]
+        pub bio: Option<String>,
+        #[serde(default)]
+        pub badges: Option<ProfileBadges>,
+        /// Play statistics, when the profile shows them to the asking member.
+        #[serde(default)]
+        pub play: Option<ProfileStats>,
+        #[serde(default)]
+        pub activity: Option<ProfileActivity>,
+        #[serde(default)]
+        pub friends_count: Option<i64>,
     }
 
     /// `GET /v1/integrations/discord/links/{discord_id}`: whether a Discord account is linked
@@ -2696,6 +2737,356 @@ wire! {
     pub struct DiscordLinkState {
         pub discord_id: String,
         pub linked: bool,
+    }
+}
+
+// ---------------------------------------------------------------- profiles (ADR 0168)
+
+wire! {
+    /// Who may open a profile page. Minors are never `public` (it is stored but shown as
+    /// `friends`).
+    #[derive(Copy, Eq, Hash, Default)]
+    #[serde(rename_all = "snake_case")]
+    pub enum ProfileVisibility {
+        Public,
+        #[default]
+        Friends,
+        Private,
+    }
+
+    /// Who sees one section of a visible profile.
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum SectionVisibility {
+        Public,
+        Friends,
+        Hidden,
+    }
+
+    /// Per-section choices. A section never reaches further than the profile itself.
+    pub struct ProfileSections {
+        /// Hours played, servers played, recently played, sessions.
+        pub stats: SectionVisibility,
+        /// Online now / last seen and the current activity.
+        pub activity: SectionVisibility,
+        pub friends: SectionVisibility,
+        /// The account's public server directory listings.
+        pub servers: SectionVisibility,
+        /// The account's public marketplace projects.
+        pub content: SectionVisibility,
+        /// Owned and equipped cosmetics.
+        pub locker: SectionVisibility,
+        /// The linked game profile name (never shown to others for a minor).
+        pub game_name: SectionVisibility,
+    }
+
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum AvatarKind {
+        /// One of the default heads, chosen or assigned from the account id.
+        Default,
+        /// The head (face + hat layer) of a skin the player uploaded.
+        Skin,
+    }
+
+    pub struct AvatarInfo {
+        pub url: Option<String>,
+        pub kind: AvatarKind,
+        /// The default head in use (1-20), when `kind` is `default`.
+        pub default_id: Option<i32>,
+        /// `false` while the player never chose: the head comes from the account id.
+        pub chosen: bool,
+    }
+
+    pub struct DefaultAvatar {
+        pub id: i32,
+        pub url: String,
+    }
+
+    /// `GET /v1/me/settings`: the account settings stored server-side and shared by the website
+    /// and the launcher (ADR 0168). Display name, country and language stay on `/v1/me`.
+    pub struct AccountSettings {
+        /// As chosen.
+        pub visibility: ProfileVisibility,
+        pub sections: ProfileSections,
+        /// What applies (a minor's `public` reads `friends`).
+        pub effective_visibility: ProfileVisibility,
+        pub effective_sections: ProfileSections,
+        /// `false` for minors: `public` is refused (`public_not_allowed`).
+        pub public_allowed: bool,
+        /// The launcher reports play sessions for the profile's statistics (default on).
+        pub play_stats: bool,
+        /// Short text on the profile (at most 160 characters).
+        pub bio: String,
+        /// Product news by email (opt-in, default off).
+        pub email_news: bool,
+        /// Staff only: show the staff role on the profile (default on).
+        pub show_role: bool,
+        pub avatar: AvatarInfo,
+    }
+
+    /// `PATCH /v1/me/settings`: only the fields present change.
+    pub struct UpdateAccountSettingsRequest {
+        #[serde(default)]
+        pub visibility: Option<ProfileVisibility>,
+        #[serde(default)]
+        pub sections: Option<ProfileSections>,
+        #[serde(default)]
+        pub play_stats: Option<bool>,
+        #[serde(default)]
+        pub bio: Option<String>,
+        #[serde(default)]
+        pub email_news: Option<bool>,
+        #[serde(default)]
+        pub show_role: Option<bool>,
+    }
+
+    /// `PUT /v1/me/avatar`: one of the default heads.
+    pub struct ChooseAvatarRequest {
+        pub default_id: i32,
+    }
+
+    /// What the viewer was allowed to see.
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum ProfileAccess {
+        /// The profile (each section by its own rule).
+        Full,
+        /// Only the card: the profile is for friends and the viewer is not one.
+        FriendsOnly,
+        /// Only the card: the profile is private.
+        Private,
+    }
+
+    pub struct ProfileBadges {
+        pub official: bool,
+        /// At least one verified marketplace project.
+        pub verified_creator: bool,
+        /// `moderator` or `admin`, when the staff member shows it.
+        pub staff_role: Option<Role>,
+    }
+
+    /// One server in the statistics. Servers that are not public directory listings are shown
+    /// to others as one "other servers" line (`listing` empty); the owner also sees `address`.
+    pub struct ProfileServerStat {
+        /// The public directory listing this address belongs to (slug, name, icon).
+        pub listing: Option<ProfilePlace>,
+        /// Only for the owner of the profile (their own data), never for others.
+        pub address: Option<String>,
+        pub seconds: i64,
+        pub sessions: i32,
+        pub last_played_at: DateTime<Utc>,
+    }
+
+    /// A public directory listing named on a profile.
+    pub struct ProfilePlace {
+        pub slug: String,
+        pub name: String,
+        pub icon_url: Option<String>,
+    }
+
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum RecentKind {
+        Server,
+        /// A world on the player's PC (never named).
+        Singleplayer,
+    }
+
+    pub struct ProfileRecent {
+        pub kind: RecentKind,
+        /// The server's public listing; `None` for a private server or singleplayer.
+        pub listing: Option<ProfilePlace>,
+        pub last_played_at: DateTime<Utc>,
+    }
+
+    pub struct ProfileStats {
+        pub total_seconds: i64,
+        pub sessions: i32,
+        pub singleplayer_seconds: i64,
+        /// Most played first (at most 8 listed servers, then one line for the others).
+        pub servers: Vec<ProfileServerStat>,
+        /// Most recent first (at most 6).
+        pub recent: Vec<ProfileRecent>,
+        pub first_played_at: Option<DateTime<Utc>>,
+    }
+
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum ProfileActivityKind {
+        InLauncher,
+        InGame,
+        Hosting,
+    }
+
+    pub struct ProfileActivity {
+        pub online: bool,
+        pub kind: Option<ProfileActivityKind>,
+        /// The public directory listing the player is on, when they share their server.
+        pub listing: Option<ProfilePlace>,
+        /// On a server that is not a public listing (or not shared): "on a server".
+        pub on_server: bool,
+        /// Last time the player was online (to the minute).
+        pub last_seen_at: Option<DateTime<Utc>>,
+    }
+
+    pub struct ProfileFriends {
+        pub count: i64,
+        /// Friends the viewer may see the profile of (at most 24).
+        pub users: Vec<PublicUser>,
+    }
+
+    pub struct ProfileServer {
+        pub slug: String,
+        pub name: String,
+        pub address: String,
+        pub summary: String,
+        pub icon_url: Option<String>,
+        pub online: Option<bool>,
+        pub players_online: Option<i32>,
+        pub verified: bool,
+    }
+
+    pub struct ProfileProject {
+        pub id: String,
+        pub kind: ContentKind,
+        pub name: String,
+        pub summary: String,
+        pub icon_url: Option<String>,
+        pub downloads: i64,
+        pub verified: bool,
+    }
+
+    pub struct ProfileCosmetic {
+        pub id: Uuid,
+        pub name: String,
+        pub slot: CosmeticSlot,
+        pub equipped: bool,
+    }
+
+    pub struct ProfileLocker {
+        pub owned_count: i64,
+        /// Equipped first (at most 48).
+        pub items: Vec<ProfileCosmetic>,
+    }
+
+    /// `GET /v1/profiles/{username}`: the page `rustic-launcher.com/account/<username>`. Every
+    /// section is `None` when the viewer may not see it.
+    pub struct PublicProfile {
+        pub user: PublicUser,
+        pub access: ProfileAccess,
+        pub is_self: bool,
+        pub is_friend: bool,
+        /// Search engines may index the page (a public profile seen by anyone).
+        pub indexable: bool,
+        pub bio: Option<String>,
+        pub member_since: Option<DateTime<Utc>>,
+        pub badges: Option<ProfileBadges>,
+        pub game_name: Option<String>,
+        pub stats: Option<ProfileStats>,
+        pub activity: Option<ProfileActivity>,
+        pub friends: Option<ProfileFriends>,
+        pub servers: Option<Vec<ProfileServer>>,
+        pub content: Option<Vec<ProfileProject>>,
+        pub locker: Option<ProfileLocker>,
+        /// The owner's own view: what applies to others.
+        pub settings: Option<AccountSettings>,
+    }
+
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum PlayPlaceKind {
+        /// The title screen and the other menus outside a world.
+        Menu,
+        Singleplayer,
+        Server,
+    }
+
+    /// `POST /v1/me/play-sessions`: the game started, or moved (menu, a world, a server). The
+    /// cloud times everything itself; the launcher only says where the player is.
+    pub struct PlaySessionReport {
+        /// The launcher's id for this run of the game (one per launch).
+        pub session_id: Uuid,
+        /// `rustic` (the Rustic edition) or `horizon`.
+        pub edition: String,
+        #[serde(default)]
+        pub game_version: Option<String>,
+        pub place: PlayPlaceKind,
+        /// The server's address as typed, for `server` (LAN and private addresses are not kept).
+        #[serde(default)]
+        pub server_address: Option<String>,
+    }
+
+    pub struct PlaySessionState {
+        /// `false` when the account turned play statistics off: nothing was recorded.
+        pub recording: bool,
+    }
+
+    /// `GET /v1/me/play-stats`: the owner's own statistics, with every address.
+    pub struct MyPlayStats {
+        pub enabled: bool,
+        pub stats: ProfileStats,
+        /// Raw sessions are kept 90 days, the totals until erased.
+        pub raw_sessions: i64,
+    }
+}
+
+// ---------------------------------------------------------------- contact form
+
+wire! {
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum ContactCategory {
+        Support,
+        Account,
+        /// Purchases and billing.
+        Billing,
+        Partnership,
+        Press,
+        /// Report abuse.
+        Abuse,
+        Other,
+    }
+
+    /// `POST /v1/contact` (the website's contact page).
+    pub struct ContactRequest {
+        pub name: String,
+        pub email: String,
+        pub category: ContactCategory,
+        pub subject: String,
+        pub message: String,
+        /// Optional link (a screenshot, a page).
+        #[serde(default)]
+        pub link: Option<String>,
+        /// The sender agreed to the processing of their message (required).
+        pub consent: bool,
+        #[serde(default)]
+        pub locale: Option<String>,
+        /// Honeypot: a hidden field people leave empty.
+        #[serde(default)]
+        pub website: Option<String>,
+        /// Milliseconds between the form showing and its sending.
+        #[serde(default)]
+        pub elapsed_ms: Option<i64>,
+    }
+
+    pub struct ContactAccepted {
+        /// `None` when the message was dropped as spam (answered the same way).
+        pub id: Option<Uuid>,
+    }
+
+    /// The staff notice the Discord bot posts for a contact message (no email address).
+    pub struct DiscordContactNotice {
+        /// Short reference, also in the emails' subjects.
+        pub reference: String,
+        pub category: ContactCategory,
+        pub name: String,
+        pub subject: String,
+        /// The first 300 characters.
+        pub excerpt: String,
+        /// Sent by a signed-in member.
+        pub signed_in: bool,
+        pub created_at: DateTime<Utc>,
     }
 }
 

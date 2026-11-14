@@ -394,6 +394,23 @@
       "confirmBody": "Twoi znajomi, kosmetyki i zakupy zostaną usunięte po 30 dniach. Nie dotyczy to licencji gry ani konta Microsoft.",
       "confirmButton": "Usuń moje konto",
       "typeUsername": "Wpisz {{name}}, aby potwierdzić"
+    },
+    "profile": {
+      "title": "Profil Rustic",
+      "description": "Twoja strona na rustic-launcher.com, wspólna z ustawieniami strony.",
+      "visibility": "Kto widzi mój profil",
+      "visibilityHint": "Wszyscy inni widzą tylko twoją głowę i nazwę.",
+      "minor": "Profile graczy poniżej 18 lat nigdy nie są publiczne.",
+      "options": {
+        "public": "Wszyscy",
+        "friends": "Tylko znajomi",
+        "private": "Tylko ja"
+      },
+      "playStats": "Udostępniaj statystyki gry",
+      "playStatsHint": "Rozegrane godziny, edycja i serwery publiczne, na potrzeby twojego profilu. Światy nigdy nie są nazywane; adresy LAN i prywatne nigdy nie są wysyłane.",
+      "signedOut": "Zaloguj się do Rustic, aby wybrać, kto widzi twój profil.",
+      "open": "Otwórz mój profil",
+      "failed": "Nie udało się zapisać ustawienia"
     }
   },
   "parental": {

@@ -14,6 +14,8 @@ export interface UserLite {
   id: string;
   username: string;
   display_name: string;
+  /** The Rustic avatar (a 64x64 pixel-art head on the CDN; ADR 0168). */
+  avatar_url?: string | null;
 }
 
 export interface Activity {
@@ -354,3 +356,17 @@ export type ContentReportReason =
   | 'copyright'
   | 'malware'
   | 'other';
+
+/** Profile visibility on rustic-launcher.com/account/<username> (ADR 0168). */
+export type ProfileVisibility = 'public' | 'friends' | 'private';
+
+/** The account settings shared by the website and the launcher (ADR 0168). */
+export interface AccountSettings {
+  visibility: ProfileVisibility;
+  /** What applies: a minor's `public` reads `friends`. */
+  effective_visibility: ProfileVisibility;
+  /** `false` for minors: `public` is refused. */
+  public_allowed: boolean;
+  /** The launcher reports play sessions (default on). */
+  play_stats: boolean;
+}

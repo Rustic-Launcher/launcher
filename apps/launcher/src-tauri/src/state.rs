@@ -57,6 +57,10 @@ pub struct AppState {
     pub http: rusticmc_launcher_core::reqwest::Client,
     /// Automatic updates of the launcher and the Rustic edition (ADR 0162).
     pub updates: crate::update::Updates,
+    /// Play sessions reported for the Rustic profile's statistics (ADR 0168).
+    pub play_stats: crate::play_stats::PlayStats,
+    /// Settings › Privacy › "Share play statistics", read by the reporter's task.
+    pub play_stats_enabled: Arc<std::sync::atomic::AtomicBool>,
 }
 
 /// What the launcher shows of a VPS server (the registry keeps only its reference).
@@ -120,6 +124,7 @@ fn default_settings(paths: &LauncherPaths, config: &LauncherConfig) -> Settings 
             friend_requests_from: "friends_of_friends".into(),
             discord_presence: true,
             discord_show_server: true,
+            play_stats: true,
         },
         onboarding_completed: false,
     }
@@ -194,6 +199,17 @@ impl AppState {
             .flatten()
             .unwrap_or_else(|| default_settings(&paths, &config));
         let discord = crate::discord::Discord::start(settings.privacy.discord());
+        let play_stats_enabled = Arc::new(std::sync::atomic::AtomicBool::new(
+            settings.privacy.play_stats,
+        ));
+        let play_stats = {
+            let on = play_stats_enabled.clone();
+            crate::play_stats::PlayStats::start(
+                cloud.clone(),
+                rustic.clone(),
+                Arc::new(move || on.load(std::sync::atomic::Ordering::Relaxed)),
+            )
+        };
         let updates = crate::update::Updates::new(
             paths.config_dir(),
             &app.package_info().version.to_string(),
@@ -202,6 +218,8 @@ impl AppState {
         Ok(Self {
             updates,
             discord,
+            play_stats,
+            play_stats_enabled,
             skins: Default::default(),
             http: http.clone(),
             tasks: Arc::new(Tasks::new(app.clone())),

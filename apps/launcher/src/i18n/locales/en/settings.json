@@ -394,6 +394,23 @@
       "confirmBody": "Your friends, cosmetics and purchases will be removed after 30 days. Your game licence and Microsoft account are not affected.",
       "confirmButton": "Delete my account",
       "typeUsername": "Type {{name}} to confirm"
+    },
+    "profile": {
+      "title": "Rustic profile",
+      "description": "Your page on rustic-launcher.com, shared with the website's settings.",
+      "visibility": "Who sees my profile",
+      "visibilityHint": "Everyone else only sees your head and your name.",
+      "minor": "Profiles of players under 18 are never public.",
+      "options": {
+        "public": "Everyone",
+        "friends": "Friends only",
+        "private": "Only me"
+      },
+      "playStats": "Share play statistics",
+      "playStatsHint": "Hours played, edition and public servers, for your profile. Worlds are never named; LAN and private addresses are never sent.",
+      "signedOut": "Sign in to Rustic to choose who sees your profile.",
+      "open": "Open my profile",
+      "failed": "The setting could not be saved"
     }
   },
   "parental": {

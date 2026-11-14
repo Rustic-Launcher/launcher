@@ -187,6 +187,41 @@ impl ApiCloud {
             .await
     }
 
+    /// Play statistics (ADR 0168): the game started or moved. `false`: the account turned the
+    /// statistics off (nothing recorded).
+    pub async fn play_session(
+        &self,
+        access: &Secret,
+        report: &rusticmc_api_client::types::PlaySessionReport,
+    ) -> Result<bool> {
+        let r: rusticmc_api_client::types::PlaySessionState = self
+            .json(
+                reqwest::Method::POST,
+                "/v1/me/play-sessions",
+                Some(access),
+                &[],
+                Some(report),
+            )
+            .await?;
+        Ok(r.recording)
+    }
+
+    /// Still playing (every few minutes; a run without news is closed after 15).
+    pub async fn play_session_heartbeat(&self, access: &Secret, run: &str) -> Result<()> {
+        let path = format!("/v1/me/play-sessions/{run}/heartbeat");
+        self.send(reqwest::Method::POST, &path, Some(access), &[], None::<&()>)
+            .await
+            .map(|_| ())
+    }
+
+    /// The game closed.
+    pub async fn play_session_end(&self, access: &Secret, run: &str) -> Result<()> {
+        let path = format!("/v1/me/play-sessions/{run}/end");
+        self.send(reqwest::Method::POST, &path, Some(access), &[], None::<&()>)
+            .await
+            .map(|_| ())
+    }
+
     /// Creates a Rustic account (the verification mail is sent by the cloud).
     pub async fn signup(&self, req: &SignupRequest) -> Result<SignupResponse> {
         self.json(

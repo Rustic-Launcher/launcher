@@ -394,6 +394,23 @@
       "confirmBody": "Tví přátelé, kosmetika a nákupy budou po 30 dnech odstraněny. Licence hry a účet Microsoft nejsou dotčeny.",
       "confirmButton": "Smazat můj účet",
       "typeUsername": "Pro potvrzení napiš {{name}}"
+    },
+    "profile": {
+      "title": "Profil Rustic",
+      "description": "Tvoje stránka na rustic-launcher.com, sdílená s nastavením webu.",
+      "visibility": "Kdo vidí můj profil",
+      "visibilityHint": "Všichni ostatní vidí jen tvoji hlavu a jméno.",
+      "minor": "Profily hráčů mladších 18 let nejsou nikdy veřejné.",
+      "options": {
+        "public": "Všichni",
+        "friends": "Jen přátelé",
+        "private": "Jen já"
+      },
+      "playStats": "Sdílet herní statistiky",
+      "playStatsHint": "Odehrané hodiny, edice a veřejné servery pro tvůj profil. Světy se nikdy nejmenují; adresy LAN a soukromé adresy se nikdy neodesílají.",
+      "signedOut": "Přihlas se k Rustic a vyber, kdo vidí tvůj profil.",
+      "open": "Otevřít můj profil",
+      "failed": "Nastavení se nepodařilo uložit"
     }
   },
   "parental": {

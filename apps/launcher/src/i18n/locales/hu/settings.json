@@ -394,6 +394,23 @@
       "confirmBody": "A barátaid, kozmetikumaid és vásárlásaid 30 nap után törlődnek. A játéklicencedet és a Microsoft-fiókodat ez nem érinti.",
       "confirmButton": "Fiókom törlése",
       "typeUsername": "A megerősítéshez írd be: {{name}}"
+    },
+    "profile": {
+      "title": "Rustic-profil",
+      "description": "Az oldalad a rustic-launcher.com-on, közösen a weboldal beállításaival.",
+      "visibility": "Ki látja a profilomat",
+      "visibilityHint": "Mindenki más csak a fejedet és a nevedet látja.",
+      "minor": "A 18 év alatti játékosok profilja soha nem nyilvános.",
+      "options": {
+        "public": "Bárki",
+        "friends": "Csak barátok",
+        "private": "Csak én"
+      },
+      "playStats": "Játékstatisztikák megosztása",
+      "playStatsHint": "Játszott órák, kiadás és nyilvános szerverek a profilodhoz. A világok nevét és a LAN- vagy privát címeket soha nem küldjük el.",
+      "signedOut": "Jelentkezz be a Rusticba, hogy kiválaszthasd, ki látja a profilodat.",
+      "open": "Profilom megnyitása",
+      "failed": "Nem sikerült menteni a beállítást"
     }
   },
   "parental": {

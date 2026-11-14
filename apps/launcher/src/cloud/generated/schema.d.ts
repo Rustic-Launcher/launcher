@@ -4,12550 +4,13492 @@
  */
 
 export interface paths {
-  '/healthz': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['health_live'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/readyz': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['health_ready'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/audit': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_audit'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/bans': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['admin_ban'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/bans/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post?: never;
-    delete: operations['admin_unban'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/collections': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_collections_list'];
-    put?: never;
-    post: operations['admin_create_collection'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/collections/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post?: never;
-    delete: operations['admin_delete_collection'];
-    options?: never;
-    head?: never;
-    patch: operations['admin_update_collection'];
-    trace?: never;
-  };
-  '/v1/admin/content/denylist/{key}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['admin_content_deny'];
-    post?: never;
-    delete: operations['admin_content_undeny'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/content/projects': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_content_list'];
-    put?: never;
-    post: operations['admin_content_create_project'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/content/projects/{id}/takedown': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['admin_content_takedown'];
-    delete: operations['admin_content_restore'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/content/projects/{id}/verified': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['admin_content_verify'];
-    post?: never;
-    delete: operations['admin_content_unverify'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/content/projects/{id}/versions': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['admin_content_create_version'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/content/review': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_content_review_queue'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/content/versions/{id}/review': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['admin_content_review'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/creator-codes': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['admin_create_creator_code'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/daily-offers': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_daily_offers_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/daily-offers/{day}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['admin_set_daily_offers'];
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/featured-servers': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_featured_list'];
-    put?: never;
-    post: operations['admin_featured_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/featured-servers/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['admin_featured_update'];
-    post?: never;
-    delete: operations['admin_featured_delete'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/gift-cards': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['admin_create_gift_card'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/items': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_items_list'];
-    put?: never;
-    post: operations['admin_create_item'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/news': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_news_list'];
-    put?: never;
-    post: operations['admin_news_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/news/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['admin_news_update'];
-    post?: never;
-    delete: operations['admin_news_delete'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/official': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['official_get'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/official/projects': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    /** Publishes a project as the official account (same rules as `POST /v1/content/projects`). */
-    post: operations['official_publish'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/official/projects/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    /** Edits the page of one of the official account's projects. */
-    patch: operations['official_update'];
-    trace?: never;
-  };
-  '/v1/admin/official/projects/{id}/versions': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    /** Adds a version to one of the official account's projects. */
-    post: operations['official_add_version'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/official/uploads': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    /**
-     * Uploads a file or an image for the official account (same checks as `/v1/content/uploads`;
-     *     `plugin` files are accepted here).
-     */
-    post: operations['official_upload'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/orders/{id}/refund': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['admin_refund_order'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/products': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_products_list'];
-    put?: never;
-    post: operations['admin_create_product'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/products/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch: operations['admin_update_product'];
-    trace?: never;
-  };
-  '/v1/admin/promo-codes': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['admin_create_promo'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/reports': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_reports'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/reports/{id}/resolve': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['admin_resolve_report'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/server-listings': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_listings'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/server-listings/{id}/featured': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['admin_listing_feature'];
-    post?: never;
-    delete: operations['admin_listing_unfeature'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/server-listings/{id}/hidden': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['admin_listing_hide'];
-    delete: operations['admin_listing_unhide'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/server-listings/{id}/verified': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['admin_listing_verify'];
-    post?: never;
-    delete: operations['admin_listing_unverify'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/store/trending': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['admin_set_trending'];
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/admin/users/{id}/bans': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['admin_user_bans'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/handoff': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['handoff_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/handoff/exchange': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['handoff_exchange'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/login': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_login'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/login/mfa': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_login_mfa'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/logout': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_logout'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/microsoft': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_microsoft'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/microsoft/complete': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_microsoft_complete'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/microsoft/link': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_microsoft_link'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/password/change': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_change_password'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/password/forgot': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_forgot_password'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/password/reset': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_reset_password'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/password/set': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['password_set'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/refresh': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_refresh'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/signup': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_signup'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/verify-email': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_verify_email'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/auth/verify-email/resend': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['auth_resend_verification'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/blocks': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['blocks_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/blocks/{user_id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['blocks_add'];
-    post?: never;
-    delete: operations['blocks_remove'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/catalog': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['content_catalog'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/fair-play/denylist': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['content_denylist'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/files/{version_id}/{filename}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    /**
-     * A marketplace file. Public ones: counted, then redirected to the CDN. Private, pending or
-     *     taken-down ones: streamed to their owner or an admin (bearer token or a signed link).
-     */
-    get: operations['content_file'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/projects': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['content_publish'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/projects/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['content_project'];
-    put?: never;
-    post?: never;
-    delete: operations['content_delete'];
-    options?: never;
-    head?: never;
-    patch: operations['content_update'];
-    trace?: never;
-  };
-  '/v1/content/projects/{id}/checkout': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    /**
-     * Paid creator content: refused while creator sales are off (`CREATOR_SALES_ENABLED`, default
-     *     off, no Stripe Connect yet). Free content goes to the library instead.
-     */
-    post: operations['content_checkout'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/projects/{id}/reports': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['content_report'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/projects/{id}/versions': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['content_versions'];
-    put?: never;
-    post: operations['content_add_version'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/search': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['content_search'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/uploads': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    /**
-     * Uploads one file, checked before it is kept (staged for 24 h until a publish request uses
-     *     it). The body is the raw bytes (`Content-Type: application/octet-stream`).
-     */
-    post: operations['content_upload'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/versions/{id}/download-link': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['content_download_link'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/content/versions/{id}/yank': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['content_yank'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/conversations': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['conversations_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/cosmetics/equipped': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['equipped_get'];
-    put: operations['equipped_set'];
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/cosmetics/worn': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['cosmetics_worn'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/emotes/playing': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['emotes_playing'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/featured-servers': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    /**
-     * Staff picks: the featured server listings (ADR 0158) by rank, then any row still active in the
-     *     legacy table (older back-offices). Player counts come from the cloud's last ping.
-     */
-    get: operations['featured_servers_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/friends': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['friends_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/friends/requests': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['friend_requests_list'];
-    put?: never;
-    post: operations['friend_request_send'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/friends/requests/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post?: never;
-    delete: operations['friend_request_cancel'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/friends/requests/{id}/accept': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['friend_request_accept'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/friends/requests/{id}/decline': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['friend_request_decline'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/friends/suggestions': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    /** Players met recently who could become friends (ADR 0145). */
-    get: operations['friend_suggestions'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/friends/{user_id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post?: never;
-    delete: operations['friends_remove'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/guardian/approvals': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['guardian_approvals'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/guardian/approvals/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['guardian_decide'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/guardian/children': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['guardian_children'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/guardian/children/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post?: never;
-    delete: operations['guardian_unlink'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/guardian/children/{id}/controls': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['guardian_update_controls'];
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/guardian/links': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['guardian_link'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/hosting': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['hosting_get'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/hosting/plans': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['hosting_plans'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/hosting/regions': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['hosting_regions'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/hosting/servers': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['hosting_allocate'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/hosting/waitlist': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['hosting_waitlist_get'];
-    put?: never;
-    post: operations['hosting_waitlist_join'];
-    delete: operations['hosting_waitlist_leave'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/integrations/discord/content/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['discord_content'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/integrations/discord/links/{discord_id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['discord_link_state'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/integrations/discord/profile': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['discord_profile'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/integrations/discord/servers/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['discord_server'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/integrations/discord/store/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['discord_store'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/inventory': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['inventory_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/invitations': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['invitations_list'];
-    put?: never;
-    post: operations['invitations_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/invitations/{id}/respond': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['invitations_respond'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/invite-codes/{code}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['invite_code_resolve'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['me_get'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch: operations['me_update'];
-    trace?: never;
-  };
-  '/v1/me/2fa/confirm': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['totp_confirm'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/2fa/disable': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['totp_disable'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/2fa/enroll': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['totp_enroll'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/2fa/recovery-codes': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['totp_regenerate_recovery'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/consents': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['consents_get'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/consents/privacy': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['consents_accept_privacy'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/consents/telemetry': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['consents_set_telemetry'];
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/content': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['my_content'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/delete': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['gdpr_delete'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/delete/cancel': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['gdpr_delete_cancel'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/discord': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['discord_get'];
-    put?: never;
-    post?: never;
-    delete: operations['discord_unlink'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/discord/link': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['discord_link_start'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/discord/link/finish': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['discord_link_finish'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/export': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['gdpr_export'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/guardian': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['guardian_get'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/guardian/invite': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['guardian_invite_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/identities': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['identities_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/identities/{provider}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post?: never;
-    delete: operations['identities_unlink'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/library': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['library_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/library/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['library_add'];
-    post?: never;
-    delete: operations['library_remove'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/server-listings': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['my_listings'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/me/skin': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    /** Skin PNG of the signed-in user's linked Minecraft profile. */
-    get: operations['me_skin'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/messages/{user_id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['messages_history'];
-    put?: never;
-    post: operations['messages_send'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/messages/{user_id}/read': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['messages_mark_read'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/minecraft/accounts': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['minecraft_accounts'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/minecraft/accounts/{uuid}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post?: never;
-    delete: operations['minecraft_unlink'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/minecraft/link/finish': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['minecraft_link_finish'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/minecraft/link/start': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['minecraft_link_start'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/news': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['news_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/news/{slug}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['news_get'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/notifications': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['notifications_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/notifications/read-all': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['notifications_read_all'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/notifications/{id}/read': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['notifications_read'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/orders': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['orders_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/orders/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['orders_get'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/orders/{id}/checkout': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['order_resume_checkout'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/outfits': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['outfits_list'];
-    put?: never;
-    post: operations['outfits_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/outfits/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['outfits_update'];
-    post?: never;
-    delete: operations['outfits_delete'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/outfits/{id}/equip': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['outfits_equip'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/parties': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['party_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/parties/current': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['party_current'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/parties/invites': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['party_invites_list'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/parties/invites/{id}/accept': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['party_invite_accept'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/parties/invites/{id}/decline': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['party_invite_decline'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/parties/{id}/invites': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['party_invite'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/parties/{id}/kick': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['party_kick'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/parties/{id}/leader': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['party_transfer_leader'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/parties/{id}/leave': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['party_leave'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/presence': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put: operations['presence_update'];
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/public/minecraft/lookup': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['minecraft_lookup_batch'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/public/minecraft/{uuid}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['minecraft_lookup'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/reports': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['reports_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/server-listings': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['listings_search'];
-    put?: never;
-    post: operations['listings_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/server-listings/catalog': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['listings_catalog'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/server-listings/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['listings_get'];
-    put?: never;
-    post?: never;
-    delete: operations['listings_delete'];
-    options?: never;
-    head?: never;
-    patch: operations['listings_update'];
-    trace?: never;
-  };
-  '/v1/server-listings/{id}/plays': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    /**
-     * Counts one "Play" press from the launcher (the trending signal). Anonymous: only a per-day
-     *     total is stored; the same player (account, else address) counts once per listing and 6 hours.
-     */
-    post: operations['listings_play'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/server-listings/{id}/reports': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['listings_report'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/servers': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['servers_list'];
-    put?: never;
-    post: operations['servers_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/servers/subdomains/{label}/availability': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['subdomain_availability'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/servers/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['servers_get'];
-    put?: never;
-    post?: never;
-    delete: operations['servers_delete'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/servers/{id}/domains': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['domains_add'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/servers/{id}/domains/{domain_id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['domains_get'];
-    put?: never;
-    post?: never;
-    delete: operations['domains_delete'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/servers/{id}/domains/{domain_id}/verify': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['domains_verify'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/servers/{id}/invite-codes': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['invite_code_create'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/servers/{id}/temp-hostname': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['temp_hostname_allocate'];
-    delete: operations['temp_hostname_release'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/servers/{id}/temp-hostname/renew': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['temp_hostname_renew'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/servers/{id}/tunnel-token': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['tunnel_token'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/sessions': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['sessions_list'];
-    put?: never;
-    post?: never;
-    delete: operations['sessions_revoke_others'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/sessions/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post?: never;
-    delete: operations['sessions_revoke'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/social': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['companion_social'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/social/invites': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['companion_invite'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/social/invites/{id}/accept': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['companion_accept_invite'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/store/catalog': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['store_catalog'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/store/checkout': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['store_checkout'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/store/legal': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['store_legal'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/store/premium/waitlist': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['premium_waitlist_get'];
-    put?: never;
-    post: operations['premium_waitlist_join'];
-    delete: operations['premium_waitlist_leave'];
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/store/products/{slug}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['store_product'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/store/quote': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['store_quote'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/users/lookup': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    /**
-     * Exact-match lookup before a friend request (ADR 0145). Same checks and error codes as
-     *     `friend_request_send`, so blocked users and accounts that may not receive requests are
-     *     indistinguishable (`cannot_add_friend`); the relation is returned instead of the conflicts.
-     */
-    get: operations['users_lookup'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/users/search': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['users_search'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/users/{id}': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['users_get'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/wallet': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get: operations['wallet_get'];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/wallet/redeem': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['wallet_redeem'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  '/v1/webhooks/stripe': {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    get?: never;
-    put?: never;
-    post: operations['stripe_webhook'];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
+    "/healthz": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["health_live"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/readyz": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["health_ready"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/audit": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_audit"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/bans": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["admin_ban"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/bans/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["admin_unban"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/collections": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_collections_list"];
+        put?: never;
+        post: operations["admin_create_collection"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/collections/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["admin_delete_collection"];
+        options?: never;
+        head?: never;
+        patch: operations["admin_update_collection"];
+        trace?: never;
+    };
+    "/v1/admin/content/denylist/{key}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["admin_content_deny"];
+        post?: never;
+        delete: operations["admin_content_undeny"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/content/projects": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_content_list"];
+        put?: never;
+        post: operations["admin_content_create_project"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/content/projects/{id}/takedown": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["admin_content_takedown"];
+        delete: operations["admin_content_restore"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/content/projects/{id}/verified": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["admin_content_verify"];
+        post?: never;
+        delete: operations["admin_content_unverify"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/content/projects/{id}/versions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["admin_content_create_version"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/content/review": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_content_review_queue"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/content/versions/{id}/review": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["admin_content_review"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/creator-codes": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["admin_create_creator_code"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/daily-offers": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_daily_offers_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/daily-offers/{day}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["admin_set_daily_offers"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/featured-servers": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_featured_list"];
+        put?: never;
+        post: operations["admin_featured_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/featured-servers/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["admin_featured_update"];
+        post?: never;
+        delete: operations["admin_featured_delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/gift-cards": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["admin_create_gift_card"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/items": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_items_list"];
+        put?: never;
+        post: operations["admin_create_item"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/news": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_news_list"];
+        put?: never;
+        post: operations["admin_news_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/news/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["admin_news_update"];
+        post?: never;
+        delete: operations["admin_news_delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/official": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["official_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/official/projects": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Publishes a project as the official account (same rules as `POST /v1/content/projects`). */
+        post: operations["official_publish"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/official/projects/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /** Edits the page of one of the official account's projects. */
+        patch: operations["official_update"];
+        trace?: never;
+    };
+    "/v1/admin/official/projects/{id}/versions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Adds a version to one of the official account's projects. */
+        post: operations["official_add_version"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/official/uploads": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Uploads a file or an image for the official account (same checks as `/v1/content/uploads`;
+         *     `plugin` files are accepted here).
+         */
+        post: operations["official_upload"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/orders/{id}/refund": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["admin_refund_order"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/products": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_products_list"];
+        put?: never;
+        post: operations["admin_create_product"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/products/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch: operations["admin_update_product"];
+        trace?: never;
+    };
+    "/v1/admin/promo-codes": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["admin_create_promo"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/reports": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_reports"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/reports/{id}/resolve": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["admin_resolve_report"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/server-listings": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_listings"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/server-listings/{id}/featured": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["admin_listing_feature"];
+        post?: never;
+        delete: operations["admin_listing_unfeature"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/server-listings/{id}/hidden": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["admin_listing_hide"];
+        delete: operations["admin_listing_unhide"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/server-listings/{id}/verified": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["admin_listing_verify"];
+        post?: never;
+        delete: operations["admin_listing_unverify"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/store/trending": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["admin_set_trending"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/users/{id}/bans": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_user_bans"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/handoff": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["handoff_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/handoff/exchange": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["handoff_exchange"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/login": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_login"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/login/mfa": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_login_mfa"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/logout": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_logout"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/microsoft": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_microsoft"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/microsoft/complete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_microsoft_complete"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/microsoft/link": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_microsoft_link"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/password/change": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_change_password"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/password/forgot": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_forgot_password"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/password/remove": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["password_remove"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/password/reset": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_reset_password"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/password/set": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["password_set"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/refresh": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_refresh"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/signup": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_signup"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/verify-email": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_verify_email"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/auth/verify-email/resend": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["auth_resend_verification"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/avatars/defaults": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["avatars_defaults"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/blocks": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["blocks_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/blocks/{user_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["blocks_add"];
+        post?: never;
+        delete: operations["blocks_remove"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/contact": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["contact_send"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/catalog": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["content_catalog"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/fair-play/denylist": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["content_denylist"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/files/{version_id}/{filename}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * A marketplace file. Public ones: counted, then redirected to the CDN. Private, pending or
+         *     taken-down ones: streamed to their owner or an admin (bearer token or a signed link).
+         */
+        get: operations["content_file"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/projects": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["content_publish"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/projects/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["content_project"];
+        put?: never;
+        post?: never;
+        delete: operations["content_delete"];
+        options?: never;
+        head?: never;
+        patch: operations["content_update"];
+        trace?: never;
+    };
+    "/v1/content/projects/{id}/checkout": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Paid creator content: refused while creator sales are off (`CREATOR_SALES_ENABLED`, default
+         *     off, no Stripe Connect yet). Free content goes to the library instead.
+         */
+        post: operations["content_checkout"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/projects/{id}/reports": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["content_report"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/projects/{id}/versions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["content_versions"];
+        put?: never;
+        post: operations["content_add_version"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/search": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["content_search"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/uploads": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Uploads one file, checked before it is kept (staged for 24 h until a publish request uses
+         *     it). The body is the raw bytes (`Content-Type: application/octet-stream`).
+         */
+        post: operations["content_upload"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/versions/{id}/download-link": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["content_download_link"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content/versions/{id}/yank": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["content_yank"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/conversations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["conversations_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/cosmetics/equipped": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["equipped_get"];
+        put: operations["equipped_set"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/cosmetics/worn": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["cosmetics_worn"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/emotes/playing": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["emotes_playing"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/featured-servers": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Staff picks: the featured server listings (ADR 0158) by rank, then any row still active in the
+         *     legacy table (older back-offices). Player counts come from the cloud's last ping.
+         */
+        get: operations["featured_servers_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/friends": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["friends_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/friends/requests": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["friend_requests_list"];
+        put?: never;
+        post: operations["friend_request_send"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/friends/requests/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["friend_request_cancel"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/friends/requests/{id}/accept": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["friend_request_accept"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/friends/requests/{id}/decline": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["friend_request_decline"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/friends/suggestions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Players met recently who could become friends (ADR 0145). */
+        get: operations["friend_suggestions"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/friends/{user_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["friends_remove"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/guardian/approvals": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["guardian_approvals"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/guardian/approvals/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["guardian_decide"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/guardian/children": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["guardian_children"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/guardian/children/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["guardian_unlink"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/guardian/children/{id}/controls": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["guardian_update_controls"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/guardian/links": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["guardian_link"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/hosting": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["hosting_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/hosting/plans": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["hosting_plans"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/hosting/regions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["hosting_regions"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/hosting/servers": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["hosting_allocate"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/hosting/waitlist": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["hosting_waitlist_get"];
+        put?: never;
+        post: operations["hosting_waitlist_join"];
+        delete: operations["hosting_waitlist_leave"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/integrations/discord/contact/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * `GET /v1/integrations/discord/contact/{id}`: the notice the bot posts for the staff (no email
+         *     address, a short excerpt only).
+         */
+        get: operations["discord_contact"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/integrations/discord/content/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["discord_content"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/integrations/discord/links/{discord_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["discord_link_state"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/integrations/discord/profile": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["discord_profile"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/integrations/discord/servers/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["discord_server"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/integrations/discord/store/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["discord_store"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/inventory": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["inventory_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/invitations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["invitations_list"];
+        put?: never;
+        post: operations["invitations_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/invitations/{id}/respond": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["invitations_respond"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/invite-codes/{code}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["invite_code_resolve"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["me_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch: operations["me_update"];
+        trace?: never;
+    };
+    "/v1/me/2fa/confirm": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["totp_confirm"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/2fa/disable": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["totp_disable"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/2fa/enroll": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["totp_enroll"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/2fa/recovery-codes": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["totp_regenerate_recovery"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/avatar": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["avatar_choose"];
+        post?: never;
+        delete: operations["avatar_reset"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/avatar/skin": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["avatar_upload_skin"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/consents": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["consents_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/consents/privacy": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["consents_accept_privacy"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/consents/telemetry": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["consents_set_telemetry"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/content": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["my_content"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/delete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["gdpr_delete"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/delete/cancel": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["gdpr_delete_cancel"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/discord": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["discord_get"];
+        put?: never;
+        post?: never;
+        delete: operations["discord_unlink"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/discord/link": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["discord_link_start"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/discord/link/finish": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["discord_link_finish"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/export": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["gdpr_export"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/guardian": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["guardian_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/guardian/invite": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["guardian_invite_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/identities": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["identities_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/identities/{provider}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["identities_unlink"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/library": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["library_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/library/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["library_add"];
+        post?: never;
+        delete: operations["library_remove"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/play-sessions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["play_session_report"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/play-sessions/{id}/end": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["play_session_end"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/play-sessions/{id}/heartbeat": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["play_session_heartbeat"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/play-stats": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["my_play_stats"];
+        put?: never;
+        post?: never;
+        delete: operations["my_play_stats_erase"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/server-listings": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["my_listings"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/settings": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["settings_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch: operations["settings_update"];
+        trace?: never;
+    };
+    "/v1/me/skin": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Skin PNG of the signed-in user's linked Minecraft profile. */
+        get: operations["me_skin"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/messages/{user_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["messages_history"];
+        put?: never;
+        post: operations["messages_send"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/messages/{user_id}/read": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["messages_mark_read"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/minecraft/accounts": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["minecraft_accounts"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/minecraft/accounts/{uuid}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["minecraft_unlink"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/minecraft/link/finish": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["minecraft_link_finish"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/minecraft/link/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["minecraft_link_start"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/news": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["news_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/news/{slug}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["news_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/notifications": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["notifications_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/notifications/read-all": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["notifications_read_all"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/notifications/{id}/read": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["notifications_read"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/orders": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["orders_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/orders/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["orders_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/orders/{id}/checkout": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["order_resume_checkout"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/outfits": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["outfits_list"];
+        put?: never;
+        post: operations["outfits_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/outfits/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["outfits_update"];
+        post?: never;
+        delete: operations["outfits_delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/outfits/{id}/equip": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["outfits_equip"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/parties": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["party_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/parties/current": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["party_current"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/parties/invites": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["party_invites_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/parties/invites/{id}/accept": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["party_invite_accept"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/parties/invites/{id}/decline": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["party_invite_decline"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/parties/{id}/invites": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["party_invite"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/parties/{id}/kick": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["party_kick"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/parties/{id}/leader": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["party_transfer_leader"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/parties/{id}/leave": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["party_leave"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/presence": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["presence_update"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/profiles/{username}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["profile_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/public/minecraft/lookup": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["minecraft_lookup_batch"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/public/minecraft/{uuid}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["minecraft_lookup"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/reports": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["reports_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/server-listings": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["listings_search"];
+        put?: never;
+        post: operations["listings_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/server-listings/catalog": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["listings_catalog"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/server-listings/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["listings_get"];
+        put?: never;
+        post?: never;
+        delete: operations["listings_delete"];
+        options?: never;
+        head?: never;
+        patch: operations["listings_update"];
+        trace?: never;
+    };
+    "/v1/server-listings/{id}/plays": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Counts one "Play" press from the launcher (the trending signal). Anonymous: only a per-day
+         *     total is stored; the same player (account, else address) counts once per listing and 6 hours.
+         */
+        post: operations["listings_play"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/server-listings/{id}/reports": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["listings_report"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/servers": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["servers_list"];
+        put?: never;
+        post: operations["servers_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/servers/subdomains/{label}/availability": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["subdomain_availability"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/servers/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["servers_get"];
+        put?: never;
+        post?: never;
+        delete: operations["servers_delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/servers/{id}/domains": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["domains_add"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/servers/{id}/domains/{domain_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["domains_get"];
+        put?: never;
+        post?: never;
+        delete: operations["domains_delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/servers/{id}/domains/{domain_id}/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["domains_verify"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/servers/{id}/invite-codes": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["invite_code_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/servers/{id}/temp-hostname": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["temp_hostname_allocate"];
+        delete: operations["temp_hostname_release"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/servers/{id}/temp-hostname/renew": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["temp_hostname_renew"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/servers/{id}/tunnel-token": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["tunnel_token"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/sessions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["sessions_list"];
+        put?: never;
+        post?: never;
+        delete: operations["sessions_revoke_others"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/sessions/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["sessions_revoke"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/social": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["companion_social"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/social/invites": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["companion_invite"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/social/invites/{id}/accept": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["companion_accept_invite"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/store/catalog": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["store_catalog"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/store/checkout": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["store_checkout"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/store/legal": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["store_legal"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/store/premium/waitlist": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["premium_waitlist_get"];
+        put?: never;
+        post: operations["premium_waitlist_join"];
+        delete: operations["premium_waitlist_leave"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/store/products/{slug}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["store_product"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/store/quote": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["store_quote"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/users/lookup": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Exact-match lookup before a friend request (ADR 0145). Same checks and error codes as
+         *     `friend_request_send`, so blocked users and accounts that may not receive requests are
+         *     indistinguishable (`cannot_add_friend`); the relation is returned instead of the conflicts.
+         */
+        get: operations["users_lookup"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/users/search": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["users_search"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/users/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["users_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/wallet": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["wallet_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/wallet/redeem": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["wallet_redeem"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/webhooks/stripe": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["stripe_webhook"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
-  schemas: {
-    /** @enum {string} */
-    AcquisitionSource: 'purchase' | 'gift' | 'promo' | 'grant';
-    Activity: {
-      kind: components['schemas']['ActivityKind'];
-      instance_name?: string | null;
-      server_name?: string | null;
-      /** @description Only forwarded to friends when the user marked the server as shareable. */
-      server_address?: string | null;
-    };
-    /** @enum {string} */
-    ActivityKind: 'in_launcher' | 'playing' | 'hosting';
-    AddDomainRequest: {
-      hostname: string;
-      /** @description Registrable zone; defaults to the last two labels of `hostname`. */
-      zone?: string | null;
-    };
-    /** @description A collection as staff see it. */
-    AdminCollection: {
-      /** Format: uuid */
-      id: string;
-      slug: string;
-      name: string;
-      description: string;
-      accent: string;
-      hero: boolean;
-      /** @description In display order (inactive products included). */
-      product_ids: string[];
-      active: boolean;
-      /** Format: int32 */
-      sort: number;
-      /** Format: date-time */
-      created_at: string;
-    };
-    AdminContentList: {
-      items: components['schemas']['ContentProject'][];
-      has_more: boolean;
-      /** Format: int64 */
-      total: number;
-    };
-    /** @description A featured server as staff see it. */
-    AdminFeaturedServer: {
-      server: components['schemas']['FeaturedServer'];
-      active: boolean;
-      /** Format: date-time */
-      created_at: string;
-    };
-    /** @description A news item as staff see it (drafts included). */
-    AdminNewsItem: {
-      /** Format: uuid */
-      id: string;
-      slug: string;
-      source: components['schemas']['NewsSource'];
-      kind: components['schemas']['NewsKind'];
-      title: string;
-      summary: string;
-      body: string;
-      external_url?: string | null;
-      version?: string | null;
-      locale: string;
-      /**
-       * Format: date-time
-       * @description Null while a draft.
-       */
-      published_at?: string | null;
-      /** Format: date-time */
-      created_at: string;
-      /** Format: date-time */
-      updated_at: string;
-    };
-    /** @description A product as staff see it (inactive ones included). */
-    AdminProduct: {
-      /** Format: uuid */
-      id: string;
-      slug: string;
-      kind: components['schemas']['ProductKind'];
-      name: string;
-      description: string;
-      category_id: string;
-      active: boolean;
-      featured: boolean;
-      /**
-       * Format: int32
-       * @description 1 = most trending; null when not trending.
-       */
-      trending_rank?: number | null;
-      /** @description Regular prices (before any daily offer). */
-      prices: components['schemas']['PriceInput'][];
-      item_ids: string[];
-      /** Format: date-time */
-      created_at: string;
-    };
-    ApprovalDecision: {
-      approve: boolean;
-    };
-    /** @enum {string} */
-    ApprovalStatus: 'pending' | 'approved' | 'denied';
-    AuditEntry: {
-      /** Format: int64 */
-      id: number;
-      /** Format: uuid */
-      actor_id?: string | null;
-      action: string;
-      target_type: string;
-      target_id?: string | null;
-      data: Record<string, never>;
-      /** Format: date-time */
-      created_at: string;
-    };
-    Ban: {
-      /** Format: uuid */
-      id: string;
-      /** Format: uuid */
-      user_id: string;
-      scope: components['schemas']['BanScope'];
-      reason: string;
-      /** Format: date-time */
-      created_at: string;
-      /** Format: date-time */
-      expires_at?: string | null;
-      /** Format: date-time */
-      revoked_at?: string | null;
-    };
-    /** @enum {string} */
-    BanScope: 'platform' | 'chat';
-    /** @description What the account may do right now (age rules + parental controls + bans). */
-    Capabilities: {
-      is_minor: boolean;
-      /** @description Under the digital-consent age and no guardian linked yet. */
-      needs_guardian: boolean;
-      can_chat: boolean;
-      chat_mode: components['schemas']['ChatMode'];
-      can_purchase: boolean;
-      purchases_need_guardian_approval: boolean;
-      friend_requests_allowed: boolean;
-      chat_banned: boolean;
-      /** @description May appear in (and see) friend suggestions of players met (ADR 0145): adults only. */
-      discoverable_allowed?: boolean;
-    };
-    Catalog: {
-      currency: components['schemas']['Currency'];
-      country?: string | null;
-      prices_include_tax: boolean;
-      /** @description Legal display note (e.g. "Prices include VAT." / "Taxes calculated at checkout."). */
-      tax_note: string;
-      categories: components['schemas']['Category'][];
-      products: components['schemas']['Product'][];
-      /** @description Active collections ordered by `sort`, then name. */
-      collections: components['schemas']['StoreCollection'][];
-      /** @description Product ids by trending rank (best first). */
-      trending: string[];
-      daily: components['schemas']['DailyOffers'];
-    };
-    Category: {
-      id: string;
-      name: string;
-      /** Format: int32 */
-      sort: number;
-    };
-    ChangePasswordRequest: {
-      current_password: string;
-      new_password: string;
-    };
-    /** @enum {string} */
-    ChatMode: 'everyone' | 'friends_only' | 'disabled';
-    CheckoutRequest: {
-      quote: components['schemas']['QuoteRequest'];
-      consent: components['schemas']['PurchaseConsent'];
-    };
-    CheckoutResponse: {
-      order: components['schemas']['Order'];
-      /** @description Stripe Checkout URL to open; `null` when fully paid by wallet or awaiting a guardian. */
-      checkout_url?: string | null;
-    };
-    ChildSummary: {
-      user: components['schemas']['PublicUser'];
-      /** Format: date-time */
-      linked_at: string;
-      controls: components['schemas']['ParentalControls'];
-    };
-    /**
-     * @description `web` receives the refresh token in an HttpOnly cookie instead of the body.
-     * @enum {string}
-     */
-    ClientKind: 'launcher' | 'web';
-    /** @description Client → server frames. */
-    ClientMessage:
-      | {
-          status: components['schemas']['PresenceStatus'];
-          activity?: null | components['schemas']['Activity'];
-          share_server?: boolean;
-          /** @enum {string} */
-          type: 'heartbeat';
-        }
-      | {
-          /** Format: int64 */
-          nonce: number;
-          /** @enum {string} */
-          type: 'ping';
+    schemas: {
+        /**
+         * @description `GET /v1/me/settings`: the account settings stored server-side and shared by the website
+         *     and the launcher (ADR 0168). Display name, country and language stay on `/v1/me`.
+         */
+        AccountSettings: {
+            /** @description As chosen. */
+            visibility: components["schemas"]["ProfileVisibility"];
+            sections: components["schemas"]["ProfileSections"];
+            /** @description What applies (a minor's `public` reads `friends`). */
+            effective_visibility: components["schemas"]["ProfileVisibility"];
+            effective_sections: components["schemas"]["ProfileSections"];
+            /** @description `false` for minors: `public` is refused (`public_not_allowed`). */
+            public_allowed: boolean;
+            /** @description The launcher reports play sessions for the profile's statistics (default on). */
+            play_stats: boolean;
+            /** @description Short text on the profile (at most 160 characters). */
+            bio: string;
+            /** @description Product news by email (opt-in, default off). */
+            email_news: boolean;
+            /** @description Staff only: show the staff role on the profile (default on). */
+            show_role: boolean;
+            avatar: components["schemas"]["AvatarInfo"];
         };
-    CompanionFriend: {
-      /** @description Minecraft UUID hex of the friend's linked profile (Rustic user id hex if none). */
-      uuid: string;
-      name: string;
-      online: boolean;
-      activity?: string | null;
-    };
-    CompanionInvite: {
-      id: string;
-      from: string;
-      server: string;
-    };
-    CompanionInviteRequest: {
-      /** @description Friend's Minecraft UUID hex (or Rustic user id). */
-      to: string;
-      /** @description `host[:port]` of the server the inviter is on. */
-      address: string;
-    };
-    CompanionMessage: {
-      id: string;
-      from: string;
-      text: string;
-    };
-    ConsentState: {
-      /** @description Telemetry is off by default. */
-      telemetry: boolean;
-      /** Format: date-time */
-      telemetry_updated_at?: string | null;
-      privacy_policy_version?: string | null;
-      /** Format: date-time */
-      privacy_policy_accepted_at?: string | null;
-      current_privacy_policy_version: string;
-    };
-    /** @description The kinds open to creators, their categories and the upload limits. */
-    ContentCatalogInfo: {
-      kinds: components['schemas']['ContentKindCategories'][];
-      /** Format: int64 */
-      max_file_bytes: number;
-      /** Format: int64 */
-      max_image_bytes: number;
-      /** Format: int64 */
-      max_gallery: number;
-      /** @description False until creator sales open (Stripe Connect): paid projects are shown, not sold. */
-      creator_sales_enabled: boolean;
-    };
-    /** @enum {string} */
-    ContentChannel: 'release' | 'beta' | 'alpha';
-    ContentDependency: {
-      project_id?: string | null;
-      version_id?: string | null;
-      /** @description Semver requirement (Rustic plugins). */
-      version_req?: string | null;
-      sha256?: string | null;
-      kind: components['schemas']['ContentDependencyKind'];
-    };
-    /** @enum {string} */
-    ContentDependencyKind: 'required' | 'optional' | 'incompatible' | 'embedded';
-    /** @description A short-lived link to a version's file (private files need one in a browser). */
-    ContentDownloadLink: {
-      url: string;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    /** @description Same JSON as `rusticmc_content::model::FairPlay` (`{"status": "clean"}`). */
-    ContentFairPlay: {
-      status: components['schemas']['FairPlayStatus'];
-      reason?: string | null;
-    };
-    ContentFile: {
-      url: string;
-      filename: string;
-      /** Format: int64 */
-      size?: number | null;
-      hashes: components['schemas']['ContentHashes'];
-      primary: boolean;
-      signature?: string | null;
-    };
-    /** @description What a checked file says about itself (its manifest). */
-    ContentFileFacts: {
-      kind: components['schemas']['ContentKind'];
-      /** @description The manifest's id (content mods, native mods, `.hpack`, `.hshader`). */
-      id?: string | null;
-      name?: string | null;
-      version?: string | null;
-      /** @description See [`ContentHorizonFacts::api`]. */
-      api: string;
-      /** @description The game version it is for, when the manifest names one. */
-      game?: string | null;
-      /** Format: int32 */
-      hooks?: number | null;
-      side?: string | null;
-      capabilities: string[];
-      /**
-       * Format: int64
-       * @description Files in the archive.
-       */
-      entries: number;
-      /**
-       * Format: int64
-       * @description Unpacked size in bytes.
-       */
-      unpacked_size: number;
-    };
-    ContentHashes: {
-      sha1?: string | null;
-      sha256?: string | null;
-      sha512?: string | null;
-    };
-    /** @description The JSON of `rusticmc_content::model::HorizonFacts` (every key present). */
-    ContentHorizonFacts: {
-      /**
-       * @description A content mod's API line (`0.2`), a native mod's `native-1/<horizon>/<mixins>`, a
-       *     modpack's format, a shader pack's shader API, a resource/data pack's pack format.
-       */
-      api: string;
-      /**
-       * Format: int32
-       * @description A native mod's hook points version.
-       */
-      hooks?: number | null;
-      side?: string | null;
-      capabilities: string[];
-      broken_on: string[];
-      key?: string | null;
-    };
-    ContentImage: {
-      url: string;
-      /** Format: int32 */
-      width: number;
-      /** Format: int32 */
-      height: number;
-    };
-    /** @enum {string} */
-    ContentKind:
-      | 'mod'
-      | 'native_mod'
-      | 'modpack'
-      | 'resourcepack'
-      | 'shader'
-      | 'shaderpack'
-      | 'datapack'
-      | 'plugin';
-    ContentKindCategories: {
-      kind: components['schemas']['ContentKind'];
-      categories: string[];
-    };
-    /** @description Links shown on the project page (`https://` only). */
-    ContentLinks: {
-      source?: string | null;
-      issues?: string | null;
-      wiki?: string | null;
-      discord?: string | null;
-      website?: string | null;
-    };
-    /** @description Owner and staff view of a project's moderation state. */
-    ContentModeration: {
-      taken_down: boolean;
-      takedown_reason?: string | null;
-      /** Format: date-time */
-      taken_down_at?: string | null;
-      /** Format: date-time */
-      verified_at?: string | null;
-      /**
-       * Format: int64
-       * @description Versions waiting for an admin (native mods).
-       */
-      pending_versions: number;
-      /** @description The newest reviewer note on a rejected version. */
-      review_note?: string | null;
-    };
-    /**
-     * @description `amount_cents` 0 = free. Paid creator content is shown with its price; buying it is not
-     *     available yet (ADR 0155).
-     */
-    ContentPrice: {
-      /** Format: int64 */
-      amount_cents: number;
-      currency: components['schemas']['Currency'];
-    };
-    ContentProject: {
-      /** @description Always `rustic`. */
-      source: string;
-      id: string;
-      slug: string;
-      kind: components['schemas']['ContentKind'];
-      name: string;
-      summary: string;
-      authors: string[];
-      icon_url?: string | null;
-      /** Format: int64 */
-      downloads: number;
-      categories: string[];
-      tags: string[];
-      license?: string | null;
-      loaders: string[];
-      game_versions: string[];
-      fair_play: components['schemas']['ContentFairPlay'];
-      /** @description Markdown page; only in `GET /v1/content/projects/{id}` (not in search hits). */
-      description?: string | null;
-      /** @description Screenshots, in order (re-encoded on upload, served from Rustic's CDN). */
-      gallery?: components['schemas']['ContentImage'][];
-      links?: components['schemas']['ContentLinks'];
-      owner?: null | components['schemas']['PublicUser'];
-      visibility?: components['schemas']['ContentVisibility'];
-      /** @description An admin confirmed the project matches its description. */
-      verified?: boolean;
-      price?: components['schemas']['ContentPrice'];
-      /** Format: date-time */
-      created_at?: string | null;
-      /** Format: date-time */
-      updated_at?: string | null;
-      /** @description Newest version visible to the caller. */
-      latest_version?: string | null;
-      /**
-       * Format: int64
-       * @description Size in bytes of the newest version's primary file.
-       */
-      size?: number | null;
-      /**
-       * @description `pending` while a native mod waits for an admin (it is then private whatever its
-       *     visibility says).
-       */
-      review?: components['schemas']['ContentReviewStatus'];
-      /** @description Hosted by Rustic's marketplace (uploaded by its creator) rather than curated. */
-      marketplace?: boolean;
-      moderation?: null | components['schemas']['ContentModeration'];
-    };
-    ContentReportRequest: {
-      reason: components['schemas']['ReportReason'];
-      details?: string | null;
-    };
-    ContentReviewItem: {
-      project: components['schemas']['ContentProject'];
-      version: components['schemas']['ContentVersion'];
-    };
-    ContentReviewRequest: {
-      /**
-       * @description `true` approves the version (the project becomes visible as its owner chose), `false`
-       *     rejects it with `note` as the reason.
-       */
-      approve: boolean;
-      note?: string | null;
-    };
-    /** @enum {string} */
-    ContentReviewStatus: 'not_required' | 'pending' | 'approved' | 'rejected';
-    ContentSearchResponse: {
-      hits: components['schemas']['ContentProject'][];
-      /** @description More results after `offset + hits.len()`. */
-      has_more?: boolean;
-      /**
-       * Format: int64
-       * @description Matching projects in all.
-       */
-      total?: number;
-    };
-    ContentTakedownRequest: {
-      reason: string;
-    };
-    /** @description A staged upload, checked and kept until a publish request uses it (or it expires). */
-    ContentUpload: {
-      /** Format: uuid */
-      id: string;
-      purpose: components['schemas']['ContentUploadPurpose'];
-      filename: string;
-      /** Format: int64 */
-      size: number;
-      sha256: string;
-      sha512: string;
-      facts?: null | components['schemas']['ContentFileFacts'];
-      /**
-       * Format: int32
-       * @description Images.
-       */
-      width?: number | null;
-      /** Format: int32 */
-      height?: number | null;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    /** @enum {string} */
-    ContentUploadPurpose: 'file' | 'icon' | 'gallery' | 'banner';
-    ContentVersion: {
-      /** @description Always `rustic`. */
-      source: string;
-      project_id: string;
-      /** @description `<project>@<version>`. */
-      id: string;
-      name: string;
-      version: string;
-      kind: components['schemas']['ContentKind'];
-      game_versions: string[];
-      loaders: string[];
-      files: components['schemas']['ContentFile'][];
-      dependencies: components['schemas']['ContentDependency'][];
-      /** @description RFC 3339. */
-      published: string;
-      horizon?: null | components['schemas']['ContentHorizonFacts'];
-      changelog?: string;
-      channel?: components['schemas']['ContentChannel'];
-      /** @description Yanked versions are listed to their owner and staff only. */
-      yanked?: boolean;
-      yanked_reason?: string | null;
-      /** Format: int64 */
-      downloads?: number;
-      review?: components['schemas']['ContentReviewStatus'];
-      /** @description Owner and staff only: the reviewer's note. */
-      review_note?: string | null;
-    };
-    /** @enum {string} */
-    ContentVisibility: 'public' | 'unlisted' | 'private';
-    /** @description One direct-message conversation (most recent first in `GET /v1/conversations`). */
-    Conversation: {
-      peer: components['schemas']['PublicUser'];
-      presence: components['schemas']['Presence'];
-      last_message: components['schemas']['Message'];
-      /**
-       * Format: int64
-       * @description Messages from `peer` not read yet.
-       */
-      unread: number;
-    };
-    CosmeticItem: {
-      /** Format: uuid */
-      id: string;
-      slug: string;
-      name: string;
-      description: string;
-      slot: components['schemas']['CosmeticSlot'];
-      /** @description Cosmetic id on the CDN (`cosmetics/<asset_ref>/<asset_version>/<asset_hash>.json`). */
-      asset_ref: string;
-      /** @description Bundle version on the CDN (empty until published by the pipeline). */
-      asset_version: string;
-      /** @description SHA-256 (hex) of the bundle: its CDN address and integrity check. */
-      asset_hash: string;
-    };
-    /**
-     * @description Cosmetic slots = the cosmetics format's categories (`packages/cosmetics-format`,
-     *     `Category`). Purely visual. There is deliberately no cape slot (docs/LEGAL.md).
-     * @enum {string}
-     */
-    CosmeticSlot:
-      | 'head'
-      | 'back'
-      | 'top'
-      | 'shoulder_companion'
-      | 'companion'
-      | 'trail'
-      | 'aura'
-      | 'emote'
-      | 'nametag';
-    CreateBanRequest: {
-      /** Format: uuid */
-      user_id: string;
-      scope: components['schemas']['BanScope'];
-      reason: string;
-      /** Format: int64 */
-      duration_hours?: number | null;
-    };
-    CreateCollectionRequest: {
-      /** @description 2-64 chars `[a-z0-9-]`, unique. */
-      slug: string;
-      name: string;
-      description?: string | null;
-      /** @description `#rrggbb`, default `#ff6a00`. */
-      accent?: string | null;
-      hero?: boolean | null;
-      active?: boolean | null;
-      /** Format: int32 */
-      sort?: number | null;
-      product_ids?: string[] | null;
-    };
-    CreateContentProjectRequest: {
-      slug: string;
-      kind: components['schemas']['ContentKind'];
-      name: string;
-      summary: string;
-      authors?: string[];
-      icon_url?: string | null;
-      categories?: string[];
-      tags?: string[];
-      license?: string | null;
-      loaders?: string[];
-      game_versions?: string[];
-    };
-    CreateContentVersionRequest: {
-      version: string;
-      name: string;
-      game_versions?: string[];
-      loaders?: string[];
-      files: components['schemas']['ContentFile'][];
-      dependencies?: components['schemas']['ContentDependency'][];
-    };
-    CreateCreatorCodeRequest: {
-      code: string;
-      /** Format: uuid */
-      creator_user_id: string;
-      /**
-       * Format: int32
-       * @description Revenue share in basis points (500 = 5 %).
-       */
-      revenue_share_bps: number;
-    };
-    CreateGiftCardRequest: {
-      currency: components['schemas']['Currency'];
-      /** Format: int64 */
-      amount_minor: number;
-    };
-    CreateInvitationRequest: {
-      /** Format: uuid */
-      to_user_id: string;
-      server: components['schemas']['ServerJoinInfo'];
-    };
-    CreateItemRequest: {
-      slug: string;
-      name: string;
-      description: string;
-      slot: components['schemas']['CosmeticSlot'];
-      asset_ref: string;
-      asset_version?: string;
-      asset_hash?: string;
-    };
-    CreateProductRequest: {
-      slug: string;
-      kind: components['schemas']['ProductKind'];
-      name: string;
-      description: string;
-      category: string;
-      item_ids: string[];
-      prices: components['schemas']['PriceInput'][];
-    };
-    CreatePromoCodeRequest: {
-      code: string;
-      /** Format: int32 */
-      percent_off?: number | null;
-      /** Format: int64 */
-      amount_off_minor?: number | null;
-      currency?: null | components['schemas']['Currency'];
-      /** Format: int32 */
-      max_redemptions?: number | null;
-      /** Format: date-time */
-      valid_until?: string | null;
-    };
-    CreateServerRequest: {
-      /** @description Display name, 3-32 chars. */
-      name: string;
-      /** @description Request a free `<label>.<relay-domain>` (only when the feature is enabled). */
-      subdomain_label?: string | null;
-    };
-    CreatorCode: {
-      /** Format: uuid */
-      id: string;
-      code: string;
-      /** Format: uuid */
-      creator_user_id: string;
-      /** Format: int32 */
-      revenue_share_bps: number;
-      active: boolean;
-    };
-    /** @enum {string} */
-    Currency: 'EUR' | 'USD' | 'GBP' | 'CHF';
-    CustomDomain: {
-      /** Format: uuid */
-      id: string;
-      /** @description Hostname players type (e.g. `play.example.com` or `example.com`). */
-      hostname: string;
-      /** @description Registrable zone the records live in (e.g. `example.com`). */
-      zone: string;
-      status: components['schemas']['DomainStatus'];
-      /** @description True when the relay is authorised to route this hostname. */
-      routing_active: boolean;
-      /** Format: date-time */
-      verified_at?: string | null;
-      /** Format: date-time */
-      last_checked_at?: string | null;
-      /**
-       * Format: date-time
-       * @description Next periodic re-verification (verified domains).
-       */
-      next_check_at?: string | null;
-      last_error?: string | null;
-      /** @description Registrar-agnostic record set to create, with per-record live check results. */
-      dns_records: components['schemas']['DnsRecord'][];
-    };
-    DailyOfferEntry: {
-      /**
-       * Format: date
-       * @description UTC day.
-       */
-      day: string;
-      /** Format: uuid */
-      product_id: string;
-      /** Format: int32 */
-      percent_off: number;
-    };
-    DailyOfferInput: {
-      /** Format: uuid */
-      product_id: string;
-      /**
-       * Format: int32
-       * @description 1-90.
-       */
-      percent_off: number;
-    };
-    /** @description Today's daily offers (one UTC day, same for everyone). */
-    DailyOffers: {
-      /** Format: date */
-      day: string;
-      /**
-       * Format: date-time
-       * @description Next UTC midnight.
-       */
-      ends_at: string;
-      product_ids: string[];
-    };
-    DeletionStatus: {
-      /** Format: date-time */
-      scheduled_for?: string | null;
-    };
-    DenyEntryRequest: {
-      reason: string;
-    };
-    /** @description `GET /v1/me/discord`. */
-    DiscordAccount: {
-      /** @description `false` while the server has no Discord OAuth2 client configured (linking disabled). */
-      available: boolean;
-      link?: null | components['schemas']['DiscordLink'];
-      /** @description Invite to the Rustic Discord server, when configured. */
-      invite_url?: string | null;
-    };
-    /**
-     * @description The public snapshot of a marketplace project for the bot's feed (service token, scope
-     *     `discord`). `postable` is the API's decision: public, listed, not taken down, at least one
-     *     public version. When it is `false` the bot removes what it posted.
-     */
-    DiscordContentSnapshot: {
-      postable: boolean;
-      project?: null | components['schemas']['ContentProject'];
-      /** @description Public versions, newest first (at most 20). */
-      versions: components['schemas']['ContentVersion'][];
-      /** @description The project's page on the website. */
-      page_url?: string | null;
-      /** @description `rustic://content/rustic/<id>`: opens the project in the launcher. */
-      launcher_url?: string | null;
-    };
-    DiscordKindCount: {
-      kind: components['schemas']['ContentKind'];
-      /** Format: int64 */
-      count: number;
-    };
-    /** @description A Discord account linked to the caller's Rustic account (identity only: it never signs in). */
-    DiscordLink: {
-      /** @description Discord user id (a snowflake, as a string). */
-      discord_id: string;
-      username: string;
-      /** @description Display name on Discord, when set. */
-      global_name?: string | null;
-      /** @description Discord CDN avatar URL, when the account has one. */
-      avatar_url?: string | null;
-      /** Format: date-time */
-      linked_at: string;
-    };
-    /** @description Step 2: the website's callback page posts what Discord returned. */
-    DiscordLinkFinishRequest: {
-      code: string;
-      state: string;
-    };
-    /** @description Step 1: the website sends the browser to `authorize_url` (Discord's consent screen). */
-    DiscordLinkStart: {
-      authorize_url: string;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    /**
-     * @description `GET /v1/integrations/discord/links/{discord_id}`: whether a Discord account is linked
-     *     (role sync). Never says to which Rustic account.
-     */
-    DiscordLinkState: {
-      discord_id: string;
-      linked: boolean;
-    };
-    /**
-     * @description `GET /v1/integrations/discord/profile`: only public data. A minor's Discord link and game
-     *     name are never revealed to others; lookups by game name never resolve a minor.
-     */
-    DiscordProfile: {
-      user: components['schemas']['PublicUser'];
-      /** @description Linked game profile name (adults only, or the member looking at their own profile). */
-      minecraft_name?: string | null;
-      /** @description The Discord account this profile is linked to, when it may be shown. */
-      discord_id?: string | null;
-      /** @description The looked-up account is the asking Discord member's own. */
-      is_self: boolean;
-      stats: components['schemas']['DiscordStats'];
-      /** @description Most downloaded public projects (at most 5). */
-      projects: components['schemas']['DiscordProjectSummary'][];
-      /** @description Public server listings (at most 5). */
-      servers: components['schemas']['DiscordServerSummary'][];
-    };
-    /** @description A public project in a Discord profile card. */
-    DiscordProjectSummary: {
-      id: string;
-      kind: components['schemas']['ContentKind'];
-      name: string;
-      /** Format: int64 */
-      downloads: number;
-      verified: boolean;
-      page_url: string;
-    };
-    /** @description The public snapshot of a server listing (ADR 0158) for the bot's feed. */
-    DiscordServerSnapshot: {
-      postable: boolean;
-      listing?: null | components['schemas']['ServerListing'];
-      page_url?: string | null;
-      /** @description `rustic://server/<slug>`. */
-      launcher_url?: string | null;
-    };
-    /** @description A public server listing in a Discord profile card. */
-    DiscordServerSummary: {
-      slug: string;
-      name: string;
-      address: string;
-      /** Format: int32 */
-      players_online?: number | null;
-      page_url: string;
-    };
-    /** @description Public statistics of an account's published content and servers. */
-    DiscordStats: {
-      /** Format: int64 */
-      projects: number;
-      /** Format: int64 */
-      versions: number;
-      /** Format: int64 */
-      downloads: number;
-      /** Format: int64 */
-      servers: number;
-      /**
-       * Format: int64
-       * @description Players online right now on the account's public servers (last ping).
-       */
-      players_online: number;
-      /** @description Public projects per kind (`mod`, `modpack`...), most first. */
-      projects_by_kind: components['schemas']['DiscordKindCount'][];
-    };
-    /** @description A store product for the bot's feed (active products only). */
-    DiscordStoreSnapshot: {
-      postable: boolean;
-      product?: null | components['schemas']['Product'];
-      page_url?: string | null;
-    };
-    /**
-     * @description A DNS record to create at the user's registrar (any registrar: by hand, or by the launcher
-     *     through the user's own registrar API keys). `name` is relative to the zone (`@` = apex).
-     */
-    DnsRecord: {
-      kind: components['schemas']['DnsRecordKind'];
-      /** @description Fully qualified record name. */
-      fqdn: string;
-      /** @description Record name relative to the zone (what registrar APIs expect as the subdomain). */
-      name: string;
-      /** @description TXT content, CNAME target, or SRV `priority weight port target`. */
-      value: string;
-      /** Format: int32 */
-      ttl: number;
-      /** @description `verification`, `routing`, `minecraft_srv`. */
-      purpose: string;
-      /**
-       * @description Required for verification. For routing, either the CNAME or the SRV record suffices
-       *     (apex domains cannot hold a CNAME: use SRV).
-       */
-      required: boolean;
-      check: components['schemas']['RecordCheck'];
-    };
-    /** @enum {string} */
-    DnsRecordKind: 'TXT' | 'CNAME' | 'SRV';
-    /** @enum {string} */
-    DomainStatus: 'pending' | 'verified' | 'failed' | 'revoked';
-    EmailRequest: {
-      email: string;
-    };
-    EmotePlayingRequest: {
-      /** @description Emote id (`asset_ref` of an owned emote) or `null` to stop. */
-      emote?: string | null;
-    };
-    Equipped: {
-      items: components['schemas']['EquippedSlot'][];
-      /** Format: date-time */
-      updated_at?: string | null;
-    };
-    EquippedSlot: {
-      slot: components['schemas']['CosmeticSlot'];
-      /** Format: uuid */
-      item_id: string;
-    };
-    /** @description Error envelope returned with every non-2xx status. */
-    ErrorBody: {
-      error: components['schemas']['ErrorDetail'];
-    };
-    ErrorDetail: {
-      /** @description Stable machine-readable code (`invalid_input`, `unauthorized`, `rate_limited`...). */
-      code: string;
-      /** @description Human readable message (English; the UI translates by `code`). */
-      message: string;
-    };
-    /** @description A sign-in method linked to the account (`microsoft`). */
-    ExternalIdentity: {
-      provider: string;
-      email?: string | null;
-      /** Format: date-time */
-      linked_at: string;
-    };
-    FairPlayDenyEntry: {
-      /** @description Project id or slug (any source: `modrinth:<id>`, `horizon:<id>`, a bare slug...). */
-      key: string;
-      reason: string;
-    };
-    /** @description The authoritative fair-play deny list (X-ray, auto-clickers, hacks...). */
-    FairPlayDenyList: {
-      entries: components['schemas']['FairPlayDenyEntry'][];
-      /** Format: date-time */
-      updated_at?: string | null;
-    };
-    /** @enum {string} */
-    FairPlayStatus: 'clean' | 'flagged' | 'blocked';
-    /** @enum {string} */
-    FeaturedEngine: 'horizon' | 'rustic';
-    /** @description A server staff feature on the Launchpad and the Servers page. */
-    FeaturedServer: {
-      /** Format: uuid */
-      id: string;
-      name: string;
-      /** @description `host` or `host:port` players type in the game. */
-      address: string;
-      description: string;
-      tags: string[];
-      engine: components['schemas']['FeaturedEngine'];
-      /** @description BCP 47 language of the community. */
-      language: string;
-      /** @description Staff checked the owner and the rules. */
-      verified: boolean;
-      /**
-       * Format: int32
-       * @description Lower first.
-       */
-      sort_order: number;
-      /**
-       * Format: int32
-       * @description Not measured by the cloud yet: clients ping the server themselves.
-       */
-      players_online?: number | null;
-      /** Format: int32 */
-      players_max?: number | null;
-    };
-    FeaturedServerUpsertRequest: {
-      name: string;
-      address: string;
-      description?: string;
-      tags?: string[];
-      engine: components['schemas']['FeaturedEngine'];
-      /** @description Default `en`. */
-      language?: string | null;
-      verified?: boolean;
-      /** Format: int32 */
-      sort_order?: number;
-      /** @description Shown to players (true) or hidden (false). */
-      active: boolean;
-    };
-    Friend: {
-      user: components['schemas']['PublicUser'];
-      /** Format: date-time */
-      since: string;
-      presence: components['schemas']['Presence'];
-    };
-    FriendRequest: {
-      /** Format: uuid */
-      id: string;
-      from: components['schemas']['PublicUser'];
-      to: components['schemas']['PublicUser'];
-      /** Format: date-time */
-      created_at: string;
-    };
-    FriendRequests: {
-      incoming: components['schemas']['FriendRequest'][];
-      outgoing: components['schemas']['FriendRequest'][];
-    };
-    FriendSuggestion: {
-      user: components['schemas']['PublicUser'];
-      minecraft_name?: string | null;
-      reason: components['schemas']['SuggestionReason'];
-      /** @description The caller's own name for the server (from their presence), when `reason` is `server`. */
-      server_name?: string | null;
-      /**
-       * Format: date-time
-       * @description End of the most recent time together.
-       */
-      seen_at: string;
-    };
-    /** @description `GET /v1/friends/suggestions` (ADR 0145). Both lists are most recent first, 10 at most. */
-    FriendSuggestions: {
-      /** @description `false` when the caller opted out or is a minor: nothing is recorded, lists are empty. */
-      discoverable: boolean;
-      /** @description Same party, or the same server for at least 10 minutes in total, in the last 14 days. */
-      played_with: components['schemas']['FriendSuggestion'][];
-      /** @description Same server at overlapping times in the last 14 days (not already in `played_with`). */
-      crossed: components['schemas']['FriendSuggestion'][];
-    };
-    /** @description One gallery image to keep: an existing one by `url`, or a staged upload. */
-    GalleryRef: {
-      url?: string | null;
-      /** Format: uuid */
-      upload_id?: string | null;
-    };
-    GiftCardCreated: {
-      /** Format: uuid */
-      id: string;
-      /** @description Shown once; only a hash is stored. */
-      code: string;
-      currency: components['schemas']['Currency'];
-      /** Format: int64 */
-      amount_minor: number;
-    };
-    GuardianInfo: {
-      guardian: components['schemas']['PublicUser'];
-      /** Format: date-time */
-      linked_at: string;
-    };
-    GuardianInviteResponse: {
-      /** @description Give this code to the guardian; valid 7 days, single use. */
-      code: string;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    GuardianLinkRequest: {
-      code: string;
-    };
-    HandoffExchangeRequest: {
-      code: string;
-      device_name?: string | null;
-      client?: components['schemas']['ClientKind'];
-    };
-    /** @description Single-use code (60 s) the website hands to the launcher through `rustic://auth?code=`. */
-    HandoffResponse: {
-      code: string;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    Health: {
-      status: string;
-      version: string;
-    };
-    /** @enum {string} */
-    HostingAvailability: 'coming_soon' | 'available';
-    /** @description Rustic Cloud hosting (coming soon): catalog preview, no provisioning. */
-    HostingCatalog: {
-      availability: components['schemas']['HostingAvailability'];
-      plans: components['schemas']['HostingPlan'][];
-      regions: components['schemas']['HostingRegion'][];
-    };
-    /** @description `GET /v1/hosting/plans` (shape of `rusticmc_hosting::cloud::CloudPlan`, camelCase). */
-    HostingCloudPlan: {
-      id: string;
-      name: string;
-      /** Format: int32 */
-      ramMb: number;
-      /** Format: float */
-      vcpus: number;
-      /** Format: int32 */
-      diskGb: number;
-      /** Format: int32 */
-      maxPlayers: number;
-      /**
-       * Format: int64
-       * @description Monthly price, VAT included, minor units (indicative: not purchasable yet).
-       */
-      priceCents: number;
-      currency: string;
-    };
-    /** @description `GET /v1/hosting/regions` (shape of `rusticmc_hosting::cloud::CloudRegion`). */
-    HostingCloudRegion: {
-      id: string;
-      name: string;
-      country: string;
-      available: boolean;
-    };
-    HostingPlan: {
-      id: string;
-      name: string;
-      /** Format: int32 */
-      memory_mb: number;
-      /** Format: float */
-      vcpus: number;
-      /** Format: int32 */
-      storage_gb: number;
-      /** Format: int32 */
-      max_players: number;
-      /** @description Indicative monthly prices (not purchasable yet). */
-      monthly_prices: components['schemas']['PriceInput'][];
-    };
-    HostingRegion: {
-      id: string;
-      name: string;
-      country: string;
-    };
-    IdentitiesResponse: {
-      /** @description Whether the account can sign in with an email and password. */
-      has_password: boolean;
-      identities: components['schemas']['ExternalIdentity'][];
-    };
-    InventoryItem: {
-      item: components['schemas']['CosmeticItem'];
-      /** Format: date-time */
-      acquired_at: string;
-      source: components['schemas']['AcquisitionSource'];
-    };
-    Invitation: {
-      /** Format: uuid */
-      id: string;
-      from: components['schemas']['PublicUser'];
-      kind: components['schemas']['InvitationKind'];
-      /** Format: uuid */
-      party_id?: string | null;
-      server?: null | components['schemas']['ServerJoinInfo'];
-      status: components['schemas']['InvitationStatus'];
-      /** Format: date-time */
-      created_at: string;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    /** @enum {string} */
-    InvitationKind: 'party' | 'server';
-    /** @enum {string} */
-    InvitationStatus: 'pending' | 'accepted' | 'declined' | 'expired';
-    /**
-     * @description An invite code for a server (ADR 0105): friends type it in the launcher, the cloud
-     *     resolves it to the server's route hostname.
-     */
-    InviteCode: {
-      code: string;
-      /** Format: uuid */
-      server_id: string;
-      hostname: string;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    InviteCodeResolution: {
-      code: string;
-      server_name: string;
-      /** @description `host` to join (the relay route hostname; port 25565 unless `port` is set). */
-      hostname: string;
-      /** Format: int32 */
-      port: number;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    LibraryEntry: {
-      project: components['schemas']['ContentProject'];
-      source: components['schemas']['LibrarySource'];
-      /** Format: date-time */
-      added_at: string;
-    };
-    /** @enum {string} */
-    LibrarySource: 'free' | 'purchase' | 'grant';
-    LoginRequest: {
-      email: string;
-      password: string;
-      device_name?: string | null;
-      client?: components['schemas']['ClientKind'];
-    };
-    LoginResponse: {
-      status: components['schemas']['LoginStatus'];
-      tokens?: null | components['schemas']['TokenPair'];
-      /** @description Present when `status = mfa_required`: send it to `/v1/auth/login/mfa` (5 min). */
-      mfa_token?: string | null;
-      /** @description Present when `status = signup_required` (Microsoft sign-in): 10 min, single use. */
-      signup_token?: string | null;
-      /** @description The Microsoft account's email, when `status = signup_required`. */
-      email?: string | null;
-    };
-    /** @enum {string} */
-    LoginStatus: 'ok' | 'mfa_required' | 'signup_required';
-    LookupBatchRequest: {
-      /** @description Up to 100 Minecraft UUIDs. */
-      uuids: string[];
-    };
-    LookupBatchResponse: {
-      players: components['schemas']['MinecraftLookup'][];
-    };
-    /**
-     * @description How the caller relates to a looked-up user.
-     * @enum {string}
-     */
-    LookupRelation: 'none' | 'friends' | 'outgoing_request' | 'incoming_request';
-    Me: {
-      /** Format: uuid */
-      id: string;
-      email?: string | null;
-      email_verified: boolean;
-      username: string;
-      display_name: string;
-      /** Format: date */
-      date_of_birth?: string | null;
-      country?: string | null;
-      locale?: string | null;
-      role: components['schemas']['Role'];
-      totp_enabled: boolean;
-      /** Format: date-time */
-      created_at: string;
-      /** Format: date-time */
-      deletion_scheduled_for?: string | null;
-      capabilities: components['schemas']['Capabilities'];
-      /**
-       * @description "Appear in suggestions of players I meet" as in effect: the setting (default on) and
-       *     `capabilities.discoverable_allowed` (always off for minors). ADR 0145.
-       */
-      discoverable?: boolean;
-    };
-    Message: {
-      /** Format: uuid */
-      id: string;
-      /** Format: uuid */
-      sender_id: string;
-      /** Format: uuid */
-      recipient_id: string;
-      body: string;
-      /** Format: date-time */
-      created_at: string;
-      /**
-       * Format: date-time
-       * @description When the recipient read it (read receipt); `null` while unread.
-       */
-      read_at?: string | null;
-    };
-    MfaLoginRequest: {
-      mfa_token: string;
-      code?: string | null;
-      recovery_code?: string | null;
-      device_name?: string | null;
-      client?: components['schemas']['ClientKind'];
-    };
-    /**
-     * @description The "complete your account" step of a Microsoft sign-up (same age gate and consent as
-     *     an email sign-up).
-     */
-    MicrosoftCompleteRequest: {
-      signup_token: string;
-      username: string;
-      /** Format: date */
-      date_of_birth: string;
-      country: string;
-      privacy_policy_version: string;
-      locale?: string | null;
-      client?: components['schemas']['ClientKind'];
-      device_name?: string | null;
-    };
-    MicrosoftLinkRequest: {
-      id_token: string;
-      nonce: string;
-    };
-    /**
-     * @description "Continue with Microsoft" (ADR 0090): the id_token the website got from Microsoft
-     *     (OIDC code flow + PKCE) and the nonce it generated.
-     */
-    MicrosoftSignInRequest: {
-      id_token: string;
-      nonce: string;
-      client?: components['schemas']['ClientKind'];
-      device_name?: string | null;
-    };
-    MinecraftAccount: {
-      /** Format: uuid */
-      uuid: string;
-      username: string;
-      /** Format: date-time */
-      linked_at: string;
-      /** Format: date-time */
-      last_verified_at: string;
-    };
-    /**
-     * @description Step 1 of the link (ADR 0011): a one-time `server_id`. The launcher then calls Mojang's
-     *     session server `POST /session/minecraft/join` with its own Minecraft token, the profile
-     *     UUID and this `server_id`. The token goes to Mojang only, never to Rustic Cloud.
-     */
-    MinecraftLinkChallenge: {
-      server_id: string;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    /** @description Step 2: the API asks Mojang `hasJoined(username, server_id)` and binds the returned UUID. */
-    MinecraftLinkFinishRequest: {
-      /** @description Current Minecraft username of the profile that joined. */
-      username: string;
-    };
-    MinecraftLookup: {
-      /** Format: uuid */
-      uuid: string;
-      player?: null | components['schemas']['PublicPlayer'];
-    };
-    /** @enum {string} */
-    ModerationAction: 'dismiss' | 'chat_ban' | 'ban' | 'take_down';
-    NameAvailability: {
-      label: string;
-      available: boolean;
-      reason?: string | null;
-      feature_enabled: boolean;
-    };
-    /** @description The first (or a new) version of a project. */
-    NewContentVersion: {
-      /**
-       * Format: uuid
-       * @description A staged `file` upload.
-       */
-      file_upload: string;
-      /** @description Must equal the version in the file's manifest when it has one. */
-      version: string;
-      /** @description Display name; the version when empty. */
-      name?: string | null;
-      /** @description Markdown. */
-      changelog?: string;
-      channel?: components['schemas']['ContentChannel'];
-      /** @description Game versions it is for (`26.3`); the manifest's when empty. */
-      game_versions?: string[];
-    };
-    /** @description A published news item (public). */
-    NewsItem: {
-      /** Format: uuid */
-      id: string;
-      slug: string;
-      source: components['schemas']['NewsSource'];
-      kind: components['schemas']['NewsKind'];
-      title: string;
-      summary: string;
-      /** @description Markdown body (rendered as text by the clients; no raw HTML). */
-      body: string;
-      /** @description Where "Read more" goes: the external link when set, else the website's news page. */
-      url: string;
-      /** @description Version the item is about (patch notes), if any. */
-      version?: string | null;
-      /** @description BCP 47 language of the item (`en`, `fr`). */
-      locale: string;
-      /** Format: date-time */
-      published_at: string;
-    };
-    /** @enum {string} */
-    NewsKind: 'patch_notes' | 'event' | 'blog';
-    /** @enum {string} */
-    NewsSource: 'rustic' | 'horizon';
-    NewsUpsertRequest: {
-      /** @description 2-64 chars `[a-z0-9-]`, unique. */
-      slug: string;
-      source: components['schemas']['NewsSource'];
-      kind: components['schemas']['NewsKind'];
-      title: string;
-      summary: string;
-      body?: string;
-      external_url?: string | null;
-      version?: string | null;
-      /** @description Default `en`. */
-      locale?: string | null;
-      /** @description Publish now (true) or keep as a draft (false). */
-      published: boolean;
-    };
-    Notification: {
-      /** Format: uuid */
-      id: string;
-      /**
-       * @description `friend_request`, `friend_accepted`, `party_invite`, `invitation`, `message`,
-       *     `purchase_approval`, `order_paid`, `order_refunded`, `moderation`...
-       */
-      kind: string;
-      payload: Record<string, never>;
-      /** Format: date-time */
-      created_at: string;
-      /** Format: date-time */
-      read_at?: string | null;
-    };
-    /** @description One project of the official account with every version (yanked and pending included). */
-    OfficialProject: {
-      project: components['schemas']['ContentProject'];
-      versions: components['schemas']['ContentVersion'][];
-    };
-    /** @description The official Rustic publisher account and what it published (ADR 0166, staff only). */
-    OfficialPublisher: {
-      /** @description The account (`official: true`); it never signs in, staff publish as it. */
-      account: components['schemas']['PublicUser'];
-      projects: components['schemas']['OfficialProject'][];
-    };
-    Order: {
-      /** Format: uuid */
-      id: string;
-      status: components['schemas']['OrderStatus'];
-      currency: components['schemas']['Currency'];
-      /** Format: int64 */
-      subtotal_minor: number;
-      /** Format: int64 */
-      discount_minor: number;
-      /** Format: int64 */
-      wallet_applied_minor: number;
-      /** Format: int64 */
-      total_minor: number;
-      lines: components['schemas']['OrderLine'][];
-      /** Format: date-time */
-      consent_recorded_at: string;
-      consent_wording_version: string;
-      /** Format: date-time */
-      created_at: string;
-      /** Format: date-time */
-      paid_at?: string | null;
-      invoice_url?: string | null;
-    };
-    OrderLine: {
-      /** Format: uuid */
-      product_id: string;
-      name: string;
-      /** Format: int64 */
-      unit_price_minor: number;
-      /** @description Cosmetic items this line grants ("Equip now" after checkout). */
-      item_ids: string[];
-    };
-    /** @enum {string} */
-    OrderStatus:
-      | 'pending'
-      | 'awaiting_guardian'
-      | 'guardian_denied'
-      | 'paid'
-      | 'refunded'
-      | 'disputed'
-      | 'cancelled'
-      | 'failed';
-    Outfit: {
-      /** Format: uuid */
-      id: string;
-      name: string;
-      items: components['schemas']['EquippedSlot'][];
-      /** Format: date-time */
-      created_at: string;
-      /** Format: date-time */
-      updated_at: string;
-    };
-    OutfitRequest: {
-      name: string;
-      items: components['schemas']['EquippedSlot'][];
-    };
-    ParentalControls: {
-      purchases_require_approval: boolean;
-      /**
-       * Format: int64
-       * @description Monthly cap in minor units of `spend_limit_currency`; `null` = no cap.
-       */
-      monthly_spend_limit_minor?: number | null;
-      spend_limit_currency: components['schemas']['Currency'];
-      chat_mode: components['schemas']['ChatMode'];
-      friend_requests_allowed: boolean;
-    };
-    Party: {
-      /** Format: uuid */
-      id: string;
-      /** Format: uuid */
-      leader_id: string;
-      /** Format: int32 */
-      max_size: number;
-      members: components['schemas']['PartyMember'][];
-      /** Format: date-time */
-      created_at: string;
-    };
-    PartyInvite: {
-      /** Format: uuid */
-      id: string;
-      /** Format: uuid */
-      party_id: string;
-      from: components['schemas']['PublicUser'];
-      /** Format: date-time */
-      created_at: string;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    PartyMember: {
-      user: components['schemas']['PublicUser'];
-      /** Format: date-time */
-      joined_at: string;
-    };
-    /** @description "Premium: coming soon" waitlist status of the caller. */
-    PremiumWaitlist: {
-      joined: boolean;
-      /** Format: date-time */
-      joined_at?: string | null;
-    };
-    Presence: {
-      status: components['schemas']['PresenceStatus'];
-      activity?: null | components['schemas']['Activity'];
-      /** Format: date-time */
-      updated_at: string;
-    };
-    /** @enum {string} */
-    PresenceStatus: 'online' | 'away' | 'busy' | 'invisible' | 'offline';
-    Price: {
-      currency: components['schemas']['Currency'];
-      /**
-       * Format: int64
-       * @description Final amount the customer pays, in minor units.
-       */
-      amount_minor: number;
-      /** @description True when `amount_minor` includes VAT (EU, UK, CH display rule). */
-      tax_inclusive: boolean;
-      /** @description Pre-formatted display string, e.g. `4,99 €` / `$4.99 + tax`. */
-      display: string;
-    };
-    PriceInput: {
-      currency: components['schemas']['Currency'];
-      /** Format: int64 */
-      amount_minor: number;
-    };
-    PrivacyAcceptRequest: {
-      version: string;
-    };
-    Product: {
-      /** Format: uuid */
-      id: string;
-      slug: string;
-      kind: components['schemas']['ProductKind'];
-      name: string;
-      description: string;
-      category: string;
-      items: components['schemas']['CosmeticItem'][];
-      price?: null | components['schemas']['Price'];
-      /** @description Only set for authenticated catalog requests. */
-      owned?: boolean | null;
-      /** Format: date-time */
-      created_at: string;
-      /** @description Highlighted by staff (e.g. a large card). */
-      featured: boolean;
-      offer?: null | components['schemas']['ProductOffer'];
-    };
-    /** @enum {string} */
-    ProductKind: 'item' | 'bundle';
-    /** @description A daily offer (ADR 0091): the same for every buyer, visible in advance, no random draw. */
-    ProductOffer: {
-      /** Format: int32 */
-      percent_off: number;
-      /** @description Undiscounted price, same currency as `Product.price`. */
-      regular: components['schemas']['Price'];
-      /**
-       * Format: int64
-       * @description EU Omnibus reference (Directive 98/6/EC art. 6a): lowest price applied to the product
-       *     in this currency during the 30 days before the offer day, in minor units.
-       */
-      reference_minor: number;
-      /**
-       * Format: date-time
-       * @description When the offer ends (next UTC midnight).
-       */
-      ends_at: string;
-    };
-    PromoCode: {
-      /** Format: uuid */
-      id: string;
-      code: string;
-      /** Format: int32 */
-      percent_off?: number | null;
-      /** Format: int64 */
-      amount_off_minor?: number | null;
-      currency?: null | components['schemas']['Currency'];
-      /** Format: int32 */
-      max_redemptions?: number | null;
-      /** Format: int32 */
-      redeemed_count: number;
-      /** Format: date-time */
-      valid_until?: string | null;
-      active: boolean;
-    };
-    PublicPlayer: {
-      user: components['schemas']['PublicUser'];
-      equipped: components['schemas']['EquippedSlot'][];
-    };
-    /** @description A user as seen by other users (no email, no date of birth). */
-    PublicUser: {
-      /** Format: uuid */
-      id: string;
-      username: string;
-      display_name: string;
-      /**
-       * @description The official Rustic account (ADR 0166): shown with an "Official" mark. It publishes
-       *     Rustic's own content and never signs in.
-       */
-      official?: boolean;
-    };
-    /** @description Publishes a new project with its first version (multi-step form of the website). */
-    PublishContentRequest: {
-      kind: components['schemas']['ContentKind'];
-      /**
-       * @description `[a-z0-9_-]{2,64}`; the project id. For a content mod, native mod, `.hpack` or
-       *     `.hshader`, it must be the manifest's id (`-` read as `_`).
-       */
-      slug: string;
-      name: string;
-      /** @description One line, at most 160 characters. */
-      summary: string;
-      /** @description Markdown, at most 10,000 characters. */
-      description?: string;
-      /** @description 1 to 3 of the kind's categories (`GET /v1/content/catalog`). */
-      categories: string[];
-      /** @description At most 10, `[a-z0-9][a-z0-9-]{0,23}`. */
-      tags?: string[];
-      /** @description An SPDX expression or `All-Rights-Reserved`. */
-      license: string;
-      links?: components['schemas']['ContentLinks'];
-      visibility: components['schemas']['ContentVisibility'];
-      /**
-       * Format: int64
-       * @description 0 = free.
-       */
-      price_cents?: number;
-      currency?: null | components['schemas']['Currency'];
-      /**
-       * Format: uuid
-       * @description A staged `icon` upload.
-       */
-      icon_upload?: string | null;
-      /** @description Staged `gallery` uploads, in order (at most 8). */
-      gallery_uploads?: string[];
-      version: components['schemas']['NewContentVersion'];
-      /**
-       * @description The publishing agreement: the creator owns the rights, the content follows the rules
-       *     and the fair-play policy. Must be `true`.
-       */
-      accept_terms: boolean;
-    };
-    PublishContentResponse: {
-      project: components['schemas']['ContentProject'];
-      version: components['schemas']['ContentVersion'];
-    };
-    PurchaseApproval: {
-      /** Format: uuid */
-      id: string;
-      child: components['schemas']['PublicUser'];
-      /** Format: uuid */
-      order_id: string;
-      currency: components['schemas']['Currency'];
-      /** Format: int64 */
-      total_minor: number;
-      items: string[];
-      status: components['schemas']['ApprovalStatus'];
-      /** Format: date-time */
-      created_at: string;
-    };
-    /**
-     * @description EU consumer law: explicit request for immediate execution and acknowledgement of the
-     *     loss of the 14-day withdrawal right for digital content. Both must be `true`.
-     */
-    PurchaseConsent: {
-      immediate_execution: boolean;
-      withdrawal_waiver: boolean;
-      /** @description Version of the consent wording displayed (see `GET /v1/store/legal`). */
-      wording_version: string;
-    };
-    Quote: {
-      currency: components['schemas']['Currency'];
-      lines: components['schemas']['QuoteLine'][];
-      /** Format: int64 */
-      subtotal_minor: number;
-      /** Format: int64 */
-      discount_minor: number;
-      /** Format: int64 */
-      wallet_applied_minor: number;
-      /** Format: int64 */
-      total_minor: number;
-      tax_inclusive: boolean;
-      promo_applied: boolean;
-      creator_code_applied: boolean;
-      warnings: string[];
-    };
-    QuoteLine: {
-      /** Format: uuid */
-      product_id: string;
-      name: string;
-      /** Format: int64 */
-      unit_price_minor: number;
-    };
-    QuoteRequest: {
-      product_ids: string[];
-      currency: components['schemas']['Currency'];
-      /** @description ISO country of the buyer (VAT rules). */
-      country: string;
-      promo_code?: string | null;
-      creator_code?: string | null;
-      /** @description Spend wallet credit (redeemed gift cards) first. */
-      use_wallet?: boolean;
-    };
-    ReadReceipt: {
-      /** Format: uuid */
-      peer_id: string;
-      /** Format: date-time */
-      read_at: string;
-      /**
-       * Format: int64
-       * @description Messages marked read by this call.
-       */
-      marked: number;
-    };
-    ReauthRequest: {
-      password?: string | null;
-      totp_code?: string | null;
-    };
-    /** @description Result of the last DNS check of one expected record. */
-    RecordCheck: {
-      status: components['schemas']['RecordCheckStatus'];
-      /** @description Values actually found in DNS (truncated). */
-      found: string[];
-      /** Format: date-time */
-      checked_at?: string | null;
-    };
-    /** @enum {string} */
-    RecordCheckStatus: 'unchecked' | 'ok' | 'missing' | 'mismatch' | 'error';
-    RecoveryCodesResponse: {
-      /** @description Ten single-use codes, shown once. */
-      codes: string[];
-    };
-    RedeemGiftCardRequest: {
-      code: string;
-    };
-    RefreshRequest: {
-      /** @description Required for the launcher; the web app sends the cookie instead. */
-      refresh_token?: string | null;
-      client?: components['schemas']['ClientKind'];
-    };
-    RelayServer: {
-      /** Format: uuid */
-      id: string;
-      name: string;
-      /**
-       * @description Unique route name `<route-id>.<relay-host>`, always routed: the CNAME/SRV target for
-       *     custom domains (ADR 0013), also usable directly by players.
-       */
-      route_hostname: string;
-      /** @description `<label>.<relay-domain>` when the optional free subdomain feature is enabled. */
-      subdomain?: string | null;
-      /** @description Hostnames the relay is authorised to route (verified domains + subdomain). */
-      hostnames: string[];
-      domains: components['schemas']['CustomDomain'][];
-      /** Format: date-time */
-      created_at: string;
-    };
-    RelayToken: {
-      /** @description Tunnel token for the relay handshake (HS256 JWT, relay ADR 0101, docs/API.md). */
-      token: string;
-      /** Format: date-time */
-      expires_at: string;
-      /** @description Relay tunnel endpoint `host:port` (TLS). */
-      relay_addr: string;
-      /** @description Permanent hostnames (verified custom domains, optional free subdomain). */
-      hostnames: string[];
-      /** @description Temporary hostnames with their lease expiry. */
-      temp_hostnames: components['schemas']['TempHostname'][];
-    };
-    Report: {
-      /** Format: uuid */
-      id: string;
-      /** Format: uuid */
-      reporter_id?: string | null;
-      target: components['schemas']['PublicUser'];
-      message?: null | components['schemas']['Message'];
-      reason: components['schemas']['ReportReason'];
-      details?: string | null;
-      status: components['schemas']['ReportStatus'];
-      /** Format: date-time */
-      created_at: string;
-      resolution_note?: string | null;
-      content_project?: null | components['schemas']['ReportedContent'];
-      server_listing?: null | components['schemas']['ReportedServer'];
-    };
-    ReportCreated: {
-      /** Format: uuid */
-      id: string;
-    };
-    /** @enum {string} */
-    ReportReason:
-      | 'spam'
-      | 'harassment'
-      | 'inappropriate_content'
-      | 'cheating'
-      | 'impersonation'
-      | 'copyright'
-      | 'malware'
-      | 'other';
-    ReportRequest: {
-      /** Format: uuid */
-      target_user_id: string;
-      /** Format: uuid */
-      message_id?: string | null;
-      reason: components['schemas']['ReportReason'];
-      details?: string | null;
-    };
-    /** @enum {string} */
-    ReportStatus: 'open' | 'actioned' | 'dismissed';
-    ReportedContent: {
-      id: string;
-      slug: string;
-      name: string;
-      kind: components['schemas']['ContentKind'];
-    };
-    ReportedServer: {
-      /** Format: uuid */
-      id: string;
-      slug: string;
-      name: string;
-      address: string;
-    };
-    ResetPasswordRequest: {
-      token: string;
-      new_password: string;
-    };
-    ResolveReportRequest: {
-      action: components['schemas']['ModerationAction'];
-      note?: string | null;
-      /**
-       * Format: int64
-       * @description Ban duration; `null` = permanent.
-       */
-      duration_hours?: number | null;
-    };
-    RespondInvitationRequest: {
-      accept: boolean;
-    };
-    /** @enum {string} */
-    Role: 'user' | 'moderator' | 'admin';
-    /** @description One of `user_id`, `username` (Rustic) or `minecraft_name` (linked Minecraft profile). */
-    SendFriendRequest: {
-      username?: string | null;
-      minecraft_name?: string | null;
-      /** Format: uuid */
-      user_id?: string | null;
-    };
-    SendMessageRequest: {
-      /** @description 1-2000 characters. Passed through the profanity filter hook. */
-      body: string;
-    };
-    ServerJoinInfo: {
-      name: string;
-      /** @description `host[:port]` to connect to. */
-      address: string;
-      /** Format: uuid */
-      rustic_server_id?: string | null;
-    };
-    /** @description A server in the directory. Lists leave `description` out (`null`); the detail has it. */
-    ServerListing: {
-      /** Format: uuid */
-      id: string;
-      /** @description `[a-z0-9-]{3,48}`, unique: `/servers/<slug>` on the website, `rustic://server/<slug>`. */
-      slug: string;
-      name: string;
-      /** @description `host` or `host:port` players type in the game (lowercase). */
-      address: string;
-      /** @description One line, 10-160 characters. */
-      summary: string;
-      /** @description Markdown (the website's small subset; never raw HTML). Detail only. */
-      description?: string | null;
-      /** @description From `GET /v1/server-listings/catalog` (`survival`, `minigames`...), 1-6. */
-      tags: string[];
-      /** @description Languages spoken (ISO 639-1, lowercase), 1-5. */
-      languages: string[];
-      /** @description What the server runs: vanilla Horizon or Rustic Server (plugins). */
-      engine: components['schemas']['FeaturedEngine'];
-      /** @description Game version players need (`26.3`), when the owner said. */
-      game_version?: string | null;
-      /** @description Players need the Rustic edition client (cosmetics, companion, native mods). */
-      requires_rustic_edition: boolean;
-      website?: string | null;
-      /** @description A Discord invite (`https://discord.gg/...`). */
-      discord?: string | null;
-      /** @description Square icon on Rustic's CDN. */
-      icon_url?: string | null;
-      /** @description Wide banner on Rustic's CDN. */
-      banner_url?: string | null;
-      visibility: components['schemas']['ContentVisibility'];
-      /** @description Staff checked the owner and the rules. */
-      verified: boolean;
-      /** @description A staff pick (the Launchpad, the hero carousels). */
-      featured: boolean;
-      owner?: null | components['schemas']['PublicUser'];
-      status?: null | components['schemas']['ServerListingStatus'];
-      /**
-       * Format: int64
-       * @description "Play" presses from the launcher over the last 7 days (anonymous, one per player and
-       *     6 hours): the trending signal with the player count.
-       */
-      plays_7d: number;
-      /** Format: date-time */
-      created_at: string;
-      /** Format: date-time */
-      updated_at: string;
-      moderation?: null | components['schemas']['ServerListingModeration'];
-    };
-    /** @description The directory's vocabulary and limits (the forms and filters read it). */
-    ServerListingCatalog: {
-      tags: string[];
-      /** @description Languages listings use most, most used first (filters). */
-      languages: string[];
-      /** Format: int64 */
-      max_tags: number;
-      /** Format: int64 */
-      max_languages: number;
-      /** Format: int64 */
-      max_listings_per_user: number;
-      /** Format: int64 */
-      max_image_bytes: number;
-    };
-    ServerListingFeatureRequest: {
-      /**
-       * Format: int32
-       * @description Lower first (0-1000).
-       */
-      rank?: number;
-    };
-    ServerListingHideRequest: {
-      /** @description Shown to the owner (3-1000 characters). */
-      reason: string;
-    };
-    /** @description What the owner and staff see besides the public page. */
-    ServerListingModeration: {
-      hidden: boolean;
-      hidden_reason?: string | null;
-      /** Format: date-time */
-      hidden_at?: string | null;
-      /** Format: date-time */
-      verified_at?: string | null;
-      /**
-       * Format: int32
-       * @description Position among staff picks (lower first); `null` when not featured.
-       */
-      featured_rank?: number | null;
-    };
-    ServerListingPage: {
-      items: components['schemas']['ServerListing'][];
-      /** @description More results after `offset + items.len()`. */
-      has_more: boolean;
-      /**
-       * Format: int64
-       * @description Matching listings in all.
-       */
-      total: number;
-    };
-    ServerListingReportRequest: {
-      reason: components['schemas']['ReportReason'];
-      details?: string | null;
-    };
-    /** @description Create (`POST`) a listing. Published at once after the automatic checks. */
-    ServerListingRequest: {
-      slug: string;
-      name: string;
-      address: string;
-      summary: string;
-      description?: string;
-      tags: string[];
-      languages: string[];
-      engine: components['schemas']['FeaturedEngine'];
-      game_version?: string | null;
-      requires_rustic_edition?: boolean;
-      website?: string | null;
-      discord?: string | null;
-      visibility?: components['schemas']['ContentVisibility'];
-      /**
-       * Format: uuid
-       * @description A staged `icon` upload (`POST /v1/content/uploads?purpose=icon`).
-       */
-      icon_upload?: string | null;
-      /**
-       * Format: uuid
-       * @description A staged `banner` upload.
-       */
-      banner_upload?: string | null;
-      /** @description The owner accepts the server listing rules (no impersonation, honest description). */
-      accept_rules: boolean;
-    };
-    /** @description Last status the cloud read with the server list ping (public addresses only, every ~10 min). */
-    ServerListingStatus: {
-      /** @description Answered the last ping. */
-      online: boolean;
-      /** Format: int32 */
-      players_online?: number | null;
-      /** Format: int32 */
-      players_max?: number | null;
-      /** @description Plain text of the MOTD (formatting codes removed, at most 200 characters). */
-      motd?: string | null;
-      /** @description The version name the server announced. */
-      version?: string | null;
-      /** Format: date-time */
-      checked_at: string;
-    };
-    /** @description Server → client frames. */
-    ServerMessage:
-      | {
-          /** Format: uuid */
-          user_id: string;
-          /** Format: uuid */
-          connection_id: string;
-          /** Format: int64 */
-          heartbeat_interval_secs: number;
-          /** @enum {string} */
-          type: 'hello';
-        }
-      | {
-          /** Format: int64 */
-          nonce: number;
-          /** @enum {string} */
-          type: 'pong';
-        }
-      | {
-          /** Format: uuid */
-          user_id: string;
-          presence: components['schemas']['Presence'];
-          /** @enum {string} */
-          type: 'presence_changed';
-        }
-      | {
-          request: components['schemas']['FriendRequest'];
-          /** @enum {string} */
-          type: 'friend_request_received';
-        }
-      | {
-          friend: components['schemas']['PublicUser'];
-          /** @enum {string} */
-          type: 'friend_added';
-        }
-      | {
-          /** Format: uuid */
-          user_id: string;
-          /** @enum {string} */
-          type: 'friend_removed';
-        }
-      | {
-          message: components['schemas']['Message'];
-          /** @enum {string} */
-          type: 'message_received';
-        }
-      | {
-          /** Format: uuid */
-          reader_id: string;
-          /** Format: date-time */
-          read_at: string;
-          /** @enum {string} */
-          type: 'messages_read';
-        }
-      | {
-          address: string;
-          /** Format: uuid */
-          invitation_id: string;
-          /** @enum {string} */
-          type: 'join_server';
-        }
-      | {
-          invite: components['schemas']['PartyInvite'];
-          /** @enum {string} */
-          type: 'party_invite_received';
-        }
-      | {
-          /** Format: uuid */
-          party_id: string;
-          party?: null | components['schemas']['Party'];
-          /** @enum {string} */
-          type: 'party_updated';
-        }
-      | {
-          invitation: components['schemas']['Invitation'];
-          /** @enum {string} */
-          type: 'invitation_received';
-        }
-      | {
-          notification: components['schemas']['Notification'];
-          /** @enum {string} */
-          type: 'notification_created';
-        }
-      | {
-          /** Format: uuid */
-          user_id: string;
-          items: components['schemas']['EquippedSlot'][];
-          /** Format: date-time */
-          updated_at: string;
-          /** @enum {string} */
-          type: 'equipped_changed';
-        }
-      | {
-          /** Format: uuid */
-          session_id: string;
-          /** @enum {string} */
-          type: 'session_revoked';
-        }
-      | {
-          /** Format: int64 */
-          retry_after_ms: number;
-          /** @enum {string} */
-          type: 'rate_limited';
-        }
-      | {
-          code: string;
-          message: string;
-          /** @enum {string} */
-          type: 'error';
+        /** @enum {string} */
+        AcquisitionSource: "purchase" | "gift" | "promo" | "grant";
+        Activity: {
+            kind: components["schemas"]["ActivityKind"];
+            instance_name?: string | null;
+            server_name?: string | null;
+            /** @description Only forwarded to friends when the user marked the server as shareable. */
+            server_address?: string | null;
         };
-    SessionInfo: {
-      /** Format: uuid */
-      id: string;
-      device_name?: string | null;
-      user_agent?: string | null;
-      ip?: string | null;
-      /** Format: date-time */
-      created_at: string;
-      /** Format: date-time */
-      last_seen_at: string;
-      current: boolean;
+        /** @enum {string} */
+        ActivityKind: "in_launcher" | "playing" | "hosting";
+        AddDomainRequest: {
+            hostname: string;
+            /** @description Registrable zone; defaults to the last two labels of `hostname`. */
+            zone?: string | null;
+        };
+        /** @description A collection as staff see it. */
+        AdminCollection: {
+            /** Format: uuid */
+            id: string;
+            slug: string;
+            name: string;
+            description: string;
+            accent: string;
+            hero: boolean;
+            /** @description In display order (inactive products included). */
+            product_ids: string[];
+            active: boolean;
+            /** Format: int32 */
+            sort: number;
+            /** Format: date-time */
+            created_at: string;
+        };
+        AdminContentList: {
+            items: components["schemas"]["ContentProject"][];
+            has_more: boolean;
+            /** Format: int64 */
+            total: number;
+        };
+        /** @description A featured server as staff see it. */
+        AdminFeaturedServer: {
+            server: components["schemas"]["FeaturedServer"];
+            active: boolean;
+            /** Format: date-time */
+            created_at: string;
+        };
+        /** @description A news item as staff see it (drafts included). */
+        AdminNewsItem: {
+            /** Format: uuid */
+            id: string;
+            slug: string;
+            source: components["schemas"]["NewsSource"];
+            kind: components["schemas"]["NewsKind"];
+            title: string;
+            summary: string;
+            body: string;
+            external_url?: string | null;
+            version?: string | null;
+            locale: string;
+            /**
+             * Format: date-time
+             * @description Null while a draft.
+             */
+            published_at?: string | null;
+            /** Format: date-time */
+            created_at: string;
+            /** Format: date-time */
+            updated_at: string;
+        };
+        /** @description A product as staff see it (inactive ones included). */
+        AdminProduct: {
+            /** Format: uuid */
+            id: string;
+            slug: string;
+            kind: components["schemas"]["ProductKind"];
+            name: string;
+            description: string;
+            category_id: string;
+            active: boolean;
+            featured: boolean;
+            /**
+             * Format: int32
+             * @description 1 = most trending; null when not trending.
+             */
+            trending_rank?: number | null;
+            /** @description Regular prices (before any daily offer). */
+            prices: components["schemas"]["PriceInput"][];
+            item_ids: string[];
+            /** Format: date-time */
+            created_at: string;
+        };
+        ApprovalDecision: {
+            approve: boolean;
+        };
+        /** @enum {string} */
+        ApprovalStatus: "pending" | "approved" | "denied";
+        AuditEntry: {
+            /** Format: int64 */
+            id: number;
+            /** Format: uuid */
+            actor_id?: string | null;
+            action: string;
+            target_type: string;
+            target_id?: string | null;
+            data: Record<string, never>;
+            /** Format: date-time */
+            created_at: string;
+        };
+        AvatarInfo: {
+            url?: string | null;
+            kind: components["schemas"]["AvatarKind"];
+            /**
+             * Format: int32
+             * @description The default head in use (1-20), when `kind` is `default`.
+             */
+            default_id?: number | null;
+            /** @description `false` while the player never chose: the head comes from the account id. */
+            chosen: boolean;
+        };
+        /** @enum {string} */
+        AvatarKind: "default" | "skin";
+        Ban: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            user_id: string;
+            scope: components["schemas"]["BanScope"];
+            reason: string;
+            /** Format: date-time */
+            created_at: string;
+            /** Format: date-time */
+            expires_at?: string | null;
+            /** Format: date-time */
+            revoked_at?: string | null;
+        };
+        /** @enum {string} */
+        BanScope: "platform" | "chat";
+        /** @description What the account may do right now (age rules + parental controls + bans). */
+        Capabilities: {
+            is_minor: boolean;
+            /** @description Under the digital-consent age and no guardian linked yet. */
+            needs_guardian: boolean;
+            can_chat: boolean;
+            chat_mode: components["schemas"]["ChatMode"];
+            can_purchase: boolean;
+            purchases_need_guardian_approval: boolean;
+            friend_requests_allowed: boolean;
+            chat_banned: boolean;
+            /** @description May appear in (and see) friend suggestions of players met (ADR 0145): adults only. */
+            discoverable_allowed?: boolean;
+        };
+        Catalog: {
+            currency: components["schemas"]["Currency"];
+            country?: string | null;
+            prices_include_tax: boolean;
+            /** @description Legal display note (e.g. "Prices include VAT." / "Taxes calculated at checkout."). */
+            tax_note: string;
+            categories: components["schemas"]["Category"][];
+            products: components["schemas"]["Product"][];
+            /** @description Active collections ordered by `sort`, then name. */
+            collections: components["schemas"]["StoreCollection"][];
+            /** @description Product ids by trending rank (best first). */
+            trending: string[];
+            daily: components["schemas"]["DailyOffers"];
+        };
+        Category: {
+            id: string;
+            name: string;
+            /** Format: int32 */
+            sort: number;
+        };
+        ChangePasswordRequest: {
+            current_password: string;
+            new_password: string;
+        };
+        /** @enum {string} */
+        ChatMode: "everyone" | "friends_only" | "disabled";
+        CheckoutRequest: {
+            quote: components["schemas"]["QuoteRequest"];
+            consent: components["schemas"]["PurchaseConsent"];
+        };
+        CheckoutResponse: {
+            order: components["schemas"]["Order"];
+            /** @description Stripe Checkout URL to open; `null` when fully paid by wallet or awaiting a guardian. */
+            checkout_url?: string | null;
+        };
+        ChildSummary: {
+            user: components["schemas"]["PublicUser"];
+            /** Format: date-time */
+            linked_at: string;
+            controls: components["schemas"]["ParentalControls"];
+        };
+        /** @description `PUT /v1/me/avatar`: one of the default heads. */
+        ChooseAvatarRequest: {
+            /** Format: int32 */
+            default_id: number;
+        };
+        /**
+         * @description `web` receives the refresh token in an HttpOnly cookie instead of the body.
+         * @enum {string}
+         */
+        ClientKind: "launcher" | "web";
+        /** @description Client → server frames. */
+        ClientMessage: {
+            status: components["schemas"]["PresenceStatus"];
+            activity?: null | components["schemas"]["Activity"];
+            share_server?: boolean;
+            /** @enum {string} */
+            type: "heartbeat";
+        } | {
+            /** Format: int64 */
+            nonce: number;
+            /** @enum {string} */
+            type: "ping";
+        };
+        CompanionFriend: {
+            /** @description Minecraft UUID hex of the friend's linked profile (Rustic user id hex if none). */
+            uuid: string;
+            name: string;
+            online: boolean;
+            activity?: string | null;
+        };
+        CompanionInvite: {
+            id: string;
+            from: string;
+            server: string;
+        };
+        CompanionInviteRequest: {
+            /** @description Friend's Minecraft UUID hex (or Rustic user id). */
+            to: string;
+            /** @description `host[:port]` of the server the inviter is on. */
+            address: string;
+        };
+        CompanionMessage: {
+            id: string;
+            from: string;
+            text: string;
+        };
+        ConsentState: {
+            /** @description Telemetry is off by default. */
+            telemetry: boolean;
+            /** Format: date-time */
+            telemetry_updated_at?: string | null;
+            privacy_policy_version?: string | null;
+            /** Format: date-time */
+            privacy_policy_accepted_at?: string | null;
+            current_privacy_policy_version: string;
+        };
+        ContactAccepted: {
+            /**
+             * Format: uuid
+             * @description `None` when the message was dropped as spam (answered the same way).
+             */
+            id?: string | null;
+        };
+        /** @enum {string} */
+        ContactCategory: "support" | "account" | "billing" | "partnership" | "press" | "abuse" | "other";
+        /** @description `POST /v1/contact` (the website's contact page). */
+        ContactRequest: {
+            name: string;
+            email: string;
+            category: components["schemas"]["ContactCategory"];
+            subject: string;
+            message: string;
+            /** @description Optional link (a screenshot, a page). */
+            link?: string | null;
+            /** @description The sender agreed to the processing of their message (required). */
+            consent: boolean;
+            locale?: string | null;
+            /** @description Honeypot: a hidden field people leave empty. */
+            website?: string | null;
+            /**
+             * Format: int64
+             * @description Milliseconds between the form showing and its sending.
+             */
+            elapsed_ms?: number | null;
+        };
+        /** @description The kinds open to creators, their categories and the upload limits. */
+        ContentCatalogInfo: {
+            kinds: components["schemas"]["ContentKindCategories"][];
+            /** Format: int64 */
+            max_file_bytes: number;
+            /** Format: int64 */
+            max_image_bytes: number;
+            /** Format: int64 */
+            max_gallery: number;
+            /** @description False until creator sales open (Stripe Connect): paid projects are shown, not sold. */
+            creator_sales_enabled: boolean;
+        };
+        /** @enum {string} */
+        ContentChannel: "release" | "beta" | "alpha";
+        ContentDependency: {
+            project_id?: string | null;
+            version_id?: string | null;
+            /** @description Semver requirement (Rustic plugins). */
+            version_req?: string | null;
+            sha256?: string | null;
+            kind: components["schemas"]["ContentDependencyKind"];
+        };
+        /** @enum {string} */
+        ContentDependencyKind: "required" | "optional" | "incompatible" | "embedded";
+        /** @description A short-lived link to a version's file (private files need one in a browser). */
+        ContentDownloadLink: {
+            url: string;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        /** @description Same JSON as `rusticmc_content::model::FairPlay` (`{"status": "clean"}`). */
+        ContentFairPlay: {
+            status: components["schemas"]["FairPlayStatus"];
+            reason?: string | null;
+        };
+        ContentFile: {
+            url: string;
+            filename: string;
+            /** Format: int64 */
+            size?: number | null;
+            hashes: components["schemas"]["ContentHashes"];
+            primary: boolean;
+            signature?: string | null;
+        };
+        /** @description What a checked file says about itself (its manifest). */
+        ContentFileFacts: {
+            kind: components["schemas"]["ContentKind"];
+            /** @description The manifest's id (content mods, native mods, `.hpack`, `.hshader`). */
+            id?: string | null;
+            name?: string | null;
+            version?: string | null;
+            /** @description See [`ContentHorizonFacts::api`]. */
+            api: string;
+            /** @description The game version it is for, when the manifest names one. */
+            game?: string | null;
+            /** Format: int32 */
+            hooks?: number | null;
+            side?: string | null;
+            capabilities: string[];
+            /**
+             * Format: int64
+             * @description Files in the archive.
+             */
+            entries: number;
+            /**
+             * Format: int64
+             * @description Unpacked size in bytes.
+             */
+            unpacked_size: number;
+        };
+        ContentHashes: {
+            sha1?: string | null;
+            sha256?: string | null;
+            sha512?: string | null;
+        };
+        /** @description The JSON of `rusticmc_content::model::HorizonFacts` (every key present). */
+        ContentHorizonFacts: {
+            /**
+             * @description A content mod's API line (`0.2`), a native mod's `native-1/<horizon>/<mixins>`, a
+             *     modpack's format, a shader pack's shader API, a resource/data pack's pack format.
+             */
+            api: string;
+            /**
+             * Format: int32
+             * @description A native mod's hook points version.
+             */
+            hooks?: number | null;
+            side?: string | null;
+            capabilities: string[];
+            broken_on: string[];
+            key?: string | null;
+        };
+        ContentImage: {
+            url: string;
+            /** Format: int32 */
+            width: number;
+            /** Format: int32 */
+            height: number;
+        };
+        /** @enum {string} */
+        ContentKind: "mod" | "native_mod" | "modpack" | "resourcepack" | "shader" | "shaderpack" | "datapack" | "plugin";
+        ContentKindCategories: {
+            kind: components["schemas"]["ContentKind"];
+            categories: string[];
+        };
+        /** @description Links shown on the project page (`https://` only). */
+        ContentLinks: {
+            source?: string | null;
+            issues?: string | null;
+            wiki?: string | null;
+            discord?: string | null;
+            website?: string | null;
+        };
+        /** @description Owner and staff view of a project's moderation state. */
+        ContentModeration: {
+            taken_down: boolean;
+            takedown_reason?: string | null;
+            /** Format: date-time */
+            taken_down_at?: string | null;
+            /** Format: date-time */
+            verified_at?: string | null;
+            /**
+             * Format: int64
+             * @description Versions waiting for an admin (native mods).
+             */
+            pending_versions: number;
+            /** @description The newest reviewer note on a rejected version. */
+            review_note?: string | null;
+        };
+        /**
+         * @description `amount_cents` 0 = free. Paid creator content is shown with its price; buying it is not
+         *     available yet (ADR 0155).
+         */
+        ContentPrice: {
+            /** Format: int64 */
+            amount_cents: number;
+            currency: components["schemas"]["Currency"];
+        };
+        ContentProject: {
+            /** @description Always `rustic`. */
+            source: string;
+            id: string;
+            slug: string;
+            kind: components["schemas"]["ContentKind"];
+            name: string;
+            summary: string;
+            authors: string[];
+            icon_url?: string | null;
+            /** Format: int64 */
+            downloads: number;
+            categories: string[];
+            tags: string[];
+            license?: string | null;
+            loaders: string[];
+            game_versions: string[];
+            fair_play: components["schemas"]["ContentFairPlay"];
+            /** @description Markdown page; only in `GET /v1/content/projects/{id}` (not in search hits). */
+            description?: string | null;
+            /** @description Screenshots, in order (re-encoded on upload, served from Rustic's CDN). */
+            gallery?: components["schemas"]["ContentImage"][];
+            links?: components["schemas"]["ContentLinks"];
+            owner?: null | components["schemas"]["PublicUser"];
+            visibility?: components["schemas"]["ContentVisibility"];
+            /** @description An admin confirmed the project matches its description. */
+            verified?: boolean;
+            price?: components["schemas"]["ContentPrice"];
+            /** Format: date-time */
+            created_at?: string | null;
+            /** Format: date-time */
+            updated_at?: string | null;
+            /** @description Newest version visible to the caller. */
+            latest_version?: string | null;
+            /**
+             * Format: int64
+             * @description Size in bytes of the newest version's primary file.
+             */
+            size?: number | null;
+            /**
+             * @description `pending` while a native mod waits for an admin (it is then private whatever its
+             *     visibility says).
+             */
+            review?: components["schemas"]["ContentReviewStatus"];
+            /** @description Hosted by Rustic's marketplace (uploaded by its creator) rather than curated. */
+            marketplace?: boolean;
+            moderation?: null | components["schemas"]["ContentModeration"];
+        };
+        ContentReportRequest: {
+            reason: components["schemas"]["ReportReason"];
+            details?: string | null;
+        };
+        ContentReviewItem: {
+            project: components["schemas"]["ContentProject"];
+            version: components["schemas"]["ContentVersion"];
+        };
+        ContentReviewRequest: {
+            /**
+             * @description `true` approves the version (the project becomes visible as its owner chose), `false`
+             *     rejects it with `note` as the reason.
+             */
+            approve: boolean;
+            note?: string | null;
+        };
+        /** @enum {string} */
+        ContentReviewStatus: "not_required" | "pending" | "approved" | "rejected";
+        ContentSearchResponse: {
+            hits: components["schemas"]["ContentProject"][];
+            /** @description More results after `offset + hits.len()`. */
+            has_more?: boolean;
+            /**
+             * Format: int64
+             * @description Matching projects in all.
+             */
+            total?: number;
+        };
+        ContentTakedownRequest: {
+            reason: string;
+        };
+        /** @description A staged upload, checked and kept until a publish request uses it (or it expires). */
+        ContentUpload: {
+            /** Format: uuid */
+            id: string;
+            purpose: components["schemas"]["ContentUploadPurpose"];
+            filename: string;
+            /** Format: int64 */
+            size: number;
+            sha256: string;
+            sha512: string;
+            facts?: null | components["schemas"]["ContentFileFacts"];
+            /**
+             * Format: int32
+             * @description Images.
+             */
+            width?: number | null;
+            /** Format: int32 */
+            height?: number | null;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        /** @enum {string} */
+        ContentUploadPurpose: "file" | "icon" | "gallery" | "banner";
+        ContentVersion: {
+            /** @description Always `rustic`. */
+            source: string;
+            project_id: string;
+            /** @description `<project>@<version>`. */
+            id: string;
+            name: string;
+            version: string;
+            kind: components["schemas"]["ContentKind"];
+            game_versions: string[];
+            loaders: string[];
+            files: components["schemas"]["ContentFile"][];
+            dependencies: components["schemas"]["ContentDependency"][];
+            /** @description RFC 3339. */
+            published: string;
+            horizon?: null | components["schemas"]["ContentHorizonFacts"];
+            changelog?: string;
+            channel?: components["schemas"]["ContentChannel"];
+            /** @description Yanked versions are listed to their owner and staff only. */
+            yanked?: boolean;
+            yanked_reason?: string | null;
+            /** Format: int64 */
+            downloads?: number;
+            review?: components["schemas"]["ContentReviewStatus"];
+            /** @description Owner and staff only: the reviewer's note. */
+            review_note?: string | null;
+        };
+        /** @enum {string} */
+        ContentVisibility: "public" | "unlisted" | "private";
+        /** @description One direct-message conversation (most recent first in `GET /v1/conversations`). */
+        Conversation: {
+            peer: components["schemas"]["PublicUser"];
+            presence: components["schemas"]["Presence"];
+            last_message: components["schemas"]["Message"];
+            /**
+             * Format: int64
+             * @description Messages from `peer` not read yet.
+             */
+            unread: number;
+        };
+        CosmeticItem: {
+            /** Format: uuid */
+            id: string;
+            slug: string;
+            name: string;
+            description: string;
+            slot: components["schemas"]["CosmeticSlot"];
+            /** @description Cosmetic id on the CDN (`cosmetics/<asset_ref>/<asset_version>/<asset_hash>.json`). */
+            asset_ref: string;
+            /** @description Bundle version on the CDN (empty until published by the pipeline). */
+            asset_version: string;
+            /** @description SHA-256 (hex) of the bundle: its CDN address and integrity check. */
+            asset_hash: string;
+        };
+        /**
+         * @description Cosmetic slots = the cosmetics format's categories (`packages/cosmetics-format`,
+         *     `Category`). Purely visual. There is deliberately no cape slot (docs/LEGAL.md).
+         * @enum {string}
+         */
+        CosmeticSlot: "head" | "back" | "top" | "shoulder_companion" | "companion" | "trail" | "aura" | "emote" | "nametag";
+        CreateBanRequest: {
+            /** Format: uuid */
+            user_id: string;
+            scope: components["schemas"]["BanScope"];
+            reason: string;
+            /** Format: int64 */
+            duration_hours?: number | null;
+        };
+        CreateCollectionRequest: {
+            /** @description 2-64 chars `[a-z0-9-]`, unique. */
+            slug: string;
+            name: string;
+            description?: string | null;
+            /** @description `#rrggbb`, default `#ff6a00`. */
+            accent?: string | null;
+            hero?: boolean | null;
+            active?: boolean | null;
+            /** Format: int32 */
+            sort?: number | null;
+            product_ids?: string[] | null;
+        };
+        CreateContentProjectRequest: {
+            slug: string;
+            kind: components["schemas"]["ContentKind"];
+            name: string;
+            summary: string;
+            authors?: string[];
+            icon_url?: string | null;
+            categories?: string[];
+            tags?: string[];
+            license?: string | null;
+            loaders?: string[];
+            game_versions?: string[];
+        };
+        CreateContentVersionRequest: {
+            version: string;
+            name: string;
+            game_versions?: string[];
+            loaders?: string[];
+            files: components["schemas"]["ContentFile"][];
+            dependencies?: components["schemas"]["ContentDependency"][];
+        };
+        CreateCreatorCodeRequest: {
+            code: string;
+            /** Format: uuid */
+            creator_user_id: string;
+            /**
+             * Format: int32
+             * @description Revenue share in basis points (500 = 5 %).
+             */
+            revenue_share_bps: number;
+        };
+        CreateGiftCardRequest: {
+            currency: components["schemas"]["Currency"];
+            /** Format: int64 */
+            amount_minor: number;
+        };
+        CreateInvitationRequest: {
+            /** Format: uuid */
+            to_user_id: string;
+            server: components["schemas"]["ServerJoinInfo"];
+        };
+        CreateItemRequest: {
+            slug: string;
+            name: string;
+            description: string;
+            slot: components["schemas"]["CosmeticSlot"];
+            asset_ref: string;
+            asset_version?: string;
+            asset_hash?: string;
+        };
+        CreateProductRequest: {
+            slug: string;
+            kind: components["schemas"]["ProductKind"];
+            name: string;
+            description: string;
+            category: string;
+            item_ids: string[];
+            prices: components["schemas"]["PriceInput"][];
+        };
+        CreatePromoCodeRequest: {
+            code: string;
+            /** Format: int32 */
+            percent_off?: number | null;
+            /** Format: int64 */
+            amount_off_minor?: number | null;
+            currency?: null | components["schemas"]["Currency"];
+            /** Format: int32 */
+            max_redemptions?: number | null;
+            /** Format: date-time */
+            valid_until?: string | null;
+        };
+        CreateServerRequest: {
+            /** @description Display name, 3-32 chars. */
+            name: string;
+            /** @description Request a free `<label>.<relay-domain>` (only when the feature is enabled). */
+            subdomain_label?: string | null;
+        };
+        CreatorCode: {
+            /** Format: uuid */
+            id: string;
+            code: string;
+            /** Format: uuid */
+            creator_user_id: string;
+            /** Format: int32 */
+            revenue_share_bps: number;
+            active: boolean;
+        };
+        /** @enum {string} */
+        Currency: "EUR" | "USD" | "GBP" | "CHF";
+        CustomDomain: {
+            /** Format: uuid */
+            id: string;
+            /** @description Hostname players type (e.g. `play.example.com` or `example.com`). */
+            hostname: string;
+            /** @description Registrable zone the records live in (e.g. `example.com`). */
+            zone: string;
+            status: components["schemas"]["DomainStatus"];
+            /** @description True when the relay is authorised to route this hostname. */
+            routing_active: boolean;
+            /** Format: date-time */
+            verified_at?: string | null;
+            /** Format: date-time */
+            last_checked_at?: string | null;
+            /**
+             * Format: date-time
+             * @description Next periodic re-verification (verified domains).
+             */
+            next_check_at?: string | null;
+            last_error?: string | null;
+            /** @description Registrar-agnostic record set to create, with per-record live check results. */
+            dns_records: components["schemas"]["DnsRecord"][];
+        };
+        DailyOfferEntry: {
+            /**
+             * Format: date
+             * @description UTC day.
+             */
+            day: string;
+            /** Format: uuid */
+            product_id: string;
+            /** Format: int32 */
+            percent_off: number;
+        };
+        DailyOfferInput: {
+            /** Format: uuid */
+            product_id: string;
+            /**
+             * Format: int32
+             * @description 1-90.
+             */
+            percent_off: number;
+        };
+        /** @description Today's daily offers (one UTC day, same for everyone). */
+        DailyOffers: {
+            /** Format: date */
+            day: string;
+            /**
+             * Format: date-time
+             * @description Next UTC midnight.
+             */
+            ends_at: string;
+            product_ids: string[];
+        };
+        DefaultAvatar: {
+            /** Format: int32 */
+            id: number;
+            url: string;
+        };
+        DeletionStatus: {
+            /** Format: date-time */
+            scheduled_for?: string | null;
+        };
+        DenyEntryRequest: {
+            reason: string;
+        };
+        /** @description `GET /v1/me/discord`. */
+        DiscordAccount: {
+            /** @description `false` while the server has no Discord OAuth2 client configured (linking disabled). */
+            available: boolean;
+            link?: null | components["schemas"]["DiscordLink"];
+            /** @description Invite to the Rustic Discord server, when configured. */
+            invite_url?: string | null;
+        };
+        /** @description The staff notice the Discord bot posts for a contact message (no email address). */
+        DiscordContactNotice: {
+            /** @description Short reference, also in the emails' subjects. */
+            reference: string;
+            category: components["schemas"]["ContactCategory"];
+            name: string;
+            subject: string;
+            /** @description The first 300 characters. */
+            excerpt: string;
+            /** @description Sent by a signed-in member. */
+            signed_in: boolean;
+            /** Format: date-time */
+            created_at: string;
+        };
+        /**
+         * @description The public snapshot of a marketplace project for the bot's feed (service token, scope
+         *     `discord`). `postable` is the API's decision: public, listed, not taken down, at least one
+         *     public version. When it is `false` the bot removes what it posted.
+         */
+        DiscordContentSnapshot: {
+            postable: boolean;
+            project?: null | components["schemas"]["ContentProject"];
+            /** @description Public versions, newest first (at most 20). */
+            versions: components["schemas"]["ContentVersion"][];
+            /** @description The project's page on the website. */
+            page_url?: string | null;
+            /** @description `rustic://content/rustic/<id>`: opens the project in the launcher. */
+            launcher_url?: string | null;
+        };
+        DiscordKindCount: {
+            kind: components["schemas"]["ContentKind"];
+            /** Format: int64 */
+            count: number;
+        };
+        /** @description A Discord account linked to the caller's Rustic account (identity only: it never signs in). */
+        DiscordLink: {
+            /** @description Discord user id (a snowflake, as a string). */
+            discord_id: string;
+            username: string;
+            /** @description Display name on Discord, when set. */
+            global_name?: string | null;
+            /** @description Discord CDN avatar URL, when the account has one. */
+            avatar_url?: string | null;
+            /** Format: date-time */
+            linked_at: string;
+        };
+        /** @description Step 2: the website's callback page posts what Discord returned. */
+        DiscordLinkFinishRequest: {
+            code: string;
+            state: string;
+        };
+        /** @description Step 1: the website sends the browser to `authorize_url` (Discord's consent screen). */
+        DiscordLinkStart: {
+            authorize_url: string;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        /**
+         * @description `GET /v1/integrations/discord/links/{discord_id}`: whether a Discord account is linked
+         *     (role sync). Never says to which Rustic account.
+         */
+        DiscordLinkState: {
+            discord_id: string;
+            linked: boolean;
+        };
+        /**
+         * @description `GET /v1/integrations/discord/profile`: only public data. A minor's Discord link and game
+         *     name are never revealed to others; lookups by game name never resolve a minor.
+         */
+        DiscordProfile: {
+            user: components["schemas"]["PublicUser"];
+            /** @description Linked game profile name (adults only, or the member looking at their own profile). */
+            minecraft_name?: string | null;
+            /** @description The Discord account this profile is linked to, when it may be shown. */
+            discord_id?: string | null;
+            /** @description The looked-up account is the asking Discord member's own. */
+            is_self: boolean;
+            stats: components["schemas"]["DiscordStats"];
+            /** @description Most downloaded public projects (at most 5). */
+            projects: components["schemas"]["DiscordProjectSummary"][];
+            /** @description Public server listings (at most 5). */
+            servers: components["schemas"]["DiscordServerSummary"][];
+            access?: null | components["schemas"]["ProfileAccess"];
+            /** @description `rustic-launcher.com/account/<username>`. */
+            profile_url?: string | null;
+            /** Format: date-time */
+            member_since?: string | null;
+            bio?: string | null;
+            badges?: null | components["schemas"]["ProfileBadges"];
+            play?: null | components["schemas"]["ProfileStats"];
+            activity?: null | components["schemas"]["ProfileActivity"];
+            /** Format: int64 */
+            friends_count?: number | null;
+        };
+        /** @description A public project in a Discord profile card. */
+        DiscordProjectSummary: {
+            id: string;
+            kind: components["schemas"]["ContentKind"];
+            name: string;
+            /** Format: int64 */
+            downloads: number;
+            verified: boolean;
+            page_url: string;
+        };
+        /** @description The public snapshot of a server listing (ADR 0158) for the bot's feed. */
+        DiscordServerSnapshot: {
+            postable: boolean;
+            listing?: null | components["schemas"]["ServerListing"];
+            page_url?: string | null;
+            /** @description `rustic://server/<slug>`. */
+            launcher_url?: string | null;
+        };
+        /** @description A public server listing in a Discord profile card. */
+        DiscordServerSummary: {
+            slug: string;
+            name: string;
+            address: string;
+            /** Format: int32 */
+            players_online?: number | null;
+            page_url: string;
+        };
+        /** @description Public statistics of an account's published content and servers. */
+        DiscordStats: {
+            /** Format: int64 */
+            projects: number;
+            /** Format: int64 */
+            versions: number;
+            /** Format: int64 */
+            downloads: number;
+            /** Format: int64 */
+            servers: number;
+            /**
+             * Format: int64
+             * @description Players online right now on the account's public servers (last ping).
+             */
+            players_online: number;
+            /** @description Public projects per kind (`mod`, `modpack`...), most first. */
+            projects_by_kind: components["schemas"]["DiscordKindCount"][];
+        };
+        /** @description A store product for the bot's feed (active products only). */
+        DiscordStoreSnapshot: {
+            postable: boolean;
+            product?: null | components["schemas"]["Product"];
+            page_url?: string | null;
+        };
+        /**
+         * @description A DNS record to create at the user's registrar (any registrar: by hand, or by the launcher
+         *     through the user's own registrar API keys). `name` is relative to the zone (`@` = apex).
+         */
+        DnsRecord: {
+            kind: components["schemas"]["DnsRecordKind"];
+            /** @description Fully qualified record name. */
+            fqdn: string;
+            /** @description Record name relative to the zone (what registrar APIs expect as the subdomain). */
+            name: string;
+            /** @description TXT content, CNAME target, or SRV `priority weight port target`. */
+            value: string;
+            /** Format: int32 */
+            ttl: number;
+            /** @description `verification`, `routing`, `minecraft_srv`. */
+            purpose: string;
+            /**
+             * @description Required for verification. For routing, either the CNAME or the SRV record suffices
+             *     (apex domains cannot hold a CNAME: use SRV).
+             */
+            required: boolean;
+            check: components["schemas"]["RecordCheck"];
+        };
+        /** @enum {string} */
+        DnsRecordKind: "TXT" | "CNAME" | "SRV";
+        /** @enum {string} */
+        DomainStatus: "pending" | "verified" | "failed" | "revoked";
+        EmailRequest: {
+            email: string;
+        };
+        EmotePlayingRequest: {
+            /** @description Emote id (`asset_ref` of an owned emote) or `null` to stop. */
+            emote?: string | null;
+        };
+        Equipped: {
+            items: components["schemas"]["EquippedSlot"][];
+            /** Format: date-time */
+            updated_at?: string | null;
+        };
+        EquippedSlot: {
+            slot: components["schemas"]["CosmeticSlot"];
+            /** Format: uuid */
+            item_id: string;
+        };
+        /** @description Error envelope returned with every non-2xx status. */
+        ErrorBody: {
+            error: components["schemas"]["ErrorDetail"];
+        };
+        ErrorDetail: {
+            /** @description Stable machine-readable code (`invalid_input`, `unauthorized`, `rate_limited`...). */
+            code: string;
+            /** @description Human readable message (English; the UI translates by `code`). */
+            message: string;
+        };
+        /** @description A sign-in method linked to the account (`microsoft`). */
+        ExternalIdentity: {
+            provider: string;
+            email?: string | null;
+            /** Format: date-time */
+            linked_at: string;
+        };
+        FairPlayDenyEntry: {
+            /** @description Project id or slug (any source: `modrinth:<id>`, `horizon:<id>`, a bare slug...). */
+            key: string;
+            reason: string;
+        };
+        /** @description The authoritative fair-play deny list (X-ray, auto-clickers, hacks...). */
+        FairPlayDenyList: {
+            entries: components["schemas"]["FairPlayDenyEntry"][];
+            /** Format: date-time */
+            updated_at?: string | null;
+        };
+        /** @enum {string} */
+        FairPlayStatus: "clean" | "flagged" | "blocked";
+        /** @enum {string} */
+        FeaturedEngine: "horizon" | "rustic";
+        /** @description A server staff feature on the Launchpad and the Servers page. */
+        FeaturedServer: {
+            /** Format: uuid */
+            id: string;
+            name: string;
+            /** @description `host` or `host:port` players type in the game. */
+            address: string;
+            description: string;
+            tags: string[];
+            engine: components["schemas"]["FeaturedEngine"];
+            /** @description BCP 47 language of the community. */
+            language: string;
+            /** @description Staff checked the owner and the rules. */
+            verified: boolean;
+            /**
+             * Format: int32
+             * @description Lower first.
+             */
+            sort_order: number;
+            /**
+             * Format: int32
+             * @description Not measured by the cloud yet: clients ping the server themselves.
+             */
+            players_online?: number | null;
+            /** Format: int32 */
+            players_max?: number | null;
+        };
+        FeaturedServerUpsertRequest: {
+            name: string;
+            address: string;
+            description?: string;
+            tags?: string[];
+            engine: components["schemas"]["FeaturedEngine"];
+            /** @description Default `en`. */
+            language?: string | null;
+            verified?: boolean;
+            /** Format: int32 */
+            sort_order?: number;
+            /** @description Shown to players (true) or hidden (false). */
+            active: boolean;
+        };
+        Friend: {
+            user: components["schemas"]["PublicUser"];
+            /** Format: date-time */
+            since: string;
+            presence: components["schemas"]["Presence"];
+        };
+        FriendRequest: {
+            /** Format: uuid */
+            id: string;
+            from: components["schemas"]["PublicUser"];
+            to: components["schemas"]["PublicUser"];
+            /** Format: date-time */
+            created_at: string;
+        };
+        FriendRequests: {
+            incoming: components["schemas"]["FriendRequest"][];
+            outgoing: components["schemas"]["FriendRequest"][];
+        };
+        FriendSuggestion: {
+            user: components["schemas"]["PublicUser"];
+            minecraft_name?: string | null;
+            reason: components["schemas"]["SuggestionReason"];
+            /** @description The caller's own name for the server (from their presence), when `reason` is `server`. */
+            server_name?: string | null;
+            /**
+             * Format: date-time
+             * @description End of the most recent time together.
+             */
+            seen_at: string;
+        };
+        /** @description `GET /v1/friends/suggestions` (ADR 0145). Both lists are most recent first, 10 at most. */
+        FriendSuggestions: {
+            /** @description `false` when the caller opted out or is a minor: nothing is recorded, lists are empty. */
+            discoverable: boolean;
+            /** @description Same party, or the same server for at least 10 minutes in total, in the last 14 days. */
+            played_with: components["schemas"]["FriendSuggestion"][];
+            /** @description Same server at overlapping times in the last 14 days (not already in `played_with`). */
+            crossed: components["schemas"]["FriendSuggestion"][];
+        };
+        /** @description One gallery image to keep: an existing one by `url`, or a staged upload. */
+        GalleryRef: {
+            url?: string | null;
+            /** Format: uuid */
+            upload_id?: string | null;
+        };
+        GiftCardCreated: {
+            /** Format: uuid */
+            id: string;
+            /** @description Shown once; only a hash is stored. */
+            code: string;
+            currency: components["schemas"]["Currency"];
+            /** Format: int64 */
+            amount_minor: number;
+        };
+        GuardianInfo: {
+            guardian: components["schemas"]["PublicUser"];
+            /** Format: date-time */
+            linked_at: string;
+        };
+        GuardianInviteResponse: {
+            /** @description Give this code to the guardian; valid 7 days, single use. */
+            code: string;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        GuardianLinkRequest: {
+            code: string;
+        };
+        HandoffExchangeRequest: {
+            code: string;
+            device_name?: string | null;
+            client?: components["schemas"]["ClientKind"];
+        };
+        /** @description Single-use code (60 s) the website hands to the launcher through `rustic://auth?code=`. */
+        HandoffResponse: {
+            code: string;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        Health: {
+            status: string;
+            version: string;
+        };
+        /** @enum {string} */
+        HostingAvailability: "coming_soon" | "available";
+        /** @description Rustic Cloud hosting (coming soon): catalog preview, no provisioning. */
+        HostingCatalog: {
+            availability: components["schemas"]["HostingAvailability"];
+            plans: components["schemas"]["HostingPlan"][];
+            regions: components["schemas"]["HostingRegion"][];
+        };
+        /** @description `GET /v1/hosting/plans` (shape of `rusticmc_hosting::cloud::CloudPlan`, camelCase). */
+        HostingCloudPlan: {
+            id: string;
+            name: string;
+            /** Format: int32 */
+            ramMb: number;
+            /** Format: float */
+            vcpus: number;
+            /** Format: int32 */
+            diskGb: number;
+            /** Format: int32 */
+            maxPlayers: number;
+            /**
+             * Format: int64
+             * @description Monthly price, VAT included, minor units (indicative: not purchasable yet).
+             */
+            priceCents: number;
+            currency: string;
+        };
+        /** @description `GET /v1/hosting/regions` (shape of `rusticmc_hosting::cloud::CloudRegion`). */
+        HostingCloudRegion: {
+            id: string;
+            name: string;
+            country: string;
+            available: boolean;
+        };
+        HostingPlan: {
+            id: string;
+            name: string;
+            /** Format: int32 */
+            memory_mb: number;
+            /** Format: float */
+            vcpus: number;
+            /** Format: int32 */
+            storage_gb: number;
+            /** Format: int32 */
+            max_players: number;
+            /** @description Indicative monthly prices (not purchasable yet). */
+            monthly_prices: components["schemas"]["PriceInput"][];
+        };
+        HostingRegion: {
+            id: string;
+            name: string;
+            country: string;
+        };
+        IdentitiesResponse: {
+            /** @description Whether the account can sign in with an email and password. */
+            has_password: boolean;
+            identities: components["schemas"]["ExternalIdentity"][];
+            /** @description The account has an email address (needed to sign in with a password). */
+            has_email?: boolean;
+            /** @description That address is verified (a password can only be set on a verified address). */
+            email_verified?: boolean;
+        };
+        InventoryItem: {
+            item: components["schemas"]["CosmeticItem"];
+            /** Format: date-time */
+            acquired_at: string;
+            source: components["schemas"]["AcquisitionSource"];
+        };
+        Invitation: {
+            /** Format: uuid */
+            id: string;
+            from: components["schemas"]["PublicUser"];
+            kind: components["schemas"]["InvitationKind"];
+            /** Format: uuid */
+            party_id?: string | null;
+            server?: null | components["schemas"]["ServerJoinInfo"];
+            status: components["schemas"]["InvitationStatus"];
+            /** Format: date-time */
+            created_at: string;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        /** @enum {string} */
+        InvitationKind: "party" | "server";
+        /** @enum {string} */
+        InvitationStatus: "pending" | "accepted" | "declined" | "expired";
+        /**
+         * @description An invite code for a server (ADR 0105): friends type it in the launcher, the cloud
+         *     resolves it to the server's route hostname.
+         */
+        InviteCode: {
+            code: string;
+            /** Format: uuid */
+            server_id: string;
+            hostname: string;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        InviteCodeResolution: {
+            code: string;
+            server_name: string;
+            /** @description `host` to join (the relay route hostname; port 25565 unless `port` is set). */
+            hostname: string;
+            /** Format: int32 */
+            port: number;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        LibraryEntry: {
+            project: components["schemas"]["ContentProject"];
+            source: components["schemas"]["LibrarySource"];
+            /** Format: date-time */
+            added_at: string;
+        };
+        /** @enum {string} */
+        LibrarySource: "free" | "purchase" | "grant";
+        LoginRequest: {
+            email: string;
+            password: string;
+            device_name?: string | null;
+            client?: components["schemas"]["ClientKind"];
+        };
+        LoginResponse: {
+            status: components["schemas"]["LoginStatus"];
+            tokens?: null | components["schemas"]["TokenPair"];
+            /** @description Present when `status = mfa_required`: send it to `/v1/auth/login/mfa` (5 min). */
+            mfa_token?: string | null;
+            /** @description Present when `status = signup_required` (Microsoft sign-in): 10 min, single use. */
+            signup_token?: string | null;
+            /** @description The Microsoft account's email, when `status = signup_required`. */
+            email?: string | null;
+        };
+        /** @enum {string} */
+        LoginStatus: "ok" | "mfa_required" | "signup_required";
+        LookupBatchRequest: {
+            /** @description Up to 100 Minecraft UUIDs. */
+            uuids: string[];
+        };
+        LookupBatchResponse: {
+            players: components["schemas"]["MinecraftLookup"][];
+        };
+        /**
+         * @description How the caller relates to a looked-up user.
+         * @enum {string}
+         */
+        LookupRelation: "none" | "friends" | "outgoing_request" | "incoming_request";
+        Me: {
+            /** Format: uuid */
+            id: string;
+            email?: string | null;
+            email_verified: boolean;
+            username: string;
+            display_name: string;
+            /** Format: date */
+            date_of_birth?: string | null;
+            country?: string | null;
+            locale?: string | null;
+            role: components["schemas"]["Role"];
+            totp_enabled: boolean;
+            /** Format: date-time */
+            created_at: string;
+            /** Format: date-time */
+            deletion_scheduled_for?: string | null;
+            capabilities: components["schemas"]["Capabilities"];
+            /**
+             * @description "Appear in suggestions of players I meet" as in effect: the setting (default on) and
+             *     `capabilities.discoverable_allowed` (always off for minors). ADR 0145.
+             */
+            discoverable?: boolean;
+            /** @description The account's avatar (ADR 0168), as others see it. */
+            avatar_url?: string | null;
+        };
+        Message: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            sender_id: string;
+            /** Format: uuid */
+            recipient_id: string;
+            body: string;
+            /** Format: date-time */
+            created_at: string;
+            /**
+             * Format: date-time
+             * @description When the recipient read it (read receipt); `null` while unread.
+             */
+            read_at?: string | null;
+        };
+        MfaLoginRequest: {
+            mfa_token: string;
+            code?: string | null;
+            recovery_code?: string | null;
+            device_name?: string | null;
+            client?: components["schemas"]["ClientKind"];
+        };
+        /**
+         * @description The "complete your account" step of a Microsoft sign-up (same age gate and consent as
+         *     an email sign-up).
+         */
+        MicrosoftCompleteRequest: {
+            signup_token: string;
+            username: string;
+            /** Format: date */
+            date_of_birth: string;
+            country: string;
+            privacy_policy_version: string;
+            locale?: string | null;
+            client?: components["schemas"]["ClientKind"];
+            device_name?: string | null;
+        };
+        MicrosoftLinkRequest: {
+            id_token: string;
+            nonce: string;
+        };
+        /**
+         * @description "Continue with Microsoft" (ADR 0090): the id_token the website got from Microsoft
+         *     (OIDC code flow + PKCE) and the nonce it generated.
+         */
+        MicrosoftSignInRequest: {
+            id_token: string;
+            nonce: string;
+            client?: components["schemas"]["ClientKind"];
+            device_name?: string | null;
+        };
+        MinecraftAccount: {
+            /** Format: uuid */
+            uuid: string;
+            username: string;
+            /** Format: date-time */
+            linked_at: string;
+            /** Format: date-time */
+            last_verified_at: string;
+        };
+        /**
+         * @description Step 1 of the link (ADR 0011): a one-time `server_id`. The launcher then calls Mojang's
+         *     session server `POST /session/minecraft/join` with its own Minecraft token, the profile
+         *     UUID and this `server_id`. The token goes to Mojang only, never to Rustic Cloud.
+         */
+        MinecraftLinkChallenge: {
+            server_id: string;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        /** @description Step 2: the API asks Mojang `hasJoined(username, server_id)` and binds the returned UUID. */
+        MinecraftLinkFinishRequest: {
+            /** @description Current Minecraft username of the profile that joined. */
+            username: string;
+        };
+        MinecraftLookup: {
+            /** Format: uuid */
+            uuid: string;
+            player?: null | components["schemas"]["PublicPlayer"];
+        };
+        /** @enum {string} */
+        ModerationAction: "dismiss" | "chat_ban" | "ban" | "take_down";
+        /** @description `GET /v1/me/play-stats`: the owner's own statistics, with every address. */
+        MyPlayStats: {
+            enabled: boolean;
+            stats: components["schemas"]["ProfileStats"];
+            /**
+             * Format: int64
+             * @description Raw sessions are kept 90 days, the totals until erased.
+             */
+            raw_sessions: number;
+        };
+        NameAvailability: {
+            label: string;
+            available: boolean;
+            reason?: string | null;
+            feature_enabled: boolean;
+        };
+        /** @description The first (or a new) version of a project. */
+        NewContentVersion: {
+            /**
+             * Format: uuid
+             * @description A staged `file` upload.
+             */
+            file_upload: string;
+            /** @description Must equal the version in the file's manifest when it has one. */
+            version: string;
+            /** @description Display name; the version when empty. */
+            name?: string | null;
+            /** @description Markdown. */
+            changelog?: string;
+            channel?: components["schemas"]["ContentChannel"];
+            /** @description Game versions it is for (`26.3`); the manifest's when empty. */
+            game_versions?: string[];
+        };
+        /** @description A published news item (public). */
+        NewsItem: {
+            /** Format: uuid */
+            id: string;
+            slug: string;
+            source: components["schemas"]["NewsSource"];
+            kind: components["schemas"]["NewsKind"];
+            title: string;
+            summary: string;
+            /** @description Markdown body (rendered as text by the clients; no raw HTML). */
+            body: string;
+            /** @description Where "Read more" goes: the external link when set, else the website's news page. */
+            url: string;
+            /** @description Version the item is about (patch notes), if any. */
+            version?: string | null;
+            /** @description BCP 47 language of the item (`en`, `fr`). */
+            locale: string;
+            /** Format: date-time */
+            published_at: string;
+        };
+        /** @enum {string} */
+        NewsKind: "patch_notes" | "event" | "blog";
+        /** @enum {string} */
+        NewsSource: "rustic" | "horizon";
+        NewsUpsertRequest: {
+            /** @description 2-64 chars `[a-z0-9-]`, unique. */
+            slug: string;
+            source: components["schemas"]["NewsSource"];
+            kind: components["schemas"]["NewsKind"];
+            title: string;
+            summary: string;
+            body?: string;
+            external_url?: string | null;
+            version?: string | null;
+            /** @description Default `en`. */
+            locale?: string | null;
+            /** @description Publish now (true) or keep as a draft (false). */
+            published: boolean;
+        };
+        Notification: {
+            /** Format: uuid */
+            id: string;
+            /**
+             * @description `friend_request`, `friend_accepted`, `party_invite`, `invitation`, `message`,
+             *     `purchase_approval`, `order_paid`, `order_refunded`, `moderation`...
+             */
+            kind: string;
+            payload: Record<string, never>;
+            /** Format: date-time */
+            created_at: string;
+            /** Format: date-time */
+            read_at?: string | null;
+        };
+        /** @description One project of the official account with every version (yanked and pending included). */
+        OfficialProject: {
+            project: components["schemas"]["ContentProject"];
+            versions: components["schemas"]["ContentVersion"][];
+        };
+        /** @description The official Rustic publisher account and what it published (ADR 0166, staff only). */
+        OfficialPublisher: {
+            /** @description The account (`official: true`); it never signs in, staff publish as it. */
+            account: components["schemas"]["PublicUser"];
+            projects: components["schemas"]["OfficialProject"][];
+        };
+        Order: {
+            /** Format: uuid */
+            id: string;
+            status: components["schemas"]["OrderStatus"];
+            currency: components["schemas"]["Currency"];
+            /** Format: int64 */
+            subtotal_minor: number;
+            /** Format: int64 */
+            discount_minor: number;
+            /** Format: int64 */
+            wallet_applied_minor: number;
+            /** Format: int64 */
+            total_minor: number;
+            lines: components["schemas"]["OrderLine"][];
+            /** Format: date-time */
+            consent_recorded_at: string;
+            consent_wording_version: string;
+            /** Format: date-time */
+            created_at: string;
+            /** Format: date-time */
+            paid_at?: string | null;
+            invoice_url?: string | null;
+        };
+        OrderLine: {
+            /** Format: uuid */
+            product_id: string;
+            name: string;
+            /** Format: int64 */
+            unit_price_minor: number;
+            /** @description Cosmetic items this line grants ("Equip now" after checkout). */
+            item_ids: string[];
+        };
+        /** @enum {string} */
+        OrderStatus: "pending" | "awaiting_guardian" | "guardian_denied" | "paid" | "refunded" | "disputed" | "cancelled" | "failed";
+        Outfit: {
+            /** Format: uuid */
+            id: string;
+            name: string;
+            items: components["schemas"]["EquippedSlot"][];
+            /** Format: date-time */
+            created_at: string;
+            /** Format: date-time */
+            updated_at: string;
+        };
+        OutfitRequest: {
+            name: string;
+            items: components["schemas"]["EquippedSlot"][];
+        };
+        ParentalControls: {
+            purchases_require_approval: boolean;
+            /**
+             * Format: int64
+             * @description Monthly cap in minor units of `spend_limit_currency`; `null` = no cap.
+             */
+            monthly_spend_limit_minor?: number | null;
+            spend_limit_currency: components["schemas"]["Currency"];
+            chat_mode: components["schemas"]["ChatMode"];
+            friend_requests_allowed: boolean;
+        };
+        Party: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            leader_id: string;
+            /** Format: int32 */
+            max_size: number;
+            members: components["schemas"]["PartyMember"][];
+            /** Format: date-time */
+            created_at: string;
+        };
+        PartyInvite: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            party_id: string;
+            from: components["schemas"]["PublicUser"];
+            /** Format: date-time */
+            created_at: string;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        PartyMember: {
+            user: components["schemas"]["PublicUser"];
+            /** Format: date-time */
+            joined_at: string;
+        };
+        /** @enum {string} */
+        PlayPlaceKind: "menu" | "singleplayer" | "server";
+        /**
+         * @description `POST /v1/me/play-sessions`: the game started, or moved (menu, a world, a server). The
+         *     cloud times everything itself; the launcher only says where the player is.
+         */
+        PlaySessionReport: {
+            /**
+             * Format: uuid
+             * @description The launcher's id for this run of the game (one per launch).
+             */
+            session_id: string;
+            /** @description `rustic` (the Rustic edition) or `horizon`. */
+            edition: string;
+            game_version?: string | null;
+            place: components["schemas"]["PlayPlaceKind"];
+            /** @description The server's address as typed, for `server` (LAN and private addresses are not kept). */
+            server_address?: string | null;
+        };
+        PlaySessionState: {
+            /** @description `false` when the account turned play statistics off: nothing was recorded. */
+            recording: boolean;
+        };
+        /** @description "Premium: coming soon" waitlist status of the caller. */
+        PremiumWaitlist: {
+            joined: boolean;
+            /** Format: date-time */
+            joined_at?: string | null;
+        };
+        Presence: {
+            status: components["schemas"]["PresenceStatus"];
+            activity?: null | components["schemas"]["Activity"];
+            /** Format: date-time */
+            updated_at: string;
+        };
+        /** @enum {string} */
+        PresenceStatus: "online" | "away" | "busy" | "invisible" | "offline";
+        Price: {
+            currency: components["schemas"]["Currency"];
+            /**
+             * Format: int64
+             * @description Final amount the customer pays, in minor units.
+             */
+            amount_minor: number;
+            /** @description True when `amount_minor` includes VAT (EU, UK, CH display rule). */
+            tax_inclusive: boolean;
+            /** @description Pre-formatted display string, e.g. `4,99 €` / `$4.99 + tax`. */
+            display: string;
+        };
+        PriceInput: {
+            currency: components["schemas"]["Currency"];
+            /** Format: int64 */
+            amount_minor: number;
+        };
+        PrivacyAcceptRequest: {
+            version: string;
+        };
+        Product: {
+            /** Format: uuid */
+            id: string;
+            slug: string;
+            kind: components["schemas"]["ProductKind"];
+            name: string;
+            description: string;
+            category: string;
+            items: components["schemas"]["CosmeticItem"][];
+            price?: null | components["schemas"]["Price"];
+            /** @description Only set for authenticated catalog requests. */
+            owned?: boolean | null;
+            /** Format: date-time */
+            created_at: string;
+            /** @description Highlighted by staff (e.g. a large card). */
+            featured: boolean;
+            offer?: null | components["schemas"]["ProductOffer"];
+        };
+        /** @enum {string} */
+        ProductKind: "item" | "bundle";
+        /** @description A daily offer (ADR 0091): the same for every buyer, visible in advance, no random draw. */
+        ProductOffer: {
+            /** Format: int32 */
+            percent_off: number;
+            /** @description Undiscounted price, same currency as `Product.price`. */
+            regular: components["schemas"]["Price"];
+            /**
+             * Format: int64
+             * @description EU Omnibus reference (Directive 98/6/EC art. 6a): lowest price applied to the product
+             *     in this currency during the 30 days before the offer day, in minor units.
+             */
+            reference_minor: number;
+            /**
+             * Format: date-time
+             * @description When the offer ends (next UTC midnight).
+             */
+            ends_at: string;
+        };
+        /**
+         * @description What the viewer was allowed to see.
+         * @enum {string}
+         */
+        ProfileAccess: "full" | "friends_only" | "private";
+        ProfileActivity: {
+            online: boolean;
+            kind?: null | components["schemas"]["ProfileActivityKind"];
+            listing?: null | components["schemas"]["ProfilePlace"];
+            /** @description On a server that is not a public listing (or not shared): "on a server". */
+            on_server: boolean;
+            /**
+             * Format: date-time
+             * @description Last time the player was online (to the minute).
+             */
+            last_seen_at?: string | null;
+        };
+        /** @enum {string} */
+        ProfileActivityKind: "in_launcher" | "in_game" | "hosting";
+        ProfileBadges: {
+            official: boolean;
+            /** @description At least one verified marketplace project. */
+            verified_creator: boolean;
+            staff_role?: null | components["schemas"]["Role"];
+        };
+        ProfileCosmetic: {
+            /** Format: uuid */
+            id: string;
+            name: string;
+            slot: components["schemas"]["CosmeticSlot"];
+            equipped: boolean;
+        };
+        ProfileFriends: {
+            /** Format: int64 */
+            count: number;
+            /** @description Friends the viewer may see the profile of (at most 24). */
+            users: components["schemas"]["PublicUser"][];
+        };
+        ProfileLocker: {
+            /** Format: int64 */
+            owned_count: number;
+            /** @description Equipped first (at most 48). */
+            items: components["schemas"]["ProfileCosmetic"][];
+        };
+        /** @description A public directory listing named on a profile. */
+        ProfilePlace: {
+            slug: string;
+            name: string;
+            icon_url?: string | null;
+        };
+        ProfileProject: {
+            id: string;
+            kind: components["schemas"]["ContentKind"];
+            name: string;
+            summary: string;
+            icon_url?: string | null;
+            /** Format: int64 */
+            downloads: number;
+            verified: boolean;
+        };
+        ProfileRecent: {
+            kind: components["schemas"]["RecentKind"];
+            listing?: null | components["schemas"]["ProfilePlace"];
+            /** Format: date-time */
+            last_played_at: string;
+        };
+        /** @description Per-section choices. A section never reaches further than the profile itself. */
+        ProfileSections: {
+            /** @description Hours played, servers played, recently played, sessions. */
+            stats: components["schemas"]["SectionVisibility"];
+            /** @description Online now / last seen and the current activity. */
+            activity: components["schemas"]["SectionVisibility"];
+            friends: components["schemas"]["SectionVisibility"];
+            /** @description The account's public server directory listings. */
+            servers: components["schemas"]["SectionVisibility"];
+            /** @description The account's public marketplace projects. */
+            content: components["schemas"]["SectionVisibility"];
+            /** @description Owned and equipped cosmetics. */
+            locker: components["schemas"]["SectionVisibility"];
+            /** @description The linked game profile name (never shown to others for a minor). */
+            game_name: components["schemas"]["SectionVisibility"];
+        };
+        ProfileServer: {
+            slug: string;
+            name: string;
+            address: string;
+            summary: string;
+            icon_url?: string | null;
+            online?: boolean | null;
+            /** Format: int32 */
+            players_online?: number | null;
+            verified: boolean;
+        };
+        /**
+         * @description One server in the statistics. Servers that are not public directory listings are shown
+         *     to others as one "other servers" line (`listing` empty); the owner also sees `address`.
+         */
+        ProfileServerStat: {
+            listing?: null | components["schemas"]["ProfilePlace"];
+            /** @description Only for the owner of the profile (their own data), never for others. */
+            address?: string | null;
+            /** Format: int64 */
+            seconds: number;
+            /** Format: int32 */
+            sessions: number;
+            /** Format: date-time */
+            last_played_at: string;
+        };
+        ProfileStats: {
+            /** Format: int64 */
+            total_seconds: number;
+            /** Format: int32 */
+            sessions: number;
+            /** Format: int64 */
+            singleplayer_seconds: number;
+            /** @description Most played first (at most 8 listed servers, then one line for the others). */
+            servers: components["schemas"]["ProfileServerStat"][];
+            /** @description Most recent first (at most 6). */
+            recent: components["schemas"]["ProfileRecent"][];
+            /** Format: date-time */
+            first_played_at?: string | null;
+        };
+        /**
+         * @description Who may open a profile page. Minors are never `public` (it is stored but shown as
+         *     `friends`).
+         * @enum {string}
+         */
+        ProfileVisibility: "public" | "friends" | "private";
+        PromoCode: {
+            /** Format: uuid */
+            id: string;
+            code: string;
+            /** Format: int32 */
+            percent_off?: number | null;
+            /** Format: int64 */
+            amount_off_minor?: number | null;
+            currency?: null | components["schemas"]["Currency"];
+            /** Format: int32 */
+            max_redemptions?: number | null;
+            /** Format: int32 */
+            redeemed_count: number;
+            /** Format: date-time */
+            valid_until?: string | null;
+            active: boolean;
+        };
+        PublicPlayer: {
+            user: components["schemas"]["PublicUser"];
+            equipped: components["schemas"]["EquippedSlot"][];
+        };
+        /**
+         * @description `GET /v1/profiles/{username}`: the page `rustic-launcher.com/account/<username>`. Every
+         *     section is `None` when the viewer may not see it.
+         */
+        PublicProfile: {
+            user: components["schemas"]["PublicUser"];
+            access: components["schemas"]["ProfileAccess"];
+            is_self: boolean;
+            is_friend: boolean;
+            /** @description Search engines may index the page (a public profile seen by anyone). */
+            indexable: boolean;
+            bio?: string | null;
+            /** Format: date-time */
+            member_since?: string | null;
+            badges?: null | components["schemas"]["ProfileBadges"];
+            game_name?: string | null;
+            stats?: null | components["schemas"]["ProfileStats"];
+            activity?: null | components["schemas"]["ProfileActivity"];
+            friends?: null | components["schemas"]["ProfileFriends"];
+            servers?: components["schemas"]["ProfileServer"][] | null;
+            content?: components["schemas"]["ProfileProject"][] | null;
+            locker?: null | components["schemas"]["ProfileLocker"];
+            settings?: null | components["schemas"]["AccountSettings"];
+        };
+        /** @description A user as seen by other users (no email, no date of birth). */
+        PublicUser: {
+            /** Format: uuid */
+            id: string;
+            username: string;
+            display_name: string;
+            /**
+             * @description The official Rustic account (ADR 0166): shown with an "Official" mark. It publishes
+             *     Rustic's own content and never signs in.
+             */
+            official?: boolean;
+            /**
+             * @description The account's avatar (a 64x64 PNG on the CDN, ADR 0168): a chosen default head, the
+             *     head of an uploaded skin, or the default head assigned from the account id. `None`
+             *     only from services that cannot build CDN URLs.
+             */
+            avatar_url?: string | null;
+        };
+        /** @description Publishes a new project with its first version (multi-step form of the website). */
+        PublishContentRequest: {
+            kind: components["schemas"]["ContentKind"];
+            /**
+             * @description `[a-z0-9_-]{2,64}`; the project id. For a content mod, native mod, `.hpack` or
+             *     `.hshader`, it must be the manifest's id (`-` read as `_`).
+             */
+            slug: string;
+            name: string;
+            /** @description One line, at most 160 characters. */
+            summary: string;
+            /** @description Markdown, at most 10,000 characters. */
+            description?: string;
+            /** @description 1 to 3 of the kind's categories (`GET /v1/content/catalog`). */
+            categories: string[];
+            /** @description At most 10, `[a-z0-9][a-z0-9-]{0,23}`. */
+            tags?: string[];
+            /** @description An SPDX expression or `All-Rights-Reserved`. */
+            license: string;
+            links?: components["schemas"]["ContentLinks"];
+            visibility: components["schemas"]["ContentVisibility"];
+            /**
+             * Format: int64
+             * @description 0 = free.
+             */
+            price_cents?: number;
+            currency?: null | components["schemas"]["Currency"];
+            /**
+             * Format: uuid
+             * @description A staged `icon` upload.
+             */
+            icon_upload?: string | null;
+            /** @description Staged `gallery` uploads, in order (at most 8). */
+            gallery_uploads?: string[];
+            version: components["schemas"]["NewContentVersion"];
+            /**
+             * @description The publishing agreement: the creator owns the rights, the content follows the rules
+             *     and the fair-play policy. Must be `true`.
+             */
+            accept_terms: boolean;
+        };
+        PublishContentResponse: {
+            project: components["schemas"]["ContentProject"];
+            version: components["schemas"]["ContentVersion"];
+        };
+        PurchaseApproval: {
+            /** Format: uuid */
+            id: string;
+            child: components["schemas"]["PublicUser"];
+            /** Format: uuid */
+            order_id: string;
+            currency: components["schemas"]["Currency"];
+            /** Format: int64 */
+            total_minor: number;
+            items: string[];
+            status: components["schemas"]["ApprovalStatus"];
+            /** Format: date-time */
+            created_at: string;
+        };
+        /**
+         * @description EU consumer law: explicit request for immediate execution and acknowledgement of the
+         *     loss of the 14-day withdrawal right for digital content. Both must be `true`.
+         */
+        PurchaseConsent: {
+            immediate_execution: boolean;
+            withdrawal_waiver: boolean;
+            /** @description Version of the consent wording displayed (see `GET /v1/store/legal`). */
+            wording_version: string;
+        };
+        Quote: {
+            currency: components["schemas"]["Currency"];
+            lines: components["schemas"]["QuoteLine"][];
+            /** Format: int64 */
+            subtotal_minor: number;
+            /** Format: int64 */
+            discount_minor: number;
+            /** Format: int64 */
+            wallet_applied_minor: number;
+            /** Format: int64 */
+            total_minor: number;
+            tax_inclusive: boolean;
+            promo_applied: boolean;
+            creator_code_applied: boolean;
+            warnings: string[];
+        };
+        QuoteLine: {
+            /** Format: uuid */
+            product_id: string;
+            name: string;
+            /** Format: int64 */
+            unit_price_minor: number;
+        };
+        QuoteRequest: {
+            product_ids: string[];
+            currency: components["schemas"]["Currency"];
+            /** @description ISO country of the buyer (VAT rules). */
+            country: string;
+            promo_code?: string | null;
+            creator_code?: string | null;
+            /** @description Spend wallet credit (redeemed gift cards) first. */
+            use_wallet?: boolean;
+        };
+        ReadReceipt: {
+            /** Format: uuid */
+            peer_id: string;
+            /** Format: date-time */
+            read_at: string;
+            /**
+             * Format: int64
+             * @description Messages marked read by this call.
+             */
+            marked: number;
+        };
+        ReauthRequest: {
+            password?: string | null;
+            totp_code?: string | null;
+        };
+        /** @enum {string} */
+        RecentKind: "server" | "singleplayer";
+        /** @description Result of the last DNS check of one expected record. */
+        RecordCheck: {
+            status: components["schemas"]["RecordCheckStatus"];
+            /** @description Values actually found in DNS (truncated). */
+            found: string[];
+            /** Format: date-time */
+            checked_at?: string | null;
+        };
+        /** @enum {string} */
+        RecordCheckStatus: "unchecked" | "ok" | "missing" | "mismatch" | "error";
+        RecoveryCodesResponse: {
+            /** @description Ten single-use codes, shown once. */
+            codes: string[];
+        };
+        RedeemGiftCardRequest: {
+            code: string;
+        };
+        RefreshRequest: {
+            /** @description Required for the launcher; the web app sends the cookie instead. */
+            refresh_token?: string | null;
+            client?: components["schemas"]["ClientKind"];
+        };
+        RelayServer: {
+            /** Format: uuid */
+            id: string;
+            name: string;
+            /**
+             * @description Unique route name `<route-id>.<relay-host>`, always routed: the CNAME/SRV target for
+             *     custom domains (ADR 0013), also usable directly by players.
+             */
+            route_hostname: string;
+            /** @description `<label>.<relay-domain>` when the optional free subdomain feature is enabled. */
+            subdomain?: string | null;
+            /** @description Hostnames the relay is authorised to route (verified domains + subdomain). */
+            hostnames: string[];
+            domains: components["schemas"]["CustomDomain"][];
+            /** Format: date-time */
+            created_at: string;
+        };
+        RelayToken: {
+            /** @description Tunnel token for the relay handshake (HS256 JWT, relay ADR 0101, docs/API.md). */
+            token: string;
+            /** Format: date-time */
+            expires_at: string;
+            /** @description Relay tunnel endpoint `host:port` (TLS). */
+            relay_addr: string;
+            /** @description Permanent hostnames (verified custom domains, optional free subdomain). */
+            hostnames: string[];
+            /** @description Temporary hostnames with their lease expiry. */
+            temp_hostnames: components["schemas"]["TempHostname"][];
+        };
+        /**
+         * @description Removes the password (ADR 0168): allowed only while another sign-in method (Microsoft)
+         *     stays linked.
+         */
+        RemovePasswordRequest: {
+            current_password: string;
+        };
+        Report: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            reporter_id?: string | null;
+            target: components["schemas"]["PublicUser"];
+            message?: null | components["schemas"]["Message"];
+            reason: components["schemas"]["ReportReason"];
+            details?: string | null;
+            status: components["schemas"]["ReportStatus"];
+            /** Format: date-time */
+            created_at: string;
+            resolution_note?: string | null;
+            content_project?: null | components["schemas"]["ReportedContent"];
+            server_listing?: null | components["schemas"]["ReportedServer"];
+        };
+        ReportCreated: {
+            /** Format: uuid */
+            id: string;
+        };
+        /** @enum {string} */
+        ReportReason: "spam" | "harassment" | "inappropriate_content" | "cheating" | "impersonation" | "copyright" | "malware" | "other";
+        ReportRequest: {
+            /** Format: uuid */
+            target_user_id: string;
+            /** Format: uuid */
+            message_id?: string | null;
+            reason: components["schemas"]["ReportReason"];
+            details?: string | null;
+        };
+        /** @enum {string} */
+        ReportStatus: "open" | "actioned" | "dismissed";
+        ReportedContent: {
+            id: string;
+            slug: string;
+            name: string;
+            kind: components["schemas"]["ContentKind"];
+        };
+        ReportedServer: {
+            /** Format: uuid */
+            id: string;
+            slug: string;
+            name: string;
+            address: string;
+        };
+        ResetPasswordRequest: {
+            token: string;
+            new_password: string;
+        };
+        ResolveReportRequest: {
+            action: components["schemas"]["ModerationAction"];
+            note?: string | null;
+            /**
+             * Format: int64
+             * @description Ban duration; `null` = permanent.
+             */
+            duration_hours?: number | null;
+        };
+        RespondInvitationRequest: {
+            accept: boolean;
+        };
+        /** @enum {string} */
+        Role: "user" | "moderator" | "admin";
+        /**
+         * @description Who sees one section of a visible profile.
+         * @enum {string}
+         */
+        SectionVisibility: "public" | "friends" | "hidden";
+        /** @description One of `user_id`, `username` (Rustic) or `minecraft_name` (linked Minecraft profile). */
+        SendFriendRequest: {
+            username?: string | null;
+            minecraft_name?: string | null;
+            /** Format: uuid */
+            user_id?: string | null;
+        };
+        SendMessageRequest: {
+            /** @description 1-2000 characters. Passed through the profanity filter hook. */
+            body: string;
+        };
+        ServerJoinInfo: {
+            name: string;
+            /** @description `host[:port]` to connect to. */
+            address: string;
+            /** Format: uuid */
+            rustic_server_id?: string | null;
+        };
+        /** @description A server in the directory. Lists leave `description` out (`null`); the detail has it. */
+        ServerListing: {
+            /** Format: uuid */
+            id: string;
+            /** @description `[a-z0-9-]{3,48}`, unique: `/servers/<slug>` on the website, `rustic://server/<slug>`. */
+            slug: string;
+            name: string;
+            /** @description `host` or `host:port` players type in the game (lowercase). */
+            address: string;
+            /** @description One line, 10-160 characters. */
+            summary: string;
+            /** @description Markdown (the website's small subset; never raw HTML). Detail only. */
+            description?: string | null;
+            /** @description From `GET /v1/server-listings/catalog` (`survival`, `minigames`...), 1-6. */
+            tags: string[];
+            /** @description Languages spoken (ISO 639-1, lowercase), 1-5. */
+            languages: string[];
+            /** @description What the server runs: vanilla Horizon or Rustic Server (plugins). */
+            engine: components["schemas"]["FeaturedEngine"];
+            /** @description Game version players need (`26.3`), when the owner said. */
+            game_version?: string | null;
+            /** @description Players need the Rustic edition client (cosmetics, companion, native mods). */
+            requires_rustic_edition: boolean;
+            website?: string | null;
+            /** @description A Discord invite (`https://discord.gg/...`). */
+            discord?: string | null;
+            /** @description Square icon on Rustic's CDN. */
+            icon_url?: string | null;
+            /** @description Wide banner on Rustic's CDN. */
+            banner_url?: string | null;
+            visibility: components["schemas"]["ContentVisibility"];
+            /** @description Staff checked the owner and the rules. */
+            verified: boolean;
+            /** @description A staff pick (the Launchpad, the hero carousels). */
+            featured: boolean;
+            owner?: null | components["schemas"]["PublicUser"];
+            status?: null | components["schemas"]["ServerListingStatus"];
+            /**
+             * Format: int64
+             * @description "Play" presses from the launcher over the last 7 days (anonymous, one per player and
+             *     6 hours): the trending signal with the player count.
+             */
+            plays_7d: number;
+            /** Format: date-time */
+            created_at: string;
+            /** Format: date-time */
+            updated_at: string;
+            moderation?: null | components["schemas"]["ServerListingModeration"];
+        };
+        /** @description The directory's vocabulary and limits (the forms and filters read it). */
+        ServerListingCatalog: {
+            tags: string[];
+            /** @description Languages listings use most, most used first (filters). */
+            languages: string[];
+            /** Format: int64 */
+            max_tags: number;
+            /** Format: int64 */
+            max_languages: number;
+            /** Format: int64 */
+            max_listings_per_user: number;
+            /** Format: int64 */
+            max_image_bytes: number;
+        };
+        ServerListingFeatureRequest: {
+            /**
+             * Format: int32
+             * @description Lower first (0-1000).
+             */
+            rank?: number;
+        };
+        ServerListingHideRequest: {
+            /** @description Shown to the owner (3-1000 characters). */
+            reason: string;
+        };
+        /** @description What the owner and staff see besides the public page. */
+        ServerListingModeration: {
+            hidden: boolean;
+            hidden_reason?: string | null;
+            /** Format: date-time */
+            hidden_at?: string | null;
+            /** Format: date-time */
+            verified_at?: string | null;
+            /**
+             * Format: int32
+             * @description Position among staff picks (lower first); `null` when not featured.
+             */
+            featured_rank?: number | null;
+        };
+        ServerListingPage: {
+            items: components["schemas"]["ServerListing"][];
+            /** @description More results after `offset + items.len()`. */
+            has_more: boolean;
+            /**
+             * Format: int64
+             * @description Matching listings in all.
+             */
+            total: number;
+        };
+        ServerListingReportRequest: {
+            reason: components["schemas"]["ReportReason"];
+            details?: string | null;
+        };
+        /** @description Create (`POST`) a listing. Published at once after the automatic checks. */
+        ServerListingRequest: {
+            slug: string;
+            name: string;
+            address: string;
+            summary: string;
+            description?: string;
+            tags: string[];
+            languages: string[];
+            engine: components["schemas"]["FeaturedEngine"];
+            game_version?: string | null;
+            requires_rustic_edition?: boolean;
+            website?: string | null;
+            discord?: string | null;
+            visibility?: components["schemas"]["ContentVisibility"];
+            /**
+             * Format: uuid
+             * @description A staged `icon` upload (`POST /v1/content/uploads?purpose=icon`).
+             */
+            icon_upload?: string | null;
+            /**
+             * Format: uuid
+             * @description A staged `banner` upload.
+             */
+            banner_upload?: string | null;
+            /** @description The owner accepts the server listing rules (no impersonation, honest description). */
+            accept_rules: boolean;
+        };
+        /** @description Last status the cloud read with the server list ping (public addresses only, every ~10 min). */
+        ServerListingStatus: {
+            /** @description Answered the last ping. */
+            online: boolean;
+            /** Format: int32 */
+            players_online?: number | null;
+            /** Format: int32 */
+            players_max?: number | null;
+            /** @description Plain text of the MOTD (formatting codes removed, at most 200 characters). */
+            motd?: string | null;
+            /** @description The version name the server announced. */
+            version?: string | null;
+            /** Format: date-time */
+            checked_at: string;
+        };
+        /** @description Server → client frames. */
+        ServerMessage: {
+            /** Format: uuid */
+            user_id: string;
+            /** Format: uuid */
+            connection_id: string;
+            /** Format: int64 */
+            heartbeat_interval_secs: number;
+            /** @enum {string} */
+            type: "hello";
+        } | {
+            /** Format: int64 */
+            nonce: number;
+            /** @enum {string} */
+            type: "pong";
+        } | {
+            /** Format: uuid */
+            user_id: string;
+            presence: components["schemas"]["Presence"];
+            /** @enum {string} */
+            type: "presence_changed";
+        } | {
+            request: components["schemas"]["FriendRequest"];
+            /** @enum {string} */
+            type: "friend_request_received";
+        } | {
+            friend: components["schemas"]["PublicUser"];
+            /** @enum {string} */
+            type: "friend_added";
+        } | {
+            /** Format: uuid */
+            user_id: string;
+            /** @enum {string} */
+            type: "friend_removed";
+        } | {
+            message: components["schemas"]["Message"];
+            /** @enum {string} */
+            type: "message_received";
+        } | {
+            /** Format: uuid */
+            reader_id: string;
+            /** Format: date-time */
+            read_at: string;
+            /** @enum {string} */
+            type: "messages_read";
+        } | {
+            address: string;
+            /** Format: uuid */
+            invitation_id: string;
+            /** @enum {string} */
+            type: "join_server";
+        } | {
+            invite: components["schemas"]["PartyInvite"];
+            /** @enum {string} */
+            type: "party_invite_received";
+        } | {
+            /** Format: uuid */
+            party_id: string;
+            party?: null | components["schemas"]["Party"];
+            /** @enum {string} */
+            type: "party_updated";
+        } | {
+            invitation: components["schemas"]["Invitation"];
+            /** @enum {string} */
+            type: "invitation_received";
+        } | {
+            notification: components["schemas"]["Notification"];
+            /** @enum {string} */
+            type: "notification_created";
+        } | {
+            /** Format: uuid */
+            user_id: string;
+            items: components["schemas"]["EquippedSlot"][];
+            /** Format: date-time */
+            updated_at: string;
+            /** @enum {string} */
+            type: "equipped_changed";
+        } | {
+            /** Format: uuid */
+            session_id: string;
+            /** @enum {string} */
+            type: "session_revoked";
+        } | {
+            /** Format: int64 */
+            retry_after_ms: number;
+            /** @enum {string} */
+            type: "rate_limited";
+        } | {
+            code: string;
+            message: string;
+            /** @enum {string} */
+            type: "error";
+        };
+        SessionInfo: {
+            /** Format: uuid */
+            id: string;
+            device_name?: string | null;
+            user_agent?: string | null;
+            ip?: string | null;
+            /** Format: date-time */
+            created_at: string;
+            /** Format: date-time */
+            last_seen_at: string;
+            current: boolean;
+        };
+        /** @description Replaces the offers of one day (at most 12). */
+        SetDailyOffersRequest: {
+            offers: components["schemas"]["DailyOfferInput"][];
+        };
+        /** @description First password of an account created with Microsoft. */
+        SetPasswordRequest: {
+            new_password: string;
+        };
+        SetTrendingRequest: {
+            /** @description Ranks 1..n in this order; every other product loses its rank. */
+            product_ids: string[];
+        };
+        SignupRequest: {
+            email: string;
+            password: string;
+            /** @description 3-20 chars, `[a-zA-Z0-9_]`. */
+            username: string;
+            /** Format: date */
+            date_of_birth: string;
+            /** @description ISO 3166-1 alpha-2 country code (age rules depend on it). */
+            country: string;
+            /** @description Version of the privacy policy the user accepted at signup. */
+            privacy_policy_version: string;
+            locale?: string | null;
+        };
+        SignupResponse: {
+            /** Format: uuid */
+            user_id: string;
+            email_verification_required: boolean;
+            /**
+             * @description True when the user is under the digital-consent age of their country: features are
+             *     restricted until a guardian links the account.
+             */
+            guardian_required: boolean;
+        };
+        /**
+         * Format: binary
+         * @description OpenAPI schema of the binary PNG body.
+         */
+        SkinPng: string;
+        SocialSnapshot: {
+            friends: components["schemas"]["CompanionFriend"][];
+            invites: components["schemas"]["CompanionInvite"][];
+            /** @description Unread direct messages (most recent 20). */
+            messages: components["schemas"]["CompanionMessage"][];
+            /** @description Emotes the account owns (the wheel shows at most 8). */
+            emotes: components["schemas"]["WornItem"][];
+        };
+        /** @description A staff-curated collection (theme, season, creator...). */
+        StoreCollection: {
+            /** Format: uuid */
+            id: string;
+            slug: string;
+            name: string;
+            description: string;
+            /** @description `#rrggbb`. */
+            accent: string;
+            /** @description Shown as the store's hero banner. */
+            hero: boolean;
+            /** @description In display order; only active products of this catalog response. */
+            product_ids: string[];
+        };
+        StoreLegal: {
+            consent_wording_version: string;
+            immediate_execution_text: string;
+            withdrawal_waiver_text: string;
+            stripe_tax_enabled: boolean;
+        };
+        /** @enum {string} */
+        SuggestionReason: "party" | "server";
+        TelemetryConsentRequest: {
+            granted: boolean;
+        };
+        TempHostname: {
+            /** @description `<adjective>-<noun>-<NN>.<temp-domain>`, e.g. `brave-otter-42.tmp.relay.example.invalid`. */
+            hostname: string;
+            /** Format: date-time */
+            expires_at: string;
+        };
+        /**
+         * @description A temporary relay hostname lease for a server running on the user's machine, plus a
+         *     relay token that already carries it.
+         */
+        TempHostnameLease: {
+            hostname: string;
+            /** Format: date-time */
+            expires_at: string;
+            /**
+             * Format: date-time
+             * @description Renew before this instant to keep the same hostname.
+             */
+            renew_before: string;
+            relay_token: components["schemas"]["RelayToken"];
+        };
+        TokenPair: {
+            token_type: string;
+            /** @description Short-lived JWT (15 min) for `Authorization: Bearer` and the realtime socket. */
+            access_token: string;
+            /** Format: date-time */
+            access_expires_at: string;
+            /** @description Opaque rotating refresh token (30 days). Absent for `client = web` (cookie instead). */
+            refresh_token?: string | null;
+            /** Format: uuid */
+            session_id: string;
+        };
+        TotpCodeRequest: {
+            code: string;
+        };
+        TotpEnrollResponse: {
+            /** @description Base32 secret (show once, or render `otpauth_url` as a QR code client-side). */
+            secret: string;
+            otpauth_url: string;
+        };
+        /** @description `PATCH /v1/me/settings`: only the fields present change. */
+        UpdateAccountSettingsRequest: {
+            visibility?: null | components["schemas"]["ProfileVisibility"];
+            sections?: null | components["schemas"]["ProfileSections"];
+            play_stats?: boolean | null;
+            bio?: string | null;
+            email_news?: boolean | null;
+            show_role?: boolean | null;
+        };
+        /** @description Every field optional; `product_ids` replaces the list (in order) when present. */
+        UpdateCollectionRequest: {
+            slug?: string | null;
+            name?: string | null;
+            description?: string | null;
+            accent?: string | null;
+            hero?: boolean | null;
+            active?: boolean | null;
+            /** Format: int32 */
+            sort?: number | null;
+            product_ids?: string[] | null;
+        };
+        /** @description Every field optional: only the ones sent change. */
+        UpdateContentProjectRequest: {
+            name?: string | null;
+            summary?: string | null;
+            description?: string | null;
+            categories?: string[] | null;
+            tags?: string[] | null;
+            license?: string | null;
+            links?: null | components["schemas"]["ContentLinks"];
+            visibility?: null | components["schemas"]["ContentVisibility"];
+            /** Format: int64 */
+            price_cents?: number | null;
+            currency?: null | components["schemas"]["Currency"];
+            /**
+             * Format: uuid
+             * @description A staged `icon` upload.
+             */
+            icon_upload?: string | null;
+            /** @description The whole gallery, in order. */
+            gallery?: components["schemas"]["GalleryRef"][] | null;
+        };
+        UpdateEquippedRequest: {
+            items: components["schemas"]["EquippedSlot"][];
+        };
+        UpdateMeRequest: {
+            display_name?: string | null;
+            locale?: string | null;
+            country?: string | null;
+            /**
+             * Format: date
+             * @description Only accepted while unset (accounts created with Microsoft).
+             */
+            date_of_birth?: string | null;
+            /**
+             * @description Friend suggestions opt-out (ADR 0145). `true` is refused (`discoverable_not_allowed`)
+             *     for minors; `false` also deletes the recorded sightings at once.
+             */
+            discoverable?: boolean | null;
+        };
+        UpdatePresenceRequest: {
+            status: components["schemas"]["PresenceStatus"];
+            activity?: null | components["schemas"]["Activity"];
+            /** @description When false, `activity.server_address` is dropped before fan-out. */
+            share_server?: boolean;
+        };
+        /** @description Every field optional; `prices` and `item_ids` replace the whole set when present. */
+        UpdateProductRequest: {
+            name?: string | null;
+            description?: string | null;
+            category_id?: string | null;
+            active?: boolean | null;
+            featured?: boolean | null;
+            prices?: components["schemas"]["PriceInput"][] | null;
+            item_ids?: string[] | null;
+        };
+        /** @description Edit (`PATCH`): absent fields stay as they are. */
+        UpdateServerListingRequest: {
+            name?: string | null;
+            address?: string | null;
+            summary?: string | null;
+            description?: string | null;
+            tags?: string[] | null;
+            languages?: string[] | null;
+            engine?: null | components["schemas"]["FeaturedEngine"];
+            /** @description `""` clears it. */
+            game_version?: string | null;
+            requires_rustic_edition?: boolean | null;
+            /** @description `""` clears it. */
+            website?: string | null;
+            /** @description `""` clears it. */
+            discord?: string | null;
+            visibility?: null | components["schemas"]["ContentVisibility"];
+            /** Format: uuid */
+            icon_upload?: string | null;
+            /** Format: uuid */
+            banner_upload?: string | null;
+            /** @description Removes the icon (ignored with `icon_upload`). */
+            remove_icon?: boolean;
+            /** @description Removes the banner (ignored with `banner_upload`). */
+            remove_banner?: boolean;
+        };
+        UserIdRequest: {
+            /** Format: uuid */
+            user_id: string;
+        };
+        /** @description Exact-match result of `GET /v1/users/lookup`, shown before sending a friend request. */
+        UserLookup: {
+            user: components["schemas"]["PublicUser"];
+            /** @description Linked Minecraft profile name. Hidden for minors unless it is what was searched. */
+            minecraft_name?: string | null;
+            relation: components["schemas"]["LookupRelation"];
+            /**
+             * Format: uuid
+             * @description Pending incoming request id when `relation` is `incoming_request`.
+             */
+            request_id?: string | null;
+        };
+        VerifyEmailRequest: {
+            token: string;
+        };
+        /** @description Also accepts the hosting crate's `{"region", "expectedPlayers"}` shape. */
+        WaitlistRequest: {
+            plan_id?: string | null;
+            region_id?: string | null;
+            /** Format: int32 */
+            expected_players?: number | null;
+        };
+        WaitlistStatus: {
+            joined: boolean;
+            /** Format: date-time */
+            joined_at?: string | null;
+            plan_id?: string | null;
+            region_id?: string | null;
+        };
+        Wallet: {
+            balances: components["schemas"]["WalletBalance"][];
+        };
+        WalletBalance: {
+            currency: components["schemas"]["Currency"];
+            /** Format: int64 */
+            amount_minor: number;
+        };
+        WornAnswer: {
+            /**
+             * Format: int64
+             * @description Seconds this answer may be cached (60-3600).
+             */
+            ttl: number;
+            /** @description By UUID hex; players wearing nothing are left out. */
+            players: {
+                [key: string]: components["schemas"]["WornItem"][];
+            };
+            /** @description Emotes playing now, by UUID hex. */
+            playing: {
+                [key: string]: components["schemas"]["WornPlaying"];
+            };
+        };
+        /** @description One worn cosmetic: where its bundle is on the CDN. */
+        WornItem: {
+            id: string;
+            version: string;
+            /** @description SHA-256 of the bundle. */
+            hash: string;
+        };
+        WornPlaying: {
+            item: components["schemas"]["WornItem"];
+            /**
+             * Format: int64
+             * @description Milliseconds since the emote started.
+             */
+            ms: number;
+        };
+        WornRequest: {
+            /** @description Up to 64 Minecraft UUIDs (hex, dashes accepted). */
+            players: string[];
+        };
+        YankContentVersionRequest: {
+            /** @description `false` restores a yanked version. */
+            yanked: boolean;
+            reason?: string | null;
+        };
     };
-    /** @description Replaces the offers of one day (at most 12). */
-    SetDailyOffersRequest: {
-      offers: components['schemas']['DailyOfferInput'][];
-    };
-    /** @description First password of an account created with Microsoft. */
-    SetPasswordRequest: {
-      new_password: string;
-    };
-    SetTrendingRequest: {
-      /** @description Ranks 1..n in this order; every other product loses its rank. */
-      product_ids: string[];
-    };
-    SignupRequest: {
-      email: string;
-      password: string;
-      /** @description 3-20 chars, `[a-zA-Z0-9_]`. */
-      username: string;
-      /** Format: date */
-      date_of_birth: string;
-      /** @description ISO 3166-1 alpha-2 country code (age rules depend on it). */
-      country: string;
-      /** @description Version of the privacy policy the user accepted at signup. */
-      privacy_policy_version: string;
-      locale?: string | null;
-    };
-    SignupResponse: {
-      /** Format: uuid */
-      user_id: string;
-      email_verification_required: boolean;
-      /**
-       * @description True when the user is under the digital-consent age of their country: features are
-       *     restricted until a guardian links the account.
-       */
-      guardian_required: boolean;
-    };
-    /**
-     * Format: binary
-     * @description OpenAPI schema of the binary PNG body.
-     */
-    SkinPng: string;
-    SocialSnapshot: {
-      friends: components['schemas']['CompanionFriend'][];
-      invites: components['schemas']['CompanionInvite'][];
-      /** @description Unread direct messages (most recent 20). */
-      messages: components['schemas']['CompanionMessage'][];
-      /** @description Emotes the account owns (the wheel shows at most 8). */
-      emotes: components['schemas']['WornItem'][];
-    };
-    /** @description A staff-curated collection (theme, season, creator...). */
-    StoreCollection: {
-      /** Format: uuid */
-      id: string;
-      slug: string;
-      name: string;
-      description: string;
-      /** @description `#rrggbb`. */
-      accent: string;
-      /** @description Shown as the store's hero banner. */
-      hero: boolean;
-      /** @description In display order; only active products of this catalog response. */
-      product_ids: string[];
-    };
-    StoreLegal: {
-      consent_wording_version: string;
-      immediate_execution_text: string;
-      withdrawal_waiver_text: string;
-      stripe_tax_enabled: boolean;
-    };
-    /** @enum {string} */
-    SuggestionReason: 'party' | 'server';
-    TelemetryConsentRequest: {
-      granted: boolean;
-    };
-    TempHostname: {
-      /** @description `<adjective>-<noun>-<NN>.<temp-domain>`, e.g. `brave-otter-42.tmp.relay.example.invalid`. */
-      hostname: string;
-      /** Format: date-time */
-      expires_at: string;
-    };
-    /**
-     * @description A temporary relay hostname lease for a server running on the user's machine, plus a
-     *     relay token that already carries it.
-     */
-    TempHostnameLease: {
-      hostname: string;
-      /** Format: date-time */
-      expires_at: string;
-      /**
-       * Format: date-time
-       * @description Renew before this instant to keep the same hostname.
-       */
-      renew_before: string;
-      relay_token: components['schemas']['RelayToken'];
-    };
-    TokenPair: {
-      token_type: string;
-      /** @description Short-lived JWT (15 min) for `Authorization: Bearer` and the realtime socket. */
-      access_token: string;
-      /** Format: date-time */
-      access_expires_at: string;
-      /** @description Opaque rotating refresh token (30 days). Absent for `client = web` (cookie instead). */
-      refresh_token?: string | null;
-      /** Format: uuid */
-      session_id: string;
-    };
-    TotpCodeRequest: {
-      code: string;
-    };
-    TotpEnrollResponse: {
-      /** @description Base32 secret (show once, or render `otpauth_url` as a QR code client-side). */
-      secret: string;
-      otpauth_url: string;
-    };
-    /** @description Every field optional; `product_ids` replaces the list (in order) when present. */
-    UpdateCollectionRequest: {
-      slug?: string | null;
-      name?: string | null;
-      description?: string | null;
-      accent?: string | null;
-      hero?: boolean | null;
-      active?: boolean | null;
-      /** Format: int32 */
-      sort?: number | null;
-      product_ids?: string[] | null;
-    };
-    /** @description Every field optional: only the ones sent change. */
-    UpdateContentProjectRequest: {
-      name?: string | null;
-      summary?: string | null;
-      description?: string | null;
-      categories?: string[] | null;
-      tags?: string[] | null;
-      license?: string | null;
-      links?: null | components['schemas']['ContentLinks'];
-      visibility?: null | components['schemas']['ContentVisibility'];
-      /** Format: int64 */
-      price_cents?: number | null;
-      currency?: null | components['schemas']['Currency'];
-      /**
-       * Format: uuid
-       * @description A staged `icon` upload.
-       */
-      icon_upload?: string | null;
-      /** @description The whole gallery, in order. */
-      gallery?: components['schemas']['GalleryRef'][] | null;
-    };
-    UpdateEquippedRequest: {
-      items: components['schemas']['EquippedSlot'][];
-    };
-    UpdateMeRequest: {
-      display_name?: string | null;
-      locale?: string | null;
-      country?: string | null;
-      /**
-       * Format: date
-       * @description Only accepted while unset (accounts created with Microsoft).
-       */
-      date_of_birth?: string | null;
-      /**
-       * @description Friend suggestions opt-out (ADR 0145). `true` is refused (`discoverable_not_allowed`)
-       *     for minors; `false` also deletes the recorded sightings at once.
-       */
-      discoverable?: boolean | null;
-    };
-    UpdatePresenceRequest: {
-      status: components['schemas']['PresenceStatus'];
-      activity?: null | components['schemas']['Activity'];
-      /** @description When false, `activity.server_address` is dropped before fan-out. */
-      share_server?: boolean;
-    };
-    /** @description Every field optional; `prices` and `item_ids` replace the whole set when present. */
-    UpdateProductRequest: {
-      name?: string | null;
-      description?: string | null;
-      category_id?: string | null;
-      active?: boolean | null;
-      featured?: boolean | null;
-      prices?: components['schemas']['PriceInput'][] | null;
-      item_ids?: string[] | null;
-    };
-    /** @description Edit (`PATCH`): absent fields stay as they are. */
-    UpdateServerListingRequest: {
-      name?: string | null;
-      address?: string | null;
-      summary?: string | null;
-      description?: string | null;
-      tags?: string[] | null;
-      languages?: string[] | null;
-      engine?: null | components['schemas']['FeaturedEngine'];
-      /** @description `""` clears it. */
-      game_version?: string | null;
-      requires_rustic_edition?: boolean | null;
-      /** @description `""` clears it. */
-      website?: string | null;
-      /** @description `""` clears it. */
-      discord?: string | null;
-      visibility?: null | components['schemas']['ContentVisibility'];
-      /** Format: uuid */
-      icon_upload?: string | null;
-      /** Format: uuid */
-      banner_upload?: string | null;
-      /** @description Removes the icon (ignored with `icon_upload`). */
-      remove_icon?: boolean;
-      /** @description Removes the banner (ignored with `banner_upload`). */
-      remove_banner?: boolean;
-    };
-    UserIdRequest: {
-      /** Format: uuid */
-      user_id: string;
-    };
-    /** @description Exact-match result of `GET /v1/users/lookup`, shown before sending a friend request. */
-    UserLookup: {
-      user: components['schemas']['PublicUser'];
-      /** @description Linked Minecraft profile name. Hidden for minors unless it is what was searched. */
-      minecraft_name?: string | null;
-      relation: components['schemas']['LookupRelation'];
-      /**
-       * Format: uuid
-       * @description Pending incoming request id when `relation` is `incoming_request`.
-       */
-      request_id?: string | null;
-    };
-    VerifyEmailRequest: {
-      token: string;
-    };
-    /** @description Also accepts the hosting crate's `{"region", "expectedPlayers"}` shape. */
-    WaitlistRequest: {
-      plan_id?: string | null;
-      region_id?: string | null;
-      /** Format: int32 */
-      expected_players?: number | null;
-    };
-    WaitlistStatus: {
-      joined: boolean;
-      /** Format: date-time */
-      joined_at?: string | null;
-      plan_id?: string | null;
-      region_id?: string | null;
-    };
-    Wallet: {
-      balances: components['schemas']['WalletBalance'][];
-    };
-    WalletBalance: {
-      currency: components['schemas']['Currency'];
-      /** Format: int64 */
-      amount_minor: number;
-    };
-    WornAnswer: {
-      /**
-       * Format: int64
-       * @description Seconds this answer may be cached (60-3600).
-       */
-      ttl: number;
-      /** @description By UUID hex; players wearing nothing are left out. */
-      players: {
-        [key: string]: components['schemas']['WornItem'][];
-      };
-      /** @description Emotes playing now, by UUID hex. */
-      playing: {
-        [key: string]: components['schemas']['WornPlaying'];
-      };
-    };
-    /** @description One worn cosmetic: where its bundle is on the CDN. */
-    WornItem: {
-      id: string;
-      version: string;
-      /** @description SHA-256 of the bundle. */
-      hash: string;
-    };
-    WornPlaying: {
-      item: components['schemas']['WornItem'];
-      /**
-       * Format: int64
-       * @description Milliseconds since the emote started.
-       */
-      ms: number;
-    };
-    WornRequest: {
-      /** @description Up to 64 Minecraft UUIDs (hex, dashes accepted). */
-      players: string[];
-    };
-    YankContentVersionRequest: {
-      /** @description `false` restores a yanked version. */
-      yanked: boolean;
-      reason?: string | null;
-    };
-  };
-  responses: never;
-  parameters: never;
-  requestBodies: never;
-  headers: never;
-  pathItems: never;
+    responses: never;
+    parameters: never;
+    requestBodies: never;
+    headers: never;
+    pathItems: never;
 }
 export type $defs = Record<string, never>;
 export interface operations {
-  health_live: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Health'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  health_ready: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Health'];
-        };
-      };
-      503: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Health'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_audit: {
-    parameters: {
-      query?: {
-        actor_id?: string | null;
-        target_type?: string | null;
-        limit?: number | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AuditEntry'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_ban: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateBanRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Ban'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_unban: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Ban id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Ban lifted */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_collections_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminCollection'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_create_collection: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateCollectionRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminCollection'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_delete_collection: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Collection id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Deleted */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_update_collection: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Collection id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UpdateCollectionRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminCollection'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_deny: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id or slug */
-        key: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['DenyEntryRequest'];
-      };
-    };
-    responses: {
-      /** @description Listed */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_undeny: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id or slug */
-        key: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Removed from the list */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_list: {
-    parameters: {
-      query?: {
-        q?: string | null;
-        kind?: string | null;
-        /**
-         * @description `all` (default), `public`, `unlisted`, `private`, `pending`, `taken_down`, `verified`,
-         *     `flagged`, `marketplace`.
-         */
-        status?: string | null;
-        /** @description `updated` (default), `newest`, `downloads`, `relevance`. */
-        sort?: string | null;
-        offset?: number | null;
-        limit?: number | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminContentList'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_create_project: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateContentProjectRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentProject'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_takedown: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ContentTakedownRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentProject'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_restore: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentProject'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_verify: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentProject'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_unverify: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentProject'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_create_version: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateContentVersionRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentVersion'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_review_queue: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentReviewItem'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_content_review: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Version id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ContentReviewRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentVersion'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_create_creator_code: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateCreatorCodeRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['CreatorCode'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_daily_offers_list: {
-    parameters: {
-      query?: {
-        /** @description First UTC day (`YYYY-MM-DD`), default today. */
-        from?: string | null;
-        /** @description Last UTC day (inclusive), default `from` + 13 days. At most 62 days in all. */
-        to?: string | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DailyOfferEntry'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_set_daily_offers: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description UTC day (YYYY-MM-DD), today or later */
-        day: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['SetDailyOffersRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DailyOfferEntry'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_featured_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminFeaturedServer'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_featured_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['FeaturedServerUpsertRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminFeaturedServer'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_featured_update: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Featured server id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['FeaturedServerUpsertRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminFeaturedServer'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_featured_delete: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Featured server id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Deleted */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_create_gift_card: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateGiftCardRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['GiftCardCreated'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_items_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['CosmeticItem'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_create_item: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateItemRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['CosmeticItem'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_news_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminNewsItem'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_news_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['NewsUpsertRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminNewsItem'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_news_update: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description News id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['NewsUpsertRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminNewsItem'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_news_delete: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description News id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Deleted */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  official_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['OfficialPublisher'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  official_publish: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['PublishContentRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PublishContentResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  official_update: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UpdateContentProjectRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentProject'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  official_add_version: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['NewContentVersion'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PublishContentResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  official_upload: {
-    parameters: {
-      query: {
-        /** @description `file`, `icon` or `gallery`. */
-        purpose: string;
-        /** @description The project's kind (`file` uploads). */
-        kind?: string | null;
-        /** @description The file's name (a plain name with the kind's extension). */
-        filename: string;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    /** @description The file's bytes */
-    requestBody: {
-      content: {
-        'application/octet-stream': string;
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentUpload'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_refund_order: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Order id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Refunded; items revoked */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_products_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminProduct'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_create_product: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateProductRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Product'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_update_product: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Product id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UpdateProductRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['AdminProduct'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_create_promo: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreatePromoCodeRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PromoCode'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_reports: {
-    parameters: {
-      query?: {
-        /** @description `open` (default), `actioned`, `dismissed`. */
-        status?: string | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Report'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_resolve_report: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Report id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ResolveReportRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Report'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_listings: {
-    parameters: {
-      query?: {
-        q?: string | null;
-        /**
-         * @description `all` (default), `public`, `unlisted`, `private`, `hidden`, `verified`, `featured`,
-         *     `reported` (open reports).
-         */
-        status?: string | null;
-        /** @description `new` (default), `trending`, `players`, `name`, `featured`. */
-        sort?: string | null;
-        offset?: number | null;
-        limit?: number | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListingPage'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_listing_feature: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ServerListingFeatureRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListing'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_listing_unfeature: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListing'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_listing_hide: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ServerListingHideRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListing'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_listing_unhide: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListing'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_listing_verify: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListing'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_listing_unverify: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListing'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_set_trending: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['SetTrendingRequest'];
-      };
-    };
-    responses: {
-      /** @description Ranks replaced */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  admin_user_bans: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description User id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Ban'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  handoff_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['HandoffResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  handoff_exchange: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['HandoffExchangeRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['LoginResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_login: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['LoginRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['LoginResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_login_mfa: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['MfaLoginRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['LoginResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_logout: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Session revoked */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_microsoft: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['MicrosoftSignInRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['LoginResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_microsoft_complete: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['MicrosoftCompleteRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['LoginResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_microsoft_link: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['MicrosoftLinkRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ExternalIdentity'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_change_password: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ChangePasswordRequest'];
-      };
-    };
-    responses: {
-      /** @description Password changed, other sessions revoked */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_forgot_password: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['EmailRequest'];
-      };
-    };
-    responses: {
-      /** @description Mail sent if the account exists */
-      202: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_reset_password: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ResetPasswordRequest'];
-      };
-    };
-    responses: {
-      /** @description Password changed, all sessions revoked */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  password_set: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['SetPasswordRequest'];
-      };
-    };
-    responses: {
-      /** @description Password set */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_refresh: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['RefreshRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['TokenPair'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_signup: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['SignupRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['SignupResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_verify_email: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['VerifyEmailRequest'];
-      };
-    };
-    responses: {
-      /** @description Email verified */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  auth_resend_verification: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['EmailRequest'];
-      };
-    };
-    responses: {
-      /** @description Sent if the account exists and is unverified */
-      202: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  blocks_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PublicUser'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  blocks_add: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description User to block */
-        user_id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Blocked (also unfriends and cancels requests) */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  blocks_remove: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description User to unblock */
-        user_id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Unblocked */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_catalog: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentCatalogInfo'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_denylist: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['FairPlayDenyList'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_file: {
-    parameters: {
-      query?: {
-        /** @description Unix expiry of a signed link (`POST /v1/content/versions/{id}/download-link`). */
-        exp?: number | null;
-        sig?: string | null;
-      };
-      header?: never;
-      path: {
-        /** @description Version id (`<project>@<version>`) */
-        version_id: string;
-        /** @description File name */
-        filename: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description The file (private files) */
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/octet-stream': unknown;
-        };
-      };
-      /** @description Redirect to the file on the CDN */
-      302: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_publish: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['PublishContentRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PublishContentResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_project: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentProject'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_delete: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Deleted with its files */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_update: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UpdateContentProjectRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentProject'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_checkout: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['CheckoutResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_report: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ContentReportRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ReportCreated'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_versions: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentVersion'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_add_version: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['NewContentVersion'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PublishContentResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_search: {
-    parameters: {
-      query?: {
-        /** @description Free text (name, slug, summary, tags). */
-        q?: string | null;
-        /** @description `mod`, `native_mod`, `modpack`, `resourcepack`, `shader`, `shaderpack`, `datapack`, `plugin`. */
-        kind?: string | null;
-        /** @description One of the kind's categories. */
-        category?: string | null;
-        /** @description A tag. */
-        tag?: string | null;
-        /** @description `relevance` (default), `downloads`, `newest`, `updated`. */
-        sort?: string | null;
-        /** @description `free` or `paid`. */
-        price?: string | null;
-        /** @description Only projects an admin verified. */
-        verified?: boolean | null;
-        offset?: number | null;
-        /** @description 1-100, default 20. */
-        limit?: number | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentSearchResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_upload: {
-    parameters: {
-      query: {
-        /** @description `file`, `icon` or `gallery`. */
-        purpose: string;
-        /** @description The project's kind (`file` uploads). */
-        kind?: string | null;
-        /** @description The file's name (a plain name with the kind's extension). */
-        filename: string;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    /** @description The file's bytes */
-    requestBody: {
-      content: {
-        'application/octet-stream': string;
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentUpload'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_download_link: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Version id (`<project>@<version>`) */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentDownloadLink'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  content_yank: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Version id (`<project>@<version>`) */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['YankContentVersionRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentVersion'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  conversations_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Conversation'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  equipped_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Equipped'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  equipped_set: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UpdateEquippedRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Equipped'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  cosmetics_worn: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['WornRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['WornAnswer'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  emotes_playing: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['EmotePlayingRequest'];
-      };
-    };
-    responses: {
-      /** @description Recorded */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  featured_servers_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['FeaturedServer'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  friends_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Friend'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  friend_requests_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['FriendRequests'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  friend_request_send: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['SendFriendRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['FriendRequest'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  friend_request_cancel: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Request id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Cancelled */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  friend_request_accept: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Request id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Friend'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  friend_request_decline: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Request id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Declined */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  friend_suggestions: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['FriendSuggestions'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  friends_remove: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Friend user id */
-        user_id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Removed */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  guardian_approvals: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PurchaseApproval'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  guardian_decide: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Approval id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ApprovalDecision'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PurchaseApproval'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  guardian_children: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ChildSummary'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  guardian_unlink: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Child user id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Unlinked */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  guardian_update_controls: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Child user id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ParentalControls'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ChildSummary'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  guardian_link: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['GuardianLinkRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ChildSummary'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  hosting_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['HostingCatalog'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  hosting_plans: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['HostingCloudPlan'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  hosting_regions: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['HostingCloudRegion'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  hosting_allocate: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description `not_available_yet`: hosting is coming soon */
-      503: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  hosting_waitlist_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['WaitlistStatus'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  hosting_waitlist_join: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['WaitlistRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['WaitlistStatus'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  hosting_waitlist_leave: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Left the waitlist */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  discord_content: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DiscordContentSnapshot'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  discord_link_state: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Discord user id */
-        discord_id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DiscordLinkState'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  discord_profile: {
-    parameters: {
-      query?: {
-        /** @description The linked Discord account. */
-        discord_id?: string | null;
-        /** @description A Rustic username (exact, case-insensitive). */
-        username?: string | null;
-        /** @description A linked game profile name (exact, case-insensitive; never resolves a minor). */
-        minecraft_name?: string | null;
-        /** @description The Discord member asking (their own profile shows a little more). */
-        viewer_discord_id?: string | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DiscordProfile'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  discord_server: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DiscordServerSnapshot'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  discord_store: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Product id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DiscordStoreSnapshot'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  inventory_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['InventoryItem'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  invitations_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Invitation'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  invitations_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateInvitationRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Invitation'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  invitations_respond: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Invitation id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['RespondInvitationRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Invitation'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  invite_code_resolve: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Invite code (case and dashes ignored) */
-        code: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['InviteCodeResolution'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  me_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Me'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  me_update: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UpdateMeRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Me'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  totp_confirm: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['TotpCodeRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['RecoveryCodesResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  totp_disable: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ReauthRequest'];
-      };
-    };
-    responses: {
-      /** @description 2FA disabled */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  totp_enroll: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['TotpEnrollResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  totp_regenerate_recovery: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['TotpCodeRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['RecoveryCodesResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  consents_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ConsentState'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  consents_accept_privacy: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['PrivacyAcceptRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ConsentState'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  consents_set_telemetry: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['TelemetryConsentRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ConsentState'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  my_content: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ContentProject'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  gdpr_delete: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ReauthRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DeletionStatus'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  gdpr_delete_cancel: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DeletionStatus'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  discord_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DiscordAccount'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  discord_unlink: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Unlinked */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  discord_link_start: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DiscordLinkStart'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  discord_link_finish: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['DiscordLinkFinishRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['DiscordLink'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  gdpr_export: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description JSON archive of all personal data */
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': Record<string, never>;
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  guardian_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['GuardianInfo'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  guardian_invite_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['GuardianInviteResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  identities_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['IdentitiesResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  identities_unlink: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description `microsoft` */
-        provider: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Unlinked */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  library_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['LibraryEntry'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  library_add: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description In the library */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  library_remove: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Project id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Removed */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  my_listings: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListing'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  me_skin: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description The skin PNG (64x64 or legacy 64x32), proxied from Mojang */
-      200: {
-        headers: {
-          /** @description `private, max-age=600` */
-          'cache-control'?: string;
-          /** @description Arm model: `slim` or `classic` */
-          'x-skin-model'?: string;
-          [name: string]: unknown;
-        };
-        content: {
-          'image/png': components['schemas']['SkinPng'];
-        };
-      };
-      /** @description `no_minecraft_profile`: no linked Minecraft profile; `no_skin`: the profile uses a default skin */
-      404: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description `skin_upstream_unavailable`, `skin_upstream_invalid`, `skin_url_rejected`, `skin_too_large`, `skin_not_png`: Mojang's services failed or sent something unexpected */
-      502: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  messages_history: {
-    parameters: {
-      query?: {
-        /** @description Return messages created strictly before this instant (pagination). */
-        before?: string | null;
-        /** @description 1-100, default 50. */
-        limit?: number | null;
-      };
-      header?: never;
-      path: {
-        /** @description Other participant */
-        user_id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Message'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  messages_send: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Recipient */
-        user_id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['SendMessageRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Message'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  messages_mark_read: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Conversation peer */
-        user_id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ReadReceipt'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  minecraft_accounts: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['MinecraftAccount'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  minecraft_unlink: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Minecraft profile UUID */
-        uuid: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Unlinked (purchases stay on the Rustic account) */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  minecraft_link_finish: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['MinecraftLinkFinishRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['MinecraftAccount'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  minecraft_link_start: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['MinecraftLinkChallenge'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  news_list: {
-    parameters: {
-      query?: {
-        /** @description Only items in this language (`en`, `fr`); all languages when absent. */
-        locale?: string | null;
-        /** @description 1-50, default 20. */
-        limit?: number | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['NewsItem'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  news_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description News slug */
-        slug: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['NewsItem'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  notifications_list: {
-    parameters: {
-      query?: {
-        unread_only?: boolean | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Notification'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  notifications_read_all: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description All marked read */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  notifications_read: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Notification id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Marked read */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  orders_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Order'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  orders_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Order id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Order'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  order_resume_checkout: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Order id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['CheckoutResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  outfits_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Outfit'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  outfits_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['OutfitRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Outfit'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  outfits_update: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Outfit id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['OutfitRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Outfit'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  outfits_delete: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Outfit id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Deleted */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  outfits_equip: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Outfit id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Equipped'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  party_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Party'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  party_current: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Party'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  party_invites_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PartyInvite'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  party_invite_accept: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Invite id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Party'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  party_invite_decline: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Invite id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Declined */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  party_invite: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Party id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UserIdRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PartyInvite'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  party_kick: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Party id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UserIdRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Party'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  party_transfer_leader: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Party id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UserIdRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Party'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  party_leave: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Party id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Left */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  presence_update: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UpdatePresenceRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Presence'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  minecraft_lookup_batch: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['LookupBatchRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['LookupBatchResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  minecraft_lookup: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Minecraft profile UUID */
-        uuid: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['MinecraftLookup'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  reports_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ReportRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ReportCreated'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  listings_search: {
-    parameters: {
-      query?: {
-        /** @description Free text (name, summary, address, tags). */
-        q?: string | null;
-        /** @description One tag of the catalog. */
-        tag?: string | null;
-        /** @description A two-letter language code. */
-        language?: string | null;
-        /** @description `horizon` or `rustic`. */
-        engine?: string | null;
-        /** @description Only listings staff verified. */
-        verified?: boolean | null;
-        /** @description Only staff picks (ordered by their rank). */
-        featured?: boolean | null;
-        /** @description `trending` (default), `players`, `new`, `name`. */
-        sort?: string | null;
-        offset?: number | null;
-        /** @description 1-50, default 24. */
-        limit?: number | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListingPage'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  listings_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ServerListingRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListing'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  listings_catalog: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListingCatalog'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  listings_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListing'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  listings_delete: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Deleted with its images */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  listings_update: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UpdateServerListingRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ServerListing'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  listings_play: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Counted (or already counted recently) */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  listings_report: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Listing id or slug */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['ServerListingReportRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ReportCreated'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  servers_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['RelayServer'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  servers_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateServerRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['RelayServer'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  subdomain_availability: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Requested subdomain label */
-        label: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['NameAvailability'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  servers_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['RelayServer'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  servers_delete: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Deleted; hostnames released */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  domains_add: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['AddDomainRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['CustomDomain'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  domains_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-        /** @description Domain id */
-        domain_id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['CustomDomain'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  domains_delete: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-        /** @description Domain id */
-        domain_id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Removed; routing stopped */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  domains_verify: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-        /** @description Domain id */
-        domain_id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['CustomDomain'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  invite_code_create: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['InviteCode'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  temp_hostname_allocate: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['TempHostnameLease'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  temp_hostname_release: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Released */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  temp_hostname_renew: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['TempHostnameLease'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  tunnel_token: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Server id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['RelayToken'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  sessions_list: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['SessionInfo'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  sessions_revoke_others: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description All other sessions revoked */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  sessions_revoke: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Session id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Revoked */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  companion_social: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['SocialSnapshot'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  companion_invite: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CompanionInviteRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Invitation'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  companion_accept_invite: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description Invitation id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Invitation'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  store_catalog: {
-    parameters: {
-      query?: {
-        /** @description `EUR` (default), `USD`, `GBP`, `CHF`. */
-        currency?: string | null;
-        /** @description ISO country (VAT display rules). */
-        country?: string | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Catalog'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  store_checkout: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CheckoutRequest'];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['CheckoutResponse'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  store_legal: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['StoreLegal'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  premium_waitlist_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PremiumWaitlist'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  premium_waitlist_join: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PremiumWaitlist'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  premium_waitlist_leave: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      /** @description Left the waitlist */
-      204: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  store_product: {
-    parameters: {
-      query?: {
-        /** @description `EUR` (default), `USD`, `GBP`, `CHF`. */
-        currency?: string | null;
-        /** @description ISO country (VAT display rules). */
-        country?: string | null;
-      };
-      header?: never;
-      path: {
-        /** @description Product slug */
-        slug: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Product'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  store_quote: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['QuoteRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Quote'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  users_lookup: {
-    parameters: {
-      query?: {
-        /** @description Exact Rustic username (case-insensitive). */
-        username?: string | null;
-        /** @description Exact Minecraft profile name linked to a Rustic account (case-insensitive). */
-        minecraft_name?: string | null;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['UserLookup'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  users_search: {
-    parameters: {
-      query: {
-        /** @description Username prefix (min 2 characters). */
-        q: string;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PublicUser'][];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  users_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        /** @description User id */
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['PublicUser'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  wallet_get: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Wallet'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  wallet_redeem: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['RedeemGiftCardRequest'];
-      };
-    };
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['Wallet'];
-        };
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
-  stripe_webhook: {
-    parameters: {
-      query?: never;
-      header: {
-        /** @description Stripe webhook signature */
-        'Stripe-Signature': string;
-      };
-      path?: never;
-      cookie?: never;
-    };
-    /** @description Raw Stripe event JSON */
-    requestBody: {
-      content: {
-        'application/json': string;
-      };
-    };
-    responses: {
-      /** @description Processed or duplicate */
-      200: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content?: never;
-      };
-      /** @description Error (see `code`) */
-      default: {
-        headers: {
-          [name: string]: unknown;
-        };
-        content: {
-          'application/json': components['schemas']['ErrorBody'];
-        };
-      };
-    };
-  };
+    health_live: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Health"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    health_ready: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Health"];
+                };
+            };
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Health"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_audit: {
+        parameters: {
+            query?: {
+                actor_id?: string | null;
+                target_type?: string | null;
+                limit?: number | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AuditEntry"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_ban: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateBanRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Ban"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_unban: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Ban id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Ban lifted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_collections_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminCollection"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_create_collection: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateCollectionRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminCollection"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_delete_collection: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Collection id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_update_collection: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Collection id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateCollectionRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminCollection"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_deny: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id or slug */
+                key: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["DenyEntryRequest"];
+            };
+        };
+        responses: {
+            /** @description Listed */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_undeny: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id or slug */
+                key: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Removed from the list */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_list: {
+        parameters: {
+            query?: {
+                q?: string | null;
+                kind?: string | null;
+                /**
+                 * @description `all` (default), `public`, `unlisted`, `private`, `pending`, `taken_down`, `verified`,
+                 *     `flagged`, `marketplace`.
+                 */
+                status?: string | null;
+                /** @description `updated` (default), `newest`, `downloads`, `relevance`. */
+                sort?: string | null;
+                offset?: number | null;
+                limit?: number | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminContentList"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_create_project: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateContentProjectRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentProject"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_takedown: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ContentTakedownRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentProject"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_restore: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentProject"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_verify: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentProject"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_unverify: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentProject"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_create_version: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateContentVersionRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentVersion"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_review_queue: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentReviewItem"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_content_review: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Version id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ContentReviewRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentVersion"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_create_creator_code: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateCreatorCodeRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CreatorCode"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_daily_offers_list: {
+        parameters: {
+            query?: {
+                /** @description First UTC day (`YYYY-MM-DD`), default today. */
+                from?: string | null;
+                /** @description Last UTC day (inclusive), default `from` + 13 days. At most 62 days in all. */
+                to?: string | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DailyOfferEntry"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_set_daily_offers: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description UTC day (YYYY-MM-DD), today or later */
+                day: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["SetDailyOffersRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DailyOfferEntry"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_featured_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminFeaturedServer"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_featured_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["FeaturedServerUpsertRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminFeaturedServer"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_featured_update: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Featured server id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["FeaturedServerUpsertRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminFeaturedServer"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_featured_delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Featured server id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_create_gift_card: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateGiftCardRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GiftCardCreated"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_items_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CosmeticItem"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_create_item: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateItemRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CosmeticItem"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_news_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminNewsItem"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_news_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["NewsUpsertRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminNewsItem"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_news_update: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description News id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["NewsUpsertRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminNewsItem"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_news_delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description News id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    official_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["OfficialPublisher"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    official_publish: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["PublishContentRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublishContentResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    official_update: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateContentProjectRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentProject"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    official_add_version: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["NewContentVersion"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublishContentResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    official_upload: {
+        parameters: {
+            query: {
+                /** @description `file`, `icon` or `gallery`. */
+                purpose: string;
+                /** @description The project's kind (`file` uploads). */
+                kind?: string | null;
+                /** @description The file's name (a plain name with the kind's extension). */
+                filename: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description The file's bytes */
+        requestBody: {
+            content: {
+                "application/octet-stream": string;
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentUpload"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_refund_order: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Order id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Refunded; items revoked */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_products_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminProduct"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_create_product: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateProductRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Product"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_update_product: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Product id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateProductRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminProduct"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_create_promo: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreatePromoCodeRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PromoCode"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_reports: {
+        parameters: {
+            query?: {
+                /** @description `open` (default), `actioned`, `dismissed`. */
+                status?: string | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Report"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_resolve_report: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Report id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResolveReportRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Report"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_listings: {
+        parameters: {
+            query?: {
+                q?: string | null;
+                /**
+                 * @description `all` (default), `public`, `unlisted`, `private`, `hidden`, `verified`, `featured`,
+                 *     `reported` (open reports).
+                 */
+                status?: string | null;
+                /** @description `new` (default), `trending`, `players`, `name`, `featured`. */
+                sort?: string | null;
+                offset?: number | null;
+                limit?: number | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListingPage"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_listing_feature: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ServerListingFeatureRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListing"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_listing_unfeature: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListing"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_listing_hide: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ServerListingHideRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListing"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_listing_unhide: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListing"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_listing_verify: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListing"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_listing_unverify: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListing"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_set_trending: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["SetTrendingRequest"];
+            };
+        };
+        responses: {
+            /** @description Ranks replaced */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_user_bans: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description User id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Ban"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    handoff_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HandoffResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    handoff_exchange: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["HandoffExchangeRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["LoginResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_login: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["LoginRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["LoginResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_login_mfa: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["MfaLoginRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["LoginResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_logout: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Session revoked */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_microsoft: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["MicrosoftSignInRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["LoginResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_microsoft_complete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["MicrosoftCompleteRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["LoginResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_microsoft_link: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["MicrosoftLinkRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ExternalIdentity"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_change_password: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ChangePasswordRequest"];
+            };
+        };
+        responses: {
+            /** @description Password changed, other sessions revoked */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_forgot_password: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["EmailRequest"];
+            };
+        };
+        responses: {
+            /** @description Mail sent if the account exists */
+            202: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    password_remove: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["RemovePasswordRequest"];
+            };
+        };
+        responses: {
+            /** @description Password removed: sign in with Microsoft from now on */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_reset_password: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResetPasswordRequest"];
+            };
+        };
+        responses: {
+            /** @description Password changed, all sessions revoked */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    password_set: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["SetPasswordRequest"];
+            };
+        };
+        responses: {
+            /** @description Password set */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_refresh: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["RefreshRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TokenPair"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_signup: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["SignupRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SignupResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_verify_email: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["VerifyEmailRequest"];
+            };
+        };
+        responses: {
+            /** @description Email verified */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    auth_resend_verification: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["EmailRequest"];
+            };
+        };
+        responses: {
+            /** @description Sent if the account exists and is unverified */
+            202: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    avatars_defaults: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DefaultAvatar"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    blocks_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicUser"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    blocks_add: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description User to block */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Blocked (also unfriends and cancels requests) */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    blocks_remove: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description User to unblock */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Unblocked */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    contact_send: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ContactRequest"];
+            };
+        };
+        responses: {
+            202: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContactAccepted"];
+                };
+            };
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_catalog: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentCatalogInfo"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_denylist: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["FairPlayDenyList"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_file: {
+        parameters: {
+            query?: {
+                /** @description Unix expiry of a signed link (`POST /v1/content/versions/{id}/download-link`). */
+                exp?: number | null;
+                sig?: string | null;
+            };
+            header?: never;
+            path: {
+                /** @description Version id (`<project>@<version>`) */
+                version_id: string;
+                /** @description File name */
+                filename: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description The file (private files) */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/octet-stream": unknown;
+                };
+            };
+            /** @description Redirect to the file on the CDN */
+            302: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_publish: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["PublishContentRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublishContentResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_project: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentProject"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted with its files */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_update: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateContentProjectRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentProject"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_checkout: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CheckoutResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_report: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ContentReportRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ReportCreated"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_versions: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentVersion"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_add_version: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["NewContentVersion"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublishContentResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_search: {
+        parameters: {
+            query?: {
+                /** @description Free text (name, slug, summary, tags). */
+                q?: string | null;
+                /** @description `mod`, `native_mod`, `modpack`, `resourcepack`, `shader`, `shaderpack`, `datapack`, `plugin`. */
+                kind?: string | null;
+                /** @description One of the kind's categories. */
+                category?: string | null;
+                /** @description A tag. */
+                tag?: string | null;
+                /** @description `relevance` (default), `downloads`, `newest`, `updated`. */
+                sort?: string | null;
+                /** @description `free` or `paid`. */
+                price?: string | null;
+                /** @description Only projects an admin verified. */
+                verified?: boolean | null;
+                offset?: number | null;
+                /** @description 1-100, default 20. */
+                limit?: number | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentSearchResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_upload: {
+        parameters: {
+            query: {
+                /** @description `file`, `icon` or `gallery`. */
+                purpose: string;
+                /** @description The project's kind (`file` uploads). */
+                kind?: string | null;
+                /** @description The file's name (a plain name with the kind's extension). */
+                filename: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description The file's bytes */
+        requestBody: {
+            content: {
+                "application/octet-stream": string;
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentUpload"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_download_link: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Version id (`<project>@<version>`) */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentDownloadLink"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    content_yank: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Version id (`<project>@<version>`) */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["YankContentVersionRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentVersion"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    conversations_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Conversation"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    equipped_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Equipped"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    equipped_set: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateEquippedRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Equipped"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    cosmetics_worn: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["WornRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["WornAnswer"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    emotes_playing: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["EmotePlayingRequest"];
+            };
+        };
+        responses: {
+            /** @description Recorded */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    featured_servers_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["FeaturedServer"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    friends_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Friend"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    friend_requests_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["FriendRequests"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    friend_request_send: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["SendFriendRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["FriendRequest"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    friend_request_cancel: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Request id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Cancelled */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    friend_request_accept: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Request id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Friend"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    friend_request_decline: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Request id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Declined */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    friend_suggestions: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["FriendSuggestions"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    friends_remove: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Friend user id */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Removed */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    guardian_approvals: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PurchaseApproval"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    guardian_decide: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Approval id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ApprovalDecision"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PurchaseApproval"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    guardian_children: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ChildSummary"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    guardian_unlink: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Child user id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Unlinked */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    guardian_update_controls: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Child user id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ParentalControls"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ChildSummary"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    guardian_link: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["GuardianLinkRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ChildSummary"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    hosting_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HostingCatalog"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    hosting_plans: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HostingCloudPlan"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    hosting_regions: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HostingCloudRegion"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    hosting_allocate: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description `not_available_yet`: hosting is coming soon */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    hosting_waitlist_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["WaitlistStatus"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    hosting_waitlist_join: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["WaitlistRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["WaitlistStatus"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    hosting_waitlist_leave: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Left the waitlist */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    discord_contact: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Contact message id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiscordContactNotice"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    discord_content: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiscordContentSnapshot"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    discord_link_state: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Discord user id */
+                discord_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiscordLinkState"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    discord_profile: {
+        parameters: {
+            query?: {
+                /** @description The linked Discord account. */
+                discord_id?: string | null;
+                /** @description A Rustic username (exact, case-insensitive). */
+                username?: string | null;
+                /** @description A linked game profile name (exact, case-insensitive; never resolves a minor). */
+                minecraft_name?: string | null;
+                /** @description The Discord member asking (their own profile shows a little more). */
+                viewer_discord_id?: string | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiscordProfile"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    discord_server: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiscordServerSnapshot"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    discord_store: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Product id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiscordStoreSnapshot"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    inventory_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["InventoryItem"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    invitations_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Invitation"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    invitations_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateInvitationRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Invitation"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    invitations_respond: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Invitation id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["RespondInvitationRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Invitation"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    invite_code_resolve: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Invite code (case and dashes ignored) */
+                code: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["InviteCodeResolution"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    me_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Me"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    me_update: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateMeRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Me"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    totp_confirm: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TotpCodeRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RecoveryCodesResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    totp_disable: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ReauthRequest"];
+            };
+        };
+        responses: {
+            /** @description 2FA disabled */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    totp_enroll: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TotpEnrollResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    totp_regenerate_recovery: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TotpCodeRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RecoveryCodesResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    avatar_choose: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ChooseAvatarRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AvatarInfo"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    avatar_reset: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AvatarInfo"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    avatar_upload_skin: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description A skin PNG (64x64 or 64x32, at most 64 KiB) */
+        requestBody: {
+            content: {
+                "image/png": string;
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AvatarInfo"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    consents_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ConsentState"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    consents_accept_privacy: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["PrivacyAcceptRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ConsentState"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    consents_set_telemetry: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TelemetryConsentRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ConsentState"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    my_content: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContentProject"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    gdpr_delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ReauthRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DeletionStatus"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    gdpr_delete_cancel: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DeletionStatus"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    discord_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiscordAccount"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    discord_unlink: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Unlinked */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    discord_link_start: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiscordLinkStart"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    discord_link_finish: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["DiscordLinkFinishRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiscordLink"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    gdpr_export: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description JSON archive of all personal data */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    guardian_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GuardianInfo"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    guardian_invite_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GuardianInviteResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    identities_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["IdentitiesResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    identities_unlink: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description `microsoft` */
+                provider: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Unlinked */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    library_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["LibraryEntry"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    library_add: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description In the library */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    library_remove: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Project id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Removed */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    play_session_report: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["PlaySessionReport"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PlaySessionState"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    play_session_end: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The launcher's run id (`session_id`) */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Closed (also when nothing was open) */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    play_session_heartbeat: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The launcher's run id (`session_id`) */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PlaySessionState"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    my_play_stats: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MyPlayStats"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    my_play_stats_erase: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Every session and total erased */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    my_listings: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListing"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    settings_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AccountSettings"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    settings_update: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateAccountSettingsRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AccountSettings"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    me_skin: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description The skin PNG (64x64 or legacy 64x32), proxied from Mojang */
+            200: {
+                headers: {
+                    /** @description `private, max-age=600` */
+                    "cache-control"?: string;
+                    /** @description Arm model: `slim` or `classic` */
+                    "x-skin-model"?: string;
+                    [name: string]: unknown;
+                };
+                content: {
+                    "image/png": components["schemas"]["SkinPng"];
+                };
+            };
+            /** @description `no_minecraft_profile`: no linked Minecraft profile; `no_skin`: the profile uses a default skin */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description `skin_upstream_unavailable`, `skin_upstream_invalid`, `skin_url_rejected`, `skin_too_large`, `skin_not_png`: Mojang's services failed or sent something unexpected */
+            502: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    messages_history: {
+        parameters: {
+            query?: {
+                /** @description Return messages created strictly before this instant (pagination). */
+                before?: string | null;
+                /** @description 1-100, default 50. */
+                limit?: number | null;
+            };
+            header?: never;
+            path: {
+                /** @description Other participant */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Message"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    messages_send: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Recipient */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["SendMessageRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Message"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    messages_mark_read: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Conversation peer */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ReadReceipt"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    minecraft_accounts: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MinecraftAccount"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    minecraft_unlink: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Minecraft profile UUID */
+                uuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Unlinked (purchases stay on the Rustic account) */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    minecraft_link_finish: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["MinecraftLinkFinishRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MinecraftAccount"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    minecraft_link_start: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MinecraftLinkChallenge"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    news_list: {
+        parameters: {
+            query?: {
+                /** @description Only items in this language (`en`, `fr`); all languages when absent. */
+                locale?: string | null;
+                /** @description 1-50, default 20. */
+                limit?: number | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NewsItem"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    news_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description News slug */
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NewsItem"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    notifications_list: {
+        parameters: {
+            query?: {
+                unread_only?: boolean | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Notification"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    notifications_read_all: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description All marked read */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    notifications_read: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Notification id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Marked read */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    orders_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Order"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    orders_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Order id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Order"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    order_resume_checkout: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Order id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CheckoutResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    outfits_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Outfit"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    outfits_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["OutfitRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Outfit"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    outfits_update: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Outfit id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["OutfitRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Outfit"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    outfits_delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Outfit id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    outfits_equip: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Outfit id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Equipped"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    party_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Party"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    party_current: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Party"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    party_invites_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PartyInvite"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    party_invite_accept: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Invite id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Party"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    party_invite_decline: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Invite id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Declined */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    party_invite: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Party id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UserIdRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PartyInvite"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    party_kick: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Party id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UserIdRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Party"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    party_transfer_leader: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Party id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UserIdRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Party"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    party_leave: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Party id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Left */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    presence_update: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdatePresenceRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Presence"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    profile_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Rustic username (case-insensitive) */
+                username: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicProfile"];
+                };
+            };
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    minecraft_lookup_batch: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["LookupBatchRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["LookupBatchResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    minecraft_lookup: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Minecraft profile UUID */
+                uuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MinecraftLookup"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    reports_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ReportRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ReportCreated"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    listings_search: {
+        parameters: {
+            query?: {
+                /** @description Free text (name, summary, address, tags). */
+                q?: string | null;
+                /** @description One tag of the catalog. */
+                tag?: string | null;
+                /** @description A two-letter language code. */
+                language?: string | null;
+                /** @description `horizon` or `rustic`. */
+                engine?: string | null;
+                /** @description Only listings staff verified. */
+                verified?: boolean | null;
+                /** @description Only staff picks (ordered by their rank). */
+                featured?: boolean | null;
+                /** @description `trending` (default), `players`, `new`, `name`. */
+                sort?: string | null;
+                offset?: number | null;
+                /** @description 1-50, default 24. */
+                limit?: number | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListingPage"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    listings_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ServerListingRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListing"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    listings_catalog: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListingCatalog"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    listings_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListing"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    listings_delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted with its images */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    listings_update: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateServerListingRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerListing"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    listings_play: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Counted (or already counted recently) */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    listings_report: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Listing id or slug */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ServerListingReportRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ReportCreated"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    servers_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RelayServer"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    servers_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateServerRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RelayServer"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    subdomain_availability: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Requested subdomain label */
+                label: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NameAvailability"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    servers_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RelayServer"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    servers_delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted; hostnames released */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    domains_add: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AddDomainRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CustomDomain"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    domains_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+                /** @description Domain id */
+                domain_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CustomDomain"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    domains_delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+                /** @description Domain id */
+                domain_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Removed; routing stopped */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    domains_verify: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+                /** @description Domain id */
+                domain_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CustomDomain"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    invite_code_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["InviteCode"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    temp_hostname_allocate: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TempHostnameLease"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    temp_hostname_release: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Released */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    temp_hostname_renew: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TempHostnameLease"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    tunnel_token: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Server id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RelayToken"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    sessions_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SessionInfo"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    sessions_revoke_others: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description All other sessions revoked */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    sessions_revoke: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Session id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Revoked */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    companion_social: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SocialSnapshot"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    companion_invite: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CompanionInviteRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Invitation"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    companion_accept_invite: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Invitation id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Invitation"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    store_catalog: {
+        parameters: {
+            query?: {
+                /** @description `EUR` (default), `USD`, `GBP`, `CHF`. */
+                currency?: string | null;
+                /** @description ISO country (VAT display rules). */
+                country?: string | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Catalog"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    store_checkout: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CheckoutRequest"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CheckoutResponse"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    store_legal: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["StoreLegal"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    premium_waitlist_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PremiumWaitlist"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    premium_waitlist_join: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PremiumWaitlist"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    premium_waitlist_leave: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Left the waitlist */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    store_product: {
+        parameters: {
+            query?: {
+                /** @description `EUR` (default), `USD`, `GBP`, `CHF`. */
+                currency?: string | null;
+                /** @description ISO country (VAT display rules). */
+                country?: string | null;
+            };
+            header?: never;
+            path: {
+                /** @description Product slug */
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Product"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    store_quote: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["QuoteRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Quote"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    users_lookup: {
+        parameters: {
+            query?: {
+                /** @description Exact Rustic username (case-insensitive). */
+                username?: string | null;
+                /** @description Exact Minecraft profile name linked to a Rustic account (case-insensitive). */
+                minecraft_name?: string | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["UserLookup"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    users_search: {
+        parameters: {
+            query: {
+                /** @description Username prefix (min 2 characters). */
+                q: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicUser"][];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    users_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description User id */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicUser"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    wallet_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Wallet"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    wallet_redeem: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["RedeemGiftCardRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Wallet"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    stripe_webhook: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description Stripe webhook signature */
+                "Stripe-Signature": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Raw Stripe event JSON */
+        requestBody: {
+            content: {
+                "application/json": string;
+            };
+        };
+        responses: {
+            /** @description Processed or duplicate */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
 }

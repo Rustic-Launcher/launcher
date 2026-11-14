@@ -394,6 +394,23 @@
       "confirmBody": "Arkadaşların, kozmetiklerin ve satın almaların 30 gün sonra kaldırılacak. Oyun lisansın ve Microsoft hesabın etkilenmez.",
       "confirmButton": "Hesabımı sil",
       "typeUsername": "Onaylamak için {{name}} yaz"
+    },
+    "profile": {
+      "title": "Rustic profili",
+      "description": "rustic-launcher.com üzerindeki sayfan; web sitesinin ayarlarıyla ortak.",
+      "visibility": "Profilimi kimler görür",
+      "visibilityHint": "Diğer herkes yalnızca kafanı ve adını görür.",
+      "minor": "18 yaş altı oyuncuların profilleri hiçbir zaman herkese açık olmaz.",
+      "options": {
+        "public": "Herkes",
+        "friends": "Yalnızca arkadaşlar",
+        "private": "Yalnızca ben"
+      },
+      "playStats": "Oyun istatistiklerini paylaş",
+      "playStatsHint": "Oynanan saatler, sürüm ve herkese açık sunucular, profilin için. Dünyaların adı hiçbir zaman belirtilmez; LAN ve özel adresler hiçbir zaman gönderilmez.",
+      "signedOut": "Profilini kimlerin göreceğini seçmek için Rustic’e giriş yap.",
+      "open": "Profilimi aç",
+      "failed": "Ayar kaydedilemedi"
     }
   },
   "parental": {

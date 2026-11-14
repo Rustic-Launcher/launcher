@@ -1046,6 +1046,10 @@ pub fn forward_game_events(state: Arc<AppState>) {
             match e.event {
                 GameEvent::Log { stream, line } => {
                     if let Some(place) = crate::discord::place_from_game_line(&line) {
+                        state.play_stats.send(crate::play_stats::Event::Moved {
+                            instance: e.instance_id.clone(),
+                            place: place.clone(),
+                        });
                         state.discord.set_place(place);
                     }
                     let lower = line.to_ascii_lowercase();
@@ -1102,6 +1106,9 @@ pub fn forward_game_events(state: Arc<AppState>) {
                         game: None,
                         since: rusticmc_launcher_core::time::now(),
                     });
+                    state.play_stats.send(crate::play_stats::Event::Exited {
+                        instance: e.instance_id.clone(),
+                    });
                     crate::update::on_game_exit(state.clone());
                     let st = state.clone();
                     // The playtime is written by the exit task; refresh the list after it.
@@ -1122,17 +1129,25 @@ pub fn forward_game_events(state: Arc<AppState>) {
                 }
                 GameEvent::Started { .. } => {
                     // "Horizon 26.3": the game version the instance's build is pinned to.
-                    let game = state
-                        .instances
-                        .store
-                        .get(&e.instance_id)
-                        .and_then(|i| state.instances.build_for(&i))
-                        .ok()
+                    let instance = state.instances.store.get(&e.instance_id).ok();
+                    let version = instance
+                        .as_ref()
+                        .and_then(|i| state.instances.build_for(i).ok())
                         .and_then(|b| rusticmc_instances::game_files::Pins::of_build(&b.dir))
-                        .map_or_else(
-                            || "Horizon".to_owned(),
-                            |p| format!("Horizon {}", p.version),
-                        );
+                        .map(|p| p.version);
+                    let game = version
+                        .as_ref()
+                        .map_or_else(|| "Horizon".to_owned(), |v| format!("Horizon {v}"));
+                    state.play_stats.send(crate::play_stats::Event::Started {
+                        instance: e.instance_id.clone(),
+                        edition: crate::play_stats::edition_of(
+                            instance
+                                .as_ref()
+                                .map_or("horizon", |i| i.build.source.as_str()),
+                        )
+                        .to_owned(),
+                        game_version: version.clone(),
+                    });
                     state.discord.set(crate::discord::Presence {
                         place: crate::discord::Place::Menu,
                         game: Some(game),

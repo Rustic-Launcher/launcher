@@ -47,7 +47,7 @@ import { UpdatePill } from '@/features/updates/UpdatePill';
 import { invoke, isNative } from '@/ipc';
 import { formatPercent, formatRelative, formatSpeed } from '@/lib/format';
 import { qk, useAccounts, useInstances, useRusticSession } from '@/queries/core';
-import { sk, useNotifications, useSocialUnread } from '@/queries/social';
+import { sk, useMe, useNotifications, useSocialUnread } from '@/queries/social';
 import { summarizeDownloads, useActivity } from '@/stores/activity';
 import { useUi } from '@/stores/ui';
 import { RusticMark, RusticWordmark } from './Logo';
@@ -320,6 +320,8 @@ function AccountPill() {
   const navigate = useNavigate();
   const { data: accounts, isLoading } = useAccounts();
   const { data: rustic } = useRusticSession();
+  // The Rustic avatar (ADR 0168) once signed in to Rustic.
+  const { data: cloudMe } = useMe();
   const active = accounts?.find((a) => a.active);
 
   if (isLoading) return <Skeleton className="h-8 w-32 rounded-lg" />;
@@ -344,7 +346,7 @@ function AccountPill() {
         <DropdownLabel>{t('account.rustic')}</DropdownLabel>
         {rustic?.signed_in ? (
           <div className="flex items-center gap-2.5 px-2.5 py-2">
-            <Avatar name={rustic.username ?? ''} size="sm" />
+            <Avatar name={rustic.username ?? ''} src={cloudMe?.avatar_url ?? undefined} size="sm" />
             <div className="flex min-w-0 flex-col">
               <span className="truncate text-sm font-medium">{rustic.username}</span>
               <span className="text-fg-subtle truncate text-xs">{rustic.email}</span>

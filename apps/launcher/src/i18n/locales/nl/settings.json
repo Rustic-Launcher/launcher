@@ -394,6 +394,23 @@
       "confirmBody": "Je vrienden, cosmetica en aankopen worden na 30 dagen verwijderd. Je gamelicentie en Microsoft-account blijven onaangetast.",
       "confirmButton": "Mijn account verwijderen",
       "typeUsername": "Typ {{name}} om te bevestigen"
+    },
+    "profile": {
+      "title": "Rustic-profiel",
+      "description": "Je pagina op rustic-launcher.com, gedeeld met de instellingen van de website.",
+      "visibility": "Wie mijn profiel ziet",
+      "visibilityHint": "Alle anderen zien alleen je hoofd en je naam.",
+      "minor": "Profielen van spelers jonger dan 18 zijn nooit openbaar.",
+      "options": {
+        "public": "Iedereen",
+        "friends": "Alleen vrienden",
+        "private": "Alleen ik"
+      },
+      "playStats": "Speelstatistieken delen",
+      "playStatsHint": "Gespeelde uren, editie en openbare servers, voor je profiel. Werelden worden nooit genoemd; LAN- en privéadressen worden nooit verstuurd.",
+      "signedOut": "Log in bij Rustic om te kiezen wie je profiel ziet.",
+      "open": "Mijn profiel openen",
+      "failed": "De instelling kon niet worden opgeslagen"
     }
   },
   "parental": {

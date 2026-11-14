@@ -308,6 +308,7 @@ export const defaultSettings: Settings = {
     share_activity_with_friends: true,
     friend_requests_from: 'everyone',
     discord_presence: true,
+    play_stats: true,
     discord_show_server: true,
   },
   onboarding_completed: false,

@@ -3099,6 +3099,44 @@
         }
       }
     },
+    "/v1/auth/password/remove": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "operationId": "password_remove",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemovePasswordRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Password removed: sign in with Microsoft from now on"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/auth/password/reset": {
       "post": {
         "tags": [
@@ -3316,6 +3354,39 @@
         }
       }
     },
+    "/v1/avatars/defaults": {
+      "get": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "avatars_defaults",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DefaultAvatar"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/blocks": {
       "get": {
         "tags": [
@@ -3430,6 +3501,66 @@
             "bearer": []
           }
         ]
+      }
+    },
+    "/v1/contact": {
+      "post": {
+        "tags": [
+          "support"
+        ],
+        "operationId": "contact_send",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactAccepted"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/v1/content/catalog": {
@@ -5316,6 +5447,54 @@
         ]
       }
     },
+    "/v1/integrations/discord/contact/{id}": {
+      "get": {
+        "tags": [
+          "integrations"
+        ],
+        "summary": "`GET /v1/integrations/discord/contact/{id}`: the notice the bot posts for the staff (no email\naddress, a short excerpt only).",
+        "operationId": "discord_contact",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Contact message id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscordContactNotice"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "service": []
+          }
+        ]
+      }
+    },
     "/v1/integrations/discord/content/{id}": {
       "get": {
         "tags": [
@@ -6049,6 +6228,130 @@
         ]
       }
     },
+    "/v1/me/avatar": {
+      "put": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "avatar_choose",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChooseAvatarRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvatarInfo"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "avatar_reset",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvatarInfo"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/me/avatar/skin": {
+      "post": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "avatar_upload_skin",
+        "requestBody": {
+          "description": "A skin PNG (64x64 or 64x32, at most 64 KiB)",
+          "content": {
+            "image/png": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvatarInfo"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/me/consents": {
       "get": {
         "tags": [
@@ -6726,6 +7029,199 @@
         ]
       }
     },
+    "/v1/me/play-sessions": {
+      "post": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "play_session_report",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlaySessionReport"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlaySessionState"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/me/play-sessions/{id}/end": {
+      "post": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "play_session_end",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The launcher's run id (`session_id`)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Closed (also when nothing was open)"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/me/play-sessions/{id}/heartbeat": {
+      "post": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "play_session_heartbeat",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The launcher's run id (`session_id`)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlaySessionState"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/me/play-stats": {
+      "get": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "my_play_stats",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyPlayStats"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "my_play_stats_erase",
+        "responses": {
+          "204": {
+            "description": "Every session and total erased"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/me/server-listings": {
       "get": {
         "tags": [
@@ -6742,6 +7238,84 @@
                   "items": {
                     "$ref": "#/components/schemas/ServerListing"
                   }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/me/settings": {
+      "get": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "settings_get",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountSettings"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "settings_update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAccountSettingsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountSettings"
                 }
               }
             }
@@ -8180,6 +8754,57 @@
             "bearer": []
           }
         ]
+      }
+    },
+    "/v1/profiles/{username}": {
+      "get": {
+        "tags": [
+          "social"
+        ],
+        "operationId": "profile_get",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "Rustic username (case-insensitive)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicProfile"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/v1/public/minecraft/lookup": {
@@ -10255,6 +10880,61 @@
   },
   "components": {
     "schemas": {
+      "AccountSettings": {
+        "type": "object",
+        "description": "`GET /v1/me/settings`: the account settings stored server-side and shared by the website\nand the launcher (ADR 0168). Display name, country and language stay on `/v1/me`.",
+        "required": [
+          "visibility",
+          "sections",
+          "effective_visibility",
+          "effective_sections",
+          "public_allowed",
+          "play_stats",
+          "bio",
+          "email_news",
+          "show_role",
+          "avatar"
+        ],
+        "properties": {
+          "visibility": {
+            "$ref": "#/components/schemas/ProfileVisibility",
+            "description": "As chosen."
+          },
+          "sections": {
+            "$ref": "#/components/schemas/ProfileSections"
+          },
+          "effective_visibility": {
+            "$ref": "#/components/schemas/ProfileVisibility",
+            "description": "What applies (a minor's `public` reads `friends`)."
+          },
+          "effective_sections": {
+            "$ref": "#/components/schemas/ProfileSections"
+          },
+          "public_allowed": {
+            "type": "boolean",
+            "description": "`false` for minors: `public` is refused (`public_not_allowed`)."
+          },
+          "play_stats": {
+            "type": "boolean",
+            "description": "The launcher reports play sessions for the profile's statistics (default on)."
+          },
+          "bio": {
+            "type": "string",
+            "description": "Short text on the profile (at most 160 characters)."
+          },
+          "email_news": {
+            "type": "boolean",
+            "description": "Product news by email (opt-in, default off)."
+          },
+          "show_role": {
+            "type": "boolean",
+            "description": "Staff only: show the staff role on the profile (default on)."
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/AvatarInfo"
+          }
+        }
+      },
       "AcquisitionSource": {
         "type": "string",
         "enum": [
@@ -10622,6 +11302,43 @@
           }
         }
       },
+      "AvatarInfo": {
+        "type": "object",
+        "required": [
+          "kind",
+          "chosen"
+        ],
+        "properties": {
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kind": {
+            "$ref": "#/components/schemas/AvatarKind"
+          },
+          "default_id": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "description": "The default head in use (1-20), when `kind` is `default`."
+          },
+          "chosen": {
+            "type": "boolean",
+            "description": "`false` while the player never chose: the head comes from the account id."
+          }
+        }
+      },
+      "AvatarKind": {
+        "type": "string",
+        "enum": [
+          "default",
+          "skin"
+        ]
+      },
       "Ban": {
         "type": "object",
         "required": [
@@ -10875,6 +11592,19 @@
           }
         }
       },
+      "ChooseAvatarRequest": {
+        "type": "object",
+        "description": "`PUT /v1/me/avatar`: one of the default heads.",
+        "required": [
+          "default_id"
+        ],
+        "properties": {
+          "default_id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
       "ClientKind": {
         "type": "string",
         "description": "`web` receives the refresh token in an HttpOnly cookie instead of the body.",
@@ -11055,6 +11785,92 @@
           },
           "current_privacy_policy_version": {
             "type": "string"
+          }
+        }
+      },
+      "ContactAccepted": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "`None` when the message was dropped as spam (answered the same way)."
+          }
+        }
+      },
+      "ContactCategory": {
+        "type": "string",
+        "enum": [
+          "support",
+          "account",
+          "billing",
+          "partnership",
+          "press",
+          "abuse",
+          "other"
+        ]
+      },
+      "ContactRequest": {
+        "type": "object",
+        "description": "`POST /v1/contact` (the website's contact page).",
+        "required": [
+          "name",
+          "email",
+          "category",
+          "subject",
+          "message",
+          "consent"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "category": {
+            "$ref": "#/components/schemas/ContactCategory"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "link": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional link (a screenshot, a page)."
+          },
+          "consent": {
+            "type": "boolean",
+            "description": "The sender agreed to the processing of their message (required)."
+          },
+          "locale": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "website": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Honeypot: a hidden field people leave empty."
+          },
+          "elapsed_ms": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Milliseconds between the form showing and its sending."
           }
         }
       },
@@ -12615,6 +13431,22 @@
           }
         }
       },
+      "DefaultAvatar": {
+        "type": "object",
+        "required": [
+          "id",
+          "url"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
       "DeletionStatus": {
         "type": "object",
         "properties": {
@@ -12665,6 +13497,46 @@
               "null"
             ],
             "description": "Invite to the Rustic Discord server, when configured."
+          }
+        }
+      },
+      "DiscordContactNotice": {
+        "type": "object",
+        "description": "The staff notice the Discord bot posts for a contact message (no email address).",
+        "required": [
+          "reference",
+          "category",
+          "name",
+          "subject",
+          "excerpt",
+          "signed_in",
+          "created_at"
+        ],
+        "properties": {
+          "reference": {
+            "type": "string",
+            "description": "Short reference, also in the emails' subjects."
+          },
+          "category": {
+            "$ref": "#/components/schemas/ContactCategory"
+          },
+          "name": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "excerpt": {
+            "type": "string",
+            "description": "The first 300 characters."
+          },
+          "signed_in": {
+            "type": "boolean",
+            "description": "Sent by a signed-in member."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -12862,6 +13734,75 @@
               "$ref": "#/components/schemas/DiscordServerSummary"
             },
             "description": "Public server listings (at most 5)."
+          },
+          "access": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileAccess",
+                "description": "What the asking member may see of the Rustic profile (ADR 0168): the profile's\nvisibility and section settings apply as on the website, the asking member being\nwhoever their Discord account is linked to. `None` from an older API."
+              }
+            ]
+          },
+          "profile_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "`rustic-launcher.com/account/<username>`."
+          },
+          "member_since": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "bio": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "badges": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileBadges"
+              }
+            ]
+          },
+          "play": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileStats",
+                "description": "Play statistics, when the profile shows them to the asking member."
+              }
+            ]
+          },
+          "activity": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileActivity"
+              }
+            ]
+          },
+          "friends_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64"
           }
         }
       },
@@ -13829,6 +14770,14 @@
             "items": {
               "$ref": "#/components/schemas/ExternalIdentity"
             }
+          },
+          "has_email": {
+            "type": "boolean",
+            "description": "The account has an email address (needed to sign in with a password)."
+          },
+          "email_verified": {
+            "type": "boolean",
+            "description": "That address is verified (a password can only be set on a verified address)."
           }
         }
       },
@@ -14191,6 +15140,13 @@
           "discoverable": {
             "type": "boolean",
             "description": "\"Appear in suggestions of players I meet\" as in effect: the setting (default on) and\n`capabilities.discoverable_allowed` (always off for minors). ADR 0145."
+          },
+          "avatar_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The account's avatar (ADR 0168), as others see it."
           }
         }
       },
@@ -14436,6 +15392,28 @@
           "ban",
           "take_down"
         ]
+      },
+      "MyPlayStats": {
+        "type": "object",
+        "description": "`GET /v1/me/play-stats`: the owner's own statistics, with every address.",
+        "required": [
+          "enabled",
+          "stats",
+          "raw_sessions"
+        ],
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "stats": {
+            "$ref": "#/components/schemas/ProfileStats"
+          },
+          "raw_sessions": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Raw sessions are kept 90 days, the totals until erased."
+          }
+        }
       },
       "NameAvailability": {
         "type": "object",
@@ -14984,6 +15962,62 @@
           }
         }
       },
+      "PlayPlaceKind": {
+        "type": "string",
+        "enum": [
+          "menu",
+          "singleplayer",
+          "server"
+        ]
+      },
+      "PlaySessionReport": {
+        "type": "object",
+        "description": "`POST /v1/me/play-sessions`: the game started, or moved (menu, a world, a server). The\ncloud times everything itself; the launcher only says where the player is.",
+        "required": [
+          "session_id",
+          "edition",
+          "place"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The launcher's id for this run of the game (one per launch)."
+          },
+          "edition": {
+            "type": "string",
+            "description": "`rustic` (the Rustic edition) or `horizon`."
+          },
+          "game_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "place": {
+            "$ref": "#/components/schemas/PlayPlaceKind"
+          },
+          "server_address": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The server's address as typed, for `server` (LAN and private addresses are not kept)."
+          }
+        }
+      },
+      "PlaySessionState": {
+        "type": "object",
+        "required": [
+          "recording"
+        ],
+        "properties": {
+          "recording": {
+            "type": "boolean",
+            "description": "`false` when the account turned play statistics off: nothing was recorded."
+          }
+        }
+      },
       "PremiumWaitlist": {
         "type": "object",
         "description": "\"Premium: coming soon\" waitlist status of the caller.",
@@ -15208,6 +16242,429 @@
           }
         }
       },
+      "ProfileAccess": {
+        "type": "string",
+        "description": "What the viewer was allowed to see.",
+        "enum": [
+          "full",
+          "friends_only",
+          "private"
+        ]
+      },
+      "ProfileActivity": {
+        "type": "object",
+        "required": [
+          "online",
+          "on_server"
+        ],
+        "properties": {
+          "online": {
+            "type": "boolean"
+          },
+          "kind": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileActivityKind"
+              }
+            ]
+          },
+          "listing": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfilePlace",
+                "description": "The public directory listing the player is on, when they share their server."
+              }
+            ]
+          },
+          "on_server": {
+            "type": "boolean",
+            "description": "On a server that is not a public listing (or not shared): \"on a server\"."
+          },
+          "last_seen_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time",
+            "description": "Last time the player was online (to the minute)."
+          }
+        }
+      },
+      "ProfileActivityKind": {
+        "type": "string",
+        "enum": [
+          "in_launcher",
+          "in_game",
+          "hosting"
+        ]
+      },
+      "ProfileBadges": {
+        "type": "object",
+        "required": [
+          "official",
+          "verified_creator"
+        ],
+        "properties": {
+          "official": {
+            "type": "boolean"
+          },
+          "verified_creator": {
+            "type": "boolean",
+            "description": "At least one verified marketplace project."
+          },
+          "staff_role": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Role",
+                "description": "`moderator` or `admin`, when the staff member shows it."
+              }
+            ]
+          }
+        }
+      },
+      "ProfileCosmetic": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "slot",
+          "equipped"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slot": {
+            "$ref": "#/components/schemas/CosmeticSlot"
+          },
+          "equipped": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ProfileFriends": {
+        "type": "object",
+        "required": [
+          "count",
+          "users"
+        ],
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicUser"
+            },
+            "description": "Friends the viewer may see the profile of (at most 24)."
+          }
+        }
+      },
+      "ProfileLocker": {
+        "type": "object",
+        "required": [
+          "owned_count",
+          "items"
+        ],
+        "properties": {
+          "owned_count": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProfileCosmetic"
+            },
+            "description": "Equipped first (at most 48)."
+          }
+        }
+      },
+      "ProfilePlace": {
+        "type": "object",
+        "description": "A public directory listing named on a profile.",
+        "required": [
+          "slug",
+          "name"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "ProfileProject": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "name",
+          "summary",
+          "downloads",
+          "verified"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/ContentKind"
+          },
+          "name": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "icon_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "downloads": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "verified": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ProfileRecent": {
+        "type": "object",
+        "required": [
+          "kind",
+          "last_played_at"
+        ],
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/RecentKind"
+          },
+          "listing": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfilePlace",
+                "description": "The server's public listing; `None` for a private server or singleplayer."
+              }
+            ]
+          },
+          "last_played_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ProfileSections": {
+        "type": "object",
+        "description": "Per-section choices. A section never reaches further than the profile itself.",
+        "required": [
+          "stats",
+          "activity",
+          "friends",
+          "servers",
+          "content",
+          "locker",
+          "game_name"
+        ],
+        "properties": {
+          "stats": {
+            "$ref": "#/components/schemas/SectionVisibility",
+            "description": "Hours played, servers played, recently played, sessions."
+          },
+          "activity": {
+            "$ref": "#/components/schemas/SectionVisibility",
+            "description": "Online now / last seen and the current activity."
+          },
+          "friends": {
+            "$ref": "#/components/schemas/SectionVisibility"
+          },
+          "servers": {
+            "$ref": "#/components/schemas/SectionVisibility",
+            "description": "The account's public server directory listings."
+          },
+          "content": {
+            "$ref": "#/components/schemas/SectionVisibility",
+            "description": "The account's public marketplace projects."
+          },
+          "locker": {
+            "$ref": "#/components/schemas/SectionVisibility",
+            "description": "Owned and equipped cosmetics."
+          },
+          "game_name": {
+            "$ref": "#/components/schemas/SectionVisibility",
+            "description": "The linked game profile name (never shown to others for a minor)."
+          }
+        }
+      },
+      "ProfileServer": {
+        "type": "object",
+        "required": [
+          "slug",
+          "name",
+          "address",
+          "summary",
+          "verified"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "icon_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "online": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "players_online": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "verified": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ProfileServerStat": {
+        "type": "object",
+        "description": "One server in the statistics. Servers that are not public directory listings are shown\nto others as one \"other servers\" line (`listing` empty); the owner also sees `address`.",
+        "required": [
+          "seconds",
+          "sessions",
+          "last_played_at"
+        ],
+        "properties": {
+          "listing": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfilePlace",
+                "description": "The public directory listing this address belongs to (slug, name, icon)."
+              }
+            ]
+          },
+          "address": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Only for the owner of the profile (their own data), never for others."
+          },
+          "seconds": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sessions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "last_played_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ProfileStats": {
+        "type": "object",
+        "required": [
+          "total_seconds",
+          "sessions",
+          "singleplayer_seconds",
+          "servers",
+          "recent"
+        ],
+        "properties": {
+          "total_seconds": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sessions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "singleplayer_seconds": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "servers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProfileServerStat"
+            },
+            "description": "Most played first (at most 8 listed servers, then one line for the others)."
+          },
+          "recent": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProfileRecent"
+            },
+            "description": "Most recent first (at most 6)."
+          },
+          "first_played_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      },
+      "ProfileVisibility": {
+        "type": "string",
+        "description": "Who may open a profile page. Minors are never `public` (it is stored but shown as\n`friends`).",
+        "enum": [
+          "public",
+          "friends",
+          "private"
+        ]
+      },
       "PromoCode": {
         "type": "object",
         "required": [
@@ -15289,6 +16746,133 @@
           }
         }
       },
+      "PublicProfile": {
+        "type": "object",
+        "description": "`GET /v1/profiles/{username}`: the page `rustic-launcher.com/account/<username>`. Every\nsection is `None` when the viewer may not see it.",
+        "required": [
+          "user",
+          "access",
+          "is_self",
+          "is_friend",
+          "indexable"
+        ],
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/PublicUser"
+          },
+          "access": {
+            "$ref": "#/components/schemas/ProfileAccess"
+          },
+          "is_self": {
+            "type": "boolean"
+          },
+          "is_friend": {
+            "type": "boolean"
+          },
+          "indexable": {
+            "type": "boolean",
+            "description": "Search engines may index the page (a public profile seen by anyone)."
+          },
+          "bio": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "member_since": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "badges": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileBadges"
+              }
+            ]
+          },
+          "game_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stats": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileStats"
+              }
+            ]
+          },
+          "activity": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileActivity"
+              }
+            ]
+          },
+          "friends": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileFriends"
+              }
+            ]
+          },
+          "servers": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ProfileServer"
+            }
+          },
+          "content": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ProfileProject"
+            }
+          },
+          "locker": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileLocker"
+              }
+            ]
+          },
+          "settings": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/AccountSettings",
+                "description": "The owner's own view: what applies to others."
+              }
+            ]
+          }
+        }
+      },
       "PublicUser": {
         "type": "object",
         "description": "A user as seen by other users (no email, no date of birth).",
@@ -15311,6 +16895,13 @@
           "official": {
             "type": "boolean",
             "description": "The official Rustic account (ADR 0166): shown with an \"Official\" mark. It publishes\nRustic's own content and never signs in."
+          },
+          "avatar_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The account's avatar (a 64x64 PNG on the CDN, ADR 0168): a chosen default head, the\nhead of an uploaded skin, or the default head assigned from the account id. `None`\nonly from services that cannot build CDN URLs."
           }
         }
       },
@@ -15651,6 +17242,13 @@
           }
         }
       },
+      "RecentKind": {
+        "type": "string",
+        "enum": [
+          "server",
+          "singleplayer"
+        ]
+      },
       "RecordCheck": {
         "type": "object",
         "description": "Result of the last DNS check of one expected record.",
@@ -15812,6 +17410,18 @@
               "$ref": "#/components/schemas/TempHostname"
             },
             "description": "Temporary hostnames with their lease expiry."
+          }
+        }
+      },
+      "RemovePasswordRequest": {
+        "type": "object",
+        "description": "Removes the password (ADR 0168): allowed only while another sign-in method (Microsoft)\nstays linked.",
+        "required": [
+          "current_password"
+        ],
+        "properties": {
+          "current_password": {
+            "type": "string"
           }
         }
       },
@@ -16061,6 +17671,15 @@
           "user",
           "moderator",
           "admin"
+        ]
+      },
+      "SectionVisibility": {
+        "type": "string",
+        "description": "Who sees one section of a visible profile.",
+        "enum": [
+          "public",
+          "friends",
+          "hidden"
         ]
       },
       "SendFriendRequest": {
@@ -17323,6 +18942,56 @@
           }
         }
       },
+      "UpdateAccountSettingsRequest": {
+        "type": "object",
+        "description": "`PATCH /v1/me/settings`: only the fields present change.",
+        "properties": {
+          "visibility": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileVisibility"
+              }
+            ]
+          },
+          "sections": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ProfileSections"
+              }
+            ]
+          },
+          "play_stats": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "bio": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "email_news": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "show_role": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      },
       "UpdateCollectionRequest": {
         "type": "object",
         "description": "Every field optional; `product_ids` replaces the list (in order) when present.",
@@ -18068,6 +19737,9 @@
     },
     {
       "name": "integrations"
+    },
+    {
+      "name": "support"
     }
   ]
 }

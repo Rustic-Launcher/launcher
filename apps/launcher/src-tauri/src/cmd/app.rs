@@ -77,6 +77,10 @@ pub fn settings_set(state: State<'_>, args: SettingsPatch) -> Res<Settings> {
     let settings: Settings =
         serde_json::from_value(v).map_err(|e| IpcError::invalid(e.to_string()))?;
     state.discord.configure(settings.privacy.discord());
+    state.play_stats_enabled.store(
+        settings.privacy.play_stats,
+        std::sync::atomic::Ordering::Relaxed,
+    );
     if settings.launcher.concurrent_downloads == 0 || settings.launcher.concurrent_downloads > 16 {
         return Err(IpcError::invalid("concurrent downloads: 1 to 16"));
     }

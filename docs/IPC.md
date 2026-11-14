@@ -340,6 +340,9 @@ export interface PrivacySettings {
   discord_presence?: boolean;
   /** The server's address in that presence; private addresses are never shown. On by default. */
   discord_show_server?: boolean;
+  /** Play sessions reported to Rustic Cloud for the profile's statistics (ADR 0168). On by
+   * default; kept in step with the account setting `play_stats` (`/v1/me/settings`). */
+  play_stats?: boolean;
 }
 
 export interface Settings {

@@ -13,6 +13,7 @@ import type { CloudClient } from './client';
 import { CloudError } from './errors';
 import type { components, paths } from './generated/schema';
 import type {
+  AccountSettings,
   AppNotification,
   ChatMessage,
   Conversation,
@@ -154,12 +155,22 @@ function favorites(): Set<string> {
   }
 }
 
+export function mapSettings(s: S['AccountSettings']): AccountSettings {
+  return {
+    visibility: s.visibility,
+    effective_visibility: s.effective_visibility,
+    public_allowed: s.public_allowed,
+    play_stats: s.play_stats,
+  };
+}
+
 export function mapFriend(f: S['Friend'], favs: Set<string> = new Set()): Friend {
   const { presence, activity } = mapPresence(f.presence);
   return {
     id: f.user.id,
     username: f.user.username,
     display_name: f.user.display_name,
+    avatar_url: f.user.avatar_url ?? null,
     presence,
     activity,
     last_seen_at: presence === 'offline' ? f.presence.updated_at : null,
@@ -431,6 +442,7 @@ export function createHttpCloud(baseUrl: string, fallback: CloudClient): CloudCl
       id: m.id,
       username: m.username,
       display_name: m.display_name,
+      avatar_url: m.avatar_url ?? null,
       email: m.email ?? '',
       created_at: m.created_at,
       age_group: ageGroup(m.date_of_birth),
@@ -806,6 +818,15 @@ export function createHttpCloud(baseUrl: string, fallback: CloudClient): CloudCl
     },
     async unlinkIdentity(provider) {
       await ok(api.DELETE('/v1/me/identities/{provider}', { params: { path: { provider } } }));
+    },
+    async accountSettings() {
+      return mapSettings(await data(api.GET('/v1/me/settings')));
+    },
+    async updateAccountSettings(patch) {
+      return mapSettings(await data(api.PATCH('/v1/me/settings', { body: patch })));
+    },
+    async setAccountLocale(locale) {
+      meCache = await data(api.PATCH('/v1/me', { body: { locale } }));
     },
     async exportAccount() {
       const dump = await data(api.GET('/v1/me/export'));

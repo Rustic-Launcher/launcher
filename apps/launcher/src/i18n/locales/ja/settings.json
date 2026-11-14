@@ -394,6 +394,23 @@
       "confirmBody": "フレンド、コスメティック、購入履歴は 30 日後に削除されます。ゲームライセンスと Microsoft アカウントには影響しません。",
       "confirmButton": "アカウントを削除",
       "typeUsername": "確認のため {{name}} と入力してください"
+    },
+    "profile": {
+      "title": "Rustic プロフィール",
+      "description": "rustic-launcher.com 上のあなたのページです。Web サイトの設定と共通です。",
+      "visibility": "プロフィールを見られる人",
+      "visibilityHint": "それ以外の人には頭と名前だけが表示されます。",
+      "minor": "18 歳未満のプレイヤーのプロフィールは公開されません。",
+      "options": {
+        "public": "全員",
+        "friends": "フレンドのみ",
+        "private": "自分だけ"
+      },
+      "playStats": "プレイ統計を共有する",
+      "playStatsHint": "プレイ時間、エディション、公開サーバーをプロフィールに使います。ワールド名は送られず、LAN やプライベートのアドレスは送信されません。",
+      "signedOut": "プロフィールを見られる人を選ぶには Rustic にログインしてください。",
+      "open": "自分のプロフィールを開く",
+      "failed": "設定を保存できませんでした"
     }
   },
   "parental": {

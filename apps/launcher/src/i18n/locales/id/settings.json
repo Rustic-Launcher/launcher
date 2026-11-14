@@ -394,6 +394,23 @@
       "confirmBody": "Teman, kosmetik, dan pembelianmu akan dihapus setelah 30 hari. Lisensi game dan akun Microsoft-mu tidak terpengaruh.",
       "confirmButton": "Hapus akunku",
       "typeUsername": "Ketik {{name}} untuk mengonfirmasi"
+    },
+    "profile": {
+      "title": "Profil Rustic",
+      "description": "Halamanmu di rustic-launcher.com, berbagi pengaturan dengan situs web.",
+      "visibility": "Siapa yang melihat profilku",
+      "visibilityHint": "Yang lain hanya melihat kepala dan namamu.",
+      "minor": "Profil pemain di bawah 18 tahun tidak pernah publik.",
+      "options": {
+        "public": "Semua orang",
+        "friends": "Hanya teman",
+        "private": "Hanya aku"
+      },
+      "playStats": "Bagikan statistik bermain",
+      "playStatsHint": "Jam bermain, edisi, dan server publik, untuk profilmu. Nama dunia tidak pernah dikirim; alamat LAN dan privat tidak pernah dikirim.",
+      "signedOut": "Masuk ke Rustic untuk memilih siapa yang melihat profilmu.",
+      "open": "Buka profilku",
+      "failed": "Pengaturan tidak dapat disimpan"
     }
   },
   "parental": {

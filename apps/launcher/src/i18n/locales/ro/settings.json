@@ -394,6 +394,23 @@
       "confirmBody": "Prietenii, cosmeticele și cumpărăturile tale vor fi eliminate după 30 de zile. Licența jocului și contul Microsoft nu sunt afectate.",
       "confirmButton": "Șterge-mi contul",
       "typeUsername": "Scrie {{name}} pentru a confirma"
+    },
+    "profile": {
+      "title": "Profil Rustic",
+      "description": "Pagina ta de pe rustic-launcher.com, comună cu setările site-ului.",
+      "visibility": "Cine îmi vede profilul",
+      "visibilityHint": "Toți ceilalți îți văd doar capul și numele.",
+      "minor": "Profilurile jucătorilor sub 18 ani nu sunt niciodată publice.",
+      "options": {
+        "public": "Oricine",
+        "friends": "Doar prietenii",
+        "private": "Doar eu"
+      },
+      "playStats": "Partajează statisticile de joc",
+      "playStatsHint": "Ore jucate, ediția și serverele publice, pentru profilul tău. Lumile nu sunt numite niciodată; adresele LAN și private nu sunt trimise niciodată.",
+      "signedOut": "Conectează-te la Rustic ca să alegi cine îți vede profilul.",
+      "open": "Deschide profilul meu",
+      "failed": "Setarea nu a putut fi salvată"
     }
   },
   "parental": {

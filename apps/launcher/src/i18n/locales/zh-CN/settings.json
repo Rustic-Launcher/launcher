@@ -394,6 +394,23 @@
       "confirmBody": "你的好友、装扮和购买记录将在 30 天后被删除。你的游戏许可证和 Microsoft 账户不受影响。",
       "confirmButton": "删除我的账户",
       "typeUsername": "输入 {{name}} 以确认"
+    },
+    "profile": {
+      "title": "Rustic 个人主页",
+      "description": "你在 rustic-launcher.com 上的页面，与网站的设置共享。",
+      "visibility": "谁能看到我的主页",
+      "visibilityHint": "其他人只能看到你的头像和名字。",
+      "minor": "未满 18 岁玩家的主页绝不会公开。",
+      "options": {
+        "public": "所有人",
+        "friends": "仅限好友",
+        "private": "仅自己"
+      },
+      "playStats": "分享游戏统计",
+      "playStatsHint": "游戏时长、版本和公开服务器，用于你的主页。世界名称绝不会上报；局域网和私有地址绝不会发送。",
+      "signedOut": "登录 Rustic 后即可选择谁能看到你的主页。",
+      "open": "打开我的主页",
+      "failed": "无法保存此设置"
     }
   },
   "parental": {

@@ -3,7 +3,8 @@ import { Monitor, Moon, Sun } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { usePrefs } from '@/stores/prefs';
 import { bundleName, resolveBundle } from '@rustic/locales';
-import { BUNDLES, currentLanguage, languageStatus } from '@/i18n';
+import { cloud } from '@/cloud/client';
+import { BUNDLES, currentLanguage, languageStatus, type Language } from '@/i18n';
 
 export function ThemeControl() {
   const { t } = useTranslation('settings');
@@ -31,7 +32,12 @@ export function ThemeControl() {
 export function LanguageControl() {
   const { t } = useTranslation('settings');
   const language = usePrefs((s) => s.language) ?? currentLanguage();
-  const setLanguage = usePrefs((s) => s.setLanguage);
+  const setPref = usePrefs((s) => s.setLanguage);
+  const setLanguage = (code: Language) => {
+    setPref(code);
+    // The account language is shared with the website (ADR 0168): best effort, signed in only.
+    void syncAccountLocale(code);
+  };
   return (
     <LanguageSelect
       value={language}
@@ -53,4 +59,13 @@ export function LanguageControl() {
       }}
     />
   );
+}
+
+/** Saves the launcher's language on the Rustic account (the website's bundle tag: `de`, `pt-BR`). */
+export async function syncAccountLocale(code: Language): Promise<void> {
+  try {
+    await (await cloud()).setAccountLocale(resolveBundle(code, BUNDLES));
+  } catch {
+    // Not signed in to Rustic, or offline: the launcher's own choice stays.
+  }
 }

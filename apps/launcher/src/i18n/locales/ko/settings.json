@@ -394,6 +394,23 @@
       "confirmBody": "친구, 치장 아이템, 구매 내역은 30일 후에 삭제돼요. 게임 라이선스와 Microsoft 계정에는 영향이 없어요.",
       "confirmButton": "내 계정 삭제",
       "typeUsername": "확인하려면 {{name}} 입력"
+    },
+    "profile": {
+      "title": "Rustic 프로필",
+      "description": "rustic-launcher.com에 있는 내 페이지로, 웹사이트 설정과 공유돼요.",
+      "visibility": "내 프로필을 볼 수 있는 사람",
+      "visibilityHint": "다른 사람에게는 머리와 이름만 보여요.",
+      "minor": "18세 미만 플레이어의 프로필은 절대 공개되지 않아요.",
+      "options": {
+        "public": "모두",
+        "friends": "친구만",
+        "private": "나만"
+      },
+      "playStats": "플레이 통계 공유",
+      "playStatsHint": "플레이 시간, 에디션, 공개 서버를 프로필에 표시해요. 월드 이름은 절대 전송되지 않고, LAN 및 사설 주소도 절대 전송되지 않아요.",
+      "signedOut": "Rustic에 로그인하면 내 프로필을 볼 수 있는 사람을 정할 수 있어요.",
+      "open": "내 프로필 열기",
+      "failed": "설정을 저장하지 못했어요"
     }
   },
   "parental": {

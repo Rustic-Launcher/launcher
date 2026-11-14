@@ -332,6 +332,7 @@ function FriendRow({ friend, onMessage }: { friend: Friend; onMessage: (friend: 
     >
       <Avatar
         name={friend.display_name}
+        src={friend.avatar_url ?? undefined}
         size="sm"
         presence={friend.presence}
         presenceLabel={t(`presence.${friend.presence}`)}
