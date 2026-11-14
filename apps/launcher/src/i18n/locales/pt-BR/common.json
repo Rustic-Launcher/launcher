@@ -269,6 +269,7 @@
       "broken": "Reparo necessário"
     },
     "progress": {
+      "updating": "Atualizando…",
       "downloading": "Baixando {{pct}}",
       "checking": "Verificando arquivos…",
       "preparing": "Preparando…",
@@ -419,6 +420,25 @@
       "label": "Layout",
       "list": "Lista",
       "grid": "Grade"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Atualizando {{pct}}",
+      "installing": "Instalando a atualização…",
+      "restarting": "Reiniciando…",
+      "deferred": "Atualizar depois da partida",
+      "apply": "Atualizar e reiniciar"
+    },
+    "toast": {
+      "launcher": "Baixando o Rustic Launcher {{version}}…",
+      "edition": "Atualizando o jogo (Edição Rustic)…",
+      "editionDone": "Jogo atualizado: {{version}}",
+      "deferred": "Uma atualização está pronta. Ela será instalada quando você fechar o jogo.",
+      "restarting": "O Rustic Launcher vai reiniciar para concluir a atualização.",
+      "updated": "Rustic Launcher atualizado para {{version}}",
+      "resuming": "Atualização concluída: iniciando seu jogo",
+      "failed": "Não foi possível instalar a atualização. Vamos tentar de novo mais tarde."
     }
   }
 }

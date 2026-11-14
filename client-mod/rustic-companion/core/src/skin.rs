@@ -32,6 +32,17 @@ pub mod palette {
     pub const DANGER: u32 = 0xFFF0_645A;
 }
 
+/// What a button does, as its label says: the screen's main action (Done, Join Server, Play
+/// Selected World, Back to Game) is drawn in the accent, a destructive one (Delete, Disconnect)
+/// in red, the rest as plates.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Default)]
+pub enum Role {
+    #[default]
+    Normal,
+    Primary,
+    Danger,
+}
+
 /// A widget's state.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum State {
@@ -121,6 +132,9 @@ pub fn widget(sprite: &str) -> Option<Widget> {
     Some(w)
 }
 
+/// How far (GUI pixels) a slider's label is lifted above the game's place, clear of the rail.
+pub const SLIDER_LABEL_LIFT: f32 = 2.5;
+
 /// One screen pixel in GUI pixels at GUI scale `scale`.
 fn px(scale: f32) -> f32 {
     1.0 / scale.max(1.0)
@@ -134,6 +148,17 @@ pub fn radius_for(h: f32) -> f32 {
 /// What the skin draws for widget `w` over `rect` at GUI scale `scale`. `track` is the slider
 /// track this frame drew last, for the handle's filled part.
 pub fn paint(w: Widget, rect: [f32; 4], scale: f32, track: Option<[f32; 4]>) -> Vec<Paint> {
+    paint_as(w, rect, scale, track, Role::Normal)
+}
+
+/// [`paint`] for a button of role `role` (other widgets ignore it).
+pub fn paint_as(
+    w: Widget,
+    rect: [f32; 4],
+    scale: f32,
+    track: Option<[f32; 4]>,
+    role: Role,
+) -> Vec<Paint> {
     let [x, y, width, h] = rect;
     let one = px(scale);
     let mut out = Vec::new();
@@ -145,13 +170,17 @@ pub fn paint(w: Widget, rect: [f32; 4], scale: f32, track: Option<[f32; 4]>) -> 
     };
     match w {
         Widget::Button(state) => {
-            let (fill, border) = match state {
-                State::Normal => (palette::FACE, palette::BORDER),
-                State::Lit => (palette::FACE_HOVER, palette::ACCENT),
-                State::Off => (palette::FACE_OFF, palette::BORDER_OFF),
+            let (fill, border) = match (role, state) {
+                (_, State::Off) => (palette::FACE_OFF, palette::BORDER_OFF),
+                (Role::Primary, State::Normal) => (0xF2E8_5F0A, 0x33FF_FFFF),
+                (Role::Primary, State::Lit) => (palette::ACCENT, 0xFFFF_B37A),
+                (Role::Danger, State::Normal) => (palette::FACE, 0x66F0_645A),
+                (Role::Danger, State::Lit) => (0xF2C2_3B32, palette::DANGER),
+                (Role::Normal, State::Normal) => (palette::FACE, palette::BORDER),
+                (Role::Normal, State::Lit) => (palette::FACE_HOVER, palette::ACCENT),
             };
             out.push(round(rect, radius_for(h), fill, border));
-            if state == State::Lit {
+            if state == State::Lit && role == Role::Normal {
                 // A soft accent line under the label, Lunar-like.
                 let lw = (width * 0.3).min(40.0);
                 out.push(Paint::Fill {
@@ -174,9 +203,9 @@ pub fn paint(w: Widget, rect: [f32; 4], scale: f32, track: Option<[f32; 4]>) -> 
             out.push(round(rect, radius_for(h), palette::FIELD, border));
         }
         Widget::SliderHandle { lit } => {
-            // A thin rail along the bottom (so the label above stays clear), filled in the
-            // accent up to the handle, and a round knob on it.
-            let rail_y = y + h - 4.5;
+            // A thin rail along the bottom (so the label above stays clear, lifted by
+            // `SLIDER_LABEL_LIFT`), filled in the accent up to the handle, and a round knob on it.
+            let rail_y = y + h - 3.5;
             let middle = x + width / 2.0;
             if let Some([tx, ty, tw, _]) = track
                 && x >= tx - 1.0
@@ -199,7 +228,7 @@ pub fn paint(w: Widget, rect: [f32; 4], scale: f32, track: Option<[f32; 4]>) -> 
                     ));
                 }
             }
-            let d = 6.0f32.min(width);
+            let d = 5.0f32.min(width);
             out.push(round(
                 [middle - d / 2.0, rail_y - d / 2.0, d, d],
                 d / 2.0,
@@ -320,6 +349,48 @@ pub fn paint(w: Widget, rect: [f32; 4], scale: f32, track: Option<[f32; 4]>) -> 
     out
 }
 
+/// A dialog's card around content `bounds` (GUI pixels) in a screen `gui` big, `alpha` its
+/// opacity (it fades in): a raised panel with a hairline border and a soft shadow, and an accent
+/// rule at its top. None when the content is too big to be a dialog.
+pub fn card(bounds: [f32; 4], gui: [f32; 2], alpha: f32) -> Option<Vec<Paint>> {
+    let pad = [16.0, 12.0];
+    let [x, y, w, h] = bounds;
+    let r = [(x - pad[0]).max(4.0), (y - pad[1]).max(4.0), 0.0, 0.0];
+    let right = (x + w + pad[0]).min(gui[0] - 4.0);
+    let bottom = (y + h + pad[1]).min(gui[1] - 4.0);
+    let r = [r[0], r[1], right - r[0], bottom - r[1]];
+    if w <= 0.0 || h <= 0.0 || r[2] > gui[0] * 0.86 || r[3] > gui[1] * 0.94 || r[2] < 40.0 {
+        return None;
+    }
+    let a = alpha.clamp(0.0, 1.0);
+    let f = crate::paint::fade;
+    let mut out = Vec::new();
+    for (i, spread) in [6.0f32, 3.0].iter().enumerate() {
+        out.push(Paint::Round {
+            rect: [
+                r[0] - spread,
+                r[1] - spread + 2.0,
+                r[2] + 2.0 * spread,
+                r[3] + 2.0 * spread,
+            ],
+            radius: 8.0 + spread,
+            fill: f(if i == 0 { 0x22000000 } else { 0x33000000 }, a),
+            border: 0,
+        });
+    }
+    out.push(Paint::Round {
+        rect: r,
+        radius: 8.0,
+        fill: f(palette::PANEL, a),
+        border: f(palette::BORDER, a),
+    });
+    out.push(Paint::Fill {
+        rect: [r[0] + 14.0, r[1], (r[2] - 28.0).max(0.0), 1.0],
+        argb: f(0x99FF_6A00, a),
+    });
+    Some(out)
+}
+
 /// The colour (ARGB) a widget label is set in, from the game's (the HUD's ABGR): white stays the
 /// theme's ink, vanilla's grey for what is off the theme's dimmed ink, any other colour its own.
 pub fn label_color(abgr: u32) -> u32 {
@@ -389,6 +460,43 @@ mod tests {
             assert!(rect[0] >= r[0] && rect[0] + rect[2] <= r[0] + r[2]);
             assert!(rect[1] >= r[1] && rect[1] + rect[3] <= r[1] + r[3]);
         }
+    }
+
+    #[test]
+    fn main_and_destructive_buttons_have_their_own_look() {
+        let r = [0.0, 0.0, 100.0, 20.0];
+        let main = paint_as(Widget::Button(State::Normal), r, 2.0, None, Role::Primary);
+        assert!(matches!(
+            main[0],
+            Paint::Round {
+                fill: 0xF2E8_5F0A,
+                ..
+            }
+        ));
+        let lit = paint_as(Widget::Button(State::Lit), r, 2.0, None, Role::Danger);
+        assert!(matches!(
+            lit[0],
+            Paint::Round {
+                border: palette::DANGER,
+                ..
+            }
+        ));
+        // Off is off whatever it does.
+        let off = paint_as(Widget::Button(State::Off), r, 2.0, None, Role::Primary);
+        assert!(matches!(
+            off[0],
+            Paint::Round {
+                fill: palette::FACE_OFF,
+                ..
+            }
+        ));
+        // A dialog's card wraps its content, but not a whole screen.
+        let c = card([100.0, 60.0, 200.0, 100.0], [427.0, 240.0], 1.0).unwrap();
+        let Paint::Round { rect, .. } = c[2] else {
+            panic!("the card")
+        };
+        assert!(rect[0] < 100.0 && rect[0] + rect[2] > 300.0);
+        assert!(card([0.0, 0.0, 420.0, 230.0], [427.0, 240.0], 1.0).is_none());
     }
 
     #[test]

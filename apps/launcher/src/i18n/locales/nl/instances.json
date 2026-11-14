@@ -1,0 +1,341 @@
+{
+  "title": "Versies",
+  "errors": {
+    "action": "Dat is niet gelukt"
+  },
+  "card": {
+    "more": "Meer acties voor {{name}}",
+    "pin": "Vastzetten",
+    "unpin": "Losmaken",
+    "duplicate": "Dupliceren",
+    "duplicated": "{{name}} gemaakt",
+    "playtime": "Speeltijd",
+    "never": "Nooit",
+    "fromModpack": "Modpack {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Actief",
+    "installing": "Installeren",
+    "broken": "Reparatie nodig"
+  },
+  "delete": {
+    "title": "{{name}} verwijderen?",
+    "body": "De mods, instellingen en werelden worden van deze computer verwijderd. Dit kan niet ongedaan worden gemaakt.",
+    "confirm": "Instantie verwijderen",
+    "done": "{{name}} verwijderd"
+  },
+  "new": {
+    "title": "Nieuwe instantie",
+    "description": "Begin opnieuw of breng een bestaand pack mee.",
+    "tabs": {
+      "create": "Maken",
+      "import": "Importeren"
+    },
+    "name": "Naam",
+    "namePlaceholder": "Mijn survivalwereld",
+    "nameRequired": "Geef de instantie een naam.",
+    "icon": "Pictogram",
+    "color": "Kleur",
+    "colorN": "Kleur {{n}}",
+    "version": "Horizon-build",
+    "versionHint": "De Rustic-editie voegt cosmetica en vrienden toe in de game. Geen Java- of RAM-instellingen nodig.",
+    "recommended": "Aanbevolen",
+    "release": "Release",
+    "nightly": "Nightly",
+    "installed": "Geïnstalleerd",
+    "submit": "Instantie maken",
+    "created": "{{name}} is klaar",
+    "preview": "Voorbeeld",
+    "edition": "Editie",
+    "editionRustic": "Cosmetica, vrienden en native mods in de game.",
+    "editionHorizon": "Horizon zoals het team het uitbrengt, zonder toevoegingen.",
+    "noBuild": "Er wordt nu geen build van deze editie aangeboden.",
+    "nightlyHint": "Nightly-builds verschijnen elke dag uit de nieuwste code van Horizon: nieuwer, minder getest."
+  },
+  "icons": {
+    "grass": "Spruit",
+    "sword": "Zwaarden",
+    "pickaxe": "Houweel",
+    "castle": "Kasteel",
+    "rocket": "Raket",
+    "gem": "Edelsteen",
+    "flame": "Vlam",
+    "leaf": "Blad",
+    "star": "Ster",
+    "compass": "Kompas"
+  },
+  "import": {
+    "folder": {
+      "title": "Instantiemap",
+      "description": "Een instantiemap van Prism of MultiMC, overgezet zoals Horizon dat doet."
+    },
+    "mrpack": {
+      "title": "Modrinth-pack (.mrpack)",
+      "description": "Mods worden gekoppeld aan hun Horizon-builds als die er zijn."
+    },
+    "curseforge_zip": {
+      "title": "CurseForge-zip",
+      "description": "Een geëxporteerd CurseForge-modpack."
+    },
+    "modpack": {
+      "title": "Vanuit een modpack",
+      "description": "Blader door modpacks van Horizon, Modrinth en Rustic."
+    },
+    "started": "{{name}} importeren",
+    "background": "Het gaat verder op de achtergrond; je kunt de launcher blijven gebruiken.",
+    "note": "Alleen content die op Horizon werkt, wordt geïnstalleerd; de rest wordt vermeld met de reden.",
+    "drop": {
+      "title": "Sleep hier een pack of een instantiemap naartoe",
+      "hint": "Modrinth-.mrpack, CurseForge-.zip of een Prism- of MultiMC-instantiemap",
+      "choose": "Bestand kiezen",
+      "active": "Loslaten om te importeren",
+      "unsupported": "Dit kan niet worden geïmporteerd. Gebruik een .mrpack, een CurseForge-.zip of een instantiemap."
+    },
+    "formats": "Ondersteunde formaten"
+  },
+  "detail": {
+    "notFound": "Deze instantie bestaat niet meer",
+    "backToList": "Terug naar instanties",
+    "tabsLabel": "Onderdelen van de instantie",
+    "tabs": {
+      "overview": "Overzicht",
+      "content": "Content",
+      "resourcepacks": "Bronpakketten",
+      "worlds": "Werelden",
+      "settings": "Instellingen"
+    }
+  },
+  "overview": {
+    "mods": "Mods",
+    "resourcePacks": "Bronpakketten",
+    "shaders": "Shaderpacks",
+    "version": "Horizon-build",
+    "updateAvailable": "Update beschikbaar",
+    "upToDate": "Up-to-date",
+    "updateNow": "Nu bijwerken",
+    "changeVersion": "Kies een Horizon-build",
+    "applyVersion": "Build wisselen",
+    "versionChanging": "Overschakelen naar {{version}}",
+    "lastSession": "Laatste sessie",
+    "lastPlayed": "Gespeeld {{when}}",
+    "neverPlayed": "Nog niet gespeeld",
+    "rejoin": "Opnieuw verbinden",
+    "noServer": "Nog geen server bezocht vanuit deze instantie.",
+    "created": "Gemaakt",
+    "folder": "Map"
+  },
+  "content": {
+    "filter": "Filteren op soort",
+    "kinds": {
+      "all": "Alles",
+      "mod": "Mods",
+      "resourcepack": "Bronpakketten",
+      "shader": "Shaders"
+    },
+    "search": "Geïnstalleerde content zoeken",
+    "updateAll_one": "{{count}} item bijwerken",
+    "updateAll_other": "{{count}} items bijwerken",
+    "browse": "Door content bladeren",
+    "noMatch": "Geen geïnstalleerde content komt overeen met je zoekopdracht.",
+    "empty": {
+      "title": "Nog niets geïnstalleerd",
+      "description": "Vind mods, bronpakketten en shaders die met deze instantie werken."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Lokaal bestand"
+    },
+    "updateTo": "Update: {{version}}",
+    "incompatible": "Niet compatibel: {{reason}}",
+    "updateOne": "{{name}} bijwerken",
+    "toggle": "{{name}} inschakelen",
+    "remove": "{{name}} verwijderen",
+    "removeTitle": "{{name}} verwijderen?",
+    "removeBody": "Het bestand wordt uit deze instantie verwijderd. Je kunt het opnieuw installeren via Content."
+  },
+  "packs": {
+    "hint": "Pakketten bovenaan winnen als twee pakketten hetzelfde veranderen.",
+    "listLabel": "Laadvolgorde van bronpakketten",
+    "top": "Hoogste prioriteit",
+    "up": "{{name}} omhoog verplaatsen",
+    "down": "{{name}} omlaag verplaatsen",
+    "moved": "{{name}} verplaatst naar positie {{position}} van {{total}}",
+    "browse": "Bronpakketten zoeken",
+    "empty": {
+      "title": "Geen bronpakket",
+      "description": "Voeg pakketten toe om textures, geluiden en de interface te veranderen."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Nog geen wereld",
+      "description": "Werelden die je in de game maakt, verschijnen hier."
+    },
+    "openSaves": "Map met opgeslagen werelden openen",
+    "lastPlayed": "Gespeeld {{when}}",
+    "modes": {
+      "survival": "Overleven",
+      "creative": "Creatief",
+      "adventure": "Avontuur",
+      "hardcore": "Hardcore",
+      "spectator": "Toeschouwer"
+    },
+    "datapacks_one": "{{count}} datapakket",
+    "datapacks_other": "{{count}} datapakketten",
+    "play": "Deze wereld spelen",
+    "addDatapacks": "Datapakketten toevoegen"
+  },
+  "settings": {
+    "general": "Algemeen",
+    "display": "Venster",
+    "useDefaultResolution": "Standaardvenstergrootte gebruiken",
+    "defaultIs": "Standaard: {{width}} × {{height}}",
+    "width": "Breedte",
+    "height": "Hoogte",
+    "fullscreen": "Starten in volledig scherm",
+    "resolutionError": "Gebruik hele getallen, minimaal 640 × 360.",
+    "launch": "Startopties",
+    "launchHint": "Horizon-instanties leggen alleen een build vast: er is geen Java, RAM of loader in te stellen.",
+    "gameArgs": "Extra game-argumenten",
+    "gameArgsHint": "Geavanceerd. Ongewijzigd doorgegeven aan Horizon.",
+    "folders": "Mappen",
+    "folder": {
+      "root": "Instantie",
+      "mods": "Mods",
+      "resourcepacks": "Bronpakketten",
+      "shaderpacks": "Shaderpacks",
+      "saves": "Werelden",
+      "screenshots": "Screenshots",
+      "logs": "Logs"
+    },
+    "unsaved": "Je hebt niet-opgeslagen wijzigingen.",
+    "allSaved": "Alle wijzigingen opgeslagen.",
+    "saved": "Instellingen van instantie opgeslagen"
+  },
+  "heading": "Jouw *profielen*",
+  "native": {
+    "title": "Native mods",
+    "allOff": "Alles uitgeschakeld: de instantie speelt de vooraf gebouwde game.",
+    "state": {
+      "building": "Compileren…",
+      "up_to_date": "Up-to-date",
+      "needs_rebuild": "Opnieuw compileren nodig",
+      "not_built": "Niet gecompileerd",
+      "not_needed": "Vooraf gebouwde game"
+    },
+    "build": "Compileren",
+    "rebuild": "Opnieuw compileren",
+    "cancel": "Annuleren",
+    "progress": "Voortgang van de native build",
+    "starting": "Starten…",
+    "firstBuildHint": "De eerste build compileert de hele game (10 tot 15 minuten); latere alleen wat er is veranderd. Je kunt de launcher blijven gebruiken.",
+    "failed": "De laatste build is mislukt",
+    "built": "Gecompileerd {{date}} in {{duration}} · game {{size}}",
+    "leftOut": {
+      "other": "{{name}} is weggelaten: hij is niet van toepassing op deze Horizon.",
+      "unsupported": "{{name}} is weggelaten: Rustic kan nog niet compileren wat hij nodig heeft."
+    },
+    "notEdition": "Deze instantie speelt een gewone Horizon-build: native mods worden alleen in de Rustic-editie gecompileerd."
+  },
+  "profiles": {
+    "summary_one": "{{count}} profiel · {{playtime}} gespeeld",
+    "summary_other": "{{count}} profielen · {{playtime}} gespeeld",
+    "searchLabel": "Je profielen doorzoeken",
+    "searchPlaceholder": "Zoek op naam, Horizon-build of modpack…",
+    "source": {
+      "label": "Tonen",
+      "all": "Alle profielen",
+      "custom": "Mijn profielen",
+      "modpack": "Uit modpacks"
+    },
+    "sorts": {
+      "recent": "Laatst gespeeld",
+      "name": "Naam",
+      "created": "Onlangs gemaakt",
+      "version": "Horizon-build",
+      "playtime": "Speeltijd"
+    },
+    "filters": {
+      "version": "Horizon-build",
+      "edition": "Editie",
+      "editions": {
+        "rustic": "Rustic-editie",
+        "horizon": "Gewone Horizon"
+      },
+      "native": "Native mods",
+      "nativeOnly": "Heeft native mods",
+      "nativeHint": "Native mods worden op je pc gecompileerd voordat de game start.",
+      "remove": "Filter verwijderen: {{filter}}",
+      "reset": "Filters herstellen"
+    },
+    "create": "Profiel maken",
+    "createHint": "Een Horizon-build, een pictogram en een naam",
+    "import": "Importeren",
+    "importHint": "Een map, een .mrpack of een CurseForge-zip",
+    "all": "Alle profielen",
+    "listLabel": "Profielen",
+    "recent": "Verder spelen",
+    "recentHint": "Je laatst gespeelde profielen",
+    "card": {
+      "active": "Actief",
+      "activeHint": "Het Launchpad speelt dit profiel",
+      "running": "Draait",
+      "pinned": "Vastgezet",
+      "update": "Update {{version}}",
+      "broken": "Reparatie nodig",
+      "modpack": "Modpack",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Gespeeld {{when}}",
+      "neverPlayed": "Nog niet gespeeld",
+      "created": "Gemaakt {{date}}",
+      "lastServer": "Laatst op {{name}}",
+      "rejoin": "Opnieuw verbinden",
+      "rejoinAria": "Opnieuw verbinden met {{server}} met {{name}}",
+      "mods": "Mods",
+      "packs": "Bronpakketten",
+      "shaders": "Shaders",
+      "playtime": "Speeltijd",
+      "contentCount": "{{mods}} mods · {{packs}} packs · {{shaders}} shaders",
+      "open": "{{name}} openen"
+    },
+    "native": {
+      "label": "Native mods",
+      "count_one": "{{count}} native mod",
+      "count_other": "{{count}} native mods",
+      "building": "Compileren {{pct}}",
+      "buildingNoPct": "Compileren…",
+      "up_to_date": "Native mods klaar",
+      "needs_rebuild": "Native: opnieuw compileren nodig",
+      "not_built": "Native: nog niet gecompileerd",
+      "off": "Native mods uit",
+      "unsupported": "Native: vereist de Rustic-editie",
+      "hint": {
+        "up_to_date": "Op deze pc gecompileerd voor deze Horizon-build.",
+        "needs_rebuild": "De mods zijn veranderd sinds de laatste build: er wordt opnieuw gecompileerd als je speelt.",
+        "not_built": "Wordt op je pc gecompileerd als je speelt (de eerste keer 10 tot 15 minuten).",
+        "off": "Alle native mods staan uit: de vooraf gebouwde game wordt gespeeld.",
+        "unsupported": "Dit profiel speelt een gewone Horizon-build: native mods worden alleen in de Rustic-editie gecompileerd.",
+        "building": "De game wordt gecompileerd met de native mods van dit profiel."
+      }
+    },
+    "menu": {
+      "edit": "Instellingen bewerken",
+      "activate": "Gebruiken op het Launchpad",
+      "isActive": "Gebruikt op het Launchpad",
+      "activated": "{{name}} staat nu op het Launchpad"
+    },
+    "empty": {
+      "title": "Nog geen profiel",
+      "description": "Een profiel is een Horizon-build met eigen mods, packs en werelden. Maak er een met de aanbevolen build, of importeer een pack dat je al hebt."
+    },
+    "noMatch": {
+      "title": "Geen profiel gevonden",
+      "description": "Probeer een andere zoekopdracht of verwijder een filter."
+    },
+    "detail": {
+      "banner": "Omslag van {{name}}"
+    }
+  }
+}

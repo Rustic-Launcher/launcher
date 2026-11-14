@@ -1,0 +1,112 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Langkah {{current}} dari {{total}}",
+  "back": "Kembali",
+  "continue": "Lanjutkan",
+  "skip": "Lewati dulu",
+  "steps": {
+    "welcome": "Selamat datang",
+    "microsoft": "Microsoft",
+    "rustic": "Akun Rustic",
+    "privacy": "Privasi",
+    "game": "File game",
+    "ready": "Siap"
+  },
+  "welcome": {
+    "title": "Selamat datang di Rustic",
+    "subtitle": "Launcher yang cepat dan sosial untuk Horizon. Beberapa pilihan saja dan kamu sudah masuk ke game.",
+    "language": "Bahasa",
+    "theme": "Tema",
+    "palette": "Palet"
+  },
+  "microsoft": {
+    "title": "Masuk dengan Microsoft",
+    "subtitle": "Rustic memeriksa ke Microsoft bahwa kamu memiliki game. Kata sandimu tidak pernah melewati Rustic.",
+    "signedInAs": "Masuk sebagai {{name}}",
+    "ownershipOk": "Kepemilikan dikonfirmasi: kamu bisa bermain.",
+    "notOwnedTitle": "Kamu memerlukan Minecraft: Java Edition",
+    "notOwnedBody": "Akun Microsoft ini tidak memiliki game. Rustic tidak pernah meluncurkan game tanpa lisensi.",
+    "buyGame": "Dapatkan game",
+    "whyTitle": "Kenapa?",
+    "whyBody": "Memiliki game itu wajib. Horizon menyiapkan file game dari instalasimu sendiri, dan profil offline baru terbuka setelah pemeriksaan ini."
+  },
+  "rustic": {
+    "title": "Akun Rustic-mu",
+    "subtitle": "Opsional. Game tetap berjalan tanpanya; kamu bisa masuk nanti dari Pengaturan.",
+    "perks": {
+      "friends": {
+        "title": "Teman dan party",
+        "body": "Lihat siapa yang online dan bergabung dengan mereka sekali klik."
+      },
+      "locker": {
+        "title": "Loker",
+        "body": "Kosmetik untuk karaktermu, murni visual."
+      },
+      "servers": {
+        "title": "Server-mu online",
+        "body": "Alamat dan domain gratis untuk server yang kamu host."
+      }
+    },
+    "signedInAs": "Masuk sebagai {{name}}",
+    "signIn": "Masuk atau buat akun",
+    "skipHint": "Atau tekan Lanjutkan untuk melewati dulu.",
+    "age": "Akun Rustic untuk usia {{min}} tahun ke atas. Di bawah {{consent}} tahun, orang tua harus menyetujui pemrosesan data; di bawah 18 tahun, pembelian memerlukan persetujuan orang tua."
+  },
+  "privacy": {
+    "title": "Pilihan privasimu",
+    "subtitle": "Semuanya nonaktif. Aktifkan hanya yang ingin kamu bagikan; kamu bisa mengubahnya kapan saja di Pengaturan.",
+    "usage": {
+      "title": "Analitik penggunaan",
+      "body": "Halaman dan fitur mana yang dipakai, tanpa konten atau pengenal."
+    },
+    "performance": {
+      "title": "Laporan performa",
+      "body": "Waktu peluncuran dan frame, untuk menemukan bagian yang lambat."
+    },
+    "crash": {
+      "title": "Laporan crash",
+      "body": "Dikirim otomatis saat game atau launcher crash. Jika nonaktif, Rustic akan bertanya setiap kali."
+    },
+    "note": "Kami tidak pernah menjual data dan tidak pernah membagikannya untuk iklan.",
+    "policy": "Baca kebijakan privasi"
+  },
+  "game": {
+    "title": "Siapkan game",
+    "subtitle": "Rustic memakai file game dari instalasimu sendiri (atau mengunduh yang kurang dari Mojang), lalu menyiapkannya untuk Horizon.",
+    "detecting": "Mencari instalasi game-mu…",
+    "found": "Game ditemukan ({{versions}})",
+    "notFound": "Instalasi tidak ditemukan",
+    "notFoundBody": "Rustic akan mengunduh file game dari Mojang untuk akunmu.",
+    "prepareTitle": "Siapkan file game",
+    "alreadyReady": "Sudah disiapkan",
+    "done": "Disiapkan",
+    "prepareAgain": "Siapkan lagi",
+    "prepare": "Siapkan",
+    "steps": {
+      "detect": "Deteksi",
+      "download": "Unduh",
+      "verify": "Verifikasi",
+      "compile_exporters": "Eksportir",
+      "export": "Ekspor",
+      "index": "Indeks"
+    },
+    "explain": "File game yang kurang diambil dari server Mojang sendiri, bukan dari pihak ketiga: file yang disiapkan tetap berada di komputer ini.",
+    "background": "Kamu bisa lanjut: persiapan tetap berjalan di latar belakang.",
+    "prepareFailed": "File game tidak dapat disiapkan: {{reason}}"
+  },
+  "ready": {
+    "title": "Semuanya siap",
+    "subtitle": "Buat instans pertamamu sekarang, atau lewati dan lakukan nanti.",
+    "finish": "Buka Rustic",
+    "defaultName": "Dunia pertamaku",
+    "createTitle": "Buat instans pertamaku",
+    "recommended": "Disarankan",
+    "nameLabel": "Nama instans",
+    "existing_other": "Kamu sudah memiliki {{count}} instans.",
+    "tips": {
+      "play": "MAIN selalu ada di kanan bawah.",
+      "friends": "Teman-temanmu ada di kanan; Gabung cukup sekali klik.",
+      "servers": "Host server untuk teman-temanmu dari halaman Server."
+    }
+  }
+}

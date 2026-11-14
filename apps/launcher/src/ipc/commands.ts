@@ -9,13 +9,14 @@ import type {
   GameInstallDetection,
   GamePreparation,
   JavaRuntime,
-  LauncherUpdate,
+  PendingLaunch,
   PickPathRequest,
   PrepareProgress,
   RusticServerStatus,
   Settings,
   SettingsPatch,
   SystemInfo,
+  UpdateStatus,
 } from './types/app';
 import type {
   Account,
@@ -123,8 +124,14 @@ export interface IpcCommands {
   /** A player's skin URL (Mojang's session service, cached); `null` without one. */
   player_skin_url: [{ uuid: string }, string | null];
   app_pick_path: [PickPathRequest, string | null];
-  app_check_update: [void, LauncherUpdate];
-  app_install_update: [void, void];
+  /** The update service's state (ADR 0162). */
+  app_update_status: [void, UpdateStatus];
+  /** "Check now": asks the feeds; automatic updates on, installs what it finds (a running game defers it). */
+  app_update_check: [void, UpdateStatus];
+  /** "Update and restart": installs what the last check found (`not_found` when nothing); never closes a running game. */
+  app_update_apply: [void, UpdateStatus];
+  /** The launch an update restart interrupted, taken once (null when none or older than 30 min). */
+  app_take_pending_launch: [void, PendingLaunch | null];
   downloads_list: [void, DownloadTask[]];
   download_cancel: [Id, void];
   game_detect_install: [void, GameInstallDetection];
@@ -314,6 +321,10 @@ export interface IpcEvents {
   'native-build-progress': NativeBuildProgress;
   /** A native build or Rust's installation ended: statuses may have changed. */
   'native-changed': { instance_id?: string };
+  /** The update service's state changed (checks, progress, deferral, restart). */
+  'update-state': UpdateStatus;
+  /** An update was installed without a restart (a Rustic edition build). */
+  'update-installed': { kind: 'edition'; version: string };
 }
 
 export type CommandName = keyof IpcCommands;

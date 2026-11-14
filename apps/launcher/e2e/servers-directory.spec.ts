@@ -14,6 +14,9 @@ test.describe('Servers: Mine, Discover, Browse and a server page (ADR 0158)', ()
     app,
   }) => {
     await app.getByTestId('rail-servers').click();
+    // The player has servers: My servers opens first (Discover when the list is empty).
+    await expect(app.getByTestId('servers-tab-mine')).toHaveAttribute('aria-selected', 'true');
+    await app.getByTestId('servers-tab-discover').click();
     await expect(app.getByTestId('servers-tab-discover')).toHaveAttribute('aria-selected', 'true');
     const hero = app.getByTestId('servers-hero');
     await expect(hero).toBeVisible();

@@ -2,7 +2,6 @@ import {
   Badge,
   Button,
   Card,
-  Carousel,
   cn,
   EmptyState,
   formatBytes,
@@ -13,10 +12,6 @@ import {
   PopoverTrigger,
   Select,
   Skeleton,
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
   toast,
 } from '@rustic/ui';
 import { Link, useNavigate } from '@tanstack/react-router';
@@ -25,22 +20,31 @@ import {
   BookmarkPlus,
   CalendarClock,
   Clock,
+  Cpu,
   Download,
   ExternalLink,
   Flag,
   Globe,
+  Hand,
   HardDrive,
   Heart,
   Link2,
   Network,
   PackageX,
   Scale,
-  User,
+  ShieldCheck,
+  Timer,
   X,
 } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CatalogCover, safeImageUrl } from '@/components/catalog';
+import {
+  CatalogCover,
+  CatalogTabList,
+  CatalogTabPanel,
+  CatalogTabs,
+  safeImageUrl,
+} from '@/components/catalog';
 import { CompatibilityBadge } from '@/components/CompatibilityBadge';
 import { Page } from '@/components/Page';
 import { QueryError } from '@/components/RouteError';
@@ -50,6 +54,7 @@ import { invoke, type IpcFailure } from '@/ipc';
 import type { ContentDetail, ContentVersion } from '@/ipc/types/content';
 import { formatCompact, formatDate, formatMoney, formatRelative, shortVersion } from '@/lib/format';
 import { useActiveInstance, useInstances, useRusticSession } from '@/queries/core';
+import { GalleryGrid, GalleryStrip, Lightbox } from './ContentGallery';
 import { Markdown } from './Markdown';
 import {
   ContentIcon,
@@ -114,6 +119,9 @@ export function pickVersion(
   return { version: best, missing: !!wanted };
 }
 
+type DetailTab =
+  'description' | 'gallery' | 'versions' | 'changelog' | 'dependencies' | 'compatibility';
+
 export function ContentDetailPage() {
   const { t } = useTranslation('content');
   const { projectId } = contentDetailRoute.useParams();
@@ -124,6 +132,8 @@ export function ContentDetailPage() {
   const { instance: active } = useActiveInstance();
   const requested = parseTarget(search.target);
   const [kindKnown, setKindKnown] = useState<ContentDetail['kind'] | null>(null);
+  const [tab, setTab] = useState<DetailTab>('description');
+  const [picture, setPicture] = useState<number | null>(null);
 
   const target: TargetRef | null = useMemo(() => {
     if (kindKnown)
@@ -144,6 +154,11 @@ export function ContentDetailPage() {
   useEffect(() => {
     if (loadedKind) setKindKnown(loadedKind);
   }, [loadedKind]);
+  // Another project (a dependency's link): start again on its description.
+  useEffect(() => {
+    setTab('description');
+    setPicture(null);
+  }, [projectId]);
 
   const targetName = !target
     ? ''
@@ -176,10 +191,14 @@ export function ContentDetailPage() {
       search: (prev) => ({ ...prev, install: undefined, version: undefined }),
       replace: true,
     });
+  const showTab = (v: DetailTab) => {
+    setTab(v);
+    document.getElementById('detail-sections')?.scrollIntoView({ block: 'start' });
+  };
 
   return (
     <Page wide>
-      <nav aria-label={t('detail.breadcrumb')} className="text-fg-subtle text-xs">
+      <nav aria-label={t('detail.breadcrumb')} className="text-fg-subtle -mb-2 text-xs">
         <Link
           to="/content"
           search={{ kind: d.kind, target: target ? formatTarget(target) : undefined }}
@@ -196,6 +215,7 @@ export function ContentDetailPage() {
         targetName={targetName}
         onTarget={setTarget}
         instancesLoading={instances.isLoading || servers.isLoading}
+        onExplainNative={() => showTab('compatibility')}
       />
       {search.install && (
         <InstallPrompt
@@ -208,66 +228,83 @@ export function ContentDetailPage() {
           instancesLoading={instances.isLoading || servers.isLoading}
         />
       )}
-      <div className="grid grid-cols-[minmax(0,1fr)_300px] gap-6 max-[1100px]:grid-cols-1">
-        <Tabs defaultValue="description" variant="underline">
-          <TabsList aria-label={t('detail.sections')} className="flex-wrap">
-            <TabsTrigger value="description">{t('detail.tabs.description')}</TabsTrigger>
-            <TabsTrigger value="gallery" count={d.gallery.length}>
-              {t('detail.tabs.gallery')}
-            </TabsTrigger>
-            <TabsTrigger value="versions" count={d.versions.length}>
-              {t('detail.tabs.versions')}
-            </TabsTrigger>
-            <TabsTrigger value="changelog">{t('detail.tabs.changelog')}</TabsTrigger>
-            <TabsTrigger value="dependencies" count={d.dependencies.length}>
-              {t('detail.tabs.dependencies')}
-            </TabsTrigger>
-            <TabsTrigger value="compatibility">{t('detail.tabs.compatibility')}</TabsTrigger>
-          </TabsList>
-          <TabsContent value="description">
-            {d.description_md ? (
-              <Markdown source={d.description_md} />
-            ) : (
-              <p className="text-fg-muted text-sm">{d.summary}</p>
-            )}
-          </TabsContent>
-          <TabsContent value="gallery">
-            <Gallery detail={d} />
-          </TabsContent>
-          <TabsContent value="versions">
-            <Versions detail={d} target={target} targetName={targetName} />
-          </TabsContent>
-          <TabsContent value="changelog">
-            {d.changelog.length === 0 ? (
-              <p className="text-fg-muted text-sm">{t('detail.noChangelog')}</p>
-            ) : (
-              <ol className="flex flex-col gap-4">
-                {d.changelog.map((c) => (
-                  <li key={c.version} className="flex gap-4">
-                    <span className="bg-accent mt-1.5 size-2 shrink-0 rounded-full" aria-hidden />
-                    <div>
-                      <p className="text-sm font-semibold">
-                        {c.version}{' '}
-                        <span className="text-fg-subtle font-normal">
-                          · <FormattedDate iso={c.published_at} />
-                        </span>
-                      </p>
-                      <p className="text-fg-muted text-sm whitespace-pre-line">{c.notes}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            )}
-          </TabsContent>
-          <TabsContent value="dependencies">
-            <Dependencies detail={d} target={target} />
-          </TabsContent>
-          <TabsContent value="compatibility">
-            <CompatibilityExplained detail={d} targetName={targetName} />
-          </TabsContent>
-        </Tabs>
-        <Sidebar detail={d} />
+      <div id="detail-sections" className="scroll-mt-4">
+        <CatalogTabs value={tab} onValueChange={setTab}>
+          <CatalogTabList
+            label={t('detail.sections')}
+            testIdPrefix="detail-tab"
+            className="max-w-full overflow-x-auto"
+            tabs={[
+              { value: 'description', label: t('detail.tabs.description') },
+              { value: 'gallery', label: t('detail.tabs.gallery'), count: d.gallery.length },
+              { value: 'versions', label: t('detail.tabs.versions'), count: d.versions.length },
+              { value: 'changelog', label: t('detail.tabs.changelog') },
+              {
+                value: 'dependencies',
+                label: t('detail.tabs.dependencies'),
+                count: d.dependencies.length,
+              },
+              { value: 'compatibility', label: t('detail.tabs.compatibility') },
+            ]}
+          />
+          <div className="grid grid-cols-[minmax(0,1fr)_20rem] items-start gap-8 max-[1180px]:grid-cols-1">
+            <div className="min-w-0">
+              <CatalogTabPanel value="description">
+                <GalleryStrip detail={d} onOpen={setPicture} onSeeAll={() => setTab('gallery')} />
+                <article
+                  className="max-w-[72ch] [&_h3]:mt-3 [&_h3]:text-base [&_li]:leading-7 [&_p]:text-[0.94rem] [&_p]:leading-7 [&_ul]:text-[0.94rem]"
+                  data-testid="detail-description"
+                >
+                  {d.description_md ? (
+                    <Markdown source={d.description_md} />
+                  ) : (
+                    <p className="text-fg-muted text-sm">{d.summary}</p>
+                  )}
+                </article>
+              </CatalogTabPanel>
+              <CatalogTabPanel value="gallery">
+                <GalleryGrid detail={d} onOpen={setPicture} />
+              </CatalogTabPanel>
+              <CatalogTabPanel value="versions">
+                <Versions detail={d} target={target} targetName={targetName} />
+              </CatalogTabPanel>
+              <CatalogTabPanel value="changelog">
+                {d.changelog.length === 0 ? (
+                  <p className="text-fg-muted text-sm">{t('detail.noChangelog')}</p>
+                ) : (
+                  <ol className="border-border ml-1 flex max-w-[72ch] flex-col gap-6 border-l pl-6">
+                    {d.changelog.map((c) => (
+                      <li key={c.version} className="relative">
+                        <span
+                          aria-hidden
+                          className="bg-accent ring-bg absolute top-1.5 -left-[1.86rem] size-2.5 rounded-full ring-4"
+                        />
+                        <p className="text-sm font-semibold">
+                          {c.version}{' '}
+                          <span className="text-fg-subtle font-normal">
+                            · <FormattedDate iso={c.published_at} />
+                          </span>
+                        </p>
+                        <p className="text-fg-muted mt-1 text-sm leading-relaxed whitespace-pre-line">
+                          {c.notes}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+                )}
+              </CatalogTabPanel>
+              <CatalogTabPanel value="dependencies">
+                <Dependencies detail={d} target={target} />
+              </CatalogTabPanel>
+              <CatalogTabPanel value="compatibility">
+                <CompatibilityExplained detail={d} targetName={targetName} />
+              </CatalogTabPanel>
+            </div>
+            <Sidebar detail={d} />
+          </div>
+        </CatalogTabs>
       </div>
+      <Lightbox detail={d} index={picture} onIndex={setPicture} onClose={() => setPicture(null)} />
     </Page>
   );
 }
@@ -295,18 +332,26 @@ function NotAvailable() {
   );
 }
 
+/**
+ * The project's header: a banner (its own banner picture cropped, else its first screenshot
+ * blurred behind a gradient, else generated art; never stretched), the icon, name, author,
+ * summary and badges, and on the right the install panel (where, the main action, library and
+ * report; for a native mod, what building on the PC means).
+ */
 function Hero({
   detail: d,
   target,
   targetName,
   onTarget,
   instancesLoading,
+  onExplainNative,
 }: {
   detail: ContentDetail;
   target: TargetRef | null;
   targetName: string;
   onTarget: (t: TargetRef) => void;
   instancesLoading: boolean;
+  onExplainNative: () => void;
 }) {
   const { t, i18n } = useTranslation('content');
   const instances = useInstances();
@@ -315,52 +360,84 @@ function Hero({
     d.kind === 'plugin' &&
     !servers.isLoading &&
     eligibleServers('plugin', servers.data ?? []).length === 0;
-  const banner = d.banner_url ?? d.gallery.find((g) => safeImageUrl(g.url))?.url ?? null;
+  const ownBanner = safeImageUrl(d.banner_url);
+  const shot = d.gallery.find((g) => safeImageUrl(g.url))?.url ?? null;
   const paid = !!d.price && d.price.amount_minor > 0;
   return (
     <header className="rx-surface relative overflow-hidden rounded-2xl" data-testid="detail-hero">
-      <CatalogCover src={banner} seed={d.id} className="h-44 lg:h-52">
+      <CatalogCover
+        src={ownBanner ?? shot}
+        seed={d.id}
+        wide
+        className="h-36 lg:h-44"
+        imgClassName="scale-110 blur-xl brightness-[0.72] saturate-[1.15]"
+      >
         <span
           aria-hidden
-          className="from-surface absolute inset-0 bg-gradient-to-t via-black/10 to-transparent"
+          className="from-surface via-surface/55 absolute inset-0 bg-gradient-to-t to-transparent"
+        />
+        <span
+          aria-hidden
+          className="from-surface/60 absolute inset-0 bg-gradient-to-r via-transparent to-transparent"
         />
       </CatalogCover>
-      <div className="relative -mt-16 flex flex-wrap items-end gap-5 px-6 pb-6">
-        <ContentIcon
-          id={d.id}
-          name={d.name}
-          src={d.icon_url}
-          size="xl"
-          className="ring-surface size-24 ring-4"
-        />
-        <div className="flex min-w-[min(100%,320px)] flex-1 flex-col gap-2">
-          <h1 className="flex items-center gap-2 text-3xl font-bold tracking-tight">
-            <span className="truncate">{d.name}</span>
-            {d.verified && <VerifiedBadge compact />}
-          </h1>
-          <p className="text-fg-muted text-sm">
-            {d.author ? t('by', { author: d.author }) : null}
-            {d.license ? ` · ${d.license}` : null} · {t(`sourceLong.${d.source}`)}
-          </p>
-          <p className="text-fg max-w-2xl text-sm">{d.summary}</p>
-          <div className="flex flex-wrap items-center gap-1.5 pt-1">
-            <ItemCompatBadge item={d} />
-            <SourceBadge source={d.source} />
-            {d.verified && <VerifiedBadge />}
-            <SideBadge side={d.side} />
-            {d.shader_format && <ShaderFormatBadge format={d.shader_format} />}
-            {d.kind === 'plugin' && (
-              <Badge variant="accent">{t('plugins.badge', { api: '0.1' })}</Badge>
-            )}
-            {d.price && <PriceBadge price={d.price} />}
+      <div className="relative -mt-20 grid items-start gap-6 px-6 pb-6 lg:grid-cols-[minmax(0,1fr)_21rem]">
+        <div className="flex min-w-0 flex-col gap-4">
+          <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-end sm:gap-5">
+            <ContentIcon
+              id={d.id}
+              name={d.name}
+              src={d.icon_url}
+              size="xl"
+              className="ring-surface size-24 shrink-0 shadow-lg ring-4"
+            />
+            <div className="flex min-w-0 flex-1 flex-col gap-2">
+              <h1 className="flex items-center gap-2 text-3xl font-bold tracking-tight">
+                <span className="truncate">{d.name}</span>
+                {d.verified && <VerifiedBadge compact />}
+              </h1>
+              <p className="text-fg-muted flex flex-wrap items-center gap-x-1.5 text-sm">
+                {d.author && (
+                  <span className="text-fg font-medium">{t('by', { author: d.author })}</span>
+                )}
+                {d.license && (
+                  <>
+                    <span aria-hidden>·</span>
+                    <span>{d.license}</span>
+                  </>
+                )}
+                <span aria-hidden>·</span>
+                <span>{t(`sourceLong.${d.source}`)}</span>
+                <span aria-hidden>·</span>
+                <span className="inline-flex items-center gap-1 tabular-nums">
+                  <Download className="size-3.5" aria-hidden />
+                  {formatCompact(d.downloads, i18n.language)}
+                </span>
+              </p>
+              <p className="text-fg line-clamp-2 max-w-2xl text-sm leading-relaxed">{d.summary}</p>
+              <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
+                <ItemCompatBadge item={d} />
+                <SourceBadge source={d.source} />
+                {d.verified && <VerifiedBadge />}
+                <SideBadge side={d.side} />
+                {d.shader_format && <ShaderFormatBadge format={d.shader_format} />}
+                {d.kind === 'plugin' && (
+                  <Badge variant="accent">{t('plugins.badge', { api: '0.1' })}</Badge>
+                )}
+                {d.price && <PriceBadge price={d.price} />}
+              </div>
+            </div>
           </div>
+          {d.native && <NativeNote onMore={onExplainNative} />}
         </div>
-        <div className="flex w-full max-w-sm flex-col items-stretch gap-3 sm:w-auto">
+
+        <aside
+          className="border-border bg-surface/90 flex flex-col gap-3 rounded-xl border p-4 shadow-lg backdrop-blur-md"
+          aria-label={t('install.install')}
+          data-testid="install-panel"
+        >
           {paid && d.price ? (
-            <div
-              className="border-warning/30 bg-warning/10 flex flex-col gap-1 rounded-xl border px-4 py-3"
-              data-testid="detail-price"
-            >
+            <div className="flex flex-col gap-0.5" data-testid="detail-price">
               <span className="text-2xl font-bold tabular-nums">
                 {formatMoney(d.price, i18n.language)}
               </span>
@@ -376,15 +453,22 @@ function Hero({
                 instances={instances.data ?? []}
                 servers={servers.data ?? []}
                 loading={instancesLoading}
+                stacked
               />
             )
           )}
-          <div className="flex flex-wrap items-center justify-end gap-2">
-            <ReportButton detail={d} />
+          <InstallButton
+            item={d}
+            target={target}
+            targetName={targetName}
+            size="lg"
+            className="w-full"
+          />
+          <div className="flex items-center justify-end gap-2 [&>button:not(:last-child)]:flex-1">
             <LibraryButton detail={d} />
-            <InstallButton item={d} target={target} targetName={targetName} size="md" />
+            <ReportButton detail={d} compact />
           </div>
-        </div>
+        </aside>
       </div>
       {noServer && (
         <div className="px-6 pb-6">
@@ -392,6 +476,52 @@ function Hero({
         </div>
       )}
     </header>
+  );
+}
+
+/** A native mod's note under the header: what building on the PC means, calmly (the trust notice
+ * itself comes when installing). */
+function NativeNote({ onMore }: { onMore: () => void }) {
+  const { t } = useTranslation('content');
+  return (
+    <section
+      aria-labelledby="native-note-title"
+      className="border-info/25 bg-info/8 @container flex flex-col gap-2.5 rounded-xl border px-4 py-3"
+      data-testid="native-note"
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h2
+          id="native-note-title"
+          className="text-info-text flex items-center gap-2 text-sm font-semibold"
+        >
+          <Cpu className="size-4" aria-hidden />
+          {t('detail.native.title')}
+        </h2>
+        <button
+          type="button"
+          onClick={onMore}
+          className="rx-focus-ring text-accent-text rounded text-xs font-medium hover:underline"
+        >
+          {t('detail.native.more')}
+        </button>
+      </div>
+      <ul className="text-fg-muted grid gap-x-5 gap-y-1.5 text-xs leading-relaxed @2xl:grid-cols-3">
+        {(
+          [
+            ['build', <Timer key="b" />],
+            ['review', <ShieldCheck key="r" />],
+            ['consent', <Hand key="c" />],
+          ] as const
+        ).map(([k, icon]) => (
+          <li key={k} className="flex gap-2 [&_svg]:mt-0.5 [&_svg]:size-3.5 [&_svg]:shrink-0">
+            <span aria-hidden className="text-info-text contents">
+              {icon}
+            </span>
+            <span>{t(`detail.native.${k}`)}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
@@ -532,7 +662,7 @@ const REPORT_REASONS: Record<'fair_play' | 'malware' | 'copyright' | 'other', Co
     other: 'other',
   };
 
-function ReportButton({ detail: d }: { detail: ContentDetail }) {
+function ReportButton({ detail: d, compact }: { detail: ContentDetail; compact?: boolean }) {
   const { t } = useTranslation('content');
   const session = useRusticSession();
   const report = useReportContent();
@@ -549,9 +679,18 @@ function ReportButton({ detail: d }: { detail: ContentDetail }) {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button size="md" variant="ghost" leftIcon={<Flag />} loading={report.isPending}>
-          {t('report.button')}
-        </Button>
+        {compact ? (
+          <IconButton
+            label={t('report.button')}
+            icon={<Flag />}
+            disabled={report.isPending}
+            className="shrink-0"
+          />
+        ) : (
+          <Button size="md" variant="ghost" leftIcon={<Flag />} loading={report.isPending}>
+            {t('report.button')}
+          </Button>
+        )}
       </PopoverTrigger>
       <PopoverContent className="w-72 p-2">
         <p className="text-fg-muted px-2 pt-1 pb-2 text-xs font-semibold">
@@ -577,36 +716,6 @@ function ReportButton({ detail: d }: { detail: ContentDetail }) {
   );
 }
 
-function Gallery({ detail: d }: { detail: ContentDetail }) {
-  const { t } = useTranslation('content');
-  if (d.gallery.length === 0) {
-    return <p className="text-fg-muted text-sm">{t('detail.noGallery')}</p>;
-  }
-  return (
-    <Carousel
-      items={d.gallery}
-      getKey={(g) => `${g.title}-${g.url ?? g.hue}`}
-      label={t('detail.galleryLabel', { name: d.name })}
-      prevLabel={t('detail.prev')}
-      nextLabel={t('detail.next')}
-      slideLabel={(i, n) => t('detail.slide', { index: i, total: n })}
-      autoPlayMs={0}
-      className="aspect-[16/8] w-full"
-      renderItem={(g) => (
-        <CatalogCover src={g.url} seed={`${d.id}-${g.hue}`} className="size-full">
-          <span
-            aria-hidden
-            className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"
-          />
-          <p className="absolute bottom-5 left-6 text-lg font-semibold text-white drop-shadow">
-            {g.title}
-          </p>
-        </CatalogCover>
-      )}
-    />
-  );
-}
-
 function Versions({
   detail: d,
   target,
@@ -623,7 +732,7 @@ function Versions({
   return (
     <div className="border-border overflow-x-auto rounded-xl border">
       <table className="w-full text-left text-sm">
-        <thead className="bg-surface-2 text-fg-muted text-xs">
+        <thead className="text-fg-subtle border-border border-b text-xs">
           <tr>
             <th scope="col" className="px-4 py-2.5 font-medium">
               {t('versions.version')}
@@ -634,7 +743,7 @@ function Versions({
             <th scope="col" className="px-4 py-2.5 font-medium">
               {t('versions.published')}
             </th>
-            <th scope="col" className="px-4 py-2.5 font-medium">
+            <th scope="col" className="px-4 py-2.5 text-right font-medium">
               {t('versions.downloads')}
             </th>
             <th scope="col" className="px-4 py-2.5 font-medium">
@@ -645,12 +754,19 @@ function Versions({
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-border divide-y">
           {d.versions.map((v, i) => (
-            <tr key={v.id} className="border-border border-t">
+            <tr
+              key={v.id}
+              className={cn(
+                'hover:bg-surface-2/50 transition-colors',
+                i === 0 && 'bg-accent-soft/20',
+              )}
+            >
               <td className="px-4 py-3">
-                <span className="flex items-center gap-1.5">
-                  <span className="font-semibold">{v.version}</span>
+                <span className="flex flex-wrap items-center gap-1.5">
+                  <span className="font-mono font-semibold">{v.version}</span>
+                  {i === 0 && <Badge variant="accent">{t('versions.latest')}</Badge>}
                   <Badge
                     variant={
                       v.channel === 'release'
@@ -664,7 +780,7 @@ function Versions({
                   </Badge>
                 </span>
                 {v.size_bytes > 0 && (
-                  <span className="text-2xs text-fg-subtle block">
+                  <span className="text-2xs text-fg-subtle mt-0.5 block">
                     {formatBytes(v.size_bytes, i18n.language)}
                   </span>
                 )}
@@ -677,7 +793,7 @@ function Versions({
               <td className="text-fg-muted px-4 py-3 text-xs whitespace-nowrap">
                 {formatDate(v.published_at, i18n.language)}
               </td>
-              <td className="text-fg-muted px-4 py-3 text-xs tabular-nums">
+              <td className="text-fg-muted px-4 py-3 text-right text-xs tabular-nums">
                 {formatCompact(v.downloads, i18n.language)}
               </td>
               <td className="px-4 py-3">
@@ -815,47 +931,80 @@ function CompatibilityExplained({
 
 function Sidebar({ detail: d }: { detail: ContentDetail }) {
   const { t, i18n } = useTranslation('content');
-  const row = (icon: React.ReactNode, label: string, value: React.ReactNode) => (
-    <div className="flex items-center gap-3 py-2 text-sm">
-      <span className="text-fg-subtle [&_svg]:size-4">{icon}</span>
-      <span className="text-fg-muted flex-1">{label}</span>
-      <span className="text-fg truncate font-medium tabular-nums">{value}</span>
-    </div>
-  );
+  const lang = i18n.language;
   const links = Object.entries(d.links).filter(([, v]) => !!v) as [string, string][];
   const site = siteProjectUrl(d);
   const size = d.size_bytes ?? d.versions[0]?.size_bytes ?? 0;
+  const stats: [React.ReactNode, string, React.ReactNode][] = [
+    [<Download key="d" />, t('stats.downloads'), formatCompact(d.downloads, lang)],
+  ];
+  if (d.follows > 0)
+    stats.push([<Heart key="f" />, t('stats.follows'), formatCompact(d.follows, lang)]);
+  if (d.updated_at)
+    stats.push([<CalendarClock key="u" />, t('stats.updated'), formatRelative(d.updated_at, lang)]);
+  if (d.created_at)
+    stats.push([<Clock key="c" />, t('stats.created'), formatDate(d.created_at, lang)]);
+  if (d.license) stats.push([<Scale key="l" />, t('stats.license'), d.license]);
+  if (size > 0) stats.push([<HardDrive key="s" />, t('stats.size'), formatBytes(size, lang)]);
   return (
-    <aside className="flex flex-col gap-4" aria-label={t('detail.about')}>
-      <Card padding="md" className="divide-border divide-y py-2">
-        {d.author && row(<User />, t('stats.author'), d.author)}
-        {row(<Download />, t('stats.downloads'), formatCompact(d.downloads, i18n.language))}
-        {d.follows > 0 &&
-          row(<Heart />, t('stats.follows'), formatCompact(d.follows, i18n.language))}
-        {d.updated_at &&
-          row(<CalendarClock />, t('stats.updated'), formatRelative(d.updated_at, i18n.language))}
-        {d.created_at &&
-          row(<Clock />, t('stats.created'), formatDate(d.created_at, i18n.language))}
-        {d.license && row(<Scale />, t('stats.license'), d.license)}
-        {size > 0 && row(<HardDrive />, t('stats.size'), formatBytes(size, i18n.language))}
-      </Card>
+    <aside
+      className="flex flex-col gap-4 min-[1180px]:sticky min-[1180px]:top-4"
+      aria-label={t('detail.about')}
+    >
+      <section className="rx-surface flex flex-col gap-3 rounded-2xl p-4">
+        <h2 className="text-fg-subtle text-xs font-semibold tracking-wider uppercase">
+          {t('detail.about')}
+        </h2>
+        {d.author && (
+          <p className="flex items-center gap-2.5 text-sm">
+            <ContentIcon id={`author-${d.author}`} name={d.author} size="sm" />
+            <span className="flex min-w-0 flex-col">
+              <span className="text-fg-subtle text-xs">{t('stats.author')}</span>
+              <span className="text-fg truncate font-semibold">{d.author}</span>
+            </span>
+          </p>
+        )}
+        <dl className="grid grid-cols-2 gap-2">
+          {stats.map(([icon, label, value]) => (
+            <div
+              key={label}
+              className="bg-surface-2/60 flex min-w-0 flex-col gap-0.5 rounded-lg px-3 py-2"
+            >
+              <dt className="text-fg-subtle flex items-center gap-1.5 text-xs [&_svg]:size-3.5">
+                <span aria-hidden className="contents">
+                  {icon}
+                </span>
+                {label}
+              </dt>
+              <dd
+                className="text-fg truncate text-sm font-semibold tabular-nums"
+                title={String(value)}
+              >
+                {value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
       {d.categories.length > 0 && (
-        <Card padding="md" className="flex flex-col gap-2">
-          <h3 className="text-fg-subtle text-xs font-semibold tracking-wider uppercase">
+        <section className="rx-surface flex flex-col gap-2 rounded-2xl p-4">
+          <h2 className="text-fg-subtle text-xs font-semibold tracking-wider uppercase">
             {t('detail.categories')}
-          </h3>
+          </h2>
           <div className="flex flex-wrap gap-1.5">
             {d.categories.map((c) => (
-              <Badge key={c}>{t(`categories.${c as 'utility'}`, { defaultValue: c })}</Badge>
+              <Badge key={c} size="md">
+                {t(`categories.${c as 'utility'}`, { defaultValue: c })}
+              </Badge>
             ))}
           </div>
-        </Card>
+        </section>
       )}
       {(links.length > 0 || site) && (
-        <Card padding="md" className="flex flex-col gap-1">
-          <h3 className="text-fg-subtle mb-1 text-xs font-semibold tracking-wider uppercase">
+        <section className="rx-surface flex flex-col gap-1 rounded-2xl p-4">
+          <h2 className="text-fg-subtle mb-1 text-xs font-semibold tracking-wider uppercase">
             {t('detail.links')}
-          </h3>
+          </h2>
           {site && (
             <LinkRow url={site} icon={<Globe className="size-4" />} label={t('detail.link.site')} />
           )}
@@ -867,7 +1016,7 @@ function Sidebar({ detail: d }: { detail: ContentDetail }) {
               label={t(`detail.link.${k as 'source'}`, { defaultValue: k })}
             />
           ))}
-        </Card>
+        </section>
       )}
     </aside>
   );
@@ -894,20 +1043,23 @@ function DetailSkeleton() {
     <Page wide>
       <Skeleton className="h-4 w-48" />
       <div className="rx-surface overflow-hidden rounded-2xl" aria-busy="true">
-        <Skeleton className="h-44 rounded-none" />
-        <div className="flex gap-5 p-6">
-          <Skeleton className="size-24 rounded-2xl" />
-          <div className="flex flex-1 flex-col gap-3">
-            <Skeleton className="h-8 w-64" />
-            <Skeleton className="h-4 w-80" />
-            <Skeleton className="h-4 w-full max-w-xl" />
+        <Skeleton className="h-36 rounded-none lg:h-44" />
+        <div className="grid gap-6 p-6 lg:grid-cols-[minmax(0,1fr)_21rem]">
+          <div className="flex gap-5">
+            <Skeleton className="size-24 rounded-2xl" />
+            <div className="flex flex-1 flex-col gap-3">
+              <Skeleton className="h-8 w-64" />
+              <Skeleton className="h-4 w-80" />
+              <Skeleton className="h-4 w-full max-w-xl" />
+            </div>
           </div>
-          <Skeleton className="h-9 w-40" />
+          <Skeleton className="h-32 rounded-xl" />
         </div>
       </div>
-      <div className="grid grid-cols-[minmax(0,1fr)_300px] gap-6">
+      <Skeleton className="h-11 w-[32rem] max-w-full rounded-xl" />
+      <div className="grid grid-cols-[minmax(0,1fr)_20rem] gap-8 max-[1180px]:grid-cols-1">
         <Skeleton className="h-72 rounded-xl" />
-        <Skeleton className="h-72 rounded-xl" />
+        <Skeleton className="h-72 rounded-2xl" />
       </div>
     </Page>
   );

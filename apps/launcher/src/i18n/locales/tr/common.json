@@ -1,0 +1,437 @@
+{
+  "a11y": {
+    "skipToContent": "İçeriğe geç",
+    "notifications": "Bildirimler"
+  },
+  "actions": {
+    "retry": "Tekrar dene",
+    "back": "Geri",
+    "forward": "İleri",
+    "cancel": "İptal",
+    "close": "Kapat",
+    "clear": "Temizle",
+    "save": "Kaydet",
+    "saved": "Kaydedildi",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "open": "Aç",
+    "install": "Yükle",
+    "installed": "Yüklü",
+    "remove": "Kaldır",
+    "confirm": "Onayla",
+    "continue": "Devam",
+    "next": "Sonraki",
+    "previous": "Önceki",
+    "done": "Bitti",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "learnMore": "Daha fazla bilgi",
+    "seeAll": "Tümünü gör",
+    "create": "Oluştur",
+    "import": "İçe aktar",
+    "browse": "Gözat…",
+    "apply": "Uygula",
+    "reset": "Sıfırla",
+    "enable": "Etkinleştir",
+    "disable": "Devre dışı bırak",
+    "update": "Güncelle",
+    "add": "Ekle",
+    "refresh": "Yenile",
+    "openFolder": "Klasörü aç",
+    "skip": "Atla",
+    "more": "Daha fazla"
+  },
+  "errors": {
+    "generic": "Bir şeyler ters gitti. Birazdan tekrar dene.",
+    "page": {
+      "title": "Bu sayfa görüntülenemedi"
+    },
+    "load": {
+      "title": "Bu yüklenemedi"
+    },
+    "notFound": {
+      "title": "Burada bir şey yok",
+      "description": "Bu sayfa mevcut değil veya taşındı."
+    }
+  },
+  "nav": {
+    "label": "Ana gezinme",
+    "home": "Ana sayfa",
+    "instances": "Profiller",
+    "content": "Keşfet",
+    "servers": "Sunucular",
+    "locker": "Dolap",
+    "store": "Mağaza",
+    "settings": "Ayarlar",
+    "newInstance": "Yeni profil"
+  },
+  "search": {
+    "title": "Ara",
+    "placeholder": "İçerik, arkadaş, sunucu, ayar ara…",
+    "empty": "Sonuç yok. Başka bir kelime dene.",
+    "loading": "Aranıyor…",
+    "hintNavigate": "gezin",
+    "hintOpen": "aç",
+    "hintClose": "kapat",
+    "open": "Aç",
+    "myServer": "Sunucum",
+    "playInstance": "Oyna: {{name}}",
+    "groups": {
+      "pages": "Sayfalar",
+      "actions": "İşlemler",
+      "instances": "Örnekler",
+      "content": "İçerik",
+      "friends": "Arkadaşlar",
+      "servers": "Sunucular",
+      "settings": "Ayarlar",
+      "play": "Oyna"
+    },
+    "actions": {
+      "newInstance": "Örnek oluştur",
+      "newServer": "Sunucu oluştur",
+      "addFriend": "Arkadaş ekle",
+      "darkTheme": "Koyu temaya geç",
+      "lightTheme": "Açık temaya geç"
+    },
+    "settings": {
+      "accounts": "Hesaplar",
+      "game": "Oyun",
+      "launcher": "Başlatıcı",
+      "appearance": "Görünüm",
+      "privacy": "Gizlilik ve veriler",
+      "parental": "Ebeveyn denetimleri",
+      "about": "Hakkında"
+    }
+  },
+  "friends": {
+    "title": "Arkadaşlar",
+    "onlineCount_one": "{{count}} çevrimiçi",
+    "onlineCount_other": "{{count}} çevrimiçi",
+    "add": "Arkadaş ekle",
+    "search": "Arkadaşlarda ara",
+    "requests_one": "İstek · {{count}}",
+    "requests_other": "İstekler · {{count}}",
+    "incoming": "Arkadaş olmak istiyor",
+    "outgoing": "İstek gönderildi",
+    "accept": "Kabul et",
+    "decline": "Reddet",
+    "cancelRequest": "İsteği iptal et",
+    "requestSent": "Arkadaşlık isteği gönderildi: {{name}}",
+    "error": "Arkadaşlar yüklenemedi.",
+    "empty": "Henüz arkadaşın yok. Rustic kullanıcı adıyla birini ekle.",
+    "online_one": "Çevrimiçi · {{count}}",
+    "online_other": "Çevrimiçi · {{count}}",
+    "offline_one": "Çevrimdışı · {{count}}",
+    "offline_other": "Çevrimdışı · {{count}}",
+    "lastSeen": "Son görülme: {{when}}",
+    "activity": {
+      "server": "Oynuyor: {{server}}",
+      "singleplayer": "Tek başına oynuyor",
+      "hosting": "Barındırıyor: {{server}}",
+      "launcher": "Başlatıcıda"
+    },
+    "favorite": "Favori",
+    "makeFavorite": "Favorilere ekle",
+    "unfavorite": "Favorilerden kaldır",
+    "join": "Katıl",
+    "joinAria": "Katıl: {{name}}",
+    "joining": "Katılınıyor: {{server}}…",
+    "more": "Diğer işlemler: {{name}}",
+    "remove": "Arkadaşlıktan çıkar",
+    "removeTitle": "{{name}} arkadaşlarından çıkarılsın mı?",
+    "removeBody": "Artık birbirinizin etkinliğini görmeyeceksiniz. Daha sonra yeni bir istek gönderebilirsin."
+  },
+  "addFriend": {
+    "title": "Arkadaş ekle",
+    "description": "Bir oyuncuyu Rustic adıyla veya bağladığı Minecraft adıyla bul ya da birlikte oynadığın birini seç.",
+    "kind": "Arama ölçütü",
+    "kindRustic": "Rustic adı",
+    "kindMinecraft": "Minecraft adı",
+    "rusticLabel": "Rustic kullanıcı adı",
+    "minecraftLabel": "Minecraft kullanıcı adı",
+    "rusticPlaceholder": "ör. lea_builds",
+    "minecraftPlaceholder": "ör. LeaBuilds",
+    "rusticHint": "Rustic profilindeki adın tam hâli.",
+    "minecraftHint": "Rustic’e o Minecraft profiliyle giriş yapmış bir oyuncunun oyun içi adının tam hâli.",
+    "find": "Bul",
+    "send": "İstek gönder",
+    "sent": "İstek gönderildi",
+    "friends": "Zaten arkadaşsınız",
+    "pending": "İstek bekliyor",
+    "incoming": "Sana zaten arkadaşlık isteği gönderdi: isteğini kabul et.",
+    "minecraftName": "Minecraft adı:",
+    "add": "Ekle",
+    "addAria": "Arkadaşlık isteği gönder: {{name}}",
+    "playedWith": "Son birlikte oynadıkların",
+    "playedWithEmpty": "Henüz kimse yok. Gruplarındaki ve ortak sunuculardaki (en az 10 dakika birlikte) oyuncular burada görünür.",
+    "crossed": "Son karşılaştıkların",
+    "crossedEmpty": "Son zamanlarda ortak bir sunucuda kimseyle karşılaşmadın.",
+    "reasonParty": "Grubunda",
+    "reasonServer": "Sunucu: {{server}}",
+    "reasonSameServer": "Aynı sunucuda",
+    "suggestionsError": "Öneriler yüklenemedi.",
+    "suggestionsOff": "Öneriler kapalı. Karşılaştığın oyuncuları görmek için Ayarlar › Gizlilik ve veriler bölümünde “Karşılaştığım oyuncuların önerilerinde görün” seçeneğini aç.",
+    "suggestionsMinor": "Karşılaştığın oyuncuların önerileri hesabın için kullanılamıyor.",
+    "privacyNote": "Öneriler, son 14 gün içindeki gruplarından ve etkinliğinde paylaştığın sunuculardan gelir. Yalnızca buna izin veren kişiler görünür.",
+    "errors": {
+      "notFoundRustic": "Bu ada sahip Rustic hesabı yok.",
+      "notFoundMinecraft": "Hiçbir Rustic oyuncusu bu Minecraft adını bağlamamış.",
+      "invalidRustic": "Rustic adları 3 ila 20 harf, rakam veya _ içerir.",
+      "invalidMinecraft": "Minecraft adları 3 ila 16 harf, rakam veya _ içerir.",
+      "cannot_add_friend": "Bu oyuncu arkadaşlık isteği alamıyor.",
+      "friend_requests_disabled": "Hesabında arkadaşlık istekleri kapalı (ebeveyn denetimleri).",
+      "cannot_add_self": "Bu sensin!",
+      "already_friends": "Zaten arkadaşsınız.",
+      "request_pending": "Zaten bekleyen bir istek var.",
+      "incoming_request_exists": "Sana zaten istek gönderdi: kabul et.",
+      "rate_limited": "Çok fazla arama yapıldı. Bir dakika bekle, sonra tekrar dene.",
+      "generic": "Bir şeyler ters gitti. Tekrar dene."
+    }
+  },
+  "party": {
+    "title": "Grup",
+    "leave": "Ayrıl",
+    "leader": "Grup lideri",
+    "pending": "{{name}} (davet edildi)",
+    "invite": "Gruba davet et",
+    "invited": "{{name}} grubuna davet edildi"
+  },
+  "presence": {
+    "online": "Çevrimiçi",
+    "in-game": "Oyunda",
+    "away": "Uzakta",
+    "busy": "Meşgul",
+    "offline": "Çevrimdışı"
+  },
+  "notifications": {
+    "title": "Bildirimler",
+    "markAllRead": "Tümünü okundu olarak işaretle",
+    "empty": "Hepsini gördün.",
+    "kinds": {
+      "friend_request": "sana arkadaşlık isteği gönderdi",
+      "update_available": "örneklerin için kullanılabilir",
+      "backup_done": "Zamanlanmış yedekleme tamamlandı",
+      "store_new": "Mağazada yeni"
+    }
+  },
+  "account": {
+    "switcher": "Hesaplar",
+    "none": "Hesap yok",
+    "rustic": "Rustic hesabı",
+    "signInRustic": "Rustic’e giriş yap",
+    "signOutRustic": "Rustic’ten çıkış yap",
+    "gameProfiles": "Oyun profilleri",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Çevrimdışı"
+    },
+    "add": "Hesap ekle",
+    "manage": "Hesapları yönet"
+  },
+  "downloads": {
+    "title": "İndirmeler",
+    "global": "Arka plan indirmeleri",
+    "working": "Çalışılıyor…",
+    "summary_one": "{{count}} indirme sürüyor",
+    "summary_other": "{{count}} indirme sürüyor",
+    "kind": {
+      "game": "Horizon",
+      "content": "İçerik",
+      "modpack": "Mod paketi",
+      "server": "Sunucu",
+      "java": "Java çalışma ortamı",
+      "update": "Başlatıcı güncellemesi",
+      "prepare": "Oyun dosyaları hazırlanıyor",
+      "native-build": "Yerel mod derlemesi",
+      "native-toolchain": "Yerel modlar için Rust"
+    }
+  },
+  "play": {
+    "play": "Oyna",
+    "update": "Güncelle",
+    "cancel": "İptal",
+    "stop": "Durdur",
+    "selectInstance": "Oynanacak örneği seç",
+    "instances": "Örnekler",
+    "manageInstances": "Örnekleri yönet",
+    "newVersion": "{{version}} kullanılabilir",
+    "cancelled": "Başlatma iptal edildi",
+    "status": {
+      "ready": "Oynamaya hazır",
+      "noInstance": "Örnek yok",
+      "running": "Oyun çalışıyor",
+      "update": "Güncelleme gerekli",
+      "broken": "Onarım gerekli"
+    },
+    "progress": {
+      "updating": "Güncelleniyor…",
+      "downloading": "İndiriliyor {{pct}}",
+      "checking": "Dosyalar kontrol ediliyor…",
+      "preparing": "Hazırlanıyor…",
+      "launching": "Başlatılıyor…",
+      "stopping": "Durduruluyor…",
+      "preparingFiles": "Oyun dosyaları hazırlanıyor {{pct}}",
+      "building": "Yerel modlar derleniyor…",
+      "buildingPct": "Yerel modlar derleniyor {{pct}}"
+    },
+    "errors": {
+      "launch": "Oyun başlatılamadı"
+    },
+    "refusals": {
+      "auth_no_account": "Oynamak için oyuna sahip bir Microsoft hesabıyla giriş yap.",
+      "auth_not_owned": "Bu Microsoft hesabı oyuna sahip değil.",
+      "auth_not_approved": "Microsoft ile giriş bu başlatıcı için henüz kullanılamıyor.",
+      "auth_reauth_required": "Oynamak için Microsoft hesabına yeniden giriş yap.",
+      "auth_offline_not_allowed": "Oyuna sahip bir Microsoft hesabıyla bir kez giriş yap, sonra çevrimdışı oynayabilirsin.",
+      "auth_network": "Hesabı kontrol etmek için Microsoft’a ulaşılamadı. Bağlantını kontrol et.",
+      "build_not_installed": "Önce bir Horizon derlemesi yükle.",
+      "prepare_needed": "Bu derlemenin oyun dosyaları henüz hazırlanmadı.",
+      "prepare_failed": "Oyun dosyaları hazırlanamadı: tekrar dene veya Ayarlar › Oyun ve örnekler bölümünden hazırla.",
+      "prepare_no_java": "Java bulunamadı: yükle veya Ayarlar › Oyun ve örnekler bölümünden seç.",
+      "prepare_no_minecraft_dir": "Oyun kurulumun bulunamadı: Ayarlar › Oyun ve örnekler bölümünden klasörünü seç.",
+      "launch_already_running": "Bu örnek zaten çalışıyor.",
+      "native_consent": "Bu örnekte yerel modlar var: önce örnek sayfasında (İçerik) güven bildirimini kabul et.",
+      "native_toolchain": "Yerel modlar Rust gerektirir: örnek sayfasından (İçerik) veya Ayarlar › Oyun ve örnekler bölümünden yükle.",
+      "native_not_edition": "Yerel modlar yalnızca Rustic sürümüne derlenir: bu örneği ona geçir veya yerel modlarını kapat.",
+      "native_build_failed": "Yerel modlar derlenemedi",
+      "native_disk": "Yerel modları derlemek için yeterli boş disk alanı yok."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (Rustic sürümü)",
+    "rusticEdition": "Rustic sürümü"
+  },
+  "compat": {
+    "buildsOnHorizon": "Horizon’unda derlenir",
+    "compatible": "Uyumlu",
+    "incompatible": "Uyumsuz: {{reason}}",
+    "unknown": "Uyumluluk bilinmiyor",
+    "reasons": {
+      "horizon_version": "Horizon sürümü",
+      "java_only": "Yalnızca Java Edition",
+      "side": "yalnızca sunucu tarafı",
+      "conflict": "yüklü bir modla çakışıyor",
+      "unsupported_format": "biçim desteklenmiyor",
+      "needs_rustic_server": "Rustic Server gerektirir",
+      "not_fair_play": "izin verilmiyor (adil oyun)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Ürün değiştir",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Rustic Server belgeleri"
+  },
+  "crumbs": {
+    "label": "Konum",
+    "horizon": "Horizon",
+    "details": "Ayrıntılar",
+    "create": "Oluştur",
+    "kinds": {
+      "mod": "Modlar",
+      "modpack": "Mod paketleri",
+      "resourcepack": "Kaynak paketleri",
+      "shader": "Shader’lar",
+      "datapack": "Veri paketleri",
+      "plugin": "Eklentiler"
+    },
+    "servers": {
+      "featured": "Öne çıkanlar",
+      "mine": "Sunucularım",
+      "multiplayer": "Çok oyunculu listesi",
+      "discover": "Keşif",
+      "joined": "Çok oyunculu listesi",
+      "browse": "Göz at"
+    }
+  },
+  "social": {
+    "title": "Sosyal",
+    "description": "Arkadaşlar, sohbetler ve grubun.",
+    "open": "Sosyal pencereyi aç",
+    "friends": "Arkadaşlar",
+    "chats": "Sohbetler",
+    "message": "Mesaj gönder",
+    "searchChats": "Sohbetlerde ara…",
+    "noChats": "Henüz konuşma yok. Arkadaşlar sekmesinden bir arkadaşına mesaj gönder.",
+    "sayHello": "Merhaba de",
+    "selectTitle": "Bir konuşma seç",
+    "selectBody": "Sohbete başlamak için bir arkadaş seç.",
+    "messagePlaceholder": "Mesaj: {{name}}",
+    "send": "Gönder"
+  },
+  "window": {
+    "minimize": "Simge durumuna küçült",
+    "maximize": "Ekranı kapla",
+    "restore": "Önceki boyut",
+    "close": "Kapat"
+  },
+  "running": {
+    "title": "Çalışan örnekler",
+    "none": "Çalışan oyun yok.",
+    "count_one": "{{count}} örnek çalışıyor",
+    "count_other": "{{count}} örnek çalışıyor",
+    "downloading": "İndiriliyor {{pct}}"
+  },
+  "launch": {
+    "launch": "Oyunu başlat",
+    "update": "Güncelle ve başlat",
+    "stop": "Oyunu durdur"
+  },
+  "deepLink": {
+    "authOk": "Rustic’e giriş yapıldı",
+    "authFailed": "Rustic girişi başarısız oldu",
+    "joining": "Katılınıyor: {{target}}…",
+    "content": "Web sitesinden açılıyor: {{project}}"
+  },
+  "catalog": {
+    "sort": "Sırala",
+    "results_one": "{{count}} sonuç",
+    "results_other": "{{count}} sonuç",
+    "loadMore": "Daha fazla yükle",
+    "loadMoreCount": "{{total}} sonuçtan {{shown}} tanesi gösteriliyor",
+    "carousel": {
+      "prev": "Önceki",
+      "next": "Sonraki",
+      "slide": "{{index}} / {{total}}",
+      "pause": "Slayt gösterisini duraklat",
+      "play": "Slayt gösterisini oynat"
+    },
+    "row": {
+      "seeAll": "Tümünü gör",
+      "seeAllAria": "Tümünü gör: {{title}}",
+      "scrollPrev": "Sola kaydır",
+      "scrollNext": "Sağa kaydır"
+    },
+    "filters": {
+      "button": "Filtreler",
+      "buttonCount": "Filtreler · {{count}}",
+      "reset": "Filtreleri sıfırla"
+    },
+    "layout": {
+      "label": "Düzen",
+      "list": "Liste",
+      "grid": "Izgara"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Güncelleniyor {{pct}}",
+      "installing": "Güncelleme yükleniyor…",
+      "restarting": "Yeniden başlatılıyor…",
+      "deferred": "Oyundan sonra güncelle",
+      "apply": "Güncelle ve yeniden başlat"
+    },
+    "toast": {
+      "launcher": "Rustic Launcher {{version}} indiriliyor…",
+      "edition": "Oyun güncelleniyor (Rustic sürümü)…",
+      "editionDone": "Oyun güncellendi: {{version}}",
+      "deferred": "Bir güncelleme hazır. Oyunu kapattığında yüklenecek.",
+      "restarting": "Rustic Launcher, güncellemeyi tamamlamak için yeniden başlıyor.",
+      "updated": "Rustic Launcher güncellendi: {{version}}",
+      "resuming": "Güncelleme tamam: oyunun başlatılıyor",
+      "failed": "Güncelleme yüklenemedi. Daha sonra yeniden denenecek."
+    }
+  }
+}

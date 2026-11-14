@@ -1,4 +1,5 @@
 /** App, system, settings, downloads, game preparation. Mirrors launcher/docs/IPC.md. */
+import type { LaunchOptions } from './instances';
 
 /** ISO-8601 date-time string (UTC). */
 export type IsoDate = string;
@@ -142,10 +143,57 @@ export interface PrepareProgress {
   message?: string;
 }
 
-export interface LauncherUpdate {
-  available: boolean;
-  version: string | null;
+/** A newer launcher or Rustic edition build (ADR 0162). */
+export interface UpdateItem {
+  version: string;
   notes: string | null;
+  size: number | null;
+  published_at: IsoDate | null;
+}
+
+/**
+ * The update service (ADR 0162): checks at start, before Play, when a game exits, every few hours
+ * and on demand; installs without a prompt when `auto` is on, never while a game runs.
+ */
+export interface UpdateStatus {
+  phase:
+    | 'idle'
+    | 'checking'
+    /** Found; automatic updates are off (or a failed install waits): "Update and restart". */
+    | 'available'
+    /** Found while a game runs: applied as soon as it exits. */
+    | 'deferred'
+    | 'downloading'
+    | 'installing'
+    | 'restarting'
+    /** The last check or install failed; retried later, playing is never blocked. */
+    | 'error';
+  current_version: string;
+  channel: 'stable' | 'beta';
+  /** Settings > Launcher > "Install updates automatically". */
+  auto: boolean;
+  last_check: IsoDate | null;
+  launcher: UpdateItem | null;
+  edition: UpdateItem | null;
+  /** The newest installed Rustic edition build. */
+  edition_current: string | null;
+  /** What `downloading`/`installing` works on. */
+  working_on: 'launcher' | 'edition' | null;
+  /** 0..1 when known. */
+  progress: number | null;
+  error: string | null;
+  /** This launcher was just updated from that version (shown once). */
+  updated_from: string | null;
+  /** A launch interrupted by the update, resumed after the restart. */
+  resume_instance: string | null;
+}
+
+/** A launch an update restart interrupted (`app_take_pending_launch`). */
+export interface PendingLaunch {
+  instance_id: string;
+  options: LaunchOptions | null;
+  /** Unix seconds. */
+  created_at: number;
 }
 
 export interface PickPathRequest {

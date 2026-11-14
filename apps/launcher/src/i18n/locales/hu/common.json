@@ -1,0 +1,437 @@
+{
+  "a11y": {
+    "skipToContent": "Ugrás a tartalomhoz",
+    "notifications": "Értesítések"
+  },
+  "actions": {
+    "retry": "Újra",
+    "back": "Vissza",
+    "forward": "Előre",
+    "cancel": "Mégse",
+    "close": "Bezárás",
+    "clear": "Törlés",
+    "save": "Mentés",
+    "saved": "Mentve",
+    "delete": "Törlés",
+    "edit": "Szerkesztés",
+    "open": "Megnyitás",
+    "install": "Telepítés",
+    "installed": "Telepítve",
+    "remove": "Eltávolítás",
+    "confirm": "Megerősítés",
+    "continue": "Tovább",
+    "next": "Következő",
+    "previous": "Előző",
+    "done": "Kész",
+    "copy": "Másolás",
+    "copied": "Másolva",
+    "learnMore": "További információ",
+    "seeAll": "Összes",
+    "create": "Létrehozás",
+    "import": "Importálás",
+    "browse": "Tallózás…",
+    "apply": "Alkalmaz",
+    "reset": "Visszaállítás",
+    "enable": "Bekapcsolás",
+    "disable": "Kikapcsolás",
+    "update": "Frissítés",
+    "add": "Hozzáadás",
+    "refresh": "Frissítés",
+    "openFolder": "Mappa megnyitása",
+    "skip": "Kihagyás",
+    "more": "Továbbiak"
+  },
+  "errors": {
+    "generic": "Valami hiba történt. Próbáld újra egy kicsit később.",
+    "page": {
+      "title": "Ez az oldal nem jeleníthető meg"
+    },
+    "load": {
+      "title": "Nem sikerült betölteni"
+    },
+    "notFound": {
+      "title": "Itt nincs semmi",
+      "description": "Ez az oldal nem létezik, vagy máshová került."
+    }
+  },
+  "nav": {
+    "label": "Fő navigáció",
+    "home": "Kezdőlap",
+    "instances": "Profilok",
+    "content": "Felfedezés",
+    "servers": "Szerverek",
+    "locker": "Szekrény",
+    "store": "Bolt",
+    "settings": "Beállítások",
+    "newInstance": "Új profil"
+  },
+  "search": {
+    "title": "Keresés",
+    "placeholder": "Tartalmak, barátok, szerverek, beállítások keresése…",
+    "empty": "Nincs találat. Próbálj meg egy másik szót.",
+    "loading": "Keresés…",
+    "hintNavigate": "navigálás",
+    "hintOpen": "megnyitás",
+    "hintClose": "bezárás",
+    "open": "Megnyitás",
+    "myServer": "Saját szerverem",
+    "playInstance": "Játék: {{name}}",
+    "groups": {
+      "pages": "Oldalak",
+      "actions": "Műveletek",
+      "instances": "Példányok",
+      "content": "Tartalom",
+      "friends": "Barátok",
+      "servers": "Szerverek",
+      "settings": "Beállítások",
+      "play": "Játék"
+    },
+    "actions": {
+      "newInstance": "Példány létrehozása",
+      "newServer": "Szerver létrehozása",
+      "addFriend": "Barát hozzáadása",
+      "darkTheme": "Váltás sötét témára",
+      "lightTheme": "Váltás világos témára"
+    },
+    "settings": {
+      "accounts": "Fiókok",
+      "game": "Játék",
+      "launcher": "Launcher",
+      "appearance": "Megjelenés",
+      "privacy": "Adatvédelem és adatok",
+      "parental": "Szülői felügyelet",
+      "about": "Névjegy"
+    }
+  },
+  "friends": {
+    "title": "Barátok",
+    "onlineCount_one": "{{count}} online",
+    "onlineCount_other": "{{count}} online",
+    "add": "Barát hozzáadása",
+    "search": "Barátok keresése",
+    "requests_one": "Kérelem · {{count}}",
+    "requests_other": "Kérelmek · {{count}}",
+    "incoming": "Barátod szeretne lenni",
+    "outgoing": "Kérelem elküldve",
+    "accept": "Elfogadás",
+    "decline": "Elutasítás",
+    "cancelRequest": "Kérelem visszavonása",
+    "requestSent": "Barátkérelem elküldve neki: {{name}}",
+    "error": "Nem sikerült betölteni a barátokat.",
+    "empty": "Még nincsenek barátaid. Adj hozzá valakit a Rustic-felhasználóneve alapján.",
+    "online_one": "Online · {{count}}",
+    "online_other": "Online · {{count}}",
+    "offline_one": "Offline · {{count}}",
+    "offline_other": "Offline · {{count}}",
+    "lastSeen": "Utoljára látva: {{when}}",
+    "activity": {
+      "server": "Játszik itt: {{server}}",
+      "singleplayer": "Egyedül játszik",
+      "hosting": "Szervert futtat: {{server}}",
+      "launcher": "A launcherben"
+    },
+    "favorite": "Kedvenc",
+    "makeFavorite": "Hozzáadás a kedvencekhez",
+    "unfavorite": "Eltávolítás a kedvencek közül",
+    "join": "Csatlakozás",
+    "joinAria": "Csatlakozás hozzá: {{name}}",
+    "joining": "Csatlakozás: {{server}}…",
+    "more": "További műveletek – {{name}}",
+    "remove": "Barát eltávolítása",
+    "removeTitle": "Eltávolítod a(z) {{name}} nevű játékost a barátaid közül?",
+    "removeBody": "Többé nem látjátok egymás tevékenységét. Később újra küldhetsz kérelmet."
+  },
+  "addFriend": {
+    "title": "Barát hozzáadása",
+    "description": "Keress meg egy játékost a Rustic-neve vagy az általa összekapcsolt Minecraft-név alapján, vagy válassz valakit, akivel már játszottál.",
+    "kind": "Keresés ez alapján",
+    "kindRustic": "Rustic-név",
+    "kindMinecraft": "Minecraft-név",
+    "rusticLabel": "Rustic-felhasználónév",
+    "minecraftLabel": "Minecraft-felhasználónév",
+    "rusticPlaceholder": "pl. lea_builds",
+    "minecraftPlaceholder": "pl. LeaBuilds",
+    "rusticHint": "A pontos név a Rustic-profilján.",
+    "minecraftHint": "Annak a játékosnak a pontos játékbeli neve, aki ezzel a Minecraft-profillal jelentkezett be a Rusticba.",
+    "find": "Keresés",
+    "send": "Kérelem küldése",
+    "sent": "Kérelem elküldve",
+    "friends": "Már barátok vagytok",
+    "pending": "Függőben lévő kérelem",
+    "incoming": "Ő már kérte, hogy legyetek barátok: fogadd el a kérelmét.",
+    "minecraftName": "Minecraft-név:",
+    "add": "Hozzáadás",
+    "addAria": "Barátkérelem küldése neki: {{name}}",
+    "playedWith": "Nemrég együtt játszottatok",
+    "playedWithEmpty": "Még senki. Itt jelennek meg a csapataid játékosai és azok, akikkel közös szerveren voltál (legalább 10 percig együtt).",
+    "crossed": "Nemrég láttad",
+    "crossedEmpty": "Mostanában senkivel sem találkoztál közös szerveren.",
+    "reasonParty": "A csapatodban",
+    "reasonServer": "Szerver: {{server}}",
+    "reasonSameServer": "Ugyanazon a szerveren",
+    "suggestionsError": "Nem sikerült betölteni a javaslatokat.",
+    "suggestionsOff": "A javaslatok ki vannak kapcsolva. Kapcsold be a „Megjelenés a találkozott játékosok javaslataiban” opciót a Beállítások › Adatvédelem és adatok alatt, hogy lásd a játékosokat, akikkel találkozol.",
+    "suggestionsMinor": "A találkozott játékosokra vonatkozó javaslatok nem érhetők el a fiókodban.",
+    "privacyNote": "A javaslatok a csapataidból és a tevékenységedben megosztott szerverekből származnak, az elmúlt 14 napból. Csak azok jelennek meg, akik szintén engedélyezik ezt.",
+    "errors": {
+      "notFoundRustic": "Nincs ilyen nevű Rustic-fiók.",
+      "notFoundMinecraft": "Egyetlen Rustic-játékos sem kapcsolta össze ezt a Minecraft-nevet.",
+      "invalidRustic": "A Rustic-nevek 3–20 betűből, számjegyből vagy _ jelből állnak.",
+      "invalidMinecraft": "A Minecraft-nevek 3–16 betűből, számjegyből vagy _ jelből állnak.",
+      "cannot_add_friend": "Ez a játékos nem fogadhat barátkérelmeket.",
+      "friend_requests_disabled": "A barátkérelmek ki vannak kapcsolva a fiókodban (szülői felügyelet).",
+      "cannot_add_self": "Ez te vagy!",
+      "already_friends": "Már barátok vagytok.",
+      "request_pending": "Már van függőben lévő kérelem.",
+      "incoming_request_exists": "Ő már küldött neked kérelmet: fogadd el.",
+      "rate_limited": "Túl sok keresés. Várj egy percet, majd próbáld újra.",
+      "generic": "Valami hiba történt. Próbáld újra."
+    }
+  },
+  "party": {
+    "title": "Csapat",
+    "leave": "Kilépés",
+    "leader": "Csapatvezető",
+    "pending": "{{name}} (meghívva)",
+    "invite": "Meghívás a csapatba",
+    "invited": "{{name}} meghívást kapott a csapatodba"
+  },
+  "presence": {
+    "online": "Online",
+    "in-game": "Játékban",
+    "away": "Távol",
+    "busy": "Elfoglalt",
+    "offline": "Offline"
+  },
+  "notifications": {
+    "title": "Értesítések",
+    "markAllRead": "Összes megjelölése olvasottként",
+    "empty": "Mindent elolvastál.",
+    "kinds": {
+      "friend_request": "barátkérelmet küldött neked",
+      "update_available": "elérhető a példányaidhoz",
+      "backup_done": "Az ütemezett biztonsági mentés elkészült",
+      "store_new": "Újdonság a boltban"
+    }
+  },
+  "account": {
+    "switcher": "Fiókok",
+    "none": "Nincs fiók",
+    "rustic": "Rustic-fiók",
+    "signInRustic": "Bejelentkezés a Rusticba",
+    "signOutRustic": "Kijelentkezés a Rusticból",
+    "gameProfiles": "Játékprofilok",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Offline"
+    },
+    "add": "Fiók hozzáadása",
+    "manage": "Fiókok kezelése"
+  },
+  "downloads": {
+    "title": "Letöltések",
+    "global": "Háttérletöltések",
+    "working": "Folyamatban…",
+    "summary_one": "{{count}} letöltés folyamatban",
+    "summary_other": "{{count}} letöltés folyamatban",
+    "kind": {
+      "game": "Horizon",
+      "content": "Tartalom",
+      "modpack": "Modcsomag",
+      "server": "Szerver",
+      "java": "Java-futtatókörnyezet",
+      "update": "Launcher-frissítés",
+      "prepare": "Játékfájlok előkészítése",
+      "native-build": "Natív modok fordítása",
+      "native-toolchain": "Rust a natív modokhoz"
+    }
+  },
+  "play": {
+    "play": "Játék",
+    "update": "Frissítés",
+    "cancel": "Mégse",
+    "stop": "Leállítás",
+    "selectInstance": "Válaszd ki az indítandó példányt",
+    "instances": "Példányok",
+    "manageInstances": "Példányok kezelése",
+    "newVersion": "Elérhető: {{version}}",
+    "cancelled": "Indítás megszakítva",
+    "status": {
+      "ready": "Indulásra kész",
+      "noInstance": "Nincs példány",
+      "running": "A játék fut",
+      "update": "Frissítés szükséges",
+      "broken": "Javítás szükséges"
+    },
+    "progress": {
+      "updating": "Frissítés…",
+      "downloading": "Letöltés: {{pct}}",
+      "checking": "Fájlok ellenőrzése…",
+      "preparing": "Előkészítés…",
+      "launching": "Indítás…",
+      "stopping": "Leállítás…",
+      "preparingFiles": "Játékfájlok előkészítése: {{pct}}",
+      "building": "Natív modok fordítása…",
+      "buildingPct": "Natív modok fordítása: {{pct}}"
+    },
+    "errors": {
+      "launch": "Nem sikerült elindítani a játékot"
+    },
+    "refusals": {
+      "auth_no_account": "A játékhoz jelentkezz be egy olyan Microsoft-fiókkal, amely rendelkezik a játékkal.",
+      "auth_not_owned": "Ez a Microsoft-fiók nem rendelkezik a játékkal.",
+      "auth_not_approved": "A Microsoft-bejelentkezés még nem érhető el ehhez a launcherhez.",
+      "auth_reauth_required": "A játékhoz jelentkezz be újra a Microsoft-fiókodba.",
+      "auth_offline_not_allowed": "Jelentkezz be egyszer egy olyan Microsoft-fiókkal, amely rendelkezik a játékkal, utána offline is játszhatsz.",
+      "auth_network": "Nem sikerült elérni a Microsoftot a fiók ellenőrzéséhez. Ellenőrizd a kapcsolatodat.",
+      "build_not_installed": "Előbb telepíts egy Horizon-buildet.",
+      "prepare_needed": "Ennek a buildnek a játékfájljai még nincsenek előkészítve.",
+      "prepare_failed": "Nem sikerült előkészíteni a játékfájlokat: próbáld újra, vagy készítsd elő őket a Beállítások › Játék és példányok alatt.",
+      "prepare_no_java": "A Java nem található: telepítsd, vagy válaszd ki a Beállítások › Játék és példányok alatt.",
+      "prepare_no_minecraft_dir": "A játék telepítése nem található: válaszd ki a mappáját a Beállítások › Játék és példányok alatt.",
+      "launch_already_running": "Ez a példány már fut.",
+      "native_consent": "Ebben a példányban natív modok vannak: előbb fogadd el a biztonsági figyelmeztetésüket a példány oldalán (Tartalom).",
+      "native_toolchain": "A natív modokhoz Rust kell: telepítsd a példány oldaláról (Tartalom) vagy a Beállítások › Játék és példányok alól.",
+      "native_not_edition": "A natív modok csak a Rustic kiadásba fordíthatók be: állítsd át erre a példányt, vagy kapcsold ki a natív modjait.",
+      "native_build_failed": "Nem sikerült lefordítani a natív modokat",
+      "native_disk": "Nincs elég szabad lemezterület a natív modok fordításához."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (Rustic kiadás)",
+    "rusticEdition": "Rustic kiadás"
+  },
+  "compat": {
+    "buildsOnHorizon": "Lefordítható a Horizonodra",
+    "compatible": "Kompatibilis",
+    "incompatible": "Nem kompatibilis: {{reason}}",
+    "unknown": "Ismeretlen kompatibilitás",
+    "reasons": {
+      "horizon_version": "Horizon-verzió",
+      "java_only": "csak Java Edition",
+      "side": "csak szerveroldali",
+      "conflict": "ütközik egy telepített moddal",
+      "unsupported_format": "nem támogatott formátum",
+      "needs_rustic_server": "Rustic Server szükséges",
+      "not_fair_play": "nem engedélyezett (fair play)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Termékváltás",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Rustic Server dokumentáció"
+  },
+  "crumbs": {
+    "label": "Navigációs útvonal",
+    "horizon": "Horizon",
+    "details": "Részletek",
+    "create": "Létrehozás",
+    "kinds": {
+      "mod": "Modok",
+      "modpack": "Modcsomagok",
+      "resourcepack": "Forráscsomagok",
+      "shader": "Shaderek",
+      "datapack": "Adatcsomagok",
+      "plugin": "Bővítmények"
+    },
+    "servers": {
+      "featured": "Kiemelt",
+      "mine": "Saját szervereim",
+      "multiplayer": "Többjátékos lista",
+      "discover": "Ajánlott",
+      "joined": "Többjátékos lista",
+      "browse": "Böngészés"
+    }
+  },
+  "social": {
+    "title": "Közösség",
+    "description": "Barátok, csevegések és a csapatod.",
+    "open": "Közösség megnyitása",
+    "friends": "Barátok",
+    "chats": "Csevegések",
+    "message": "Üzenet küldése",
+    "searchChats": "Csevegések keresése…",
+    "noChats": "Még nincsenek beszélgetések. Írj egy barátodnak a Barátok fülön.",
+    "sayHello": "Köszönj neki",
+    "selectTitle": "Válassz egy beszélgetést",
+    "selectBody": "Válassz egy barátot a csevegés elkezdéséhez.",
+    "messagePlaceholder": "Üzenet neki: {{name}}",
+    "send": "Küldés"
+  },
+  "window": {
+    "minimize": "Kis méret",
+    "maximize": "Teljes méret",
+    "restore": "Előző méret",
+    "close": "Bezárás"
+  },
+  "running": {
+    "title": "Futó példányok",
+    "none": "Nem fut játék.",
+    "count_one": "{{count}} példány fut",
+    "count_other": "{{count}} példány fut",
+    "downloading": "Letöltés: {{pct}}"
+  },
+  "launch": {
+    "launch": "Játék indítása",
+    "update": "Frissítés és indítás",
+    "stop": "Játék leállítása"
+  },
+  "deepLink": {
+    "authOk": "Bejelentkeztél a Rusticba",
+    "authFailed": "A Rustic-bejelentkezés nem sikerült",
+    "joining": "Csatlakozás: {{target}}…",
+    "content": "Megnyitás a weboldalról: {{project}}"
+  },
+  "catalog": {
+    "sort": "Rendezés",
+    "results_one": "{{count}} találat",
+    "results_other": "{{count}} találat",
+    "loadMore": "Továbbiak betöltése",
+    "loadMoreCount": "{{shown}} / {{total}} megjelenítve",
+    "carousel": {
+      "prev": "Előző",
+      "next": "Következő",
+      "slide": "{{index}} / {{total}}",
+      "pause": "Diavetítés szüneteltetése",
+      "play": "Diavetítés lejátszása"
+    },
+    "row": {
+      "seeAll": "Összes",
+      "seeAllAria": "Összes: {{title}}",
+      "scrollPrev": "Görgetés balra",
+      "scrollNext": "Görgetés jobbra"
+    },
+    "filters": {
+      "button": "Szűrők",
+      "buttonCount": "Szűrők · {{count}}",
+      "reset": "Szűrők visszaállítása"
+    },
+    "layout": {
+      "label": "Elrendezés",
+      "list": "Lista",
+      "grid": "Rács"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Frissítés: {{pct}}",
+      "installing": "A frissítés telepítése…",
+      "restarting": "Újraindítás…",
+      "deferred": "Frissítés a játék után",
+      "apply": "Frissítés és újraindítás"
+    },
+    "toast": {
+      "launcher": "Rustic Launcher letöltése ({{version}})…",
+      "edition": "A játék frissítése (Rustic kiadás)…",
+      "editionDone": "Játék frissítve: {{version}}",
+      "deferred": "Egy frissítés készen áll. A játék bezárásakor települ.",
+      "restarting": "A Rustic Launcher újraindul a frissítés befejezéséhez.",
+      "updated": "Rustic Launcher frissítve. Új verzió: {{version}}",
+      "resuming": "A frissítés kész: indul a játékod",
+      "failed": "A frissítést nem sikerült telepíteni. Később újra próbálkozunk."
+    }
+  }
+}

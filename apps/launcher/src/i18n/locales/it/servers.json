@@ -176,7 +176,8 @@
       "capDataFolder": "Propria cartella di dati",
       "eula": "Accetto l'EULA di Minecraft",
       "eulaHint": "È necessaria per gestire un server. La accetti tu; Rustic non la accetta al posto tuo.",
-      "eulaRead": "Leggi l'EULA"
+      "eulaRead": "Leggi l'EULA",
+      "eulaTitle": "EULA di Minecraft"
     },
     "world": {
       "title": "Mondo",
@@ -214,7 +215,10 @@
       "pickInstance": "Scegli un'istanza",
       "world": "Mondo",
       "pickWorld": "Scegli un mondo",
-      "noWorlds": "Nessun mondo in questa istanza"
+      "noWorlds": "Nessun mondo in questa istanza",
+      "newDesc": "Un mondo nuovo da un seme, con le tue regole.",
+      "importDesc": "Una cartella del mondo dal tuo PC o da un backup.",
+      "fromInstanceDesc": "Un mondo giocato in uno dei tuoi profili."
     },
     "type": {
       "memory": "Memoria del server (RAM)",
@@ -266,7 +270,20 @@
       "generateKey": "Genera prima una chiave, poi aggiungila al tuo VPS.",
       "password": "Inserisci la password."
     },
-    "heading": "Crea un *server*"
+    "heading": "Crea un *server*",
+    "stepHints": {
+      "basics": "Dagli un nome, scegli cosa esegue e il mondo di partenza.",
+      "hosting": "Scegli la macchina che lo esegue e quanta memoria riceve.",
+      "access": "Scegli come entrano i tuoi amici. Puoi cambiarlo in seguito."
+    },
+    "sections": {
+      "identity": "Nome e icona"
+    },
+    "preview": {
+      "title": "Anteprima",
+      "unnamed": "Il tuo server",
+      "draft": "non ancora creato"
+    }
   },
   "hosting": {
     "local": {
@@ -464,7 +481,17 @@
       "port": "Porta",
       "memory": "Memoria",
       "created": "Creato",
-      "folder": "Cartella"
+      "folder": "Cartella",
+      "uptime": "Tempo di attività",
+      "startedAt": "Avvio: {{time}}",
+      "lastSession": "Ultima sessione",
+      "lastStarted": "Ultimo avvio: {{when}}",
+      "neverStarted": "Mai avviato",
+      "lastLines": "Ultime righe della console",
+      "noLines": "Ancora nessun registro.",
+      "openConsole": "Apri la console",
+      "crashedTitle": "Il server si è arrestato in modo imprevisto",
+      "crashedBody": "Controlla le ultime righe della console, poi riavvialo."
     },
     "console": {
       "filter": "Filtra righe",

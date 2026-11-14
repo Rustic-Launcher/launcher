@@ -44,7 +44,13 @@
     "nightly": "Nightly",
     "installed": "Installiert",
     "submit": "Instanz erstellen",
-    "created": "{{name}} ist bereit"
+    "created": "{{name}} ist bereit",
+    "preview": "Vorschau",
+    "edition": "Edition",
+    "editionRustic": "Kosmetik, Freunde und native Mods im Spiel.",
+    "editionHorizon": "Horizon so, wie sein Team es veröffentlicht, ohne Zusätze.",
+    "noBuild": "Für diese Edition wird gerade kein Build angeboten.",
+    "nightlyHint": "Nightly-Builds erscheinen täglich aus Horizons neuestem Code: neuer, weniger getestet."
   },
   "icons": {
     "grass": "Spross",
@@ -77,7 +83,15 @@
     },
     "started": "{{name}} wird importiert",
     "background": "Es läuft im Hintergrund weiter; du kannst den Launcher weiter nutzen.",
-    "note": "Nur Inhalte, die mit Horizon funktionieren, werden installiert; der Rest wird mit Grund aufgelistet."
+    "note": "Nur Inhalte, die mit Horizon funktionieren, werden installiert; der Rest wird mit Grund aufgelistet.",
+    "drop": {
+      "title": "Zieh ein Pack oder einen Instanzordner hierher",
+      "hint": "Modrinth-.mrpack, CurseForge-.zip oder ein Prism- oder MultiMC-Instanzordner",
+      "choose": "Datei auswählen",
+      "active": "Zum Importieren loslassen",
+      "unsupported": "Das lässt sich nicht importieren. Nutze eine .mrpack-Datei, eine CurseForge-.zip oder einen Instanzordner."
+    },
+    "formats": "Unterstützte Formate"
   },
   "detail": {
     "notFound": "Diese Instanz existiert nicht mehr",

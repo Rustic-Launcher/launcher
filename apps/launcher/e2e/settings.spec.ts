@@ -40,7 +40,7 @@ test.describe('settings', () => {
     // Translated first; a language shown in English says so.
     const groups = list.locator('[cmdk-group-heading]');
     await expect(groups).toHaveText(['Translated', 'Other languages']);
-    await expect(app.getByTestId('language-select-ja_jp')).toContainText('in English for now');
+    await expect(app.getByTestId('language-select-da_dk')).toContainText('in English for now');
     await expect(app.getByTestId('language-select-de_de').locator('[data-flag] svg')).toBeVisible();
     // Search by English name, native name or code, accents ignored.
     await app.getByTestId('language-select-search').fill('portugues');
@@ -50,6 +50,29 @@ test.describe('settings', () => {
     await expect(app.getByTestId('rail-home')).toHaveAccessibleName('Startseite');
     await expect(app.locator('html')).toHaveAttribute('lang', /^de/);
     await expect(app.getByRole('heading', { level: 1, name: 'Einstellungen' })).toBeVisible();
+  });
+
+  test('Japanese, Russian, Chinese, Czech, Thai and European Portuguese are translated', async ({
+    app,
+  }) => {
+    await app.goto('/#/settings?section=launcher');
+    for (const [search, code, home, title, lang] of [
+      ['japanese', 'ja_jp', 'ホーム', '設定', /^ja/],
+      ['russian', 'ru_ru', 'Главная', 'Настройки', /^ru/],
+      ['traditional', 'zh_tw', '首頁', '設定', /^zh-TW/],
+      ['czech', 'cs_cz', 'Domů', 'Nastavení', /^cs/],
+      ['thai', 'th_th', 'หน้าหลัก', 'การตั้งค่า', /^th/],
+      ['portugal', 'pt_pt', 'Início', 'Definições', /^pt-PT/],
+    ] as const) {
+      await app.getByTestId('language-select').click();
+      await app.getByTestId('language-select-search').fill(search);
+      await app.getByTestId(`language-select-${code}`).click();
+      await expect(app.getByTestId('rail-home')).toHaveAccessibleName(home);
+      await expect(app.locator('html')).toHaveAttribute('lang', lang);
+      await expect(app.getByRole('heading', { level: 1, name: title })).toBeVisible();
+    }
+    await app.getByTestId('language-select').click();
+    await app.getByTestId('language-select-en_us').click();
   });
 
   test('a language without a translation shows English, right to left when it is written so', async ({

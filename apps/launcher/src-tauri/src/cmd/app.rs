@@ -10,12 +10,12 @@ use std::path::PathBuf;
 use tauri::{AppHandle, Emitter};
 use tauri_plugin_dialog::DialogExt;
 use tauri_plugin_opener::OpenerExt;
-use tauri_plugin_updater::UpdaterExt;
 
 #[tauri::command]
-pub fn app_info(state: State<'_>) -> AppInfo {
+pub fn app_info(app: AppHandle, state: State<'_>) -> AppInfo {
     AppInfo {
-        version: rusticmc_launcher_core::VERSION.into(),
+        // The bundle's version (tauri.conf.json), what the updater compares.
+        version: app.package_info().version.to_string(),
         channel: "stable",
         os: match std::env::consts::OS {
             "windows" => "windows",
@@ -97,6 +97,9 @@ pub fn settings_set(state: State<'_>, args: SettingsPatch) -> Res<Settings> {
     state.save_config(config)?;
     state.save_settings(&settings)?;
     *state.settings.lock().expect("settings") = settings.clone();
+    if state.updates.status().auto != settings.launcher.auto_update {
+        crate::update::auto_changed(state.inner(), settings.launcher.auto_update);
+    }
     Ok(settings)
 }
 
@@ -239,64 +242,36 @@ pub async fn app_pick_path(app: AppHandle, args: PickPathRequest) -> Res<Option<
         .map(|p| p.display().to_string()))
 }
 
+/// The update service's state (ADR 0162).
 #[tauri::command]
-pub async fn app_check_update(app: AppHandle) -> Res<LauncherUpdate> {
-    let updater = app
-        .updater()
-        .map_err(|e| IpcError::unavailable(e.to_string()))?;
-    match updater.check().await {
-        Ok(Some(u)) => Ok(LauncherUpdate {
-            available: true,
-            version: Some(u.version.clone()),
-            notes: u.body.clone(),
-        }),
-        Ok(None) => Ok(LauncherUpdate {
-            available: false,
-            version: None,
-            notes: None,
-        }),
-        Err(e) => Err(IpcError::new(IpcErrorCode::Network, e.to_string())),
-    }
+pub fn app_update_status(state: State<'_>) -> UpdateStatus {
+    state.updates.status()
 }
 
+/// "Check now": asks the feeds; with automatic updates on, installs what it finds (a running
+/// game defers it). Resolves with the state after the check.
 #[tauri::command]
-pub async fn app_install_update(app: AppHandle, state: State<'_>) -> Res<()> {
-    let updater = app
-        .updater()
-        .map_err(|e| IpcError::unavailable(e.to_string()))?;
-    let update = updater
-        .check()
-        .await
-        .map_err(|e| IpcError::new(IpcErrorCode::Network, e.to_string()))?
-        .ok_or_else(|| IpcError::not_found("no update available"))?;
-    let (task, _) = state.tasks.start(
-        "update",
-        format!("Rustic Launcher {}", update.version),
-        None,
-        None,
-    );
-    let tasks = state.tasks.clone();
-    let task2 = task.clone();
-    let mut received = 0u64;
-    let result = update
-        .download_and_install(
-            move |chunk, total| {
-                received += chunk as u64;
-                tasks.bytes(&task2, received, total);
-            },
-            || {},
-        )
-        .await;
-    match result {
-        Ok(()) => {
-            state.tasks.finish(&task);
-            app.restart();
-        }
-        Err(e) => {
-            state.tasks.fail(&task, e.to_string());
-            Err(IpcError::new(IpcErrorCode::Network, e.to_string()))
-        }
+pub async fn app_update_check(state: State<'_>) -> Res<UpdateStatus> {
+    crate::update::run(state.inner(), crate::update::Trigger::Manual, None).await;
+    Ok(state.updates.status())
+}
+
+/// "Update and restart": installs what the last check found, automatic updates on or off. A
+/// running game is never closed: the launcher's own update then waits for it to exit.
+#[tauri::command]
+pub async fn app_update_apply(state: State<'_>) -> Res<UpdateStatus> {
+    let s = state.updates.status();
+    if s.launcher.is_none() && s.edition.is_none() {
+        return Err(IpcError::not_found("no update available"));
     }
+    crate::update::run(state.inner(), crate::update::Trigger::Apply, None).await;
+    Ok(state.updates.status())
+}
+
+/// The launch an update restart interrupted, taken once (the UI starts it again).
+#[tauri::command]
+pub fn app_take_pending_launch(state: State<'_>) -> Option<PendingLaunch> {
+    state.updates.take_pending_launch()
 }
 
 #[tauri::command]

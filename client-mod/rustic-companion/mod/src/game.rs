@@ -31,6 +31,10 @@ impl Hooks for Companion {
     fn frame(&self, host: &mut dyn Host, _event: &mut FrameEvent) {
         let theme = lock().cfg.rustic_theme;
         crate::skin::ON.store(theme, std::sync::atomic::Ordering::Relaxed);
+        // The theme off gives the game's own Options back (its Language page included).
+        if horizon_client::options_shell::on() != theme {
+            horizon_client::options_shell::install(theme, !theme);
+        }
         crate::title_menu::frame(host);
     }
 

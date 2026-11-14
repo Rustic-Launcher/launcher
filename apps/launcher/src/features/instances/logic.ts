@@ -154,3 +154,22 @@ export function initials(name: string): string {
   const words = name.split(/\s+/).filter(Boolean);
   return ((words[0]?.[0] ?? '') + (words[1]?.[0] ?? words[0]?.[1] ?? '')).toUpperCase();
 }
+
+/** The file kinds the New instance dialog imports (`instance_import`). */
+export type ImportKind = 'folder' | 'mrpack' | 'curseforge_zip';
+
+/** The import kind a dropped or picked path is read as, or null when it can't be imported. */
+export function importKindOf(path: string): ImportKind | null {
+  const base =
+    path
+      .replace(/[\\/]+$/, '')
+      .split(/[\\/]/)
+      .pop() ?? '';
+  const lower = base.toLowerCase();
+  if (lower.endsWith('.mrpack')) return 'mrpack';
+  if (lower.endsWith('.zip')) return 'curseforge_zip';
+  // No file extension (a version number like `5.4.1` is not one): an instance folder, which the
+  // desktop side checks.
+  if (base && !/\.[a-z][a-z0-9]{0,7}$/i.test(base)) return 'folder';
+  return null;
+}

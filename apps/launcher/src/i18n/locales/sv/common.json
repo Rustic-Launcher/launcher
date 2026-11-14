@@ -1,0 +1,437 @@
+{
+  "a11y": {
+    "skipToContent": "Hoppa till innehållet",
+    "notifications": "Aviseringar"
+  },
+  "actions": {
+    "retry": "Försök igen",
+    "back": "Tillbaka",
+    "forward": "Framåt",
+    "cancel": "Avbryt",
+    "close": "Stäng",
+    "clear": "Rensa",
+    "save": "Spara",
+    "saved": "Sparat",
+    "delete": "Ta bort",
+    "edit": "Redigera",
+    "open": "Öppna",
+    "install": "Installera",
+    "installed": "Installerat",
+    "remove": "Ta bort",
+    "confirm": "Bekräfta",
+    "continue": "Fortsätt",
+    "next": "Nästa",
+    "previous": "Föregående",
+    "done": "Klar",
+    "copy": "Kopiera",
+    "copied": "Kopierat",
+    "learnMore": "Läs mer",
+    "seeAll": "Visa alla",
+    "create": "Skapa",
+    "import": "Importera",
+    "browse": "Bläddra…",
+    "apply": "Verkställ",
+    "reset": "Återställ",
+    "enable": "Aktivera",
+    "disable": "Inaktivera",
+    "update": "Uppdatera",
+    "add": "Lägg till",
+    "refresh": "Uppdatera",
+    "openFolder": "Öppna mapp",
+    "skip": "Hoppa över",
+    "more": "Mer"
+  },
+  "errors": {
+    "generic": "Något gick fel. Försök igen om en stund.",
+    "page": {
+      "title": "Sidan kunde inte visas"
+    },
+    "load": {
+      "title": "Det gick inte att läsa in"
+    },
+    "notFound": {
+      "title": "Här finns inget",
+      "description": "Sidan finns inte eller har flyttats."
+    }
+  },
+  "nav": {
+    "label": "Huvudnavigering",
+    "home": "Hem",
+    "instances": "Profiler",
+    "content": "Utforska",
+    "servers": "Servrar",
+    "locker": "Skåp",
+    "store": "Butik",
+    "settings": "Inställningar",
+    "newInstance": "Ny profil"
+  },
+  "search": {
+    "title": "Sök",
+    "placeholder": "Sök innehåll, vänner, servrar, inställningar…",
+    "empty": "Inga resultat. Prova ett annat ord.",
+    "loading": "Söker…",
+    "hintNavigate": "navigera",
+    "hintOpen": "öppna",
+    "hintClose": "stäng",
+    "open": "Öppna",
+    "myServer": "Min server",
+    "playInstance": "Spela {{name}}",
+    "groups": {
+      "pages": "Sidor",
+      "actions": "Åtgärder",
+      "instances": "Instanser",
+      "content": "Innehåll",
+      "friends": "Vänner",
+      "servers": "Servrar",
+      "settings": "Inställningar",
+      "play": "Spela"
+    },
+    "actions": {
+      "newInstance": "Skapa en instans",
+      "newServer": "Skapa en server",
+      "addFriend": "Lägg till en vän",
+      "darkTheme": "Byt till mörkt tema",
+      "lightTheme": "Byt till ljust tema"
+    },
+    "settings": {
+      "accounts": "Konton",
+      "game": "Spel",
+      "launcher": "Launcher",
+      "appearance": "Utseende",
+      "privacy": "Integritet och data",
+      "parental": "Föräldrakontroll",
+      "about": "Om"
+    }
+  },
+  "friends": {
+    "title": "Vänner",
+    "onlineCount_one": "{{count}} online",
+    "onlineCount_other": "{{count}} online",
+    "add": "Lägg till en vän",
+    "search": "Sök bland vänner",
+    "requests_one": "Förfrågan · {{count}}",
+    "requests_other": "Förfrågningar · {{count}}",
+    "incoming": "Vill bli din vän",
+    "outgoing": "Förfrågan skickad",
+    "accept": "Acceptera",
+    "decline": "Avböj",
+    "cancelRequest": "Återkalla förfrågan",
+    "requestSent": "Vänförfrågan skickad till {{name}}",
+    "error": "Det gick inte att läsa in vänner.",
+    "empty": "Inga vänner än. Lägg till någon med deras Rustic-användarnamn.",
+    "online_one": "Online · {{count}}",
+    "online_other": "Online · {{count}}",
+    "offline_one": "Offline · {{count}}",
+    "offline_other": "Offline · {{count}}",
+    "lastSeen": "Sågs {{when}}",
+    "activity": {
+      "server": "Spelar på {{server}}",
+      "singleplayer": "Spelar solo",
+      "hosting": "Är värd för {{server}}",
+      "launcher": "I launchern"
+    },
+    "favorite": "Favorit",
+    "makeFavorite": "Lägg till i favoriter",
+    "unfavorite": "Ta bort från favoriter",
+    "join": "Gå med",
+    "joinAria": "Anslut till {{name}}",
+    "joining": "Ansluter till {{server}}…",
+    "more": "Fler åtgärder för {{name}}",
+    "remove": "Ta bort vän",
+    "removeTitle": "Ta bort {{name}} från dina vänner?",
+    "removeBody": "Ni kommer inte längre att se varandras aktivitet. Du kan skicka en ny förfrågan senare."
+  },
+  "addFriend": {
+    "title": "Lägg till en vän",
+    "description": "Hitta en spelare med deras Rustic-namn eller det Minecraft-namn de har länkat, eller välj någon du har spelat med.",
+    "kind": "Sök efter",
+    "kindRustic": "Rustic-namn",
+    "kindMinecraft": "Minecraft-namn",
+    "rusticLabel": "Rustic-användarnamn",
+    "minecraftLabel": "Minecraft-användarnamn",
+    "rusticPlaceholder": "t.ex. lea_builds",
+    "minecraftPlaceholder": "t.ex. LeaBuilds",
+    "rusticHint": "Exakt det namn som står på deras Rustic-profil.",
+    "minecraftHint": "Exakt det spelnamn som en spelare har när hen loggat in på Rustic med den Minecraft-profilen.",
+    "find": "Sök",
+    "send": "Skicka förfrågan",
+    "sent": "Förfrågan skickad",
+    "friends": "Redan vänner",
+    "pending": "Förfrågan väntar",
+    "incoming": "Hen har redan frågat om att bli din vän: acceptera förfrågan.",
+    "minecraftName": "Minecraft-namn:",
+    "add": "Lägg till",
+    "addAria": "Skicka en vänförfrågan till {{name}}",
+    "playedWith": "Har spelat med nyligen",
+    "playedWithEmpty": "Ingen än. Spelare från dina grupper och från gemensamma servrar (10 minuter eller mer tillsammans) visas här.",
+    "crossed": "Sedda nyligen",
+    "crossedEmpty": "Ingen har korsat din väg nyligen på en gemensam server.",
+    "reasonParty": "I din grupp",
+    "reasonServer": "På {{server}}",
+    "reasonSameServer": "På samma server",
+    "suggestionsError": "Det gick inte att läsa in förslag.",
+    "suggestionsOff": "Förslag är avstängda. Slå på ”Visas i förslag för spelare jag möter” i Inställningar › Integritet och data för att se spelarna du möter.",
+    "suggestionsMinor": "Förslag på spelare du möter är inte tillgängliga för ditt konto.",
+    "privacyNote": "Förslagen kommer från dina grupper och de servrar ni delar i din aktivitet under de senaste 14 dagarna. Bara personer som också tillåter det visas.",
+    "errors": {
+      "notFoundRustic": "Inget Rustic-konto har det namnet.",
+      "notFoundMinecraft": "Ingen Rustic-spelare har länkat det Minecraft-namnet.",
+      "invalidRustic": "Rustic-namn har 3 till 20 bokstäver, siffror eller _.",
+      "invalidMinecraft": "Minecraft-namn har 3 till 16 bokstäver, siffror eller _.",
+      "cannot_add_friend": "Den här spelaren kan inte ta emot vänförfrågningar.",
+      "friend_requests_disabled": "Vänförfrågningar är avstängda för ditt konto (föräldrakontroll).",
+      "cannot_add_self": "Det är ju du!",
+      "already_friends": "Ni är redan vänner.",
+      "request_pending": "En förfrågan väntar redan.",
+      "incoming_request_exists": "Hen har redan skickat en förfrågan till dig: acceptera den.",
+      "rate_limited": "För många sökningar. Vänta en minut och försök sedan igen.",
+      "generic": "Något gick fel. Försök igen."
+    }
+  },
+  "party": {
+    "title": "Grupp",
+    "leave": "Lämna",
+    "leader": "Gruppledare",
+    "pending": "{{name}} (inbjuden)",
+    "invite": "Bjud in till gruppen",
+    "invited": "{{name}} har bjudits in till din grupp"
+  },
+  "presence": {
+    "online": "Online",
+    "in-game": "I spelet",
+    "away": "Borta",
+    "busy": "Upptagen",
+    "offline": "Offline"
+  },
+  "notifications": {
+    "title": "Aviseringar",
+    "markAllRead": "Markera alla som lästa",
+    "empty": "Du har inget nytt.",
+    "kinds": {
+      "friend_request": "skickade en vänförfrågan till dig",
+      "update_available": "finns tillgänglig för dina instanser",
+      "backup_done": "Schemalagd säkerhetskopiering klar",
+      "store_new": "Nytt i butiken"
+    }
+  },
+  "account": {
+    "switcher": "Konton",
+    "none": "Inget konto",
+    "rustic": "Rustic-konto",
+    "signInRustic": "Logga in på Rustic",
+    "signOutRustic": "Logga ut från Rustic",
+    "gameProfiles": "Spelprofiler",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Offline"
+    },
+    "add": "Lägg till ett konto",
+    "manage": "Hantera konton"
+  },
+  "downloads": {
+    "title": "Nedladdningar",
+    "global": "Nedladdningar i bakgrunden",
+    "working": "Arbetar…",
+    "summary_one": "{{count}} nedladdning pågår",
+    "summary_other": "{{count}} nedladdningar pågår",
+    "kind": {
+      "game": "Horizon",
+      "content": "Innehåll",
+      "modpack": "Modpaket",
+      "server": "Server",
+      "java": "Java-körmiljö",
+      "update": "Uppdatering av launchern",
+      "prepare": "Förbereder spelfiler",
+      "native-build": "Bygge av native-moddar",
+      "native-toolchain": "Rust för native-moddar"
+    }
+  },
+  "play": {
+    "play": "Spela",
+    "update": "Uppdatera",
+    "cancel": "Avbryt",
+    "stop": "Stoppa",
+    "selectInstance": "Välj instansen att spela",
+    "instances": "Instanser",
+    "manageInstances": "Hantera instanser",
+    "newVersion": "{{version}} finns tillgänglig",
+    "cancelled": "Starten avbröts",
+    "status": {
+      "ready": "Redo att spela",
+      "noInstance": "Ingen instans",
+      "running": "Spelet körs",
+      "update": "Uppdatering krävs",
+      "broken": "Reparation krävs"
+    },
+    "progress": {
+      "updating": "Uppdaterar…",
+      "downloading": "Laddar ner {{pct}}",
+      "checking": "Kontrollerar filer…",
+      "preparing": "Förbereder…",
+      "launching": "Startar…",
+      "stopping": "Stoppar…",
+      "preparingFiles": "Förbereder spelfiler {{pct}}",
+      "building": "Kompilerar native-moddar…",
+      "buildingPct": "Kompilerar native-moddar {{pct}}"
+    },
+    "errors": {
+      "launch": "Spelet kunde inte starta"
+    },
+    "refusals": {
+      "auth_no_account": "Logga in med ett Microsoft-konto som äger spelet för att spela.",
+      "auth_not_owned": "Det här Microsoft-kontot äger inte spelet.",
+      "auth_not_approved": "Microsoft-inloggning är inte tillgänglig för den här launchern än.",
+      "auth_reauth_required": "Logga in på ditt Microsoft-konto igen för att spela.",
+      "auth_offline_not_allowed": "Logga in en gång med ett Microsoft-konto som äger spelet, sedan kan du spela offline.",
+      "auth_network": "Det gick inte att nå Microsoft för att kontrollera kontot. Kontrollera din anslutning.",
+      "build_not_installed": "Installera en Horizon-version först.",
+      "prepare_needed": "Spelfilerna för den här versionen är inte förberedda än.",
+      "prepare_failed": "Spelfilerna kunde inte förberedas: försök igen, eller förbered dem i Inställningar › Spel och instanser.",
+      "prepare_no_java": "Java hittades inte: installera det eller välj det i Inställningar › Spel och instanser.",
+      "prepare_no_minecraft_dir": "Din spelinstallation hittades inte: välj dess mapp i Inställningar › Spel och instanser.",
+      "launch_already_running": "Den här instansen körs redan.",
+      "native_consent": "Den här instansen har native-moddar: godkänn först deras förtroendemeddelande på instanssidan (Innehåll).",
+      "native_toolchain": "Native-moddar behöver Rust: installera det från instanssidan (Innehåll) eller Inställningar › Spel och instanser.",
+      "native_not_edition": "Native-moddar byggs bara in i Rustic-utgåvan: byt den här instansen till den, eller stäng av dess native-moddar.",
+      "native_build_failed": "Native-moddarna kunde inte byggas",
+      "native_disk": "Inte tillräckligt med ledigt diskutrymme för att bygga native-moddarna."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (Rustic-utgåvan)",
+    "rusticEdition": "Rustic-utgåvan"
+  },
+  "compat": {
+    "buildsOnHorizon": "Byggs på din Horizon",
+    "compatible": "Kompatibel",
+    "incompatible": "Inkompatibel: {{reason}}",
+    "unknown": "Okänd kompatibilitet",
+    "reasons": {
+      "horizon_version": "Horizon-version",
+      "java_only": "Endast Java Edition",
+      "side": "endast serversidan",
+      "conflict": "krockar med en installerad mod",
+      "unsupported_format": "formatet stöds inte",
+      "needs_rustic_server": "kräver Rustic Server",
+      "not_fair_play": "inte tillåtet (schysst spel)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Byt produkt",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Dokumentation för Rustic Server"
+  },
+  "crumbs": {
+    "label": "Brödsmulor",
+    "horizon": "Horizon",
+    "details": "Detaljer",
+    "create": "Skapa",
+    "kinds": {
+      "mod": "Moddar",
+      "modpack": "Modpaket",
+      "resourcepack": "Resurspaket",
+      "shader": "Shaders",
+      "datapack": "Datapaket",
+      "plugin": "Plugins"
+    },
+    "servers": {
+      "featured": "Utvalt",
+      "mine": "Mina servrar",
+      "multiplayer": "Flerspelarlista",
+      "discover": "Upptäck",
+      "joined": "Flerspelarlista",
+      "browse": "Bläddra"
+    }
+  },
+  "social": {
+    "title": "Socialt",
+    "description": "Vänner, chattar och din grupp.",
+    "open": "Öppna Socialt",
+    "friends": "Vänner",
+    "chats": "Chattar",
+    "message": "Skicka ett meddelande",
+    "searchChats": "Sök i chattar…",
+    "noChats": "Inga konversationer än. Skicka ett meddelande till en vän från fliken Vänner.",
+    "sayHello": "Säg hej",
+    "selectTitle": "Välj en konversation",
+    "selectBody": "Välj en vän för att börja chatta.",
+    "messagePlaceholder": "Meddelande till {{name}}",
+    "send": "Skicka"
+  },
+  "window": {
+    "minimize": "Minimera",
+    "maximize": "Maximera",
+    "restore": "Återställ",
+    "close": "Stäng"
+  },
+  "running": {
+    "title": "Instanser som körs",
+    "none": "Inget spel körs.",
+    "count_one": "{{count}} instans körs",
+    "count_other": "{{count}} instanser körs",
+    "downloading": "Laddar ner {{pct}}"
+  },
+  "launch": {
+    "launch": "Starta spelet",
+    "update": "Uppdatera och starta",
+    "stop": "Stoppa spelet"
+  },
+  "deepLink": {
+    "authOk": "Inloggad på Rustic",
+    "authFailed": "Inloggningen på Rustic misslyckades",
+    "joining": "Ansluter till {{target}}…",
+    "content": "Öppnar {{project}} från webbplatsen"
+  },
+  "catalog": {
+    "sort": "Sortera efter",
+    "results_one": "{{count}} resultat",
+    "results_other": "{{count}} resultat",
+    "loadMore": "Läs in fler",
+    "loadMoreCount": "Visar {{shown}} av {{total}}",
+    "carousel": {
+      "prev": "Föregående",
+      "next": "Nästa",
+      "slide": "{{index}} av {{total}}",
+      "pause": "Pausa bildspelet",
+      "play": "Spela upp bildspelet"
+    },
+    "row": {
+      "seeAll": "Visa alla",
+      "seeAllAria": "Visa alla: {{title}}",
+      "scrollPrev": "Rulla åt vänster",
+      "scrollNext": "Rulla åt höger"
+    },
+    "filters": {
+      "button": "Filter",
+      "buttonCount": "Filter · {{count}}",
+      "reset": "Återställ filter"
+    },
+    "layout": {
+      "label": "Layout",
+      "list": "Lista",
+      "grid": "Rutnät"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Uppdaterar {{pct}}",
+      "installing": "Installerar uppdateringen…",
+      "restarting": "Startar om…",
+      "deferred": "Uppdatera efter ditt spel",
+      "apply": "Uppdatera och starta om"
+    },
+    "toast": {
+      "launcher": "Laddar ner Rustic Launcher {{version}}…",
+      "edition": "Uppdaterar spelet (Rustic-utgåvan)…",
+      "editionDone": "Spelet uppdaterat: {{version}}",
+      "deferred": "En uppdatering är klar. Den installeras när du stänger spelet.",
+      "restarting": "Rustic Launcher startar om för att slutföra uppdateringen.",
+      "updated": "Rustic Launcher uppdaterad till {{version}}",
+      "resuming": "Uppdateringen klar: ditt spel startar",
+      "failed": "Uppdateringen kunde inte installeras. Den provas igen senare."
+    }
+  }
+}

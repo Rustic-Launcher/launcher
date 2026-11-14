@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "greeting": "다시 오신 걸 환영해요, {{name}} 님",
+    "greetingAnon": "Rustic에 오신 걸 환영해요",
+    "continue": "이어서 하기: {{name}} · {{when}} 플레이",
+    "continueNew": "준비 완료: {{name}}",
+    "firstRun": "세 단계만 거치면 게임을 준비할 수 있어요.",
+    "playNow": "지금 플레이",
+    "updateAndPlay": "업데이트 후 플레이",
+    "resumeServer": "{{server}} 다시 접속",
+    "switch": "인스턴스 변경",
+    "stats": {
+      "playtime": "{{time}} 플레이",
+      "mods_other": "모드 {{count}}개",
+      "friends_other": "친구 {{count}}명 온라인"
+    },
+    "steps": {
+      "signIn": "게임을 보유한 Microsoft 계정으로 로그인",
+      "prepare": "내 설치본에서 게임 파일 준비",
+      "create": "첫 인스턴스 만들기"
+    },
+    "getReady": "게임 준비하기",
+    "openLocker": "보관함",
+    "player": "치장 아이템을 착용하지 않고 대기 중인 내 플레이어",
+    "playerWearing": "대기 중인 내 플레이어, 착용 중: {{items}}"
+  },
+  "recent": {
+    "title": "최근 서버 및 월드",
+    "unknown": "상태 알 수 없음",
+    "online": "온라인 · {{online}}/{{max}}",
+    "offline": "오프라인",
+    "world": "월드 · 로컬",
+    "joining": "{{name}} 접속 중…",
+    "opening": "{{name}} 여는 중…",
+    "removed": "내 서버 목록에서 {{name}} 삭제됨",
+    "playAria": "{{name}} 플레이",
+    "more": "{{name}} 추가 작업",
+    "copyAddress": "주소 복사",
+    "addServer": "서버 추가",
+    "empty": "접속한 서버와 플레이한 월드가 여기에 표시돼요."
+  },
+  "news": {
+    "title": "뉴스 및 업데이트",
+    "empty": "지금은 뉴스가 없어요.",
+    "slide": "{{total}}개 중 {{index}}번째 소식",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "릴리스 노트",
+      "event": "이벤트",
+      "blog": "기사"
+    },
+    "readNotes": "릴리스 노트 읽기",
+    "read": "읽기"
+  },
+  "friends": {
+    "title": "지금 접속 중인 친구",
+    "empty": "지금 플레이 중인 친구가 없어요.",
+    "since": "{{when}}부터",
+    "activity": {
+      "server": "{{server}}에서 플레이 중",
+      "hosting": "{{server}} 호스팅 중",
+      "singleplayer": "혼자 플레이 중",
+      "launcher": "런처에 있음"
+    }
+  },
+  "featured": {
+    "title": "추천 서버",
+    "verified": "인증된 서버",
+    "players": "플레이어 {{online}} / {{max}}명",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "새 치장 아이템",
+    "owned": "보유 중"
+  },
+  "launchpad": {
+    "welcome": "*다시* 오신 걸 환영해요,",
+    "playAs": "플레이 계정",
+    "online": "명이 추천 서버에서 플레이 중",
+    "heroLabel": "실행",
+    "instanceSettings": "인스턴스 설정",
+    "news": "최신 뉴스",
+    "unread_other": "(읽지 않음 {{count}}개)",
+    "unreadDot": "읽지 않음",
+    "explore": "소스 탐색",
+    "aside": "서버 및 친구",
+    "joinServer": "{{name}} 접속",
+    "friendsOnline_other": "({{count}}명 온라인)",
+    "openSocial": "소셜 열기",
+    "noNews": "아직 뉴스가 없어요.",
+    "noFriendsOnline": "지금 온라인인 친구가 없어요.",
+    "socialHint": "채팅, 초대, 파티는 소셜 창에서 확인할 수 있어요.",
+    "eyebrow": "Launchpad"
+  }
+}

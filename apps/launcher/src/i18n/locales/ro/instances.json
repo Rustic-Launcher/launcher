@@ -1,0 +1,345 @@
+{
+  "title": "Versiuni",
+  "errors": {
+    "action": "Nu a funcționat"
+  },
+  "card": {
+    "more": "Mai multe acțiuni pentru {{name}}",
+    "pin": "Fixează",
+    "unpin": "Anulează fixarea",
+    "duplicate": "Duplică",
+    "duplicated": "{{name}} a fost creat",
+    "playtime": "Timp de joc",
+    "never": "Niciodată",
+    "fromModpack": "Modpack {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Rulează",
+    "installing": "Se instalează",
+    "broken": "Necesită reparare"
+  },
+  "delete": {
+    "title": "Ștergi {{name}}?",
+    "body": "Modurile, setările și lumile ei sunt șterse de pe acest computer. Acțiunea nu poate fi anulată.",
+    "confirm": "Șterge instanța",
+    "done": "{{name}} a fost șters"
+  },
+  "new": {
+    "title": "Instanță nouă",
+    "description": "Pornește de la zero sau adu un pachet existent.",
+    "tabs": {
+      "create": "Creează",
+      "import": "Importă"
+    },
+    "name": "Nume",
+    "namePlaceholder": "Lumea mea de supraviețuire",
+    "nameRequired": "Dă un nume instanței.",
+    "icon": "Pictogramă",
+    "color": "Culoare",
+    "colorN": "Culoarea {{n}}",
+    "version": "Build Horizon",
+    "versionHint": "Ediția Rustic adaugă cosmetice și prieteni în joc. Nu sunt necesare setări pentru Java sau RAM.",
+    "recommended": "Recomandat",
+    "release": "Stabilă",
+    "nightly": "Nightly",
+    "installed": "Instalat",
+    "submit": "Creează instanța",
+    "created": "{{name}} e gata",
+    "preview": "Previzualizare",
+    "edition": "Ediție",
+    "editionRustic": "Cosmetice, prieteni și moduri native în joc.",
+    "editionHorizon": "Horizon așa cum îl publică echipa sa, fără adăugiri.",
+    "noBuild": "Momentan nu există nicio versiune a acestei ediții.",
+    "nightlyHint": "Versiunile Nightly apar zilnic din cel mai nou cod Horizon: mai noi, mai puțin testate."
+  },
+  "icons": {
+    "grass": "Lăstar",
+    "sword": "Săbii",
+    "pickaxe": "Târnăcop",
+    "castle": "Castel",
+    "rocket": "Rachetă",
+    "gem": "Nestemată",
+    "flame": "Flacără",
+    "leaf": "Frunză",
+    "star": "Stea",
+    "compass": "Busolă"
+  },
+  "import": {
+    "folder": {
+      "title": "Folder de instanță",
+      "description": "Un folder de instanță Prism sau MultiMC, portat așa cum o face Horizon."
+    },
+    "mrpack": {
+      "title": "Pachet Modrinth (.mrpack)",
+      "description": "Modurile sunt asociate cu build-urile lor Horizon când există."
+    },
+    "curseforge_zip": {
+      "title": "Zip CurseForge",
+      "description": "Un modpack CurseForge exportat."
+    },
+    "modpack": {
+      "title": "Dintr-un modpack",
+      "description": "Răsfoiește modpackurile Horizon, Modrinth și Rustic."
+    },
+    "started": "Se importă {{name}}",
+    "background": "Continuă în fundal; poți folosi în continuare launcherul.",
+    "note": "Se instalează doar conținutul care funcționează pe Horizon; restul e listat împreună cu motivul.",
+    "drop": {
+      "title": "Trage aici un pachet sau un folder de instanță",
+      "hint": ".mrpack Modrinth, .zip CurseForge sau un folder de instanță Prism ori MultiMC",
+      "choose": "Alege un fișier",
+      "active": "Eliberează pentru a importa",
+      "unsupported": "Acest lucru nu poate fi importat. Folosește un .mrpack, un .zip CurseForge sau un folder de instanță."
+    },
+    "formats": "Formate acceptate"
+  },
+  "detail": {
+    "notFound": "Această instanță nu mai există",
+    "backToList": "Înapoi la instanțe",
+    "tabsLabel": "Secțiunile instanței",
+    "tabs": {
+      "overview": "Prezentare",
+      "content": "Conținut",
+      "resourcepacks": "Pachete de resurse",
+      "worlds": "Lumi",
+      "settings": "Setări"
+    }
+  },
+  "overview": {
+    "mods": "Moduri",
+    "resourcePacks": "Pachete de resurse",
+    "shaders": "Pachete de shadere",
+    "version": "Build Horizon",
+    "updateAvailable": "Actualizare disponibilă",
+    "upToDate": "La zi",
+    "updateNow": "Actualizează acum",
+    "changeVersion": "Alege un build Horizon",
+    "applyVersion": "Schimbă build-ul",
+    "versionChanging": "Se trece la {{version}}",
+    "lastSession": "Ultima sesiune",
+    "lastPlayed": "Jucat {{when}}",
+    "neverPlayed": "Nejucat încă",
+    "rejoin": "Revino",
+    "noServer": "Încă n-ai intrat pe niciun server din această instanță.",
+    "created": "Creată",
+    "folder": "Folder"
+  },
+  "content": {
+    "filter": "Filtrează după tip",
+    "kinds": {
+      "all": "Toate",
+      "mod": "Moduri",
+      "resourcepack": "Pachete de resurse",
+      "shader": "Shadere"
+    },
+    "search": "Caută în conținutul instalat",
+    "updateAll_one": "Actualizează {{count}} element",
+    "updateAll_few": "Actualizează {{count}} elemente",
+    "updateAll_other": "Actualizează {{count}} de elemente",
+    "browse": "Răsfoiește conținut",
+    "noMatch": "Nimic instalat nu se potrivește căutării.",
+    "empty": {
+      "title": "Nimic instalat încă",
+      "description": "Găsește moduri, pachete de resurse și shadere care funcționează cu această instanță."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Fișier local"
+    },
+    "updateTo": "Actualizare: {{version}}",
+    "incompatible": "Incompatibil: {{reason}}",
+    "updateOne": "Actualizează {{name}}",
+    "toggle": "Activează {{name}}",
+    "remove": "Elimină {{name}}",
+    "removeTitle": "Elimini {{name}}?",
+    "removeBody": "Fișierul este șters din această instanță. Îl poți instala din nou din Conținut."
+  },
+  "packs": {
+    "hint": "Pachetele de sus câștigă când două pachete schimbă același lucru.",
+    "listLabel": "Ordinea de încărcare a pachetelor de resurse",
+    "top": "Prioritate maximă",
+    "up": "Mută {{name}} mai sus",
+    "down": "Mută {{name}} mai jos",
+    "moved": "{{name}} mutat pe poziția {{position}} din {{total}}",
+    "browse": "Găsește pachete de resurse",
+    "empty": {
+      "title": "Niciun pachet de resurse",
+      "description": "Adaugă pachete ca să schimbi texturile, sunetele și interfața."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Nicio lume încă",
+      "description": "Lumile pe care le creezi în joc apar aici."
+    },
+    "openSaves": "Deschide folderul de salvări",
+    "lastPlayed": "Jucată {{when}}",
+    "modes": {
+      "survival": "Supraviețuire",
+      "creative": "Creativ",
+      "adventure": "Aventură",
+      "hardcore": "Hardcore",
+      "spectator": "Spectator"
+    },
+    "datapacks_one": "{{count}} pachet de date",
+    "datapacks_few": "{{count}} pachete de date",
+    "datapacks_other": "{{count}} de pachete de date",
+    "play": "Joacă această lume",
+    "addDatapacks": "Adaugă pachete de date"
+  },
+  "settings": {
+    "general": "General",
+    "display": "Fereastră",
+    "useDefaultResolution": "Folosește dimensiunea implicită a ferestrei",
+    "defaultIs": "Implicit: {{width}} × {{height}}",
+    "width": "Lățime",
+    "height": "Înălțime",
+    "fullscreen": "Pornește pe tot ecranul",
+    "resolutionError": "Folosește numere întregi, cel puțin 640 × 360.",
+    "launch": "Opțiuni de lansare",
+    "launchHint": "Instanțele Horizon fixează doar un build: nu există Java, RAM sau loader de setat.",
+    "gameArgs": "Argumente suplimentare pentru joc",
+    "gameArgsHint": "Avansat. Transmise către Horizon așa cum sunt.",
+    "folders": "Foldere",
+    "folder": {
+      "root": "Instanță",
+      "mods": "Moduri",
+      "resourcepacks": "Pachete de resurse",
+      "shaderpacks": "Pachete de shadere",
+      "saves": "Lumi",
+      "screenshots": "Capturi de ecran",
+      "logs": "Jurnale"
+    },
+    "unsaved": "Ai modificări nesalvate.",
+    "allSaved": "Toate modificările au fost salvate.",
+    "saved": "Setările instanței au fost salvate"
+  },
+  "heading": "*Profilurile* tale",
+  "native": {
+    "title": "Moduri native",
+    "allOff": "Toate dezactivate: instanța rulează jocul precompilat.",
+    "state": {
+      "building": "Se compilează…",
+      "up_to_date": "La zi",
+      "needs_rebuild": "Necesită recompilare",
+      "not_built": "Necompilat",
+      "not_needed": "Joc precompilat"
+    },
+    "build": "Compilează",
+    "rebuild": "Recompilează",
+    "cancel": "Anulează",
+    "progress": "Progresul compilării native",
+    "starting": "Se pornește…",
+    "firstBuildHint": "Prima compilare construiește tot jocul (10–15 minute); următoarele doar ce s-a schimbat. Poți folosi în continuare launcherul.",
+    "failed": "Ultima compilare a eșuat",
+    "built": "Compilat {{date}} în {{duration}} · joc {{size}}",
+    "leftOut": {
+      "other": "{{name}} a fost omis: nu se aplică acestui Horizon.",
+      "unsupported": "{{name}} a fost omis: Rustic nu poate compila încă ce îi trebuie."
+    },
+    "notEdition": "Această instanță rulează un build Horizon simplu: modurile native se compilează doar în ediția Rustic."
+  },
+  "profiles": {
+    "summary_one": "{{count}} profil · {{playtime}} jucate",
+    "summary_few": "{{count}} profiluri · {{playtime}} jucate",
+    "summary_other": "{{count}} de profiluri · {{playtime}} jucate",
+    "searchLabel": "Caută în profilurile tale",
+    "searchPlaceholder": "Caută după nume, build Horizon sau modpack…",
+    "source": {
+      "label": "Arată",
+      "all": "Toate profilurile",
+      "custom": "Profilurile mele",
+      "modpack": "Din modpackuri"
+    },
+    "sorts": {
+      "recent": "Jucate ultima dată",
+      "name": "Nume",
+      "created": "Create recent",
+      "version": "Build Horizon",
+      "playtime": "Timp de joc"
+    },
+    "filters": {
+      "version": "Build Horizon",
+      "edition": "Ediție",
+      "editions": {
+        "rustic": "Ediția Rustic",
+        "horizon": "Horizon simplu"
+      },
+      "native": "Moduri native",
+      "nativeOnly": "Are moduri native",
+      "nativeHint": "Modurile native sunt compilate pe PC-ul tău înainte să pornească jocul.",
+      "remove": "Elimină filtrul: {{filter}}",
+      "reset": "Resetează filtrele"
+    },
+    "create": "Creează profil",
+    "createHint": "Un build Horizon, o pictogramă și un nume",
+    "import": "Importă",
+    "importHint": "Un folder, un .mrpack sau un zip CurseForge",
+    "all": "Toate profilurile",
+    "listLabel": "Profiluri",
+    "recent": "Revino în joc",
+    "recentHint": "Ultimele profiluri jucate",
+    "card": {
+      "active": "Activ",
+      "activeHint": "Launchpad-ul joacă acest profil",
+      "running": "Rulează",
+      "pinned": "Fixat",
+      "update": "Actualizare {{version}}",
+      "broken": "Necesită reparare",
+      "modpack": "Modpack",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Jucat {{when}}",
+      "neverPlayed": "Nejucat încă",
+      "created": "Creat {{date}}",
+      "lastServer": "Ultima dată pe {{name}}",
+      "rejoin": "Revino",
+      "rejoinAria": "Revino pe {{server}} cu {{name}}",
+      "mods": "Moduri",
+      "packs": "Pachete de resurse",
+      "shaders": "Shadere",
+      "playtime": "Timp de joc",
+      "contentCount": "Moduri: {{mods}} · pachete: {{packs}} · shadere: {{shaders}}",
+      "open": "Deschide {{name}}"
+    },
+    "native": {
+      "label": "Moduri native",
+      "count_one": "{{count}} mod nativ",
+      "count_few": "{{count}} moduri native",
+      "count_other": "{{count}} de moduri native",
+      "building": "Se compilează {{pct}}",
+      "buildingNoPct": "Se compilează…",
+      "up_to_date": "Moduri native gata",
+      "needs_rebuild": "Native: necesită recompilare",
+      "not_built": "Native: încă necompilate",
+      "off": "Moduri native dezactivate",
+      "unsupported": "Native: necesită ediția Rustic",
+      "hint": {
+        "up_to_date": "Compilate pe acest PC pentru acest build Horizon.",
+        "needs_rebuild": "Modurile s-au schimbat de la ultima compilare: se recompilează când joci.",
+        "not_built": "Compilate pe PC-ul tău când joci (10–15 minute prima dată).",
+        "off": "Toate modurile native sunt dezactivate: rulează jocul precompilat.",
+        "unsupported": "Acest profil rulează un build Horizon simplu: modurile native se compilează doar în ediția Rustic.",
+        "building": "Se compilează jocul cu modurile native ale acestui profil."
+      }
+    },
+    "menu": {
+      "edit": "Editează setările",
+      "activate": "Folosește pe Launchpad",
+      "isActive": "Folosit pe Launchpad",
+      "activated": "{{name}} este acum pe Launchpad"
+    },
+    "empty": {
+      "title": "Niciun profil încă",
+      "description": "Un profil este un build Horizon cu propriile moduri, pachete și lumi. Creează unul cu build-ul recomandat sau importă un pachet pe care îl ai deja."
+    },
+    "noMatch": {
+      "title": "Niciun profil nu se potrivește",
+      "description": "Încearcă altă căutare sau elimină un filtru."
+    },
+    "detail": {
+      "banner": "Coperta profilului {{name}}"
+    }
+  }
+}

@@ -173,7 +173,8 @@
       "capDataFolder": "Eigener Datenordner",
       "eula": "Ich akzeptiere die Minecraft-EULA",
       "eulaHint": "Zum Betrieb eines Servers erforderlich. Du akzeptierst sie selbst; Rustic akzeptiert sie nicht für dich.",
-      "eulaRead": "EULA lesen"
+      "eulaRead": "EULA lesen",
+      "eulaTitle": "Minecraft-EULA"
     },
     "world": {
       "title": "Welt",
@@ -211,7 +212,10 @@
       "pickInstance": "Instanz wählen",
       "world": "Welt",
       "pickWorld": "Welt wählen",
-      "noWorlds": "Keine Welten in dieser Instanz"
+      "noWorlds": "Keine Welten in dieser Instanz",
+      "newDesc": "Eine frische Welt aus einem Seed, mit deinen Regeln.",
+      "importDesc": "Ein Weltordner von deinem PC oder aus einem Backup.",
+      "fromInstanceDesc": "Eine Welt, die du in einem deiner Profile gespielt hast."
     },
     "type": {
       "memory": "Serverspeicher (RAM)",
@@ -263,7 +267,20 @@
       "generateKey": "Erzeuge zuerst einen Schlüssel und füge ihn dann deinem VPS hinzu.",
       "password": "Gib das Passwort ein."
     },
-    "heading": "Einen *Server* erstellen"
+    "heading": "Einen *Server* erstellen",
+    "stepHints": {
+      "basics": "Gib ihm einen Namen, wähle, was er ausführt, und die Startwelt.",
+      "hosting": "Wähle den Rechner, auf dem er läuft, und wie viel Arbeitsspeicher er bekommt.",
+      "access": "Wähle, wie deine Freunde beitreten. Du kannst das später ändern."
+    },
+    "sections": {
+      "identity": "Name und Symbol"
+    },
+    "preview": {
+      "title": "Vorschau",
+      "unnamed": "Dein Server",
+      "draft": "noch nicht erstellt"
+    }
   },
   "hosting": {
     "local": {
@@ -457,7 +474,17 @@
       "port": "Port",
       "memory": "Speicher",
       "created": "Erstellt",
-      "folder": "Ordner"
+      "folder": "Ordner",
+      "uptime": "Laufzeit",
+      "startedAt": "Seit {{time}}",
+      "lastSession": "Letzte Sitzung",
+      "lastStarted": "Zuletzt gestartet: {{when}}",
+      "neverStarted": "Noch nie gestartet",
+      "lastLines": "Letzte Konsolenzeilen",
+      "noLines": "Noch nichts protokolliert.",
+      "openConsole": "Konsole öffnen",
+      "crashedTitle": "Der Server wurde unerwartet beendet",
+      "crashedBody": "Sieh dir die letzten Konsolenzeilen an und starte ihn dann neu."
     },
     "console": {
       "filter": "Zeilen filtern",

@@ -1,0 +1,86 @@
+{
+  "title": "Vestiar",
+  "subtitle": "Obiecte pur vizuale. Văzute în joc de jucătorii care folosesc ediția Rustic.",
+  "horizonNote": {
+    "badge": "Cosmeticele Horizon rămân disponibile",
+    "detail": "Cosmeticele tale Horizon sunt păstrate în clientul ediției Rustic. Gestionează-le în joc; funcționează alături de obiectele tale Rustic."
+  },
+  "empty": {
+    "title": "Încă nu ai niciun cosmetic.",
+    "description": "Obiectele pe care le cumperi sau le primești apar aici, gata de purtat.",
+    "browse": "Răsfoiește magazinul",
+    "categoryTitle": "Nimic încă la: {{category}}",
+    "categoryDescription": "Obiectele de acest tip pe care le deții vor apărea aici."
+  },
+  "viewer": {
+    "region": "Personajul tău",
+    "label_one": "Personajul tău poartă {{count}} obiect. Trage sau folosește săgețile pentru a-l roti, plus și minus pentru zoom.",
+    "label_few": "Personajul tău poartă {{count}} obiecte. Trage sau folosește săgețile pentru a-l roti, plus și minus pentru zoom.",
+    "label_other": "Personajul tău poartă {{count}} de obiecte. Trage sau folosește săgețile pentru a-l roti, plus și minus pentru zoom.",
+    "hint": "Trage pentru a roti · derulează pentru zoom",
+    "animation": "Animație",
+    "playEmote": "Redă {{name}}",
+    "noEmote": "Niciun emote echipat",
+    "reset": "Resetează vederea"
+  },
+  "animations": {
+    "idle": "Repaus",
+    "walk": "Mers",
+    "wave": "Salut",
+    "dance": "Dans"
+  },
+  "items": {
+    "region": "Obiectele tale",
+    "nothing": "Nimic",
+    "equipped": "Echipat"
+  },
+  "categories": {
+    "label": "Categorii",
+    "all": "Toate",
+    "head": "Pălării",
+    "back": "Spate",
+    "top": "Bust",
+    "shoulder": "Umăr",
+    "nametag": "Etichete de nume",
+    "emote": "Emote",
+    "companion": "Însoțitori",
+    "trail": "Dâre",
+    "aura": "Aure"
+  },
+  "rarity": {
+    "common": "Comun",
+    "rare": "Rar",
+    "epic": "Epic",
+    "legendary": "Legendar"
+  },
+  "toast": {
+    "equipped": "{{name}} echipat",
+    "unequipped": "{{name}} scos",
+    "cleared": "{{slot}}: nimic echipat",
+    "outfitWorn": "Ținută îmbrăcată",
+    "outfitSaved": "Ținuta „{{name}}” a fost salvată",
+    "equipFailed": "Nu ți-am putut schimba înfățișarea. Încearcă din nou."
+  },
+  "outfits": {
+    "title": "Ținute",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Dă un nume acestei înfățișări",
+    "save": "Salvează înfățișarea actuală",
+    "full": "Poți păstra până la {{max}} ținute. Șterge una ca să salvezi o înfățișare nouă.",
+    "empty": "Salvează-ți înfățișarea actuală ca s-o porți din nou dintr-un clic.",
+    "items_one": "{{count}} obiect",
+    "items_few": "{{count}} obiecte",
+    "items_other": "{{count}} de obiecte",
+    "wearing": "Purtată",
+    "wear": "Poartă",
+    "delete": "Șterge ținuta {{name}}"
+  },
+  "switches": {
+    "showMine": "Arată-mi cosmeticele",
+    "showMineHint": "Ceilalți jucători ai ediției Rustic văd ce porți.",
+    "hideOthers": "Ascunde cosmeticele celorlalți jucători",
+    "hideTrailsAuras": "Ascunde dârele și aurele"
+  },
+  "heading": "*Vestiarul* tău",
+  "eyebrow": "Cosmetice"
+}

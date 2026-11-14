@@ -2,8 +2,9 @@
 //! layers (bands, crosses, discs, triangles, a canton holding another flag), simplified for a
 //! picture a few dozen pixels wide (no stars or coats of arms). A language is shown with its
 //! region's flag (`fr_ca` with Canada's); the game's regional and constructed languages have
-//! their own where a well-known one exists, the rest a neutral tile ([`flag_for`] is None, and the
-//! screen writes the code on it).
+//! their own where a well-known one exists (Esperanto's, Ido's), a historic variant its country's,
+//! and the rest a symbol tile of their own (Toki Pona's sun, Valyrian's): every one of the game's
+//! languages has a picture ([`flag_for`] is None only for a code the game does not have).
 use crate::title::Rgba;
 
 /// One layer, in the flag's unit square (x right, y down, 0-1).
@@ -34,6 +35,8 @@ pub enum Layer {
     Diamond(f32, u32),
     /// Another flag drawn in `[x, y, w, h]`.
     Sub([f32; 4], &'static [Layer]),
+    /// A polygon through these points (fractions of the width and the height).
+    Poly(&'static [[f32; 2]], u32),
 }
 
 const RED: u32 = 0xD52B1E;
@@ -326,6 +329,34 @@ fn design(code: &str) -> Option<&'static [Layer]> {
             Layer::Disc([0.5, 0.5], 0.24, 0xE0B341),
         ]),
         "rpr" => Some(&[Layer::H(&[(BLACK, 1.0), (0xFFD700, 1.0), (WHITE, 1.0)])]),
+        // Ido's flag (Wikimedia Commons, Flag_of_Ido.svg, public domain): a white star on light
+        // blue, simplified to its outline.
+        "io_en" => Some(&[
+            Layer::Fill(0x3399FF),
+            Layer::Poly(&[[0.5, 0.06], [0.93, 0.92], [0.07, 0.92]], WHITE),
+            Layer::Poly(&[[0.5, 0.94], [0.07, 0.22], [0.93, 0.22]], WHITE),
+        ]),
+        // Toki Pona has no flag: its sign (a light yellow sun under three rays, outlined in navy:
+        // Wikimedia Commons, Toki_pona.svg, public domain) on navy.
+        "tok" => Some(&[
+            Layer::Fill(0x000099),
+            Layer::Disc([0.5, 0.6], 0.27, 0xFFFF63),
+            Layer::Rect([0.48, 0.08, 0.04, 0.18], 0xFFFF63),
+            Layer::Poly(
+                &[[0.30, 0.16], [0.335, 0.13], [0.40, 0.29], [0.365, 0.32]],
+                0xFFFF63,
+            ),
+            Layer::Poly(
+                &[[0.70, 0.16], [0.665, 0.13], [0.60, 0.29], [0.635, 0.32]],
+                0xFFFF63,
+            ),
+        ]),
+        // Valyrian, a language of fiction with no flag: a symbol tile (a red diamond on black).
+        "vp_vl" => Some(&[
+            Layer::Fill(0x17171B),
+            Layer::Diamond(0.24, 0xA3201B),
+            Layer::Diamond(0.36, 0x17171B),
+        ]),
         _ => None,
     };
     if own.is_some() {
@@ -341,7 +372,8 @@ fn design(code: &str) -> Option<&'static [Layer]> {
         "vro" => "EE".to_owned(),
         "brb" => "BE".to_owned(),
         "ovd" => "SE".to_owned(),
-        "tok" | "io_en" | "vp_vl" | "qid" => String::new(),
+        // Indonesian in its old spelling: Indonesia's.
+        "qid" => "ID".to_owned(),
         "got_de" | "yi_de" | "nds_de" => "DE".to_owned(),
         "hn_no" => "NO".to_owned(),
         "hal_ua" | "ry_ua" => "UA".to_owned(),
@@ -751,6 +783,10 @@ fn layer_shapes(layers: &[Layer], w: f32, h: f32) -> Vec<serde_json::Value> {
             Layer::Triangle(depth, c) => {
                 out.push(poly(&[(0.0, 0.0), (depth * w, h / 2.0), (0.0, h)], c))
             }
+            Layer::Poly(points, c) => {
+                let at: Vec<(f32, f32)> = points.iter().map(|p| (p[0] * w, p[1] * h)).collect();
+                out.push(poly(&at, c));
+            }
             Layer::Diamond(inset, c) => {
                 let (hw, hh) = (w / 2.0 - inset * h, h / 2.0 - inset * h);
                 out.push(poly(
@@ -858,6 +894,19 @@ fn sample(layers: &[Layer], x: f32, y: f32, w: f32, h: f32) -> Option<u32> {
                 ((x - w / 2.0).abs() / hw.max(0.01) + (y - h / 2.0).abs() / hh.max(0.01) <= 1.0)
                     .then_some(c)
             }
+            Layer::Poly(points, c) => {
+                // Even-odd ray casting in the unit square.
+                let mut inside = false;
+                let n = points.len();
+                for i in 0..n {
+                    let [ax, ay] = points[i];
+                    let [bx, by] = points[(i + n - 1) % n];
+                    if (ay > v) != (by > v) && u < (bx - ax) * (v - ay) / (by - ay) + ax {
+                        inside = !inside;
+                    }
+                }
+                inside.then_some(c)
+            }
             Layer::Sub([rx, ry, rw, rh], inner) => {
                 if u >= rx && u < rx + rw && v >= ry && v < ry + rh {
                     sample(inner, (u - rx) * w, (v - ry) * h, rw * w, rh * h)
@@ -948,7 +997,7 @@ mod tests {
             assert!(px(&im, 0, 0)[3] < 255, "{code}");
             known += usize::from(flag_for(code).is_some());
         }
-        assert!(known >= 135, "{known} flags");
+        assert_eq!(known, all.len(), "every game language has a picture");
     }
 
     #[test]
@@ -1003,7 +1052,12 @@ mod tests {
             fr["s"][0],
             serde_json::json!(["r", 0, 0, 10, 20, "#0055a4"])
         );
-        assert!(shapes("tok").is_none());
+        assert!(shapes("xx_none").is_none());
+        // Ido's star is a polygon.
+        let io = shapes("io_en").expect("Ido");
+        assert_eq!(io["s"][1][0], "p");
+        // Old-spelling Indonesian has Indonesia's flag.
+        assert_eq!(shapes("qid"), shapes("id_id"));
         assert_eq!(shapes("en_ud").expect("flag")["f"], 1);
         // The canton of Hawaii's flag is the Union flag in its own box.
         let haw = shapes("haw_us").expect("Hawaii");

@@ -1,0 +1,84 @@
+{
+  "title": "Szekrény",
+  "subtitle": "Tisztán vizuális tárgyak. A Rustic kiadást használó játékosok látják őket a játékban.",
+  "horizonNote": {
+    "badge": "A Horizon-kozmetikumok továbbra is elérhetők",
+    "detail": "A Horizon-kozmetikumaid megmaradnak a Rustic kiadás kliensében. A játékban kezelheted őket; a Rustic-tárgyaid mellett működnek."
+  },
+  "empty": {
+    "title": "Még nincs egyetlen kozmetikumod sem.",
+    "description": "A megvett vagy kapott tárgyak itt jelennek meg, felvehető állapotban.",
+    "browse": "Bolt böngészése",
+    "categoryTitle": "Még nincs ilyened: {{category}}",
+    "categoryDescription": "Az ilyen típusú tárgyaid itt fognak megjelenni."
+  },
+  "viewer": {
+    "region": "A karaktered",
+    "label_one": "A karaktered {{count}} tárggyal. Húzd vagy használd a nyílbillentyűket a forgatáshoz, a plusz és mínusz jelet a nagyításhoz.",
+    "label_other": "A karaktered {{count}} tárggyal. Húzd vagy használd a nyílbillentyűket a forgatáshoz, a plusz és mínusz jelet a nagyításhoz.",
+    "hint": "Húzd a forgatáshoz · görgess a nagyításhoz",
+    "animation": "Animáció",
+    "playEmote": "Lejátszás: {{name}}",
+    "noEmote": "Nincs felszerelt emote",
+    "reset": "Nézet visszaállítása"
+  },
+  "animations": {
+    "idle": "Álló",
+    "walk": "Séta",
+    "wave": "Integetés",
+    "dance": "Tánc"
+  },
+  "items": {
+    "region": "Tárgyaid",
+    "nothing": "Semmi",
+    "equipped": "Felszerelve"
+  },
+  "categories": {
+    "label": "Kategóriák",
+    "all": "Mind",
+    "head": "Kalapok",
+    "back": "Hát",
+    "top": "Felsőtest",
+    "shoulder": "Váll",
+    "nametag": "Névcédulák",
+    "emote": "Emote-ok",
+    "companion": "Társak",
+    "trail": "Csóvák",
+    "aura": "Aurák"
+  },
+  "rarity": {
+    "common": "Gyakori",
+    "rare": "Ritka",
+    "epic": "Epikus",
+    "legendary": "Legendás"
+  },
+  "toast": {
+    "equipped": "{{name}} felszerelve",
+    "unequipped": "{{name}} levéve",
+    "cleared": "{{slot}}: semmi sincs felszerelve",
+    "outfitWorn": "Öltözék felvéve",
+    "outfitSaved": "„{{name}}” öltözék mentve",
+    "equipFailed": "Nem sikerült megváltoztatni a kinézetedet. Próbáld újra."
+  },
+  "outfits": {
+    "title": "Öltözékek",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Nevezd el ezt a kinézetet",
+    "save": "Jelenlegi kinézet mentése",
+    "full": "Legfeljebb {{max}} öltözéket tarthatsz meg. Törölj egyet, hogy új kinézetet ments.",
+    "empty": "Mentsd el a jelenlegi kinézetedet, hogy egy kattintással újra felvehesd.",
+    "items_one": "{{count}} tárgy",
+    "items_other": "{{count}} tárgy",
+    "wearing": "Viselve",
+    "wear": "Felvétel",
+    "delete": "Öltözék törlése: {{name}}"
+  },
+  "switches": {
+    "showMine": "Kozmetikumaim megjelenítése",
+    "showMineHint": "A többi Rustic kiadást használó játékos látja, amit viselsz.",
+    "hideOthers": "Más játékosok kozmetikumainak elrejtése",
+    "hideTrailsAuras": "Csóvák és aurák elrejtése"
+  },
+  "heading": "A *szekrényed*",
+  "eyebrow": "Kozmetikumok"
+}

@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "greeting": "Selamat datang kembali, {{name}}",
+    "greetingAnon": "Selamat datang di Rustic",
+    "continue": "Lanjutkan: {{name}} · dimainkan {{when}}",
+    "continueNew": "Siap kapan pun kamu siap: {{name}}",
+    "firstRun": "Siapkan game dalam tiga langkah.",
+    "playNow": "Main sekarang",
+    "updateAndPlay": "Perbarui & main",
+    "resumeServer": "Gabung lagi ke {{server}}",
+    "switch": "Ganti instans",
+    "stats": {
+      "playtime": "{{time}} dimainkan",
+      "mods_other": "{{count}} mod",
+      "friends_other": "{{count}} teman online"
+    },
+    "steps": {
+      "signIn": "Masuk dengan akun Microsoft yang memiliki game",
+      "prepare": "Siapkan file game dari instalasimu sendiri",
+      "create": "Buat instans pertamamu"
+    },
+    "getReady": "Siapkan game",
+    "openLocker": "Loker",
+    "player": "Karaktermu, diam, tanpa kosmetik terpasang",
+    "playerWearing": "Karaktermu, diam, memakai: {{items}}"
+  },
+  "recent": {
+    "title": "Server & dunia terbaru",
+    "unknown": "Status tidak diketahui",
+    "online": "Online · {{online}}/{{max}}",
+    "offline": "Offline",
+    "world": "Dunia · lokal",
+    "joining": "Bergabung ke {{name}}…",
+    "opening": "Membuka {{name}}…",
+    "removed": "{{name}} dihapus dari server-mu",
+    "playAria": "Mainkan {{name}}",
+    "more": "Tindakan lain untuk {{name}}",
+    "copyAddress": "Salin alamat",
+    "addServer": "Tambah server",
+    "empty": "Server yang kamu masuki dan dunia yang kamu mainkan akan muncul di sini."
+  },
+  "news": {
+    "title": "Berita & pembaruan",
+    "empty": "Belum ada berita saat ini.",
+    "slide": "Cerita {{index}} dari {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Catatan rilis",
+      "event": "Acara",
+      "blog": "Artikel"
+    },
+    "readNotes": "Baca catatan rilis",
+    "read": "Baca"
+  },
+  "friends": {
+    "title": "Teman saat ini",
+    "empty": "Tidak ada temanmu yang sedang bermain saat ini.",
+    "since": "sejak {{when}}",
+    "activity": {
+      "server": "sedang bermain di {{server}}",
+      "hosting": "sedang menjadi host {{server}}",
+      "singleplayer": "sedang bermain sendiri",
+      "launcher": "sedang di launcher"
+    }
+  },
+  "featured": {
+    "title": "Server unggulan",
+    "verified": "Server terverifikasi",
+    "players": "{{online}} / {{max}} pemain",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Kosmetik baru",
+    "owned": "Dimiliki"
+  },
+  "launchpad": {
+    "welcome": "Selamat datang *kembali*,",
+    "playAs": "Main sebagai",
+    "online": "online di server unggulan",
+    "heroLabel": "Luncurkan",
+    "instanceSettings": "Pengaturan instans",
+    "news": "Berita terbaru",
+    "unread_other": "({{count}} belum dibaca)",
+    "unreadDot": "Belum dibaca",
+    "explore": "Jelajahi sumber",
+    "aside": "Server dan teman",
+    "joinServer": "Gabung ke {{name}}",
+    "friendsOnline_other": "({{count}} online)",
+    "openSocial": "Buka sosial",
+    "noNews": "Belum ada berita.",
+    "noFriendsOnline": "Tidak ada teman yang online saat ini.",
+    "socialHint": "Obrolan, undangan, dan party-mu ada di jendela Sosial.",
+    "eyebrow": "Launchpad"
+  }
+}

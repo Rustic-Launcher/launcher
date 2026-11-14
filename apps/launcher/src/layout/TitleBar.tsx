@@ -43,6 +43,7 @@ import type { AppNotification } from '@/cloud/types';
 import { InstanceIcon } from '@/components/InstanceIcon';
 import { LEGAL_URLS, siteUrlFor } from '@/features/settings/legal';
 import { openSocial } from '@/features/social/openSocial';
+import { UpdatePill } from '@/features/updates/UpdatePill';
 import { invoke, isNative } from '@/ipc';
 import { formatPercent, formatRelative, formatSpeed } from '@/lib/format';
 import { qk, useAccounts, useInstances, useRusticSession } from '@/queries/core';
@@ -108,6 +109,7 @@ export function TitleBar() {
           data-testid="open-social"
         />
         <AccountPill />
+        <UpdatePill />
         <RunningPill />
       </div>
       <WindowControls className="ml-1" />

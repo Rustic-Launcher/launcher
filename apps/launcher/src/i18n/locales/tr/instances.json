@@ -1,0 +1,341 @@
+{
+  "title": "Sürümler",
+  "errors": {
+    "action": "Bu işe yaramadı"
+  },
+  "card": {
+    "more": "Diğer işlemler: {{name}}",
+    "pin": "Sabitle",
+    "unpin": "Sabitlemeyi kaldır",
+    "duplicate": "Çoğalt",
+    "duplicated": "{{name}} oluşturuldu",
+    "playtime": "Oynama süresi",
+    "never": "Hiç",
+    "fromModpack": "Mod paketi: {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Çalışıyor",
+    "installing": "Yükleniyor",
+    "broken": "Onarım gerekli"
+  },
+  "delete": {
+    "title": "{{name}} silinsin mi?",
+    "body": "Modları, ayarları ve dünyaları bu bilgisayardan silinir. Bu işlem geri alınamaz.",
+    "confirm": "Örneği sil",
+    "done": "{{name}} silindi"
+  },
+  "new": {
+    "title": "Yeni örnek",
+    "description": "Sıfırdan başla veya mevcut bir paketi getir.",
+    "tabs": {
+      "create": "Oluştur",
+      "import": "İçe aktar"
+    },
+    "name": "Ad",
+    "namePlaceholder": "Hayatta kalma dünyam",
+    "nameRequired": "Örneğe bir ad ver.",
+    "icon": "Simge",
+    "color": "Renk",
+    "colorN": "Renk {{n}}",
+    "version": "Horizon derlemesi",
+    "versionHint": "Rustic sürümü oyuna kozmetikler ve arkadaşlar ekler. Java veya RAM ayarı gerekmez.",
+    "recommended": "Önerilen",
+    "release": "Kararlı",
+    "nightly": "Gecelik",
+    "installed": "Yüklü",
+    "submit": "Örnek oluştur",
+    "created": "{{name}} hazır",
+    "preview": "Önizleme",
+    "edition": "Sürüm",
+    "editionRustic": "Oyunda kozmetikler, arkadaşlar ve yerel modlar.",
+    "editionHorizon": "Ekibinin yayımladığı haliyle Horizon, ekleme yok.",
+    "noBuild": "Şu anda bu sürümün hiçbir derlemesi listelenmiyor.",
+    "nightlyHint": "Gecelik derlemeler her gün Horizon’un en yeni kodundan çıkar: daha yeni, daha az test edilmiş."
+  },
+  "icons": {
+    "grass": "Filiz",
+    "sword": "Kılıçlar",
+    "pickaxe": "Kazma",
+    "castle": "Kale",
+    "rocket": "Roket",
+    "gem": "Mücevher",
+    "flame": "Alev",
+    "leaf": "Yaprak",
+    "star": "Yıldız",
+    "compass": "Pusula"
+  },
+  "import": {
+    "folder": {
+      "title": "Örnek klasörü",
+      "description": "Bir Prism veya MultiMC örnek klasörü, Horizon’un yaptığı gibi aktarılır."
+    },
+    "mrpack": {
+      "title": "Modrinth paketi (.mrpack)",
+      "description": "Modlar, mümkün olduğunda Horizon derlemeleriyle eşleştirilir."
+    },
+    "curseforge_zip": {
+      "title": "CurseForge zip",
+      "description": "Dışa aktarılmış bir CurseForge mod paketi."
+    },
+    "modpack": {
+      "title": "Bir mod paketinden",
+      "description": "Horizon, Modrinth ve Rustic mod paketlerine göz at."
+    },
+    "started": "İçe aktarılıyor: {{name}}",
+    "background": "Arka planda devam ediyor; başlatıcıyı kullanmaya devam edebilirsin.",
+    "note": "Yalnızca Horizon’da çalışan içerik yüklenir; geri kalanı nedeniyle birlikte listelenir.",
+    "drop": {
+      "title": "Bir paketi ya da örnek klasörünü buraya bırak",
+      "hint": "Modrinth .mrpack, CurseForge .zip ya da bir Prism veya MultiMC örnek klasörü",
+      "choose": "Dosya seç",
+      "active": "İçe aktarmak için bırak",
+      "unsupported": "Bu içe aktarılamıyor. Bir .mrpack, bir CurseForge .zip ya da bir örnek klasörü kullan."
+    },
+    "formats": "Desteklenen biçimler"
+  },
+  "detail": {
+    "notFound": "Bu örnek artık mevcut değil",
+    "backToList": "Örneklere dön",
+    "tabsLabel": "Örnek bölümleri",
+    "tabs": {
+      "overview": "Genel bakış",
+      "content": "İçerik",
+      "resourcepacks": "Kaynak paketleri",
+      "worlds": "Dünyalar",
+      "settings": "Ayarlar"
+    }
+  },
+  "overview": {
+    "mods": "Modlar",
+    "resourcePacks": "Kaynak paketleri",
+    "shaders": "Shader paketleri",
+    "version": "Horizon derlemesi",
+    "updateAvailable": "Güncelleme mevcut",
+    "upToDate": "Güncel",
+    "updateNow": "Şimdi güncelle",
+    "changeVersion": "Bir Horizon derlemesi seç",
+    "applyVersion": "Derlemeyi değiştir",
+    "versionChanging": "Geçiliyor: {{version}}",
+    "lastSession": "Son oturum",
+    "lastPlayed": "Son oynama: {{when}}",
+    "neverPlayed": "Henüz oynanmadı",
+    "rejoin": "Yeniden katıl",
+    "noServer": "Bu örnekten henüz hiçbir sunucuya katılmadın.",
+    "created": "Oluşturulma",
+    "folder": "Klasör"
+  },
+  "content": {
+    "filter": "Türe göre filtrele",
+    "kinds": {
+      "all": "Tümü",
+      "mod": "Modlar",
+      "resourcepack": "Kaynak paketleri",
+      "shader": "Shader’lar"
+    },
+    "search": "Yüklü içerikte ara",
+    "updateAll_one": "{{count}} öğeyi güncelle",
+    "updateAll_other": "{{count}} öğeyi güncelle",
+    "browse": "İçeriğe göz at",
+    "noMatch": "Aramanla eşleşen yüklü içerik yok.",
+    "empty": {
+      "title": "Henüz hiçbir şey yüklü değil",
+      "description": "Bu örnekle çalışan modları, kaynak paketlerini ve shader’ları bul."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Yerel dosya"
+    },
+    "updateTo": "Güncelleme: {{version}}",
+    "incompatible": "Uyumsuz: {{reason}}",
+    "updateOne": "Güncelle: {{name}}",
+    "toggle": "Etkinleştir: {{name}}",
+    "remove": "Kaldır: {{name}}",
+    "removeTitle": "{{name}} kaldırılsın mı?",
+    "removeBody": "Dosya bu örnekten silinir. İçerik bölümünden yeniden yükleyebilirsin."
+  },
+  "packs": {
+    "hint": "İki paket aynı şeyi değiştirdiğinde en üstteki paket kazanır.",
+    "listLabel": "Kaynak paketi yükleme sırası",
+    "top": "En yüksek öncelik",
+    "up": "Yukarı taşı: {{name}}",
+    "down": "Aşağı taşı: {{name}}",
+    "moved": "{{name}} taşındı: sıra {{position}} / {{total}}",
+    "browse": "Kaynak paketi bul",
+    "empty": {
+      "title": "Kaynak paketi yok",
+      "description": "Dokuları, sesleri ve arayüzü değiştirmek için paket ekle."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Henüz dünya yok",
+      "description": "Oyunda oluşturduğun dünyalar burada görünür."
+    },
+    "openSaves": "Kayıt klasörünü aç",
+    "lastPlayed": "Son oynama: {{when}}",
+    "modes": {
+      "survival": "Hayatta kalma",
+      "creative": "Yaratıcı",
+      "adventure": "Macera",
+      "hardcore": "Zorlu",
+      "spectator": "İzleyici"
+    },
+    "datapacks_one": "{{count}} veri paketi",
+    "datapacks_other": "{{count}} veri paketi",
+    "play": "Bu dünyayı oyna",
+    "addDatapacks": "Veri paketi ekle"
+  },
+  "settings": {
+    "general": "Genel",
+    "display": "Pencere",
+    "useDefaultResolution": "Varsayılan pencere boyutunu kullan",
+    "defaultIs": "Varsayılan: {{width}} × {{height}}",
+    "width": "Genişlik",
+    "height": "Yükseklik",
+    "fullscreen": "Tam ekranda başlat",
+    "resolutionError": "Tam sayı kullan, en az 640 × 360.",
+    "launch": "Başlatma seçenekleri",
+    "launchHint": "Horizon örnekleri yalnızca bir derlemeyi sabitler: ayarlanacak Java, RAM veya yükleyici yoktur.",
+    "gameArgs": "Ek oyun argümanları",
+    "gameArgsHint": "Gelişmiş. Horizon’a olduğu gibi iletilir.",
+    "folders": "Klasörler",
+    "folder": {
+      "root": "Örnek",
+      "mods": "Modlar",
+      "resourcepacks": "Kaynak paketleri",
+      "shaderpacks": "Shader paketleri",
+      "saves": "Dünyalar",
+      "screenshots": "Ekran görüntüleri",
+      "logs": "Günlükler"
+    },
+    "unsaved": "Kaydedilmemiş değişikliklerin var.",
+    "allSaved": "Tüm değişiklikler kaydedildi.",
+    "saved": "Örnek ayarları kaydedildi"
+  },
+  "heading": "Senin *profillerin*",
+  "native": {
+    "title": "Yerel modlar",
+    "allOff": "Hepsi kapalı: örnek önceden derlenmiş oyunu oynatır.",
+    "state": {
+      "building": "Derleniyor…",
+      "up_to_date": "Güncel",
+      "needs_rebuild": "Yeniden derleme gerekli",
+      "not_built": "Derlenmedi",
+      "not_needed": "Önceden derlenmiş oyun"
+    },
+    "build": "Derle",
+    "rebuild": "Yeniden derle",
+    "cancel": "İptal",
+    "progress": "Yerel derleme ilerlemesi",
+    "starting": "Başlatılıyor…",
+    "firstBuildHint": "İlk derleme tüm oyunu derler (10 ila 15 dakika); sonrakiler yalnızca değişenleri. Başlatıcıyı kullanmaya devam edebilirsin.",
+    "failed": "Son derleme başarısız oldu",
+    "built": "Derlenme: {{date}}, süre: {{duration}} · oyun {{size}}",
+    "leftOut": {
+      "other": "{{name}} dışarıda bırakıldı: bu Horizon için geçerli değil.",
+      "unsupported": "{{name}} dışarıda bırakıldı: Rustic, gerektirdiği şeyi henüz derleyemiyor."
+    },
+    "notEdition": "Bu örnek düz bir Horizon derlemesi oynatıyor: yerel modlar yalnızca Rustic sürümüne derlenir."
+  },
+  "profiles": {
+    "summary_one": "{{count}} profil · {{playtime}} oynandı",
+    "summary_other": "{{count}} profil · {{playtime}} oynandı",
+    "searchLabel": "Profillerinde ara",
+    "searchPlaceholder": "Ada, Horizon derlemesine veya mod paketine göre ara…",
+    "source": {
+      "label": "Göster",
+      "all": "Tüm profiller",
+      "custom": "Profillerim",
+      "modpack": "Mod paketlerinden"
+    },
+    "sorts": {
+      "recent": "Son oynanan",
+      "name": "Ad",
+      "created": "Yeni oluşturulan",
+      "version": "Horizon derlemesi",
+      "playtime": "Oynama süresi"
+    },
+    "filters": {
+      "version": "Horizon derlemesi",
+      "edition": "Sürüm",
+      "editions": {
+        "rustic": "Rustic sürümü",
+        "horizon": "Düz Horizon"
+      },
+      "native": "Yerel modlar",
+      "nativeOnly": "Yerel mod içeren",
+      "nativeHint": "Yerel modlar, oyun başlamadan önce bilgisayarında derlenir.",
+      "remove": "Filtreyi kaldır: {{filter}}",
+      "reset": "Filtreleri sıfırla"
+    },
+    "create": "Profil oluştur",
+    "createHint": "Bir Horizon derlemesi, bir simge ve bir ad",
+    "import": "İçe aktar",
+    "importHint": "Bir klasör, bir .mrpack veya bir CurseForge zip",
+    "all": "Tüm profiller",
+    "listLabel": "Profiller",
+    "recent": "Kaldığın yerden devam et",
+    "recentHint": "Son oynadığın profiller",
+    "card": {
+      "active": "Etkin",
+      "activeHint": "Launchpad bu profili oynatır",
+      "running": "Çalışıyor",
+      "pinned": "Sabitlendi",
+      "update": "Güncelleme: {{version}}",
+      "broken": "Onarım gerekli",
+      "modpack": "Mod paketi",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Son oynama: {{when}}",
+      "neverPlayed": "Henüz oynanmadı",
+      "created": "Oluşturulma: {{date}}",
+      "lastServer": "Son sunucu: {{name}}",
+      "rejoin": "Yeniden katıl",
+      "rejoinAria": "{{name}} ile yeniden katıl: {{server}}",
+      "mods": "Modlar",
+      "packs": "Kaynak paketleri",
+      "shaders": "Shader’lar",
+      "playtime": "Oynama süresi",
+      "contentCount": "{{mods}} mod · {{packs}} paket · {{shaders}} shader",
+      "open": "Aç: {{name}}"
+    },
+    "native": {
+      "label": "Yerel modlar",
+      "count_one": "{{count}} yerel mod",
+      "count_other": "{{count}} yerel mod",
+      "building": "Derleniyor {{pct}}",
+      "buildingNoPct": "Derleniyor…",
+      "up_to_date": "Yerel modlar hazır",
+      "needs_rebuild": "Yerel: yeniden derleme gerekli",
+      "not_built": "Yerel: henüz derlenmedi",
+      "off": "Yerel modlar kapalı",
+      "unsupported": "Yerel: Rustic sürümü gerekli",
+      "hint": {
+        "up_to_date": "Bu Horizon derlemesi için bu bilgisayarda derlendi.",
+        "needs_rebuild": "Modlar son derlemeden beri değişti: oynadığında yeniden derlenir.",
+        "not_built": "Oynadığında bilgisayarında derlenir (ilk seferinde 10 ila 15 dakika).",
+        "off": "Tüm yerel modlar kapalı: önceden derlenmiş oyun oynatılır.",
+        "unsupported": "Bu profil düz bir Horizon derlemesi oynatıyor: yerel modlar yalnızca Rustic sürümüne derlenir.",
+        "building": "Oyun, bu profilin yerel modlarıyla derleniyor."
+      }
+    },
+    "menu": {
+      "edit": "Ayarları düzenle",
+      "activate": "Launchpad’de kullan",
+      "isActive": "Launchpad’de kullanılıyor",
+      "activated": "{{name}} artık Launchpad’de"
+    },
+    "empty": {
+      "title": "Henüz profil yok",
+      "description": "Profil, kendi modları, paketleri ve dünyaları olan bir Horizon derlemesidir. Önerilen derlemeyle bir tane oluştur veya zaten sahip olduğun bir paketi içe aktar."
+    },
+    "noMatch": {
+      "title": "Eşleşen profil yok",
+      "description": "Başka bir arama dene veya bir filtreyi kaldır."
+    },
+    "detail": {
+      "banner": "Kapak görseli: {{name}}"
+    }
+  }
+}

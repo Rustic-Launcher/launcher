@@ -161,10 +161,7 @@ export function Panel({
   testId?: string;
 }) {
   return (
-    <section
-      className={cn('border-border bg-surface/70 rounded-2xl border p-5', className)}
-      data-testid={testId}
-    >
+    <section className={cn('rx-surface rounded-2xl p-5', className)} data-testid={testId}>
       {(title || action) && (
         <header className="mb-4 flex flex-wrap items-start justify-between gap-3">
           <div className="flex min-w-0 flex-col gap-0.5">

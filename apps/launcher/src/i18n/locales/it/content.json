@@ -10,7 +10,6 @@
     "datapack": "Pacchetti dati",
     "plugin": "Plugin"
   },
-  "searchPlaceholder": "Cerca {{kind}}…",
   "searchLabel": "Cerca contenuti",
   "clear": "Cancella ricerca",
   "by": "di {{author}}",
@@ -205,6 +204,13 @@
       "title": "Questo progetto non è disponibile",
       "body": "Potrebbe essere privato, in attesa di revisione o rimosso dal suo creatore o da un moderatore.",
       "back": "Torna a Esplora"
+    },
+    "native": {
+      "title": "Si compila sul tuo PC",
+      "build": "Compilato nel gioco di questo profilo la prima volta che giochi: circa 10-15 minuti, poi più veloce.",
+      "review": "Verificato prima di poter essere installato, dal registro di Horizon o dagli admin di Rustic.",
+      "consent": "Non viene compilato nulla prima che tu abbia letto e accettato un breve avviso.",
+      "more": "Come funzionano i mod nativi"
     }
   },
   "report": {
@@ -233,7 +239,8 @@
       "beta": "Beta",
       "alpha": "Alpha"
     },
-    "empty": "Ancora nessuna versione disponibile."
+    "empty": "Ancora nessuna versione disponibile.",
+    "latest": "Ultima"
   },
   "deps": {
     "none": "Nessuna dipendenza.",
@@ -271,7 +278,14 @@
     "author": "Autore",
     "created": "Pubblicato"
   },
-  "searchSources": "Cerca {{kind}} su Horizon, Modrinth e Rustic…",
+  "searchSources": {
+    "mod": "Cerca mod su Horizon, Modrinth e Rustic…",
+    "modpack": "Cerca modpack su Horizon, Modrinth e Rustic…",
+    "resourcepack": "Cerca pacchetti di risorse su Horizon, Modrinth e Rustic…",
+    "shader": "Cerca shader su Horizon, Modrinth e Rustic…",
+    "datapack": "Cerca pacchetti dati su Horizon, Modrinth e Rustic…",
+    "plugin": "Cerca plugin su Horizon, Modrinth e Rustic…"
+  },
   "filtersLabel": "Filtri",
   "view": "Visualizza",
   "heading": "Trova il tuo prossimo *mod*",
@@ -287,7 +301,14 @@
     "eyebrow": "In evidenza"
   },
   "discover": {
-    "heroLabel": "{{kind}} in evidenza",
+    "heroLabel": {
+      "mod": "Mod in evidenza",
+      "modpack": "Modpack in evidenza",
+      "resourcepack": "Pacchetti di risorse in evidenza",
+      "shader": "Shader in evidenza",
+      "datapack": "Pacchetti dati in evidenza",
+      "plugin": "Plugin in evidenza"
+    },
     "rows": {
       "new": "Novità",
       "newHint": "Appena pubblicati o aggiornati",
@@ -392,7 +413,14 @@
     "installed": {
       "title": "Installati",
       "titleOn": "Installati su {{target}}",
-      "hint": "{{kind}} di questa destinazione: attivali o disattivali, aggiornali o rimuovili.",
+      "hint": {
+        "mod": "I mod di questa destinazione: attivali o disattivali, aggiornali o rimuovili.",
+        "modpack": "I modpack di questa destinazione: attivali o disattivali, aggiornali o rimuovili.",
+        "resourcepack": "I pacchetti di risorse di questa destinazione: attivali o disattivali, aggiornali o rimuovili.",
+        "shader": "Gli shader di questa destinazione: attivali o disattivali, aggiornali o rimuovili.",
+        "datapack": "I pacchetti dati di questa destinazione: attivali o disattivali, aggiornali o rimuovili.",
+        "plugin": "I plugin di questa destinazione: attivali o disattivali, aggiornali o rimuovili."
+      },
       "modpacksTitle": "I modpack diventano profili",
       "modpacksHint": "Ogni modpack installato è un profilo a sé.",
       "openProfiles": "Apri i miei profili",

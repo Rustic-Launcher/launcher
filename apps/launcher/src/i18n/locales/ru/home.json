@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "greeting": "С возвращением, {{name}}",
+    "greetingAnon": "Добро пожаловать в Rustic",
+    "continue": "Продолжить: {{name}} · последняя игра {{when}}",
+    "continueNew": "Всё готово: {{name}}",
+    "firstRun": "Подготовь игру за три шага.",
+    "playNow": "Играть",
+    "updateAndPlay": "Обновить и играть",
+    "resumeServer": "Вернуться на {{server}}",
+    "switch": "Сменить экземпляр",
+    "stats": {
+      "playtime": "Сыграно: {{time}}",
+      "mods_one": "{{count}} мод",
+      "mods_few": "{{count}} мода",
+      "mods_many": "{{count}} модов",
+      "mods_other": "{{count}} мода",
+      "friends_one": "{{count}} друг в сети",
+      "friends_few": "{{count}} друга в сети",
+      "friends_many": "{{count}} друзей в сети",
+      "friends_other": "{{count}} друга в сети"
+    },
+    "steps": {
+      "signIn": "Войди с учётной записью Microsoft, которая владеет игрой",
+      "prepare": "Подготовь файлы игры из своей установки",
+      "create": "Создай свой первый экземпляр"
+    },
+    "getReady": "Подготовить игру",
+    "openLocker": "Шкафчик",
+    "player": "Твой персонаж стоит без косметики",
+    "playerWearing": "Твой персонаж стоит, на нём: {{items}}"
+  },
+  "recent": {
+    "title": "Недавние серверы и миры",
+    "unknown": "Статус неизвестен",
+    "online": "В сети · {{online}}/{{max}}",
+    "offline": "Не в сети",
+    "world": "Мир · локальный",
+    "joining": "Подключение к {{name}}…",
+    "opening": "Открытие {{name}}…",
+    "removed": "{{name}} удалён из твоих серверов",
+    "playAria": "Играть: {{name}}",
+    "more": "Другие действия для {{name}}",
+    "copyAddress": "Скопировать адрес",
+    "addServer": "Добавить сервер",
+    "empty": "Здесь появятся серверы, на которые ты заходишь, и миры, в которые играешь."
+  },
+  "news": {
+    "title": "Новости и обновления",
+    "empty": "Пока новостей нет.",
+    "slide": "Новость {{index}} из {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Примечания к выпуску",
+      "event": "Событие",
+      "blog": "Статья"
+    },
+    "readNotes": "Читать примечания к выпуску",
+    "read": "Читать"
+  },
+  "friends": {
+    "title": "Друзья сейчас",
+    "empty": "Сейчас никто из друзей не играет.",
+    "since": "с {{when}}",
+    "activity": {
+      "server": "играет на {{server}}",
+      "hosting": "запустил(а) сервер {{server}}",
+      "singleplayer": "играет в одиночку",
+      "launcher": "в лаунчере"
+    }
+  },
+  "featured": {
+    "title": "Рекомендуемые серверы",
+    "verified": "Проверенный сервер",
+    "players": "Игроков: {{online}} / {{max}}",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Новая косметика",
+    "owned": "Есть у тебя"
+  },
+  "launchpad": {
+    "welcome": "С *возвращением*,",
+    "playAs": "Играть как",
+    "online": "в сети на рекомендуемых серверах",
+    "heroLabel": "Запуск",
+    "instanceSettings": "Настройки экземпляра",
+    "news": "Последние новости",
+    "unread_one": "({{count}} непрочитанная)",
+    "unread_few": "({{count}} непрочитанные)",
+    "unread_many": "({{count}} непрочитанных)",
+    "unread_other": "({{count}} непрочитанной)",
+    "unreadDot": "Не прочитано",
+    "explore": "Исследовать источники",
+    "aside": "Серверы и друзья",
+    "joinServer": "Зайти на {{name}}",
+    "friendsOnline_one": "({{count}} в сети)",
+    "friendsOnline_few": "({{count}} в сети)",
+    "friendsOnline_many": "({{count}} в сети)",
+    "friendsOnline_other": "({{count}} в сети)",
+    "openSocial": "Открыть общение",
+    "noNews": "Новостей пока нет.",
+    "noFriendsOnline": "Сейчас нет друзей в сети.",
+    "socialHint": "Чаты, приглашения и твоя группа — в окне «Общение».",
+    "eyebrow": "Launchpad"
+  }
+}

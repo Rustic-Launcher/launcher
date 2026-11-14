@@ -1,0 +1,430 @@
+{
+  "a11y": {
+    "skipToContent": "Chuyển đến nội dung",
+    "notifications": "Thông báo"
+  },
+  "actions": {
+    "retry": "Thử lại",
+    "back": "Quay lại",
+    "forward": "Tiến tới",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "clear": "Xóa",
+    "save": "Lưu",
+    "saved": "Đã lưu",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "open": "Mở",
+    "install": "Cài đặt",
+    "installed": "Đã cài đặt",
+    "remove": "Gỡ",
+    "confirm": "Xác nhận",
+    "continue": "Tiếp tục",
+    "next": "Tiếp",
+    "previous": "Trước",
+    "done": "Xong",
+    "copy": "Sao chép",
+    "copied": "Đã sao chép",
+    "learnMore": "Tìm hiểu thêm",
+    "seeAll": "Xem tất cả",
+    "create": "Tạo",
+    "import": "Nhập",
+    "browse": "Duyệt…",
+    "apply": "Áp dụng",
+    "reset": "Đặt lại",
+    "enable": "Bật",
+    "disable": "Tắt",
+    "update": "Cập nhật",
+    "add": "Thêm",
+    "refresh": "Làm mới",
+    "openFolder": "Mở thư mục",
+    "skip": "Bỏ qua",
+    "more": "Thêm"
+  },
+  "errors": {
+    "generic": "Đã xảy ra lỗi. Hãy thử lại sau giây lát.",
+    "page": {
+      "title": "Không thể hiển thị trang này"
+    },
+    "load": {
+      "title": "Không thể tải nội dung này"
+    },
+    "notFound": {
+      "title": "Không có gì ở đây",
+      "description": "Trang này không tồn tại hoặc đã được chuyển đi."
+    }
+  },
+  "nav": {
+    "label": "Điều hướng chính",
+    "home": "Trang chủ",
+    "instances": "Hồ sơ",
+    "content": "Khám phá",
+    "servers": "Máy chủ",
+    "locker": "Tủ đồ",
+    "store": "Cửa hàng",
+    "settings": "Cài đặt",
+    "newInstance": "Hồ sơ mới"
+  },
+  "search": {
+    "title": "Tìm kiếm",
+    "placeholder": "Tìm nội dung, bạn bè, máy chủ, cài đặt…",
+    "empty": "Không có kết quả. Hãy thử từ khác.",
+    "loading": "Đang tìm…",
+    "hintNavigate": "di chuyển",
+    "hintOpen": "mở",
+    "hintClose": "đóng",
+    "open": "Mở",
+    "myServer": "Máy chủ của tôi",
+    "playInstance": "Chơi {{name}}",
+    "groups": {
+      "pages": "Trang",
+      "actions": "Thao tác",
+      "instances": "Phiên bản cài đặt",
+      "content": "Nội dung",
+      "friends": "Bạn bè",
+      "servers": "Máy chủ",
+      "settings": "Cài đặt",
+      "play": "Chơi"
+    },
+    "actions": {
+      "newInstance": "Tạo phiên bản cài đặt",
+      "newServer": "Tạo máy chủ",
+      "addFriend": "Thêm bạn",
+      "darkTheme": "Chuyển sang giao diện tối",
+      "lightTheme": "Chuyển sang giao diện sáng"
+    },
+    "settings": {
+      "accounts": "Tài khoản",
+      "game": "Trò chơi",
+      "launcher": "Launcher",
+      "appearance": "Giao diện",
+      "privacy": "Quyền riêng tư và dữ liệu",
+      "parental": "Kiểm soát của phụ huynh",
+      "about": "Giới thiệu"
+    }
+  },
+  "friends": {
+    "title": "Bạn bè",
+    "onlineCount_other": "{{count}} người trực tuyến",
+    "add": "Thêm bạn",
+    "search": "Tìm bạn bè",
+    "requests_other": "Lời mời · {{count}}",
+    "incoming": "Muốn kết bạn",
+    "outgoing": "Đã gửi lời mời",
+    "accept": "Chấp nhận",
+    "decline": "Từ chối",
+    "cancelRequest": "Hủy lời mời",
+    "requestSent": "Đã gửi lời mời kết bạn đến {{name}}",
+    "error": "Không thể tải danh sách bạn bè.",
+    "empty": "Chưa có bạn bè nào. Hãy thêm bạn bằng tên người dùng Rustic của họ.",
+    "online_other": "Trực tuyến · {{count}}",
+    "offline_other": "Ngoại tuyến · {{count}}",
+    "lastSeen": "Hoạt động {{when}}",
+    "activity": {
+      "server": "Đang chơi trên {{server}}",
+      "singleplayer": "Đang chơi một mình",
+      "hosting": "Đang mở máy chủ {{server}}",
+      "launcher": "Đang ở launcher"
+    },
+    "favorite": "Yêu thích",
+    "makeFavorite": "Thêm vào yêu thích",
+    "unfavorite": "Bỏ khỏi yêu thích",
+    "join": "Tham gia",
+    "joinAria": "Tham gia cùng {{name}}",
+    "joining": "Đang vào {{server}}…",
+    "more": "Thao tác khác cho {{name}}",
+    "remove": "Xóa bạn",
+    "removeTitle": "Xóa {{name}} khỏi danh sách bạn bè?",
+    "removeBody": "Hai bạn sẽ không còn thấy hoạt động của nhau. Bạn có thể gửi lời mời mới sau."
+  },
+  "addFriend": {
+    "title": "Thêm bạn",
+    "description": "Tìm người chơi theo tên Rustic hoặc tên Minecraft họ đã liên kết, hoặc chọn người bạn từng chơi cùng.",
+    "kind": "Tìm theo",
+    "kindRustic": "Tên Rustic",
+    "kindMinecraft": "Tên Minecraft",
+    "rusticLabel": "Tên người dùng Rustic",
+    "minecraftLabel": "Tên người dùng Minecraft",
+    "rusticPlaceholder": "vd: lea_builds",
+    "minecraftPlaceholder": "vd: LeaBuilds",
+    "rusticHint": "Tên chính xác trên hồ sơ Rustic của họ.",
+    "minecraftHint": "Tên trong trò chơi chính xác của người chơi đã đăng nhập Rustic bằng hồ sơ Minecraft đó.",
+    "find": "Tìm",
+    "send": "Gửi lời mời",
+    "sent": "Đã gửi lời mời",
+    "friends": "Đã là bạn bè",
+    "pending": "Lời mời đang chờ",
+    "incoming": "Họ đã gửi lời mời kết bạn cho bạn: hãy chấp nhận lời mời đó.",
+    "minecraftName": "Tên Minecraft:",
+    "add": "Thêm",
+    "addAria": "Gửi lời mời kết bạn đến {{name}}",
+    "playedWith": "Đã chơi cùng gần đây",
+    "playedWithEmpty": "Chưa có ai. Người chơi trong nhóm của bạn và trên các máy chủ chung (cùng chơi từ 10 phút trở lên) sẽ hiện ở đây.",
+    "crossed": "Đã gặp gần đây",
+    "crossedEmpty": "Gần đây bạn chưa gặp ai trên máy chủ chung.",
+    "reasonParty": "Trong nhóm của bạn",
+    "reasonServer": "Trên {{server}}",
+    "reasonSameServer": "Trên cùng máy chủ",
+    "suggestionsError": "Không thể tải gợi ý.",
+    "suggestionsOff": "Gợi ý đang tắt. Hãy bật “Xuất hiện trong gợi ý của những người chơi tôi gặp” trong Cài đặt › Quyền riêng tư và dữ liệu để thấy những người chơi bạn gặp.",
+    "suggestionsMinor": "Tài khoản của bạn không dùng được gợi ý về những người chơi bạn gặp.",
+    "privacyNote": "Gợi ý dựa trên nhóm của bạn và các máy chủ bạn cùng chơi trong hoạt động của bạn, trong 14 ngày qua. Chỉ những người cũng cho phép mới xuất hiện.",
+    "errors": {
+      "notFoundRustic": "Không có tài khoản Rustic nào mang tên này.",
+      "notFoundMinecraft": "Chưa có người chơi Rustic nào liên kết tên Minecraft này.",
+      "invalidRustic": "Tên Rustic gồm 3 đến 20 chữ cái, chữ số hoặc dấu _.",
+      "invalidMinecraft": "Tên Minecraft gồm 3 đến 16 chữ cái, chữ số hoặc dấu _.",
+      "cannot_add_friend": "Người chơi này không thể nhận lời mời kết bạn.",
+      "friend_requests_disabled": "Lời mời kết bạn đã bị tắt cho tài khoản của bạn (kiểm soát của phụ huynh).",
+      "cannot_add_self": "Đó là bạn mà!",
+      "already_friends": "Hai bạn đã là bạn bè.",
+      "request_pending": "Đã có một lời mời đang chờ.",
+      "incoming_request_exists": "Họ đã gửi lời mời cho bạn: hãy chấp nhận.",
+      "rate_limited": "Bạn đã tìm kiếm quá nhiều lần. Hãy chờ một phút rồi thử lại.",
+      "generic": "Đã xảy ra lỗi. Hãy thử lại."
+    }
+  },
+  "party": {
+    "title": "Nhóm",
+    "leave": "Rời nhóm",
+    "leader": "Trưởng nhóm",
+    "pending": "{{name}} (đã mời)",
+    "invite": "Mời vào nhóm",
+    "invited": "Đã mời {{name}} vào nhóm của bạn"
+  },
+  "presence": {
+    "online": "Trực tuyến",
+    "in-game": "Đang trong trò chơi",
+    "away": "Vắng mặt",
+    "busy": "Bận",
+    "offline": "Ngoại tuyến"
+  },
+  "notifications": {
+    "title": "Thông báo",
+    "markAllRead": "Đánh dấu tất cả là đã đọc",
+    "empty": "Bạn đã xem hết thông báo.",
+    "kinds": {
+      "friend_request": "đã gửi cho bạn lời mời kết bạn",
+      "update_available": "đã có cho các phiên bản cài đặt của bạn",
+      "backup_done": "Đã hoàn tất sao lưu theo lịch",
+      "store_new": "Mới trong cửa hàng"
+    }
+  },
+  "account": {
+    "switcher": "Tài khoản",
+    "none": "Không có tài khoản",
+    "rustic": "Tài khoản Rustic",
+    "signInRustic": "Đăng nhập Rustic",
+    "signOutRustic": "Đăng xuất khỏi Rustic",
+    "gameProfiles": "Hồ sơ trò chơi",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Ngoại tuyến"
+    },
+    "add": "Thêm tài khoản",
+    "manage": "Quản lý tài khoản"
+  },
+  "downloads": {
+    "title": "Tải xuống",
+    "global": "Tải xuống trong nền",
+    "working": "Đang xử lý…",
+    "summary_other": "{{count}} lượt tải xuống đang chạy",
+    "kind": {
+      "game": "Horizon",
+      "content": "Nội dung",
+      "modpack": "Gói mod",
+      "server": "Máy chủ",
+      "java": "Môi trường Java",
+      "update": "Bản cập nhật launcher",
+      "prepare": "Chuẩn bị tệp trò chơi",
+      "native-build": "Biên dịch mod gốc",
+      "native-toolchain": "Rust cho mod gốc"
+    }
+  },
+  "play": {
+    "play": "Chơi",
+    "update": "Cập nhật",
+    "cancel": "Hủy",
+    "stop": "Dừng",
+    "selectInstance": "Chọn phiên bản cài đặt để chơi",
+    "instances": "Phiên bản cài đặt",
+    "manageInstances": "Quản lý phiên bản cài đặt",
+    "newVersion": "Đã có {{version}}",
+    "cancelled": "Đã hủy khởi chạy",
+    "status": {
+      "ready": "Sẵn sàng để chơi",
+      "noInstance": "Chưa có phiên bản cài đặt",
+      "running": "Trò chơi đang chạy",
+      "update": "Cần cập nhật",
+      "broken": "Cần sửa chữa"
+    },
+    "progress": {
+      "updating": "Đang cập nhật…",
+      "downloading": "Đang tải xuống {{pct}}",
+      "checking": "Đang kiểm tra tệp…",
+      "preparing": "Đang chuẩn bị…",
+      "launching": "Đang khởi chạy…",
+      "stopping": "Đang dừng…",
+      "preparingFiles": "Đang chuẩn bị tệp trò chơi {{pct}}",
+      "building": "Đang biên dịch mod gốc…",
+      "buildingPct": "Đang biên dịch mod gốc {{pct}}"
+    },
+    "errors": {
+      "launch": "Không thể khởi động trò chơi"
+    },
+    "refusals": {
+      "auth_no_account": "Hãy đăng nhập bằng tài khoản Microsoft sở hữu trò chơi để chơi.",
+      "auth_not_owned": "Tài khoản Microsoft này không sở hữu trò chơi.",
+      "auth_not_approved": "Launcher này chưa hỗ trợ đăng nhập Microsoft.",
+      "auth_reauth_required": "Hãy đăng nhập lại tài khoản Microsoft của bạn để chơi.",
+      "auth_offline_not_allowed": "Hãy đăng nhập một lần bằng tài khoản Microsoft sở hữu trò chơi, sau đó bạn có thể chơi ngoại tuyến.",
+      "auth_network": "Không thể kết nối tới Microsoft để kiểm tra tài khoản. Hãy kiểm tra kết nối mạng.",
+      "build_not_installed": "Hãy cài một bản dựng Horizon trước.",
+      "prepare_needed": "Tệp trò chơi cho bản dựng này chưa được chuẩn bị.",
+      "prepare_failed": "Không thể chuẩn bị tệp trò chơi: hãy thử lại, hoặc chuẩn bị chúng trong Cài đặt › Trò chơi và phiên bản cài đặt.",
+      "prepare_no_java": "Không tìm thấy Java: hãy cài đặt hoặc chọn Java trong Cài đặt › Trò chơi và phiên bản cài đặt.",
+      "prepare_no_minecraft_dir": "Không tìm thấy bản cài trò chơi của bạn: hãy chọn thư mục của nó trong Cài đặt › Trò chơi và phiên bản cài đặt.",
+      "launch_already_running": "Phiên bản cài đặt này đang chạy.",
+      "native_consent": "Phiên bản cài đặt này có mod gốc: hãy chấp nhận thông báo tin cậy của chúng trên trang phiên bản cài đặt (Nội dung) trước.",
+      "native_toolchain": "Mod gốc cần Rust: hãy cài Rust từ trang phiên bản cài đặt (Nội dung) hoặc Cài đặt › Trò chơi và phiên bản cài đặt.",
+      "native_not_edition": "Mod gốc chỉ biên dịch được vào phiên bản Rustic: hãy chuyển phiên bản cài đặt này sang phiên bản đó, hoặc tắt các mod gốc của nó.",
+      "native_build_failed": "Không thể biên dịch các mod gốc",
+      "native_disk": "Không đủ dung lượng đĩa trống để biên dịch các mod gốc."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (phiên bản Rustic)",
+    "rusticEdition": "Phiên bản Rustic"
+  },
+  "compat": {
+    "buildsOnHorizon": "Biên dịch được trên Horizon của bạn",
+    "compatible": "Tương thích",
+    "incompatible": "Không tương thích: {{reason}}",
+    "unknown": "Chưa rõ khả năng tương thích",
+    "reasons": {
+      "horizon_version": "phiên bản Horizon",
+      "java_only": "chỉ dành cho Java Edition",
+      "side": "chỉ phía máy chủ",
+      "conflict": "xung đột với một mod đã cài",
+      "unsupported_format": "định dạng không được hỗ trợ",
+      "needs_rustic_server": "cần Rustic Server",
+      "not_fair_play": "không được phép (chơi công bằng)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Chuyển sản phẩm",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Tài liệu Rustic Server"
+  },
+  "crumbs": {
+    "label": "Đường dẫn",
+    "horizon": "Horizon",
+    "details": "Chi tiết",
+    "create": "Tạo",
+    "kinds": {
+      "mod": "Mod",
+      "modpack": "Gói mod",
+      "resourcepack": "Gói tài nguyên",
+      "shader": "Shader",
+      "datapack": "Gói dữ liệu",
+      "plugin": "Plugin"
+    },
+    "servers": {
+      "featured": "Nổi bật",
+      "mine": "Máy chủ của tôi",
+      "multiplayer": "Danh sách nhiều người chơi",
+      "discover": "Gợi ý",
+      "joined": "Danh sách nhiều người chơi",
+      "browse": "Duyệt"
+    }
+  },
+  "social": {
+    "title": "Xã hội",
+    "description": "Bạn bè, trò chuyện và nhóm của bạn.",
+    "open": "Mở Xã hội",
+    "friends": "Bạn bè",
+    "chats": "Trò chuyện",
+    "message": "Gửi tin nhắn",
+    "searchChats": "Tìm cuộc trò chuyện…",
+    "noChats": "Chưa có cuộc trò chuyện nào. Hãy nhắn tin cho một người bạn từ tab Bạn bè.",
+    "sayHello": "Gửi lời chào",
+    "selectTitle": "Chọn một cuộc trò chuyện",
+    "selectBody": "Chọn một người bạn để bắt đầu trò chuyện.",
+    "messagePlaceholder": "Nhắn tin cho {{name}}",
+    "send": "Gửi"
+  },
+  "window": {
+    "minimize": "Thu nhỏ",
+    "maximize": "Phóng to",
+    "restore": "Khôi phục",
+    "close": "Đóng"
+  },
+  "running": {
+    "title": "Phiên bản cài đặt đang chạy",
+    "none": "Không có trò chơi nào đang chạy.",
+    "count_other": "{{count}} phiên bản cài đặt đang chạy",
+    "downloading": "Đang tải xuống {{pct}}"
+  },
+  "launch": {
+    "launch": "Khởi chạy trò chơi",
+    "update": "Cập nhật và khởi chạy",
+    "stop": "Dừng trò chơi"
+  },
+  "deepLink": {
+    "authOk": "Đã đăng nhập Rustic",
+    "authFailed": "Đăng nhập Rustic thất bại",
+    "joining": "Đang vào {{target}}…",
+    "content": "Đang mở {{project}} từ trang web"
+  },
+  "catalog": {
+    "sort": "Sắp xếp theo",
+    "results_other": "{{count}} kết quả",
+    "loadMore": "Tải thêm",
+    "loadMoreCount": "Đang hiển thị {{shown}} trên {{total}}",
+    "carousel": {
+      "prev": "Trước",
+      "next": "Tiếp",
+      "slide": "{{index}} / {{total}}",
+      "pause": "Tạm dừng trình chiếu",
+      "play": "Phát trình chiếu"
+    },
+    "row": {
+      "seeAll": "Xem tất cả",
+      "seeAllAria": "Xem tất cả: {{title}}",
+      "scrollPrev": "Cuộn sang trái",
+      "scrollNext": "Cuộn sang phải"
+    },
+    "filters": {
+      "button": "Bộ lọc",
+      "buttonCount": "Bộ lọc · {{count}}",
+      "reset": "Đặt lại bộ lọc"
+    },
+    "layout": {
+      "label": "Bố cục",
+      "list": "Danh sách",
+      "grid": "Lưới"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Đang cập nhật {{pct}}",
+      "installing": "Đang cài đặt bản cập nhật…",
+      "restarting": "Đang khởi động lại…",
+      "deferred": "Cập nhật sau khi chơi",
+      "apply": "Cập nhật và khởi động lại"
+    },
+    "toast": {
+      "launcher": "Đang tải Rustic Launcher {{version}}…",
+      "edition": "Đang cập nhật trò chơi (Phiên bản Rustic)…",
+      "editionDone": "Đã cập nhật trò chơi: {{version}}",
+      "deferred": "Bản cập nhật đã sẵn sàng. Nó sẽ được cài khi bạn đóng trò chơi.",
+      "restarting": "Rustic Launcher khởi động lại để hoàn tất cập nhật.",
+      "updated": "Đã cập nhật Rustic Launcher lên {{version}}",
+      "resuming": "Cập nhật xong: đang khởi chạy trò chơi của bạn",
+      "failed": "Không thể cài đặt bản cập nhật. Sẽ thử lại sau."
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "title": "Tủ đồ",
+  "subtitle": "Vật phẩm thuần hình ảnh. Người chơi dùng phiên bản Rustic sẽ thấy chúng trong trò chơi.",
+  "horizonNote": {
+    "badge": "Vật phẩm trang trí Horizon vẫn dùng được",
+    "detail": "Vật phẩm trang trí Horizon của bạn được giữ lại trong client phiên bản Rustic. Hãy quản lý chúng trong trò chơi; chúng hoạt động song song với vật phẩm Rustic của bạn."
+  },
+  "empty": {
+    "title": "Bạn chưa sở hữu vật phẩm trang trí nào.",
+    "description": "Vật phẩm bạn mua hoặc nhận được sẽ hiện ở đây, sẵn sàng để mặc.",
+    "browse": "Duyệt Cửa hàng",
+    "categoryTitle": "Chưa có {{category}}",
+    "categoryDescription": "Các vật phẩm loại này mà bạn sở hữu sẽ hiện ở đây."
+  },
+  "viewer": {
+    "region": "Nhân vật của bạn",
+    "label_other": "Nhân vật của bạn đang mặc {{count}} vật phẩm. Kéo hoặc dùng phím mũi tên để xoay, phím cộng và trừ để thu phóng.",
+    "hint": "Kéo để xoay · cuộn để thu phóng",
+    "animation": "Hoạt ảnh",
+    "playEmote": "Phát {{name}}",
+    "noEmote": "Chưa trang bị biểu cảm",
+    "reset": "Đặt lại góc nhìn"
+  },
+  "animations": {
+    "idle": "Đứng yên",
+    "walk": "Đi bộ",
+    "wave": "Vẫy tay",
+    "dance": "Nhảy múa"
+  },
+  "items": {
+    "region": "Vật phẩm của bạn",
+    "nothing": "Không có",
+    "equipped": "Đã trang bị"
+  },
+  "categories": {
+    "label": "Danh mục",
+    "all": "Tất cả",
+    "head": "Mũ",
+    "back": "Lưng",
+    "top": "Thân",
+    "shoulder": "Vai",
+    "nametag": "Bảng tên",
+    "emote": "Biểu cảm",
+    "companion": "Bạn đồng hành",
+    "trail": "Vệt sáng",
+    "aura": "Hào quang"
+  },
+  "rarity": {
+    "common": "Thường",
+    "rare": "Hiếm",
+    "epic": "Sử thi",
+    "legendary": "Huyền thoại"
+  },
+  "toast": {
+    "equipped": "Đã trang bị {{name}}",
+    "unequipped": "Đã gỡ {{name}}",
+    "cleared": "{{slot}}: không trang bị gì",
+    "outfitWorn": "Đã mặc trang phục",
+    "outfitSaved": "Đã lưu trang phục “{{name}}”",
+    "equipFailed": "Không thể thay đổi diện mạo của bạn. Hãy thử lại."
+  },
+  "outfits": {
+    "title": "Trang phục",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Đặt tên cho diện mạo này",
+    "save": "Lưu diện mạo hiện tại",
+    "full": "Bạn có thể lưu tối đa {{max}} trang phục. Hãy xóa một trang phục để lưu diện mạo mới.",
+    "empty": "Lưu diện mạo hiện tại để mặc lại chỉ với một cú nhấp.",
+    "items_other": "{{count}} vật phẩm",
+    "wearing": "Đang mặc",
+    "wear": "Mặc",
+    "delete": "Xóa trang phục {{name}}"
+  },
+  "switches": {
+    "showMine": "Hiện vật phẩm trang trí của tôi",
+    "showMineHint": "Người chơi phiên bản Rustic khác sẽ thấy những gì bạn mặc.",
+    "hideOthers": "Ẩn vật phẩm trang trí của người chơi khác",
+    "hideTrailsAuras": "Ẩn vệt sáng và hào quang"
+  },
+  "heading": "*Tủ đồ* của bạn",
+  "eyebrow": "Vật phẩm trang trí"
+}

@@ -76,6 +76,59 @@ pub fn inside(r: [f32; 4], at: [f32; 2]) -> bool {
     at[0] >= r[0] && at[0] < r[0] + r[2] && at[1] >= r[1] && at[1] < r[1] + r[3]
 }
 
+/// Rustic's full screens (Discover, languages) are at least this many units high: a 1080p
+/// window shows them at about two window pixels per unit, like a desktop app, whatever the
+/// game's GUI scale.
+pub const SCREEN_UNITS_HIGH: f32 = 480.0;
+
+/// GUI pixels per unit of Rustic's full screens: 1 at small GUI scales, less when the GUI
+/// scale would make them fewer than [`SCREEN_UNITS_HIGH`] units high.
+pub fn screen_unit(gui_scale: f32, window_height_px: f32) -> f32 {
+    let scale = gui_scale.max(1.0);
+    let wanted = (window_height_px / SCREEN_UNITS_HIGH).max(1.0);
+    wanted.min(scale) / scale
+}
+
+/// `r` (in screen units) in GUI pixels, `unit` GUI pixels per unit.
+pub fn scale_rect(r: [f32; 4], unit: f32) -> [f32; 4] {
+    [r[0] * unit, r[1] * unit, r[2] * unit, r[3] * unit]
+}
+
+/// `paints` laid out in screen units, in GUI pixels (`unit` GUI pixels per unit).
+pub fn rescaled(paints: &[Paint], unit: f32) -> Vec<Paint> {
+    let mut out = paints.to_vec();
+    if (unit - 1.0).abs() < f32::EPSILON {
+        return out;
+    }
+    for p in &mut out {
+        match p {
+            Paint::Fill { rect, .. }
+            | Paint::Gradient { rect, .. }
+            | Paint::Picture { rect, .. } => {
+                *rect = scale_rect(*rect, unit);
+            }
+            Paint::Round { rect, radius, .. } => {
+                *rect = scale_rect(*rect, unit);
+                *radius *= unit;
+            }
+            Paint::Quad { points, .. } => {
+                for pt in points.iter_mut() {
+                    pt[0] *= unit;
+                    pt[1] *= unit;
+                }
+            }
+            Paint::Text { x, y, size, .. } => {
+                *x *= unit;
+                *y *= unit;
+                *size *= unit;
+            }
+            Paint::ClipBegin(rect) => *rect = scale_rect(*rect, unit),
+            Paint::ClipEnd => {}
+        }
+    }
+    out
+}
+
 /// `text` cut to `width` with an ellipsis.
 pub fn fit(text: &str, width: f32, size: f32, weight: Weight, measure: Measure<'_>) -> String {
     if measure(text, size, weight) <= width {
@@ -149,6 +202,38 @@ pub(crate) fn test_measure(t: &str, size: f32, _: Weight) -> f32 {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn full_screens_keep_desktop_sizes_at_large_gui_scales() {
+        // 1080p at GUI scale 4: about two window pixels per unit, not four.
+        assert!((screen_unit(4.0, 1080.0) * 4.0 - 2.25).abs() < 1e-4);
+        // At most the GUI scale, never below one window pixel per unit.
+        assert!((screen_unit(2.0, 1080.0) - 1.0).abs() < 1e-6);
+        assert!((screen_unit(3.0, 600.0) * 3.0 - 1.25).abs() < 1e-4);
+        assert!((screen_unit(1.0, 400.0) - 1.0).abs() < 1e-6);
+        let p = rescaled(
+            &[Paint::Text {
+                x: 10.0,
+                y: 20.0,
+                text: "a".into(),
+                size: 8.0,
+                weight: Weight::Medium,
+                argb: 0,
+                align: Align::Left,
+            }],
+            0.5,
+        );
+        assert!(matches!(
+            p[0],
+            Paint::Text {
+                x: 5.0,
+                y: 10.0,
+                size: 4.0,
+                ..
+            }
+        ));
+        assert_eq!(scale_rect([2.0, 4.0, 6.0, 8.0], 0.5), [1.0, 2.0, 3.0, 4.0]);
+    }
 
     #[test]
     fn long_text_is_cut_and_wrapped() {

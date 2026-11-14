@@ -158,6 +158,7 @@ export function TargetPicker({
   instances,
   servers,
   loading,
+  stacked,
 }: {
   kind: ContentKind;
   value: TargetRef | null;
@@ -165,10 +166,12 @@ export function TargetPicker({
   instances: Instance[];
   servers: Server[];
   loading?: boolean;
+  /** The label above a full-width select (the project page's install panel). */
+  stacked?: boolean;
 }) {
   const { t } = useTranslation('content');
   const versionLabel = useHorizonVersionLabel();
-  if (loading) return <Skeleton className="h-9 w-64" />;
+  if (loading) return <Skeleton className={cn('h-9', stacked ? 'w-full' : 'w-64')} />;
   const options: SelectOption[] = [];
   if (kind !== 'plugin') {
     for (const i of instances) {
@@ -194,7 +197,7 @@ export function TargetPicker({
     });
   }
   return (
-    <div className="flex items-center gap-2">
+    <div className={cn('flex flex-col gap-1', stacked ? 'items-stretch' : 'items-start')}>
       <span className="text-fg-muted shrink-0 text-xs font-medium">{t('target.label')}</span>
       <Select
         aria-label={t('target.label')}
@@ -205,7 +208,7 @@ export function TargetPicker({
         }}
         options={options}
         placeholder={t('target.none')}
-        className="w-64"
+        className={stacked ? 'w-full' : 'w-64'}
       />
     </div>
   );

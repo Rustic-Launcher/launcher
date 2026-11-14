@@ -1,4 +1,4 @@
-import { Button, cn, IconButton } from '@rustic/ui';
+import { Button, IconButton } from '@rustic/ui';
 import { useQueryClient } from '@tanstack/react-query';
 import { Link, useNavigate } from '@tanstack/react-router';
 import { Compass, ExternalLink, LayoutList, Plus, RefreshCw, Star } from 'lucide-react';
@@ -54,11 +54,15 @@ export function ServersPage() {
   const navigate = useNavigate({ from: '/servers' });
   const [text, setText] = useState(search.q ?? '');
   const query = useDebounced(text.trim(), 250);
-  const tab: ServersTab = search.tab ?? (search.q ? 'browse' : 'discover');
   const hosted = useServers();
   const saved = useMultiplayer();
   useServersLive();
   const mineCount = (hosted.data?.length ?? 0) + (saved.data?.length ?? 0);
+  // Without a tab in the URL: the player's own servers when there is at least one (or while
+  // they load), else Discover; a search lands on Browse.
+  const mineLoading = hosted.isPending || saved.isPending;
+  const tab: ServersTab =
+    search.tab ?? (search.q ? 'browse' : mineCount > 0 || mineLoading ? 'mine' : 'discover');
 
   const setSearch = (patch: Partial<ServersSearch>, replace = false) =>
     void navigate({ to: '/servers', search: (prev) => ({ ...prev, ...patch }), replace });
@@ -142,19 +146,11 @@ export function ServersPage() {
               >
                 {t('directory.publish')}
               </Button>
-              <Link
-                to="/servers/new"
-                data-testid="create-server"
-                className={cn(
-                  'rx-focus-ring border-accent/50 bg-accent-soft text-accent-text hover:bg-accent/20 flex h-11 items-center gap-2.5 rounded-xl border px-4 text-sm font-semibold transition-colors',
-                )}
-              >
-                <Plus className="size-4" />
-                <span className="flex flex-col leading-tight">
+              <Button asChild variant="primary" className="h-11" leftIcon={<Plus />}>
+                <Link to="/servers/new" data-testid="create-server" title={t('list.createHint')}>
                   {t('list.create')}
-                  <span className="text-fg-muted text-2xs font-medium">{t('list.createHint')}</span>
-                </span>
-              </Link>
+                </Link>
+              </Button>
             </>
           }
         />

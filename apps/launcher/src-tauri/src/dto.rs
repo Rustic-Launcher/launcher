@@ -158,11 +158,51 @@ pub struct PrepareProgress {
     pub message: Option<String>,
 }
 
+/// The update service's state (`app_update_status`, `update-state`; ADR 0162).
 #[derive(Clone, Serialize)]
-pub struct LauncherUpdate {
-    pub available: bool,
-    pub version: Option<String>,
+pub struct UpdateStatus {
+    /// `idle` | `checking` | `available` (found, automatic updates off or held back) |
+    /// `deferred` (waiting for the game to exit) | `downloading` | `installing` | `restarting` |
+    /// `error` (the last check or install failed: retried later).
+    pub phase: &'static str,
+    pub current_version: String,
+    pub channel: &'static str,
+    /// Settings > Launcher > "Install updates automatically".
+    pub auto: bool,
+    pub last_check: Option<IsoDate>,
+    /// A newer launcher, when found.
+    pub launcher: Option<UpdateItem>,
+    /// A newer Rustic edition build, when found.
+    pub edition: Option<UpdateItem>,
+    /// The newest installed Rustic edition build.
+    pub edition_current: Option<String>,
+    /// What `downloading`/`installing` works on: `launcher` | `edition`.
+    pub working_on: Option<&'static str>,
+    /// 0..1 when known.
+    pub progress: Option<f64>,
+    pub error: Option<String>,
+    /// The version this launcher was updated from at its start (shown once).
+    pub updated_from: Option<String>,
+    /// A launch that resumes after the restart.
+    pub resume_instance: Option<String>,
+}
+
+#[derive(Clone, Serialize)]
+pub struct UpdateItem {
+    pub version: String,
     pub notes: Option<String>,
+    pub size: Option<u64>,
+    pub published_at: Option<IsoDate>,
+}
+
+/// A launch an update interrupted, resumed after the restart (`app_take_pending_launch`).
+#[derive(Clone, Serialize, Deserialize)]
+pub struct PendingLaunch {
+    pub instance_id: String,
+    /// The launch's `LaunchOptions`, as given.
+    pub options: Option<Value>,
+    /// Unix seconds.
+    pub created_at: u64,
 }
 
 #[derive(Deserialize)]
@@ -522,14 +562,14 @@ pub struct World {
     pub datapack_count: usize,
 }
 
-#[derive(Deserialize, Default)]
+#[derive(Serialize, Deserialize, Default)]
 pub struct JoinTarget {
     pub address: String,
     #[serde(default)]
     pub name: Option<String>,
 }
 
-#[derive(Deserialize, Default)]
+#[derive(Serialize, Deserialize, Default)]
 pub struct LaunchOptions {
     #[serde(default)]
     pub join: Option<JoinTarget>,

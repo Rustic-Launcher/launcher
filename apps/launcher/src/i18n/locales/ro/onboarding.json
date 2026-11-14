@@ -1,0 +1,114 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Pasul {{current}} din {{total}}",
+  "back": "Înapoi",
+  "continue": "Continuă",
+  "skip": "Sari peste deocamdată",
+  "steps": {
+    "welcome": "Bun venit",
+    "microsoft": "Microsoft",
+    "rustic": "Cont Rustic",
+    "privacy": "Confidențialitate",
+    "game": "Fișierele jocului",
+    "ready": "Gata"
+  },
+  "welcome": {
+    "title": "Bine ai venit în Rustic",
+    "subtitle": "Un launcher rapid și social pentru Horizon. Câteva alegeri și ești în joc.",
+    "language": "Limbă",
+    "theme": "Temă",
+    "palette": "Paletă"
+  },
+  "microsoft": {
+    "title": "Conectează-te cu Microsoft",
+    "subtitle": "Rustic verifică la Microsoft că deții jocul. Parola ta nu ajunge niciodată la Rustic.",
+    "signedInAs": "Conectat ca {{name}}",
+    "ownershipOk": "Deținere confirmată: poți juca.",
+    "notOwnedTitle": "Ai nevoie de Minecraft: Java Edition",
+    "notOwnedBody": "Acest cont Microsoft nu deține jocul. Rustic nu lansează niciodată jocul fără licență.",
+    "buyGame": "Obține jocul",
+    "whyTitle": "De ce?",
+    "whyBody": "Deținerea jocului este obligatorie. Horizon pregătește fișierele jocului din propria ta instalare, iar profilurile offline sunt deblocate doar după această verificare."
+  },
+  "rustic": {
+    "title": "Contul tău Rustic",
+    "subtitle": "Opțional. Jocul funcționează și fără el; te poți conecta mai târziu din Setări.",
+    "perks": {
+      "friends": {
+        "title": "Prieteni și grupuri",
+        "body": "Vezi cine e online și alătură-te dintr-un clic."
+      },
+      "locker": {
+        "title": "Vestiar",
+        "body": "Cosmetice pe jucătorul tău, pur vizuale."
+      },
+      "servers": {
+        "title": "Serverele tale online",
+        "body": "O adresă gratuită și domenii pentru serverele pe care le găzduiești."
+      }
+    },
+    "signedInAs": "Conectat ca {{name}}",
+    "signIn": "Conectează-te sau creează un cont",
+    "skipHint": "Sau apasă Continuă ca să sari peste deocamdată.",
+    "age": "Conturile Rustic sunt pentru vârste de la {{min}} ani în sus. Sub {{consent}} ani, un părinte trebuie să fie de acord cu prelucrarea datelor; sub 18 ani, cumpărăturile necesită aprobarea unui părinte."
+  },
+  "privacy": {
+    "title": "Alegerile tale de confidențialitate",
+    "subtitle": "Totul e dezactivat. Activează doar ce ești dispus să împărtășești; poți schimba oricând din Setări.",
+    "usage": {
+      "title": "Statistici de utilizare",
+      "body": "Ce pagini și funcții sunt folosite, fără conținut sau identificatori."
+    },
+    "performance": {
+      "title": "Rapoarte de performanță",
+      "body": "Timpii de lansare și de cadru, pentru a găsi punctele lente."
+    },
+    "crash": {
+      "title": "Rapoarte de blocare",
+      "body": "Trimise automat când jocul sau launcherul se blochează. Când e dezactivat, Rustic întreabă de fiecare dată."
+    },
+    "note": "Nu vindem niciodată date și nu le împărtășim niciodată în scopuri publicitare.",
+    "policy": "Citește politica de confidențialitate"
+  },
+  "game": {
+    "title": "Pregătește jocul",
+    "subtitle": "Rustic folosește fișierele jocului din propria ta instalare (sau descarcă de la Mojang ce lipsește), apoi le pregătește pentru Horizon.",
+    "detecting": "Se caută instalarea jocului…",
+    "found": "Joc găsit ({{versions}})",
+    "notFound": "Nicio instalare găsită",
+    "notFoundBody": "Rustic va descărca fișierele jocului de la Mojang pentru contul tău.",
+    "prepareTitle": "Pregătește fișierele jocului",
+    "alreadyReady": "Deja pregătite",
+    "done": "Pregătite",
+    "prepareAgain": "Pregătește din nou",
+    "prepare": "Pregătește",
+    "steps": {
+      "detect": "Detectare",
+      "download": "Descărcare",
+      "verify": "Verificare",
+      "compile_exporters": "Exportatoare",
+      "export": "Export",
+      "index": "Indexare"
+    },
+    "explain": "Fișierele lipsă ale jocului vin de pe serverele Mojang, nimic de la terți: fișierele pregătite rămân pe acest computer.",
+    "background": "Poți continua: pregătirea continuă în fundal.",
+    "prepareFailed": "Fișierele jocului nu au putut fi pregătite: {{reason}}"
+  },
+  "ready": {
+    "title": "Totul e gata",
+    "subtitle": "Creează-ți prima instanță acum sau sari peste și fă-o mai târziu.",
+    "finish": "Deschide Rustic",
+    "defaultName": "Prima mea lume",
+    "createTitle": "Creează prima mea instanță",
+    "recommended": "Recomandat",
+    "nameLabel": "Numele instanței",
+    "existing_one": "Ai deja {{count}} instanță.",
+    "existing_few": "Ai deja {{count}} instanțe.",
+    "existing_other": "Ai deja {{count}} de instanțe.",
+    "tips": {
+      "play": "JOACĂ e mereu în dreapta jos.",
+      "friends": "Prietenii tăi sunt în dreapta; Intră e la un clic distanță.",
+      "servers": "Găzduiește un server pentru prietenii tăi din pagina Servere."
+    }
+  }
+}

@@ -4,5 +4,29 @@
  * pages. A bundle joins only when its three apps are complete (the apps' tests check it). Its own
  * module (`@rustic/locales/complete`) so the website's first load doesn't carry the registry.
  */
-export const COMPLETE = ['en', 'fr', 'de', 'es', 'it', 'pt-BR', 'pl'] as const;
+export const COMPLETE = [
+  'en',
+  'fr',
+  'de',
+  'es',
+  'it',
+  'pt-BR',
+  'pl',
+  'ru',
+  'tr',
+  'nl',
+  'ja',
+  'ko',
+  'zh-CN',
+  'uk',
+  'zh-TW',
+  'pt-PT',
+  'cs',
+  'sv',
+  'hu',
+  'ro',
+  'id',
+  'vi',
+  'th',
+] as const;
 export type CompleteBundle = (typeof COMPLETE)[number];

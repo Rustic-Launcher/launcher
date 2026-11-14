@@ -173,7 +173,8 @@
       "capDataFolder": "Own data folder",
       "eula": "I accept the Minecraft EULA",
       "eulaHint": "Running a server requires it. You accept it yourself; Rustic does not accept it for you.",
-      "eulaRead": "Read the EULA"
+      "eulaRead": "Read the EULA",
+      "eulaTitle": "Minecraft EULA"
     },
     "world": {
       "title": "World",
@@ -211,7 +212,10 @@
       "pickInstance": "Choose an instance",
       "world": "World",
       "pickWorld": "Choose a world",
-      "noWorlds": "No worlds in this instance"
+      "noWorlds": "No worlds in this instance",
+      "newDesc": "A fresh world from a seed, with your rules.",
+      "importDesc": "A world folder from your PC or a backup.",
+      "fromInstanceDesc": "A world you played in one of your profiles."
     },
     "type": {
       "memory": "Server memory (RAM)",
@@ -263,7 +267,20 @@
       "generateKey": "Generate a key first, then add it to your VPS.",
       "password": "Enter the password."
     },
-    "heading": "Create a *server*"
+    "heading": "Create a *server*",
+    "stepHints": {
+      "basics": "Name it, choose what it runs and the world it starts with.",
+      "hosting": "Choose the machine that runs it and how much memory it gets.",
+      "access": "Choose how your friends join. You can change this later."
+    },
+    "sections": {
+      "identity": "Identity"
+    },
+    "preview": {
+      "title": "Preview",
+      "unnamed": "Your server",
+      "draft": "not created yet"
+    }
   },
   "hosting": {
     "local": {
@@ -457,7 +474,17 @@
       "port": "Port",
       "memory": "Memory",
       "created": "Created",
-      "folder": "Folder"
+      "folder": "Folder",
+      "uptime": "Uptime",
+      "startedAt": "Since {{time}}",
+      "lastSession": "Last session",
+      "lastStarted": "Last started {{when}}",
+      "neverStarted": "Not started yet",
+      "lastLines": "Last console lines",
+      "noLines": "Nothing logged yet.",
+      "openConsole": "Open the console",
+      "crashedTitle": "The server stopped unexpectedly",
+      "crashedBody": "Check the last console lines, then start it again."
     },
     "console": {
       "filter": "Filter lines",

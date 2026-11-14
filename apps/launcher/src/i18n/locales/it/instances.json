@@ -44,7 +44,13 @@
     "nightly": "Nightly",
     "installed": "Installata",
     "submit": "Crea istanza",
-    "created": "{{name}} è pronta"
+    "created": "{{name}} è pronta",
+    "preview": "Anteprima",
+    "edition": "Edizione",
+    "editionRustic": "Cosmetici, amici e mod nativi in gioco.",
+    "editionHorizon": "Horizon come lo pubblica il suo team, senza aggiunte.",
+    "noBuild": "Al momento non è disponibile nessuna build di questa edizione.",
+    "nightlyHint": "Le Nightly escono ogni giorno dal codice più recente di Horizon: più nuove, meno testate."
   },
   "icons": {
     "grass": "Germoglio",
@@ -77,7 +83,15 @@
     },
     "started": "Importazione di {{name}}",
     "background": "Prosegue in background; puoi continuare a usare il launcher.",
-    "note": "Vengono installati solo i contenuti che funzionano su Horizon; gli altri sono elencati con il motivo."
+    "note": "Vengono installati solo i contenuti che funzionano su Horizon; gli altri sono elencati con il motivo.",
+    "drop": {
+      "title": "Trascina qui un pack o una cartella di istanza",
+      "hint": ".mrpack di Modrinth, .zip di CurseForge o una cartella di istanza Prism o MultiMC",
+      "choose": "Scegli un file",
+      "active": "Rilascia per importare",
+      "unsupported": "Non è possibile importarlo. Usa un .mrpack, uno .zip di CurseForge o una cartella di istanza."
+    },
+    "formats": "Formati supportati"
   },
   "detail": {
     "notFound": "Questa istanza non esiste più",

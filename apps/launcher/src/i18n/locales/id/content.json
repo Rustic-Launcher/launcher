@@ -1,0 +1,465 @@
+{
+  "title": "Jelajahi",
+  "subtitle": "Mod, paket, shader, dan plugin dari Horizon, Modrinth, dan Rustic, diperiksa terhadap instansmu.",
+  "kindsLabel": "Jenis konten",
+  "kinds": {
+    "mod": "Mod",
+    "modpack": "Modpack",
+    "resourcepack": "Paket sumber daya",
+    "shader": "Shader",
+    "datapack": "Paket data",
+    "plugin": "Plugin"
+  },
+  "searchLabel": "Cari konten",
+  "clear": "Hapus pencarian",
+  "by": "oleh {{author}}",
+  "featured": "Unggulan",
+  "downloads": "{{value}} unduhan",
+  "updated": "diperbarui {{when}}",
+  "results_other": "{{count}} hasil",
+  "loadMore": "Muat lebih banyak ({{shown}} dari {{total}})",
+  "target": {
+    "label": "Dipasang ke",
+    "none": "Pilih tujuan",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Server Horizon",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "PC ini",
+    "vps": "VPS-mu",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Urutkan menurut",
+    "relevance": "Relevansi",
+    "downloads": "Paling banyak diunduh",
+    "updated": "Baru diperbarui",
+    "newest": "Terbaru"
+  },
+  "sources": {
+    "label": "Sumber",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Registri Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Katalog Rustic"
+  },
+  "filters": {
+    "category": "Kategori",
+    "allCategories": "Semua kategori",
+    "compatibleInstance": "Kompatibel dengan instans ini",
+    "compatibleServer": "Kompatibel dengan server ini",
+    "worksNow": "Dapat dikompilasi di Horizon saat ini",
+    "categories": "Kategori",
+    "viewMore_other": "Lihat {{count}} lagi",
+    "viewLess": "Lihat lebih sedikit",
+    "compatibility": "Kompatibilitas",
+    "pluginHint": "Plugin berjalan terisolasi (sandbox) hanya di Rustic Server.",
+    "fairPlayHint": "Hanya konten fair play yang dicantumkan.",
+    "versions": "Versi Horizon",
+    "targetVersion": "Instans atau server pilihanmu",
+    "checkingAgainst": "Kompatibilitas diperiksa terhadap build yang disorot.",
+    "rustic": "Marketplace Rustic",
+    "rusticHint": "Proyek berbayar dan terverifikasi hanya ada di Rustic.",
+    "verifiedOnly": "Hanya yang diverifikasi Rustic",
+    "price": "Harga",
+    "priceOptions": {
+      "all": "Semua",
+      "free": "Gratis",
+      "paid": "Berbayar"
+    },
+    "reset": "Atur ulang filter",
+    "remove": "Hapus filter {{filter}}"
+  },
+  "categories": {
+    "performance": "Performa",
+    "utility": "Utilitas",
+    "ui": "Antarmuka",
+    "pvp": "PvP",
+    "adventure": "Petualangan",
+    "decoration": "Dekorasi",
+    "storage": "Penyimpanan",
+    "worldgen": "Pembuatan dunia",
+    "library": "Pustaka",
+    "tech": "Teknologi",
+    "cozy": "Santai",
+    "multiplayer": "Multipemain",
+    "realistic": "Realistis",
+    "simple": "Setia aslinya",
+    "lightweight": "Ringan",
+    "cinematic": "Sinematik",
+    "qol": "Kenyamanan bermain",
+    "admin": "Administrasi",
+    "chat": "Obrolan",
+    "minigames": "Minigame",
+    "protection": "Perlindungan",
+    "integration": "Integrasi"
+  },
+  "empty": {
+    "title": "Tidak ada yang cocok",
+    "hint": "Coba kata, sumber, atau kategori lain.",
+    "compatibleHint": "Hanya konten yang berjalan di tujuan ini yang ditampilkan. Nonaktifkan filter untuk melihat semuanya.",
+    "showAll": "Tampilkan hasil yang tidak kompatibel"
+  },
+  "banners": {
+    "mod": "Hanya mod fair play yang dicantumkan: tanpa X-ray, auto-clicker, atau keuntungan curang lainnya.",
+    "modpack": "Modpack menjadi instans baru dengan mod dan pengaturannya sendiri.",
+    "resourcepack": "Paket bertumpuk: paket di posisi teratas urutan muat yang menang.",
+    "shader": "Horizon menjalankan paket shader WGSL miliknya sendiri (.hshader, shader API 0.1, eksperimental) dan paket berformat Iris/OptiFine dari registri Horizon. Pilih salah satunya dalam game di Pengaturan Video › Paket Shader.",
+    "datapack": "Paket data melekat pada dunia: kamu akan memilih dunianya saat memasang.",
+    "plugin": "Plugin (.rplugin) berjalan terisolasi (sandbox) di server yang memakai mesin Rustic Server. Plugin yang bermasalah akan dinonaktifkan; server tetap berjalan."
+  },
+  "resourcepacks": {
+    "manageOrder": "Kelola urutan muat"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "WGSL Horizon",
+      "shaders_dir": "Format Iris/OptiFine"
+    },
+    "formatHint": {
+      "horizon": "Format milik Horizon sendiri (.hshader), shader API 0.1 (eksperimental). Diperiksa sebelum dijalankan.",
+      "shaders_dir": "Paket shaders/ berformat Iris/OptiFine, dijalankan oleh loader terpisah milik Horizon."
+    }
+  },
+  "side": {
+    "client": "Klien",
+    "server": "Server",
+    "both": "Klien & server"
+  },
+  "install": {
+    "install": "Pasang",
+    "installAria": "Pasang {{name}} ke {{target}}",
+    "installed": "Terpasang",
+    "installing": "Memasang…",
+    "installingPct": "Memasang {{pct}}",
+    "createInstance": "Buat instans",
+    "chooseWorld": "Pasang di dunia",
+    "noTarget": "Pilih dulu tempat memasang.",
+    "started": "Memasang {{name}} ke {{target}}",
+    "withDeps_other": "Ditambah {{count}} dependensi wajib.",
+    "failed": "{{name}} tidak dapat dipasang",
+    "native": "Kompilasi dan pasang",
+    "update": "Perbarui",
+    "updateAria": "Perbarui {{name}} ke {{version}}"
+  },
+  "modpack": {
+    "created": "Membuat instans {{name}}",
+    "createdHint": "Unduhan sedang berjalan. Instans akan muncul di Main saat sudah siap."
+  },
+  "datapacks": {
+    "pickWorld": "Pilih dunia",
+    "noWorlds": "Instans ini belum memiliki dunia. Mainkan sekali untuk membuatnya.",
+    "count_other": "{{count}} paket data"
+  },
+  "plugins": {
+    "badge": "Plugin Rustic Server · API {{api}}",
+    "noServerTitle": "Belum ada server Rustic Server",
+    "noServerBody": "Plugin hanya berjalan di server yang memakai mesin Rustic Server. Buat satu dalam beberapa langkah, lalu kembali untuk memasang plugin di sana.",
+    "createServer": "Buat server"
+  },
+  "detail": {
+    "breadcrumb": "Jejak navigasi",
+    "sections": "Bagian proyek",
+    "tabs": {
+      "description": "Deskripsi",
+      "gallery": "Galeri",
+      "versions": "Versi",
+      "changelog": "Catatan perubahan",
+      "dependencies": "Dependensi",
+      "compatibility": "Kompatibilitas"
+    },
+    "galleryLabel": "Galeri {{name}}",
+    "prev": "Gambar sebelumnya",
+    "next": "Gambar berikutnya",
+    "slide": "Gambar {{index}} dari {{total}}",
+    "about": "Tentang proyek ini",
+    "categories": "Kategori",
+    "links": "Tautan",
+    "link": {
+      "source": "Kode sumber",
+      "issues": "Laporkan bug",
+      "website": "Situs web",
+      "site": "Di rustic-launcher.com",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "Belum ada catatan perubahan.",
+    "noGallery": "Belum ada tangkapan layar.",
+    "notAvailable": {
+      "title": "Proyek ini tidak tersedia",
+      "body": "Proyek ini mungkin privat, sedang menunggu peninjauan, atau dihapus oleh pembuatnya atau moderator.",
+      "back": "Kembali ke Jelajahi"
+    },
+    "native": {
+      "title": "Dikompilasi di PC-mu",
+      "build": "Dikompilasi ke game profil ini saat pertama kali kamu bermain: sekitar 10 sampai 15 menit, lebih cepat setelahnya.",
+      "review": "Ditinjau sebelum bisa dipasang, oleh registri Horizon atau admin Rustic.",
+      "consent": "Tidak ada yang dikompilasi sebelum kamu membaca dan menyetujui pemberitahuan singkat.",
+      "more": "Cara kerja mod native"
+    }
+  },
+  "report": {
+    "button": "Laporkan",
+    "title": "Laporkan {{name}}",
+    "sent": "Laporan terkirim",
+    "sentBody": "Terima kasih. Moderator kami akan meninjaunya.",
+    "reasons": {
+      "fair_play": "Melanggar kebijakan fair play",
+      "malware": "Malware atau pencurian data",
+      "copyright": "Pelanggaran hak cipta",
+      "other": "Hal lain"
+    },
+    "failed": "Laporan tidak dapat dikirim"
+  },
+  "versions": {
+    "version": "Versi",
+    "horizon": "Build Horizon",
+    "published": "Diterbitkan",
+    "downloads": "Unduhan",
+    "compatibility": "Kompatibilitas",
+    "actions": "Tindakan",
+    "none": "Tidak ada",
+    "channel": {
+      "release": "Rilis",
+      "beta": "Beta",
+      "alpha": "Alfa"
+    },
+    "empty": "Belum ada versi yang tersedia.",
+    "latest": "Terbaru"
+  },
+  "deps": {
+    "none": "Tidak ada dependensi.",
+    "relation": {
+      "required": "Wajib",
+      "optional": "Opsional",
+      "incompatible": "Tidak kompatibel"
+    },
+    "installed": "Terpasang",
+    "willInstall": "Dipasang otomatis",
+    "notInstalled": "Tidak terpasang"
+  },
+  "compatTab": {
+    "for": "untuk {{target}}",
+    "builds": "Pembuatnya menerbitkan build yang dibuat untuk versi Horizon ini.",
+    "format": "Konten ini hanya berisi data (tekstur, shader, paket data): tidak bergantung pada build Horizon.",
+    "unknown": "Pilih instans atau server untuk memeriksa kompatibilitas.",
+    "fairPlay": "Rustic hanya mempromosikan konten fair play. Apa pun yang memberi keuntungan curang tidak akan pernah dicantumkan.",
+    "native": "Mod native yang cocok dengan Horizon ini: Rustic Launcher mengompilasinya ke game milik instans ini di PC-mu."
+  },
+  "permissions": {
+    "title": "Izin",
+    "network": "Akses jaringan: {{value}}",
+    "none": "tidak ada",
+    "files": "File: hanya folder datanya sendiri."
+  },
+  "stats": {
+    "downloads": "Unduhan",
+    "follows": "Pengikut",
+    "updated": "Diperbarui",
+    "license": "Lisensi",
+    "size": "Ukuran",
+    "gameVersion": "Versi game",
+    "version": "Versi terbaru",
+    "author": "Pembuat",
+    "created": "Diterbitkan"
+  },
+  "searchSources": {
+    "mod": "Cari mod di Horizon, Modrinth, dan Rustic…",
+    "modpack": "Cari modpack di Horizon, Modrinth, dan Rustic…",
+    "resourcepack": "Cari paket sumber daya di Horizon, Modrinth, dan Rustic…",
+    "shader": "Cari shader di Horizon, Modrinth, dan Rustic…",
+    "datapack": "Cari paket data di Horizon, Modrinth, dan Rustic…",
+    "plugin": "Cari plugin di Horizon, Modrinth, dan Rustic…"
+  },
+  "filtersLabel": "Filter",
+  "view": "Lihat",
+  "heading": "Temukan *mod* berikutnya",
+  "eyebrow": "Jelajahi",
+  "kindsServer": "Untuk Rustic Server",
+  "tabs": {
+    "label": "Bagian Jelajahi",
+    "discover": "Temukan",
+    "browse": "Telusuri",
+    "mine": "Konten saya"
+  },
+  "hero": {
+    "eyebrow": "Unggulan"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "Mod unggulan",
+      "modpack": "Modpack unggulan",
+      "resourcepack": "Paket sumber daya unggulan",
+      "shader": "Shader unggulan",
+      "datapack": "Paket data unggulan",
+      "plugin": "Plugin unggulan"
+    },
+    "rows": {
+      "new": "Baru",
+      "newHint": "Baru diterbitkan atau diperbarui",
+      "horizon": "Populer di Horizon",
+      "horizonHint": "Paling banyak diunduh dari registri Horizon",
+      "verified": "Diverifikasi oleh Rustic",
+      "verifiedHint": "Diperiksa oleh tim Rustic: sesuai dengan yang dijanjikan",
+      "yours": "Untuk {{target}}",
+      "yoursHint": "Berjalan di Horizon {{version}}",
+      "community": "Dari komunitas",
+      "communityHint": "Baru diperbarui di marketplace Rustic"
+    },
+    "empty": {
+      "title": "Belum ada yang bisa ditemukan di sini",
+      "hint": "Belum ada konten jenis ini yang berjalan di tujuanmu. Telusuri semuanya saja.",
+      "browse": "Telusuri semuanya"
+    },
+    "rowError": "Pilihan ini tidak dapat dimuat.",
+    "retry": "Coba lagi"
+  },
+  "verified": {
+    "label": "Terverifikasi",
+    "hint": "Diverifikasi oleh Rustic: moderator telah memeriksa bahwa konten ini sesuai dengan yang tertulis di halamannya."
+  },
+  "price": {
+    "soon": "Segera hadir",
+    "soonHint": "Kreator akan segera bisa menjual karya mereka. Pembelian belum tersedia.",
+    "notOnSale": "Belum dijual: penjualan kreator segera dibuka."
+  },
+  "native": {
+    "badge": "Dikompilasi di PC-mu",
+    "short": "Native",
+    "hint": "Mod native adalah kode Rust yang dikompilasi ke dalam game di PC-mu sebelum dijalankan.",
+    "title": "Mod native",
+    "body": "Mod native adalah kode sumber Rust yang dikompilasi ke dalam game-mu di PC ini (bisa memakan waktu satu menit hingga setengah jam). Admin meninjau setiap versi sebelum dipublikasikan.",
+    "kind": "Mod native",
+    "how": "Rustic Launcher mengompilasinya di PC-mu ke dalam game milik instans ini, setelah kamu menerima pemberitahuan kepercayaan. Kompilasi pertama memakan waktu 10 sampai 15 menit; berikutnya hanya mengompilasi ulang bagian yang berubah. Instans tanpa mod native tetap memakai game yang sudah dikompilasi.",
+    "instanceOnly": "Mod native dipasang ke dalam instans.",
+    "trust": {
+      "title": "Kode native: baca sebelum mengompilasi",
+      "lead": "{{name}} adalah mod native: kode Rust yang dikompilasi ke dalam game “{{instance}}” di PC ini.",
+      "unsandboxed": "Mod native tidak terisolasi (sandbox). Setelah dikompilasi, mod berjalan dengan hak aksesmu dan dapat membaca, mengubah, atau mengirim apa pun yang bisa diakses akunmu.",
+      "review": "Hanya mod dari registri Horizon (ditinjau oleh pengelolanya) dan mod yang disetujui admin dari marketplace Rustic yang dapat dipasang. Peninjauan menurunkan risiko, tetapi tidak menghilangkannya.",
+      "build": "Rust dipasang jika diperlukan, lalu game dikompilasi untuk instans ini: sekitar 10 sampai 15 menit dan beberapa GB pada kali pertama, lebih cepat setelahnya.",
+      "scope": "Hanya instans ini yang memainkan game hasil kompilasi. Kamu tidak akan ditanya lagi untuk mod native berikutnya di instans ini.",
+      "source": "Baca kode sumbernya",
+      "check": "Aku paham bahwa mod native berjalan tanpa sandbox dengan hak aksesku, dan aku memercayai mod ini.",
+      "accept": "Aku percaya: pasang dan kompilasi"
+    },
+    "toolchain": {
+      "title": "Pasang Rust {{version}}?",
+      "lead": "Mengompilasi mod native memerlukan kompiler Rust. Rustic Launcher dapat memasangnya untukmu.",
+      "manual": "Mengompilasi mod native memerlukan kompiler Rust dan alat sistem yang tidak bisa dipasang Rustic Launcher untukmu. Pasang alat berikut, lalu kompilasi lagi:",
+      "where": "Dari situs resmi (static.rust-lang.org), diperiksa terhadap SHA-256 yang diterbitkannya, ke folder milik launcher sendiri: tidak ada yang berubah di bagian lain PC-mu.",
+      "size": "Sekitar 1 sampai 2,5 GB (dengan kompiler C di Windows).",
+      "once": "Sekali untuk semua instans; menghapus data launcher juga akan menghapusnya.",
+      "found": "Ditemukan: {{reason}}.",
+      "install": "Pasang Rust",
+      "started": "Memasang Rust",
+      "startedHint": "Kompilasi dimulai segera setelah siap. Pantau di panel unduhan.",
+      "failed": "Rust tidak dapat dipasang"
+    },
+    "build": {
+      "started": "Mengompilasi mod native untuk {{instance}}",
+      "startedHint": "Pantau di halaman instans atau di panel unduhan. Kompilasi pertama memakan waktu 10 sampai 15 menit.",
+      "failed": "Mod native {{instance}} tidak dapat dikompilasi"
+    },
+    "errors": {
+      "notEdition": "Mod native hanya dapat dikompilasi ke edisi Rustic: alihkan instans ini ke edisi tersebut di pengaturannya.",
+      "running": "Tutup game terlebih dahulu: mod native-nya dikompilasi ulang saat game berhenti.",
+      "disk": "Ruang disk kosong tidak cukup. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "Tidak kompatibel",
+    "compatible": "Kompatibel"
+  },
+  "library": {
+    "add": "Tambahkan ke pustakaku",
+    "inLibrary": "Ada di pustakaku",
+    "added": "{{name}} ditambahkan ke pustakamu",
+    "removed": "{{name}} dihapus dari pustakamu",
+    "remove": "Hapus {{name}} dari pustakaku",
+    "failed": "Pustakamu tidak dapat diperbarui"
+  },
+  "prompt": {
+    "title": "Pasang {{name}}?",
+    "body": "Kamu membuka proyek ini dari situs web. Pilih tempat memasang dan versinya, lalu konfirmasi.",
+    "dismiss": "Nanti saja",
+    "version": "Versi",
+    "versionMissing": "Versi {{version}} sudah tidak tersedia: versi kompatibel terbaru yang dipilih."
+  },
+  "mine": {
+    "searchPlaceholder": "Filter kontenku…",
+    "noMatch": "Tidak ada yang cocok",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Ditambahkan manual"
+    },
+    "installed": {
+      "title": "Terpasang",
+      "titleOn": "Terpasang di {{target}}",
+      "hint": {
+        "mod": "Mod di tujuan ini: aktifkan atau nonaktifkan, perbarui, atau hapus.",
+        "modpack": "Modpack di tujuan ini: aktifkan atau nonaktifkan, perbarui, atau hapus.",
+        "resourcepack": "Paket sumber daya di tujuan ini: aktifkan atau nonaktifkan, perbarui, atau hapus.",
+        "shader": "Shader di tujuan ini: aktifkan atau nonaktifkan, perbarui, atau hapus.",
+        "datapack": "Paket data di tujuan ini: aktifkan atau nonaktifkan, perbarui, atau hapus.",
+        "plugin": "Plugin di tujuan ini: aktifkan atau nonaktifkan, perbarui, atau hapus."
+      },
+      "modpacksTitle": "Modpack menjadi profil",
+      "modpacksHint": "Setiap modpack yang terpasang adalah profil tersendiri.",
+      "openProfiles": "Buka profilku",
+      "noTarget": "Pilih dulu tempat mencari.",
+      "serverHint": "Plugin dan paket data server dikelola di halaman server tersebut.",
+      "manageServer": "Kelola server",
+      "updateAll_other": "Perbarui {{count}} item",
+      "openProfile": "Buka profil",
+      "empty": "Belum ada yang terpasang di sini",
+      "emptyHint": "Cari sesuatu di Temukan atau Telusuri.",
+      "discover": "Temukan konten",
+      "updateTo": "Perbarui ke {{version}}",
+      "incompatible": "Tidak kompatibel",
+      "update": "Perbarui {{name}}",
+      "toggle": "Aktifkan {{name}}",
+      "remove": "Hapus {{name}}",
+      "removeTitle": "Hapus {{name}}?",
+      "removeBody": "File-nya dihapus dari profil ini. Kamu bisa memasangnya lagi kapan saja."
+    },
+    "signIn": {
+      "title": "Pustaka dan kreasimu",
+      "body": "Masuk ke akun Rustic-mu untuk menemukan proyek yang kamu simpan dan yang kamu terbitkan.",
+      "action": "Masuk"
+    },
+    "library": {
+      "title": "Pustakaku",
+      "hint": "Proyek yang disimpan ke akun Rustic-mu, di setiap PC.",
+      "empty": "Pustakamu kosong",
+      "emptyHint": "Tambahkan proyek Rustic dari halamannya agar muncul di sini.",
+      "installAria": "Pasang {{name}}"
+    },
+    "creations": {
+      "title": "Kreasiku",
+      "hint": "Yang kamu terbitkan di marketplace Rustic.",
+      "publish": "Terbitkan di situs web",
+      "empty": "Kamu belum menerbitkan apa pun",
+      "emptyHint": "Bagikan mod, paket, atau shader ke semua pemain Rustic dari situs web.",
+      "manage": "Kelola",
+      "manageAria": "Kelola {{name}} di situs web",
+      "status": {
+        "public": "Publik",
+        "unlisted": "Tidak terdaftar",
+        "private": "Privat",
+        "pending": "Menunggu peninjauan",
+        "rejected": "Ditolak",
+        "takenDown": "Diturunkan"
+      }
+    }
+  }
+}

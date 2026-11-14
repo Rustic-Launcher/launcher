@@ -1,0 +1,84 @@
+{
+  "title": "Kluisje",
+  "subtitle": "Puur visuele items. In de game zichtbaar voor spelers met de Rustic-editie.",
+  "horizonNote": {
+    "badge": "Horizon-cosmetica blijven beschikbaar",
+    "detail": "Je Horizon-cosmetica blijven bewaard in de client van de Rustic-editie. Beheer ze in de game; ze werken naast je Rustic-items."
+  },
+  "empty": {
+    "title": "Je hebt nog geen cosmetica.",
+    "description": "Items die je koopt of krijgt, verschijnen hier, klaar om te dragen.",
+    "browse": "Bekijk de Winkel",
+    "categoryTitle": "Nog geen {{category}}",
+    "categoryDescription": "Items van dit soort die je bezit, verschijnen hier."
+  },
+  "viewer": {
+    "region": "Je personage",
+    "label_one": "Je personage draagt {{count}} item. Sleep of gebruik de pijltjestoetsen om te draaien, plus en min om te zoomen.",
+    "label_other": "Je personage draagt {{count}} items. Sleep of gebruik de pijltjestoetsen om te draaien, plus en min om te zoomen.",
+    "hint": "Sleep om te draaien · scroll om te zoomen",
+    "animation": "Animatie",
+    "playEmote": "{{name}} afspelen",
+    "noEmote": "Geen emote uitgerust",
+    "reset": "Weergave herstellen"
+  },
+  "animations": {
+    "idle": "In rust",
+    "walk": "Lopen",
+    "wave": "Zwaaien",
+    "dance": "Dansen"
+  },
+  "items": {
+    "region": "Je items",
+    "nothing": "Niets",
+    "equipped": "Uitgerust"
+  },
+  "categories": {
+    "label": "Categorieën",
+    "all": "Alles",
+    "head": "Hoeden",
+    "back": "Rug",
+    "top": "Bovenlijf",
+    "shoulder": "Schouder",
+    "nametag": "Naamkaartjes",
+    "emote": "Emotes",
+    "companion": "Metgezellen",
+    "trail": "Sporen",
+    "aura": "Aura’s"
+  },
+  "rarity": {
+    "common": "Gewoon",
+    "rare": "Zeldzaam",
+    "epic": "Episch",
+    "legendary": "Legendarisch"
+  },
+  "toast": {
+    "equipped": "{{name}} uitgerust",
+    "unequipped": "{{name}} afgedaan",
+    "cleared": "{{slot}}: niets uitgerust",
+    "outfitWorn": "Outfit aangetrokken",
+    "outfitSaved": "Outfit ‘{{name}}’ opgeslagen",
+    "equipFailed": "Je uiterlijk kon niet worden gewijzigd. Probeer het opnieuw."
+  },
+  "outfits": {
+    "title": "Outfits",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Geef deze look een naam",
+    "save": "Huidige look opslaan",
+    "full": "Je kunt maximaal {{max}} outfits bewaren. Verwijder er een om een nieuwe look op te slaan.",
+    "empty": "Sla je huidige look op om hem met één klik weer te dragen.",
+    "items_one": "{{count}} item",
+    "items_other": "{{count}} items",
+    "wearing": "Draag je nu",
+    "wear": "Dragen",
+    "delete": "Outfit {{name}} verwijderen"
+  },
+  "switches": {
+    "showMine": "Mijn cosmetica tonen",
+    "showMineHint": "Andere spelers met de Rustic-editie zien wat je draagt.",
+    "hideOthers": "Cosmetica van andere spelers verbergen",
+    "hideTrailsAuras": "Sporen en aura’s verbergen"
+  },
+  "heading": "Jouw *kluisje*",
+  "eyebrow": "Cosmetica"
+}

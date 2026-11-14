@@ -31,7 +31,22 @@
     "error_title": "Não foi possível acessar o diretório de servidores",
     "retry": "Tentar de novo",
     "publish_hint": "Publique o seu em rustic-launcher.com/servers",
-    "rustic_edition": "Edição Rustic"
+    "rustic_edition": "Edição Rustic",
+    "saved_servers": "Servidores salvos",
+    "local_network": "Rede local",
+    "search_servers": "Pesquisar seus servidores",
+    "no_servers_title": "Nenhum servidor ainda",
+    "no_servers_body": "Adicione um servidor pelo endereço ou encontre um em Descobrir.",
+    "no_worlds_title": "Nenhum mundo ainda",
+    "no_worlds_body": "Crie um mundo para começar a jogar.",
+    "nothing_found": "Nada corresponde à sua pesquisa",
+    "just_now": "Agora mesmo",
+    "minutes_ago": "há {n} min",
+    "hours_ago": "há {n} h",
+    "days_ago": "há {n} d",
+    "lan_empty": "Mundos abertos em LAN na sua rede aparecem aqui.",
+    "play": "Jogar",
+    "no_mods": "Nenhum mod instalado ainda. Encontre mods para o Rustic em Explorar no launcher ou adicione seus próprios arquivos à pasta de mods."
   },
   "tags": {
     "survival": "Sobrevivência",

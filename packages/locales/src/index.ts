@@ -35,7 +35,7 @@ function base(tag: string): string {
 
 /**
  * The bundles a locale may read, most specific first: its tag (`pt-PT`), its language (`pt`),
- * then its registry fallback's (`pt-BR`, `pt`). English is not in the list (it is everyone's
+ * then its registry fallback's (`sv-SE`, `sv` for Elfdalian). English is not in the list (it is everyone's
  * last resort).
  */
 export function bundleCandidates(code: string): string[] {
@@ -68,7 +68,7 @@ export type TranslationStatus = 'complete' | 'partial' | 'fallback' | 'none';
  * How far `code` is translated: `complete` when it reads a complete bundle of its own language
  * (regional variants included: `de_at`, `en_gb`), `partial` when that bundle exists but is not
  * complete yet, `fallback` when it reads a close language through its registry fallback (`bar` →
- * German, `pt_pt` → Brazilian Portuguese), `none` when it reads English. Dialects (a `fallback`)
+ * German, `ovd` → Swedish), `none` when it reads English. Dialects (a `fallback`)
  * and tier-3 languages (Pirate Speak, LOLCAT…) never count as translated by their tag alone.
  */
 export function translationStatus(
@@ -106,7 +106,7 @@ export function codeForTag(tag: string): string | undefined {
 /**
  * The best of `offered` (bundle tags such as `fr`, `pt-BR`) for a visitor's languages
  * (`navigator.languages`, `Accept-Language` order): an exact tag, else the same language
- * (`pt-PT` → `pt-BR`, `es-MX` → `es`). Null when none matches.
+ * (`pt-AO` → `pt-BR`, `es-MX` → `es`). Null when none matches.
  */
 export function negotiate(preferred: readonly string[], offered: readonly string[]): string | null {
   const tags = offered.map((o) => [o, canonicalTag(o)] as const);

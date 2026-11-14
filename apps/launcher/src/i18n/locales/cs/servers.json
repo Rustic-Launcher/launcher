@@ -1,0 +1,1077 @@
+{
+  "list": {
+    "title": "Servery",
+    "description": "Hostuj svět pro své přátele, tady nebo na vlastním VPS, a měj oblíbené servery po ruce.",
+    "create": "Vytvořit server",
+    "tabs": {
+      "mine": "Moje servery",
+      "joined": "Připojené",
+      "discover": "Objevovat"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Vanilla Horizon"
+    },
+    "hosting": {
+      "local": "Tento počítač",
+      "remote": "Vzdálený: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Stav",
+    "states": {
+      "running": "Běží",
+      "starting": "Spouští se…",
+      "stopping": "Zastavuje se…",
+      "stopped": "Zastaveno",
+      "crashed": "Spadl",
+      "installing": "Instaluje se…",
+      "unreachable": "Nedostupný"
+    },
+    "players": "Hráči",
+    "playersCount": "{{online}}/{{max}} hráčů",
+    "version": "Verze",
+    "copyAddress": "Kopírovat adresu",
+    "copyFailed": "Nepodařilo se zkopírovat do schránky",
+    "notShared": "Zatím nesdíleno",
+    "notSharedHint": "Zapni dočasnou adresu, kód pozvánky nebo doménu na kartě Přístup serveru.",
+    "start": "Spustit",
+    "stop": "Zastavit",
+    "startAria": "Spustit {{name}}",
+    "stopAria": "Zastavit {{name}}",
+    "powerFailed": "Server neodpověděl",
+    "empty": {
+      "title": "Hostuj svět pro přátele ve 3 krocích",
+      "description": "Spusť ho zdarma na tomto počítači, nebo ho nech Rusticem nainstalovat na vlastní VPS."
+    },
+    "featured": {
+      "description": "Servery vybrané týmem Rusticu: fair play, připravené pro Horizon, moderované.",
+      "empty": "Momentálně žádné doporučené servery.",
+      "verified": "Ověřeno Rusticem",
+      "save": "Přidat do seznamu",
+      "inList": "V tvém seznamu",
+      "online_one": "{{value}} online",
+      "online_few": "{{value}} online",
+      "online_many": "{{value}} online",
+      "online_other": "{{value}} online",
+      "view": "O serveru {{name}}"
+    },
+    "viewLabel": "Zobrazení",
+    "views": {
+      "discover": "Objevovat",
+      "mine": "Moje servery"
+    },
+    "searchPlaceholder": {
+      "discover": "Hledej doporučené servery…",
+      "mine": "Hledej ve svých serverech…"
+    },
+    "clearSearch": "Vymazat hledání",
+    "sortLabel": "Řazení",
+    "sorts": {
+      "recommended": "Doporučené",
+      "players": "Nejvíc hráčů",
+      "name": "Název"
+    },
+    "refreshPing": "Obnovit ping a stav",
+    "layoutList": "Zobrazit jako seznam",
+    "layoutGrid": "Zobrazit jako mřížku",
+    "createHint": "Tady, na tvém VPS, nebo brzy v cloudu",
+    "heading": "Hraj na *serverech*",
+    "eyebrow": "Servery",
+    "sections": {
+      "hosted": "Hostované tebou",
+      "joined": "Připojené servery"
+    }
+  },
+  "multiplayer": {
+    "description": "Seznam serverů hry, sdílený všemi tvými instancemi.",
+    "add": "Přidat server",
+    "added": "{{name}} přidán do tvého seznamu",
+    "addFailed": "Tento server se nepodařilo přidat",
+    "name": "Název serveru",
+    "namePlaceholder": "Název",
+    "address": "Adresa serveru",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Použij název hostitele nebo IP, volitelně s :portem.",
+    "refreshPings": "Obnovit",
+    "favorites_one": "Oblíbený · {{count}}",
+    "favorites_few": "Oblíbené · {{count}}",
+    "favorites_many": "Oblíbené · {{count}}",
+    "favorites_other": "Oblíbené · {{count}}",
+    "others_one": "Další server · {{count}}",
+    "others_few": "Další servery · {{count}}",
+    "others_many": "Další servery · {{count}}",
+    "others_other": "Další servery · {{count}}",
+    "favorite": "Přidat {{name}} do oblíbených",
+    "unfavorite": "Odebrat {{name}} z oblíbených",
+    "offline": "Offline",
+    "unreachable": "Tento server teď není dostupný",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Připojit se",
+    "joinAria": "Připojit se k {{name}}",
+    "joinWith": "Připojí se s instancí {{instance}}",
+    "noInstance": "Pro připojení k serverům vytvoř instanci",
+    "joining": "Spouštím a připojuji se k {{name}}…",
+    "more": "Další akce: {{name}}",
+    "copyAddress": "Kopírovat adresu",
+    "removed": "{{name}} odebrán",
+    "undo": "Vrátit",
+    "empty": {
+      "title": "Zatím žádné servery",
+      "description": "Přidej server podle adresy, nebo si vyber v sekci Objevovat."
+    }
+  },
+  "wizard": {
+    "title": "Vytvořit server",
+    "subtitle": "Tři kroky: co spustit, kde hostovat a jak se přátelé připojí.",
+    "creatingTitle": "Nastavuji {{name}}",
+    "stepOf": "Krok {{index}} z {{total}}",
+    "steps": {
+      "basics": "Základy",
+      "hosting": "Kde hostovat",
+      "access": "Přístup"
+    },
+    "create": "Vytvořit server",
+    "installOn": "Nainstalovat na {{host}}",
+    "createFailed": "Server se nepodařilo vytvořit",
+    "noRusticServer": "Program rustic-server nebyl nalezen. Vyber ho v Nastavení › Hra a instance › Rustic Server, nebo nainstaluj sestavení edice Rustic, které ho obsahuje.",
+    "openRusticServerSettings": "Otevřít nastavení",
+    "fixErrors": "Pro pokračování zkontroluj zvýrazněná pole.",
+    "discard": {
+      "title": "Zahodit tento server?",
+      "body": "Údaje zadané v průvodci se ztratí.",
+      "keep": "Pokračovat v úpravách",
+      "confirm": "Zahodit"
+    },
+    "basics": {
+      "name": "Název serveru",
+      "namePlaceholder": "Loušino SMP",
+      "icon": "Ikona",
+      "icons": {
+        "grass": "Tráva",
+        "sword": "Meč",
+        "pickaxe": "Krumpáč",
+        "castle": "Hrad",
+        "rocket": "Raketa",
+        "gem": "Drahokam",
+        "flame": "Plamen",
+        "leaf": "List",
+        "star": "Hvězda",
+        "compass": "Kompas"
+      },
+      "color": "Barva",
+      "colorN": "Barva {{n}}",
+      "type": "Typ",
+      "recommended": "Doporučeno",
+      "nightly": "Nightly",
+      "rusticDesc": "Pluginy (.rplugin) v sandboxu: plugin nikdy nemůže shodit tvůj server.",
+      "horizonDesc": "Vlastní server Horizonu, bez pluginů.",
+      "version": "Verze Horizonu",
+      "maxPlayers": "Max. hráčů",
+      "versionLineRustic": "Rustic Server 0.1 na Horizonu {{version}}",
+      "versionLineHorizon": "Server Horizon {{version}}",
+      "sameAsClient": "(stejná jako tvůj klient)",
+      "starterPlugins": "Startovní pluginy",
+      "starterHint": "Oficiální pluginy a to, co smějí dělat.",
+      "capNetwork": "Síť",
+      "capNoNetwork": "Bez sítě",
+      "capNoFiles": "Bez souborů",
+      "capDataFolder": "Vlastní datová složka",
+      "eula": "Přijímám EULA Minecraftu",
+      "eulaHint": "Provozování serveru to vyžaduje. Přijímáš ji ty; Rustic ji za tebe nepřijímá.",
+      "eulaRead": "Přečíst EULA",
+      "eulaTitle": "EULA Minecraftu"
+    },
+    "world": {
+      "title": "Svět",
+      "new": "Nový svět",
+      "import": "Importovat složku",
+      "fromInstance": "Z instance",
+      "seed": "Seed",
+      "seedHint": "Nech prázdné pro náhodný svět.",
+      "seedPlaceholder": "Volitelné",
+      "randomSeed": "Náhodný seed",
+      "levelType": "Typ světa",
+      "levelTypes": {
+        "default": "Výchozí",
+        "flat": "Superplochý",
+        "large_biomes": "Velké biomy",
+        "amplified": "Zesílený"
+      },
+      "gamemode": "Herní režim",
+      "gamemodes": {
+        "survival": "Přežití",
+        "creative": "Tvořivý",
+        "adventure": "Dobrodružství"
+      },
+      "difficulty": "Obtížnost",
+      "difficulties": {
+        "peaceful": "Mírumilovná",
+        "easy": "Snadná",
+        "normal": "Normální",
+        "hard": "Těžká"
+      },
+      "structures": "Generovat stavby",
+      "hardcore": "Hardcore",
+      "folder": "Složka světa",
+      "instance": "Instance",
+      "pickInstance": "Vyber instanci",
+      "world": "Svět",
+      "pickWorld": "Vyber svět",
+      "noWorlds": "V této instanci nejsou žádné světy",
+      "newDesc": "Nový svět ze seedu, s tvými pravidly.",
+      "importDesc": "Složka světa z tvého PC nebo ze zálohy.",
+      "fromInstanceDesc": "Svět z některého z tvých profilů."
+    },
+    "type": {
+      "memory": "Paměť serveru (RAM)",
+      "memoryHint": "4 GB stačí většině part přátel. Víc pomůže při mnoha hráčích nebo velkých modpackách."
+    },
+    "access": {
+      "intro": "Jak se tvoji přátelé připojí. Zapnuto může být víc možností najednou; později je můžeš změnit.",
+      "lan": "Přátelé v mé síti (LAN)",
+      "lanDetail": "Místní adresa tohoto počítače, zobrazí se, jakmile server vznikne.",
+      "publicIp": "Veřejná adresa",
+      "publicIpDetail": "IP tvého VPS",
+      "alwaysOn": "Vždy zapnuto",
+      "relay": "Dočasná adresa",
+      "relayDetail": "zdarma, dokud server běží; žádný port k otevření",
+      "invite": "Kód pozvánky",
+      "inviteDetail": "Kód, který přátelé vloží do Rustic Launcheru a připojí se.",
+      "domain": "Vlastní doména",
+      "domainDetail": "Propojit Porkbun · Koupit u Porkbunu · Použít libovolného registrátora",
+      "domainAfter": "Nastavit po vytvoření",
+      "safety": "Online režim zapnutý: připojit se mohou jen hráči, kteří vlastní hru. Whitelist zapnutý."
+    },
+    "summary": {
+      "title": "Souhrn",
+      "version": "Verze",
+      "host": "Hosting",
+      "world": "Svět",
+      "memory": "Paměť",
+      "players": "Max. hráčů",
+      "plugins": "Pluginy",
+      "none": "Žádné",
+      "eulaAccepted": "EULA Minecraftu byla přijata v kroku 1."
+    },
+    "errors": {
+      "nameRequired": "Pojmenuj svůj server.",
+      "nameTooLong": "Použij nejvýš 40 znaků.",
+      "version": "Vyber verzi Horizonu.",
+      "maxPlayers": "Od 1 do 1000 hráčů.",
+      "importPath": "Vyber složku světa k importu.",
+      "world": "Vyber instanci a jeden z jejích světů.",
+      "seed": "Seed může mít nejvýš 64 znaků.",
+      "eula": "Pro provozování serveru přijmi EULA.",
+      "cloudUnavailable": "Rustic Cloud zatím není dostupný.",
+      "vpsNotReady": "Nejdřív připoj svůj VPS a projdi kontrolami.",
+      "memory": "Alespoň 1 GB paměti.",
+      "host": "Zadej IP adresu nebo název hostitele.",
+      "port": "Port od 1 do 65535.",
+      "username": "Zadej uživatelské jméno v Linuxu.",
+      "keyPath": "Vyber soubor se soukromým klíčem.",
+      "generateKey": "Nejdřív vygeneruj klíč a pak ho přidej na svůj VPS.",
+      "password": "Zadej heslo."
+    },
+    "heading": "Vytvoř *server*",
+    "stepHints": {
+      "basics": "Pojmenuj ho, vyber, co na něm poběží, a počáteční svět.",
+      "hosting": "Vyber stroj, na kterém poběží, a kolik paměti dostane.",
+      "access": "Vyber, jak se k němu přátelé připojí. Později to můžeš změnit."
+    },
+    "sections": {
+      "identity": "Název a ikona"
+    },
+    "preview": {
+      "title": "Náhled",
+      "unnamed": "Tvůj server",
+      "draft": "zatím nevytvořený"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "Tento počítač (místně)",
+      "free": "Zdarma",
+      "description": "Tvůj počítač musí zůstat zapnutý, dokud přátelé hrají.",
+      "settings": "Na tomto počítači",
+      "reach": "Přátelé se připojí přes tvou síť, přes dočasnou adresu Rusticu nebo kódem pozvánky. Žádné nastavování routeru.",
+      "startWithLauncher": "Spouštět s launcherem",
+      "startWithLauncherHint": "Server se spustí, když se otevře Rustic Launcher."
+    },
+    "vps": {
+      "title": "Tvůj VPS (SSH)",
+      "description": "Tvůj linuxový server. Nainstalujeme a spustíme ho za tebe.",
+      "which": "VPS",
+      "existing_one": "Uložený VPS ({{count}})",
+      "existing_few": "Uložené VPS ({{count}})",
+      "existing_many": "Uložené VPS ({{count}})",
+      "existing_other": "Uložené VPS ({{count}})",
+      "new": "Přidat VPS",
+      "pinned": "Klíč hostitele připnut",
+      "host": "Hostitel",
+      "port": "Port",
+      "user": "Uživatel",
+      "userPlaceholder": "root nebo uživatel se sudo",
+      "auth": "Přihlášení",
+      "authGenerate": "Vygenerovat klíč za mě",
+      "authKey": "Existující soubor s klíčem",
+      "authPassword": "Heslo (jednorázově)",
+      "generateHint": "Doporučeno. Rustic vytvoří pár klíčů; soukromý klíč nikdy neopustí tento počítač.",
+      "generate": "Vygenerovat klíč",
+      "addKeyCommand": "Jednou spusť tento příkaz v konzoli svého VPS a autorizuj tím klíč:",
+      "keyStored": "Soukromý klíč uložen v systémové klíčence ({{path}})",
+      "openFirewall": "Otevřít herní port ve firewallu VPS",
+      "openFirewallHint": "Povolí TCP na port serveru v ufw nebo firewalld. Může to být potřeba i ve firewallu tvého poskytovatele.",
+      "keyFile": "Soukromý klíč",
+      "passphrase": "Heslová fráze",
+      "optional": "Volitelné",
+      "password": "Heslo",
+      "passwordHint": "Použije se jednou k instalaci klíče. Neukládá se.",
+      "test": "Otestovat připojení",
+      "reachable": "Připojeno · {{ms}} ms",
+      "unreachable": "K tomuto VPS se nepodařilo připojit",
+      "authFailed": "VPS přihlášení odmítl"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Již brzy",
+      "description": "Servery na strojích Rusticu, vždy zapnuté.",
+      "waitlist": "Dostaň e-mail, až se Rustic Cloud otevře.",
+      "email": "E-mailová adresa",
+      "join": "Zapsat se do pořadníku",
+      "joined": "Jsi v pořadníku (#{{position}}). Pošleme ti e-mail.",
+      "invalidEmail": "Zadej platnou e-mailovou adresu."
+    },
+    "requirements": {
+      "title": "Kontrola požadavků",
+      "ram": "Paměť ({{free}} volné)",
+      "gameFiles": "Herní soubory připravené",
+      "port": "Port 25565 volný",
+      "hint": "Místo na disku se kontroluje při stahování souborů serveru."
+    },
+    "fingerprint": {
+      "title": "Důvěřovat hostiteli {{host}}?",
+      "description": "První připojení k tomuto VPS. Než mu začneš důvěřovat, porovnej tento otisk s otiskem v konzoli svého poskytovatele.",
+      "warning": "Pokud nesedí, zruš to: někdo možná připojení odposlouchává. Rustic zablokuje jakoukoli pozdější změnu tohoto klíče.",
+      "trust": "Důvěřovat a pokračovat"
+    },
+    "testFailed": "Test připojení selhal",
+    "checkFailed": "Kontrola VPS selhala",
+    "preflight": {
+      "running": "Kontroluji tvůj VPS…",
+      "ok": "Tvůj VPS je připravený",
+      "notOk": "Tvůj VPS nesplňuje požadavky",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_few": "{{count}} vCPU",
+      "cpu_many": "{{count}} vCPU",
+      "cpu_other": "{{count}} vCPU",
+      "memory": "Paměť {{memory}}",
+      "disk": "Volný disk {{disk}}",
+      "systemd": "systemd dostupný",
+      "ip": "Veřejná IP"
+    },
+    "problems": {
+      "memory": "Paměť",
+      "disk": "Disk",
+      "arch": "Architektura",
+      "os": "Operační systém",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Instalace na {{host}}",
+      "steps": {
+        "connect": "Připojení přes SSH",
+        "check": "Úvodní kontroly",
+        "user": "Vytvoření uživatele ‚rustic‘",
+        "download": "Nahrání podepsaných souborů serveru",
+        "engine": "Konfigurace enginu Rustic",
+        "service": "Instalace služby",
+        "firewall": "Otevření portu 25565",
+        "world": "Příprava světa",
+        "start": "Spuštění a kontrola"
+      },
+      "state": {
+        "pending": "čeká",
+        "running": "probíhá",
+        "done": "hotovo",
+        "failed": "selhalo",
+        "skipped": "přeskočeno"
+      },
+      "skippedVanilla": "Pro vanilla Horizon není potřeba",
+      "log_one": "Zobrazit log ({{count}} řádek)",
+      "log_few": "Zobrazit log ({{count}} řádky)",
+      "log_many": "Zobrazit log ({{count}} řádku)",
+      "log_other": "Zobrazit log ({{count}} řádků)",
+      "vpsDone": "{{name}} běží na {{host}}",
+      "vpsDoneBody": "Spravuj ho z launcheru jako místní server: konzole, hráči, pluginy, zálohy.",
+      "localDownload": "Stažení {{engine}}",
+      "localInit": "Příprava světa a nastavení",
+      "localStart": "První spuštění",
+      "localReady": "Připraveno ke spuštění",
+      "localDone": "{{name}} běží",
+      "localDoneBody": "Sdílej jeho adresu z karty Přístup, nebo pozvi přátele z panelu přátel.",
+      "open": "Otevřít server",
+      "backToList": "Zpět na servery",
+      "retry": "Zkusit znovu",
+      "failed": "Instalace selhala",
+      "crashed": "Server se při prvním spuštění zastavil. Zkontroluj konzoli."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Sekce serveru",
+    "tabs": {
+      "overview": "Přehled",
+      "console": "Konzole",
+      "players": "Hráči",
+      "plugins": "Pluginy",
+      "config": "Konfigurace",
+      "datapacks": "Datové balíčky",
+      "backups": "Zálohy",
+      "access": "Přístup",
+      "danger": "Nebezpečná zóna"
+    },
+    "state": {
+      "stopped": "Zastaveno",
+      "starting": "Spouští se…",
+      "running": "Běží",
+      "stopping": "Zastavuje se…",
+      "crashed": "Spadl",
+      "installing": "Instaluje se…",
+      "unreachable": "Nedostupný"
+    },
+    "save": "Uložit",
+    "cancel": "Zrušit",
+    "close": "Zavřít",
+    "remove": "Odebrat",
+    "done": "Hotovo",
+    "header": {
+      "back": "Servery",
+      "players": "{{online}}/{{max}} hráčů",
+      "uptime": "běží {{duration}}",
+      "start": "Spustit",
+      "stop": "Zastavit",
+      "restart": "Restartovat",
+      "join": "Připojit se",
+      "address": "Adresa",
+      "copyAddress": "Kopírovat adresu serveru",
+      "powerFailed": "Server nemohl změnit stav"
+    },
+    "overview": {
+      "stoppedTitle": "Server je zastavený",
+      "stoppedBody": "Spusť ho a uvidíš živé CPU, paměť, TPS a dobu ticku.",
+      "cpu": "CPU",
+      "cpuChart": "Využití CPU za poslední dvě minuty",
+      "ram": "Paměť",
+      "ramChart": "Využitá paměť za poslední dvě minuty",
+      "of": "z {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Ticky za sekundu za poslední dvě minuty",
+      "mspt": "Doba ticku",
+      "msptChart": "Milisekundy na tick za poslední dvě minuty, čára rozpočtu 50 ms",
+      "msptBudget": "rozpočet 50 ms",
+      "health": {
+        "good": "Plynulé",
+        "busy": "Vytížené",
+        "lagging": "Laguje"
+      },
+      "onlineTitle_one": "{{count}} hráč online",
+      "onlineTitle_few": "{{count}} hráči online",
+      "onlineTitle_many": "{{count}} hráče online",
+      "onlineTitle_other": "{{count}} hráčů online",
+      "onlineStopped": "Dokud je server zastavený, nikdo se nemůže připojit.",
+      "nobody": "Teď nikdo nehraje.",
+      "infoTitle": "Podrobnosti",
+      "world": "Svět",
+      "version": "Horizon",
+      "port": "Port",
+      "memory": "Paměť",
+      "created": "Vytvořeno",
+      "folder": "Složka",
+      "uptime": "Doba běhu",
+      "startedAt": "Od {{time}}",
+      "lastSession": "Poslední relace",
+      "lastStarted": "Naposledy spuštěn: {{when}}",
+      "neverStarted": "Zatím nespuštěn",
+      "lastLines": "Poslední řádky konzole",
+      "noLines": "Zatím nic nezaznamenáno.",
+      "openConsole": "Otevřít konzoli",
+      "crashedTitle": "Server se nečekaně zastavil",
+      "crashedBody": "Podívej se na poslední řádky konzole a pak ho znovu spusť."
+    },
+    "console": {
+      "filter": "Filtrovat řádky",
+      "filters": {
+        "all": "Vše",
+        "info": "Info",
+        "warn": "Varování",
+        "error": "Chyby",
+        "chat": "Chat"
+      },
+      "levels": {
+        "info": "info",
+        "warn": "varov.",
+        "error": "chyba",
+        "command": "přík.",
+        "chat": "chat"
+      },
+      "autoScroll": "Sledovat nové řádky",
+      "logLabel": "Konzole serveru",
+      "empty": "Zatím žádné řádky.",
+      "suggestions": "Návrhy příkazů",
+      "inputLabel": "Příkaz serveru",
+      "placeholder": "Napiš příkaz (Tab doplní, ↑ historie)",
+      "offline": "Pro odesílání příkazů spusť server",
+      "send": "Odeslat",
+      "sendFailed": "Příkaz se nepodařilo odeslat",
+      "hint": "Příkazy běží jako konzole serveru, se všemi oprávněními. Lomítko na začátku není potřeba."
+    },
+    "players": {
+      "whitelist": "Whitelist",
+      "whitelistHint": "Připojit se mohou jen hráči ze seznamu. Doporučeno, když je server dostupný z internetu.",
+      "view": "Zobrazit hráče",
+      "views": {
+        "online": "Online",
+        "all": "Všichni",
+        "ops": "Operátoři",
+        "whitelist": "Na whitelistu",
+        "banned": "Zabanovaní"
+      },
+      "search": "Najít hráče",
+      "emptyOnline": "Nikdo není online",
+      "empty": "Žádní hráči",
+      "stoppedHint": "Spusť server a uvidíš, kdo hraje.",
+      "online": "Online",
+      "offline": "Offline",
+      "op": "Operátor",
+      "whitelisted": "Na whitelistu",
+      "banned": "Zabanován",
+      "playtime": "Odehráno {{duration}}",
+      "kick": "Vyhodit",
+      "kickAria": "Vyhodit hráče {{name}}",
+      "more": "Další akce: {{name}}",
+      "makeOp": "Udělat operátorem",
+      "deop": "Odebrat operátora",
+      "whitelistAdd": "Přidat na whitelist",
+      "whitelistRemove": "Odebrat z whitelistu",
+      "ban": "Zabanovat",
+      "pardon": "Odbanovat",
+      "banTitle": "Zabanovat hráče {{name}}?",
+      "banBody": "Hráč bude odpojen a nebude se moct znovu připojit, dokud ho neodbanuješ.",
+      "reason": "Důvod (volitelné, zobrazí se hráči)",
+      "failed": "Akce selhala",
+      "done": {
+        "kick": "Hráč {{name}} byl vyhozen",
+        "ban": "Hráč {{name}} byl zabanován",
+        "pardon": "Hráč {{name}} byl odbanován",
+        "op": "Hráč {{name}} je teď operátor",
+        "deop": "Hráč {{name}} už není operátor",
+        "whitelist_add": "Hráč {{name}} byl přidán na whitelist",
+        "whitelist_remove": "Hráč {{name}} byl odebrán z whitelistu"
+      }
+    },
+    "config": {
+      "mode": "Režim úprav",
+      "form": "Nastavení",
+      "raw": "Surový soubor",
+      "groups": {
+        "general": "Obecné",
+        "world": "Svět",
+        "players": "Hráči",
+        "network": "Síť",
+        "performance": "Výkon"
+      },
+      "keys": {
+        "motd": "Zpráva dne",
+        "max-players": "Maximum hráčů",
+        "white-list": "Whitelist",
+        "online-mode": "Online režim (ověření účtu)",
+        "pvp": "Hráč proti hráči",
+        "gamemode": "Výchozí herní režim",
+        "difficulty": "Obtížnost",
+        "level-seed": "Seed světa",
+        "spawn-protection": "Poloměr ochrany spawnu",
+        "server-port": "Port",
+        "enable-rcon": "Vzdálená konzole (RCON)",
+        "view-distance": "Dohled",
+        "simulation-distance": "Vzdálenost simulace"
+      },
+      "restart": "Restartovat",
+      "restartNeeded": "Pro uplatnění některých změn restartuj server",
+      "unsaved_one": "{{count}} neuložená změna",
+      "unsaved_few": "{{count}} neuložené změny",
+      "unsaved_many": "{{count}} neuložené změny",
+      "unsaved_other": "{{count}} neuložených změn",
+      "noChanges": "Žádné změny",
+      "discard": "Zahodit",
+      "saved": "Konfigurace uložena",
+      "saveFailed": "Konfiguraci se nepodařilo uložit",
+      "rawTitle": "server.toml",
+      "rawWarning": "Pokročilé: překlep může zabránit spuštění serveru. Hodnoty se kontrolují při uložení."
+    },
+    "plugins": {
+      "vanillaTitle": "Pluginy potřebují Rustic Server",
+      "vanillaBody": "Tento server běží na vanilla Horizonu. Rustic Server přidává pluginy .rplugin v sandboxu, které ho nikdy nemohou shodit. Pro použití pluginů vytvoř Rustic Server a importuj do něj tento svět.",
+      "createRustic": "Vytvořit Rustic Server",
+      "intro": "Pluginy běží v sandboxu: plugin, který selže, se vypne s řádkem v logu a server jede dál. Každý uvádí, k čemu smí přistupovat.",
+      "upload": "Přidat soubor…",
+      "uploadTitle": "Vyber soubor .rplugin",
+      "find": "Najít pluginy",
+      "empty": "Zatím žádné pluginy",
+      "emptyBody": "Projdi Obsah › Pluginy a přidej jeden jedním kliknutím.",
+      "errored": "Vypnuto po chybě",
+      "disabled": "Vypnuto",
+      "noDescription": "Bez popisu",
+      "toggle": "Zapnout {{name}}",
+      "capabilities": "Přístup",
+      "noNetwork": "Bez sítě",
+      "network": "Síť: {{domains}}",
+      "fs": {
+        "none": "Bez souborů",
+        "data-folder": "Vlastní datová složka"
+      },
+      "update": "Aktualizovat na {{version}}",
+      "updated": "{{name}} aktualizován na {{version}}",
+      "installed": "{{name}} nainstalován a zapnut",
+      "removeTitle": "Odebrat {{name}}?",
+      "removeBody": "Plugin se uvolní a jeho soubor smaže. Jeho datová složka zůstane.",
+      "failed": "Akce s pluginem selhala"
+    },
+    "datapacks": {
+      "intro": "Datové balíčky světa „{{world}}“.",
+      "find": "Najít datové balíčky",
+      "empty": "V tomto světě nejsou žádné datové balíčky",
+      "toggle": "Zapnout {{name}}",
+      "remove": "Odebrat {{name}}",
+      "reloadHint": "Změny se projeví po /reload nebo restartu.",
+      "failed": "Akce s datovým balíčkem selhala"
+    },
+    "backups": {
+      "nowTitle": "Zálohovat teď",
+      "nowBody": "Kopie světa a konfigurace. Server běží dál.",
+      "note": "Poznámka",
+      "notePlaceholder": "Volitelná poznámka, např. „před aktualizací“",
+      "now": "Zálohovat teď",
+      "created": "Záloha vytvořena",
+      "empty": "Zatím žádné zálohy",
+      "kinds": {
+        "manual": "Ruční",
+        "scheduled": "Plánovaná",
+        "pre_restore": "Před obnovením"
+      },
+      "restore": "Obnovit",
+      "restoreTitle": "Obnovit tuto zálohu?",
+      "restoreBody": "Svět se vrátí do stavu z {{date}}. Vše postavené od té doby bude nahrazeno. Nejdřív se vytvoří záloha aktuálního světa.",
+      "restored": "Záloha obnovena",
+      "delete": "Smazat zálohu",
+      "deleteTitle": "Smazat tuto zálohu?",
+      "deleteBody": "Tato záloha bude odstraněna natrvalo.",
+      "failed": "Akce se zálohou selhala",
+      "scheduleTitle": "Automatické zálohy",
+      "scheduleBody": "Po dosažení limitu se odstraní nejstarší automatické zálohy.",
+      "scheduleEnabled": "Zálohovat automaticky",
+      "every": "Každé",
+      "hours_one": "{{count}} hodinu",
+      "hours_few": "{{count}} hodiny",
+      "hours_many": "{{count}} hodiny",
+      "hours_other": "{{count}} hodin",
+      "keep": "Ponechat",
+      "keepCount_one": "poslední {{count}} zálohu",
+      "keepCount_few": "poslední {{count}} zálohy",
+      "keepCount_many": "posledních {{count}} zálohy",
+      "keepCount_other": "posledních {{count}} záloh",
+      "scheduleSaved": "Plán záloh uložen"
+    },
+    "danger": {
+      "deleteTitle": "Smazat tento server",
+      "deleteBody": "Zastaví server a odebere ho z launcheru. Jeho soubory si můžeš ponechat.",
+      "delete": "Smazat server",
+      "removeVpsTitle": "Odebrat z tvého VPS",
+      "removeVpsBody": "Zastaví službu na {{host}} a odinstaluje z něj Rustic. Tvůj VPS zůstává tvůj.",
+      "removeVps": "Odebrat z VPS",
+      "confirmTitle": "Smazat „{{name}}“?",
+      "confirmBody": "Tuto akci nelze vrátit. Pokud budeš svět možná ještě potřebovat, nejdřív ho zazálohuj.",
+      "deleteFiles": "Smazat i svět a všechny soubory serveru",
+      "typeName": "Pro potvrzení napiš „{{name}}“",
+      "deleted": "{{name}} byl smazán",
+      "failed": "Server se nepodařilo smazat"
+    }
+  },
+  "access": {
+    "intro": "Vyber, jak se přátelé k tvému serveru dostanou. Můžeš zapnout víc možností najednou.",
+    "optional": "Volitelné",
+    "lan": {
+      "title": "V tvé síti",
+      "body": "Hráči ve stejné Wi-Fi nebo síti se připojí s touto adresou.",
+      "copy": "Kopírovat místní adresu"
+    },
+    "public": {
+      "title": "Veřejná adresa",
+      "body": "IP a port tvého VPS. Připojit se s ní může kdokoli; doména se sdílí snáz.",
+      "copy": "Kopírovat veřejnou adresu"
+    },
+    "relay": {
+      "title": "Dočasná adresa",
+      "body": "Bezplatná adresa na Rustic Relay, dokud server běží. Žádné nastavování routeru, tvoje IP zůstane skrytá.",
+      "toggle": "Dočasná adresa",
+      "copy": "Kopírovat dočasnou adresu",
+      "off": "Vypnuto. Zapni ji a získáš adresu, kterou můžeš sdílet.",
+      "label": "Název v adrese",
+      "apply": "Použít",
+      "status": {
+        "off": "Vypnuto",
+        "connecting": "Čekám na spuštění serveru",
+        "online": "Teď dostupná",
+        "error": "Relay nedostupný"
+      },
+      "failed": "Dočasnou adresu se nepodařilo změnit",
+      "taken": "Tento název je obsazený. Zkus jiný.",
+      "invalid": "Použij 3 až 32 malých písmen, číslic nebo pomlček."
+    },
+    "invite": {
+      "title": "Kód pozvánky",
+      "body": "Přátelé s Rustic Launcherem vloží tento kód a připojí se, jako u funkce Hrát s přáteli v Horizonu.",
+      "create": "Vytvořit kód",
+      "copy": "Kopírovat kód pozvánky",
+      "expires": "Vyprší {{when}}",
+      "revoke": "Zrušit platnost"
+    },
+    "advanced": "Pokročilé: otevřít port na routeru (UPnP)",
+    "upnp": {
+      "title": "Mapování portů přes UPnP",
+      "warning": "Tímto požádáš router, aby otevřel port serveru do internetu. Tvoje veřejná IP adresa bude viditelná všem hráčům, což vystavuje tvé domácí připojení (útoky, poloha). Raději použij dočasnou adresu nebo doménu.",
+      "status": {
+        "off": "Vypnuto",
+        "mapping": "Ptám se routeru…",
+        "mapped": "Port otevřen",
+        "failed": "Router odmítl (UPnP může být vypnuté)"
+      },
+      "mapped": "Port otevřen: {{address}}",
+      "copy": "Kopírovat veřejnou adresu",
+      "failed": "Port se nepodařilo otevřít",
+      "prefer": "Dočasná adresa a domény fungují bez otevírání portů."
+    }
+  },
+  "domains": {
+    "title": "Vlastní doména",
+    "intro": "Doména je adresa tvého serveru, třeba play.tvojejmeno.net. Můžeš propojit doménu, kterou už máš, koupit novou u Porkbunu přímo z launcheru, nebo použít libovolného registrátora: přesně ti ukážeme, co přidat.",
+    "automatic": "Automaticky",
+    "anyRegistrar": "Libovolný registrátor",
+    "otherPaths": "Další možnosti",
+    "paths": {
+      "porkbun": {
+        "title": "Propojit Porkbun",
+        "body": "Už máš doménu u Porkbunu? Propoj svůj účet a záznamy vytvoříme za tebe."
+      },
+      "buy": {
+        "title": "Koupit doménu u Porkbunu",
+        "body": "Najdi volný název, kup ho na svém účtu Porkbun a nastaví se automaticky."
+      },
+      "manual": {
+        "title": "Použít doménu od libovolného registrátora",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: ukážeme, co přidat, a zkontrolujeme to za tebe."
+      }
+    },
+    "subdomain": "Subdoména",
+    "subdomainHint": "play je dobrá výchozí volba.",
+    "apexHint": "Prázdné: samotná doména (u některých registrátorů vyžaduje ALIAS/ANAME).",
+    "invalidSubdomain": "Jen písmena, číslice a pomlčky.",
+    "invalidDomain": "Tohle nevypadá jako doména (example.net).",
+    "copyAddress": "Kopírovat adresu domény",
+    "configureFailed": "Doménu se nepodařilo nastavit",
+    "boundBody": "Hráči se připojují s touto adresou.",
+    "remove": "Odebrat doménu",
+    "removeTitle": "Přestat používat {{domain}}?",
+    "removeBody": "Po odstranění záznamů adresa přestane mířit na tento server. Doména zůstává tvoje.",
+    "status": {
+      "pending": "Čeká",
+      "propagating": "Šíří se",
+      "verified": "Propojeno",
+      "error": "Chyba"
+    },
+    "provider": {
+      "porkbun": "Spravováno přes Porkbun",
+      "manual": "Spravováno u tvého registrátora"
+    },
+    "connected": "Doména propojena",
+    "connectedBody": "Rustic Cloud ověří záznam TXT a pak tvoje adresa začne fungovat. Můžeš to zavřít; dáme ti vědět.",
+    "porkbun": {
+      "step1": "Na porkbun.com › Account › API Access vytvoř klíč API.",
+      "openApi": "Otevřít Porkbun API Access",
+      "step2": "Na stránce domény u Porkbunu zapni „API Access“.",
+      "apiKey": "Klíč API",
+      "secret": "Tajný klíč API",
+      "keychain": "Uloženo v klíčence tvého počítače, nikdy se neposílá Rusticu.",
+      "connect": "Propojit",
+      "badApiKey": "Klíč API začíná na pk1_.",
+      "badSecret": "Tajný klíč API začíná na sk1_.",
+      "rejected": "Porkbun tyto klíče odmítl. Zkontroluj je, nebo vytvoř nový pár.",
+      "connected": "Porkbun propojen",
+      "disconnect": "Odpojit",
+      "domain": "Doména",
+      "pickDomain": "Vyber jednu ze svých domén",
+      "apiAccessOff": "API Access je pro tuto doménu u Porkbunu vypnutý",
+      "apiAccessHint": "Zašedlé domény potřebují u Porkbunu zapnutý „API Access“.",
+      "preview": "Změny, které provedeme",
+      "dryRun": "Náhled",
+      "previewBody": "Tyto záznamy se přidají nebo nahradí na tvé doméně, aby {{fqdn}} vedlo na tento server. Dokud je nepoužiješ, nic se nezmění.",
+      "apply": "Nastavit automaticky"
+    },
+    "buy": {
+      "intro": "Doména se registruje na tvůj vlastní účet Porkbun a platí se tam. Rustic za ni nikdy nepřijímá platbu.",
+      "needsAccount": "K nákupu je potřeba tvůj účet Porkbun: nejdřív ho propoj (zdarma si ho můžeš založit na porkbun.com).",
+      "search": "Název, který chceš",
+      "searchPlaceholder": "např. loucraft",
+      "searchButton": "Hledat",
+      "noResults": "Pro tento název žádné výsledky.",
+      "premium": "Prémiová",
+      "price": "{{price}} první rok · prodloužení {{renewal}}",
+      "taken": "Obsazeno",
+      "select": "Vybrat",
+      "overLimit": "Přes 100 $: kup ji na porkbun.com",
+      "pricesNote": "Ceny jsou od Porkbunu, v amerických dolarech, podle aktuální nabídky. U Porkbunu se mohou připočíst daně.",
+      "confirmTitle": "Potvrdit nákup u Porkbunu",
+      "seller": "Prodávající: Porkbun LLC, ne Rustic. Platí jeho podmínky, ceny, prodloužení a vracení peněz.",
+      "domain": "Doména",
+      "address": "Adresa serveru",
+      "registrar": "Registrátor",
+      "registrarValue": "Porkbun, na tvém účtu",
+      "firstYear": "První rok",
+      "renewal": "Roční prodloužení za",
+      "payment": "Platí se z kreditu tvého účtu Porkbun nebo uloženou kartou: {{price}} teď; každý rok se prodlužuje za {{renewal}}, pokud u Porkbunu nevypneš automatické prodloužení.",
+      "agreeTerms": "Souhlasím s registrační smlouvou a podmínkami Porkbunu",
+      "termsLink": "(přečíst)",
+      "agreeOrder": "Rozumím, že Rustic jen posílá tuto objednávku Porkbunu mým jménem",
+      "refunds": "Vracení peněz a zrušení u domén řeší Porkbun podle svých podmínek.",
+      "buyButton": "Koupit u Porkbunu · {{price}}",
+      "bought": "{{domain}} je tvoje",
+      "boughtBody": "Porkbun účtoval: {{price}}. Teď ji nastavuji…",
+      "configuring": "Nastavuji tvou novou doménu…",
+      "failed": "Nákup neproběhl",
+      "errors": {
+        "price_changed": "Cena u Porkbunu se změnila. Zkontroluj novou cenu a zkus to znovu.",
+        "not_available": "Tuto doménu právě někdo zabral.",
+        "over_limit": "Přes 100 $: kup ji na porkbun.com.",
+        "porkbun_not_connected": "Nejdřív propoj svůj účet Porkbun.",
+        "consent_required": "Obě políčka musí být zaškrtnutá."
+      }
+    },
+    "manual": {
+      "intro": "Přidej tyto záznamy do DNS zóny u svého registrátora. Kontrolujeme je každých 10 sekund a dáme ti vědět, až to bude fungovat.",
+      "domain": "Tvoje doména",
+      "registrar": "Registrátor",
+      "show": "Zobrazit záznamy",
+      "guideTitle": "U registrátora {{registrar}}",
+      "allGuides": "Návody pro všechny registrátory"
+    },
+    "records": {
+      "caption": "DNS záznamy k přidání",
+      "type": "Typ",
+      "name": "Název / hostitel",
+      "value": "Hodnota / cíl",
+      "ttl": "TTL",
+      "status": "Stav",
+      "optional": "volitelné",
+      "emptyHost": "(nech prázdné)",
+      "copyName": "Kopírovat název {{type}}",
+      "copyValue": "Kopírovat hodnotu {{type}}",
+      "srvFields": "priorita {{priority}} · váha {{weight}} · port {{port}}"
+    },
+    "check": {
+      "pending": "Nezkontrolováno",
+      "notNeeded": "Není potřeba",
+      "ok": "OK",
+      "propagating": "Šíří se ({{ok}}/{{total}})",
+      "wrong": "Špatná hodnota",
+      "found": "Nalezeno:",
+      "expected": "Očekáváno:",
+      "missing": "Chybí",
+      "first": "První kontrola…",
+      "progress": "{{ok}} z {{total}} záznamů OK",
+      "progressLabel": "Ověřené záznamy",
+      "auto": "Automatická kontrola každých 10 s",
+      "lastCheck": "poslední kontrola před {{seconds}} s",
+      "now": "Zkontrolovat teď"
+    },
+    "help": {
+      "txt": "Proč záznam TXT? Dokazuje, že doména je tvoje, takže ji nikdo jiný nemůže nasměrovat na svůj server.",
+      "propagation": "Změny se ke všem mohou dostat za minutu až několik hodin. Kontrolujeme dál; nemusíš tu zůstávat.",
+      "apex": "Hlavní domény (tvojejmeno.net bez „play.“) potřebují záznam ALIAS/ANAME; ne každý registrátor ho nabízí. Subdoména funguje vždy."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › tvoje doména › DNS zone.\nKlikni na „Add an entry“ a vyber typ (CNAME, SRV, A nebo TXT).\nSub-domain = Název níže (pro samotnou doménu nech prázdné), Target = Hodnota.\nOpakuj pro každý záznam a potvrď. OVH změny uplatní během několika minut."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › tvoje doména › DNS records.\nKlikni na „Add record“ a vyber typ.\nName = Název níže, Value = Hodnota (u cílů CNAME/SRV ponech tečku na konci).\nUlož každý záznam."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nV části Host records zvol „Add new record“.\nHost = Název níže (@ pro samotnou doménu), Value/Target = Hodnota.\nKaždý záznam ulož kliknutím na zelené zatržítko."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › tvoje doména › DNS › Manage DNS.\nKlikni na „Add new record“ a vyber typ.\nName = Název níže (@ pro samotnou doménu), Value = Hodnota.\nU SRV vyplň Service _minecraft, Protocol _tcp, pak prioritu, váhu a port. Ulož."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Vyber svůj web › DNS › Records › Add record.\nVyber typ, Name = Název níže, Target/Content = Hodnota.\nNastav Proxy status na „DNS only“ (šedý mráček): herní provoz nemůže jít přes proxy Cloudflaru.\nUlož každý záznam."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › tvoje doména › DNS.\nKlikni na „Add record“ a vyber typ.\nHost name = Název níže, Points to / Value = Hodnota.\nUlož; IONOS se může zeptat, zda nahradit výchozí záznam."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › tvoje doména › DNS / Nameservers.\nV části „Manage DNS records“ vyber typ.\nName = Název níže, Points to / Value = Hodnota, TTL podle zobrazení.\nPro každý záznam klikni na „Add record“."
+      },
+      "porkbun": {
+        "name": "Porkbun (ručně)",
+        "steps": "Domain Management › tvoje doména › DNS.\nVyber typ, Host = Název níže (pro samotnou doménu prázdné), Answer = Hodnota.\nPro každý záznam klikni na „Add“.\nTip: možnost Propojit Porkbun tohle všechno udělá za tebe."
+      },
+      "generic": {
+        "name": "Jiný registrátor",
+        "steps": "Otevři DNS zónu své domény (někdy se jmenuje DNS záznamy nebo Editor zóny).\nPřidej každý záznam níže se stejným typem, názvem a hodnotou.\nPokud registrátor chce celý název, přidej za Název svou doménu.\nUlož a vrať se sem: kontrolujeme automaticky."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Zobrazení serverů",
+    "tabs": {
+      "discover": "Objevovat",
+      "browse": "Procházet"
+    },
+    "searchLabel": "Hledat servery",
+    "searchPlaceholder": "Hledej v katalogu serverů…",
+    "publish": "Zveřejnit můj server",
+    "publishCta": {
+      "title": "Tvůj server tady",
+      "hint": "Přidej svůj server Horizon do katalogu z webu: jakmile projde automatickými kontrolami, zobrazí se tady i na rustic-launcher.com."
+    },
+    "play": "Hrát",
+    "playAria": "Hrát na {{name}}",
+    "view": "Zobrazit",
+    "verified": "Ověřeno",
+    "featured": "Výběr týmu",
+    "verifiedHint": "Ověřené servery: tým Rusticu zkontroloval majitele a pravidla.",
+    "online_one": "{{value}} online",
+    "online_few": "{{value}} online",
+    "online_many": "{{value}} online",
+    "online_other": "{{value}} online",
+    "playersLabel": "Hráči online",
+    "languagesLabel": "Jazyky",
+    "playsLabel": "Spuštění tento týden",
+    "lastPlayed": "Naposledy hráno",
+    "lastPlayedOn": "Hráno {{when}}",
+    "hero": {
+      "label": "Doporučené servery",
+      "eyebrow": "Ověřeno"
+    },
+    "rows": {
+      "trending": "Populární",
+      "trendingHint": "Tento týden nejčastěji spouštěné z Rusticu",
+      "players": "Teď nejvíc hráčů",
+      "playersHint": "Podle poslední kontroly cloudu",
+      "new": "Nové v katalogu",
+      "newHint": "Majitelé je právě přidali",
+      "recent": "Nedávno hrané",
+      "recentHint": "Z tvého seznamu serverů"
+    },
+    "rowError": "Tuto řadu se nepodařilo načíst.",
+    "retry": "Zkusit znovu",
+    "empty": {
+      "title": "Zatím žádné servery v katalogu",
+      "hint": "Buď první: zveřejni svůj server z webu."
+    },
+    "emptySearch": {
+      "title": "Žádný server neodpovídá",
+      "hint": "Zkus jiná slova nebo méně filtrů."
+    },
+    "sorts": {
+      "trending": "Populární",
+      "players": "Nejvíc hráčů",
+      "new": "Nejnovější",
+      "name": "Název"
+    },
+    "filters": {
+      "tags": "Herní styl",
+      "language": "Jazyk",
+      "engine": "Engine",
+      "rustic": "Rustic",
+      "verifiedOnly": "Jen ověřené",
+      "reset": "Obnovit filtry",
+      "remove": "Odebrat filtr {{filter}}"
+    },
+    "tags": {
+      "survival": "Survival",
+      "smp": "SMP",
+      "creative": "Creative",
+      "minigames": "Minihry",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Roleplay",
+      "factions": "Factions",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Dobrodružství",
+      "building": "Stavění",
+      "economy": "Ekonomika",
+      "modded": "S módy",
+      "anarchy": "Anarchie",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Servery",
+      "status": "Živý stav",
+      "cloudSaw_one": "cloud viděl {{when}} online {{value}} hráče",
+      "cloudSaw_few": "cloud viděl {{when}} online {{value}} hráče",
+      "cloudSaw_many": "cloud viděl {{when}} online {{value}} hráče",
+      "cloudSaw_other": "cloud viděl {{when}} online {{value}} hráčů",
+      "engine": "Engine",
+      "version": "Verze hry",
+      "languages": "Jazyky",
+      "plays": "Spuštění tento týden",
+      "about": "O serveru",
+      "noDescription": "Zatím bez popisu.",
+      "address": "Adresa",
+      "copy": "Kopírovat",
+      "openSite": "Otevřít na webu",
+      "website": "Web",
+      "discord": "Discord",
+      "by": "Autor záznamu: {{name}}",
+      "byStaff": "Přidal tým Rusticu",
+      "report": "Nahlásit",
+      "rusticEdition": "Vyžaduje edici Rustic",
+      "missing": "Tento server není dostupný",
+      "missingHint": "Může být soukromý, skrytý moderací nebo smazaný."
+    },
+    "report": {
+      "title": "Nahlásit {{name}}",
+      "lead": "Řekni moderátorskému týmu, co je špatně. Každé nahlášení posuzujeme.",
+      "reason": "Důvod",
+      "reasons": {
+        "impersonation": "Vydává se za jiný server",
+        "spam": "Spam nebo klamavé",
+        "inappropriate_content": "Nevhodný obsah",
+        "cheating": "Cheatování nebo škodlivý server",
+        "harassment": "Obtěžování",
+        "copyright": "Porušuje moje práva (ochranná známka, název)",
+        "malware": "Malware",
+        "other": "Jiné"
+      },
+      "details": "Podrobnosti",
+      "detailsHint": "Volitelné, nejvýš 2 000 znaků.",
+      "send": "Odeslat nahlášení",
+      "sent": "Děkujeme, tvé nahlášení bylo předáno moderátorskému týmu.",
+      "signIn": "Pro nahlášení serveru se přihlas ke svému účtu Rustic.",
+      "failed": "Nahlášení se nepodařilo odeslat."
+    }
+  }
+}

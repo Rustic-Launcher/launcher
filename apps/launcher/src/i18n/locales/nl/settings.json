@@ -1,0 +1,514 @@
+{
+  "title": "Instellingen",
+  "subtitle": "Accounts, game, launcher, uiterlijk en je gegevens.",
+  "sectionsLabel": "Onderdelen van Instellingen",
+  "saving": "Opslaan…",
+  "saved": "Alle wijzigingen opgeslagen",
+  "close": "Sluiten",
+  "cancel": "Annuleren",
+  "sections": {
+    "accounts": "Accounts en beveiliging",
+    "game": "Game en instanties",
+    "launcher": "Launcher",
+    "appearance": "Uiterlijk",
+    "privacy": "Privacy en gegevens",
+    "parental": "Ouderlijk toezicht",
+    "about": "Over en juridisch"
+  },
+  "accounts": {
+    "active": "Actief",
+    "useThis": "Dit profiel gebruiken",
+    "signOut": "Uitloggen",
+    "signedOut": "{{name}} is uitgelogd",
+    "ownership": {
+      "valid": "Bezit de game",
+      "expired": "Controle verlopen",
+      "never": "Nooit gecontroleerd",
+      "failed": "Controle mislukt",
+      "lastChecked": "Gecontroleerd {{when}}",
+      "nextCheck": "volgende controle uiterlijk {{date}}",
+      "checkNow": "Nu controleren",
+      "checkedToast": "Bezit bevestigd",
+      "checkFailed": "Microsoft was niet bereikbaar. Probeer het later opnieuw."
+    },
+    "microsoft": {
+      "title": "Microsoft-accounts",
+      "description": "Je moet de game bezitten om te spelen. Rustic controleert dat bij Microsoft en ziet nooit je wachtwoord.",
+      "add": "Een Microsoft-account toevoegen",
+      "keychain": "Inlogtokens worden bewaard in je systeemsleutelhanger, nooit in een bestand of op een opdrachtregel.",
+      "signIn": "Inloggen met Microsoft",
+      "step1": "Open de Microsoft-pagina in je browser (of op een ander apparaat).",
+      "step2": "Voer de code hieronder in en log in.",
+      "step3": "Kom hier terug: de launcher gaat vanzelf verder.",
+      "codeLabel": "Inlogcode",
+      "copyCode": "Code kopiëren",
+      "copied": "Code gekopieerd",
+      "openPage": "microsoft.com/link openen",
+      "waiting": "Wachten tot je inlogt in de browser…",
+      "cancel": "Annuleren",
+      "signedInAs": "Ingelogd als {{name}}",
+      "ownershipOk": "Bezit bevestigd: je kunt spelen.",
+      "ownershipMissing": "Dit account bezit de game niet.",
+      "tryAgain": "Opnieuw proberen",
+      "failed": {
+        "expired": {
+          "title": "De code is verlopen",
+          "body": "Codes zijn 15 minuten geldig. Begin opnieuw om een nieuwe te krijgen."
+        },
+        "denied": {
+          "title": "Inloggen is geannuleerd",
+          "body": "Microsoft meldt dat het inloggen is geweigerd."
+        },
+        "no_ownership": {
+          "title": "Dit account bezit de game niet",
+          "body": "Rustic start de game alleen voor accounts die Minecraft: Java Edition bezitten."
+        },
+        "error": {
+          "title": "Inloggen mislukt",
+          "body": "Rustic kon het inloggen niet afronden. Probeer het opnieuw; blijft het mislukken, dan staat hieronder waarom."
+        },
+        "not_configured": {
+          "title": "Inloggen met Microsoft is niet ingesteld in deze build",
+          "body": "Deze build heeft geen Azure-applicatie-id, dus kan hij Microsoft niet vragen de gamelicentie te controleren. Officiële builds hebben die wel."
+        },
+        "not_approved": {
+          "title": "De launcher wacht op goedkeuring van Mojang",
+          "body": "Je Microsoft-account is ingelogd, maar de gameservices accepteren deze launcher nog niet: Mojang moet eerst de applicatie-id goedkeuren. Je hoeft zelf niets te doen; probeer het opnieuw zodra die is goedgekeurd."
+        },
+        "xbox": {
+          "title": "Xbox Live heeft het inloggen geweigerd",
+          "body": "De reden staat hieronder (kinderaccount zonder toestemming van een ouder, Xbox-profiel dat nog moet worden aangemaakt, niet-ondersteunde regio…)."
+        },
+        "rate_limited": {
+          "title": "Te veel pogingen",
+          "body": "De services hebben in korte tijd te veel inlogpogingen ontvangen. Wacht een minuut en probeer het opnieuw."
+        },
+        "network": {
+          "title": "De services zijn niet bereikbaar",
+          "body": "Controleer je internetverbinding en probeer het opnieuw."
+        },
+        "detail": "Details: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Rustic-account",
+      "description": "Je Rustic-identiteit voor vrienden, het Kluisje, aankopen en servers.",
+      "signedOut": "Niet ingelogd. De game werkt zonder; sociale functies, het Kluisje en de Winkel hebben het nodig.",
+      "signIn": "Inloggen of account aanmaken",
+      "licenceNote": "Een Rustic-account is een platformidentiteit. Het vervangt nooit de gamelicentie: je hebt nog steeds een Microsoft-account nodig dat de game bezit."
+    },
+    "offline": {
+      "title": "Offline spelen",
+      "description": "Voor LAN-party’s en spelen zonder internet: je speelt met je Microsoft-account, onder je officiële naam en UUID. Beschikbaar tot {{days}} dagen na de laatste geslaagde bezitscontrole; daarna vraagt Rustic het opnieuw aan Microsoft.",
+      "until": "Offline spelen beschikbaar tot {{date}}",
+      "locked": "Log eerst in met een Microsoft-account dat de game bezit: offline spelen gaat open na een geslaagde bezitscontrole."
+    },
+    "connections": {
+      "title": "Verbindingen",
+      "description": "Services die de launcher namens jou gebruikt. Sleutels en vingerafdrukken van hosts blijven in je systeemsleutelhanger.",
+      "porkbun": "Porkbun (domeinen)",
+      "porkbunHint": "Gebruikt om DNS-records voor je servers aan te maken in je eigen Porkbun-account.",
+      "porkbunRemoved": "Porkbun-sleutels verwijderd van deze computer",
+      "connected": "Verbonden",
+      "notConnected": "Niet verbonden",
+      "remove": "Sleutels verwijderen",
+      "vps": "VPS-hosts",
+      "vpsHint": "Servers die je via SSH op je eigen VPS host. Als je een host vergeet, wordt de vastgezette sleutel verwijderd.",
+      "noVps": "Geen",
+      "fingerprint": "{{fp}} · vertrouwd op {{date}}",
+      "forget": "Vergeten"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Gekoppeld",
+      "notLinked": "Niet gekoppeld: log ook met je Microsoft-account in bij Rustic.",
+      "link": "Koppelen op de website",
+      "unlink": "Ontkoppelen",
+      "unlinked": "Microsoft ontkoppeld",
+      "unlinkFailed": "Microsoft kon niet worden ontkoppeld",
+      "lastMethod": "Voeg eerst een wachtwoord toe (op de website): Microsoft is je enige manier om in te loggen."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Geheugen (RAM)",
+      "description": "Standaardgeheugen voor de game. Elke instantie kan dit overschrijven.",
+      "system": "{{total}} geïnstalleerd · {{free}} nu vrij",
+      "warn": "Dit laat weinig geheugen over voor je systeem en kan alles vertragen.",
+      "perInstance": "Tip: 4 GB is genoeg voor de meeste instanties; grote modpacks willen soms 6 tot 8 GB."
+    },
+    "prepare": {
+      "title": "Gamebestanden",
+      "description": "Horizon bereidt de resources van de game voor vanuit je eigen installatie van de game. Er wordt niets van derden gedownload.",
+      "status": "Status",
+      "states": {
+        "missing": "Niet voorbereid",
+        "preparing": "Voorbereiden",
+        "ready": "Klaar",
+        "outdated": "Moet opnieuw worden voorbereid"
+      },
+      "gameVersion": "Game {{version}}",
+      "source": "Broninstallatie",
+      "sourceHint": "De gamemap van de officiële launcher die op deze computer is gevonden.",
+      "doneToast": "De gamebestanden zijn klaar",
+      "steps": {
+        "detect": "Je installatie zoeken…",
+        "download": "De gamebestanden downloaden bij Mojang…",
+        "verify": "Gamebestanden controleren…",
+        "compile_exporters": "Exporters bouwen…",
+        "export": "Resources exporteren…",
+        "index": "Indexeren…",
+        "done": "Klaar"
+      },
+      "legal": "De voorbereide bestanden blijven op deze computer en worden nooit gedeeld.",
+      "again": "Opnieuw voorbereiden",
+      "failed": "Voorbereiden mislukt"
+    },
+    "java": {
+      "label": "Java voor het voorbereiden",
+      "description": "Alleen gebruikt om gamebestanden voor te bereiden (horizon-prepare). Horizon zelf heeft geen Java nodig om te draaien.",
+      "pickTitle": "Kies een Java-programma",
+      "source": {
+        "bundled": "Meegeleverd met Rustic",
+        "system": "Geïnstalleerd op deze computer",
+        "custom": "Aangepast"
+      },
+      "custom": "Aangepast pad…",
+      "customHint": "Kies een Java 21+-programma"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "Het programma rustic-server dat je Rustic Server-servers draaien (de engine van Horizon met Rustic-plug-ins). Het moet van dezelfde Horizon-commit komen als de gameversie van de server: een build van de Rustic-editie levert het mee in zijn map.",
+      "program": "Programma in gebruik",
+      "notFound": "Niet gevonden",
+      "notFoundHint": "Installeer een build van de Rustic-editie die het meelevert, of kies het bestand rustic-server. Zonder dit programma mislukt het maken van een Rustic Server.",
+      "configuredMissing": "Het gekozen bestand bestaat niet meer: {{path}}",
+      "origin": {
+        "server": "Dat van de server zelf",
+        "configured": "Handmatig gekozen",
+        "build": "Meegeleverd met build {{build}}",
+        "beside_launcher": "Naast de launcher",
+        "path": "Gevonden in het PATH"
+      },
+      "choose": "Kiezen…",
+      "pickTitle": "Kies het programma rustic-server",
+      "automatic": "Automatisch gebruiken",
+      "saved": "Programma rustic-server opgeslagen",
+      "automaticSaved": "Automatische detectie hersteld",
+      "invalid": "Dit bestand is geen rustic-server-programma (het reageert niet op --rustic-version).",
+      "failed": "Dit programma kon niet worden opgeslagen",
+      "order": "Zoekvolgorde: jouw keuze, dan de map van de gameversie, dan naast de launcher, dan het PATH."
+    },
+    "folders": {
+      "title": "Mappen",
+      "description": "Waar de launcher zijn gegevens, je instanties en je servers bewaart.",
+      "data": "Launchergegevens",
+      "instances": "Instanties",
+      "servers": "Servers",
+      "open": "Openen",
+      "change": "Wijzigen",
+      "changed": "Map gewijzigd",
+      "moveNote": "Bestaande bestanden worden niet automatisch verplaatst."
+    },
+    "resolution": {
+      "title": "Gamevenster",
+      "description": "Standaardvenstergrootte voor nieuwe instanties.",
+      "size": "Grootte",
+      "width": "Breedte",
+      "height": "Hoogte",
+      "fullscreen": "Starten in volledig scherm",
+      "hint": "Minimaal 640 × 480."
+    },
+    "native": {
+      "title": "Native mods",
+      "description": "Instanties met native mods spelen een game die op deze pc voor ze is gecompileerd. Hier: de Rust-compiler en de compileercache die latere builds snel maakt.",
+      "rust": "Rust-compiler",
+      "rustReady": {
+        "managed": "Rust {{version}}, geïnstalleerd door de launcher",
+        "rustup": "Rust {{version}}, uit je rustup",
+        "system": "Rust {{version}}, geïnstalleerd op deze pc"
+      },
+      "rustMissing": "Rust {{version}} is nodig voor de eerste build.",
+      "ready": "Klaar",
+      "missing": "Niet geïnstalleerd",
+      "installing": "Installeren…",
+      "installRust": "Rust installeren",
+      "rustInstalled": "Rust is geïnstalleerd",
+      "rustFailed": "Rust kon niet worden geïnstalleerd",
+      "cache": "Compileercache",
+      "cacheDetail": "Cache {{cache}} · gedownloade crates {{crates}} · Rust {{toolchain}} · bron {{source}}. Wissen houdt de gecompileerde games; de volgende build compileert alles opnieuw.",
+      "clear": "Wissen",
+      "clearTitle": "De compileercache wissen?",
+      "clearBody": "Instanties houden hun gecompileerde game. De volgende native build compileert de hele game opnieuw (10 tot 15 minuten).",
+      "cleared": "Compileercache gewist ({{size}} vrijgemaakt)",
+      "limit": "Cachelimiet",
+      "limitHint": "Na een build wordt de cache gewist als die groter is dan dit (0: nooit).",
+      "gib": "GiB",
+      "limitSaved": "Cachelimiet opgeslagen",
+      "limitInvalid": "De limiet is een heel aantal GiB van 0 tot 4096.",
+      "folder": "Map: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Taal",
+      "description": "Geldt meteen voor de hele launcher.",
+      "label": "Taal",
+      "search": "Talen zoeken",
+      "empty": "Geen taal gevonden",
+      "translated": "Vertaald",
+      "others": "Andere talen",
+      "partial": "Gedeeltelijk",
+      "english": "voorlopig in het Engels",
+      "via": "voorlopig in het {{lang}}",
+      "help": "Teksten die nog niet zijn vertaald, worden in het Engels getoond. Vertalingen komen van de community."
+    },
+    "startup": {
+      "title": "Opstarten",
+      "onBoot": "Rustic openen als de computer opstart",
+      "onBootHint": "Vrienden zien je eerder online en updates worden op de achtergrond gedownload.",
+      "minimized": "Geminimaliseerd starten"
+    },
+    "behaviour": {
+      "title": "Tijdens het spelen",
+      "onLaunch": "Als de game start",
+      "launchOptions": {
+        "keep_open": "Launcher open laten",
+        "minimize": "Launcher minimaliseren",
+        "hide": "Verbergen in het systeemvak",
+        "close": "Launcher sluiten"
+      },
+      "onClose": "Als ik het venster sluit",
+      "onCloseHint": "In het systeemvak kunnen vrienden je blijven uitnodigen en blijven servers draaien.",
+      "closeOptions": {
+        "tray": "Blijven draaien in het systeemvak",
+        "quit": "Rustic afsluiten"
+      }
+    },
+    "updates": {
+      "title": "Updates",
+      "auto": "Updates automatisch installeren",
+      "autoHint": "Updates worden ondertekend en gecontroleerd voordat ze worden geïnstalleerd.",
+      "check": "Rustic Launcher",
+      "checkNow": "Controleren op updates",
+      "available": "Versie {{version}} beschikbaar",
+      "upToDate": "Je bent up-to-date",
+      "failed": "Kon niet controleren op updates",
+      "lastCheck": "Laatst gecontroleerd {{when}}",
+      "neverChecked": "Nog niet gecontroleerd",
+      "edition": "Spel (Rustic-editie)",
+      "editionNone": "Geen build van de Rustic-editie geïnstalleerd",
+      "apply": "Bijwerken en opnieuw starten",
+      "checking": "Controleren…",
+      "working": "Bijwerken… {{pct}}",
+      "restarting": "Opnieuw starten…",
+      "deferred": "Wachten tot het spel sluit",
+      "lastError": "De laatste poging is mislukt. Het wordt automatisch opnieuw geprobeerd."
+    },
+    "performance": {
+      "title": "Downloads en prestaties",
+      "downloads": "Parallelle downloads",
+      "downloadsHint": "Verlaag dit bij een trage verbinding.",
+      "hardware": "Hardwareversnelling",
+      "hardwareHint": "Zet dit uit als de launcher flikkert. Werkt na een herstart."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Thema",
+      "description": "Rustic is in de eerste plaats donker ontworpen; het lichte thema is er voor lichte ruimtes.",
+      "label": "Thema",
+      "dark": "Donker",
+      "light": "Licht",
+      "system": "Systeem"
+    },
+    "palette": {
+      "title": "Kleurenpalet",
+      "description": "De accentkleur voor SPELEN, selecties en voortgang.",
+      "label": "Kleurenpalet",
+      "play": "Spelen",
+      "default": "Standaard",
+      "names": {
+        "ember": "Gloed",
+        "verdigris": "Kopergroen",
+        "heather": "Heide"
+      },
+      "descriptions": {
+        "ember": "Warm koper op antraciet",
+        "verdigris": "Patinagroen, zoals geoxideerd koper",
+        "heather": "Gedempt heideroze"
+      }
+    },
+    "motion": {
+      "title": "Beweging",
+      "body": "Rustic volgt de instelling ‘beweging beperken’ van je systeem: animaties, de carrousel en de 3D-voorvertoning staan dan stil."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "Wat je met ons deelt",
+      "description": "Alles hier staat standaard uit. Iets aanzetten helpt ons Rustic te verbeteren; je kunt altijd van gedachten veranderen.",
+      "usage": "Gebruiksstatistieken",
+      "usageHint": "Welke pagina’s en functies worden gebruikt, zonder inhoud of identificatiegegevens.",
+      "performance": "Prestatierapporten",
+      "performanceHint": "Starttijden en frametijden, om trage plekken te vinden.",
+      "crash": "Crashrapporten",
+      "crashHint": "Staat dit uit, dan vraagt Rustic het je bij elke crash."
+    },
+    "policyLink": "Lees het privacybeleid",
+    "social": {
+      "title": "Vrienden en aanwezigheid",
+      "activity": "Mijn vrienden laten zien wat ik speel",
+      "activityHint": "Vrienden zien je server en kunnen met één klik meedoen.",
+      "requests": "Wie mij vriendschapsverzoeken mag sturen",
+      "requestsOptions": {
+        "everyone": "Iedereen",
+        "friends_of_friends": "Vrienden van vrienden",
+        "nobody": "Niemand"
+      },
+      "discoverable": "Verschijnen in suggesties van spelers die ik tegenkom",
+      "discoverableHint": "Spelers met wie je in een groep zat of die je tegenkwam op een server die je deelt in je activiteit, kunnen je zien in ‘Een vriend toevoegen’, en jij ziet hen. 30 dagen bewaard; als je dit uitzet, wordt het verwijderd.",
+      "discoverableMinor": "Niet beschikbaar voor accounts onder 18 jaar.",
+      "discoverableFailed": "Deze instelling kon niet worden opgeslagen.",
+      "discord": "Mijn activiteit tonen op Discord",
+      "discordHint": "‘Speelt Rustic’ op je Discord-profiel: in de launcher, in het hoofdmenu, in singleplayer of op een server, met je speeltijd.",
+      "discordServer": "Het serveradres tonen op Discord",
+      "discordServerHint": "Anders toont Discord ‘Multiplayer’. Privéadressen (LAN, deze pc) worden nooit getoond."
+    },
+    "data": {
+      "title": "Je gegevens",
+      "description": "Je rechten onder de AVG: inzage, overdraagbaarheid en verwijdering.",
+      "export": "Mijn gegevens exporteren",
+      "exportHint": "Een JSON-archief van je account, vrienden, aankopen en instellingen.",
+      "exportButton": "Export voorbereiden",
+      "exportReady": "Je export is klaar",
+      "exportFailed": "De export kon niet worden voorbereid",
+      "download": "Downloaden (link geldig tot {{date}})",
+      "delete": "Mijn account verwijderen",
+      "deleteHint": "Bedenktijd van 30 dagen waarin je kunt annuleren, daarna definitieve verwijdering.",
+      "deleteButton": "Account verwijderen",
+      "deleteScheduled": "Verwijdering gepland op {{date}}. Log daarvoor in om te annuleren.",
+      "deleteFailed": "Het account kon niet worden verwijderd",
+      "rights": "Vragen of klachten: neem contact met ons op, of met de CNIL (de Franse toezichthouder voor gegevensbescherming).",
+      "confirmTitle": "Je Rustic-account verwijderen?",
+      "confirmBody": "Je vrienden, cosmetica en aankopen worden na 30 dagen verwijderd. Je gamelicentie en Microsoft-account blijven onaangetast.",
+      "confirmButton": "Mijn account verwijderen",
+      "typeUsername": "Typ {{name}} om te bevestigen"
+    }
+  },
+  "parental": {
+    "title": "Ouderlijk toezicht",
+    "description": "Rustic-accounts zijn voor gebruikers vanaf {{age}} jaar. Voor spelers onder 18 jaar hebben aankopen standaard goedkeuring van een ouder nodig.",
+    "minorNote": "Dit account is van een minderjarige: voor aankopen wordt om goedkeuring van een ouder gevraagd.",
+    "enable": "Ouderlijk toezicht inschakelen",
+    "enableHint": "Voor wijzigingen hieronder is dan de pincode nodig.",
+    "pinFirst": "Maak eerst een pincode om ouderlijk toezicht in te schakelen.",
+    "saveFailed": "De wijziging kon niet worden opgeslagen",
+    "lockAgain": "Opnieuw vergrendelen",
+    "rules": {
+      "title": "Regels",
+      "purchases": "Aankopen",
+      "purchasesHint": "Aankopen in de winkel zijn alleen cosmetisch. Nooit lootboxen.",
+      "purchaseOptions": {
+        "blocked": "Uit",
+        "pin": "Een ouder vragen",
+        "allowed": "Toegestaan"
+      },
+      "limit": "Maandelijkse bestedingslimiet",
+      "limitHint": "Deze maand besteed: {{spent}}. Laat leeg voor geen limiet.",
+      "noLimit": "Geen limiet",
+      "limitInvalid": "Voer een bedrag in zoals 10 of 9.99.",
+      "chat": "Chat",
+      "chatOptions": {
+        "off": "Uit",
+        "friends": "Alleen vrienden",
+        "everyone": "Iedereen"
+      },
+      "friendRequests": "Vriendschapsverzoeken",
+      "friendRequestsHint": "Anderen toestaan vriendschapsverzoeken te sturen."
+    },
+    "pin": {
+      "title": "Ouderlijke pincode",
+      "set": "Er is een pincode ingesteld. Die is nodig om deze instellingen te wijzigen en aankopen goed te keuren.",
+      "notSet": "Nog geen pincode.",
+      "change": "Pincode wijzigen",
+      "create": "Een pincode maken",
+      "saved": "Pincode opgeslagen",
+      "new": "Nieuwe pincode",
+      "confirm": "Pincode bevestigen",
+      "save": "Pincode opslaan",
+      "hint": "4 tot 6 cijfers, geen eenvoudige reeks.",
+      "errors": {
+        "format": "Gebruik 4 tot 6 cijfers.",
+        "mismatch": "De twee pincodes verschillen.",
+        "weak": "Te makkelijk te raden: vermijd 1234 of 0000."
+      }
+    },
+    "unlock": {
+      "title": "Vergrendeld",
+      "description": "Voer de ouderlijke pincode in om deze instellingen te wijzigen.",
+      "label": "Ouderlijke pincode",
+      "wrong": "Verkeerde pincode.",
+      "button": "Ontgrendelen"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Versie {{version}}",
+    "channel": {
+      "stable": "Stabiel",
+      "beta": "Bèta"
+    },
+    "browserMock": "Browservoorvertoning (testgegevens)",
+    "horizon": "Horizon",
+    "horizonHint": "Aanbevolen build van de game.",
+    "licence": "Licentie",
+    "platform": "Platform",
+    "legalTitle": "Juridisch",
+    "legalDescription": "Beleid en kennisgevingen.",
+    "links": {
+      "privacy": "Privacybeleid",
+      "terms": "Gebruiks- en verkoopvoorwaarden",
+      "legalNotice": "Juridische kennisgeving",
+      "fairPlay": "Fair-playbeleid",
+      "thirdParty": "Opensourcevermeldingen",
+      "horizon": "Horizon-project (MIT)"
+    },
+    "notAffiliated": "Geen officieel Minecraft-product. Niet goedgekeurd door of verbonden met Mojang of Microsoft.",
+    "horizonCredit": "Gebouwd op Horizon, een MIT-gelicentieerde herschrijving van de game in Rust, door de bijdragers ervan.",
+    "company": "Uitgegeven door [company name], een Frans bedrijf (SIREN [number], [address]). Betalingen via Stripe; het bedrijf is de verkoper.",
+    "tagline": "Rustic is een sociaal gameplatform, aangedreven door de Horizon-engine"
+  },
+  "rusticAuth": {
+    "mode": "Inloggen of account aanmaken",
+    "signIn": "Inloggen",
+    "signUp": "Account aanmaken",
+    "create": "Mijn account aanmaken",
+    "verify": "Verifiëren",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "username": "Gebruikersnaam",
+    "dateOfBirth": "Geboortedatum",
+    "country": "Land",
+    "acceptPrivacy": "Ik heb het privacybeleid gelezen en ga ermee akkoord.",
+    "code": "Code uit je authenticator-app",
+    "checkInbox": "We hebben een verificatielink gestuurd naar {{email}}. Open die en log dan in.",
+    "resend": "Opnieuw sturen",
+    "resent": "Verificatie-e-mail opnieuw verzonden",
+    "signedIn": "Ingelogd bij Rustic",
+    "problems": {
+      "email": "Voer een geldig e-mailadres in.",
+      "password": "Wachtwoord: minimaal 10 tekens.",
+      "username": "Gebruikersnaam: 3 tot 20 letters, cijfers of underscores.",
+      "dateOfBirth": "Voer je geboortedatum in.",
+      "tooYoung": "Rustic-accounts zijn voor gebruikers vanaf 13 jaar.",
+      "privacy": "Accepteer het privacybeleid om door te gaan."
+    },
+    "microsoft": "Doorgaan met Microsoft",
+    "orEmail": "of met een e-mailadres",
+    "microsoftWaiting": "Rond het inloggen af in je browser: de launcher neemt je sessie automatisch over."
+  },
+  "heading": "Jouw *instellingen*",
+  "eyebrow": "Launcher"
+}

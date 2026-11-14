@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "greeting": "Welkom terug, {{name}}",
+    "greetingAnon": "Welkom bij Rustic",
+    "continue": "Verder: {{name}} · gespeeld {{when}}",
+    "continueNew": "Klaar wanneer jij het bent: {{name}}",
+    "firstRun": "Maak de game klaar in drie stappen.",
+    "playNow": "Nu spelen",
+    "updateAndPlay": "Bijwerken en spelen",
+    "resumeServer": "Opnieuw verbinden met {{server}}",
+    "switch": "Andere instantie",
+    "stats": {
+      "playtime": "{{time}} gespeeld",
+      "mods_one": "{{count}} mod",
+      "mods_other": "{{count}} mods",
+      "friends_one": "{{count}} vriend online",
+      "friends_other": "{{count}} vrienden online"
+    },
+    "steps": {
+      "signIn": "Log in met het Microsoft-account dat de game bezit",
+      "prepare": "Bereid de gamebestanden voor vanuit je eigen installatie",
+      "create": "Maak je eerste instantie"
+    },
+    "getReady": "Maak de game klaar",
+    "openLocker": "Kluisje",
+    "player": "Je speler, in rust, zonder cosmetica",
+    "playerWearing": "Je speler, in rust, draagt: {{items}}"
+  },
+  "recent": {
+    "title": "Recente servers en werelden",
+    "unknown": "Status onbekend",
+    "online": "Online · {{online}}/{{max}}",
+    "offline": "Offline",
+    "world": "Wereld · lokaal",
+    "joining": "Verbinden met {{name}}…",
+    "opening": "{{name}} openen…",
+    "removed": "{{name}} verwijderd uit je servers",
+    "playAria": "{{name}} spelen",
+    "more": "Meer acties voor {{name}}",
+    "copyAddress": "Adres kopiëren",
+    "addServer": "Server toevoegen",
+    "empty": "Servers waarop je speelt en werelden die je speelt, verschijnen hier."
+  },
+  "news": {
+    "title": "Nieuws en updates",
+    "empty": "Momenteel geen nieuws.",
+    "slide": "Bericht {{index}} van {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Releasenotes",
+      "event": "Evenement",
+      "blog": "Artikel"
+    },
+    "readNotes": "Lees de releasenotes",
+    "read": "Lezen"
+  },
+  "friends": {
+    "title": "Vrienden nu",
+    "empty": "Geen van je vrienden speelt op dit moment.",
+    "since": "sinds {{when}}",
+    "activity": {
+      "server": "speelt op {{server}}",
+      "hosting": "host {{server}}",
+      "singleplayer": "speelt solo",
+      "launcher": "zit in de launcher"
+    }
+  },
+  "featured": {
+    "title": "Uitgelichte servers",
+    "verified": "Geverifieerde server",
+    "players": "{{online}} / {{max}} spelers",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Nieuwe cosmetica",
+    "owned": "In bezit"
+  },
+  "launchpad": {
+    "welcome": "Welkom *terug*,",
+    "playAs": "Spelen als",
+    "online": "online op uitgelichte servers",
+    "heroLabel": "Starten",
+    "instanceSettings": "Instellingen van instantie",
+    "news": "Laatste nieuws",
+    "unread_one": "({{count}} ongelezen)",
+    "unread_other": "({{count}} ongelezen)",
+    "unreadDot": "Ongelezen",
+    "explore": "Bronnen verkennen",
+    "aside": "Servers en vrienden",
+    "joinServer": "Speel mee op {{name}}",
+    "friendsOnline_one": "({{count}} online)",
+    "friendsOnline_other": "({{count}} online)",
+    "openSocial": "Sociaal openen",
+    "noNews": "Nog geen nieuws.",
+    "noFriendsOnline": "Op dit moment geen vrienden online.",
+    "socialHint": "Chats, uitnodigingen en je groep vind je in het venster Sociaal.",
+    "eyebrow": "Launchpad"
+  }
+}

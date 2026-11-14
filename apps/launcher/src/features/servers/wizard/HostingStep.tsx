@@ -1,6 +1,14 @@
 import { Badge, Button, cn, Input, Skeleton, Slider, Switch, toast } from '@rustic/ui';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { CheckCircle2, Cloud, Laptop, Server, XCircle } from 'lucide-react';
+import {
+  CheckCircle2,
+  Cloud,
+  Laptop,
+  ListChecks,
+  MemoryStick,
+  Server,
+  XCircle,
+} from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { invoke } from '@/ipc';
@@ -9,6 +17,7 @@ import { qk, useSystemInfo } from '@/queries/core';
 import { VpsSetup } from '../hosting/VpsSetup';
 import { memoryBounds, type FieldErrors, type WizardState } from './model';
 import { RadioCard } from './RadioCard';
+import { WizardSection } from './Section';
 
 interface StepProps {
   state: WizardState;
@@ -79,15 +88,16 @@ export function HostingStep({ state, update, errors, showErrors }: StepProps) {
   const ramOk = system.data ? system.data.available_memory_mb >= state.memoryMb : null;
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-4">
       <div
-        className="grid gap-3 md:grid-cols-3"
+        className="grid gap-3 @xl:grid-cols-3"
         role="radiogroup"
         aria-label={t('wizard.steps.hosting')}
       >
         <RadioCard
           name="hosting"
           value="local"
+          art="hosting-local"
           checked={state.hosting === 'local'}
           onChange={() => update({ hosting: 'local' })}
           icon={<Laptop />}
@@ -99,6 +109,7 @@ export function HostingStep({ state, update, errors, showErrors }: StepProps) {
         <RadioCard
           name="hosting"
           value="vps"
+          art="ember"
           checked={state.hosting === 'vps'}
           onChange={() => update({ hosting: 'vps' })}
           icon={<Server />}
@@ -109,6 +120,7 @@ export function HostingStep({ state, update, errors, showErrors }: StepProps) {
         <RadioCard
           name="hosting"
           value="cloud"
+          art="sky"
           checked={false}
           disabled
           onChange={() => undefined}
@@ -126,101 +138,99 @@ export function HostingStep({ state, update, errors, showErrors }: StepProps) {
         </p>
       )}
 
-      <div className="grid gap-5 lg:grid-cols-[1fr_20rem]">
-        <section className="rx-surface flex flex-col gap-4 rounded-xl p-5">
-          {state.hosting === 'local' && (
-            <>
-              <h3 className="text-sm font-semibold">{t('hosting.local.settings')}</h3>
-              <p className="text-fg-muted text-sm">{t('hosting.local.reach')}</p>
-              <label className="flex items-center justify-between gap-4 text-sm">
-                <span className="flex flex-col">
-                  <span className="font-medium">{t('hosting.local.startWithLauncher')}</span>
-                  <span className="text-fg-muted text-xs">
-                    {t('hosting.local.startWithLauncherHint')}
-                  </span>
-                </span>
-                <Switch
-                  checked={state.startWithLauncher}
-                  onCheckedChange={(v) => update({ startWithLauncher: v })}
-                />
-              </label>
-            </>
-          )}
-          {state.hosting === 'vps' && (
-            <>
-              <VpsSetup state={state} update={update} />
-              <label className="flex items-center justify-between gap-4 text-sm">
-                <span className="flex flex-col">
-                  <span className="font-medium">{t('hosting.vps.openFirewall')}</span>
-                  <span className="text-fg-muted text-xs">{t('hosting.vps.openFirewallHint')}</span>
-                </span>
-                <Switch
-                  checked={state.vpsOpenFirewall}
-                  onCheckedChange={(v) => update({ vpsOpenFirewall: v })}
-                  data-testid="vps-open-firewall"
-                />
-              </label>
-            </>
-          )}
-          <div className="border-border flex flex-col gap-2 border-t pt-4">
-            <div className="flex items-baseline justify-between">
-              <span className="text-sm font-medium">{t('wizard.type.memory')}</span>
-              <span className="text-accent-text font-mono text-sm tabular-nums">
-                {fmt(state.memoryMb)}
+      <WizardSection
+        icon={state.hosting === 'vps' ? <Server /> : <Laptop />}
+        title={state.hosting === 'vps' ? t('hosting.vps.title') : t('hosting.local.settings')}
+        hint={state.hosting === 'local' ? t('hosting.local.reach') : undefined}
+      >
+        {state.hosting === 'local' && (
+          <label className="bg-surface-2/60 flex items-center justify-between gap-4 rounded-lg px-3 py-2.5 text-sm">
+            <span className="flex flex-col">
+              <span className="font-medium">{t('hosting.local.startWithLauncher')}</span>
+              <span className="text-fg-muted text-xs">
+                {t('hosting.local.startWithLauncherHint')}
               </span>
-            </div>
-            <Slider
-              label={t('wizard.type.memory')}
-              value={Math.min(state.memoryMb, bounds.max)}
-              onValueChange={(v) => update({ memoryMb: v })}
-              min={bounds.min}
-              max={bounds.max}
-              step={512}
-              formatValue={fmt}
-              warnAbove={Math.round(bounds.max * 0.75)}
-              marks={[bounds.min, bounds.max].map((v) => ({
-                value: v,
-                label: <span className="whitespace-nowrap">{fmt(v)}</span>,
-              }))}
+            </span>
+            <Switch
+              checked={state.startWithLauncher}
+              onCheckedChange={(v) => update({ startWithLauncher: v })}
             />
-            <p className="text-fg-subtle text-xs">{t('wizard.type.memoryHint')}</p>
-          </div>
-        </section>
+          </label>
+        )}
+        {state.hosting === 'vps' && (
+          <>
+            <VpsSetup state={state} update={update} />
+            <label className="bg-surface-2/60 flex items-center justify-between gap-4 rounded-lg px-3 py-2.5 text-sm">
+              <span className="flex flex-col">
+                <span className="font-medium">{t('hosting.vps.openFirewall')}</span>
+                <span className="text-fg-muted text-xs">{t('hosting.vps.openFirewallHint')}</span>
+              </span>
+              <Switch
+                checked={state.vpsOpenFirewall}
+                onCheckedChange={(v) => update({ vpsOpenFirewall: v })}
+                data-testid="vps-open-firewall"
+              />
+            </label>
+          </>
+        )}
+      </WizardSection>
 
-        <aside className="rx-surface flex flex-col gap-3 rounded-xl p-5">
-          {state.hosting === 'local' ? (
-            <>
-              <h3 className="text-sm font-semibold">{t('hosting.requirements.title')}</h3>
-              <div className={cn('flex flex-col gap-2 text-sm')} data-testid="requirements">
-                <Requirement
-                  ok={ramOk}
-                  label={t('hosting.requirements.ram', {
-                    free: system.data ? fmt(system.data.available_memory_mb) : '…',
-                  })}
-                />
-                <Requirement
-                  ok={prepare.data ? prepare.data.state === 'ready' : null}
-                  label={t('hosting.requirements.gameFiles')}
-                />
-                <Requirement ok label={t('hosting.requirements.port')} />
-              </div>
-              <p className="text-fg-subtle text-xs">{t('hosting.requirements.hint')}</p>
-            </>
-          ) : (
-            <>
-              <h3 className="text-sm font-semibold">{t('hosting.cloud.title')}</h3>
-              <p className="text-fg-muted text-xs">{t('hosting.cloud.waitlist')}</p>
-              <Waitlist />
-            </>
-          )}
-          {state.hosting === 'local' && (
-            <div className="border-border mt-2 flex flex-col gap-2 border-t pt-3">
-              <p className="text-xs font-semibold">{t('hosting.cloud.title')}</p>
-              <p className="text-fg-muted text-xs">{t('hosting.cloud.waitlist')}</p>
-              <Waitlist />
+      <WizardSection
+        icon={<MemoryStick />}
+        title={t('wizard.type.memory')}
+        hint={t('wizard.type.memoryHint')}
+        action={
+          <span className="text-accent-text bg-accent-soft rounded-lg px-2.5 py-1 font-mono text-sm font-semibold tabular-nums">
+            {fmt(state.memoryMb)}
+          </span>
+        }
+      >
+        <Slider
+          label={t('wizard.type.memory')}
+          value={Math.min(state.memoryMb, bounds.max)}
+          onValueChange={(v) => update({ memoryMb: v })}
+          min={bounds.min}
+          max={bounds.max}
+          step={512}
+          formatValue={fmt}
+          warnAbove={Math.round(bounds.max * 0.75)}
+          marks={[bounds.min, bounds.max].map((v) => ({
+            value: v,
+            label: <span className="whitespace-nowrap">{fmt(v)}</span>,
+          }))}
+        />
+      </WizardSection>
+
+      <div className={cn('grid gap-4', state.hosting === 'local' && '@2xl:grid-cols-2')}>
+        {state.hosting === 'local' && (
+          <WizardSection
+            icon={<ListChecks />}
+            title={t('hosting.requirements.title')}
+            hint={t('hosting.requirements.hint')}
+          >
+            <div className="flex flex-col gap-2 text-sm" data-testid="requirements">
+              <Requirement
+                ok={ramOk}
+                label={t('hosting.requirements.ram', {
+                  free: system.data ? fmt(system.data.available_memory_mb) : '…',
+                })}
+              />
+              <Requirement
+                ok={prepare.data ? prepare.data.state === 'ready' : null}
+                label={t('hosting.requirements.gameFiles')}
+              />
+              <Requirement ok label={t('hosting.requirements.port')} />
             </div>
-          )}
-        </aside>
+          </WizardSection>
+        )}
+        <WizardSection
+          icon={<Cloud />}
+          title={t('hosting.cloud.title')}
+          hint={t('hosting.cloud.waitlist')}
+          action={<Badge variant="info">{t('hosting.cloud.soon')}</Badge>}
+        >
+          <Waitlist />
+        </WizardSection>
       </div>
     </div>
   );

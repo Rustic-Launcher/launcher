@@ -2,11 +2,12 @@ import { cn } from '@rustic/ui';
 import { useState, type ReactNode } from 'react';
 
 /**
- * Image hosts the webview may load (tauri.conf.json `img-src`): Rustic's CDN and Modrinth's.
- * Anything else (a registry's GitHub-hosted icon, a stray http link) falls back to generated art,
- * so no third-party request is ever attempted.
+ * Image hosts the webview may load (tauri.conf.json `img-src`): Rustic's CDN, Modrinth's, and
+ * Horizon's mod registry site (its icons sit next to the `index.json` the launcher already
+ * reads there). Anything else (a stray http link) falls back to generated art, so no request
+ * to another host is ever attempted.
  */
-const ALLOWED_HOSTS = ['cdn.rustic-launcher.com', 'cdn.modrinth.com'];
+const ALLOWED_HOSTS = ['cdn.rustic-launcher.com', 'cdn.modrinth.com', 'horizon-rust.github.io'];
 
 /** The URL when the webview may show it (allowed https host, or inline `data:`/`blob:`), else null. */
 export function safeImageUrl(url: string | null | undefined): string | null {
@@ -36,10 +37,23 @@ export function initialsOf(name: string): string {
     .join('');
 }
 
-/** Original art for a project without a picture: voxel hills under a hue gradient sky. */
-export function GeneratedArt({ seed, className }: { seed: string; className?: string }) {
+/**
+ * Original art for a project without a picture: voxel hills under a hue gradient sky. `wide`
+ * draws three times as many hills for banners (wider than about 3:1), whose 16:9 art would
+ * otherwise be scaled up into a few huge blocks.
+ */
+export function GeneratedArt({
+  seed,
+  className,
+  wide,
+}: {
+  seed: string;
+  className?: string;
+  wide?: boolean;
+}) {
   const hue = hueOf(seed);
-  const hills = Array.from({ length: 16 }, (_, i) => 16 + (((hue + 7) * (i + 5)) % 30));
+  const w = wide ? 480 : 160;
+  const hills = Array.from({ length: w / 10 }, (_, i) => 16 + (((hue + 7) * (i + 5)) % 30));
   return (
     <div
       aria-hidden
@@ -49,11 +63,11 @@ export function GeneratedArt({ seed, className }: { seed: string; className?: st
       }}
     >
       <svg
-        viewBox="0 0 160 90"
+        viewBox={`0 0 ${w} 90`}
         preserveAspectRatio="xMidYMax slice"
         className="absolute inset-0 size-full"
       >
-        <circle cx="128" cy="22" r="10" fill="white" fillOpacity="0.3" />
+        <circle cx={wide ? 300 : 128} cy={wide ? 46 : 22} r="10" fill="white" fillOpacity="0.3" />
         {hills.map((h, i) => (
           <rect
             key={i}
@@ -80,12 +94,15 @@ export function CatalogCover({
   className,
   imgClassName,
   children,
+  wide,
 }: {
   src?: string | null;
   seed: string;
   className?: string;
   imgClassName?: string;
   children?: ReactNode;
+  /** A banner: the generated art draws more, smaller hills (see {@link GeneratedArt}). */
+  wide?: boolean;
 }) {
   const safe = safeImageUrl(src);
   const [failed, setFailed] = useState<string | null>(null);
@@ -103,7 +120,7 @@ export function CatalogCover({
           className={cn('absolute inset-0 size-full object-cover', imgClassName)}
         />
       ) : (
-        <GeneratedArt seed={seed} />
+        <GeneratedArt seed={seed} wide={wide} />
       )}
       {children}
     </div>

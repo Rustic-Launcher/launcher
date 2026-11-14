@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "greeting": "Vítej zpět, {{name}}",
+    "greetingAnon": "Vítej v Rusticu",
+    "continue": "Pokračovat: {{name}} · hráno {{when}}",
+    "continueNew": "Připraveno, až budeš chtít: {{name}}",
+    "firstRun": "Připrav hru ve třech krocích.",
+    "playNow": "Hrát",
+    "updateAndPlay": "Aktualizovat a hrát",
+    "resumeServer": "Znovu se připojit: {{server}}",
+    "switch": "Změnit instanci",
+    "stats": {
+      "playtime": "Odehráno {{time}}",
+      "mods_one": "{{count}} mód",
+      "mods_few": "{{count}} módy",
+      "mods_many": "{{count}} módu",
+      "mods_other": "{{count}} módů",
+      "friends_one": "{{count}} přítel online",
+      "friends_few": "{{count}} přátelé online",
+      "friends_many": "{{count}} přítele online",
+      "friends_other": "{{count}} přátel online"
+    },
+    "steps": {
+      "signIn": "Přihlas se účtem Microsoft, který vlastní hru",
+      "prepare": "Připrav herní soubory ze své vlastní instalace",
+      "create": "Vytvoř svou první instanci"
+    },
+    "getReady": "Připravit hru",
+    "openLocker": "Šatna",
+    "player": "Tvoje postava v klidu, bez nasazené kosmetiky",
+    "playerWearing": "Tvoje postava v klidu, má na sobě: {{items}}"
+  },
+  "recent": {
+    "title": "Nedávné servery a světy",
+    "unknown": "Stav neznámý",
+    "online": "Online · {{online}}/{{max}}",
+    "offline": "Offline",
+    "world": "Svět · místní",
+    "joining": "Připojování k {{name}}…",
+    "opening": "Otevírám {{name}}…",
+    "removed": "{{name}} odebráno z tvých serverů",
+    "playAria": "Hrát: {{name}}",
+    "more": "Další akce: {{name}}",
+    "copyAddress": "Kopírovat adresu",
+    "addServer": "Přidat server",
+    "empty": "Zobrazí se tu servery, na které se připojíš, a světy, které hraješ."
+  },
+  "news": {
+    "title": "Novinky a aktualizace",
+    "empty": "Momentálně žádné novinky.",
+    "slide": "Příspěvek {{index}} z {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Poznámky k vydání",
+      "event": "Událost",
+      "blog": "Článek"
+    },
+    "readNotes": "Přečíst poznámky k vydání",
+    "read": "Přečíst"
+  },
+  "friends": {
+    "title": "Přátelé právě teď",
+    "empty": "Nikdo z tvých přátel teď nehraje.",
+    "since": "od {{when}}",
+    "activity": {
+      "server": "hraje na {{server}}",
+      "hosting": "hostuje {{server}}",
+      "singleplayer": "hraje sólo",
+      "launcher": "je v launcheru"
+    }
+  },
+  "featured": {
+    "title": "Doporučené servery",
+    "verified": "Ověřený server",
+    "players": "{{online}} / {{max}} hráčů",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Nová kosmetika",
+    "owned": "Vlastníš"
+  },
+  "launchpad": {
+    "welcome": "Vítej *zpět*,",
+    "playAs": "Hrát jako",
+    "online": "online na doporučených serverech",
+    "heroLabel": "Spuštění",
+    "instanceSettings": "Nastavení instance",
+    "news": "Nejnovější zprávy",
+    "unread_one": "({{count}} nepřečtená)",
+    "unread_few": "({{count}} nepřečtené)",
+    "unread_many": "({{count}} nepřečtené)",
+    "unread_other": "({{count}} nepřečtených)",
+    "unreadDot": "Nepřečteno",
+    "explore": "Prozkoumat zdroje",
+    "aside": "Servery a přátelé",
+    "joinServer": "Připojit se: {{name}}",
+    "friendsOnline_one": "({{count}} online)",
+    "friendsOnline_few": "({{count}} online)",
+    "friendsOnline_many": "({{count}} online)",
+    "friendsOnline_other": "({{count}} online)",
+    "openSocial": "Otevřít komunitu",
+    "noNews": "Zatím žádné novinky.",
+    "noFriendsOnline": "Teď nejsou online žádní přátelé.",
+    "socialHint": "Chaty, pozvánky a tvoje parta najdeš v okně Komunita.",
+    "eyebrow": "Launchpad"
+  }
+}

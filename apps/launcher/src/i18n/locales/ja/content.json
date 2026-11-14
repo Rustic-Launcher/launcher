@@ -1,0 +1,465 @@
+{
+  "title": "探索",
+  "subtitle": "Horizon、Modrinth、Rustic の MOD、パック、シェーダー、プラグインを、お使いのインスタンスとの互換性を確認して表示します。",
+  "kindsLabel": "コンテンツの種類",
+  "kinds": {
+    "mod": "MOD",
+    "modpack": "MODパック",
+    "resourcepack": "リソースパック",
+    "shader": "シェーダー",
+    "datapack": "データパック",
+    "plugin": "プラグイン"
+  },
+  "searchLabel": "コンテンツを検索",
+  "clear": "検索をクリア",
+  "by": "作者：{{author}}",
+  "featured": "注目",
+  "downloads": "{{value}} ダウンロード",
+  "updated": "{{when}}に更新",
+  "results_other": "{{count}} 件の結果",
+  "loadMore": "さらに読み込む（{{total}} 件中 {{shown}} 件）",
+  "target": {
+    "label": "インストール先",
+    "none": "インストール先を選択",
+    "serverDescription": "{{engine}}・{{hosting}}"
+  },
+  "engine": {
+    "horizon": "Horizon サーバー",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "この PC",
+    "vps": "あなたの VPS",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "並べ替え",
+    "relevance": "関連度",
+    "downloads": "ダウンロード数順",
+    "updated": "最近更新",
+    "newest": "新しい順"
+  },
+  "sources": {
+    "label": "ソース",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Horizon レジストリ",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic カタログ"
+  },
+  "filters": {
+    "category": "カテゴリー",
+    "allCategories": "すべてのカテゴリー",
+    "compatibleInstance": "このインスタンスと互換性あり",
+    "compatibleServer": "このサーバーと互換性あり",
+    "worksNow": "現在の Horizon でビルド可能",
+    "categories": "カテゴリー",
+    "viewMore_other": "さらに {{count}} 件表示",
+    "viewLess": "表示を減らす",
+    "compatibility": "互換性",
+    "pluginHint": "プラグインは Rustic Server 上でのみ、サンドボックス化されて動作します。",
+    "fairPlayHint": "フェアプレイのコンテンツのみ掲載しています。",
+    "versions": "Horizon のバージョン",
+    "targetVersion": "選択中のインスタンスまたはサーバー",
+    "checkingAgainst": "互換性はハイライトされたビルドに対して確認されます。",
+    "rustic": "Rustic Marketplace",
+    "rusticHint": "有料および認証済みのプロジェクトは Rustic にのみあります。",
+    "verifiedOnly": "Rustic の認証済みのみ",
+    "price": "価格",
+    "priceOptions": {
+      "all": "すべて",
+      "free": "無料",
+      "paid": "有料"
+    },
+    "reset": "フィルターをリセット",
+    "remove": "フィルター「{{filter}}」を解除"
+  },
+  "categories": {
+    "performance": "パフォーマンス",
+    "utility": "ユーティリティ",
+    "ui": "インターフェース",
+    "pvp": "PvP",
+    "adventure": "冒険",
+    "decoration": "装飾",
+    "storage": "収納",
+    "worldgen": "ワールド生成",
+    "library": "ライブラリ",
+    "tech": "テクノロジー",
+    "cozy": "まったり",
+    "multiplayer": "マルチプレイ",
+    "realistic": "リアル",
+    "simple": "バニラ風",
+    "lightweight": "軽量",
+    "cinematic": "シネマティック",
+    "qol": "快適性向上",
+    "admin": "管理",
+    "chat": "チャット",
+    "minigames": "ミニゲーム",
+    "protection": "保護",
+    "integration": "連携"
+  },
+  "empty": {
+    "title": "一致するものがありません",
+    "hint": "別のキーワード、ソース、カテゴリーをお試しください。",
+    "compatibleHint": "このインストール先で動作するコンテンツのみ表示しています。すべて表示するにはフィルターをオフにしてください。",
+    "showAll": "互換性のない結果も表示"
+  },
+  "banners": {
+    "mod": "フェアプレイの MOD のみ掲載しています。X-ray、オートクリッカーなどの不公平な有利をもたらすものはありません。",
+    "modpack": "MODパックは、独自の MOD と設定を持つ新しいインスタンスになります。",
+    "resourcepack": "パックは重ねて適用され、読み込み順で一番上のものが優先されます。",
+    "shader": "Horizon は独自の WGSL シェーダーパック（.hshader、シェーダー API 0.1、実験的）と、Horizon レジストリにある Iris/OptiFine 形式のパックを実行できます。ゲーム内の「ビデオ設定 › シェーダーパック」で選択してください。",
+    "datapack": "データパックはワールドに属します。インストール時にワールドを選択します。",
+    "plugin": "プラグイン（.rplugin）は Rustic Server エンジンを使うサーバー上で、サンドボックス化されて動作します。不具合のあるプラグインは無効化され、サーバーは動き続けます。"
+  },
+  "resourcepacks": {
+    "manageOrder": "読み込み順を管理"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Iris/OptiFine 形式"
+    },
+    "formatHint": {
+      "horizon": "Horizon 独自の形式（.hshader）、シェーダー API 0.1（実験的）。実行前にチェックされます。",
+      "shaders_dir": "Iris/OptiFine 形式の shaders/ パック。Horizon の別のローダーで実行されます。"
+    }
+  },
+  "side": {
+    "client": "クライアント",
+    "server": "サーバー",
+    "both": "クライアントとサーバー"
+  },
+  "install": {
+    "install": "インストール",
+    "installAria": "{{name}} を {{target}} にインストール",
+    "installed": "インストール済み",
+    "installing": "インストール中…",
+    "installingPct": "インストール中 {{pct}}",
+    "createInstance": "インスタンスを作成",
+    "chooseWorld": "ワールドにインストール",
+    "noTarget": "先にインストール先を選択してください。",
+    "started": "{{name}} を {{target}} にインストールしています",
+    "withDeps_other": "必須の依存関係 {{count}} 件も含みます。",
+    "failed": "{{name}} をインストールできませんでした",
+    "native": "ビルドしてインストール",
+    "update": "更新",
+    "updateAria": "{{name}} を {{version}} に更新"
+  },
+  "modpack": {
+    "created": "インスタンス {{name}} を作成しています",
+    "createdHint": "ダウンロード中です。準備ができると「プレイ」に表示されます。"
+  },
+  "datapacks": {
+    "pickWorld": "ワールドを選択",
+    "noWorlds": "このインスタンスにはまだワールドがありません。一度プレイして作成してください。",
+    "count_other": "データパック {{count}} 個"
+  },
+  "plugins": {
+    "badge": "Rustic Server プラグイン・API {{api}}",
+    "noServerTitle": "Rustic Server のサーバーがまだありません",
+    "noServerBody": "プラグインは Rustic Server エンジンを使うサーバーでのみ動作します。数ステップでサーバーを作成してから、ここに戻ってプラグインをインストールしてください。",
+    "createServer": "サーバーを作成"
+  },
+  "detail": {
+    "breadcrumb": "パンくずリスト",
+    "sections": "プロジェクトのセクション",
+    "tabs": {
+      "description": "説明",
+      "gallery": "ギャラリー",
+      "versions": "バージョン",
+      "changelog": "更新履歴",
+      "dependencies": "依存関係",
+      "compatibility": "互換性"
+    },
+    "galleryLabel": "{{name}} のギャラリー",
+    "prev": "前の画像",
+    "next": "次の画像",
+    "slide": "{{total}} 枚中 {{index}} 枚目",
+    "about": "このプロジェクトについて",
+    "categories": "カテゴリー",
+    "links": "リンク",
+    "link": {
+      "source": "ソースコード",
+      "issues": "バグを報告",
+      "website": "ウェブサイト",
+      "site": "rustic-launcher.com で見る",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "まだ更新履歴はありません。",
+    "noGallery": "まだスクリーンショットはありません。",
+    "notAvailable": {
+      "title": "このプロジェクトは利用できません",
+      "body": "非公開、審査待ち、または作成者かモデレーターによって削除された可能性があります。",
+      "back": "探索に戻る"
+    },
+    "native": {
+      "title": "あなたの PC でビルド",
+      "build": "初回プレイ時にこのプロファイルのゲームへコンパイルされます。最初は 10〜15 分ほどで、以降はもっと速くなります。",
+      "review": "インストールできるようになる前に、Horizon のレジストリまたは Rustic の管理者が審査しています。",
+      "consent": "短い注意事項を読んで同意するまで、何もビルドされません。",
+      "more": "ネイティブMOD の仕組み"
+    }
+  },
+  "report": {
+    "button": "報告",
+    "title": "{{name}} を報告",
+    "sent": "報告を送信しました",
+    "sentBody": "ありがとうございます。モデレーターが確認します。",
+    "reasons": {
+      "fair_play": "フェアプレイポリシー違反",
+      "malware": "マルウェアまたはデータ窃取",
+      "copyright": "著作権侵害",
+      "other": "その他"
+    },
+    "failed": "報告を送信できませんでした"
+  },
+  "versions": {
+    "version": "バージョン",
+    "horizon": "Horizon ビルド",
+    "published": "公開日",
+    "downloads": "ダウンロード数",
+    "compatibility": "互換性",
+    "actions": "操作",
+    "none": "なし",
+    "channel": {
+      "release": "リリース",
+      "beta": "ベータ",
+      "alpha": "アルファ"
+    },
+    "empty": "利用可能なバージョンはまだありません。",
+    "latest": "最新"
+  },
+  "deps": {
+    "none": "依存関係はありません。",
+    "relation": {
+      "required": "必須",
+      "optional": "任意",
+      "incompatible": "互換性なし"
+    },
+    "installed": "インストール済み",
+    "willInstall": "自動でインストール",
+    "notInstalled": "未インストール"
+  },
+  "compatTab": {
+    "for": "{{target}} 向け",
+    "builds": "作者がこの Horizon バージョン向けのビルドを公開しています。",
+    "format": "このコンテンツはデータのみ（テクスチャー、シェーダー、データパック）で、Horizon のビルドに依存しません。",
+    "unknown": "互換性を確認するには、インスタンスまたはサーバーを選択してください。",
+    "fairPlay": "Rustic はフェアプレイのコンテンツのみを紹介します。不公平な有利をもたらすものは掲載しません。",
+    "native": "この Horizon に対応するネイティブMODです。Rustic Launcher があなたの PC 上で、このインスタンス専用のゲームにコンパイルします。"
+  },
+  "permissions": {
+    "title": "権限",
+    "network": "ネットワークアクセス：{{value}}",
+    "none": "なし",
+    "files": "ファイル：自身のデータフォルダーのみ。"
+  },
+  "stats": {
+    "downloads": "ダウンロード数",
+    "follows": "フォロワー",
+    "updated": "更新日",
+    "license": "ライセンス",
+    "size": "サイズ",
+    "gameVersion": "ゲームバージョン",
+    "version": "最新バージョン",
+    "author": "作者",
+    "created": "公開日"
+  },
+  "searchSources": {
+    "mod": "Horizon、Modrinth、Rustic でMODを検索…",
+    "modpack": "Horizon、Modrinth、Rustic でMODパックを検索…",
+    "resourcepack": "Horizon、Modrinth、Rustic でリソースパックを検索…",
+    "shader": "Horizon、Modrinth、Rustic でシェーダーを検索…",
+    "datapack": "Horizon、Modrinth、Rustic でデータパックを検索…",
+    "plugin": "Horizon、Modrinth、Rustic でプラグインを検索…"
+  },
+  "filtersLabel": "フィルター",
+  "view": "表示",
+  "heading": "次の*MOD*を見つけよう",
+  "eyebrow": "探索",
+  "kindsServer": "Rustic Server 向け",
+  "tabs": {
+    "label": "探索のセクション",
+    "discover": "見つける",
+    "browse": "一覧",
+    "mine": "マイコンテンツ"
+  },
+  "hero": {
+    "eyebrow": "注目"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "注目のMOD",
+      "modpack": "注目のMODパック",
+      "resourcepack": "注目のリソースパック",
+      "shader": "注目のシェーダー",
+      "datapack": "注目のデータパック",
+      "plugin": "注目のプラグイン"
+    },
+    "rows": {
+      "new": "新着",
+      "newHint": "公開・更新されたばかり",
+      "horizon": "Horizon で人気",
+      "horizonHint": "Horizon レジストリで最もダウンロードされたもの",
+      "verified": "Rustic 認証済み",
+      "verifiedHint": "Rustic チームが確認済み：説明どおりに動作します",
+      "yours": "{{target}} 向け",
+      "yoursHint": "Horizon {{version}} で動作",
+      "community": "コミュニティから",
+      "communityHint": "Rustic Marketplace で最近更新"
+    },
+    "empty": {
+      "title": "まだ見つけられるものがありません",
+      "hint": "この種類のコンテンツで、インストール先で動作するものはまだありません。代わりにすべてを一覧で見てみましょう。",
+      "browse": "すべてを一覧表示"
+    },
+    "rowError": "このセレクションを読み込めませんでした。",
+    "retry": "再試行"
+  },
+  "verified": {
+    "label": "認証済み",
+    "hint": "Rustic 認証済み：ページの説明どおりに動作することをモデレーターが確認しました。"
+  },
+  "price": {
+    "soon": "近日公開",
+    "soonHint": "クリエイターは近いうちに作品を販売できるようになります。購入はまだご利用いただけません。",
+    "notOnSale": "まだ販売されていません。クリエイターによる販売は近日開始予定です。"
+  },
+  "native": {
+    "badge": "あなたの PC でビルド",
+    "short": "ネイティブ",
+    "hint": "ネイティブMODは、実行前にあなたの PC 上でゲームにコンパイルされる Rust コードです。",
+    "title": "ネイティブMOD",
+    "body": "ネイティブMODは、この PC 上であなたのゲームにビルドされる Rust のソースコードです（1 分から 30 分ほどかかります）。すべてのバージョンは公開前に管理者が審査します。",
+    "kind": "ネイティブMOD",
+    "how": "信頼に関する注意事項に同意すると、Rustic Launcher があなたの PC 上でこのインスタンス専用のゲームにコンパイルします。初回のビルドは 10〜15 分かかり、2 回目以降は変更部分のみ再コンパイルします。ネイティブMODのないインスタンスはビルド済みのゲームをそのまま使います。",
+    "instanceOnly": "ネイティブMODはインスタンスに追加します。",
+    "trust": {
+      "title": "ネイティブコード：ビルド前にお読みください",
+      "lead": "{{name}} はネイティブMODです。この PC 上で「{{instance}}」のゲームにコンパイルされる Rust コードです。",
+      "unsandboxed": "ネイティブMODはサンドボックス化されていません。ビルド後はあなたの権限で動作し、あなたのアカウントでできることなら何でも読み取り、変更、送信できます。",
+      "review": "インストールできるのは、Horizon レジストリの MOD（メンテナーが審査済み）と、Rustic Marketplace で管理者に承認された MOD のみです。審査はリスクを下げますが、なくすわけではありません。",
+      "build": "必要に応じて Rust をインストールし、このインスタンス用にゲームをコンパイルします。初回は約 10〜15 分と数 GB が必要で、2 回目以降はより速くなります。",
+      "scope": "ビルドしたゲームを使うのはこのインスタンスだけです。今後このインスタンスに追加するネイティブMODでは、再度確認しません。",
+      "source": "ソースコードを読む",
+      "check": "ネイティブMODがサンドボックス化されずに自分の権限で動作することを理解し、この MOD を信頼します。",
+      "accept": "信頼する：インストールしてビルド"
+    },
+    "toolchain": {
+      "title": "Rust {{version}} をインストールしますか？",
+      "lead": "ネイティブMODのビルドには Rust コンパイラーが必要です。Rustic Launcher がインストールできます。",
+      "manual": "ネイティブMODのビルドには、Rust コンパイラーと、Rustic Launcher がインストールできないシステムツールが必要です。以下をインストールしてから、もう一度ビルドしてください：",
+      "where": "公式サイト（static.rust-lang.org）から取得し、公開されている SHA-256 で検証したうえで、ランチャー専用のフォルダーにインストールします。PC のほかの場所は変更されません。",
+      "size": "約 1〜2.5 GB（Windows では C コンパイラーを含む）。",
+      "once": "すべてのインスタンスで一度だけ。ランチャーのデータを削除すると一緒に削除されます。",
+      "found": "検出：{{reason}}。",
+      "install": "Rust をインストール",
+      "started": "Rust をインストールしています",
+      "startedHint": "準備ができるとすぐにビルドが始まります。ダウンロードパネルで進行状況を確認できます。",
+      "failed": "Rust をインストールできませんでした"
+    },
+    "build": {
+      "started": "{{instance}} のネイティブMODをビルドしています",
+      "startedHint": "インスタンスページまたはダウンロードパネルで進行状況を確認できます。初回のビルドは 10〜15 分かかります。",
+      "failed": "{{instance}} のネイティブMODをビルドできませんでした"
+    },
+    "errors": {
+      "notEdition": "ネイティブMODは Rustic エディションにのみビルドされます。インスタンスの設定で Rustic エディションに切り替えてください。",
+      "running": "先にゲームを閉じてください。ネイティブMODはゲームの停止中に再ビルドされます。",
+      "disk": "空きディスク容量が足りません。{{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "互換性なし",
+    "compatible": "互換性あり"
+  },
+  "library": {
+    "add": "ライブラリに追加",
+    "inLibrary": "ライブラリにあります",
+    "added": "{{name}} をライブラリに追加しました",
+    "removed": "{{name}} をライブラリから削除しました",
+    "remove": "{{name}} をライブラリから削除",
+    "failed": "ライブラリを更新できませんでした"
+  },
+  "prompt": {
+    "title": "{{name}} をインストールしますか？",
+    "body": "ウェブサイトからこのプロジェクトを開きました。インストール先とバージョンを選んで確定してください。",
+    "dismiss": "今はしない",
+    "version": "バージョン",
+    "versionMissing": "バージョン {{version}} は利用できなくなりました。互換性のある最新バージョンを選択しています。"
+  },
+  "mine": {
+    "searchPlaceholder": "マイコンテンツを絞り込み…",
+    "noMatch": "一致するものがありません",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "手動で追加"
+    },
+    "installed": {
+      "title": "インストール済み",
+      "titleOn": "{{target}} にインストール済み",
+      "hint": {
+        "mod": "このインストール先のMODです。オン・オフの切り替え、更新、削除ができます。",
+        "modpack": "このインストール先のMODパックです。オン・オフの切り替え、更新、削除ができます。",
+        "resourcepack": "このインストール先のリソースパックです。オン・オフの切り替え、更新、削除ができます。",
+        "shader": "このインストール先のシェーダーです。オン・オフの切り替え、更新、削除ができます。",
+        "datapack": "このインストール先のデータパックです。オン・オフの切り替え、更新、削除ができます。",
+        "plugin": "このインストール先のプラグインです。オン・オフの切り替え、更新、削除ができます。"
+      },
+      "modpacksTitle": "MODパックはプロファイルになります",
+      "modpacksHint": "インストールした MODパックは、それぞれ独立したプロファイルになります。",
+      "openProfiles": "プロファイルを開く",
+      "noTarget": "先に確認する場所を選択してください。",
+      "serverHint": "サーバーのプラグインとデータパックは、そのサーバーのページで管理します。",
+      "manageServer": "サーバーを管理",
+      "updateAll_other": "{{count}} 件を更新",
+      "openProfile": "プロファイルを開く",
+      "empty": "ここにはまだ何もインストールされていません",
+      "emptyHint": "「見つける」や「一覧」で探してみましょう。",
+      "discover": "コンテンツを見つける",
+      "updateTo": "{{version}} に更新",
+      "incompatible": "互換性なし",
+      "update": "{{name}} を更新",
+      "toggle": "{{name}} を有効にする",
+      "remove": "{{name}} を削除",
+      "removeTitle": "{{name}} を削除しますか？",
+      "removeBody": "このプロファイルからファイルが削除されます。いつでも再インストールできます。"
+    },
+    "signIn": {
+      "title": "ライブラリと作品",
+      "body": "保存したプロジェクトや公開したプロジェクトを見るには、Rustic アカウントにログインしてください。",
+      "action": "ログイン"
+    },
+    "library": {
+      "title": "マイライブラリ",
+      "hint": "Rustic アカウントに保存したプロジェクト。どの PC でも使えます。",
+      "empty": "ライブラリは空です",
+      "emptyHint": "Rustic のプロジェクトをページから追加すると、ここに表示されます。",
+      "installAria": "{{name}} をインストール"
+    },
+    "creations": {
+      "title": "マイ作品",
+      "hint": "Rustic Marketplace で公開したもの。",
+      "publish": "ウェブサイトで公開",
+      "empty": "まだ何も公開していません",
+      "emptyHint": "MOD、パック、シェーダーをウェブサイトから Rustic の全プレイヤーと共有しましょう。",
+      "manage": "管理",
+      "manageAria": "ウェブサイトで {{name}} を管理",
+      "status": {
+        "public": "公開",
+        "unlisted": "限定公開",
+        "private": "非公開",
+        "pending": "審査待ち",
+        "rejected": "却下",
+        "takenDown": "公開停止"
+      }
+    }
+  }
+}

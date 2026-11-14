@@ -31,7 +31,22 @@
     "error_title": "Das Serververzeichnis ist nicht erreichbar",
     "retry": "Erneut versuchen",
     "publish_hint": "Veröffentliche deinen auf rustic-launcher.com/servers",
-    "rustic_edition": "Rustic-Edition"
+    "rustic_edition": "Rustic-Edition",
+    "saved_servers": "Gespeicherte Server",
+    "local_network": "Lokales Netzwerk",
+    "search_servers": "Deine Server durchsuchen",
+    "no_servers_title": "Noch keine Server",
+    "no_servers_body": "Füge einen Server über seine Adresse hinzu oder finde einen unter Entdecken.",
+    "no_worlds_title": "Noch keine Welten",
+    "no_worlds_body": "Erstelle eine Welt, um loszuspielen.",
+    "nothing_found": "Nichts passt zu deiner Suche",
+    "just_now": "Gerade eben",
+    "minutes_ago": "vor {n} Min.",
+    "hours_ago": "vor {n} Std.",
+    "days_ago": "vor {n} T.",
+    "lan_empty": "Welten, die in deinem Netzwerk für LAN geöffnet sind, erscheinen hier.",
+    "play": "Spielen",
+    "no_mods": "Noch keine Mods installiert. Finde Mods für Rustic unter „Entdecken“ im Launcher oder lege eigene Dateien in den Mod-Ordner."
   },
   "tags": {
     "survival": "Überleben",

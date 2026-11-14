@@ -125,8 +125,16 @@ impl BuildSource {
                 signing::parse_keys(signing::HORIZON_KEYS).map_err(InstanceError::Signature)?,
             );
         }
+        if config.signature_namespace == signing::RUSTIC_NAMESPACE {
+            keys.extend(
+                signing::parse_keys(signing::RUSTIC_KEYS).map_err(InstanceError::Signature)?,
+            );
+        }
         for k in &config.public_keys {
-            keys.push(signing::parse_key(k).map_err(InstanceError::Signature)?);
+            let key = signing::parse_key(k).map_err(InstanceError::Signature)?;
+            if !keys.contains(&key) {
+                keys.push(key);
+            }
         }
         Ok(Self {
             config,
@@ -189,6 +197,8 @@ pub struct BuildManager {
 }
 
 const BUILD_FILE: &str = "rustic-build.json";
+/// Where an installed bundle's own `rustic-build.json` (what CI built it from) is kept.
+pub const BUNDLE_FILE: &str = "rustic-bundle.json";
 
 impl BuildManager {
     pub fn new(root: PathBuf, http: reqwest::Client, downloads: DownloadManager) -> Self {
@@ -240,6 +250,16 @@ impl BuildManager {
             return Err(InstanceError::Signature("checksum file too large".into()));
         }
         Ok(Some(bytes.to_vec()))
+    }
+
+    /// The newest release of `source` this computer can install: the first non-prerelease with
+    /// an archive for this platform (releases come newest first).
+    pub async fn latest(&self, source: &BuildSource) -> Result<Option<BuildRelease>> {
+        Ok(self
+            .releases(source)
+            .await?
+            .into_iter()
+            .find(|r| !r.prerelease && r.asset.is_some()))
     }
 
     /// What `source` publishes, newest first.
@@ -347,6 +367,11 @@ impl BuildManager {
             use std::os::unix::fs::PermissionsExt;
             let _ =
                 std::fs::set_permissions(top.join(name), std::fs::Permissions::from_mode(0o755));
+        }
+        // The bundle's own build record (Horizon commit, companion, target: ADR 0006) keeps its
+        // content under another name: `rustic-build.json` is the launcher's install record.
+        if top.join(BUILD_FILE).is_file() {
+            let _ = std::fs::rename(top.join(BUILD_FILE), top.join(BUNDLE_FILE));
         }
         let target = self.root.join(&release.version);
         let _ = tokio::fs::remove_dir_all(&target).await;

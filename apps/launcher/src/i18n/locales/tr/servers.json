@@ -1,0 +1,1053 @@
+{
+  "list": {
+    "title": "Sunucular",
+    "description": "Arkadaşların için burada veya kendi VPS’inde bir dünya barındır ve favori sunucularını el altında tut.",
+    "create": "Sunucu oluştur",
+    "tabs": {
+      "mine": "Sunucularım",
+      "joined": "Katıldıkların",
+      "discover": "Keşif"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Saf Horizon"
+    },
+    "hosting": {
+      "local": "Bu bilgisayar",
+      "remote": "Uzak: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Durum",
+    "states": {
+      "running": "Çalışıyor",
+      "starting": "Başlatılıyor…",
+      "stopping": "Durduruluyor…",
+      "stopped": "Durduruldu",
+      "crashed": "Çöktü",
+      "installing": "Yükleniyor…",
+      "unreachable": "Ulaşılamıyor"
+    },
+    "players": "Oyuncular",
+    "playersCount": "{{online}}/{{max}} oyuncu",
+    "version": "Sürüm",
+    "copyAddress": "Adresi kopyala",
+    "copyFailed": "Panoya kopyalanamadı",
+    "notShared": "Henüz paylaşılmadı",
+    "notSharedHint": "Sunucunun Erişim sekmesinden geçici adresi, davet kodunu veya bir alan adını aç.",
+    "start": "Başlat",
+    "stop": "Durdur",
+    "startAria": "Başlat: {{name}}",
+    "stopAria": "Durdur: {{name}}",
+    "powerFailed": "Sunucu yanıt vermedi",
+    "empty": {
+      "title": "Arkadaşların için 3 adımda bir dünya barındır",
+      "description": "Bu bilgisayarda ücretsiz çalıştır veya Rustic’in onu kendi VPS’ine kurmasına izin ver."
+    },
+    "featured": {
+      "description": "Rustic ekibinin seçtiği sunucular: adil oyun, Horizon’a hazır, moderasyonlu.",
+      "empty": "Şu an öne çıkan sunucu yok.",
+      "verified": "Rustic tarafından doğrulandı",
+      "save": "Listeye ekle",
+      "inList": "Listende",
+      "online_one": "{{value}} çevrimiçi",
+      "online_other": "{{value}} çevrimiçi",
+      "view": "Hakkında: {{name}}"
+    },
+    "viewLabel": "Görünüm",
+    "views": {
+      "discover": "Keşif",
+      "mine": "Sunucularım"
+    },
+    "searchPlaceholder": {
+      "discover": "Öne çıkan sunucularda ara…",
+      "mine": "Sunucularında ara…"
+    },
+    "clearSearch": "Aramayı temizle",
+    "sortLabel": "Sırala",
+    "sorts": {
+      "recommended": "Önerilen",
+      "players": "En çok oyuncu",
+      "name": "Ad"
+    },
+    "refreshPing": "Ping’i ve durumu yenile",
+    "layoutList": "Liste olarak göster",
+    "layoutGrid": "Izgara olarak göster",
+    "createHint": "Burada, VPS’inde veya yakında bulutta",
+    "heading": "*Sunucularda* oyna",
+    "eyebrow": "Sunucular",
+    "sections": {
+      "hosted": "Senin barındırdıkların",
+      "joined": "Katıldığın sunucular"
+    }
+  },
+  "multiplayer": {
+    "description": "Oyunun sunucu listesi, tüm örneklerin tarafından paylaşılır.",
+    "add": "Sunucu ekle",
+    "added": "{{name}} listene eklendi",
+    "addFailed": "Bu sunucu eklenemedi",
+    "name": "Sunucu adı",
+    "namePlaceholder": "Ad",
+    "address": "Sunucu adresi",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Bir ana bilgisayar adı veya IP kullan, isteğe bağlı :port ile.",
+    "refreshPings": "Yenile",
+    "favorites_one": "Favori · {{count}}",
+    "favorites_other": "Favoriler · {{count}}",
+    "others_one": "Diğer sunucu · {{count}}",
+    "others_other": "Diğer sunucular · {{count}}",
+    "favorite": "Favorilere ekle: {{name}}",
+    "unfavorite": "Favorilerden kaldır: {{name}}",
+    "offline": "Çevrimdışı",
+    "unreachable": "Bu sunucuya şu an ulaşılamıyor",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Katıl",
+    "joinAria": "Katıl: {{name}}",
+    "joinWith": "Katılınacak örnek: {{instance}}",
+    "noInstance": "Sunuculara katılmak için bir örnek oluştur",
+    "joining": "Başlatılıyor ve katılınıyor: {{name}}…",
+    "more": "Diğer işlemler: {{name}}",
+    "copyAddress": "Adresi kopyala",
+    "removed": "{{name}} kaldırıldı",
+    "undo": "Geri al",
+    "empty": {
+      "title": "Henüz sunucu yok",
+      "description": "Adresiyle bir tane ekle veya Keşif bölümünden birini seç."
+    }
+  },
+  "wizard": {
+    "title": "Sunucu oluştur",
+    "subtitle": "Üç adım: ne çalışacak, nerede barındırılacak, arkadaşlar nasıl katılacak.",
+    "creatingTitle": "Kuruluyor: {{name}}",
+    "stepOf": "Adım {{index}} / {{total}}",
+    "steps": {
+      "basics": "Temeller",
+      "hosting": "Barındırma yeri",
+      "access": "Erişim"
+    },
+    "create": "Sunucu oluştur",
+    "installOn": "Şuraya kur: {{host}}",
+    "createFailed": "Sunucu oluşturulamadı",
+    "noRusticServer": "rustic-server programı bulunamadı. Ayarlar › Oyun ve örnekler › Rustic Server bölümünden seç veya onu içeren bir Rustic sürümü derlemesi yükle.",
+    "openRusticServerSettings": "Ayarları aç",
+    "fixErrors": "Devam etmek için vurgulanan alanları kontrol et.",
+    "discard": {
+      "title": "Bu sunucu iptal edilsin mi?",
+      "body": "Sihirbaza girdiklerin kaybolacak.",
+      "keep": "Düzenlemeye devam et",
+      "confirm": "Vazgeç"
+    },
+    "basics": {
+      "name": "Sunucu adı",
+      "namePlaceholder": "Lou’nun SMP’si",
+      "icon": "Simge",
+      "icons": {
+        "grass": "Çimen",
+        "sword": "Kılıç",
+        "pickaxe": "Kazma",
+        "castle": "Kale",
+        "rocket": "Roket",
+        "gem": "Mücevher",
+        "flame": "Alev",
+        "leaf": "Yaprak",
+        "star": "Yıldız",
+        "compass": "Pusula"
+      },
+      "color": "Renk",
+      "colorN": "Renk {{n}}",
+      "type": "Tür",
+      "recommended": "Önerilen",
+      "nightly": "Gecelik",
+      "rusticDesc": "Eklentiler (.rplugin), yalıtılmış: bir eklenti sunucunu asla çökertemez.",
+      "horizonDesc": "Horizon’un kendi sunucusu, eklentisiz.",
+      "version": "Horizon sürümü",
+      "maxPlayers": "En fazla oyuncu",
+      "versionLineRustic": "Horizon {{version}} üzerinde Rustic Server 0.1",
+      "versionLineHorizon": "Horizon sunucusu {{version}}",
+      "sameAsClient": "(istemcinle aynı)",
+      "starterPlugins": "Başlangıç eklentileri",
+      "starterHint": "Resmî eklentiler, neleri yapmalarına izin verildiğiyle birlikte.",
+      "capNetwork": "Ağ",
+      "capNoNetwork": "Ağ yok",
+      "capNoFiles": "Dosya yok",
+      "capDataFolder": "Kendi veri klasörü",
+      "eula": "Minecraft EULA’sını kabul ediyorum",
+      "eulaHint": "Sunucu çalıştırmak bunu gerektirir. Kabulü sen yaparsın; Rustic senin yerine kabul etmez.",
+      "eulaRead": "EULA’yı oku",
+      "eulaTitle": "Minecraft EULA"
+    },
+    "world": {
+      "title": "Dünya",
+      "new": "Yeni dünya",
+      "import": "Klasör içe aktar",
+      "fromInstance": "Bir örnekten",
+      "seed": "Tohum",
+      "seedHint": "Rastgele bir dünya için boş bırak.",
+      "seedPlaceholder": "İsteğe bağlı",
+      "randomSeed": "Rastgele tohum",
+      "levelType": "Dünya türü",
+      "levelTypes": {
+        "default": "Varsayılan",
+        "flat": "Süper düz",
+        "large_biomes": "Büyük biyomlar",
+        "amplified": "Abartılı"
+      },
+      "gamemode": "Oyun modu",
+      "gamemodes": {
+        "survival": "Hayatta kalma",
+        "creative": "Yaratıcı",
+        "adventure": "Macera"
+      },
+      "difficulty": "Zorluk",
+      "difficulties": {
+        "peaceful": "Barışçıl",
+        "easy": "Kolay",
+        "normal": "Normal",
+        "hard": "Zor"
+      },
+      "structures": "Yapılar oluştur",
+      "hardcore": "Zorlu",
+      "folder": "Dünya klasörü",
+      "instance": "Örnek",
+      "pickInstance": "Bir örnek seç",
+      "world": "Dünya",
+      "pickWorld": "Bir dünya seç",
+      "noWorlds": "Bu örnekte dünya yok",
+      "newDesc": "Bir tohumdan, senin kurallarınla yepyeni bir dünya.",
+      "importDesc": "Bilgisayarından ya da bir yedekten bir dünya klasörü.",
+      "fromInstanceDesc": "Profillerinden birinde oynadığın bir dünya."
+    },
+    "type": {
+      "memory": "Sunucu belleği (RAM)",
+      "memoryHint": "Çoğu arkadaş grubuna 4 GB yeter. Çok oyuncu veya büyük mod paketleri için daha fazlası iyi gelir."
+    },
+    "access": {
+      "intro": "Arkadaşların nasıl katılır. Birkaçı aynı anda açık olabilir; sonradan değiştirebilirsin.",
+      "lan": "Ağımdaki arkadaşlar (LAN)",
+      "lanDetail": "Bu bilgisayarın yerel adresi, sunucu oluşturulunca gösterilir.",
+      "publicIp": "Genel adres",
+      "publicIpDetail": "VPS’inin IP’si",
+      "alwaysOn": "Her zaman açık",
+      "relay": "Geçici adres",
+      "relayDetail": "ücretsiz, sunucu çalıştığı sürece; açılacak port yok",
+      "invite": "Davet kodu",
+      "inviteDetail": "Arkadaşlarının katılmak için Rustic Launcher’a yapıştırdığı bir kod.",
+      "domain": "Kendi alan adım",
+      "domainDetail": "Porkbun’a bağlan · Porkbun’dan satın al · Herhangi bir kayıt şirketini kullan",
+      "domainAfter": "Oluşturduktan sonra ayarla",
+      "safety": "Çevrimiçi mod açık: yalnızca oyuna sahip oyuncular katılabilir. Beyaz liste açık."
+    },
+    "summary": {
+      "title": "Özet",
+      "version": "Sürüm",
+      "host": "Barındırma",
+      "world": "Dünya",
+      "memory": "Bellek",
+      "players": "En fazla oyuncu",
+      "plugins": "Eklentiler",
+      "none": "Yok",
+      "eulaAccepted": "Minecraft EULA’sını 1. adımda kabul ettin."
+    },
+    "errors": {
+      "nameRequired": "Sunucuna bir ad ver.",
+      "nameTooLong": "En fazla 40 karakter kullan.",
+      "version": "Bir Horizon sürümü seç.",
+      "maxPlayers": "1 ile 1000 oyuncu arası.",
+      "importPath": "İçe aktarılacak dünya klasörünü seç.",
+      "world": "Bir örnek ve onun dünyalarından birini seç.",
+      "seed": "Tohumlar en fazla 64 karakterdir.",
+      "eula": "Sunucu çalıştırmak için EULA’yı kabul et.",
+      "cloudUnavailable": "Rustic Cloud henüz kullanılamıyor.",
+      "vpsNotReady": "Önce VPS’ini bağla ve kontrollerden geç.",
+      "memory": "En az 1 GB bellek.",
+      "host": "Bir IP adresi veya ana bilgisayar adı gir.",
+      "port": "1 ile 65535 arasında bir port.",
+      "username": "Linux kullanıcı adını gir.",
+      "keyPath": "Özel anahtar dosyanı seç.",
+      "generateKey": "Önce bir anahtar oluştur, sonra VPS’ine ekle.",
+      "password": "Şifreyi gir."
+    },
+    "heading": "Bir *sunucu* oluştur",
+    "stepHints": {
+      "basics": "Ona bir ad ver, ne çalıştıracağını ve başlangıç dünyasını seç.",
+      "hosting": "Onu çalıştıracak makineyi ve ne kadar bellek alacağını seç.",
+      "access": "Arkadaşlarının nasıl katılacağını seç. Bunu sonra değiştirebilirsin."
+    },
+    "sections": {
+      "identity": "Ad ve simge"
+    },
+    "preview": {
+      "title": "Önizleme",
+      "unnamed": "Sunucun",
+      "draft": "henüz oluşturulmadı"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "Bu bilgisayar (Yerel)",
+      "free": "Ücretsiz",
+      "description": "Arkadaşların oynarken bilgisayarın açık kalmalı.",
+      "settings": "Bu bilgisayarda",
+      "reach": "Arkadaşların ona ağın üzerinden, geçici bir Rustic adresiyle veya bir davet koduyla ulaşır. Modem ayarı gerekmez.",
+      "startWithLauncher": "Başlatıcıyla birlikte başlat",
+      "startWithLauncherHint": "Sunucu, Rustic Launcher açıldığında başlar."
+    },
+    "vps": {
+      "title": "VPS’in (SSH)",
+      "description": "Senin Linux sunucun. Biz senin için kurar ve çalıştırırız.",
+      "which": "VPS",
+      "existing_one": "Kayıtlı VPS ({{count}})",
+      "existing_other": "Kayıtlı VPS ({{count}})",
+      "new": "VPS ekle",
+      "pinned": "Sunucu anahtarı sabitlendi",
+      "host": "Ana bilgisayar",
+      "port": "Port",
+      "user": "Kullanıcı",
+      "userPlaceholder": "root veya sudo yetkili bir kullanıcı",
+      "auth": "Giriş",
+      "authGenerate": "Benim için bir anahtar oluştur",
+      "authKey": "Mevcut anahtar dosyası",
+      "authPassword": "Şifre (bir kez)",
+      "generateHint": "Önerilen. Rustic bir anahtar çifti oluşturur; özel anahtar bu bilgisayardan asla çıkmaz.",
+      "generate": "Anahtar oluştur",
+      "addKeyCommand": "Anahtarı yetkilendirmek için bunu VPS konsolunda bir kez çalıştır:",
+      "keyStored": "Özel anahtar sistem anahtar zincirine kaydedildi ({{path}})",
+      "openFirewall": "VPS güvenlik duvarında oyun portunu aç",
+      "openFirewallHint": "ufw veya firewalld’de sunucunun portuna TCP izni verir. Sağlayıcının kendi güvenlik duvarında da gerekebilir.",
+      "keyFile": "Özel anahtar",
+      "passphrase": "Parola",
+      "optional": "İsteğe bağlı",
+      "password": "Şifre",
+      "passwordHint": "Bir anahtar kurmak için bir kez kullanılır. Saklanmaz.",
+      "test": "Bağlantıyı test et",
+      "reachable": "Bağlandı · {{ms}} ms",
+      "unreachable": "Bu VPS’e ulaşamadık",
+      "authFailed": "VPS girişi reddetti"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Çok yakında",
+      "description": "Rustic’in makinelerinde, her zaman açık sunucular.",
+      "waitlist": "Rustic Cloud açıldığında e-posta al.",
+      "email": "E-posta adresi",
+      "join": "Bekleme listesine katıl",
+      "joined": "Listedesin (#{{position}}). Sana e-posta göndereceğiz.",
+      "invalidEmail": "Geçerli bir e-posta adresi gir."
+    },
+    "requirements": {
+      "title": "Gereksinim kontrolü",
+      "ram": "Bellek ({{free}} boş)",
+      "gameFiles": "Oyun dosyaları hazırlandı",
+      "port": "Port 25565 boş",
+      "hint": "Disk alanı, sunucu dosyaları indirilirken kontrol edilir."
+    },
+    "fingerprint": {
+      "title": "{{host}} güvenilir olarak işaretlensin mi?",
+      "description": "Bu VPS’e ilk bağlantı. Güvenmeden önce bu parmak izini sağlayıcının konsolundakiyle karşılaştır.",
+      "warning": "Eşleşmiyorsa iptal et: birisi bağlantıyı dinliyor olabilir. Rustic bu anahtarın sonraki her değişikliğini engelleyecek.",
+      "trust": "Güven ve devam et"
+    },
+    "testFailed": "Bağlantı testi başarısız oldu",
+    "checkFailed": "VPS kontrolü başarısız oldu",
+    "preflight": {
+      "running": "VPS’in kontrol ediliyor…",
+      "ok": "VPS’in hazır",
+      "notOk": "VPS’in gereksinimleri karşılamıyor",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_other": "{{count}} vCPU",
+      "memory": "{{memory}} bellek",
+      "disk": "{{disk}} boş disk",
+      "systemd": "systemd mevcut",
+      "ip": "Genel IP"
+    },
+    "problems": {
+      "memory": "Bellek",
+      "disk": "Disk",
+      "arch": "Mimari",
+      "os": "İşletim sistemi",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Kuruluyor: {{host}}",
+      "steps": {
+        "connect": "SSH ile bağlan",
+        "check": "Ön kontroller",
+        "user": "‘rustic’ kullanıcısını oluştur",
+        "download": "İmzalı sunucu dosyalarını yükle",
+        "engine": "Rustic motorunu yapılandır",
+        "service": "Hizmeti kur",
+        "firewall": "Port 25565’i aç",
+        "world": "Dünyayı hazırla",
+        "start": "Başlat ve kontrol et"
+      },
+      "state": {
+        "pending": "bekliyor",
+        "running": "sürüyor",
+        "done": "bitti",
+        "failed": "başarısız",
+        "skipped": "atlandı"
+      },
+      "skippedVanilla": "Saf Horizon için gerekmez",
+      "log_one": "Günlüğü göster ({{count}} satır)",
+      "log_other": "Günlüğü göster ({{count}} satır)",
+      "vpsDone": "{{name}} çalışıyor, konum: {{host}}",
+      "vpsDoneBody": "Yerel bir sunucu gibi başlatıcıdan yönet: konsol, oyuncular, eklentiler, yedekler.",
+      "localDownload": "İndir: {{engine}}",
+      "localInit": "Dünyayı ve ayarları hazırla",
+      "localStart": "İlk başlatma",
+      "localReady": "Başlatmaya hazır",
+      "localDone": "{{name}} çalışıyor",
+      "localDoneBody": "Adresini Erişim sekmesinden paylaş veya arkadaşlar panelinden arkadaşlarını davet et.",
+      "open": "Sunucuyu aç",
+      "backToList": "Sunuculara dön",
+      "retry": "Tekrar dene",
+      "failed": "Kurulum başarısız oldu",
+      "crashed": "Sunucu ilk başlatma sırasında durdu. Konsolu kontrol et."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Sunucu bölümleri",
+    "tabs": {
+      "overview": "Genel bakış",
+      "console": "Konsol",
+      "players": "Oyuncular",
+      "plugins": "Eklentiler",
+      "config": "Yapılandırma",
+      "datapacks": "Veri paketleri",
+      "backups": "Yedekler",
+      "access": "Erişim",
+      "danger": "Tehlikeli bölge"
+    },
+    "state": {
+      "stopped": "Durduruldu",
+      "starting": "Başlatılıyor…",
+      "running": "Çalışıyor",
+      "stopping": "Durduruluyor…",
+      "crashed": "Çöktü",
+      "installing": "Yükleniyor…",
+      "unreachable": "Ulaşılamıyor"
+    },
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "close": "Kapat",
+    "remove": "Kaldır",
+    "done": "Bitti",
+    "header": {
+      "back": "Sunucular",
+      "players": "{{online}}/{{max}} oyuncu",
+      "uptime": "çalışma süresi {{duration}}",
+      "start": "Başlat",
+      "stop": "Durdur",
+      "restart": "Yeniden başlat",
+      "join": "Katıl",
+      "address": "Adres",
+      "copyAddress": "Sunucu adresini kopyala",
+      "powerFailed": "Sunucunun durumu değiştirilemedi"
+    },
+    "overview": {
+      "stoppedTitle": "Sunucu durduruldu",
+      "stoppedBody": "Canlı CPU, bellek, TPS ve tick süresini görmek için başlat.",
+      "cpu": "CPU",
+      "cpuChart": "Son iki dakikadaki CPU kullanımı",
+      "ram": "Bellek",
+      "ramChart": "Son iki dakikada kullanılan bellek",
+      "of": "/ {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Son iki dakikadaki saniye başına tick",
+      "mspt": "Tick süresi",
+      "msptChart": "Son iki dakikadaki tick başına milisaniye, 50 ms bütçe çizgisi",
+      "msptBudget": "bütçe 50 ms",
+      "health": {
+        "good": "Akıcı",
+        "busy": "Yoğun",
+        "lagging": "Gecikmeli"
+      },
+      "onlineTitle_one": "{{count}} oyuncu çevrimiçi",
+      "onlineTitle_other": "{{count}} oyuncu çevrimiçi",
+      "onlineStopped": "Sunucu durduğu sürece kimse katılamaz.",
+      "nobody": "Şu an kimse oynamıyor.",
+      "infoTitle": "Ayrıntılar",
+      "world": "Dünya",
+      "version": "Horizon",
+      "port": "Port",
+      "memory": "Bellek",
+      "created": "Oluşturulma",
+      "folder": "Klasör",
+      "uptime": "Çalışma süresi",
+      "startedAt": "Başlangıç: {{time}}",
+      "lastSession": "Son oturum",
+      "lastStarted": "Son başlatma: {{when}}",
+      "neverStarted": "Henüz başlatılmadı",
+      "lastLines": "Son konsol satırları",
+      "noLines": "Henüz kayıt yok.",
+      "openConsole": "Konsolu aç",
+      "crashedTitle": "Sunucu beklenmedik şekilde durdu",
+      "crashedBody": "Son konsol satırlarına bak, sonra yeniden başlat."
+    },
+    "console": {
+      "filter": "Satırları filtrele",
+      "filters": {
+        "all": "Tümü",
+        "info": "Bilgi",
+        "warn": "Uyarılar",
+        "error": "Hatalar",
+        "chat": "Sohbet"
+      },
+      "levels": {
+        "info": "bilgi",
+        "warn": "uyarı",
+        "error": "hata",
+        "command": "komut",
+        "chat": "sohbet"
+      },
+      "autoScroll": "Yeni satırları takip et",
+      "logLabel": "Sunucu konsolu",
+      "empty": "Henüz satır yok.",
+      "suggestions": "Komut önerileri",
+      "inputLabel": "Sunucu komutu",
+      "placeholder": "Bir komut yaz (Tab tamamlar, ↑ geçmiş)",
+      "offline": "Komut göndermek için sunucuyu başlat",
+      "send": "Gönder",
+      "sendFailed": "Komut gönderilemedi",
+      "hint": "Komutlar, tüm izinlerle sunucu konsolu olarak çalışır. Başta eğik çizgi gerekmez."
+    },
+    "players": {
+      "whitelist": "Beyaz liste",
+      "whitelistHint": "Yalnızca listedeki oyuncular katılabilir. Sunucuya internetten ulaşılabiliyorsa önerilir.",
+      "view": "Oyuncuları göster",
+      "views": {
+        "online": "Çevrimiçi",
+        "all": "Tümü",
+        "ops": "Operatörler",
+        "whitelist": "Beyaz listede",
+        "banned": "Yasaklı"
+      },
+      "search": "Oyuncu bul",
+      "emptyOnline": "Kimse çevrimiçi değil",
+      "empty": "Burada oyuncu yok",
+      "stoppedHint": "Kimin oynadığını görmek için sunucuyu başlat.",
+      "online": "Çevrimiçi",
+      "offline": "Çevrimdışı",
+      "op": "Operatör",
+      "whitelisted": "Beyaz listede",
+      "banned": "Yasaklı",
+      "playtime": "{{duration}} oynandı",
+      "kick": "At",
+      "kickAria": "At: {{name}}",
+      "more": "Diğer işlemler: {{name}}",
+      "makeOp": "Operatör yap",
+      "deop": "Operatörlüğü kaldır",
+      "whitelistAdd": "Beyaz listeye ekle",
+      "whitelistRemove": "Beyaz listeden çıkar",
+      "ban": "Yasakla",
+      "pardon": "Yasağı kaldır",
+      "banTitle": "{{name}} yasaklansın mı?",
+      "banBody": "Bağlantısı kesilir ve sen yasağı kaldırana kadar yeniden katılamaz.",
+      "reason": "Neden (isteğe bağlı, oyuncuya gösterilir)",
+      "failed": "İşlem başarısız oldu",
+      "done": {
+        "kick": "{{name}} atıldı",
+        "ban": "{{name}} yasaklandı",
+        "pardon": "{{name}} adlı oyuncunun yasağı kaldırıldı",
+        "op": "{{name}} artık operatör",
+        "deop": "{{name}} artık operatör değil",
+        "whitelist_add": "{{name}} beyaz listeye eklendi",
+        "whitelist_remove": "{{name}} beyaz listeden çıkarıldı"
+      }
+    },
+    "config": {
+      "mode": "Düzenleme modu",
+      "form": "Ayarlar",
+      "raw": "Ham dosya",
+      "groups": {
+        "general": "Genel",
+        "world": "Dünya",
+        "players": "Oyuncular",
+        "network": "Ağ",
+        "performance": "Performans"
+      },
+      "keys": {
+        "motd": "Günün mesajı",
+        "max-players": "En fazla oyuncu",
+        "white-list": "Beyaz liste",
+        "online-mode": "Çevrimiçi mod (hesap kontrolü)",
+        "pvp": "Oyuncuya karşı oyuncu",
+        "gamemode": "Varsayılan oyun modu",
+        "difficulty": "Zorluk",
+        "level-seed": "Dünya tohumu",
+        "spawn-protection": "Doğma noktası koruma yarıçapı",
+        "server-port": "Port",
+        "enable-rcon": "Uzak konsol (RCON)",
+        "view-distance": "Görüş mesafesi",
+        "simulation-distance": "Simülasyon mesafesi"
+      },
+      "restart": "Yeniden başlat",
+      "restartNeeded": "Bazı değişiklikleri uygulamak için sunucuyu yeniden başlat",
+      "unsaved_one": "{{count}} kaydedilmemiş değişiklik",
+      "unsaved_other": "{{count}} kaydedilmemiş değişiklik",
+      "noChanges": "Değişiklik yok",
+      "discard": "Vazgeç",
+      "saved": "Yapılandırma kaydedildi",
+      "saveFailed": "Yapılandırma kaydedilemedi",
+      "rawTitle": "server.toml",
+      "rawWarning": "Gelişmiş: bir yazım hatası sunucunun başlamasını engelleyebilir. Değerler kaydettiğinde kontrol edilir."
+    },
+    "plugins": {
+      "vanillaTitle": "Eklentiler Rustic Server gerektirir",
+      "vanillaBody": "Bu sunucu saf Horizon çalıştırıyor. Rustic Server, sunucuyu asla çökertemeyen yalıtılmış .rplugin eklentileri ekler. Eklenti kullanmak için bir Rustic Server oluştur ve bu dünyayı içe aktar.",
+      "createRustic": "Rustic Server oluştur",
+      "intro": "Eklentiler yalıtılmış çalışır: başarısız olan bir eklenti bir günlük satırıyla devre dışı bırakılır, sunucu devam eder. Her biri neye erişebileceğini bildirir.",
+      "upload": "Dosya ekle…",
+      "uploadTitle": "Bir .rplugin dosyası seç",
+      "find": "Eklenti bul",
+      "empty": "Henüz eklenti yok",
+      "emptyBody": "Tek tıkla eklemek için İçerik › Eklentiler bölümüne göz at.",
+      "errored": "Bir hatadan sonra devre dışı bırakıldı",
+      "disabled": "Kapalı",
+      "noDescription": "Açıklama yok",
+      "toggle": "Etkinleştir: {{name}}",
+      "capabilities": "Erişim",
+      "noNetwork": "Ağ yok",
+      "network": "Ağ: {{domains}}",
+      "fs": {
+        "none": "Dosya yok",
+        "data-folder": "Kendi veri klasörü"
+      },
+      "update": "Güncelle: {{version}}",
+      "updated": "{{name}} güncellendi: {{version}}",
+      "installed": "{{name}} yüklendi ve etkinleştirildi",
+      "removeTitle": "{{name}} kaldırılsın mı?",
+      "removeBody": "Eklenti kaldırılır ve dosyası silinir. Veri klasörü korunur.",
+      "failed": "Eklenti işlemi başarısız oldu"
+    },
+    "datapacks": {
+      "intro": "“{{world}}” dünyasının veri paketleri.",
+      "find": "Veri paketi bul",
+      "empty": "Bu dünyada veri paketi yok",
+      "toggle": "Etkinleştir: {{name}}",
+      "remove": "Kaldır: {{name}}",
+      "reloadHint": "Değişiklikler /reload veya yeniden başlatmadan sonra uygulanır.",
+      "failed": "Veri paketi işlemi başarısız oldu"
+    },
+    "backups": {
+      "nowTitle": "Şimdi yedekle",
+      "nowBody": "Dünyanın ve yapılandırmanın bir kopyası. Sunucu çalışmaya devam eder.",
+      "note": "Not",
+      "notePlaceholder": "İsteğe bağlı not, ör. “güncellemeden önce”",
+      "now": "Şimdi yedekle",
+      "created": "Yedek oluşturuldu",
+      "empty": "Henüz yedek yok",
+      "kinds": {
+        "manual": "Elle",
+        "scheduled": "Zamanlanmış",
+        "pre_restore": "Geri yüklemeden önce"
+      },
+      "restore": "Geri yükle",
+      "restoreTitle": "Bu yedek geri yüklensin mi?",
+      "restoreBody": "Dünya şu tarihe geri döner: {{date}}. O zamandan beri inşa edilen her şey değiştirilir. Önce mevcut dünyanın bir yedeği alınır.",
+      "restored": "Yedek geri yüklendi",
+      "delete": "Yedeği sil",
+      "deleteTitle": "Bu yedek silinsin mi?",
+      "deleteBody": "Bu yedek kalıcı olarak kaldırılır.",
+      "failed": "Yedekleme işlemi başarısız oldu",
+      "scheduleTitle": "Otomatik yedekler",
+      "scheduleBody": "Sınıra ulaşıldığında en eski otomatik yedekler kaldırılır.",
+      "scheduleEnabled": "Otomatik yedekle",
+      "every": "Sıklık: her",
+      "hours_one": "{{count}} saat",
+      "hours_other": "{{count}} saat",
+      "keep": "Sakla",
+      "keepCount_one": "son {{count}} yedek",
+      "keepCount_other": "son {{count}} yedek",
+      "scheduleSaved": "Yedekleme zamanlaması kaydedildi"
+    },
+    "danger": {
+      "deleteTitle": "Bu sunucuyu sil",
+      "deleteBody": "Sunucuyu durdurur ve başlatıcıdan kaldırır. Dosyalarını saklayabilirsin.",
+      "delete": "Sunucuyu sil",
+      "removeVpsTitle": "VPS’inden kaldır",
+      "removeVpsBody": "{{host}} üzerindeki hizmeti durdurur ve Rustic’i oradan kaldırır. VPS’in sende kalır.",
+      "removeVps": "VPS’ten kaldır",
+      "confirmTitle": "“{{name}}” silinsin mi?",
+      "confirmBody": "Bu işlem geri alınamaz. Dünyaya tekrar ihtiyacın olabilirse önce bir yedek al.",
+      "deleteFiles": "Dünyayı ve tüm sunucu dosyalarını da sil",
+      "typeName": "Onaylamak için “{{name}}” yaz",
+      "deleted": "{{name}} silindi",
+      "failed": "Sunucu silinemedi"
+    }
+  },
+  "access": {
+    "intro": "Arkadaşlarının sunucuna nasıl ulaşacağını seç. Aynı anda birkaçını açabilirsin.",
+    "optional": "İsteğe bağlı",
+    "lan": {
+      "title": "Ağında",
+      "body": "Aynı Wi-Fi’daki veya ağdaki oyuncular bu adresle katılır.",
+      "copy": "Yerel adresi kopyala"
+    },
+    "public": {
+      "title": "Genel adres",
+      "body": "VPS’inin IP’si ve portu. Herkes bununla katılabilir; bir alan adını paylaşmak daha kolaydır.",
+      "copy": "Genel adresi kopyala"
+    },
+    "relay": {
+      "title": "Geçici adres",
+      "body": "Sunucu çalıştığı sürece Rustic Relay üzerinde ücretsiz bir adres. Modem ayarı yok, IP’n gizli kalır.",
+      "toggle": "Geçici adres",
+      "copy": "Geçici adresi kopyala",
+      "off": "Kapalı. Paylaşabileceğin bir adres almak için aç.",
+      "label": "Adresteki ad",
+      "apply": "Uygula",
+      "status": {
+        "off": "Kapalı",
+        "connecting": "Sunucunun başlaması bekleniyor",
+        "online": "Şu an ulaşılabilir",
+        "error": "Relay’e ulaşılamıyor"
+      },
+      "failed": "Geçici adres değiştirilemedi",
+      "taken": "Bu ad alınmış. Başka bir tane dene.",
+      "invalid": "3 ila 32 küçük harf, rakam veya tire kullan."
+    },
+    "invite": {
+      "title": "Davet kodu",
+      "body": "Rustic Launcher kullanan arkadaşların katılmak için bu kodu yapıştırır; Horizon’un Arkadaşlarla Oyna özelliği gibi.",
+      "create": "Kod oluştur",
+      "copy": "Davet kodunu kopyala",
+      "expires": "Bitiş: {{when}}",
+      "revoke": "İptal et"
+    },
+    "advanced": "Gelişmiş: modeminde bir port aç (UPnP)",
+    "upnp": {
+      "title": "UPnP port eşleme",
+      "warning": "Bu, modeminden sunucunun portunu internete açmasını ister. Genel IP adresin her oyuncuya görünür olur ve bu da ev bağlantını açığa çıkarır (saldırılar, konum). Geçici adresi veya bir alan adını tercih et.",
+      "status": {
+        "off": "Kapalı",
+        "mapping": "Modeme soruluyor…",
+        "mapped": "Port açık",
+        "failed": "Modem reddetti (UPnP kapalı olabilir)"
+      },
+      "mapped": "Port açık: {{address}}",
+      "copy": "Genel adresi kopyala",
+      "failed": "Port açılamadı",
+      "prefer": "Geçici adres ve alan adları hiçbir port açmadan çalışır."
+    }
+  },
+  "domains": {
+    "title": "Kendi alan adım",
+    "intro": "Alan adı, sunucunun adresidir; örneğin play.adin.net. Zaten sahip olduğun birini bağlayabilir, başlatıcıdan çıkmadan Porkbun’dan bir tane satın alabilir veya herhangi bir kayıt şirketini kullanabilirsin: tam olarak neyi eklemen gerektiğini gösteririz.",
+    "automatic": "Otomatik",
+    "anyRegistrar": "Herhangi bir kayıt şirketi",
+    "otherPaths": "Diğer yollar",
+    "paths": {
+      "porkbun": {
+        "title": "Porkbun’a bağlan",
+        "body": "Porkbun’da zaten bir alan adın mı var? Hesabını bağla, kayıtları senin için biz oluşturalım."
+      },
+      "buy": {
+        "title": "Porkbun’dan alan adı satın al",
+        "body": "Boşta bir ad bul, kendi Porkbun hesabından satın al; otomatik olarak ayarlanır."
+      },
+      "manual": {
+        "title": "Herhangi bir kayıt şirketinden alan adı kullan",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: neyin ekleneceğini gösterir ve senin için kontrol ederiz."
+      }
+    },
+    "subdomain": "Alt alan adı",
+    "subdomainHint": "play iyi bir varsayılandır.",
+    "apexHint": "Boş: alan adının kendisi (bazı kayıt şirketlerinde ALIAS/ANAME gerekir).",
+    "invalidSubdomain": "Yalnızca harf, rakam ve tire.",
+    "invalidDomain": "Bu bir alan adına benzemiyor (example.net).",
+    "copyAddress": "Alan adı adresini kopyala",
+    "configureFailed": "Alan adı yapılandırılamadı",
+    "boundBody": "Oyuncular bu adresle katılır.",
+    "remove": "Alan adını kaldır",
+    "removeTitle": "{{domain}} kullanımı durdurulsun mu?",
+    "removeBody": "Kayıtlar kaldırıldığında adres artık bu sunucuyu göstermez. Alan adı sende kalır.",
+    "status": {
+      "pending": "Bekliyor",
+      "propagating": "Yayılıyor",
+      "verified": "Bağlandı",
+      "error": "Hata"
+    },
+    "provider": {
+      "porkbun": "Porkbun üzerinden yönetiliyor",
+      "manual": "Kayıt şirketinde yönetiliyor"
+    },
+    "connected": "Alan adı bağlandı",
+    "connectedBody": "Rustic Cloud TXT kaydını doğrular, ardından adresin çalışmaya başlar. Bunu kapatabilirsin; sana bildirim göndereceğiz.",
+    "porkbun": {
+      "step1": "porkbun.com › Account › API Access bölümünde bir API anahtarı oluştur.",
+      "openApi": "Porkbun API Access’i aç",
+      "step2": "Porkbun’da alan adının sayfasında “API Access” seçeneğini aç.",
+      "apiKey": "API anahtarı",
+      "secret": "Gizli API anahtarı",
+      "keychain": "Bilgisayarının anahtar zincirinde saklanır, asla Rustic’e gönderilmez.",
+      "connect": "Bağlan",
+      "badApiKey": "API anahtarı pk1_ ile başlar.",
+      "badSecret": "Gizli API anahtarı sk1_ ile başlar.",
+      "rejected": "Porkbun bu anahtarları reddetti. Kontrol et veya yeni bir çift oluştur.",
+      "connected": "Porkbun bağlandı",
+      "disconnect": "Bağlantıyı kes",
+      "domain": "Alan adı",
+      "pickDomain": "Alan adlarından birini seç",
+      "apiAccessOff": "Bu alan adı için Porkbun’da API Access kapalı",
+      "apiAccessHint": "Gri görünen alan adlarında Porkbun’da “API Access” açılmalıdır.",
+      "preview": "Yapacağımız değişiklikler",
+      "dryRun": "Önizleme",
+      "previewBody": "{{fqdn}} adresinin bu sunucuya ulaşması için bu kayıtlar alan adına eklenir veya değiştirilir. Sen uygulayana kadar hiçbir şey değişmez.",
+      "apply": "Otomatik yapılandır"
+    },
+    "buy": {
+      "intro": "Alan adı kendi Porkbun hesabına kaydedilir ve orada ödenir. Rustic bunun için asla ödeme almaz.",
+      "needsAccount": "Satın almak için Porkbun hesabın gerekir: önce onu bağla (porkbun.com’da ücretsiz oluşturabilirsin).",
+      "search": "İstediğin ad",
+      "searchPlaceholder": "ör. loucraft",
+      "searchButton": "Ara",
+      "noResults": "Bu ad için sonuç yok.",
+      "premium": "Premium",
+      "price": "İlk yıl {{price}} · yenileme {{renewal}}",
+      "taken": "Alınmış",
+      "select": "Seç",
+      "overLimit": "100 $ üzeri: porkbun.com’dan satın al",
+      "pricesNote": "Fiyatlar Porkbun’a aittir, ABD doları cinsindendir ve şu anki tekliftir. Porkbun’da vergi uygulanabilir.",
+      "confirmTitle": "Porkbun’da satın almayı onayla",
+      "seller": "Satıcı: Porkbun LLC, Rustic değil. Onların koşulları, fiyatları, yenilemeleri ve iadeleri geçerlidir.",
+      "domain": "Alan adı",
+      "address": "Sunucu adresi",
+      "registrar": "Kayıt şirketi",
+      "registrarValue": "Porkbun, senin hesabında",
+      "firstYear": "İlk yıl",
+      "renewal": "Yıllık yenileme ücreti",
+      "payment": "Porkbun hesap bakiyen veya kayıtlı kartınla ödenir: şimdi {{price}}; Porkbun’da otomatik yenilemeyi kapatmadığın sürece her yıl {{renewal}} ile yenilenir.",
+      "agreeTerms": "Porkbun’un kayıt sözleşmesini ve koşullarını kabul ediyorum",
+      "termsLink": "(oku)",
+      "agreeOrder": "Rustic’in bu siparişi yalnızca benim adıma Porkbun’a ilettiğini anlıyorum",
+      "refunds": "Alan adlarının iadeleri ve iptalleri Porkbun tarafından kendi koşullarına göre yürütülür.",
+      "buyButton": "Porkbun’dan satın al · {{price}}",
+      "bought": "{{domain}} artık senin",
+      "boughtBody": "Porkbun tarafından tahsil edildi: {{price}}. Şimdi ayarlanıyor…",
+      "configuring": "Yeni alan adın yapılandırılıyor…",
+      "failed": "Satın alma gerçekleşmedi",
+      "errors": {
+        "price_changed": "Porkbun’da fiyat değişti. Yeni fiyatı kontrol et ve tekrar dene.",
+        "not_available": "Bu alan adı az önce alındı.",
+        "over_limit": "100 $ üzeri: porkbun.com’dan satın al.",
+        "porkbun_not_connected": "Önce Porkbun hesabını bağla.",
+        "consent_required": "Her iki kutu da işaretlenmeli."
+      }
+    },
+    "manual": {
+      "intro": "Bu kayıtları kayıt şirketinin DNS bölgesine ekle. Bunları 10 saniyede bir kontrol eder ve çalıştığında sana haber veririz.",
+      "domain": "Alan adın",
+      "registrar": "Kayıt şirketi",
+      "show": "Kayıtları göster",
+      "guideTitle": "Kayıt şirketi: {{registrar}}",
+      "allGuides": "Tüm kayıt şirketleri için rehberler"
+    },
+    "records": {
+      "caption": "Eklenecek DNS kayıtları",
+      "type": "Tür",
+      "name": "Ad / ana bilgisayar",
+      "value": "Değer / hedef",
+      "ttl": "TTL",
+      "status": "Durum",
+      "optional": "isteğe bağlı",
+      "emptyHost": "(boş bırak)",
+      "copyName": "{{type}} adını kopyala",
+      "copyValue": "{{type}} değerini kopyala",
+      "srvFields": "öncelik {{priority}} · ağırlık {{weight}} · port {{port}}"
+    },
+    "check": {
+      "pending": "Kontrol edilmedi",
+      "notNeeded": "Gerekmiyor",
+      "ok": "Tamam",
+      "propagating": "Yayılıyor ({{ok}}/{{total}})",
+      "wrong": "Yanlış değer",
+      "found": "Bulunan:",
+      "expected": "Beklenen:",
+      "missing": "Eksik",
+      "first": "İlk kontrol…",
+      "progress": "{{total}} kayıttan {{ok}} tanesi tamam",
+      "progressLabel": "Doğrulanan kayıtlar",
+      "auto": "Her 10 sn’de bir otomatik kontrol ediliyor",
+      "lastCheck": "son kontrol {{seconds}} sn önce",
+      "now": "Şimdi kontrol et"
+    },
+    "help": {
+      "txt": "Neden TXT kaydı? Alan adının sana ait olduğunu kanıtlar; böylece başka kimse onu kendi sunucusuna yönlendiremez.",
+      "propagation": "Değişikliklerin herkese ulaşması bir dakikadan birkaç saate kadar sürebilir. Kontrol etmeye devam ederiz; burada kalmana gerek yok.",
+      "apex": "Kök alan adları (“play.” olmadan adin.net) bir ALIAS/ANAME kaydı gerektirir; her kayıt şirketinde bulunmaz. Alt alan adı her zaman çalışır."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › alan adın › DNS zone.\n“Add an entry” düğmesine tıkla ve türü seç (CNAME, SRV, A veya TXT).\nSub-domain = aşağıdaki “Ad” (alan adının kendisi için boş bırak), Target = “Değer”.\nHer kayıt için tekrarla, sonra onayla. OVH değişiklikleri birkaç dakika içinde uygular."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › alan adın › DNS records.\n“Add record” düğmesine tıkla, türü seç.\nName = aşağıdaki “Ad”, Value = “Değer” (CNAME/SRV hedeflerinde sondaki noktayı koru).\nHer kaydı kaydet."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nHost records altında “Add new record” seçeneğine tıkla.\nHost = aşağıdaki “Ad” (alan adının kendisi için @), Value/Target = “Değer”.\nHer birini kaydetmek için yeşil onay işaretine tıkla."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › alan adın › DNS › Manage DNS.\n“Add new record” düğmesine tıkla, türü seç.\nName = aşağıdaki “Ad” (alan adının kendisi için @), Value = “Değer”.\nSRV için Service alanına _minecraft, Protocol alanına _tcp yaz, sonra priority, weight ve port değerlerini gir. Kaydet."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Siteni seç › DNS › Records › Add record.\nTürü seç, Name = aşağıdaki “Ad”, Target/Content = “Değer”.\nProxy status’u “DNS only” (gri bulut) yap: oyun trafiği Cloudflare’in proxy’sinden geçemez.\nHer kaydı kaydet."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › alan adın › DNS.\n“Add record” düğmesine tıkla ve türü seç.\nHost name = aşağıdaki “Ad”, Points to / Value = “Değer”.\nKaydet; IONOS varsayılan bir kaydın değiştirilmesini onaylamanı isteyebilir."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › alan adın › DNS / Nameservers.\n“Manage DNS records” altında türü seç.\nName = aşağıdaki “Ad”, Points to / Value = “Değer”, TTL gösterildiği gibi.\nHer biri için “Add record” düğmesine tıkla."
+      },
+      "porkbun": {
+        "name": "Porkbun (elle)",
+        "steps": "Domain Management › alan adın › DNS.\nTürü seç, Host = aşağıdaki “Ad” (alan adının kendisi için boş), Answer = “Değer”.\nHer kayıt için “Add” düğmesine tıkla.\nİpucu: Porkbun’a bağlan yolu bunların hepsini senin için yapar."
+      },
+      "generic": {
+        "name": "Diğer kayıt şirketi",
+        "steps": "Alan adının DNS bölgesini aç (bazen DNS kayıtları veya Bölge düzenleyici olarak adlandırılır).\nAşağıdaki her kaydı aynı tür, ad ve değerle ekle.\nKayıt şirketin tam adı isterse, Ad’ın sonuna alan adını ekle.\nKaydet, sonra geri gel: otomatik olarak kontrol ederiz."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Sunucu görünümleri",
+    "tabs": {
+      "discover": "Keşif",
+      "browse": "Göz at"
+    },
+    "searchLabel": "Sunucu ara",
+    "searchPlaceholder": "Sunucu dizininde ara…",
+    "publish": "Sunucumu yayınla",
+    "publishCta": {
+      "title": "Senin sunucun burada",
+      "hint": "Horizon sunucunu web sitesinden dizine ekle: otomatik kontrollerden geçtiğinde burada ve rustic-launcher.com’da görünür."
+    },
+    "play": "Oyna",
+    "playAria": "Oyna: {{name}}",
+    "view": "Görüntüle",
+    "verified": "Doğrulandı",
+    "featured": "Ekibin seçimi",
+    "verifiedHint": "Doğrulanmış sunucular: Rustic ekibi sahibini ve kuralları kontrol etti.",
+    "online_one": "{{value}} çevrimiçi",
+    "online_other": "{{value}} çevrimiçi",
+    "playersLabel": "Çevrimiçi oyuncular",
+    "languagesLabel": "Diller",
+    "playsLabel": "Bu haftaki başlatmalar",
+    "lastPlayed": "Son oynanma",
+    "lastPlayedOn": "Son oynama: {{when}}",
+    "hero": {
+      "label": "Öne çıkan sunucular",
+      "eyebrow": "Doğrulandı"
+    },
+    "rows": {
+      "trending": "Trend olanlar",
+      "trendingHint": "Bu hafta Rustic’ten en çok başlatılanlar",
+      "players": "Şu an en çok oyuncu",
+      "playersHint": "Bulutun son kontrolüne göre",
+      "new": "Dizinde yeni",
+      "newHint": "Sahipleri tarafından yeni listelendi",
+      "recent": "Son oynananlar",
+      "recentHint": "Sunucu listenden"
+    },
+    "rowError": "Bu satır yüklenemedi.",
+    "retry": "Tekrar dene",
+    "empty": {
+      "title": "Henüz listelenmiş sunucu yok",
+      "hint": "İlk sen ol: sunucunu web sitesinden yayınla."
+    },
+    "emptySearch": {
+      "title": "Eşleşen sunucu yok",
+      "hint": "Başka kelimeler veya daha az filtre dene."
+    },
+    "sorts": {
+      "trending": "Trend olanlar",
+      "players": "En çok oyuncu",
+      "new": "En yeni",
+      "name": "Ad"
+    },
+    "filters": {
+      "tags": "Oyun tarzı",
+      "language": "Dil",
+      "engine": "Motor",
+      "rustic": "Rustic",
+      "verifiedOnly": "Yalnızca doğrulananlar",
+      "reset": "Filtreleri sıfırla",
+      "remove": "Filtreyi kaldır: {{filter}}"
+    },
+    "tags": {
+      "survival": "Hayatta kalma",
+      "smp": "SMP",
+      "creative": "Yaratıcı",
+      "minigames": "Mini oyunlar",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Rol yapma",
+      "factions": "Factions",
+      "prison": "Hapishane",
+      "parkour": "Parkur",
+      "adventure": "Macera",
+      "building": "İnşa",
+      "economy": "Ekonomi",
+      "modded": "Modlu",
+      "anarchy": "Anarşi",
+      "hardcore": "Zorlu",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Sunucular",
+      "status": "Canlı durum",
+      "cloudSaw_one": "bulut {{when}} {{value}} oyuncuyu çevrimiçi gördü",
+      "cloudSaw_other": "bulut {{when}} {{value}} oyuncuyu çevrimiçi gördü",
+      "engine": "Motor",
+      "version": "Oyun sürümü",
+      "languages": "Diller",
+      "plays": "Bu haftaki başlatmalar",
+      "about": "Hakkında",
+      "noDescription": "Henüz açıklama yok.",
+      "address": "Adres",
+      "copy": "Kopyala",
+      "openSite": "Web sitesinde aç",
+      "website": "Web sitesi",
+      "discord": "Discord",
+      "by": "Listeleyen: {{name}}",
+      "byStaff": "Rustic ekibi tarafından listelendi",
+      "report": "Bildir",
+      "rusticEdition": "Rustic sürümü gerekli",
+      "missing": "Bu sunucu kullanılamıyor",
+      "missingHint": "Gizli olabilir, moderasyon tarafından gizlenmiş veya silinmiş olabilir."
+    },
+    "report": {
+      "title": "Bildir: {{name}}",
+      "lead": "Moderasyon ekibine neyin yanlış olduğunu anlat. Her bildirim incelenir.",
+      "reason": "Neden",
+      "reasons": {
+        "impersonation": "Başka bir sunucuyu taklit ediyor",
+        "spam": "Spam veya yanıltıcı",
+        "inappropriate_content": "Uygunsuz içerik",
+        "cheating": "Hile veya kötü amaçlı sunucu",
+        "harassment": "Taciz",
+        "copyright": "Haklarımı ihlal ediyor (marka, ad)",
+        "malware": "Kötü amaçlı yazılım",
+        "other": "Diğer"
+      },
+      "details": "Ayrıntılar",
+      "detailsHint": "İsteğe bağlı, en fazla 2.000 karakter.",
+      "send": "Bildirimi gönder",
+      "sent": "Teşekkürler, bildirimin moderasyon ekibine iletildi.",
+      "signIn": "Bir sunucuyu bildirmek için Rustic hesabına giriş yap.",
+      "failed": "Bildirim gönderilemedi."
+    }
+  }
+}

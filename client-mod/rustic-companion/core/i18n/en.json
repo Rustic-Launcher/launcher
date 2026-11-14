@@ -31,7 +31,22 @@
     "error_title": "The server directory can't be reached",
     "retry": "Retry",
     "publish_hint": "Publish yours at rustic-launcher.com/servers",
-    "rustic_edition": "Rustic edition"
+    "rustic_edition": "Rustic edition",
+    "saved_servers": "Saved servers",
+    "local_network": "Local network",
+    "search_servers": "Search your servers",
+    "no_servers_title": "No servers yet",
+    "no_servers_body": "Add a server by its address, or find one on Discover.",
+    "no_worlds_title": "No worlds yet",
+    "no_worlds_body": "Create a world to start playing.",
+    "nothing_found": "Nothing matches your search",
+    "just_now": "Just now",
+    "minutes_ago": "{n} min ago",
+    "hours_ago": "{n} h ago",
+    "days_ago": "{n} d ago",
+    "lan_empty": "Worlds opened to LAN on your network show up here.",
+    "play": "Play",
+    "no_mods": "No mods installed yet. Find mods for Rustic in the launcher's Explore, or add your own files to the mods folder."
   },
   "tags": {
     "survival": "Survival",

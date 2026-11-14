@@ -176,7 +176,8 @@
       "capDataFolder": "Pasta de dados própria",
       "eula": "Aceito o EULA do Minecraft",
       "eulaHint": "É obrigatório para rodar um servidor. Você mesmo o aceita; o Rustic não aceita por você.",
-      "eulaRead": "Ler o EULA"
+      "eulaRead": "Ler o EULA",
+      "eulaTitle": "EULA do Minecraft"
     },
     "world": {
       "title": "Mundo",
@@ -214,7 +215,10 @@
       "pickInstance": "Escolha uma instância",
       "world": "Mundo",
       "pickWorld": "Escolha um mundo",
-      "noWorlds": "Nenhum mundo nesta instância"
+      "noWorlds": "Nenhum mundo nesta instância",
+      "newDesc": "Um mundo novo a partir de uma semente, com suas regras.",
+      "importDesc": "Uma pasta de mundo do seu PC ou de um backup.",
+      "fromInstanceDesc": "Um mundo que você jogou em um dos seus perfis."
     },
     "type": {
       "memory": "Memória do servidor (RAM)",
@@ -266,7 +270,20 @@
       "generateKey": "Gere uma chave primeiro e depois adicione-a à sua VPS.",
       "password": "Digite a senha."
     },
-    "heading": "Criar um *servidor*"
+    "heading": "Criar um *servidor*",
+    "stepHints": {
+      "basics": "Dê um nome, escolha o que ele roda e o mundo inicial.",
+      "hosting": "Escolha a máquina que o roda e quanta memória ele recebe.",
+      "access": "Escolha como seus amigos entram. Você pode mudar isso depois."
+    },
+    "sections": {
+      "identity": "Nome e ícone"
+    },
+    "preview": {
+      "title": "Prévia",
+      "unnamed": "Seu servidor",
+      "draft": "ainda não criado"
+    }
   },
   "hosting": {
     "local": {
@@ -464,7 +481,17 @@
       "port": "Porta",
       "memory": "Memória",
       "created": "Criado",
-      "folder": "Pasta"
+      "folder": "Pasta",
+      "uptime": "Tempo ativo",
+      "startedAt": "Desde {{time}}",
+      "lastSession": "Última sessão",
+      "lastStarted": "Último início: {{when}}",
+      "neverStarted": "Nunca iniciado",
+      "lastLines": "Últimas linhas do console",
+      "noLines": "Nada registrado ainda.",
+      "openConsole": "Abrir o console",
+      "crashedTitle": "O servidor parou inesperadamente",
+      "crashedBody": "Confira as últimas linhas do console e inicie-o de novo."
     },
     "console": {
       "filter": "Filtrar linhas",

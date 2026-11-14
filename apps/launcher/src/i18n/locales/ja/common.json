@@ -1,0 +1,430 @@
+{
+  "a11y": {
+    "skipToContent": "コンテンツへスキップ",
+    "notifications": "通知"
+  },
+  "actions": {
+    "retry": "再試行",
+    "back": "戻る",
+    "forward": "進む",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "clear": "クリア",
+    "save": "保存",
+    "saved": "保存しました",
+    "delete": "削除",
+    "edit": "編集",
+    "open": "開く",
+    "install": "インストール",
+    "installed": "インストール済み",
+    "remove": "削除",
+    "confirm": "確認",
+    "continue": "続ける",
+    "next": "次へ",
+    "previous": "前へ",
+    "done": "完了",
+    "copy": "コピー",
+    "copied": "コピーしました",
+    "learnMore": "詳しく見る",
+    "seeAll": "すべて表示",
+    "create": "作成",
+    "import": "インポート",
+    "browse": "参照…",
+    "apply": "適用",
+    "reset": "リセット",
+    "enable": "有効にする",
+    "disable": "無効にする",
+    "update": "更新",
+    "add": "追加",
+    "refresh": "再読み込み",
+    "openFolder": "フォルダーを開く",
+    "skip": "スキップ",
+    "more": "その他"
+  },
+  "errors": {
+    "generic": "問題が発生しました。しばらくしてからもう一度お試しください。",
+    "page": {
+      "title": "このページを表示できませんでした"
+    },
+    "load": {
+      "title": "読み込めませんでした"
+    },
+    "notFound": {
+      "title": "何もありません",
+      "description": "このページは存在しないか、移動しました。"
+    }
+  },
+  "nav": {
+    "label": "メインナビゲーション",
+    "home": "ホーム",
+    "instances": "プロファイル",
+    "content": "探索",
+    "servers": "サーバー",
+    "locker": "ロッカー",
+    "store": "ストア",
+    "settings": "設定",
+    "newInstance": "新しいプロファイル"
+  },
+  "search": {
+    "title": "検索",
+    "placeholder": "コンテンツ、フレンド、サーバー、設定を検索…",
+    "empty": "結果がありません。別のキーワードをお試しください。",
+    "loading": "検索中…",
+    "hintNavigate": "移動",
+    "hintOpen": "開く",
+    "hintClose": "閉じる",
+    "open": "開く",
+    "myServer": "マイサーバー",
+    "playInstance": "{{name}} をプレイ",
+    "groups": {
+      "pages": "ページ",
+      "actions": "操作",
+      "instances": "インスタンス",
+      "content": "コンテンツ",
+      "friends": "フレンド",
+      "servers": "サーバー",
+      "settings": "設定",
+      "play": "プレイ"
+    },
+    "actions": {
+      "newInstance": "インスタンスを作成",
+      "newServer": "サーバーを作成",
+      "addFriend": "フレンドを追加",
+      "darkTheme": "ダークテーマに切り替え",
+      "lightTheme": "ライトテーマに切り替え"
+    },
+    "settings": {
+      "accounts": "アカウント",
+      "game": "ゲーム",
+      "launcher": "ランチャー",
+      "appearance": "外観",
+      "privacy": "プライバシーとデータ",
+      "parental": "ペアレンタルコントロール",
+      "about": "情報"
+    }
+  },
+  "friends": {
+    "title": "フレンド",
+    "onlineCount_other": "{{count}} 人オンライン",
+    "add": "フレンドを追加",
+    "search": "フレンドを検索",
+    "requests_other": "申請・{{count}}",
+    "incoming": "フレンドになりたがっています",
+    "outgoing": "申請済み",
+    "accept": "承認",
+    "decline": "拒否",
+    "cancelRequest": "申請を取り消す",
+    "requestSent": "{{name}} さんにフレンド申請を送信しました",
+    "error": "フレンドを読み込めませんでした。",
+    "empty": "まだフレンドがいません。Rustic のユーザー名で追加しましょう。",
+    "online_other": "オンライン・{{count}}",
+    "offline_other": "オフライン・{{count}}",
+    "lastSeen": "{{when}}にオンライン",
+    "activity": {
+      "server": "{{server}} でプレイ中",
+      "singleplayer": "ソロでプレイ中",
+      "hosting": "{{server}} をホスト中",
+      "launcher": "ランチャーを使用中"
+    },
+    "favorite": "お気に入り",
+    "makeFavorite": "お気に入りに追加",
+    "unfavorite": "お気に入りから削除",
+    "join": "参加",
+    "joinAria": "{{name}} さんに参加",
+    "joining": "{{server}} に参加中…",
+    "more": "{{name}} さんのその他の操作",
+    "remove": "フレンドを削除",
+    "removeTitle": "{{name}} さんをフレンドから削除しますか？",
+    "removeBody": "お互いのアクティビティが表示されなくなります。あとで改めて申請を送ることができます。"
+  },
+  "addFriend": {
+    "title": "フレンドを追加",
+    "description": "Rustic の名前や、連携された Minecraft の名前でプレイヤーを探すか、一緒にプレイした人を選んでください。",
+    "kind": "検索方法",
+    "kindRustic": "Rustic の名前",
+    "kindMinecraft": "Minecraft の名前",
+    "rusticLabel": "Rustic のユーザー名",
+    "minecraftLabel": "Minecraft のユーザー名",
+    "rusticPlaceholder": "例：lea_builds",
+    "minecraftPlaceholder": "例：LeaBuilds",
+    "rusticHint": "相手の Rustic プロフィールに表示されている正確な名前。",
+    "minecraftHint": "その Minecraft プロフィールで Rustic にログインしたプレイヤーの、ゲーム内での正確な名前。",
+    "find": "検索",
+    "send": "申請を送信",
+    "sent": "申請済み",
+    "friends": "すでにフレンドです",
+    "pending": "申請中",
+    "incoming": "相手からすでにフレンド申請が届いています。申請を承認してください。",
+    "minecraftName": "Minecraft の名前：",
+    "add": "追加",
+    "addAria": "{{name}} さんにフレンド申請を送信",
+    "playedWith": "最近一緒にプレイした人",
+    "playedWithEmpty": "まだいません。パーティーや共通のサーバー（10 分以上一緒）のプレイヤーがここに表示されます。",
+    "crossed": "最近見かけた人",
+    "crossedEmpty": "最近共通のサーバーで出会った人はいません。",
+    "reasonParty": "あなたのパーティー",
+    "reasonServer": "{{server}} にて",
+    "reasonSameServer": "同じサーバーにて",
+    "suggestionsError": "おすすめを読み込めませんでした。",
+    "suggestionsOff": "おすすめはオフです。出会ったプレイヤーを表示するには、設定 › プライバシーとデータで「出会ったプレイヤーのおすすめに表示する」をオンにしてください。",
+    "suggestionsMinor": "出会ったプレイヤーのおすすめは、あなたのアカウントでは利用できません。",
+    "privacyNote": "おすすめは、過去 14 日間のあなたのパーティーと、アクティビティで共有しているサーバーから表示されます。同じく許可している人だけが表示されます。",
+    "errors": {
+      "notFoundRustic": "この名前の Rustic アカウントはありません。",
+      "notFoundMinecraft": "この Minecraft の名前を連携した Rustic プレイヤーはいません。",
+      "invalidRustic": "Rustic の名前は 3〜20 文字の英字、数字、_ です。",
+      "invalidMinecraft": "Minecraft の名前は 3〜16 文字の英字、数字、_ です。",
+      "cannot_add_friend": "このプレイヤーはフレンド申請を受け取れません。",
+      "friend_requests_disabled": "あなたのアカウントではフレンド申請がオフになっています（ペアレンタルコントロール）。",
+      "cannot_add_self": "それはあなたです！",
+      "already_friends": "すでにフレンドです。",
+      "request_pending": "すでに申請中です。",
+      "incoming_request_exists": "相手からすでに申請が届いています。承認してください。",
+      "rate_limited": "検索回数が多すぎます。1 分待ってから再度お試しください。",
+      "generic": "問題が発生しました。もう一度お試しください。"
+    }
+  },
+  "party": {
+    "title": "パーティー",
+    "leave": "退出",
+    "leader": "パーティーリーダー",
+    "pending": "{{name}}（招待中）",
+    "invite": "パーティーに招待",
+    "invited": "{{name}} さんをパーティーに招待しました"
+  },
+  "presence": {
+    "online": "オンライン",
+    "in-game": "ゲーム中",
+    "away": "離席中",
+    "busy": "取り込み中",
+    "offline": "オフライン"
+  },
+  "notifications": {
+    "title": "通知",
+    "markAllRead": "すべて既読にする",
+    "empty": "新しい通知はありません。",
+    "kinds": {
+      "friend_request": "からフレンド申請が届きました",
+      "update_available": "がインスタンスで利用可能です",
+      "backup_done": "定期バックアップが完了しました",
+      "store_new": "ストアの新着"
+    }
+  },
+  "account": {
+    "switcher": "アカウント",
+    "none": "アカウントなし",
+    "rustic": "Rustic アカウント",
+    "signInRustic": "Rustic にログイン",
+    "signOutRustic": "Rustic からログアウト",
+    "gameProfiles": "ゲームプロフィール",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "オフライン"
+    },
+    "add": "アカウントを追加",
+    "manage": "アカウントを管理"
+  },
+  "downloads": {
+    "title": "ダウンロード",
+    "global": "バックグラウンドのダウンロード",
+    "working": "処理中…",
+    "summary_other": "{{count}} 件のダウンロードが進行中",
+    "kind": {
+      "game": "Horizon",
+      "content": "コンテンツ",
+      "modpack": "MODパック",
+      "server": "サーバー",
+      "java": "Java ランタイム",
+      "update": "ランチャーの更新",
+      "prepare": "ゲームファイルの準備",
+      "native-build": "ネイティブMODのビルド",
+      "native-toolchain": "ネイティブMOD用の Rust"
+    }
+  },
+  "play": {
+    "play": "プレイ",
+    "update": "更新",
+    "cancel": "キャンセル",
+    "stop": "停止",
+    "selectInstance": "プレイするインスタンスを選択",
+    "instances": "インスタンス",
+    "manageInstances": "インスタンスを管理",
+    "newVersion": "{{version}} が利用可能",
+    "cancelled": "起動をキャンセルしました",
+    "status": {
+      "ready": "プレイ可能",
+      "noInstance": "インスタンスなし",
+      "running": "ゲーム実行中",
+      "update": "更新が必要",
+      "broken": "修復が必要"
+    },
+    "progress": {
+      "updating": "アップデート中…",
+      "downloading": "ダウンロード中 {{pct}}",
+      "checking": "ファイルを確認中…",
+      "preparing": "準備中…",
+      "launching": "起動中…",
+      "stopping": "停止中…",
+      "preparingFiles": "ゲームファイルを準備中 {{pct}}",
+      "building": "ネイティブMODをビルド中…",
+      "buildingPct": "ネイティブMODをビルド中 {{pct}}"
+    },
+    "errors": {
+      "launch": "ゲームを起動できませんでした"
+    },
+    "refusals": {
+      "auth_no_account": "プレイするには、ゲームを所有している Microsoft アカウントでログインしてください。",
+      "auth_not_owned": "この Microsoft アカウントはゲームを所有していません。",
+      "auth_not_approved": "このランチャーではまだ Microsoft でのログインを利用できません。",
+      "auth_reauth_required": "プレイするには、Microsoft アカウントにもう一度ログインしてください。",
+      "auth_offline_not_allowed": "ゲームを所有している Microsoft アカウントで一度ログインすると、オフラインでプレイできるようになります。",
+      "auth_network": "アカウントの確認のために Microsoft に接続できませんでした。接続を確認してください。",
+      "build_not_installed": "先に Horizon のビルドをインストールしてください。",
+      "prepare_needed": "このビルドのゲームファイルはまだ準備されていません。",
+      "prepare_failed": "ゲームファイルを準備できませんでした。再試行するか、設定 › ゲームとインスタンスで準備してください。",
+      "prepare_no_java": "Java が見つかりません。インストールするか、設定 › ゲームとインスタンスで選択してください。",
+      "prepare_no_minecraft_dir": "ゲームのインストールが見つかりません。設定 › ゲームとインスタンスでフォルダーを選択してください。",
+      "launch_already_running": "このインスタンスはすでに実行中です。",
+      "native_consent": "このインスタンスにはネイティブMODがあります。先にインスタンスページ（コンテンツ）で信頼に関する注意事項に同意してください。",
+      "native_toolchain": "ネイティブMODには Rust が必要です。インスタンスページ（コンテンツ）または設定 › ゲームとインスタンスからインストールしてください。",
+      "native_not_edition": "ネイティブMODは Rustic エディションにのみビルドされます。このインスタンスを Rustic エディションに切り替えるか、ネイティブMODをオフにしてください。",
+      "native_build_failed": "ネイティブMODをビルドできませんでした",
+      "native_disk": "ネイティブMODをビルドするための空きディスク容量が足りません。"
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}}（Rustic エディション）",
+    "rusticEdition": "Rustic エディション"
+  },
+  "compat": {
+    "buildsOnHorizon": "お使いの Horizon でビルド可能",
+    "compatible": "互換性あり",
+    "incompatible": "互換性なし：{{reason}}",
+    "unknown": "互換性不明",
+    "reasons": {
+      "horizon_version": "Horizon のバージョン",
+      "java_only": "Java Edition 専用",
+      "side": "サーバー側専用",
+      "conflict": "インストール済みの MOD と競合",
+      "unsupported_format": "非対応の形式",
+      "needs_rustic_server": "Rustic Server が必要",
+      "not_fair_play": "使用不可（フェアプレイ）"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "製品を切り替え",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Rustic Server ドキュメント"
+  },
+  "crumbs": {
+    "label": "パンくずリスト",
+    "horizon": "Horizon",
+    "details": "詳細",
+    "create": "作成",
+    "kinds": {
+      "mod": "MOD",
+      "modpack": "MODパック",
+      "resourcepack": "リソースパック",
+      "shader": "シェーダー",
+      "datapack": "データパック",
+      "plugin": "プラグイン"
+    },
+    "servers": {
+      "featured": "注目",
+      "mine": "マイサーバー",
+      "multiplayer": "マルチプレイリスト",
+      "discover": "見つける",
+      "joined": "マルチプレイリスト",
+      "browse": "一覧"
+    }
+  },
+  "social": {
+    "title": "ソーシャル",
+    "description": "フレンド、チャット、パーティー。",
+    "open": "ソーシャルを開く",
+    "friends": "フレンド",
+    "chats": "チャット",
+    "message": "メッセージを送る",
+    "searchChats": "チャットを検索…",
+    "noChats": "まだ会話はありません。「フレンド」タブからフレンドにメッセージを送りましょう。",
+    "sayHello": "あいさつする",
+    "selectTitle": "会話を選択",
+    "selectBody": "チャットを始めるフレンドを選んでください。",
+    "messagePlaceholder": "{{name}} さんにメッセージ",
+    "send": "送信"
+  },
+  "window": {
+    "minimize": "最小化",
+    "maximize": "最大化",
+    "restore": "元に戻す",
+    "close": "閉じる"
+  },
+  "running": {
+    "title": "実行中のインスタンス",
+    "none": "実行中のゲームはありません。",
+    "count_other": "{{count}} 個のインスタンスを実行中",
+    "downloading": "ダウンロード中 {{pct}}"
+  },
+  "launch": {
+    "launch": "ゲームを起動",
+    "update": "更新して起動",
+    "stop": "ゲームを停止"
+  },
+  "deepLink": {
+    "authOk": "Rustic にログインしました",
+    "authFailed": "Rustic へのログインに失敗しました",
+    "joining": "{{target}} に参加中…",
+    "content": "ウェブサイトから {{project}} を開いています"
+  },
+  "catalog": {
+    "sort": "並べ替え",
+    "results_other": "{{count}} 件の結果",
+    "loadMore": "さらに読み込む",
+    "loadMoreCount": "{{total}} 件中 {{shown}} 件を表示",
+    "carousel": {
+      "prev": "前へ",
+      "next": "次へ",
+      "slide": "{{index}}/{{total}}",
+      "pause": "スライドショーを一時停止",
+      "play": "スライドショーを再生"
+    },
+    "row": {
+      "seeAll": "すべて表示",
+      "seeAllAria": "すべて表示：{{title}}",
+      "scrollPrev": "左にスクロール",
+      "scrollNext": "右にスクロール"
+    },
+    "filters": {
+      "button": "フィルター",
+      "buttonCount": "フィルター・{{count}}",
+      "reset": "フィルターをリセット"
+    },
+    "layout": {
+      "label": "レイアウト",
+      "list": "リスト",
+      "grid": "グリッド"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "アップデート中 {{pct}}",
+      "installing": "アップデートをインストール中…",
+      "restarting": "再起動中…",
+      "deferred": "ゲーム終了後にアップデート",
+      "apply": "アップデートして再起動"
+    },
+    "toast": {
+      "launcher": "Rustic Launcher {{version}} をダウンロード中…",
+      "edition": "ゲームをアップデート中（Rustic エディション）…",
+      "editionDone": "ゲームをアップデートしました：{{version}}",
+      "deferred": "アップデートの準備ができました。ゲームを閉じるとインストールされます。",
+      "restarting": "アップデートを完了するため Rustic Launcher を再起動します。",
+      "updated": "Rustic Launcher を {{version}} にアップデートしました",
+      "resuming": "アップデート完了：ゲームを起動しています",
+      "failed": "アップデートをインストールできませんでした。後でもう一度試します。"
+    }
+  }
+}

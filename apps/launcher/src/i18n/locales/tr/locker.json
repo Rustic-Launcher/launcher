@@ -1,0 +1,84 @@
+{
+  "title": "Dolap",
+  "subtitle": "Tamamen görsel öğeler. Oyunda Rustic sürümünü kullanan oyuncular tarafından görülür.",
+  "horizonNote": {
+    "badge": "Horizon kozmetikleri kullanılabilir kalır",
+    "detail": "Horizon kozmetiklerin Rustic sürümü istemcisinde korunur. Onları oyun içinden yönet; Rustic öğelerinle birlikte çalışırlar."
+  },
+  "empty": {
+    "title": "Henüz hiç kozmetiğin yok.",
+    "description": "Satın aldığın veya sana verilen öğeler burada, giymeye hazır şekilde görünür.",
+    "browse": "Mağazaya göz at",
+    "categoryTitle": "Henüz yok: {{category}}",
+    "categoryDescription": "Sahip olduğun bu türdeki öğeler burada görünür."
+  },
+  "viewer": {
+    "region": "Karakterin",
+    "label_one": "Karakterin {{count}} öğe kuşanmış. Döndürmek için sürükle veya ok tuşlarını kullan, yakınlaştırmak için artı ve eksi.",
+    "label_other": "Karakterin {{count}} öğe kuşanmış. Döndürmek için sürükle veya ok tuşlarını kullan, yakınlaştırmak için artı ve eksi.",
+    "hint": "Döndürmek için sürükle · yakınlaştırmak için kaydır",
+    "animation": "Animasyon",
+    "playEmote": "Oynat: {{name}}",
+    "noEmote": "Kuşanılmış ifade yok",
+    "reset": "Görünümü sıfırla"
+  },
+  "animations": {
+    "idle": "Beklemede",
+    "walk": "Yürüme",
+    "wave": "El sallama",
+    "dance": "Dans"
+  },
+  "items": {
+    "region": "Öğelerin",
+    "nothing": "Hiçbiri",
+    "equipped": "Kuşanıldı"
+  },
+  "categories": {
+    "label": "Kategoriler",
+    "all": "Tümü",
+    "head": "Şapkalar",
+    "back": "Sırt",
+    "top": "Gövde",
+    "shoulder": "Omuz",
+    "nametag": "İsim etiketleri",
+    "emote": "İfadeler",
+    "companion": "Yoldaşlar",
+    "trail": "İzler",
+    "aura": "Auralar"
+  },
+  "rarity": {
+    "common": "Yaygın",
+    "rare": "Nadir",
+    "epic": "Destansı",
+    "legendary": "Efsanevi"
+  },
+  "toast": {
+    "equipped": "{{name}} kuşanıldı",
+    "unequipped": "{{name}} çıkarıldı",
+    "cleared": "{{slot}}: hiçbir şey kuşanılmadı",
+    "outfitWorn": "Kıyafet giyildi",
+    "outfitSaved": "“{{name}}” kıyafeti kaydedildi",
+    "equipFailed": "Görünümün değiştirilemedi. Tekrar dene."
+  },
+  "outfits": {
+    "title": "Kıyafetler",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Bu görünüme ad ver",
+    "save": "Mevcut görünümü kaydet",
+    "full": "En fazla {{max}} kıyafet saklayabilirsin. Yeni bir görünüm kaydetmek için birini sil.",
+    "empty": "Mevcut görünümünü kaydet, tek tıkla yeniden giy.",
+    "items_one": "{{count}} öğe",
+    "items_other": "{{count}} öğe",
+    "wearing": "Giyiliyor",
+    "wear": "Giy",
+    "delete": "Kıyafeti sil: {{name}}"
+  },
+  "switches": {
+    "showMine": "Kozmetiklerimi göster",
+    "showMineHint": "Diğer Rustic sürümü oyuncuları giydiklerini görür.",
+    "hideOthers": "Diğer oyuncuların kozmetiklerini gizle",
+    "hideTrailsAuras": "İzleri ve auraları gizle"
+  },
+  "heading": "Senin *dolabın*",
+  "eyebrow": "Kozmetikler"
+}

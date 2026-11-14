@@ -10,7 +10,6 @@
     "datapack": "Paczki danych",
     "plugin": "Pluginy"
   },
-  "searchPlaceholder": "Szukaj: {{kind}}…",
   "searchLabel": "Szukaj zawartości",
   "clear": "Wyczyść wyszukiwanie",
   "by": "autor: {{author}}",
@@ -209,6 +208,13 @@
       "title": "Ten projekt jest niedostępny",
       "body": "Może być prywatny, czekać na weryfikację albo zostać usunięty przez twórcę lub moderatora.",
       "back": "Wróć do Eksploruj"
+    },
+    "native": {
+      "title": "Kompiluje się na twoim PC",
+      "build": "Kompilowany do gry tego profilu przy pierwszym uruchomieniu: około 10–15 minut, potem szybciej.",
+      "review": "Sprawdzany przed instalacją przez rejestr Horizon lub administratorów Rustic.",
+      "consent": "Nic nie jest kompilowane, zanim nie przeczytasz i nie zaakceptujesz krótkiego ostrzeżenia.",
+      "more": "Jak działają mody natywne"
     }
   },
   "report": {
@@ -237,7 +243,8 @@
       "beta": "Beta",
       "alpha": "Alfa"
     },
-    "empty": "Nie ma jeszcze dostępnej wersji."
+    "empty": "Nie ma jeszcze dostępnej wersji.",
+    "latest": "Najnowsza"
   },
   "deps": {
     "none": "Brak zależności.",
@@ -275,9 +282,16 @@
     "author": "Autor",
     "created": "Opublikowano"
   },
-  "searchSources": "Szukaj: {{kind}} w Horizon, Modrinth i Rustic…",
+  "searchSources": {
+    "mod": "Szukaj modów w Horizon, Modrinth i Rustic…",
+    "modpack": "Szukaj modpacków w Horizon, Modrinth i Rustic…",
+    "resourcepack": "Szukaj paczek zasobów w Horizon, Modrinth i Rustic…",
+    "shader": "Szukaj shaderów w Horizon, Modrinth i Rustic…",
+    "datapack": "Szukaj paczek danych w Horizon, Modrinth i Rustic…",
+    "plugin": "Szukaj pluginów w Horizon, Modrinth i Rustic…"
+  },
   "filtersLabel": "Filtry",
-  "view": "Widok",
+  "view": "Zobacz",
   "heading": "Znajdź swój następny *mod*",
   "eyebrow": "Eksploruj",
   "kindsServer": "Dla Rustic Server",
@@ -291,7 +305,14 @@
     "eyebrow": "Polecane"
   },
   "discover": {
-    "heroLabel": "Polecane: {{kind}}",
+    "heroLabel": {
+      "mod": "Polecane mody",
+      "modpack": "Polecane modpacki",
+      "resourcepack": "Polecane paczki zasobów",
+      "shader": "Polecane shadery",
+      "datapack": "Polecane paczki danych",
+      "plugin": "Polecane pluginy"
+    },
     "rows": {
       "new": "Nowe",
       "newHint": "Świeżo opublikowane lub zaktualizowane",
@@ -396,7 +417,14 @@
     "installed": {
       "title": "Zainstalowane",
       "titleOn": "Zainstalowane na: {{target}}",
-      "hint": "Zawartość tego celu ({{kind}}): włączaj, wyłączaj, aktualizuj lub usuwaj.",
+      "hint": {
+        "mod": "Mody tego celu: włączaj je i wyłączaj, aktualizuj lub usuwaj.",
+        "modpack": "Modpacki tego celu: włączaj je i wyłączaj, aktualizuj lub usuwaj.",
+        "resourcepack": "Paczki zasobów tego celu: włączaj je i wyłączaj, aktualizuj lub usuwaj.",
+        "shader": "Shadery tego celu: włączaj je i wyłączaj, aktualizuj lub usuwaj.",
+        "datapack": "Paczki danych tego celu: włączaj je i wyłączaj, aktualizuj lub usuwaj.",
+        "plugin": "Pluginy tego celu: włączaj je i wyłączaj, aktualizuj lub usuwaj."
+      },
       "modpacksTitle": "Modpacki stają się profilami",
       "modpacksHint": "Każdy zainstalowany modpack to osobny profil.",
       "openProfiles": "Otwórz moje profile",

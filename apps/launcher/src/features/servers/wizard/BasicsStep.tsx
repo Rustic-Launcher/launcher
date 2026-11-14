@@ -6,22 +6,35 @@ import {
   Field,
   IconButton,
   Input,
-  SegmentedControl,
   Select,
   Skeleton,
   Switch,
 } from '@rustic/ui';
 import { useQuery } from '@tanstack/react-query';
-import { Dices, ExternalLink, FolderOpen, Network, Puzzle, Server } from 'lucide-react';
-import { useEffect, useId } from 'react';
+import {
+  Blocks,
+  Dices,
+  ExternalLink,
+  FolderOpen,
+  FolderInput,
+  Gamepad2,
+  Globe2,
+  IdCard,
+  Mountain,
+  Network,
+  Puzzle,
+  Scale,
+  Server,
+} from 'lucide-react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { PRESET_COLORS, PRESET_ICONS } from '@/components/InstanceIcon';
+import { IconPicker } from '@/components/IconPicker';
 import { invoke } from '@/ipc';
-import type { InstanceIconPreset } from '@/ipc/types/instances';
 import { shortVersion } from '@/lib/format';
 import { useActiveInstance, useHorizonVersions, useInstances } from '@/queries/core';
 import { randomSeed, type FieldErrors, type WizardState } from './model';
 import { RadioCard } from './RadioCard';
+import { WizardSection } from './Section';
 
 export const EULA_URL = 'https://www.minecraft.net/eula';
 
@@ -42,6 +55,15 @@ function FieldError({ id, msg }: { id?: string; msg?: string }) {
   );
 }
 
+/** Generated-art seeds of the visual choice cards (their hues: orange, blue, green, teal, violet). */
+const ART = {
+  rustic: 'lake',
+  horizon: 'iron',
+  new: 'world-new',
+  import: 'world-import',
+  from_instance: 'world-instance',
+} as const;
+
 export function BasicsStep({ state, update, errors, showErrors }: StepProps) {
   const { t } = useTranslation('servers');
   const { t: tc } = useTranslation();
@@ -58,8 +80,6 @@ export function BasicsStep({ state, update, errors, showErrors }: StepProps) {
     queryFn: () => invoke('instance_worlds_list', { instance_id: state.world.instanceId }),
     enabled: state.world.kind === 'from_instance' && !!state.world.instanceId,
   });
-  const iconGroup = useId();
-  const colorGroup = useId();
 
   // Defaults: the client's version, recommended starter plugins.
   useEffect(() => {
@@ -82,8 +102,8 @@ export function BasicsStep({ state, update, errors, showErrors }: StepProps) {
   const sameAsClient = active?.horizon_version === state.horizonVersion;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
-      <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-4">
+      <WizardSection icon={<IdCard />} title={t('wizard.sections.identity')}>
         <Field
           label={t('wizard.basics.name')}
           error={err('name') ? t(err('name') as 'wizard.errors.nameRequired') : undefined}
@@ -101,96 +121,52 @@ export function BasicsStep({ state, update, errors, showErrors }: StepProps) {
             />
           )}
         </Field>
+        <div className="flex flex-col gap-2">
+          <span className="text-sm font-medium">{t('wizard.basics.icon')}</span>
+          <IconPicker
+            preset={state.preset}
+            color={state.color}
+            onPreset={(preset) => update({ preset })}
+            onColor={(color) => update({ color })}
+            iconsLabel={t('wizard.basics.icon')}
+            colorsLabel={t('wizard.basics.color')}
+            iconLabel={(p) => t(`wizard.basics.icons.${p}`)}
+            colorLabel={(n) => t('wizard.basics.colorN', { n })}
+          />
+        </div>
+      </WizardSection>
 
-        <fieldset className="flex flex-col gap-2">
-          <legend className="mb-2 text-sm font-medium">{t('wizard.basics.icon')}</legend>
-          <div
-            className="flex flex-wrap gap-1.5"
-            role="radiogroup"
-            aria-label={t('wizard.basics.icon')}
-          >
-            {(Object.keys(PRESET_ICONS) as InstanceIconPreset[]).map((p) => {
-              const Icon = PRESET_ICONS[p];
-              const on = state.preset === p;
-              return (
-                <label
-                  key={p}
-                  className={cn(
-                    'has-[:focus-visible]:ring-accent/60 grid size-10 cursor-pointer place-items-center rounded-lg border text-white transition-transform has-[:focus-visible]:ring-2',
-                    on
-                      ? 'border-accent scale-105'
-                      : 'border-transparent opacity-70 hover:opacity-100',
-                  )}
-                  style={{ background: state.color }}
-                >
-                  <input
-                    type="radio"
-                    name={iconGroup}
-                    className="sr-only"
-                    checked={on}
-                    onChange={() => update({ preset: p })}
-                    aria-label={t(`wizard.basics.icons.${p}`)}
-                  />
-                  <Icon className="size-5" aria-hidden />
-                </label>
-              );
-            })}
-          </div>
-          <div
-            className="flex flex-wrap gap-1.5"
-            role="radiogroup"
-            aria-label={t('wizard.basics.color')}
-          >
-            {PRESET_COLORS.map((c, i) => (
-              <label
-                key={c}
-                className={cn(
-                  'has-[:focus-visible]:ring-accent/60 size-6 cursor-pointer rounded-full border-2 has-[:focus-visible]:ring-2',
-                  state.color === c ? 'border-fg' : 'border-transparent',
-                )}
-                style={{ background: c }}
-              >
-                <input
-                  type="radio"
-                  name={colorGroup}
-                  className="sr-only"
-                  checked={state.color === c}
-                  onChange={() => update({ color: c })}
-                  aria-label={t('wizard.basics.colorN', { n: i + 1 })}
-                />
-              </label>
-            ))}
-          </div>
-        </fieldset>
-
-        <fieldset className="flex flex-col gap-2">
-          <legend className="mb-2 text-sm font-medium">{t('wizard.basics.type')}</legend>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <RadioCard
-              name="engine"
-              value="rustic"
-              checked={state.engine === 'rustic'}
-              onChange={() => update({ engine: 'rustic' })}
-              icon={<Puzzle />}
-              title={t('list.engine.rustic')}
-              badge={<Badge variant="accent">{t('wizard.basics.recommended')}</Badge>}
-              description={t('wizard.basics.rusticDesc')}
-              testId="engine-rustic"
-            />
-            <RadioCard
-              name="engine"
-              value="horizon"
-              checked={state.engine === 'horizon'}
-              onChange={() => update({ engine: 'horizon' })}
-              icon={<Server />}
-              title={t('list.engine.horizon')}
-              description={t('wizard.basics.horizonDesc')}
-              testId="engine-horizon"
-            />
-          </div>
-        </fieldset>
-
-        <div className="grid gap-4 sm:grid-cols-[1fr_8rem]">
+      <WizardSection icon={<Server />} title={t('wizard.basics.type')}>
+        <div
+          className="grid gap-3 @xl:grid-cols-2"
+          role="radiogroup"
+          aria-label={t('wizard.basics.type')}
+        >
+          <RadioCard
+            name="engine"
+            value="rustic"
+            art={ART.rustic}
+            checked={state.engine === 'rustic'}
+            onChange={() => update({ engine: 'rustic' })}
+            icon={<Puzzle />}
+            title={t('list.engine.rustic')}
+            badge={<Badge variant="accent">{t('wizard.basics.recommended')}</Badge>}
+            description={t('wizard.basics.rusticDesc')}
+            testId="engine-rustic"
+          />
+          <RadioCard
+            name="engine"
+            value="horizon"
+            art={ART.horizon}
+            checked={state.engine === 'horizon'}
+            onChange={() => update({ engine: 'horizon' })}
+            icon={<Server />}
+            title={t('list.engine.horizon')}
+            description={t('wizard.basics.horizonDesc')}
+            testId="engine-horizon"
+          />
+        </div>
+        <div className="grid gap-4 @lg:grid-cols-[1fr_9rem]">
           <Field
             label={t('wizard.basics.version')}
             error={err('version') ? t('wizard.errors.version') : undefined}
@@ -232,7 +208,10 @@ export function BasicsStep({ state, update, errors, showErrors }: StepProps) {
           </Field>
         </div>
         {state.horizonVersion && (
-          <p className="text-fg-muted -mt-2 text-xs" data-testid="version-line">
+          <p
+            className="bg-surface-2/70 text-fg-muted -mt-1 rounded-lg px-3 py-2 text-xs"
+            data-testid="version-line"
+          >
             {state.engine === 'rustic'
               ? t('wizard.basics.versionLineRustic', {
                   version: shortVersion(state.horizonVersion),
@@ -245,214 +224,250 @@ export function BasicsStep({ state, update, errors, showErrors }: StepProps) {
             )}
           </p>
         )}
-      </div>
+      </WizardSection>
 
-      <div className="flex flex-col gap-5">
-        <fieldset className="flex flex-col gap-3">
-          <legend className="mb-2 text-sm font-medium">{t('wizard.world.title')}</legend>
-          <SegmentedControl
-            label={t('wizard.world.title')}
-            value={w.kind}
-            onValueChange={(v) => setWorld({ kind: v as WizardState['world']['kind'] })}
-            options={[
-              { value: 'new', label: t('wizard.world.new') },
-              { value: 'import', label: t('wizard.world.import') },
-              { value: 'from_instance', label: t('wizard.world.fromInstance') },
-            ]}
+      <WizardSection icon={<Globe2 />} title={t('wizard.world.title')}>
+        <div
+          className="grid gap-3 @xl:grid-cols-3"
+          role="radiogroup"
+          aria-label={t('wizard.world.title')}
+        >
+          <RadioCard
+            name="world-kind"
+            value="new"
+            art={ART.new}
+            checked={w.kind === 'new'}
+            onChange={() => setWorld({ kind: 'new' })}
+            icon={<Mountain />}
+            title={t('wizard.world.new')}
+            description={t('wizard.world.newDesc')}
+            testId="world-new"
           />
-          {w.kind === 'new' && (
-            <div className="grid gap-3 sm:grid-cols-2">
-              <Field
-                label={t('wizard.world.seed')}
-                hint={t('wizard.world.seedHint')}
-                className="sm:col-span-2"
-                error={err('seed') ? t('wizard.errors.seed') : undefined}
-              >
-                {(p) => (
-                  <Input
-                    {...p}
-                    value={w.seed}
-                    onChange={(e) => setWorld({ seed: e.target.value })}
-                    className="[&_input]:font-mono"
-                    placeholder={t('wizard.world.seedPlaceholder')}
-                    rightSlot={
-                      <IconButton
-                        size="sm"
-                        label={t('wizard.world.randomSeed')}
-                        icon={<Dices />}
-                        onClick={() => setWorld({ seed: randomSeed() })}
-                      />
-                    }
-                  />
-                )}
-              </Field>
-              <Field label={t('wizard.world.levelType')}>
-                {(p) => (
-                  <Select
-                    id={p.id}
-                    value={w.levelType}
-                    onValueChange={(v) =>
-                      setWorld({ levelType: v as WizardState['world']['levelType'] })
-                    }
-                    options={(['default', 'flat', 'large_biomes', 'amplified'] as const).map(
-                      (v) => ({ value: v, label: t(`wizard.world.levelTypes.${v}`) }),
-                    )}
-                  />
-                )}
-              </Field>
-              <Field label={t('wizard.world.gamemode')}>
-                {(p) => (
-                  <Select
-                    id={p.id}
-                    value={w.gamemode}
-                    onValueChange={(v) =>
-                      setWorld({ gamemode: v as WizardState['world']['gamemode'] })
-                    }
-                    options={(['survival', 'creative', 'adventure'] as const).map((v) => ({
-                      value: v,
-                      label: t(`wizard.world.gamemodes.${v}`),
-                    }))}
-                  />
-                )}
-              </Field>
-              <Field label={t('wizard.world.difficulty')}>
-                {(p) => (
-                  <Select
-                    id={p.id}
-                    value={w.hardcore ? 'hard' : w.difficulty}
-                    disabled={w.hardcore}
-                    onValueChange={(v) =>
-                      setWorld({ difficulty: v as WizardState['world']['difficulty'] })
-                    }
-                    options={(['peaceful', 'easy', 'normal', 'hard'] as const).map((v) => ({
-                      value: v,
-                      label: t(`wizard.world.difficulties.${v}`),
-                    }))}
-                  />
-                )}
-              </Field>
-              <div className="flex flex-col justify-end gap-2 pb-1">
-                <label className="flex items-center justify-between gap-3 text-sm">
-                  {t('wizard.world.structures')}
-                  <Switch
-                    checked={w.structures}
-                    onCheckedChange={(v) => setWorld({ structures: v })}
-                  />
-                </label>
-                <label className="flex items-center justify-between gap-3 text-sm">
-                  {t('wizard.world.hardcore')}
-                  <Switch checked={w.hardcore} onCheckedChange={(v) => setWorld({ hardcore: v })} />
-                </label>
-              </div>
-            </div>
-          )}
-          {w.kind === 'import' && (
+          <RadioCard
+            name="world-kind"
+            value="import"
+            art={ART.import}
+            checked={w.kind === 'import'}
+            onChange={() => setWorld({ kind: 'import' })}
+            icon={<FolderInput />}
+            title={t('wizard.world.import')}
+            description={t('wizard.world.importDesc')}
+            testId="world-import"
+          />
+          <RadioCard
+            name="world-kind"
+            value="from_instance"
+            art={ART.from_instance}
+            checked={w.kind === 'from_instance'}
+            onChange={() => setWorld({ kind: 'from_instance' })}
+            icon={<Gamepad2 />}
+            title={t('wizard.world.fromInstance')}
+            description={t('wizard.world.fromInstanceDesc')}
+            testId="world-from-instance"
+          />
+        </div>
+
+        {w.kind === 'new' && (
+          <div className="grid gap-4 @xl:grid-cols-2 @4xl:grid-cols-4">
             <Field
-              label={t('wizard.world.folder')}
-              error={err('importPath') ? t('wizard.errors.importPath') : undefined}
+              label={t('wizard.world.seed')}
+              hint={t('wizard.world.seedHint')}
+              className="@xl:col-span-2 @4xl:col-span-4"
+              error={err('seed') ? t('wizard.errors.seed') : undefined}
             >
               {(p) => (
-                <div className="flex gap-2">
-                  <Input
-                    {...p}
-                    className="flex-1 [&_input]:font-mono"
-                    value={w.importPath}
-                    onChange={(e) => setWorld({ importPath: e.target.value })}
-                    placeholder="C:/Users/…/saves/My World"
-                  />
-                  <Button
-                    leftIcon={<FolderOpen />}
-                    onClick={() =>
-                      void invoke('app_pick_path', {
-                        kind: 'folder',
-                        title: t('wizard.world.folder'),
-                      }).then((path) => path && setWorld({ importPath: path }))
-                    }
-                  >
-                    {tc('actions.browse')}
-                  </Button>
-                </div>
+                <Input
+                  {...p}
+                  value={w.seed}
+                  onChange={(e) => setWorld({ seed: e.target.value })}
+                  className="[&_input]:font-mono"
+                  placeholder={t('wizard.world.seedPlaceholder')}
+                  rightSlot={
+                    <IconButton
+                      size="sm"
+                      label={t('wizard.world.randomSeed')}
+                      icon={<Dices />}
+                      onClick={() => setWorld({ seed: randomSeed() })}
+                    />
+                  }
+                />
               )}
             </Field>
-          )}
-          {w.kind === 'from_instance' && (
-            <div className="grid gap-3 sm:grid-cols-2">
-              <Field label={t('wizard.world.instance')}>
-                {(p) => (
+            <Field label={t('wizard.world.levelType')}>
+              {(p) => (
+                <Select
+                  id={p.id}
+                  value={w.levelType}
+                  onValueChange={(v) =>
+                    setWorld({ levelType: v as WizardState['world']['levelType'] })
+                  }
+                  options={(['default', 'flat', 'large_biomes', 'amplified'] as const).map((v) => ({
+                    value: v,
+                    label: t(`wizard.world.levelTypes.${v}`),
+                  }))}
+                />
+              )}
+            </Field>
+            <Field label={t('wizard.world.gamemode')}>
+              {(p) => (
+                <Select
+                  id={p.id}
+                  value={w.gamemode}
+                  onValueChange={(v) =>
+                    setWorld({ gamemode: v as WizardState['world']['gamemode'] })
+                  }
+                  options={(['survival', 'creative', 'adventure'] as const).map((v) => ({
+                    value: v,
+                    label: t(`wizard.world.gamemodes.${v}`),
+                  }))}
+                />
+              )}
+            </Field>
+            <Field label={t('wizard.world.difficulty')}>
+              {(p) => (
+                <Select
+                  id={p.id}
+                  value={w.hardcore ? 'hard' : w.difficulty}
+                  disabled={w.hardcore}
+                  onValueChange={(v) =>
+                    setWorld({ difficulty: v as WizardState['world']['difficulty'] })
+                  }
+                  options={(['peaceful', 'easy', 'normal', 'hard'] as const).map((v) => ({
+                    value: v,
+                    label: t(`wizard.world.difficulties.${v}`),
+                  }))}
+                />
+              )}
+            </Field>
+            <div className="border-border flex flex-col justify-center gap-2.5 rounded-lg border px-3 py-2">
+              <label className="flex items-center justify-between gap-3 text-sm">
+                {t('wizard.world.structures')}
+                <Switch
+                  checked={w.structures}
+                  onCheckedChange={(v) => setWorld({ structures: v })}
+                />
+              </label>
+              <label className="flex items-center justify-between gap-3 text-sm">
+                {t('wizard.world.hardcore')}
+                <Switch checked={w.hardcore} onCheckedChange={(v) => setWorld({ hardcore: v })} />
+              </label>
+            </div>
+          </div>
+        )}
+        {w.kind === 'import' && (
+          <Field
+            label={t('wizard.world.folder')}
+            error={err('importPath') ? t('wizard.errors.importPath') : undefined}
+          >
+            {(p) => (
+              <div className="flex gap-2">
+                <Input
+                  {...p}
+                  className="flex-1 [&_input]:font-mono"
+                  value={w.importPath}
+                  onChange={(e) => setWorld({ importPath: e.target.value })}
+                  placeholder="C:/Users/…/saves/My World"
+                />
+                <Button
+                  leftIcon={<FolderOpen />}
+                  onClick={() =>
+                    void invoke('app_pick_path', {
+                      kind: 'folder',
+                      title: t('wizard.world.folder'),
+                    }).then((path) => path && setWorld({ importPath: path }))
+                  }
+                >
+                  {tc('actions.browse')}
+                </Button>
+              </div>
+            )}
+          </Field>
+        )}
+        {w.kind === 'from_instance' && (
+          <div className="grid gap-4 @xl:grid-cols-2">
+            <Field label={t('wizard.world.instance')}>
+              {(p) => (
+                <Select
+                  id={p.id}
+                  value={w.instanceId || undefined}
+                  placeholder={t('wizard.world.pickInstance')}
+                  onValueChange={(v) => setWorld({ instanceId: v, worldId: '' })}
+                  options={(instances ?? []).map((i) => ({ value: i.id, label: i.name }))}
+                />
+              )}
+            </Field>
+            <Field
+              label={t('wizard.world.world')}
+              error={err('world') ? t('wizard.errors.world') : undefined}
+            >
+              {(p) =>
+                worlds.isLoading ? (
+                  <Skeleton className="h-9" />
+                ) : (
                   <Select
                     id={p.id}
-                    value={w.instanceId || undefined}
-                    placeholder={t('wizard.world.pickInstance')}
-                    onValueChange={(v) => setWorld({ instanceId: v, worldId: '' })}
-                    options={(instances ?? []).map((i) => ({ value: i.id, label: i.name }))}
+                    value={w.worldId || undefined}
+                    disabled={!w.instanceId || !worlds.data?.length}
+                    placeholder={
+                      w.instanceId && worlds.data?.length === 0
+                        ? t('wizard.world.noWorlds')
+                        : t('wizard.world.pickWorld')
+                    }
+                    onValueChange={(v) => setWorld({ worldId: v })}
+                    options={(worlds.data ?? []).map((x) => ({
+                      value: x.id,
+                      label: x.name,
+                      description: t(
+                        `wizard.world.gamemodes.${x.mode === 'hardcore' || x.mode === 'spectator' ? 'survival' : x.mode}`,
+                      ),
+                    }))}
                   />
-                )}
-              </Field>
-              <Field
-                label={t('wizard.world.world')}
-                error={err('world') ? t('wizard.errors.world') : undefined}
-              >
-                {(p) =>
-                  worlds.isLoading ? (
-                    <Skeleton className="h-9" />
-                  ) : (
-                    <Select
-                      id={p.id}
-                      value={w.worldId || undefined}
-                      disabled={!w.instanceId || !worlds.data?.length}
-                      placeholder={
-                        w.instanceId && worlds.data?.length === 0
-                          ? t('wizard.world.noWorlds')
-                          : t('wizard.world.pickWorld')
-                      }
-                      onValueChange={(v) => setWorld({ worldId: v })}
-                      options={(worlds.data ?? []).map((x) => ({
-                        value: x.id,
-                        label: x.name,
-                        description: t(
-                          `wizard.world.gamemodes.${x.mode === 'hardcore' || x.mode === 'spectator' ? 'survival' : x.mode}`,
-                        ),
-                      }))}
-                    />
-                  )
-                }
-              </Field>
-            </div>
-          )}
-        </fieldset>
+                )
+              }
+            </Field>
+          </div>
+        )}
+      </WizardSection>
 
-        {state.engine === 'rustic' && (
-          <fieldset className="flex flex-col gap-2">
-            <legend className="mb-1 text-sm font-medium">
-              {t('wizard.basics.starterPlugins')}
-            </legend>
-            <p className="text-fg-muted text-xs">{t('wizard.basics.starterHint')}</p>
-            {starters.isLoading && <Skeleton className="h-24" />}
-            <ul className="flex flex-col gap-1">
-              {starters.data?.map((pl) => {
-                const on = state.starterPlugins.includes(pl.id);
-                return (
-                  <li key={pl.id}>
-                    <label className="hover:bg-surface-2 flex cursor-pointer items-start gap-3 rounded-lg px-2 py-2">
-                      <Checkbox
-                        className="mt-0.5"
-                        checked={on}
-                        onCheckedChange={(v) =>
-                          update({
-                            starterPlugins: v
-                              ? [...state.starterPlugins, pl.id]
-                              : state.starterPlugins.filter((x) => x !== pl.id),
-                          })
-                        }
-                      />
-                      <span className="flex min-w-0 flex-1 flex-col">
-                        <span className="text-sm font-medium">
-                          {pl.name}{' '}
-                          <span className="text-fg-subtle font-mono text-xs">{pl.version}</span>
-                        </span>
-                        <span className="text-fg-muted text-xs">{pl.description}</span>
+      {state.engine === 'rustic' && (
+        <WizardSection
+          icon={<Blocks />}
+          title={t('wizard.basics.starterPlugins')}
+          hint={t('wizard.basics.starterHint')}
+        >
+          {starters.isLoading && <Skeleton className="h-24" />}
+          <ul className="grid gap-2 @2xl:grid-cols-2">
+            {starters.data?.map((pl) => {
+              const on = state.starterPlugins.includes(pl.id);
+              return (
+                <li key={pl.id}>
+                  <label
+                    className={cn(
+                      'flex h-full cursor-pointer items-start gap-3 rounded-xl border p-3 transition-colors',
+                      'has-[:focus-visible]:ring-accent/50 has-[:focus-visible]:ring-2',
+                      on
+                        ? 'border-accent/50 bg-accent-soft/50'
+                        : 'border-border hover:bg-surface-2/70',
+                    )}
+                  >
+                    <Checkbox
+                      className="mt-0.5"
+                      checked={on}
+                      onCheckedChange={(v) =>
+                        update({
+                          starterPlugins: v
+                            ? [...state.starterPlugins, pl.id]
+                            : state.starterPlugins.filter((x) => x !== pl.id),
+                        })
+                      }
+                    />
+                    <span className="flex min-w-0 flex-1 flex-col gap-1">
+                      <span className="text-sm font-medium">
+                        {pl.name}{' '}
+                        <span className="text-fg-subtle font-mono text-xs">{pl.version}</span>
                       </span>
-                      <span className="flex shrink-0 flex-wrap justify-end gap-1">
+                      <span className="text-fg-muted text-xs">{pl.description}</span>
+                      <span className="flex flex-wrap gap-1 pt-0.5">
                         <Badge
                           variant={pl.capabilities.network ? 'warning' : 'neutral'}
                           icon={<Network />}
@@ -467,46 +482,62 @@ export function BasicsStep({ state, update, errors, showErrors }: StepProps) {
                             : t('wizard.basics.capDataFolder')}
                         </Badge>
                       </span>
-                    </label>
-                  </li>
-                );
-              })}
-            </ul>
-          </fieldset>
-        )}
+                    </span>
+                  </label>
+                </li>
+              );
+            })}
+          </ul>
+        </WizardSection>
+      )}
 
-        <div
-          className={cn(
-            'flex flex-col gap-1 rounded-lg border p-3',
-            err('eula') ? 'border-danger/60' : 'border-border',
-          )}
-        >
-          <label className="flex cursor-pointer items-start gap-3 text-sm">
-            <Checkbox
-              className="mt-0.5"
-              checked={state.eulaAccepted}
-              onCheckedChange={(v) => update({ eulaAccepted: v === true })}
-              aria-describedby="eula-hint"
-              data-testid="wizard-eula"
-            />
-            <span>{t('wizard.basics.eula')}</span>
-          </label>
-          <div className="flex items-center gap-2 pl-7">
-            <p id="eula-hint" className="text-fg-subtle text-xs">
+      <section
+        aria-labelledby="eula-title"
+        className={cn(
+          'flex flex-col gap-3 rounded-2xl border p-5 transition-colors',
+          err('eula')
+            ? 'border-danger/60 bg-danger/5'
+            : state.eulaAccepted
+              ? 'border-success/40 bg-success/5'
+              : 'border-border bg-surface/70',
+        )}
+        data-testid="wizard-eula-block"
+      >
+        <div className="flex items-start gap-3">
+          <span
+            aria-hidden
+            className="bg-surface-3 text-fg grid size-8 shrink-0 place-items-center rounded-lg [&_svg]:size-4"
+          >
+            <Scale />
+          </span>
+          <div className="flex min-w-0 flex-1 flex-col gap-1 pt-0.5">
+            <h3 id="eula-title" className="text-sm font-semibold">
+              {t('wizard.basics.eulaTitle')}
+            </h3>
+            <p id="eula-hint" className="text-fg-muted max-w-[70ch] text-sm leading-relaxed">
               {t('wizard.basics.eulaHint')}
             </p>
-            <Button
-              variant="link"
-              size="sm"
-              rightIcon={<ExternalLink />}
-              onClick={() => void invoke('app_open_url', { url: EULA_URL })}
-            >
-              {t('wizard.basics.eulaRead')}
-            </Button>
           </div>
-          <FieldError msg={err('eula')} />
+          <Button
+            variant="secondary"
+            size="sm"
+            rightIcon={<ExternalLink />}
+            onClick={() => void invoke('app_open_url', { url: EULA_URL })}
+          >
+            {t('wizard.basics.eulaRead')}
+          </Button>
         </div>
-      </div>
+        <label className="bg-surface-2/70 hover:bg-surface-2 flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors">
+          <Checkbox
+            checked={state.eulaAccepted}
+            onCheckedChange={(v) => update({ eulaAccepted: v === true })}
+            aria-describedby="eula-hint"
+            data-testid="wizard-eula"
+          />
+          <span>{t('wizard.basics.eula')}</span>
+        </label>
+        <FieldError msg={err('eula')} />
+      </section>
     </div>
   );
 }

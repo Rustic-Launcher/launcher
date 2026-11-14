@@ -264,6 +264,7 @@
       "broken": "Repair required"
     },
     "progress": {
+      "updating": "Updating…",
       "downloading": "Downloading {{pct}}",
       "checking": "Checking files…",
       "preparing": "Preparing…",
@@ -412,6 +413,25 @@
       "label": "Layout",
       "list": "List",
       "grid": "Grid"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Updating {{pct}}",
+      "installing": "Installing the update…",
+      "restarting": "Restarting…",
+      "deferred": "Update after your game",
+      "apply": "Update and restart"
+    },
+    "toast": {
+      "launcher": "Downloading Rustic Launcher {{version}}…",
+      "edition": "Updating the game (Rustic edition)…",
+      "editionDone": "Game updated: {{version}}",
+      "deferred": "An update is ready. It installs when you close the game.",
+      "restarting": "Rustic Launcher restarts to finish the update.",
+      "updated": "Rustic Launcher updated to {{version}}",
+      "resuming": "Update done: launching your game",
+      "failed": "The update could not be installed. It will be retried later."
     }
   }
 }

@@ -1,12 +1,13 @@
-import { cn, IconButton } from '@rustic/ui';
+import { cn } from '@rustic/ui';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
 /**
  * A themed row of cards (Discover: "New", "Popular on Horizon"...): a title, an optional
- * "See all", and a horizontal, snap-scrolling list with previous/next buttons that page by the
- * visible width. Children are the `<li>` items (use {@link CardRowItem}).
+ * "See all", and a horizontal, snap-scrolling list without a scrollbar: round previous/next
+ * arrows on its edges page by the visible width (shown while there is more that way). Children
+ * are the `<li>` items (use {@link CardRowItem}).
  */
 export function CardRow({
   title,
@@ -90,34 +91,79 @@ export function CardRow({
               <ArrowRight className="size-3.5" aria-hidden />
             </button>
           )}
-          <IconButton
-            size="sm"
-            variant="secondary"
-            label={t('catalog.row.scrollPrev')}
-            icon={<ChevronLeft />}
-            disabled={edges.start}
-            onClick={() => page(-1)}
-            tabIndex={-1}
-          />
-          <IconButton
-            size="sm"
-            variant="secondary"
-            label={t('catalog.row.scrollNext')}
-            icon={<ChevronRight />}
-            disabled={edges.end}
-            onClick={() => page(1)}
-            tabIndex={-1}
-          />
         </div>
       </div>
-      <ul
-        ref={scroller}
-        onScroll={measure}
-        className="-mx-1 flex snap-x snap-mandatory scroll-px-1 [scrollbar-width:thin] gap-4 overflow-x-auto px-1 pt-1 pb-3"
-      >
-        {children}
-      </ul>
+      <div className="group/row relative">
+        <ul
+          ref={scroller}
+          onScroll={measure}
+          className="-mx-1 flex snap-x snap-mandatory scroll-px-1 [scrollbar-width:none] gap-4 overflow-x-auto px-1 pt-1 pb-3 [&::-webkit-scrollbar]:hidden"
+        >
+          {children}
+        </ul>
+        <RowArrow
+          side="prev"
+          hidden={edges.start}
+          label={t('catalog.row.scrollPrev')}
+          onClick={() => page(-1)}
+          testId={testId ? `${testId}-prev` : undefined}
+        />
+        <RowArrow
+          side="next"
+          hidden={edges.end}
+          label={t('catalog.row.scrollNext')}
+          onClick={() => page(1)}
+          testId={testId ? `${testId}-next` : undefined}
+        />
+      </div>
     </section>
+  );
+}
+
+/** A round arrow over one edge of a {@link CardRow}, on a fade into the page. */
+function RowArrow({
+  side,
+  hidden,
+  label,
+  onClick,
+  testId,
+}: {
+  side: 'prev' | 'next';
+  hidden: boolean;
+  label: string;
+  onClick: () => void;
+  testId?: string;
+}) {
+  const prev = side === 'prev';
+  return (
+    <div
+      className={cn(
+        'pointer-events-none absolute inset-y-0 flex w-16 items-center pb-2 transition-opacity duration-200',
+        prev
+          ? 'from-surface -left-1 justify-start bg-gradient-to-r to-transparent pl-1'
+          : 'from-surface -right-1 justify-end bg-gradient-to-l to-transparent pr-1',
+        hidden ? 'opacity-0' : 'opacity-100',
+      )}
+    >
+      <button
+        type="button"
+        aria-label={label}
+        onClick={onClick}
+        disabled={hidden}
+        tabIndex={-1}
+        data-testid={testId}
+        className={cn(
+          'rx-focus-ring bg-surface-3/95 border-border text-fg hover:bg-accent hover:border-accent grid size-10 place-items-center rounded-full border shadow-lg backdrop-blur transition-colors hover:text-white',
+          hidden ? 'pointer-events-none' : 'pointer-events-auto',
+        )}
+      >
+        {prev ? (
+          <ChevronLeft className="size-5" aria-hidden />
+        ) : (
+          <ChevronRight className="size-5" aria-hidden />
+        )}
+      </button>
+    </div>
   );
 }
 

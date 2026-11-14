@@ -1,0 +1,341 @@
+{
+  "title": "Versioner",
+  "errors": {
+    "action": "Det fungerade inte"
+  },
+  "card": {
+    "more": "Fler åtgärder för {{name}}",
+    "pin": "Fäst",
+    "unpin": "Lossa",
+    "duplicate": "Duplicera",
+    "duplicated": "{{name}} har skapats",
+    "playtime": "Speltid",
+    "never": "Aldrig",
+    "fromModpack": "Modpaket {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Körs",
+    "installing": "Installeras",
+    "broken": "Behöver repareras"
+  },
+  "delete": {
+    "title": "Ta bort {{name}}?",
+    "body": "Dess moddar, inställningar och världar raderas från den här datorn. Det går inte att ångra.",
+    "confirm": "Ta bort instansen",
+    "done": "{{name}} har tagits bort"
+  },
+  "new": {
+    "title": "Ny instans",
+    "description": "Börja från början eller ta med ett befintligt paket.",
+    "tabs": {
+      "create": "Skapa",
+      "import": "Importera"
+    },
+    "name": "Namn",
+    "namePlaceholder": "Min överlevnadsvärld",
+    "nameRequired": "Ge instansen ett namn.",
+    "icon": "Ikon",
+    "color": "Färg",
+    "colorN": "Färg {{n}}",
+    "version": "Horizon-version",
+    "versionHint": "Rustic-utgåvan lägger till kosmetika och vänner i spelet. Inga inställningar för Java eller RAM behövs.",
+    "recommended": "Rekommenderas",
+    "release": "Stabil",
+    "nightly": "Nightly",
+    "installed": "Installerad",
+    "submit": "Skapa instans",
+    "created": "{{name}} är klar",
+    "preview": "Förhandsvisning",
+    "edition": "Utgåva",
+    "editionRustic": "Kosmetika, vänner och native-moddar i spelet.",
+    "editionHorizon": "Horizon som teamet publicerar det, inget tillagt.",
+    "noBuild": "Ingen version av den här utgåvan finns just nu.",
+    "nightlyHint": "Nightly-versioner kommer varje dag från Horizons senaste kod: nyare, mindre testade."
+  },
+  "icons": {
+    "grass": "Grodd",
+    "sword": "Svärd",
+    "pickaxe": "Hacka",
+    "castle": "Slott",
+    "rocket": "Raket",
+    "gem": "Ädelsten",
+    "flame": "Låga",
+    "leaf": "Löv",
+    "star": "Stjärna",
+    "compass": "Kompass"
+  },
+  "import": {
+    "folder": {
+      "title": "Instansmapp",
+      "description": "En instansmapp från Prism eller MultiMC, porterad på samma sätt som Horizon gör."
+    },
+    "mrpack": {
+      "title": "Modrinth-paket (.mrpack)",
+      "description": "Moddar matchas mot sina Horizon-versioner när sådana finns."
+    },
+    "curseforge_zip": {
+      "title": "CurseForge-zip",
+      "description": "Ett exporterat modpaket från CurseForge."
+    },
+    "modpack": {
+      "title": "Från ett modpaket",
+      "description": "Bläddra bland modpaket från Horizon, Modrinth och Rustic."
+    },
+    "started": "Importerar {{name}}",
+    "background": "Det fortsätter i bakgrunden; du kan fortsätta använda launchern.",
+    "note": "Bara innehåll som fungerar på Horizon installeras; resten listas med orsaken.",
+    "drop": {
+      "title": "Släpp ett paket eller en instansmapp här",
+      "hint": "Modrinth-.mrpack, CurseForge-.zip eller en instansmapp från Prism eller MultiMC",
+      "choose": "Välj en fil",
+      "active": "Släpp för att importera",
+      "unsupported": "Det här kan inte importeras. Använd en .mrpack, en CurseForge-.zip eller en instansmapp."
+    },
+    "formats": "Format som stöds"
+  },
+  "detail": {
+    "notFound": "Den här instansen finns inte längre",
+    "backToList": "Tillbaka till instanser",
+    "tabsLabel": "Instansavsnitt",
+    "tabs": {
+      "overview": "Översikt",
+      "content": "Innehåll",
+      "resourcepacks": "Resurspaket",
+      "worlds": "Världar",
+      "settings": "Inställningar"
+    }
+  },
+  "overview": {
+    "mods": "Moddar",
+    "resourcePacks": "Resurspaket",
+    "shaders": "Shaderpaket",
+    "version": "Horizon-version",
+    "updateAvailable": "Uppdatering tillgänglig",
+    "upToDate": "Uppdaterad",
+    "updateNow": "Uppdatera nu",
+    "changeVersion": "Välj en Horizon-version",
+    "applyVersion": "Byt version",
+    "versionChanging": "Byter till {{version}}",
+    "lastSession": "Senaste session",
+    "lastPlayed": "Spelades {{when}}",
+    "neverPlayed": "Inte spelad än",
+    "rejoin": "Anslut igen",
+    "noServer": "Ingen server har anslutits från den här instansen än.",
+    "created": "Skapad",
+    "folder": "Mapp"
+  },
+  "content": {
+    "filter": "Filtrera efter typ",
+    "kinds": {
+      "all": "Alla",
+      "mod": "Moddar",
+      "resourcepack": "Resurspaket",
+      "shader": "Shaders"
+    },
+    "search": "Sök installerat innehåll",
+    "updateAll_one": "Uppdatera {{count}} objekt",
+    "updateAll_other": "Uppdatera {{count}} objekt",
+    "browse": "Bläddra bland innehåll",
+    "noMatch": "Inget installerat matchar din sökning.",
+    "empty": {
+      "title": "Inget installerat än",
+      "description": "Hitta moddar, resurspaket och shaders som fungerar med den här instansen."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Lokal fil"
+    },
+    "updateTo": "Uppdatering: {{version}}",
+    "incompatible": "Inkompatibelt: {{reason}}",
+    "updateOne": "Uppdatera {{name}}",
+    "toggle": "Aktivera {{name}}",
+    "remove": "Ta bort {{name}}",
+    "removeTitle": "Ta bort {{name}}?",
+    "removeBody": "Filen raderas från den här instansen. Du kan installera den igen från Innehåll."
+  },
+  "packs": {
+    "hint": "Paketen överst vinner när två paket ändrar samma sak.",
+    "listLabel": "Inläsningsordning för resurspaket",
+    "top": "Högst prioritet",
+    "up": "Flytta upp {{name}}",
+    "down": "Flytta ner {{name}}",
+    "moved": "{{name}} har flyttats till plats {{position}} av {{total}}",
+    "browse": "Hitta resurspaket",
+    "empty": {
+      "title": "Inget resurspaket",
+      "description": "Lägg till paket för att ändra texturer, ljud och gränssnittet."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Ingen värld än",
+      "description": "Världar du skapar i spelet visas här."
+    },
+    "openSaves": "Öppna mappen med sparade världar",
+    "lastPlayed": "Spelades {{when}}",
+    "modes": {
+      "survival": "Överlevnad",
+      "creative": "Kreativt",
+      "adventure": "Äventyr",
+      "hardcore": "Hardcore",
+      "spectator": "Åskådare"
+    },
+    "datapacks_one": "{{count}} datapaket",
+    "datapacks_other": "{{count}} datapaket",
+    "play": "Spela den här världen",
+    "addDatapacks": "Lägg till datapaket"
+  },
+  "settings": {
+    "general": "Allmänt",
+    "display": "Fönster",
+    "useDefaultResolution": "Använd standardstorleken för fönstret",
+    "defaultIs": "Standard: {{width}} × {{height}}",
+    "width": "Bredd",
+    "height": "Höjd",
+    "fullscreen": "Starta i helskärm",
+    "resolutionError": "Använd heltal, minst 640 × 360.",
+    "launch": "Startalternativ",
+    "launchHint": "Horizon-instanser låser bara en version: det finns ingen Java, RAM eller laddare att ställa in.",
+    "gameArgs": "Extra spelargument",
+    "gameArgsHint": "Avancerat. Skickas till Horizon som de är.",
+    "folders": "Mappar",
+    "folder": {
+      "root": "Instans",
+      "mods": "Moddar",
+      "resourcepacks": "Resurspaket",
+      "shaderpacks": "Shaderpaket",
+      "saves": "Världar",
+      "screenshots": "Skärmbilder",
+      "logs": "Loggar"
+    },
+    "unsaved": "Du har osparade ändringar.",
+    "allSaved": "Alla ändringar har sparats.",
+    "saved": "Instansinställningarna har sparats"
+  },
+  "heading": "Dina *profiler*",
+  "native": {
+    "title": "Native-moddar",
+    "allOff": "Alla avstängda: instansen spelar det förbyggda spelet.",
+    "state": {
+      "building": "Bygger…",
+      "up_to_date": "Uppdaterad",
+      "needs_rebuild": "Behöver byggas om",
+      "not_built": "Inte byggd",
+      "not_needed": "Förbyggt spel"
+    },
+    "build": "Bygg",
+    "rebuild": "Bygg om",
+    "cancel": "Avbryt",
+    "progress": "Förlopp för native-bygget",
+    "starting": "Startar…",
+    "firstBuildHint": "Första bygget kompilerar hela spelet (10 till 15 minuter); senare byggen bara det som ändrats. Du kan fortsätta använda launchern.",
+    "failed": "Det senaste bygget misslyckades",
+    "built": "Byggd {{date}} på {{duration}} · spel {{size}}",
+    "leftOut": {
+      "other": "{{name}} utelämnades: den gäller inte för den här Horizon.",
+      "unsupported": "{{name}} utelämnades: Rustic kan inte bygga det den behöver än."
+    },
+    "notEdition": "Den här instansen spelar en vanlig Horizon-version: native-moddar byggs bara in i Rustic-utgåvan."
+  },
+  "profiles": {
+    "summary_one": "{{count}} profil · {{playtime}} spelat",
+    "summary_other": "{{count}} profiler · {{playtime}} spelat",
+    "searchLabel": "Sök bland dina profiler",
+    "searchPlaceholder": "Sök på namn, Horizon-version eller modpaket…",
+    "source": {
+      "label": "Visa",
+      "all": "Alla profiler",
+      "custom": "Mina profiler",
+      "modpack": "Från modpaket"
+    },
+    "sorts": {
+      "recent": "Senast spelad",
+      "name": "Namn",
+      "created": "Nyligen skapad",
+      "version": "Horizon-version",
+      "playtime": "Speltid"
+    },
+    "filters": {
+      "version": "Horizon-version",
+      "edition": "Utgåva",
+      "editions": {
+        "rustic": "Rustic-utgåvan",
+        "horizon": "Vanlig Horizon"
+      },
+      "native": "Native-moddar",
+      "nativeOnly": "Har native-moddar",
+      "nativeHint": "Native-moddar kompileras på din dator innan spelet startar.",
+      "remove": "Ta bort filtret: {{filter}}",
+      "reset": "Återställ filter"
+    },
+    "create": "Skapa profil",
+    "createHint": "En Horizon-version, en ikon och ett namn",
+    "import": "Importera",
+    "importHint": "En mapp, en .mrpack eller en CurseForge-zip",
+    "all": "Alla profiler",
+    "listLabel": "Profiler",
+    "recent": "Hoppa in igen",
+    "recentHint": "Dina senast spelade profiler",
+    "card": {
+      "active": "Aktiv",
+      "activeHint": "Launchpad spelar den här profilen",
+      "running": "Körs",
+      "pinned": "Fäst",
+      "update": "Uppdatera {{version}}",
+      "broken": "Behöver repareras",
+      "modpack": "Modpaket",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Spelades {{when}}",
+      "neverPlayed": "Inte spelad än",
+      "created": "Skapad {{date}}",
+      "lastServer": "Senast på {{name}}",
+      "rejoin": "Anslut igen",
+      "rejoinAria": "Anslut till {{server}} igen med {{name}}",
+      "mods": "Moddar",
+      "packs": "Resurspaket",
+      "shaders": "Shaders",
+      "playtime": "Speltid",
+      "contentCount": "{{mods}} moddar · {{packs}} paket · {{shaders}} shaders",
+      "open": "Öppna {{name}}"
+    },
+    "native": {
+      "label": "Native-moddar",
+      "count_one": "{{count}} native-mod",
+      "count_other": "{{count}} native-moddar",
+      "building": "Bygger {{pct}}",
+      "buildingNoPct": "Bygger…",
+      "up_to_date": "Native-moddar klara",
+      "needs_rebuild": "Native: behöver byggas om",
+      "not_built": "Native: inte byggd än",
+      "off": "Native-moddar avstängda",
+      "unsupported": "Native: kräver Rustic-utgåvan",
+      "hint": {
+        "up_to_date": "Byggd på den här datorn för den här Horizon-versionen.",
+        "needs_rebuild": "Moddarna har ändrats sedan senaste bygget: det byggs om när du spelar.",
+        "not_built": "Kompileras på din dator när du spelar (10 till 15 minuter första gången).",
+        "off": "Alla native-moddar är avstängda: det förbyggda spelet spelas.",
+        "unsupported": "Den här profilen spelar en vanlig Horizon-version: native-moddar byggs bara in i Rustic-utgåvan.",
+        "building": "Kompilerar spelet med den här profilens native-moddar."
+      }
+    },
+    "menu": {
+      "edit": "Redigera inställningar",
+      "activate": "Använd på Launchpad",
+      "isActive": "Används på Launchpad",
+      "activated": "{{name}} finns nu på Launchpad"
+    },
+    "empty": {
+      "title": "Ingen profil än",
+      "description": "En profil är en Horizon-version med egna moddar, paket och världar. Skapa en med den rekommenderade versionen, eller importera ett paket du redan har."
+    },
+    "noMatch": {
+      "title": "Ingen profil matchar",
+      "description": "Prova en annan sökning eller ta bort ett filter."
+    },
+    "detail": {
+      "banner": "Omslagsbild för {{name}}"
+    }
+  }
+}

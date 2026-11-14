@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "greeting": "おかえりなさい、{{name}}さん",
+    "greetingAnon": "Rustic へようこそ",
+    "continue": "続きから：{{name}}・{{when}}にプレイ",
+    "continueNew": "準備完了：{{name}}",
+    "firstRun": "3 つのステップでゲームの準備をしましょう。",
+    "playNow": "今すぐプレイ",
+    "updateAndPlay": "更新してプレイ",
+    "resumeServer": "{{server}} に再接続",
+    "switch": "インスタンスを切り替え",
+    "stats": {
+      "playtime": "プレイ時間 {{time}}",
+      "mods_other": "MOD {{count}} 個",
+      "friends_other": "フレンド {{count}} 人がオンライン"
+    },
+    "steps": {
+      "signIn": "ゲームを所有している Microsoft アカウントでログイン",
+      "prepare": "お使いのインストールからゲームファイルを準備",
+      "create": "最初のインスタンスを作成"
+    },
+    "getReady": "ゲームの準備",
+    "openLocker": "ロッカー",
+    "player": "待機中のあなたのプレイヤー（コスメティック未装備）",
+    "playerWearing": "待機中のあなたのプレイヤー、装備中：{{items}}"
+  },
+  "recent": {
+    "title": "最近のサーバーとワールド",
+    "unknown": "状態不明",
+    "online": "オンライン・{{online}}/{{max}}",
+    "offline": "オフライン",
+    "world": "ワールド・ローカル",
+    "joining": "{{name}} に参加中…",
+    "opening": "{{name}} を開いています…",
+    "removed": "{{name}} をサーバーリストから削除しました",
+    "playAria": "{{name}} をプレイ",
+    "more": "{{name}} のその他の操作",
+    "copyAddress": "アドレスをコピー",
+    "addServer": "サーバーを追加",
+    "empty": "参加したサーバーやプレイしたワールドがここに表示されます。"
+  },
+  "news": {
+    "title": "ニュースとアップデート",
+    "empty": "現在ニュースはありません。",
+    "slide": "{{total}} 件中 {{index}} 件目",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "リリースノート",
+      "event": "イベント",
+      "blog": "記事"
+    },
+    "readNotes": "リリースノートを読む",
+    "read": "読む"
+  },
+  "friends": {
+    "title": "現在のフレンド",
+    "empty": "現在プレイ中のフレンドはいません。",
+    "since": "{{when}}から",
+    "activity": {
+      "server": "{{server}} でプレイ中",
+      "hosting": "{{server}} をホスト中",
+      "singleplayer": "ソロでプレイ中",
+      "launcher": "ランチャーを使用中"
+    }
+  },
+  "featured": {
+    "title": "注目のサーバー",
+    "verified": "認証済みサーバー",
+    "players": "プレイヤー {{online}} / {{max}}",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "新着コスメティック",
+    "owned": "所有済み"
+  },
+  "launchpad": {
+    "welcome": "*おかえりなさい*、",
+    "playAs": "プレイするアカウント",
+    "online": "人が注目のサーバーでオンライン",
+    "heroLabel": "起動",
+    "instanceSettings": "インスタンス設定",
+    "news": "最新ニュース",
+    "unread_other": "（未読 {{count}} 件）",
+    "unreadDot": "未読",
+    "explore": "ソースを探索",
+    "aside": "サーバーとフレンド",
+    "joinServer": "{{name}} に参加",
+    "friendsOnline_other": "（{{count}} 人オンライン）",
+    "openSocial": "ソーシャルを開く",
+    "noNews": "まだニュースはありません。",
+    "noFriendsOnline": "現在オンラインのフレンドはいません。",
+    "socialHint": "チャット、招待、パーティーはソーシャルウィンドウにあります。",
+    "eyebrow": "Launchpad"
+  }
+}

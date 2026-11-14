@@ -1,0 +1,337 @@
+{
+  "title": "版本",
+  "errors": {
+    "action": "操作未成功"
+  },
+  "card": {
+    "more": "{{name}} 的更多操作",
+    "pin": "置顶",
+    "unpin": "取消置顶",
+    "duplicate": "复制",
+    "duplicated": "已创建 {{name}}",
+    "playtime": "游戏时长",
+    "never": "从未",
+    "fromModpack": "整合包 {{name}} {{version}}"
+  },
+  "state": {
+    "running": "运行中",
+    "installing": "安装中",
+    "broken": "需要修复"
+  },
+  "delete": {
+    "title": "要删除 {{name}} 吗？",
+    "body": "它的模组、设置和世界将从这台电脑上删除。此操作无法撤销。",
+    "confirm": "删除实例",
+    "done": "已删除 {{name}}"
+  },
+  "new": {
+    "title": "新建实例",
+    "description": "从头开始，或导入已有的整合包。",
+    "tabs": {
+      "create": "创建",
+      "import": "导入"
+    },
+    "name": "名称",
+    "namePlaceholder": "我的生存世界",
+    "nameRequired": "请为实例命名。",
+    "icon": "图标",
+    "color": "颜色",
+    "colorN": "颜色 {{n}}",
+    "version": "Horizon 版本",
+    "versionHint": "Rustic 版在游戏中加入了装扮和好友功能。无需设置 Java 或内存。",
+    "recommended": "推荐",
+    "release": "正式版",
+    "nightly": "每夜版",
+    "installed": "已安装",
+    "submit": "创建实例",
+    "created": "{{name}} 已就绪",
+    "preview": "预览",
+    "edition": "版本类型",
+    "editionRustic": "游戏内的装扮、好友和原生模组。",
+    "editionHorizon": "Horizon 团队发布的原版 Horizon，不添加任何内容。",
+    "noBuild": "目前没有此版本类型的构建。",
+    "nightlyHint": "每夜版每天由 Horizon 最新代码构建：更新，但测试较少。"
+  },
+  "icons": {
+    "grass": "幼苗",
+    "sword": "双剑",
+    "pickaxe": "镐",
+    "castle": "城堡",
+    "rocket": "火箭",
+    "gem": "宝石",
+    "flame": "火焰",
+    "leaf": "树叶",
+    "star": "星星",
+    "compass": "指南针"
+  },
+  "import": {
+    "folder": {
+      "title": "实例文件夹",
+      "description": "Prism 或 MultiMC 的实例文件夹，按 Horizon 的方式移植。"
+    },
+    "mrpack": {
+      "title": "Modrinth 整合包（.mrpack）",
+      "description": "如有对应的 Horizon 版本，模组会自动匹配。"
+    },
+    "curseforge_zip": {
+      "title": "CurseForge zip",
+      "description": "从 CurseForge 导出的整合包。"
+    },
+    "modpack": {
+      "title": "从整合包",
+      "description": "浏览 Horizon、Modrinth 和 Rustic 整合包。"
+    },
+    "started": "正在导入 {{name}}",
+    "background": "导入会在后台继续；你可以继续使用启动器。",
+    "note": "只会安装能在 Horizon 上运行的内容；其余内容会列出并注明原因。",
+    "drop": {
+      "title": "将整合包或实例文件夹拖放到这里",
+      "hint": "Modrinth 的 .mrpack、CurseForge 的 .zip，或 Prism / MultiMC 实例文件夹",
+      "choose": "选择文件",
+      "active": "松开即可导入",
+      "unsupported": "无法导入此项。请使用 .mrpack、CurseForge 的 .zip 或实例文件夹。"
+    },
+    "formats": "支持的格式"
+  },
+  "detail": {
+    "notFound": "此实例已不存在",
+    "backToList": "返回实例列表",
+    "tabsLabel": "实例分区",
+    "tabs": {
+      "overview": "概览",
+      "content": "内容",
+      "resourcepacks": "资源包",
+      "worlds": "世界",
+      "settings": "设置"
+    }
+  },
+  "overview": {
+    "mods": "模组",
+    "resourcePacks": "资源包",
+    "shaders": "光影包",
+    "version": "Horizon 版本",
+    "updateAvailable": "有可用更新",
+    "upToDate": "已是最新",
+    "updateNow": "立即更新",
+    "changeVersion": "选择 Horizon 版本",
+    "applyVersion": "切换版本",
+    "versionChanging": "正在切换到 {{version}}",
+    "lastSession": "上次游戏",
+    "lastPlayed": "{{when}}玩过",
+    "neverPlayed": "尚未游玩",
+    "rejoin": "重新加入",
+    "noServer": "尚未通过此实例加入任何服务器。",
+    "created": "创建时间",
+    "folder": "文件夹"
+  },
+  "content": {
+    "filter": "按类型筛选",
+    "kinds": {
+      "all": "全部",
+      "mod": "模组",
+      "resourcepack": "资源包",
+      "shader": "光影"
+    },
+    "search": "搜索已安装的内容",
+    "updateAll_other": "更新 {{count}} 项",
+    "browse": "浏览内容",
+    "noMatch": "没有与你的搜索匹配的已安装内容。",
+    "empty": {
+      "title": "还没有安装任何内容",
+      "description": "查找适用于此实例的模组、资源包和光影。"
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "本地文件"
+    },
+    "updateTo": "更新：{{version}}",
+    "incompatible": "不兼容：{{reason}}",
+    "updateOne": "更新 {{name}}",
+    "toggle": "启用 {{name}}",
+    "remove": "移除 {{name}}",
+    "removeTitle": "要移除 {{name}} 吗？",
+    "removeBody": "该文件将从此实例中删除。你可以在“内容”中重新安装。"
+  },
+  "packs": {
+    "hint": "当两个资源包修改同一内容时，靠上的资源包优先。",
+    "listLabel": "资源包加载顺序",
+    "top": "最高优先级",
+    "up": "上移 {{name}}",
+    "down": "下移 {{name}}",
+    "moved": "{{name}} 已移至第 {{position}} 位，共 {{total}} 位",
+    "browse": "查找资源包",
+    "empty": {
+      "title": "没有资源包",
+      "description": "添加资源包来更改纹理、声音和界面。"
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "还没有世界",
+      "description": "你在游戏中创建的世界会显示在这里。"
+    },
+    "openSaves": "打开存档文件夹",
+    "lastPlayed": "{{when}}玩过",
+    "modes": {
+      "survival": "生存",
+      "creative": "创造",
+      "adventure": "冒险",
+      "hardcore": "极限",
+      "spectator": "旁观"
+    },
+    "datapacks_other": "{{count}} 个数据包",
+    "play": "游玩此世界",
+    "addDatapacks": "添加数据包"
+  },
+  "settings": {
+    "general": "常规",
+    "display": "窗口",
+    "useDefaultResolution": "使用默认窗口大小",
+    "defaultIs": "默认：{{width}} × {{height}}",
+    "width": "宽度",
+    "height": "高度",
+    "fullscreen": "以全屏模式启动",
+    "resolutionError": "请使用整数，至少为 640 × 360。",
+    "launch": "启动选项",
+    "launchHint": "Horizon 实例只需锁定一个版本：无需设置 Java、内存或加载器。",
+    "gameArgs": "额外游戏参数",
+    "gameArgsHint": "高级选项。原样传递给 Horizon。",
+    "folders": "文件夹",
+    "folder": {
+      "root": "实例",
+      "mods": "模组",
+      "resourcepacks": "资源包",
+      "shaderpacks": "光影包",
+      "saves": "世界",
+      "screenshots": "截图",
+      "logs": "日志"
+    },
+    "unsaved": "你有未保存的更改。",
+    "allSaved": "所有更改已保存。",
+    "saved": "实例设置已保存"
+  },
+  "heading": "你的*配置*",
+  "native": {
+    "title": "原生模组",
+    "allOff": "已全部关闭：此实例运行预编译的游戏。",
+    "state": {
+      "building": "正在编译…",
+      "up_to_date": "已是最新",
+      "needs_rebuild": "需要重新编译",
+      "not_built": "未编译",
+      "not_needed": "预编译游戏"
+    },
+    "build": "编译",
+    "rebuild": "重新编译",
+    "cancel": "取消",
+    "progress": "原生编译进度",
+    "starting": "正在开始…",
+    "firstBuildHint": "首次编译会编译整个游戏（10 到 15 分钟）；之后只编译改动的部分。你可以继续使用启动器。",
+    "failed": "上次编译失败",
+    "built": "{{date}}编译，耗时 {{duration}} · 游戏 {{size}}",
+    "leftOut": {
+      "other": "已跳过 {{name}}：它不适用于此 Horizon。",
+      "unsupported": "已跳过 {{name}}：Rustic 暂时还无法编译它所需的内容。"
+    },
+    "notEdition": "此实例运行的是普通 Horizon 版本：原生模组只能编译进 Rustic 版。"
+  },
+  "profiles": {
+    "summary_other": "{{count}} 个配置 · 已游玩 {{playtime}}",
+    "searchLabel": "搜索你的配置",
+    "searchPlaceholder": "按名称、Horizon 版本或整合包搜索…",
+    "source": {
+      "label": "显示",
+      "all": "全部配置",
+      "custom": "我的配置",
+      "modpack": "来自整合包"
+    },
+    "sorts": {
+      "recent": "最近游玩",
+      "name": "名称",
+      "created": "最近创建",
+      "version": "Horizon 版本",
+      "playtime": "游戏时长"
+    },
+    "filters": {
+      "version": "Horizon 版本",
+      "edition": "版本类型",
+      "editions": {
+        "rustic": "Rustic 版",
+        "horizon": "普通 Horizon"
+      },
+      "native": "原生模组",
+      "nativeOnly": "含原生模组",
+      "nativeHint": "原生模组会在游戏启动前在你的电脑上编译。",
+      "remove": "移除筛选条件：{{filter}}",
+      "reset": "重置筛选"
+    },
+    "create": "创建配置",
+    "createHint": "一个 Horizon 版本、一个图标和一个名称",
+    "import": "导入",
+    "importHint": "文件夹、.mrpack 或 CurseForge zip",
+    "all": "全部配置",
+    "listLabel": "配置",
+    "recent": "继续游玩",
+    "recentHint": "你最近游玩的配置",
+    "card": {
+      "active": "当前",
+      "activeHint": "Launchpad 会启动此配置",
+      "running": "运行中",
+      "pinned": "已置顶",
+      "update": "更新 {{version}}",
+      "broken": "需要修复",
+      "modpack": "整合包",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "{{when}}玩过",
+      "neverPlayed": "尚未游玩",
+      "created": "创建于 {{date}}",
+      "lastServer": "上次在 {{name}}",
+      "rejoin": "重新加入",
+      "rejoinAria": "使用 {{name}} 重新加入 {{server}}",
+      "mods": "模组",
+      "packs": "资源包",
+      "shaders": "光影",
+      "playtime": "游戏时长",
+      "contentCount": "{{mods}} 个模组 · {{packs}} 个资源包 · {{shaders}} 个光影",
+      "open": "打开 {{name}}"
+    },
+    "native": {
+      "label": "原生模组",
+      "count_other": "{{count}} 个原生模组",
+      "building": "正在编译 {{pct}}",
+      "buildingNoPct": "正在编译…",
+      "up_to_date": "原生模组已就绪",
+      "needs_rebuild": "原生：需要重新编译",
+      "not_built": "原生：尚未编译",
+      "off": "原生模组已关闭",
+      "unsupported": "原生：需要 Rustic 版",
+      "hint": {
+        "up_to_date": "已在这台电脑上为此 Horizon 版本编译。",
+        "needs_rebuild": "自上次编译后模组有变动：游玩时会重新编译。",
+        "not_built": "游玩时在你的电脑上编译（首次需要 10 到 15 分钟）。",
+        "off": "所有原生模组均已关闭：运行预编译的游戏。",
+        "unsupported": "此配置运行的是普通 Horizon 版本：原生模组只能编译进 Rustic 版。",
+        "building": "正在使用此配置的原生模组编译游戏。"
+      }
+    },
+    "menu": {
+      "edit": "编辑设置",
+      "activate": "在 Launchpad 上使用",
+      "isActive": "已在 Launchpad 上使用",
+      "activated": "{{name}} 现已显示在 Launchpad 上"
+    },
+    "empty": {
+      "title": "还没有配置",
+      "description": "配置是一个 Horizon 版本，拥有独立的模组、资源包和世界。使用推荐版本创建一个，或导入你已有的整合包。"
+    },
+    "noMatch": {
+      "title": "没有匹配的配置",
+      "description": "换个搜索词试试，或移除一个筛选条件。"
+    },
+    "detail": {
+      "banner": "{{name}} 的封面"
+    }
+  }
+}

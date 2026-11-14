@@ -1,7 +1,9 @@
 """Static Inter weights for the title menu's text (`rustic-companion` draws it anti-aliased with
 ab_glyph): run `python make_fonts.py <@fontsource-variable/inter folder>`. Inter is SIL OFL 1.1
 (The Inter Project Authors); its licence ships beside the fonts (`Inter-LICENSE.txt`). Needs
-fontTools and brotli. Latin and Latin Extended only (the menu's French and English).
+fontTools and brotli. Latin, Latin Extended, Cyrillic (+ extended), Greek and Vietnamese: the
+scripts of the translated in-game tables (ADR 0161). Chinese, Japanese and Korean come from the
+system's own fonts at run time (`canvas.rs`, `cjk_fallback`), never bundled.
 """
 import sys
 from pathlib import Path
@@ -13,7 +15,14 @@ from fontTools.varLib import instancer
 src = Path(sys.argv[1]) / "files"
 for weight, name in [(500, "Inter-Medium.ttf"), (600, "Inter-SemiBold.ttf")]:
     parts = []
-    for subset in ["latin", "latin-ext"]:
+    for subset in [
+        "latin",
+        "latin-ext",
+        "cyrillic",
+        "cyrillic-ext",
+        "greek",
+        "vietnamese",
+    ]:
         font = TTFont(src / f"inter-{subset}-wght-normal.woff2")
         static = instancer.instantiateVariableFont(font, {"wght": weight})
         static.flavor = None

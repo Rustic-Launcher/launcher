@@ -48,7 +48,7 @@ import {
   totalPlaytime,
   type ProfileSource,
 } from './logic';
-import { NewInstanceSheet } from './NewInstanceSheet';
+import { NewInstanceDialog } from './NewInstanceDialog';
 import { useNativeOverview } from './queries';
 import { instancesRoute, type InstancesSearch } from './routes';
 
@@ -197,20 +197,16 @@ export function InstancesPage() {
             >
               {t('profiles.import')}
             </Button>
-            <button
-              type="button"
+            <Button
+              variant="primary"
+              className="h-11"
+              leftIcon={<Plus />}
               onClick={() => openSheet('create')}
               data-testid="new-instance"
-              className="rx-focus-ring border-accent/50 bg-accent-soft text-accent-text hover:bg-accent/20 flex h-11 items-center gap-2.5 rounded-xl border px-4 text-left text-sm font-semibold transition-colors"
+              title={t('profiles.createHint')}
             >
-              <Plus className="size-4" aria-hidden />
-              <span className="flex flex-col leading-tight">
-                {t('profiles.create')}
-                <span className="text-fg-muted text-2xs font-medium max-[1100px]:hidden">
-                  {t('profiles.createHint')}
-                </span>
-              </span>
-            </button>
+              {t('profiles.create')}
+            </Button>
           </>
         }
       />
@@ -388,7 +384,7 @@ export function InstancesPage() {
           )}
         </section>
       )}
-      <NewInstanceSheet
+      <NewInstanceDialog
         open={sheet !== null}
         initialTab={sheet ?? 'create'}
         onOpenChange={(open) => openSheet(open ? (sheet ?? 'create') : null)}

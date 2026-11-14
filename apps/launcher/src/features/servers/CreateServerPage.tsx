@@ -14,6 +14,7 @@ import { serverKeys } from './list/queries';
 import { AccessStep } from './wizard/AccessStep';
 import { BasicsStep } from './wizard/BasicsStep';
 import { HostingStep } from './wizard/HostingStep';
+import { ServerPreview } from './wizard/ServerPreview';
 import {
   buildCreateRequest,
   canProceed,
@@ -126,7 +127,7 @@ export function CreateServerPage() {
   const doneTab = state.domainAfter ? 'access' : undefined;
 
   return (
-    <Page>
+    <Page wide>
       <PageHeader
         title={
           result ? t('wizard.creatingTitle', { name: result.server.name }) : t('wizard.heading')
@@ -139,91 +140,108 @@ export function CreateServerPage() {
           steps={stepTitles}
           current={step}
           stepLabel={(i, n) => t('wizard.stepOf', { index: i, total: n })}
-          className="max-w-3xl"
+          className="rx-surface w-full rounded-2xl px-4 py-2.5"
         />
       )}
 
-      <Card variant="glass" padding="lg" className="overflow-hidden">
-        {result ? (
-          result.server.hosting.mode === 'vps' ? (
-            <VpsInstallProgress
-              server={result.server}
-              taskId={result.task_id}
-              host={result.server.hosting.host}
-              tab={doneTab}
-            />
+      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_17rem] xl:grid-cols-[minmax(0,1fr)_20rem]">
+        <div className="@container flex min-w-0 flex-col gap-4">
+          {result ? (
+            <Card variant="glass" padding="lg" className="overflow-hidden">
+              {result.server.hosting.mode === 'vps' ? (
+                <VpsInstallProgress
+                  server={result.server}
+                  taskId={result.task_id}
+                  host={result.server.hosting.host}
+                  tab={doneTab}
+                />
+              ) : (
+                <LocalProgress server={result.server} taskId={result.task_id} tab={doneTab} />
+              )}
+            </Card>
           ) : (
-            <LocalProgress server={result.server} taskId={result.task_id} tab={doneTab} />
-          )
-        ) : (
-          <>
-            <h2 className="mb-5 text-lg font-semibold">{stepTitles[step]}</h2>
-            <AnimatePresence mode="wait" initial={false} custom={dir}>
-              <motion.div
-                key={current}
-                initial={{ opacity: 0, x: dir * 24 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: dir * -24 }}
-                transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              >
-                {current === 'basics' && (
-                  <BasicsStep
-                    state={state}
-                    update={update}
-                    errors={errors}
-                    showErrors={showErrors}
-                  />
+            <>
+              <header className="flex flex-col gap-0.5 px-1" data-testid="wizard-step-header">
+                <h2 className="text-fg text-xl font-semibold tracking-tight">
+                  <span className="text-accent-text mr-2 font-mono text-base tabular-nums">
+                    {step + 1}/{WIZARD_STEPS.length}
+                  </span>
+                  {stepTitles[step]}
+                </h2>
+                <p className="text-fg-muted text-sm">{t(`wizard.stepHints.${current}`)}</p>
+              </header>
+              <AnimatePresence mode="wait" initial={false} custom={dir}>
+                <motion.div
+                  key={current}
+                  initial={{ opacity: 0, x: dir * 24 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: dir * -24 }}
+                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {current === 'basics' && (
+                    <BasicsStep
+                      state={state}
+                      update={update}
+                      errors={errors}
+                      showErrors={showErrors}
+                    />
+                  )}
+                  {current === 'hosting' && (
+                    <HostingStep
+                      state={state}
+                      update={update}
+                      errors={errors}
+                      showErrors={showErrors}
+                    />
+                  )}
+                  {current === 'access' && (
+                    <AccessStep state={state} update={update} vpsHost={vpsHost} />
+                  )}
+                </motion.div>
+              </AnimatePresence>
+              <div className="border-border bg-bg/85 sticky bottom-0 z-10 -mx-1 flex flex-wrap items-center justify-between gap-3 rounded-2xl border px-4 py-3 backdrop-blur-md">
+                <Button
+                  variant="ghost"
+                  onClick={() =>
+                    step === 0
+                      ? dirty
+                        ? setConfirmDiscard(true)
+                        : void navigate({ to: '/servers' })
+                      : go(step - 1)
+                  }
+                  leftIcon={<ArrowLeft />}
+                >
+                  {step === 0 ? tc('actions.cancel') : tc('actions.back')}
+                </Button>
+                {showErrors && Object.keys(errors).length > 0 && (
+                  <p role="alert" className="text-danger-text flex-1 text-center text-sm">
+                    {t('wizard.fixErrors')}
+                  </p>
                 )}
-                {current === 'hosting' && (
-                  <HostingStep
-                    state={state}
-                    update={update}
-                    errors={errors}
-                    showErrors={showErrors}
-                  />
-                )}
-                {current === 'access' && (
-                  <AccessStep state={state} update={update} vpsHost={vpsHost} />
-                )}
-              </motion.div>
-            </AnimatePresence>
-            {showErrors && Object.keys(errors).length > 0 && (
-              <p role="alert" className="text-danger-text mt-4 text-sm">
-                {t('wizard.fixErrors')}
-              </p>
-            )}
-            <div className="border-border mt-6 flex items-center justify-between gap-3 border-t pt-5">
-              <Button
-                variant="ghost"
-                onClick={() =>
-                  step === 0
-                    ? dirty
-                      ? setConfirmDiscard(true)
-                      : void navigate({ to: '/servers' })
-                    : go(step - 1)
-                }
-                leftIcon={<ArrowLeft />}
-              >
-                {step === 0 ? tc('actions.cancel') : tc('actions.back')}
-              </Button>
-              <Button
-                variant="primary"
-                size="lg"
-                onClick={next}
-                loading={create.isPending}
-                rightIcon={step === WIZARD_STEPS.length - 1 ? <Rocket /> : <ArrowRight />}
-                data-testid="wizard-next"
-              >
-                {step === WIZARD_STEPS.length - 1
-                  ? state.hosting === 'vps'
-                    ? t('wizard.installOn', { host: vpsHost ?? '' })
-                    : t('wizard.create')
-                  : tc('actions.next')}
-              </Button>
-            </div>
-          </>
-        )}
-      </Card>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  onClick={next}
+                  loading={create.isPending}
+                  rightIcon={step === WIZARD_STEPS.length - 1 ? <Rocket /> : <ArrowRight />}
+                  data-testid="wizard-next"
+                >
+                  {step === WIZARD_STEPS.length - 1
+                    ? state.hosting === 'vps'
+                      ? t('wizard.installOn', { host: vpsHost ?? '' })
+                      : t('wizard.create')
+                    : tc('actions.next')}
+                </Button>
+              </div>
+            </>
+          )}
+        </div>
+        <ServerPreview
+          state={result ? { ...state, name: result.server.name } : state}
+          vpsHost={vpsHost}
+          className="max-lg:hidden lg:sticky lg:top-4"
+        />
+      </div>
 
       <Dialog
         open={confirmDiscard || blocker.status === 'blocked'}

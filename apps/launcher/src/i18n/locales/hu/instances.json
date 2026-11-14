@@ -1,0 +1,341 @@
+{
+  "title": "Verziók",
+  "errors": {
+    "action": "Ez nem sikerült"
+  },
+  "card": {
+    "more": "További műveletek – {{name}}",
+    "pin": "Rögzítés",
+    "unpin": "Rögzítés feloldása",
+    "duplicate": "Duplikálás",
+    "duplicated": "{{name}} létrehozva",
+    "playtime": "Játékidő",
+    "never": "Soha",
+    "fromModpack": "Modcsomag: {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Fut",
+    "installing": "Telepítés",
+    "broken": "Javítás szükséges"
+  },
+  "delete": {
+    "title": "{{name}} törlése?",
+    "body": "A modjai, beállításai és világai törlődnek erről a gépről. Ez nem vonható vissza.",
+    "confirm": "Példány törlése",
+    "done": "{{name}} törölve"
+  },
+  "new": {
+    "title": "Új példány",
+    "description": "Kezdj tisztán, vagy hozz egy meglévő csomagot.",
+    "tabs": {
+      "create": "Létrehozás",
+      "import": "Importálás"
+    },
+    "name": "Név",
+    "namePlaceholder": "Túlélő világom",
+    "nameRequired": "Adj nevet a példánynak.",
+    "icon": "Ikon",
+    "color": "Szín",
+    "colorN": "{{n}}. szín",
+    "version": "Horizon-build",
+    "versionHint": "A Rustic kiadás kozmetikumokat és barátokat hoz a játékba. Nincs szükség Java- vagy RAM-beállításokra.",
+    "recommended": "Ajánlott",
+    "release": "Stabil",
+    "nightly": "Nightly",
+    "installed": "Telepítve",
+    "submit": "Példány létrehozása",
+    "created": "{{name}} elkészült",
+    "preview": "Előnézet",
+    "edition": "Kiadás",
+    "editionRustic": "Kozmetikumok, barátok és natív modok a játékban.",
+    "editionHorizon": "A Horizon úgy, ahogy a csapata kiadja, kiegészítések nélkül.",
+    "noBuild": "Ebből a kiadásból jelenleg nincs elérhető build.",
+    "nightlyHint": "A Nightly buildek naponta készülnek a Horizon legfrissebb kódjából: újabbak, de kevésbé teszteltek."
+  },
+  "icons": {
+    "grass": "Hajtás",
+    "sword": "Kardok",
+    "pickaxe": "Csákány",
+    "castle": "Kastély",
+    "rocket": "Rakéta",
+    "gem": "Drágakő",
+    "flame": "Láng",
+    "leaf": "Levél",
+    "star": "Csillag",
+    "compass": "Iránytű"
+  },
+  "import": {
+    "folder": {
+      "title": "Példánymappa",
+      "description": "Prism- vagy MultiMC-példánymappa, úgy átvéve, ahogy a Horizon teszi."
+    },
+    "mrpack": {
+      "title": "Modrinth-csomag (.mrpack)",
+      "description": "A modokat a Horizon-buildjeikhez párosítjuk, ha elérhetők."
+    },
+    "curseforge_zip": {
+      "title": "CurseForge zip",
+      "description": "Exportált CurseForge-modcsomag."
+    },
+    "modpack": {
+      "title": "Modcsomagból",
+      "description": "Horizon-, Modrinth- és Rustic-modcsomagok böngészése."
+    },
+    "started": "Importálás: {{name}}",
+    "background": "A háttérben folytatódik; közben használhatod a launchert.",
+    "note": "Csak a Horizonon működő tartalom települ; a többi az okkal együtt listázva lesz.",
+    "drop": {
+      "title": "Húzz ide egy csomagot vagy egy példánymappát",
+      "hint": "Modrinth .mrpack, CurseForge .zip vagy egy Prism- vagy MultiMC-példánymappa",
+      "choose": "Fájl kiválasztása",
+      "active": "Engedd el az importáláshoz",
+      "unsupported": "Ez nem importálható. Használj .mrpack fájlt, CurseForge .zip fájlt vagy egy példánymappát."
+    },
+    "formats": "Támogatott formátumok"
+  },
+  "detail": {
+    "notFound": "Ez a példány már nem létezik",
+    "backToList": "Vissza a példányokhoz",
+    "tabsLabel": "Példány részei",
+    "tabs": {
+      "overview": "Áttekintés",
+      "content": "Tartalom",
+      "resourcepacks": "Forráscsomagok",
+      "worlds": "Világok",
+      "settings": "Beállítások"
+    }
+  },
+  "overview": {
+    "mods": "Modok",
+    "resourcePacks": "Forráscsomagok",
+    "shaders": "Shadercsomagok",
+    "version": "Horizon-build",
+    "updateAvailable": "Frissítés érhető el",
+    "upToDate": "Naprakész",
+    "updateNow": "Frissítés most",
+    "changeVersion": "Horizon-build kiválasztása",
+    "applyVersion": "Buildváltás",
+    "versionChanging": "Váltás erre: {{version}}",
+    "lastSession": "Utolsó munkamenet",
+    "lastPlayed": "Utoljára játszva: {{when}}",
+    "neverPlayed": "Még nem játszottál vele",
+    "rejoin": "Újracsatlakozás",
+    "noServer": "Ebből a példányból még nem csatlakoztál szerverhez.",
+    "created": "Létrehozva",
+    "folder": "Mappa"
+  },
+  "content": {
+    "filter": "Szűrés típus szerint",
+    "kinds": {
+      "all": "Mind",
+      "mod": "Modok",
+      "resourcepack": "Forráscsomagok",
+      "shader": "Shaderek"
+    },
+    "search": "Telepített tartalom keresése",
+    "updateAll_one": "{{count}} elem frissítése",
+    "updateAll_other": "{{count}} elem frissítése",
+    "browse": "Tartalom böngészése",
+    "noMatch": "Egyetlen telepített elem sem felel meg a keresésnek.",
+    "empty": {
+      "title": "Még nincs semmi telepítve",
+      "description": "Keress modokat, forráscsomagokat és shadereket, amelyek működnek ezzel a példánnyal."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Helyi fájl"
+    },
+    "updateTo": "Frissítés: {{version}}",
+    "incompatible": "Nem kompatibilis: {{reason}}",
+    "updateOne": "{{name}} frissítése",
+    "toggle": "{{name}} bekapcsolása",
+    "remove": "{{name}} eltávolítása",
+    "removeTitle": "{{name}} eltávolítása?",
+    "removeBody": "A fájl törlődik ebből a példányból. A Tartalom alatt újra telepítheted."
+  },
+  "packs": {
+    "hint": "Ha két csomag ugyanazt módosítja, a felül lévő nyer.",
+    "listLabel": "Forráscsomagok betöltési sorrendje",
+    "top": "Legmagasabb prioritás",
+    "up": "{{name}} feljebb mozgatása",
+    "down": "{{name}} lejjebb mozgatása",
+    "moved": "{{name}} áthelyezve: {{position}}. hely / {{total}}",
+    "browse": "Forráscsomagok keresése",
+    "empty": {
+      "title": "Nincs forráscsomag",
+      "description": "Adj hozzá csomagokat a textúrák, hangok és a felület módosításához."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Még nincs világ",
+      "description": "A játékban létrehozott világok itt jelennek meg."
+    },
+    "openSaves": "Mentések mappájának megnyitása",
+    "lastPlayed": "Utoljára játszva: {{when}}",
+    "modes": {
+      "survival": "Túlélő",
+      "creative": "Kreatív",
+      "adventure": "Kaland",
+      "hardcore": "Hardcore",
+      "spectator": "Szemlélő"
+    },
+    "datapacks_one": "{{count}} adatcsomag",
+    "datapacks_other": "{{count}} adatcsomag",
+    "play": "Játék ebben a világban",
+    "addDatapacks": "Adatcsomagok hozzáadása"
+  },
+  "settings": {
+    "general": "Általános",
+    "display": "Ablak",
+    "useDefaultResolution": "Alapértelmezett ablakméret használata",
+    "defaultIs": "Alapértelmezett: {{width}} × {{height}}",
+    "width": "Szélesség",
+    "height": "Magasság",
+    "fullscreen": "Indítás teljes képernyőn",
+    "resolutionError": "Egész számokat használj, legalább 640 × 360.",
+    "launch": "Indítási beállítások",
+    "launchHint": "A Horizon-példányok csak egy buildet rögzítenek: nincs beállítandó Java, RAM vagy betöltő.",
+    "gameArgs": "További játékargumentumok",
+    "gameArgsHint": "Haladó. Változtatás nélkül kerül át a Horizonhoz.",
+    "folders": "Mappák",
+    "folder": {
+      "root": "Példány",
+      "mods": "Modok",
+      "resourcepacks": "Forráscsomagok",
+      "shaderpacks": "Shadercsomagok",
+      "saves": "Világok",
+      "screenshots": "Képernyőképek",
+      "logs": "Naplók"
+    },
+    "unsaved": "Nem mentett módosításaid vannak.",
+    "allSaved": "Minden módosítás mentve.",
+    "saved": "Példánybeállítások mentve"
+  },
+  "heading": "A *profiljaid*",
+  "native": {
+    "title": "Natív modok",
+    "allOff": "Mind ki van kapcsolva: a példány az előre lefordított játékot futtatja.",
+    "state": {
+      "building": "Fordítás…",
+      "up_to_date": "Naprakész",
+      "needs_rebuild": "Újrafordítás szükséges",
+      "not_built": "Nincs lefordítva",
+      "not_needed": "Előre lefordított játék"
+    },
+    "build": "Fordítás",
+    "rebuild": "Újrafordítás",
+    "cancel": "Mégse",
+    "progress": "Natív fordítás állapota",
+    "starting": "Indítás…",
+    "firstBuildHint": "Az első fordítás az egész játékot lefordítja (10–15 perc), a későbbiek csak a változásokat. Közben használhatod a launchert.",
+    "failed": "A legutóbbi fordítás nem sikerült",
+    "built": "Lefordítva: {{date}}, {{duration}} alatt · játék: {{size}}",
+    "leftOut": {
+      "other": "{{name}} kimaradt: nem vonatkozik erre a Horizonra.",
+      "unsupported": "{{name}} kimaradt: a Rustic még nem tudja lefordítani, amire szüksége van."
+    },
+    "notEdition": "Ez a példány sima Horizon-buildet futtat: natív modok csak a Rustic kiadásba fordíthatók be."
+  },
+  "profiles": {
+    "summary_one": "{{count}} profil · játékidő: {{playtime}}",
+    "summary_other": "{{count}} profil · játékidő: {{playtime}}",
+    "searchLabel": "Profiljaid keresése",
+    "searchPlaceholder": "Keresés név, Horizon-build vagy modcsomag alapján…",
+    "source": {
+      "label": "Megjelenítés",
+      "all": "Minden profil",
+      "custom": "Saját profiljaim",
+      "modpack": "Modcsomagokból"
+    },
+    "sorts": {
+      "recent": "Utoljára játszott",
+      "name": "Név",
+      "created": "Nemrég létrehozott",
+      "version": "Horizon-build",
+      "playtime": "Játékidő"
+    },
+    "filters": {
+      "version": "Horizon-build",
+      "edition": "Kiadás",
+      "editions": {
+        "rustic": "Rustic kiadás",
+        "horizon": "Sima Horizon"
+      },
+      "native": "Natív modok",
+      "nativeOnly": "Natív modokkal",
+      "nativeHint": "A natív modokat a játék indítása előtt a gépeden fordítjuk le.",
+      "remove": "Szűrő eltávolítása: {{filter}}",
+      "reset": "Szűrők visszaállítása"
+    },
+    "create": "Profil létrehozása",
+    "createHint": "Egy Horizon-build, egy ikon és egy név",
+    "import": "Importálás",
+    "importHint": "Mappa, .mrpack vagy CurseForge zip",
+    "all": "Minden profil",
+    "listLabel": "Profilok",
+    "recent": "Folytasd ott, ahol abbahagytad",
+    "recentHint": "Legutóbb játszott profiljaid",
+    "card": {
+      "active": "Aktív",
+      "activeHint": "A Launchpad ezt a profilt indítja",
+      "running": "Fut",
+      "pinned": "Rögzítve",
+      "update": "Frissítés: {{version}}",
+      "broken": "Javítás szükséges",
+      "modpack": "Modcsomag",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Utoljára játszva: {{when}}",
+      "neverPlayed": "Még nem játszottál vele",
+      "created": "Létrehozva: {{date}}",
+      "lastServer": "Utoljára itt: {{name}}",
+      "rejoin": "Újracsatlakozás",
+      "rejoinAria": "Újracsatlakozás ide: {{server}}, ezzel: {{name}}",
+      "mods": "Modok",
+      "packs": "Forráscsomagok",
+      "shaders": "Shaderek",
+      "playtime": "Játékidő",
+      "contentCount": "{{mods}} mod · {{packs}} csomag · {{shaders}} shader",
+      "open": "{{name}} megnyitása"
+    },
+    "native": {
+      "label": "Natív modok",
+      "count_one": "{{count}} natív mod",
+      "count_other": "{{count}} natív mod",
+      "building": "Fordítás: {{pct}}",
+      "buildingNoPct": "Fordítás…",
+      "up_to_date": "A natív modok készen állnak",
+      "needs_rebuild": "Natív: újrafordítás szükséges",
+      "not_built": "Natív: még nincs lefordítva",
+      "off": "Natív modok kikapcsolva",
+      "unsupported": "Natív: a Rustic kiadás szükséges",
+      "hint": {
+        "up_to_date": "Ezen a gépen lefordítva ehhez a Horizon-buildhez.",
+        "needs_rebuild": "A modok megváltoztak a legutóbbi fordítás óta: játékkor újrafordítjuk.",
+        "not_built": "Játékkor a gépeden fordítjuk le (először 10–15 perc).",
+        "off": "Minden natív mod ki van kapcsolva: az előre lefordított játék fut.",
+        "unsupported": "Ez a profil sima Horizon-buildet futtat: natív modok csak a Rustic kiadásba fordíthatók be.",
+        "building": "A játék fordítása ennek a profilnak a natív modjaival."
+      }
+    },
+    "menu": {
+      "edit": "Beállítások szerkesztése",
+      "activate": "Használat a Launchpadon",
+      "isActive": "A Launchpadon használt",
+      "activated": "{{name}} most már a Launchpadon van"
+    },
+    "empty": {
+      "title": "Még nincs profil",
+      "description": "A profil egy Horizon-build saját modokkal, csomagokkal és világokkal. Hozz létre egyet az ajánlott builddel, vagy importálj egy meglévő csomagot."
+    },
+    "noMatch": {
+      "title": "Nincs egyező profil",
+      "description": "Próbálj meg másik keresést, vagy távolíts el egy szűrőt."
+    },
+    "detail": {
+      "banner": "Borítókép: {{name}}"
+    }
+  }
+}

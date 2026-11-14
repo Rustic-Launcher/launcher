@@ -1,0 +1,337 @@
+{
+  "title": "バージョン",
+  "errors": {
+    "action": "うまくいきませんでした"
+  },
+  "card": {
+    "more": "{{name}} のその他の操作",
+    "pin": "ピン留め",
+    "unpin": "ピン留めを外す",
+    "duplicate": "複製",
+    "duplicated": "{{name}} を作成しました",
+    "playtime": "プレイ時間",
+    "never": "なし",
+    "fromModpack": "MODパック {{name}} {{version}}"
+  },
+  "state": {
+    "running": "実行中",
+    "installing": "インストール中",
+    "broken": "修復が必要"
+  },
+  "delete": {
+    "title": "{{name}} を削除しますか？",
+    "body": "MOD、設定、ワールドがこのコンピューターから削除されます。この操作は元に戻せません。",
+    "confirm": "インスタンスを削除",
+    "done": "{{name}} を削除しました"
+  },
+  "new": {
+    "title": "新しいインスタンス",
+    "description": "一から始めるか、既存のパックを取り込みます。",
+    "tabs": {
+      "create": "作成",
+      "import": "インポート"
+    },
+    "name": "名前",
+    "namePlaceholder": "サバイバルワールド",
+    "nameRequired": "インスタンスに名前を付けてください。",
+    "icon": "アイコン",
+    "color": "色",
+    "colorN": "色 {{n}}",
+    "version": "Horizon ビルド",
+    "versionHint": "Rustic エディションでは、ゲーム内でコスメティックとフレンド機能が使えます。Java や RAM の設定は不要です。",
+    "recommended": "おすすめ",
+    "release": "リリース",
+    "nightly": "ナイトリー",
+    "installed": "インストール済み",
+    "submit": "インスタンスを作成",
+    "created": "{{name}} の準備ができました",
+    "preview": "プレビュー",
+    "edition": "エディション",
+    "editionRustic": "ゲーム内のコスメティック、フレンド、ネイティブMOD。",
+    "editionHorizon": "Horizon チームが公開したままの Horizon。追加はありません。",
+    "noBuild": "現在、このエディションのビルドはありません。",
+    "nightlyHint": "ナイトリービルドは Horizon の最新コードから毎日作られます。新しい分、テストは少なめです。"
+  },
+  "icons": {
+    "grass": "芽",
+    "sword": "剣",
+    "pickaxe": "ツルハシ",
+    "castle": "城",
+    "rocket": "ロケット",
+    "gem": "宝石",
+    "flame": "炎",
+    "leaf": "葉",
+    "star": "星",
+    "compass": "コンパス"
+  },
+  "import": {
+    "folder": {
+      "title": "インスタンスフォルダー",
+      "description": "Prism または MultiMC のインスタンスフォルダー。Horizon と同じ方法で移行します。"
+    },
+    "mrpack": {
+      "title": "Modrinth パック（.mrpack）",
+      "description": "可能な場合、MOD は対応する Horizon ビルドに照合されます。"
+    },
+    "curseforge_zip": {
+      "title": "CurseForge zip",
+      "description": "エクスポートされた CurseForge の MODパック。"
+    },
+    "modpack": {
+      "title": "MODパックから",
+      "description": "Horizon、Modrinth、Rustic の MODパックを一覧で見る。"
+    },
+    "started": "{{name}} をインポートしています",
+    "background": "バックグラウンドで続行します。ランチャーはそのまま使えます。",
+    "note": "Horizon で動作するコンテンツのみインストールされます。それ以外は理由とともに一覧表示されます。",
+    "drop": {
+      "title": "MODパックまたはインスタンスフォルダーをここにドロップ",
+      "hint": "Modrinth の .mrpack、CurseForge の .zip、または Prism / MultiMC のインスタンスフォルダー",
+      "choose": "ファイルを選択",
+      "active": "離してインポート",
+      "unsupported": "これはインポートできません。.mrpack、CurseForge の .zip、またはインスタンスフォルダーを使ってください。"
+    },
+    "formats": "対応形式"
+  },
+  "detail": {
+    "notFound": "このインスタンスはもう存在しません",
+    "backToList": "インスタンス一覧に戻る",
+    "tabsLabel": "インスタンスのセクション",
+    "tabs": {
+      "overview": "概要",
+      "content": "コンテンツ",
+      "resourcepacks": "リソースパック",
+      "worlds": "ワールド",
+      "settings": "設定"
+    }
+  },
+  "overview": {
+    "mods": "MOD",
+    "resourcePacks": "リソースパック",
+    "shaders": "シェーダーパック",
+    "version": "Horizon ビルド",
+    "updateAvailable": "アップデートあり",
+    "upToDate": "最新の状態",
+    "updateNow": "今すぐ更新",
+    "changeVersion": "Horizon ビルドを選択",
+    "applyVersion": "ビルドを切り替え",
+    "versionChanging": "{{version}} に切り替えています",
+    "lastSession": "前回のセッション",
+    "lastPlayed": "{{when}}にプレイ",
+    "neverPlayed": "未プレイ",
+    "rejoin": "再接続",
+    "noServer": "このインスタンスからまだサーバーに参加していません。",
+    "created": "作成日",
+    "folder": "フォルダー"
+  },
+  "content": {
+    "filter": "種類で絞り込み",
+    "kinds": {
+      "all": "すべて",
+      "mod": "MOD",
+      "resourcepack": "リソースパック",
+      "shader": "シェーダー"
+    },
+    "search": "インストール済みのコンテンツを検索",
+    "updateAll_other": "{{count}} 件を更新",
+    "browse": "コンテンツを見る",
+    "noMatch": "検索に一致するインストール済みコンテンツはありません。",
+    "empty": {
+      "title": "まだ何もインストールされていません",
+      "description": "このインスタンスで動作する MOD、リソースパック、シェーダーを探しましょう。"
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "ローカルファイル"
+    },
+    "updateTo": "更新：{{version}}",
+    "incompatible": "互換性なし：{{reason}}",
+    "updateOne": "{{name}} を更新",
+    "toggle": "{{name}} を有効にする",
+    "remove": "{{name}} を削除",
+    "removeTitle": "{{name}} を削除しますか？",
+    "removeBody": "このインスタンスからファイルが削除されます。「コンテンツ」から再インストールできます。"
+  },
+  "packs": {
+    "hint": "2 つのパックが同じ要素を変更する場合、上にあるパックが優先されます。",
+    "listLabel": "リソースパックの読み込み順",
+    "top": "最優先",
+    "up": "{{name}} を上へ移動",
+    "down": "{{name}} を下へ移動",
+    "moved": "{{name}} を {{total}} 個中 {{position}} 番目に移動しました",
+    "browse": "リソースパックを探す",
+    "empty": {
+      "title": "リソースパックがありません",
+      "description": "パックを追加して、テクスチャー、サウンド、インターフェースを変更できます。"
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "まだワールドがありません",
+      "description": "ゲーム内で作成したワールドがここに表示されます。"
+    },
+    "openSaves": "saves フォルダーを開く",
+    "lastPlayed": "{{when}}にプレイ",
+    "modes": {
+      "survival": "サバイバル",
+      "creative": "クリエイティブ",
+      "adventure": "アドベンチャー",
+      "hardcore": "ハードコア",
+      "spectator": "スペクテイター"
+    },
+    "datapacks_other": "データパック {{count}} 個",
+    "play": "このワールドをプレイ",
+    "addDatapacks": "データパックを追加"
+  },
+  "settings": {
+    "general": "一般",
+    "display": "ウィンドウ",
+    "useDefaultResolution": "デフォルトのウィンドウサイズを使用",
+    "defaultIs": "デフォルト：{{width}} × {{height}}",
+    "width": "幅",
+    "height": "高さ",
+    "fullscreen": "フルスクリーンで起動",
+    "resolutionError": "640 × 360 以上の整数を入力してください。",
+    "launch": "起動オプション",
+    "launchHint": "Horizon のインスタンスはビルドを固定するだけです。Java、RAM、ローダーの設定はありません。",
+    "gameArgs": "追加のゲーム引数",
+    "gameArgsHint": "上級者向け。そのまま Horizon に渡されます。",
+    "folders": "フォルダー",
+    "folder": {
+      "root": "インスタンス",
+      "mods": "MOD",
+      "resourcepacks": "リソースパック",
+      "shaderpacks": "シェーダーパック",
+      "saves": "ワールド",
+      "screenshots": "スクリーンショット",
+      "logs": "ログ"
+    },
+    "unsaved": "保存されていない変更があります。",
+    "allSaved": "すべての変更を保存しました。",
+    "saved": "インスタンス設定を保存しました"
+  },
+  "heading": "あなたの*プロファイル*",
+  "native": {
+    "title": "ネイティブMOD",
+    "allOff": "すべてオフ：このインスタンスはビルド済みのゲームでプレイします。",
+    "state": {
+      "building": "ビルド中…",
+      "up_to_date": "最新の状態",
+      "needs_rebuild": "再ビルドが必要",
+      "not_built": "未ビルド",
+      "not_needed": "ビルド済みのゲーム"
+    },
+    "build": "ビルド",
+    "rebuild": "再ビルド",
+    "cancel": "キャンセル",
+    "progress": "ネイティブビルドの進行状況",
+    "starting": "開始中…",
+    "firstBuildHint": "初回のビルドではゲーム全体をコンパイルします（10〜15 分）。2 回目以降は変更部分のみです。ランチャーはそのまま使えます。",
+    "failed": "前回のビルドに失敗しました",
+    "built": "{{date}}に {{duration}} でビルド・ゲーム {{size}}",
+    "leftOut": {
+      "other": "{{name}} は除外されました。この Horizon には適用されません。",
+      "unsupported": "{{name}} は除外されました。必要なものを Rustic はまだビルドできません。"
+    },
+    "notEdition": "このインスタンスは通常の Horizon ビルドでプレイします。ネイティブMODは Rustic エディションにのみビルドされます。"
+  },
+  "profiles": {
+    "summary_other": "{{count}} 個のプロファイル・プレイ時間 {{playtime}}",
+    "searchLabel": "プロファイルを検索",
+    "searchPlaceholder": "名前、Horizon ビルド、MODパックで検索…",
+    "source": {
+      "label": "表示",
+      "all": "すべてのプロファイル",
+      "custom": "マイプロファイル",
+      "modpack": "MODパックから"
+    },
+    "sorts": {
+      "recent": "最近プレイした順",
+      "name": "名前",
+      "created": "最近作成した順",
+      "version": "Horizon ビルド",
+      "playtime": "プレイ時間"
+    },
+    "filters": {
+      "version": "Horizon ビルド",
+      "edition": "エディション",
+      "editions": {
+        "rustic": "Rustic エディション",
+        "horizon": "通常の Horizon"
+      },
+      "native": "ネイティブMOD",
+      "nativeOnly": "ネイティブMODあり",
+      "nativeHint": "ネイティブMODはゲームの起動前にあなたの PC でコンパイルされます。",
+      "remove": "フィルターを解除：{{filter}}",
+      "reset": "フィルターをリセット"
+    },
+    "create": "プロファイルを作成",
+    "createHint": "Horizon ビルド、アイコン、名前",
+    "import": "インポート",
+    "importHint": "フォルダー、.mrpack、または CurseForge の zip",
+    "all": "すべてのプロファイル",
+    "listLabel": "プロファイル",
+    "recent": "続きをプレイ",
+    "recentHint": "最近プレイしたプロファイル",
+    "card": {
+      "active": "使用中",
+      "activeHint": "Launchpad はこのプロファイルでプレイします",
+      "running": "実行中",
+      "pinned": "ピン留め済み",
+      "update": "{{version}} に更新",
+      "broken": "修復が必要",
+      "modpack": "MODパック",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "{{when}}にプレイ",
+      "neverPlayed": "未プレイ",
+      "created": "{{date}}に作成",
+      "lastServer": "前回：{{name}}",
+      "rejoin": "再接続",
+      "rejoinAria": "{{name}} で {{server}} に再接続",
+      "mods": "MOD",
+      "packs": "リソースパック",
+      "shaders": "シェーダー",
+      "playtime": "プレイ時間",
+      "contentCount": "MOD {{mods}}・パック {{packs}}・シェーダー {{shaders}}",
+      "open": "{{name}} を開く"
+    },
+    "native": {
+      "label": "ネイティブMOD",
+      "count_other": "ネイティブMOD {{count}} 個",
+      "building": "ビルド中 {{pct}}",
+      "buildingNoPct": "ビルド中…",
+      "up_to_date": "ネイティブMOD準備完了",
+      "needs_rebuild": "ネイティブ：再ビルドが必要",
+      "not_built": "ネイティブ：未ビルド",
+      "off": "ネイティブMODオフ",
+      "unsupported": "ネイティブ：Rustic エディションが必要",
+      "hint": {
+        "up_to_date": "この PC でこの Horizon ビルド向けにビルド済みです。",
+        "needs_rebuild": "前回のビルド以降に MOD が変更されました。プレイ時に再ビルドされます。",
+        "not_built": "プレイ時にあなたの PC でコンパイルされます（初回は 10〜15 分）。",
+        "off": "すべてのネイティブMODがオフです。ビルド済みのゲームでプレイします。",
+        "unsupported": "このプロファイルは通常の Horizon ビルドでプレイします。ネイティブMODは Rustic エディションにのみビルドされます。",
+        "building": "このプロファイルのネイティブMODを含めてゲームをコンパイルしています。"
+      }
+    },
+    "menu": {
+      "edit": "設定を編集",
+      "activate": "Launchpad で使用",
+      "isActive": "Launchpad で使用中",
+      "activated": "{{name}} を Launchpad に設定しました"
+    },
+    "empty": {
+      "title": "まだプロファイルがありません",
+      "description": "プロファイルとは、独自の MOD、パック、ワールドを持つ Horizon ビルドです。おすすめのビルドで作成するか、手持ちのパックをインポートしてください。"
+    },
+    "noMatch": {
+      "title": "一致するプロファイルがありません",
+      "description": "別のキーワードで検索するか、フィルターを解除してください。"
+    },
+    "detail": {
+      "banner": "{{name}} のカバー"
+    }
+  }
+}

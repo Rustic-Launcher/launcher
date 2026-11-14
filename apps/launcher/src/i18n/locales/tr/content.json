@@ -1,0 +1,470 @@
+{
+  "title": "Keşfet",
+  "subtitle": "Horizon, Modrinth ve Rustic’ten modlar, paketler, shader’lar ve eklentiler; örneğine göre kontrol edilmiş.",
+  "kindsLabel": "İçerik türleri",
+  "kinds": {
+    "mod": "Modlar",
+    "modpack": "Mod paketleri",
+    "resourcepack": "Kaynak paketleri",
+    "shader": "Shader’lar",
+    "datapack": "Veri paketleri",
+    "plugin": "Eklentiler"
+  },
+  "searchLabel": "İçerik ara",
+  "clear": "Aramayı temizle",
+  "by": "{{author}} tarafından",
+  "featured": "Öne çıkanlar",
+  "downloads": "{{value}} indirme",
+  "updated": "güncellendi: {{when}}",
+  "results_one": "{{count}} sonuç",
+  "results_other": "{{count}} sonuç",
+  "loadMore": "Daha fazla yükle ({{shown}} / {{total}})",
+  "target": {
+    "label": "Yükleme hedefi",
+    "none": "Bir hedef seç",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Horizon sunucusu",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "Bu bilgisayar",
+    "vps": "VPS’in",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Sırala",
+    "relevance": "Alaka düzeyi",
+    "downloads": "En çok indirilen",
+    "updated": "Son güncellenen",
+    "newest": "En yeni"
+  },
+  "sources": {
+    "label": "Kaynaklar",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Horizon kayıt deposu",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic kataloğu"
+  },
+  "filters": {
+    "category": "Kategori",
+    "allCategories": "Tüm kategoriler",
+    "compatibleInstance": "Bu örnekle uyumlu",
+    "compatibleServer": "Bu sunucuyla uyumlu",
+    "worksNow": "Mevcut Horizon’da derlenir",
+    "categories": "Kategoriler",
+    "viewMore_one": "{{count}} tane daha gör",
+    "viewMore_other": "{{count}} tane daha gör",
+    "viewLess": "Daha az gör",
+    "compatibility": "Uyumluluk",
+    "pluginHint": "Eklentiler yalnızca Rustic Server’da yalıtılmış olarak çalışır.",
+    "fairPlayHint": "Yalnızca adil oyun içeriği listelenir.",
+    "versions": "Horizon sürümleri",
+    "targetVersion": "Seçili örneğin veya sunucun",
+    "checkingAgainst": "Uyumluluk, vurgulanan derlemeye göre kontrol edilir.",
+    "rustic": "Rustic Marketplace",
+    "rusticHint": "Ücretli ve doğrulanmış projeler yalnızca Rustic’te bulunur.",
+    "verifiedOnly": "Yalnızca Rustic tarafından doğrulananlar",
+    "price": "Fiyat",
+    "priceOptions": {
+      "all": "Tümü",
+      "free": "Ücretsiz",
+      "paid": "Ücretli"
+    },
+    "reset": "Filtreleri sıfırla",
+    "remove": "Filtreyi kaldır: {{filter}}"
+  },
+  "categories": {
+    "performance": "Performans",
+    "utility": "Araçlar",
+    "ui": "Arayüz",
+    "pvp": "PvP",
+    "adventure": "Macera",
+    "decoration": "Dekorasyon",
+    "storage": "Depolama",
+    "worldgen": "Dünya oluşturma",
+    "library": "Kütüphane",
+    "tech": "Teknoloji",
+    "cozy": "Rahat",
+    "multiplayer": "Çok oyunculu",
+    "realistic": "Gerçekçi",
+    "simple": "Orijinale sadık",
+    "lightweight": "Hafif",
+    "cinematic": "Sinematik",
+    "qol": "Kullanım kolaylığı",
+    "admin": "Yönetim",
+    "chat": "Sohbet",
+    "minigames": "Mini oyunlar",
+    "protection": "Koruma",
+    "integration": "Entegrasyonlar"
+  },
+  "empty": {
+    "title": "Eşleşen bir şey yok",
+    "hint": "Başka bir kelime, kaynak veya kategori dene.",
+    "compatibleHint": "Yalnızca bu hedefte çalışan içerik gösteriliyor. Her şeyi görmek için filtreyi kapat.",
+    "showAll": "Uyumsuz sonuçları göster"
+  },
+  "banners": {
+    "mod": "Yalnızca adil oyun modları listelenir: X-ray, otomatik tıklayıcı veya başka haksız avantajlar yok.",
+    "modpack": "Bir mod paketi, kendi modları ve ayarlarıyla yeni bir örnek olur.",
+    "resourcepack": "Paketler üst üste biner: yükleme sırasında en üstteki kazanır.",
+    "shader": "Horizon kendi WGSL shader paketlerini (.hshader, shader API 0.1, deneysel) ve Horizon kayıt deposundaki Iris/OptiFine biçimli paketleri çalıştırır. Oyunda Görüntü Ayarları › Shader Paketleri altından birini seç.",
+    "datapack": "Veri paketleri bir dünyaya aittir: yüklerken dünyayı seçeceksin.",
+    "plugin": "Eklentiler (.rplugin), Rustic Server motorunu kullanan sunucularda yalıtılmış olarak çalışır. Hatalı bir eklenti devre dışı bırakılır; sunucu çalışmaya devam eder."
+  },
+  "resourcepacks": {
+    "manageOrder": "Yükleme sırasını yönet"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Iris/OptiFine biçimi"
+    },
+    "formatHint": {
+      "horizon": "Horizon’un kendi biçimi (.hshader), shader API 0.1 (deneysel). Çalışmadan önce kontrol edilir.",
+      "shaders_dir": "Iris/OptiFine biçiminde bir shaders/ paketi, Horizon’un ayrı yükleyicisiyle çalışır."
+    }
+  },
+  "side": {
+    "client": "İstemci",
+    "server": "Sunucu",
+    "both": "İstemci ve sunucu"
+  },
+  "install": {
+    "install": "Yükle",
+    "installAria": "{{name}} öğesini yükle, hedef: {{target}}",
+    "installed": "Yüklü",
+    "installing": "Yükleniyor…",
+    "installingPct": "Yükleniyor {{pct}}",
+    "createInstance": "Örnek oluştur",
+    "chooseWorld": "Bir dünyaya yükle",
+    "noTarget": "Önce nereye yükleneceğini seç.",
+    "started": "{{name}} yükleniyor, hedef: {{target}}",
+    "withDeps_one": "Artı {{count}} gerekli bağımlılık.",
+    "withDeps_other": "Artı {{count}} gerekli bağımlılık.",
+    "failed": "{{name}} yüklenemedi",
+    "native": "Derle ve yükle",
+    "update": "Güncelle",
+    "updateAria": "{{name}} öğesini güncelle: {{version}}"
+  },
+  "modpack": {
+    "created": "Örnek oluşturuluyor: {{name}}",
+    "createdHint": "İndirme sürüyor. Hazır olduğunda Oyna bölümünde görünecek."
+  },
+  "datapacks": {
+    "pickWorld": "Bir dünya seç",
+    "noWorlds": "Bu örnekte henüz dünya yok. Bir tane oluşturmak için bir kez oyna.",
+    "count_one": "{{count}} veri paketi",
+    "count_other": "{{count}} veri paketi"
+  },
+  "plugins": {
+    "badge": "Rustic Server eklentisi · API {{api}}",
+    "noServerTitle": "Henüz Rustic Server sunucun yok",
+    "noServerBody": "Eklentiler yalnızca Rustic Server motorunu kullanan sunucularda çalışır. Birkaç adımda bir tane oluştur, sonra eklenti yüklemek için geri gel.",
+    "createServer": "Sunucu oluştur"
+  },
+  "detail": {
+    "breadcrumb": "Konum",
+    "sections": "Proje bölümleri",
+    "tabs": {
+      "description": "Açıklama",
+      "gallery": "Galeri",
+      "versions": "Sürümler",
+      "changelog": "Değişiklik günlüğü",
+      "dependencies": "Bağımlılıklar",
+      "compatibility": "Uyumluluk"
+    },
+    "galleryLabel": "Galeri: {{name}}",
+    "prev": "Önceki görsel",
+    "next": "Sonraki görsel",
+    "slide": "Görsel {{index}} / {{total}}",
+    "about": "Bu proje hakkında",
+    "categories": "Kategoriler",
+    "links": "Bağlantılar",
+    "link": {
+      "source": "Kaynak kodu",
+      "issues": "Hata bildir",
+      "website": "Web sitesi",
+      "site": "rustic-launcher.com’da",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "Henüz değişiklik günlüğü yok.",
+    "noGallery": "Henüz ekran görüntüsü yok.",
+    "notAvailable": {
+      "title": "Bu proje kullanılamıyor",
+      "body": "Gizli olabilir, inceleme bekliyor olabilir ya da yaratıcısı veya bir moderatör tarafından kaldırılmış olabilir.",
+      "back": "Keşfet’e dön"
+    },
+    "native": {
+      "title": "Bilgisayarında derlenir",
+      "build": "İlk oynadığında bu profilin oyununa derlenir: yaklaşık 10–15 dakika, sonrasında daha hızlı.",
+      "review": "Kurulabilmeden önce Horizon kayıt defteri ya da Rustic yöneticileri tarafından incelenir.",
+      "consent": "Kısa bir uyarıyı okuyup kabul etmeden hiçbir şey derlenmez.",
+      "more": "Yerel modlar nasıl çalışır"
+    }
+  },
+  "report": {
+    "button": "Bildir",
+    "title": "Bildir: {{name}}",
+    "sent": "Bildirim gönderildi",
+    "sentBody": "Teşekkürler. Moderatörlerimiz inceleyecek.",
+    "reasons": {
+      "fair_play": "Adil oyun politikasını ihlal ediyor",
+      "malware": "Kötü amaçlı yazılım veya veri hırsızlığı",
+      "copyright": "Telif hakkı ihlali",
+      "other": "Başka bir şey"
+    },
+    "failed": "Bildirim gönderilemedi"
+  },
+  "versions": {
+    "version": "Sürüm",
+    "horizon": "Horizon derlemeleri",
+    "published": "Yayınlanma",
+    "downloads": "İndirmeler",
+    "compatibility": "Uyumluluk",
+    "actions": "İşlemler",
+    "none": "Yok",
+    "channel": {
+      "release": "Kararlı",
+      "beta": "Beta",
+      "alpha": "Alfa"
+    },
+    "empty": "Henüz kullanılabilir sürüm yok.",
+    "latest": "En yeni"
+  },
+  "deps": {
+    "none": "Bağımlılık yok.",
+    "relation": {
+      "required": "Gerekli",
+      "optional": "İsteğe bağlı",
+      "incompatible": "Uyumsuz"
+    },
+    "installed": "Yüklü",
+    "willInstall": "Otomatik yüklenir",
+    "notInstalled": "Yüklü değil"
+  },
+  "compatTab": {
+    "for": "Hedef: {{target}}",
+    "builds": "Yazar, bu Horizon sürümü için yapılmış bir derleme yayınlıyor.",
+    "format": "Bu içerik yalnızca veridir (dokular, shader’lar, veri paketleri): bir Horizon derlemesine bağlı değildir.",
+    "unknown": "Uyumluluğu kontrol etmek için bir örnek veya sunucu seç.",
+    "fairPlay": "Rustic yalnızca adil oyun içeriğini öne çıkarır. Haksız avantaj sağlayan hiçbir şey listelenmez.",
+    "native": "Bu Horizon’a uyan bir yerel mod: Rustic Launcher onu bilgisayarında bu örneğin kendi oyununa derler."
+  },
+  "permissions": {
+    "title": "İzinler",
+    "network": "Ağ erişimi: {{value}}",
+    "none": "yok",
+    "files": "Dosyalar: yalnızca kendi veri klasörü."
+  },
+  "stats": {
+    "downloads": "İndirmeler",
+    "follows": "Takipçiler",
+    "updated": "Güncellenme",
+    "license": "Lisans",
+    "size": "Boyut",
+    "gameVersion": "Oyun sürümü",
+    "version": "Son sürüm",
+    "author": "Yazar",
+    "created": "Yayınlanma"
+  },
+  "searchSources": {
+    "mod": "Horizon, Modrinth ve Rustic’te mod ara…",
+    "modpack": "Horizon, Modrinth ve Rustic’te mod paketi ara…",
+    "resourcepack": "Horizon, Modrinth ve Rustic’te kaynak paketi ara…",
+    "shader": "Horizon, Modrinth ve Rustic’te shader ara…",
+    "datapack": "Horizon, Modrinth ve Rustic’te veri paketi ara…",
+    "plugin": "Horizon, Modrinth ve Rustic’te eklenti ara…"
+  },
+  "filtersLabel": "Filtreler",
+  "view": "Görüntüle",
+  "heading": "Sıradaki *modunu* bul",
+  "eyebrow": "Keşfet",
+  "kindsServer": "Bir Rustic Server için",
+  "tabs": {
+    "label": "Keşfet bölümleri",
+    "discover": "Keşif",
+    "browse": "Göz at",
+    "mine": "İçeriğim"
+  },
+  "hero": {
+    "eyebrow": "Öne çıkanlar"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "Öne çıkan modlar",
+      "modpack": "Öne çıkan mod paketleri",
+      "resourcepack": "Öne çıkan kaynak paketleri",
+      "shader": "Öne çıkan shader’lar",
+      "datapack": "Öne çıkan veri paketleri",
+      "plugin": "Öne çıkan eklentiler"
+    },
+    "rows": {
+      "new": "Yeni",
+      "newHint": "Yeni yayınlanan veya güncellenen",
+      "horizon": "Horizon’da popüler",
+      "horizonHint": "Horizon kayıt deposundan en çok indirilenler",
+      "verified": "Rustic tarafından doğrulandı",
+      "verifiedHint": "Rustic ekibi tarafından kontrol edildi: söylediklerini yapıyorlar",
+      "yours": "{{target}} için",
+      "yoursHint": "Horizon {{version}} üzerinde çalışır",
+      "community": "Topluluktan",
+      "communityHint": "Rustic Marketplace’te son güncellenenler"
+    },
+    "empty": {
+      "title": "Burada henüz keşfedilecek bir şey yok",
+      "hint": "Bu türde henüz hedefinde çalışan içerik yok. Bunun yerine her şeye göz at.",
+      "browse": "Her şeye göz at"
+    },
+    "rowError": "Bu seçki yüklenemedi.",
+    "retry": "Tekrar dene"
+  },
+  "verified": {
+    "label": "Doğrulandı",
+    "hint": "Rustic tarafından doğrulandı: bir moderatör, sayfasında söylediğini yaptığını kontrol etti."
+  },
+  "price": {
+    "soon": "Çok yakında",
+    "soonHint": "Yaratıcılar yakında eserlerini satabilecek. Satın alma henüz kullanılamıyor.",
+    "notOnSale": "Henüz satışta değil: yaratıcı satışları yakında açılıyor."
+  },
+  "native": {
+    "badge": "Bilgisayarında derlenir",
+    "short": "Yerel",
+    "hint": "Yerel mod, çalışmadan önce bilgisayarında oyuna derlenen Rust kodudur.",
+    "title": "Bir yerel mod",
+    "body": "Yerel modlar, bu bilgisayarda oyununa derlenen Rust kaynak kodudur (bir dakikadan yarım saate kadar sürebilir). Yöneticiler her sürümü herkese açılmadan önce inceler.",
+    "kind": "Yerel mod",
+    "how": "Rustic Launcher, bir güven bildirimini kabul ettikten sonra bunları bilgisayarında bu örneğin kendi oyununa derler. İlk derleme 10 ila 15 dakika sürer; sonrakiler yalnızca değişenleri yeniden derler. Yerel modu olmayan örnekler önceden derlenmiş oyunu kullanmaya devam eder.",
+    "instanceOnly": "Yerel modlar bir örneğe yüklenir.",
+    "trust": {
+      "title": "Yerel kod: derlemeden önce oku",
+      "lead": "{{name}} bir yerel moddur: bu bilgisayarda “{{instance}}” örneğinin oyununa derlenen Rust kodu.",
+      "unsandboxed": "Yerel modlar yalıtılmış değildir. Derlendikten sonra senin yetkilerinle çalışırlar ve hesabının erişebildiği her şeyi okuyabilir, değiştirebilir veya gönderebilirler.",
+      "review": "Yalnızca Horizon kayıt deposundaki modlar (bakımcıları tarafından incelenir) ve Rustic Marketplace’te yönetici onaylı modlar yüklenebilir. İnceleme riski azaltır; ortadan kaldırmaz.",
+      "build": "Gerekirse Rust yüklenir, ardından oyun bu örnek için derlenir: ilk seferinde yaklaşık 10 ila 15 dakika ve birkaç GB, sonrasında daha hızlı.",
+      "scope": "Derlenen oyunu yalnızca bu örnek oynatır. Sonraki yerel modları için sana tekrar sorulmaz.",
+      "source": "Kaynak kodunu oku",
+      "check": "Yerel modların yalıtılmadan, benim yetkilerimle çalıştığını anlıyorum ve bu moda güveniyorum.",
+      "accept": "Güveniyorum: yükle ve derle"
+    },
+    "toolchain": {
+      "title": "Rust {{version}} yüklensin mi?",
+      "lead": "Yerel modları derlemek için Rust derleyicisi gerekir. Rustic Launcher onu senin için yükleyebilir.",
+      "manual": "Yerel modları derlemek için Rust derleyicisi ve Rustic Launcher’ın senin için yükleyemediği sistem araçları gerekir. Bunları yükle, sonra yeniden derle:",
+      "where": "Resmî siteden (static.rust-lang.org), yayınlanan SHA-256 değeriyle doğrulanarak, başlatıcının kendi klasörüne: bilgisayarında başka hiçbir şey değişmez.",
+      "size": "Yaklaşık 1 ila 2,5 GB (Windows’ta bir C derleyicisiyle).",
+      "once": "Tüm örnekler için bir kez; başlatıcının verilerini kaldırmak onu da kaldırır.",
+      "found": "Bulunan: {{reason}}.",
+      "install": "Rust’ı yükle",
+      "started": "Rust yükleniyor",
+      "startedHint": "Hazır olur olmaz derleme başlar. İndirmeler panelinden takip et.",
+      "failed": "Rust yüklenemedi"
+    },
+    "build": {
+      "started": "Yerel modlar derleniyor: {{instance}}",
+      "startedHint": "Örnek sayfasından veya indirmeler panelinden takip et. İlk derleme 10 ila 15 dakika sürer.",
+      "failed": "Yerel modlar derlenemedi: {{instance}}"
+    },
+    "errors": {
+      "notEdition": "Yerel modlar yalnızca Rustic sürümüne derlenir: bu örneği ayarlarından ona geçir.",
+      "running": "Önce oyunu kapat: yerel modları oyun durduğunda yeniden derlenir.",
+      "disk": "Yeterli boş disk alanı yok. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "Uyumsuz",
+    "compatible": "Uyumlu"
+  },
+  "library": {
+    "add": "Kütüphaneme ekle",
+    "inLibrary": "Kütüphanemde",
+    "added": "{{name}} kütüphanene eklendi",
+    "removed": "{{name}} kütüphanenden kaldırıldı",
+    "remove": "Kütüphanemden kaldır: {{name}}",
+    "failed": "Kütüphanen güncellenemedi"
+  },
+  "prompt": {
+    "title": "{{name}} yüklensin mi?",
+    "body": "Bu projeyi web sitesinden açtın. Nereye ve hangi sürümün yükleneceğini seç, sonra onayla.",
+    "dismiss": "Şimdi değil",
+    "version": "Sürüm",
+    "versionMissing": "{{version}} sürümü artık mevcut değil: en yeni uyumlu sürüm seçildi."
+  },
+  "mine": {
+    "searchPlaceholder": "İçeriğimi filtrele…",
+    "noMatch": "Eşleşen bir şey yok",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Elle eklendi"
+    },
+    "installed": {
+      "title": "Yüklü",
+      "titleOn": "Yüklü olduğu yer: {{target}}",
+      "hint": {
+        "mod": "Bu hedefteki modlar: aç veya kapat, güncelle ya da kaldır.",
+        "modpack": "Bu hedefteki mod paketleri: aç veya kapat, güncelle ya da kaldır.",
+        "resourcepack": "Bu hedefteki kaynak paketleri: aç veya kapat, güncelle ya da kaldır.",
+        "shader": "Bu hedefteki shader’lar: aç veya kapat, güncelle ya da kaldır.",
+        "datapack": "Bu hedefteki veri paketleri: aç veya kapat, güncelle ya da kaldır.",
+        "plugin": "Bu hedefteki eklentiler: aç veya kapat, güncelle ya da kaldır."
+      },
+      "modpacksTitle": "Mod paketleri profile dönüşür",
+      "modpacksHint": "Yüklü her mod paketi kendi başına bir profildir.",
+      "openProfiles": "Profillerimi aç",
+      "noTarget": "Önce nereye bakılacağını seç.",
+      "serverHint": "Bir sunucunun eklentileri ve veri paketleri kendi sayfasında yönetilir.",
+      "manageServer": "Sunucuyu yönet",
+      "updateAll_one": "{{count}} öğeyi güncelle",
+      "updateAll_other": "{{count}} öğeyi güncelle",
+      "openProfile": "Profili aç",
+      "empty": "Burada henüz yüklü bir şey yok",
+      "emptyHint": "Keşif veya Göz at bölümünden bir şey bul.",
+      "discover": "İçerik keşfet",
+      "updateTo": "Güncelle: {{version}}",
+      "incompatible": "Uyumsuz",
+      "update": "Güncelle: {{name}}",
+      "toggle": "Etkinleştir: {{name}}",
+      "remove": "Kaldır: {{name}}",
+      "removeTitle": "{{name}} kaldırılsın mı?",
+      "removeBody": "Dosyaları bu profilden silinir. İstediğin zaman yeniden yükleyebilirsin."
+    },
+    "signIn": {
+      "title": "Kütüphanen ve eserlerin",
+      "body": "Kaydettiğin ve yayınladığın projeleri bulmak için Rustic hesabına giriş yap.",
+      "action": "Giriş yap"
+    },
+    "library": {
+      "title": "Kütüphanem",
+      "hint": "Rustic hesabına kaydedilen projeler, her bilgisayarda.",
+      "empty": "Kütüphanen boş",
+      "emptyHint": "Burada bulmak için bir Rustic projesini kendi sayfasından ekle.",
+      "installAria": "Yükle: {{name}}"
+    },
+    "creations": {
+      "title": "Eserlerim",
+      "hint": "Rustic Marketplace’te yayınladıkların.",
+      "publish": "Web sitesinde yayınla",
+      "empty": "Henüz hiçbir şey yayınlamadın",
+      "emptyHint": "Bir modu, paketi veya shader’ı web sitesinden tüm Rustic oyuncularıyla paylaş.",
+      "manage": "Yönet",
+      "manageAria": "Web sitesinde yönet: {{name}}",
+      "status": {
+        "public": "Herkese açık",
+        "unlisted": "Liste dışı",
+        "private": "Gizli",
+        "pending": "İnceleme bekliyor",
+        "rejected": "Reddedildi",
+        "takenDown": "Kaldırıldı"
+      }
+    }
+  }
+}

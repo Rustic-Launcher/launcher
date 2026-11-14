@@ -293,7 +293,17 @@
       "checkNow": "Check for updates",
       "available": "Version {{version}} available",
       "upToDate": "You are up to date",
-      "failed": "Could not check for updates"
+      "failed": "Could not check for updates",
+      "lastCheck": "Last checked {{when}}",
+      "neverChecked": "Not checked yet",
+      "edition": "Game (Rustic edition)",
+      "editionNone": "No Rustic edition build installed",
+      "apply": "Update and restart",
+      "checking": "Checking…",
+      "working": "Updating… {{pct}}",
+      "restarting": "Restarting…",
+      "deferred": "Waiting for the game to close",
+      "lastError": "The last attempt failed. It will be retried automatically."
     },
     "performance": {
       "title": "Downloads & performance",

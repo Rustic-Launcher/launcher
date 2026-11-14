@@ -1,0 +1,1053 @@
+{
+  "list": {
+    "title": "Szerverek",
+    "description": "Futtass egy világot a barátaidnak itt vagy a saját VPS-eden, és tartsd kéznél a kedvenc szervereidet.",
+    "create": "Szerver létrehozása",
+    "tabs": {
+      "mine": "Saját szervereim",
+      "joined": "Csatlakozott",
+      "discover": "Ajánlott"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Vanilla Horizon"
+    },
+    "hosting": {
+      "local": "Ez a gép",
+      "remote": "Távoli: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Állapot",
+    "states": {
+      "running": "Fut",
+      "starting": "Indítás…",
+      "stopping": "Leállítás…",
+      "stopped": "Leállítva",
+      "crashed": "Összeomlott",
+      "installing": "Telepítés…",
+      "unreachable": "Nem érhető el"
+    },
+    "players": "Játékosok",
+    "playersCount": "{{online}}/{{max}} játékos",
+    "version": "Verzió",
+    "copyAddress": "Cím másolása",
+    "copyFailed": "Nem sikerült a vágólapra másolni",
+    "notShared": "Még nincs megosztva",
+    "notSharedHint": "Kapcsolj be egy ideiglenes címet, meghívókódot vagy domaint a szerver Hozzáférés lapján.",
+    "start": "Indítás",
+    "stop": "Leállítás",
+    "startAria": "{{name}} indítása",
+    "stopAria": "{{name}} leállítása",
+    "powerFailed": "A szerver nem válaszolt",
+    "empty": {
+      "title": "Futtass világot a barátaidnak 3 lépésben",
+      "description": "Futtasd ingyen ezen a gépen, vagy hagyd, hogy a Rustic telepítse a saját VPS-edre."
+    },
+    "featured": {
+      "description": "A Rustic csapata által válogatott szerverek: fair play, Horizonra kész, moderált.",
+      "empty": "Most nincsenek kiemelt szerverek.",
+      "verified": "A Rustic által ellenőrzött",
+      "save": "Hozzáadás a listához",
+      "inList": "A listádban",
+      "online_one": "{{value}} online",
+      "online_other": "{{value}} online",
+      "view": "Részletek: {{name}}"
+    },
+    "viewLabel": "Nézet",
+    "views": {
+      "discover": "Ajánlott",
+      "mine": "Saját szervereim"
+    },
+    "searchPlaceholder": {
+      "discover": "Kiemelt szerverek keresése…",
+      "mine": "Szervereid keresése…"
+    },
+    "clearSearch": "Keresés törlése",
+    "sortLabel": "Rendezés",
+    "sorts": {
+      "recommended": "Ajánlott",
+      "players": "Legtöbb játékos",
+      "name": "Név"
+    },
+    "refreshPing": "Ping és állapot frissítése",
+    "layoutList": "Megjelenítés listaként",
+    "layoutGrid": "Megjelenítés rácsként",
+    "createHint": "Itt, a VPS-eden, vagy hamarosan a felhőben",
+    "heading": "Játssz *szervereken*",
+    "eyebrow": "Szerverek",
+    "sections": {
+      "hosted": "Általad futtatott",
+      "joined": "Csatlakozott szerverek"
+    }
+  },
+  "multiplayer": {
+    "description": "A játék szerverlistája, amelyen az összes példányod osztozik.",
+    "add": "Szerver hozzáadása",
+    "added": "{{name}} hozzáadva a listádhoz",
+    "addFailed": "Nem sikerült hozzáadni ezt a szervert",
+    "name": "Szerver neve",
+    "namePlaceholder": "Név",
+    "address": "Szerver címe",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Gépnevet vagy IP-címet használj, opcionálisan :port megadással.",
+    "refreshPings": "Frissítés",
+    "favorites_one": "Kedvenc · {{count}}",
+    "favorites_other": "Kedvencek · {{count}}",
+    "others_one": "Egyéb szerver · {{count}}",
+    "others_other": "Egyéb szerverek · {{count}}",
+    "favorite": "{{name}} hozzáadása a kedvencekhez",
+    "unfavorite": "{{name}} eltávolítása a kedvencek közül",
+    "offline": "Offline",
+    "unreachable": "Ez a szerver most nem érhető el",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Csatlakozás",
+    "joinAria": "Csatlakozás: {{name}}",
+    "joinWith": "Csatlakozás ezzel: {{instance}}",
+    "noInstance": "Hozz létre egy példányt a szerverekhez való csatlakozáshoz",
+    "joining": "Indítás és csatlakozás: {{name}}…",
+    "more": "További műveletek – {{name}}",
+    "copyAddress": "Cím másolása",
+    "removed": "{{name}} eltávolítva",
+    "undo": "Visszavonás",
+    "empty": {
+      "title": "Még nincsenek szerverek",
+      "description": "Adj hozzá egyet a címével, vagy válassz egyet az Ajánlott alatt."
+    }
+  },
+  "wizard": {
+    "title": "Szerver létrehozása",
+    "subtitle": "Három lépés: mit futtass, hol futtasd, és hogyan csatlakoznak a barátaid.",
+    "creatingTitle": "Beállítás: {{name}}",
+    "stepOf": "{{index}}. lépés / {{total}}",
+    "steps": {
+      "basics": "Alapok",
+      "hosting": "Hol fusson",
+      "access": "Hozzáférés"
+    },
+    "create": "Szerver létrehozása",
+    "installOn": "Telepítés ide: {{host}}",
+    "createFailed": "Nem sikerült létrehozni a szervert",
+    "noRusticServer": "A rustic-server program nem található. Válaszd ki a Beállítások › Játék és példányok › Rustic Server alatt, vagy telepíts egy Rustic kiadású buildet, amely tartalmazza.",
+    "openRusticServerSettings": "Beállítások megnyitása",
+    "fixErrors": "A folytatáshoz ellenőrizd a kiemelt mezőket.",
+    "discard": {
+      "title": "Elveted ezt a szervert?",
+      "body": "A varázslóban megadott adatok elvesznek.",
+      "keep": "Szerkesztés folytatása",
+      "confirm": "Elvetés"
+    },
+    "basics": {
+      "name": "Szerver neve",
+      "namePlaceholder": "Lou SMP-je",
+      "icon": "Ikon",
+      "icons": {
+        "grass": "Fű",
+        "sword": "Kard",
+        "pickaxe": "Csákány",
+        "castle": "Kastély",
+        "rocket": "Rakéta",
+        "gem": "Drágakő",
+        "flame": "Láng",
+        "leaf": "Levél",
+        "star": "Csillag",
+        "compass": "Iránytű"
+      },
+      "color": "Szín",
+      "colorN": "{{n}}. szín",
+      "type": "Típus",
+      "recommended": "Ajánlott",
+      "nightly": "Nightly",
+      "rusticDesc": "Bővítmények (.rplugin) elkülönítve (sandboxban): egy bővítmény soha nem döntheti össze a szerveredet.",
+      "horizonDesc": "A Horizon saját szervere, bővítmények nélkül.",
+      "version": "Horizon-verzió",
+      "maxPlayers": "Max. játékosszám",
+      "versionLineRustic": "Rustic Server 0.1, Horizon {{version}} alapon",
+      "versionLineHorizon": "Horizon szerver {{version}}",
+      "sameAsClient": "(ugyanaz, mint a kliensed)",
+      "starterPlugins": "Kezdő bővítmények",
+      "starterHint": "Hivatalos bővítmények, azzal együtt, hogy mit tehetnek.",
+      "capNetwork": "Hálózat",
+      "capNoNetwork": "Nincs hálózat",
+      "capNoFiles": "Nincsenek fájlok",
+      "capDataFolder": "Saját adatmappa",
+      "eula": "Elfogadom a Minecraft EULA-t",
+      "eulaHint": "A szerver futtatásához szükséges. Te magad fogadod el; a Rustic nem fogadja el helyetted.",
+      "eulaRead": "EULA elolvasása",
+      "eulaTitle": "Minecraft EULA"
+    },
+    "world": {
+      "title": "Világ",
+      "new": "Új világ",
+      "import": "Mappa importálása",
+      "fromInstance": "Példányból",
+      "seed": "Seed",
+      "seedHint": "Hagyd üresen egy véletlenszerű világhoz.",
+      "seedPlaceholder": "Opcionális",
+      "randomSeed": "Véletlenszerű seed",
+      "levelType": "Világtípus",
+      "levelTypes": {
+        "default": "Alapértelmezett",
+        "flat": "Szupersík",
+        "large_biomes": "Nagy biomok",
+        "amplified": "Felerősített"
+      },
+      "gamemode": "Játékmód",
+      "gamemodes": {
+        "survival": "Túlélő",
+        "creative": "Kreatív",
+        "adventure": "Kaland"
+      },
+      "difficulty": "Nehézség",
+      "difficulties": {
+        "peaceful": "Békés",
+        "easy": "Könnyű",
+        "normal": "Normál",
+        "hard": "Nehéz"
+      },
+      "structures": "Építmények generálása",
+      "hardcore": "Hardcore",
+      "folder": "Világmappa",
+      "instance": "Példány",
+      "pickInstance": "Válassz példányt",
+      "world": "Világ",
+      "pickWorld": "Válassz világot",
+      "noWorlds": "Ebben a példányban nincsenek világok",
+      "newDesc": "Friss világ egy seedből, a saját szabályaiddal.",
+      "importDesc": "Világmappa a gépedről vagy egy biztonsági mentésből.",
+      "fromInstanceDesc": "Egy világ, amelyben valamelyik profilodban játszottál."
+    },
+    "type": {
+      "memory": "Szervermemória (RAM)",
+      "memoryHint": "A legtöbb baráti társaságnak elég 4 GB. Több kell sok játékoshoz vagy nagy modcsomagokhoz."
+    },
+    "access": {
+      "intro": "Hogyan csatlakoznak a barátaid. Egyszerre több is bekapcsolható; később módosíthatod őket.",
+      "lan": "Barátok a hálózatomon (LAN)",
+      "lanDetail": "Ennek a gépnek a helyi címe, a szerver létrejötte után jelenik meg.",
+      "publicIp": "Nyilvános cím",
+      "publicIpDetail": "a VPS-ed IP-címe",
+      "alwaysOn": "Mindig bekapcsolva",
+      "relay": "Ideiglenes cím",
+      "relayDetail": "ingyenes, amíg a szerver fut; nem kell portot nyitni",
+      "invite": "Meghívókód",
+      "inviteDetail": "Egy kód, amelyet a barátaid beillesztenek a Rustic Launcherbe a csatlakozáshoz.",
+      "domain": "Saját domain",
+      "domainDetail": "Porkbun csatlakoztatása · Vásárlás a Porkbunnál · Bármilyen domainregisztrátor",
+      "domainAfter": "Beállítás a létrehozás után",
+      "safety": "Online mód bekapcsolva: csak a játékkal rendelkező játékosok csatlakozhatnak. Engedélyezési lista (whitelist) bekapcsolva."
+    },
+    "summary": {
+      "title": "Összegzés",
+      "version": "Verzió",
+      "host": "Futtatás helye",
+      "world": "Világ",
+      "memory": "Memória",
+      "players": "Max. játékosszám",
+      "plugins": "Bővítmények",
+      "none": "Nincs",
+      "eulaAccepted": "Az 1. lépésben elfogadtad a Minecraft EULA-t."
+    },
+    "errors": {
+      "nameRequired": "Adj nevet a szerverednek.",
+      "nameTooLong": "Legfeljebb 40 karaktert használj.",
+      "version": "Válassz Horizon-verziót.",
+      "maxPlayers": "1 és 1000 játékos között.",
+      "importPath": "Válaszd ki az importálandó világmappát.",
+      "world": "Válassz egy példányt és annak egy világát.",
+      "seed": "A seed legfeljebb 64 karakter lehet.",
+      "eula": "A szerver futtatásához fogadd el az EULA-t.",
+      "cloudUnavailable": "A Rustic Cloud még nem érhető el.",
+      "vpsNotReady": "Előbb csatlakoztasd a VPS-edet, és teljesítsd az ellenőrzéseket.",
+      "memory": "Legalább 1 GB memória.",
+      "host": "Adj meg egy IP-címet vagy gépnevet.",
+      "port": "Port 1 és 65535 között.",
+      "username": "Add meg a Linux-felhasználónevet.",
+      "keyPath": "Válaszd ki a privát kulcsfájlodat.",
+      "generateKey": "Előbb generálj egy kulcsot, majd add hozzá a VPS-edhez.",
+      "password": "Add meg a jelszót."
+    },
+    "heading": "*Szerver* létrehozása",
+    "stepHints": {
+      "basics": "Adj neki nevet, válaszd ki, mit futtasson, és a kezdő világot.",
+      "hosting": "Válaszd ki a gépet, amelyen fut, és hogy mennyi memóriát kapjon.",
+      "access": "Válaszd ki, hogyan csatlakoznak a barátaid. Később módosíthatod."
+    },
+    "sections": {
+      "identity": "Név és ikon"
+    },
+    "preview": {
+      "title": "Előnézet",
+      "unnamed": "A szervered",
+      "draft": "még nincs létrehozva"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "Ez a gép (helyi)",
+      "free": "Ingyenes",
+      "description": "A gépednek bekapcsolva kell maradnia, amíg a barátaid játszanak.",
+      "settings": "Ezen a gépen",
+      "reach": "A barátaid a hálózatodon, egy ideiglenes Rustic-címen vagy meghívókóddal érik el. Nincs szükség routerbeállításra.",
+      "startWithLauncher": "Indítás a launcherrel",
+      "startWithLauncherHint": "A szerver elindul, amikor a Rustic Launcher megnyílik."
+    },
+    "vps": {
+      "title": "Saját VPS (SSH)",
+      "description": "A Linux-szervered. Mi telepítjük és futtatjuk helyetted.",
+      "which": "VPS",
+      "existing_one": "Mentett VPS ({{count}})",
+      "existing_other": "Mentett VPS-ek ({{count}})",
+      "new": "VPS hozzáadása",
+      "pinned": "Gazdagépkulcs rögzítve",
+      "host": "Gazdagép",
+      "port": "Port",
+      "user": "Felhasználó",
+      "userPlaceholder": "root vagy egy sudo-felhasználó",
+      "auth": "Bejelentkezés",
+      "authGenerate": "Kulcs generálása nekem",
+      "authKey": "Meglévő kulcsfájl",
+      "authPassword": "Jelszó (egyszer)",
+      "generateHint": "Ajánlott. A Rustic létrehoz egy kulcspárt; a privát kulcs soha nem hagyja el ezt a gépet.",
+      "generate": "Kulcs generálása",
+      "addKeyCommand": "Futtasd ezt egyszer a VPS-ed konzolján a kulcs engedélyezéséhez:",
+      "keyStored": "Privát kulcs mentve a rendszer-kulcstartódba ({{path}})",
+      "openFirewall": "A játékport megnyitása a VPS tűzfalán",
+      "openFirewallHint": "Engedélyezi a TCP-forgalmat a szerver portjára az ufw-ben vagy a firewalld-ben. A szolgáltatód saját tűzfalán is szükség lehet rá.",
+      "keyFile": "Privát kulcs",
+      "passphrase": "Jelmondat",
+      "optional": "Opcionális",
+      "password": "Jelszó",
+      "passwordHint": "Egyszer használjuk egy kulcs telepítéséhez. Nem tároljuk.",
+      "test": "Kapcsolat tesztelése",
+      "reachable": "Csatlakoztatva · {{ms}} ms",
+      "unreachable": "Nem sikerült elérni ezt a VPS-t",
+      "authFailed": "A VPS elutasította a bejelentkezést"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Hamarosan",
+      "description": "Szerverek a Rustic gépein, mindig bekapcsolva.",
+      "waitlist": "Kapj e-mailt, amikor a Rustic Cloud megnyílik.",
+      "email": "E-mail-cím",
+      "join": "Feliratkozás a várólistára",
+      "joined": "Rajta vagy a listán (#{{position}}). E-mailben értesítünk.",
+      "invalidEmail": "Adj meg egy érvényes e-mail-címet."
+    },
+    "requirements": {
+      "title": "Követelmények ellenőrzése",
+      "ram": "Memória ({{free}} szabad)",
+      "gameFiles": "Játékfájlok előkészítve",
+      "port": "A 25565-ös port szabad",
+      "hint": "A lemezterületet a szerverfájlok letöltésekor ellenőrizzük."
+    },
+    "fingerprint": {
+      "title": "Megbízol a(z) {{host}} gazdagépben?",
+      "description": "Első kapcsolat ehhez a VPS-hez. Mielőtt megbíznál benne, hasonlítsd össze ezt az ujjlenyomatot a szolgáltatód konzolján láthatóval.",
+      "warning": "Ha nem egyezik, szakítsd meg: lehet, hogy valaki lehallgatja a kapcsolatot. A Rustic letilt minden későbbi változást ebben a kulcsban.",
+      "trust": "Megbízom benne, tovább"
+    },
+    "testFailed": "A kapcsolat tesztelése nem sikerült",
+    "checkFailed": "A VPS ellenőrzése nem sikerült",
+    "preflight": {
+      "running": "A VPS-ed ellenőrzése…",
+      "ok": "A VPS-ed készen áll",
+      "notOk": "A VPS-ed nem felel meg a követelményeknek",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_other": "{{count}} vCPU",
+      "memory": "{{memory}} memória",
+      "disk": "{{disk}} szabad lemezterület",
+      "systemd": "systemd elérhető",
+      "ip": "Nyilvános IP"
+    },
+    "problems": {
+      "memory": "Memória",
+      "disk": "Lemez",
+      "arch": "Architektúra",
+      "os": "Operációs rendszer",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Telepítés ide: {{host}}",
+      "steps": {
+        "connect": "Csatlakozás SSH-n",
+        "check": "Előzetes ellenőrzések",
+        "user": "A „rustic” felhasználó létrehozása",
+        "download": "Aláírt szerverfájlok feltöltése",
+        "engine": "A Rustic motor beállítása",
+        "service": "A szolgáltatás telepítése",
+        "firewall": "A 25565-ös port megnyitása",
+        "world": "A világ előkészítése",
+        "start": "Indítás és ellenőrzés"
+      },
+      "state": {
+        "pending": "várakozik",
+        "running": "folyamatban",
+        "done": "kész",
+        "failed": "sikertelen",
+        "skipped": "kihagyva"
+      },
+      "skippedVanilla": "Vanilla Horizonhoz nem szükséges",
+      "log_one": "Napló megjelenítése ({{count}} sor)",
+      "log_other": "Napló megjelenítése ({{count}} sor)",
+      "vpsDone": "{{name}} fut itt: {{host}}",
+      "vpsDoneBody": "Kezeld a launcherből, mint egy helyi szervert: konzol, játékosok, bővítmények, biztonsági mentések.",
+      "localDownload": "Letöltés: {{engine}}",
+      "localInit": "A világ és a beállítások előkészítése",
+      "localStart": "Első indítás",
+      "localReady": "Indításra kész",
+      "localDone": "{{name}} fut",
+      "localDoneBody": "Oszd meg a címét a Hozzáférés lapon, vagy hívd meg a barátaidat a barátok panelről.",
+      "open": "Szerver megnyitása",
+      "backToList": "Vissza a szerverekhez",
+      "retry": "Újra",
+      "failed": "A telepítés nem sikerült",
+      "crashed": "A szerver leállt az első indításakor. Nézd meg a konzolt."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Szerver részei",
+    "tabs": {
+      "overview": "Áttekintés",
+      "console": "Konzol",
+      "players": "Játékosok",
+      "plugins": "Bővítmények",
+      "config": "Konfiguráció",
+      "datapacks": "Adatcsomagok",
+      "backups": "Biztonsági mentések",
+      "access": "Hozzáférés",
+      "danger": "Veszélyzóna"
+    },
+    "state": {
+      "stopped": "Leállítva",
+      "starting": "Indítás…",
+      "running": "Fut",
+      "stopping": "Leállítás…",
+      "crashed": "Összeomlott",
+      "installing": "Telepítés…",
+      "unreachable": "Nem érhető el"
+    },
+    "save": "Mentés",
+    "cancel": "Mégse",
+    "close": "Bezárás",
+    "remove": "Eltávolítás",
+    "done": "Kész",
+    "header": {
+      "back": "Szerverek",
+      "players": "{{online}}/{{max}} játékos",
+      "uptime": "üzemidő: {{duration}}",
+      "start": "Indítás",
+      "stop": "Leállítás",
+      "restart": "Újraindítás",
+      "join": "Csatlakozás",
+      "address": "Cím",
+      "copyAddress": "A szerver címének másolása",
+      "powerFailed": "A szerver nem tudott állapotot váltani"
+    },
+    "overview": {
+      "stoppedTitle": "A szerver le van állítva",
+      "stoppedBody": "Indítsd el, hogy élőben lásd a CPU-t, a memóriát, a TPS-t és a tickidőt.",
+      "cpu": "CPU",
+      "cpuChart": "CPU-használat az elmúlt két percben",
+      "ram": "Memória",
+      "ramChart": "Memóriahasználat az elmúlt két percben",
+      "of": "/ {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Tick másodpercenként az elmúlt két percben",
+      "mspt": "Tickidő",
+      "msptChart": "Ezredmásodperc tickenként az elmúlt két percben, 50 ms-os kerettel",
+      "msptBudget": "keret: 50 ms",
+      "health": {
+        "good": "Gördülékeny",
+        "busy": "Terhelt",
+        "lagging": "Akadozik"
+      },
+      "onlineTitle_one": "{{count}} játékos online",
+      "onlineTitle_other": "{{count}} játékos online",
+      "onlineStopped": "Amíg a szerver le van állítva, senki sem csatlakozhat.",
+      "nobody": "Most senki sem játszik.",
+      "infoTitle": "Részletek",
+      "world": "Világ",
+      "version": "Horizon",
+      "port": "Port",
+      "memory": "Memória",
+      "created": "Létrehozva",
+      "folder": "Mappa",
+      "uptime": "Üzemidő",
+      "startedAt": "Indítva: {{time}}",
+      "lastSession": "Utolsó munkamenet",
+      "lastStarted": "Utolsó indítás: {{when}}",
+      "neverStarted": "Még nem volt elindítva",
+      "lastLines": "A konzol utolsó sorai",
+      "noLines": "Még nincs naplózva semmi.",
+      "openConsole": "Konzol megnyitása",
+      "crashedTitle": "A szerver váratlanul leállt",
+      "crashedBody": "Nézd meg a konzol utolsó sorait, majd indítsd újra."
+    },
+    "console": {
+      "filter": "Sorok szűrése",
+      "filters": {
+        "all": "Mind",
+        "info": "Infó",
+        "warn": "Figyelmeztetések",
+        "error": "Hibák",
+        "chat": "Csevegés"
+      },
+      "levels": {
+        "info": "infó",
+        "warn": "figy.",
+        "error": "hiba",
+        "command": "parancs",
+        "chat": "csevegés"
+      },
+      "autoScroll": "Új sorok követése",
+      "logLabel": "Szerverkonzol",
+      "empty": "Még nincsenek sorok.",
+      "suggestions": "Parancsjavaslatok",
+      "inputLabel": "Szerverparancs",
+      "placeholder": "Írj be egy parancsot (Tab: kiegészítés, ↑: előzmények)",
+      "offline": "Parancsok küldéséhez indítsd el a szervert",
+      "send": "Küldés",
+      "sendFailed": "Nem sikerült elküldeni a parancsot",
+      "hint": "A parancsok a szerverkonzol nevében futnak, minden jogosultsággal. Nem kell perjel az elejére."
+    },
+    "players": {
+      "whitelist": "Engedélyezési lista (whitelist)",
+      "whitelistHint": "Csak a listán szereplő játékosok csatlakozhatnak. Ajánlott, ha a szerver az internetről is elérhető.",
+      "view": "Játékosok megjelenítése",
+      "views": {
+        "online": "Online",
+        "all": "Mind",
+        "ops": "Operátorok",
+        "whitelist": "Engedélyezett",
+        "banned": "Kitiltott"
+      },
+      "search": "Játékos keresése",
+      "emptyOnline": "Senki sincs online",
+      "empty": "Itt nincsenek játékosok",
+      "stoppedHint": "Indítsd el a szervert, hogy lásd, ki játszik.",
+      "online": "Online",
+      "offline": "Offline",
+      "op": "Operátor",
+      "whitelisted": "Engedélyezett",
+      "banned": "Kitiltva",
+      "playtime": "Játékidő: {{duration}}",
+      "kick": "Kirúgás",
+      "kickAria": "{{name}} kirúgása",
+      "more": "További műveletek – {{name}}",
+      "makeOp": "Operátorrá tétel",
+      "deop": "Operátori jog elvétele",
+      "whitelistAdd": "Hozzáadás az engedélyezési listához",
+      "whitelistRemove": "Eltávolítás az engedélyezési listáról",
+      "ban": "Kitiltás",
+      "pardon": "Kitiltás feloldása",
+      "banTitle": "{{name}} kitiltása?",
+      "banBody": "Lecsatlakoztatjuk, és addig nem csatlakozhat újra, amíg fel nem oldod a kitiltását.",
+      "reason": "Indok (opcionális, a játékos látja)",
+      "failed": "A művelet nem sikerült",
+      "done": {
+        "kick": "{{name}} ki lett rúgva",
+        "ban": "{{name}} ki lett tiltva",
+        "pardon": "{{name}} kitiltása feloldva",
+        "op": "{{name}} mostantól operátor",
+        "deop": "{{name}} már nem operátor",
+        "whitelist_add": "{{name}} hozzáadva az engedélyezési listához",
+        "whitelist_remove": "{{name}} eltávolítva az engedélyezési listáról"
+      }
+    },
+    "config": {
+      "mode": "Szerkesztési mód",
+      "form": "Beállítások",
+      "raw": "Nyers fájl",
+      "groups": {
+        "general": "Általános",
+        "world": "Világ",
+        "players": "Játékosok",
+        "network": "Hálózat",
+        "performance": "Teljesítmény"
+      },
+      "keys": {
+        "motd": "A nap üzenete",
+        "max-players": "Maximális játékosszám",
+        "white-list": "Engedélyezési lista (whitelist)",
+        "online-mode": "Online mód (fiókellenőrzés)",
+        "pvp": "Játékos játékos ellen (PvP)",
+        "gamemode": "Alapértelmezett játékmód",
+        "difficulty": "Nehézség",
+        "level-seed": "Világ seedje",
+        "spawn-protection": "Kezdőpont-védelem sugara",
+        "server-port": "Port",
+        "enable-rcon": "Távoli konzol (RCON)",
+        "view-distance": "Látótávolság",
+        "simulation-distance": "Szimulációs távolság"
+      },
+      "restart": "Újraindítás",
+      "restartNeeded": "Néhány módosítás érvényesítéséhez indítsd újra a szervert",
+      "unsaved_one": "{{count}} nem mentett módosítás",
+      "unsaved_other": "{{count}} nem mentett módosítás",
+      "noChanges": "Nincs módosítás",
+      "discard": "Elvetés",
+      "saved": "Konfiguráció mentve",
+      "saveFailed": "Nem sikerült menteni a konfigurációt",
+      "rawTitle": "server.toml",
+      "rawWarning": "Haladó: egy elírás megakadályozhatja a szerver indulását. Az értékeket mentéskor ellenőrizzük."
+    },
+    "plugins": {
+      "vanillaTitle": "A bővítményekhez Rustic Server kell",
+      "vanillaBody": "Ez a szerver vanilla Horizont futtat. A Rustic Server elkülönítve (sandboxban) futó .rplugin bővítményeket ad hozzá, amelyek soha nem dönthetik össze. Bővítmények használatához hozz létre egy Rustic Servert, és importáld bele ezt a világot.",
+      "createRustic": "Rustic Server létrehozása",
+      "intro": "A bővítmények elkülönítve (sandboxban) futnak: a hibás bővítményt egy naplósorral kikapcsoljuk, a szerver tovább fut. Mindegyik közli, mihez férhet hozzá.",
+      "upload": "Fájl hozzáadása…",
+      "uploadTitle": ".rplugin fájl kiválasztása",
+      "find": "Bővítmények keresése",
+      "empty": "Még nincsenek bővítmények",
+      "emptyBody": "Böngészd a Tartalom › Bővítmények részt, és adj hozzá egyet egy kattintással.",
+      "errored": "Hiba után kikapcsolva",
+      "disabled": "Kikapcsolva",
+      "noDescription": "Nincs leírás",
+      "toggle": "{{name}} bekapcsolása",
+      "capabilities": "Hozzáférés",
+      "noNetwork": "Nincs hálózat",
+      "network": "Hálózat: {{domains}}",
+      "fs": {
+        "none": "Nincsenek fájlok",
+        "data-folder": "Saját adatmappa"
+      },
+      "update": "Frissítés erre: {{version}}",
+      "updated": "{{name}} frissítve erre: {{version}}",
+      "installed": "{{name}} telepítve és bekapcsolva",
+      "removeTitle": "{{name}} eltávolítása?",
+      "removeBody": "A bővítményt kiürítjük a memóriából, a fájlját töröljük. Az adatmappája megmarad.",
+      "failed": "A bővítményművelet nem sikerült"
+    },
+    "datapacks": {
+      "intro": "A(z) „{{world}}” világ adatcsomagjai.",
+      "find": "Adatcsomagok keresése",
+      "empty": "Ebben a világban nincsenek adatcsomagok",
+      "toggle": "{{name}} bekapcsolása",
+      "remove": "{{name}} eltávolítása",
+      "reloadHint": "A módosítások a /reload vagy egy újraindítás után lépnek életbe.",
+      "failed": "Az adatcsomag-művelet nem sikerült"
+    },
+    "backups": {
+      "nowTitle": "Biztonsági mentés most",
+      "nowBody": "Másolat a világról és a konfigurációról. A szerver közben tovább fut.",
+      "note": "Megjegyzés",
+      "notePlaceholder": "Opcionális megjegyzés, pl. „frissítés előtt”",
+      "now": "Mentés most",
+      "created": "Biztonsági mentés létrehozva",
+      "empty": "Még nincsenek biztonsági mentések",
+      "kinds": {
+        "manual": "Kézi",
+        "scheduled": "Ütemezett",
+        "pre_restore": "Visszaállítás előtti"
+      },
+      "restore": "Visszaállítás",
+      "restoreTitle": "Visszaállítod ezt a biztonsági mentést?",
+      "restoreBody": "A világ visszaáll erre az időpontra: {{date}}. Minden azóta épített dolog felülíródik. Előtte biztonsági mentés készül a jelenlegi világról.",
+      "restored": "Biztonsági mentés visszaállítva",
+      "delete": "Biztonsági mentés törlése",
+      "deleteTitle": "Törlöd ezt a biztonsági mentést?",
+      "deleteBody": "Ez a biztonsági mentés véglegesen törlődik.",
+      "failed": "A biztonsági mentési művelet nem sikerült",
+      "scheduleTitle": "Automatikus biztonsági mentések",
+      "scheduleBody": "A korlát elérésekor a legrégebbi automatikus mentések törlődnek.",
+      "scheduleEnabled": "Automatikus biztonsági mentés",
+      "every": "Gyakoriság",
+      "hours_one": "{{count}} óránként",
+      "hours_other": "{{count}} óránként",
+      "keep": "Megtartás",
+      "keepCount_one": "az utolsó {{count}} mentés",
+      "keepCount_other": "az utolsó {{count}} mentés",
+      "scheduleSaved": "Mentési ütemezés mentve"
+    },
+    "danger": {
+      "deleteTitle": "A szerver törlése",
+      "deleteBody": "Leállítja a szervert, és eltávolítja a launcherből. A fájljait megtarthatod.",
+      "delete": "Szerver törlése",
+      "removeVpsTitle": "Eltávolítás a VPS-edről",
+      "removeVpsBody": "Leállítja a szolgáltatást itt: {{host}}, és eltávolítja róla a Rusticot. A VPS-ed a tiéd marad.",
+      "removeVps": "Eltávolítás a VPS-ről",
+      "confirmTitle": "„{{name}}” törlése?",
+      "confirmBody": "Ez nem vonható vissza. Ha még szükséged lehet a világra, előbb készíts biztonsági mentést.",
+      "deleteFiles": "A világ és az összes szerverfájl törlése is",
+      "typeName": "A megerősítéshez írd be: „{{name}}”",
+      "deleted": "{{name}} törölve",
+      "failed": "Nem sikerült törölni a szervert"
+    }
+  },
+  "access": {
+    "intro": "Válaszd ki, hogyan érik el a barátaid a szerveredet. Egyszerre többet is bekapcsolhatsz.",
+    "optional": "Opcionális",
+    "lan": {
+      "title": "A hálózatodon",
+      "body": "Az ugyanazon a Wi-Fin vagy hálózaton lévő játékosok ezzel a címmel csatlakoznak.",
+      "copy": "Helyi cím másolása"
+    },
+    "public": {
+      "title": "Nyilvános cím",
+      "body": "A VPS-ed IP-címe és portja. Bárki csatlakozhat vele; egy domaint könnyebb megosztani.",
+      "copy": "Nyilvános cím másolása"
+    },
+    "relay": {
+      "title": "Ideiglenes cím",
+      "body": "Ingyenes cím a Rustic Relayen, amíg a szerver fut. Nincs routerbeállítás, az IP-címed rejtve marad.",
+      "toggle": "Ideiglenes cím",
+      "copy": "Ideiglenes cím másolása",
+      "off": "Kikapcsolva. Kapcsold be, hogy megosztható címet kapj.",
+      "label": "Név a címben",
+      "apply": "Alkalmaz",
+      "status": {
+        "off": "Kikapcsolva",
+        "connecting": "Várakozás a szerver indulására",
+        "online": "Most elérhető",
+        "error": "A relay nem érhető el"
+      },
+      "failed": "Nem sikerült módosítani az ideiglenes címet",
+      "taken": "Ez a név foglalt. Próbálj meg egy másikat.",
+      "invalid": "3–32 kisbetűt, számjegyet vagy kötőjelet használj."
+    },
+    "invite": {
+      "title": "Meghívókód",
+      "body": "A Rustic Launchert használó barátaid ezt a kódot beillesztve csatlakoznak, mint a Horizon Játék barátokkal funkciójánál.",
+      "create": "Kód létrehozása",
+      "copy": "Meghívókód másolása",
+      "expires": "Lejár: {{when}}",
+      "revoke": "Visszavonás"
+    },
+    "advanced": "Haladó: port megnyitása a routereden (UPnP)",
+    "upnp": {
+      "title": "UPnP-porttovábbítás",
+      "warning": "Ez megkéri a routeredet, hogy nyissa meg a szerver portját az internet felé. A nyilvános IP-címed minden játékos számára láthatóvá válik, ami kiteszi az otthoni kapcsolatodat (támadások, helymeghatározás). Inkább az ideiglenes címet vagy egy domaint válaszd.",
+      "status": {
+        "off": "Kikapcsolva",
+        "mapping": "Kérés a routertől…",
+        "mapped": "Port megnyitva",
+        "failed": "A router elutasította (lehet, hogy az UPnP ki van kapcsolva)"
+      },
+      "mapped": "Port megnyitva: {{address}}",
+      "copy": "Nyilvános cím másolása",
+      "failed": "Nem sikerült megnyitni a portot",
+      "prefer": "Az ideiglenes cím és a domainek portnyitás nélkül is működnek."
+    }
+  },
+  "domains": {
+    "title": "Saját domain",
+    "intro": "A domain a szervered címe, például play.tenevem.net. Csatlakoztathatsz egy meglévőt, vásárolhatsz egyet a Porkbunnál a launcher elhagyása nélkül, vagy használhatsz bármilyen domainregisztrátort: pontosan megmutatjuk, mit kell hozzáadni.",
+    "automatic": "Automatikus",
+    "anyRegistrar": "Bármilyen regisztrátor",
+    "otherPaths": "Egyéb módok",
+    "paths": {
+      "porkbun": {
+        "title": "Porkbun csatlakoztatása",
+        "body": "Már van domained a Porkbunnál? Csatlakoztasd a fiókodat, és létrehozzuk helyetted a rekordokat."
+      },
+      "buy": {
+        "title": "Domain vásárlása a Porkbunnál",
+        "body": "Keress egy szabad nevet, vedd meg a saját Porkbun-fiókodon, és automatikusan be lesz állítva."
+      },
+      "manual": {
+        "title": "Domain használata bármely regisztrátortól",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: megmutatjuk, mit kell hozzáadni, és ellenőrizzük helyetted."
+      }
+    },
+    "subdomain": "Aldomain",
+    "subdomainHint": "A play jó alapértelmezés.",
+    "apexHint": "Üresen: maga a domain (egyes regisztrátoroknál ALIAS/ANAME kell hozzá).",
+    "invalidSubdomain": "Csak betűk, számjegyek és kötőjelek.",
+    "invalidDomain": "Ez nem tűnik domainnek (example.net).",
+    "copyAddress": "Domaincím másolása",
+    "configureFailed": "Nem sikerült beállítani a domaint",
+    "boundBody": "A játékosok ezzel a címmel csatlakoznak.",
+    "remove": "Domain eltávolítása",
+    "removeTitle": "Leállítod a(z) {{domain}} használatát?",
+    "removeBody": "A rekordok eltávolítása után a cím már nem erre a szerverre mutat. A domain a tiéd marad.",
+    "status": {
+      "pending": "Függőben",
+      "propagating": "Terjedés alatt",
+      "verified": "Csatlakoztatva",
+      "error": "Hiba"
+    },
+    "provider": {
+      "porkbun": "A Porkbunon keresztül kezelve",
+      "manual": "A regisztrátorodnál kezelve"
+    },
+    "connected": "Domain csatlakoztatva",
+    "connectedBody": "A Rustic Cloud ellenőrzi a TXT-rekordot, aztán a címed működni kezd. Ezt bezárhatod; értesítünk.",
+    "porkbun": {
+      "step1": "A porkbun.com › Account › API Access alatt hozz létre egy API-kulcsot.",
+      "openApi": "Porkbun API Access megnyitása",
+      "step2": "A domain Porkbun-oldalán kapcsold be az „API Access” opciót.",
+      "apiKey": "API-kulcs",
+      "secret": "Titkos API-kulcs",
+      "keychain": "A számítógéped kulcstartójában tárolva, soha nem kerül a Rustichoz.",
+      "connect": "Csatlakoztatás",
+      "badApiKey": "Az API-kulcs pk1_ előtaggal kezdődik.",
+      "badSecret": "A titkos API-kulcs sk1_ előtaggal kezdődik.",
+      "rejected": "A Porkbun elutasította ezeket a kulcsokat. Ellenőrizd őket, vagy hozz létre új kulcspárt.",
+      "connected": "Porkbun csatlakoztatva",
+      "disconnect": "Leválasztás",
+      "domain": "Domain",
+      "pickDomain": "Válassz egyet a domainjeid közül",
+      "apiAccessOff": "Az API Access ki van kapcsolva ennél a domainnél a Porkbunon",
+      "apiAccessHint": "A kiszürkített domaineknél be kell kapcsolni az „API Access” opciót a Porkbunon.",
+      "preview": "Az általunk végzett módosítások",
+      "dryRun": "Előnézet",
+      "previewBody": "Ezeket a rekordokat adjuk hozzá vagy cseréljük le a domaineden, hogy a(z) {{fqdn}} elérje ezt a szervert. Amíg nem alkalmazod, semmi sem változik.",
+      "apply": "Automatikus beállítás"
+    },
+    "buy": {
+      "intro": "A domain a saját Porkbun-fiókodon lesz regisztrálva, és ott fizeted. A Rustic soha nem vesz át érte fizetést.",
+      "needsAccount": "A vásárláshoz a Porkbun-fiókod kell: előbb csatlakoztasd (ingyen létrehozhatsz egyet a porkbun.com oldalon).",
+      "search": "A kívánt név",
+      "searchPlaceholder": "pl. loucraft",
+      "searchButton": "Keresés",
+      "noResults": "Erre a névre nincs találat.",
+      "premium": "Prémium",
+      "price": "{{price}} az első évben · megújítás: {{renewal}}",
+      "taken": "Foglalt",
+      "select": "Kiválasztás",
+      "overLimit": "100 $ felett: vedd meg a porkbun.com oldalon",
+      "pricesNote": "Az árak a Porkbun aktuális árai, amerikai dollárban. A Porkbunnál adók is felmerülhetnek.",
+      "confirmTitle": "Vásárlás megerősítése a Porkbunnál",
+      "seller": "Eladó: Porkbun LLC, nem a Rustic. Az ő feltételeik, áraik, megújítási és visszatérítési szabályaik érvényesek.",
+      "domain": "Domain",
+      "address": "Szerver címe",
+      "registrar": "Regisztrátor",
+      "registrarValue": "Porkbun, a te fiókodon",
+      "firstYear": "Első év",
+      "renewal": "Éves megújítás ára",
+      "payment": "A Porkbun-egyenlegedből vagy mentett kártyádról fizetve: most {{price}}; évente {{renewal}} áron megújul, hacsak ki nem kapcsolod az automatikus megújítást a Porkbunnál.",
+      "agreeTerms": "Elfogadom a Porkbun regisztrációs megállapodását és feltételeit",
+      "termsLink": "(elolvasás)",
+      "agreeOrder": "Tudomásul veszem, hogy a Rustic csak továbbítja ezt a rendelést a nevemben a Porkbunnak",
+      "refunds": "A domainek visszatérítését és lemondását a Porkbun kezeli a saját feltételei szerint.",
+      "buyButton": "Vásárlás a Porkbunnál · {{price}}",
+      "bought": "A(z) {{domain}} a tiéd",
+      "boughtBody": "A Porkbun terhelése: {{price}}. Beállítás folyamatban…",
+      "configuring": "Az új domained beállítása…",
+      "failed": "A vásárlás nem sikerült",
+      "errors": {
+        "price_changed": "Az ár megváltozott a Porkbunnál. Nézd meg az új árat, és próbáld újra.",
+        "not_available": "Ezt a domaint épp most foglalták le.",
+        "over_limit": "100 $ felett: vedd meg a porkbun.com oldalon.",
+        "porkbun_not_connected": "Előbb csatlakoztasd a Porkbun-fiókodat.",
+        "consent_required": "Mindkét négyzetet be kell jelölni."
+      }
+    },
+    "manual": {
+      "intro": "Add hozzá ezeket a rekordokat a regisztrátorod DNS-zónájához. 10 másodpercenként ellenőrizzük őket, és szólunk, ha működik.",
+      "domain": "A domained",
+      "registrar": "Regisztrátor",
+      "show": "Rekordok megjelenítése",
+      "guideTitle": "Regisztrátor: {{registrar}}",
+      "allGuides": "Útmutatók minden regisztrátorhoz"
+    },
+    "records": {
+      "caption": "Hozzáadandó DNS-rekordok",
+      "type": "Típus",
+      "name": "Név / gazdagép",
+      "value": "Érték / cél",
+      "ttl": "TTL",
+      "status": "Állapot",
+      "optional": "opcionális",
+      "emptyHost": "(hagyd üresen)",
+      "copyName": "{{type}} név másolása",
+      "copyValue": "{{type}} érték másolása",
+      "srvFields": "prioritás: {{priority}} · súly: {{weight}} · port: {{port}}"
+    },
+    "check": {
+      "pending": "Nincs ellenőrizve",
+      "notNeeded": "Nem szükséges",
+      "ok": "OK",
+      "propagating": "Terjedés alatt ({{ok}}/{{total}})",
+      "wrong": "Hibás érték",
+      "found": "Talált:",
+      "expected": "Várt:",
+      "missing": "Hiányzik",
+      "first": "Első ellenőrzés…",
+      "progress": "{{ok}} / {{total}} rekord rendben",
+      "progressLabel": "Ellenőrzött rekordok",
+      "auto": "Automatikus ellenőrzés 10 másodpercenként",
+      "lastCheck": "utolsó ellenőrzés {{seconds}} másodperce",
+      "now": "Ellenőrzés most"
+    },
+    "help": {
+      "txt": "Miért kell TXT-rekord? Ez bizonyítja, hogy a domain a tiéd, így senki más nem irányíthatja a saját szerverére.",
+      "propagation": "A módosítások egy perctől néhány óráig tarthatnak, mire mindenkihez eljutnak. Mi folyamatosan ellenőrizzük; nem kell itt maradnod.",
+      "apex": "A fődomainekhez („play.” nélküli tenevem.net) ALIAS/ANAME rekord kell, ami nem minden regisztrátornál van. Egy aldomain mindig működik."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › a domained › DNS zone.\nKattints az „Add an entry” gombra, és válaszd ki a típust (CNAME, SRV, A vagy TXT).\nSub-domain = az alábbi Név (magához a domainhez hagyd üresen), Target = az Érték.\nIsmételd meg minden rekordnál, majd erősítsd meg. Az OVH perceken belül alkalmazza a módosításokat."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › a domained › DNS records.\nKattints az „Add record” gombra, válaszd ki a típust.\nName = az alábbi Név, Value = az Érték (CNAME/SRV céloknál tartsd meg a záró pontot).\nMents el minden rekordot."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nA Host records alatt: „Add new record”.\nHost = az alábbi Név (magához a domainhez @), Value/Target = az Érték.\nMindegyik mentéséhez kattints a zöld pipára."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › a domained › DNS › Manage DNS.\nKattints az „Add new record” gombra, válaszd ki a típust.\nName = az alábbi Név (magához a domainhez @), Value = az Érték.\nSRV-nél töltsd ki: Service _minecraft, Protocol _tcp, majd a prioritást, a súlyt és a portot. Mentés."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Válaszd ki az oldaladat › DNS › Records › Add record.\nVálaszd ki a típust, Name = az alábbi Név, Target/Content = az Érték.\nA Proxy status legyen „DNS only” (szürke felhő): a játékforgalom nem mehet át a Cloudflare proxyján.\nMents el minden rekordot."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › a domained › DNS.\nKattints az „Add record” gombra, és válaszd ki a típust.\nHost name = az alábbi Név, Points to / Value = az Érték.\nMentés; az IONOS megerősítést kérhet egy alapértelmezett rekord lecseréléséhez."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › a domained › DNS / Nameservers.\nA „Manage DNS records” alatt válaszd ki a típust.\nName = az alábbi Név, Points to / Value = az Érték, TTL a látható módon.\nMindegyikhez kattints az „Add record” gombra."
+      },
+      "porkbun": {
+        "name": "Porkbun (kézzel)",
+        "steps": "Domain Management › a domained › DNS.\nVálaszd ki a típust, Host = az alábbi Név (magához a domainhez üres), Answer = az Érték.\nMinden rekordnál kattints az „Add” gombra.\nTipp: a Porkbun csatlakoztatása mindezt elvégzi helyetted."
+      },
+      "generic": {
+        "name": "Egyéb regisztrátor",
+        "steps": "Nyisd meg a domained DNS-zónáját (néha DNS records vagy Zone editor a neve).\nAdd hozzá az alábbi rekordokat ugyanazzal a típussal, névvel és értékkel.\nHa a regisztrátorod a teljes nevet kéri, írd a domainedet a Név után.\nMents, majd gyere vissza: automatikusan ellenőrizzük."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Szervernézetek",
+    "tabs": {
+      "discover": "Ajánlott",
+      "browse": "Böngészés"
+    },
+    "searchLabel": "Szerverek keresése",
+    "searchPlaceholder": "Keresés a szerverlistában…",
+    "publish": "Szerverem közzététele",
+    "publishCta": {
+      "title": "A te szervered itt",
+      "hint": "Vedd fel a Horizon-szerveredet a szerverlistába a weboldalon: az automatikus ellenőrzések után itt és a rustic-launcher.com oldalon is megjelenik."
+    },
+    "play": "Játék",
+    "playAria": "Játék itt: {{name}}",
+    "view": "Megtekintés",
+    "verified": "Ellenőrzött",
+    "featured": "A csapat választása",
+    "verifiedHint": "Ellenőrzött szerverek: a Rustic csapata ellenőrizte a tulajdonost és a szabályokat.",
+    "online_one": "{{value}} online",
+    "online_other": "{{value}} online",
+    "playersLabel": "Online játékosok",
+    "languagesLabel": "Nyelvek",
+    "playsLabel": "Indítások ezen a héten",
+    "lastPlayed": "Utoljára játszva",
+    "lastPlayedOn": "Utoljára játszva: {{when}}",
+    "hero": {
+      "label": "Kiemelt szerverek",
+      "eyebrow": "Ellenőrzött"
+    },
+    "rows": {
+      "trending": "Felkapott",
+      "trendingHint": "A héten a legtöbbször indított a Rusticból",
+      "players": "Most a legtöbb játékos",
+      "playersHint": "A felhő legutóbbi ellenőrzése alapján",
+      "new": "Új a szerverlistában",
+      "newHint": "A tulajdonosaik most vették fel",
+      "recent": "Nemrég játszott",
+      "recentHint": "A szerverlistádból"
+    },
+    "rowError": "Nem sikerült betölteni ezt a sort.",
+    "retry": "Újra",
+    "empty": {
+      "title": "Még nincsenek listázott szerverek",
+      "hint": "Légy az első: tedd közzé a szerveredet a weboldalon."
+    },
+    "emptySearch": {
+      "title": "Nincs egyező szerver",
+      "hint": "Próbálj más szavakat vagy kevesebb szűrőt."
+    },
+    "sorts": {
+      "trending": "Felkapott",
+      "players": "Legtöbb játékos",
+      "new": "Legújabb",
+      "name": "Név"
+    },
+    "filters": {
+      "tags": "Játékstílus",
+      "language": "Nyelv",
+      "engine": "Motor",
+      "rustic": "Rustic",
+      "verifiedOnly": "Csak ellenőrzöttek",
+      "reset": "Szűrők visszaállítása",
+      "remove": "Szűrő eltávolítása: {{filter}}"
+    },
+    "tags": {
+      "survival": "Túlélő",
+      "smp": "SMP",
+      "creative": "Kreatív",
+      "minigames": "Minijátékok",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Szerepjáték",
+      "factions": "Factions",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Kaland",
+      "building": "Építés",
+      "economy": "Gazdaság",
+      "modded": "Modolt",
+      "anarchy": "Anarchia",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Szerverek",
+      "status": "Élő állapot",
+      "cloudSaw_one": "a felhő {{value}} online játékost látott {{when}}",
+      "cloudSaw_other": "a felhő {{value}} online játékost látott {{when}}",
+      "engine": "Motor",
+      "version": "Játékverzió",
+      "languages": "Nyelvek",
+      "plays": "Indítások ezen a héten",
+      "about": "Névjegy",
+      "noDescription": "Még nincs leírás.",
+      "address": "Cím",
+      "copy": "Másolás",
+      "openSite": "Megnyitás a weboldalon",
+      "website": "Weboldal",
+      "discord": "Discord",
+      "by": "Felvette: {{name}}",
+      "byStaff": "Felvette: a Rustic csapata",
+      "report": "Jelentés",
+      "rusticEdition": "Rustic kiadás szükséges",
+      "missing": "Ez a szerver nem érhető el",
+      "missingHint": "Lehet, hogy privát, a moderáció elrejtette, vagy törölték."
+    },
+    "report": {
+      "title": "Jelentés: {{name}}",
+      "lead": "Mondd el a moderátoroknak, mi a gond. Minden jelentést átnézünk.",
+      "reason": "Indok",
+      "reasons": {
+        "impersonation": "Másik szervernek adja ki magát",
+        "spam": "Spam vagy félrevezető",
+        "inappropriate_content": "Nem helyénvaló tartalom",
+        "cheating": "Csalás vagy rosszindulatú szerver",
+        "harassment": "Zaklatás",
+        "copyright": "Sérti a jogaimat (védjegy, név)",
+        "malware": "Kártevő",
+        "other": "Egyéb"
+      },
+      "details": "Részletek",
+      "detailsHint": "Opcionális, legfeljebb 2000 karakter.",
+      "send": "Jelentés küldése",
+      "sent": "Köszönjük, a jelentésed eljutott a moderátorokhoz.",
+      "signIn": "Szerver jelentéséhez jelentkezz be a Rustic-fiókodba.",
+      "failed": "Nem sikerült elküldeni a jelentést."
+    }
+  }
+}

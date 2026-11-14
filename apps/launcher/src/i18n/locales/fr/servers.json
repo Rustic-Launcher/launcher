@@ -176,7 +176,8 @@
       "capDataFolder": "Son dossier de données",
       "eula": "J’accepte le CLUF de Minecraft (EULA)",
       "eulaHint": "Il est requis pour faire tourner un serveur. Vous l’acceptez vous-même ; Rustic ne l’accepte pas à votre place.",
-      "eulaRead": "Lire le CLUF"
+      "eulaRead": "Lire le CLUF",
+      "eulaTitle": "CLUF de Minecraft (EULA)"
     },
     "world": {
       "title": "Monde",
@@ -214,7 +215,10 @@
       "pickInstance": "Choisir une instance",
       "world": "Monde",
       "pickWorld": "Choisir un monde",
-      "noWorlds": "Aucun monde dans cette instance"
+      "noWorlds": "Aucun monde dans cette instance",
+      "newDesc": "Un monde neuf à partir d’une graine, avec vos règles.",
+      "importDesc": "Un dossier de monde de votre PC ou d’une sauvegarde.",
+      "fromInstanceDesc": "Un monde joué dans l’un de vos profils."
     },
     "type": {
       "memory": "Mémoire du serveur (RAM)",
@@ -266,7 +270,20 @@
       "generateKey": "Générez d’abord une clé, puis ajoutez-la à votre VPS.",
       "password": "Saisissez le mot de passe."
     },
-    "heading": "Créer un *serveur*"
+    "heading": "Créer un *serveur*",
+    "stepHints": {
+      "basics": "Nommez-le, choisissez ce qu’il fait tourner et le monde de départ.",
+      "hosting": "Choisissez la machine qui le fait tourner et sa mémoire.",
+      "access": "Choisissez comment vos amis le rejoignent. Modifiable ensuite."
+    },
+    "sections": {
+      "identity": "Identité"
+    },
+    "preview": {
+      "title": "Aperçu",
+      "unnamed": "Votre serveur",
+      "draft": "pas encore créé"
+    }
   },
   "hosting": {
     "local": {
@@ -464,7 +481,17 @@
       "port": "Port",
       "memory": "Mémoire",
       "created": "Créé le",
-      "folder": "Dossier"
+      "folder": "Dossier",
+      "uptime": "En ligne depuis",
+      "startedAt": "Depuis {{time}}",
+      "lastSession": "Dernière session",
+      "lastStarted": "Dernier démarrage {{when}}",
+      "neverStarted": "Jamais démarré",
+      "lastLines": "Dernières lignes de la console",
+      "noLines": "Rien n’a encore été journalisé.",
+      "openConsole": "Ouvrir la console",
+      "crashedTitle": "Le serveur s’est arrêté de façon inattendue",
+      "crashedBody": "Consultez les dernières lignes de la console, puis redémarrez-le."
     },
     "console": {
       "filter": "Filtrer les lignes",

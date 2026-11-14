@@ -1,4 +1,4 @@
-import { Skeleton, Tabs, TabsContent, TabsList, TabsTrigger } from '@rustic/ui';
+import { cn, Skeleton, Tabs, TabsContent, TabsList, TabsTrigger } from '@rustic/ui';
 import { useNavigate } from '@tanstack/react-router';
 import {
   Archive,
@@ -11,6 +11,7 @@ import {
   TriangleAlert,
   Users,
 } from 'lucide-react';
+import { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Page } from '@/components/Page';
 import { QueryError } from '@/components/RouteError';
@@ -94,6 +95,8 @@ export function ServerPage() {
     <Page wide>
       <ServerHeader server={server} />
       <Tabs
+        variant="pill"
+        className="gap-5"
         value={tab}
         onValueChange={(v) =>
           void navigate({
@@ -104,44 +107,60 @@ export function ServerPage() {
           })
         }
       >
-        <TabsList aria-label={t('manage.tabsLabel')} className="overflow-x-auto">
+        <TabsList
+          aria-label={t('manage.tabsLabel')}
+          className="bg-surface-2 isolate h-11 max-w-full [scrollbar-width:none] overflow-x-auto rounded-xl p-1"
+        >
           {SERVER_TABS.map((k) => (
-            <TabsTrigger
-              key={k}
-              value={k}
-              icon={ICONS[k]}
-              data-testid={`server-tab-${k}`}
-              className={k === 'danger' ? 'data-[state=active]:text-danger-text' : undefined}
-            >
-              {t(`manage.tabs.${k}`)}
-            </TabsTrigger>
+            <Fragment key={k}>
+              {k === 'danger' && (
+                <span aria-hidden className="bg-border mx-1.5 h-5 w-px shrink-0" />
+              )}
+              <TabsTrigger
+                value={k}
+                icon={ICONS[k]}
+                data-testid={`server-tab-${k}`}
+                title={t(`manage.tabs.${k}`)}
+                className={cn(
+                  'h-9 shrink-0 rounded-lg px-3 font-semibold xl:px-4 max-xl:[&>svg]:hidden',
+                  k === 'danger' &&
+                    'text-danger-text/80 hover:text-danger-text data-[state=active]:text-danger-text max-xl:[&>svg]:inline',
+                )}
+              >
+                {k === 'danger' ? (
+                  <span className="max-xl:sr-only">{t(`manage.tabs.${k}`)}</span>
+                ) : (
+                  t(`manage.tabs.${k}`)
+                )}
+              </TabsTrigger>
+            </Fragment>
           ))}
         </TabsList>
-        <TabsContent value="overview">
+        <TabsContent className="mt-0" value="overview">
           <OverviewTab server={server} />
         </TabsContent>
-        <TabsContent value="console">
+        <TabsContent className="mt-0" value="console">
           <ConsoleTab server={server} />
         </TabsContent>
-        <TabsContent value="players">
+        <TabsContent className="mt-0" value="players">
           <PlayersTab server={server} />
         </TabsContent>
-        <TabsContent value="plugins">
+        <TabsContent className="mt-0" value="plugins">
           <PluginsTab server={server} />
         </TabsContent>
-        <TabsContent value="config">
+        <TabsContent className="mt-0" value="config">
           <ConfigTab server={server} />
         </TabsContent>
-        <TabsContent value="datapacks">
+        <TabsContent className="mt-0" value="datapacks">
           <DatapacksTab server={server} />
         </TabsContent>
-        <TabsContent value="backups">
+        <TabsContent className="mt-0" value="backups">
           <BackupsTab server={server} />
         </TabsContent>
-        <TabsContent value="access">
+        <TabsContent className="mt-0" value="access">
           <AccessTab server={server} />
         </TabsContent>
-        <TabsContent value="danger">
+        <TabsContent className="mt-0" value="danger">
           <DangerTab server={server} />
         </TabsContent>
       </Tabs>

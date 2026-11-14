@@ -1,0 +1,1065 @@
+{
+  "list": {
+    "title": "Servidores",
+    "description": "Aloja um mundo para os teus amigos, aqui ou no teu próprio VPS, e mantém os teus servidores favoritos à mão.",
+    "create": "Criar servidor",
+    "tabs": {
+      "mine": "Os meus servidores",
+      "joined": "Visitados",
+      "discover": "Descobrir"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon vanilla"
+    },
+    "hosting": {
+      "local": "Este PC",
+      "remote": "Remoto: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Estado",
+    "states": {
+      "running": "Em execução",
+      "starting": "A arrancar…",
+      "stopping": "A parar…",
+      "stopped": "Parado",
+      "crashed": "Falhou",
+      "installing": "A instalar…",
+      "unreachable": "Inacessível"
+    },
+    "players": "Jogadores",
+    "playersCount": "{{online}}/{{max}} jogadores",
+    "version": "Versão",
+    "copyAddress": "Copiar endereço",
+    "copyFailed": "Não foi possível copiar para a área de transferência",
+    "notShared": "Ainda não partilhado",
+    "notSharedHint": "Ativa um endereço temporário, um código de convite ou um domínio no separador Acesso do servidor.",
+    "start": "Iniciar",
+    "stop": "Parar",
+    "startAria": "Iniciar {{name}}",
+    "stopAria": "Parar {{name}}",
+    "powerFailed": "O servidor não respondeu",
+    "empty": {
+      "title": "Aloja um mundo para os teus amigos em 3 passos",
+      "description": "Executa-o neste PC gratuitamente ou deixa o Rustic instalá-lo no teu próprio VPS."
+    },
+    "featured": {
+      "description": "Servidores escolhidos pela equipa do Rustic: jogo limpo, prontos para o Horizon, moderados.",
+      "empty": "Não há servidores em destaque de momento.",
+      "verified": "Verificado pelo Rustic",
+      "save": "Adicionar à lista",
+      "inList": "Na tua lista",
+      "online_one": "{{value}} online",
+      "online_many": "{{value}} online",
+      "online_other": "{{value}} online",
+      "view": "Acerca de {{name}}"
+    },
+    "viewLabel": "Vista",
+    "views": {
+      "discover": "Descobrir",
+      "mine": "Os meus servidores"
+    },
+    "searchPlaceholder": {
+      "discover": "Pesquisar servidores em destaque…",
+      "mine": "Pesquisar os teus servidores…"
+    },
+    "clearSearch": "Limpar a pesquisa",
+    "sortLabel": "Ordenar",
+    "sorts": {
+      "recommended": "Recomendados",
+      "players": "Mais jogadores",
+      "name": "Nome"
+    },
+    "refreshPing": "Atualizar a latência e o estado",
+    "layoutList": "Mostrar em lista",
+    "layoutGrid": "Mostrar em grelha",
+    "createHint": "Aqui, no teu VPS ou, em breve, na cloud",
+    "heading": "Joga em *servidores*",
+    "eyebrow": "Servidores",
+    "sections": {
+      "hosted": "Alojados por ti",
+      "joined": "Servidores visitados"
+    }
+  },
+  "multiplayer": {
+    "description": "A lista de servidores do jogo, partilhada por todas as tuas instâncias.",
+    "add": "Adicionar um servidor",
+    "added": "{{name}} adicionado à tua lista",
+    "addFailed": "Não foi possível adicionar este servidor",
+    "name": "Nome do servidor",
+    "namePlaceholder": "Nome",
+    "address": "Endereço do servidor",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Usa um nome de anfitrião ou um IP, com :porta opcional.",
+    "refreshPings": "Atualizar",
+    "favorites_one": "Favorito · {{count}}",
+    "favorites_many": "Favoritos · {{count}}",
+    "favorites_other": "Favoritos · {{count}}",
+    "others_one": "Outro servidor · {{count}}",
+    "others_many": "Outros servidores · {{count}}",
+    "others_other": "Outros servidores · {{count}}",
+    "favorite": "Adicionar {{name}} aos favoritos",
+    "unfavorite": "Remover {{name}} dos favoritos",
+    "offline": "Offline",
+    "unreachable": "Não é possível contactar este servidor neste momento",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Entrar",
+    "joinAria": "Entrar em {{name}}",
+    "joinWith": "Entra com {{instance}}",
+    "noInstance": "Cria uma instância para entrares em servidores",
+    "joining": "A iniciar e a entrar em {{name}}…",
+    "more": "Mais ações para {{name}}",
+    "copyAddress": "Copiar endereço",
+    "removed": "{{name}} removido",
+    "undo": "Anular",
+    "empty": {
+      "title": "Ainda não há servidores",
+      "description": "Adiciona um com o respetivo endereço ou escolhe um em Descobrir."
+    }
+  },
+  "wizard": {
+    "title": "Criar um servidor",
+    "subtitle": "Três passos: o que executar, onde o alojar e como entram os amigos.",
+    "creatingTitle": "A configurar {{name}}",
+    "stepOf": "Passo {{index}} de {{total}}",
+    "steps": {
+      "basics": "Básico",
+      "hosting": "Onde alojar",
+      "access": "Acesso"
+    },
+    "create": "Criar servidor",
+    "installOn": "Instalar em {{host}}",
+    "createFailed": "Não foi possível criar o servidor",
+    "noRusticServer": "O programa rustic-server não foi encontrado. Escolhe-o em Definições › Jogo e instâncias › Rustic Server ou instala uma compilação da edição Rustic que o inclua.",
+    "openRusticServerSettings": "Abrir as definições",
+    "fixErrors": "Verifica os campos realçados para continuar.",
+    "discard": {
+      "title": "Descartar este servidor?",
+      "body": "O que introduziste no assistente vai perder-se.",
+      "keep": "Continuar a editar",
+      "confirm": "Descartar"
+    },
+    "basics": {
+      "name": "Nome do servidor",
+      "namePlaceholder": "SMP da Lou",
+      "icon": "Ícone",
+      "icons": {
+        "grass": "Erva",
+        "sword": "Espada",
+        "pickaxe": "Picareta",
+        "castle": "Castelo",
+        "rocket": "Foguetão",
+        "gem": "Gema",
+        "flame": "Chama",
+        "leaf": "Folha",
+        "star": "Estrela",
+        "compass": "Bússola"
+      },
+      "color": "Cor",
+      "colorN": "Cor {{n}}",
+      "type": "Tipo",
+      "recommended": "Recomendado",
+      "nightly": "Nightly",
+      "rusticDesc": "Plugins (.rplugin), isolados (sandbox): um plugin nunca pode fazer o teu servidor falhar.",
+      "horizonDesc": "O servidor próprio do Horizon, sem plugins.",
+      "version": "Versão do Horizon",
+      "maxPlayers": "Máximo de jogadores",
+      "versionLineRustic": "Rustic Server 0.1 no Horizon {{version}}",
+      "versionLineHorizon": "Servidor Horizon {{version}}",
+      "sameAsClient": "(igual ao teu cliente)",
+      "starterPlugins": "Plugins iniciais",
+      "starterHint": "Plugins oficiais, com o que estão autorizados a fazer.",
+      "capNetwork": "Rede",
+      "capNoNetwork": "Sem rede",
+      "capNoFiles": "Sem ficheiros",
+      "capDataFolder": "Pasta de dados própria",
+      "eula": "Aceito o EULA do Minecraft",
+      "eulaHint": "É obrigatório para executar um servidor. És tu que o aceitas; o Rustic não o aceita por ti.",
+      "eulaRead": "Ler o EULA",
+      "eulaTitle": "EULA do Minecraft"
+    },
+    "world": {
+      "title": "Mundo",
+      "new": "Novo mundo",
+      "import": "Importar uma pasta",
+      "fromInstance": "De uma instância",
+      "seed": "Semente",
+      "seedHint": "Deixa em branco para um mundo aleatório.",
+      "seedPlaceholder": "Opcional",
+      "randomSeed": "Semente aleatória",
+      "levelType": "Tipo de mundo",
+      "levelTypes": {
+        "default": "Predefinido",
+        "flat": "Superplano",
+        "large_biomes": "Biomas grandes",
+        "amplified": "Amplificado"
+      },
+      "gamemode": "Modo de jogo",
+      "gamemodes": {
+        "survival": "Sobrevivência",
+        "creative": "Criativo",
+        "adventure": "Aventura"
+      },
+      "difficulty": "Dificuldade",
+      "difficulties": {
+        "peaceful": "Pacífico",
+        "easy": "Fácil",
+        "normal": "Normal",
+        "hard": "Difícil"
+      },
+      "structures": "Gerar estruturas",
+      "hardcore": "Hardcore",
+      "folder": "Pasta do mundo",
+      "instance": "Instância",
+      "pickInstance": "Escolhe uma instância",
+      "world": "Mundo",
+      "pickWorld": "Escolhe um mundo",
+      "noWorlds": "Não há mundos nesta instância",
+      "newDesc": "Um mundo novo a partir de uma semente, com as tuas regras.",
+      "importDesc": "Uma pasta de mundo do teu PC ou de uma cópia de segurança.",
+      "fromInstanceDesc": "Um mundo que jogaste num dos teus perfis."
+    },
+    "type": {
+      "memory": "Memória do servidor (RAM)",
+      "memoryHint": "4 GB chegam para a maioria dos grupos de amigos. Mais ajuda com muitos jogadores ou modpacks grandes."
+    },
+    "access": {
+      "intro": "Como entram os teus amigos. Podes ativar várias opções ao mesmo tempo e alterá-las mais tarde.",
+      "lan": "Amigos na minha rede (LAN)",
+      "lanDetail": "O endereço local deste PC, mostrado assim que o servidor existir.",
+      "publicIp": "Endereço público",
+      "publicIpDetail": "o IP do teu VPS",
+      "alwaysOn": "Sempre ativo",
+      "relay": "Endereço temporário",
+      "relayDetail": "gratuito, enquanto o servidor estiver a funcionar; sem portas para abrir",
+      "invite": "Código de convite",
+      "inviteDetail": "Um código que os amigos colam no Rustic Launcher para entrar.",
+      "domain": "O meu próprio domínio",
+      "domainDetail": "Ligar a Porkbun · Comprar na Porkbun · Usar qualquer registador",
+      "domainAfter": "Configurar depois da criação",
+      "safety": "Modo online ativo: só os jogadores que têm o jogo podem entrar. Lista de permissões ativa."
+    },
+    "summary": {
+      "title": "Resumo",
+      "version": "Versão",
+      "host": "Alojamento",
+      "world": "Mundo",
+      "memory": "Memória",
+      "players": "Máximo de jogadores",
+      "plugins": "Plugins",
+      "none": "Nenhum",
+      "eulaAccepted": "Aceitaste o EULA do Minecraft no passo 1."
+    },
+    "errors": {
+      "nameRequired": "Dá um nome ao teu servidor.",
+      "nameTooLong": "Usa no máximo 40 carateres.",
+      "version": "Escolhe uma versão do Horizon.",
+      "maxPlayers": "Entre 1 e 1000 jogadores.",
+      "importPath": "Escolhe a pasta do mundo a importar.",
+      "world": "Escolhe uma instância e um dos seus mundos.",
+      "seed": "As sementes têm no máximo 64 carateres.",
+      "eula": "Aceita o EULA para executares um servidor.",
+      "cloudUnavailable": "O Rustic Cloud ainda não está disponível.",
+      "vpsNotReady": "Liga primeiro o teu VPS e passa as verificações.",
+      "memory": "Pelo menos 1 GB de memória.",
+      "host": "Introduz um endereço IP ou um nome de anfitrião.",
+      "port": "Porta entre 1 e 65535.",
+      "username": "Introduz o nome de utilizador Linux.",
+      "keyPath": "Escolhe o ficheiro da tua chave privada.",
+      "generateKey": "Gera primeiro uma chave e depois adiciona-a ao teu VPS.",
+      "password": "Introduz a palavra-passe."
+    },
+    "heading": "Criar um *servidor*",
+    "stepHints": {
+      "basics": "Dá-lhe um nome, escolhe o que executa e o mundo inicial.",
+      "hosting": "Escolhe a máquina que o executa e quanta memória recebe.",
+      "access": "Escolhe como os teus amigos entram. Podes mudar isto depois."
+    },
+    "sections": {
+      "identity": "Nome e ícone"
+    },
+    "preview": {
+      "title": "Pré-visualização",
+      "unnamed": "O teu servidor",
+      "draft": "ainda não criado"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "Este PC (local)",
+      "free": "Gratuito",
+      "description": "O teu PC tem de ficar ligado enquanto os amigos jogam.",
+      "settings": "Neste PC",
+      "reach": "Os amigos acedem-lhe na tua rede, através de um endereço temporário Rustic ou com um código de convite. Não é preciso configurar o router.",
+      "startWithLauncher": "Iniciar com o launcher",
+      "startWithLauncherHint": "O servidor arranca quando o Rustic Launcher abre."
+    },
+    "vps": {
+      "title": "O teu VPS (SSH)",
+      "description": "O teu servidor Linux. Nós instalamo-lo e executamo-lo por ti.",
+      "which": "VPS",
+      "existing_one": "VPS guardado ({{count}})",
+      "existing_many": "VPS guardados ({{count}})",
+      "existing_other": "VPS guardados ({{count}})",
+      "new": "Adicionar um VPS",
+      "pinned": "Chave do anfitrião fixada",
+      "host": "Anfitrião",
+      "port": "Porta",
+      "user": "Utilizador",
+      "userPlaceholder": "root ou um utilizador sudo",
+      "auth": "Autenticação",
+      "authGenerate": "Gerar uma chave para mim",
+      "authKey": "Ficheiro de chave existente",
+      "authPassword": "Palavra-passe (uma vez)",
+      "generateHint": "Recomendado. O Rustic cria um par de chaves; a chave privada nunca sai deste PC.",
+      "generate": "Gerar uma chave",
+      "addKeyCommand": "Executa isto uma vez na consola do teu VPS para autorizar a chave:",
+      "keyStored": "Chave privada guardada no porta-chaves do sistema ({{path}})",
+      "openFirewall": "Abrir a porta do jogo na firewall do VPS",
+      "openFirewallHint": "Permite TCP para a porta do servidor no ufw ou no firewalld. A firewall do teu fornecedor também poderá precisar disso.",
+      "keyFile": "Chave privada",
+      "passphrase": "Frase de acesso",
+      "optional": "Opcional",
+      "password": "Palavra-passe",
+      "passwordHint": "Usada uma vez para instalar uma chave. Não é guardada.",
+      "test": "Testar ligação",
+      "reachable": "Ligado · {{ms}} ms",
+      "unreachable": "Não conseguimos contactar este VPS",
+      "authFailed": "O VPS recusou a autenticação"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Brevemente",
+      "description": "Servidores nas máquinas do Rustic, sempre ligados.",
+      "waitlist": "Recebe um e-mail quando o Rustic Cloud abrir.",
+      "email": "Endereço de e-mail",
+      "join": "Entrar na lista de espera",
+      "joined": "Estás na lista (n.º {{position}}). Vamos enviar-te um e-mail.",
+      "invalidEmail": "Introduz um endereço de e-mail válido."
+    },
+    "requirements": {
+      "title": "Verificação de requisitos",
+      "ram": "Memória ({{free}} livre)",
+      "gameFiles": "Ficheiros do jogo preparados",
+      "port": "Porta 25565 livre",
+      "hint": "O espaço em disco é verificado quando os ficheiros do servidor são transferidos."
+    },
+    "fingerprint": {
+      "title": "Confiar em {{host}}?",
+      "description": "Primeira ligação a este VPS. Compara esta impressão digital com a que aparece na consola do teu fornecedor antes de confiares nela.",
+      "warning": "Se não corresponder, cancela: alguém pode estar a intercetar a ligação. O Rustic vai bloquear qualquer alteração futura desta chave.",
+      "trust": "Confiar e continuar"
+    },
+    "testFailed": "O teste de ligação falhou",
+    "checkFailed": "A verificação do VPS falhou",
+    "preflight": {
+      "running": "A verificar o teu VPS…",
+      "ok": "O teu VPS está pronto",
+      "notOk": "O teu VPS não cumpre os requisitos",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_many": "{{count}} vCPU",
+      "cpu_other": "{{count}} vCPU",
+      "memory": "{{memory}} de memória",
+      "disk": "{{disk}} livres em disco",
+      "systemd": "systemd disponível",
+      "ip": "IP público"
+    },
+    "problems": {
+      "memory": "Memória",
+      "disk": "Disco",
+      "arch": "Arquitetura",
+      "os": "Sistema operativo",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "A instalar em {{host}}",
+      "steps": {
+        "connect": "Ligar por SSH",
+        "check": "Verificações prévias",
+        "user": "Criar o utilizador «rustic»",
+        "download": "Enviar os ficheiros do servidor assinados",
+        "engine": "Configurar o motor Rustic",
+        "service": "Instalar o serviço",
+        "firewall": "Abrir a porta 25565",
+        "world": "Preparar o mundo",
+        "start": "Iniciar e verificar"
+      },
+      "state": {
+        "pending": "em espera",
+        "running": "em curso",
+        "done": "concluído",
+        "failed": "falhou",
+        "skipped": "ignorado"
+      },
+      "skippedVanilla": "Não é necessário para o Horizon vanilla",
+      "log_one": "Mostrar registo ({{count}} linha)",
+      "log_many": "Mostrar registo ({{count}} linhas)",
+      "log_other": "Mostrar registo ({{count}} linhas)",
+      "vpsDone": "{{name}} está a funcionar em {{host}}",
+      "vpsDoneBody": "Gere-o a partir do launcher como um servidor local: consola, jogadores, plugins, cópias de segurança.",
+      "localDownload": "Transferir {{engine}}",
+      "localInit": "Preparar o mundo e as definições",
+      "localStart": "Primeiro arranque",
+      "localReady": "Pronto para iniciar",
+      "localDone": "{{name}} está a funcionar",
+      "localDoneBody": "Partilha o endereço a partir do separador Acesso ou convida amigos a partir do painel de amigos.",
+      "open": "Abrir servidor",
+      "backToList": "Voltar aos servidores",
+      "retry": "Tentar novamente",
+      "failed": "A instalação falhou",
+      "crashed": "O servidor parou durante o primeiro arranque. Verifica a consola."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Secções do servidor",
+    "tabs": {
+      "overview": "Visão geral",
+      "console": "Consola",
+      "players": "Jogadores",
+      "plugins": "Plugins",
+      "config": "Configuração",
+      "datapacks": "Pacotes de dados",
+      "backups": "Cópias de segurança",
+      "access": "Acesso",
+      "danger": "Zona de perigo"
+    },
+    "state": {
+      "stopped": "Parado",
+      "starting": "A arrancar…",
+      "running": "Em execução",
+      "stopping": "A parar…",
+      "crashed": "Falhou",
+      "installing": "A instalar…",
+      "unreachable": "Inacessível"
+    },
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "close": "Fechar",
+    "remove": "Remover",
+    "done": "Concluído",
+    "header": {
+      "back": "Servidores",
+      "players": "{{online}}/{{max}} jogadores",
+      "uptime": "ativo há {{duration}}",
+      "start": "Iniciar",
+      "stop": "Parar",
+      "restart": "Reiniciar",
+      "join": "Entrar",
+      "address": "Endereço",
+      "copyAddress": "Copiar o endereço do servidor",
+      "powerFailed": "Não foi possível mudar o estado do servidor"
+    },
+    "overview": {
+      "stoppedTitle": "O servidor está parado",
+      "stoppedBody": "Inicia-o para veres em tempo real o CPU, a memória, os TPS e o tempo por tick.",
+      "cpu": "CPU",
+      "cpuChart": "Utilização do CPU nos últimos dois minutos",
+      "ram": "Memória",
+      "ramChart": "Memória usada nos últimos dois minutos",
+      "of": "de {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Ticks por segundo nos últimos dois minutos",
+      "mspt": "Tempo por tick",
+      "msptChart": "Milissegundos por tick nos últimos dois minutos, linha de orçamento de 50 ms",
+      "msptBudget": "orçamento 50 ms",
+      "health": {
+        "good": "Fluido",
+        "busy": "Ocupado",
+        "lagging": "Com atraso"
+      },
+      "onlineTitle_one": "{{count}} jogador online",
+      "onlineTitle_many": "{{count}} jogadores online",
+      "onlineTitle_other": "{{count}} jogadores online",
+      "onlineStopped": "Ninguém pode entrar enquanto o servidor estiver parado.",
+      "nobody": "Ninguém está a jogar neste momento.",
+      "infoTitle": "Detalhes",
+      "world": "Mundo",
+      "version": "Horizon",
+      "port": "Porta",
+      "memory": "Memória",
+      "created": "Criado",
+      "folder": "Pasta",
+      "uptime": "Tempo ativo",
+      "startedAt": "Desde {{time}}",
+      "lastSession": "Última sessão",
+      "lastStarted": "Último arranque: {{when}}",
+      "neverStarted": "Ainda não foi iniciado",
+      "lastLines": "Últimas linhas da consola",
+      "noLines": "Ainda nada registado.",
+      "openConsole": "Abrir a consola",
+      "crashedTitle": "O servidor parou inesperadamente",
+      "crashedBody": "Vê as últimas linhas da consola e volta a iniciá-lo."
+    },
+    "console": {
+      "filter": "Filtrar linhas",
+      "filters": {
+        "all": "Todas",
+        "info": "Info",
+        "warn": "Avisos",
+        "error": "Erros",
+        "chat": "Chat"
+      },
+      "levels": {
+        "info": "info",
+        "warn": "aviso",
+        "error": "erro",
+        "command": "cmd",
+        "chat": "chat"
+      },
+      "autoScroll": "Seguir as novas linhas",
+      "logLabel": "Consola do servidor",
+      "empty": "Ainda não há linhas.",
+      "suggestions": "Sugestões de comandos",
+      "inputLabel": "Comando do servidor",
+      "placeholder": "Escreve um comando (Tab completa, ↑ histórico)",
+      "offline": "Inicia o servidor para enviares comandos",
+      "send": "Enviar",
+      "sendFailed": "Não foi possível enviar o comando",
+      "hint": "Os comandos são executados como a consola do servidor, com todas as permissões. Não é preciso a barra inicial."
+    },
+    "players": {
+      "whitelist": "Lista de permissões",
+      "whitelistHint": "Só os jogadores da lista podem entrar. Recomendado quando o servidor está acessível a partir da internet.",
+      "view": "Mostrar jogadores",
+      "views": {
+        "online": "Online",
+        "all": "Todos",
+        "ops": "Operadores",
+        "whitelist": "Na lista de permissões",
+        "banned": "Banidos"
+      },
+      "search": "Procurar um jogador",
+      "emptyOnline": "Ninguém está online",
+      "empty": "Não há jogadores aqui",
+      "stoppedHint": "Inicia o servidor para veres quem está a jogar.",
+      "online": "Online",
+      "offline": "Offline",
+      "op": "Operador",
+      "whitelisted": "Na lista de permissões",
+      "banned": "Banido",
+      "playtime": "{{duration}} de jogo",
+      "kick": "Expulsar",
+      "kickAria": "Expulsar {{name}}",
+      "more": "Mais ações para {{name}}",
+      "makeOp": "Tornar operador",
+      "deop": "Remover operador",
+      "whitelistAdd": "Adicionar à lista de permissões",
+      "whitelistRemove": "Remover da lista de permissões",
+      "ban": "Banir",
+      "pardon": "Desbanir",
+      "banTitle": "Banir {{name}}?",
+      "banBody": "O jogador é desligado e não pode voltar a entrar até o desbanires.",
+      "reason": "Motivo (opcional, mostrado ao jogador)",
+      "failed": "A ação falhou",
+      "done": {
+        "kick": "{{name}} foi expulso",
+        "ban": "{{name}} foi banido",
+        "pardon": "{{name}} foi desbanido",
+        "op": "{{name}} é agora operador",
+        "deop": "{{name}} já não é operador",
+        "whitelist_add": "{{name}} foi adicionado à lista de permissões",
+        "whitelist_remove": "{{name}} foi removido da lista de permissões"
+      }
+    },
+    "config": {
+      "mode": "Modo de edição",
+      "form": "Definições",
+      "raw": "Ficheiro em bruto",
+      "groups": {
+        "general": "Geral",
+        "world": "Mundo",
+        "players": "Jogadores",
+        "network": "Rede",
+        "performance": "Desempenho"
+      },
+      "keys": {
+        "motd": "Mensagem do dia",
+        "max-players": "Máximo de jogadores",
+        "white-list": "Lista de permissões",
+        "online-mode": "Modo online (verificação de conta)",
+        "pvp": "Jogador contra jogador",
+        "gamemode": "Modo de jogo predefinido",
+        "difficulty": "Dificuldade",
+        "level-seed": "Semente do mundo",
+        "spawn-protection": "Raio de proteção do ponto de nascimento",
+        "server-port": "Porta",
+        "enable-rcon": "Consola remota (RCON)",
+        "view-distance": "Distância de visão",
+        "simulation-distance": "Distância de simulação"
+      },
+      "restart": "Reiniciar",
+      "restartNeeded": "Reinicia o servidor para aplicar algumas alterações",
+      "unsaved_one": "{{count}} alteração por guardar",
+      "unsaved_many": "{{count}} alterações por guardar",
+      "unsaved_other": "{{count}} alterações por guardar",
+      "noChanges": "Sem alterações",
+      "discard": "Descartar",
+      "saved": "Configuração guardada",
+      "saveFailed": "Não foi possível guardar a configuração",
+      "rawTitle": "server.toml",
+      "rawWarning": "Avançado: um erro de escrita pode impedir o servidor de arrancar. Os valores são verificados quando guardas."
+    },
+    "plugins": {
+      "vanillaTitle": "Os plugins requerem o Rustic Server",
+      "vanillaBody": "Este servidor executa o Horizon vanilla. O Rustic Server acrescenta plugins .rplugin isolados (sandbox) que nunca o podem fazer falhar. Cria um Rustic Server e importa este mundo para usares plugins.",
+      "createRustic": "Criar um Rustic Server",
+      "intro": "Os plugins são executados isolados (sandbox): um plugin que falha é desativado com uma linha no registo e o servidor continua a funcionar. Cada um declara aquilo a que pode aceder.",
+      "upload": "Adicionar um ficheiro…",
+      "uploadTitle": "Escolhe um ficheiro .rplugin",
+      "find": "Encontrar plugins",
+      "empty": "Ainda não há plugins",
+      "emptyBody": "Navega em Conteúdo › Plugins para adicionares um com um clique.",
+      "errored": "Desativado após um erro",
+      "disabled": "Desativado",
+      "noDescription": "Sem descrição",
+      "toggle": "Ativar {{name}}",
+      "capabilities": "Acesso",
+      "noNetwork": "Sem rede",
+      "network": "Rede: {{domains}}",
+      "fs": {
+        "none": "Sem ficheiros",
+        "data-folder": "Pasta de dados própria"
+      },
+      "update": "Atualizar para {{version}}",
+      "updated": "{{name}} atualizado para {{version}}",
+      "installed": "{{name}} instalado e ativado",
+      "removeTitle": "Remover {{name}}?",
+      "removeBody": "O plugin é descarregado e o ficheiro eliminado. A pasta de dados é mantida.",
+      "failed": "A ação no plugin falhou"
+    },
+    "datapacks": {
+      "intro": "Pacotes de dados do mundo «{{world}}».",
+      "find": "Encontrar pacotes de dados",
+      "empty": "Não há pacotes de dados neste mundo",
+      "toggle": "Ativar {{name}}",
+      "remove": "Remover {{name}}",
+      "reloadHint": "As alterações aplicam-se depois de /reload ou de um reinício.",
+      "failed": "A ação no pacote de dados falhou"
+    },
+    "backups": {
+      "nowTitle": "Fazer cópia de segurança agora",
+      "nowBody": "Uma cópia do mundo e da configuração. O servidor continua a funcionar.",
+      "note": "Nota",
+      "notePlaceholder": "Nota opcional, p. ex. «antes da atualização»",
+      "now": "Fazer cópia agora",
+      "created": "Cópia de segurança criada",
+      "empty": "Ainda não há cópias de segurança",
+      "kinds": {
+        "manual": "Manual",
+        "scheduled": "Agendada",
+        "pre_restore": "Antes do restauro"
+      },
+      "restore": "Restaurar",
+      "restoreTitle": "Restaurar esta cópia de segurança?",
+      "restoreBody": "O mundo volta a {{date}}. Tudo o que foi construído desde então é substituído. Primeiro é feita uma cópia de segurança do mundo atual.",
+      "restored": "Cópia de segurança restaurada",
+      "delete": "Eliminar cópia de segurança",
+      "deleteTitle": "Eliminar esta cópia de segurança?",
+      "deleteBody": "Esta cópia de segurança é removida definitivamente.",
+      "failed": "A ação na cópia de segurança falhou",
+      "scheduleTitle": "Cópias de segurança automáticas",
+      "scheduleBody": "As cópias automáticas mais antigas são removidas quando o limite é atingido.",
+      "scheduleEnabled": "Fazer cópias de segurança automaticamente",
+      "every": "A cada",
+      "hours_one": "{{count}} hora",
+      "hours_many": "{{count}} horas",
+      "hours_other": "{{count}} horas",
+      "keep": "Manter",
+      "keepCount_one": "a última cópia",
+      "keepCount_many": "as últimas {{count}} cópias",
+      "keepCount_other": "as últimas {{count}} cópias",
+      "scheduleSaved": "Agendamento das cópias de segurança guardado"
+    },
+    "danger": {
+      "deleteTitle": "Eliminar este servidor",
+      "deleteBody": "Para o servidor e remove-o do launcher. Podes manter os ficheiros.",
+      "delete": "Eliminar servidor",
+      "removeVpsTitle": "Remover do teu VPS",
+      "removeVpsBody": "Para o serviço em {{host}} e desinstala o Rustic. O teu VPS continua a ser teu.",
+      "removeVps": "Remover do VPS",
+      "confirmTitle": "Eliminar «{{name}}»?",
+      "confirmBody": "Esta ação não pode ser anulada. Faz primeiro uma cópia de segurança se puderes vir a precisar do mundo.",
+      "deleteFiles": "Eliminar também o mundo e todos os ficheiros do servidor",
+      "typeName": "Escreve «{{name}}» para confirmar",
+      "deleted": "{{name}} foi eliminado",
+      "failed": "Não foi possível eliminar o servidor"
+    }
+  },
+  "access": {
+    "intro": "Escolhe como os amigos chegam ao teu servidor. Podes ativar várias opções ao mesmo tempo.",
+    "optional": "Opcional",
+    "lan": {
+      "title": "Na tua rede",
+      "body": "Os jogadores na mesma rede Wi-Fi ou local entram com este endereço.",
+      "copy": "Copiar o endereço local"
+    },
+    "public": {
+      "title": "Endereço público",
+      "body": "O IP e a porta do teu VPS. Qualquer pessoa pode entrar com eles; um domínio é mais fácil de partilhar.",
+      "copy": "Copiar o endereço público"
+    },
+    "relay": {
+      "title": "Endereço temporário",
+      "body": "Um endereço gratuito no Rustic Relay enquanto o servidor estiver a funcionar. Sem configurar o router e o teu IP fica oculto.",
+      "toggle": "Endereço temporário",
+      "copy": "Copiar o endereço temporário",
+      "off": "Desativado. Ativa-o para obteres um endereço que podes partilhar.",
+      "label": "Nome no endereço",
+      "apply": "Aplicar",
+      "status": {
+        "off": "Desativado",
+        "connecting": "À espera que o servidor arranque",
+        "online": "Acessível agora",
+        "error": "Relay inacessível"
+      },
+      "failed": "Não foi possível alterar o endereço temporário",
+      "taken": "Este nome já está a ser usado. Experimenta outro.",
+      "invalid": "Usa 3 a 32 letras minúsculas, algarismos ou hífenes."
+    },
+    "invite": {
+      "title": "Código de convite",
+      "body": "Os amigos que usam o Rustic Launcher colam este código para entrar, como no Jogar com amigos do Horizon.",
+      "create": "Criar um código",
+      "copy": "Copiar o código de convite",
+      "expires": "Expira {{when}}",
+      "revoke": "Revogar"
+    },
+    "advanced": "Avançado: abrir uma porta no teu router (UPnP)",
+    "upnp": {
+      "title": "Mapeamento de portas UPnP",
+      "warning": "Isto pede ao teu router que abra a porta do servidor à internet. O teu endereço IP público fica visível para todos os jogadores, o que expõe a tua ligação de casa (ataques, localização). Prefere o endereço temporário ou um domínio.",
+      "status": {
+        "off": "Desativado",
+        "mapping": "A pedir ao router…",
+        "mapped": "Porta aberta",
+        "failed": "O router recusou (o UPnP pode estar desativado)"
+      },
+      "mapped": "Porta aberta: {{address}}",
+      "copy": "Copiar o endereço público",
+      "failed": "Não foi possível abrir a porta",
+      "prefer": "O endereço temporário e os domínios funcionam sem abrir nenhuma porta."
+    }
+  },
+  "domains": {
+    "title": "O meu próprio domínio",
+    "intro": "Um domínio é o endereço do teu servidor, como play.oteunome.net. Podes ligar um que já tenhas, comprar um na Porkbun sem sair do launcher ou usar qualquer registador: mostramos-te exatamente o que acrescentar.",
+    "automatic": "Automático",
+    "anyRegistrar": "Qualquer registador",
+    "otherPaths": "Outras opções",
+    "paths": {
+      "porkbun": {
+        "title": "Ligar a Porkbun",
+        "body": "Já tens um domínio na Porkbun? Liga a tua conta e nós criamos os registos por ti."
+      },
+      "buy": {
+        "title": "Comprar um domínio na Porkbun",
+        "body": "Encontra um nome livre, compra-o na tua própria conta Porkbun e fica configurado automaticamente."
+      },
+      "manual": {
+        "title": "Usar um domínio de qualquer registador",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: mostramos o que tens de acrescentar e verificamos por ti."
+      }
+    },
+    "subdomain": "Subdomínio",
+    "subdomainHint": "play é uma boa opção predefinida.",
+    "apexHint": "Vazio: o próprio domínio (requer ALIAS/ANAME em alguns registadores).",
+    "invalidSubdomain": "Apenas letras, algarismos e hífenes.",
+    "invalidDomain": "Isto não parece um domínio (example.net).",
+    "copyAddress": "Copiar o endereço do domínio",
+    "configureFailed": "Não foi possível configurar o domínio",
+    "boundBody": "Os jogadores entram com este endereço.",
+    "remove": "Remover domínio",
+    "removeTitle": "Deixar de usar {{domain}}?",
+    "removeBody": "O endereço deixa de apontar para este servidor quando os registos forem removidos. O domínio continua a ser teu.",
+    "status": {
+      "pending": "Pendente",
+      "propagating": "Em propagação",
+      "verified": "Ligado",
+      "error": "Erro"
+    },
+    "provider": {
+      "porkbun": "Gerido através da Porkbun",
+      "manual": "Gerido no teu registador"
+    },
+    "connected": "Domínio ligado",
+    "connectedBody": "O Rustic Cloud verifica o registo TXT e depois o teu endereço começa a funcionar. Podes fechar isto; vamos notificar-te.",
+    "porkbun": {
+      "step1": "Em porkbun.com › Account › API Access, cria uma chave de API.",
+      "openApi": "Abrir o API Access da Porkbun",
+      "step2": "Na página do domínio na Porkbun, ativa «API Access».",
+      "apiKey": "Chave de API",
+      "secret": "Chave de API secreta",
+      "keychain": "Guardada no porta-chaves do teu computador, nunca enviada ao Rustic.",
+      "connect": "Ligar",
+      "badApiKey": "Uma chave de API começa por pk1_.",
+      "badSecret": "Uma chave de API secreta começa por sk1_.",
+      "rejected": "A Porkbun recusou estas chaves. Verifica-as ou cria um novo par.",
+      "connected": "Porkbun ligada",
+      "disconnect": "Desligar",
+      "domain": "Domínio",
+      "pickDomain": "Escolhe um dos teus domínios",
+      "apiAccessOff": "O API Access está desativado para este domínio na Porkbun",
+      "apiAccessHint": "Os domínios a cinzento precisam de ter o «API Access» ativado na Porkbun.",
+      "preview": "Alterações que vamos fazer",
+      "dryRun": "Pré-visualizar",
+      "previewBody": "Estes registos são adicionados ou substituídos no teu domínio para que {{fqdn}} chegue a este servidor. Nada muda até aplicares.",
+      "apply": "Configurar automaticamente"
+    },
+    "buy": {
+      "intro": "O domínio é registado na tua própria conta Porkbun e pago lá. O Rustic nunca recebe pagamentos por ele.",
+      "needsAccount": "Para comprar, precisas da tua conta Porkbun: liga-a primeiro (podes criar uma gratuitamente em porkbun.com).",
+      "search": "Nome que queres",
+      "searchPlaceholder": "p. ex. loucraft",
+      "searchButton": "Pesquisar",
+      "noResults": "Sem resultados para este nome.",
+      "premium": "Premium",
+      "price": "{{price}} no primeiro ano · renova a {{renewal}}",
+      "taken": "Indisponível",
+      "select": "Selecionar",
+      "overLimit": "Acima de 100 $: compra-o em porkbun.com",
+      "pricesNote": "Os preços são os da Porkbun, em dólares americanos, tal como cotados agora. Podem aplicar-se impostos na Porkbun.",
+      "confirmTitle": "Confirmar a compra na Porkbun",
+      "seller": "Vendedor: Porkbun LLC, não o Rustic. Aplicam-se os termos, preços, renovações e reembolsos da Porkbun.",
+      "domain": "Domínio",
+      "address": "Endereço do servidor",
+      "registrar": "Registador",
+      "registrarValue": "Porkbun, na tua conta",
+      "firstYear": "Primeiro ano",
+      "renewal": "Renova anualmente a",
+      "payment": "Pago com o crédito da tua conta Porkbun ou com o cartão guardado: {{price}} agora; renova anualmente a {{renewal}}, a menos que desatives a renovação automática na Porkbun.",
+      "agreeTerms": "Aceito o contrato de registo e os termos da Porkbun",
+      "termsLink": "(ler)",
+      "agreeOrder": "Compreendo que o Rustic apenas envia esta encomenda à Porkbun em meu nome",
+      "refunds": "Os reembolsos e cancelamentos de domínios são tratados pela Porkbun, segundo os seus termos.",
+      "buyButton": "Comprar na Porkbun · {{price}}",
+      "bought": "{{domain}} é teu",
+      "boughtBody": "Cobrado pela Porkbun: {{price}}. A configurá-lo agora…",
+      "configuring": "A configurar o teu novo domínio…",
+      "failed": "A compra não foi concluída",
+      "errors": {
+        "price_changed": "O preço mudou na Porkbun. Verifica o novo preço e tenta novamente.",
+        "not_available": "Este domínio acabou de ser registado por outra pessoa.",
+        "over_limit": "Acima de 100 $: compra-o em porkbun.com.",
+        "porkbun_not_connected": "Liga primeiro a tua conta Porkbun.",
+        "consent_required": "Tens de marcar as duas caixas."
+      }
+    },
+    "manual": {
+      "intro": "Acrescenta estes registos na zona DNS do teu registador. Verificamo-los a cada 10 segundos e dizemos-te quando funcionar.",
+      "domain": "O teu domínio",
+      "registrar": "Registador",
+      "show": "Mostrar os registos",
+      "guideTitle": "Em {{registrar}}",
+      "allGuides": "Guias para todos os registadores"
+    },
+    "records": {
+      "caption": "Registos DNS a acrescentar",
+      "type": "Tipo",
+      "name": "Nome / anfitrião",
+      "value": "Valor / destino",
+      "ttl": "TTL",
+      "status": "Estado",
+      "optional": "opcional",
+      "emptyHost": "(deixar em branco)",
+      "copyName": "Copiar o nome {{type}}",
+      "copyValue": "Copiar o valor {{type}}",
+      "srvFields": "prioridade {{priority}} · peso {{weight}} · porta {{port}}"
+    },
+    "check": {
+      "pending": "Não verificado",
+      "notNeeded": "Não necessário",
+      "ok": "OK",
+      "propagating": "Em propagação ({{ok}}/{{total}})",
+      "wrong": "Valor errado",
+      "found": "Encontrado:",
+      "expected": "Esperado:",
+      "missing": "Em falta",
+      "first": "Primeira verificação…",
+      "progress": "{{ok}} de {{total}} registos OK",
+      "progressLabel": "Registos verificados",
+      "auto": "Verificação automática a cada 10 s",
+      "lastCheck": "última verificação há {{seconds}} s",
+      "now": "Verificar agora"
+    },
+    "help": {
+      "txt": "Porquê um registo TXT? Prova que o domínio é teu, para que mais ninguém o possa apontar para o servidor dele.",
+      "propagation": "As alterações podem demorar entre um minuto e algumas horas a chegar a todos. Continuamos a verificar; não precisas de ficar aqui.",
+      "apex": "Os domínios de raiz (oteunome.net sem «play.») precisam de um registo ALIAS/ANAME, que nem todos os registadores têm. Um subdomínio funciona sempre."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Nomes de domínio › o teu domínio › Zona DNS.\nClica em «Adicionar uma entrada» e escolhe o tipo (CNAME, SRV, A ou TXT).\nSubdomínio = o Nome abaixo (deixa em branco para o próprio domínio), Destino = o Valor.\nRepete para cada registo e confirma. A OVH aplica as alterações em poucos minutos."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › o teu domínio › DNS records.\nClica em «Add record» e escolhe o tipo.\nName = o Nome abaixo, Value = o Valor (mantém o ponto final nos destinos CNAME/SRV).\nGuarda cada registo."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nEm Host records, «Add new record».\nHost = o Nome abaixo (@ para o próprio domínio), Value/Target = o Valor.\nClica no visto verde para guardar cada um."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "Os meus produtos › o teu domínio › DNS › Gerir DNS.\nClica em «Adicionar novo registo» e escolhe o tipo.\nNome = o Nome abaixo (@ para o próprio domínio), Valor = o Valor.\nPara SRV, preenche Serviço _minecraft, Protocolo _tcp e depois a prioridade, o peso e a porta. Guarda."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Seleciona o teu site › DNS › Records › Add record.\nEscolhe o tipo, Name = o Nome abaixo, Target/Content = o Valor.\nDefine o Proxy status como «DNS only» (nuvem cinzenta): o tráfego do jogo não pode passar pelo proxy da Cloudflare.\nGuarda cada registo."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domínios e SSL › o teu domínio › DNS.\nClica em «Adicionar registo» e escolhe o tipo.\nNome do anfitrião = o Nome abaixo, Aponta para / Valor = o Valor.\nGuarda; a IONOS pode pedir-te que confirmes a substituição de um registo predefinido."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domínios › o teu domínio › DNS / Nameservers.\nEm «Gerir registos DNS», escolhe o tipo.\nNome = o Nome abaixo, Aponta para / Valor = o Valor, TTL como indicado.\nClica em «Adicionar registo» para cada um."
+      },
+      "porkbun": {
+        "name": "Porkbun (manualmente)",
+        "steps": "Domain Management › o teu domínio › DNS.\nEscolhe o tipo, Host = o Nome abaixo (vazio para o próprio domínio), Answer = o Valor.\nClica em «Add» para cada registo.\nDica: a opção Ligar a Porkbun faz tudo isto por ti."
+      },
+      "generic": {
+        "name": "Outro registador",
+        "steps": "Abre a zona DNS do teu domínio (por vezes chamada registos DNS ou editor de zona).\nAcrescenta cada registo abaixo com o mesmo tipo, nome e valor.\nSe o teu registador pedir o nome completo, acrescenta o teu domínio a seguir ao Nome.\nGuarda e volta aqui: verificamos automaticamente."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Vistas de servidores",
+    "tabs": {
+      "discover": "Descobrir",
+      "browse": "Navegar"
+    },
+    "searchLabel": "Pesquisar servidores",
+    "searchPlaceholder": "Pesquisar no diretório de servidores…",
+    "publish": "Publicar o meu servidor",
+    "publishCta": {
+      "title": "O teu servidor aqui",
+      "hint": "Lista o teu servidor Horizon no diretório a partir do site: aparece aqui e em rustic-launcher.com assim que passar as verificações automáticas."
+    },
+    "play": "Jogar",
+    "playAria": "Jogar em {{name}}",
+    "view": "Ver",
+    "verified": "Verificado",
+    "featured": "Escolha da equipa",
+    "verifiedHint": "Servidores verificados: a equipa do Rustic verificou o dono e as regras.",
+    "online_one": "{{value}} online",
+    "online_many": "{{value}} online",
+    "online_other": "{{value}} online",
+    "playersLabel": "Jogadores online",
+    "languagesLabel": "Idiomas",
+    "playsLabel": "Arranques esta semana",
+    "lastPlayed": "Jogado pela última vez",
+    "lastPlayedOn": "Jogado {{when}}",
+    "hero": {
+      "label": "Servidores em destaque",
+      "eyebrow": "Verificados"
+    },
+    "rows": {
+      "trending": "Tendências",
+      "trendingHint": "Os mais iniciados a partir do Rustic esta semana",
+      "players": "Mais jogadores agora",
+      "playersHint": "Segundo a última verificação da cloud",
+      "new": "Novos no diretório",
+      "newHint": "Acabados de listar pelos donos",
+      "recent": "Jogados recentemente",
+      "recentHint": "Da tua lista de servidores"
+    },
+    "rowError": "Não foi possível carregar esta linha.",
+    "retry": "Tentar novamente",
+    "empty": {
+      "title": "Ainda não há servidores listados",
+      "hint": "Sê o primeiro: publica o teu servidor a partir do site."
+    },
+    "emptySearch": {
+      "title": "Nenhum servidor corresponde",
+      "hint": "Experimenta outras palavras ou menos filtros."
+    },
+    "sorts": {
+      "trending": "Tendências",
+      "players": "Mais jogadores",
+      "new": "Mais recentes",
+      "name": "Nome"
+    },
+    "filters": {
+      "tags": "Estilo de jogo",
+      "language": "Idioma",
+      "engine": "Motor",
+      "rustic": "Rustic",
+      "verifiedOnly": "Só verificados",
+      "reset": "Repor os filtros",
+      "remove": "Remover o filtro {{filter}}"
+    },
+    "tags": {
+      "survival": "Sobrevivência",
+      "smp": "SMP",
+      "creative": "Criativo",
+      "minigames": "Minijogos",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Roleplay",
+      "factions": "Fações",
+      "prison": "Prisão",
+      "parkour": "Parkour",
+      "adventure": "Aventura",
+      "building": "Construção",
+      "economy": "Economia",
+      "modded": "Com mods",
+      "anarchy": "Anarquia",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Servidores",
+      "status": "Estado em direto",
+      "cloudSaw_one": "a cloud viu {{value}} jogador online {{when}}",
+      "cloudSaw_many": "a cloud viu {{value}} jogadores online {{when}}",
+      "cloudSaw_other": "a cloud viu {{value}} jogadores online {{when}}",
+      "engine": "Motor",
+      "version": "Versão do jogo",
+      "languages": "Idiomas",
+      "plays": "Arranques esta semana",
+      "about": "Acerca de",
+      "noDescription": "Ainda não há descrição.",
+      "address": "Endereço",
+      "copy": "Copiar",
+      "openSite": "Abrir no site",
+      "website": "Site",
+      "discord": "Discord",
+      "by": "Listado por {{name}}",
+      "byStaff": "Listado pela equipa do Rustic",
+      "report": "Denunciar",
+      "rusticEdition": "Requer a edição Rustic",
+      "missing": "Este servidor não está disponível",
+      "missingHint": "Pode ser privado, ter sido ocultado pela moderação ou eliminado."
+    },
+    "report": {
+      "title": "Denunciar {{name}}",
+      "lead": "Diz à equipa de moderação o que está mal. Todas as denúncias são analisadas.",
+      "reason": "Motivo",
+      "reasons": {
+        "impersonation": "Faz-se passar por outro servidor",
+        "spam": "Spam ou enganoso",
+        "inappropriate_content": "Conteúdo inadequado",
+        "cheating": "Batota ou servidor malicioso",
+        "harassment": "Assédio",
+        "copyright": "Viola os meus direitos (marca, nome)",
+        "malware": "Malware",
+        "other": "Outro"
+      },
+      "details": "Detalhes",
+      "detailsHint": "Opcional, no máximo 2000 carateres.",
+      "send": "Enviar a denúncia",
+      "sent": "Obrigado, a tua denúncia foi enviada à equipa de moderação.",
+      "signIn": "Inicia sessão na tua conta Rustic para denunciares um servidor.",
+      "failed": "Não foi possível enviar a denúncia."
+    }
+  }
+}

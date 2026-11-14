@@ -8,6 +8,7 @@ import { multiplayerHandlers } from './handlers/multiplayer';
 import { nativeHandlers } from './handlers/native';
 import { serverAdminHandlers } from './handlers/serverAdmin';
 import { serversHandlers } from './handlers/servers';
+import { updateHandlers } from './handlers/updates';
 import { fail, on, type MockHandler, type MockHandlers } from './runtime';
 import type { CommandName } from '../commands';
 
@@ -20,6 +21,7 @@ const handlers: MockHandlers = {
   ...serverAdminHandlers,
   ...hostingHandlers,
   ...dnsHandlers,
+  ...updateHandlers,
 };
 
 export function createMockTransport(): IpcTransport {

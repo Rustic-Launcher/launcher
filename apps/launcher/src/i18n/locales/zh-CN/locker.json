@@ -1,0 +1,82 @@
+{
+  "title": "储物柜",
+  "subtitle": "纯外观物品。使用 Rustic 版的玩家可以在游戏中看到。",
+  "horizonNote": {
+    "badge": "Horizon 装扮仍可使用",
+    "detail": "你的 Horizon 装扮会保留在 Rustic 版客户端中。请在游戏中管理它们；它们可以与你的 Rustic 物品同时使用。"
+  },
+  "empty": {
+    "title": "你还没有任何装扮。",
+    "description": "你购买或获得的物品会显示在这里，随时可以穿戴。",
+    "browse": "浏览商店",
+    "categoryTitle": "还没有{{category}}",
+    "categoryDescription": "你拥有的这类物品会显示在这里。"
+  },
+  "viewer": {
+    "region": "你的角色",
+    "label_other": "你的角色穿戴着 {{count}} 件物品。拖动或使用方向键旋转，使用加号和减号缩放。",
+    "hint": "拖动旋转 · 滚动缩放",
+    "animation": "动画",
+    "playEmote": "播放 {{name}}",
+    "noEmote": "未装备表情动作",
+    "reset": "重置视角"
+  },
+  "animations": {
+    "idle": "待机",
+    "walk": "行走",
+    "wave": "挥手",
+    "dance": "跳舞"
+  },
+  "items": {
+    "region": "你的物品",
+    "nothing": "无",
+    "equipped": "已装备"
+  },
+  "categories": {
+    "label": "分类",
+    "all": "全部",
+    "head": "帽子",
+    "back": "背部",
+    "top": "躯干",
+    "shoulder": "肩部",
+    "nametag": "命名牌",
+    "emote": "表情动作",
+    "companion": "伙伴",
+    "trail": "拖尾",
+    "aura": "光环"
+  },
+  "rarity": {
+    "common": "普通",
+    "rare": "稀有",
+    "epic": "史诗",
+    "legendary": "传说"
+  },
+  "toast": {
+    "equipped": "已装备 {{name}}",
+    "unequipped": "已卸下 {{name}}",
+    "cleared": "{{slot}}：未装备任何物品",
+    "outfitWorn": "已换上套装",
+    "outfitSaved": "已保存套装“{{name}}”",
+    "equipFailed": "无法更改你的外观，请重试。"
+  },
+  "outfits": {
+    "title": "套装",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "为这套造型命名",
+    "save": "保存当前造型",
+    "full": "你最多可以保留 {{max}} 套套装。删除一套才能保存新造型。",
+    "empty": "保存你当前的造型，一键即可再次穿上。",
+    "items_other": "{{count}} 件物品",
+    "wearing": "穿戴中",
+    "wear": "穿戴",
+    "delete": "删除套装 {{name}}"
+  },
+  "switches": {
+    "showMine": "显示我的装扮",
+    "showMineHint": "其他 Rustic 版玩家可以看到你的穿戴。",
+    "hideOthers": "隐藏其他玩家的装扮",
+    "hideTrailsAuras": "隐藏拖尾和光环"
+  },
+  "heading": "你的*储物柜*",
+  "eyebrow": "装扮"
+}

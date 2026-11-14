@@ -179,7 +179,8 @@
       "capDataFolder": "Własny folder danych",
       "eula": "Akceptuję EULA Minecrafta",
       "eulaHint": "Jest wymagana do uruchomienia serwera. Akceptujesz ją samodzielnie; Rustic nie akceptuje jej za ciebie.",
-      "eulaRead": "Przeczytaj EULA"
+      "eulaRead": "Przeczytaj EULA",
+      "eulaTitle": "EULA Minecrafta"
     },
     "world": {
       "title": "Świat",
@@ -217,7 +218,10 @@
       "pickInstance": "Wybierz instancję",
       "world": "Świat",
       "pickWorld": "Wybierz świat",
-      "noWorlds": "Brak światów w tej instancji"
+      "noWorlds": "Brak światów w tej instancji",
+      "newDesc": "Nowy świat z ziarna, z twoimi zasadami.",
+      "importDesc": "Folder świata z twojego PC lub z kopii zapasowej.",
+      "fromInstanceDesc": "Świat z jednego z twoich profili."
     },
     "type": {
       "memory": "Pamięć serwera (RAM)",
@@ -269,7 +273,20 @@
       "generateKey": "Najpierw wygeneruj klucz, a potem dodaj go do VPS.",
       "password": "Wpisz hasło."
     },
-    "heading": "Utwórz *serwer*"
+    "heading": "Utwórz *serwer*",
+    "stepHints": {
+      "basics": "Nazwij go, wybierz, co ma uruchamiać, i świat startowy.",
+      "hosting": "Wybierz maszynę, na której działa, i ile pamięci dostanie.",
+      "access": "Wybierz, jak dołączą twoi znajomi. Możesz to później zmienić."
+    },
+    "sections": {
+      "identity": "Nazwa i ikona"
+    },
+    "preview": {
+      "title": "Podgląd",
+      "unnamed": "Twój serwer",
+      "draft": "jeszcze nie utworzony"
+    }
   },
   "hosting": {
     "local": {
@@ -471,7 +488,17 @@
       "port": "Port",
       "memory": "Pamięć",
       "created": "Utworzono",
-      "folder": "Folder"
+      "folder": "Folder",
+      "uptime": "Czas działania",
+      "startedAt": "Od {{time}}",
+      "lastSession": "Ostatnia sesja",
+      "lastStarted": "Ostatnie uruchomienie: {{when}}",
+      "neverStarted": "Jeszcze nie uruchomiony",
+      "lastLines": "Ostatnie wiersze konsoli",
+      "noLines": "Jeszcze nic nie zapisano w dzienniku.",
+      "openConsole": "Otwórz konsolę",
+      "crashedTitle": "Serwer nieoczekiwanie się zatrzymał",
+      "crashedBody": "Sprawdź ostatnie wiersze konsoli, a potem uruchom go ponownie."
     },
     "console": {
       "filter": "Filtruj wiersze",

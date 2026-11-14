@@ -113,6 +113,8 @@ export interface LaunchOptions {
 
 export type LaunchPhase =
   | 'idle'
+  /** Updates first (ADR 0162): the edition build it follows, then the launcher. */
+  | 'updating'
   | 'checking'
   | 'downloading'
   | 'preparing'

@@ -1,0 +1,82 @@
+{
+  "title": "ロッカー",
+  "subtitle": "見た目だけのアイテムです。Rustic エディションを使うプレイヤーにゲーム内で表示されます。",
+  "horizonNote": {
+    "badge": "Horizon のコスメティックも引き続き使えます",
+    "detail": "Horizon のコスメティックは Rustic エディションのクライアントでも保持されます。ゲーム内で管理でき、Rustic のアイテムと併用できます。"
+  },
+  "empty": {
+    "title": "まだコスメティックを所有していません。",
+    "description": "購入したり受け取ったりしたアイテムがここに表示され、すぐに装備できます。",
+    "browse": "ストアを見る",
+    "categoryTitle": "{{category}}はまだありません",
+    "categoryDescription": "所有しているこの種類のアイテムがここに表示されます。"
+  },
+  "viewer": {
+    "region": "あなたのキャラクター",
+    "label_other": "{{count}} 個のアイテムを装備したあなたのキャラクター。ドラッグまたは矢印キーで回転、プラスとマイナスでズームします。",
+    "hint": "ドラッグで回転・スクロールでズーム",
+    "animation": "アニメーション",
+    "playEmote": "{{name}}を再生",
+    "noEmote": "エモート未装備",
+    "reset": "表示をリセット"
+  },
+  "animations": {
+    "idle": "待機",
+    "walk": "歩く",
+    "wave": "手を振る",
+    "dance": "ダンス"
+  },
+  "items": {
+    "region": "あなたのアイテム",
+    "nothing": "なし",
+    "equipped": "装備中"
+  },
+  "categories": {
+    "label": "カテゴリー",
+    "all": "すべて",
+    "head": "帽子",
+    "back": "背中",
+    "top": "胴体",
+    "shoulder": "肩",
+    "nametag": "名札",
+    "emote": "エモート",
+    "companion": "コンパニオン",
+    "trail": "トレイル",
+    "aura": "オーラ"
+  },
+  "rarity": {
+    "common": "コモン",
+    "rare": "レア",
+    "epic": "エピック",
+    "legendary": "レジェンダリー"
+  },
+  "toast": {
+    "equipped": "{{name}}を装備しました",
+    "unequipped": "{{name}}を外しました",
+    "cleared": "{{slot}}：装備なし",
+    "outfitWorn": "衣装を着用しました",
+    "outfitSaved": "衣装「{{name}}」を保存しました",
+    "equipFailed": "見た目を変更できませんでした。もう一度お試しください。"
+  },
+  "outfits": {
+    "title": "衣装",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "この見た目に名前を付ける",
+    "save": "現在の見た目を保存",
+    "full": "衣装は {{max}} 個まで保存できます。新しい見た目を保存するには、いずれかを削除してください。",
+    "empty": "現在の見た目を保存すると、ワンクリックでまた着用できます。",
+    "items_other": "{{count}} 個のアイテム",
+    "wearing": "着用中",
+    "wear": "着用",
+    "delete": "衣装「{{name}}」を削除"
+  },
+  "switches": {
+    "showMine": "自分のコスメティックを表示",
+    "showMineHint": "ほかの Rustic エディションのプレイヤーにあなたの装備が表示されます。",
+    "hideOthers": "ほかのプレイヤーのコスメティックを非表示",
+    "hideTrailsAuras": "トレイルとオーラを非表示"
+  },
+  "heading": "あなたの*ロッカー*",
+  "eyebrow": "コスメティック"
+}

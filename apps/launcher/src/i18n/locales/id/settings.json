@@ -1,0 +1,514 @@
+{
+  "title": "Pengaturan",
+  "subtitle": "Akun, game, launcher, tampilan, dan datamu.",
+  "sectionsLabel": "Bagian pengaturan",
+  "saving": "Menyimpan…",
+  "saved": "Semua perubahan tersimpan",
+  "close": "Tutup",
+  "cancel": "Batal",
+  "sections": {
+    "accounts": "Akun & keamanan",
+    "game": "Game & instans",
+    "launcher": "Launcher",
+    "appearance": "Tampilan",
+    "privacy": "Privasi & data",
+    "parental": "Kontrol orang tua",
+    "about": "Tentang & hukum"
+  },
+  "accounts": {
+    "active": "Aktif",
+    "useThis": "Gunakan profil ini",
+    "signOut": "Keluar",
+    "signedOut": "{{name}} telah keluar",
+    "ownership": {
+      "valid": "Memiliki game",
+      "expired": "Pemeriksaan kedaluwarsa",
+      "never": "Belum pernah diperiksa",
+      "failed": "Pemeriksaan gagal",
+      "lastChecked": "Diperiksa {{when}}",
+      "nextCheck": "pemeriksaan berikutnya paling lambat {{date}}",
+      "checkNow": "Periksa sekarang",
+      "checkedToast": "Kepemilikan dikonfirmasi",
+      "checkFailed": "Microsoft tidak dapat dihubungi. Coba lagi nanti."
+    },
+    "microsoft": {
+      "title": "Akun Microsoft",
+      "description": "Memiliki game diwajibkan untuk bermain. Rustic memeriksanya ke Microsoft dan tidak pernah melihat kata sandimu.",
+      "add": "Tambah akun Microsoft",
+      "keychain": "Token masuk disimpan di keychain sistem, tidak pernah di file atau di baris perintah.",
+      "signIn": "Masuk dengan Microsoft",
+      "step1": "Buka halaman Microsoft di browser-mu (atau di perangkat lain).",
+      "step2": "Masukkan kode di bawah dan masuk.",
+      "step3": "Kembali ke sini: launcher akan melanjutkan dengan sendirinya.",
+      "codeLabel": "Kode masuk",
+      "copyCode": "Salin kode",
+      "copied": "Kode tersalin",
+      "openPage": "Buka microsoft.com/link",
+      "waiting": "Menunggu kamu masuk di browser…",
+      "cancel": "Batal",
+      "signedInAs": "Masuk sebagai {{name}}",
+      "ownershipOk": "Kepemilikan dikonfirmasi: kamu bisa bermain.",
+      "ownershipMissing": "Akun ini tidak memiliki game.",
+      "tryAgain": "Coba lagi",
+      "failed": {
+        "expired": {
+          "title": "Kode sudah kedaluwarsa",
+          "body": "Kode berlaku selama 15 menit. Mulai lagi untuk mendapatkan kode baru."
+        },
+        "denied": {
+          "title": "Proses masuk dibatalkan",
+          "body": "Microsoft melaporkan bahwa proses masuk ditolak."
+        },
+        "no_ownership": {
+          "title": "Akun ini tidak memiliki game",
+          "body": "Rustic hanya meluncurkan game untuk akun yang memiliki Minecraft: Java Edition."
+        },
+        "error": {
+          "title": "Gagal masuk",
+          "body": "Rustic tidak dapat menyelesaikan proses masuk. Coba lagi; jika terus gagal, detail di bawah menjelaskan alasannya."
+        },
+        "not_configured": {
+          "title": "Masuk dengan Microsoft belum diatur di build ini",
+          "body": "Build ini tidak memiliki ID aplikasi Azure, sehingga tidak dapat meminta Microsoft memverifikasi lisensi game. Build resmi sudah menyertakannya."
+        },
+        "not_approved": {
+          "title": "Launcher sedang menunggu persetujuan Mojang",
+          "body": "Akun Microsoft-mu berhasil masuk, tetapi layanan game belum menerima launcher ini: Mojang harus menyetujui ID aplikasinya terlebih dahulu. Tidak ada yang perlu kamu lakukan; coba lagi setelah disetujui."
+        },
+        "xbox": {
+          "title": "Xbox Live menolak proses masuk",
+          "body": "Alasannya ada di bawah (akun anak tanpa izin orang tua, profil Xbox yang perlu dibuat, wilayah yang tidak didukung…)."
+        },
+        "rate_limited": {
+          "title": "Terlalu banyak percobaan",
+          "body": "Layanan menerima terlalu banyak permintaan masuk dalam waktu singkat. Tunggu satu menit dan coba lagi."
+        },
+        "network": {
+          "title": "Tidak dapat menghubungi layanan",
+          "body": "Periksa koneksi internetmu dan coba lagi."
+        },
+        "detail": "Detail: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Akun Rustic",
+      "description": "Identitas Rustic-mu untuk teman, Loker, pembelian, dan server.",
+      "signedOut": "Belum masuk. Game tetap berjalan tanpanya; fitur sosial, Loker, dan Toko memerlukannya.",
+      "signIn": "Masuk atau buat akun",
+      "licenceNote": "Akun Rustic adalah identitas platform. Akun ini tidak pernah menggantikan lisensi game: kamu tetap memerlukan akun Microsoft yang memiliki game."
+    },
+    "offline": {
+      "title": "Bermain offline",
+      "description": "Untuk LAN party dan bermain tanpa internet: kamu bermain dengan akun Microsoft-mu, dengan nama dan UUID resmimu. Tersedia selama {{days}} hari setelah pemeriksaan kepemilikan terakhir yang berhasil, lalu Rustic akan bertanya lagi ke Microsoft.",
+      "until": "Bermain offline tersedia sampai {{date}}",
+      "locked": "Masuk dulu dengan akun Microsoft yang memiliki game: bermain offline terbuka setelah pemeriksaan kepemilikan berhasil."
+    },
+    "connections": {
+      "title": "Koneksi",
+      "description": "Layanan yang dipakai launcher atas namamu. Kunci dan sidik jari host tetap berada di keychain sistem.",
+      "porkbun": "Porkbun (domain)",
+      "porkbunHint": "Dipakai untuk membuat catatan DNS bagi server-mu di akun Porkbun milikmu sendiri.",
+      "porkbunRemoved": "Kunci Porkbun dihapus dari komputer ini",
+      "connected": "Terhubung",
+      "notConnected": "Tidak terhubung",
+      "remove": "Hapus kunci",
+      "vps": "Host VPS",
+      "vpsHint": "Server yang kamu host di VPS milikmu sendiri melalui SSH. Melupakan host akan menghapus kunci yang disematkan.",
+      "noVps": "Tidak ada",
+      "fingerprint": "{{fp}} · dipercaya pada {{date}}",
+      "forget": "Lupakan"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Tertaut",
+      "notLinked": "Belum tertaut: masuk juga ke Rustic dengan akun Microsoft-mu.",
+      "link": "Tautkan di situs web",
+      "unlink": "Lepas tautan",
+      "unlinked": "Tautan Microsoft dilepas",
+      "unlinkFailed": "Tidak dapat melepas tautan Microsoft",
+      "lastMethod": "Tambahkan kata sandi dulu (di situs web): Microsoft adalah satu-satunya cara kamu masuk."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Memori (RAM)",
+      "description": "Memori bawaan yang diberikan ke game. Setiap instans dapat menggantinya.",
+      "system": "{{total}} terpasang · {{free}} kosong saat ini",
+      "warn": "Ini menyisakan sedikit memori untuk sistemmu dan bisa memperlambat semuanya.",
+      "perInstance": "Tips: 4 GB sudah cukup untuk sebagian besar instans; modpack besar mungkin butuh 6 sampai 8 GB."
+    },
+    "prepare": {
+      "title": "File game",
+      "description": "Horizon menyiapkan sumber daya game dari instalasi game milikmu sendiri. Tidak ada yang diunduh dari pihak ketiga.",
+      "status": "Status",
+      "states": {
+        "missing": "Belum disiapkan",
+        "preparing": "Sedang disiapkan",
+        "ready": "Siap",
+        "outdated": "Perlu disiapkan lagi"
+      },
+      "gameVersion": "Game {{version}}",
+      "source": "Instalasi sumber",
+      "sourceHint": "Folder game launcher resmi yang ditemukan di komputer ini.",
+      "doneToast": "File game sudah siap",
+      "steps": {
+        "detect": "Mencari instalasimu…",
+        "download": "Mengunduh file game dari Mojang…",
+        "verify": "Memverifikasi file game…",
+        "compile_exporters": "Mengompilasi eksportir…",
+        "export": "Mengekspor sumber daya…",
+        "index": "Mengindeks…",
+        "done": "Selesai"
+      },
+      "legal": "File yang disiapkan tetap berada di komputer ini dan tidak pernah dibagikan.",
+      "again": "Siapkan lagi",
+      "failed": "Persiapan gagal"
+    },
+    "java": {
+      "label": "Java untuk persiapan",
+      "description": "Hanya dipakai untuk menyiapkan file game (horizon-prepare). Horizon sendiri tidak memerlukan Java untuk berjalan.",
+      "pickTitle": "Pilih file Java yang dapat dieksekusi",
+      "source": {
+        "bundled": "Disertakan bersama Rustic",
+        "system": "Terpasang di komputer ini",
+        "custom": "Kustom"
+      },
+      "custom": "Jalur kustom…",
+      "customHint": "Pilih file Java 21+ yang dapat dieksekusi"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "Program rustic-server yang dijalankan oleh server Rustic Server-mu (mesin Horizon dengan plugin Rustic). Program ini harus berasal dari commit Horizon yang sama dengan versi game server: build edisi Rustic menyertakannya di foldernya.",
+      "program": "Program yang dipakai",
+      "notFound": "Tidak ditemukan",
+      "notFoundHint": "Pasang build edisi Rustic yang menyertakannya, atau pilih file rustic-server. Tanpanya, pembuatan Rustic Server akan gagal.",
+      "configuredMissing": "File yang dipilih sudah tidak ada: {{path}}",
+      "origin": {
+        "server": "Milik server itu sendiri",
+        "configured": "Dipilih manual",
+        "build": "Disertakan bersama build {{build}}",
+        "beside_launcher": "Di samping launcher",
+        "path": "Ditemukan di PATH"
+      },
+      "choose": "Pilih…",
+      "pickTitle": "Pilih program rustic-server",
+      "automatic": "Gunakan otomatis",
+      "saved": "Program rustic-server tersimpan",
+      "automaticSaved": "Deteksi otomatis dipulihkan",
+      "invalid": "File ini bukan program rustic-server (tidak merespons --rustic-version).",
+      "failed": "Program ini tidak dapat disimpan",
+      "order": "Urutan pencarian: pilihanmu, lalu folder versi game, lalu di samping launcher, lalu PATH."
+    },
+    "folders": {
+      "title": "Folder",
+      "description": "Tempat launcher menyimpan datanya, instansmu, dan server-mu.",
+      "data": "Data launcher",
+      "instances": "Instans",
+      "servers": "Server",
+      "open": "Buka",
+      "change": "Ubah",
+      "changed": "Folder diubah",
+      "moveNote": "File yang sudah ada tidak dipindahkan secara otomatis."
+    },
+    "resolution": {
+      "title": "Jendela game",
+      "description": "Ukuran jendela bawaan untuk instans baru.",
+      "size": "Ukuran",
+      "width": "Lebar",
+      "height": "Tinggi",
+      "fullscreen": "Mulai dalam layar penuh",
+      "hint": "Minimal 640 × 480."
+    },
+    "native": {
+      "title": "Mod native",
+      "description": "Instans dengan mod native memainkan game yang dikompilasi khusus untuknya di PC ini. Di sini: kompiler Rust dan cache kompilasi yang mempercepat kompilasi berikutnya.",
+      "rust": "Kompiler Rust",
+      "rustReady": {
+        "managed": "Rust {{version}}, dipasang oleh launcher",
+        "rustup": "Rust {{version}}, dari rustup-mu",
+        "system": "Rust {{version}}, terpasang di PC ini"
+      },
+      "rustMissing": "Rust {{version}} diperlukan untuk kompilasi pertama.",
+      "ready": "Siap",
+      "missing": "Tidak terpasang",
+      "installing": "Memasang…",
+      "installRust": "Pasang Rust",
+      "rustInstalled": "Rust sudah terpasang",
+      "rustFailed": "Rust tidak dapat dipasang",
+      "cache": "Cache kompilasi",
+      "cacheDetail": "Cache {{cache}} · crate yang diunduh {{crates}} · Rust {{toolchain}} · sumber {{source}}. Mengosongkannya tetap menyimpan game yang sudah dikompilasi; kompilasi berikutnya akan mengompilasi ulang semuanya.",
+      "clear": "Kosongkan",
+      "clearTitle": "Kosongkan cache kompilasi?",
+      "clearBody": "Instans tetap menyimpan game yang sudah dikompilasi. Kompilasi native berikutnya akan mengompilasi seluruh game lagi (10 sampai 15 menit).",
+      "cleared": "Cache kompilasi dikosongkan ({{size}} dibebaskan)",
+      "limit": "Batas cache",
+      "limitHint": "Setelah kompilasi, cache dikosongkan jika ukurannya melebihi batas ini (0: tidak pernah).",
+      "gib": "GiB",
+      "limitSaved": "Batas cache tersimpan",
+      "limitInvalid": "Batasnya berupa bilangan bulat GiB dari 0 sampai 4096.",
+      "folder": "Folder: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Bahasa",
+      "description": "Langsung berlaku untuk seluruh launcher.",
+      "label": "Bahasa",
+      "search": "Cari bahasa",
+      "empty": "Tidak ada bahasa yang cocok",
+      "translated": "Diterjemahkan",
+      "others": "Bahasa lain",
+      "partial": "Sebagian",
+      "english": "dalam bahasa Inggris untuk saat ini",
+      "via": "dalam {{lang}} untuk saat ini",
+      "help": "Teks yang belum diterjemahkan ditampilkan dalam bahasa Inggris. Terjemahan berasal dari komunitas."
+    },
+    "startup": {
+      "title": "Saat memulai",
+      "onBoot": "Buka Rustic saat komputer dinyalakan",
+      "onBootHint": "Teman-teman melihatmu online lebih cepat dan pembaruan diunduh di latar belakang.",
+      "minimized": "Mulai dalam keadaan diperkecil"
+    },
+    "behaviour": {
+      "title": "Saat bermain",
+      "onLaunch": "Saat game dimulai",
+      "launchOptions": {
+        "keep_open": "Biarkan launcher tetap terbuka",
+        "minimize": "Perkecil launcher",
+        "hide": "Sembunyikan ke baki sistem",
+        "close": "Tutup launcher"
+      },
+      "onClose": "Saat aku menutup jendela",
+      "onCloseHint": "Membiarkannya di baki sistem memungkinkan teman mengundangmu dan server tetap berjalan.",
+      "closeOptions": {
+        "tray": "Tetap berjalan di baki sistem",
+        "quit": "Keluar dari Rustic"
+      }
+    },
+    "updates": {
+      "title": "Pembaruan",
+      "auto": "Pasang pembaruan secara otomatis",
+      "autoHint": "Pembaruan ditandatangani dan diverifikasi sebelum dipasang.",
+      "check": "Rustic Launcher",
+      "checkNow": "Periksa pembaruan",
+      "available": "Versi {{version}} tersedia",
+      "upToDate": "Kamu sudah memakai versi terbaru",
+      "failed": "Tidak dapat memeriksa pembaruan",
+      "lastCheck": "Terakhir diperiksa {{when}}",
+      "neverChecked": "Belum diperiksa",
+      "edition": "Game (Edisi Rustic)",
+      "editionNone": "Belum ada build Edisi Rustic yang terpasang",
+      "apply": "Perbarui dan mulai ulang",
+      "checking": "Memeriksa…",
+      "working": "Memperbarui… {{pct}}",
+      "restarting": "Memulai ulang…",
+      "deferred": "Menunggu game ditutup",
+      "lastError": "Percobaan terakhir gagal. Akan dicoba lagi secara otomatis."
+    },
+    "performance": {
+      "title": "Unduhan & performa",
+      "downloads": "Unduhan paralel",
+      "downloadsHint": "Turunkan jika koneksimu lambat.",
+      "hardware": "Akselerasi perangkat keras",
+      "hardwareHint": "Nonaktifkan jika launcher berkedip. Berlaku setelah dimulai ulang."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Tema",
+      "description": "Rustic dirancang untuk tema gelap terlebih dahulu; tema terang tersedia untuk ruangan yang terang.",
+      "label": "Tema",
+      "dark": "Gelap",
+      "light": "Terang",
+      "system": "Sistem"
+    },
+    "palette": {
+      "title": "Palet",
+      "description": "Warna aksen yang dipakai untuk MAIN, pilihan, dan progres.",
+      "label": "Palet",
+      "play": "Main",
+      "default": "Bawaan",
+      "names": {
+        "ember": "Bara",
+        "verdigris": "Verdigris",
+        "heather": "Heather"
+      },
+      "descriptions": {
+        "ember": "Tembaga hangat di atas antrasit",
+        "verdigris": "Hijau patina, seperti tembaga teroksidasi",
+        "heather": "Merah muda heather yang lembut"
+      }
+    },
+    "motion": {
+      "title": "Gerakan",
+      "body": "Rustic mengikuti pengaturan “kurangi gerakan” di sistemmu: animasi, korsel, dan pratinjau 3D menjadi diam."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "Yang kamu bagikan kepada kami",
+      "description": "Semua di sini nonaktif secara bawaan. Mengaktifkan sesuatu membantu kami meningkatkan Rustic; kamu bisa berubah pikiran kapan saja.",
+      "usage": "Analitik penggunaan",
+      "usageHint": "Halaman dan fitur mana yang dipakai, tanpa konten atau pengenal.",
+      "performance": "Laporan performa",
+      "performanceHint": "Waktu peluncuran dan waktu frame, untuk menemukan bagian yang lambat.",
+      "crash": "Laporan crash",
+      "crashHint": "Jika nonaktif, Rustic akan bertanya setiap kali terjadi crash."
+    },
+    "policyLink": "Baca kebijakan privasi",
+    "social": {
+      "title": "Teman dan kehadiran",
+      "activity": "Tampilkan apa yang kumainkan ke teman-temanku",
+      "activityHint": "Memungkinkan teman melihat server-mu dan bergabung denganmu sekali klik.",
+      "requests": "Siapa yang bisa mengirimiku permintaan pertemanan",
+      "requestsOptions": {
+        "everyone": "Semua orang",
+        "friends_of_friends": "Teman dari teman",
+        "nobody": "Tidak ada"
+      },
+      "discoverable": "Muncul di saran pemain yang kutemui",
+      "discoverableHint": "Pemain yang pernah satu party denganmu atau kamu temui di server yang kamu bagikan dalam aktivitasmu dapat melihatmu di “Tambah teman”, dan kamu juga melihat mereka. Disimpan 30 hari; menonaktifkan ini akan menghapusnya.",
+      "discoverableMinor": "Tidak tersedia untuk akun di bawah 18 tahun.",
+      "discoverableFailed": "Pengaturan ini tidak dapat disimpan.",
+      "discord": "Tampilkan aktivitasku di Discord",
+      "discordHint": "“Memainkan Rustic” di profil Discord-mu: di launcher, di menu utama, dalam mode pemain tunggal, atau di server, beserta waktu bermainmu.",
+      "discordServer": "Tampilkan alamat server di Discord",
+      "discordServerHint": "Jika tidak, Discord menampilkan “Multipemain”. Alamat privat (LAN, PC ini) tidak pernah ditampilkan."
+    },
+    "data": {
+      "title": "Datamu",
+      "description": "Hak-hakmu menurut GDPR: akses, portabilitas, dan penghapusan.",
+      "export": "Ekspor dataku",
+      "exportHint": "Arsip JSON berisi akun, teman, pembelian, dan pengaturanmu.",
+      "exportButton": "Siapkan ekspor",
+      "exportReady": "Ekspormu sudah siap",
+      "exportFailed": "Ekspor tidak dapat disiapkan",
+      "download": "Unduh (tautan berlaku sampai {{date}})",
+      "delete": "Hapus akunku",
+      "deleteHint": "Masa tenggang 30 hari yang memungkinkanmu membatalkan, lalu penghapusan permanen.",
+      "deleteButton": "Hapus akun",
+      "deleteScheduled": "Penghapusan dijadwalkan pada {{date}}. Masuk sebelum tanggal itu untuk membatalkannya.",
+      "deleteFailed": "Akun tidak dapat dihapus",
+      "rights": "Pertanyaan atau keluhan: hubungi kami, atau CNIL (otoritas perlindungan data Prancis).",
+      "confirmTitle": "Hapus akun Rustic-mu?",
+      "confirmBody": "Teman, kosmetik, dan pembelianmu akan dihapus setelah 30 hari. Lisensi game dan akun Microsoft-mu tidak terpengaruh.",
+      "confirmButton": "Hapus akunku",
+      "typeUsername": "Ketik {{name}} untuk mengonfirmasi"
+    }
+  },
+  "parental": {
+    "title": "Kontrol orang tua",
+    "description": "Akun Rustic untuk usia {{age}} tahun ke atas. Untuk pemain di bawah 18 tahun, pembelian memerlukan persetujuan orang tua secara bawaan.",
+    "minorNote": "Akun ini milik anak di bawah umur: pembelian meminta persetujuan orang tua.",
+    "enable": "Aktifkan kontrol orang tua",
+    "enableHint": "Setelah itu, perubahan di bawah memerlukan PIN.",
+    "pinFirst": "Buat PIN terlebih dahulu untuk mengaktifkan kontrol orang tua.",
+    "saveFailed": "Perubahan tidak dapat disimpan",
+    "lockAgain": "Kunci lagi",
+    "rules": {
+      "title": "Aturan",
+      "purchases": "Pembelian",
+      "purchasesHint": "Pembelian di toko hanya kosmetik. Tidak ada loot box, selamanya.",
+      "purchaseOptions": {
+        "blocked": "Nonaktif",
+        "pin": "Tanya orang tua",
+        "allowed": "Diizinkan"
+      },
+      "limit": "Batas pengeluaran bulanan",
+      "limitHint": "Pengeluaran bulan ini: {{spent}}. Kosongkan untuk tanpa batas.",
+      "noLimit": "Tanpa batas",
+      "limitInvalid": "Masukkan jumlah seperti 10 atau 9,99.",
+      "chat": "Obrolan",
+      "chatOptions": {
+        "off": "Nonaktif",
+        "friends": "Hanya teman",
+        "everyone": "Semua orang"
+      },
+      "friendRequests": "Permintaan pertemanan",
+      "friendRequestsHint": "Izinkan orang lain mengirim permintaan pertemanan."
+    },
+    "pin": {
+      "title": "PIN orang tua",
+      "set": "PIN sudah diatur. PIN diperlukan untuk mengubah pengaturan ini dan menyetujui pembelian.",
+      "notSet": "Belum ada PIN.",
+      "change": "Ubah PIN",
+      "create": "Buat PIN",
+      "saved": "PIN tersimpan",
+      "new": "PIN baru",
+      "confirm": "Konfirmasi PIN",
+      "save": "Simpan PIN",
+      "hint": "4 sampai 6 angka, bukan urutan sederhana.",
+      "errors": {
+        "format": "Gunakan 4 sampai 6 angka.",
+        "mismatch": "Kedua PIN berbeda.",
+        "weak": "Terlalu mudah ditebak: hindari 1234 atau 0000."
+      }
+    },
+    "unlock": {
+      "title": "Terkunci",
+      "description": "Masukkan PIN orang tua untuk mengubah pengaturan ini.",
+      "label": "PIN orang tua",
+      "wrong": "PIN salah.",
+      "button": "Buka kunci"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Versi {{version}}",
+    "channel": {
+      "stable": "Stabil",
+      "beta": "Beta"
+    },
+    "browserMock": "Pratinjau browser (data tiruan)",
+    "horizon": "Horizon",
+    "horizonHint": "Build game yang disarankan.",
+    "licence": "Lisensi",
+    "platform": "Platform",
+    "legalTitle": "Hukum",
+    "legalDescription": "Kebijakan dan pemberitahuan.",
+    "links": {
+      "privacy": "Kebijakan privasi",
+      "terms": "Ketentuan penggunaan dan penjualan",
+      "legalNotice": "Pemberitahuan hukum",
+      "fairPlay": "Kebijakan fair play",
+      "thirdParty": "Pemberitahuan open source",
+      "horizon": "Proyek Horizon (MIT)"
+    },
+    "notAffiliated": "Bukan produk resmi Minecraft. Tidak disetujui oleh atau terkait dengan Mojang atau Microsoft.",
+    "horizonCredit": "Dibangun di atas Horizon, penulisan ulang game dalam Rust berlisensi MIT, oleh para kontributornya.",
+    "company": "Diterbitkan oleh [company name], perusahaan Prancis (SIREN [number], [address]). Pembayaran melalui Stripe; perusahaan tersebut adalah penjualnya.",
+    "tagline": "Rustic adalah platform game sosial, didukung oleh mesin Horizon"
+  },
+  "rusticAuth": {
+    "mode": "Masuk atau buat akun",
+    "signIn": "Masuk",
+    "signUp": "Buat akun",
+    "create": "Buat akunku",
+    "verify": "Verifikasi",
+    "email": "Email",
+    "password": "Kata sandi",
+    "username": "Nama pengguna",
+    "dateOfBirth": "Tanggal lahir",
+    "country": "Negara",
+    "acceptPrivacy": "Aku telah membaca dan menerima kebijakan privasi.",
+    "code": "Kode dari aplikasi autentikatormu",
+    "checkInbox": "Kami telah mengirim tautan verifikasi ke {{email}}. Buka tautan itu, lalu masuk.",
+    "resend": "Kirim ulang",
+    "resent": "Email verifikasi telah dikirim ulang",
+    "signedIn": "Berhasil masuk ke Rustic",
+    "problems": {
+      "email": "Masukkan alamat email yang valid.",
+      "password": "Kata sandi: minimal 10 karakter.",
+      "username": "Nama pengguna: 3 sampai 20 huruf, angka, atau garis bawah.",
+      "dateOfBirth": "Masukkan tanggal lahirmu.",
+      "tooYoung": "Akun Rustic untuk usia 13 tahun ke atas.",
+      "privacy": "Terima kebijakan privasi untuk melanjutkan."
+    },
+    "microsoft": "Lanjutkan dengan Microsoft",
+    "orEmail": "atau dengan email",
+    "microsoftWaiting": "Selesaikan proses masuk di browser-mu: launcher akan mengambil sesimu secara otomatis."
+  },
+  "heading": "*Pengaturan*-mu",
+  "eyebrow": "Launcher"
+}

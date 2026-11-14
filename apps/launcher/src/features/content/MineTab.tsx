@@ -174,7 +174,7 @@ function InstanceContent({ ctx, instanceId }: { ctx: ExploreContext; instanceId:
   return (
     <Section
       title={t('mine.installed.titleOn', { target: ctx.targetName })}
-      hint={t('mine.installed.hint', { kind: t(`kinds.${ctx.kind}`).toLowerCase() })}
+      hint={t(`mine.installed.hint.${ctx.kind}`)}
       testId="mine-installed"
       action={
         <div className="flex items-center gap-2">

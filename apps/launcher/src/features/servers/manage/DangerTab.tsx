@@ -30,7 +30,7 @@ export function DangerTab({ server }: { server: Server }) {
   });
   return (
     <Panel
-      className="border-danger/30"
+      className="border-danger/35 bg-danger/5"
       title={vps ? t('manage.danger.removeVpsTitle') : t('manage.danger.deleteTitle')}
       description={
         vps

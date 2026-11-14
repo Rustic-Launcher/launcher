@@ -1,0 +1,1053 @@
+{
+  "list": {
+    "title": "Servrar",
+    "description": "Var värd för en värld åt dina vänner, här eller på din egen VPS, och ha dina favoritservrar nära till hands.",
+    "create": "Skapa server",
+    "tabs": {
+      "mine": "Mina servrar",
+      "joined": "Anslutna",
+      "discover": "Upptäck"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Vanilla Horizon"
+    },
+    "hosting": {
+      "local": "Den här datorn",
+      "remote": "Fjärr: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Status",
+    "states": {
+      "running": "Körs",
+      "starting": "Startar…",
+      "stopping": "Stoppar…",
+      "stopped": "Stoppad",
+      "crashed": "Kraschad",
+      "installing": "Installerar…",
+      "unreachable": "Går inte att nå"
+    },
+    "players": "Spelare",
+    "playersCount": "{{online}}/{{max}} spelare",
+    "version": "Version",
+    "copyAddress": "Kopiera adress",
+    "copyFailed": "Det gick inte att kopiera till urklipp",
+    "notShared": "Inte delad än",
+    "notSharedHint": "Slå på en tillfällig adress, en inbjudningskod eller en domän på serverns flik Åtkomst.",
+    "start": "Starta",
+    "stop": "Stoppa",
+    "startAria": "Starta {{name}}",
+    "stopAria": "Stoppa {{name}}",
+    "powerFailed": "Servern svarade inte",
+    "empty": {
+      "title": "Var värd för en värld åt dina vänner i 3 steg",
+      "description": "Kör den gratis på den här datorn, eller låt Rustic installera den på din egen VPS."
+    },
+    "featured": {
+      "description": "Servrar utvalda av Rustic-teamet: schysst spel, redo för Horizon, modererade.",
+      "empty": "Inga utvalda servrar just nu.",
+      "verified": "Verifierad av Rustic",
+      "save": "Lägg till i listan",
+      "inList": "I din lista",
+      "online_one": "{{value}} online",
+      "online_other": "{{value}} online",
+      "view": "Om {{name}}"
+    },
+    "viewLabel": "Visa",
+    "views": {
+      "discover": "Upptäck",
+      "mine": "Mina servrar"
+    },
+    "searchPlaceholder": {
+      "discover": "Sök bland utvalda servrar…",
+      "mine": "Sök bland dina servrar…"
+    },
+    "clearSearch": "Rensa sökningen",
+    "sortLabel": "Sortera",
+    "sorts": {
+      "recommended": "Rekommenderade",
+      "players": "Flest spelare",
+      "name": "Namn"
+    },
+    "refreshPing": "Uppdatera ping och status",
+    "layoutList": "Visa som lista",
+    "layoutGrid": "Visa som rutnät",
+    "createHint": "Här, på din VPS, eller snart i molnet",
+    "heading": "Spela på *servrar*",
+    "eyebrow": "Servrar",
+    "sections": {
+      "hosted": "Du är värd",
+      "joined": "Anslutna servrar"
+    }
+  },
+  "multiplayer": {
+    "description": "Spelets serverlista, delad av alla dina instanser.",
+    "add": "Lägg till en server",
+    "added": "{{name}} har lagts till i din lista",
+    "addFailed": "Det gick inte att lägga till servern",
+    "name": "Servernamn",
+    "namePlaceholder": "Namn",
+    "address": "Serveradress",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Använd ett värdnamn eller en IP-adress, med valfri :port.",
+    "refreshPings": "Uppdatera",
+    "favorites_one": "Favorit · {{count}}",
+    "favorites_other": "Favoriter · {{count}}",
+    "others_one": "Annan server · {{count}}",
+    "others_other": "Andra servrar · {{count}}",
+    "favorite": "Lägg till {{name}} i favoriter",
+    "unfavorite": "Ta bort {{name}} från favoriter",
+    "offline": "Offline",
+    "unreachable": "Servern går inte att nå just nu",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Anslut",
+    "joinAria": "Anslut till {{name}}",
+    "joinWith": "Ansluter med {{instance}}",
+    "noInstance": "Skapa en instans för att ansluta till servrar",
+    "joining": "Startar och ansluter till {{name}}…",
+    "more": "Fler åtgärder för {{name}}",
+    "copyAddress": "Kopiera adress",
+    "removed": "{{name}} har tagits bort",
+    "undo": "Ångra",
+    "empty": {
+      "title": "Inga servrar än",
+      "description": "Lägg till en med dess adress, eller välj en under Upptäck."
+    }
+  },
+  "wizard": {
+    "title": "Skapa en server",
+    "subtitle": "Tre steg: vad som ska köras, var den ska ligga, hur vänner ansluter.",
+    "creatingTitle": "Konfigurerar {{name}}",
+    "stepOf": "Steg {{index}} av {{total}}",
+    "steps": {
+      "basics": "Grunder",
+      "hosting": "Var den ska ligga",
+      "access": "Åtkomst"
+    },
+    "create": "Skapa server",
+    "installOn": "Installera på {{host}}",
+    "createFailed": "Servern kunde inte skapas",
+    "noRusticServer": "Programmet rustic-server hittades inte. Välj det i Inställningar › Spel och instanser › Rustic Server, eller installera en version av Rustic-utgåvan som levereras med det.",
+    "openRusticServerSettings": "Öppna inställningar",
+    "fixErrors": "Kontrollera de markerade fälten för att fortsätta.",
+    "discard": {
+      "title": "Kasta den här servern?",
+      "body": "Det du har angett i guiden försvinner.",
+      "keep": "Fortsätt redigera",
+      "confirm": "Kasta"
+    },
+    "basics": {
+      "name": "Servernamn",
+      "namePlaceholder": "Lous SMP",
+      "icon": "Ikon",
+      "icons": {
+        "grass": "Gräs",
+        "sword": "Svärd",
+        "pickaxe": "Hacka",
+        "castle": "Slott",
+        "rocket": "Raket",
+        "gem": "Ädelsten",
+        "flame": "Låga",
+        "leaf": "Löv",
+        "star": "Stjärna",
+        "compass": "Kompass"
+      },
+      "color": "Färg",
+      "colorN": "Färg {{n}}",
+      "type": "Typ",
+      "recommended": "Rekommenderas",
+      "nightly": "Nightly",
+      "rusticDesc": "Plugins (.rplugin) i sandlåda: ett plugin kan aldrig krascha din server.",
+      "horizonDesc": "Horizons egen server, utan plugins.",
+      "version": "Horizon-version",
+      "maxPlayers": "Max antal spelare",
+      "versionLineRustic": "Rustic Server 0.1 på Horizon {{version}}",
+      "versionLineHorizon": "Horizon-server {{version}}",
+      "sameAsClient": "(samma som din klient)",
+      "starterPlugins": "Startplugins",
+      "starterHint": "Officiella plugins, med vad de får göra.",
+      "capNetwork": "Nätverk",
+      "capNoNetwork": "Inget nätverk",
+      "capNoFiles": "Inga filer",
+      "capDataFolder": "Egen datamapp",
+      "eula": "Jag godkänner Minecraft EULA",
+      "eulaHint": "Den krävs för att köra en server. Du godkänner den själv; Rustic godkänner den inte åt dig.",
+      "eulaRead": "Läs EULA",
+      "eulaTitle": "Minecraft EULA"
+    },
+    "world": {
+      "title": "Värld",
+      "new": "Ny värld",
+      "import": "Importera en mapp",
+      "fromInstance": "Från en instans",
+      "seed": "Frö",
+      "seedHint": "Lämna tomt för en slumpmässig värld.",
+      "seedPlaceholder": "Valfritt",
+      "randomSeed": "Slumpmässigt frö",
+      "levelType": "Världstyp",
+      "levelTypes": {
+        "default": "Standard",
+        "flat": "Superplatt",
+        "large_biomes": "Stora biomer",
+        "amplified": "Förstärkt"
+      },
+      "gamemode": "Spelläge",
+      "gamemodes": {
+        "survival": "Överlevnad",
+        "creative": "Kreativt",
+        "adventure": "Äventyr"
+      },
+      "difficulty": "Svårighetsgrad",
+      "difficulties": {
+        "peaceful": "Fridfull",
+        "easy": "Lätt",
+        "normal": "Normal",
+        "hard": "Svår"
+      },
+      "structures": "Generera strukturer",
+      "hardcore": "Hardcore",
+      "folder": "Världsmapp",
+      "instance": "Instans",
+      "pickInstance": "Välj en instans",
+      "world": "Värld",
+      "pickWorld": "Välj en värld",
+      "noWorlds": "Inga världar i den här instansen",
+      "newDesc": "En ny värld från ett frö, med dina regler.",
+      "importDesc": "En världsmapp från din dator eller en säkerhetskopia.",
+      "fromInstanceDesc": "En värld du har spelat i en av dina profiler."
+    },
+    "type": {
+      "memory": "Serverminne (RAM)",
+      "memoryHint": "4 GB räcker för de flesta kompisgäng. Mer hjälper vid många spelare eller stora modpaket."
+    },
+    "access": {
+      "intro": "Hur dina vänner ansluter. Flera kan vara på samtidigt; du kan ändra dem senare.",
+      "lan": "Vänner i mitt nätverk (LAN)",
+      "lanDetail": "Den här datorns lokala adress, visas när servern finns.",
+      "publicIp": "Offentlig adress",
+      "publicIpDetail": "din VPS:s IP-adress",
+      "alwaysOn": "Alltid på",
+      "relay": "Tillfällig adress",
+      "relayDetail": "gratis, medan servern körs; ingen port att öppna",
+      "invite": "Inbjudningskod",
+      "inviteDetail": "En kod som vänner klistrar in i Rustic Launcher för att ansluta.",
+      "domain": "Min egen domän",
+      "domainDetail": "Anslut Porkbun · Köp hos Porkbun · Använd valfri domänregistrar",
+      "domainAfter": "Konfigurera efter att servern skapats",
+      "safety": "Onlineläge på: bara spelare som äger spelet kan ansluta. Vitlista på."
+    },
+    "summary": {
+      "title": "Sammanfattning",
+      "version": "Version",
+      "host": "Värd",
+      "world": "Värld",
+      "memory": "Minne",
+      "players": "Max antal spelare",
+      "plugins": "Plugins",
+      "none": "Inga",
+      "eulaAccepted": "Du godkände Minecraft EULA i steg 1."
+    },
+    "errors": {
+      "nameRequired": "Ge din server ett namn.",
+      "nameTooLong": "Använd högst 40 tecken.",
+      "version": "Välj en Horizon-version.",
+      "maxPlayers": "Mellan 1 och 1000 spelare.",
+      "importPath": "Välj världsmappen som ska importeras.",
+      "world": "Välj en instans och en av dess världar.",
+      "seed": "Frön är högst 64 tecken.",
+      "eula": "Godkänn EULA för att köra en server.",
+      "cloudUnavailable": "Rustic Cloud är inte tillgängligt än.",
+      "vpsNotReady": "Anslut din VPS och klara kontrollerna först.",
+      "memory": "Minst 1 GB minne.",
+      "host": "Ange en IP-adress eller ett värdnamn.",
+      "port": "Port mellan 1 och 65535.",
+      "username": "Ange Linux-användarnamnet.",
+      "keyPath": "Välj din privata nyckelfil.",
+      "generateKey": "Generera först en nyckel och lägg sedan till den på din VPS.",
+      "password": "Ange lösenordet."
+    },
+    "heading": "Skapa en *server*",
+    "stepHints": {
+      "basics": "Ge den ett namn, välj vad den kör och världen den startar med.",
+      "hosting": "Välj maskinen som kör den och hur mycket minne den får.",
+      "access": "Välj hur dina vänner ansluter. Du kan ändra det senare."
+    },
+    "sections": {
+      "identity": "Namn och ikon"
+    },
+    "preview": {
+      "title": "Förhandsvisning",
+      "unnamed": "Din server",
+      "draft": "inte skapad än"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "Den här datorn (lokalt)",
+      "free": "Gratis",
+      "description": "Din dator måste vara på medan vännerna spelar.",
+      "settings": "På den här datorn",
+      "reach": "Vänner når den i ditt nätverk, via en tillfällig Rustic-adress eller med en inbjudningskod. Ingen routerkonfiguration behövs.",
+      "startWithLauncher": "Starta med launchern",
+      "startWithLauncherHint": "Servern startar när Rustic Launcher öppnas."
+    },
+    "vps": {
+      "title": "Din VPS (SSH)",
+      "description": "Din Linux-server. Vi installerar och kör den åt dig.",
+      "which": "VPS",
+      "existing_one": "Sparad VPS ({{count}})",
+      "existing_other": "Sparade VPS ({{count}})",
+      "new": "Lägg till en VPS",
+      "pinned": "Värdnyckeln är fäst",
+      "host": "Värd",
+      "port": "Port",
+      "user": "Användare",
+      "userPlaceholder": "root eller en sudo-användare",
+      "auth": "Inloggning",
+      "authGenerate": "Generera en nyckel åt mig",
+      "authKey": "Befintlig nyckelfil",
+      "authPassword": "Lösenord (en gång)",
+      "generateHint": "Rekommenderas. Rustic skapar ett nyckelpar; den privata nyckeln lämnar aldrig den här datorn.",
+      "generate": "Generera en nyckel",
+      "addKeyCommand": "Kör det här en gång i din VPS-konsol för att auktorisera nyckeln:",
+      "keyStored": "Den privata nyckeln har sparats i systemets nyckelring ({{path}})",
+      "openFirewall": "Öppna spelporten i VPS:ens brandvägg",
+      "openFirewallHint": "Tillåter TCP till serverns port i ufw eller firewalld. Din leverantörs egen brandvägg kan också behöva det.",
+      "keyFile": "Privat nyckel",
+      "passphrase": "Lösenfras",
+      "optional": "Valfritt",
+      "password": "Lösenord",
+      "passwordHint": "Används en gång för att installera en nyckel. Det sparas inte.",
+      "test": "Testa anslutningen",
+      "reachable": "Ansluten · {{ms}} ms",
+      "unreachable": "Vi kunde inte nå den här VPS:en",
+      "authFailed": "VPS:en nekade inloggningen"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Kommer snart",
+      "description": "Servrar på Rustics maskiner, alltid på.",
+      "waitlist": "Få ett mejl när Rustic Cloud öppnar.",
+      "email": "E-postadress",
+      "join": "Ställ dig på väntelistan",
+      "joined": "Du står på listan (#{{position}}). Vi mejlar dig.",
+      "invalidEmail": "Ange en giltig e-postadress."
+    },
+    "requirements": {
+      "title": "Kontroll av krav",
+      "ram": "Minne ({{free}} ledigt)",
+      "gameFiles": "Spelfiler förberedda",
+      "port": "Port 25565 ledig",
+      "hint": "Diskutrymmet kontrolleras när serverfilerna laddas ner."
+    },
+    "fingerprint": {
+      "title": "Lita på {{host}}?",
+      "description": "Första anslutningen till den här VPS:en. Jämför fingeravtrycket med det i din leverantörs konsol innan du litar på det.",
+      "warning": "Om det inte stämmer, avbryt: någon kan avlyssna anslutningen. Rustic blockerar alla senare ändringar av den här nyckeln.",
+      "trust": "Lita på och fortsätt"
+    },
+    "testFailed": "Anslutningstestet misslyckades",
+    "checkFailed": "Kontrollen av VPS:en misslyckades",
+    "preflight": {
+      "running": "Kontrollerar din VPS…",
+      "ok": "Din VPS är redo",
+      "notOk": "Din VPS uppfyller inte kraven",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_other": "{{count}} vCPU",
+      "memory": "{{memory}} minne",
+      "disk": "{{disk}} ledigt diskutrymme",
+      "systemd": "systemd tillgängligt",
+      "ip": "Offentlig IP-adress"
+    },
+    "problems": {
+      "memory": "Minne",
+      "disk": "Disk",
+      "arch": "Arkitektur",
+      "os": "Operativsystem",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Installerar på {{host}}",
+      "steps": {
+        "connect": "Anslut via SSH",
+        "check": "Förhandskontroller",
+        "user": "Skapa användaren ’rustic’",
+        "download": "Ladda upp signerade serverfiler",
+        "engine": "Konfigurera Rustic-motorn",
+        "service": "Installera tjänsten",
+        "firewall": "Öppna port 25565",
+        "world": "Förbered världen",
+        "start": "Starta och kontrollera"
+      },
+      "state": {
+        "pending": "väntar",
+        "running": "pågår",
+        "done": "klart",
+        "failed": "misslyckades",
+        "skipped": "hoppades över"
+      },
+      "skippedVanilla": "Behövs inte för vanilla Horizon",
+      "log_one": "Visa logg ({{count}} rad)",
+      "log_other": "Visa logg ({{count}} rader)",
+      "vpsDone": "{{name}} körs på {{host}}",
+      "vpsDoneBody": "Hantera den från launchern som en lokal server: konsol, spelare, plugins, säkerhetskopior.",
+      "localDownload": "Ladda ner {{engine}}",
+      "localInit": "Förbered världen och inställningarna",
+      "localStart": "Första start",
+      "localReady": "Redo att starta",
+      "localDone": "{{name}} körs",
+      "localDoneBody": "Dela dess adress från fliken Åtkomst, eller bjud in vänner från vänpanelen.",
+      "open": "Öppna servern",
+      "backToList": "Tillbaka till servrar",
+      "retry": "Försök igen",
+      "failed": "Installationen misslyckades",
+      "crashed": "Servern stoppades under sin första start. Kontrollera konsolen."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Serveravsnitt",
+    "tabs": {
+      "overview": "Översikt",
+      "console": "Konsol",
+      "players": "Spelare",
+      "plugins": "Plugins",
+      "config": "Konfiguration",
+      "datapacks": "Datapaket",
+      "backups": "Säkerhetskopior",
+      "access": "Åtkomst",
+      "danger": "Farozon"
+    },
+    "state": {
+      "stopped": "Stoppad",
+      "starting": "Startar…",
+      "running": "Körs",
+      "stopping": "Stoppar…",
+      "crashed": "Kraschad",
+      "installing": "Installerar…",
+      "unreachable": "Går inte att nå"
+    },
+    "save": "Spara",
+    "cancel": "Avbryt",
+    "close": "Stäng",
+    "remove": "Ta bort",
+    "done": "Klar",
+    "header": {
+      "back": "Servrar",
+      "players": "{{online}}/{{max}} spelare",
+      "uptime": "igång {{duration}}",
+      "start": "Starta",
+      "stop": "Stoppa",
+      "restart": "Starta om",
+      "join": "Anslut",
+      "address": "Adress",
+      "copyAddress": "Kopiera serveradressen",
+      "powerFailed": "Servern kunde inte byta läge"
+    },
+    "overview": {
+      "stoppedTitle": "Servern är stoppad",
+      "stoppedBody": "Starta den för att se CPU, minne, TPS och ticktid i realtid.",
+      "cpu": "CPU",
+      "cpuChart": "CPU-användning de senaste två minuterna",
+      "ram": "Minne",
+      "ramChart": "Använt minne de senaste två minuterna",
+      "of": "av {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Tick per sekund de senaste två minuterna",
+      "mspt": "Ticktid",
+      "msptChart": "Millisekunder per tick de senaste två minuterna, budgetlinje på 50 ms",
+      "msptBudget": "budget 50 ms",
+      "health": {
+        "good": "Smidig",
+        "busy": "Belastad",
+        "lagging": "Laggar"
+      },
+      "onlineTitle_one": "{{count}} spelare online",
+      "onlineTitle_other": "{{count}} spelare online",
+      "onlineStopped": "Ingen kan ansluta medan servern är stoppad.",
+      "nobody": "Ingen spelar just nu.",
+      "infoTitle": "Detaljer",
+      "world": "Värld",
+      "version": "Horizon",
+      "port": "Port",
+      "memory": "Minne",
+      "created": "Skapad",
+      "folder": "Mapp",
+      "uptime": "Drifttid",
+      "startedAt": "Sedan {{time}}",
+      "lastSession": "Senaste session",
+      "lastStarted": "Senast startad: {{when}}",
+      "neverStarted": "Aldrig startad",
+      "lastLines": "Senaste konsolraderna",
+      "noLines": "Inget loggat än.",
+      "openConsole": "Öppna konsolen",
+      "crashedTitle": "Servern stoppades oväntat",
+      "crashedBody": "Titta på de senaste konsolraderna och starta den sedan igen."
+    },
+    "console": {
+      "filter": "Filtrera rader",
+      "filters": {
+        "all": "Alla",
+        "info": "Info",
+        "warn": "Varningar",
+        "error": "Fel",
+        "chat": "Chatt"
+      },
+      "levels": {
+        "info": "info",
+        "warn": "varn",
+        "error": "fel",
+        "command": "kmd",
+        "chat": "chatt"
+      },
+      "autoScroll": "Följ nya rader",
+      "logLabel": "Serverkonsol",
+      "empty": "Inga rader än.",
+      "suggestions": "Kommandoförslag",
+      "inputLabel": "Serverkommando",
+      "placeholder": "Skriv ett kommando (Tab kompletterar, ↑ historik)",
+      "offline": "Starta servern för att skicka kommandon",
+      "send": "Skicka",
+      "sendFailed": "Kommandot kunde inte skickas",
+      "hint": "Kommandon körs som serverkonsolen, med alla behörigheter. Inget inledande snedstreck behövs."
+    },
+    "players": {
+      "whitelist": "Vitlista",
+      "whitelistHint": "Bara spelare på listan kan ansluta. Rekommenderas när servern går att nå från internet.",
+      "view": "Visa spelare",
+      "views": {
+        "online": "Online",
+        "all": "Alla",
+        "ops": "Operatörer",
+        "whitelist": "På vitlistan",
+        "banned": "Bannlysta"
+      },
+      "search": "Hitta en spelare",
+      "emptyOnline": "Ingen är online",
+      "empty": "Inga spelare här",
+      "stoppedHint": "Starta servern för att se vem som spelar.",
+      "online": "Online",
+      "offline": "Offline",
+      "op": "Operatör",
+      "whitelisted": "På vitlistan",
+      "banned": "Bannlyst",
+      "playtime": "{{duration}} spelat",
+      "kick": "Sparka",
+      "kickAria": "Sparka {{name}}",
+      "more": "Fler åtgärder för {{name}}",
+      "makeOp": "Gör till operatör",
+      "deop": "Ta bort som operatör",
+      "whitelistAdd": "Lägg till på vitlistan",
+      "whitelistRemove": "Ta bort från vitlistan",
+      "ban": "Bannlys",
+      "pardon": "Häv bannlysning",
+      "banTitle": "Bannlys {{name}}?",
+      "banBody": "Spelaren kopplas från och kan inte ansluta igen förrän du häver bannlysningen.",
+      "reason": "Orsak (valfri, visas för spelaren)",
+      "failed": "Åtgärden misslyckades",
+      "done": {
+        "kick": "{{name}} har sparkats ut",
+        "ban": "{{name}} har bannlysts",
+        "pardon": "Bannlysningen av {{name}} har hävts",
+        "op": "{{name}} är nu operatör",
+        "deop": "{{name}} är inte längre operatör",
+        "whitelist_add": "{{name}} har lagts till på vitlistan",
+        "whitelist_remove": "{{name}} har tagits bort från vitlistan"
+      }
+    },
+    "config": {
+      "mode": "Redigeringsläge",
+      "form": "Inställningar",
+      "raw": "Råfil",
+      "groups": {
+        "general": "Allmänt",
+        "world": "Värld",
+        "players": "Spelare",
+        "network": "Nätverk",
+        "performance": "Prestanda"
+      },
+      "keys": {
+        "motd": "Dagens meddelande",
+        "max-players": "Max antal spelare",
+        "white-list": "Vitlista",
+        "online-mode": "Onlineläge (kontokontroll)",
+        "pvp": "Spelare mot spelare",
+        "gamemode": "Standardspelläge",
+        "difficulty": "Svårighetsgrad",
+        "level-seed": "Världsfrö",
+        "spawn-protection": "Radie för spawnskydd",
+        "server-port": "Port",
+        "enable-rcon": "Fjärrkonsol (RCON)",
+        "view-distance": "Synavstånd",
+        "simulation-distance": "Simuleringsavstånd"
+      },
+      "restart": "Starta om",
+      "restartNeeded": "Starta om servern för att tillämpa vissa ändringar",
+      "unsaved_one": "{{count}} osparad ändring",
+      "unsaved_other": "{{count}} osparade ändringar",
+      "noChanges": "Inga ändringar",
+      "discard": "Kasta",
+      "saved": "Konfigurationen har sparats",
+      "saveFailed": "Konfigurationen kunde inte sparas",
+      "rawTitle": "server.toml",
+      "rawWarning": "Avancerat: ett stavfel kan hindra servern från att starta. Värdena kontrolleras när du sparar."
+    },
+    "plugins": {
+      "vanillaTitle": "Plugins kräver Rustic Server",
+      "vanillaBody": "Den här servern kör vanilla Horizon. Rustic Server lägger till .rplugin-plugins i sandlåda som aldrig kan krascha den. Skapa en Rustic Server och importera den här världen för att använda plugins.",
+      "createRustic": "Skapa en Rustic Server",
+      "intro": "Plugins körs i sandlåda: ett plugin som fallerar inaktiveras med en loggrad och servern fortsätter. Varje plugin anger vad det får komma åt.",
+      "upload": "Lägg till en fil…",
+      "uploadTitle": "Välj en .rplugin-fil",
+      "find": "Hitta plugins",
+      "empty": "Inga plugins än",
+      "emptyBody": "Bläddra i Innehåll › Plugins för att lägga till ett med ett klick.",
+      "errored": "Inaktiverat efter ett fel",
+      "disabled": "Av",
+      "noDescription": "Ingen beskrivning",
+      "toggle": "Aktivera {{name}}",
+      "capabilities": "Åtkomst",
+      "noNetwork": "Inget nätverk",
+      "network": "Nätverk: {{domains}}",
+      "fs": {
+        "none": "Inga filer",
+        "data-folder": "Egen datamapp"
+      },
+      "update": "Uppdatera till {{version}}",
+      "updated": "{{name}} har uppdaterats till {{version}}",
+      "installed": "{{name}} har installerats och aktiverats",
+      "removeTitle": "Ta bort {{name}}?",
+      "removeBody": "Pluginet avlastas och dess fil raderas. Dess datamapp behålls.",
+      "failed": "Pluginåtgärden misslyckades"
+    },
+    "datapacks": {
+      "intro": "Datapaket i världen ”{{world}}”.",
+      "find": "Hitta datapaket",
+      "empty": "Inga datapaket i den här världen",
+      "toggle": "Aktivera {{name}}",
+      "remove": "Ta bort {{name}}",
+      "reloadHint": "Ändringarna gäller efter /reload eller en omstart.",
+      "failed": "Datapaketsåtgärden misslyckades"
+    },
+    "backups": {
+      "nowTitle": "Säkerhetskopiera nu",
+      "nowBody": "En kopia av världen och konfigurationen. Servern fortsätter att köra.",
+      "note": "Anteckning",
+      "notePlaceholder": "Valfri anteckning, t.ex. ”före uppdateringen”",
+      "now": "Säkerhetskopiera nu",
+      "created": "Säkerhetskopian har skapats",
+      "empty": "Inga säkerhetskopior än",
+      "kinds": {
+        "manual": "Manuell",
+        "scheduled": "Schemalagd",
+        "pre_restore": "Före återställning"
+      },
+      "restore": "Återställ",
+      "restoreTitle": "Återställ den här säkerhetskopian?",
+      "restoreBody": "Världen återgår till {{date}}. Allt som byggts sedan dess ersätts. En säkerhetskopia av den nuvarande världen görs först.",
+      "restored": "Säkerhetskopian har återställts",
+      "delete": "Ta bort säkerhetskopian",
+      "deleteTitle": "Ta bort den här säkerhetskopian?",
+      "deleteBody": "Säkerhetskopian tas bort för gott.",
+      "failed": "Säkerhetskopieringsåtgärden misslyckades",
+      "scheduleTitle": "Automatiska säkerhetskopior",
+      "scheduleBody": "De äldsta automatiska säkerhetskopiorna tas bort när gränsen nås.",
+      "scheduleEnabled": "Säkerhetskopiera automatiskt",
+      "every": "Intervall",
+      "hours_one": "{{count}} timme",
+      "hours_other": "{{count}} timmar",
+      "keep": "Behåll",
+      "keepCount_one": "den senaste {{count}} säkerhetskopian",
+      "keepCount_other": "de senaste {{count}} säkerhetskopiorna",
+      "scheduleSaved": "Schemat för säkerhetskopiering har sparats"
+    },
+    "danger": {
+      "deleteTitle": "Ta bort den här servern",
+      "deleteBody": "Stoppar servern och tar bort den från launchern. Du kan behålla dess filer.",
+      "delete": "Ta bort servern",
+      "removeVpsTitle": "Ta bort från din VPS",
+      "removeVpsBody": "Stoppar tjänsten på {{host}} och avinstallerar Rustic från den. Din VPS förblir din.",
+      "removeVps": "Ta bort från VPS",
+      "confirmTitle": "Ta bort ”{{name}}”?",
+      "confirmBody": "Det går inte att ångra. Gör en säkerhetskopia först om du kan komma att behöva världen igen.",
+      "deleteFiles": "Ta även bort världen och alla serverfiler",
+      "typeName": "Skriv ”{{name}}” för att bekräfta",
+      "deleted": "{{name}} har tagits bort",
+      "failed": "Servern kunde inte tas bort"
+    }
+  },
+  "access": {
+    "intro": "Välj hur vänner når din server. Du kan slå på flera samtidigt.",
+    "optional": "Valfritt",
+    "lan": {
+      "title": "I ditt nätverk",
+      "body": "Spelare på samma wifi eller nätverk ansluter med den här adressen.",
+      "copy": "Kopiera den lokala adressen"
+    },
+    "public": {
+      "title": "Offentlig adress",
+      "body": "Din VPS:s IP-adress och port. Vem som helst kan ansluta med den; en domän är enklare att dela.",
+      "copy": "Kopiera den offentliga adressen"
+    },
+    "relay": {
+      "title": "Tillfällig adress",
+      "body": "En gratis adress på Rustic Relay medan servern körs. Ingen routerkonfiguration, din IP-adress förblir dold.",
+      "toggle": "Tillfällig adress",
+      "copy": "Kopiera den tillfälliga adressen",
+      "off": "Av. Slå på den för att få en adress du kan dela.",
+      "label": "Namn i adressen",
+      "apply": "Verkställ",
+      "status": {
+        "off": "Av",
+        "connecting": "Väntar på att servern ska starta",
+        "online": "Nåbar nu",
+        "error": "Reläet går inte att nå"
+      },
+      "failed": "Den tillfälliga adressen kunde inte ändras",
+      "taken": "Namnet är upptaget. Prova ett annat.",
+      "invalid": "Använd 3 till 32 gemener, siffror eller bindestreck."
+    },
+    "invite": {
+      "title": "Inbjudningskod",
+      "body": "Vänner som använder Rustic Launcher klistrar in den här koden för att ansluta, som Horizons Spela med vänner.",
+      "create": "Skapa en kod",
+      "copy": "Kopiera inbjudningskoden",
+      "expires": "Går ut {{when}}",
+      "revoke": "Återkalla"
+    },
+    "advanced": "Avancerat: öppna en port i din router (UPnP)",
+    "upnp": {
+      "title": "UPnP-portmappning",
+      "warning": "Det här ber din router att öppna serverns port mot internet. Din offentliga IP-adress blir synlig för alla spelare, vilket exponerar din hemanslutning (attacker, plats). Använd hellre den tillfälliga adressen eller en domän.",
+      "status": {
+        "off": "Av",
+        "mapping": "Frågar routern…",
+        "mapped": "Porten är öppen",
+        "failed": "Routern nekade (UPnP kan vara avstängt)"
+      },
+      "mapped": "Porten är öppen: {{address}}",
+      "copy": "Kopiera den offentliga adressen",
+      "failed": "Porten kunde inte öppnas",
+      "prefer": "Den tillfälliga adressen och domäner fungerar utan att öppna någon port."
+    }
+  },
+  "domains": {
+    "title": "Min egen domän",
+    "intro": "En domän är din servers adress, som play.dittnamn.net. Du kan ansluta en du redan har, köpa en hos Porkbun utan att lämna launchern, eller använda valfri domänregistrar: vi visar exakt vad du ska lägga till.",
+    "automatic": "Automatiskt",
+    "anyRegistrar": "Valfri domänregistrar",
+    "otherPaths": "Andra sätt",
+    "paths": {
+      "porkbun": {
+        "title": "Anslut Porkbun",
+        "body": "Har du redan en domän hos Porkbun? Anslut ditt konto så skapar vi posterna åt dig."
+      },
+      "buy": {
+        "title": "Köp en domän hos Porkbun",
+        "body": "Hitta ett ledigt namn, köp det på ditt eget Porkbun-konto, så konfigureras det automatiskt."
+      },
+      "manual": {
+        "title": "Använd en domän från valfri domänregistrar",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: vi visar vad du ska lägga till och kontrollerar det åt dig."
+      }
+    },
+    "subdomain": "Underdomän",
+    "subdomainHint": "play är ett bra standardval.",
+    "apexHint": "Tomt: själva domänen (kräver ALIAS/ANAME hos vissa domänregistrarer).",
+    "invalidSubdomain": "Bara bokstäver, siffror och bindestreck.",
+    "invalidDomain": "Det här ser inte ut som en domän (example.net).",
+    "copyAddress": "Kopiera domänadressen",
+    "configureFailed": "Domänen kunde inte konfigureras",
+    "boundBody": "Spelare ansluter med den här adressen.",
+    "remove": "Ta bort domän",
+    "removeTitle": "Sluta använda {{domain}}?",
+    "removeBody": "Adressen slutar peka på den här servern när posterna har tagits bort. Domänen förblir din.",
+    "status": {
+      "pending": "Väntar",
+      "propagating": "Sprids",
+      "verified": "Ansluten",
+      "error": "Fel"
+    },
+    "provider": {
+      "porkbun": "Hanteras via Porkbun",
+      "manual": "Hanteras hos din domänregistrar"
+    },
+    "connected": "Domänen är ansluten",
+    "connectedBody": "Rustic Cloud verifierar TXT-posten, sedan börjar din adress fungera. Du kan stänga det här; vi meddelar dig.",
+    "porkbun": {
+      "step1": "På porkbun.com › Account › API Access, skapa en API-nyckel.",
+      "openApi": "Öppna API Access hos Porkbun",
+      "step2": "Slå på ”API Access” på domänens sida hos Porkbun.",
+      "apiKey": "API-nyckel",
+      "secret": "Hemlig API-nyckel",
+      "keychain": "Lagras i datorns nyckelring, skickas aldrig till Rustic.",
+      "connect": "Anslut",
+      "badApiKey": "En API-nyckel börjar med pk1_.",
+      "badSecret": "En hemlig API-nyckel börjar med sk1_.",
+      "rejected": "Porkbun nekade de här nycklarna. Kontrollera dem, eller skapa ett nytt par.",
+      "connected": "Porkbun är anslutet",
+      "disconnect": "Koppla från",
+      "domain": "Domän",
+      "pickDomain": "Välj en av dina domäner",
+      "apiAccessOff": "API Access är avstängt för den här domänen hos Porkbun",
+      "apiAccessHint": "Gråade domäner behöver ha ”API Access” påslaget hos Porkbun.",
+      "preview": "Ändringar vi kommer att göra",
+      "dryRun": "Förhandsvisa",
+      "previewBody": "De här posterna läggs till eller ersätts på din domän så att {{fqdn}} når den här servern. Inget ändras förrän du verkställer.",
+      "apply": "Konfigurera automatiskt"
+    },
+    "buy": {
+      "intro": "Domänen registreras på ditt eget Porkbun-konto och betalas där. Rustic tar aldrig betalt för den.",
+      "needsAccount": "För att köpa behövs ditt Porkbun-konto: anslut det först (du kan skapa ett gratis på porkbun.com).",
+      "search": "Namn du vill ha",
+      "searchPlaceholder": "t.ex. loucraft",
+      "searchButton": "Sök",
+      "noResults": "Inga resultat för det här namnet.",
+      "premium": "Premium",
+      "price": "{{price}} första året · förnyas för {{renewal}}",
+      "taken": "Upptaget",
+      "select": "Välj",
+      "overLimit": "Över 100 $: köp den på porkbun.com",
+      "pricesNote": "Priserna är Porkbuns, i amerikanska dollar, enligt aktuell offert. Skatter kan tillkomma hos Porkbun.",
+      "confirmTitle": "Bekräfta köpet hos Porkbun",
+      "seller": "Säljare: Porkbun LLC, inte Rustic. Deras villkor, priser, förnyelser och återbetalningar gäller.",
+      "domain": "Domän",
+      "address": "Serveradress",
+      "registrar": "Domänregistrar",
+      "registrarValue": "Porkbun, på ditt konto",
+      "firstYear": "Första året",
+      "renewal": "Förnyas årligen för",
+      "payment": "Betalas med ditt Porkbun-kontosaldo eller sparade kort: {{price}} nu; förnyas årligen för {{renewal}} om du inte stänger av automatisk förnyelse hos Porkbun.",
+      "agreeTerms": "Jag godkänner Porkbuns registreringsavtal och villkor",
+      "termsLink": "(läs dem)",
+      "agreeOrder": "Jag förstår att Rustic bara skickar den här beställningen till Porkbun å mina vägnar",
+      "refunds": "Återbetalningar och avbokning för domäner hanteras av Porkbun enligt deras villkor.",
+      "buyButton": "Köp hos Porkbun · {{price}}",
+      "bought": "{{domain}} är din",
+      "boughtBody": "Debiterat av Porkbun: {{price}}. Konfigurerar den nu…",
+      "configuring": "Konfigurerar din nya domän…",
+      "failed": "Köpet gick inte igenom",
+      "errors": {
+        "price_changed": "Priset har ändrats hos Porkbun. Kontrollera det nya priset och försök igen.",
+        "not_available": "Den här domänen togs precis.",
+        "over_limit": "Över 100 $: köp den på porkbun.com.",
+        "porkbun_not_connected": "Anslut ditt Porkbun-konto först.",
+        "consent_required": "Båda rutorna måste vara ikryssade."
+      }
+    },
+    "manual": {
+      "intro": "Lägg till de här posterna i din domänregistrars DNS-zon. Vi kontrollerar dem var 10:e sekund och säger till när det fungerar.",
+      "domain": "Din domän",
+      "registrar": "Domänregistrar",
+      "show": "Visa posterna",
+      "guideTitle": "Hos {{registrar}}",
+      "allGuides": "Guider för alla domänregistrarer"
+    },
+    "records": {
+      "caption": "DNS-poster att lägga till",
+      "type": "Typ",
+      "name": "Namn / värd",
+      "value": "Värde / mål",
+      "ttl": "TTL",
+      "status": "Status",
+      "optional": "valfritt",
+      "emptyHost": "(lämna tomt)",
+      "copyName": "Kopiera {{type}}-namnet",
+      "copyValue": "Kopiera {{type}}-värdet",
+      "srvFields": "prioritet {{priority}} · vikt {{weight}} · port {{port}}"
+    },
+    "check": {
+      "pending": "Inte kontrollerad",
+      "notNeeded": "Behövs inte",
+      "ok": "OK",
+      "propagating": "Sprids ({{ok}}/{{total}})",
+      "wrong": "Fel värde",
+      "found": "Hittat:",
+      "expected": "Förväntat:",
+      "missing": "Saknas",
+      "first": "Första kontrollen…",
+      "progress": "{{ok}} av {{total}} poster OK",
+      "progressLabel": "Verifierade poster",
+      "auto": "Kontrollerar automatiskt var 10:e s",
+      "lastCheck": "senaste kontroll för {{seconds}} s sedan",
+      "now": "Kontrollera nu"
+    },
+    "help": {
+      "txt": "Varför en TXT-post? Den bevisar att domänen är din, så att ingen annan kan peka den mot sin server.",
+      "propagation": "Ändringar kan ta från en minut till några timmar att nå alla. Vi fortsätter att kontrollera; du behöver inte stanna här.",
+      "apex": "Apexdomäner (dittnamn.net utan ”play.”) kräver en ALIAS/ANAME-post; alla domänregistrarer har inte det. En underdomän fungerar alltid."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › din domän › DNS zone.\nKlicka på ”Add an entry” och välj typen (CNAME, SRV, A eller TXT).\nSub-domain = Namn nedan (lämna tomt för själva domänen), Target = Värde.\nUpprepa för varje post och bekräfta sedan. OVH tillämpar ändringarna inom några minuter."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › din domän › DNS records.\nKlicka på ”Add record” och välj typen.\nName = Namn nedan, Value = Värde (behåll den avslutande punkten för CNAME/SRV-mål).\nSpara varje post."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nUnder Host records, ”Add new record”.\nHost = Namn nedan (@ för själva domänen), Value/Target = Värde.\nKlicka på den gröna bocken för att spara varje post."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › din domän › DNS › Manage DNS.\nKlicka på ”Add new record” och välj typen.\nName = Namn nedan (@ för själva domänen), Value = Värde.\nFör SRV, fyll i Service _minecraft, Protocol _tcp, sedan prioritet, vikt och port. Spara."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Välj din webbplats › DNS › Records › Add record.\nVälj typen, Name = Namn nedan, Target/Content = Värde.\nSätt Proxy status till ”DNS only” (grått moln): speltrafiken kan inte gå genom Cloudflares proxy.\nSpara varje post."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › din domän › DNS.\nKlicka på ”Add record” och välj typen.\nHost name = Namn nedan, Points to / Value = Värde.\nSpara; IONOS kan be dig bekräfta att en standardpost ersätts."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › din domän › DNS / Nameservers.\nUnder ”Manage DNS records”, välj typen.\nName = Namn nedan, Points to / Value = Värde, TTL enligt visningen.\nKlicka på ”Add record” för varje post."
+      },
+      "porkbun": {
+        "name": "Porkbun (manuellt)",
+        "steps": "Domain Management › din domän › DNS.\nVälj typen, Host = Namn nedan (tomt för själva domänen), Answer = Värde.\nKlicka på ”Add” för varje post.\nTips: vägen Anslut Porkbun gör allt detta åt dig."
+      },
+      "generic": {
+        "name": "Annan domänregistrar",
+        "steps": "Öppna din domäns DNS-zon (kallas ibland DNS-poster eller zonredigerare).\nLägg till varje post nedan med samma typ, namn och värde.\nOm din domänregistrar ber om det fullständiga namnet, lägg till din domän efter Namn.\nSpara och kom sedan tillbaka: vi kontrollerar automatiskt."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Servervyer",
+    "tabs": {
+      "discover": "Upptäck",
+      "browse": "Bläddra"
+    },
+    "searchLabel": "Sök servrar",
+    "searchPlaceholder": "Sök i serverkatalogen…",
+    "publish": "Publicera min server",
+    "publishCta": {
+      "title": "Din server här",
+      "hint": "Lista din Horizon-server i katalogen från webbplatsen: den visas här och på rustic-launcher.com när de automatiska kontrollerna har godkänts."
+    },
+    "play": "Spela",
+    "playAria": "Spela på {{name}}",
+    "view": "Visa",
+    "verified": "Verifierad",
+    "featured": "Teamets val",
+    "verifiedHint": "Verifierade servrar: Rustic-teamet har kontrollerat ägaren och reglerna.",
+    "online_one": "{{value}} online",
+    "online_other": "{{value}} online",
+    "playersLabel": "Spelare online",
+    "languagesLabel": "Språk",
+    "playsLabel": "Starter den här veckan",
+    "lastPlayed": "Senast spelad",
+    "lastPlayedOn": "Spelades {{when}}",
+    "hero": {
+      "label": "Utvalda servrar",
+      "eyebrow": "Verifierad"
+    },
+    "rows": {
+      "trending": "Populärt just nu",
+      "trendingHint": "Mest startade från Rustic den här veckan",
+      "players": "Flest spelare nu",
+      "playersHint": "Enligt molnets senaste kontroll",
+      "new": "Nytt i katalogen",
+      "newHint": "Nyss listade av sina ägare",
+      "recent": "Nyligen spelade",
+      "recentHint": "Från din serverlista"
+    },
+    "rowError": "Den här raden kunde inte läsas in.",
+    "retry": "Försök igen",
+    "empty": {
+      "title": "Inga servrar listade än",
+      "hint": "Bli först: publicera din server från webbplatsen."
+    },
+    "emptySearch": {
+      "title": "Ingen server matchar",
+      "hint": "Prova andra ord eller färre filter."
+    },
+    "sorts": {
+      "trending": "Populärt just nu",
+      "players": "Flest spelare",
+      "new": "Nyaste",
+      "name": "Namn"
+    },
+    "filters": {
+      "tags": "Spelstil",
+      "language": "Språk",
+      "engine": "Motor",
+      "rustic": "Rustic",
+      "verifiedOnly": "Bara verifierade",
+      "reset": "Återställ filtren",
+      "remove": "Ta bort filtret {{filter}}"
+    },
+    "tags": {
+      "survival": "Överlevnad",
+      "smp": "SMP",
+      "creative": "Kreativt",
+      "minigames": "Minispel",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Rollspel",
+      "factions": "Factions",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Äventyr",
+      "building": "Bygge",
+      "economy": "Ekonomi",
+      "modded": "Moddat",
+      "anarchy": "Anarki",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Servrar",
+      "status": "Status i realtid",
+      "cloudSaw_one": "molnet såg {{value}} spelare online {{when}}",
+      "cloudSaw_other": "molnet såg {{value}} spelare online {{when}}",
+      "engine": "Motor",
+      "version": "Spelversion",
+      "languages": "Språk",
+      "plays": "Starter den här veckan",
+      "about": "Om",
+      "noDescription": "Ingen beskrivning än.",
+      "address": "Adress",
+      "copy": "Kopiera",
+      "openSite": "Öppna på webbplatsen",
+      "website": "Webbplats",
+      "discord": "Discord",
+      "by": "Listad av {{name}}",
+      "byStaff": "Listad av Rustic-teamet",
+      "report": "Anmäl",
+      "rusticEdition": "Rustic-utgåvan krävs",
+      "missing": "Den här servern är inte tillgänglig",
+      "missingHint": "Den kan vara privat, dold av modereringen eller borttagen."
+    },
+    "report": {
+      "title": "Anmäl {{name}}",
+      "lead": "Berätta för modereringsteamet vad som är fel. Varje anmälan granskas.",
+      "reason": "Orsak",
+      "reasons": {
+        "impersonation": "Utger sig för att vara en annan server",
+        "spam": "Spam eller vilseledande",
+        "inappropriate_content": "Olämpligt innehåll",
+        "cheating": "Fusk eller skadlig server",
+        "harassment": "Trakasserier",
+        "copyright": "Gör intrång i mina rättigheter (varumärke, namn)",
+        "malware": "Skadlig kod",
+        "other": "Annat"
+      },
+      "details": "Detaljer",
+      "detailsHint": "Valfritt, högst 2 000 tecken.",
+      "send": "Skicka anmälan",
+      "sent": "Tack, din anmälan har skickats till modereringsteamet.",
+      "signIn": "Logga in på ditt Rustic-konto för att anmäla en server.",
+      "failed": "Anmälan kunde inte skickas."
+    }
+  }
+}

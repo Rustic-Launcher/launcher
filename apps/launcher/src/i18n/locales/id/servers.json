@@ -1,0 +1,1041 @@
+{
+  "list": {
+    "title": "Server",
+    "description": "Host dunia untuk teman-temanmu, di sini atau di VPS milikmu sendiri, dan simpan server favoritmu agar mudah diakses.",
+    "create": "Buat server",
+    "tabs": {
+      "mine": "Server saya",
+      "joined": "Pernah dimasuki",
+      "discover": "Temukan"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon vanilla"
+    },
+    "hosting": {
+      "local": "PC ini",
+      "remote": "Jarak jauh: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Status",
+    "states": {
+      "running": "Berjalan",
+      "starting": "Memulai…",
+      "stopping": "Menghentikan…",
+      "stopped": "Berhenti",
+      "crashed": "Crash",
+      "installing": "Memasang…",
+      "unreachable": "Tidak terjangkau"
+    },
+    "players": "Pemain",
+    "playersCount": "{{online}}/{{max}} pemain",
+    "version": "Versi",
+    "copyAddress": "Salin alamat",
+    "copyFailed": "Tidak dapat menyalin ke papan klip",
+    "notShared": "Belum dibagikan",
+    "notSharedHint": "Aktifkan alamat sementara, kode undangan, atau domain di tab Akses server.",
+    "start": "Mulai",
+    "stop": "Hentikan",
+    "startAria": "Mulai {{name}}",
+    "stopAria": "Hentikan {{name}}",
+    "powerFailed": "Server tidak merespons",
+    "empty": {
+      "title": "Host dunia untuk teman-temanmu dalam 3 langkah",
+      "description": "Jalankan gratis di PC ini, atau biarkan Rustic memasangnya di VPS milikmu sendiri."
+    },
+    "featured": {
+      "description": "Server pilihan tim Rustic: fair play, siap untuk Horizon, dimoderasi.",
+      "empty": "Belum ada server unggulan saat ini.",
+      "verified": "Diverifikasi oleh Rustic",
+      "save": "Tambahkan ke daftar",
+      "inList": "Ada di daftarmu",
+      "online_other": "{{value}} online",
+      "view": "Tentang {{name}}"
+    },
+    "viewLabel": "Tampilan",
+    "views": {
+      "discover": "Temukan",
+      "mine": "Server saya"
+    },
+    "searchPlaceholder": {
+      "discover": "Cari server unggulan…",
+      "mine": "Cari server-mu…"
+    },
+    "clearSearch": "Hapus pencarian",
+    "sortLabel": "Urutkan",
+    "sorts": {
+      "recommended": "Disarankan",
+      "players": "Pemain terbanyak",
+      "name": "Nama"
+    },
+    "refreshPing": "Muat ulang ping dan status",
+    "layoutList": "Tampilkan sebagai daftar",
+    "layoutGrid": "Tampilkan sebagai kisi",
+    "createHint": "Di sini, di VPS-mu, atau segera di cloud",
+    "heading": "Main di *server*",
+    "eyebrow": "Server",
+    "sections": {
+      "hosted": "Di-host olehmu",
+      "joined": "Server yang pernah dimasuki"
+    }
+  },
+  "multiplayer": {
+    "description": "Daftar server game, dipakai bersama oleh semua instansmu.",
+    "add": "Tambah server",
+    "added": "{{name}} ditambahkan ke daftarmu",
+    "addFailed": "Tidak dapat menambahkan server ini",
+    "name": "Nama server",
+    "namePlaceholder": "Nama",
+    "address": "Alamat server",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Gunakan nama host atau IP, dengan :port opsional.",
+    "refreshPings": "Muat ulang",
+    "favorites_other": "Favorit · {{count}}",
+    "others_other": "Server lain · {{count}}",
+    "favorite": "Tambahkan {{name}} ke favorit",
+    "unfavorite": "Hapus {{name}} dari favorit",
+    "offline": "Offline",
+    "unreachable": "Server ini tidak dapat dijangkau saat ini",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Gabung",
+    "joinAria": "Gabung ke {{name}}",
+    "joinWith": "Bergabung dengan {{instance}}",
+    "noInstance": "Buat instans untuk bergabung ke server",
+    "joining": "Meluncurkan dan bergabung ke {{name}}…",
+    "more": "Tindakan lain untuk {{name}}",
+    "copyAddress": "Salin alamat",
+    "removed": "{{name}} dihapus",
+    "undo": "Urungkan",
+    "empty": {
+      "title": "Belum ada server",
+      "description": "Tambahkan satu dengan alamatnya, atau pilih satu di Temukan."
+    }
+  },
+  "wizard": {
+    "title": "Buat server",
+    "subtitle": "Tiga langkah: apa yang dijalankan, di mana di-host, bagaimana teman bergabung.",
+    "creatingTitle": "Menyiapkan {{name}}",
+    "stepOf": "Langkah {{index}} dari {{total}}",
+    "steps": {
+      "basics": "Dasar",
+      "hosting": "Tempat hosting",
+      "access": "Akses"
+    },
+    "create": "Buat server",
+    "installOn": "Pasang di {{host}}",
+    "createFailed": "Server tidak dapat dibuat",
+    "noRusticServer": "Program rustic-server tidak ditemukan. Pilih di Pengaturan › Game & instans › Rustic Server, atau pasang build edisi Rustic yang menyertakannya.",
+    "openRusticServerSettings": "Buka pengaturan",
+    "fixErrors": "Periksa kolom yang disorot untuk melanjutkan.",
+    "discard": {
+      "title": "Buang server ini?",
+      "body": "Yang kamu isi di wizard akan hilang.",
+      "keep": "Lanjutkan mengedit",
+      "confirm": "Buang"
+    },
+    "basics": {
+      "name": "Nama server",
+      "namePlaceholder": "SMP Lou",
+      "icon": "Ikon",
+      "icons": {
+        "grass": "Rumput",
+        "sword": "Pedang",
+        "pickaxe": "Beliung",
+        "castle": "Kastel",
+        "rocket": "Roket",
+        "gem": "Permata",
+        "flame": "Api",
+        "leaf": "Daun",
+        "star": "Bintang",
+        "compass": "Kompas"
+      },
+      "color": "Warna",
+      "colorN": "Warna {{n}}",
+      "type": "Jenis",
+      "recommended": "Disarankan",
+      "nightly": "Nightly",
+      "rusticDesc": "Plugin (.rplugin), terisolasi (sandbox): plugin tidak akan pernah bisa membuat server-mu crash.",
+      "horizonDesc": "Server milik Horizon sendiri, tanpa plugin.",
+      "version": "Versi Horizon",
+      "maxPlayers": "Pemain maksimal",
+      "versionLineRustic": "Rustic Server 0.1 di Horizon {{version}}",
+      "versionLineHorizon": "Server Horizon {{version}}",
+      "sameAsClient": "(sama dengan klienmu)",
+      "starterPlugins": "Plugin awal",
+      "starterHint": "Plugin resmi, beserta apa yang boleh mereka lakukan.",
+      "capNetwork": "Jaringan",
+      "capNoNetwork": "Tanpa jaringan",
+      "capNoFiles": "Tanpa file",
+      "capDataFolder": "Folder data sendiri",
+      "eula": "Aku menerima EULA Minecraft",
+      "eulaHint": "Menjalankan server mewajibkannya. Kamu sendiri yang menerimanya; Rustic tidak menerimanya atas namamu.",
+      "eulaRead": "Baca EULA",
+      "eulaTitle": "EULA Minecraft"
+    },
+    "world": {
+      "title": "Dunia",
+      "new": "Dunia baru",
+      "import": "Impor folder",
+      "fromInstance": "Dari instans",
+      "seed": "Seed",
+      "seedHint": "Kosongkan untuk dunia acak.",
+      "seedPlaceholder": "Opsional",
+      "randomSeed": "Seed acak",
+      "levelType": "Jenis dunia",
+      "levelTypes": {
+        "default": "Bawaan",
+        "flat": "Superdatar",
+        "large_biomes": "Bioma besar",
+        "amplified": "Diperkuat"
+      },
+      "gamemode": "Mode permainan",
+      "gamemodes": {
+        "survival": "Survival",
+        "creative": "Kreatif",
+        "adventure": "Petualangan"
+      },
+      "difficulty": "Tingkat kesulitan",
+      "difficulties": {
+        "peaceful": "Damai",
+        "easy": "Mudah",
+        "normal": "Normal",
+        "hard": "Sulit"
+      },
+      "structures": "Buat struktur",
+      "hardcore": "Hardcore",
+      "folder": "Folder dunia",
+      "instance": "Instans",
+      "pickInstance": "Pilih instans",
+      "world": "Dunia",
+      "pickWorld": "Pilih dunia",
+      "noWorlds": "Tidak ada dunia di instans ini",
+      "newDesc": "Dunia baru dari seed, dengan aturanmu sendiri.",
+      "importDesc": "Folder dunia dari PC-mu atau dari cadangan.",
+      "fromInstanceDesc": "Dunia yang pernah kamu mainkan di salah satu profilmu."
+    },
+    "type": {
+      "memory": "Memori server (RAM)",
+      "memoryHint": "4 GB cukup untuk sebagian besar kelompok teman. Lebih banyak membantu untuk banyak pemain atau modpack besar."
+    },
+    "access": {
+      "intro": "Cara teman-temanmu bergabung. Beberapa bisa aktif bersamaan; kamu bisa mengubahnya nanti.",
+      "lan": "Teman di jaringanku (LAN)",
+      "lanDetail": "Alamat lokal PC ini, ditampilkan setelah server dibuat.",
+      "publicIp": "Alamat publik",
+      "publicIpDetail": "IP VPS-mu",
+      "alwaysOn": "Selalu aktif",
+      "relay": "Alamat sementara",
+      "relayDetail": "gratis, selama server berjalan; tanpa perlu membuka port",
+      "invite": "Kode undangan",
+      "inviteDetail": "Kode yang ditempelkan teman di Rustic Launcher untuk bergabung.",
+      "domain": "Domain milikku sendiri",
+      "domainDetail": "Hubungkan Porkbun · Beli di Porkbun · Gunakan registrar mana pun",
+      "domainAfter": "Atur setelah dibuat",
+      "safety": "Mode online aktif: hanya pemain yang memiliki game yang dapat bergabung. Whitelist aktif."
+    },
+    "summary": {
+      "title": "Ringkasan",
+      "version": "Versi",
+      "host": "Hosting",
+      "world": "Dunia",
+      "memory": "Memori",
+      "players": "Pemain maksimal",
+      "plugins": "Plugin",
+      "none": "Tidak ada",
+      "eulaAccepted": "Kamu telah menerima EULA Minecraft di langkah 1."
+    },
+    "errors": {
+      "nameRequired": "Beri nama server-mu.",
+      "nameTooLong": "Gunakan maksimal 40 karakter.",
+      "version": "Pilih versi Horizon.",
+      "maxPlayers": "Antara 1 dan 1000 pemain.",
+      "importPath": "Pilih folder dunia yang akan diimpor.",
+      "world": "Pilih instans dan salah satu dunianya.",
+      "seed": "Seed maksimal 64 karakter.",
+      "eula": "Terima EULA untuk menjalankan server.",
+      "cloudUnavailable": "Rustic Cloud belum tersedia.",
+      "vpsNotReady": "Hubungkan VPS-mu dan lulus pemeriksaan terlebih dahulu.",
+      "memory": "Minimal 1 GB memori.",
+      "host": "Masukkan alamat IP atau nama host.",
+      "port": "Port antara 1 dan 65535.",
+      "username": "Masukkan nama pengguna Linux.",
+      "keyPath": "Pilih file kunci privatmu.",
+      "generateKey": "Buat kunci terlebih dahulu, lalu tambahkan ke VPS-mu.",
+      "password": "Masukkan kata sandi."
+    },
+    "heading": "Buat *server*",
+    "stepHints": {
+      "basics": "Beri nama, pilih apa yang dijalankan, dan dunia awalnya.",
+      "hosting": "Pilih mesin yang menjalankannya dan berapa memori yang didapat.",
+      "access": "Pilih cara teman-temanmu bergabung. Bisa diubah nanti."
+    },
+    "sections": {
+      "identity": "Nama dan ikon"
+    },
+    "preview": {
+      "title": "Pratinjau",
+      "unnamed": "Server-mu",
+      "draft": "belum dibuat"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "PC ini (Lokal)",
+      "free": "Gratis",
+      "description": "PC-mu harus tetap menyala selama teman-teman bermain.",
+      "settings": "Di PC ini",
+      "reach": "Teman bisa menjangkaunya di jaringanmu, melalui alamat sementara Rustic, atau dengan kode undangan. Tidak perlu mengatur router.",
+      "startWithLauncher": "Mulai bersama launcher",
+      "startWithLauncherHint": "Server dimulai saat Rustic Launcher dibuka."
+    },
+    "vps": {
+      "title": "VPS-mu (SSH)",
+      "description": "Server Linux milikmu. Kami memasang dan menjalankannya untukmu.",
+      "which": "VPS",
+      "existing_other": "VPS tersimpan ({{count}})",
+      "new": "Tambah VPS",
+      "pinned": "Kunci host disematkan",
+      "host": "Host",
+      "port": "Port",
+      "user": "Pengguna",
+      "userPlaceholder": "root atau pengguna sudo",
+      "auth": "Masuk",
+      "authGenerate": "Buatkan kunci untukku",
+      "authKey": "File kunci yang sudah ada",
+      "authPassword": "Kata sandi (sekali)",
+      "generateHint": "Disarankan. Rustic membuat pasangan kunci; kunci privat tidak pernah meninggalkan PC ini.",
+      "generate": "Buat kunci",
+      "addKeyCommand": "Jalankan ini sekali di konsol VPS-mu untuk mengotorisasi kunci:",
+      "keyStored": "Kunci privat disimpan di keychain sistem ({{path}})",
+      "openFirewall": "Buka port game di firewall VPS",
+      "openFirewallHint": "Mengizinkan TCP ke port server di ufw atau firewalld. Firewall milik penyedia layananmu mungkin juga perlu diatur.",
+      "keyFile": "Kunci privat",
+      "passphrase": "Frasa sandi",
+      "optional": "Opsional",
+      "password": "Kata sandi",
+      "passwordHint": "Dipakai sekali untuk memasang kunci. Tidak disimpan.",
+      "test": "Uji koneksi",
+      "reachable": "Terhubung · {{ms}} ms",
+      "unreachable": "Kami tidak dapat menjangkau VPS ini",
+      "authFailed": "VPS menolak proses masuk"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Segera hadir",
+      "description": "Server di mesin Rustic, selalu aktif.",
+      "waitlist": "Dapatkan email saat Rustic Cloud dibuka.",
+      "email": "Alamat email",
+      "join": "Gabung ke daftar tunggu",
+      "joined": "Kamu sudah masuk daftar (#{{position}}). Kami akan mengirimimu email.",
+      "invalidEmail": "Masukkan alamat email yang valid."
+    },
+    "requirements": {
+      "title": "Pemeriksaan persyaratan",
+      "ram": "Memori ({{free}} kosong)",
+      "gameFiles": "File game disiapkan",
+      "port": "Port 25565 kosong",
+      "hint": "Ruang disk diperiksa saat file server diunduh."
+    },
+    "fingerprint": {
+      "title": "Percayai {{host}}?",
+      "description": "Koneksi pertama ke VPS ini. Bandingkan sidik jari ini dengan yang ada di konsol penyedia layananmu sebelum memercayainya.",
+      "warning": "Jika tidak cocok, batalkan: seseorang mungkin sedang menyadap koneksi. Rustic akan memblokir setiap perubahan kunci ini di kemudian hari.",
+      "trust": "Percayai dan lanjutkan"
+    },
+    "testFailed": "Uji koneksi gagal",
+    "checkFailed": "Pemeriksaan VPS gagal",
+    "preflight": {
+      "running": "Memeriksa VPS-mu…",
+      "ok": "VPS-mu sudah siap",
+      "notOk": "VPS-mu tidak memenuhi persyaratan",
+      "os": "{{os}} · {{arch}}",
+      "cpu_other": "{{count}} vCPU",
+      "memory": "Memori {{memory}}",
+      "disk": "Disk kosong {{disk}}",
+      "systemd": "systemd tersedia",
+      "ip": "IP publik"
+    },
+    "problems": {
+      "memory": "Memori",
+      "disk": "Disk",
+      "arch": "Arsitektur",
+      "os": "Sistem operasi",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Memasang di {{host}}",
+      "steps": {
+        "connect": "Hubungkan melalui SSH",
+        "check": "Pemeriksaan awal",
+        "user": "Buat pengguna ‘rustic’",
+        "download": "Unggah file server bertanda tangan",
+        "engine": "Konfigurasikan mesin Rustic",
+        "service": "Pasang layanan",
+        "firewall": "Buka port 25565",
+        "world": "Siapkan dunia",
+        "start": "Mulai dan periksa"
+      },
+      "state": {
+        "pending": "menunggu",
+        "running": "sedang berjalan",
+        "done": "selesai",
+        "failed": "gagal",
+        "skipped": "dilewati"
+      },
+      "skippedVanilla": "Tidak diperlukan untuk Horizon vanilla",
+      "log_other": "Tampilkan log ({{count}} baris)",
+      "vpsDone": "{{name}} berjalan di {{host}}",
+      "vpsDoneBody": "Kelola dari launcher seperti server lokal: konsol, pemain, plugin, cadangan.",
+      "localDownload": "Unduh {{engine}}",
+      "localInit": "Siapkan dunia dan pengaturan",
+      "localStart": "Mulai pertama kali",
+      "localReady": "Siap dimulai",
+      "localDone": "{{name}} sedang berjalan",
+      "localDoneBody": "Bagikan alamatnya dari tab Akses, atau undang teman dari panel teman.",
+      "open": "Buka server",
+      "backToList": "Kembali ke daftar server",
+      "retry": "Coba lagi",
+      "failed": "Pemasangan gagal",
+      "crashed": "Server berhenti saat pertama kali dimulai. Periksa konsol."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Bagian server",
+    "tabs": {
+      "overview": "Ringkasan",
+      "console": "Konsol",
+      "players": "Pemain",
+      "plugins": "Plugin",
+      "config": "Konfigurasi",
+      "datapacks": "Paket data",
+      "backups": "Cadangan",
+      "access": "Akses",
+      "danger": "Zona berbahaya"
+    },
+    "state": {
+      "stopped": "Berhenti",
+      "starting": "Memulai…",
+      "running": "Berjalan",
+      "stopping": "Menghentikan…",
+      "crashed": "Crash",
+      "installing": "Memasang…",
+      "unreachable": "Tidak terjangkau"
+    },
+    "save": "Simpan",
+    "cancel": "Batal",
+    "close": "Tutup",
+    "remove": "Hapus",
+    "done": "Selesai",
+    "header": {
+      "back": "Server",
+      "players": "{{online}}/{{max}} pemain",
+      "uptime": "aktif {{duration}}",
+      "start": "Mulai",
+      "stop": "Hentikan",
+      "restart": "Mulai ulang",
+      "join": "Gabung",
+      "address": "Alamat",
+      "copyAddress": "Salin alamat server",
+      "powerFailed": "Status server tidak dapat diubah"
+    },
+    "overview": {
+      "stoppedTitle": "Server sedang berhenti",
+      "stoppedBody": "Mulai server untuk melihat CPU, memori, TPS, dan waktu tick secara langsung.",
+      "cpu": "CPU",
+      "cpuChart": "Penggunaan CPU selama dua menit terakhir",
+      "ram": "Memori",
+      "ramChart": "Memori yang dipakai selama dua menit terakhir",
+      "of": "dari {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Tick per detik selama dua menit terakhir",
+      "mspt": "Waktu tick",
+      "msptChart": "Milidetik per tick selama dua menit terakhir, garis batas 50 ms",
+      "msptBudget": "batas 50 ms",
+      "health": {
+        "good": "Lancar",
+        "busy": "Sibuk",
+        "lagging": "Lag"
+      },
+      "onlineTitle_other": "{{count}} pemain online",
+      "onlineStopped": "Tidak ada yang bisa bergabung selama server berhenti.",
+      "nobody": "Tidak ada yang sedang bermain saat ini.",
+      "infoTitle": "Detail",
+      "world": "Dunia",
+      "version": "Horizon",
+      "port": "Port",
+      "memory": "Memori",
+      "created": "Dibuat",
+      "folder": "Folder",
+      "uptime": "Waktu aktif",
+      "startedAt": "Sejak {{time}}",
+      "lastSession": "Sesi terakhir",
+      "lastStarted": "Terakhir dijalankan: {{when}}",
+      "neverStarted": "Belum pernah dijalankan",
+      "lastLines": "Baris konsol terakhir",
+      "noLines": "Belum ada yang tercatat.",
+      "openConsole": "Buka konsol",
+      "crashedTitle": "Server berhenti secara tak terduga",
+      "crashedBody": "Periksa baris konsol terakhir, lalu jalankan lagi."
+    },
+    "console": {
+      "filter": "Filter baris",
+      "filters": {
+        "all": "Semua",
+        "info": "Info",
+        "warn": "Peringatan",
+        "error": "Error",
+        "chat": "Obrolan"
+      },
+      "levels": {
+        "info": "info",
+        "warn": "peringatan",
+        "error": "error",
+        "command": "perintah",
+        "chat": "obrolan"
+      },
+      "autoScroll": "Ikuti baris baru",
+      "logLabel": "Konsol server",
+      "empty": "Belum ada baris.",
+      "suggestions": "Saran perintah",
+      "inputLabel": "Perintah server",
+      "placeholder": "Ketik perintah (Tab untuk melengkapi, ↑ untuk riwayat)",
+      "offline": "Mulai server untuk mengirim perintah",
+      "send": "Kirim",
+      "sendFailed": "Perintah tidak dapat dikirim",
+      "hint": "Perintah dijalankan sebagai konsol server, dengan semua izin. Tidak perlu garis miring di depan."
+    },
+    "players": {
+      "whitelist": "Whitelist",
+      "whitelistHint": "Hanya pemain dalam daftar yang dapat bergabung. Disarankan jika server dapat dijangkau dari internet.",
+      "view": "Tampilkan pemain",
+      "views": {
+        "online": "Online",
+        "all": "Semua",
+        "ops": "Operator",
+        "whitelist": "Di whitelist",
+        "banned": "Diblokir"
+      },
+      "search": "Cari pemain",
+      "emptyOnline": "Tidak ada yang online",
+      "empty": "Tidak ada pemain di sini",
+      "stoppedHint": "Mulai server untuk melihat siapa yang sedang bermain.",
+      "online": "Online",
+      "offline": "Offline",
+      "op": "Operator",
+      "whitelisted": "Di whitelist",
+      "banned": "Diblokir",
+      "playtime": "{{duration}} dimainkan",
+      "kick": "Tendang",
+      "kickAria": "Tendang {{name}}",
+      "more": "Tindakan lain untuk {{name}}",
+      "makeOp": "Jadikan operator",
+      "deop": "Cabut operator",
+      "whitelistAdd": "Tambahkan ke whitelist",
+      "whitelistRemove": "Hapus dari whitelist",
+      "ban": "Blokir",
+      "pardon": "Buka blokir",
+      "banTitle": "Blokir {{name}}?",
+      "banBody": "Pemain ini akan diputus dan tidak bisa bergabung lagi sampai kamu membuka blokirnya.",
+      "reason": "Alasan (opsional, ditampilkan ke pemain)",
+      "failed": "Tindakan gagal",
+      "done": {
+        "kick": "{{name}} telah ditendang",
+        "ban": "{{name}} telah diblokir",
+        "pardon": "Blokir {{name}} telah dibuka",
+        "op": "{{name}} sekarang menjadi operator",
+        "deop": "{{name}} tidak lagi menjadi operator",
+        "whitelist_add": "{{name}} telah ditambahkan ke whitelist",
+        "whitelist_remove": "{{name}} telah dihapus dari whitelist"
+      }
+    },
+    "config": {
+      "mode": "Mode pengeditan",
+      "form": "Pengaturan",
+      "raw": "File mentah",
+      "groups": {
+        "general": "Umum",
+        "world": "Dunia",
+        "players": "Pemain",
+        "network": "Jaringan",
+        "performance": "Performa"
+      },
+      "keys": {
+        "motd": "Pesan hari ini",
+        "max-players": "Pemain maksimal",
+        "white-list": "Whitelist",
+        "online-mode": "Mode online (pemeriksaan akun)",
+        "pvp": "Pemain lawan pemain",
+        "gamemode": "Mode permainan bawaan",
+        "difficulty": "Tingkat kesulitan",
+        "level-seed": "Seed dunia",
+        "spawn-protection": "Radius perlindungan spawn",
+        "server-port": "Port",
+        "enable-rcon": "Konsol jarak jauh (RCON)",
+        "view-distance": "Jarak pandang",
+        "simulation-distance": "Jarak simulasi"
+      },
+      "restart": "Mulai ulang",
+      "restartNeeded": "Mulai ulang server untuk menerapkan beberapa perubahan",
+      "unsaved_other": "{{count}} perubahan belum disimpan",
+      "noChanges": "Tidak ada perubahan",
+      "discard": "Buang",
+      "saved": "Konfigurasi tersimpan",
+      "saveFailed": "Konfigurasi tidak dapat disimpan",
+      "rawTitle": "server.toml",
+      "rawWarning": "Lanjutan: salah ketik bisa membuat server gagal dimulai. Nilai diperiksa saat kamu menyimpan."
+    },
+    "plugins": {
+      "vanillaTitle": "Plugin memerlukan Rustic Server",
+      "vanillaBody": "Server ini menjalankan Horizon vanilla. Rustic Server menambahkan plugin .rplugin yang terisolasi (sandbox) dan tidak akan pernah bisa membuatnya crash. Buat Rustic Server dan impor dunia ini untuk memakai plugin.",
+      "createRustic": "Buat Rustic Server",
+      "intro": "Plugin berjalan terisolasi (sandbox): plugin yang gagal akan dinonaktifkan dengan satu baris log, server tetap berjalan. Setiap plugin menyatakan apa saja yang boleh diaksesnya.",
+      "upload": "Tambah file…",
+      "uploadTitle": "Pilih file .rplugin",
+      "find": "Cari plugin",
+      "empty": "Belum ada plugin",
+      "emptyBody": "Telusuri Konten › Plugin untuk menambahkannya sekali klik.",
+      "errored": "Dinonaktifkan setelah terjadi error",
+      "disabled": "Nonaktif",
+      "noDescription": "Tidak ada deskripsi",
+      "toggle": "Aktifkan {{name}}",
+      "capabilities": "Akses",
+      "noNetwork": "Tanpa jaringan",
+      "network": "Jaringan: {{domains}}",
+      "fs": {
+        "none": "Tanpa file",
+        "data-folder": "Folder data sendiri"
+      },
+      "update": "Perbarui ke {{version}}",
+      "updated": "{{name}} diperbarui ke {{version}}",
+      "installed": "{{name}} dipasang dan diaktifkan",
+      "removeTitle": "Hapus {{name}}?",
+      "removeBody": "Plugin akan dilepas dan file-nya dihapus. Folder datanya tetap disimpan.",
+      "failed": "Tindakan plugin gagal"
+    },
+    "datapacks": {
+      "intro": "Paket data dunia “{{world}}”.",
+      "find": "Cari paket data",
+      "empty": "Tidak ada paket data di dunia ini",
+      "toggle": "Aktifkan {{name}}",
+      "remove": "Hapus {{name}}",
+      "reloadHint": "Perubahan berlaku setelah /reload atau mulai ulang.",
+      "failed": "Tindakan paket data gagal"
+    },
+    "backups": {
+      "nowTitle": "Cadangkan sekarang",
+      "nowBody": "Salinan dunia dan konfigurasi. Server tetap berjalan.",
+      "note": "Catatan",
+      "notePlaceholder": "Catatan opsional, mis. “sebelum pembaruan”",
+      "now": "Cadangkan sekarang",
+      "created": "Cadangan dibuat",
+      "empty": "Belum ada cadangan",
+      "kinds": {
+        "manual": "Manual",
+        "scheduled": "Terjadwal",
+        "pre_restore": "Sebelum pemulihan"
+      },
+      "restore": "Pulihkan",
+      "restoreTitle": "Pulihkan cadangan ini?",
+      "restoreBody": "Dunia akan kembali ke {{date}}. Semua yang dibangun sejak itu akan diganti. Cadangan dunia saat ini dibuat terlebih dahulu.",
+      "restored": "Cadangan dipulihkan",
+      "delete": "Hapus cadangan",
+      "deleteTitle": "Hapus cadangan ini?",
+      "deleteBody": "Cadangan ini akan dihapus selamanya.",
+      "failed": "Tindakan cadangan gagal",
+      "scheduleTitle": "Cadangan otomatis",
+      "scheduleBody": "Cadangan otomatis terlama dihapus saat batasnya tercapai.",
+      "scheduleEnabled": "Cadangkan secara otomatis",
+      "every": "Setiap",
+      "hours_other": "{{count}} jam",
+      "keep": "Simpan",
+      "keepCount_other": "{{count}} cadangan terakhir",
+      "scheduleSaved": "Jadwal cadangan tersimpan"
+    },
+    "danger": {
+      "deleteTitle": "Hapus server ini",
+      "deleteBody": "Menghentikan server dan menghapusnya dari launcher. Kamu bisa menyimpan file-nya.",
+      "delete": "Hapus server",
+      "removeVpsTitle": "Hapus dari VPS-mu",
+      "removeVpsBody": "Menghentikan layanan di {{host}} dan mencopot Rustic darinya. VPS-mu tetap milikmu.",
+      "removeVps": "Hapus dari VPS",
+      "confirmTitle": "Hapus “{{name}}”?",
+      "confirmBody": "Tindakan ini tidak dapat dibatalkan. Buat cadangan terlebih dahulu jika kamu mungkin memerlukan dunia ini lagi.",
+      "deleteFiles": "Hapus juga dunia dan semua file server",
+      "typeName": "Ketik “{{name}}” untuk mengonfirmasi",
+      "deleted": "{{name}} telah dihapus",
+      "failed": "Server tidak dapat dihapus"
+    }
+  },
+  "access": {
+    "intro": "Pilih cara teman menjangkau server-mu. Kamu bisa mengaktifkan beberapa sekaligus.",
+    "optional": "Opsional",
+    "lan": {
+      "title": "Di jaringanmu",
+      "body": "Pemain di Wi-Fi atau jaringan yang sama bergabung dengan alamat ini.",
+      "copy": "Salin alamat lokal"
+    },
+    "public": {
+      "title": "Alamat publik",
+      "body": "IP dan port VPS-mu. Siapa pun bisa bergabung dengannya; domain lebih mudah dibagikan.",
+      "copy": "Salin alamat publik"
+    },
+    "relay": {
+      "title": "Alamat sementara",
+      "body": "Alamat gratis di Rustic Relay selama server berjalan. Tanpa pengaturan router, IP-mu tetap tersembunyi.",
+      "toggle": "Alamat sementara",
+      "copy": "Salin alamat sementara",
+      "off": "Nonaktif. Aktifkan untuk mendapatkan alamat yang bisa kamu bagikan.",
+      "label": "Nama dalam alamat",
+      "apply": "Terapkan",
+      "status": {
+        "off": "Nonaktif",
+        "connecting": "Menunggu server dimulai",
+        "online": "Dapat dijangkau sekarang",
+        "error": "Relay tidak terjangkau"
+      },
+      "failed": "Alamat sementara tidak dapat diubah",
+      "taken": "Nama ini sudah dipakai. Coba yang lain.",
+      "invalid": "Gunakan 3 sampai 32 huruf kecil, angka, atau tanda hubung."
+    },
+    "invite": {
+      "title": "Kode undangan",
+      "body": "Teman yang memakai Rustic Launcher menempelkan kode ini untuk bergabung, seperti Play with Friends di Horizon.",
+      "create": "Buat kode",
+      "copy": "Salin kode undangan",
+      "expires": "Kedaluwarsa {{when}}",
+      "revoke": "Cabut"
+    },
+    "advanced": "Lanjutan: buka port di router-mu (UPnP)",
+    "upnp": {
+      "title": "Pemetaan port UPnP",
+      "warning": "Ini meminta router-mu membuka port server ke internet. Alamat IP publikmu menjadi terlihat oleh setiap pemain, yang membuat koneksi rumahmu rentan (serangan, lokasi). Lebih baik gunakan alamat sementara atau domain.",
+      "status": {
+        "off": "Nonaktif",
+        "mapping": "Meminta ke router…",
+        "mapped": "Port terbuka",
+        "failed": "Router menolak (UPnP mungkin nonaktif)"
+      },
+      "mapped": "Port terbuka: {{address}}",
+      "copy": "Salin alamat publik",
+      "failed": "Port tidak dapat dibuka",
+      "prefer": "Alamat sementara dan domain berfungsi tanpa membuka port apa pun."
+    }
+  },
+  "domains": {
+    "title": "Domain milikku sendiri",
+    "intro": "Domain adalah alamat server-mu, seperti play.namamu.net. Kamu bisa menghubungkan domain yang sudah kamu miliki, membelinya di Porkbun tanpa meninggalkan launcher, atau memakai registrar mana pun: kami tunjukkan persis apa yang perlu ditambahkan.",
+    "automatic": "Otomatis",
+    "anyRegistrar": "Registrar mana pun",
+    "otherPaths": "Cara lain",
+    "paths": {
+      "porkbun": {
+        "title": "Hubungkan Porkbun",
+        "body": "Sudah punya domain di Porkbun? Hubungkan akunmu dan kami buatkan catatannya untukmu."
+      },
+      "buy": {
+        "title": "Beli domain di Porkbun",
+        "body": "Cari nama yang tersedia, beli di akun Porkbun milikmu sendiri, dan domain akan diatur secara otomatis."
+      },
+      "manual": {
+        "title": "Gunakan domain dari registrar mana pun",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: kami tunjukkan apa yang perlu ditambahkan dan memeriksanya untukmu."
+      }
+    },
+    "subdomain": "Subdomain",
+    "subdomainHint": "play adalah pilihan bawaan yang bagus.",
+    "apexHint": "Kosong: domain itu sendiri (memerlukan ALIAS/ANAME di beberapa registrar).",
+    "invalidSubdomain": "Hanya huruf, angka, dan tanda hubung.",
+    "invalidDomain": "Ini tidak terlihat seperti domain (example.net).",
+    "copyAddress": "Salin alamat domain",
+    "configureFailed": "Domain tidak dapat dikonfigurasi",
+    "boundBody": "Pemain bergabung dengan alamat ini.",
+    "remove": "Hapus domain",
+    "removeTitle": "Berhenti memakai {{domain}}?",
+    "removeBody": "Alamat ini tidak lagi mengarah ke server ini setelah catatannya dihapus. Domain tetap milikmu.",
+    "status": {
+      "pending": "Tertunda",
+      "propagating": "Sedang menyebar",
+      "verified": "Terhubung",
+      "error": "Error"
+    },
+    "provider": {
+      "porkbun": "Dikelola melalui Porkbun",
+      "manual": "Dikelola di registrar-mu"
+    },
+    "connected": "Domain terhubung",
+    "connectedBody": "Rustic Cloud memverifikasi catatan TXT, lalu alamatmu mulai berfungsi. Kamu bisa menutup ini; kami akan memberitahumu.",
+    "porkbun": {
+      "step1": "Di porkbun.com › Account › API Access, buat kunci API.",
+      "openApi": "Buka Porkbun API Access",
+      "step2": "Di halaman domain di Porkbun, aktifkan “API Access”.",
+      "apiKey": "Kunci API",
+      "secret": "Kunci API rahasia",
+      "keychain": "Disimpan di keychain komputermu, tidak pernah dikirim ke Rustic.",
+      "connect": "Hubungkan",
+      "badApiKey": "Kunci API diawali dengan pk1_.",
+      "badSecret": "Kunci API rahasia diawali dengan sk1_.",
+      "rejected": "Porkbun menolak kunci ini. Periksa lagi, atau buat pasangan kunci baru.",
+      "connected": "Porkbun terhubung",
+      "disconnect": "Putuskan",
+      "domain": "Domain",
+      "pickDomain": "Pilih salah satu domainmu",
+      "apiAccessOff": "API Access nonaktif untuk domain ini di Porkbun",
+      "apiAccessHint": "Domain yang berwarna abu-abu memerlukan “API Access” yang diaktifkan di Porkbun.",
+      "preview": "Perubahan yang akan kami buat",
+      "dryRun": "Pratinjau",
+      "previewBody": "Catatan ini ditambahkan atau diganti di domainmu agar {{fqdn}} mengarah ke server ini. Tidak ada yang berubah sampai kamu menerapkannya.",
+      "apply": "Konfigurasikan otomatis"
+    },
+    "buy": {
+      "intro": "Domain didaftarkan di akun Porkbun milikmu sendiri dan dibayar di sana. Rustic tidak pernah menerima pembayaran untuknya.",
+      "needsAccount": "Pembelian memerlukan akun Porkbun-mu: hubungkan terlebih dahulu (kamu bisa membuatnya gratis di porkbun.com).",
+      "search": "Nama yang kamu inginkan",
+      "searchPlaceholder": "mis. loucraft",
+      "searchButton": "Cari",
+      "noResults": "Tidak ada hasil untuk nama ini.",
+      "premium": "Premium",
+      "price": "{{price}} tahun pertama · perpanjangan {{renewal}}",
+      "taken": "Sudah dipakai",
+      "select": "Pilih",
+      "overLimit": "Lebih dari $100: beli di porkbun.com",
+      "pricesNote": "Harga dari Porkbun, dalam dolar AS, sesuai penawaran saat ini. Pajak mungkin berlaku di Porkbun.",
+      "confirmTitle": "Konfirmasi pembelian di Porkbun",
+      "seller": "Penjual: Porkbun LLC, bukan Rustic. Ketentuan, harga, perpanjangan, dan pengembalian dana mereka yang berlaku.",
+      "domain": "Domain",
+      "address": "Alamat server",
+      "registrar": "Registrar",
+      "registrarValue": "Porkbun, di akunmu",
+      "firstYear": "Tahun pertama",
+      "renewal": "Perpanjangan tahunan seharga",
+      "payment": "Dibayar dengan saldo akun Porkbun-mu atau kartu yang tersimpan: {{price}} sekarang; diperpanjang setiap tahun seharga {{renewal}} kecuali kamu menonaktifkan perpanjangan otomatis di Porkbun.",
+      "agreeTerms": "Aku menyetujui perjanjian pendaftaran dan ketentuan Porkbun",
+      "termsLink": "(baca)",
+      "agreeOrder": "Aku paham bahwa Rustic hanya mengirim pesanan ini ke Porkbun atas namaku",
+      "refunds": "Pengembalian dana dan pembatalan domain ditangani oleh Porkbun sesuai ketentuannya.",
+      "buyButton": "Beli di Porkbun · {{price}}",
+      "bought": "{{domain}} sekarang milikmu",
+      "boughtBody": "Ditagih oleh Porkbun: {{price}}. Sedang mengaturnya…",
+      "configuring": "Mengonfigurasi domain barumu…",
+      "failed": "Pembelian tidak berhasil",
+      "errors": {
+        "price_changed": "Harga di Porkbun berubah. Periksa harga baru dan coba lagi.",
+        "not_available": "Domain ini baru saja diambil orang lain.",
+        "over_limit": "Lebih dari $100: beli di porkbun.com.",
+        "porkbun_not_connected": "Hubungkan akun Porkbun-mu terlebih dahulu.",
+        "consent_required": "Kedua kotak harus dicentang."
+      }
+    },
+    "manual": {
+      "intro": "Tambahkan catatan ini di zona DNS registrar-mu. Kami memeriksanya setiap 10 detik dan memberitahumu saat sudah berfungsi.",
+      "domain": "Domainmu",
+      "registrar": "Registrar",
+      "show": "Tampilkan catatan",
+      "guideTitle": "Di {{registrar}}",
+      "allGuides": "Panduan untuk setiap registrar"
+    },
+    "records": {
+      "caption": "Catatan DNS yang perlu ditambahkan",
+      "type": "Jenis",
+      "name": "Nama / host",
+      "value": "Nilai / target",
+      "ttl": "TTL",
+      "status": "Status",
+      "optional": "opsional",
+      "emptyHost": "(biarkan kosong)",
+      "copyName": "Salin nama {{type}}",
+      "copyValue": "Salin nilai {{type}}",
+      "srvFields": "prioritas {{priority}} · bobot {{weight}} · port {{port}}"
+    },
+    "check": {
+      "pending": "Belum diperiksa",
+      "notNeeded": "Tidak diperlukan",
+      "ok": "OK",
+      "propagating": "Sedang menyebar ({{ok}}/{{total}})",
+      "wrong": "Nilai salah",
+      "found": "Ditemukan:",
+      "expected": "Seharusnya:",
+      "missing": "Tidak ada",
+      "first": "Pemeriksaan pertama…",
+      "progress": "{{ok}} dari {{total}} catatan OK",
+      "progressLabel": "Catatan terverifikasi",
+      "auto": "Memeriksa otomatis setiap 10 dtk",
+      "lastCheck": "pemeriksaan terakhir {{seconds}} dtk yang lalu",
+      "now": "Periksa sekarang"
+    },
+    "help": {
+      "txt": "Kenapa catatan TXT? Catatan ini membuktikan bahwa domain itu milikmu, sehingga tidak ada orang lain yang bisa mengarahkannya ke server mereka.",
+      "propagation": "Perubahan bisa memakan waktu satu menit hingga beberapa jam untuk menjangkau semua orang. Kami terus memeriksa; kamu tidak perlu tetap di sini.",
+      "apex": "Domain apex (namamu.net tanpa “play.”) memerlukan catatan ALIAS/ANAME; tidak semua registrar menyediakannya. Subdomain selalu berfungsi."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › domainmu › DNS zone.\nKlik “Add an entry” dan pilih jenisnya (CNAME, SRV, A, atau TXT).\nSub-domain = Nama di bawah (kosongkan untuk domain itu sendiri), Target = Nilai.\nUlangi untuk setiap catatan, lalu konfirmasi. OVH menerapkan perubahan dalam beberapa menit."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › domainmu › DNS records.\nKlik “Add record”, pilih jenisnya.\nName = Nama di bawah, Value = Nilai (pertahankan titik di akhir untuk target CNAME/SRV).\nSimpan setiap catatan."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nDi bawah Host records, “Add new record”.\nHost = Nama di bawah (@ untuk domain itu sendiri), Value/Target = Nilai.\nKlik centang hijau untuk menyimpan setiap catatan."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › domainmu › DNS › Manage DNS.\nKlik “Add new record”, pilih jenisnya.\nName = Nama di bawah (@ untuk domain itu sendiri), Value = Nilai.\nUntuk SRV, isi Service _minecraft, Protocol _tcp, lalu prioritas, bobot, dan port. Simpan."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Pilih situsmu › DNS › Records › Add record.\nPilih jenisnya, Name = Nama di bawah, Target/Content = Nilai.\nAtur Proxy status ke “DNS only” (awan abu-abu): lalu lintas game tidak bisa melewati proxy Cloudflare.\nSimpan setiap catatan."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › domainmu › DNS.\nKlik “Add record” dan pilih jenisnya.\nHost name = Nama di bawah, Points to / Value = Nilai.\nSimpan; IONOS mungkin meminta konfirmasi untuk mengganti catatan bawaan."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › domainmu › DNS / Nameservers.\nDi bawah “Manage DNS records”, pilih jenisnya.\nName = Nama di bawah, Points to / Value = Nilai, TTL sesuai yang ditampilkan.\nKlik “Add record” untuk setiap catatan."
+      },
+      "porkbun": {
+        "name": "Porkbun (manual)",
+        "steps": "Domain Management › domainmu › DNS.\nPilih jenisnya, Host = Nama di bawah (kosong untuk domain itu sendiri), Answer = Nilai.\nKlik “Add” untuk setiap catatan.\nTips: jalur Hubungkan Porkbun melakukan semua ini untukmu."
+      },
+      "generic": {
+        "name": "Registrar lain",
+        "steps": "Buka zona DNS domainmu (terkadang disebut DNS records atau Zone editor).\nTambahkan setiap catatan di bawah dengan jenis, nama, dan nilai yang sama.\nJika registrar-mu meminta nama lengkap, tambahkan domainmu setelah Nama.\nSimpan, lalu kembali ke sini: kami memeriksanya secara otomatis."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Tampilan server",
+    "tabs": {
+      "discover": "Temukan",
+      "browse": "Telusuri"
+    },
+    "searchLabel": "Cari server",
+    "searchPlaceholder": "Cari di direktori server…",
+    "publish": "Publikasikan server-ku",
+    "publishCta": {
+      "title": "Server-mu di sini",
+      "hint": "Cantumkan server Horizon-mu di direktori dari situs web: server akan muncul di sini dan di rustic-launcher.com setelah lolos pemeriksaan otomatis."
+    },
+    "play": "Main",
+    "playAria": "Main di {{name}}",
+    "view": "Lihat",
+    "verified": "Terverifikasi",
+    "featured": "Pilihan tim",
+    "verifiedHint": "Server terverifikasi: tim Rustic telah memeriksa pemilik dan aturannya.",
+    "online_other": "{{value}} online",
+    "playersLabel": "Pemain online",
+    "languagesLabel": "Bahasa",
+    "playsLabel": "Peluncuran minggu ini",
+    "lastPlayed": "Terakhir dimainkan",
+    "lastPlayedOn": "Dimainkan {{when}}",
+    "hero": {
+      "label": "Server unggulan",
+      "eyebrow": "Terverifikasi"
+    },
+    "rows": {
+      "trending": "Sedang tren",
+      "trendingHint": "Paling banyak diluncurkan dari Rustic minggu ini",
+      "players": "Pemain terbanyak saat ini",
+      "playersHint": "Dari pemeriksaan terakhir cloud",
+      "new": "Baru di direktori",
+      "newHint": "Baru dicantumkan oleh pemiliknya",
+      "recent": "Baru dimainkan",
+      "recentHint": "Dari daftar server-mu"
+    },
+    "rowError": "Baris ini tidak dapat dimuat.",
+    "retry": "Coba lagi",
+    "empty": {
+      "title": "Belum ada server yang dicantumkan",
+      "hint": "Jadilah yang pertama: publikasikan server-mu dari situs web."
+    },
+    "emptySearch": {
+      "title": "Tidak ada server yang cocok",
+      "hint": "Coba kata lain atau kurangi filter."
+    },
+    "sorts": {
+      "trending": "Sedang tren",
+      "players": "Pemain terbanyak",
+      "new": "Terbaru",
+      "name": "Nama"
+    },
+    "filters": {
+      "tags": "Gaya permainan",
+      "language": "Bahasa",
+      "engine": "Mesin",
+      "rustic": "Rustic",
+      "verifiedOnly": "Hanya terverifikasi",
+      "reset": "Atur ulang filter",
+      "remove": "Hapus filter {{filter}}"
+    },
+    "tags": {
+      "survival": "Survival",
+      "smp": "SMP",
+      "creative": "Kreatif",
+      "minigames": "Minigame",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Roleplay",
+      "factions": "Faksi",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Petualangan",
+      "building": "Membangun",
+      "economy": "Ekonomi",
+      "modded": "Dengan mod",
+      "anarchy": "Anarki",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Server",
+      "status": "Status langsung",
+      "cloudSaw_other": "cloud melihat {{value}} pemain online {{when}}",
+      "engine": "Mesin",
+      "version": "Versi game",
+      "languages": "Bahasa",
+      "plays": "Peluncuran minggu ini",
+      "about": "Tentang",
+      "noDescription": "Belum ada deskripsi.",
+      "address": "Alamat",
+      "copy": "Salin",
+      "openSite": "Buka di situs web",
+      "website": "Situs web",
+      "discord": "Discord",
+      "by": "Dicantumkan oleh {{name}}",
+      "byStaff": "Dicantumkan oleh tim Rustic",
+      "report": "Laporkan",
+      "rusticEdition": "Memerlukan edisi Rustic",
+      "missing": "Server ini tidak tersedia",
+      "missingHint": "Server ini mungkin privat, disembunyikan oleh moderasi, atau dihapus."
+    },
+    "report": {
+      "title": "Laporkan {{name}}",
+      "lead": "Beri tahu tim moderasi apa masalahnya. Setiap laporan akan ditinjau.",
+      "reason": "Alasan",
+      "reasons": {
+        "impersonation": "Menyamar sebagai server lain",
+        "spam": "Spam atau menyesatkan",
+        "inappropriate_content": "Konten tidak pantas",
+        "cheating": "Server curang atau berbahaya",
+        "harassment": "Pelecehan",
+        "copyright": "Melanggar hakku (merek dagang, nama)",
+        "malware": "Malware",
+        "other": "Lainnya"
+      },
+      "details": "Detail",
+      "detailsHint": "Opsional, maksimal 2.000 karakter.",
+      "send": "Kirim laporan",
+      "sent": "Terima kasih, laporanmu sudah dikirim ke tim moderasi.",
+      "signIn": "Masuk ke akun Rustic-mu untuk melaporkan server.",
+      "failed": "Laporan tidak dapat dikirim."
+    }
+  }
+}

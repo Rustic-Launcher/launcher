@@ -44,7 +44,13 @@
     "nightly": "Nightly",
     "installed": "Installée",
     "submit": "Créer l’instance",
-    "created": "{{name}} est prête"
+    "created": "{{name}} est prête",
+    "preview": "Aperçu",
+    "edition": "Édition",
+    "editionRustic": "Cosmétiques, amis et mods natifs en jeu.",
+    "editionHorizon": "Horizon tel que son équipe le publie, sans ajout.",
+    "noBuild": "Aucune version de cette édition n’est proposée pour l’instant.",
+    "nightlyHint": "Les Nightly sortent chaque jour du dernier code d’Horizon : plus récentes, moins testées."
   },
   "icons": {
     "grass": "Pousse",
@@ -77,7 +83,15 @@
     },
     "started": "Import de {{name}}",
     "background": "L’opération continue en arrière-plan ; vous pouvez continuer à utiliser le launcher.",
-    "note": "Seul le contenu qui fonctionne sur Horizon est installé ; le reste est listé avec la raison."
+    "note": "Seul le contenu qui fonctionne sur Horizon est installé ; le reste est listé avec la raison.",
+    "drop": {
+      "title": "Déposez un pack ou un dossier d’instance ici",
+      "hint": ".mrpack Modrinth, .zip CurseForge, ou un dossier d’instance Prism ou MultiMC",
+      "choose": "Choisir un fichier",
+      "active": "Relâchez pour importer",
+      "unsupported": "Impossible d’importer ceci. Utilisez un .mrpack, un .zip CurseForge ou un dossier d’instance."
+    },
+    "formats": "Formats pris en charge"
   },
   "detail": {
     "notFound": "Cette instance n’existe plus",

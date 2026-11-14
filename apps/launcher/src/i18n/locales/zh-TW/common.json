@@ -1,0 +1,430 @@
+{
+  "a11y": {
+    "skipToContent": "跳至主要內容",
+    "notifications": "通知"
+  },
+  "actions": {
+    "retry": "重試",
+    "back": "返回",
+    "forward": "前進",
+    "cancel": "取消",
+    "close": "關閉",
+    "clear": "清除",
+    "save": "儲存",
+    "saved": "已儲存",
+    "delete": "刪除",
+    "edit": "編輯",
+    "open": "開啟",
+    "install": "安裝",
+    "installed": "已安裝",
+    "remove": "移除",
+    "confirm": "確認",
+    "continue": "繼續",
+    "next": "下一步",
+    "previous": "上一步",
+    "done": "完成",
+    "copy": "複製",
+    "copied": "已複製",
+    "learnMore": "了解更多",
+    "seeAll": "查看全部",
+    "create": "建立",
+    "import": "匯入",
+    "browse": "瀏覽…",
+    "apply": "套用",
+    "reset": "重設",
+    "enable": "啟用",
+    "disable": "停用",
+    "update": "更新",
+    "add": "新增",
+    "refresh": "重新整理",
+    "openFolder": "開啟資料夾",
+    "skip": "略過",
+    "more": "更多"
+  },
+  "errors": {
+    "generic": "發生錯誤，請稍後再試。",
+    "page": {
+      "title": "無法顯示此頁面"
+    },
+    "load": {
+      "title": "無法載入此內容"
+    },
+    "notFound": {
+      "title": "這裡什麼都沒有",
+      "description": "此頁面不存在或已移動。"
+    }
+  },
+  "nav": {
+    "label": "主要導覽",
+    "home": "首頁",
+    "instances": "設定檔",
+    "content": "探索",
+    "servers": "伺服器",
+    "locker": "置物櫃",
+    "store": "商店",
+    "settings": "設定",
+    "newInstance": "新增設定檔"
+  },
+  "search": {
+    "title": "搜尋",
+    "placeholder": "搜尋內容、好友、伺服器、設定…",
+    "empty": "沒有結果，換個關鍵字試試看。",
+    "loading": "正在搜尋…",
+    "hintNavigate": "瀏覽",
+    "hintOpen": "開啟",
+    "hintClose": "關閉",
+    "open": "開啟",
+    "myServer": "我的伺服器",
+    "playInstance": "遊玩 {{name}}",
+    "groups": {
+      "pages": "頁面",
+      "actions": "動作",
+      "instances": "實例",
+      "content": "內容",
+      "friends": "好友",
+      "servers": "伺服器",
+      "settings": "設定",
+      "play": "遊玩"
+    },
+    "actions": {
+      "newInstance": "建立實例",
+      "newServer": "建立伺服器",
+      "addFriend": "新增好友",
+      "darkTheme": "切換為深色主題",
+      "lightTheme": "切換為淺色主題"
+    },
+    "settings": {
+      "accounts": "帳戶",
+      "game": "遊戲",
+      "launcher": "啟動器",
+      "appearance": "外觀",
+      "privacy": "隱私權與資料",
+      "parental": "家長監護",
+      "about": "關於"
+    }
+  },
+  "friends": {
+    "title": "好友",
+    "onlineCount_other": "{{count}} 位在線上",
+    "add": "新增好友",
+    "search": "搜尋好友",
+    "requests_other": "邀請 · {{count}}",
+    "incoming": "想成為好友",
+    "outgoing": "已送出邀請",
+    "accept": "接受",
+    "decline": "拒絕",
+    "cancelRequest": "取消邀請",
+    "requestSent": "已向 {{name}} 送出好友邀請",
+    "error": "無法載入好友。",
+    "empty": "還沒有好友。輸入對方的 Rustic 使用者名稱來新增。",
+    "online_other": "線上 · {{count}}",
+    "offline_other": "離線 · {{count}}",
+    "lastSeen": "最後上線：{{when}}",
+    "activity": {
+      "server": "正在 {{server}} 遊玩",
+      "singleplayer": "正在單人遊玩",
+      "hosting": "正在架設 {{server}}",
+      "launcher": "在啟動器中"
+    },
+    "favorite": "最愛",
+    "makeFavorite": "加入最愛",
+    "unfavorite": "從最愛中移除",
+    "join": "加入",
+    "joinAria": "加入 {{name}}",
+    "joining": "正在加入 {{server}}…",
+    "more": "{{name}} 的更多動作",
+    "remove": "移除好友",
+    "removeTitle": "要將 {{name}} 從你的好友中移除嗎？",
+    "removeBody": "你們將不再看到彼此的動態。你之後可以再送出新的邀請。"
+  },
+  "addFriend": {
+    "title": "新增好友",
+    "description": "透過 Rustic 名稱或對方連結的 Minecraft 名稱尋找玩家，或從一起玩過的人中挑選。",
+    "kind": "搜尋方式",
+    "kindRustic": "Rustic 名稱",
+    "kindMinecraft": "Minecraft 名稱",
+    "rusticLabel": "Rustic 使用者名稱",
+    "minecraftLabel": "Minecraft 使用者名稱",
+    "rusticPlaceholder": "例如 lea_builds",
+    "minecraftPlaceholder": "例如 LeaBuilds",
+    "rusticHint": "對方 Rustic 個人檔案上的確切名稱。",
+    "minecraftHint": "以該 Minecraft 設定檔登入 Rustic 的玩家的確切遊戲內名稱。",
+    "find": "尋找",
+    "send": "送出邀請",
+    "sent": "已送出邀請",
+    "friends": "已經是好友",
+    "pending": "邀請待回覆",
+    "incoming": "對方已經向你送出好友邀請：接受即可。",
+    "minecraftName": "Minecraft 名稱：",
+    "add": "新增",
+    "addAria": "向 {{name}} 送出好友邀請",
+    "playedWith": "最近一起玩過",
+    "playedWithEmpty": "還沒有人。你隊伍中的玩家，以及在同一伺服器上（一起 10 分鐘以上）的玩家會顯示在這裡。",
+    "crossed": "最近遇到",
+    "crossedEmpty": "最近沒有在同一伺服器上遇到任何人。",
+    "reasonParty": "在你的隊伍中",
+    "reasonServer": "在 {{server}}",
+    "reasonSameServer": "在同一個伺服器上",
+    "suggestionsError": "無法載入建議。",
+    "suggestionsOff": "建議已關閉。在「設定 › 隱私權與資料」中開啟「出現在我遇到的玩家的建議中」，即可看到你遇到的玩家。",
+    "suggestionsMinor": "你的帳戶無法使用「你遇到的玩家」建議。",
+    "privacyNote": "建議來自過去 14 天內你的隊伍，以及你動態中共同遊玩的伺服器。只有同樣允許此功能的人才會出現。",
+    "errors": {
+      "notFoundRustic": "沒有使用這個名稱的 Rustic 帳戶。",
+      "notFoundMinecraft": "沒有 Rustic 玩家連結這個 Minecraft 名稱。",
+      "invalidRustic": "Rustic 名稱由 3 到 20 個字母、數字或 _ 組成。",
+      "invalidMinecraft": "Minecraft 名稱由 3 到 16 個字母、數字或 _ 組成。",
+      "cannot_add_friend": "這位玩家無法接收好友邀請。",
+      "friend_requests_disabled": "你的帳戶已關閉好友邀請（家長監護）。",
+      "cannot_add_self": "那是你自己！",
+      "already_friends": "你們已經是好友了。",
+      "request_pending": "已經有一則邀請待回覆。",
+      "incoming_request_exists": "對方已經向你送出邀請：接受即可。",
+      "rate_limited": "搜尋次數過多。請等一分鐘後再試。",
+      "generic": "發生錯誤，請再試一次。"
+    }
+  },
+  "party": {
+    "title": "隊伍",
+    "leave": "離開",
+    "leader": "隊長",
+    "pending": "{{name}}（已邀請）",
+    "invite": "邀請加入隊伍",
+    "invited": "已邀請 {{name}} 加入你的隊伍"
+  },
+  "presence": {
+    "online": "線上",
+    "in-game": "遊戲中",
+    "away": "離開",
+    "busy": "忙碌",
+    "offline": "離線"
+  },
+  "notifications": {
+    "title": "通知",
+    "markAllRead": "全部標示為已讀",
+    "empty": "你已經看完所有通知了。",
+    "kinds": {
+      "friend_request": "向你送出了好友邀請",
+      "update_available": "已可用於你的實例",
+      "backup_done": "排程備份已完成",
+      "store_new": "商店新品"
+    }
+  },
+  "account": {
+    "switcher": "帳戶",
+    "none": "沒有帳戶",
+    "rustic": "Rustic 帳戶",
+    "signInRustic": "登入 Rustic",
+    "signOutRustic": "登出 Rustic",
+    "gameProfiles": "遊戲設定檔",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "離線"
+    },
+    "add": "新增帳戶",
+    "manage": "管理帳戶"
+  },
+  "downloads": {
+    "title": "下載",
+    "global": "背景下載",
+    "working": "處理中…",
+    "summary_other": "{{count}} 項下載進行中",
+    "kind": {
+      "game": "Horizon",
+      "content": "內容",
+      "modpack": "模組包",
+      "server": "伺服器",
+      "java": "Java 執行環境",
+      "update": "啟動器更新",
+      "prepare": "正在準備遊戲檔案",
+      "native-build": "原生模組編譯",
+      "native-toolchain": "原生模組所需的 Rust"
+    }
+  },
+  "play": {
+    "play": "遊玩",
+    "update": "更新",
+    "cancel": "取消",
+    "stop": "停止",
+    "selectInstance": "選擇要遊玩的實例",
+    "instances": "實例",
+    "manageInstances": "管理實例",
+    "newVersion": "{{version}} 已推出",
+    "cancelled": "已取消啟動",
+    "status": {
+      "ready": "準備就緒",
+      "noInstance": "沒有實例",
+      "running": "遊戲執行中",
+      "update": "需要更新",
+      "broken": "需要修復"
+    },
+    "progress": {
+      "updating": "正在更新…",
+      "downloading": "正在下載 {{pct}}",
+      "checking": "正在檢查檔案…",
+      "preparing": "正在準備…",
+      "launching": "正在啟動…",
+      "stopping": "正在停止…",
+      "preparingFiles": "正在準備遊戲檔案 {{pct}}",
+      "building": "正在編譯原生模組…",
+      "buildingPct": "正在編譯原生模組 {{pct}}"
+    },
+    "errors": {
+      "launch": "無法啟動遊戲"
+    },
+    "refusals": {
+      "auth_no_account": "請使用擁有遊戲的 Microsoft 帳戶登入才能遊玩。",
+      "auth_not_owned": "這個 Microsoft 帳戶沒有擁有遊戲。",
+      "auth_not_approved": "此啟動器尚無法使用 Microsoft 登入。",
+      "auth_reauth_required": "請重新登入你的 Microsoft 帳戶才能遊玩。",
+      "auth_offline_not_allowed": "請先用擁有遊戲的 Microsoft 帳戶登入一次，之後就能離線遊玩。",
+      "auth_network": "無法連線至 Microsoft 檢查帳戶。請檢查你的網路連線。",
+      "build_not_installed": "請先安裝 Horizon 版本。",
+      "prepare_needed": "此版本的遊戲檔案尚未準備好。",
+      "prepare_failed": "無法準備遊戲檔案：請再試一次，或在「設定 › 遊戲與實例」中準備。",
+      "prepare_no_java": "找不到 Java：請安裝 Java，或在「設定 › 遊戲與實例」中選擇。",
+      "prepare_no_minecraft_dir": "找不到你的遊戲安裝：請在「設定 › 遊戲與實例」中選擇其資料夾。",
+      "launch_already_running": "此實例已在執行中。",
+      "native_consent": "此實例含有原生模組：請先在實例頁面（內容）接受它們的信任聲明。",
+      "native_toolchain": "原生模組需要 Rust：請從實例頁面（內容）或「設定 › 遊戲與實例」安裝。",
+      "native_not_edition": "原生模組只能編譯進 Rustic 版：請將此實例切換為 Rustic 版，或關閉其原生模組。",
+      "native_build_failed": "無法編譯原生模組",
+      "native_disk": "磁碟可用空間不足，無法編譯原生模組。"
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}}（Rustic 版）",
+    "rusticEdition": "Rustic 版"
+  },
+  "compat": {
+    "buildsOnHorizon": "可在你的 Horizon 上編譯",
+    "compatible": "相容",
+    "incompatible": "不相容：{{reason}}",
+    "unknown": "相容性不明",
+    "reasons": {
+      "horizon_version": "Horizon 版本",
+      "java_only": "僅限 Java 版",
+      "side": "僅限伺服器端",
+      "conflict": "與已安裝的模組衝突",
+      "unsupported_format": "不支援的格式",
+      "needs_rustic_server": "需要 Rustic Server",
+      "not_fair_play": "不允許（公平遊戲）"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "切換產品",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Rustic Server 文件"
+  },
+  "crumbs": {
+    "label": "導覽路徑",
+    "horizon": "Horizon",
+    "details": "詳細資料",
+    "create": "建立",
+    "kinds": {
+      "mod": "模組",
+      "modpack": "模組包",
+      "resourcepack": "資源包",
+      "shader": "光影",
+      "datapack": "資料包",
+      "plugin": "插件"
+    },
+    "servers": {
+      "featured": "精選",
+      "mine": "我的伺服器",
+      "multiplayer": "多人遊戲清單",
+      "discover": "發現",
+      "joined": "多人遊戲清單",
+      "browse": "瀏覽"
+    }
+  },
+  "social": {
+    "title": "社交",
+    "description": "好友、聊天和你的隊伍。",
+    "open": "開啟社交",
+    "friends": "好友",
+    "chats": "聊天",
+    "message": "傳送訊息",
+    "searchChats": "搜尋聊天…",
+    "noChats": "還沒有對話。從「好友」分頁傳訊息給好友吧。",
+    "sayHello": "打聲招呼",
+    "selectTitle": "選擇對話",
+    "selectBody": "選擇一位好友開始聊天。",
+    "messagePlaceholder": "傳訊息給 {{name}}",
+    "send": "傳送"
+  },
+  "window": {
+    "minimize": "最小化",
+    "maximize": "最大化",
+    "restore": "還原",
+    "close": "關閉"
+  },
+  "running": {
+    "title": "執行中的實例",
+    "none": "沒有執行中的遊戲。",
+    "count_other": "{{count}} 個實例執行中",
+    "downloading": "正在下載 {{pct}}"
+  },
+  "launch": {
+    "launch": "啟動遊戲",
+    "update": "更新並啟動",
+    "stop": "停止遊戲"
+  },
+  "deepLink": {
+    "authOk": "已登入 Rustic",
+    "authFailed": "Rustic 登入失敗",
+    "joining": "正在加入 {{target}}…",
+    "content": "正在從網站開啟 {{project}}"
+  },
+  "catalog": {
+    "sort": "排序方式",
+    "results_other": "{{count}} 個結果",
+    "loadMore": "載入更多",
+    "loadMoreCount": "顯示 {{shown}} 個，共 {{total}} 個",
+    "carousel": {
+      "prev": "上一個",
+      "next": "下一個",
+      "slide": "{{index}} / {{total}}",
+      "pause": "暫停輪播",
+      "play": "播放輪播"
+    },
+    "row": {
+      "seeAll": "查看全部",
+      "seeAllAria": "查看全部：{{title}}",
+      "scrollPrev": "向左捲動",
+      "scrollNext": "向右捲動"
+    },
+    "filters": {
+      "button": "篩選",
+      "buttonCount": "篩選 · {{count}}",
+      "reset": "重設篩選"
+    },
+    "layout": {
+      "label": "版面配置",
+      "list": "清單",
+      "grid": "格狀"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "正在更新 {{pct}}",
+      "installing": "正在安裝更新…",
+      "restarting": "正在重新啟動…",
+      "deferred": "遊戲結束後更新",
+      "apply": "更新並重新啟動"
+    },
+    "toast": {
+      "launcher": "正在下載 Rustic Launcher {{version}}…",
+      "edition": "正在更新遊戲（Rustic 版）…",
+      "editionDone": "遊戲已更新：{{version}}",
+      "deferred": "更新已就緒，關閉遊戲後會自動安裝。",
+      "restarting": "Rustic Launcher 正在重新啟動以完成更新。",
+      "updated": "Rustic Launcher 已更新至 {{version}}",
+      "resuming": "更新完成：正在啟動你的遊戲",
+      "failed": "無法安裝更新，稍後會再試一次。"
+    }
+  }
+}

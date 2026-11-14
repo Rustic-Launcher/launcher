@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "greeting": "З поверненням, {{name}}",
+    "greetingAnon": "Ласкаво просимо до Rustic",
+    "continue": "Продовжити: {{name}} · остання гра {{when}}",
+    "continueNew": "Усе готово: {{name}}",
+    "firstRun": "Підготуй гру за три кроки.",
+    "playNow": "Грати",
+    "updateAndPlay": "Оновити й грати",
+    "resumeServer": "Повернутися на {{server}}",
+    "switch": "Змінити екземпляр",
+    "stats": {
+      "playtime": "Зіграно: {{time}}",
+      "mods_one": "{{count}} мод",
+      "mods_few": "{{count}} моди",
+      "mods_many": "{{count}} модів",
+      "mods_other": "{{count}} мода",
+      "friends_one": "{{count}} друг у мережі",
+      "friends_few": "{{count}} друзі в мережі",
+      "friends_many": "{{count}} друзів у мережі",
+      "friends_other": "{{count}} друга в мережі"
+    },
+    "steps": {
+      "signIn": "Увійди з обліковим записом Microsoft, який має гру",
+      "prepare": "Підготуй файли гри зі своєї інсталяції",
+      "create": "Створи свій перший екземпляр"
+    },
+    "getReady": "Підготувати гру",
+    "openLocker": "Шафка",
+    "player": "Твій персонаж стоїть без косметики",
+    "playerWearing": "Твій персонаж стоїть, на ньому: {{items}}"
+  },
+  "recent": {
+    "title": "Нещодавні сервери й світи",
+    "unknown": "Стан невідомий",
+    "online": "У мережі · {{online}}/{{max}}",
+    "offline": "Не в мережі",
+    "world": "Світ · локальний",
+    "joining": "Підключення до {{name}}…",
+    "opening": "Відкриття {{name}}…",
+    "removed": "{{name}} видалено з твоїх серверів",
+    "playAria": "Грати: {{name}}",
+    "more": "Інші дії для {{name}}",
+    "copyAddress": "Скопіювати адресу",
+    "addServer": "Додати сервер",
+    "empty": "Тут з’являться сервери, на які ти заходиш, і світи, у які граєш."
+  },
+  "news": {
+    "title": "Новини й оновлення",
+    "empty": "Поки що новин немає.",
+    "slide": "Новина {{index}} з {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Нотатки до випуску",
+      "event": "Подія",
+      "blog": "Стаття"
+    },
+    "readNotes": "Читати нотатки до випуску",
+    "read": "Читати"
+  },
+  "friends": {
+    "title": "Друзі зараз",
+    "empty": "Зараз ніхто з друзів не грає.",
+    "since": "з {{when}}",
+    "activity": {
+      "server": "грає на {{server}}",
+      "hosting": "запустив(-ла) сервер {{server}}",
+      "singleplayer": "грає наодинці",
+      "launcher": "у лаунчері"
+    }
+  },
+  "featured": {
+    "title": "Рекомендовані сервери",
+    "verified": "Перевірений сервер",
+    "players": "Гравців: {{online}} / {{max}}",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Нова косметика",
+    "owned": "Уже є"
+  },
+  "launchpad": {
+    "welcome": "З *поверненням*,",
+    "playAs": "Грати як",
+    "online": "у мережі на рекомендованих серверах",
+    "heroLabel": "Запуск",
+    "instanceSettings": "Налаштування екземпляра",
+    "news": "Останні новини",
+    "unread_one": "({{count}} непрочитана)",
+    "unread_few": "({{count}} непрочитані)",
+    "unread_many": "({{count}} непрочитаних)",
+    "unread_other": "({{count}} непрочитаної)",
+    "unreadDot": "Не прочитано",
+    "explore": "Досліджувати джерела",
+    "aside": "Сервери й друзі",
+    "joinServer": "Зайти на {{name}}",
+    "friendsOnline_one": "({{count}} у мережі)",
+    "friendsOnline_few": "({{count}} у мережі)",
+    "friendsOnline_many": "({{count}} у мережі)",
+    "friendsOnline_other": "({{count}} у мережі)",
+    "openSocial": "Відкрити спілкування",
+    "noNews": "Новин поки немає.",
+    "noFriendsOnline": "Зараз немає друзів у мережі.",
+    "socialHint": "Чати, запрошення й твоя група — у вікні «Спілкування».",
+    "eyebrow": "Launchpad"
+  }
+}

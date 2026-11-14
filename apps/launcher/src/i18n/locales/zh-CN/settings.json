@@ -1,0 +1,514 @@
+{
+  "title": "设置",
+  "subtitle": "账户、游戏、启动器、外观和你的数据。",
+  "sectionsLabel": "设置分区",
+  "saving": "正在保存…",
+  "saved": "所有更改已保存",
+  "close": "关闭",
+  "cancel": "取消",
+  "sections": {
+    "accounts": "账户与安全",
+    "game": "游戏与实例",
+    "launcher": "启动器",
+    "appearance": "外观",
+    "privacy": "隐私与数据",
+    "parental": "家长控制",
+    "about": "关于与法律信息"
+  },
+  "accounts": {
+    "active": "当前",
+    "useThis": "使用此档案",
+    "signOut": "退出登录",
+    "signedOut": "{{name}} 已退出登录",
+    "ownership": {
+      "valid": "拥有游戏",
+      "expired": "验证已过期",
+      "never": "从未验证",
+      "failed": "验证失败",
+      "lastChecked": "{{when}}验证",
+      "nextCheck": "下次验证不晚于 {{date}}",
+      "checkNow": "立即验证",
+      "checkedToast": "已确认拥有游戏",
+      "checkFailed": "无法连接 Microsoft。请稍后重试。"
+    },
+    "microsoft": {
+      "title": "Microsoft 账户",
+      "description": "必须拥有游戏才能游玩。Rustic 会向 Microsoft 验证，且绝不会看到你的密码。",
+      "add": "添加 Microsoft 账户",
+      "keychain": "登录令牌保存在你的系统钥匙串中，绝不会存放在文件或命令行中。",
+      "signIn": "使用 Microsoft 登录",
+      "step1": "在浏览器中（或在另一台设备上）打开 Microsoft 页面。",
+      "step2": "输入下方的代码并登录。",
+      "step3": "回到这里：启动器会自动继续。",
+      "codeLabel": "登录代码",
+      "copyCode": "复制代码",
+      "copied": "代码已复制",
+      "openPage": "打开 microsoft.com/link",
+      "waiting": "正在等待你在浏览器中登录…",
+      "cancel": "取消",
+      "signedInAs": "已登录为 {{name}}",
+      "ownershipOk": "已确认拥有游戏：你可以开始游玩了。",
+      "ownershipMissing": "此账户未拥有游戏。",
+      "tryAgain": "重试",
+      "failed": {
+        "expired": {
+          "title": "代码已过期",
+          "body": "代码有效期为 15 分钟。重新开始以获取新代码。"
+        },
+        "denied": {
+          "title": "登录已取消",
+          "body": "Microsoft 报告登录被拒绝。"
+        },
+        "no_ownership": {
+          "title": "此账户未拥有游戏",
+          "body": "Rustic 只为拥有 Minecraft: Java Edition 的账户启动游戏。"
+        },
+        "error": {
+          "title": "登录失败",
+          "body": "Rustic 无法完成登录。请重试；如果仍然失败，下方的详情会说明原因。"
+        },
+        "not_configured": {
+          "title": "此版本未设置 Microsoft 登录",
+          "body": "此版本没有 Azure 应用程序 ID，因此无法请求 Microsoft 验证游戏许可证。官方版本已包含该 ID。"
+        },
+        "not_approved": {
+          "title": "启动器正在等待 Mojang 的批准",
+          "body": "你的 Microsoft 账户已登录，但游戏服务暂不接受此启动器：Mojang 必须先批准其应用程序 ID。你无需进行任何操作；批准后再试即可。"
+        },
+        "xbox": {
+          "title": "Xbox Live 拒绝了登录",
+          "body": "原因如下（未经家长许可的儿童账户、需要创建 Xbox 档案、不支持的地区…）。"
+        },
+        "rate_limited": {
+          "title": "尝试次数过多",
+          "body": "服务在短时间内收到了过多的登录请求。请等待一分钟后重试。"
+        },
+        "network": {
+          "title": "无法连接服务",
+          "body": "请检查你的网络连接后重试。"
+        },
+        "detail": "详情：{{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Rustic 账户",
+      "description": "你在好友、储物柜、购买和服务器中使用的 Rustic 身份。",
+      "signedOut": "未登录。没有它游戏也能运行；社交功能、储物柜和商店需要登录。",
+      "signIn": "登录或创建账户",
+      "licenceNote": "Rustic 账户是平台身份，绝不能代替游戏许可证：你仍然需要一个拥有游戏的 Microsoft 账户。"
+    },
+    "offline": {
+      "title": "离线游玩",
+      "description": "适用于局域网聚会和无网络游玩：你使用自己的 Microsoft 账户，以官方名称和 UUID 进行游戏。在上次成功验证游戏所有权后 {{days}} 天内可用，之后 Rustic 会再次向 Microsoft 验证。",
+      "until": "离线游玩可用至 {{date}}",
+      "locked": "请先使用拥有游戏的 Microsoft 账户登录：成功验证游戏所有权后才会开放离线游玩。"
+    },
+    "connections": {
+      "title": "连接",
+      "description": "启动器代表你使用的服务。密钥和主机指纹保存在你的系统钥匙串中。",
+      "porkbun": "Porkbun（域名）",
+      "porkbunHint": "用于在你自己的 Porkbun 账户上为你的服务器创建 DNS 记录。",
+      "porkbunRemoved": "已从这台电脑上移除 Porkbun 密钥",
+      "connected": "已连接",
+      "notConnected": "未连接",
+      "remove": "移除密钥",
+      "vps": "VPS 主机",
+      "vpsHint": "你通过 SSH 在自己的 VPS 上托管的服务器。忘记主机会移除其固定的密钥。",
+      "noVps": "无",
+      "fingerprint": "{{fp}} · 于 {{date}} 信任",
+      "forget": "忘记"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "已绑定",
+      "notLinked": "未绑定：也请使用你的 Microsoft 账户登录 Rustic。",
+      "link": "在网站上绑定",
+      "unlink": "解除绑定",
+      "unlinked": "已解除 Microsoft 绑定",
+      "unlinkFailed": "无法解除 Microsoft 绑定",
+      "lastMethod": "请先（在网站上）添加密码：Microsoft 是你唯一的登录方式。"
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "内存（RAM）",
+      "description": "分配给游戏的默认内存。每个实例都可以单独设置。",
+      "system": "已安装 {{total}} · 当前可用 {{free}}",
+      "warn": "这会让系统剩余的内存很少，可能导致一切变慢。",
+      "perInstance": "提示：大多数实例 4 GB 就足够了；大型整合包可能需要 6 到 8 GB。"
+    },
+    "prepare": {
+      "title": "游戏文件",
+      "description": "Horizon 会从你自己的游戏安装中准备游戏资源。不会从第三方下载任何内容。",
+      "status": "状态",
+      "states": {
+        "missing": "未准备",
+        "preparing": "准备中",
+        "ready": "就绪",
+        "outdated": "需要重新准备"
+      },
+      "gameVersion": "游戏 {{version}}",
+      "source": "来源安装",
+      "sourceHint": "在这台电脑上找到的官方启动器游戏文件夹。",
+      "doneToast": "游戏文件已就绪",
+      "steps": {
+        "detect": "正在查找你的安装…",
+        "download": "正在从 Mojang 下载游戏文件…",
+        "verify": "正在校验游戏文件…",
+        "compile_exporters": "正在编译导出器…",
+        "export": "正在导出资源…",
+        "index": "正在建立索引…",
+        "done": "完成"
+      },
+      "legal": "准备好的文件保留在这台电脑上，绝不会被分享。",
+      "again": "重新准备",
+      "failed": "准备失败"
+    },
+    "java": {
+      "label": "用于准备的 Java",
+      "description": "仅用于准备游戏文件（horizon-prepare）。Horizon 本身运行不需要 Java。",
+      "pickTitle": "选择 Java 可执行文件",
+      "source": {
+        "bundled": "Rustic 自带",
+        "system": "已安装在这台电脑上",
+        "custom": "自定义"
+      },
+      "custom": "自定义路径…",
+      "customHint": "选择 Java 21 或更高版本的可执行文件"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "你的 Rustic Server 服务器所运行的 rustic-server 程序（带有 Rustic 插件的 Horizon 引擎）。它必须与服务器的游戏版本来自同一个 Horizon 提交：Rustic 版的构建会在其文件夹中附带它。",
+      "program": "正在使用的程序",
+      "notFound": "未找到",
+      "notFoundHint": "请安装附带它的 Rustic 版构建，或选择 rustic-server 文件。没有它，创建 Rustic Server 会失败。",
+      "configuredMissing": "所选文件已不存在：{{path}}",
+      "origin": {
+        "server": "服务器自带",
+        "configured": "手动选择",
+        "build": "随构建 {{build}} 附带",
+        "beside_launcher": "位于启动器旁边",
+        "path": "在 PATH 中找到"
+      },
+      "choose": "选择…",
+      "pickTitle": "选择 rustic-server 程序",
+      "automatic": "使用自动检测",
+      "saved": "已保存 rustic-server 程序",
+      "automaticSaved": "已恢复自动检测",
+      "invalid": "此文件不是 rustic-server 程序（它不响应 --rustic-version）。",
+      "failed": "无法保存此程序",
+      "order": "查找顺序：你的选择，然后是游戏版本的文件夹，再然后是启动器旁边，最后是 PATH。"
+    },
+    "folders": {
+      "title": "文件夹",
+      "description": "启动器存放其数据、你的实例和你的服务器的位置。",
+      "data": "启动器数据",
+      "instances": "实例",
+      "servers": "服务器",
+      "open": "打开",
+      "change": "更改",
+      "changed": "文件夹已更改",
+      "moveNote": "现有文件不会自动移动。"
+    },
+    "resolution": {
+      "title": "游戏窗口",
+      "description": "新实例的默认窗口大小。",
+      "size": "大小",
+      "width": "宽度",
+      "height": "高度",
+      "fullscreen": "以全屏模式启动",
+      "hint": "最小 640 × 480。"
+    },
+    "native": {
+      "title": "原生模组",
+      "description": "带有原生模组的实例会运行在这台电脑上为其编译的游戏。这里包括：Rust 编译器，以及让后续编译更快的编译缓存。",
+      "rust": "Rust 编译器",
+      "rustReady": {
+        "managed": "Rust {{version}}，由启动器安装",
+        "rustup": "Rust {{version}}，来自你的 rustup",
+        "system": "Rust {{version}}，已安装在这台电脑上"
+      },
+      "rustMissing": "首次编译需要 Rust {{version}}。",
+      "ready": "就绪",
+      "missing": "未安装",
+      "installing": "正在安装…",
+      "installRust": "安装 Rust",
+      "rustInstalled": "Rust 已安装",
+      "rustFailed": "无法安装 Rust",
+      "cache": "编译缓存",
+      "cacheDetail": "缓存 {{cache}} · 已下载的 crate {{crates}} · Rust {{toolchain}} · 源代码 {{source}}。清除缓存会保留已编译的游戏；下次编译会重新编译全部内容。",
+      "clear": "清除",
+      "clearTitle": "要清除编译缓存吗？",
+      "clearBody": "实例会保留已编译的游戏。下次原生编译会重新编译整个游戏（10 到 15 分钟）。",
+      "cleared": "已清除编译缓存（释放了 {{size}}）",
+      "limit": "缓存上限",
+      "limitHint": "编译完成后，如果缓存大于此值就会被清除（0：从不）。",
+      "gib": "GiB",
+      "limitSaved": "缓存上限已保存",
+      "limitInvalid": "上限必须是 0 到 4096 之间的整数（单位 GiB）。",
+      "folder": "文件夹：{{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "语言",
+      "description": "立即应用于整个启动器。",
+      "label": "语言",
+      "search": "搜索语言",
+      "empty": "没有匹配的语言",
+      "translated": "已翻译",
+      "others": "其他语言",
+      "partial": "部分翻译",
+      "english": "暂时显示英语",
+      "via": "暂时显示{{lang}}",
+      "help": "尚未翻译的文本会以英语显示。翻译由社区提供。"
+    },
+    "startup": {
+      "title": "启动",
+      "onBoot": "电脑启动时打开 Rustic",
+      "onBootHint": "好友能更早看到你在线，更新会在后台下载。",
+      "minimized": "启动时最小化"
+    },
+    "behaviour": {
+      "title": "游戏时",
+      "onLaunch": "游戏启动时",
+      "launchOptions": {
+        "keep_open": "保持启动器打开",
+        "minimize": "最小化启动器",
+        "hide": "隐藏到托盘",
+        "close": "关闭启动器"
+      },
+      "onClose": "关闭窗口时",
+      "onCloseHint": "保留在托盘中，好友可以邀请你，服务器也能继续运行。",
+      "closeOptions": {
+        "tray": "在托盘中继续运行",
+        "quit": "退出 Rustic"
+      }
+    },
+    "updates": {
+      "title": "更新",
+      "auto": "自动安装更新",
+      "autoHint": "更新在安装前会经过签名和校验。",
+      "check": "Rustic Launcher",
+      "checkNow": "检查更新",
+      "available": "版本 {{version}} 可用",
+      "upToDate": "已是最新版本",
+      "failed": "无法检查更新",
+      "lastCheck": "上次检查：{{when}}",
+      "neverChecked": "尚未检查",
+      "edition": "游戏（Rustic 版）",
+      "editionNone": "未安装 Rustic 版构建",
+      "apply": "更新并重启",
+      "checking": "正在检查…",
+      "working": "正在更新… {{pct}}",
+      "restarting": "正在重启…",
+      "deferred": "正在等待游戏关闭",
+      "lastError": "上次尝试失败，将自动重试。"
+    },
+    "performance": {
+      "title": "下载与性能",
+      "downloads": "并行下载数",
+      "downloadsHint": "网络较慢时请调低。",
+      "hardware": "硬件加速",
+      "hardwareHint": "如果启动器闪烁，请关闭此项。重启后生效。"
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "主题",
+      "description": "Rustic 以深色为主进行设计；浅色主题适合明亮的房间。",
+      "label": "主题",
+      "dark": "深色",
+      "light": "浅色",
+      "system": "跟随系统"
+    },
+    "palette": {
+      "title": "配色",
+      "description": "用于“开始游戏”按钮、选中项和进度的强调色。",
+      "label": "配色",
+      "play": "开始游戏",
+      "default": "默认",
+      "names": {
+        "ember": "余烬",
+        "verdigris": "铜绿",
+        "heather": "石楠"
+      },
+      "descriptions": {
+        "ember": "炭灰底上的暖铜色",
+        "verdigris": "铜锈绿，如同氧化的铜",
+        "heather": "柔和的石楠玫瑰色"
+      }
+    },
+    "motion": {
+      "title": "动效",
+      "body": "Rustic 会遵循系统的“减少动态效果”设置：动画、轮播和 3D 预览将变为静止。"
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "你与我们分享的内容",
+      "description": "这里的所有选项默认关闭。开启某项可以帮助我们改进 Rustic；你可以随时改变主意。",
+      "usage": "使用情况分析",
+      "usageHint": "使用了哪些页面和功能，不包含内容或标识符。",
+      "performance": "性能报告",
+      "performanceHint": "启动时间和帧时间，用于找出卡顿之处。",
+      "crash": "崩溃报告",
+      "crashHint": "关闭后，每次发生崩溃时 Rustic 都会询问你。"
+    },
+    "policyLink": "阅读隐私政策",
+    "social": {
+      "title": "好友与在线状态",
+      "activity": "向好友显示我正在玩什么",
+      "activityHint": "好友可以看到你所在的服务器，并一键加入你。",
+      "requests": "谁可以向我发送好友请求",
+      "requestsOptions": {
+        "everyone": "所有人",
+        "friends_of_friends": "好友的好友",
+        "nobody": "任何人都不可以"
+      },
+      "discoverable": "出现在我遇到的玩家的推荐中",
+      "discoverableHint": "与你组过队的玩家，或在你动态中共享的服务器上遇到的玩家，可以在“添加好友”中看到你，你也能看到他们。数据保留 30 天；关闭此项会将其删除。",
+      "discoverableMinor": "未满 18 岁的账户无法使用。",
+      "discoverableFailed": "无法保存此设置。",
+      "discord": "在 Discord 上显示我的动态",
+      "discordHint": "在你的 Discord 个人资料上显示“正在玩 Rustic”：无论在启动器中、主菜单、单人游戏还是服务器上，都会附带你的游戏时长。",
+      "discordServer": "在 Discord 上显示服务器地址",
+      "discordServerHint": "否则 Discord 会显示“多人游戏”。私有地址（局域网、这台电脑）绝不会显示。"
+    },
+    "data": {
+      "title": "你的数据",
+      "description": "你在 GDPR 下的权利：访问、可携带和删除。",
+      "export": "导出我的数据",
+      "exportHint": "包含你的账户、好友、购买记录和设置的 JSON 存档。",
+      "exportButton": "准备导出",
+      "exportReady": "你的导出已准备就绪",
+      "exportFailed": "无法准备导出",
+      "download": "下载（链接有效期至 {{date}}）",
+      "delete": "删除我的账户",
+      "deleteHint": "有 30 天的宽限期，期间你可以取消，之后将永久删除。",
+      "deleteButton": "删除账户",
+      "deleteScheduled": "已计划于 {{date}} 删除。在此之前登录即可取消。",
+      "deleteFailed": "无法删除账户",
+      "rights": "如有疑问或投诉：请联系我们，或联系 CNIL（法国数据保护机构）。",
+      "confirmTitle": "要删除你的 Rustic 账户吗？",
+      "confirmBody": "你的好友、装扮和购买记录将在 30 天后被删除。你的游戏许可证和 Microsoft 账户不受影响。",
+      "confirmButton": "删除我的账户",
+      "typeUsername": "输入 {{name}} 以确认"
+    }
+  },
+  "parental": {
+    "title": "家长控制",
+    "description": "Rustic 账户面向 {{age}} 岁及以上的用户。对于未满 18 岁的玩家，购买默认需要家长批准。",
+    "minorNote": "此账户属于未成年人：购买时需要家长批准。",
+    "enable": "开启家长控制",
+    "enableHint": "开启后，更改以下设置需要输入 PIN 码。",
+    "pinFirst": "请先创建 PIN 码以开启家长控制。",
+    "saveFailed": "无法保存更改",
+    "lockAgain": "重新锁定",
+    "rules": {
+      "title": "规则",
+      "purchases": "购买",
+      "purchasesHint": "商店中只售卖装扮。永远没有战利品箱。",
+      "purchaseOptions": {
+        "blocked": "关闭",
+        "pin": "询问家长",
+        "allowed": "允许"
+      },
+      "limit": "每月消费上限",
+      "limitHint": "本月已消费：{{spent}}。留空表示不设上限。",
+      "noLimit": "无上限",
+      "limitInvalid": "请输入类似 10 或 9.99 的金额。",
+      "chat": "聊天",
+      "chatOptions": {
+        "off": "关闭",
+        "friends": "仅好友",
+        "everyone": "所有人"
+      },
+      "friendRequests": "好友请求",
+      "friendRequestsHint": "允许其他人发送好友请求。"
+    },
+    "pin": {
+      "title": "家长 PIN 码",
+      "set": "已设置 PIN 码。更改这些设置和批准购买时需要它。",
+      "notSet": "尚未设置 PIN 码。",
+      "change": "更改 PIN 码",
+      "create": "创建 PIN 码",
+      "saved": "PIN 码已保存",
+      "new": "新 PIN 码",
+      "confirm": "确认 PIN 码",
+      "save": "保存 PIN 码",
+      "hint": "4 到 6 位数字，不能是简单的序列。",
+      "errors": {
+        "format": "请使用 4 到 6 位数字。",
+        "mismatch": "两次输入的 PIN 码不一致。",
+        "weak": "太容易被猜到：请避免使用 1234 或 0000。"
+      }
+    },
+    "unlock": {
+      "title": "已锁定",
+      "description": "输入家长 PIN 码以更改这些设置。",
+      "label": "家长 PIN 码",
+      "wrong": "PIN 码错误。",
+      "button": "解锁"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "版本 {{version}}",
+    "channel": {
+      "stable": "稳定版",
+      "beta": "Beta"
+    },
+    "browserMock": "浏览器预览（模拟数据）",
+    "horizon": "Horizon",
+    "horizonHint": "推荐的游戏版本。",
+    "licence": "许可证",
+    "platform": "平台",
+    "legalTitle": "法律信息",
+    "legalDescription": "政策和声明。",
+    "links": {
+      "privacy": "隐私政策",
+      "terms": "使用和销售条款",
+      "legalNotice": "法律声明",
+      "fairPlay": "公平游戏政策",
+      "thirdParty": "开源声明",
+      "horizon": "Horizon 项目（MIT）"
+    },
+    "notAffiliated": "非 Minecraft 官方产品。未经 Mojang 或 Microsoft 批准，也与 Mojang 或 Microsoft 无关。",
+    "horizonCredit": "基于 Horizon 构建，Horizon 是由其贡献者以 Rust 重写的游戏，采用 MIT 许可证。",
+    "company": "由 [company name]（法国公司，SIREN [number]，[address]）发行。支付由 Stripe 处理；该公司为销售方。",
+    "tagline": "Rustic 是一个由 Horizon 引擎驱动的社交游戏平台"
+  },
+  "rusticAuth": {
+    "mode": "登录或创建账户",
+    "signIn": "登录",
+    "signUp": "创建账户",
+    "create": "创建我的账户",
+    "verify": "验证",
+    "email": "电子邮件",
+    "password": "密码",
+    "username": "用户名",
+    "dateOfBirth": "出生日期",
+    "country": "国家/地区",
+    "acceptPrivacy": "我已阅读并接受隐私政策。",
+    "code": "身份验证器应用中的代码",
+    "checkInbox": "我们已向 {{email}} 发送了验证链接。打开链接，然后登录。",
+    "resend": "重新发送",
+    "resent": "验证邮件已重新发送",
+    "signedIn": "已登录 Rustic",
+    "problems": {
+      "email": "请输入有效的电子邮件地址。",
+      "password": "密码：至少 10 个字符。",
+      "username": "用户名：3 到 20 个字母、数字或下划线。",
+      "dateOfBirth": "请输入你的出生日期。",
+      "tooYoung": "Rustic 账户面向 13 岁及以上的用户。",
+      "privacy": "请接受隐私政策以继续。"
+    },
+    "microsoft": "使用 Microsoft 继续",
+    "orEmail": "或使用电子邮件",
+    "microsoftWaiting": "请在浏览器中完成登录：启动器会自动获取你的会话。"
+  },
+  "heading": "你的*设置*",
+  "eyebrow": "启动器"
+}

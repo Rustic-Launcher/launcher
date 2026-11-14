@@ -92,3 +92,54 @@
   --rl-bottombar-height: 72px;
   --rl-friends-width: 296px;
 }
+
+/*
+ * Chinese, Japanese and Korean: Inter and Instrument Serif have no CJK glyphs, so the page's
+ * language (html `lang`, set by both apps) picks the system's own font for that script, in the
+ * right regional forms (Japanese, Simplified, Traditional, Korean Han differ). Thai the same way
+ * (Leelawadee UI on Windows, Thonburi / Sukhumvit Set on macOS, Noto Sans Thai on Linux). System
+ * fonts only: nothing is downloaded (docs/PERFORMANCE.md). Cyrillic, Greek and Vietnamese are in
+ * Inter itself.
+ */
+:root:lang(ja) {
+  --rl-font-sans:
+    'Inter Variable', 'Inter', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI',
+    'Yu Gothic', Meiryo, 'Noto Sans CJK JP', 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  --rl-font-serif:
+    'Instrument Serif', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif CJK JP', 'Noto Serif JP',
+    ui-serif, serif;
+}
+:root:lang(ko) {
+  --rl-font-sans:
+    'Inter Variable', 'Inter', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans CJK KR',
+    'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
+  --rl-font-serif:
+    'Instrument Serif', 'AppleMyungjo', 'Batang', 'Noto Serif CJK KR', 'Noto Serif KR', ui-serif,
+    serif;
+}
+:root:lang(zh-CN),
+:root:lang(zh-Hans) {
+  --rl-font-sans:
+    'Inter Variable', 'Inter', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei',
+    'Noto Sans CJK SC', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif;
+  --rl-font-serif:
+    'Instrument Serif', 'Songti SC', 'SimSun', 'Noto Serif CJK SC', 'Noto Serif SC', ui-serif, serif;
+}
+:root:lang(zh-TW),
+:root:lang(zh-HK),
+:root:lang(zh-Hant) {
+  --rl-font-sans:
+    'Inter Variable', 'Inter', 'PingFang TC', 'Microsoft JhengHei UI', 'Microsoft JhengHei',
+    'Noto Sans CJK TC', 'Noto Sans TC', ui-sans-serif, system-ui, sans-serif;
+  --rl-font-serif:
+    'Instrument Serif', 'Songti TC', 'PMingLiU', 'Noto Serif CJK TC', 'Noto Serif TC', ui-serif,
+    serif;
+}
+:root:lang(th) {
+  --rl-font-sans:
+    'Inter Variable', 'Inter', 'Leelawadee UI', 'Leelawadee', 'Thonburi', 'Sukhumvit Set',
+    'Noto Sans Thai UI', 'Noto Sans Thai', 'Tahoma', ui-sans-serif, system-ui, sans-serif;
+  --rl-font-serif:
+    'Instrument Serif', 'Noto Serif Thai', 'Leelawadee UI', 'Thonburi', 'Noto Sans Thai', 'Tahoma',
+    ui-serif, serif;
+}

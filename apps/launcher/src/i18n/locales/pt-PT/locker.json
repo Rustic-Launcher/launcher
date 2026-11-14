@@ -1,0 +1,86 @@
+{
+  "title": "Cacifo",
+  "subtitle": "Itens puramente visuais. Vistos no jogo pelos jogadores que usam a edição Rustic.",
+  "horizonNote": {
+    "badge": "Os cosméticos Horizon continuam disponíveis",
+    "detail": "Os teus cosméticos Horizon são mantidos no cliente da edição Rustic. Gere-os no jogo; funcionam a par dos teus itens Rustic."
+  },
+  "empty": {
+    "title": "Ainda não tens nenhum cosmético.",
+    "description": "Os itens que comprares ou receberes aparecem aqui, prontos a usar.",
+    "browse": "Explorar a loja",
+    "categoryTitle": "Ainda não há {{category}}",
+    "categoryDescription": "Os itens deste tipo que tiveres vão aparecer aqui."
+  },
+  "viewer": {
+    "region": "A tua personagem",
+    "label_one": "A tua personagem a usar {{count}} item. Arrasta ou usa as setas para rodar, mais e menos para fazer zoom.",
+    "label_many": "A tua personagem a usar {{count}} itens. Arrasta ou usa as setas para rodar, mais e menos para fazer zoom.",
+    "label_other": "A tua personagem a usar {{count}} itens. Arrasta ou usa as setas para rodar, mais e menos para fazer zoom.",
+    "hint": "Arrasta para rodar · desliza para fazer zoom",
+    "animation": "Animação",
+    "playEmote": "Reproduzir {{name}}",
+    "noEmote": "Nenhum emote equipado",
+    "reset": "Repor a vista"
+  },
+  "animations": {
+    "idle": "Parado",
+    "walk": "Andar",
+    "wave": "Acenar",
+    "dance": "Dançar"
+  },
+  "items": {
+    "region": "Os teus itens",
+    "nothing": "Nada",
+    "equipped": "Equipado"
+  },
+  "categories": {
+    "label": "Categorias",
+    "all": "Todos",
+    "head": "Chapéus",
+    "back": "Costas",
+    "top": "Tronco",
+    "shoulder": "Ombro",
+    "nametag": "Etiquetas de nome",
+    "emote": "Emotes",
+    "companion": "Companheiros",
+    "trail": "Rastos",
+    "aura": "Auras"
+  },
+  "rarity": {
+    "common": "Comum",
+    "rare": "Raro",
+    "epic": "Épico",
+    "legendary": "Lendário"
+  },
+  "toast": {
+    "equipped": "{{name}} equipado",
+    "unequipped": "{{name}} removido",
+    "cleared": "{{slot}}: nada equipado",
+    "outfitWorn": "Visual aplicado",
+    "outfitSaved": "Visual «{{name}}» guardado",
+    "equipFailed": "Não foi possível mudar o teu visual. Tenta novamente."
+  },
+  "outfits": {
+    "title": "Visuais",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Dá um nome a este visual",
+    "save": "Guardar o visual atual",
+    "full": "Podes guardar até {{max}} visuais. Elimina um para guardares um novo.",
+    "empty": "Guarda o teu visual atual para o voltares a usar com um clique.",
+    "items_one": "{{count}} item",
+    "items_many": "{{count}} itens",
+    "items_other": "{{count}} itens",
+    "wearing": "Em uso",
+    "wear": "Usar",
+    "delete": "Eliminar o visual {{name}}"
+  },
+  "switches": {
+    "showMine": "Mostrar os meus cosméticos",
+    "showMineHint": "Os outros jogadores da edição Rustic veem o que usas.",
+    "hideOthers": "Ocultar os cosméticos dos outros jogadores",
+    "hideTrailsAuras": "Ocultar rastos e auras"
+  },
+  "heading": "O teu *cacifo*",
+  "eyebrow": "Cosméticos"
+}

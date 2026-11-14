@@ -1,0 +1,109 @@
+{
+  "hero": {
+    "greeting": "Bine ai revenit, {{name}}",
+    "greetingAnon": "Bine ai venit în Rustic",
+    "continue": "Continuă: {{name}} · jucat {{when}}",
+    "continueNew": "Gata când ești și tu: {{name}}",
+    "firstRun": "Pregătește jocul în trei pași.",
+    "playNow": "Joacă acum",
+    "updateAndPlay": "Actualizează și joacă",
+    "resumeServer": "Revino pe {{server}}",
+    "switch": "Schimbă instanța",
+    "stats": {
+      "playtime": "{{time}} jucate",
+      "mods_one": "{{count}} mod",
+      "mods_few": "{{count}} moduri",
+      "mods_other": "{{count}} de moduri",
+      "friends_one": "{{count}} prieten online",
+      "friends_few": "{{count}} prieteni online",
+      "friends_other": "{{count}} de prieteni online"
+    },
+    "steps": {
+      "signIn": "Conectează-te cu contul Microsoft care deține jocul",
+      "prepare": "Pregătește fișierele jocului din propria instalare",
+      "create": "Creează prima ta instanță"
+    },
+    "getReady": "Pregătește jocul",
+    "openLocker": "Vestiar",
+    "player": "Jucătorul tău, în repaus, fără cosmetice echipate",
+    "playerWearing": "Jucătorul tău, în repaus, poartă: {{items}}"
+  },
+  "recent": {
+    "title": "Servere și lumi recente",
+    "unknown": "Stare necunoscută",
+    "online": "Online · {{online}}/{{max}}",
+    "offline": "Offline",
+    "world": "Lume · locală",
+    "joining": "Se intră pe {{name}}…",
+    "opening": "Se deschide {{name}}…",
+    "removed": "{{name}} a fost eliminat din serverele tale",
+    "playAria": "Joacă {{name}}",
+    "more": "Mai multe acțiuni pentru {{name}}",
+    "copyAddress": "Copiază adresa",
+    "addServer": "Adaugă server",
+    "empty": "Serverele pe care intri și lumile în care joci apar aici."
+  },
+  "news": {
+    "title": "Știri și actualizări",
+    "empty": "Nicio știre deocamdată.",
+    "slide": "Știrea {{index}} din {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Note de lansare",
+      "event": "Eveniment",
+      "blog": "Articol"
+    },
+    "readNotes": "Citește notele de lansare",
+    "read": "Citește"
+  },
+  "friends": {
+    "title": "Prieteni acum",
+    "empty": "Niciunul dintre prietenii tăi nu joacă acum.",
+    "since": "de {{when}}",
+    "activity": {
+      "server": "joacă pe {{server}}",
+      "hosting": "găzduiește {{server}}",
+      "singleplayer": "joacă singur",
+      "launcher": "e în launcher"
+    }
+  },
+  "featured": {
+    "title": "Servere recomandate",
+    "verified": "Server verificat",
+    "players": "{{online}} / {{max}} jucători",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Cosmetice noi",
+    "owned": "Deținut"
+  },
+  "launchpad": {
+    "welcome": "Bine ai *revenit*,",
+    "playAs": "Joacă drept",
+    "online": "online pe serverele recomandate",
+    "heroLabel": "Lansare",
+    "instanceSettings": "Setările instanței",
+    "news": "Ultimele știri",
+    "unread_one": "({{count}} necitită)",
+    "unread_few": "({{count}} necitite)",
+    "unread_other": "({{count}} de necitite)",
+    "unreadDot": "Necitit",
+    "explore": "Explorează sursele",
+    "aside": "Servere și prieteni",
+    "joinServer": "Intră pe {{name}}",
+    "friendsOnline_one": "({{count}} online)",
+    "friendsOnline_few": "({{count}} online)",
+    "friendsOnline_other": "({{count}} online)",
+    "openSocial": "Deschide Social",
+    "noNews": "Nicio știre încă.",
+    "noFriendsOnline": "Niciun prieten online acum.",
+    "socialHint": "Conversațiile, invitațiile și grupul tău sunt în fereastra Social.",
+    "eyebrow": "Launchpad"
+  }
+}

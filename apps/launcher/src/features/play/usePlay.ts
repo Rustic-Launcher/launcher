@@ -77,6 +77,7 @@ export function statusTone(
 }
 
 const BUSY: LaunchPhase[] = [
+  'updating',
   'checking',
   'downloading',
   'preparing',
@@ -124,7 +125,10 @@ export function usePlay(instance: Instance | undefined): PlayModel {
   } else if (BUSY.includes(phase)) {
     state = 'progress';
     progress =
-      phase === 'downloading' || phase === 'preparing' || phase === 'building'
+      phase === 'downloading' ||
+      phase === 'preparing' ||
+      phase === 'building' ||
+      phase === 'updating'
         ? (launch?.progress ?? null)
         : null;
     progressLabel =
@@ -138,7 +142,7 @@ export function usePlay(instance: Instance | undefined): PlayModel {
             { pct: formatPercent(progress, i18n.language) },
           )
         : t(
-            `play.progress.${phase as 'checking' | 'preparing' | 'building' | 'launching' | 'stopping'}`,
+            `play.progress.${phase as 'updating' | 'checking' | 'preparing' | 'building' | 'launching' | 'stopping'}`,
           );
     status = progressLabel;
   } else if (phase === 'running' || instance.state === 'running') {

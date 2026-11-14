@@ -16,6 +16,8 @@
 //!   [`kit`] the pieces Rustic's own screens are drawn with.
 //! - [`langs`] and [`flags`]: the language screen (flags drawn in code); [`discover`]: the server
 //!   directory screen; [`i18n`]: Rustic's in-game texts (English, French; English fallback).
+//! - [`lists`]: the world list and the server list as the launcher's pages; [`panel`]: the
+//!   pause menu as a panel (ADR 0164).
 //! - [`notify`]: discreet notifications (at most a few, deduplicated, rate-limited).
 //! - [`trail`]: trail particles placed from distance walked and age only (deterministic).
 #![forbid(unsafe_code)]
@@ -28,9 +30,11 @@ pub mod flags;
 pub mod i18n;
 pub mod kit;
 pub mod langs;
+pub mod lists;
 pub mod notify;
 pub mod overlay;
 pub mod paint;
+pub mod panel;
 pub mod presence;
 pub mod protocol;
 pub mod skin;

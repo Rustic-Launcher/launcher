@@ -176,7 +176,8 @@
       "capDataFolder": "Carpeta de datos propia",
       "eula": "Acepto el EULA de Minecraft",
       "eulaHint": "Es obligatorio para ejecutar un servidor. Lo aceptas tú; Rustic no lo acepta por ti.",
-      "eulaRead": "Leer el EULA"
+      "eulaRead": "Leer el EULA",
+      "eulaTitle": "EULA de Minecraft"
     },
     "world": {
       "title": "Mundo",
@@ -214,7 +215,10 @@
       "pickInstance": "Elige una instancia",
       "world": "Mundo",
       "pickWorld": "Elige un mundo",
-      "noWorlds": "No hay mundos en esta instancia"
+      "noWorlds": "No hay mundos en esta instancia",
+      "newDesc": "Un mundo nuevo a partir de una semilla, con tus reglas.",
+      "importDesc": "Una carpeta de mundo de tu PC o de una copia de seguridad.",
+      "fromInstanceDesc": "Un mundo que jugaste en uno de tus perfiles."
     },
     "type": {
       "memory": "Memoria del servidor (RAM)",
@@ -266,7 +270,20 @@
       "generateKey": "Primero genera una clave y añádela a tu VPS.",
       "password": "Introduce la contraseña."
     },
-    "heading": "Crea un *servidor*"
+    "heading": "Crea un *servidor*",
+    "stepHints": {
+      "basics": "Ponle nombre, elige qué ejecuta y con qué mundo empieza.",
+      "hosting": "Elige la máquina que lo ejecuta y cuánta memoria recibe.",
+      "access": "Elige cómo se unen tus amigos. Puedes cambiarlo después."
+    },
+    "sections": {
+      "identity": "Nombre e icono"
+    },
+    "preview": {
+      "title": "Vista previa",
+      "unnamed": "Tu servidor",
+      "draft": "aún sin crear"
+    }
   },
   "hosting": {
     "local": {
@@ -464,7 +481,17 @@
       "port": "Puerto",
       "memory": "Memoria",
       "created": "Creado",
-      "folder": "Carpeta"
+      "folder": "Carpeta",
+      "uptime": "Tiempo activo",
+      "startedAt": "Desde {{time}}",
+      "lastSession": "Última sesión",
+      "lastStarted": "Último inicio: {{when}}",
+      "neverStarted": "Aún no se ha iniciado",
+      "lastLines": "Últimas líneas de la consola",
+      "noLines": "Todavía no hay nada registrado.",
+      "openConsole": "Abrir la consola",
+      "crashedTitle": "El servidor se detuvo inesperadamente",
+      "crashedBody": "Revisa las últimas líneas de la consola y vuelve a iniciarlo."
     },
     "console": {
       "filter": "Filtrar líneas",

@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "greeting": "Tekrar hoş geldin, {{name}}",
+    "greetingAnon": "Rustic’e hoş geldin",
+    "continue": "Devam et: {{name}} · son oynama: {{when}}",
+    "continueNew": "Sen hazır olduğunda: {{name}}",
+    "firstRun": "Oyunu üç adımda hazırla.",
+    "playNow": "Şimdi oyna",
+    "updateAndPlay": "Güncelle ve oyna",
+    "resumeServer": "Yeniden katıl: {{server}}",
+    "switch": "Örnek değiştir",
+    "stats": {
+      "playtime": "{{time}} oynandı",
+      "mods_one": "{{count}} mod",
+      "mods_other": "{{count}} mod",
+      "friends_one": "{{count}} arkadaş çevrimiçi",
+      "friends_other": "{{count}} arkadaş çevrimiçi"
+    },
+    "steps": {
+      "signIn": "Oyuna sahip olan Microsoft hesabınla giriş yap",
+      "prepare": "Oyun dosyalarını kendi kurulumundan hazırla",
+      "create": "İlk örneğini oluştur"
+    },
+    "getReady": "Oyunu hazırla",
+    "openLocker": "Dolap",
+    "player": "Karakterin, beklemede, kozmetik kuşanmamış",
+    "playerWearing": "Karakterin, beklemede, kuşandıkları: {{items}}"
+  },
+  "recent": {
+    "title": "Son sunucular ve dünyalar",
+    "unknown": "Durum bilinmiyor",
+    "online": "Çevrimiçi · {{online}}/{{max}}",
+    "offline": "Çevrimdışı",
+    "world": "Dünya · yerel",
+    "joining": "Katılınıyor: {{name}}…",
+    "opening": "Açılıyor: {{name}}…",
+    "removed": "{{name}} sunucularından kaldırıldı",
+    "playAria": "Oyna: {{name}}",
+    "more": "Diğer işlemler: {{name}}",
+    "copyAddress": "Adresi kopyala",
+    "addServer": "Sunucu ekle",
+    "empty": "Katıldığın sunucular ve oynadığın dünyalar burada görünür."
+  },
+  "news": {
+    "title": "Haberler ve güncellemeler",
+    "empty": "Şu an haber yok.",
+    "slide": "Haber {{index}} / {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Sürüm notları",
+      "event": "Etkinlik",
+      "blog": "Makale"
+    },
+    "readNotes": "Sürüm notlarını oku",
+    "read": "Oku"
+  },
+  "friends": {
+    "title": "Şu an arkadaşların",
+    "empty": "Şu an hiçbir arkadaşın oynamıyor.",
+    "since": "başlangıç: {{when}}",
+    "activity": {
+      "server": "şurada oynuyor: {{server}}",
+      "hosting": "sunucu barındırıyor: {{server}}",
+      "singleplayer": "tek başına oynuyor",
+      "launcher": "başlatıcıda"
+    }
+  },
+  "featured": {
+    "title": "Öne çıkan sunucular",
+    "verified": "Doğrulanmış sunucu",
+    "players": "{{online}} / {{max}} oyuncu",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Yeni kozmetikler",
+    "owned": "Sahipsin"
+  },
+  "launchpad": {
+    "welcome": "Tekrar *hoş geldin*,",
+    "playAs": "Oynanacak hesap",
+    "online": "öne çıkan sunucularda çevrimiçi",
+    "heroLabel": "Başlat",
+    "instanceSettings": "Örnek ayarları",
+    "news": "Son haberler",
+    "unread_one": "({{count}} okunmamış)",
+    "unread_other": "({{count}} okunmamış)",
+    "unreadDot": "Okunmamış",
+    "explore": "Kaynakları keşfet",
+    "aside": "Sunucular ve arkadaşlar",
+    "joinServer": "Katıl: {{name}}",
+    "friendsOnline_one": "({{count}} çevrimiçi)",
+    "friendsOnline_other": "({{count}} çevrimiçi)",
+    "openSocial": "Sosyal pencereyi aç",
+    "noNews": "Henüz haber yok.",
+    "noFriendsOnline": "Şu an çevrimiçi arkadaş yok.",
+    "socialHint": "Sohbetler, davetler ve grubun Sosyal penceresinde.",
+    "eyebrow": "Launchpad"
+  }
+}

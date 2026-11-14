@@ -50,9 +50,20 @@ describe('locales', () => {
         translationStatus(l.code, BUNDLES),
       );
     }
-    expect(bundleChain('pt_pt')).toEqual(['pt-BR', 'en']);
+    expect(bundleChain('pt_pt')).toEqual(['pt-PT', 'en']);
+    expect(bundleChain('pt_br')).toEqual(['pt-BR', 'en']);
     expect(bundleChain('de_ch')).toEqual(['de', 'en']);
-    expect(bundleChain('ja_jp')).toEqual(['en']);
+    expect(bundleChain('ja_jp')).toEqual(['ja', 'en']);
+    // Hong Kong and Classical Chinese read Traditional Chinese; Galician-Ukrainian dialects Ukrainian.
+    expect(bundleChain('zh_hk')).toEqual(['zh-TW', 'en']);
+    expect(bundleChain('lzh')).toEqual(['zh-TW', 'en']);
+    expect(bundleChain('zh_cn')).toEqual(['zh-CN', 'en']);
+    expect(bundleChain('nl_be')).toEqual(['nl', 'en']);
+    expect(bundleChain('cs_cz')).toEqual(['cs', 'en']);
+    expect(bundleChain('th_th')).toEqual(['th', 'en']);
+    // Elfdalian reads Swedish; Danish has no translation yet.
+    expect(bundleChain('ovd')).toEqual(['sv', 'en']);
+    expect(bundleChain('da_dk')).toEqual(['en']);
     expect(bundleChain('en_gb')).toEqual(['en']);
   });
 });

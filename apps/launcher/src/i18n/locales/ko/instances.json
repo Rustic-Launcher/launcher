@@ -1,0 +1,337 @@
+{
+  "title": "버전",
+  "errors": {
+    "action": "작업에 실패했어요"
+  },
+  "card": {
+    "more": "{{name}} 추가 작업",
+    "pin": "고정",
+    "unpin": "고정 해제",
+    "duplicate": "복제",
+    "duplicated": "{{name}} 생성됨",
+    "playtime": "플레이 시간",
+    "never": "없음",
+    "fromModpack": "모드팩 {{name}} {{version}}"
+  },
+  "state": {
+    "running": "실행 중",
+    "installing": "설치 중",
+    "broken": "복구 필요"
+  },
+  "delete": {
+    "title": "{{name}} 인스턴스를 삭제할까요?",
+    "body": "모드, 설정, 월드가 이 컴퓨터에서 삭제돼요. 되돌릴 수 없어요.",
+    "confirm": "인스턴스 삭제",
+    "done": "{{name}} 삭제됨"
+  },
+  "new": {
+    "title": "새 인스턴스",
+    "description": "새로 시작하거나 기존 팩을 가져오세요.",
+    "tabs": {
+      "create": "만들기",
+      "import": "가져오기"
+    },
+    "name": "이름",
+    "namePlaceholder": "나의 서바이벌 월드",
+    "nameRequired": "인스턴스 이름을 입력하세요.",
+    "icon": "아이콘",
+    "color": "색상",
+    "colorN": "색상 {{n}}",
+    "version": "Horizon 빌드",
+    "versionHint": "Rustic 에디션은 게임에 치장 아이템과 친구 기능을 추가해요. Java나 RAM 설정은 필요 없어요.",
+    "recommended": "추천",
+    "release": "정식",
+    "nightly": "나이틀리",
+    "installed": "설치됨",
+    "submit": "인스턴스 만들기",
+    "created": "{{name}} 준비 완료",
+    "preview": "미리보기",
+    "edition": "에디션",
+    "editionRustic": "게임 안의 치장 아이템, 친구, 네이티브 모드.",
+    "editionHorizon": "Horizon 팀이 배포한 그대로의 Horizon, 추가 기능 없음.",
+    "noBuild": "지금은 이 에디션의 빌드가 없어요.",
+    "nightlyHint": "나이틀리 빌드는 Horizon의 최신 코드로 매일 나와요. 더 새롭지만 테스트는 덜 됐어요."
+  },
+  "icons": {
+    "grass": "새싹",
+    "sword": "검",
+    "pickaxe": "곡괭이",
+    "castle": "성",
+    "rocket": "로켓",
+    "gem": "보석",
+    "flame": "불꽃",
+    "leaf": "잎",
+    "star": "별",
+    "compass": "나침반"
+  },
+  "import": {
+    "folder": {
+      "title": "인스턴스 폴더",
+      "description": "Prism 또는 MultiMC 인스턴스 폴더를 Horizon 방식으로 변환해요."
+    },
+    "mrpack": {
+      "title": "Modrinth 팩(.mrpack)",
+      "description": "가능하면 모드를 해당 Horizon 빌드와 연결해요."
+    },
+    "curseforge_zip": {
+      "title": "CurseForge zip",
+      "description": "내보낸 CurseForge 모드팩이에요."
+    },
+    "modpack": {
+      "title": "모드팩에서",
+      "description": "Horizon, Modrinth, Rustic 모드팩을 둘러보세요."
+    },
+    "started": "{{name}} 가져오는 중",
+    "background": "백그라운드에서 계속 진행돼요. 런처를 계속 사용해도 돼요.",
+    "note": "Horizon에서 작동하는 콘텐츠만 설치돼요. 나머지는 이유와 함께 목록에 표시돼요.",
+    "drop": {
+      "title": "모드팩이나 인스턴스 폴더를 여기에 놓으세요",
+      "hint": "Modrinth .mrpack, CurseForge .zip, 또는 Prism·MultiMC 인스턴스 폴더",
+      "choose": "파일 선택",
+      "active": "놓으면 가져와요",
+      "unsupported": "가져올 수 없어요. .mrpack, CurseForge .zip 또는 인스턴스 폴더를 사용해 주세요."
+    },
+    "formats": "지원 형식"
+  },
+  "detail": {
+    "notFound": "이 인스턴스는 더 이상 존재하지 않아요",
+    "backToList": "인스턴스 목록으로",
+    "tabsLabel": "인스턴스 섹션",
+    "tabs": {
+      "overview": "개요",
+      "content": "콘텐츠",
+      "resourcepacks": "리소스 팩",
+      "worlds": "월드",
+      "settings": "설정"
+    }
+  },
+  "overview": {
+    "mods": "모드",
+    "resourcePacks": "리소스 팩",
+    "shaders": "셰이더 팩",
+    "version": "Horizon 빌드",
+    "updateAvailable": "업데이트 가능",
+    "upToDate": "최신 상태",
+    "updateNow": "지금 업데이트",
+    "changeVersion": "Horizon 빌드 선택",
+    "applyVersion": "빌드 전환",
+    "versionChanging": "{{version}}(으)로 전환 중",
+    "lastSession": "마지막 세션",
+    "lastPlayed": "{{when}} 플레이",
+    "neverPlayed": "아직 플레이하지 않음",
+    "rejoin": "다시 접속",
+    "noServer": "이 인스턴스로 접속한 서버가 아직 없어요.",
+    "created": "생성일",
+    "folder": "폴더"
+  },
+  "content": {
+    "filter": "유형별 필터",
+    "kinds": {
+      "all": "전체",
+      "mod": "모드",
+      "resourcepack": "리소스 팩",
+      "shader": "셰이더"
+    },
+    "search": "설치된 콘텐츠 검색",
+    "updateAll_other": "항목 {{count}}개 업데이트",
+    "browse": "콘텐츠 둘러보기",
+    "noMatch": "검색과 일치하는 설치된 콘텐츠가 없어요.",
+    "empty": {
+      "title": "아직 설치된 것이 없어요",
+      "description": "이 인스턴스에서 작동하는 모드, 리소스 팩, 셰이더를 찾아보세요."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "로컬 파일"
+    },
+    "updateTo": "업데이트: {{version}}",
+    "incompatible": "호환되지 않음: {{reason}}",
+    "updateOne": "{{name}} 업데이트",
+    "toggle": "{{name}} 켜기",
+    "remove": "{{name}} 제거",
+    "removeTitle": "{{name}} 항목을 제거할까요?",
+    "removeBody": "이 인스턴스에서 파일이 삭제돼요. 콘텐츠에서 다시 설치할 수 있어요."
+  },
+  "packs": {
+    "hint": "두 팩이 같은 것을 바꾸면 위에 있는 팩이 우선해요.",
+    "listLabel": "리소스 팩 적용 순서",
+    "top": "가장 높은 우선순위",
+    "up": "{{name}} 위로 이동",
+    "down": "{{name}} 아래로 이동",
+    "moved": "{{name}}: {{total}}개 중 {{position}}번째로 이동함",
+    "browse": "리소스 팩 찾기",
+    "empty": {
+      "title": "리소스 팩 없음",
+      "description": "팩을 추가해서 텍스처, 소리, 인터페이스를 바꿔 보세요."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "아직 월드가 없어요",
+      "description": "게임에서 만든 월드가 여기에 표시돼요."
+    },
+    "openSaves": "saves 폴더 열기",
+    "lastPlayed": "{{when}} 플레이",
+    "modes": {
+      "survival": "서바이벌",
+      "creative": "크리에이티브",
+      "adventure": "모험",
+      "hardcore": "하드코어",
+      "spectator": "관전자"
+    },
+    "datapacks_other": "데이터 팩 {{count}}개",
+    "play": "이 월드 플레이",
+    "addDatapacks": "데이터 팩 추가"
+  },
+  "settings": {
+    "general": "일반",
+    "display": "창",
+    "useDefaultResolution": "기본 창 크기 사용",
+    "defaultIs": "기본값: {{width}} × {{height}}",
+    "width": "너비",
+    "height": "높이",
+    "fullscreen": "전체 화면으로 시작",
+    "resolutionError": "640 × 360 이상의 정수를 입력하세요.",
+    "launch": "실행 옵션",
+    "launchHint": "Horizon 인스턴스는 빌드만 지정해요. Java, RAM, 로더는 설정할 필요가 없어요.",
+    "gameArgs": "추가 게임 인수",
+    "gameArgsHint": "고급 설정. Horizon에 그대로 전달돼요.",
+    "folders": "폴더",
+    "folder": {
+      "root": "인스턴스",
+      "mods": "모드",
+      "resourcepacks": "리소스 팩",
+      "shaderpacks": "셰이더 팩",
+      "saves": "월드",
+      "screenshots": "스크린샷",
+      "logs": "로그"
+    },
+    "unsaved": "저장하지 않은 변경 사항이 있어요.",
+    "allSaved": "모든 변경 사항을 저장했어요.",
+    "saved": "인스턴스 설정을 저장했어요"
+  },
+  "heading": "내 *프로필*",
+  "native": {
+    "title": "네이티브 모드",
+    "allOff": "모두 꺼져 있어요. 이 인스턴스는 미리 빌드된 게임으로 실행돼요.",
+    "state": {
+      "building": "빌드 중…",
+      "up_to_date": "최신 상태",
+      "needs_rebuild": "다시 빌드 필요",
+      "not_built": "빌드되지 않음",
+      "not_needed": "미리 빌드된 게임"
+    },
+    "build": "빌드",
+    "rebuild": "다시 빌드",
+    "cancel": "취소",
+    "progress": "네이티브 빌드 진행률",
+    "starting": "시작 중…",
+    "firstBuildHint": "첫 빌드는 게임 전체를 컴파일해요(10~15분). 이후에는 바뀐 부분만 빌드해요. 런처는 계속 사용할 수 있어요.",
+    "failed": "마지막 빌드에 실패했어요",
+    "built": "{{date}} 빌드 · 소요 시간 {{duration}} · 게임 {{size}}",
+    "leftOut": {
+      "other": "{{name}} 제외됨: 이 Horizon에는 적용되지 않아요.",
+      "unsupported": "{{name}} 제외됨: Rustic이 아직 필요한 부분을 빌드할 수 없어요."
+    },
+    "notEdition": "이 인스턴스는 일반 Horizon 빌드로 실행돼요. 네이티브 모드는 Rustic 에디션에서만 빌드돼요."
+  },
+  "profiles": {
+    "summary_other": "프로필 {{count}}개 · {{playtime}} 플레이",
+    "searchLabel": "내 프로필 검색",
+    "searchPlaceholder": "이름, Horizon 빌드, 모드팩으로 검색…",
+    "source": {
+      "label": "표시",
+      "all": "모든 프로필",
+      "custom": "내 프로필",
+      "modpack": "모드팩에서"
+    },
+    "sorts": {
+      "recent": "최근 플레이",
+      "name": "이름",
+      "created": "최근 생성",
+      "version": "Horizon 빌드",
+      "playtime": "플레이 시간"
+    },
+    "filters": {
+      "version": "Horizon 빌드",
+      "edition": "에디션",
+      "editions": {
+        "rustic": "Rustic 에디션",
+        "horizon": "일반 Horizon"
+      },
+      "native": "네이티브 모드",
+      "nativeOnly": "네이티브 모드 포함",
+      "nativeHint": "네이티브 모드는 게임이 시작되기 전에 내 PC에서 컴파일돼요.",
+      "remove": "필터 제거: {{filter}}",
+      "reset": "필터 초기화"
+    },
+    "create": "프로필 만들기",
+    "createHint": "Horizon 빌드, 아이콘, 이름",
+    "import": "가져오기",
+    "importHint": "폴더, .mrpack 또는 CurseForge zip",
+    "all": "모든 프로필",
+    "listLabel": "프로필",
+    "recent": "이어서 플레이",
+    "recentHint": "최근 플레이한 프로필",
+    "card": {
+      "active": "활성",
+      "activeHint": "Launchpad에서 이 프로필로 플레이해요",
+      "running": "실행 중",
+      "pinned": "고정됨",
+      "update": "업데이트 {{version}}",
+      "broken": "복구 필요",
+      "modpack": "모드팩",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "{{when}} 플레이",
+      "neverPlayed": "아직 플레이하지 않음",
+      "created": "생성일: {{date}}",
+      "lastServer": "마지막 접속: {{name}}",
+      "rejoin": "다시 접속",
+      "rejoinAria": "{{name}} 프로필로 {{server}} 다시 접속",
+      "mods": "모드",
+      "packs": "리소스 팩",
+      "shaders": "셰이더",
+      "playtime": "플레이 시간",
+      "contentCount": "모드 {{mods}}개 · 팩 {{packs}}개 · 셰이더 {{shaders}}개",
+      "open": "{{name}} 열기"
+    },
+    "native": {
+      "label": "네이티브 모드",
+      "count_other": "네이티브 모드 {{count}}개",
+      "building": "빌드 중 {{pct}}",
+      "buildingNoPct": "빌드 중…",
+      "up_to_date": "네이티브 모드 준비됨",
+      "needs_rebuild": "네이티브: 다시 빌드 필요",
+      "not_built": "네이티브: 아직 빌드되지 않음",
+      "off": "네이티브 모드 꺼짐",
+      "unsupported": "네이티브: Rustic 에디션 필요",
+      "hint": {
+        "up_to_date": "이 PC에서 이 Horizon 빌드용으로 빌드했어요.",
+        "needs_rebuild": "마지막 빌드 이후 모드가 바뀌었어요. 플레이할 때 다시 빌드돼요.",
+        "not_built": "플레이할 때 내 PC에서 컴파일돼요(처음에는 10~15분).",
+        "off": "모든 네이티브 모드가 꺼져 있어요. 미리 빌드된 게임으로 실행돼요.",
+        "unsupported": "이 프로필은 일반 Horizon 빌드로 실행돼요. 네이티브 모드는 Rustic 에디션에서만 빌드돼요.",
+        "building": "이 프로필의 네이티브 모드로 게임을 컴파일하는 중이에요."
+      }
+    },
+    "menu": {
+      "edit": "설정 편집",
+      "activate": "Launchpad에서 사용",
+      "isActive": "Launchpad에서 사용 중",
+      "activated": "이제 Launchpad에서 {{name}} 프로필을 사용해요"
+    },
+    "empty": {
+      "title": "아직 프로필이 없어요",
+      "description": "프로필은 자체 모드, 팩, 월드를 가진 Horizon 빌드예요. 추천 빌드로 하나 만들거나 이미 가진 팩을 가져오세요."
+    },
+    "noMatch": {
+      "title": "일치하는 프로필이 없어요",
+      "description": "다른 검색어를 입력하거나 필터를 제거해 보세요."
+    },
+    "detail": {
+      "banner": "{{name}} 커버 이미지"
+    }
+  }
+}

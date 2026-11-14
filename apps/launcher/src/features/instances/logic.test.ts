@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { initialInstances } from '@/ipc/mock/data/core';
 import type { Instance } from '@/ipc/types/instances';
 import {
+  importKindOf,
   activeFilterCount,
   buildsInUse,
   compareBuilds,
@@ -137,5 +138,22 @@ describe('instances logic', () => {
   it('makes initials', () => {
     expect(initials('Atlas Minimap')).toBe('AM');
     expect(initials('Lumen')).toBe('LU');
+  });
+});
+
+describe('importKindOf', () => {
+  it('reads packs by extension, whatever the case or the separators', () => {
+    expect(importKindOf('C:\\Users\\me\\Downloads\\Pack.MRPACK')).toBe('mrpack');
+    expect(importKindOf('C:\\Users\\me\\Packs\\Old\\')).toBe('folder');
+    expect(importKindOf('/home/me/Fabulous 5.4.1.zip')).toBe('curseforge_zip');
+  });
+  it('reads a path without a file extension as an instance folder', () => {
+    expect(importKindOf('C:/Prism/instances/Survival')).toBe('folder');
+    expect(importKindOf('/home/me/instances/Optimized 5.4.1/')).toBe('folder');
+  });
+  it('refuses other files', () => {
+    expect(importKindOf('C:/Downloads/mod.jar')).toBeNull();
+    expect(importKindOf('notes.txt')).toBeNull();
+    expect(importKindOf('')).toBeNull();
   });
 });

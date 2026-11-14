@@ -1,0 +1,1041 @@
+{
+  "list": {
+    "title": "Máy chủ",
+    "description": "Mở một thế giới cho bạn bè, ngay tại đây hoặc trên VPS của bạn, và giữ các máy chủ yêu thích trong tầm tay.",
+    "create": "Tạo máy chủ",
+    "tabs": {
+      "mine": "Máy chủ của tôi",
+      "joined": "Đã tham gia",
+      "discover": "Gợi ý"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon thuần"
+    },
+    "hosting": {
+      "local": "Máy tính này",
+      "remote": "Từ xa: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Trạng thái",
+    "states": {
+      "running": "Đang chạy",
+      "starting": "Đang khởi động…",
+      "stopping": "Đang dừng…",
+      "stopped": "Đã dừng",
+      "crashed": "Đã gặp sự cố",
+      "installing": "Đang cài đặt…",
+      "unreachable": "Không thể kết nối"
+    },
+    "players": "Người chơi",
+    "playersCount": "{{online}}/{{max}} người chơi",
+    "version": "Phiên bản",
+    "copyAddress": "Sao chép địa chỉ",
+    "copyFailed": "Không thể sao chép vào bộ nhớ tạm",
+    "notShared": "Chưa chia sẻ",
+    "notSharedHint": "Hãy bật địa chỉ tạm thời, mã mời hoặc tên miền trong tab Truy cập của máy chủ.",
+    "start": "Khởi động",
+    "stop": "Dừng",
+    "startAria": "Khởi động {{name}}",
+    "stopAria": "Dừng {{name}}",
+    "powerFailed": "Máy chủ không phản hồi",
+    "empty": {
+      "title": "Mở một thế giới cho bạn bè trong 3 bước",
+      "description": "Chạy miễn phí trên máy tính này, hoặc để Rustic cài đặt trên VPS của bạn."
+    },
+    "featured": {
+      "description": "Các máy chủ do đội ngũ Rustic chọn: chơi công bằng, sẵn sàng cho Horizon, có kiểm duyệt.",
+      "empty": "Hiện không có máy chủ nổi bật nào.",
+      "verified": "Được Rustic xác minh",
+      "save": "Thêm vào danh sách",
+      "inList": "Đã có trong danh sách",
+      "online_other": "{{value}} người trực tuyến",
+      "view": "Về {{name}}"
+    },
+    "viewLabel": "Chế độ xem",
+    "views": {
+      "discover": "Gợi ý",
+      "mine": "Máy chủ của tôi"
+    },
+    "searchPlaceholder": {
+      "discover": "Tìm máy chủ nổi bật…",
+      "mine": "Tìm máy chủ của bạn…"
+    },
+    "clearSearch": "Xóa tìm kiếm",
+    "sortLabel": "Sắp xếp",
+    "sorts": {
+      "recommended": "Đề xuất",
+      "players": "Nhiều người chơi nhất",
+      "name": "Tên"
+    },
+    "refreshPing": "Làm mới ping và trạng thái",
+    "layoutList": "Hiển thị dạng danh sách",
+    "layoutGrid": "Hiển thị dạng lưới",
+    "createHint": "Tại đây, trên VPS của bạn, hoặc sắp tới trên đám mây",
+    "heading": "Chơi trên *máy chủ*",
+    "eyebrow": "Máy chủ",
+    "sections": {
+      "hosted": "Do bạn mở",
+      "joined": "Máy chủ đã tham gia"
+    }
+  },
+  "multiplayer": {
+    "description": "Danh sách máy chủ của trò chơi, dùng chung cho mọi phiên bản cài đặt của bạn.",
+    "add": "Thêm máy chủ",
+    "added": "Đã thêm {{name}} vào danh sách của bạn",
+    "addFailed": "Không thể thêm máy chủ này",
+    "name": "Tên máy chủ",
+    "namePlaceholder": "Tên",
+    "address": "Địa chỉ máy chủ",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Hãy dùng tên máy chủ hoặc IP, có thể kèm :cổng.",
+    "refreshPings": "Làm mới",
+    "favorites_other": "Yêu thích · {{count}}",
+    "others_other": "Máy chủ khác · {{count}}",
+    "favorite": "Thêm {{name}} vào yêu thích",
+    "unfavorite": "Bỏ {{name}} khỏi yêu thích",
+    "offline": "Ngoại tuyến",
+    "unreachable": "Hiện không thể kết nối tới máy chủ này",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Tham gia",
+    "joinAria": "Tham gia {{name}}",
+    "joinWith": "Tham gia bằng {{instance}}",
+    "noInstance": "Hãy tạo một phiên bản cài đặt để vào máy chủ",
+    "joining": "Đang khởi chạy và vào {{name}}…",
+    "more": "Thao tác khác cho {{name}}",
+    "copyAddress": "Sao chép địa chỉ",
+    "removed": "Đã xóa {{name}}",
+    "undo": "Hoàn tác",
+    "empty": {
+      "title": "Chưa có máy chủ nào",
+      "description": "Thêm một máy chủ bằng địa chỉ của nó, hoặc chọn một máy chủ trong Gợi ý."
+    }
+  },
+  "wizard": {
+    "title": "Tạo máy chủ",
+    "subtitle": "Ba bước: chạy gì, đặt ở đâu, bạn bè tham gia thế nào.",
+    "creatingTitle": "Đang thiết lập {{name}}",
+    "stepOf": "Bước {{index}} / {{total}}",
+    "steps": {
+      "basics": "Cơ bản",
+      "hosting": "Nơi đặt máy chủ",
+      "access": "Truy cập"
+    },
+    "create": "Tạo máy chủ",
+    "installOn": "Cài đặt trên {{host}}",
+    "createFailed": "Không thể tạo máy chủ",
+    "noRusticServer": "Không tìm thấy chương trình rustic-server. Hãy chọn nó trong Cài đặt › Trò chơi và phiên bản cài đặt › Rustic Server, hoặc cài một bản dựng phiên bản Rustic có kèm nó.",
+    "openRusticServerSettings": "Mở cài đặt",
+    "fixErrors": "Hãy kiểm tra các trường được đánh dấu để tiếp tục.",
+    "discard": {
+      "title": "Bỏ máy chủ này?",
+      "body": "Những gì bạn đã nhập trong trình hướng dẫn sẽ bị mất.",
+      "keep": "Tiếp tục chỉnh sửa",
+      "confirm": "Bỏ"
+    },
+    "basics": {
+      "name": "Tên máy chủ",
+      "namePlaceholder": "SMP của Lou",
+      "icon": "Biểu tượng",
+      "icons": {
+        "grass": "Cỏ",
+        "sword": "Kiếm",
+        "pickaxe": "Cuốc chim",
+        "castle": "Lâu đài",
+        "rocket": "Tên lửa",
+        "gem": "Đá quý",
+        "flame": "Ngọn lửa",
+        "leaf": "Lá cây",
+        "star": "Ngôi sao",
+        "compass": "La bàn"
+      },
+      "color": "Màu",
+      "colorN": "Màu {{n}}",
+      "type": "Loại",
+      "recommended": "Đề xuất",
+      "nightly": "Nightly",
+      "rusticDesc": "Plugin (.rplugin) chạy trong sandbox: plugin không bao giờ có thể làm sập máy chủ của bạn.",
+      "horizonDesc": "Máy chủ riêng của Horizon, không có plugin.",
+      "version": "Phiên bản Horizon",
+      "maxPlayers": "Số người chơi tối đa",
+      "versionLineRustic": "Rustic Server 0.1 trên Horizon {{version}}",
+      "versionLineHorizon": "Máy chủ Horizon {{version}}",
+      "sameAsClient": "(giống client của bạn)",
+      "starterPlugins": "Plugin khởi đầu",
+      "starterHint": "Plugin chính thức, kèm những gì chúng được phép làm.",
+      "capNetwork": "Mạng",
+      "capNoNetwork": "Không có mạng",
+      "capNoFiles": "Không có tệp",
+      "capDataFolder": "Thư mục dữ liệu riêng",
+      "eula": "Tôi chấp nhận EULA của Minecraft",
+      "eulaHint": "Bắt buộc để chạy máy chủ. Bạn tự chấp nhận; Rustic không chấp nhận thay bạn.",
+      "eulaRead": "Đọc EULA",
+      "eulaTitle": "EULA của Minecraft"
+    },
+    "world": {
+      "title": "Thế giới",
+      "new": "Thế giới mới",
+      "import": "Nhập một thư mục",
+      "fromInstance": "Từ một phiên bản cài đặt",
+      "seed": "Hạt giống (seed)",
+      "seedHint": "Để trống để tạo thế giới ngẫu nhiên.",
+      "seedPlaceholder": "Không bắt buộc",
+      "randomSeed": "Seed ngẫu nhiên",
+      "levelType": "Loại thế giới",
+      "levelTypes": {
+        "default": "Mặc định",
+        "flat": "Siêu phẳng",
+        "large_biomes": "Quần xã lớn",
+        "amplified": "Khuếch đại"
+      },
+      "gamemode": "Chế độ chơi",
+      "gamemodes": {
+        "survival": "Sinh tồn",
+        "creative": "Sáng tạo",
+        "adventure": "Phiêu lưu"
+      },
+      "difficulty": "Độ khó",
+      "difficulties": {
+        "peaceful": "Hòa bình",
+        "easy": "Dễ",
+        "normal": "Thường",
+        "hard": "Khó"
+      },
+      "structures": "Tạo công trình",
+      "hardcore": "Hardcore",
+      "folder": "Thư mục thế giới",
+      "instance": "Phiên bản cài đặt",
+      "pickInstance": "Chọn một phiên bản cài đặt",
+      "world": "Thế giới",
+      "pickWorld": "Chọn một thế giới",
+      "noWorlds": "Không có thế giới nào trong phiên bản cài đặt này",
+      "newDesc": "Một thế giới mới từ hạt giống (seed), theo luật của bạn.",
+      "importDesc": "Một thư mục thế giới từ máy tính của bạn hoặc từ bản sao lưu.",
+      "fromInstanceDesc": "Một thế giới bạn đã chơi trong một hồ sơ của mình."
+    },
+    "type": {
+      "memory": "Bộ nhớ máy chủ (RAM)",
+      "memoryHint": "4 GB phù hợp với hầu hết nhóm bạn. Nhiều hơn sẽ giúp khi có đông người chơi hoặc gói mod lớn."
+    },
+    "access": {
+      "intro": "Cách bạn bè tham gia. Có thể bật nhiều cách cùng lúc; bạn có thể thay đổi sau.",
+      "lan": "Bạn bè trong mạng của tôi (LAN)",
+      "lanDetail": "Địa chỉ cục bộ của máy tính này, hiển thị khi máy chủ đã được tạo.",
+      "publicIp": "Địa chỉ công khai",
+      "publicIpDetail": "IP của VPS của bạn",
+      "alwaysOn": "Luôn bật",
+      "relay": "Địa chỉ tạm thời",
+      "relayDetail": "miễn phí, khi máy chủ đang chạy; không cần mở cổng",
+      "invite": "Mã mời",
+      "inviteDetail": "Một mã mà bạn bè dán vào Rustic Launcher để tham gia.",
+      "domain": "Tên miền của riêng tôi",
+      "domainDetail": "Kết nối Porkbun · Mua tại Porkbun · Dùng bất kỳ nhà đăng ký tên miền nào",
+      "domainAfter": "Thiết lập sau khi tạo",
+      "safety": "Chế độ trực tuyến bật: chỉ người chơi sở hữu trò chơi mới có thể tham gia. Danh sách trắng bật."
+    },
+    "summary": {
+      "title": "Tóm tắt",
+      "version": "Phiên bản",
+      "host": "Nơi đặt máy chủ",
+      "world": "Thế giới",
+      "memory": "Bộ nhớ",
+      "players": "Số người chơi tối đa",
+      "plugins": "Plugin",
+      "none": "Không có",
+      "eulaAccepted": "Bạn đã chấp nhận EULA của Minecraft ở bước 1."
+    },
+    "errors": {
+      "nameRequired": "Hãy đặt tên cho máy chủ.",
+      "nameTooLong": "Tối đa 40 ký tự.",
+      "version": "Hãy chọn một phiên bản Horizon.",
+      "maxPlayers": "Từ 1 đến 1000 người chơi.",
+      "importPath": "Hãy chọn thư mục thế giới cần nhập.",
+      "world": "Hãy chọn một phiên bản cài đặt và một thế giới của nó.",
+      "seed": "Seed tối đa 64 ký tự.",
+      "eula": "Hãy chấp nhận EULA để chạy máy chủ.",
+      "cloudUnavailable": "Rustic Cloud chưa khả dụng.",
+      "vpsNotReady": "Hãy kết nối VPS và vượt qua các bước kiểm tra trước.",
+      "memory": "Tối thiểu 1 GB bộ nhớ.",
+      "host": "Hãy nhập địa chỉ IP hoặc tên máy chủ.",
+      "port": "Cổng từ 1 đến 65535.",
+      "username": "Hãy nhập tên người dùng Linux.",
+      "keyPath": "Hãy chọn tệp khóa riêng của bạn.",
+      "generateKey": "Hãy tạo khóa trước, rồi thêm nó vào VPS của bạn.",
+      "password": "Hãy nhập mật khẩu."
+    },
+    "heading": "Tạo *máy chủ*",
+    "stepHints": {
+      "basics": "Đặt tên, chọn nội dung máy chủ chạy và thế giới khởi đầu.",
+      "hosting": "Chọn máy sẽ chạy máy chủ và lượng bộ nhớ dành cho nó.",
+      "access": "Chọn cách bạn bè tham gia. Bạn có thể đổi sau."
+    },
+    "sections": {
+      "identity": "Tên và biểu tượng"
+    },
+    "preview": {
+      "title": "Xem trước",
+      "unnamed": "Máy chủ của bạn",
+      "draft": "chưa được tạo"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "Máy tính này (cục bộ)",
+      "free": "Miễn phí",
+      "description": "Máy tính của bạn phải luôn bật khi bạn bè đang chơi.",
+      "settings": "Trên máy tính này",
+      "reach": "Bạn bè kết nối qua mạng của bạn, qua địa chỉ tạm thời của Rustic hoặc bằng mã mời. Không cần thiết lập router.",
+      "startWithLauncher": "Khởi động cùng launcher",
+      "startWithLauncherHint": "Máy chủ khởi động khi Rustic Launcher mở."
+    },
+    "vps": {
+      "title": "VPS của bạn (SSH)",
+      "description": "Máy chủ Linux của bạn. Chúng tôi cài đặt và vận hành giúp bạn.",
+      "which": "VPS",
+      "existing_other": "VPS đã lưu ({{count}})",
+      "new": "Thêm VPS",
+      "pinned": "Đã ghim khóa máy chủ",
+      "host": "Máy chủ",
+      "port": "Cổng",
+      "user": "Người dùng",
+      "userPlaceholder": "root hoặc một người dùng sudo",
+      "auth": "Đăng nhập",
+      "authGenerate": "Tạo khóa giúp tôi",
+      "authKey": "Tệp khóa có sẵn",
+      "authPassword": "Mật khẩu (một lần)",
+      "generateHint": "Đề xuất. Rustic tạo một cặp khóa; khóa riêng không bao giờ rời khỏi máy tính này.",
+      "generate": "Tạo khóa",
+      "addKeyCommand": "Chạy lệnh này một lần trong console của VPS để cấp quyền cho khóa:",
+      "keyStored": "Đã lưu khóa riêng vào kho khóa của hệ thống ({{path}})",
+      "openFirewall": "Mở cổng trò chơi trong tường lửa của VPS",
+      "openFirewallHint": "Cho phép TCP tới cổng của máy chủ trong ufw hoặc firewalld. Tường lửa riêng của nhà cung cấp có thể cũng cần mở.",
+      "keyFile": "Khóa riêng",
+      "passphrase": "Cụm mật khẩu",
+      "optional": "Không bắt buộc",
+      "password": "Mật khẩu",
+      "passwordHint": "Chỉ dùng một lần để cài khóa. Không được lưu lại.",
+      "test": "Kiểm tra kết nối",
+      "reachable": "Đã kết nối · {{ms}} ms",
+      "unreachable": "Chúng tôi không thể kết nối tới VPS này",
+      "authFailed": "VPS đã từ chối đăng nhập"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Sắp ra mắt",
+      "description": "Máy chủ chạy trên máy của Rustic, luôn bật.",
+      "waitlist": "Nhận email khi Rustic Cloud mở cửa.",
+      "email": "Địa chỉ email",
+      "join": "Tham gia danh sách chờ",
+      "joined": "Bạn đã có trong danh sách (#{{position}}). Chúng tôi sẽ gửi email cho bạn.",
+      "invalidEmail": "Hãy nhập địa chỉ email hợp lệ."
+    },
+    "requirements": {
+      "title": "Kiểm tra yêu cầu",
+      "ram": "Bộ nhớ (trống {{free}})",
+      "gameFiles": "Tệp trò chơi đã chuẩn bị",
+      "port": "Cổng 25565 còn trống",
+      "hint": "Dung lượng đĩa được kiểm tra khi tải tệp máy chủ."
+    },
+    "fingerprint": {
+      "title": "Tin cậy {{host}}?",
+      "description": "Lần kết nối đầu tiên tới VPS này. Hãy so sánh dấu vân tay này với dấu vân tay trong bảng điều khiển của nhà cung cấp trước khi tin cậy.",
+      "warning": "Nếu không khớp, hãy hủy: có thể ai đó đang chặn kết nối. Rustic sẽ chặn mọi thay đổi sau này của khóa này.",
+      "trust": "Tin cậy và tiếp tục"
+    },
+    "testFailed": "Kiểm tra kết nối thất bại",
+    "checkFailed": "Kiểm tra VPS thất bại",
+    "preflight": {
+      "running": "Đang kiểm tra VPS của bạn…",
+      "ok": "VPS của bạn đã sẵn sàng",
+      "notOk": "VPS của bạn chưa đáp ứng yêu cầu",
+      "os": "{{os}} · {{arch}}",
+      "cpu_other": "{{count}} vCPU",
+      "memory": "Bộ nhớ {{memory}}",
+      "disk": "Đĩa trống {{disk}}",
+      "systemd": "Có systemd",
+      "ip": "IP công khai"
+    },
+    "problems": {
+      "memory": "Bộ nhớ",
+      "disk": "Đĩa",
+      "arch": "Kiến trúc",
+      "os": "Hệ điều hành",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Đang cài đặt trên {{host}}",
+      "steps": {
+        "connect": "Kết nối qua SSH",
+        "check": "Kiểm tra trước khi cài",
+        "user": "Tạo người dùng ‘rustic’",
+        "download": "Tải lên tệp máy chủ đã ký",
+        "engine": "Cấu hình engine Rustic",
+        "service": "Cài đặt dịch vụ",
+        "firewall": "Mở cổng 25565",
+        "world": "Chuẩn bị thế giới",
+        "start": "Khởi động và kiểm tra"
+      },
+      "state": {
+        "pending": "đang chờ",
+        "running": "đang thực hiện",
+        "done": "xong",
+        "failed": "thất bại",
+        "skipped": "bỏ qua"
+      },
+      "skippedVanilla": "Không cần cho Horizon thuần",
+      "log_other": "Hiện nhật ký ({{count}} dòng)",
+      "vpsDone": "{{name}} đang chạy trên {{host}}",
+      "vpsDoneBody": "Quản lý nó từ launcher như một máy chủ cục bộ: console, người chơi, plugin, bản sao lưu.",
+      "localDownload": "Tải xuống {{engine}}",
+      "localInit": "Chuẩn bị thế giới và cài đặt",
+      "localStart": "Khởi động lần đầu",
+      "localReady": "Sẵn sàng khởi động",
+      "localDone": "{{name}} đang chạy",
+      "localDoneBody": "Chia sẻ địa chỉ của nó từ tab Truy cập, hoặc mời bạn bè từ bảng bạn bè.",
+      "open": "Mở máy chủ",
+      "backToList": "Quay lại danh sách máy chủ",
+      "retry": "Thử lại",
+      "failed": "Cài đặt thất bại",
+      "crashed": "Máy chủ đã dừng trong lần khởi động đầu tiên. Hãy kiểm tra console."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Các mục của máy chủ",
+    "tabs": {
+      "overview": "Tổng quan",
+      "console": "Console",
+      "players": "Người chơi",
+      "plugins": "Plugin",
+      "config": "Cấu hình",
+      "datapacks": "Gói dữ liệu",
+      "backups": "Bản sao lưu",
+      "access": "Truy cập",
+      "danger": "Vùng nguy hiểm"
+    },
+    "state": {
+      "stopped": "Đã dừng",
+      "starting": "Đang khởi động…",
+      "running": "Đang chạy",
+      "stopping": "Đang dừng…",
+      "crashed": "Đã gặp sự cố",
+      "installing": "Đang cài đặt…",
+      "unreachable": "Không thể kết nối"
+    },
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "remove": "Xóa",
+    "done": "Xong",
+    "header": {
+      "back": "Máy chủ",
+      "players": "{{online}}/{{max}} người chơi",
+      "uptime": "đã chạy {{duration}}",
+      "start": "Khởi động",
+      "stop": "Dừng",
+      "restart": "Khởi động lại",
+      "join": "Tham gia",
+      "address": "Địa chỉ",
+      "copyAddress": "Sao chép địa chỉ máy chủ",
+      "powerFailed": "Không thể thay đổi trạng thái máy chủ"
+    },
+    "overview": {
+      "stoppedTitle": "Máy chủ đang dừng",
+      "stoppedBody": "Khởi động máy chủ để xem trực tiếp CPU, bộ nhớ, TPS và thời gian tick.",
+      "cpu": "CPU",
+      "cpuChart": "Mức sử dụng CPU trong hai phút qua",
+      "ram": "Bộ nhớ",
+      "ramChart": "Bộ nhớ đã dùng trong hai phút qua",
+      "of": "trên {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Số tick mỗi giây trong hai phút qua",
+      "mspt": "Thời gian tick",
+      "msptChart": "Mili giây mỗi tick trong hai phút qua, đường ngưỡng 50 ms",
+      "msptBudget": "ngưỡng 50 ms",
+      "health": {
+        "good": "Mượt",
+        "busy": "Bận",
+        "lagging": "Đang giật lag"
+      },
+      "onlineTitle_other": "{{count}} người chơi trực tuyến",
+      "onlineStopped": "Không ai có thể tham gia khi máy chủ đang dừng.",
+      "nobody": "Hiện không có ai đang chơi.",
+      "infoTitle": "Chi tiết",
+      "world": "Thế giới",
+      "version": "Horizon",
+      "port": "Cổng",
+      "memory": "Bộ nhớ",
+      "created": "Ngày tạo",
+      "folder": "Thư mục",
+      "uptime": "Thời gian hoạt động",
+      "startedAt": "Từ {{time}}",
+      "lastSession": "Phiên gần nhất",
+      "lastStarted": "Khởi động gần nhất: {{when}}",
+      "neverStarted": "Chưa từng khởi động",
+      "lastLines": "Các dòng console gần nhất",
+      "noLines": "Chưa có gì được ghi lại.",
+      "openConsole": "Mở console",
+      "crashedTitle": "Máy chủ đã dừng bất ngờ",
+      "crashedBody": "Xem các dòng console gần nhất rồi khởi động lại."
+    },
+    "console": {
+      "filter": "Lọc dòng",
+      "filters": {
+        "all": "Tất cả",
+        "info": "Thông tin",
+        "warn": "Cảnh báo",
+        "error": "Lỗi",
+        "chat": "Trò chuyện"
+      },
+      "levels": {
+        "info": "info",
+        "warn": "warn",
+        "error": "lỗi",
+        "command": "lệnh",
+        "chat": "chat"
+      },
+      "autoScroll": "Theo dõi dòng mới",
+      "logLabel": "Console máy chủ",
+      "empty": "Chưa có dòng nào.",
+      "suggestions": "Gợi ý lệnh",
+      "inputLabel": "Lệnh máy chủ",
+      "placeholder": "Nhập lệnh (Tab để hoàn thành, ↑ lịch sử)",
+      "offline": "Khởi động máy chủ để gửi lệnh",
+      "send": "Gửi",
+      "sendFailed": "Không thể gửi lệnh",
+      "hint": "Lệnh chạy dưới quyền console máy chủ, với mọi quyền hạn. Không cần dấu gạch chéo ở đầu."
+    },
+    "players": {
+      "whitelist": "Danh sách trắng",
+      "whitelistHint": "Chỉ người chơi có trong danh sách mới có thể tham gia. Nên bật khi máy chủ có thể truy cập từ internet.",
+      "view": "Hiển thị người chơi",
+      "views": {
+        "online": "Trực tuyến",
+        "all": "Tất cả",
+        "ops": "Quản trị viên (OP)",
+        "whitelist": "Trong danh sách trắng",
+        "banned": "Bị cấm"
+      },
+      "search": "Tìm người chơi",
+      "emptyOnline": "Không có ai trực tuyến",
+      "empty": "Không có người chơi nào ở đây",
+      "stoppedHint": "Khởi động máy chủ để xem ai đang chơi.",
+      "online": "Trực tuyến",
+      "offline": "Ngoại tuyến",
+      "op": "Quản trị viên (OP)",
+      "whitelisted": "Trong danh sách trắng",
+      "banned": "Bị cấm",
+      "playtime": "Đã chơi {{duration}}",
+      "kick": "Đuổi",
+      "kickAria": "Đuổi {{name}}",
+      "more": "Thao tác khác cho {{name}}",
+      "makeOp": "Đặt làm OP",
+      "deop": "Gỡ quyền OP",
+      "whitelistAdd": "Thêm vào danh sách trắng",
+      "whitelistRemove": "Xóa khỏi danh sách trắng",
+      "ban": "Cấm",
+      "pardon": "Bỏ cấm",
+      "banTitle": "Cấm {{name}}?",
+      "banBody": "Người chơi này sẽ bị ngắt kết nối và không thể vào lại cho đến khi bạn bỏ cấm.",
+      "reason": "Lý do (không bắt buộc, hiển thị cho người chơi)",
+      "failed": "Thao tác thất bại",
+      "done": {
+        "kick": "Đã đuổi {{name}}",
+        "ban": "Đã cấm {{name}}",
+        "pardon": "Đã bỏ cấm {{name}}",
+        "op": "{{name}} giờ là OP",
+        "deop": "{{name}} không còn là OP",
+        "whitelist_add": "Đã thêm {{name}} vào danh sách trắng",
+        "whitelist_remove": "Đã xóa {{name}} khỏi danh sách trắng"
+      }
+    },
+    "config": {
+      "mode": "Chế độ chỉnh sửa",
+      "form": "Cài đặt",
+      "raw": "Tệp gốc",
+      "groups": {
+        "general": "Chung",
+        "world": "Thế giới",
+        "players": "Người chơi",
+        "network": "Mạng",
+        "performance": "Hiệu năng"
+      },
+      "keys": {
+        "motd": "Thông điệp trong ngày",
+        "max-players": "Số người chơi tối đa",
+        "white-list": "Danh sách trắng",
+        "online-mode": "Chế độ trực tuyến (kiểm tra tài khoản)",
+        "pvp": "Người chơi đấu người chơi",
+        "gamemode": "Chế độ chơi mặc định",
+        "difficulty": "Độ khó",
+        "level-seed": "Seed thế giới",
+        "spawn-protection": "Bán kính bảo vệ điểm hồi sinh",
+        "server-port": "Cổng",
+        "enable-rcon": "Console từ xa (RCON)",
+        "view-distance": "Khoảng cách nhìn",
+        "simulation-distance": "Khoảng cách mô phỏng"
+      },
+      "restart": "Khởi động lại",
+      "restartNeeded": "Khởi động lại máy chủ để áp dụng một số thay đổi",
+      "unsaved_other": "{{count}} thay đổi chưa lưu",
+      "noChanges": "Không có thay đổi",
+      "discard": "Hủy bỏ",
+      "saved": "Đã lưu cấu hình",
+      "saveFailed": "Không thể lưu cấu hình",
+      "rawTitle": "server.toml",
+      "rawWarning": "Nâng cao: một lỗi đánh máy có thể khiến máy chủ không khởi động được. Giá trị được kiểm tra khi bạn lưu."
+    },
+    "plugins": {
+      "vanillaTitle": "Plugin cần Rustic Server",
+      "vanillaBody": "Máy chủ này chạy Horizon thuần. Rustic Server bổ sung plugin .rplugin chạy trong sandbox, không bao giờ làm sập máy chủ. Hãy tạo một Rustic Server và nhập thế giới này để dùng plugin.",
+      "createRustic": "Tạo Rustic Server",
+      "intro": "Plugin chạy trong sandbox: plugin gặp lỗi sẽ bị tắt kèm một dòng nhật ký, máy chủ vẫn tiếp tục chạy. Mỗi plugin khai báo những gì nó được phép truy cập.",
+      "upload": "Thêm tệp…",
+      "uploadTitle": "Chọn tệp .rplugin",
+      "find": "Tìm plugin",
+      "empty": "Chưa có plugin nào",
+      "emptyBody": "Duyệt Khám phá › Plugin để thêm chỉ với một cú nhấp.",
+      "errored": "Đã tắt sau khi gặp lỗi",
+      "disabled": "Tắt",
+      "noDescription": "Không có mô tả",
+      "toggle": "Bật {{name}}",
+      "capabilities": "Quyền truy cập",
+      "noNetwork": "Không có mạng",
+      "network": "Mạng: {{domains}}",
+      "fs": {
+        "none": "Không có tệp",
+        "data-folder": "Thư mục dữ liệu riêng"
+      },
+      "update": "Cập nhật lên {{version}}",
+      "updated": "Đã cập nhật {{name}} lên {{version}}",
+      "installed": "Đã cài và bật {{name}}",
+      "removeTitle": "Xóa {{name}}?",
+      "removeBody": "Plugin sẽ được gỡ tải và tệp của nó bị xóa. Thư mục dữ liệu của nó được giữ lại.",
+      "failed": "Thao tác với plugin thất bại"
+    },
+    "datapacks": {
+      "intro": "Gói dữ liệu của thế giới “{{world}}”.",
+      "find": "Tìm gói dữ liệu",
+      "empty": "Không có gói dữ liệu nào trong thế giới này",
+      "toggle": "Bật {{name}}",
+      "remove": "Gỡ {{name}}",
+      "reloadHint": "Thay đổi có hiệu lực sau /reload hoặc khởi động lại.",
+      "failed": "Thao tác với gói dữ liệu thất bại"
+    },
+    "backups": {
+      "nowTitle": "Sao lưu ngay",
+      "nowBody": "Một bản sao của thế giới và cấu hình. Máy chủ vẫn tiếp tục chạy.",
+      "note": "Ghi chú",
+      "notePlaceholder": "Ghi chú tùy chọn, vd: “trước khi cập nhật”",
+      "now": "Sao lưu ngay",
+      "created": "Đã tạo bản sao lưu",
+      "empty": "Chưa có bản sao lưu nào",
+      "kinds": {
+        "manual": "Thủ công",
+        "scheduled": "Theo lịch",
+        "pre_restore": "Trước khi khôi phục"
+      },
+      "restore": "Khôi phục",
+      "restoreTitle": "Khôi phục bản sao lưu này?",
+      "restoreBody": "Thế giới sẽ quay về thời điểm {{date}}. Mọi thứ xây dựng từ đó sẽ bị thay thế. Một bản sao lưu của thế giới hiện tại sẽ được tạo trước.",
+      "restored": "Đã khôi phục bản sao lưu",
+      "delete": "Xóa bản sao lưu",
+      "deleteTitle": "Xóa bản sao lưu này?",
+      "deleteBody": "Bản sao lưu này sẽ bị xóa vĩnh viễn.",
+      "failed": "Thao tác sao lưu thất bại",
+      "scheduleTitle": "Sao lưu tự động",
+      "scheduleBody": "Khi đạt giới hạn, các bản sao lưu tự động cũ nhất sẽ bị xóa.",
+      "scheduleEnabled": "Tự động sao lưu",
+      "every": "Mỗi",
+      "hours_other": "{{count}} giờ",
+      "keep": "Giữ",
+      "keepCount_other": "{{count}} bản sao lưu gần nhất",
+      "scheduleSaved": "Đã lưu lịch sao lưu"
+    },
+    "danger": {
+      "deleteTitle": "Xóa máy chủ này",
+      "deleteBody": "Dừng máy chủ và xóa nó khỏi launcher. Bạn có thể giữ lại các tệp của nó.",
+      "delete": "Xóa máy chủ",
+      "removeVpsTitle": "Gỡ khỏi VPS của bạn",
+      "removeVpsBody": "Dừng dịch vụ trên {{host}} và gỡ cài đặt Rustic khỏi đó. VPS vẫn là của bạn.",
+      "removeVps": "Gỡ khỏi VPS",
+      "confirmTitle": "Xóa “{{name}}”?",
+      "confirmBody": "Không thể hoàn tác. Hãy sao lưu trước nếu bạn có thể cần lại thế giới này.",
+      "deleteFiles": "Xóa luôn thế giới và mọi tệp của máy chủ",
+      "typeName": "Nhập “{{name}}” để xác nhận",
+      "deleted": "Đã xóa {{name}}",
+      "failed": "Không thể xóa máy chủ"
+    }
+  },
+  "access": {
+    "intro": "Chọn cách bạn bè kết nối tới máy chủ của bạn. Bạn có thể bật nhiều cách cùng lúc.",
+    "optional": "Không bắt buộc",
+    "lan": {
+      "title": "Trong mạng của bạn",
+      "body": "Người chơi dùng cùng Wi-Fi hoặc cùng mạng sẽ tham gia bằng địa chỉ này.",
+      "copy": "Sao chép địa chỉ cục bộ"
+    },
+    "public": {
+      "title": "Địa chỉ công khai",
+      "body": "IP và cổng của VPS của bạn. Ai cũng có thể tham gia bằng địa chỉ này; tên miền thì dễ chia sẻ hơn.",
+      "copy": "Sao chép địa chỉ công khai"
+    },
+    "relay": {
+      "title": "Địa chỉ tạm thời",
+      "body": "Một địa chỉ miễn phí trên Rustic Relay khi máy chủ đang chạy. Không cần thiết lập router, IP của bạn được giữ kín.",
+      "toggle": "Địa chỉ tạm thời",
+      "copy": "Sao chép địa chỉ tạm thời",
+      "off": "Đang tắt. Hãy bật để nhận một địa chỉ có thể chia sẻ.",
+      "label": "Tên trong địa chỉ",
+      "apply": "Áp dụng",
+      "status": {
+        "off": "Tắt",
+        "connecting": "Đang chờ máy chủ khởi động",
+        "online": "Hiện có thể kết nối",
+        "error": "Không thể kết nối tới Relay"
+      },
+      "failed": "Không thể thay đổi địa chỉ tạm thời",
+      "taken": "Tên này đã có người dùng. Hãy thử tên khác.",
+      "invalid": "Dùng 3 đến 32 chữ cái thường, chữ số hoặc dấu gạch ngang."
+    },
+    "invite": {
+      "title": "Mã mời",
+      "body": "Bạn bè dùng Rustic Launcher dán mã này để tham gia, giống tính năng Chơi cùng bạn bè của Horizon.",
+      "create": "Tạo mã",
+      "copy": "Sao chép mã mời",
+      "expires": "Hết hạn {{when}}",
+      "revoke": "Thu hồi"
+    },
+    "advanced": "Nâng cao: mở cổng trên router của bạn (UPnP)",
+    "upnp": {
+      "title": "Ánh xạ cổng UPnP",
+      "warning": "Thao tác này yêu cầu router mở cổng của máy chủ ra internet. Địa chỉ IP công khai của bạn sẽ hiển thị với mọi người chơi, làm lộ kết nối mạng gia đình của bạn (tấn công, vị trí). Nên dùng địa chỉ tạm thời hoặc tên miền.",
+      "status": {
+        "off": "Tắt",
+        "mapping": "Đang hỏi router…",
+        "mapped": "Đã mở cổng",
+        "failed": "Router đã từ chối (có thể UPnP đang tắt)"
+      },
+      "mapped": "Đã mở cổng: {{address}}",
+      "copy": "Sao chép địa chỉ công khai",
+      "failed": "Không thể mở cổng",
+      "prefer": "Địa chỉ tạm thời và tên miền hoạt động mà không cần mở cổng nào."
+    }
+  },
+  "domains": {
+    "title": "Tên miền của riêng tôi",
+    "intro": "Tên miền là địa chỉ máy chủ của bạn, như play.tencuaban.net. Bạn có thể kết nối tên miền đã có, mua một tên miền tại Porkbun ngay trong launcher, hoặc dùng bất kỳ nhà đăng ký tên miền nào: chúng tôi sẽ chỉ chính xác những gì cần thêm.",
+    "automatic": "Tự động",
+    "anyRegistrar": "Mọi nhà đăng ký tên miền",
+    "otherPaths": "Cách khác",
+    "paths": {
+      "porkbun": {
+        "title": "Kết nối Porkbun",
+        "body": "Đã có tên miền tại Porkbun? Hãy kết nối tài khoản và chúng tôi sẽ tạo bản ghi giúp bạn."
+      },
+      "buy": {
+        "title": "Mua tên miền tại Porkbun",
+        "body": "Tìm một tên còn trống, mua bằng tài khoản Porkbun của chính bạn, và nó sẽ được thiết lập tự động."
+      },
+      "manual": {
+        "title": "Dùng tên miền từ nhà đăng ký bất kỳ",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: chúng tôi chỉ cho bạn những gì cần thêm và kiểm tra giúp bạn."
+      }
+    },
+    "subdomain": "Tên miền phụ",
+    "subdomainHint": "play là lựa chọn mặc định tốt.",
+    "apexHint": "Để trống: chính tên miền (một số nhà đăng ký cần ALIAS/ANAME).",
+    "invalidSubdomain": "Chỉ dùng chữ cái, chữ số và dấu gạch ngang.",
+    "invalidDomain": "Đây không giống một tên miền (example.net).",
+    "copyAddress": "Sao chép địa chỉ tên miền",
+    "configureFailed": "Không thể cấu hình tên miền",
+    "boundBody": "Người chơi tham gia bằng địa chỉ này.",
+    "remove": "Gỡ tên miền",
+    "removeTitle": "Ngừng dùng {{domain}}?",
+    "removeBody": "Địa chỉ sẽ ngừng trỏ tới máy chủ này khi các bản ghi bị xóa. Tên miền vẫn là của bạn.",
+    "status": {
+      "pending": "Đang chờ",
+      "propagating": "Đang lan truyền",
+      "verified": "Đã kết nối",
+      "error": "Lỗi"
+    },
+    "provider": {
+      "porkbun": "Quản lý qua Porkbun",
+      "manual": "Quản lý tại nhà đăng ký của bạn"
+    },
+    "connected": "Đã kết nối tên miền",
+    "connectedBody": "Rustic Cloud xác minh bản ghi TXT, sau đó địa chỉ của bạn bắt đầu hoạt động. Bạn có thể đóng cửa sổ này; chúng tôi sẽ thông báo cho bạn.",
+    "porkbun": {
+      "step1": "Trên porkbun.com › Account › API Access, hãy tạo một API key.",
+      "openApi": "Mở Porkbun API Access",
+      "step2": "Trên trang của tên miền tại Porkbun, hãy bật “API Access”.",
+      "apiKey": "API key",
+      "secret": "Secret API key",
+      "keychain": "Được lưu trong kho khóa của máy tính, không bao giờ gửi tới Rustic.",
+      "connect": "Kết nối",
+      "badApiKey": "API key bắt đầu bằng pk1_.",
+      "badSecret": "Secret API key bắt đầu bằng sk1_.",
+      "rejected": "Porkbun đã từ chối các khóa này. Hãy kiểm tra lại, hoặc tạo một cặp khóa mới.",
+      "connected": "Đã kết nối Porkbun",
+      "disconnect": "Ngắt kết nối",
+      "domain": "Tên miền",
+      "pickDomain": "Chọn một tên miền của bạn",
+      "apiAccessOff": "API Access đang tắt cho tên miền này tại Porkbun",
+      "apiAccessHint": "Tên miền bị làm mờ cần bật “API Access” tại Porkbun.",
+      "preview": "Những thay đổi chúng tôi sẽ thực hiện",
+      "dryRun": "Xem trước",
+      "previewBody": "Các bản ghi này sẽ được thêm hoặc thay thế trên tên miền của bạn để {{fqdn}} trỏ tới máy chủ này. Không có gì thay đổi cho đến khi bạn áp dụng.",
+      "apply": "Cấu hình tự động"
+    },
+    "buy": {
+      "intro": "Tên miền được đăng ký trên tài khoản Porkbun của chính bạn và thanh toán tại đó. Rustic không bao giờ nhận tiền cho tên miền.",
+      "needsAccount": "Cần tài khoản Porkbun để mua: hãy kết nối trước (bạn có thể tạo tài khoản miễn phí tại porkbun.com).",
+      "search": "Tên bạn muốn",
+      "searchPlaceholder": "vd: loucraft",
+      "searchButton": "Tìm",
+      "noResults": "Không có kết quả cho tên này.",
+      "premium": "Cao cấp",
+      "price": "{{price}} năm đầu · gia hạn {{renewal}}",
+      "taken": "Đã có người dùng",
+      "select": "Chọn",
+      "overLimit": "Trên $100: hãy mua trên porkbun.com",
+      "pricesNote": "Giá do Porkbun báo hiện tại, tính bằng đô la Mỹ. Porkbun có thể tính thêm thuế.",
+      "confirmTitle": "Xác nhận mua tại Porkbun",
+      "seller": "Bên bán: Porkbun LLC, không phải Rustic. Điều khoản, giá, gia hạn và hoàn tiền của họ được áp dụng.",
+      "domain": "Tên miền",
+      "address": "Địa chỉ máy chủ",
+      "registrar": "Nhà đăng ký tên miền",
+      "registrarValue": "Porkbun, trên tài khoản của bạn",
+      "firstYear": "Năm đầu",
+      "renewal": "Gia hạn hằng năm với giá",
+      "payment": "Thanh toán bằng số dư tài khoản Porkbun hoặc thẻ đã lưu: {{price}} ngay bây giờ; gia hạn hằng năm với giá {{renewal}} trừ khi bạn tắt tự động gia hạn tại Porkbun.",
+      "agreeTerms": "Tôi đồng ý với thỏa thuận đăng ký và điều khoản của Porkbun",
+      "termsLink": "(đọc điều khoản)",
+      "agreeOrder": "Tôi hiểu rằng Rustic chỉ gửi đơn hàng này tới Porkbun thay mặt tôi",
+      "refunds": "Việc hoàn tiền và hủy tên miền do Porkbun xử lý theo điều khoản của họ.",
+      "buyButton": "Mua tại Porkbun · {{price}}",
+      "bought": "{{domain}} giờ là của bạn",
+      "boughtBody": "Porkbun đã tính phí: {{price}}. Đang thiết lập…",
+      "configuring": "Đang cấu hình tên miền mới của bạn…",
+      "failed": "Giao dịch mua không thành công",
+      "errors": {
+        "price_changed": "Giá tại Porkbun đã thay đổi. Hãy kiểm tra giá mới và thử lại.",
+        "not_available": "Tên miền này vừa có người đăng ký.",
+        "over_limit": "Trên $100: hãy mua trên porkbun.com.",
+        "porkbun_not_connected": "Hãy kết nối tài khoản Porkbun trước.",
+        "consent_required": "Phải đánh dấu cả hai ô."
+      }
+    },
+    "manual": {
+      "intro": "Thêm các bản ghi này vào vùng DNS tại nhà đăng ký của bạn. Chúng tôi kiểm tra mỗi 10 giây và báo cho bạn khi hoạt động.",
+      "domain": "Tên miền của bạn",
+      "registrar": "Nhà đăng ký tên miền",
+      "show": "Hiện các bản ghi",
+      "guideTitle": "Tại {{registrar}}",
+      "allGuides": "Hướng dẫn cho mọi nhà đăng ký"
+    },
+    "records": {
+      "caption": "Bản ghi DNS cần thêm",
+      "type": "Loại",
+      "name": "Tên / host",
+      "value": "Giá trị / đích",
+      "ttl": "TTL",
+      "status": "Trạng thái",
+      "optional": "không bắt buộc",
+      "emptyHost": "(để trống)",
+      "copyName": "Sao chép tên bản ghi {{type}}",
+      "copyValue": "Sao chép giá trị bản ghi {{type}}",
+      "srvFields": "ưu tiên {{priority}} · trọng số {{weight}} · cổng {{port}}"
+    },
+    "check": {
+      "pending": "Chưa kiểm tra",
+      "notNeeded": "Không cần",
+      "ok": "OK",
+      "propagating": "Đang lan truyền ({{ok}}/{{total}})",
+      "wrong": "Sai giá trị",
+      "found": "Tìm thấy:",
+      "expected": "Mong đợi:",
+      "missing": "Thiếu",
+      "first": "Đang kiểm tra lần đầu…",
+      "progress": "{{ok}} / {{total}} bản ghi OK",
+      "progressLabel": "Bản ghi đã xác minh",
+      "auto": "Tự động kiểm tra mỗi 10 giây",
+      "lastCheck": "lần kiểm tra cuối {{seconds}} giây trước",
+      "now": "Kiểm tra ngay"
+    },
+    "help": {
+      "txt": "Tại sao cần bản ghi TXT? Nó chứng minh tên miền là của bạn, để không ai khác có thể trỏ nó tới máy chủ của họ.",
+      "propagation": "Thay đổi có thể mất từ một phút đến vài giờ để đến với mọi người. Chúng tôi vẫn tiếp tục kiểm tra; bạn không cần ở lại đây.",
+      "apex": "Tên miền gốc (tencuaban.net không có “play.”) cần bản ghi ALIAS/ANAME; không phải nhà đăng ký nào cũng hỗ trợ. Tên miền phụ thì luôn hoạt động."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › tên miền của bạn › DNS zone.\nNhấp “Add an entry” và chọn loại (CNAME, SRV, A hoặc TXT).\nSub-domain = Tên bên dưới (để trống cho chính tên miền), Target = Giá trị.\nLặp lại cho từng bản ghi, rồi xác nhận. OVH áp dụng thay đổi trong vài phút."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › tên miền của bạn › DNS records.\nNhấp “Add record”, chọn loại.\nName = Tên bên dưới, Value = Giá trị (giữ dấu chấm cuối cho đích CNAME/SRV).\nLưu từng bản ghi."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nTrong Host records, chọn “Add new record”.\nHost = Tên bên dưới (@ cho chính tên miền), Value/Target = Giá trị.\nNhấp dấu tích xanh để lưu từng bản ghi."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › tên miền của bạn › DNS › Manage DNS.\nNhấp “Add new record”, chọn loại.\nName = Tên bên dưới (@ cho chính tên miền), Value = Giá trị.\nVới SRV, điền Service _minecraft, Protocol _tcp, rồi priority, weight và port. Lưu."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Chọn trang của bạn › DNS › Records › Add record.\nChọn loại, Name = Tên bên dưới, Target/Content = Giá trị.\nĐặt Proxy status thành “DNS only” (đám mây xám): lưu lượng trò chơi không thể đi qua proxy của Cloudflare.\nLưu từng bản ghi."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › tên miền của bạn › DNS.\nNhấp “Add record” và chọn loại.\nHost name = Tên bên dưới, Points to / Value = Giá trị.\nLưu; IONOS có thể yêu cầu xác nhận việc thay thế một bản ghi mặc định."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › tên miền của bạn › DNS / Nameservers.\nTrong “Manage DNS records”, chọn loại.\nName = Tên bên dưới, Points to / Value = Giá trị, TTL như hiển thị.\nNhấp “Add record” cho từng bản ghi."
+      },
+      "porkbun": {
+        "name": "Porkbun (thủ công)",
+        "steps": "Domain Management › tên miền của bạn › DNS.\nChọn loại, Host = Tên bên dưới (để trống cho chính tên miền), Answer = Giá trị.\nNhấp “Add” cho từng bản ghi.\nMẹo: cách Kết nối Porkbun sẽ làm tất cả việc này giúp bạn."
+      },
+      "generic": {
+        "name": "Nhà đăng ký khác",
+        "steps": "Mở vùng DNS của tên miền (đôi khi gọi là DNS records hoặc Zone editor).\nThêm từng bản ghi bên dưới với cùng loại, tên và giá trị.\nNếu nhà đăng ký yêu cầu tên đầy đủ, hãy thêm tên miền của bạn sau Tên.\nLưu, rồi quay lại: chúng tôi sẽ kiểm tra tự động."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Chế độ xem máy chủ",
+    "tabs": {
+      "discover": "Gợi ý",
+      "browse": "Duyệt"
+    },
+    "searchLabel": "Tìm máy chủ",
+    "searchPlaceholder": "Tìm trong danh bạ máy chủ…",
+    "publish": "Đăng máy chủ của tôi",
+    "publishCta": {
+      "title": "Máy chủ của bạn ở đây",
+      "hint": "Đăng máy chủ Horizon của bạn lên danh bạ từ trang web: nó sẽ hiện ở đây và trên rustic-launcher.com khi vượt qua các bước kiểm tra tự động."
+    },
+    "play": "Chơi",
+    "playAria": "Chơi trên {{name}}",
+    "view": "Xem",
+    "verified": "Đã xác minh",
+    "featured": "Đội ngũ chọn",
+    "verifiedHint": "Máy chủ đã xác minh: đội ngũ Rustic đã kiểm tra chủ sở hữu và luật chơi.",
+    "online_other": "{{value}} người trực tuyến",
+    "playersLabel": "Người chơi trực tuyến",
+    "languagesLabel": "Ngôn ngữ",
+    "playsLabel": "Lượt khởi chạy tuần này",
+    "lastPlayed": "Chơi gần nhất",
+    "lastPlayedOn": "Đã chơi {{when}}",
+    "hero": {
+      "label": "Máy chủ nổi bật",
+      "eyebrow": "Đã xác minh"
+    },
+    "rows": {
+      "trending": "Thịnh hành",
+      "trendingHint": "Được khởi chạy nhiều nhất từ Rustic tuần này",
+      "players": "Đông người chơi nhất lúc này",
+      "playersHint": "Theo lần kiểm tra gần nhất của đám mây",
+      "new": "Mới trong danh bạ",
+      "newHint": "Vừa được chủ sở hữu đăng",
+      "recent": "Chơi gần đây",
+      "recentHint": "Từ danh sách máy chủ của bạn"
+    },
+    "rowError": "Không thể tải hàng này.",
+    "retry": "Thử lại",
+    "empty": {
+      "title": "Chưa có máy chủ nào được đăng",
+      "hint": "Hãy là người đầu tiên: đăng máy chủ của bạn từ trang web."
+    },
+    "emptySearch": {
+      "title": "Không có máy chủ nào phù hợp",
+      "hint": "Hãy thử từ khóa khác hoặc bớt bộ lọc."
+    },
+    "sorts": {
+      "trending": "Thịnh hành",
+      "players": "Nhiều người chơi nhất",
+      "new": "Mới nhất",
+      "name": "Tên"
+    },
+    "filters": {
+      "tags": "Lối chơi",
+      "language": "Ngôn ngữ",
+      "engine": "Engine",
+      "rustic": "Rustic",
+      "verifiedOnly": "Chỉ máy chủ đã xác minh",
+      "reset": "Đặt lại bộ lọc",
+      "remove": "Bỏ bộ lọc {{filter}}"
+    },
+    "tags": {
+      "survival": "Sinh tồn",
+      "smp": "SMP",
+      "creative": "Sáng tạo",
+      "minigames": "Minigame",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Nhập vai",
+      "factions": "Factions",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Phiêu lưu",
+      "building": "Xây dựng",
+      "economy": "Kinh tế",
+      "modded": "Có mod",
+      "anarchy": "Anarchy",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Máy chủ",
+      "status": "Trạng thái trực tiếp",
+      "cloudSaw_other": "đám mây ghi nhận {{value}} người chơi trực tuyến {{when}}",
+      "engine": "Engine",
+      "version": "Phiên bản trò chơi",
+      "languages": "Ngôn ngữ",
+      "plays": "Lượt khởi chạy tuần này",
+      "about": "Giới thiệu",
+      "noDescription": "Chưa có mô tả.",
+      "address": "Địa chỉ",
+      "copy": "Sao chép",
+      "openSite": "Mở trên trang web",
+      "website": "Trang web",
+      "discord": "Discord",
+      "by": "Được đăng bởi {{name}}",
+      "byStaff": "Được đăng bởi đội ngũ Rustic",
+      "report": "Báo cáo",
+      "rusticEdition": "Yêu cầu phiên bản Rustic",
+      "missing": "Máy chủ này không khả dụng",
+      "missingHint": "Máy chủ có thể ở chế độ riêng tư, bị ẩn do kiểm duyệt, hoặc đã bị xóa."
+    },
+    "report": {
+      "title": "Báo cáo {{name}}",
+      "lead": "Hãy cho đội ngũ kiểm duyệt biết có vấn đề gì. Mọi báo cáo đều được xem xét.",
+      "reason": "Lý do",
+      "reasons": {
+        "impersonation": "Mạo danh máy chủ khác",
+        "spam": "Spam hoặc gây hiểu lầm",
+        "inappropriate_content": "Nội dung không phù hợp",
+        "cheating": "Gian lận hoặc máy chủ độc hại",
+        "harassment": "Quấy rối",
+        "copyright": "Xâm phạm quyền của tôi (nhãn hiệu, tên)",
+        "malware": "Phần mềm độc hại",
+        "other": "Khác"
+      },
+      "details": "Chi tiết",
+      "detailsHint": "Không bắt buộc, tối đa 2.000 ký tự.",
+      "send": "Gửi báo cáo",
+      "sent": "Cảm ơn bạn, báo cáo đã được gửi tới đội ngũ kiểm duyệt.",
+      "signIn": "Đăng nhập tài khoản Rustic để báo cáo máy chủ.",
+      "failed": "Không thể gửi báo cáo."
+    }
+  }
+}

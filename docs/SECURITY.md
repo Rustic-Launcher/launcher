@@ -57,7 +57,12 @@ dependency.
 ### 2.3 Updates and downloads
 
 - Launcher self-update: `tauri-plugin-updater` with its minisign/Ed25519 signature (key offline, CI signs in a protected
-  environment), HTTPS, plus Authenticode (Windows) and notarisation (macOS).
+  environment), HTTPS, plus Authenticode (Windows) and notarisation (macOS). Automatic (ADR 0162): static feed
+  `releases/launcher/latest.json`, passive NSIS install, never while a game runs; the updater is not exposed to the
+  webview (no `updater:` permission), only the app's own `app_update_*` commands.
+- Release keys (ADR 0162): private keys only in `~/.rustic-release/` (owner-only ACL) or CI secrets, never in a
+  repository; the Rustic edition's public keys are built into the launcher (`rustic_release_keys.txt`), so a rotation
+  reaches every install with the next launcher instead of lingering in saved `launcher.toml` files.
 - Rustic edition builds and server bundles: `SHA256SUMS` signed with our Ed25519 key, verified before unpacking; per-file
   hashes from `rustic-build.json`; unpack into a fresh directory with zip-slip/symlink protection; atomic swap.
 - Horizon artefacts we fetch directly (`horizon-server` for VPS/local): verify Horizon's `SHA256SUMS.sig` with the key in

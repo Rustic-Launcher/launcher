@@ -51,39 +51,65 @@ describe('registry', () => {
   it('resolves the bundle of a locale through its language and fallback', () => {
     const have = [...COMPLETE];
     expect(resolveBundle('de_at', have)).toBe('de');
-    expect(resolveBundle('pt_pt', have)).toBe('pt-BR');
+    expect(resolveBundle('pt_pt', have)).toBe('pt-PT');
     expect(resolveBundle('pt_br', have)).toBe('pt-BR');
     expect(resolveBundle('bar', have)).toBe('de');
     expect(resolveBundle('nah', have)).toBe('es');
-    expect(resolveBundle('ja_jp', have)).toBe('en');
+    expect(resolveBundle('cs_cz', have)).toBe('cs');
+    expect(resolveBundle('th_th', have)).toBe('th');
+    expect(resolveBundle('ovd', have)).toBe('sv');
+    expect(resolveBundle('da_dk', have)).toBe('en');
+    expect(resolveBundle('ja_jp', have)).toBe('ja');
+    // Hong Kong and Classical Chinese read Traditional Chinese, Rusyn Ukrainian, Brabantian Dutch.
+    expect(resolveBundle('zh_hk', have)).toBe('zh-TW');
+    expect(resolveBundle('lzh', have)).toBe('zh-TW');
+    expect(resolveBundle('zh_cn', have)).toBe('zh-CN');
+    expect(resolveBundle('ry_ua', have)).toBe('uk');
+    expect(resolveBundle('brb', have)).toBe('nl');
     expect(resolveBundle('en_gb', have)).toBe('en');
     expect(bundleCandidates('val_es')).toEqual(['ca-ES-valencia', 'ca-ES', 'ca']);
     expect(translationStatus('fr_ca', have)).toBe('complete');
     expect(translationStatus('en_au', have)).toBe('complete');
-    expect(translationStatus('ja_jp', have)).toBe('none');
-    expect(translationStatus('ja_jp', [...have, 'ja'])).toBe('partial');
+    expect(translationStatus('ja_jp', have)).toBe('complete');
+    expect(translationStatus('nl_be', have)).toBe('complete');
+    expect(translationStatus('cs_cz', have)).toBe('complete');
+    expect(translationStatus('da_dk', have)).toBe('none');
+    expect(translationStatus('da_dk', [...have, 'da'])).toBe('partial');
     // Dialects and close varieties read another language; joke languages read English.
     expect(translationStatus('bar', have)).toBe('fallback');
-    expect(translationStatus('pt_pt', have)).toBe('fallback');
+    expect(translationStatus('pt_pt', have)).toBe('complete');
+    expect(translationStatus('ovd', have)).toBe('fallback');
     expect(translationStatus('esan', have)).toBe('fallback');
     expect(translationStatus('en_pt', have)).toBe('none');
     expect(translationStatus('val_es', have)).toBe('none');
     expect(bundleName('pt-BR')).toBe('Português (Brasil)');
     expect(bundleName('de')).toBe('Deutsch');
+    expect(bundleName('pt-PT')).toBe('Português (Portugal)');
+    expect(bundleName('th')).toBe('ไทย');
   });
 
   it('negotiates browser languages', () => {
     const offered = [...COMPLETE];
     expect(negotiate(['de-CH', 'en'], offered)).toBe('de');
-    expect(negotiate(['pt-PT'], offered)).toBe('pt-BR');
+    expect(negotiate(['pt-PT'], offered)).toBe('pt-PT');
+    expect(negotiate(['pt-AO'], offered)).toBe('pt-BR');
+    expect(negotiate(['vi-VN'], offered)).toBe('vi');
     expect(negotiate(['es-MX', 'en'], offered)).toBe('es');
-    expect(negotiate(['ja', 'fr-FR'], offered)).toBe('fr');
-    expect(negotiate(['ja'], offered)).toBeNull();
+    expect(negotiate(['da', 'fr-FR'], offered)).toBe('fr');
+    expect(negotiate(['cs'], offered)).toBe('cs');
+    expect(negotiate(['da'], offered)).toBeNull();
+    expect(negotiate(['ja'], offered)).toBe('ja');
+    expect(negotiate(['zh-HK'], offered)).toBe('zh-TW');
+    expect(negotiate(['zh-CN'], offered)).toBe('zh-CN');
     expect(negotiate(['en-GB'], offered)).toBe('en');
     expect(codeForTag('de')).toBe('de_de');
     expect(codeForTag('de-AT')).toBe('de_at');
     expect(codeForTag('pt')).toBe('pt_br');
     expect(codeForTag('zh-TW')).toBe('zh_tw');
+    // Every complete bundle names its main locale (the website menu's flag).
+    for (const b of COMPLETE) expect(codeForTag(b), b).toMatch(/^[a-z]{2}_[a-z]{2}$/);
+    expect(codeForTag('zh-CN')).toBe('zh_cn');
+    expect(codeForTag('ja')).toBe('ja_jp');
     expect(codeForTag('en')).toBe('en_us');
   });
 

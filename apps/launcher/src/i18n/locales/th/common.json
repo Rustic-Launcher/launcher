@@ -1,0 +1,430 @@
+{
+  "a11y": {
+    "skipToContent": "ข้ามไปยังเนื้อหา",
+    "notifications": "การแจ้งเตือน"
+  },
+  "actions": {
+    "retry": "ลองใหม่",
+    "back": "กลับ",
+    "forward": "ไปข้างหน้า",
+    "cancel": "ยกเลิก",
+    "close": "ปิด",
+    "clear": "ล้าง",
+    "save": "บันทึก",
+    "saved": "บันทึกแล้ว",
+    "delete": "ลบ",
+    "edit": "แก้ไข",
+    "open": "เปิด",
+    "install": "ติดตั้ง",
+    "installed": "ติดตั้งแล้ว",
+    "remove": "นำออก",
+    "confirm": "ยืนยัน",
+    "continue": "ดำเนินการต่อ",
+    "next": "ถัดไป",
+    "previous": "ก่อนหน้า",
+    "done": "เสร็จสิ้น",
+    "copy": "คัดลอก",
+    "copied": "คัดลอกแล้ว",
+    "learnMore": "ดูข้อมูลเพิ่มเติม",
+    "seeAll": "ดูทั้งหมด",
+    "create": "สร้าง",
+    "import": "นำเข้า",
+    "browse": "เรียกดู…",
+    "apply": "นำไปใช้",
+    "reset": "รีเซ็ต",
+    "enable": "เปิดใช้งาน",
+    "disable": "ปิดใช้งาน",
+    "update": "อัปเดต",
+    "add": "เพิ่ม",
+    "refresh": "รีเฟรช",
+    "openFolder": "เปิดโฟลเดอร์",
+    "skip": "ข้าม",
+    "more": "เพิ่มเติม"
+  },
+  "errors": {
+    "generic": "เกิดข้อผิดพลาดบางอย่าง ลองอีกครั้งในอีกสักครู่",
+    "page": {
+      "title": "ไม่สามารถแสดงหน้านี้ได้"
+    },
+    "load": {
+      "title": "โหลดเนื้อหานี้ไม่ได้"
+    },
+    "notFound": {
+      "title": "ไม่มีอะไรที่นี่",
+      "description": "ไม่มีหน้านี้หรือหน้านี้ถูกย้ายไปแล้ว"
+    }
+  },
+  "nav": {
+    "label": "การนำทางหลัก",
+    "home": "หน้าหลัก",
+    "instances": "โปรไฟล์",
+    "content": "สำรวจ",
+    "servers": "เซิร์ฟเวอร์",
+    "locker": "ล็อกเกอร์",
+    "store": "ร้านค้า",
+    "settings": "การตั้งค่า",
+    "newInstance": "โปรไฟล์ใหม่"
+  },
+  "search": {
+    "title": "ค้นหา",
+    "placeholder": "ค้นหาเนื้อหา เพื่อน เซิร์ฟเวอร์ การตั้งค่า…",
+    "empty": "ไม่พบผลลัพธ์ ลองใช้คำอื่น",
+    "loading": "กำลังค้นหา…",
+    "hintNavigate": "เลื่อน",
+    "hintOpen": "เปิด",
+    "hintClose": "ปิด",
+    "open": "เปิด",
+    "myServer": "เซิร์ฟเวอร์ของฉัน",
+    "playInstance": "เล่น {{name}}",
+    "groups": {
+      "pages": "หน้า",
+      "actions": "การทำงาน",
+      "instances": "อินสแตนซ์",
+      "content": "เนื้อหา",
+      "friends": "เพื่อน",
+      "servers": "เซิร์ฟเวอร์",
+      "settings": "การตั้งค่า",
+      "play": "เล่น"
+    },
+    "actions": {
+      "newInstance": "สร้างอินสแตนซ์",
+      "newServer": "สร้างเซิร์ฟเวอร์",
+      "addFriend": "เพิ่มเพื่อน",
+      "darkTheme": "เปลี่ยนเป็นธีมมืด",
+      "lightTheme": "เปลี่ยนเป็นธีมสว่าง"
+    },
+    "settings": {
+      "accounts": "บัญชี",
+      "game": "เกม",
+      "launcher": "ลันเชอร์",
+      "appearance": "รูปลักษณ์",
+      "privacy": "ความเป็นส่วนตัวและข้อมูล",
+      "parental": "การควบคุมโดยผู้ปกครอง",
+      "about": "เกี่ยวกับ"
+    }
+  },
+  "friends": {
+    "title": "เพื่อน",
+    "onlineCount_other": "ออนไลน์ {{count}} คน",
+    "add": "เพิ่มเพื่อน",
+    "search": "ค้นหาเพื่อน",
+    "requests_other": "คำขอ · {{count}}",
+    "incoming": "อยากเป็นเพื่อนกับคุณ",
+    "outgoing": "ส่งคำขอแล้ว",
+    "accept": "ยอมรับ",
+    "decline": "ปฏิเสธ",
+    "cancelRequest": "ยกเลิกคำขอ",
+    "requestSent": "ส่งคำขอเป็นเพื่อนถึง {{name}} แล้ว",
+    "error": "โหลดรายชื่อเพื่อนไม่ได้",
+    "empty": "ยังไม่มีเพื่อน เพิ่มเพื่อนได้ด้วยชื่อผู้ใช้ Rustic",
+    "online_other": "ออนไลน์ · {{count}}",
+    "offline_other": "ออฟไลน์ · {{count}}",
+    "lastSeen": "เห็นล่าสุด {{when}}",
+    "activity": {
+      "server": "กำลังเล่นใน {{server}}",
+      "singleplayer": "กำลังเล่นคนเดียว",
+      "hosting": "กำลังโฮสต์ {{server}}",
+      "launcher": "อยู่ในลันเชอร์"
+    },
+    "favorite": "รายการโปรด",
+    "makeFavorite": "เพิ่มในรายการโปรด",
+    "unfavorite": "นำออกจากรายการโปรด",
+    "join": "เข้าร่วม",
+    "joinAria": "เข้าร่วมกับ {{name}}",
+    "joining": "กำลังเข้าร่วม {{server}}…",
+    "more": "การทำงานเพิ่มเติมสำหรับ {{name}}",
+    "remove": "ลบเพื่อน",
+    "removeTitle": "ลบ {{name}} ออกจากรายชื่อเพื่อนใช่ไหม",
+    "removeBody": "จะไม่เห็นกิจกรรมของกันและกันอีก แต่ส่งคำขอใหม่ได้ภายหลัง"
+  },
+  "addFriend": {
+    "title": "เพิ่มเพื่อน",
+    "description": "ค้นหาผู้เล่นด้วยชื่อ Rustic หรือชื่อ Minecraft ที่เชื่อมโยงไว้ หรือเลือกคนที่เคยเล่นด้วยกัน",
+    "kind": "ค้นหาด้วย",
+    "kindRustic": "ชื่อ Rustic",
+    "kindMinecraft": "ชื่อ Minecraft",
+    "rusticLabel": "ชื่อผู้ใช้ Rustic",
+    "minecraftLabel": "ชื่อผู้ใช้ Minecraft",
+    "rusticPlaceholder": "เช่น lea_builds",
+    "minecraftPlaceholder": "เช่น LeaBuilds",
+    "rusticHint": "ชื่อที่ตรงกับโปรไฟล์ Rustic ของผู้เล่นนั้นทุกตัวอักษร",
+    "minecraftHint": "ชื่อในเกมที่ตรงทุกตัวอักษรของผู้เล่นที่เข้าสู่ระบบ Rustic ด้วยโปรไฟล์ Minecraft นั้น",
+    "find": "ค้นหา",
+    "send": "ส่งคำขอ",
+    "sent": "ส่งคำขอแล้ว",
+    "friends": "เป็นเพื่อนกันแล้ว",
+    "pending": "คำขอรอดำเนินการ",
+    "incoming": "ผู้เล่นนี้ขอเป็นเพื่อนกับคุณแล้ว ยอมรับคำขอได้เลย",
+    "minecraftName": "ชื่อ Minecraft:",
+    "add": "เพิ่ม",
+    "addAria": "ส่งคำขอเป็นเพื่อนถึง {{name}}",
+    "playedWith": "เพิ่งเล่นด้วยกัน",
+    "playedWithEmpty": "ยังไม่มีใคร ผู้เล่นจากปาร์ตี้ของคุณและจากเซิร์ฟเวอร์ที่เล่นร่วมกัน (อยู่ด้วยกัน 10 นาทีขึ้นไป) จะแสดงที่นี่",
+    "crossed": "เพิ่งพบกัน",
+    "crossedEmpty": "ช่วงนี้ไม่ได้พบใครในเซิร์ฟเวอร์ที่เล่นร่วมกัน",
+    "reasonParty": "อยู่ในปาร์ตี้ของคุณ",
+    "reasonServer": "ใน {{server}}",
+    "reasonSameServer": "อยู่เซิร์ฟเวอร์เดียวกัน",
+    "suggestionsError": "โหลดคำแนะนำไม่ได้",
+    "suggestionsOff": "คำแนะนำปิดอยู่ เปิด “แสดงในคำแนะนำของผู้เล่นที่ฉันพบ” ใน การตั้งค่า › ความเป็นส่วนตัวและข้อมูล เพื่อดูผู้เล่นที่คุณพบ",
+    "suggestionsMinor": "คำแนะนำผู้เล่นที่คุณพบไม่พร้อมใช้งานสำหรับบัญชีของคุณ",
+    "privacyNote": "คำแนะนำมาจากปาร์ตี้และเซิร์ฟเวอร์ที่คุณแชร์ในกิจกรรมตลอด 14 วันที่ผ่านมา จะแสดงเฉพาะคนที่อนุญาตไว้เช่นกัน",
+    "errors": {
+      "notFoundRustic": "ไม่มีบัญชี Rustic ที่ใช้ชื่อนี้",
+      "notFoundMinecraft": "ไม่มีผู้เล่น Rustic ที่เชื่อมโยงชื่อ Minecraft นี้",
+      "invalidRustic": "ชื่อ Rustic มีได้ 3 ถึง 20 ตัว ประกอบด้วยตัวอักษร ตัวเลข หรือ _",
+      "invalidMinecraft": "ชื่อ Minecraft มีได้ 3 ถึง 16 ตัว ประกอบด้วยตัวอักษร ตัวเลข หรือ _",
+      "cannot_add_friend": "ผู้เล่นนี้รับคำขอเป็นเพื่อนไม่ได้",
+      "friend_requests_disabled": "คำขอเป็นเพื่อนถูกปิดสำหรับบัญชีของคุณ (การควบคุมโดยผู้ปกครอง)",
+      "cannot_add_self": "นั่นคือคุณเอง!",
+      "already_friends": "เป็นเพื่อนกันอยู่แล้ว",
+      "request_pending": "มีคำขอที่รอดำเนินการอยู่แล้ว",
+      "incoming_request_exists": "ผู้เล่นนี้ส่งคำขอถึงคุณแล้ว ยอมรับได้เลย",
+      "rate_limited": "ค้นหาบ่อยเกินไป รอสักนาทีแล้วลองใหม่",
+      "generic": "เกิดข้อผิดพลาดบางอย่าง ลองอีกครั้ง"
+    }
+  },
+  "party": {
+    "title": "ปาร์ตี้",
+    "leave": "ออก",
+    "leader": "หัวหน้าปาร์ตี้",
+    "pending": "{{name}} (เชิญแล้ว)",
+    "invite": "เชิญเข้าปาร์ตี้",
+    "invited": "เชิญ {{name}} เข้าปาร์ตี้แล้ว"
+  },
+  "presence": {
+    "online": "ออนไลน์",
+    "in-game": "อยู่ในเกม",
+    "away": "ไม่อยู่",
+    "busy": "ไม่ว่าง",
+    "offline": "ออฟไลน์"
+  },
+  "notifications": {
+    "title": "การแจ้งเตือน",
+    "markAllRead": "ทำเครื่องหมายว่าอ่านทั้งหมดแล้ว",
+    "empty": "ไม่มีอะไรใหม่",
+    "kinds": {
+      "friend_request": "ส่งคำขอเป็นเพื่อนถึงคุณ",
+      "update_available": "พร้อมใช้งานสำหรับอินสแตนซ์ของคุณ",
+      "backup_done": "สำรองข้อมูลตามกำหนดเวลาเสร็จแล้ว",
+      "store_new": "มาใหม่ในร้านค้า"
+    }
+  },
+  "account": {
+    "switcher": "บัญชี",
+    "none": "ไม่มีบัญชี",
+    "rustic": "บัญชี Rustic",
+    "signInRustic": "เข้าสู่ระบบ Rustic",
+    "signOutRustic": "ออกจากระบบ Rustic",
+    "gameProfiles": "โปรไฟล์เกม",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "ออฟไลน์"
+    },
+    "add": "เพิ่มบัญชี",
+    "manage": "จัดการบัญชี"
+  },
+  "downloads": {
+    "title": "ดาวน์โหลด",
+    "global": "ดาวน์โหลดเบื้องหลัง",
+    "working": "กำลังดำเนินการ…",
+    "summary_other": "กำลังดาวน์โหลด {{count}} รายการ",
+    "kind": {
+      "game": "Horizon",
+      "content": "เนื้อหา",
+      "modpack": "ม็อดแพ็ก",
+      "server": "เซิร์ฟเวอร์",
+      "java": "รันไทม์ Java",
+      "update": "อัปเดตลันเชอร์",
+      "prepare": "กำลังเตรียมไฟล์เกม",
+      "native-build": "คอมไพล์ม็อดเนทีฟ",
+      "native-toolchain": "Rust สำหรับม็อดเนทีฟ"
+    }
+  },
+  "play": {
+    "play": "เล่น",
+    "update": "อัปเดต",
+    "cancel": "ยกเลิก",
+    "stop": "หยุด",
+    "selectInstance": "เลือกอินสแตนซ์ที่จะเล่น",
+    "instances": "อินสแตนซ์",
+    "manageInstances": "จัดการอินสแตนซ์",
+    "newVersion": "มี {{version}} แล้ว",
+    "cancelled": "ยกเลิกการเปิดเกมแล้ว",
+    "status": {
+      "ready": "พร้อมเล่น",
+      "noInstance": "ไม่มีอินสแตนซ์",
+      "running": "เกมกำลังทำงาน",
+      "update": "ต้องอัปเดต",
+      "broken": "ต้องซ่อมแซม"
+    },
+    "progress": {
+      "updating": "กำลังอัปเดต…",
+      "downloading": "กำลังดาวน์โหลด {{pct}}",
+      "checking": "กำลังตรวจสอบไฟล์…",
+      "preparing": "กำลังเตรียม…",
+      "launching": "กำลังเปิดเกม…",
+      "stopping": "กำลังหยุด…",
+      "preparingFiles": "กำลังเตรียมไฟล์เกม {{pct}}",
+      "building": "กำลังคอมไพล์ม็อดเนทีฟ…",
+      "buildingPct": "กำลังคอมไพล์ม็อดเนทีฟ {{pct}}"
+    },
+    "errors": {
+      "launch": "เริ่มเกมไม่ได้"
+    },
+    "refusals": {
+      "auth_no_account": "เข้าสู่ระบบด้วยบัญชี Microsoft ที่เป็นเจ้าของเกมเพื่อเล่น",
+      "auth_not_owned": "บัญชี Microsoft นี้ไม่ได้เป็นเจ้าของเกม",
+      "auth_not_approved": "ลันเชอร์นี้ยังเข้าสู่ระบบด้วย Microsoft ไม่ได้",
+      "auth_reauth_required": "เข้าสู่ระบบบัญชี Microsoft อีกครั้งเพื่อเล่น",
+      "auth_offline_not_allowed": "เข้าสู่ระบบหนึ่งครั้งด้วยบัญชี Microsoft ที่เป็นเจ้าของเกม แล้วจะเล่นออฟไลน์ได้",
+      "auth_network": "ติดต่อ Microsoft เพื่อตรวจสอบบัญชีไม่ได้ ตรวจสอบการเชื่อมต่อ",
+      "build_not_installed": "ติดตั้งบิลด์ Horizon ก่อน",
+      "prepare_needed": "ยังไม่ได้เตรียมไฟล์เกมสำหรับบิลด์นี้",
+      "prepare_failed": "เตรียมไฟล์เกมไม่ได้ ลองอีกครั้ง หรือเตรียมใน การตั้งค่า › เกมและอินสแตนซ์",
+      "prepare_no_java": "ไม่พบ Java ติดตั้งหรือเลือกใน การตั้งค่า › เกมและอินสแตนซ์",
+      "prepare_no_minecraft_dir": "ไม่พบเกมที่ติดตั้งไว้ เลือกโฟลเดอร์ใน การตั้งค่า › เกมและอินสแตนซ์",
+      "launch_already_running": "อินสแตนซ์นี้กำลังทำงานอยู่แล้ว",
+      "native_consent": "อินสแตนซ์นี้มีม็อดเนทีฟ ยอมรับประกาศความไว้วางใจในหน้าอินสแตนซ์ (เนื้อหา) ก่อน",
+      "native_toolchain": "ม็อดเนทีฟต้องใช้ Rust ติดตั้งได้จากหน้าอินสแตนซ์ (เนื้อหา) หรือ การตั้งค่า › เกมและอินสแตนซ์",
+      "native_not_edition": "ม็อดเนทีฟคอมไพล์ได้เฉพาะในรุ่น Rustic เปลี่ยนอินสแตนซ์นี้เป็นรุ่นนั้น หรือปิดม็อดเนทีฟ",
+      "native_build_failed": "คอมไพล์ม็อดเนทีฟไม่ได้",
+      "native_disk": "พื้นที่ดิสก์ว่างไม่พอสำหรับคอมไพล์ม็อดเนทีฟ"
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (รุ่น Rustic)",
+    "rusticEdition": "รุ่น Rustic"
+  },
+  "compat": {
+    "buildsOnHorizon": "คอมไพล์บน Horizon ของคุณได้",
+    "compatible": "ใช้ร่วมกันได้",
+    "incompatible": "ใช้ร่วมกันไม่ได้: {{reason}}",
+    "unknown": "ไม่ทราบความเข้ากันได้",
+    "reasons": {
+      "horizon_version": "เวอร์ชัน Horizon",
+      "java_only": "เฉพาะ Java Edition",
+      "side": "เฉพาะฝั่งเซิร์ฟเวอร์",
+      "conflict": "ขัดแย้งกับม็อดที่ติดตั้งไว้",
+      "unsupported_format": "ไม่รองรับรูปแบบนี้",
+      "needs_rustic_server": "ต้องใช้ Rustic Server",
+      "not_fair_play": "ไม่อนุญาต (การเล่นอย่างยุติธรรม)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "สลับผลิตภัณฑ์",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "เอกสาร Rustic Server"
+  },
+  "crumbs": {
+    "label": "เส้นทางนำทาง",
+    "horizon": "Horizon",
+    "details": "รายละเอียด",
+    "create": "สร้าง",
+    "kinds": {
+      "mod": "ม็อด",
+      "modpack": "ม็อดแพ็ก",
+      "resourcepack": "รีซอร์สแพ็ก",
+      "shader": "เชเดอร์",
+      "datapack": "ดาต้าแพ็ก",
+      "plugin": "ปลั๊กอิน"
+    },
+    "servers": {
+      "featured": "แนะนำ",
+      "mine": "เซิร์ฟเวอร์ของฉัน",
+      "multiplayer": "รายการผู้เล่นหลายคน",
+      "discover": "ค้นพบ",
+      "joined": "รายการผู้เล่นหลายคน",
+      "browse": "เรียกดู"
+    }
+  },
+  "social": {
+    "title": "โซเชียล",
+    "description": "เพื่อน แชต และปาร์ตี้ของคุณ",
+    "open": "เปิดโซเชียล",
+    "friends": "เพื่อน",
+    "chats": "แชต",
+    "message": "ส่งข้อความ",
+    "searchChats": "ค้นหาแชต…",
+    "noChats": "ยังไม่มีบทสนทนา ส่งข้อความหาเพื่อนได้จากแท็บเพื่อน",
+    "sayHello": "ทักทาย",
+    "selectTitle": "เลือกบทสนทนา",
+    "selectBody": "เลือกเพื่อนเพื่อเริ่มแชต",
+    "messagePlaceholder": "ส่งข้อความถึง {{name}}",
+    "send": "ส่ง"
+  },
+  "window": {
+    "minimize": "ย่อ",
+    "maximize": "ขยายเต็มจอ",
+    "restore": "คืนขนาด",
+    "close": "ปิด"
+  },
+  "running": {
+    "title": "อินสแตนซ์ที่กำลังทำงาน",
+    "none": "ไม่มีเกมที่กำลังทำงาน",
+    "count_other": "อินสแตนซ์ทำงานอยู่ {{count}} รายการ",
+    "downloading": "กำลังดาวน์โหลด {{pct}}"
+  },
+  "launch": {
+    "launch": "เปิดเกม",
+    "update": "อัปเดตและเปิดเกม",
+    "stop": "หยุดเกม"
+  },
+  "deepLink": {
+    "authOk": "เข้าสู่ระบบ Rustic แล้ว",
+    "authFailed": "เข้าสู่ระบบ Rustic ไม่สำเร็จ",
+    "joining": "กำลังเข้าร่วม {{target}}…",
+    "content": "กำลังเปิด {{project}} จากเว็บไซต์"
+  },
+  "catalog": {
+    "sort": "เรียงตาม",
+    "results_other": "{{count}} ผลลัพธ์",
+    "loadMore": "โหลดเพิ่ม",
+    "loadMoreCount": "แสดง {{shown}} จาก {{total}}",
+    "carousel": {
+      "prev": "ก่อนหน้า",
+      "next": "ถัดไป",
+      "slide": "{{index}} จาก {{total}}",
+      "pause": "หยุดสไลด์โชว์ชั่วคราว",
+      "play": "เล่นสไลด์โชว์"
+    },
+    "row": {
+      "seeAll": "ดูทั้งหมด",
+      "seeAllAria": "ดูทั้งหมด: {{title}}",
+      "scrollPrev": "เลื่อนไปทางซ้าย",
+      "scrollNext": "เลื่อนไปทางขวา"
+    },
+    "filters": {
+      "button": "ตัวกรอง",
+      "buttonCount": "ตัวกรอง · {{count}}",
+      "reset": "รีเซ็ตตัวกรอง"
+    },
+    "layout": {
+      "label": "เลย์เอาต์",
+      "list": "รายการ",
+      "grid": "ตาราง"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "กำลังอัปเดต {{pct}}",
+      "installing": "กำลังติดตั้งอัปเดต…",
+      "restarting": "กำลังรีสตาร์ต…",
+      "deferred": "อัปเดตหลังเล่นเกม",
+      "apply": "อัปเดตแล้วรีสตาร์ต"
+    },
+    "toast": {
+      "launcher": "กำลังดาวน์โหลด Rustic Launcher {{version}}…",
+      "edition": "กำลังอัปเดตเกม (รุ่น Rustic)…",
+      "editionDone": "อัปเดตเกมแล้ว: {{version}}",
+      "deferred": "อัปเดตพร้อมแล้ว จะติดตั้งเมื่อปิดเกม",
+      "restarting": "Rustic Launcher กำลังรีสตาร์ตเพื่อทำการอัปเดตให้เสร็จ",
+      "updated": "อัปเดต Rustic Launcher เป็น {{version}} แล้ว",
+      "resuming": "อัปเดตเสร็จแล้ว: กำลังเปิดเกม",
+      "failed": "ติดตั้งอัปเดตไม่ได้ จะลองใหม่ภายหลัง"
+    }
+  }
+}

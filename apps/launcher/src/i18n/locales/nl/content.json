@@ -1,0 +1,470 @@
+{
+  "title": "Verkennen",
+  "subtitle": "Mods, packs, shaders en plug-ins van Horizon, Modrinth en Rustic, gecontroleerd op je instantie.",
+  "kindsLabel": "Soorten content",
+  "kinds": {
+    "mod": "Mods",
+    "modpack": "Modpacks",
+    "resourcepack": "Bronpakketten",
+    "shader": "Shaders",
+    "datapack": "Datapakketten",
+    "plugin": "Plug-ins"
+  },
+  "searchLabel": "Content zoeken",
+  "clear": "Zoekopdracht wissen",
+  "by": "door {{author}}",
+  "featured": "Uitgelicht",
+  "downloads": "{{value}} downloads",
+  "updated": "bijgewerkt {{when}}",
+  "results_one": "{{count}} resultaat",
+  "results_other": "{{count}} resultaten",
+  "loadMore": "Meer laden ({{shown}} van {{total}})",
+  "target": {
+    "label": "Installeren in",
+    "none": "Kies een doel",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Horizon-server",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "Deze pc",
+    "vps": "Je VPS",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Sorteren op",
+    "relevance": "Relevantie",
+    "downloads": "Meest gedownload",
+    "updated": "Onlangs bijgewerkt",
+    "newest": "Nieuwste"
+  },
+  "sources": {
+    "label": "Bronnen",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Horizon-register",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic-catalogus"
+  },
+  "filters": {
+    "category": "Categorie",
+    "allCategories": "Alle categorieën",
+    "compatibleInstance": "Compatibel met deze instantie",
+    "compatibleServer": "Compatibel met deze server",
+    "worksNow": "Compileert op de huidige Horizon",
+    "categories": "Categorieën",
+    "viewMore_one": "Nog {{count}} tonen",
+    "viewMore_other": "Nog {{count}} tonen",
+    "viewLess": "Minder tonen",
+    "compatibility": "Compatibiliteit",
+    "pluginHint": "Plug-ins draaien in een sandbox, alleen op Rustic Server.",
+    "fairPlayHint": "Alleen fair-play-content wordt vermeld.",
+    "versions": "Horizon-versies",
+    "targetVersion": "Je gekozen instantie of server",
+    "checkingAgainst": "De compatibiliteit wordt gecontroleerd met de gemarkeerde build.",
+    "rustic": "Rustic Marketplace",
+    "rusticHint": "Betaalde en geverifieerde projecten staan alleen op Rustic.",
+    "verifiedOnly": "Alleen geverifieerd door Rustic",
+    "price": "Prijs",
+    "priceOptions": {
+      "all": "Alle",
+      "free": "Gratis",
+      "paid": "Betaald"
+    },
+    "reset": "Filters herstellen",
+    "remove": "Filter {{filter}} verwijderen"
+  },
+  "categories": {
+    "performance": "Prestaties",
+    "utility": "Hulpmiddelen",
+    "ui": "Interface",
+    "pvp": "PvP",
+    "adventure": "Avontuur",
+    "decoration": "Decoratie",
+    "storage": "Opslag",
+    "worldgen": "Wereldgeneratie",
+    "library": "Bibliotheek",
+    "tech": "Technologie",
+    "cozy": "Gezellig",
+    "multiplayer": "Multiplayer",
+    "realistic": "Realistisch",
+    "simple": "Getrouw",
+    "lightweight": "Lichtgewicht",
+    "cinematic": "Filmisch",
+    "qol": "Gebruiksgemak",
+    "admin": "Beheer",
+    "chat": "Chat",
+    "minigames": "Minigames",
+    "protection": "Bescherming",
+    "integration": "Integraties"
+  },
+  "empty": {
+    "title": "Niets gevonden",
+    "hint": "Probeer een ander woord, een andere bron of categorie.",
+    "compatibleHint": "Alleen content die op dit doel draait, wordt getoond. Zet het filter uit om alles te zien.",
+    "showAll": "Niet-compatibele resultaten tonen"
+  },
+  "banners": {
+    "mod": "Alleen fair-play-mods worden vermeld: geen X-ray, autoclickers of andere oneerlijke voordelen.",
+    "modpack": "Een modpack wordt een nieuwe instantie met eigen mods en instellingen.",
+    "resourcepack": "Pakketten stapelen: het pakket bovenaan de laadvolgorde wint.",
+    "shader": "Horizon draait eigen WGSL-shaderpacks (.hshader, shader-API 0.1, experimenteel) en packs in Iris/OptiFine-formaat uit het Horizon-register. Kies er een in de game onder Video-instellingen › Shaderpacks.",
+    "datapack": "Datapakketten horen bij een wereld: je kiest de wereld bij het installeren.",
+    "plugin": "Plug-ins (.rplugin) draaien in een sandbox op servers met de Rustic Server-engine. Een defecte plug-in wordt uitgeschakeld; de server blijft draaien."
+  },
+  "resourcepacks": {
+    "manageOrder": "Laadvolgorde beheren"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Iris/OptiFine-formaat"
+    },
+    "formatHint": {
+      "horizon": "Het eigen formaat van Horizon (.hshader), shader-API 0.1 (experimenteel). Gecontroleerd voordat het draait.",
+      "shaders_dir": "Een shaders/-pack in het Iris/OptiFine-formaat, gedraaid door de aparte loader van Horizon."
+    }
+  },
+  "side": {
+    "client": "Client",
+    "server": "Server",
+    "both": "Client en server"
+  },
+  "install": {
+    "install": "Installeren",
+    "installAria": "{{name}} installeren in {{target}}",
+    "installed": "Geïnstalleerd",
+    "installing": "Installeren…",
+    "installingPct": "Installeren {{pct}}",
+    "createInstance": "Instantie maken",
+    "chooseWorld": "In een wereld installeren",
+    "noTarget": "Kies eerst waar je wilt installeren.",
+    "started": "{{name}} wordt geïnstalleerd in {{target}}",
+    "withDeps_one": "Plus {{count}} vereiste afhankelijkheid.",
+    "withDeps_other": "Plus {{count}} vereiste afhankelijkheden.",
+    "failed": "{{name}} kon niet worden geïnstalleerd",
+    "native": "Compileren en installeren",
+    "update": "Bijwerken",
+    "updateAria": "{{name}} bijwerken naar {{version}}"
+  },
+  "modpack": {
+    "created": "De instantie {{name}} wordt gemaakt",
+    "createdHint": "Download bezig. Ze verschijnt bij Spelen zodra ze klaar is."
+  },
+  "datapacks": {
+    "pickWorld": "Kies een wereld",
+    "noWorlds": "Deze instantie heeft nog geen wereld. Speel één keer om er een te maken.",
+    "count_one": "{{count}} datapakket",
+    "count_other": "{{count}} datapakketten"
+  },
+  "plugins": {
+    "badge": "Rustic Server-plug-in · API {{api}}",
+    "noServerTitle": "Nog geen server met Rustic Server",
+    "noServerBody": "Plug-ins draaien alleen op servers met de Rustic Server-engine. Maak er in een paar stappen een en kom dan terug om er plug-ins op te installeren.",
+    "createServer": "Een server maken"
+  },
+  "detail": {
+    "breadcrumb": "Kruimelpad",
+    "sections": "Projectonderdelen",
+    "tabs": {
+      "description": "Beschrijving",
+      "gallery": "Galerij",
+      "versions": "Versies",
+      "changelog": "Wijzigingen",
+      "dependencies": "Afhankelijkheden",
+      "compatibility": "Compatibiliteit"
+    },
+    "galleryLabel": "Galerij van {{name}}",
+    "prev": "Vorige afbeelding",
+    "next": "Volgende afbeelding",
+    "slide": "Afbeelding {{index}} van {{total}}",
+    "about": "Over dit project",
+    "categories": "Categorieën",
+    "links": "Links",
+    "link": {
+      "source": "Broncode",
+      "issues": "Een bug melden",
+      "website": "Website",
+      "site": "Op rustic-launcher.com",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "Nog geen wijzigingen.",
+    "noGallery": "Nog geen screenshots.",
+    "notAvailable": {
+      "title": "Dit project is niet beschikbaar",
+      "body": "Het is misschien privé, wacht op beoordeling of is verwijderd door de maker of een moderator.",
+      "back": "Terug naar Verkennen"
+    },
+    "native": {
+      "title": "Compileert op je pc",
+      "build": "Wordt de eerste keer dat je speelt in de game van dit profiel gecompileerd: zo’n 10 tot 15 minuten, daarna sneller.",
+      "review": "Gecontroleerd voordat het geïnstalleerd kan worden, door het register van Horizon of de admins van Rustic.",
+      "consent": "Er wordt niets gebouwd voordat je een korte melding hebt gelezen en geaccepteerd.",
+      "more": "Zo werken native mods"
+    }
+  },
+  "report": {
+    "button": "Melden",
+    "title": "{{name}} melden",
+    "sent": "Melding verzonden",
+    "sentBody": "Bedankt. Onze moderators gaan ernaar kijken.",
+    "reasons": {
+      "fair_play": "Overtreedt het fair-playbeleid",
+      "malware": "Malware of gegevensdiefstal",
+      "copyright": "Inbreuk op auteursrecht",
+      "other": "Iets anders"
+    },
+    "failed": "De melding kon niet worden verzonden"
+  },
+  "versions": {
+    "version": "Versie",
+    "horizon": "Horizon-builds",
+    "published": "Gepubliceerd",
+    "downloads": "Downloads",
+    "compatibility": "Compatibiliteit",
+    "actions": "Acties",
+    "none": "Geen",
+    "channel": {
+      "release": "Release",
+      "beta": "Bèta",
+      "alpha": "Alfa"
+    },
+    "empty": "Er is nog geen versie beschikbaar.",
+    "latest": "Nieuwste"
+  },
+  "deps": {
+    "none": "Geen afhankelijkheden.",
+    "relation": {
+      "required": "Vereist",
+      "optional": "Optioneel",
+      "incompatible": "Niet compatibel"
+    },
+    "installed": "Geïnstalleerd",
+    "willInstall": "Wordt automatisch geïnstalleerd",
+    "notInstalled": "Niet geïnstalleerd"
+  },
+  "compatTab": {
+    "for": "voor {{target}}",
+    "builds": "De auteur publiceert een build die voor deze Horizon-versie is gemaakt.",
+    "format": "Deze content bestaat alleen uit data (textures, shaders, datapakketten): ze is niet afhankelijk van een Horizon-build.",
+    "unknown": "Kies een instantie of een server om de compatibiliteit te controleren.",
+    "fairPlay": "Rustic promoot alleen fair-play-content. Alles wat een oneerlijk voordeel geeft, wordt nooit vermeld.",
+    "native": "Een native mod die bij deze Horizon past: Rustic Launcher compileert hem op je pc in de eigen game van deze instantie."
+  },
+  "permissions": {
+    "title": "Rechten",
+    "network": "Netwerktoegang: {{value}}",
+    "none": "geen",
+    "files": "Bestanden: alleen de eigen datamap."
+  },
+  "stats": {
+    "downloads": "Downloads",
+    "follows": "Volgers",
+    "updated": "Bijgewerkt",
+    "license": "Licentie",
+    "size": "Grootte",
+    "gameVersion": "Gameversie",
+    "version": "Nieuwste versie",
+    "author": "Auteur",
+    "created": "Gepubliceerd"
+  },
+  "searchSources": {
+    "mod": "Mods zoeken op Horizon, Modrinth en Rustic…",
+    "modpack": "Modpacks zoeken op Horizon, Modrinth en Rustic…",
+    "resourcepack": "Bronpakketten zoeken op Horizon, Modrinth en Rustic…",
+    "shader": "Shaders zoeken op Horizon, Modrinth en Rustic…",
+    "datapack": "Datapakketten zoeken op Horizon, Modrinth en Rustic…",
+    "plugin": "Plug-ins zoeken op Horizon, Modrinth en Rustic…"
+  },
+  "filtersLabel": "Filters",
+  "view": "Bekijken",
+  "heading": "Vind je volgende *mod*",
+  "eyebrow": "Verkennen",
+  "kindsServer": "Voor een Rustic Server",
+  "tabs": {
+    "label": "Onderdelen van Verkennen",
+    "discover": "Ontdekken",
+    "browse": "Bladeren",
+    "mine": "Mijn content"
+  },
+  "hero": {
+    "eyebrow": "Uitgelicht"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "Uitgelichte mods",
+      "modpack": "Uitgelichte modpacks",
+      "resourcepack": "Uitgelichte bronpakketten",
+      "shader": "Uitgelichte shaders",
+      "datapack": "Uitgelichte datapakketten",
+      "plugin": "Uitgelichte plug-ins"
+    },
+    "rows": {
+      "new": "Nieuw",
+      "newHint": "Net gepubliceerd of bijgewerkt",
+      "horizon": "Populair op Horizon",
+      "horizonHint": "Het meest gedownload uit het Horizon-register",
+      "verified": "Geverifieerd door Rustic",
+      "verifiedHint": "Gecontroleerd door het Rustic-team: ze doen wat ze beloven",
+      "yours": "Voor {{target}}",
+      "yoursHint": "Draait op Horizon {{version}}",
+      "community": "Uit de community",
+      "communityHint": "Onlangs bijgewerkt op de Rustic Marketplace"
+    },
+    "empty": {
+      "title": "Hier valt nog niets te ontdekken",
+      "hint": "Er draait nog geen content van deze soort op je doel. Blader in plaats daarvan door alles.",
+      "browse": "Door alles bladeren"
+    },
+    "rowError": "Deze selectie kon niet worden geladen.",
+    "retry": "Opnieuw proberen"
+  },
+  "verified": {
+    "label": "Geverifieerd",
+    "hint": "Geverifieerd door Rustic: een moderator heeft gecontroleerd dat het doet wat de pagina zegt."
+  },
+  "price": {
+    "soon": "Binnenkort",
+    "soonHint": "Makers kunnen hun werk binnenkort verkopen. Kopen is nog niet mogelijk.",
+    "notOnSale": "Nog niet te koop: verkoop door makers start binnenkort."
+  },
+  "native": {
+    "badge": "Compileert op je pc",
+    "short": "Native",
+    "hint": "Een native mod is Rust-code die op je pc in de game wordt gecompileerd voordat die start.",
+    "title": "Een native mod",
+    "body": "Native mods zijn Rust-broncode die op deze pc in je game wordt gecompileerd (dat kan van een minuut tot een halfuur duren). Beheerders beoordelen elke versie voordat die openbaar wordt.",
+    "kind": "Native mod",
+    "how": "Rustic Launcher compileert ze op je pc in de eigen game van deze instantie, nadat je een vertrouwensmelding hebt geaccepteerd. De eerste build duurt 10 tot 15 minuten; daarna wordt alleen opnieuw gecompileerd wat er is veranderd. Instanties zonder native mods behouden de vooraf gebouwde game.",
+    "instanceOnly": "Native mods gaan in een instantie.",
+    "trust": {
+      "title": "Native code: lees dit voordat je compileert",
+      "lead": "{{name}} is een native mod: Rust-code die op deze pc in de game van ‘{{instance}}’ wordt gecompileerd.",
+      "unsandboxed": "Native mods draaien niet in een sandbox. Eenmaal gecompileerd draaien ze met jouw rechten en kunnen ze alles lezen, wijzigen of versturen wat je account kan.",
+      "review": "Alleen mods uit het Horizon-register (beoordeeld door de beheerders) en door admins goedgekeurde mods van de Rustic Marketplace kunnen worden geïnstalleerd. Een beoordeling verkleint het risico, maar neemt het niet weg.",
+      "build": "Rust wordt zo nodig geïnstalleerd, daarna wordt de game voor deze instantie gecompileerd: de eerste keer ongeveer 10 tot 15 minuten en een paar GB, daarna sneller.",
+      "scope": "Alleen deze instantie speelt de gecompileerde game. Voor de volgende native mods ervan wordt dit niet opnieuw gevraagd.",
+      "source": "Lees de broncode",
+      "check": "Ik begrijp dat native mods zonder sandbox met mijn rechten draaien, en ik vertrouw deze mod.",
+      "accept": "Ik vertrouw hem: installeren en compileren"
+    },
+    "toolchain": {
+      "title": "Rust {{version}} installeren?",
+      "lead": "Voor het compileren van native mods is de Rust-compiler nodig. Rustic Launcher kan die voor je installeren.",
+      "manual": "Voor het compileren van native mods zijn de Rust-compiler en systeemtools nodig die Rustic Launcher niet voor je kan installeren. Installeer deze en compileer dan opnieuw:",
+      "where": "Van de officiële site (static.rust-lang.org), gecontroleerd met de gepubliceerde SHA-256, in de eigen map van de launcher: elders op je pc verandert niets.",
+      "size": "Ongeveer 1 tot 2,5 GB (met een C-compiler op Windows).",
+      "once": "Eén keer voor alle instanties; als je de gegevens van de launcher verwijdert, wordt het ook verwijderd.",
+      "found": "Gevonden: {{reason}}.",
+      "install": "Rust installeren",
+      "started": "Rust wordt geïnstalleerd",
+      "startedHint": "Het compileren begint zodra het klaar is. Volg het in het downloadpaneel.",
+      "failed": "Rust kon niet worden geïnstalleerd"
+    },
+    "build": {
+      "started": "Native mods worden gecompileerd voor {{instance}}",
+      "startedHint": "Volg het op de pagina van de instantie of in het downloadpaneel. De eerste build duurt 10 tot 15 minuten.",
+      "failed": "De native mods van {{instance}} konden niet worden gecompileerd"
+    },
+    "errors": {
+      "notEdition": "Native mods worden alleen in de Rustic-editie gecompileerd: zet deze instantie daarop over in de instellingen.",
+      "running": "Sluit eerst de game: de native mods worden opnieuw gecompileerd terwijl die gestopt is.",
+      "disk": "Niet genoeg vrije schijfruimte. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "Niet compatibel",
+    "compatible": "Compatibel"
+  },
+  "library": {
+    "add": "Aan mijn bibliotheek toevoegen",
+    "inLibrary": "In mijn bibliotheek",
+    "added": "{{name}} toegevoegd aan je bibliotheek",
+    "removed": "{{name}} verwijderd uit je bibliotheek",
+    "remove": "{{name}} uit mijn bibliotheek verwijderen",
+    "failed": "Je bibliotheek kon niet worden bijgewerkt"
+  },
+  "prompt": {
+    "title": "{{name}} installeren?",
+    "body": "Je hebt dit project vanaf de website geopend. Kies waar je het wilt installeren en welke versie, en bevestig.",
+    "dismiss": "Niet nu",
+    "version": "Versie",
+    "versionMissing": "Versie {{version}} is niet meer beschikbaar: de nieuwste compatibele versie is gekozen."
+  },
+  "mine": {
+    "searchPlaceholder": "Mijn content filteren…",
+    "noMatch": "Niets gevonden",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Handmatig toegevoegd"
+    },
+    "installed": {
+      "title": "Geïnstalleerd",
+      "titleOn": "Geïnstalleerd op {{target}}",
+      "hint": {
+        "mod": "De mods van dit doel: zet ze aan of uit, werk ze bij of verwijder ze.",
+        "modpack": "De modpacks van dit doel: zet ze aan of uit, werk ze bij of verwijder ze.",
+        "resourcepack": "De bronpakketten van dit doel: zet ze aan of uit, werk ze bij of verwijder ze.",
+        "shader": "De shaders van dit doel: zet ze aan of uit, werk ze bij of verwijder ze.",
+        "datapack": "De datapakketten van dit doel: zet ze aan of uit, werk ze bij of verwijder ze.",
+        "plugin": "De plug-ins van dit doel: zet ze aan of uit, werk ze bij of verwijder ze."
+      },
+      "modpacksTitle": "Modpacks worden profielen",
+      "modpacksHint": "Elk geïnstalleerd modpack is een eigen profiel.",
+      "openProfiles": "Mijn profielen openen",
+      "noTarget": "Kies eerst waar je wilt kijken.",
+      "serverHint": "Plug-ins en datapakketten van een server worden op de pagina ervan beheerd.",
+      "manageServer": "Server beheren",
+      "updateAll_one": "{{count}} item bijwerken",
+      "updateAll_other": "{{count}} items bijwerken",
+      "openProfile": "Profiel openen",
+      "empty": "Hier is nog niets geïnstalleerd",
+      "emptyHint": "Vind iets in Ontdekken of Bladeren.",
+      "discover": "Content ontdekken",
+      "updateTo": "Bijwerken naar {{version}}",
+      "incompatible": "Niet compatibel",
+      "update": "{{name}} bijwerken",
+      "toggle": "{{name}} inschakelen",
+      "remove": "{{name}} verwijderen",
+      "removeTitle": "{{name}} verwijderen?",
+      "removeBody": "De bestanden worden uit dit profiel verwijderd. Je kunt het altijd opnieuw installeren."
+    },
+    "signIn": {
+      "title": "Je bibliotheek en je creaties",
+      "body": "Log in bij je Rustic-account om de projecten te vinden die je hebt bewaard en die je publiceert.",
+      "action": "Inloggen"
+    },
+    "library": {
+      "title": "Mijn bibliotheek",
+      "hint": "Projecten die in je Rustic-account zijn bewaard, op elke pc.",
+      "empty": "Je bibliotheek is leeg",
+      "emptyHint": "Voeg een Rustic-project toe vanaf de pagina ervan om het hier te vinden.",
+      "installAria": "{{name}} installeren"
+    },
+    "creations": {
+      "title": "Mijn creaties",
+      "hint": "Wat je publiceert op de Rustic Marketplace.",
+      "publish": "Publiceren op de website",
+      "empty": "Je hebt nog niets gepubliceerd",
+      "emptyHint": "Deel een mod, een pack of een shader met alle Rustic-spelers via de website.",
+      "manage": "Beheren",
+      "manageAria": "{{name}} beheren op de website",
+      "status": {
+        "public": "Openbaar",
+        "unlisted": "Niet vermeld",
+        "private": "Privé",
+        "pending": "Wacht op beoordeling",
+        "rejected": "Afgewezen",
+        "takenDown": "Verwijderd"
+      }
+    }
+  }
+}

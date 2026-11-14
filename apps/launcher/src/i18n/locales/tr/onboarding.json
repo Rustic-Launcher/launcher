@@ -1,0 +1,113 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Adım {{current}} / {{total}}",
+  "back": "Geri",
+  "continue": "Devam",
+  "skip": "Şimdilik atla",
+  "steps": {
+    "welcome": "Hoş geldin",
+    "microsoft": "Microsoft",
+    "rustic": "Rustic hesabı",
+    "privacy": "Gizlilik",
+    "game": "Oyun dosyaları",
+    "ready": "Hazır"
+  },
+  "welcome": {
+    "title": "Rustic’e hoş geldin",
+    "subtitle": "Horizon için hızlı ve sosyal bir başlatıcı. Birkaç seçim yap, oyundasın.",
+    "language": "Dil",
+    "theme": "Tema",
+    "palette": "Renk paleti"
+  },
+  "microsoft": {
+    "title": "Microsoft ile giriş yap",
+    "subtitle": "Rustic, oyuna sahip olduğunu Microsoft ile doğrular. Şifren asla Rustic’e ulaşmaz.",
+    "signedInAs": "Giriş yapılan hesap: {{name}}",
+    "ownershipOk": "Sahiplik doğrulandı: oynayabilirsin.",
+    "notOwnedTitle": "Minecraft: Java Edition gerekli",
+    "notOwnedBody": "Bu Microsoft hesabı oyuna sahip değil. Rustic, oyunu lisans olmadan asla başlatmaz.",
+    "buyGame": "Oyunu edin",
+    "whyTitle": "Neden?",
+    "whyBody": "Oyuna sahip olmak zorunludur. Horizon oyun dosyalarını kendi kurulumundan hazırlar ve çevrimdışı profiller ancak bu kontrolden sonra açılır."
+  },
+  "rustic": {
+    "title": "Rustic hesabın",
+    "subtitle": "İsteğe bağlı. Oyun onsuz da çalışır; daha sonra Ayarlar’dan giriş yapabilirsin.",
+    "perks": {
+      "friends": {
+        "title": "Arkadaşlar ve gruplar",
+        "body": "Kimin çevrimiçi olduğunu gör ve tek tıkla yanlarına katıl."
+      },
+      "locker": {
+        "title": "Dolap",
+        "body": "Karakterinde kozmetikler, tamamen görsel."
+      },
+      "servers": {
+        "title": "Sunucuların çevrimiçi",
+        "body": "Barındırdığın sunucular için ücretsiz bir adres ve alan adları."
+      }
+    },
+    "signedInAs": "Giriş yapılan hesap: {{name}}",
+    "signIn": "Giriş yap veya hesap oluştur",
+    "skipHint": "Ya da şimdilik atlamak için Devam’a bas.",
+    "age": "Rustic hesapları {{min}} yaş ve üzeri içindir. {{consent}} yaşın altındaysan verilerinin işlenmesine bir ebeveynin onay vermelidir; 18 yaşın altında satın almalar için ebeveyn onayı gerekir."
+  },
+  "privacy": {
+    "title": "Gizlilik tercihlerin",
+    "subtitle": "Hepsi kapalı. Yalnızca paylaşmaktan memnun olduklarını aç; bunu istediğin zaman Ayarlar’dan değiştirebilirsin.",
+    "usage": {
+      "title": "Kullanım analizleri",
+      "body": "Hangi sayfaların ve özelliklerin kullanıldığı; içerik veya tanımlayıcı olmadan."
+    },
+    "performance": {
+      "title": "Performans raporları",
+      "body": "Başlatma ve kare süreleri, yavaş noktaları bulmak için."
+    },
+    "crash": {
+      "title": "Çökme raporları",
+      "body": "Oyun veya başlatıcı çöktüğünde otomatik gönderilir. Kapalıyken Rustic her seferinde sorar."
+    },
+    "note": "Verileri asla satmayız ve asla reklam için paylaşmayız.",
+    "policy": "Gizlilik politikasını oku"
+  },
+  "game": {
+    "title": "Oyunu hazırla",
+    "subtitle": "Rustic, kendi kurulumundaki oyun dosyalarını kullanır (veya eksik olanları Mojang’dan indirir), sonra bunları Horizon için hazırlar.",
+    "detecting": "Oyun kurulumun aranıyor…",
+    "found": "Oyun bulundu ({{versions}})",
+    "notFound": "Kurulum bulunamadı",
+    "notFoundBody": "Rustic, oyun dosyalarını hesabın için Mojang’dan indirecek.",
+    "prepareTitle": "Oyun dosyalarını hazırla",
+    "alreadyReady": "Zaten hazırlandı",
+    "done": "Hazırlandı",
+    "prepareAgain": "Yeniden hazırla",
+    "prepare": "Hazırla",
+    "steps": {
+      "detect": "Algılama",
+      "download": "İndirme",
+      "verify": "Doğrulama",
+      "compile_exporters": "Dışa aktarıcılar",
+      "export": "Dışa aktarma",
+      "index": "Dizinleme"
+    },
+    "explain": "Eksik oyun dosyaları Mojang’ın kendi sunucularından gelir, üçüncü taraflardan hiçbir şey gelmez: hazırlanan dosyalar bu bilgisayarda kalır.",
+    "background": "Devam edebilirsin: hazırlık arka planda sürer.",
+    "prepareFailed": "Oyun dosyaları hazırlanamadı: {{reason}}"
+  },
+  "ready": {
+    "title": "Her şey hazır",
+    "subtitle": "İlk örneğini şimdi oluştur ya da atlayıp daha sonra yap.",
+    "finish": "Rustic’i aç",
+    "defaultName": "İlk dünyam",
+    "createTitle": "İlk örneğimi oluştur",
+    "recommended": "Önerilen",
+    "nameLabel": "Örnek adı",
+    "existing_one": "Zaten {{count}} örneğin var.",
+    "existing_other": "Zaten {{count}} örneğin var.",
+    "tips": {
+      "play": "OYNA her zaman sağ alttadır.",
+      "friends": "Arkadaşların sağda; Katıl tek tık sürer.",
+      "servers": "Sunucular sayfasından arkadaşların için bir sunucu barındır."
+    }
+  }
+}

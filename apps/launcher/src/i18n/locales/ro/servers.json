@@ -1,0 +1,1065 @@
+{
+  "list": {
+    "title": "Servere",
+    "description": "Găzduiește o lume pentru prietenii tăi, aici sau pe propriul VPS, și ține-ți serverele preferate la îndemână.",
+    "create": "Creează server",
+    "tabs": {
+      "mine": "Serverele mele",
+      "joined": "Accesate",
+      "discover": "Descoperă"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon vanilla"
+    },
+    "hosting": {
+      "local": "Acest PC",
+      "remote": "La distanță: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Stare",
+    "states": {
+      "running": "Rulează",
+      "starting": "Pornește…",
+      "stopping": "Se oprește…",
+      "stopped": "Oprit",
+      "crashed": "Blocat",
+      "installing": "Se instalează…",
+      "unreachable": "Inaccesibil"
+    },
+    "players": "Jucători",
+    "playersCount": "{{online}}/{{max}} jucători",
+    "version": "Versiune",
+    "copyAddress": "Copiază adresa",
+    "copyFailed": "Nu s-a putut copia în clipboard",
+    "notShared": "Nepartajat încă",
+    "notSharedHint": "Activează o adresă temporară, un cod de invitație sau un domeniu în fila Acces a serverului.",
+    "start": "Pornește",
+    "stop": "Oprește",
+    "startAria": "Pornește {{name}}",
+    "stopAria": "Oprește {{name}}",
+    "powerFailed": "Serverul nu a răspuns",
+    "empty": {
+      "title": "Găzduiește o lume pentru prietenii tăi în 3 pași",
+      "description": "Rulează-l gratuit pe acest PC sau lasă Rustic să-l instaleze pe propriul tău VPS."
+    },
+    "featured": {
+      "description": "Servere alese de echipa Rustic: fair play, pregătite pentru Horizon, moderate.",
+      "empty": "Niciun server recomandat deocamdată.",
+      "verified": "Verificat de Rustic",
+      "save": "Adaugă în listă",
+      "inList": "În lista ta",
+      "online_one": "{{value}} online",
+      "online_few": "{{value}} online",
+      "online_other": "{{value}} online",
+      "view": "Despre {{name}}"
+    },
+    "viewLabel": "Vizualizare",
+    "views": {
+      "discover": "Descoperă",
+      "mine": "Serverele mele"
+    },
+    "searchPlaceholder": {
+      "discover": "Caută servere recomandate…",
+      "mine": "Caută în serverele tale…"
+    },
+    "clearSearch": "Șterge căutarea",
+    "sortLabel": "Sortare",
+    "sorts": {
+      "recommended": "Recomandate",
+      "players": "Cei mai mulți jucători",
+      "name": "Nume"
+    },
+    "refreshPing": "Reîmprospătează pingul și starea",
+    "layoutList": "Afișează ca listă",
+    "layoutGrid": "Afișează ca grilă",
+    "createHint": "Aici, pe VPS-ul tău sau, în curând, în cloud",
+    "heading": "Joacă pe *servere*",
+    "eyebrow": "Servere",
+    "sections": {
+      "hosted": "Găzduite de tine",
+      "joined": "Servere accesate"
+    }
+  },
+  "multiplayer": {
+    "description": "Lista de servere a jocului, comună tuturor instanțelor tale.",
+    "add": "Adaugă un server",
+    "added": "{{name}} a fost adăugat în lista ta",
+    "addFailed": "Acest server nu a putut fi adăugat",
+    "name": "Numele serverului",
+    "namePlaceholder": "Nume",
+    "address": "Adresa serverului",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Folosește un nume de gazdă sau un IP, cu :port opțional.",
+    "refreshPings": "Reîmprospătează",
+    "favorites_one": "Favorit · {{count}}",
+    "favorites_few": "Favorite · {{count}}",
+    "favorites_other": "Favorite · {{count}}",
+    "others_one": "Alt server · {{count}}",
+    "others_few": "Alte servere · {{count}}",
+    "others_other": "Alte servere · {{count}}",
+    "favorite": "Adaugă {{name}} la favorite",
+    "unfavorite": "Elimină {{name}} din favorite",
+    "offline": "Offline",
+    "unreachable": "Acest server nu poate fi accesat acum",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Intră",
+    "joinAria": "Intră pe {{name}}",
+    "joinWith": "Intră cu {{instance}}",
+    "noInstance": "Creează o instanță ca să intri pe servere",
+    "joining": "Se lansează și se intră pe {{name}}…",
+    "more": "Mai multe acțiuni pentru {{name}}",
+    "copyAddress": "Copiază adresa",
+    "removed": "{{name}} a fost eliminat",
+    "undo": "Anulează",
+    "empty": {
+      "title": "Niciun server încă",
+      "description": "Adaugă unul după adresă sau alege unul din Descoperă."
+    }
+  },
+  "wizard": {
+    "title": "Creează un server",
+    "subtitle": "Trei pași: ce rulezi, unde îl găzduiești, cum intră prietenii.",
+    "creatingTitle": "Se configurează {{name}}",
+    "stepOf": "Pasul {{index}} din {{total}}",
+    "steps": {
+      "basics": "Bazele",
+      "hosting": "Găzduire",
+      "access": "Acces"
+    },
+    "create": "Creează serverul",
+    "installOn": "Instalează pe {{host}}",
+    "createFailed": "Serverul nu a putut fi creat",
+    "noRusticServer": "Programul rustic-server nu a fost găsit. Alege-l în Setări › Joc și instanțe › Rustic Server sau instalează un build al ediției Rustic care îl include.",
+    "openRusticServerSettings": "Deschide setările",
+    "fixErrors": "Verifică câmpurile evidențiate ca să continui.",
+    "discard": {
+      "title": "Renunți la acest server?",
+      "body": "Ce ai introdus în asistent se va pierde.",
+      "keep": "Continuă editarea",
+      "confirm": "Renunță"
+    },
+    "basics": {
+      "name": "Numele serverului",
+      "namePlaceholder": "SMP-ul lui Lou",
+      "icon": "Pictogramă",
+      "icons": {
+        "grass": "Iarbă",
+        "sword": "Sabie",
+        "pickaxe": "Târnăcop",
+        "castle": "Castel",
+        "rocket": "Rachetă",
+        "gem": "Nestemată",
+        "flame": "Flacără",
+        "leaf": "Frunză",
+        "star": "Stea",
+        "compass": "Busolă"
+      },
+      "color": "Culoare",
+      "colorN": "Culoarea {{n}}",
+      "type": "Tip",
+      "recommended": "Recomandat",
+      "nightly": "Nightly",
+      "rusticDesc": "Pluginuri (.rplugin), izolate (sandbox): un plugin nu îți poate bloca niciodată serverul.",
+      "horizonDesc": "Serverul propriu Horizon, fără pluginuri.",
+      "version": "Versiunea Horizon",
+      "maxPlayers": "Jucători maximi",
+      "versionLineRustic": "Rustic Server 0.1 pe Horizon {{version}}",
+      "versionLineHorizon": "Server Horizon {{version}}",
+      "sameAsClient": "(la fel ca la clientul tău)",
+      "starterPlugins": "Pluginuri de pornire",
+      "starterHint": "Pluginuri oficiale, cu ce li se permite să facă.",
+      "capNetwork": "Rețea",
+      "capNoNetwork": "Fără rețea",
+      "capNoFiles": "Fără fișiere",
+      "capDataFolder": "Folder de date propriu",
+      "eula": "Accept EULA Minecraft",
+      "eulaHint": "Rularea unui server o cere. O accepți tu; Rustic nu o acceptă în locul tău.",
+      "eulaRead": "Citește EULA",
+      "eulaTitle": "EULA Minecraft"
+    },
+    "world": {
+      "title": "Lume",
+      "new": "Lume nouă",
+      "import": "Importă un folder",
+      "fromInstance": "Dintr-o instanță",
+      "seed": "Seed",
+      "seedHint": "Lasă gol pentru o lume aleatorie.",
+      "seedPlaceholder": "Opțional",
+      "randomSeed": "Seed aleatoriu",
+      "levelType": "Tipul lumii",
+      "levelTypes": {
+        "default": "Implicit",
+        "flat": "Superplată",
+        "large_biomes": "Biomi mari",
+        "amplified": "Amplificată"
+      },
+      "gamemode": "Mod de joc",
+      "gamemodes": {
+        "survival": "Supraviețuire",
+        "creative": "Creativ",
+        "adventure": "Aventură"
+      },
+      "difficulty": "Dificultate",
+      "difficulties": {
+        "peaceful": "Pașnică",
+        "easy": "Ușoară",
+        "normal": "Normală",
+        "hard": "Grea"
+      },
+      "structures": "Generează structuri",
+      "hardcore": "Hardcore",
+      "folder": "Folderul lumii",
+      "instance": "Instanță",
+      "pickInstance": "Alege o instanță",
+      "world": "Lume",
+      "pickWorld": "Alege o lume",
+      "noWorlds": "Nicio lume în această instanță",
+      "newDesc": "O lume nouă dintr-un seed, cu regulile tale.",
+      "importDesc": "Un folder de lume de pe PC-ul tău sau dintr-o copie de rezervă.",
+      "fromInstanceDesc": "O lume în care ai jucat într-unul dintre profilurile tale."
+    },
+    "type": {
+      "memory": "Memoria serverului (RAM)",
+      "memoryHint": "4 GB ajung pentru majoritatea grupurilor de prieteni. Mai mult ajută la mulți jucători sau la modpackuri mari."
+    },
+    "access": {
+      "intro": "Cum intră prietenii tăi. Pot fi active mai multe deodată; le poți schimba mai târziu.",
+      "lan": "Prieteni din rețeaua mea (LAN)",
+      "lanDetail": "Adresa locală a acestui PC, afișată după ce serverul există.",
+      "publicIp": "Adresă publică",
+      "publicIpDetail": "IP-ul VPS-ului tău",
+      "alwaysOn": "Mereu activ",
+      "relay": "Adresă temporară",
+      "relayDetail": "gratuită, cât timp rulează serverul; niciun port de deschis",
+      "invite": "Cod de invitație",
+      "inviteDetail": "Un cod pe care prietenii îl lipesc în Rustic Launcher ca să intre.",
+      "domain": "Domeniul meu",
+      "domainDetail": "Conectează Porkbun · Cumpără la Porkbun · Folosește orice registrar",
+      "domainAfter": "Configurează după creare",
+      "safety": "Mod online activ: pot intra doar jucătorii care dețin jocul. Listă albă activă."
+    },
+    "summary": {
+      "title": "Rezumat",
+      "version": "Versiune",
+      "host": "Găzduire",
+      "world": "Lume",
+      "memory": "Memorie",
+      "players": "Jucători maximi",
+      "plugins": "Pluginuri",
+      "none": "Niciunul",
+      "eulaAccepted": "Ai acceptat EULA Minecraft la pasul 1."
+    },
+    "errors": {
+      "nameRequired": "Dă un nume serverului.",
+      "nameTooLong": "Folosește cel mult 40 de caractere.",
+      "version": "Alege o versiune Horizon.",
+      "maxPlayers": "Între 1 și 1000 de jucători.",
+      "importPath": "Alege folderul lumii de importat.",
+      "world": "Alege o instanță și una dintre lumile ei.",
+      "seed": "Seedurile au cel mult 64 de caractere.",
+      "eula": "Acceptă EULA ca să rulezi un server.",
+      "cloudUnavailable": "Rustic Cloud nu este încă disponibil.",
+      "vpsNotReady": "Conectează-ți mai întâi VPS-ul și trece verificările.",
+      "memory": "Cel puțin 1 GB de memorie.",
+      "host": "Introdu o adresă IP sau un nume de gazdă.",
+      "port": "Port între 1 și 65535.",
+      "username": "Introdu numele de utilizator Linux.",
+      "keyPath": "Alege fișierul cheii private.",
+      "generateKey": "Generează mai întâi o cheie, apoi adaug-o pe VPS.",
+      "password": "Introdu parola."
+    },
+    "heading": "Creează un *server*",
+    "stepHints": {
+      "basics": "Dă-i un nume, alege ce rulează și lumea de start.",
+      "hosting": "Alege mașina care îl rulează și câtă memorie primește.",
+      "access": "Alege cum se alătură prietenii tăi. Poți schimba asta mai târziu."
+    },
+    "sections": {
+      "identity": "Nume și pictogramă"
+    },
+    "preview": {
+      "title": "Previzualizare",
+      "unnamed": "Serverul tău",
+      "draft": "încă necreat"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "Acest PC (local)",
+      "free": "Gratuit",
+      "description": "PC-ul tău trebuie să rămână pornit cât timp joacă prietenii.",
+      "settings": "Pe acest PC",
+      "reach": "Prietenii ajung la el prin rețeaua ta, printr-o adresă Rustic temporară sau cu un cod de invitație. Nu e nevoie să configurezi routerul.",
+      "startWithLauncher": "Pornește odată cu launcherul",
+      "startWithLauncherHint": "Serverul pornește când se deschide Rustic Launcher."
+    },
+    "vps": {
+      "title": "VPS-ul tău (SSH)",
+      "description": "Serverul tău Linux. Noi îl instalăm și îl rulăm pentru tine.",
+      "which": "VPS",
+      "existing_one": "VPS salvat ({{count}})",
+      "existing_few": "VPS-uri salvate ({{count}})",
+      "existing_other": "VPS-uri salvate ({{count}})",
+      "new": "Adaugă un VPS",
+      "pinned": "Cheia gazdei fixată",
+      "host": "Gazdă",
+      "port": "Port",
+      "user": "Utilizator",
+      "userPlaceholder": "root sau un utilizator sudo",
+      "auth": "Conectare",
+      "authGenerate": "Generează o cheie pentru mine",
+      "authKey": "Fișier de cheie existent",
+      "authPassword": "Parolă (o singură dată)",
+      "generateHint": "Recomandat. Rustic creează o pereche de chei; cheia privată nu părăsește niciodată acest PC.",
+      "generate": "Generează o cheie",
+      "addKeyCommand": "Rulează asta o dată în consola VPS-ului ca să autorizezi cheia:",
+      "keyStored": "Cheia privată a fost salvată în portcheiul de sistem ({{path}})",
+      "openFirewall": "Deschide portul jocului în firewallul VPS-ului",
+      "openFirewallHint": "Permite TCP către portul serverului în ufw sau firewalld. Poate fi necesar și în firewallul propriu al furnizorului.",
+      "keyFile": "Cheie privată",
+      "passphrase": "Frază de acces",
+      "optional": "Opțional",
+      "password": "Parolă",
+      "passwordHint": "Folosită o singură dată pentru a instala o cheie. Nu este stocată.",
+      "test": "Testează conexiunea",
+      "reachable": "Conectat · {{ms}} ms",
+      "unreachable": "Nu am putut contacta acest VPS",
+      "authFailed": "VPS-ul a refuzat conectarea"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "În curând",
+      "description": "Servere pe mașinile Rustic, mereu pornite.",
+      "waitlist": "Primește un e-mail când se deschide Rustic Cloud.",
+      "email": "Adresă de e-mail",
+      "join": "Intră pe lista de așteptare",
+      "joined": "Ești pe listă (#{{position}}). Îți vom trimite un e-mail.",
+      "invalidEmail": "Introdu o adresă de e-mail validă."
+    },
+    "requirements": {
+      "title": "Verificarea cerințelor",
+      "ram": "Memorie ({{free}} liberă)",
+      "gameFiles": "Fișierele jocului pregătite",
+      "port": "Portul 25565 liber",
+      "hint": "Spațiul pe disc este verificat la descărcarea fișierelor serverului."
+    },
+    "fingerprint": {
+      "title": "Ai încredere în {{host}}?",
+      "description": "Prima conexiune la acest VPS. Compară această amprentă cu cea din consola furnizorului înainte să ai încredere în ea.",
+      "warning": "Dacă nu se potrivește, anulează: cineva ar putea intercepta conexiunea. Rustic va bloca orice schimbare ulterioară a acestei chei.",
+      "trust": "Am încredere, continuă"
+    },
+    "testFailed": "Testul conexiunii a eșuat",
+    "checkFailed": "Verificarea VPS-ului a eșuat",
+    "preflight": {
+      "running": "Se verifică VPS-ul…",
+      "ok": "VPS-ul tău e gata",
+      "notOk": "VPS-ul tău nu îndeplinește cerințele",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_few": "{{count}} vCPU",
+      "cpu_other": "{{count}} de vCPU",
+      "memory": "Memorie: {{memory}}",
+      "disk": "Disc liber: {{disk}}",
+      "systemd": "systemd disponibil",
+      "ip": "IP public"
+    },
+    "problems": {
+      "memory": "Memorie",
+      "disk": "Disc",
+      "arch": "Arhitectură",
+      "os": "Sistem de operare",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Se instalează pe {{host}}",
+      "steps": {
+        "connect": "Conectare prin SSH",
+        "check": "Verificări preliminare",
+        "user": "Crearea utilizatorului „rustic”",
+        "download": "Încărcarea fișierelor semnate ale serverului",
+        "engine": "Configurarea motorului Rustic",
+        "service": "Instalarea serviciului",
+        "firewall": "Deschiderea portului 25565",
+        "world": "Pregătirea lumii",
+        "start": "Pornire și verificare"
+      },
+      "state": {
+        "pending": "în așteptare",
+        "running": "în curs",
+        "done": "gata",
+        "failed": "eșuat",
+        "skipped": "omis"
+      },
+      "skippedVanilla": "Nu e necesar pentru Horizon vanilla",
+      "log_one": "Arată jurnalul ({{count}} linie)",
+      "log_few": "Arată jurnalul ({{count}} linii)",
+      "log_other": "Arată jurnalul ({{count}} de linii)",
+      "vpsDone": "{{name}} rulează pe {{host}}",
+      "vpsDoneBody": "Gestionează-l din launcher ca pe un server local: consolă, jucători, pluginuri, copii de rezervă.",
+      "localDownload": "Descarcă {{engine}}",
+      "localInit": "Pregătește lumea și setările",
+      "localStart": "Prima pornire",
+      "localReady": "Gata de pornire",
+      "localDone": "{{name}} rulează",
+      "localDoneBody": "Partajează-i adresa din fila Acces sau invită prieteni din panoul de prieteni.",
+      "open": "Deschide serverul",
+      "backToList": "Înapoi la servere",
+      "retry": "Reîncearcă",
+      "failed": "Instalarea a eșuat",
+      "crashed": "Serverul s-a oprit la prima pornire. Verifică consola."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Secțiunile serverului",
+    "tabs": {
+      "overview": "Prezentare",
+      "console": "Consolă",
+      "players": "Jucători",
+      "plugins": "Pluginuri",
+      "config": "Configurare",
+      "datapacks": "Pachete de date",
+      "backups": "Copii de rezervă",
+      "access": "Acces",
+      "danger": "Zonă periculoasă"
+    },
+    "state": {
+      "stopped": "Oprit",
+      "starting": "Pornește…",
+      "running": "Rulează",
+      "stopping": "Se oprește…",
+      "crashed": "Blocat",
+      "installing": "Se instalează…",
+      "unreachable": "Inaccesibil"
+    },
+    "save": "Salvează",
+    "cancel": "Anulează",
+    "close": "Închide",
+    "remove": "Elimină",
+    "done": "Gata",
+    "header": {
+      "back": "Servere",
+      "players": "{{online}}/{{max}} jucători",
+      "uptime": "pornit de {{duration}}",
+      "start": "Pornește",
+      "stop": "Oprește",
+      "restart": "Repornește",
+      "join": "Intră",
+      "address": "Adresă",
+      "copyAddress": "Copiază adresa serverului",
+      "powerFailed": "Serverul nu și-a putut schimba starea"
+    },
+    "overview": {
+      "stoppedTitle": "Serverul este oprit",
+      "stoppedBody": "Pornește-l ca să vezi în timp real CPU, memoria, TPS și timpul de tick.",
+      "cpu": "CPU",
+      "cpuChart": "Utilizarea CPU în ultimele două minute",
+      "ram": "Memorie",
+      "ramChart": "Memoria folosită în ultimele două minute",
+      "of": "din {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Tickuri pe secundă în ultimele două minute",
+      "mspt": "Timp de tick",
+      "msptChart": "Milisecunde pe tick în ultimele două minute, linia de buget de 50 ms",
+      "msptBudget": "buget 50 ms",
+      "health": {
+        "good": "Fluid",
+        "busy": "Încărcat",
+        "lagging": "Cu lag"
+      },
+      "onlineTitle_one": "{{count}} jucător online",
+      "onlineTitle_few": "{{count}} jucători online",
+      "onlineTitle_other": "{{count}} de jucători online",
+      "onlineStopped": "Nimeni nu poate intra cât timp serverul e oprit.",
+      "nobody": "Nimeni nu joacă acum.",
+      "infoTitle": "Detalii",
+      "world": "Lume",
+      "version": "Horizon",
+      "port": "Port",
+      "memory": "Memorie",
+      "created": "Creat",
+      "folder": "Folder",
+      "uptime": "Timp de funcționare",
+      "startedAt": "Pornit: {{time}}",
+      "lastSession": "Ultima sesiune",
+      "lastStarted": "Ultima pornire: {{when}}",
+      "neverStarted": "Încă nepornit",
+      "lastLines": "Ultimele rânduri din consolă",
+      "noLines": "Nimic înregistrat încă.",
+      "openConsole": "Deschide consola",
+      "crashedTitle": "Serverul s-a oprit neașteptat",
+      "crashedBody": "Verifică ultimele rânduri din consolă, apoi pornește-l din nou."
+    },
+    "console": {
+      "filter": "Filtrează liniile",
+      "filters": {
+        "all": "Toate",
+        "info": "Info",
+        "warn": "Avertismente",
+        "error": "Erori",
+        "chat": "Chat"
+      },
+      "levels": {
+        "info": "info",
+        "warn": "avert",
+        "error": "eroare",
+        "command": "cmd",
+        "chat": "chat"
+      },
+      "autoScroll": "Urmărește liniile noi",
+      "logLabel": "Consola serverului",
+      "empty": "Nicio linie încă.",
+      "suggestions": "Sugestii de comenzi",
+      "inputLabel": "Comandă de server",
+      "placeholder": "Scrie o comandă (Tab completează, ↑ istoric)",
+      "offline": "Pornește serverul ca să trimiți comenzi",
+      "send": "Trimite",
+      "sendFailed": "Comanda nu a putut fi trimisă",
+      "hint": "Comenzile rulează ca din consola serverului, cu toate permisiunile. Nu e nevoie de bară oblică la început."
+    },
+    "players": {
+      "whitelist": "Listă albă",
+      "whitelistHint": "Pot intra doar jucătorii de pe listă. Recomandat când serverul e accesibil de pe internet.",
+      "view": "Arată jucătorii",
+      "views": {
+        "online": "Online",
+        "all": "Toți",
+        "ops": "Operatori",
+        "whitelist": "Pe lista albă",
+        "banned": "Interziși"
+      },
+      "search": "Caută un jucător",
+      "emptyOnline": "Nimeni nu e online",
+      "empty": "Niciun jucător aici",
+      "stoppedHint": "Pornește serverul ca să vezi cine joacă.",
+      "online": "Online",
+      "offline": "Offline",
+      "op": "Operator",
+      "whitelisted": "Pe lista albă",
+      "banned": "Interzis",
+      "playtime": "{{duration}} jucate",
+      "kick": "Dă afară",
+      "kickAria": "Dă-l afară pe {{name}}",
+      "more": "Mai multe acțiuni pentru {{name}}",
+      "makeOp": "Fă operator",
+      "deop": "Elimină operatorul",
+      "whitelistAdd": "Adaugă pe lista albă",
+      "whitelistRemove": "Elimină de pe lista albă",
+      "ban": "Interzice (ban)",
+      "pardon": "Ridică interdicția",
+      "banTitle": "Îi interzici accesul lui {{name}}?",
+      "banBody": "Este deconectat și nu mai poate intra până nu îi ridici interdicția.",
+      "reason": "Motiv (opțional, afișat jucătorului)",
+      "failed": "Acțiunea a eșuat",
+      "done": {
+        "kick": "{{name}} a fost dat afară",
+        "ban": "{{name}} a primit ban",
+        "pardon": "Interdicția pentru {{name}} a fost ridicată",
+        "op": "{{name}} este acum operator",
+        "deop": "{{name}} nu mai este operator",
+        "whitelist_add": "{{name}} a fost adăugat pe lista albă",
+        "whitelist_remove": "{{name}} a fost eliminat de pe lista albă"
+      }
+    },
+    "config": {
+      "mode": "Mod de editare",
+      "form": "Setări",
+      "raw": "Fișier brut",
+      "groups": {
+        "general": "General",
+        "world": "Lume",
+        "players": "Jucători",
+        "network": "Rețea",
+        "performance": "Performanță"
+      },
+      "keys": {
+        "motd": "Mesajul zilei",
+        "max-players": "Număr maxim de jucători",
+        "white-list": "Listă albă",
+        "online-mode": "Mod online (verificarea contului)",
+        "pvp": "Jucător contra jucător",
+        "gamemode": "Mod de joc implicit",
+        "difficulty": "Dificultate",
+        "level-seed": "Seedul lumii",
+        "spawn-protection": "Raza de protecție a spawnului",
+        "server-port": "Port",
+        "enable-rcon": "Consolă la distanță (RCON)",
+        "view-distance": "Distanța de vizibilitate",
+        "simulation-distance": "Distanța de simulare"
+      },
+      "restart": "Repornește",
+      "restartNeeded": "Repornește serverul ca să aplici unele modificări",
+      "unsaved_one": "{{count}} modificare nesalvată",
+      "unsaved_few": "{{count}} modificări nesalvate",
+      "unsaved_other": "{{count}} de modificări nesalvate",
+      "noChanges": "Nicio modificare",
+      "discard": "Renunță",
+      "saved": "Configurația a fost salvată",
+      "saveFailed": "Configurația nu a putut fi salvată",
+      "rawTitle": "server.toml",
+      "rawWarning": "Avansat: o greșeală de scriere poate împiedica pornirea serverului. Valorile sunt verificate la salvare."
+    },
+    "plugins": {
+      "vanillaTitle": "Pluginurile necesită Rustic Server",
+      "vanillaBody": "Acest server rulează Horizon vanilla. Rustic Server adaugă pluginuri .rplugin izolate (sandbox) care nu îl pot bloca niciodată. Creează un Rustic Server și importă această lume ca să folosești pluginuri.",
+      "createRustic": "Creează un Rustic Server",
+      "intro": "Pluginurile rulează izolate (sandbox): un plugin care eșuează este dezactivat cu o linie în jurnal, iar serverul merge mai departe. Fiecare declară la ce poate avea acces.",
+      "upload": "Adaugă un fișier…",
+      "uploadTitle": "Alege un fișier .rplugin",
+      "find": "Găsește pluginuri",
+      "empty": "Niciun plugin încă",
+      "emptyBody": "Răsfoiește Conținut › Pluginuri ca să adaugi unul dintr-un clic.",
+      "errored": "Dezactivat după o eroare",
+      "disabled": "Dezactivat",
+      "noDescription": "Fără descriere",
+      "toggle": "Activează {{name}}",
+      "capabilities": "Acces",
+      "noNetwork": "Fără rețea",
+      "network": "Rețea: {{domains}}",
+      "fs": {
+        "none": "Fără fișiere",
+        "data-folder": "Folder de date propriu"
+      },
+      "update": "Actualizează la {{version}}",
+      "updated": "{{name}} a fost actualizat la {{version}}",
+      "installed": "{{name}} a fost instalat și activat",
+      "removeTitle": "Elimini {{name}}?",
+      "removeBody": "Pluginul este descărcat din memorie și fișierul lui este șters. Folderul lui de date este păstrat.",
+      "failed": "Acțiunea asupra pluginului a eșuat"
+    },
+    "datapacks": {
+      "intro": "Pachetele de date ale lumii „{{world}}”.",
+      "find": "Găsește pachete de date",
+      "empty": "Niciun pachet de date în această lume",
+      "toggle": "Activează {{name}}",
+      "remove": "Elimină {{name}}",
+      "reloadHint": "Modificările se aplică după /reload sau o repornire.",
+      "failed": "Acțiunea asupra pachetului de date a eșuat"
+    },
+    "backups": {
+      "nowTitle": "Fă o copie de rezervă acum",
+      "nowBody": "O copie a lumii și a configurației. Serverul continuă să ruleze.",
+      "note": "Notă",
+      "notePlaceholder": "Notă opțională, ex. „înainte de actualizare”",
+      "now": "Copie de rezervă acum",
+      "created": "Copie de rezervă creată",
+      "empty": "Nicio copie de rezervă încă",
+      "kinds": {
+        "manual": "Manuală",
+        "scheduled": "Programată",
+        "pre_restore": "Înainte de restaurare"
+      },
+      "restore": "Restaurează",
+      "restoreTitle": "Restaurezi această copie de rezervă?",
+      "restoreBody": "Lumea revine la {{date}}. Tot ce s-a construit de atunci este înlocuit. Mai întâi se face o copie de rezervă a lumii actuale.",
+      "restored": "Copie de rezervă restaurată",
+      "delete": "Șterge copia de rezervă",
+      "deleteTitle": "Ștergi această copie de rezervă?",
+      "deleteBody": "Această copie de rezervă este eliminată definitiv.",
+      "failed": "Acțiunea asupra copiei de rezervă a eșuat",
+      "scheduleTitle": "Copii de rezervă automate",
+      "scheduleBody": "Cele mai vechi copii automate sunt eliminate când se atinge limita.",
+      "scheduleEnabled": "Fă copii de rezervă automat",
+      "every": "La fiecare",
+      "hours_one": "{{count}} oră",
+      "hours_few": "{{count}} ore",
+      "hours_other": "{{count}} de ore",
+      "keep": "Păstrează",
+      "keepCount_one": "ultima {{count}} copie",
+      "keepCount_few": "ultimele {{count}} copii",
+      "keepCount_other": "ultimele {{count}} de copii",
+      "scheduleSaved": "Programul copiilor de rezervă a fost salvat"
+    },
+    "danger": {
+      "deleteTitle": "Șterge acest server",
+      "deleteBody": "Oprește serverul și îl elimină din launcher. Îi poți păstra fișierele.",
+      "delete": "Șterge serverul",
+      "removeVpsTitle": "Elimină de pe VPS",
+      "removeVpsBody": "Oprește serviciul pe {{host}} și dezinstalează Rustic de pe el. VPS-ul rămâne al tău.",
+      "removeVps": "Elimină de pe VPS",
+      "confirmTitle": "Ștergi „{{name}}”?",
+      "confirmBody": "Acțiunea nu poate fi anulată. Fă mai întâi o copie de rezervă dacă s-ar putea să mai ai nevoie de lume.",
+      "deleteFiles": "Șterge și lumea și toate fișierele serverului",
+      "typeName": "Scrie „{{name}}” pentru a confirma",
+      "deleted": "{{name}} a fost șters",
+      "failed": "Serverul nu a putut fi șters"
+    }
+  },
+  "access": {
+    "intro": "Alege cum ajung prietenii la serverul tău. Poți activa mai multe deodată.",
+    "optional": "Opțional",
+    "lan": {
+      "title": "În rețeaua ta",
+      "body": "Jucătorii din aceeași rețea Wi-Fi sau locală intră cu această adresă.",
+      "copy": "Copiază adresa locală"
+    },
+    "public": {
+      "title": "Adresă publică",
+      "body": "IP-ul și portul VPS-ului tău. Oricine poate intra cu ea; un domeniu e mai ușor de partajat.",
+      "copy": "Copiază adresa publică"
+    },
+    "relay": {
+      "title": "Adresă temporară",
+      "body": "O adresă gratuită pe Rustic Relay cât timp rulează serverul. Fără configurarea routerului, IP-ul tău rămâne ascuns.",
+      "toggle": "Adresă temporară",
+      "copy": "Copiază adresa temporară",
+      "off": "Dezactivată. Activeaz-o ca să primești o adresă pe care o poți partaja.",
+      "label": "Numele din adresă",
+      "apply": "Aplică",
+      "status": {
+        "off": "Dezactivată",
+        "connecting": "Se așteaptă pornirea serverului",
+        "online": "Accesibilă acum",
+        "error": "Releul nu poate fi accesat"
+      },
+      "failed": "Adresa temporară nu a putut fi schimbată",
+      "taken": "Acest nume este luat. Încearcă altul.",
+      "invalid": "Folosește 3–32 de litere mici, cifre sau cratime."
+    },
+    "invite": {
+      "title": "Cod de invitație",
+      "body": "Prietenii care folosesc Rustic Launcher lipesc acest cod ca să intre, ca la Play with Friends din Horizon.",
+      "create": "Creează un cod",
+      "copy": "Copiază codul de invitație",
+      "expires": "Expiră {{when}}",
+      "revoke": "Revocă"
+    },
+    "advanced": "Avansat: deschide un port pe router (UPnP)",
+    "upnp": {
+      "title": "Mapare de porturi UPnP",
+      "warning": "Asta îi cere routerului să deschidă portul serverului către internet. Adresa ta IP publică devine vizibilă pentru toți jucătorii, ceea ce îți expune conexiunea de acasă (atacuri, localizare). Preferă adresa temporară sau un domeniu.",
+      "status": {
+        "off": "Dezactivat",
+        "mapping": "Se cere routerului…",
+        "mapped": "Port deschis",
+        "failed": "Routerul a refuzat (UPnP poate fi dezactivat)"
+      },
+      "mapped": "Port deschis: {{address}}",
+      "copy": "Copiază adresa publică",
+      "failed": "Portul nu a putut fi deschis",
+      "prefer": "Adresa temporară și domeniile funcționează fără să deschizi vreun port."
+    }
+  },
+  "domains": {
+    "title": "Domeniul meu",
+    "intro": "Un domeniu este adresa serverului tău, precum play.numeletau.net. Poți conecta unul pe care îl ai deja, poți cumpăra unul la Porkbun fără să ieși din launcher sau poți folosi orice registrar: îți arătăm exact ce să adaugi.",
+    "automatic": "Automat",
+    "anyRegistrar": "Orice registrar",
+    "otherPaths": "Alte variante",
+    "paths": {
+      "porkbun": {
+        "title": "Conectează Porkbun",
+        "body": "Ai deja un domeniu la Porkbun? Conectează-ți contul și creăm noi înregistrările pentru tine."
+      },
+      "buy": {
+        "title": "Cumpără un domeniu la Porkbun",
+        "body": "Găsește un nume liber, cumpără-l în propriul cont Porkbun și este configurat automat."
+      },
+      "manual": {
+        "title": "Folosește un domeniu de la orice registrar",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: îți arătăm ce să adaugi și verificăm pentru tine."
+      }
+    },
+    "subdomain": "Subdomeniu",
+    "subdomainHint": "play este o alegere implicită bună.",
+    "apexHint": "Gol: domeniul însuși (necesită ALIAS/ANAME la unii registrari).",
+    "invalidSubdomain": "Doar litere, cifre și cratime.",
+    "invalidDomain": "Nu pare a fi un domeniu (example.net).",
+    "copyAddress": "Copiază adresa domeniului",
+    "configureFailed": "Domeniul nu a putut fi configurat",
+    "boundBody": "Jucătorii intră cu această adresă.",
+    "remove": "Elimină domeniul",
+    "removeTitle": "Nu mai folosești {{domain}}?",
+    "removeBody": "Adresa nu mai indică spre acest server după ce înregistrările sunt eliminate. Domeniul rămâne al tău.",
+    "status": {
+      "pending": "În așteptare",
+      "propagating": "Se propagă",
+      "verified": "Conectat",
+      "error": "Eroare"
+    },
+    "provider": {
+      "porkbun": "Gestionat prin Porkbun",
+      "manual": "Gestionat la registrarul tău"
+    },
+    "connected": "Domeniu conectat",
+    "connectedBody": "Rustic Cloud verifică înregistrarea TXT, apoi adresa ta începe să funcționeze. Poți închide; te vom notifica.",
+    "porkbun": {
+      "step1": "Pe porkbun.com › Account › API Access, creează o cheie API.",
+      "openApi": "Deschide Porkbun API Access",
+      "step2": "Pe pagina domeniului la Porkbun, activează „API Access”.",
+      "apiKey": "Cheie API",
+      "secret": "Cheie API secretă",
+      "keychain": "Stocată în portcheiul computerului, nu este trimisă niciodată către Rustic.",
+      "connect": "Conectează",
+      "badApiKey": "O cheie API începe cu pk1_.",
+      "badSecret": "O cheie API secretă începe cu sk1_.",
+      "rejected": "Porkbun a refuzat aceste chei. Verifică-le sau creează o pereche nouă.",
+      "connected": "Porkbun conectat",
+      "disconnect": "Deconectează",
+      "domain": "Domeniu",
+      "pickDomain": "Alege unul dintre domeniile tale",
+      "apiAccessOff": "API Access este dezactivat pentru acest domeniu la Porkbun",
+      "apiAccessHint": "Domeniile gri necesită activarea „API Access” la Porkbun.",
+      "preview": "Modificările pe care le vom face",
+      "dryRun": "Previzualizare",
+      "previewBody": "Aceste înregistrări sunt adăugate sau înlocuite în domeniul tău, astfel încât {{fqdn}} să ajungă la acest server. Nimic nu se schimbă până nu aplici.",
+      "apply": "Configurează automat"
+    },
+    "buy": {
+      "intro": "Domeniul este înregistrat în propriul tău cont Porkbun și plătit acolo. Rustic nu încasează niciodată plata pentru el.",
+      "needsAccount": "Cumpărarea necesită contul tău Porkbun: conectează-l mai întâi (poți crea unul gratuit pe porkbun.com).",
+      "search": "Numele dorit",
+      "searchPlaceholder": "ex. loucraft",
+      "searchButton": "Caută",
+      "noResults": "Niciun rezultat pentru acest nume.",
+      "premium": "Premium",
+      "price": "{{price}} primul an · se reînnoiește la {{renewal}}",
+      "taken": "Luat",
+      "select": "Alege",
+      "overLimit": "Peste 100 $: cumpără-l pe porkbun.com",
+      "pricesNote": "Prețurile sunt cele ale Porkbun, în dolari americani, așa cum sunt afișate acum. Porkbun poate aplica taxe.",
+      "confirmTitle": "Confirmă cumpărarea la Porkbun",
+      "seller": "Vânzător: Porkbun LLC, nu Rustic. Se aplică termenii, prețurile, reînnoirile și rambursările lor.",
+      "domain": "Domeniu",
+      "address": "Adresa serverului",
+      "registrar": "Registrar",
+      "registrarValue": "Porkbun, în contul tău",
+      "firstYear": "Primul an",
+      "renewal": "Se reînnoiește anual la",
+      "payment": "Plătit cu creditul contului Porkbun sau cu cardul salvat: {{price}} acum; se reînnoiește anual la {{renewal}}, dacă nu dezactivezi reînnoirea automată la Porkbun.",
+      "agreeTerms": "Accept acordul de înregistrare și termenii Porkbun",
+      "termsLink": "(citește-i)",
+      "agreeOrder": "Înțeleg că Rustic doar trimite această comandă către Porkbun în numele meu",
+      "refunds": "Rambursările și anulările pentru domenii sunt gestionate de Porkbun conform termenilor săi.",
+      "buyButton": "Cumpără la Porkbun · {{price}}",
+      "bought": "{{domain}} este al tău",
+      "boughtBody": "Încasat de Porkbun: {{price}}. Se configurează acum…",
+      "configuring": "Se configurează noul tău domeniu…",
+      "failed": "Cumpărarea nu a reușit",
+      "errors": {
+        "price_changed": "Prețul s-a schimbat la Porkbun. Verifică noul preț și încearcă din nou.",
+        "not_available": "Acest domeniu tocmai a fost luat.",
+        "over_limit": "Peste 100 $: cumpără-l pe porkbun.com.",
+        "porkbun_not_connected": "Conectează-ți mai întâi contul Porkbun.",
+        "consent_required": "Ambele căsuțe trebuie bifate."
+      }
+    },
+    "manual": {
+      "intro": "Adaugă aceste înregistrări în zona DNS a registrarului tău. Le verificăm la fiecare 10 secunde și îți spunem când funcționează.",
+      "domain": "Domeniul tău",
+      "registrar": "Registrar",
+      "show": "Arată înregistrările",
+      "guideTitle": "La {{registrar}}",
+      "allGuides": "Ghiduri pentru fiecare registrar"
+    },
+    "records": {
+      "caption": "Înregistrări DNS de adăugat",
+      "type": "Tip",
+      "name": "Nume / gazdă",
+      "value": "Valoare / țintă",
+      "ttl": "TTL",
+      "status": "Stare",
+      "optional": "opțional",
+      "emptyHost": "(lasă gol)",
+      "copyName": "Copiază numele {{type}}",
+      "copyValue": "Copiază valoarea {{type}}",
+      "srvFields": "prioritate {{priority}} · pondere {{weight}} · port {{port}}"
+    },
+    "check": {
+      "pending": "Neverificat",
+      "notNeeded": "Nu e necesar",
+      "ok": "OK",
+      "propagating": "Se propagă ({{ok}}/{{total}})",
+      "wrong": "Valoare greșită",
+      "found": "Găsit:",
+      "expected": "Așteptat:",
+      "missing": "Lipsește",
+      "first": "Prima verificare…",
+      "progress": "{{ok}} din {{total}} înregistrări OK",
+      "progressLabel": "Înregistrări verificate",
+      "auto": "Se verifică automat la fiecare 10 s",
+      "lastCheck": "ultima verificare acum {{seconds}} s",
+      "now": "Verifică acum"
+    },
+    "help": {
+      "txt": "De ce o înregistrare TXT? Dovedește că domeniul e al tău, ca nimeni altcineva să nu-l poată îndrepta spre serverul lui.",
+      "propagation": "Modificările pot dura de la un minut la câteva ore până ajung la toată lumea. Continuăm să verificăm; nu trebuie să rămâi aici.",
+      "apex": "Domeniile apex (numeletau.net fără „play.”) necesită o înregistrare ALIAS/ANAME; nu toți registrarii o au. Un subdomeniu funcționează întotdeauna."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › domeniul tău › DNS zone.\nApasă „Add an entry” și alege tipul (CNAME, SRV, A sau TXT).\nSub-domain = Numele de mai jos (lasă gol pentru domeniul însuși), Target = Valoarea.\nRepetă pentru fiecare înregistrare, apoi confirmă. OVH aplică modificările în câteva minute."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › domeniul tău › DNS records.\nApasă „Add record”, alege tipul.\nName = Numele de mai jos, Value = Valoarea (păstrează punctul final pentru țintele CNAME/SRV).\nSalvează fiecare înregistrare."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nLa Host records, „Add new record”.\nHost = Numele de mai jos (@ pentru domeniul însuși), Value/Target = Valoarea.\nApasă bifa verde ca să salvezi fiecare."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › domeniul tău › DNS › Manage DNS.\nApasă „Add new record”, alege tipul.\nName = Numele de mai jos (@ pentru domeniul însuși), Value = Valoarea.\nPentru SRV, completează Service _minecraft, Protocol _tcp, apoi prioritatea, ponderea și portul. Salvează."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Alege site-ul › DNS › Records › Add record.\nAlege tipul, Name = Numele de mai jos, Target/Content = Valoarea.\nSetează Proxy status la „DNS only” (norul gri): traficul jocului nu poate trece prin proxy-ul Cloudflare.\nSalvează fiecare înregistrare."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › domeniul tău › DNS.\nApasă „Add record” și alege tipul.\nHost name = Numele de mai jos, Points to / Value = Valoarea.\nSalvează; IONOS poate cere confirmarea înlocuirii unei înregistrări implicite."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › domeniul tău › DNS / Nameservers.\nLa „Manage DNS records”, alege tipul.\nName = Numele de mai jos, Points to / Value = Valoarea, TTL ca în tabel.\nApasă „Add record” pentru fiecare."
+      },
+      "porkbun": {
+        "name": "Porkbun (manual)",
+        "steps": "Domain Management › domeniul tău › DNS.\nAlege tipul, Host = Numele de mai jos (gol pentru domeniul însuși), Answer = Valoarea.\nApasă „Add” pentru fiecare înregistrare.\nSfat: varianta Conectează Porkbun face toate acestea pentru tine."
+      },
+      "generic": {
+        "name": "Alt registrar",
+        "steps": "Deschide zona DNS a domeniului tău (uneori numită DNS records sau Zone editor).\nAdaugă fiecare înregistrare de mai jos cu același tip, nume și valoare.\nDacă registrarul cere numele complet, adaugă domeniul tău după Nume.\nSalvează, apoi revino: verificăm automat."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Vizualizări de servere",
+    "tabs": {
+      "discover": "Descoperă",
+      "browse": "Răsfoiește"
+    },
+    "searchLabel": "Caută servere",
+    "searchPlaceholder": "Caută în catalogul de servere…",
+    "publish": "Publică-mi serverul",
+    "publishCta": {
+      "title": "Serverul tău aici",
+      "hint": "Listează-ți serverul Horizon în catalog de pe site: apare aici și pe rustic-launcher.com după ce trec verificările automate."
+    },
+    "play": "Joacă",
+    "playAria": "Joacă pe {{name}}",
+    "view": "Vezi",
+    "verified": "Verificat",
+    "featured": "Alegerea echipei",
+    "verifiedHint": "Servere verificate: echipa Rustic a verificat proprietarul și regulile.",
+    "online_one": "{{value}} online",
+    "online_few": "{{value}} online",
+    "online_other": "{{value}} online",
+    "playersLabel": "Jucători online",
+    "languagesLabel": "Limbi",
+    "playsLabel": "Lansări săptămâna aceasta",
+    "lastPlayed": "Jucat ultima dată",
+    "lastPlayedOn": "Jucat {{when}}",
+    "hero": {
+      "label": "Servere recomandate",
+      "eyebrow": "Verificate"
+    },
+    "rows": {
+      "trending": "În tendințe",
+      "trendingHint": "Cele mai lansate din Rustic săptămâna aceasta",
+      "players": "Cei mai mulți jucători acum",
+      "playersHint": "Conform ultimei verificări din cloud",
+      "new": "Noi în catalog",
+      "newHint": "Abia listate de proprietarii lor",
+      "recent": "Jucate recent",
+      "recentHint": "Din lista ta de servere"
+    },
+    "rowError": "Acest rând nu a putut fi încărcat.",
+    "retry": "Reîncearcă",
+    "empty": {
+      "title": "Niciun server listat încă",
+      "hint": "Fii primul: publică-ți serverul de pe site."
+    },
+    "emptySearch": {
+      "title": "Niciun server nu se potrivește",
+      "hint": "Încearcă alte cuvinte sau mai puține filtre."
+    },
+    "sorts": {
+      "trending": "În tendințe",
+      "players": "Cei mai mulți jucători",
+      "new": "Cele mai noi",
+      "name": "Nume"
+    },
+    "filters": {
+      "tags": "Stil de joc",
+      "language": "Limbă",
+      "engine": "Motor",
+      "rustic": "Rustic",
+      "verifiedOnly": "Doar verificate",
+      "reset": "Resetează filtrele",
+      "remove": "Elimină filtrul {{filter}}"
+    },
+    "tags": {
+      "survival": "Supraviețuire",
+      "smp": "SMP",
+      "creative": "Creativ",
+      "minigames": "Minijocuri",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Roleplay",
+      "factions": "Facțiuni",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Aventură",
+      "building": "Construcții",
+      "economy": "Economie",
+      "modded": "Cu moduri",
+      "anarchy": "Anarhie",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Servere",
+      "status": "Stare în timp real",
+      "cloudSaw_one": "cloudul a văzut {{value}} jucător online {{when}}",
+      "cloudSaw_few": "cloudul a văzut {{value}} jucători online {{when}}",
+      "cloudSaw_other": "cloudul a văzut {{value}} de jucători online {{when}}",
+      "engine": "Motor",
+      "version": "Versiunea jocului",
+      "languages": "Limbi",
+      "plays": "Lansări săptămâna aceasta",
+      "about": "Despre",
+      "noDescription": "Nicio descriere încă.",
+      "address": "Adresă",
+      "copy": "Copiază",
+      "openSite": "Deschide pe site",
+      "website": "Site web",
+      "discord": "Discord",
+      "by": "Listat de {{name}}",
+      "byStaff": "Listat de echipa Rustic",
+      "report": "Raportează",
+      "rusticEdition": "Necesită ediția Rustic",
+      "missing": "Acest server nu este disponibil",
+      "missingHint": "Poate fi privat, ascuns de moderare sau șters."
+    },
+    "report": {
+      "title": "Raportează {{name}}",
+      "lead": "Spune-i echipei de moderare ce nu e în regulă. Fiecare raport este verificat.",
+      "reason": "Motiv",
+      "reasons": {
+        "impersonation": "Se dă drept alt server",
+        "spam": "Spam sau înșelător",
+        "inappropriate_content": "Conținut nepotrivit",
+        "cheating": "Trișare sau server rău intenționat",
+        "harassment": "Hărțuire",
+        "copyright": "Îmi încalcă drepturile (marcă, nume)",
+        "malware": "Malware",
+        "other": "Altele"
+      },
+      "details": "Detalii",
+      "detailsHint": "Opțional, cel mult 2.000 de caractere.",
+      "send": "Trimite raportul",
+      "sent": "Mulțumim, raportul tău a ajuns la echipa de moderare.",
+      "signIn": "Conectează-te la contul Rustic ca să raportezi un server.",
+      "failed": "Raportul nu a putut fi trimis."
+    }
+  }
+}

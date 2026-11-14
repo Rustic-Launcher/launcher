@@ -31,7 +31,22 @@
     "error_title": "Nie można połączyć się z katalogiem serwerów",
     "retry": "Ponów",
     "publish_hint": "Opublikuj swój na rustic-launcher.com/servers",
-    "rustic_edition": "Edycja Rustic"
+    "rustic_edition": "Edycja Rustic",
+    "saved_servers": "Zapisane serwery",
+    "local_network": "Sieć lokalna",
+    "search_servers": "Szukaj w swoich serwerach",
+    "no_servers_title": "Nie masz jeszcze serwerów",
+    "no_servers_body": "Dodaj serwer po adresie albo znajdź jakiś w sekcji „Odkrywaj”.",
+    "no_worlds_title": "Nie masz jeszcze światów",
+    "no_worlds_body": "Utwórz świat, aby zacząć grać.",
+    "nothing_found": "Nic nie pasuje do wyszukiwania",
+    "just_now": "Przed chwilą",
+    "minutes_ago": "{n} min temu",
+    "hours_ago": "{n} godz. temu",
+    "days_ago": "{n} dni temu",
+    "lan_empty": "Tutaj pojawiają się światy otwarte w sieci LAN.",
+    "play": "Graj",
+    "no_mods": "Nie masz jeszcze modów. Znajdź mody do Rustic w sekcji „Odkrywaj” w launcherze albo dodaj własne pliki do folderu modów."
   },
   "tags": {
     "survival": "Przetrwanie",

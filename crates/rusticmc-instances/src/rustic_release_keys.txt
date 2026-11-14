@@ -1,0 +1,6 @@
+# Rustic's edition release keys: base64 Ed25519 public keys, one per line (ADR 0162).
+# They verify SHA256SUMS.sig of Rustic edition builds, signed over "rustic release <version>\n"
+# followed by SHA256SUMS. The private keys are kept offline by the release manager
+# (docs/RELEASING.md, docs/TODO_HUMAN.md "Release keys"). To rotate: add the new key here, ship a
+# launcher with both, sign new builds with the new key, then remove the old line.
+ByhLWZo4VVfvCNk7LqsAL1UMAPlSFJkNgO/C9rmZTvI=

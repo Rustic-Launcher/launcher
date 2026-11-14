@@ -109,7 +109,7 @@ function setLaunch(s: LaunchStatus) {
 export const coreHandlers: MockHandlers = {
   // ---- app ----
   app_info: () => ({
-    version: '0.1.0',
+    version: '0.2.0',
     channel: 'beta',
     os: 'windows',
     arch: 'x86_64',
@@ -169,13 +169,6 @@ export const coreHandlers: MockHandlers = {
     return title?.includes('rustic-server')
       ? 'C:/Users/Sam/Rustic/rustic-server.exe'
       : 'C:/Users/Sam/Downloads/pack.mrpack';
-  },
-  app_check_update: async () => {
-    await latency(1);
-    return { available: false, version: null, notes: null };
-  },
-  app_install_update: async () => {
-    await latency(1);
   },
   downloads_list: () => listDownloads(),
   download_cancel: ({ id }) => cancelDownload(id),

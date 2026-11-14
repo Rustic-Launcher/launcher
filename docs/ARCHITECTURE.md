@@ -39,7 +39,7 @@ Porkbun API (user's own keys) · user's VPS over SSH · Stripe · email provider
 |---|---|---|
 | UI | `apps/launcher/src` | React 19 + TS + Vite + Tailwind v4 + Radix + Motion, TanStack Router/Query, Zustand, i18next (ADR 0001-0003). Pure presentation + view state; every side effect through IPC or the Cloud API client. Runs in a browser with the IPC mock. |
 | Design system | `packages/ui` | Tokens from [PALETTES.md](PALETTES.md), components, Storybook. |
-| Tauri shell | `apps/launcher/src-tauri` | Commands/events (snake_case / kebab-case, `docs/IPC.md`), window, tray, deep links `rustic://`, single instance, updater, capability files (least privilege). |
+| Tauri shell | `apps/launcher/src-tauri` | Commands/events (snake_case / kebab-case, `docs/IPC.md`), window, tray, deep links `rustic://`, single instance, automatic updates of the launcher and the Rustic edition (`update.rs`, ADR 0162), capability files (least privilege). |
 | `rusticmc-launcher-core` | crates | Paths, settings, job/download manager (resumable, hash-checked, progress events), **Horizon build manager** (Rustic edition builds), `horizon-prepare` driver (`--progress json`), game process supervisor (spawn, stdin session, exit codes, crash report path). |
 | `rusticmc-auth` | crates | Microsoft OAuth (auth code + PKCE loopback, device-code fallback), XBL → XSTS → `login_with_xbox` → entitlements → profile; refresh; keychain storage; owner gate + offline grace; Rustic account session (link via Mojang join/hasJoined). |
 | `rusticmc-instances` | crates | Instances (folder per instance, `--game-dir/--home`), pinned build, content state, import/export. |

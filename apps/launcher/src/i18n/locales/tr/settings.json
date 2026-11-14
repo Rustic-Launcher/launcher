@@ -1,0 +1,514 @@
+{
+  "title": "Ayarlar",
+  "subtitle": "Hesaplar, oyun, başlatıcı, görünüm ve verilerin.",
+  "sectionsLabel": "Ayar bölümleri",
+  "saving": "Kaydediliyor…",
+  "saved": "Tüm değişiklikler kaydedildi",
+  "close": "Kapat",
+  "cancel": "İptal",
+  "sections": {
+    "accounts": "Hesaplar ve güvenlik",
+    "game": "Oyun ve örnekler",
+    "launcher": "Başlatıcı",
+    "appearance": "Görünüm",
+    "privacy": "Gizlilik ve veriler",
+    "parental": "Ebeveyn denetimleri",
+    "about": "Hakkında ve yasal"
+  },
+  "accounts": {
+    "active": "Etkin",
+    "useThis": "Bu profili kullan",
+    "signOut": "Çıkış yap",
+    "signedOut": "{{name}} oturumu kapatıldı",
+    "ownership": {
+      "valid": "Oyuna sahip",
+      "expired": "Kontrolün süresi doldu",
+      "never": "Hiç kontrol edilmedi",
+      "failed": "Kontrol başarısız",
+      "lastChecked": "Kontrol: {{when}}",
+      "nextCheck": "sonraki kontrol en geç {{date}}",
+      "checkNow": "Şimdi kontrol et",
+      "checkedToast": "Sahiplik doğrulandı",
+      "checkFailed": "Microsoft’a ulaşılamadı. Daha sonra tekrar dene."
+    },
+    "microsoft": {
+      "title": "Microsoft hesapları",
+      "description": "Oynamak için oyuna sahip olmak gerekir. Rustic bunu Microsoft ile kontrol eder ve şifreni asla görmez.",
+      "add": "Microsoft hesabı ekle",
+      "keychain": "Giriş belirteçleri sistem anahtar zincirinde saklanır; asla bir dosyada veya komut satırında tutulmaz.",
+      "signIn": "Microsoft ile giriş yap",
+      "step1": "Microsoft sayfasını tarayıcında (veya başka bir cihazda) aç.",
+      "step2": "Aşağıdaki kodu gir ve giriş yap.",
+      "step3": "Buraya geri dön: başlatıcı kendiliğinden devam eder.",
+      "codeLabel": "Giriş kodu",
+      "copyCode": "Kodu kopyala",
+      "copied": "Kod kopyalandı",
+      "openPage": "microsoft.com/link adresini aç",
+      "waiting": "Tarayıcıda giriş yapman bekleniyor…",
+      "cancel": "İptal",
+      "signedInAs": "Giriş yapılan hesap: {{name}}",
+      "ownershipOk": "Sahiplik doğrulandı: oynayabilirsin.",
+      "ownershipMissing": "Bu hesap oyuna sahip değil.",
+      "tryAgain": "Tekrar dene",
+      "failed": {
+        "expired": {
+          "title": "Kodun süresi doldu",
+          "body": "Kodlar 15 dakika geçerlidir. Yeni bir kod almak için yeniden başla."
+        },
+        "denied": {
+          "title": "Giriş iptal edildi",
+          "body": "Microsoft, girişin reddedildiğini bildirdi."
+        },
+        "no_ownership": {
+          "title": "Bu hesap oyuna sahip değil",
+          "body": "Rustic, oyunu yalnızca Minecraft: Java Edition’a sahip hesaplar için başlatır."
+        },
+        "error": {
+          "title": "Giriş başarısız oldu",
+          "body": "Rustic girişi tamamlayamadı. Tekrar dene; başarısız olmaya devam ederse aşağıdaki ayrıntı nedenini söyler."
+        },
+        "not_configured": {
+          "title": "Bu derlemede Microsoft ile giriş ayarlanmamış",
+          "body": "Bu derlemede Azure uygulama kimliği yok, bu yüzden Microsoft’tan oyun lisansını doğrulamasını isteyemez. Resmî derlemelerde bulunur."
+        },
+        "not_approved": {
+          "title": "Başlatıcı Mojang’ın onayını bekliyor",
+          "body": "Microsoft hesabınla giriş yapıldı ama oyun hizmetleri bu başlatıcıyı henüz kabul etmiyor: önce Mojang’ın uygulama kimliğini onaylaması gerekiyor. Senin yapacağın bir şey yok; onaylandığında tekrar dene."
+        },
+        "xbox": {
+          "title": "Xbox Live girişi reddetti",
+          "body": "Nedeni aşağıda (ebeveyn izni olmayan çocuk hesabı, oluşturulması gereken Xbox profili, desteklenmeyen bölge…)."
+        },
+        "rate_limited": {
+          "title": "Çok fazla deneme",
+          "body": "Hizmetler kısa sürede çok fazla giriş denemesi aldı. Bir dakika bekle ve tekrar dene."
+        },
+        "network": {
+          "title": "Hizmetlere ulaşılamadı",
+          "body": "İnternet bağlantını kontrol et ve tekrar dene."
+        },
+        "detail": "Ayrıntı: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Rustic hesabı",
+      "description": "Arkadaşlar, Dolap, satın almalar ve sunucular için Rustic kimliğin.",
+      "signedOut": "Giriş yapılmadı. Oyun onsuz çalışır; sosyal özellikler, Dolap ve Mağaza için gereklidir.",
+      "signIn": "Giriş yap veya hesap oluştur",
+      "licenceNote": "Rustic hesabı bir platform kimliğidir. Oyun lisansının yerini asla tutmaz: yine de oyuna sahip bir Microsoft hesabına ihtiyacın var."
+    },
+    "offline": {
+      "title": "Çevrimdışı oyun",
+      "description": "LAN partileri ve internetsiz oynamak için: Microsoft hesabınla, resmî adın ve UUID’inle oynarsın. Son başarılı sahiplik kontrolünden sonra {{days}} gün boyunca kullanılabilir, ardından Rustic Microsoft’a yeniden sorar.",
+      "until": "Çevrimdışı oyun şu tarihe kadar kullanılabilir: {{date}}",
+      "locked": "Önce oyuna sahip bir Microsoft hesabıyla giriş yap: çevrimdışı oyun başarılı bir sahiplik kontrolünden sonra açılır."
+    },
+    "connections": {
+      "title": "Bağlantılar",
+      "description": "Başlatıcının senin adına kullandığı hizmetler. Anahtarlar ve sunucu parmak izleri sistem anahtar zincirinde kalır.",
+      "porkbun": "Porkbun (alan adları)",
+      "porkbunHint": "Sunucuların için kendi Porkbun hesabında DNS kayıtları oluşturmak için kullanılır.",
+      "porkbunRemoved": "Porkbun anahtarları bu bilgisayardan kaldırıldı",
+      "connected": "Bağlı",
+      "notConnected": "Bağlı değil",
+      "remove": "Anahtarları kaldır",
+      "vps": "VPS sunucuları",
+      "vpsHint": "Kendi VPS’inde SSH üzerinden barındırdığın sunucular. Bir sunucuyu unutmak, sabitlenmiş anahtarını kaldırır.",
+      "noVps": "Yok",
+      "fingerprint": "{{fp}} · güvenilme tarihi: {{date}}",
+      "forget": "Unut"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Bağlandı",
+      "notLinked": "Bağlı değil: Rustic’e Microsoft hesabınla da giriş yap.",
+      "link": "Web sitesinde bağla",
+      "unlink": "Bağlantıyı kaldır",
+      "unlinked": "Microsoft bağlantısı kaldırıldı",
+      "unlinkFailed": "Microsoft bağlantısı kaldırılamadı",
+      "lastMethod": "Önce (web sitesinden) bir şifre ekle: Microsoft şu an tek giriş yöntemin."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Bellek (RAM)",
+      "description": "Oyuna verilen varsayılan bellek. Her örnek bunu geçersiz kılabilir.",
+      "system": "{{total}} yüklü · şu an {{free}} boş",
+      "warn": "Bu, sistemine az bellek bırakır ve her şeyi yavaşlatabilir.",
+      "perInstance": "İpucu: çoğu örnek için 4 GB yeterlidir; büyük mod paketleri 6 ila 8 GB isteyebilir."
+    },
+    "prepare": {
+      "title": "Oyun dosyaları",
+      "description": "Horizon, oyunun kaynaklarını kendi oyun kurulumundan hazırlar. Üçüncü taraflardan hiçbir şey indirilmez.",
+      "status": "Durum",
+      "states": {
+        "missing": "Hazırlanmadı",
+        "preparing": "Hazırlanıyor",
+        "ready": "Hazır",
+        "outdated": "Yeniden hazırlanmalı"
+      },
+      "gameVersion": "Oyun {{version}}",
+      "source": "Kaynak kurulum",
+      "sourceHint": "Bu bilgisayarda bulunan resmî başlatıcının oyun klasörü.",
+      "doneToast": "Oyun dosyaları hazır",
+      "steps": {
+        "detect": "Kurulumun aranıyor…",
+        "download": "Oyun dosyaları Mojang’dan indiriliyor…",
+        "verify": "Oyun dosyaları doğrulanıyor…",
+        "compile_exporters": "Dışa aktarıcılar derleniyor…",
+        "export": "Kaynaklar dışa aktarılıyor…",
+        "index": "Dizinleniyor…",
+        "done": "Bitti"
+      },
+      "legal": "Hazırlanan dosyalar bu bilgisayarda kalır ve asla paylaşılmaz.",
+      "again": "Yeniden hazırla",
+      "failed": "Hazırlık başarısız oldu"
+    },
+    "java": {
+      "label": "Hazırlık için Java",
+      "description": "Yalnızca oyun dosyalarını hazırlamak için kullanılır (horizon-prepare). Horizon’un kendisi çalışmak için Java’ya ihtiyaç duymaz.",
+      "pickTitle": "Bir Java çalıştırılabilir dosyası seç",
+      "source": {
+        "bundled": "Rustic ile birlikte gelen",
+        "system": "Bu bilgisayarda yüklü",
+        "custom": "Özel"
+      },
+      "custom": "Özel yol…",
+      "customHint": "Java 21+ çalıştırılabilir dosyası seç"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "Rustic Server sunucularının çalıştırdığı rustic-server programı (Rustic eklentileriyle Horizon’un motoru). Sunucunun oyun sürümüyle aynı Horizon commit’inden gelmelidir: Rustic sürümü derlemeleri onu kendi klasörlerinde getirir.",
+      "program": "Kullanılan program",
+      "notFound": "Bulunamadı",
+      "notFoundHint": "Onu içeren bir Rustic sürümü derlemesi yükle veya rustic-server dosyasını seç. O olmadan Rustic Server oluşturma başarısız olur.",
+      "configuredMissing": "Seçilen dosya artık mevcut değil: {{path}}",
+      "origin": {
+        "server": "Sunucunun kendisinin",
+        "configured": "Elle seçildi",
+        "build": "Derlemeyle birlikte geldi: {{build}}",
+        "beside_launcher": "Başlatıcının yanında",
+        "path": "PATH üzerinde bulundu"
+      },
+      "choose": "Seç…",
+      "pickTitle": "rustic-server programını seç",
+      "automatic": "Otomatik kullan",
+      "saved": "rustic-server programı kaydedildi",
+      "automaticSaved": "Otomatik algılama geri yüklendi",
+      "invalid": "Bu dosya bir rustic-server programı değil (--rustic-version komutuna yanıt vermiyor).",
+      "failed": "Bu program kaydedilemedi",
+      "order": "Arama sırası: senin seçimin, sonra oyun sürümünün klasörü, sonra başlatıcının yanı, sonra PATH."
+    },
+    "folders": {
+      "title": "Klasörler",
+      "description": "Başlatıcının verilerini, örneklerini ve sunucularını sakladığı yer.",
+      "data": "Başlatıcı verileri",
+      "instances": "Örnekler",
+      "servers": "Sunucular",
+      "open": "Aç",
+      "change": "Değiştir",
+      "changed": "Klasör değiştirildi",
+      "moveNote": "Mevcut dosyalar otomatik olarak taşınmaz."
+    },
+    "resolution": {
+      "title": "Oyun penceresi",
+      "description": "Yeni örnekler için varsayılan pencere boyutu.",
+      "size": "Boyut",
+      "width": "Genişlik",
+      "height": "Yükseklik",
+      "fullscreen": "Tam ekranda başlat",
+      "hint": "En az 640 × 480."
+    },
+    "native": {
+      "title": "Yerel modlar",
+      "description": "Yerel modlu örnekler, bu bilgisayarda onlar için derlenmiş bir oyun oynatır. Burada: Rust derleyicisi ve sonraki derlemeleri hızlandıran derleme önbelleği.",
+      "rust": "Rust derleyicisi",
+      "rustReady": {
+        "managed": "Rust {{version}}, başlatıcı tarafından yüklendi",
+        "rustup": "Rust {{version}}, rustup’ından",
+        "system": "Rust {{version}}, bu bilgisayarda yüklü"
+      },
+      "rustMissing": "İlk derleme için Rust {{version}} gerekli.",
+      "ready": "Hazır",
+      "missing": "Yüklü değil",
+      "installing": "Yükleniyor…",
+      "installRust": "Rust’ı yükle",
+      "rustInstalled": "Rust yüklendi",
+      "rustFailed": "Rust yüklenemedi",
+      "cache": "Derleme önbelleği",
+      "cacheDetail": "Önbellek {{cache}} · indirilen crate’ler {{crates}} · Rust {{toolchain}} · kaynak {{source}}. Temizlemek derlenmiş oyunları korur; sonraki derleme her şeyi yeniden derler.",
+      "clear": "Temizle",
+      "clearTitle": "Derleme önbelleği temizlensin mi?",
+      "clearBody": "Örnekler derlenmiş oyunlarını korur. Sonraki yerel derleme tüm oyunu yeniden derler (10 ila 15 dakika).",
+      "cleared": "Derleme önbelleği temizlendi ({{size}} boşaltıldı)",
+      "limit": "Önbellek sınırı",
+      "limitHint": "Bir derlemeden sonra önbellek bu değerden büyükse temizlenir (0: asla).",
+      "gib": "GiB",
+      "limitSaved": "Önbellek sınırı kaydedildi",
+      "limitInvalid": "Sınır, 0 ile 4096 arasında tam sayı GiB olmalıdır.",
+      "folder": "Klasör: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Dil",
+      "description": "Tüm başlatıcıya hemen uygulanır.",
+      "label": "Dil",
+      "search": "Dil ara",
+      "empty": "Eşleşen dil yok",
+      "translated": "Çevrildi",
+      "others": "Diğer diller",
+      "partial": "Kısmi",
+      "english": "şimdilik İngilizce",
+      "via": "şimdilik {{lang}}",
+      "help": "Henüz çevrilmemiş metinler İngilizce görünür. Çeviriler topluluktan gelir."
+    },
+    "startup": {
+      "title": "Başlangıç",
+      "onBoot": "Bilgisayar açıldığında Rustic’i aç",
+      "onBootHint": "Arkadaşların seni daha erken çevrimiçi görür ve güncellemeler arka planda indirilir.",
+      "minimized": "Simge durumunda başlat"
+    },
+    "behaviour": {
+      "title": "Oynarken",
+      "onLaunch": "Oyun başladığında",
+      "launchOptions": {
+        "keep_open": "Başlatıcıyı açık tut",
+        "minimize": "Başlatıcıyı simge durumuna küçült",
+        "hide": "Sistem tepsisine gizle",
+        "close": "Başlatıcıyı kapat"
+      },
+      "onClose": "Pencereyi kapattığımda",
+      "onCloseHint": "Sistem tepsisinde tutmak, arkadaşlarının seni davet etmesini ve sunucuların çalışmaya devam etmesini sağlar.",
+      "closeOptions": {
+        "tray": "Sistem tepsisinde çalışmaya devam et",
+        "quit": "Rustic’ten çık"
+      }
+    },
+    "updates": {
+      "title": "Güncellemeler",
+      "auto": "Güncellemeleri otomatik yükle",
+      "autoHint": "Güncellemeler yüklenmeden önce imzalanır ve doğrulanır.",
+      "check": "Rustic Launcher",
+      "checkNow": "Güncellemeleri denetle",
+      "available": "{{version}} sürümü kullanılabilir",
+      "upToDate": "Güncelsin",
+      "failed": "Güncellemeler denetlenemedi",
+      "lastCheck": "Son kontrol: {{when}}",
+      "neverChecked": "Henüz kontrol edilmedi",
+      "edition": "Oyun (Rustic sürümü)",
+      "editionNone": "Yüklü Rustic sürümü derlemesi yok",
+      "apply": "Güncelle ve yeniden başlat",
+      "checking": "Kontrol ediliyor…",
+      "working": "Güncelleniyor… {{pct}}",
+      "restarting": "Yeniden başlatılıyor…",
+      "deferred": "Oyunun kapanması bekleniyor",
+      "lastError": "Son deneme başarısız oldu. Otomatik olarak yeniden denenecek."
+    },
+    "performance": {
+      "title": "İndirmeler ve performans",
+      "downloads": "Paralel indirmeler",
+      "downloadsHint": "Yavaş bir bağlantıda düşür.",
+      "hardware": "Donanım hızlandırma",
+      "hardwareHint": "Başlatıcı titriyorsa kapat. Yeniden başlattıktan sonra etkili olur."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Tema",
+      "description": "Rustic öncelikle koyu tema için tasarlandı; açık tema aydınlık odalar için var.",
+      "label": "Tema",
+      "dark": "Koyu",
+      "light": "Açık",
+      "system": "Sistem"
+    },
+    "palette": {
+      "title": "Renk paleti",
+      "description": "OYNA, seçim ve ilerleme için kullanılan vurgu rengi.",
+      "label": "Renk paleti",
+      "play": "Oyna",
+      "default": "Varsayılan",
+      "names": {
+        "ember": "Kor",
+        "verdigris": "Bakır pası",
+        "heather": "Funda"
+      },
+      "descriptions": {
+        "ember": "Antrasit üzerinde sıcak bakır",
+        "verdigris": "Oksitlenmiş bakır gibi patina yeşili",
+        "heather": "Soluk funda pembesi"
+      }
+    },
+    "motion": {
+      "title": "Hareket",
+      "body": "Rustic, sisteminin “hareketi azalt” ayarına uyar: animasyonlar, karusel ve 3B önizleme durağanlaşır."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "Bizimle paylaştıkların",
+      "description": "Buradaki her şey varsayılan olarak kapalıdır. Bir şeyi açmak Rustic’i geliştirmemize yardımcı olur; istediğin zaman fikrini değiştirebilirsin.",
+      "usage": "Kullanım analizleri",
+      "usageHint": "Hangi sayfaların ve özelliklerin kullanıldığı; içerik veya tanımlayıcı olmadan.",
+      "performance": "Performans raporları",
+      "performanceHint": "Başlatma ve kare süreleri, yavaş noktaları bulmak için.",
+      "crash": "Çökme raporları",
+      "crashHint": "Kapalıyken Rustic her çökmede sana sorar."
+    },
+    "policyLink": "Gizlilik politikasını oku",
+    "social": {
+      "title": "Arkadaşlar ve durum",
+      "activity": "Ne oynadığımı arkadaşlarıma göster",
+      "activityHint": "Arkadaşlarının sunucunu görmesini ve tek tıkla sana katılmasını sağlar.",
+      "requests": "Bana kimler arkadaşlık isteği gönderebilir",
+      "requestsOptions": {
+        "everyone": "Herkes",
+        "friends_of_friends": "Arkadaşların arkadaşları",
+        "nobody": "Hiç kimse"
+      },
+      "discoverable": "Karşılaştığım oyuncuların önerilerinde görün",
+      "discoverableHint": "Grup paylaştığın veya etkinliğinde paylaştığın bir sunucuda karşılaştığın oyuncular seni “Arkadaş ekle” bölümünde görebilir, sen de onları görürsün. 30 gün saklanır; bunu kapatmak siler.",
+      "discoverableMinor": "18 yaş altı hesaplar için kullanılamaz.",
+      "discoverableFailed": "Bu ayar kaydedilemedi.",
+      "discord": "Etkinliğimi Discord’da göster",
+      "discordHint": "Discord profilinde “Rustic oynuyor”: başlatıcıda, ana menüde, tek oyunculuda veya bir sunucuda, oynama sürenle birlikte.",
+      "discordServer": "Sunucu adresini Discord’da göster",
+      "discordServerHint": "Aksi halde Discord “Çok oyunculu” gösterir. Özel adresler (LAN, bu bilgisayar) asla gösterilmez."
+    },
+    "data": {
+      "title": "Verilerin",
+      "description": "GDPR kapsamındaki hakların: erişim, taşınabilirlik ve silme.",
+      "export": "Verilerimi dışa aktar",
+      "exportHint": "Hesabının, arkadaşlarının, satın almalarının ve ayarlarının bir JSON arşivi.",
+      "exportButton": "Dışa aktarmayı hazırla",
+      "exportReady": "Dışa aktarman hazır",
+      "exportFailed": "Dışa aktarma hazırlanamadı",
+      "download": "İndir (bağlantı {{date}} tarihine kadar geçerli)",
+      "delete": "Hesabımı sil",
+      "deleteHint": "İptal edebileceğin 30 günlük bir bekleme süresi, ardından kalıcı silme.",
+      "deleteButton": "Hesabı sil",
+      "deleteScheduled": "Silme işlemi şu tarihe planlandı: {{date}}. İptal etmek için bu tarihten önce giriş yap.",
+      "deleteFailed": "Hesap silinemedi",
+      "rights": "Sorular veya şikâyetler için: bize ya da CNIL’e (Fransız veri koruma otoritesi) başvur.",
+      "confirmTitle": "Rustic hesabın silinsin mi?",
+      "confirmBody": "Arkadaşların, kozmetiklerin ve satın almaların 30 gün sonra kaldırılacak. Oyun lisansın ve Microsoft hesabın etkilenmez.",
+      "confirmButton": "Hesabımı sil",
+      "typeUsername": "Onaylamak için {{name}} yaz"
+    }
+  },
+  "parental": {
+    "title": "Ebeveyn denetimleri",
+    "description": "Rustic hesapları {{age}} yaş ve üzeri içindir. 18 yaş altındaki oyuncular için satın almalar varsayılan olarak ebeveyn onayı gerektirir.",
+    "minorNote": "Bu hesap reşit olmayan birine ait: satın almalar ebeveyn onayı ister.",
+    "enable": "Ebeveyn denetimlerini aç",
+    "enableHint": "Bu durumda aşağıdaki değişiklikler PIN gerektirir.",
+    "pinFirst": "Ebeveyn denetimlerini açmak için önce bir PIN oluştur.",
+    "saveFailed": "Değişiklik kaydedilemedi",
+    "lockAgain": "Yeniden kilitle",
+    "rules": {
+      "title": "Kurallar",
+      "purchases": "Satın almalar",
+      "purchasesHint": "Mağaza satın almaları yalnızca kozmetiktir. Ganimet kutusu yok, asla.",
+      "purchaseOptions": {
+        "blocked": "Kapalı",
+        "pin": "Ebeveyne sor",
+        "allowed": "İzinli"
+      },
+      "limit": "Aylık harcama sınırı",
+      "limitHint": "Bu ay harcanan: {{spent}}. Sınır olmaması için boş bırak.",
+      "noLimit": "Sınır yok",
+      "limitInvalid": "10 veya 9.99 gibi bir tutar gir.",
+      "chat": "Sohbet",
+      "chatOptions": {
+        "off": "Kapalı",
+        "friends": "Yalnızca arkadaşlar",
+        "everyone": "Herkes"
+      },
+      "friendRequests": "Arkadaşlık istekleri",
+      "friendRequestsHint": "Başkalarının arkadaşlık isteği göndermesine izin ver."
+    },
+    "pin": {
+      "title": "Ebeveyn PIN’i",
+      "set": "Bir PIN ayarlı. Bu ayarları değiştirmek ve satın almaları onaylamak için gereklidir.",
+      "notSet": "Henüz PIN yok.",
+      "change": "PIN’i değiştir",
+      "create": "PIN oluştur",
+      "saved": "PIN kaydedildi",
+      "new": "Yeni PIN",
+      "confirm": "PIN’i onayla",
+      "save": "PIN’i kaydet",
+      "hint": "4 ila 6 rakam, basit bir dizi olmasın.",
+      "errors": {
+        "format": "4 ila 6 rakam kullan.",
+        "mismatch": "İki PIN birbirinden farklı.",
+        "weak": "Tahmin etmesi çok kolay: 1234 veya 0000 kullanma."
+      }
+    },
+    "unlock": {
+      "title": "Kilitli",
+      "description": "Bu ayarları değiştirmek için ebeveyn PIN’ini gir.",
+      "label": "Ebeveyn PIN’i",
+      "wrong": "Yanlış PIN.",
+      "button": "Kilidi aç"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Sürüm {{version}}",
+    "channel": {
+      "stable": "Kararlı",
+      "beta": "Beta"
+    },
+    "browserMock": "Tarayıcı önizlemesi (örnek veriler)",
+    "horizon": "Horizon",
+    "horizonHint": "Önerilen oyun derlemesi.",
+    "licence": "Lisans",
+    "platform": "Platform",
+    "legalTitle": "Yasal",
+    "legalDescription": "Politikalar ve bildirimler.",
+    "links": {
+      "privacy": "Gizlilik politikası",
+      "terms": "Kullanım ve satış koşulları",
+      "legalNotice": "Yasal bildirim",
+      "fairPlay": "Adil oyun politikası",
+      "thirdParty": "Açık kaynak bildirimleri",
+      "horizon": "Horizon projesi (MIT)"
+    },
+    "notAffiliated": "Resmî bir Minecraft ürünü değildir. Mojang veya Microsoft tarafından onaylanmamıştır ve onlarla bağlantılı değildir.",
+    "horizonCredit": "Katkıcıları tarafından geliştirilen, oyunun MIT lisanslı bir Rust yeniden yazımı olan Horizon üzerine kurulmuştur.",
+    "company": "Yayıncı: [company name], bir Fransız şirketi (SIREN [number], [address]). Ödemeler Stripe ile; satıcı şirkettir.",
+    "tagline": "Rustic, Horizon motoruyla çalışan sosyal bir oyun platformudur"
+  },
+  "rusticAuth": {
+    "mode": "Giriş yap veya hesap oluştur",
+    "signIn": "Giriş yap",
+    "signUp": "Hesap oluştur",
+    "create": "Hesabımı oluştur",
+    "verify": "Doğrula",
+    "email": "E-posta",
+    "password": "Şifre",
+    "username": "Kullanıcı adı",
+    "dateOfBirth": "Doğum tarihi",
+    "country": "Ülke",
+    "acceptPrivacy": "Gizlilik politikasını okudum ve kabul ediyorum.",
+    "code": "Kimlik doğrulama uygulamandaki kod",
+    "checkInbox": "{{email}} adresine bir doğrulama bağlantısı gönderdik. Bağlantıyı aç, sonra giriş yap.",
+    "resend": "Yeniden gönder",
+    "resent": "Doğrulama e-postası yeniden gönderildi",
+    "signedIn": "Rustic’e giriş yapıldı",
+    "problems": {
+      "email": "Geçerli bir e-posta adresi gir.",
+      "password": "Şifre: en az 10 karakter.",
+      "username": "Kullanıcı adı: 3 ila 20 harf, rakam veya alt çizgi.",
+      "dateOfBirth": "Doğum tarihini gir.",
+      "tooYoung": "Rustic hesapları 13 yaş ve üzeri içindir.",
+      "privacy": "Devam etmek için gizlilik politikasını kabul et."
+    },
+    "microsoft": "Microsoft ile devam et",
+    "orEmail": "veya e-posta ile",
+    "microsoftWaiting": "Girişi tarayıcında tamamla: başlatıcı oturumunu otomatik olarak alır."
+  },
+  "heading": "Senin *ayarların*",
+  "eyebrow": "Başlatıcı"
+}

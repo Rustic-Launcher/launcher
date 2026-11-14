@@ -1,0 +1,437 @@
+{
+  "a11y": {
+    "skipToContent": "Naar inhoud springen",
+    "notifications": "Meldingen"
+  },
+  "actions": {
+    "retry": "Opnieuw proberen",
+    "back": "Terug",
+    "forward": "Vooruit",
+    "cancel": "Annuleren",
+    "close": "Sluiten",
+    "clear": "Wissen",
+    "save": "Opslaan",
+    "saved": "Opgeslagen",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "open": "Openen",
+    "install": "Installeren",
+    "installed": "Geïnstalleerd",
+    "remove": "Verwijderen",
+    "confirm": "Bevestigen",
+    "continue": "Doorgaan",
+    "next": "Volgende",
+    "previous": "Vorige",
+    "done": "Klaar",
+    "copy": "Kopiëren",
+    "copied": "Gekopieerd",
+    "learnMore": "Meer informatie",
+    "seeAll": "Alles bekijken",
+    "create": "Maken",
+    "import": "Importeren",
+    "browse": "Bladeren…",
+    "apply": "Toepassen",
+    "reset": "Herstellen",
+    "enable": "Inschakelen",
+    "disable": "Uitschakelen",
+    "update": "Bijwerken",
+    "add": "Toevoegen",
+    "refresh": "Vernieuwen",
+    "openFolder": "Map openen",
+    "skip": "Overslaan",
+    "more": "Meer"
+  },
+  "errors": {
+    "generic": "Er ging iets mis. Probeer het zo opnieuw.",
+    "page": {
+      "title": "Deze pagina kon niet worden weergegeven"
+    },
+    "load": {
+      "title": "Dit kon niet worden geladen"
+    },
+    "notFound": {
+      "title": "Niets te zien",
+      "description": "Deze pagina bestaat niet of is verplaatst."
+    }
+  },
+  "nav": {
+    "label": "Hoofdnavigatie",
+    "home": "Start",
+    "instances": "Profielen",
+    "content": "Verkennen",
+    "servers": "Servers",
+    "locker": "Kluisje",
+    "store": "Winkel",
+    "settings": "Instellingen",
+    "newInstance": "Nieuw profiel"
+  },
+  "search": {
+    "title": "Zoeken",
+    "placeholder": "Zoek content, vrienden, servers, instellingen…",
+    "empty": "Geen resultaten. Probeer een ander woord.",
+    "loading": "Zoeken…",
+    "hintNavigate": "navigeren",
+    "hintOpen": "openen",
+    "hintClose": "sluiten",
+    "open": "Openen",
+    "myServer": "Mijn server",
+    "playInstance": "{{name}} spelen",
+    "groups": {
+      "pages": "Pagina’s",
+      "actions": "Acties",
+      "instances": "Instanties",
+      "content": "Content",
+      "friends": "Vrienden",
+      "servers": "Servers",
+      "settings": "Instellingen",
+      "play": "Spelen"
+    },
+    "actions": {
+      "newInstance": "Een instantie maken",
+      "newServer": "Een server maken",
+      "addFriend": "Een vriend toevoegen",
+      "darkTheme": "Naar donker thema",
+      "lightTheme": "Naar licht thema"
+    },
+    "settings": {
+      "accounts": "Accounts",
+      "game": "Game",
+      "launcher": "Launcher",
+      "appearance": "Uiterlijk",
+      "privacy": "Privacy en gegevens",
+      "parental": "Ouderlijk toezicht",
+      "about": "Over"
+    }
+  },
+  "friends": {
+    "title": "Vrienden",
+    "onlineCount_one": "{{count}} online",
+    "onlineCount_other": "{{count}} online",
+    "add": "Een vriend toevoegen",
+    "search": "Vrienden zoeken",
+    "requests_one": "Verzoek · {{count}}",
+    "requests_other": "Verzoeken · {{count}}",
+    "incoming": "Wil vrienden worden",
+    "outgoing": "Verzoek verzonden",
+    "accept": "Accepteren",
+    "decline": "Weigeren",
+    "cancelRequest": "Verzoek annuleren",
+    "requestSent": "Vriendschapsverzoek verzonden naar {{name}}",
+    "error": "Vrienden konden niet worden geladen.",
+    "empty": "Nog geen vrienden. Voeg iemand toe met zijn of haar Rustic-gebruikersnaam.",
+    "online_one": "Online · {{count}}",
+    "online_other": "Online · {{count}}",
+    "offline_one": "Offline · {{count}}",
+    "offline_other": "Offline · {{count}}",
+    "lastSeen": "Gezien {{when}}",
+    "activity": {
+      "server": "Speelt op {{server}}",
+      "singleplayer": "Speelt solo",
+      "hosting": "Host {{server}}",
+      "launcher": "In de launcher"
+    },
+    "favorite": "Favoriet",
+    "makeFavorite": "Aan favorieten toevoegen",
+    "unfavorite": "Uit favorieten verwijderen",
+    "join": "Meedoen",
+    "joinAria": "Meedoen met {{name}}",
+    "joining": "Verbinden met {{server}}…",
+    "more": "Meer acties voor {{name}}",
+    "remove": "Vriend verwijderen",
+    "removeTitle": "{{name}} uit je vrienden verwijderen?",
+    "removeBody": "Jullie zien elkaars activiteit niet meer. Je kunt later een nieuw verzoek sturen."
+  },
+  "addFriend": {
+    "title": "Een vriend toevoegen",
+    "description": "Zoek een speler op zijn Rustic-naam of de gekoppelde Minecraft-naam, of kies iemand met wie je hebt gespeeld.",
+    "kind": "Zoeken op",
+    "kindRustic": "Rustic-naam",
+    "kindMinecraft": "Minecraft-naam",
+    "rusticLabel": "Rustic-gebruikersnaam",
+    "minecraftLabel": "Minecraft-gebruikersnaam",
+    "rusticPlaceholder": "bijv. lea_builds",
+    "minecraftPlaceholder": "bijv. LeaBuilds",
+    "rusticHint": "De exacte naam op het Rustic-profiel.",
+    "minecraftHint": "De exacte gamenaam van een speler die met dat Minecraft-profiel bij Rustic is ingelogd.",
+    "find": "Zoeken",
+    "send": "Verzoek sturen",
+    "sent": "Verzoek verzonden",
+    "friends": "Al vrienden",
+    "pending": "Verzoek in behandeling",
+    "incoming": "Deze speler heeft je al een vriendschapsverzoek gestuurd: accepteer het.",
+    "minecraftName": "Minecraft-naam:",
+    "add": "Toevoegen",
+    "addAria": "Een vriendschapsverzoek sturen naar {{name}}",
+    "playedWith": "Onlangs mee gespeeld",
+    "playedWithEmpty": "Nog niemand. Spelers uit je groepen en van gedeelde servers (10 minuten of langer samen) verschijnen hier.",
+    "crossed": "Onlangs gezien",
+    "crossedEmpty": "Onlangs niemand tegengekomen op een gedeelde server.",
+    "reasonParty": "In je groep",
+    "reasonServer": "Op {{server}}",
+    "reasonSameServer": "Op dezelfde server",
+    "suggestionsError": "Suggesties konden niet worden geladen.",
+    "suggestionsOff": "Suggesties staan uit. Zet ‘Verschijnen in suggesties van spelers die ik tegenkom’ aan in Instellingen › Privacy en gegevens om de spelers te zien die je tegenkomt.",
+    "suggestionsMinor": "Suggesties van spelers die je tegenkomt zijn niet beschikbaar voor je account.",
+    "privacyNote": "Suggesties komen uit je groepen en de servers die je deelt in je activiteit, over de afgelopen 14 dagen. Alleen mensen die dat ook toestaan, verschijnen.",
+    "errors": {
+      "notFoundRustic": "Er is geen Rustic-account met deze naam.",
+      "notFoundMinecraft": "Geen enkele Rustic-speler heeft deze Minecraft-naam gekoppeld.",
+      "invalidRustic": "Rustic-namen bestaan uit 3 tot 20 letters, cijfers of _.",
+      "invalidMinecraft": "Minecraft-namen bestaan uit 3 tot 16 letters, cijfers of _.",
+      "cannot_add_friend": "Deze speler kan geen vriendschapsverzoeken ontvangen.",
+      "friend_requests_disabled": "Vriendschapsverzoeken staan uit voor je account (ouderlijk toezicht).",
+      "cannot_add_self": "Dat ben jij!",
+      "already_friends": "Jullie zijn al vrienden.",
+      "request_pending": "Er staat al een verzoek open.",
+      "incoming_request_exists": "Deze speler heeft je al een verzoek gestuurd: accepteer het.",
+      "rate_limited": "Te veel zoekopdrachten. Wacht een minuut en probeer het dan opnieuw.",
+      "generic": "Er ging iets mis. Probeer het opnieuw."
+    }
+  },
+  "party": {
+    "title": "Groep",
+    "leave": "Verlaten",
+    "leader": "Groepsleider",
+    "pending": "{{name}} (uitgenodigd)",
+    "invite": "Uitnodigen voor groep",
+    "invited": "{{name}} is uitgenodigd voor je groep"
+  },
+  "presence": {
+    "online": "Online",
+    "in-game": "In de game",
+    "away": "Afwezig",
+    "busy": "Bezet",
+    "offline": "Offline"
+  },
+  "notifications": {
+    "title": "Meldingen",
+    "markAllRead": "Alles als gelezen markeren",
+    "empty": "Je bent helemaal bij.",
+    "kinds": {
+      "friend_request": "heeft je een vriendschapsverzoek gestuurd",
+      "update_available": "is beschikbaar voor je instanties",
+      "backup_done": "Geplande back-up voltooid",
+      "store_new": "Nieuw in de winkel"
+    }
+  },
+  "account": {
+    "switcher": "Accounts",
+    "none": "Geen account",
+    "rustic": "Rustic-account",
+    "signInRustic": "Inloggen bij Rustic",
+    "signOutRustic": "Uitloggen bij Rustic",
+    "gameProfiles": "Gameprofielen",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Offline"
+    },
+    "add": "Een account toevoegen",
+    "manage": "Accounts beheren"
+  },
+  "downloads": {
+    "title": "Downloads",
+    "global": "Downloads op de achtergrond",
+    "working": "Bezig…",
+    "summary_one": "{{count}} download bezig",
+    "summary_other": "{{count}} downloads bezig",
+    "kind": {
+      "game": "Horizon",
+      "content": "Content",
+      "modpack": "Modpack",
+      "server": "Server",
+      "java": "Java-runtime",
+      "update": "Launcher-update",
+      "prepare": "Gamebestanden voorbereiden",
+      "native-build": "Native mods compileren",
+      "native-toolchain": "Rust voor native mods"
+    }
+  },
+  "play": {
+    "play": "Spelen",
+    "update": "Bijwerken",
+    "cancel": "Annuleren",
+    "stop": "Stoppen",
+    "selectInstance": "Kies de instantie om te spelen",
+    "instances": "Instanties",
+    "manageInstances": "Instanties beheren",
+    "newVersion": "{{version}} beschikbaar",
+    "cancelled": "Starten geannuleerd",
+    "status": {
+      "ready": "Klaar om te spelen",
+      "noInstance": "Geen instantie",
+      "running": "Game draait",
+      "update": "Update vereist",
+      "broken": "Reparatie vereist"
+    },
+    "progress": {
+      "updating": "Bijwerken…",
+      "downloading": "Downloaden {{pct}}",
+      "checking": "Bestanden controleren…",
+      "preparing": "Voorbereiden…",
+      "launching": "Starten…",
+      "stopping": "Stoppen…",
+      "preparingFiles": "Gamebestanden voorbereiden {{pct}}",
+      "building": "Native mods compileren…",
+      "buildingPct": "Native mods compileren {{pct}}"
+    },
+    "errors": {
+      "launch": "De game kon niet starten"
+    },
+    "refusals": {
+      "auth_no_account": "Log in met een Microsoft-account dat de game bezit om te spelen.",
+      "auth_not_owned": "Dit Microsoft-account bezit de game niet.",
+      "auth_not_approved": "Inloggen met Microsoft is nog niet beschikbaar voor deze launcher.",
+      "auth_reauth_required": "Log opnieuw in bij je Microsoft-account om te spelen.",
+      "auth_offline_not_allowed": "Log één keer in met een Microsoft-account dat de game bezit, daarna kun je offline spelen.",
+      "auth_network": "Microsoft was niet bereikbaar om het account te controleren. Controleer je verbinding.",
+      "build_not_installed": "Installeer eerst een Horizon-build.",
+      "prepare_needed": "De gamebestanden voor deze build zijn nog niet voorbereid.",
+      "prepare_failed": "De gamebestanden konden niet worden voorbereid: probeer het opnieuw, of bereid ze voor in Instellingen › Game en instanties.",
+      "prepare_no_java": "Java is niet gevonden: installeer het of kies het in Instellingen › Game en instanties.",
+      "prepare_no_minecraft_dir": "Je game-installatie is niet gevonden: kies de map in Instellingen › Game en instanties.",
+      "launch_already_running": "Deze instantie draait al.",
+      "native_consent": "Deze instantie heeft native mods: accepteer eerst hun vertrouwensmelding op de pagina van de instantie (Content).",
+      "native_toolchain": "Native mods hebben Rust nodig: installeer het via de pagina van de instantie (Content) of Instellingen › Game en instanties.",
+      "native_not_edition": "Native mods worden alleen in de Rustic-editie gecompileerd: zet deze instantie daarop over, of schakel de native mods uit.",
+      "native_build_failed": "De native mods konden niet worden gecompileerd",
+      "native_disk": "Niet genoeg vrije schijfruimte om de native mods te compileren."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (Rustic-editie)",
+    "rusticEdition": "Rustic-editie"
+  },
+  "compat": {
+    "buildsOnHorizon": "Compileert op je Horizon",
+    "compatible": "Compatibel",
+    "incompatible": "Niet compatibel: {{reason}}",
+    "unknown": "Compatibiliteit onbekend",
+    "reasons": {
+      "horizon_version": "Horizon-versie",
+      "java_only": "Alleen Java Edition",
+      "side": "alleen serverzijde",
+      "conflict": "conflicteert met een geïnstalleerde mod",
+      "unsupported_format": "formaat niet ondersteund",
+      "needs_rustic_server": "vereist Rustic Server",
+      "not_fair_play": "niet toegestaan (fair play)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Ander product",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Documentatie van Rustic Server"
+  },
+  "crumbs": {
+    "label": "Kruimelpad",
+    "horizon": "Horizon",
+    "details": "Details",
+    "create": "Maken",
+    "kinds": {
+      "mod": "Mods",
+      "modpack": "Modpacks",
+      "resourcepack": "Bronpakketten",
+      "shader": "Shaders",
+      "datapack": "Datapakketten",
+      "plugin": "Plug-ins"
+    },
+    "servers": {
+      "featured": "Uitgelicht",
+      "mine": "Mijn servers",
+      "multiplayer": "Multiplayerlijst",
+      "discover": "Ontdekken",
+      "joined": "Multiplayerlijst",
+      "browse": "Bladeren"
+    }
+  },
+  "social": {
+    "title": "Sociaal",
+    "description": "Vrienden, chats en je groep.",
+    "open": "Sociaal openen",
+    "friends": "Vrienden",
+    "chats": "Chats",
+    "message": "Een bericht sturen",
+    "searchChats": "Chats zoeken…",
+    "noChats": "Nog geen gesprekken. Stuur een vriend een bericht via het tabblad Vrienden.",
+    "sayHello": "Zeg hallo",
+    "selectTitle": "Kies een gesprek",
+    "selectBody": "Kies een vriend om te beginnen met chatten.",
+    "messagePlaceholder": "Bericht aan {{name}}",
+    "send": "Versturen"
+  },
+  "window": {
+    "minimize": "Minimaliseren",
+    "maximize": "Maximaliseren",
+    "restore": "Herstellen",
+    "close": "Sluiten"
+  },
+  "running": {
+    "title": "Actieve instanties",
+    "none": "Er draait geen game.",
+    "count_one": "{{count}} instantie actief",
+    "count_other": "{{count}} instanties actief",
+    "downloading": "Downloaden {{pct}}"
+  },
+  "launch": {
+    "launch": "Game starten",
+    "update": "Bijwerken en starten",
+    "stop": "Game stoppen"
+  },
+  "deepLink": {
+    "authOk": "Ingelogd bij Rustic",
+    "authFailed": "Inloggen bij Rustic mislukt",
+    "joining": "Verbinden met {{target}}…",
+    "content": "{{project}} openen vanaf de website"
+  },
+  "catalog": {
+    "sort": "Sorteren op",
+    "results_one": "{{count}} resultaat",
+    "results_other": "{{count}} resultaten",
+    "loadMore": "Meer laden",
+    "loadMoreCount": "{{shown}} van {{total}} weergegeven",
+    "carousel": {
+      "prev": "Vorige",
+      "next": "Volgende",
+      "slide": "{{index}} van {{total}}",
+      "pause": "Diavoorstelling pauzeren",
+      "play": "Diavoorstelling afspelen"
+    },
+    "row": {
+      "seeAll": "Alles bekijken",
+      "seeAllAria": "Alles bekijken: {{title}}",
+      "scrollPrev": "Naar links scrollen",
+      "scrollNext": "Naar rechts scrollen"
+    },
+    "filters": {
+      "button": "Filters",
+      "buttonCount": "Filters · {{count}}",
+      "reset": "Filters herstellen"
+    },
+    "layout": {
+      "label": "Weergave",
+      "list": "Lijst",
+      "grid": "Raster"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Bijwerken {{pct}}",
+      "installing": "Update wordt geïnstalleerd…",
+      "restarting": "Opnieuw starten…",
+      "deferred": "Update na je spel",
+      "apply": "Bijwerken en opnieuw starten"
+    },
+    "toast": {
+      "launcher": "Rustic Launcher {{version}} downloaden…",
+      "edition": "Spel bijwerken (Rustic-editie)…",
+      "editionDone": "Spel bijgewerkt: {{version}}",
+      "deferred": "Er staat een update klaar. Die wordt geïnstalleerd zodra je het spel sluit.",
+      "restarting": "Rustic Launcher start opnieuw om de update af te ronden.",
+      "updated": "Rustic Launcher bijgewerkt naar {{version}}",
+      "resuming": "Update klaar: je spel wordt gestart",
+      "failed": "De update kon niet worden geïnstalleerd. Het wordt later opnieuw geprobeerd."
+    }
+  }
+}

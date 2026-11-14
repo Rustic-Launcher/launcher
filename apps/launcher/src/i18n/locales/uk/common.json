@@ -1,0 +1,451 @@
+{
+  "a11y": {
+    "skipToContent": "Перейти до вмісту",
+    "notifications": "Сповіщення"
+  },
+  "actions": {
+    "retry": "Повторити",
+    "back": "Назад",
+    "forward": "Вперед",
+    "cancel": "Скасувати",
+    "close": "Закрити",
+    "clear": "Очистити",
+    "save": "Зберегти",
+    "saved": "Збережено",
+    "delete": "Видалити",
+    "edit": "Змінити",
+    "open": "Відкрити",
+    "install": "Встановити",
+    "installed": "Встановлено",
+    "remove": "Вилучити",
+    "confirm": "Підтвердити",
+    "continue": "Продовжити",
+    "next": "Далі",
+    "previous": "Назад",
+    "done": "Готово",
+    "copy": "Скопіювати",
+    "copied": "Скопійовано",
+    "learnMore": "Докладніше",
+    "seeAll": "Показати все",
+    "create": "Створити",
+    "import": "Імпортувати",
+    "browse": "Огляд…",
+    "apply": "Застосувати",
+    "reset": "Скинути",
+    "enable": "Увімкнути",
+    "disable": "Вимкнути",
+    "update": "Оновити",
+    "add": "Додати",
+    "refresh": "Оновити",
+    "openFolder": "Відкрити теку",
+    "skip": "Пропустити",
+    "more": "Більше"
+  },
+  "errors": {
+    "generic": "Щось пішло не так. Спробуй ще раз за мить.",
+    "page": {
+      "title": "Не вдалося показати цю сторінку"
+    },
+    "load": {
+      "title": "Не вдалося завантажити"
+    },
+    "notFound": {
+      "title": "Тут нічого немає",
+      "description": "Ця сторінка не існує або її переміщено."
+    }
+  },
+  "nav": {
+    "label": "Головна навігація",
+    "home": "Головна",
+    "instances": "Профілі",
+    "content": "Досліджувати",
+    "servers": "Сервери",
+    "locker": "Шафка",
+    "store": "Крамниця",
+    "settings": "Налаштування",
+    "newInstance": "Новий профіль"
+  },
+  "search": {
+    "title": "Пошук",
+    "placeholder": "Пошук вмісту, друзів, серверів, налаштувань…",
+    "empty": "Нічого не знайдено. Спробуй інше слово.",
+    "loading": "Пошук…",
+    "hintNavigate": "перейти",
+    "hintOpen": "відкрити",
+    "hintClose": "закрити",
+    "open": "Відкрити",
+    "myServer": "Мій сервер",
+    "playInstance": "Грати: {{name}}",
+    "groups": {
+      "pages": "Сторінки",
+      "actions": "Дії",
+      "instances": "Екземпляри",
+      "content": "Вміст",
+      "friends": "Друзі",
+      "servers": "Сервери",
+      "settings": "Налаштування",
+      "play": "Грати"
+    },
+    "actions": {
+      "newInstance": "Створити екземпляр",
+      "newServer": "Створити сервер",
+      "addFriend": "Додати друга",
+      "darkTheme": "Перейти на темну тему",
+      "lightTheme": "Перейти на світлу тему"
+    },
+    "settings": {
+      "accounts": "Облікові записи",
+      "game": "Гра",
+      "launcher": "Лаунчер",
+      "appearance": "Вигляд",
+      "privacy": "Конфіденційність і дані",
+      "parental": "Батьківський контроль",
+      "about": "Про програму"
+    }
+  },
+  "friends": {
+    "title": "Друзі",
+    "onlineCount_one": "{{count}} у мережі",
+    "onlineCount_few": "{{count}} у мережі",
+    "onlineCount_many": "{{count}} у мережі",
+    "onlineCount_other": "{{count}} у мережі",
+    "add": "Додати друга",
+    "search": "Пошук друзів",
+    "requests_one": "Запит · {{count}}",
+    "requests_few": "Запити · {{count}}",
+    "requests_many": "Запити · {{count}}",
+    "requests_other": "Запити · {{count}}",
+    "incoming": "Хоче дружити",
+    "outgoing": "Запит надіслано",
+    "accept": "Прийняти",
+    "decline": "Відхилити",
+    "cancelRequest": "Скасувати запит",
+    "requestSent": "Запит у друзі надіслано гравцю {{name}}",
+    "error": "Не вдалося завантажити друзів.",
+    "empty": "Друзів поки немає. Додай когось за ім’ям користувача Rustic.",
+    "online_one": "У мережі · {{count}}",
+    "online_few": "У мережі · {{count}}",
+    "online_many": "У мережі · {{count}}",
+    "online_other": "У мережі · {{count}}",
+    "offline_one": "Не в мережі · {{count}}",
+    "offline_few": "Не в мережі · {{count}}",
+    "offline_many": "Не в мережі · {{count}}",
+    "offline_other": "Не в мережі · {{count}}",
+    "lastSeen": "Востаннє в мережі {{when}}",
+    "activity": {
+      "server": "Грає на {{server}}",
+      "singleplayer": "Грає наодинці",
+      "hosting": "Запустив(-ла) сервер {{server}}",
+      "launcher": "У лаунчері"
+    },
+    "favorite": "Улюблений",
+    "makeFavorite": "Додати до улюблених",
+    "unfavorite": "Вилучити з улюблених",
+    "join": "Приєднатися",
+    "joinAria": "Приєднатися до {{name}}",
+    "joining": "Підключення до {{server}}…",
+    "more": "Інші дії для {{name}}",
+    "remove": "Вилучити з друзів",
+    "removeTitle": "Вилучити {{name}} з друзів?",
+    "removeBody": "Ви більше не бачитимете активність одне одного. Пізніше можна надіслати новий запит."
+  },
+  "addFriend": {
+    "title": "Додати друга",
+    "description": "Знайди гравця за ім’ям у Rustic або за прив’язаним ім’ям у Minecraft чи вибери когось, з ким ти грав(-ла).",
+    "kind": "Шукати за",
+    "kindRustic": "Ім’я в Rustic",
+    "kindMinecraft": "Ім’я в Minecraft",
+    "rusticLabel": "Ім’я користувача Rustic",
+    "minecraftLabel": "Ім’я користувача Minecraft",
+    "rusticPlaceholder": "напр., lea_builds",
+    "minecraftPlaceholder": "напр., LeaBuilds",
+    "rusticHint": "Точне ім’я з профілю Rustic.",
+    "minecraftHint": "Точне ігрове ім’я гравця, який увійшов у Rustic із цим профілем Minecraft.",
+    "find": "Знайти",
+    "send": "Надіслати запит",
+    "sent": "Запит надіслано",
+    "friends": "Уже друзі",
+    "pending": "Запит очікує",
+    "incoming": "Цей гравець уже хоче з тобою дружити: прийми його запит.",
+    "minecraftName": "Ім’я в Minecraft:",
+    "add": "Додати",
+    "addAria": "Надіслати запит у друзі гравцю {{name}}",
+    "playedWith": "Нещодавно грали разом",
+    "playedWithEmpty": "Поки нікого. Тут з’являться гравці з твоїх груп і спільних серверів (від 10 хвилин разом).",
+    "crossed": "Нещодавно бачені",
+    "crossedEmpty": "Останнім часом ти ні з ким не перетинався(-лася) на спільному сервері.",
+    "reasonParty": "У твоїй групі",
+    "reasonServer": "На {{server}}",
+    "reasonSameServer": "На тому самому сервері",
+    "suggestionsError": "Не вдалося завантажити пропозиції.",
+    "suggestionsOff": "Пропозиції вимкнено. Увімкни «Показувати мене в пропозиціях гравців, яких я зустрічаю» в Налаштуваннях › Конфіденційність і дані, щоб бачити гравців, яких ти зустрічаєш.",
+    "suggestionsMinor": "Пропозиції гравців, яких ти зустрічаєш, недоступні для твого облікового запису.",
+    "privacyNote": "Пропозиції формуються з твоїх груп і серверів, які ти поділяєш у своїй активності, за останні 14 днів. З’являються лише ті, хто теж це дозволяє.",
+    "errors": {
+      "notFoundRustic": "Немає облікового запису Rustic із таким ім’ям.",
+      "notFoundMinecraft": "Жоден гравець Rustic не прив’язав це ім’я в Minecraft.",
+      "invalidRustic": "Ім’я в Rustic — від 3 до 20 літер, цифр або _.",
+      "invalidMinecraft": "Ім’я в Minecraft — від 3 до 16 літер, цифр або _.",
+      "cannot_add_friend": "Цей гравець не може отримувати запити в друзі.",
+      "friend_requests_disabled": "Запити в друзі вимкнено для твого облікового запису (батьківський контроль).",
+      "cannot_add_self": "Це ж ти!",
+      "already_friends": "Ви вже друзі.",
+      "request_pending": "Запит уже очікує.",
+      "incoming_request_exists": "Цей гравець уже надіслав тобі запит: прийми його.",
+      "rate_limited": "Забагато пошуків. Зачекай хвилину й спробуй знову.",
+      "generic": "Щось пішло не так. Спробуй ще раз."
+    }
+  },
+  "party": {
+    "title": "Група",
+    "leave": "Вийти",
+    "leader": "Лідер групи",
+    "pending": "{{name}} (запрошено)",
+    "invite": "Запросити до групи",
+    "invited": "{{name}} запрошено до твоєї групи"
+  },
+  "presence": {
+    "online": "У мережі",
+    "in-game": "У грі",
+    "away": "Немає на місці",
+    "busy": "Не турбувати",
+    "offline": "Не в мережі"
+  },
+  "notifications": {
+    "title": "Сповіщення",
+    "markAllRead": "Позначити все як прочитане",
+    "empty": "Нових сповіщень немає.",
+    "kinds": {
+      "friend_request": "надсилає тобі запит у друзі",
+      "update_available": "доступно для твоїх екземплярів",
+      "backup_done": "Заплановану резервну копію створено",
+      "store_new": "Новинки в Крамниці"
+    }
+  },
+  "account": {
+    "switcher": "Облікові записи",
+    "none": "Немає облікового запису",
+    "rustic": "Обліковий запис Rustic",
+    "signInRustic": "Увійти в Rustic",
+    "signOutRustic": "Вийти з Rustic",
+    "gameProfiles": "Ігрові профілі",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Офлайн"
+    },
+    "add": "Додати обліковий запис",
+    "manage": "Керувати обліковими записами"
+  },
+  "downloads": {
+    "title": "Завантаження",
+    "global": "Фонові завантаження",
+    "working": "Виконується…",
+    "summary_one": "Триває {{count}} завантаження",
+    "summary_few": "Тривають {{count}} завантаження",
+    "summary_many": "Триває {{count}} завантажень",
+    "summary_other": "Триває {{count}} завантаження",
+    "kind": {
+      "game": "Horizon",
+      "content": "Вміст",
+      "modpack": "Збірка модів",
+      "server": "Сервер",
+      "java": "Середовище Java",
+      "update": "Оновлення лаунчера",
+      "prepare": "Підготовка файлів гри",
+      "native-build": "Компіляція нативних модів",
+      "native-toolchain": "Rust для нативних модів"
+    }
+  },
+  "play": {
+    "play": "Грати",
+    "update": "Оновити",
+    "cancel": "Скасувати",
+    "stop": "Зупинити",
+    "selectInstance": "Вибери екземпляр для гри",
+    "instances": "Екземпляри",
+    "manageInstances": "Керувати екземплярами",
+    "newVersion": "Доступна {{version}}",
+    "cancelled": "Запуск скасовано",
+    "status": {
+      "ready": "Готово до гри",
+      "noInstance": "Немає екземпляра",
+      "running": "Гру запущено",
+      "update": "Потрібне оновлення",
+      "broken": "Потрібне відновлення"
+    },
+    "progress": {
+      "updating": "Оновлення…",
+      "downloading": "Завантаження {{pct}}",
+      "checking": "Перевірка файлів…",
+      "preparing": "Підготовка…",
+      "launching": "Запуск…",
+      "stopping": "Зупинка…",
+      "preparingFiles": "Підготовка файлів гри {{pct}}",
+      "building": "Компіляція нативних модів…",
+      "buildingPct": "Компіляція нативних модів {{pct}}"
+    },
+    "errors": {
+      "launch": "Не вдалося запустити гру"
+    },
+    "refusals": {
+      "auth_no_account": "Щоб грати, увійди з обліковим записом Microsoft, який має гру.",
+      "auth_not_owned": "Цей обліковий запис Microsoft не має гри.",
+      "auth_not_approved": "Вхід через Microsoft поки недоступний для цього лаунчера.",
+      "auth_reauth_required": "Щоб грати, знову увійди у свій обліковий запис Microsoft.",
+      "auth_offline_not_allowed": "Увійди один раз з обліковим записом Microsoft, який має гру, — після цього можна грати офлайн.",
+      "auth_network": "Не вдалося зв’язатися з Microsoft для перевірки облікового запису. Перевір з’єднання.",
+      "build_not_installed": "Спершу встанови збірку Horizon.",
+      "prepare_needed": "Файли гри для цієї збірки ще не підготовлено.",
+      "prepare_failed": "Не вдалося підготувати файли гри: спробуй ще раз або підготуй їх у Налаштуваннях › Гра й екземпляри.",
+      "prepare_no_java": "Java не знайдено: встанови її або вибери в Налаштуваннях › Гра й екземпляри.",
+      "prepare_no_minecraft_dir": "Інсталяцію гри не знайдено: вибери її теку в Налаштуваннях › Гра й екземпляри.",
+      "launch_already_running": "Цей екземпляр уже запущено.",
+      "native_consent": "У цьому екземплярі є нативні моди: спершу прийми попередження про довіру на сторінці екземпляра (Вміст).",
+      "native_toolchain": "Нативним модам потрібен Rust: встанови його на сторінці екземпляра (Вміст) або в Налаштуваннях › Гра й екземпляри.",
+      "native_not_edition": "Нативні моди компілюються лише у видання Rustic: перемкни на нього цей екземпляр або вимкни його нативні моди.",
+      "native_build_failed": "Не вдалося скомпілювати нативні моди",
+      "native_disk": "Недостатньо вільного місця на диску для компіляції нативних модів."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (видання Rustic)",
+    "rusticEdition": "Видання Rustic"
+  },
+  "compat": {
+    "buildsOnHorizon": "Компілюється на твоєму Horizon",
+    "compatible": "Сумісний",
+    "incompatible": "Несумісний: {{reason}}",
+    "unknown": "Сумісність невідома",
+    "reasons": {
+      "horizon_version": "версія Horizon",
+      "java_only": "лише Java Edition",
+      "side": "лише на боці сервера",
+      "conflict": "конфліктує зі встановленим модом",
+      "unsupported_format": "формат не підтримується",
+      "needs_rustic_server": "потрібен Rustic Server",
+      "not_fair_play": "заборонено (чесна гра)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Змінити продукт",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Документація Rustic Server"
+  },
+  "crumbs": {
+    "label": "Навігаційний ланцюжок",
+    "horizon": "Horizon",
+    "details": "Подробиці",
+    "create": "Створити",
+    "kinds": {
+      "mod": "Моди",
+      "modpack": "Збірки модів",
+      "resourcepack": "Набори ресурсів",
+      "shader": "Шейдери",
+      "datapack": "Набори даних",
+      "plugin": "Плагіни"
+    },
+    "servers": {
+      "featured": "Рекомендовані",
+      "mine": "Мої сервери",
+      "multiplayer": "Список мультиплеєра",
+      "discover": "Відкриття",
+      "joined": "Список мультиплеєра",
+      "browse": "Огляд"
+    }
+  },
+  "social": {
+    "title": "Спілкування",
+    "description": "Друзі, чати й твоя група.",
+    "open": "Відкрити спілкування",
+    "friends": "Друзі",
+    "chats": "Чати",
+    "message": "Надіслати повідомлення",
+    "searchChats": "Пошук у чатах…",
+    "noChats": "Розмов поки немає. Напиши другові з вкладки «Друзі».",
+    "sayHello": "Привітатися",
+    "selectTitle": "Вибери розмову",
+    "selectBody": "Вибери друга, щоб почати спілкування.",
+    "messagePlaceholder": "Повідомлення для {{name}}",
+    "send": "Надіслати"
+  },
+  "window": {
+    "minimize": "Згорнути",
+    "maximize": "Розгорнути",
+    "restore": "Відновити",
+    "close": "Закрити"
+  },
+  "running": {
+    "title": "Запущені екземпляри",
+    "none": "Жодну гру не запущено.",
+    "count_one": "Запущено {{count}} екземпляр",
+    "count_few": "Запущено {{count}} екземпляри",
+    "count_many": "Запущено {{count}} екземплярів",
+    "count_other": "Запущено {{count}} екземпляра",
+    "downloading": "Завантаження {{pct}}"
+  },
+  "launch": {
+    "launch": "Запустити гру",
+    "update": "Оновити й запустити",
+    "stop": "Зупинити гру"
+  },
+  "deepLink": {
+    "authOk": "Вхід у Rustic виконано",
+    "authFailed": "Не вдалося увійти в Rustic",
+    "joining": "Підключення до {{target}}…",
+    "content": "Відкриття {{project}} з вебсайту"
+  },
+  "catalog": {
+    "sort": "Сортування",
+    "results_one": "{{count}} результат",
+    "results_few": "{{count}} результати",
+    "results_many": "{{count}} результатів",
+    "results_other": "{{count}} результату",
+    "loadMore": "Завантажити ще",
+    "loadMoreCount": "Показано {{shown}} з {{total}}",
+    "carousel": {
+      "prev": "Назад",
+      "next": "Далі",
+      "slide": "{{index}} з {{total}}",
+      "pause": "Призупинити слайд-шоу",
+      "play": "Відтворити слайд-шоу"
+    },
+    "row": {
+      "seeAll": "Показати все",
+      "seeAllAria": "Показати все: {{title}}",
+      "scrollPrev": "Прокрутити ліворуч",
+      "scrollNext": "Прокрутити праворуч"
+    },
+    "filters": {
+      "button": "Фільтри",
+      "buttonCount": "Фільтри · {{count}}",
+      "reset": "Скинути фільтри"
+    },
+    "layout": {
+      "label": "Розташування",
+      "list": "Список",
+      "grid": "Сітка"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Оновлення {{pct}}",
+      "installing": "Встановлення оновлення…",
+      "restarting": "Перезапуск…",
+      "deferred": "Оновлення після гри",
+      "apply": "Оновити й перезапустити"
+    },
+    "toast": {
+      "launcher": "Завантаження Rustic Launcher {{version}}…",
+      "edition": "Оновлення гри (видання Rustic)…",
+      "editionDone": "Гру оновлено: {{version}}",
+      "deferred": "Оновлення готове. Його буде встановлено, коли ти закриєш гру.",
+      "restarting": "Rustic Launcher перезапускається, щоб завершити оновлення.",
+      "updated": "Rustic Launcher оновлено до {{version}}",
+      "resuming": "Оновлення завершено: запускаємо гру",
+      "failed": "Не вдалося встановити оновлення. Спробуємо пізніше."
+    }
+  }
+}

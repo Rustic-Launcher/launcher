@@ -1,0 +1,470 @@
+{
+  "title": "Felfedezés",
+  "subtitle": "Modok, csomagok, shaderek és bővítmények a Horizonról, a Modrinthről és a Rusticról, a példányodhoz ellenőrizve.",
+  "kindsLabel": "Tartalomtípusok",
+  "kinds": {
+    "mod": "Modok",
+    "modpack": "Modcsomagok",
+    "resourcepack": "Forráscsomagok",
+    "shader": "Shaderek",
+    "datapack": "Adatcsomagok",
+    "plugin": "Bővítmények"
+  },
+  "searchLabel": "Tartalom keresése",
+  "clear": "Keresés törlése",
+  "by": "Készítő: {{author}}",
+  "featured": "Kiemelt",
+  "downloads": "{{value}} letöltés",
+  "updated": "frissítve: {{when}}",
+  "results_one": "{{count}} találat",
+  "results_other": "{{count}} találat",
+  "loadMore": "Továbbiak betöltése ({{shown}} / {{total}})",
+  "target": {
+    "label": "Telepítés ide",
+    "none": "Válassz célt",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Horizon szerver",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "Ez a gép",
+    "vps": "Saját VPS",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Rendezés",
+    "relevance": "Relevancia",
+    "downloads": "Legtöbbet letöltött",
+    "updated": "Nemrég frissített",
+    "newest": "Legújabb"
+  },
+  "sources": {
+    "label": "Források",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Horizon-regiszter",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic-katalógus"
+  },
+  "filters": {
+    "category": "Kategória",
+    "allCategories": "Minden kategória",
+    "compatibleInstance": "Kompatibilis ezzel a példánnyal",
+    "compatibleServer": "Kompatibilis ezzel a szerverrel",
+    "worksNow": "Lefordítható a jelenlegi Horizonra",
+    "categories": "Kategóriák",
+    "viewMore_one": "Még {{count}} megjelenítése",
+    "viewMore_other": "Még {{count}} megjelenítése",
+    "viewLess": "Kevesebb",
+    "compatibility": "Kompatibilitás",
+    "pluginHint": "A bővítmények elkülönítve (sandboxban) futnak, kizárólag Rustic Serveren.",
+    "fairPlayHint": "Csak fair play tartalmak szerepelnek a listában.",
+    "versions": "Horizon-verziók",
+    "targetVersion": "A kiválasztott példányod vagy szervered",
+    "checkingAgainst": "A kompatibilitást a kiemelt buildhez ellenőrizzük.",
+    "rustic": "Rustic Marketplace",
+    "rusticHint": "Fizetős és ellenőrzött projektek csak a Rusticon vannak.",
+    "verifiedOnly": "Csak a Rustic által ellenőrzöttek",
+    "price": "Ár",
+    "priceOptions": {
+      "all": "Mind",
+      "free": "Ingyenes",
+      "paid": "Fizetős"
+    },
+    "reset": "Szűrők visszaállítása",
+    "remove": "Szűrő eltávolítása: {{filter}}"
+  },
+  "categories": {
+    "performance": "Teljesítmény",
+    "utility": "Segédeszköz",
+    "ui": "Felület",
+    "pvp": "PvP",
+    "adventure": "Kaland",
+    "decoration": "Dekoráció",
+    "storage": "Tárolás",
+    "worldgen": "Világgenerálás",
+    "library": "Könyvtár",
+    "tech": "Technológia",
+    "cozy": "Hangulatos",
+    "multiplayer": "Többjátékos",
+    "realistic": "Realisztikus",
+    "simple": "Eredetihez hű",
+    "lightweight": "Könnyű",
+    "cinematic": "Filmszerű",
+    "qol": "Kényelmi funkciók",
+    "admin": "Adminisztráció",
+    "chat": "Csevegés",
+    "minigames": "Minijátékok",
+    "protection": "Védelem",
+    "integration": "Integrációk"
+  },
+  "empty": {
+    "title": "Nincs egyezés",
+    "hint": "Próbálj meg egy másik szót, forrást vagy kategóriát.",
+    "compatibleHint": "Csak az ezen a célon futó tartalmak látszanak. Kapcsold ki a szűrőt, hogy mindent láss.",
+    "showAll": "Nem kompatibilis találatok megjelenítése"
+  },
+  "banners": {
+    "mod": "Csak fair play modok szerepelnek: nincs X-ray, automata kattintó vagy más tisztességtelen előny.",
+    "modpack": "Egy modcsomagból új példány lesz, saját modokkal és beállításokkal.",
+    "resourcepack": "A csomagok egymásra rétegződnek: a betöltési sorrend legfelső eleme nyer.",
+    "shader": "A Horizon a saját WGSL shadercsomagjait (.hshader, shader API 0.1, kísérleti) és az Iris/OptiFine formátumú csomagokat futtatja a Horizon-regiszterből. Játékban válassz egyet a Videóbeállítások › Shadercsomagok alatt.",
+    "datapack": "Az adatcsomagok egy világhoz tartoznak: telepítéskor kiválasztod a világot.",
+    "plugin": "A bővítmények (.rplugin) elkülönítve (sandboxban) futnak a Rustic Server motort használó szervereken. A hibás bővítményt kikapcsoljuk, a szerver tovább fut."
+  },
+  "resourcepacks": {
+    "manageOrder": "Betöltési sorrend kezelése"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Iris/OptiFine formátum"
+    },
+    "formatHint": {
+      "horizon": "A Horizon saját formátuma (.hshader), shader API 0.1 (kísérleti). Futtatás előtt ellenőrizzük.",
+      "shaders_dir": "Iris/OptiFine formátumú shaders/ csomag, amelyet a Horizon külön betöltője futtat."
+    }
+  },
+  "side": {
+    "client": "Kliens",
+    "server": "Szerver",
+    "both": "Kliens és szerver"
+  },
+  "install": {
+    "install": "Telepítés",
+    "installAria": "{{name}} telepítése ide: {{target}}",
+    "installed": "Telepítve",
+    "installing": "Telepítés…",
+    "installingPct": "Telepítés: {{pct}}",
+    "createInstance": "Példány létrehozása",
+    "chooseWorld": "Telepítés egy világba",
+    "noTarget": "Előbb válaszd ki, hová telepíted.",
+    "started": "{{name}} telepítése ide: {{target}}",
+    "withDeps_one": "Plusz {{count}} szükséges függőség.",
+    "withDeps_other": "Plusz {{count}} szükséges függőség.",
+    "failed": "Nem sikerült telepíteni: {{name}}",
+    "native": "Fordítás és telepítés",
+    "update": "Frissítés",
+    "updateAria": "{{name}} frissítése erre: {{version}}"
+  },
+  "modpack": {
+    "created": "Példány létrehozása: {{name}}",
+    "createdHint": "Letöltés folyamatban. Ha kész, megjelenik a Játék menüben."
+  },
+  "datapacks": {
+    "pickWorld": "Válassz világot",
+    "noWorlds": "Ebben a példányban még nincs világ. Játssz egyszer, hogy létrejöjjön egy.",
+    "count_one": "{{count}} adatcsomag",
+    "count_other": "{{count}} adatcsomag"
+  },
+  "plugins": {
+    "badge": "Rustic Server-bővítmény · API {{api}}",
+    "noServerTitle": "Még nincs Rustic Server szervered",
+    "noServerBody": "A bővítmények csak a Rustic Server motort használó szervereken futnak. Hozz létre egyet néhány lépésben, aztán gyere vissza, és telepíts rá bővítményeket.",
+    "createServer": "Szerver létrehozása"
+  },
+  "detail": {
+    "breadcrumb": "Navigációs útvonal",
+    "sections": "Projekt részei",
+    "tabs": {
+      "description": "Leírás",
+      "gallery": "Galéria",
+      "versions": "Verziók",
+      "changelog": "Változásnapló",
+      "dependencies": "Függőségek",
+      "compatibility": "Kompatibilitás"
+    },
+    "galleryLabel": "Galéria: {{name}}",
+    "prev": "Előző kép",
+    "next": "Következő kép",
+    "slide": "{{index}}. kép / {{total}}",
+    "about": "A projektről",
+    "categories": "Kategóriák",
+    "links": "Linkek",
+    "link": {
+      "source": "Forráskód",
+      "issues": "Hiba jelentése",
+      "website": "Weboldal",
+      "site": "A rustic-launcher.com oldalon",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "Még nincs változásnapló.",
+    "noGallery": "Még nincsenek képernyőképek.",
+    "notAvailable": {
+      "title": "Ez a projekt nem érhető el",
+      "body": "Lehet, hogy privát, ellenőrzésre vár, vagy a készítője vagy egy moderátor eltávolította.",
+      "back": "Vissza a Felfedezéshez"
+    },
+    "native": {
+      "title": "A gépeden fordul le",
+      "build": "Az első játékkor lefordul ennek a profilnak a játékába: nagyjából 10–15 perc, utána gyorsabb.",
+      "review": "Mielőtt telepíthető lenne, a Horizon regisztere vagy a Rustic adminjai ellenőrzik.",
+      "consent": "Semmi sem fordul le, amíg el nem olvasol és el nem fogadsz egy rövid figyelmeztetést.",
+      "more": "Hogyan működnek a natív modok"
+    }
+  },
+  "report": {
+    "button": "Jelentés",
+    "title": "Jelentés: {{name}}",
+    "sent": "Jelentés elküldve",
+    "sentBody": "Köszönjük. A moderátoraink átnézik.",
+    "reasons": {
+      "fair_play": "Megsérti a fair play szabályzatot",
+      "malware": "Kártevő vagy adatlopás",
+      "copyright": "Szerzői jogsértés",
+      "other": "Egyéb"
+    },
+    "failed": "Nem sikerült elküldeni a jelentést"
+  },
+  "versions": {
+    "version": "Verzió",
+    "horizon": "Horizon-buildek",
+    "published": "Közzétéve",
+    "downloads": "Letöltések",
+    "compatibility": "Kompatibilitás",
+    "actions": "Műveletek",
+    "none": "Nincs",
+    "channel": {
+      "release": "Kiadás",
+      "beta": "Béta",
+      "alpha": "Alfa"
+    },
+    "empty": "Még nincs elérhető verzió.",
+    "latest": "Legújabb"
+  },
+  "deps": {
+    "none": "Nincsenek függőségek.",
+    "relation": {
+      "required": "Szükséges",
+      "optional": "Opcionális",
+      "incompatible": "Nem kompatibilis"
+    },
+    "installed": "Telepítve",
+    "willInstall": "Automatikusan települ",
+    "notInstalled": "Nincs telepítve"
+  },
+  "compatTab": {
+    "for": "ehhez: {{target}}",
+    "builds": "A készítő ehhez a Horizon-verzióhoz készült buildet tesz közzé.",
+    "format": "Ez a tartalom csak adat (textúrák, shaderek, adatcsomagok): nem függ Horizon-buildtől.",
+    "unknown": "Válassz egy példányt vagy szervert a kompatibilitás ellenőrzéséhez.",
+    "fairPlay": "A Rustic csak fair play tartalmakat népszerűsít. Ami tisztességtelen előnyt ad, soha nem kerül a listába.",
+    "native": "Ehhez a Horizonhoz illő natív mod: a Rustic Launcher a gépeden fordítja bele ennek a példánynak a saját játékába."
+  },
+  "permissions": {
+    "title": "Engedélyek",
+    "network": "Hálózati hozzáférés: {{value}}",
+    "none": "nincs",
+    "files": "Fájlok: csak a saját adatmappája."
+  },
+  "stats": {
+    "downloads": "Letöltések",
+    "follows": "Követők",
+    "updated": "Frissítve",
+    "license": "Licenc",
+    "size": "Méret",
+    "gameVersion": "Játékverzió",
+    "version": "Legújabb verzió",
+    "author": "Készítő",
+    "created": "Közzétéve"
+  },
+  "searchSources": {
+    "mod": "Modok keresése a Horizonon, a Modrinthen és a Rusticon…",
+    "modpack": "Modcsomagok keresése a Horizonon, a Modrinthen és a Rusticon…",
+    "resourcepack": "Forráscsomagok keresése a Horizonon, a Modrinthen és a Rusticon…",
+    "shader": "Shaderek keresése a Horizonon, a Modrinthen és a Rusticon…",
+    "datapack": "Adatcsomagok keresése a Horizonon, a Modrinthen és a Rusticon…",
+    "plugin": "Bővítmények keresése a Horizonon, a Modrinthen és a Rusticon…"
+  },
+  "filtersLabel": "Szűrők",
+  "view": "Megtekintés",
+  "heading": "Találd meg a következő *mododat*",
+  "eyebrow": "Felfedezés",
+  "kindsServer": "Rustic Serverhez",
+  "tabs": {
+    "label": "Felfedezés részei",
+    "discover": "Ajánlott",
+    "browse": "Böngészés",
+    "mine": "Saját tartalom"
+  },
+  "hero": {
+    "eyebrow": "Kiemelt"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "Kiemelt modok",
+      "modpack": "Kiemelt modcsomagok",
+      "resourcepack": "Kiemelt forráscsomagok",
+      "shader": "Kiemelt shaderek",
+      "datapack": "Kiemelt adatcsomagok",
+      "plugin": "Kiemelt bővítmények"
+    },
+    "rows": {
+      "new": "Új",
+      "newHint": "Most közzétett vagy frissített",
+      "horizon": "Népszerű a Horizonon",
+      "horizonHint": "A legtöbbet letöltöttek a Horizon-regiszterből",
+      "verified": "A Rustic által ellenőrzött",
+      "verifiedHint": "A Rustic csapata ellenőrizte: azt teszik, amit ígérnek",
+      "yours": "Ehhez: {{target}}",
+      "yoursHint": "Fut ezen: Horizon {{version}}",
+      "community": "A közösségtől",
+      "communityHint": "Nemrég frissítve a Rustic Marketplace-en"
+    },
+    "empty": {
+      "title": "Itt még nincs mit felfedezni",
+      "hint": "Ebből a fajtából még semmi sem fut a kiválasztott célon. Böngéssz inkább mindent.",
+      "browse": "Minden böngészése"
+    },
+    "rowError": "Nem sikerült betölteni ezt a válogatást.",
+    "retry": "Újra"
+  },
+  "verified": {
+    "label": "Ellenőrzött",
+    "hint": "A Rustic által ellenőrzött: egy moderátor megnézte, hogy azt teszi, amit az oldala ír."
+  },
+  "price": {
+    "soon": "Hamarosan",
+    "soonHint": "A készítők hamarosan eladhatják a munkáikat. A vásárlás még nem érhető el.",
+    "notOnSale": "Még nem kapható: a készítői eladások hamarosan indulnak."
+  },
+  "native": {
+    "badge": "A gépeden fordul le",
+    "short": "Natív",
+    "hint": "A natív mod Rust-kód, amelyet futtatás előtt a gépeden fordítunk bele a játékba.",
+    "title": "Natív mod",
+    "body": "A natív modok Rust-forráskódok, amelyeket ezen a gépen fordítunk bele a játékodba (egy perctől fél óráig tarthat). Az adminok minden verziót átnéznek, mielőtt nyilvános lenne.",
+    "kind": "Natív mod",
+    "how": "A Rustic Launcher a gépeden fordítja bele őket ennek a példánynak a saját játékába, miután elfogadtál egy biztonsági figyelmeztetést. Az első fordítás 10–15 percig tart, a későbbiek csak a változásokat fordítják újra. A natív modok nélküli példányok megtartják az előre lefordított játékot.",
+    "instanceOnly": "A natív modok egy példányba kerülnek.",
+    "trust": {
+      "title": "Natív kód: olvasd el fordítás előtt",
+      "lead": "A(z) {{name}} natív mod: Rust-kód, amelyet ezen a gépen fordítunk bele a(z) „{{instance}}” példány játékába.",
+      "unsandboxed": "A natív modok nem futnak elkülönítve (sandboxban). Lefordítás után a te jogaiddal futnak, és bármit olvashatnak, módosíthatnak vagy elküldhetnek, amihez a fiókod hozzáfér.",
+      "review": "Csak a Horizon-regiszterből származó (a karbantartói által átnézett) és a Rustic Marketplace-en adminok által jóváhagyott modok telepíthetők. Az ellenőrzés csökkenti a kockázatot, de nem szünteti meg.",
+      "build": "Szükség esetén telepítjük a Rustot, majd lefordítjuk a játékot ehhez a példányhoz: először kb. 10–15 perc és néhány GB, utána gyorsabb.",
+      "scope": "Csak ez a példány játssza a lefordított játékot. A következő natív modjainál már nem kérdezünk rá újra.",
+      "source": "Forráskód megtekintése",
+      "check": "Megértettem, hogy a natív modok elkülönítés nélkül, a jogaimmal futnak, és megbízom ebben a modban.",
+      "accept": "Megbízom benne: telepítés és fordítás"
+    },
+    "toolchain": {
+      "title": "Telepíted a Rust {{version}} verziót?",
+      "lead": "A natív modok fordításához a Rust fordítóprogram kell. A Rustic Launcher telepítheti neked.",
+      "manual": "A natív modok fordításához a Rust fordítóprogram és olyan rendszereszközök kellenek, amelyeket a Rustic Launcher nem tud telepíteni. Telepítsd ezeket, majd fordíts újra:",
+      "where": "A hivatalos oldalról (static.rust-lang.org), a közzétett SHA-256 alapján ellenőrizve, a launcher saját mappájába: a gépeden máshol semmi sem változik.",
+      "size": "Kb. 1–2,5 GB (Windowson egy C-fordítóval együtt).",
+      "once": "Egyszer, az összes példányhoz; a launcher adatainak törlésével ez is törlődik.",
+      "found": "Észlelve: {{reason}}.",
+      "install": "Rust telepítése",
+      "started": "A Rust telepítése folyamatban",
+      "startedHint": "A fordítás azonnal indul, amint kész. Kövesd a letöltések panelen.",
+      "failed": "Nem sikerült telepíteni a Rustot"
+    },
+    "build": {
+      "started": "Natív modok fordítása: {{instance}}",
+      "startedHint": "Kövesd a példány oldalán vagy a letöltések panelen. Az első fordítás 10–15 percig tart.",
+      "failed": "Nem sikerült lefordítani a natív modokat: {{instance}}"
+    },
+    "errors": {
+      "notEdition": "A natív modok csak a Rustic kiadásba fordíthatók be: állítsd át erre a példányt a beállításaiban.",
+      "running": "Előbb zárd be a játékot: a natív modjait leállított állapotban fordítjuk újra.",
+      "disk": "Nincs elég szabad lemezterület. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "Nem kompatibilis",
+    "compatible": "Kompatibilis"
+  },
+  "library": {
+    "add": "Hozzáadás a könyvtáramhoz",
+    "inLibrary": "A könyvtáramban",
+    "added": "{{name}} hozzáadva a könyvtáradhoz",
+    "removed": "{{name}} eltávolítva a könyvtáradból",
+    "remove": "{{name}} eltávolítása a könyvtáramból",
+    "failed": "Nem sikerült frissíteni a könyvtáradat"
+  },
+  "prompt": {
+    "title": "{{name}} telepítése?",
+    "body": "Ezt a projektet a weboldalról nyitottad meg. Válaszd ki, hová és melyik verziót telepíted, majd erősítsd meg.",
+    "dismiss": "Most nem",
+    "version": "Verzió",
+    "versionMissing": "A(z) {{version}} verzió már nem érhető el: a legújabb kompatibilis van kiválasztva."
+  },
+  "mine": {
+    "searchPlaceholder": "Saját tartalom szűrése…",
+    "noMatch": "Nincs egyezés",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Kézzel hozzáadva"
+    },
+    "installed": {
+      "title": "Telepítve",
+      "titleOn": "Telepítve ide: {{target}}",
+      "hint": {
+        "mod": "Ennek a célnak a modjai: kapcsold be vagy ki, frissítsd vagy távolítsd el őket.",
+        "modpack": "Ennek a célnak a modcsomagjai: kapcsold be vagy ki, frissítsd vagy távolítsd el őket.",
+        "resourcepack": "Ennek a célnak a forráscsomagjai: kapcsold be vagy ki, frissítsd vagy távolítsd el őket.",
+        "shader": "Ennek a célnak a shaderei: kapcsold be vagy ki, frissítsd vagy távolítsd el őket.",
+        "datapack": "Ennek a célnak az adatcsomagjai: kapcsold be vagy ki, frissítsd vagy távolítsd el őket.",
+        "plugin": "Ennek a célnak a bővítményei: kapcsold be vagy ki, frissítsd vagy távolítsd el őket."
+      },
+      "modpacksTitle": "A modcsomagokból profilok lesznek",
+      "modpacksHint": "Minden telepített modcsomag külön profil.",
+      "openProfiles": "Profiljaim megnyitása",
+      "noTarget": "Előbb válaszd ki, hol keressünk.",
+      "serverHint": "A szerver bővítményeit és adatcsomagjait a szerver oldalán kezelheted.",
+      "manageServer": "Szerver kezelése",
+      "updateAll_one": "{{count}} elem frissítése",
+      "updateAll_other": "{{count}} elem frissítése",
+      "openProfile": "Profil megnyitása",
+      "empty": "Itt még nincs semmi telepítve",
+      "emptyHint": "Találj valamit az Ajánlott vagy a Böngészés alatt.",
+      "discover": "Tartalmak felfedezése",
+      "updateTo": "Frissítés erre: {{version}}",
+      "incompatible": "Nem kompatibilis",
+      "update": "{{name}} frissítése",
+      "toggle": "{{name}} bekapcsolása",
+      "remove": "{{name}} eltávolítása",
+      "removeTitle": "{{name}} eltávolítása?",
+      "removeBody": "A fájljai törlődnek ebből a profilból. Bármikor újra telepítheted."
+    },
+    "signIn": {
+      "title": "A könyvtárad és az alkotásaid",
+      "body": "Jelentkezz be a Rustic-fiókodba, hogy megtaláld az elmentett és a közzétett projektjeidet.",
+      "action": "Bejelentkezés"
+    },
+    "library": {
+      "title": "Könyvtáram",
+      "hint": "A Rustic-fiókodba mentett projektek, minden gépen.",
+      "empty": "A könyvtárad üres",
+      "emptyHint": "Adj hozzá egy Rustic-projektet az oldaláról, és itt megtalálod.",
+      "installAria": "{{name}} telepítése"
+    },
+    "creations": {
+      "title": "Alkotásaim",
+      "hint": "Amit a Rustic Marketplace-en közzéteszel.",
+      "publish": "Közzététel a weboldalon",
+      "empty": "Még nem tettél közzé semmit",
+      "emptyHint": "Ossz meg egy modot, csomagot vagy shadert minden Rustic-játékossal a weboldalon keresztül.",
+      "manage": "Kezelés",
+      "manageAria": "{{name}} kezelése a weboldalon",
+      "status": {
+        "public": "Nyilvános",
+        "unlisted": "Nem listázott",
+        "private": "Privát",
+        "pending": "Ellenőrzésre vár",
+        "rejected": "Elutasítva",
+        "takenDown": "Eltávolítva"
+      }
+    }
+  }
+}

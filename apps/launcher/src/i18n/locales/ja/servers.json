@@ -1,0 +1,1041 @@
+{
+  "list": {
+    "title": "サーバー",
+    "description": "フレンドのためにワールドをこの PC や自分の VPS でホストし、お気に入りのサーバーをすぐに開けるようにします。",
+    "create": "サーバーを作成",
+    "tabs": {
+      "mine": "マイサーバー",
+      "joined": "参加済み",
+      "discover": "見つける"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "バニラ Horizon"
+    },
+    "hosting": {
+      "local": "この PC",
+      "remote": "リモート：{{host}}",
+      "cloud": "Rustic Cloud・{{region}}"
+    },
+    "state": "状態",
+    "states": {
+      "running": "実行中",
+      "starting": "起動中…",
+      "stopping": "停止中…",
+      "stopped": "停止",
+      "crashed": "クラッシュ",
+      "installing": "インストール中…",
+      "unreachable": "接続不可"
+    },
+    "players": "プレイヤー",
+    "playersCount": "プレイヤー {{online}}/{{max}}",
+    "version": "バージョン",
+    "copyAddress": "アドレスをコピー",
+    "copyFailed": "クリップボードにコピーできませんでした",
+    "notShared": "まだ共有されていません",
+    "notSharedHint": "サーバーの「アクセス」タブで、一時アドレス、招待コード、ドメインのいずれかをオンにしてください。",
+    "start": "起動",
+    "stop": "停止",
+    "startAria": "{{name}} を起動",
+    "stopAria": "{{name}} を停止",
+    "powerFailed": "サーバーが応答しませんでした",
+    "empty": {
+      "title": "3 ステップでフレンドのためにワールドをホスト",
+      "description": "この PC で無料で実行するか、Rustic に自分の VPS へインストールしてもらいましょう。"
+    },
+    "featured": {
+      "description": "Rustic チームが選んだサーバー：フェアプレイ、Horizon 対応、モデレーションあり。",
+      "empty": "現在、注目のサーバーはありません。",
+      "verified": "Rustic 認証済み",
+      "save": "リストに追加",
+      "inList": "リストに追加済み",
+      "online_other": "{{value}} 人オンライン",
+      "view": "{{name}} について"
+    },
+    "viewLabel": "表示",
+    "views": {
+      "discover": "見つける",
+      "mine": "マイサーバー"
+    },
+    "searchPlaceholder": {
+      "discover": "注目のサーバーを検索…",
+      "mine": "マイサーバーを検索…"
+    },
+    "clearSearch": "検索をクリア",
+    "sortLabel": "並べ替え",
+    "sorts": {
+      "recommended": "おすすめ",
+      "players": "プレイヤー数順",
+      "name": "名前"
+    },
+    "refreshPing": "Ping と状態を更新",
+    "layoutList": "リスト表示",
+    "layoutGrid": "グリッド表示",
+    "createHint": "この PC、あなたの VPS、そして近日クラウドでも",
+    "heading": "*サーバー*でプレイ",
+    "eyebrow": "サーバー",
+    "sections": {
+      "hosted": "ホスト中のサーバー",
+      "joined": "参加したサーバー"
+    }
+  },
+  "multiplayer": {
+    "description": "ゲームのサーバーリスト。すべてのインスタンスで共有されます。",
+    "add": "サーバーを追加",
+    "added": "{{name}} をリストに追加しました",
+    "addFailed": "このサーバーを追加できませんでした",
+    "name": "サーバー名",
+    "namePlaceholder": "名前",
+    "address": "サーバーアドレス",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "ホスト名または IP を入力してください（:port は任意）。",
+    "refreshPings": "更新",
+    "favorites_other": "お気に入り・{{count}}",
+    "others_other": "その他のサーバー・{{count}}",
+    "favorite": "{{name}} をお気に入りに追加",
+    "unfavorite": "{{name}} をお気に入りから削除",
+    "offline": "オフライン",
+    "unreachable": "現在このサーバーに接続できません",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "参加",
+    "joinAria": "{{name}} に参加",
+    "joinWith": "{{instance}} で参加",
+    "noInstance": "サーバーに参加するにはインスタンスを作成してください",
+    "joining": "起動して {{name}} に参加しています…",
+    "more": "{{name}} のその他の操作",
+    "copyAddress": "アドレスをコピー",
+    "removed": "{{name}} を削除しました",
+    "undo": "元に戻す",
+    "empty": {
+      "title": "まだサーバーがありません",
+      "description": "アドレスで追加するか、「見つける」から選んでください。"
+    }
+  },
+  "wizard": {
+    "title": "サーバーを作成",
+    "subtitle": "3 つのステップ：何を実行するか、どこでホストするか、フレンドがどう参加するか。",
+    "creatingTitle": "{{name}} をセットアップしています",
+    "stepOf": "ステップ {{index}}/{{total}}",
+    "steps": {
+      "basics": "基本",
+      "hosting": "ホスト先",
+      "access": "アクセス"
+    },
+    "create": "サーバーを作成",
+    "installOn": "{{host}} にインストール",
+    "createFailed": "サーバーを作成できませんでした",
+    "noRusticServer": "rustic-server プログラムが見つかりません。設定 › ゲームとインスタンス › Rustic Server で選択するか、これを同梱する Rustic エディションのビルドをインストールしてください。",
+    "openRusticServerSettings": "設定を開く",
+    "fixErrors": "続行するには、ハイライトされた項目を確認してください。",
+    "discard": {
+      "title": "このサーバーを破棄しますか？",
+      "body": "ウィザードで入力した内容は失われます。",
+      "keep": "編集を続ける",
+      "confirm": "破棄"
+    },
+    "basics": {
+      "name": "サーバー名",
+      "namePlaceholder": "Lou の SMP",
+      "icon": "アイコン",
+      "icons": {
+        "grass": "草",
+        "sword": "剣",
+        "pickaxe": "ツルハシ",
+        "castle": "城",
+        "rocket": "ロケット",
+        "gem": "宝石",
+        "flame": "炎",
+        "leaf": "葉",
+        "star": "星",
+        "compass": "コンパス"
+      },
+      "color": "色",
+      "colorN": "色 {{n}}",
+      "type": "種類",
+      "recommended": "おすすめ",
+      "nightly": "ナイトリー",
+      "rusticDesc": "プラグイン（.rplugin）はサンドボックス化されており、プラグインがサーバーをクラッシュさせることはありません。",
+      "horizonDesc": "Horizon 純正のサーバー。プラグインなし。",
+      "version": "Horizon のバージョン",
+      "maxPlayers": "最大プレイヤー数",
+      "versionLineRustic": "Horizon {{version}} 上の Rustic Server 0.1",
+      "versionLineHorizon": "Horizon サーバー {{version}}",
+      "sameAsClient": "（クライアントと同じ）",
+      "starterPlugins": "スタータープラグイン",
+      "starterHint": "公式プラグインと、それぞれに許可されている操作。",
+      "capNetwork": "ネットワーク",
+      "capNoNetwork": "ネットワークなし",
+      "capNoFiles": "ファイルなし",
+      "capDataFolder": "専用データフォルダー",
+      "eula": "Minecraft EULA に同意します",
+      "eulaHint": "サーバーの実行に必要です。同意するのはあなた自身であり、Rustic が代わりに同意することはありません。",
+      "eulaRead": "EULA を読む",
+      "eulaTitle": "Minecraft EULA"
+    },
+    "world": {
+      "title": "ワールド",
+      "new": "新しいワールド",
+      "import": "フォルダーをインポート",
+      "fromInstance": "インスタンスから",
+      "seed": "シード値",
+      "seedHint": "ランダムなワールドにする場合は空欄のままにしてください。",
+      "seedPlaceholder": "任意",
+      "randomSeed": "ランダムなシード値",
+      "levelType": "ワールドタイプ",
+      "levelTypes": {
+        "default": "デフォルト",
+        "flat": "スーパーフラット",
+        "large_biomes": "大きなバイオーム",
+        "amplified": "アンプリファイド"
+      },
+      "gamemode": "ゲームモード",
+      "gamemodes": {
+        "survival": "サバイバル",
+        "creative": "クリエイティブ",
+        "adventure": "アドベンチャー"
+      },
+      "difficulty": "難易度",
+      "difficulties": {
+        "peaceful": "ピース",
+        "easy": "イージー",
+        "normal": "ノーマル",
+        "hard": "ハード"
+      },
+      "structures": "構造物の生成",
+      "hardcore": "ハードコア",
+      "folder": "ワールドフォルダー",
+      "instance": "インスタンス",
+      "pickInstance": "インスタンスを選択",
+      "world": "ワールド",
+      "pickWorld": "ワールドを選択",
+      "noWorlds": "このインスタンスにはワールドがありません",
+      "newDesc": "シード値から作る新しいワールド。ルールは自由に決められます。",
+      "importDesc": "PC 上またはバックアップのワールドフォルダー。",
+      "fromInstanceDesc": "あなたのプロファイルで遊んだワールド。"
+    },
+    "type": {
+      "memory": "サーバーメモリ（RAM）",
+      "memoryHint": "ほとんどのフレンドグループには 4 GB で十分です。プレイヤーが多い場合や大きな MODパックでは、より多いほうが快適です。"
+    },
+    "access": {
+      "intro": "フレンドの参加方法です。複数を同時にオンにでき、あとから変更できます。",
+      "lan": "同じネットワークのフレンド（LAN）",
+      "lanDetail": "この PC のローカルアドレス。サーバー作成後に表示されます。",
+      "publicIp": "パブリックアドレス",
+      "publicIpDetail": "あなたの VPS の IP",
+      "alwaysOn": "常時オン",
+      "relay": "一時アドレス",
+      "relayDetail": "無料、サーバーの実行中のみ。ポート開放は不要",
+      "invite": "招待コード",
+      "inviteDetail": "フレンドが Rustic Launcher に貼り付けて参加するためのコード。",
+      "domain": "自分のドメイン",
+      "domainDetail": "Porkbun と連携・Porkbun で購入・任意のレジストラーを使用",
+      "domainAfter": "作成後に設定",
+      "safety": "オンラインモードがオン：ゲームを所有するプレイヤーのみ参加できます。ホワイトリストもオンです。"
+    },
+    "summary": {
+      "title": "概要",
+      "version": "バージョン",
+      "host": "ホスト",
+      "world": "ワールド",
+      "memory": "メモリ",
+      "players": "最大プレイヤー数",
+      "plugins": "プラグイン",
+      "none": "なし",
+      "eulaAccepted": "ステップ 1 で Minecraft EULA に同意しました。"
+    },
+    "errors": {
+      "nameRequired": "サーバーに名前を付けてください。",
+      "nameTooLong": "40 文字以内で入力してください。",
+      "version": "Horizon のバージョンを選択してください。",
+      "maxPlayers": "1〜1000 人の範囲で指定してください。",
+      "importPath": "インポートするワールドフォルダーを選択してください。",
+      "world": "インスタンスとそのワールドを選択してください。",
+      "seed": "シード値は 64 文字以内です。",
+      "eula": "サーバーを実行するには EULA に同意してください。",
+      "cloudUnavailable": "Rustic Cloud はまだ利用できません。",
+      "vpsNotReady": "先に VPS に接続し、チェックに合格してください。",
+      "memory": "メモリは 1 GB 以上必要です。",
+      "host": "IP アドレスまたはホスト名を入力してください。",
+      "port": "ポートは 1〜65535 の範囲です。",
+      "username": "Linux のユーザー名を入力してください。",
+      "keyPath": "秘密鍵ファイルを選択してください。",
+      "generateKey": "先に鍵を生成し、VPS に追加してください。",
+      "password": "パスワードを入力してください。"
+    },
+    "heading": "*サーバー*を作成",
+    "stepHints": {
+      "basics": "名前を付けて、動かすものと最初のワールドを選びます。",
+      "hosting": "サーバーを動かすマシンと割り当てるメモリを選びます。",
+      "access": "フレンドの参加方法を選びます。あとから変更できます。"
+    },
+    "sections": {
+      "identity": "名前とアイコン"
+    },
+    "preview": {
+      "title": "プレビュー",
+      "unnamed": "あなたのサーバー",
+      "draft": "未作成"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "この PC（ローカル）",
+      "free": "無料",
+      "description": "フレンドがプレイしている間は PC の電源を入れたままにする必要があります。",
+      "settings": "この PC 上",
+      "reach": "フレンドは同じネットワーク、Rustic の一時アドレス、または招待コードで接続できます。ルーターの設定は不要です。",
+      "startWithLauncher": "ランチャーと一緒に起動",
+      "startWithLauncherHint": "Rustic Launcher を開くとサーバーが起動します。"
+    },
+    "vps": {
+      "title": "あなたの VPS（SSH）",
+      "description": "あなたの Linux サーバー。インストールと実行は Rustic が行います。",
+      "which": "VPS",
+      "existing_other": "保存済みの VPS（{{count}}）",
+      "new": "VPS を追加",
+      "pinned": "ホストキーを固定済み",
+      "host": "ホスト",
+      "port": "ポート",
+      "user": "ユーザー",
+      "userPlaceholder": "root または sudo ユーザー",
+      "auth": "ログイン",
+      "authGenerate": "鍵を生成する",
+      "authKey": "既存の鍵ファイル",
+      "authPassword": "パスワード（1 回のみ）",
+      "generateHint": "おすすめ。Rustic が鍵ペアを作成します。秘密鍵がこの PC から出ることはありません。",
+      "generate": "鍵を生成",
+      "addKeyCommand": "VPS のコンソールでこれを 1 回実行して、鍵を承認してください：",
+      "keyStored": "秘密鍵をシステムのキーチェーンに保存しました（{{path}}）",
+      "openFirewall": "VPS のファイアウォールでゲームポートを開放",
+      "openFirewallHint": "ufw または firewalld でサーバーのポートへの TCP を許可します。プロバイダー側のファイアウォールでも設定が必要な場合があります。",
+      "keyFile": "秘密鍵",
+      "passphrase": "パスフレーズ",
+      "optional": "任意",
+      "password": "パスワード",
+      "passwordHint": "鍵のインストールに 1 回だけ使用します。保存されません。",
+      "test": "接続をテスト",
+      "reachable": "接続済み・{{ms}} ms",
+      "unreachable": "この VPS に接続できませんでした",
+      "authFailed": "VPS がログインを拒否しました"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "近日公開",
+      "description": "Rustic のマシン上で常時稼働するサーバー。",
+      "waitlist": "Rustic Cloud の開始時にメールで受け取る。",
+      "email": "メールアドレス",
+      "join": "ウェイトリストに登録",
+      "joined": "リストに登録されました（#{{position}}）。メールでお知らせします。",
+      "invalidEmail": "有効なメールアドレスを入力してください。"
+    },
+    "requirements": {
+      "title": "要件チェック",
+      "ram": "メモリ（空き {{free}}）",
+      "gameFiles": "ゲームファイル準備済み",
+      "port": "ポート 25565 が空いている",
+      "hint": "ディスク容量はサーバーファイルのダウンロード時にチェックされます。"
+    },
+    "fingerprint": {
+      "title": "{{host}} を信頼しますか？",
+      "description": "この VPS への初回接続です。信頼する前に、このフィンガープリントをプロバイダーのコンソールに表示されているものと比較してください。",
+      "warning": "一致しない場合はキャンセルしてください。誰かが接続を傍受している可能性があります。Rustic は今後このキーの変更をすべてブロックします。",
+      "trust": "信頼して続行"
+    },
+    "testFailed": "接続テストに失敗しました",
+    "checkFailed": "VPS のチェックに失敗しました",
+    "preflight": {
+      "running": "VPS をチェックしています…",
+      "ok": "VPS の準備ができています",
+      "notOk": "VPS が要件を満たしていません",
+      "os": "{{os}}・{{arch}}",
+      "cpu_other": "{{count}} vCPU",
+      "memory": "メモリ {{memory}}",
+      "disk": "ディスク空き {{disk}}",
+      "systemd": "systemd 利用可能",
+      "ip": "パブリック IP"
+    },
+    "problems": {
+      "memory": "メモリ",
+      "disk": "ディスク",
+      "arch": "アーキテクチャ",
+      "os": "オペレーティングシステム",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "{{host}} にインストールしています",
+      "steps": {
+        "connect": "SSH で接続",
+        "check": "事前チェック",
+        "user": "ユーザー「rustic」を作成",
+        "download": "署名済みサーバーファイルをアップロード",
+        "engine": "Rustic エンジンを設定",
+        "service": "サービスをインストール",
+        "firewall": "ポート 25565 を開放",
+        "world": "ワールドを準備",
+        "start": "起動して確認"
+      },
+      "state": {
+        "pending": "待機中",
+        "running": "進行中",
+        "done": "完了",
+        "failed": "失敗",
+        "skipped": "スキップ"
+      },
+      "skippedVanilla": "バニラ Horizon では不要",
+      "log_other": "ログを表示（{{count}} 行）",
+      "vpsDone": "{{name}} が {{host}} で実行中です",
+      "vpsDoneBody": "ローカルサーバーと同じようにランチャーから管理できます：コンソール、プレイヤー、プラグイン、バックアップ。",
+      "localDownload": "{{engine}} をダウンロード",
+      "localInit": "ワールドと設定を準備",
+      "localStart": "初回起動",
+      "localReady": "起動準備完了",
+      "localDone": "{{name}} が実行中です",
+      "localDoneBody": "「アクセス」タブからアドレスを共有するか、フレンドパネルからフレンドを招待してください。",
+      "open": "サーバーを開く",
+      "backToList": "サーバー一覧に戻る",
+      "retry": "再試行",
+      "failed": "インストールに失敗しました",
+      "crashed": "初回起動中にサーバーが停止しました。コンソールを確認してください。"
+    }
+  },
+  "manage": {
+    "tabsLabel": "サーバーのセクション",
+    "tabs": {
+      "overview": "概要",
+      "console": "コンソール",
+      "players": "プレイヤー",
+      "plugins": "プラグイン",
+      "config": "設定",
+      "datapacks": "データパック",
+      "backups": "バックアップ",
+      "access": "アクセス",
+      "danger": "危険な操作"
+    },
+    "state": {
+      "stopped": "停止",
+      "starting": "起動中…",
+      "running": "実行中",
+      "stopping": "停止中…",
+      "crashed": "クラッシュ",
+      "installing": "インストール中…",
+      "unreachable": "接続不可"
+    },
+    "save": "保存",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "remove": "削除",
+    "done": "完了",
+    "header": {
+      "back": "サーバー",
+      "players": "プレイヤー {{online}}/{{max}}",
+      "uptime": "稼働 {{duration}}",
+      "start": "起動",
+      "stop": "停止",
+      "restart": "再起動",
+      "join": "参加",
+      "address": "アドレス",
+      "copyAddress": "サーバーアドレスをコピー",
+      "powerFailed": "サーバーの状態を変更できませんでした"
+    },
+    "overview": {
+      "stoppedTitle": "サーバーは停止しています",
+      "stoppedBody": "起動すると CPU、メモリ、TPS、ティック時間をリアルタイムで確認できます。",
+      "cpu": "CPU",
+      "cpuChart": "過去 2 分間の CPU 使用率",
+      "ram": "メモリ",
+      "ramChart": "過去 2 分間のメモリ使用量",
+      "of": "/ {{max}}",
+      "tps": "TPS",
+      "tpsChart": "過去 2 分間の 1 秒あたりのティック数",
+      "mspt": "ティック時間",
+      "msptChart": "過去 2 分間の 1 ティックあたりのミリ秒（50 ms の目安線付き）",
+      "msptBudget": "目安 50 ms",
+      "health": {
+        "good": "快適",
+        "busy": "高負荷",
+        "lagging": "ラグあり"
+      },
+      "onlineTitle_other": "{{count}} 人のプレイヤーがオンライン",
+      "onlineStopped": "サーバーが停止している間は誰も参加できません。",
+      "nobody": "現在プレイしている人はいません。",
+      "infoTitle": "詳細",
+      "world": "ワールド",
+      "version": "Horizon",
+      "port": "ポート",
+      "memory": "メモリ",
+      "created": "作成日",
+      "folder": "フォルダー",
+      "uptime": "稼働時間",
+      "startedAt": "{{time}} から",
+      "lastSession": "前回のセッション",
+      "lastStarted": "最終起動: {{when}}",
+      "neverStarted": "まだ起動していません",
+      "lastLines": "コンソールの最新行",
+      "noLines": "まだ記録はありません。",
+      "openConsole": "コンソールを開く",
+      "crashedTitle": "サーバーが予期せず停止しました",
+      "crashedBody": "コンソールの最新行を確認してから、もう一度起動してください。"
+    },
+    "console": {
+      "filter": "行を絞り込み",
+      "filters": {
+        "all": "すべて",
+        "info": "情報",
+        "warn": "警告",
+        "error": "エラー",
+        "chat": "チャット"
+      },
+      "levels": {
+        "info": "info",
+        "warn": "warn",
+        "error": "error",
+        "command": "cmd",
+        "chat": "chat"
+      },
+      "autoScroll": "新しい行を追従",
+      "logLabel": "サーバーコンソール",
+      "empty": "まだ行はありません。",
+      "suggestions": "コマンドの候補",
+      "inputLabel": "サーバーコマンド",
+      "placeholder": "コマンドを入力（Tab で補完、↑ で履歴）",
+      "offline": "コマンドを送信するにはサーバーを起動してください",
+      "send": "送信",
+      "sendFailed": "コマンドを送信できませんでした",
+      "hint": "コマンドはすべての権限を持つサーバーコンソールとして実行されます。先頭のスラッシュは不要です。"
+    },
+    "players": {
+      "whitelist": "ホワイトリスト",
+      "whitelistHint": "リストに登録されたプレイヤーのみ参加できます。サーバーがインターネットから接続可能な場合におすすめです。",
+      "view": "プレイヤーを表示",
+      "views": {
+        "online": "オンライン",
+        "all": "すべて",
+        "ops": "オペレーター",
+        "whitelist": "ホワイトリスト",
+        "banned": "BAN 済み"
+      },
+      "search": "プレイヤーを検索",
+      "emptyOnline": "オンラインの人はいません",
+      "empty": "ここにはプレイヤーがいません",
+      "stoppedHint": "誰がプレイしているかを見るにはサーバーを起動してください。",
+      "online": "オンライン",
+      "offline": "オフライン",
+      "op": "オペレーター",
+      "whitelisted": "ホワイトリスト登録済み",
+      "banned": "BAN 済み",
+      "playtime": "プレイ時間 {{duration}}",
+      "kick": "キック",
+      "kickAria": "{{name}} をキック",
+      "more": "{{name}} のその他の操作",
+      "makeOp": "オペレーターにする",
+      "deop": "オペレーターを解除",
+      "whitelistAdd": "ホワイトリストに追加",
+      "whitelistRemove": "ホワイトリストから削除",
+      "ban": "BAN",
+      "pardon": "BAN 解除",
+      "banTitle": "{{name}} を BAN しますか？",
+      "banBody": "このプレイヤーは切断され、BAN を解除するまで再参加できません。",
+      "reason": "理由（任意、プレイヤーに表示されます）",
+      "failed": "操作に失敗しました",
+      "done": {
+        "kick": "{{name}} をキックしました",
+        "ban": "{{name}} を BAN しました",
+        "pardon": "{{name}} の BAN を解除しました",
+        "op": "{{name}} をオペレーターにしました",
+        "deop": "{{name}} のオペレーターを解除しました",
+        "whitelist_add": "{{name}} をホワイトリストに追加しました",
+        "whitelist_remove": "{{name}} をホワイトリストから削除しました"
+      }
+    },
+    "config": {
+      "mode": "編集モード",
+      "form": "設定",
+      "raw": "ファイルを直接編集",
+      "groups": {
+        "general": "一般",
+        "world": "ワールド",
+        "players": "プレイヤー",
+        "network": "ネットワーク",
+        "performance": "パフォーマンス"
+      },
+      "keys": {
+        "motd": "MOTD（サーバーメッセージ）",
+        "max-players": "最大プレイヤー数",
+        "white-list": "ホワイトリスト",
+        "online-mode": "オンラインモード（アカウント確認）",
+        "pvp": "PvP（プレイヤー同士の戦闘）",
+        "gamemode": "デフォルトのゲームモード",
+        "difficulty": "難易度",
+        "level-seed": "ワールドのシード値",
+        "spawn-protection": "スポーン保護の範囲",
+        "server-port": "ポート",
+        "enable-rcon": "リモートコンソール（RCON）",
+        "view-distance": "描画距離",
+        "simulation-distance": "シミュレーション距離"
+      },
+      "restart": "再起動",
+      "restartNeeded": "一部の変更を適用するにはサーバーを再起動してください",
+      "unsaved_other": "保存されていない変更 {{count}} 件",
+      "noChanges": "変更なし",
+      "discard": "破棄",
+      "saved": "設定を保存しました",
+      "saveFailed": "設定を保存できませんでした",
+      "rawTitle": "server.toml",
+      "rawWarning": "上級者向け：入力ミスがあるとサーバーが起動しなくなる場合があります。値は保存時にチェックされます。"
+    },
+    "plugins": {
+      "vanillaTitle": "プラグインには Rustic Server が必要です",
+      "vanillaBody": "このサーバーはバニラ Horizon で動作しています。Rustic Server では、サーバーをクラッシュさせることのない、サンドボックス化された .rplugin プラグインを使えます。プラグインを使うには、Rustic Server を作成してこのワールドをインポートしてください。",
+      "createRustic": "Rustic Server を作成",
+      "intro": "プラグインはサンドボックス化されて動作します。失敗したプラグインはログに記録されて無効化され、サーバーは動き続けます。各プラグインはアクセスできる範囲を宣言しています。",
+      "upload": "ファイルを追加…",
+      "uploadTitle": ".rplugin ファイルを選択",
+      "find": "プラグインを探す",
+      "empty": "まだプラグインがありません",
+      "emptyBody": "コンテンツ › プラグインからワンクリックで追加できます。",
+      "errored": "エラーにより無効化",
+      "disabled": "オフ",
+      "noDescription": "説明なし",
+      "toggle": "{{name}} を有効にする",
+      "capabilities": "アクセス",
+      "noNetwork": "ネットワークなし",
+      "network": "ネットワーク：{{domains}}",
+      "fs": {
+        "none": "ファイルなし",
+        "data-folder": "専用データフォルダー"
+      },
+      "update": "{{version}} に更新",
+      "updated": "{{name}} を {{version}} に更新しました",
+      "installed": "{{name}} をインストールして有効にしました",
+      "removeTitle": "{{name}} を削除しますか？",
+      "removeBody": "プラグインはアンロードされ、ファイルが削除されます。データフォルダーは残ります。",
+      "failed": "プラグインの操作に失敗しました"
+    },
+    "datapacks": {
+      "intro": "ワールド「{{world}}」のデータパック。",
+      "find": "データパックを探す",
+      "empty": "このワールドにはデータパックがありません",
+      "toggle": "{{name}} を有効にする",
+      "remove": "{{name}} を削除",
+      "reloadHint": "変更は /reload または再起動後に適用されます。",
+      "failed": "データパックの操作に失敗しました"
+    },
+    "backups": {
+      "nowTitle": "今すぐバックアップ",
+      "nowBody": "ワールドと設定のコピーを作成します。サーバーは動き続けます。",
+      "note": "メモ",
+      "notePlaceholder": "任意のメモ（例：「アップデート前」）",
+      "now": "今すぐバックアップ",
+      "created": "バックアップを作成しました",
+      "empty": "まだバックアップがありません",
+      "kinds": {
+        "manual": "手動",
+        "scheduled": "定期",
+        "pre_restore": "復元前"
+      },
+      "restore": "復元",
+      "restoreTitle": "このバックアップを復元しますか？",
+      "restoreBody": "ワールドは {{date}} の状態に戻り、それ以降に作ったものはすべて置き換えられます。先に現在のワールドのバックアップが作成されます。",
+      "restored": "バックアップを復元しました",
+      "delete": "バックアップを削除",
+      "deleteTitle": "このバックアップを削除しますか？",
+      "deleteBody": "このバックアップは完全に削除されます。",
+      "failed": "バックアップの操作に失敗しました",
+      "scheduleTitle": "自動バックアップ",
+      "scheduleBody": "上限に達すると、最も古い自動バックアップから削除されます。",
+      "scheduleEnabled": "自動でバックアップ",
+      "every": "間隔",
+      "hours_other": "{{count}} 時間ごと",
+      "keep": "保持",
+      "keepCount_other": "最新 {{count}} 件",
+      "scheduleSaved": "バックアップのスケジュールを保存しました"
+    },
+    "danger": {
+      "deleteTitle": "このサーバーを削除",
+      "deleteBody": "サーバーを停止してランチャーから削除します。ファイルは残すこともできます。",
+      "delete": "サーバーを削除",
+      "removeVpsTitle": "VPS から削除",
+      "removeVpsBody": "{{host}} のサービスを停止し、Rustic をアンインストールします。VPS はそのまま残ります。",
+      "removeVps": "VPS から削除",
+      "confirmTitle": "「{{name}}」を削除しますか？",
+      "confirmBody": "この操作は元に戻せません。ワールドが再び必要になる可能性がある場合は、先にバックアップを作成してください。",
+      "deleteFiles": "ワールドとすべてのサーバーファイルも削除する",
+      "typeName": "確認のため「{{name}}」と入力してください",
+      "deleted": "{{name}} を削除しました",
+      "failed": "サーバーを削除できませんでした"
+    }
+  },
+  "access": {
+    "intro": "フレンドがサーバーに接続する方法を選んでください。複数を同時にオンにできます。",
+    "optional": "任意",
+    "lan": {
+      "title": "同じネットワーク",
+      "body": "同じ Wi-Fi やネットワークにいるプレイヤーは、このアドレスで参加できます。",
+      "copy": "ローカルアドレスをコピー"
+    },
+    "public": {
+      "title": "パブリックアドレス",
+      "body": "VPS の IP とポート。誰でもこれで参加できます。共有するならドメインのほうが簡単です。",
+      "copy": "パブリックアドレスをコピー"
+    },
+    "relay": {
+      "title": "一時アドレス",
+      "body": "サーバーの実行中に Rustic Relay 上で使える無料のアドレス。ルーターの設定は不要で、あなたの IP は隠されたままです。",
+      "toggle": "一時アドレス",
+      "copy": "一時アドレスをコピー",
+      "off": "オフです。オンにすると共有できるアドレスを取得できます。",
+      "label": "アドレス内の名前",
+      "apply": "適用",
+      "status": {
+        "off": "オフ",
+        "connecting": "サーバーの起動を待っています",
+        "online": "現在接続可能",
+        "error": "リレーに接続できません"
+      },
+      "failed": "一時アドレスを変更できませんでした",
+      "taken": "この名前は使用されています。別の名前をお試しください。",
+      "invalid": "3〜32 文字の英小文字、数字、ハイフンを使ってください。"
+    },
+    "invite": {
+      "title": "招待コード",
+      "body": "Rustic Launcher を使うフレンドは、このコードを貼り付けて参加できます。Horizon の「フレンドとプレイ」と同じ仕組みです。",
+      "create": "コードを作成",
+      "copy": "招待コードをコピー",
+      "expires": "有効期限：{{when}}",
+      "revoke": "無効にする"
+    },
+    "advanced": "上級者向け：ルーターのポートを開放（UPnP）",
+    "upnp": {
+      "title": "UPnP ポートマッピング",
+      "warning": "ルーターにサーバーのポートをインターネットに開放するよう要求します。あなたのパブリック IP アドレスがすべてのプレイヤーに見えるようになり、自宅の回線が危険にさらされます（攻撃、位置情報）。一時アドレスかドメインの利用をおすすめします。",
+      "status": {
+        "off": "オフ",
+        "mapping": "ルーターに要求しています…",
+        "mapped": "ポート開放済み",
+        "failed": "ルーターが拒否しました（UPnP がオフになっている可能性があります）"
+      },
+      "mapped": "ポート開放済み：{{address}}",
+      "copy": "パブリックアドレスをコピー",
+      "failed": "ポートを開放できませんでした",
+      "prefer": "一時アドレスとドメインは、ポートを開放しなくても使えます。"
+    }
+  },
+  "domains": {
+    "title": "自分のドメイン",
+    "intro": "ドメインは play.yourname.net のようなサーバーのアドレスです。手持ちのドメインを接続する、ランチャーから離れずに Porkbun で購入する、または任意のレジストラーを使う方法があります。追加する内容は正確にお見せします。",
+    "automatic": "自動",
+    "anyRegistrar": "任意のレジストラー",
+    "otherPaths": "その他の方法",
+    "paths": {
+      "porkbun": {
+        "title": "Porkbun と連携",
+        "body": "Porkbun ですでにドメインをお持ちですか？アカウントを連携すると、レコードを自動で作成します。"
+      },
+      "buy": {
+        "title": "Porkbun でドメインを購入",
+        "body": "空いている名前を探して自分の Porkbun アカウントで購入すると、自動で設定されます。"
+      },
+      "manual": {
+        "title": "任意のレジストラーのドメインを使用",
+        "body": "OVH、Gandi、Namecheap、Cloudflare など。追加する内容を表示し、確認も行います。"
+      }
+    },
+    "subdomain": "サブドメイン",
+    "subdomainHint": "play がおすすめです。",
+    "apexHint": "空欄：ドメインそのもの（一部のレジストラーでは ALIAS/ANAME が必要）。",
+    "invalidSubdomain": "英字、数字、ハイフンのみ使えます。",
+    "invalidDomain": "ドメインの形式ではないようです（example.net）。",
+    "copyAddress": "ドメインアドレスをコピー",
+    "configureFailed": "ドメインを設定できませんでした",
+    "boundBody": "プレイヤーはこのアドレスで参加します。",
+    "remove": "ドメインを削除",
+    "removeTitle": "{{domain}} の使用をやめますか？",
+    "removeBody": "レコードが削除されると、アドレスはこのサーバーを指さなくなります。ドメインはあなたのものとして残ります。",
+    "status": {
+      "pending": "保留中",
+      "propagating": "反映中",
+      "verified": "接続済み",
+      "error": "エラー"
+    },
+    "provider": {
+      "porkbun": "Porkbun で管理",
+      "manual": "レジストラーで管理"
+    },
+    "connected": "ドメインを接続しました",
+    "connectedBody": "Rustic Cloud が TXT レコードを確認すると、アドレスが使えるようになります。この画面は閉じても構いません。完了したらお知らせします。",
+    "porkbun": {
+      "step1": "porkbun.com › Account › API Access で API キーを作成します。",
+      "openApi": "Porkbun の API Access を開く",
+      "step2": "Porkbun のドメインのページで「API Access」をオンにします。",
+      "apiKey": "API キー",
+      "secret": "シークレット API キー",
+      "keychain": "コンピューターのキーチェーンに保存され、Rustic に送信されることはありません。",
+      "connect": "連携",
+      "badApiKey": "API キーは pk1_ で始まります。",
+      "badSecret": "シークレット API キーは sk1_ で始まります。",
+      "rejected": "Porkbun がこれらのキーを拒否しました。確認するか、新しいペアを作成してください。",
+      "connected": "Porkbun と連携しました",
+      "disconnect": "連携を解除",
+      "domain": "ドメイン",
+      "pickDomain": "ドメインを選択",
+      "apiAccessOff": "Porkbun でこのドメインの API Access がオフになっています",
+      "apiAccessHint": "グレー表示のドメインは、Porkbun で「API Access」をオンにする必要があります。",
+      "preview": "行われる変更",
+      "dryRun": "プレビュー",
+      "previewBody": "{{fqdn}} がこのサーバーに届くように、これらのレコードがドメインに追加または置き換えられます。適用するまで何も変更されません。",
+      "apply": "自動で設定"
+    },
+    "buy": {
+      "intro": "ドメインはあなた自身の Porkbun アカウントで登録され、支払いもそちらで行われます。Rustic が代金を受け取ることはありません。",
+      "needsAccount": "購入には Porkbun アカウントが必要です。先に連携してください（porkbun.com で無料で作成できます）。",
+      "search": "希望する名前",
+      "searchPlaceholder": "例：loucraft",
+      "searchButton": "検索",
+      "noResults": "この名前の結果はありません。",
+      "premium": "プレミアム",
+      "price": "初年度 {{price}}・更新 {{renewal}}",
+      "taken": "取得済み",
+      "select": "選択",
+      "overLimit": "$100 超：porkbun.com で購入してください",
+      "pricesNote": "価格は現在の Porkbun の見積もり（米ドル）です。Porkbun で税金がかかる場合があります。",
+      "confirmTitle": "Porkbun での購入を確認",
+      "seller": "販売者：Porkbun LLC（Rustic ではありません）。同社の規約、価格、更新、返金が適用されます。",
+      "domain": "ドメイン",
+      "address": "サーバーアドレス",
+      "registrar": "レジストラー",
+      "registrarValue": "Porkbun（あなたのアカウント）",
+      "firstYear": "初年度",
+      "renewal": "年間更新料",
+      "payment": "Porkbun アカウントのクレジットまたは保存済みのカードで支払います：今回 {{price}}。Porkbun で自動更新をオフにしない限り、毎年 {{renewal}} で更新されます。",
+      "agreeTerms": "Porkbun の登録契約と規約に同意します",
+      "termsLink": "（読む）",
+      "agreeOrder": "Rustic は私に代わってこの注文を Porkbun に送信するだけであることを理解しています",
+      "refunds": "ドメインの返金とキャンセルは、Porkbun が同社の規約に基づいて対応します。",
+      "buyButton": "Porkbun で購入・{{price}}",
+      "bought": "{{domain}} があなたのものになりました",
+      "boughtBody": "Porkbun による請求：{{price}}。設定しています…",
+      "configuring": "新しいドメインを設定しています…",
+      "failed": "購入が完了しませんでした",
+      "errors": {
+        "price_changed": "Porkbun で価格が変更されました。新しい価格を確認して、もう一度お試しください。",
+        "not_available": "このドメインはたった今取得されました。",
+        "over_limit": "$100 超：porkbun.com で購入してください。",
+        "porkbun_not_connected": "先に Porkbun アカウントを連携してください。",
+        "consent_required": "両方のチェックボックスにチェックを入れてください。"
+      }
+    },
+    "manual": {
+      "intro": "これらのレコードをレジストラーの DNS ゾーンに追加してください。10 秒ごとに確認し、動作したらお知らせします。",
+      "domain": "あなたのドメイン",
+      "registrar": "レジストラー",
+      "show": "レコードを表示",
+      "guideTitle": "{{registrar}} の場合",
+      "allGuides": "すべてのレジストラーのガイド"
+    },
+    "records": {
+      "caption": "追加する DNS レコード",
+      "type": "タイプ",
+      "name": "名前 / ホスト",
+      "value": "値 / ターゲット",
+      "ttl": "TTL",
+      "status": "状態",
+      "optional": "任意",
+      "emptyHost": "（空欄のまま）",
+      "copyName": "{{type}} の名前をコピー",
+      "copyValue": "{{type}} の値をコピー",
+      "srvFields": "優先度 {{priority}}・重み {{weight}}・ポート {{port}}"
+    },
+    "check": {
+      "pending": "未確認",
+      "notNeeded": "不要",
+      "ok": "OK",
+      "propagating": "反映中（{{ok}}/{{total}}）",
+      "wrong": "値が違います",
+      "found": "検出：",
+      "expected": "期待値：",
+      "missing": "見つかりません",
+      "first": "初回確認中…",
+      "progress": "{{total}} 件中 {{ok}} 件のレコードが OK",
+      "progressLabel": "確認済みのレコード",
+      "auto": "10 秒ごとに自動確認中",
+      "lastCheck": "最終確認：{{seconds}} 秒前",
+      "now": "今すぐ確認"
+    },
+    "help": {
+      "txt": "なぜ TXT レコードが必要？ドメインがあなたのものであることを証明し、ほかの人が自分のサーバーに向けられないようにするためです。",
+      "propagation": "変更がすべての人に反映されるまで、1 分から数時間かかることがあります。確認は続けるので、この画面にいる必要はありません。",
+      "apex": "Apex ドメイン（「play.」のない yourname.net）には ALIAS/ANAME レコードが必要ですが、すべてのレジストラーが対応しているわけではありません。サブドメインなら必ず使えます。"
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › あなたのドメイン › DNS zone を開きます。\n「Add an entry」をクリックし、タイプ（CNAME、SRV、A、TXT）を選びます。\nSub-domain に下の「名前」（ドメインそのものの場合は空欄）、Target に「値」を入力します。\nレコードごとに繰り返して確定します。OVH は数分以内に変更を反映します。"
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › あなたのドメイン › DNS records を開きます。\n「Add record」をクリックし、タイプを選びます。\nName に下の「名前」、Value に「値」を入力します（CNAME/SRV のターゲットは末尾のドットを残してください）。\nレコードごとに保存します。"
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS を開きます。\nHost records で「Add new record」をクリックします。\nHost に下の「名前」（ドメインそのものの場合は @）、Value/Target に「値」を入力します。\n緑のチェックマークをクリックしてそれぞれ保存します。"
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › あなたのドメイン › DNS › Manage DNS を開きます。\n「Add new record」をクリックし、タイプを選びます。\nName に下の「名前」（ドメインそのものの場合は @）、Value に「値」を入力します。\nSRV の場合は Service に _minecraft、Protocol に _tcp を入力し、優先度、重み、ポートを入力します。保存します。"
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "サイトを選択 › DNS › Records › Add record を開きます。\nタイプを選び、Name に下の「名前」、Target/Content に「値」を入力します。\nProxy status を「DNS only」（グレーの雲）にします。ゲームの通信は Cloudflare のプロキシを通過できません。\nレコードごとに保存します。"
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › あなたのドメイン › DNS を開きます。\n「Add record」をクリックし、タイプを選びます。\nHost name に下の「名前」、Points to / Value に「値」を入力します。\n保存します。IONOS からデフォルトのレコードの置き換えを確認される場合があります。"
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › あなたのドメイン › DNS / Nameservers を開きます。\n「Manage DNS records」でタイプを選びます。\nName に下の「名前」、Points to / Value に「値」を入力し、TTL は表示どおりにします。\nレコードごとに「Add record」をクリックします。"
+      },
+      "porkbun": {
+        "name": "Porkbun（手動）",
+        "steps": "Domain Management › あなたのドメイン › DNS を開きます。\nタイプを選び、Host に下の「名前」（ドメインそのものの場合は空欄）、Answer に「値」を入力します。\nレコードごとに「Add」をクリックします。\nヒント：「Porkbun と連携」を使えば、これらをすべて自動で行えます。"
+      },
+      "generic": {
+        "name": "その他のレジストラー",
+        "steps": "ドメインの DNS ゾーンを開きます（DNS レコードやゾーンエディターと呼ばれることもあります）。\n下の各レコードを、同じタイプ、名前、値で追加します。\nレジストラーが完全な名前を求める場合は、「名前」の後ろにドメインを付けてください。\n保存したら戻ってきてください。自動で確認します。"
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "サーバーの表示",
+    "tabs": {
+      "discover": "見つける",
+      "browse": "一覧"
+    },
+    "searchLabel": "サーバーを検索",
+    "searchPlaceholder": "サーバー一覧を検索…",
+    "publish": "自分のサーバーを掲載",
+    "publishCta": {
+      "title": "あなたのサーバーをここに",
+      "hint": "ウェブサイトから Horizon サーバーをサーバー一覧に掲載しましょう。自動チェックに合格すると、ここと rustic-launcher.com に表示されます。"
+    },
+    "play": "プレイ",
+    "playAria": "{{name}} でプレイ",
+    "view": "表示",
+    "verified": "認証済み",
+    "featured": "スタッフのおすすめ",
+    "verifiedHint": "認証済みサーバー：Rustic チームがオーナーとルールを確認しました。",
+    "online_other": "{{value}} 人オンライン",
+    "playersLabel": "オンラインのプレイヤー",
+    "languagesLabel": "言語",
+    "playsLabel": "今週の起動回数",
+    "lastPlayed": "最終プレイ",
+    "lastPlayedOn": "{{when}}にプレイ",
+    "hero": {
+      "label": "注目のサーバー",
+      "eyebrow": "認証済み"
+    },
+    "rows": {
+      "trending": "トレンド",
+      "trendingHint": "今週 Rustic から最も起動されたサーバー",
+      "players": "現在のプレイヤー数順",
+      "playersHint": "クラウドの最新チェックより",
+      "new": "サーバー一覧の新着",
+      "newHint": "オーナーが掲載したばかり",
+      "recent": "最近プレイ",
+      "recentHint": "あなたのサーバーリストより"
+    },
+    "rowError": "この行を読み込めませんでした。",
+    "retry": "再試行",
+    "empty": {
+      "title": "まだ掲載されているサーバーはありません",
+      "hint": "一番乗りしましょう：ウェブサイトからサーバーを掲載できます。"
+    },
+    "emptySearch": {
+      "title": "一致するサーバーがありません",
+      "hint": "別のキーワードを試すか、フィルターを減らしてください。"
+    },
+    "sorts": {
+      "trending": "トレンド",
+      "players": "プレイヤー数順",
+      "new": "新しい順",
+      "name": "名前"
+    },
+    "filters": {
+      "tags": "ゲームスタイル",
+      "language": "言語",
+      "engine": "エンジン",
+      "rustic": "Rustic",
+      "verifiedOnly": "認証済みのみ",
+      "reset": "フィルターをリセット",
+      "remove": "フィルター「{{filter}}」を解除"
+    },
+    "tags": {
+      "survival": "サバイバル",
+      "smp": "SMP",
+      "creative": "クリエイティブ",
+      "minigames": "ミニゲーム",
+      "pvp": "PvP",
+      "skyblock": "スカイブロック",
+      "oneblock": "ワンブロック",
+      "roleplay": "ロールプレイ",
+      "factions": "ファクション",
+      "prison": "プリズン",
+      "parkour": "アスレチック",
+      "adventure": "アドベンチャー",
+      "building": "建築",
+      "economy": "経済",
+      "modded": "MOD 入り",
+      "anarchy": "アナーキー",
+      "hardcore": "ハードコア",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "バニラ"
+    },
+    "page": {
+      "back": "サーバー",
+      "status": "リアルタイムの状態",
+      "cloudSaw_other": "{{when}}、クラウドが {{value}} 人のオンラインプレイヤーを確認",
+      "engine": "エンジン",
+      "version": "ゲームバージョン",
+      "languages": "言語",
+      "plays": "今週の起動回数",
+      "about": "概要",
+      "noDescription": "まだ説明はありません。",
+      "address": "アドレス",
+      "copy": "コピー",
+      "openSite": "ウェブサイトで開く",
+      "website": "ウェブサイト",
+      "discord": "Discord",
+      "by": "掲載者：{{name}}",
+      "byStaff": "Rustic チームが掲載",
+      "report": "報告",
+      "rusticEdition": "Rustic エディションが必要",
+      "missing": "このサーバーは利用できません",
+      "missingHint": "非公開、モデレーションによる非表示、または削除された可能性があります。"
+    },
+    "report": {
+      "title": "{{name}} を報告",
+      "lead": "何が問題かをモデレーションチームに伝えてください。すべての報告が確認されます。",
+      "reason": "理由",
+      "reasons": {
+        "impersonation": "別のサーバーになりすましている",
+        "spam": "スパムまたは誤解を招く内容",
+        "inappropriate_content": "不適切なコンテンツ",
+        "cheating": "チートまたは悪意のあるサーバー",
+        "harassment": "嫌がらせ",
+        "copyright": "私の権利を侵害している（商標、名称）",
+        "malware": "マルウェア",
+        "other": "その他"
+      },
+      "details": "詳細",
+      "detailsHint": "任意、2,000 文字以内。",
+      "send": "報告を送信",
+      "sent": "ありがとうございます。報告はモデレーションチームに送られました。",
+      "signIn": "サーバーを報告するには Rustic アカウントにログインしてください。",
+      "failed": "報告を送信できませんでした。"
+    }
+  }
+}

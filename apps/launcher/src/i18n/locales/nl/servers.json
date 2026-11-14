@@ -1,0 +1,1053 @@
+{
+  "list": {
+    "title": "Servers",
+    "description": "Host een wereld voor je vrienden, hier of op je eigen VPS, en houd je favoriete servers bij de hand.",
+    "create": "Server maken",
+    "tabs": {
+      "mine": "Mijn servers",
+      "joined": "Bezocht",
+      "discover": "Ontdekken"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Vanilla Horizon"
+    },
+    "hosting": {
+      "local": "Deze pc",
+      "remote": "Extern: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Status",
+    "states": {
+      "running": "Actief",
+      "starting": "Starten…",
+      "stopping": "Stoppen…",
+      "stopped": "Gestopt",
+      "crashed": "Gecrasht",
+      "installing": "Installeren…",
+      "unreachable": "Onbereikbaar"
+    },
+    "players": "Spelers",
+    "playersCount": "{{online}}/{{max}} spelers",
+    "version": "Versie",
+    "copyAddress": "Adres kopiëren",
+    "copyFailed": "Kon niet naar het klembord kopiëren",
+    "notShared": "Nog niet gedeeld",
+    "notSharedHint": "Zet een tijdelijk adres, een uitnodigingscode of een domein aan op het tabblad Toegang van de server.",
+    "start": "Starten",
+    "stop": "Stoppen",
+    "startAria": "{{name}} starten",
+    "stopAria": "{{name}} stoppen",
+    "powerFailed": "De server reageerde niet",
+    "empty": {
+      "title": "Host in 3 stappen een wereld voor je vrienden",
+      "description": "Draai hem gratis op deze pc, of laat Rustic hem op je eigen VPS installeren."
+    },
+    "featured": {
+      "description": "Servers gekozen door het Rustic-team: fair play, klaar voor Horizon, gemodereerd.",
+      "empty": "Momenteel geen uitgelichte servers.",
+      "verified": "Geverifieerd door Rustic",
+      "save": "Aan lijst toevoegen",
+      "inList": "In je lijst",
+      "online_one": "{{value}} online",
+      "online_other": "{{value}} online",
+      "view": "Over {{name}}"
+    },
+    "viewLabel": "Weergave",
+    "views": {
+      "discover": "Ontdekken",
+      "mine": "Mijn servers"
+    },
+    "searchPlaceholder": {
+      "discover": "Uitgelichte servers zoeken…",
+      "mine": "Je servers zoeken…"
+    },
+    "clearSearch": "Zoekopdracht wissen",
+    "sortLabel": "Sorteren",
+    "sorts": {
+      "recommended": "Aanbevolen",
+      "players": "Meeste spelers",
+      "name": "Naam"
+    },
+    "refreshPing": "Ping en status vernieuwen",
+    "layoutList": "Als lijst tonen",
+    "layoutGrid": "Als raster tonen",
+    "createHint": "Hier, op je VPS, of binnenkort in de cloud",
+    "heading": "Speel op *servers*",
+    "eyebrow": "Servers",
+    "sections": {
+      "hosted": "Door jou gehost",
+      "joined": "Bezochte servers"
+    }
+  },
+  "multiplayer": {
+    "description": "De serverlijst van de game, gedeeld door al je instanties.",
+    "add": "Een server toevoegen",
+    "added": "{{name}} toegevoegd aan je lijst",
+    "addFailed": "Deze server kon niet worden toegevoegd",
+    "name": "Servernaam",
+    "namePlaceholder": "Naam",
+    "address": "Serveradres",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Gebruik een hostnaam of IP-adres, met eventueel :poort.",
+    "refreshPings": "Vernieuwen",
+    "favorites_one": "Favoriet · {{count}}",
+    "favorites_other": "Favorieten · {{count}}",
+    "others_one": "Andere server · {{count}}",
+    "others_other": "Andere servers · {{count}}",
+    "favorite": "{{name}} aan favorieten toevoegen",
+    "unfavorite": "{{name}} uit favorieten verwijderen",
+    "offline": "Offline",
+    "unreachable": "Deze server is nu niet bereikbaar",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Verbinden",
+    "joinAria": "Verbinden met {{name}}",
+    "joinWith": "Verbindt via {{instance}}",
+    "noInstance": "Maak een instantie om met servers te verbinden",
+    "joining": "Starten en verbinden met {{name}}…",
+    "more": "Meer acties voor {{name}}",
+    "copyAddress": "Adres kopiëren",
+    "removed": "{{name}} verwijderd",
+    "undo": "Ongedaan maken",
+    "empty": {
+      "title": "Nog geen servers",
+      "description": "Voeg er een toe met het adres, of kies er een in Ontdekken."
+    }
+  },
+  "wizard": {
+    "title": "Een server maken",
+    "subtitle": "Drie stappen: wat je draait, waar je het host, hoe vrienden meedoen.",
+    "creatingTitle": "{{name}} wordt ingericht",
+    "stepOf": "Stap {{index}} van {{total}}",
+    "steps": {
+      "basics": "Basis",
+      "hosting": "Waar hosten",
+      "access": "Toegang"
+    },
+    "create": "Server maken",
+    "installOn": "Installeren op {{host}}",
+    "createFailed": "De server kon niet worden gemaakt",
+    "noRusticServer": "Het programma rustic-server is niet gevonden. Kies het in Instellingen › Game en instanties › Rustic Server, of installeer een build van de Rustic-editie die het meelevert.",
+    "openRusticServerSettings": "Instellingen openen",
+    "fixErrors": "Controleer de gemarkeerde velden om door te gaan.",
+    "discard": {
+      "title": "Deze server weggooien?",
+      "body": "Wat je in de wizard hebt ingevuld, gaat verloren.",
+      "keep": "Verder bewerken",
+      "confirm": "Weggooien"
+    },
+    "basics": {
+      "name": "Servernaam",
+      "namePlaceholder": "SMP van Lou",
+      "icon": "Pictogram",
+      "icons": {
+        "grass": "Gras",
+        "sword": "Zwaard",
+        "pickaxe": "Houweel",
+        "castle": "Kasteel",
+        "rocket": "Raket",
+        "gem": "Edelsteen",
+        "flame": "Vlam",
+        "leaf": "Blad",
+        "star": "Ster",
+        "compass": "Kompas"
+      },
+      "color": "Kleur",
+      "colorN": "Kleur {{n}}",
+      "type": "Type",
+      "recommended": "Aanbevolen",
+      "nightly": "Nightly",
+      "rusticDesc": "Plug-ins (.rplugin), in een sandbox: een plug-in kan je server nooit laten crashen.",
+      "horizonDesc": "De eigen server van Horizon, zonder plug-ins.",
+      "version": "Horizon-versie",
+      "maxPlayers": "Max. spelers",
+      "versionLineRustic": "Rustic Server 0.1 op Horizon {{version}}",
+      "versionLineHorizon": "Horizon-server {{version}}",
+      "sameAsClient": "(gelijk aan je client)",
+      "starterPlugins": "Startplug-ins",
+      "starterHint": "Officiële plug-ins, met wat ze mogen doen.",
+      "capNetwork": "Netwerk",
+      "capNoNetwork": "Geen netwerk",
+      "capNoFiles": "Geen bestanden",
+      "capDataFolder": "Eigen datamap",
+      "eula": "Ik accepteer de Minecraft-EULA",
+      "eulaHint": "Die is vereist om een server te draaien. Je accepteert hem zelf; Rustic doet dat niet voor je.",
+      "eulaRead": "Lees de EULA",
+      "eulaTitle": "Minecraft-EULA"
+    },
+    "world": {
+      "title": "Wereld",
+      "new": "Nieuwe wereld",
+      "import": "Een map importeren",
+      "fromInstance": "Uit een instantie",
+      "seed": "Seed",
+      "seedHint": "Laat leeg voor een willekeurige wereld.",
+      "seedPlaceholder": "Optioneel",
+      "randomSeed": "Willekeurige seed",
+      "levelType": "Wereldtype",
+      "levelTypes": {
+        "default": "Standaard",
+        "flat": "Supervlak",
+        "large_biomes": "Grote biomen",
+        "amplified": "Versterkt"
+      },
+      "gamemode": "Spelmodus",
+      "gamemodes": {
+        "survival": "Overleven",
+        "creative": "Creatief",
+        "adventure": "Avontuur"
+      },
+      "difficulty": "Moeilijkheidsgraad",
+      "difficulties": {
+        "peaceful": "Vredig",
+        "easy": "Makkelijk",
+        "normal": "Normaal",
+        "hard": "Moeilijk"
+      },
+      "structures": "Bouwwerken genereren",
+      "hardcore": "Hardcore",
+      "folder": "Wereldmap",
+      "instance": "Instantie",
+      "pickInstance": "Kies een instantie",
+      "world": "Wereld",
+      "pickWorld": "Kies een wereld",
+      "noWorlds": "Geen werelden in deze instantie",
+      "newDesc": "Een nieuwe wereld uit een seed, met jouw regels.",
+      "importDesc": "Een wereldmap van je pc of uit een back-up.",
+      "fromInstanceDesc": "Een wereld die je in een van je profielen hebt gespeeld."
+    },
+    "type": {
+      "memory": "Servergeheugen (RAM)",
+      "memoryHint": "4 GB past bij de meeste vriendengroepen. Meer helpt bij veel spelers of grote modpacks."
+    },
+    "access": {
+      "intro": "Hoe je vrienden meedoen. Er kunnen er meerdere tegelijk aan staan; je kunt ze later wijzigen.",
+      "lan": "Vrienden op mijn netwerk (LAN)",
+      "lanDetail": "Het lokale adres van deze pc, getoond zodra de server bestaat.",
+      "publicIp": "Openbaar adres",
+      "publicIpDetail": "het IP-adres van je VPS",
+      "alwaysOn": "Altijd aan",
+      "relay": "Tijdelijk adres",
+      "relayDetail": "gratis, zolang de server draait; geen poort te openen",
+      "invite": "Uitnodigingscode",
+      "inviteDetail": "Een code die vrienden in Rustic Launcher plakken om mee te doen.",
+      "domain": "Mijn eigen domein",
+      "domainDetail": "Porkbun koppelen · Kopen bij Porkbun · Elke registrar gebruiken",
+      "domainAfter": "Instellen na het maken",
+      "safety": "Onlinemodus aan: alleen spelers die de game bezitten, kunnen meedoen. Whitelist aan."
+    },
+    "summary": {
+      "title": "Overzicht",
+      "version": "Versie",
+      "host": "Hosting",
+      "world": "Wereld",
+      "memory": "Geheugen",
+      "players": "Max. spelers",
+      "plugins": "Plug-ins",
+      "none": "Geen",
+      "eulaAccepted": "Je hebt de Minecraft-EULA geaccepteerd in stap 1."
+    },
+    "errors": {
+      "nameRequired": "Geef je server een naam.",
+      "nameTooLong": "Gebruik maximaal 40 tekens.",
+      "version": "Kies een Horizon-versie.",
+      "maxPlayers": "Tussen 1 en 1000 spelers.",
+      "importPath": "Kies de wereldmap om te importeren.",
+      "world": "Kies een instantie en een van de werelden ervan.",
+      "seed": "Seeds zijn maximaal 64 tekens.",
+      "eula": "Accepteer de EULA om een server te draaien.",
+      "cloudUnavailable": "Rustic Cloud is nog niet beschikbaar.",
+      "vpsNotReady": "Koppel eerst je VPS en doorloop de controles.",
+      "memory": "Minimaal 1 GB geheugen.",
+      "host": "Voer een IP-adres of hostnaam in.",
+      "port": "Poort tussen 1 en 65535.",
+      "username": "Voer de Linux-gebruikersnaam in.",
+      "keyPath": "Kies je privésleutelbestand.",
+      "generateKey": "Genereer eerst een sleutel en voeg die toe aan je VPS.",
+      "password": "Voer het wachtwoord in."
+    },
+    "heading": "Een *server* maken",
+    "stepHints": {
+      "basics": "Geef hem een naam, kies wat hij draait en met welke wereld hij start.",
+      "hosting": "Kies de machine waarop hij draait en hoeveel geheugen hij krijgt.",
+      "access": "Kies hoe je vrienden meedoen. Je kunt dit later wijzigen."
+    },
+    "sections": {
+      "identity": "Naam en pictogram"
+    },
+    "preview": {
+      "title": "Voorbeeld",
+      "unnamed": "Je server",
+      "draft": "nog niet gemaakt"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "Deze pc (lokaal)",
+      "free": "Gratis",
+      "description": "Je pc moet aan blijven terwijl vrienden spelen.",
+      "settings": "Op deze pc",
+      "reach": "Vrienden bereiken hem via je netwerk, via een tijdelijk Rustic-adres of met een uitnodigingscode. Je hoeft je router niet in te stellen.",
+      "startWithLauncher": "Starten met de launcher",
+      "startWithLauncherHint": "De server start als Rustic Launcher opent."
+    },
+    "vps": {
+      "title": "Je VPS (SSH)",
+      "description": "Je Linux-server. Wij installeren en draaien hem voor je.",
+      "which": "VPS",
+      "existing_one": "Opgeslagen VPS ({{count}})",
+      "existing_other": "Opgeslagen VPS’en ({{count}})",
+      "new": "Een VPS toevoegen",
+      "pinned": "Hostsleutel vastgezet",
+      "host": "Host",
+      "port": "Poort",
+      "user": "Gebruiker",
+      "userPlaceholder": "root of een sudo-gebruiker",
+      "auth": "Inloggen",
+      "authGenerate": "Genereer een sleutel voor mij",
+      "authKey": "Bestaand sleutelbestand",
+      "authPassword": "Wachtwoord (eenmalig)",
+      "generateHint": "Aanbevolen. Rustic maakt een sleutelpaar; de privésleutel verlaat deze pc nooit.",
+      "generate": "Een sleutel genereren",
+      "addKeyCommand": "Voer dit één keer uit in de console van je VPS om de sleutel te autoriseren:",
+      "keyStored": "Privésleutel opgeslagen in je systeemsleutelhanger ({{path}})",
+      "openFirewall": "De gamepoort openen in de firewall van de VPS",
+      "openFirewallHint": "Staat TCP naar de poort van de server toe in ufw of firewalld. De eigen firewall van je provider moet dat misschien ook.",
+      "keyFile": "Privésleutel",
+      "passphrase": "Wachtwoordzin",
+      "optional": "Optioneel",
+      "password": "Wachtwoord",
+      "passwordHint": "Eén keer gebruikt om een sleutel te installeren. Het wordt niet bewaard.",
+      "test": "Verbinding testen",
+      "reachable": "Verbonden · {{ms}} ms",
+      "unreachable": "We konden deze VPS niet bereiken",
+      "authFailed": "De VPS heeft het inloggen geweigerd"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Binnenkort",
+      "description": "Servers op de machines van Rustic, altijd aan.",
+      "waitlist": "Krijg een e-mail als Rustic Cloud opent.",
+      "email": "E-mailadres",
+      "join": "Op de wachtlijst",
+      "joined": "Je staat op de lijst (#{{position}}). We sturen je een e-mail.",
+      "invalidEmail": "Voer een geldig e-mailadres in."
+    },
+    "requirements": {
+      "title": "Controle van de vereisten",
+      "ram": "Geheugen ({{free}} vrij)",
+      "gameFiles": "Gamebestanden voorbereid",
+      "port": "Poort 25565 vrij",
+      "hint": "De schijfruimte wordt gecontroleerd als de serverbestanden worden gedownload."
+    },
+    "fingerprint": {
+      "title": "{{host}} vertrouwen?",
+      "description": "Eerste verbinding met deze VPS. Vergelijk deze vingerafdruk met die in de console van je provider voordat je hem vertrouwt.",
+      "warning": "Komt hij niet overeen, annuleer dan: iemand onderschept misschien de verbinding. Rustic blokkeert elke latere wijziging van deze sleutel.",
+      "trust": "Vertrouwen en doorgaan"
+    },
+    "testFailed": "De verbindingstest is mislukt",
+    "checkFailed": "De controle van de VPS is mislukt",
+    "preflight": {
+      "running": "Je VPS controleren…",
+      "ok": "Je VPS is klaar",
+      "notOk": "Je VPS voldoet niet aan de vereisten",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_other": "{{count}} vCPU’s",
+      "memory": "{{memory}} geheugen",
+      "disk": "{{disk}} vrije schijfruimte",
+      "systemd": "systemd beschikbaar",
+      "ip": "Openbaar IP-adres"
+    },
+    "problems": {
+      "memory": "Geheugen",
+      "disk": "Schijf",
+      "arch": "Architectuur",
+      "os": "Besturingssysteem",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Installeren op {{host}}",
+      "steps": {
+        "connect": "Verbinden via SSH",
+        "check": "Voorafgaande controles",
+        "user": "De gebruiker ‘rustic’ aanmaken",
+        "download": "Ondertekende serverbestanden uploaden",
+        "engine": "De Rustic-engine configureren",
+        "service": "De service installeren",
+        "firewall": "Poort 25565 openen",
+        "world": "De wereld voorbereiden",
+        "start": "Starten en controleren"
+      },
+      "state": {
+        "pending": "wachten",
+        "running": "bezig",
+        "done": "klaar",
+        "failed": "mislukt",
+        "skipped": "overgeslagen"
+      },
+      "skippedVanilla": "Niet nodig voor vanilla Horizon",
+      "log_one": "Log tonen ({{count}} regel)",
+      "log_other": "Log tonen ({{count}} regels)",
+      "vpsDone": "{{name}} draait op {{host}}",
+      "vpsDoneBody": "Beheer hem vanuit de launcher zoals een lokale server: console, spelers, plug-ins, back-ups.",
+      "localDownload": "{{engine}} downloaden",
+      "localInit": "De wereld en instellingen voorbereiden",
+      "localStart": "Eerste start",
+      "localReady": "Klaar om te starten",
+      "localDone": "{{name}} draait",
+      "localDoneBody": "Deel het adres via het tabblad Toegang, of nodig vrienden uit via het vriendenpaneel.",
+      "open": "Server openen",
+      "backToList": "Terug naar servers",
+      "retry": "Opnieuw proberen",
+      "failed": "De installatie is mislukt",
+      "crashed": "De server is gestopt tijdens de eerste start. Bekijk de console."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Onderdelen van de server",
+    "tabs": {
+      "overview": "Overzicht",
+      "console": "Console",
+      "players": "Spelers",
+      "plugins": "Plug-ins",
+      "config": "Configuratie",
+      "datapacks": "Datapakketten",
+      "backups": "Back-ups",
+      "access": "Toegang",
+      "danger": "Gevarenzone"
+    },
+    "state": {
+      "stopped": "Gestopt",
+      "starting": "Starten…",
+      "running": "Actief",
+      "stopping": "Stoppen…",
+      "crashed": "Gecrasht",
+      "installing": "Installeren…",
+      "unreachable": "Onbereikbaar"
+    },
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "close": "Sluiten",
+    "remove": "Verwijderen",
+    "done": "Klaar",
+    "header": {
+      "back": "Servers",
+      "players": "{{online}}/{{max}} spelers",
+      "uptime": "{{duration}} online",
+      "start": "Starten",
+      "stop": "Stoppen",
+      "restart": "Herstarten",
+      "join": "Meedoen",
+      "address": "Adres",
+      "copyAddress": "Het serveradres kopiëren",
+      "powerFailed": "De status van de server kon niet worden gewijzigd"
+    },
+    "overview": {
+      "stoppedTitle": "De server is gestopt",
+      "stoppedBody": "Start hem om live CPU, geheugen, TPS en ticktijd te zien.",
+      "cpu": "CPU",
+      "cpuChart": "CPU-gebruik in de afgelopen twee minuten",
+      "ram": "Geheugen",
+      "ramChart": "Geheugengebruik in de afgelopen twee minuten",
+      "of": "van {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Ticks per seconde in de afgelopen twee minuten",
+      "mspt": "Ticktijd",
+      "msptChart": "Milliseconden per tick in de afgelopen twee minuten, budgetlijn van 50 ms",
+      "msptBudget": "budget 50 ms",
+      "health": {
+        "good": "Soepel",
+        "busy": "Druk",
+        "lagging": "Laggy"
+      },
+      "onlineTitle_one": "{{count}} speler online",
+      "onlineTitle_other": "{{count}} spelers online",
+      "onlineStopped": "Niemand kan meedoen zolang de server gestopt is.",
+      "nobody": "Er speelt op dit moment niemand.",
+      "infoTitle": "Details",
+      "world": "Wereld",
+      "version": "Horizon",
+      "port": "Poort",
+      "memory": "Geheugen",
+      "created": "Gemaakt",
+      "folder": "Map",
+      "uptime": "Uptime",
+      "startedAt": "Sinds {{time}}",
+      "lastSession": "Laatste sessie",
+      "lastStarted": "Laatst gestart: {{when}}",
+      "neverStarted": "Nog nooit gestart",
+      "lastLines": "Laatste consoleregels",
+      "noLines": "Nog niets gelogd.",
+      "openConsole": "Console openen",
+      "crashedTitle": "De server is onverwacht gestopt",
+      "crashedBody": "Bekijk de laatste consoleregels en start hem daarna opnieuw."
+    },
+    "console": {
+      "filter": "Regels filteren",
+      "filters": {
+        "all": "Alles",
+        "info": "Info",
+        "warn": "Waarschuwingen",
+        "error": "Fouten",
+        "chat": "Chat"
+      },
+      "levels": {
+        "info": "info",
+        "warn": "waarsch.",
+        "error": "fout",
+        "command": "cmd",
+        "chat": "chat"
+      },
+      "autoScroll": "Nieuwe regels volgen",
+      "logLabel": "Serverconsole",
+      "empty": "Nog geen regels.",
+      "suggestions": "Suggesties voor commando’s",
+      "inputLabel": "Servercommando",
+      "placeholder": "Typ een commando (Tab vult aan, ↑ geschiedenis)",
+      "offline": "Start de server om commando’s te sturen",
+      "send": "Versturen",
+      "sendFailed": "Het commando kon niet worden verstuurd",
+      "hint": "Commando’s draaien als de serverconsole, met alle rechten. Geen slash vooraan nodig."
+    },
+    "players": {
+      "whitelist": "Whitelist",
+      "whitelistHint": "Alleen spelers op de lijst kunnen meedoen. Aanbevolen als de server vanaf internet bereikbaar is.",
+      "view": "Spelers tonen",
+      "views": {
+        "online": "Online",
+        "all": "Alle",
+        "ops": "Operators",
+        "whitelist": "Op whitelist",
+        "banned": "Verbannen"
+      },
+      "search": "Een speler zoeken",
+      "emptyOnline": "Niemand is online",
+      "empty": "Hier zijn geen spelers",
+      "stoppedHint": "Start de server om te zien wie er speelt.",
+      "online": "Online",
+      "offline": "Offline",
+      "op": "Operator",
+      "whitelisted": "Op whitelist",
+      "banned": "Verbannen",
+      "playtime": "{{duration}} gespeeld",
+      "kick": "Kicken",
+      "kickAria": "{{name}} kicken",
+      "more": "Meer acties voor {{name}}",
+      "makeOp": "Operator maken",
+      "deop": "Operator weghalen",
+      "whitelistAdd": "Aan whitelist toevoegen",
+      "whitelistRemove": "Van whitelist verwijderen",
+      "ban": "Bannen",
+      "pardon": "Unbannen",
+      "banTitle": "{{name}} bannen?",
+      "banBody": "De speler wordt losgekoppeld en kan pas weer meedoen als je de ban opheft.",
+      "reason": "Reden (optioneel, getoond aan de speler)",
+      "failed": "De actie is mislukt",
+      "done": {
+        "kick": "{{name}} is gekickt",
+        "ban": "{{name}} is verbannen",
+        "pardon": "{{name}} is geünband",
+        "op": "{{name}} is nu operator",
+        "deop": "{{name}} is geen operator meer",
+        "whitelist_add": "{{name}} is aan de whitelist toegevoegd",
+        "whitelist_remove": "{{name}} is van de whitelist verwijderd"
+      }
+    },
+    "config": {
+      "mode": "Bewerkingsmodus",
+      "form": "Instellingen",
+      "raw": "Ruw bestand",
+      "groups": {
+        "general": "Algemeen",
+        "world": "Wereld",
+        "players": "Spelers",
+        "network": "Netwerk",
+        "performance": "Prestaties"
+      },
+      "keys": {
+        "motd": "Bericht van de dag",
+        "max-players": "Maximaal aantal spelers",
+        "white-list": "Whitelist",
+        "online-mode": "Onlinemodus (accountcontrole)",
+        "pvp": "Speler tegen speler",
+        "gamemode": "Standaardspelmodus",
+        "difficulty": "Moeilijkheidsgraad",
+        "level-seed": "Wereldseed",
+        "spawn-protection": "Straal van spawnbescherming",
+        "server-port": "Poort",
+        "enable-rcon": "Externe console (RCON)",
+        "view-distance": "Zichtafstand",
+        "simulation-distance": "Simulatieafstand"
+      },
+      "restart": "Herstarten",
+      "restartNeeded": "Herstart de server om sommige wijzigingen toe te passen",
+      "unsaved_one": "{{count}} niet-opgeslagen wijziging",
+      "unsaved_other": "{{count}} niet-opgeslagen wijzigingen",
+      "noChanges": "Geen wijzigingen",
+      "discard": "Verwerpen",
+      "saved": "Configuratie opgeslagen",
+      "saveFailed": "De configuratie kon niet worden opgeslagen",
+      "rawTitle": "server.toml",
+      "rawWarning": "Geavanceerd: door een typfout kan de server niet meer starten. Waarden worden gecontroleerd als je opslaat."
+    },
+    "plugins": {
+      "vanillaTitle": "Plug-ins vereisen Rustic Server",
+      "vanillaBody": "Deze server draait vanilla Horizon. Rustic Server voegt .rplugin-plug-ins toe die in een sandbox draaien en hem nooit kunnen laten crashen. Maak een Rustic Server en importeer deze wereld om plug-ins te gebruiken.",
+      "createRustic": "Een Rustic Server maken",
+      "intro": "Plug-ins draaien in een sandbox: een plug-in die faalt, wordt uitgeschakeld met een logregel en de server draait door. Elke plug-in geeft aan waartoe hij toegang mag hebben.",
+      "upload": "Een bestand toevoegen…",
+      "uploadTitle": "Kies een .rplugin-bestand",
+      "find": "Plug-ins zoeken",
+      "empty": "Nog geen plug-ins",
+      "emptyBody": "Blader door Content › Plug-ins om er met één klik een toe te voegen.",
+      "errored": "Uitgeschakeld na een fout",
+      "disabled": "Uit",
+      "noDescription": "Geen beschrijving",
+      "toggle": "{{name}} inschakelen",
+      "capabilities": "Toegang",
+      "noNetwork": "Geen netwerk",
+      "network": "Netwerk: {{domains}}",
+      "fs": {
+        "none": "Geen bestanden",
+        "data-folder": "Eigen datamap"
+      },
+      "update": "Bijwerken naar {{version}}",
+      "updated": "{{name}} bijgewerkt naar {{version}}",
+      "installed": "{{name}} geïnstalleerd en ingeschakeld",
+      "removeTitle": "{{name}} verwijderen?",
+      "removeBody": "De plug-in wordt ontladen en het bestand verwijderd. De datamap blijft bewaard.",
+      "failed": "De actie met de plug-in is mislukt"
+    },
+    "datapacks": {
+      "intro": "Datapakketten van de wereld ‘{{world}}’.",
+      "find": "Datapakketten zoeken",
+      "empty": "Geen datapakketten in deze wereld",
+      "toggle": "{{name}} inschakelen",
+      "remove": "{{name}} verwijderen",
+      "reloadHint": "Wijzigingen gelden na /reload of een herstart.",
+      "failed": "De actie met het datapakket is mislukt"
+    },
+    "backups": {
+      "nowTitle": "Nu een back-up maken",
+      "nowBody": "Een kopie van de wereld en de configuratie. De server blijft draaien.",
+      "note": "Notitie",
+      "notePlaceholder": "Optionele notitie, bijv. ‘voor de update’",
+      "now": "Nu back-up maken",
+      "created": "Back-up gemaakt",
+      "empty": "Nog geen back-ups",
+      "kinds": {
+        "manual": "Handmatig",
+        "scheduled": "Gepland",
+        "pre_restore": "Voor het terugzetten"
+      },
+      "restore": "Terugzetten",
+      "restoreTitle": "Deze back-up terugzetten?",
+      "restoreBody": "De wereld gaat terug naar {{date}}. Alles wat sindsdien is gebouwd, wordt vervangen. Eerst wordt een back-up van de huidige wereld gemaakt.",
+      "restored": "Back-up teruggezet",
+      "delete": "Back-up verwijderen",
+      "deleteTitle": "Deze back-up verwijderen?",
+      "deleteBody": "Deze back-up wordt definitief verwijderd.",
+      "failed": "De actie met de back-up is mislukt",
+      "scheduleTitle": "Automatische back-ups",
+      "scheduleBody": "De oudste automatische back-ups worden verwijderd als de limiet is bereikt.",
+      "scheduleEnabled": "Automatisch back-ups maken",
+      "every": "Elke",
+      "hours_one": "{{count}} uur",
+      "hours_other": "{{count}} uur",
+      "keep": "Bewaren",
+      "keepCount_one": "de laatste {{count}} back-up",
+      "keepCount_other": "de laatste {{count}} back-ups",
+      "scheduleSaved": "Back-upschema opgeslagen"
+    },
+    "danger": {
+      "deleteTitle": "Deze server verwijderen",
+      "deleteBody": "Stopt de server en verwijdert hem uit de launcher. Je kunt de bestanden bewaren.",
+      "delete": "Server verwijderen",
+      "removeVpsTitle": "Verwijderen van je VPS",
+      "removeVpsBody": "Stopt de service op {{host}} en verwijdert Rustic ervan. Je VPS blijft van jou.",
+      "removeVps": "Verwijderen van VPS",
+      "confirmTitle": "‘{{name}}’ verwijderen?",
+      "confirmBody": "Dit kan niet ongedaan worden gemaakt. Maak eerst een back-up als je de wereld misschien nog nodig hebt.",
+      "deleteFiles": "Ook de wereld en alle serverbestanden verwijderen",
+      "typeName": "Typ ‘{{name}}’ om te bevestigen",
+      "deleted": "{{name}} is verwijderd",
+      "failed": "De server kon niet worden verwijderd"
+    }
+  },
+  "access": {
+    "intro": "Kies hoe vrienden je server bereiken. Je kunt er meerdere tegelijk aanzetten.",
+    "optional": "Optioneel",
+    "lan": {
+      "title": "Op je netwerk",
+      "body": "Spelers op dezelfde wifi of hetzelfde netwerk doen mee met dit adres.",
+      "copy": "Het lokale adres kopiëren"
+    },
+    "public": {
+      "title": "Openbaar adres",
+      "body": "Het IP-adres en de poort van je VPS. Iedereen kan hiermee meedoen; een domein is makkelijker te delen.",
+      "copy": "Het openbare adres kopiëren"
+    },
+    "relay": {
+      "title": "Tijdelijk adres",
+      "body": "Een gratis adres op de Rustic Relay zolang de server draait. Geen routerinstellingen, je IP-adres blijft verborgen.",
+      "toggle": "Tijdelijk adres",
+      "copy": "Het tijdelijke adres kopiëren",
+      "off": "Uit. Zet het aan om een adres te krijgen dat je kunt delen.",
+      "label": "Naam in het adres",
+      "apply": "Toepassen",
+      "status": {
+        "off": "Uit",
+        "connecting": "Wachten tot de server start",
+        "online": "Nu bereikbaar",
+        "error": "Relay onbereikbaar"
+      },
+      "failed": "Het tijdelijke adres kon niet worden gewijzigd",
+      "taken": "Deze naam is bezet. Probeer een andere.",
+      "invalid": "Gebruik 3 tot 32 kleine letters, cijfers of streepjes."
+    },
+    "invite": {
+      "title": "Uitnodigingscode",
+      "body": "Vrienden met Rustic Launcher plakken deze code om mee te doen, zoals ‘Spelen met vrienden’ in Horizon.",
+      "create": "Een code maken",
+      "copy": "De uitnodigingscode kopiëren",
+      "expires": "Verloopt {{when}}",
+      "revoke": "Intrekken"
+    },
+    "advanced": "Geavanceerd: een poort openen op je router (UPnP)",
+    "upnp": {
+      "title": "UPnP-poorttoewijzing",
+      "warning": "Hiermee vraag je je router om de poort van de server open te zetten naar internet. Je openbare IP-adres wordt zichtbaar voor elke speler, wat je thuisverbinding blootstelt (aanvallen, locatie). Gebruik liever het tijdelijke adres of een domein.",
+      "status": {
+        "off": "Uit",
+        "mapping": "De router vragen…",
+        "mapped": "Poort open",
+        "failed": "De router weigerde (UPnP staat misschien uit)"
+      },
+      "mapped": "Poort open: {{address}}",
+      "copy": "Het openbare adres kopiëren",
+      "failed": "De poort kon niet worden geopend",
+      "prefer": "Het tijdelijke adres en domeinen werken zonder een poort te openen."
+    }
+  },
+  "domains": {
+    "title": "Mijn eigen domein",
+    "intro": "Een domein is het adres van je server, zoals play.jouwnaam.net. Je kunt er een koppelen dat je al hebt, er een kopen bij Porkbun zonder de launcher te verlaten, of elke registrar gebruiken: we laten je precies zien wat je moet toevoegen.",
+    "automatic": "Automatisch",
+    "anyRegistrar": "Elke registrar",
+    "otherPaths": "Andere manieren",
+    "paths": {
+      "porkbun": {
+        "title": "Porkbun koppelen",
+        "body": "Heb je al een domein bij Porkbun? Koppel je account en wij maken de records voor je aan."
+      },
+      "buy": {
+        "title": "Een domein kopen bij Porkbun",
+        "body": "Zoek een vrije naam, koop hem met je eigen Porkbun-account en hij wordt automatisch ingesteld."
+      },
+      "manual": {
+        "title": "Een domein van een willekeurige registrar gebruiken",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: we laten zien wat je moet toevoegen en controleren het voor je."
+      }
+    },
+    "subdomain": "Subdomein",
+    "subdomainHint": "play is een goede standaard.",
+    "apexHint": "Leeg: het domein zelf (vereist ALIAS/ANAME bij sommige registrars).",
+    "invalidSubdomain": "Alleen letters, cijfers en streepjes.",
+    "invalidDomain": "Dit lijkt geen domein (example.net).",
+    "copyAddress": "Het domeinadres kopiëren",
+    "configureFailed": "Het domein kon niet worden geconfigureerd",
+    "boundBody": "Spelers doen mee met dit adres.",
+    "remove": "Domein verwijderen",
+    "removeTitle": "{{domain}} niet meer gebruiken?",
+    "removeBody": "Het adres verwijst niet meer naar deze server zodra de records zijn verwijderd. Het domein blijft van jou.",
+    "status": {
+      "pending": "In afwachting",
+      "propagating": "Wordt verspreid",
+      "verified": "Verbonden",
+      "error": "Fout"
+    },
+    "provider": {
+      "porkbun": "Beheerd via Porkbun",
+      "manual": "Beheerd bij je registrar"
+    },
+    "connected": "Domein gekoppeld",
+    "connectedBody": "Rustic Cloud controleert het TXT-record, daarna begint je adres te werken. Je kunt dit sluiten; we sturen je een melding.",
+    "porkbun": {
+      "step1": "Maak op porkbun.com › Account › API Access een API-sleutel aan.",
+      "openApi": "Porkbun API Access openen",
+      "step2": "Zet op de pagina van het domein bij Porkbun ‘API Access’ aan.",
+      "apiKey": "API-sleutel",
+      "secret": "Geheime API-sleutel",
+      "keychain": "Bewaard in de sleutelhanger van je computer, nooit naar Rustic gestuurd.",
+      "connect": "Koppelen",
+      "badApiKey": "Een API-sleutel begint met pk1_.",
+      "badSecret": "Een geheime API-sleutel begint met sk1_.",
+      "rejected": "Porkbun heeft deze sleutels geweigerd. Controleer ze, of maak een nieuw paar aan.",
+      "connected": "Porkbun gekoppeld",
+      "disconnect": "Ontkoppelen",
+      "domain": "Domein",
+      "pickDomain": "Kies een van je domeinen",
+      "apiAccessOff": "API Access staat uit voor dit domein bij Porkbun",
+      "apiAccessHint": "Voor grijze domeinen moet ‘API Access’ aan staan bij Porkbun.",
+      "preview": "Wijzigingen die we maken",
+      "dryRun": "Voorvertoning",
+      "previewBody": "Deze records worden toegevoegd of vervangen op je domein zodat {{fqdn}} naar deze server leidt. Er verandert niets tot je ze toepast.",
+      "apply": "Automatisch configureren"
+    },
+    "buy": {
+      "intro": "Het domein wordt geregistreerd op je eigen Porkbun-account en daar betaald. Rustic ontvangt er nooit een betaling voor.",
+      "needsAccount": "Om te kopen heb je je Porkbun-account nodig: koppel het eerst (je kunt er gratis een aanmaken op porkbun.com).",
+      "search": "Gewenste naam",
+      "searchPlaceholder": "bijv. loucraft",
+      "searchButton": "Zoeken",
+      "noResults": "Geen resultaten voor deze naam.",
+      "premium": "Premium",
+      "price": "{{price}} eerste jaar · verlenging {{renewal}}",
+      "taken": "Bezet",
+      "select": "Kiezen",
+      "overLimit": "Meer dan $100: koop het op porkbun.com",
+      "pricesNote": "Prijzen zijn die van Porkbun, in Amerikaanse dollars, zoals nu opgegeven. Bij Porkbun kunnen belastingen gelden.",
+      "confirmTitle": "Aankoop bij Porkbun bevestigen",
+      "seller": "Verkoper: Porkbun LLC, niet Rustic. Hun voorwaarden, prijzen, verlengingen en terugbetalingen gelden.",
+      "domain": "Domein",
+      "address": "Serveradres",
+      "registrar": "Registrar",
+      "registrarValue": "Porkbun, op je account",
+      "firstYear": "Eerste jaar",
+      "renewal": "Jaarlijkse verlenging voor",
+      "payment": "Betaald met het tegoed of de opgeslagen kaart van je Porkbun-account: nu {{price}}; wordt jaarlijks verlengd voor {{renewal}}, tenzij je automatisch verlengen uitzet bij Porkbun.",
+      "agreeTerms": "Ik ga akkoord met de registratieovereenkomst en voorwaarden van Porkbun",
+      "termsLink": "(lees ze)",
+      "agreeOrder": "Ik begrijp dat Rustic deze bestelling alleen namens mij naar Porkbun stuurt",
+      "refunds": "Terugbetalingen en annuleringen van domeinen worden door Porkbun afgehandeld volgens zijn voorwaarden.",
+      "buyButton": "Kopen bij Porkbun · {{price}}",
+      "bought": "{{domain}} is van jou",
+      "boughtBody": "In rekening gebracht door Porkbun: {{price}}. Wordt nu ingesteld…",
+      "configuring": "Je nieuwe domein wordt geconfigureerd…",
+      "failed": "De aankoop is niet gelukt",
+      "errors": {
+        "price_changed": "De prijs bij Porkbun is veranderd. Bekijk de nieuwe prijs en probeer het opnieuw.",
+        "not_available": "Dit domein is net door iemand anders genomen.",
+        "over_limit": "Meer dan $100: koop het op porkbun.com.",
+        "porkbun_not_connected": "Koppel eerst je Porkbun-account.",
+        "consent_required": "Beide vakjes moeten zijn aangevinkt."
+      }
+    },
+    "manual": {
+      "intro": "Voeg deze records toe in de DNS-zone van je registrar. We controleren ze elke 10 seconden en laten je weten wanneer het werkt.",
+      "domain": "Je domein",
+      "registrar": "Registrar",
+      "show": "De records tonen",
+      "guideTitle": "Bij {{registrar}}",
+      "allGuides": "Handleidingen voor elke registrar"
+    },
+    "records": {
+      "caption": "Toe te voegen DNS-records",
+      "type": "Type",
+      "name": "Naam / host",
+      "value": "Waarde / doel",
+      "ttl": "TTL",
+      "status": "Status",
+      "optional": "optioneel",
+      "emptyHost": "(leeg laten)",
+      "copyName": "De {{type}}-naam kopiëren",
+      "copyValue": "De {{type}}-waarde kopiëren",
+      "srvFields": "prioriteit {{priority}} · gewicht {{weight}} · poort {{port}}"
+    },
+    "check": {
+      "pending": "Niet gecontroleerd",
+      "notNeeded": "Niet nodig",
+      "ok": "OK",
+      "propagating": "Wordt verspreid ({{ok}}/{{total}})",
+      "wrong": "Verkeerde waarde",
+      "found": "Gevonden:",
+      "expected": "Verwacht:",
+      "missing": "Ontbreekt",
+      "first": "Eerste controle…",
+      "progress": "{{ok}} van {{total}} records OK",
+      "progressLabel": "Records gecontroleerd",
+      "auto": "Elke 10 s automatisch gecontroleerd",
+      "lastCheck": "laatste controle {{seconds}} s geleden",
+      "now": "Nu controleren"
+    },
+    "help": {
+      "txt": "Waarom een TXT-record? Het bewijst dat het domein van jou is, zodat niemand anders het naar zijn server kan laten wijzen.",
+      "propagation": "Het kan van een minuut tot een paar uur duren voordat wijzigingen iedereen bereiken. We blijven controleren; je hoeft hier niet te blijven.",
+      "apex": "Apex-domeinen (jouwnaam.net zonder ‘play.’) hebben een ALIAS/ANAME-record nodig; niet elke registrar heeft dat. Een subdomein werkt altijd."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › je domein › DNS zone.\nKlik op ‘Add an entry’ en kies het type (CNAME, SRV, A of TXT).\nSub-domain = de ‘Naam’ hieronder (leeg laten voor het domein zelf), Target = de ‘Waarde’.\nHerhaal dit voor elk record en bevestig. OVH voert de wijzigingen binnen enkele minuten door."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › je domein › DNS records.\nKlik op ‘Add record’ en kies het type.\nName = de ‘Naam’ hieronder, Value = de ‘Waarde’ (houd de punt aan het eind voor CNAME/SRV-doelen).\nSla elk record op."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nKlik onder Host records op ‘Add new record’.\nHost = de ‘Naam’ hieronder (@ voor het domein zelf), Value/Target = de ‘Waarde’.\nKlik op het groene vinkje om elk record op te slaan."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › je domein › DNS › Manage DNS.\nKlik op ‘Add new record’ en kies het type.\nName = de ‘Naam’ hieronder (@ voor het domein zelf), Value = de ‘Waarde’.\nVul voor SRV bij Service _minecraft in, bij Protocol _tcp, en dan prioriteit, gewicht en poort. Sla op."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Kies je site › DNS › Records › Add record.\nKies het type, Name = de ‘Naam’ hieronder, Target/Content = de ‘Waarde’.\nZet Proxy status op ‘DNS only’ (grijze wolk): het gameverkeer kan niet via de proxy van Cloudflare.\nSla elk record op."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › je domein › DNS.\nKlik op ‘Add record’ en kies het type.\nHost name = de ‘Naam’ hieronder, Points to / Value = de ‘Waarde’.\nSla op; IONOS vraagt misschien om te bevestigen dat een standaardrecord wordt vervangen."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › je domein › DNS / Nameservers.\nKies onder ‘Manage DNS records’ het type.\nName = de ‘Naam’ hieronder, Points to / Value = de ‘Waarde’, TTL zoals getoond.\nKlik voor elk record op ‘Add record’."
+      },
+      "porkbun": {
+        "name": "Porkbun (handmatig)",
+        "steps": "Domain Management › je domein › DNS.\nKies het type, Host = de ‘Naam’ hieronder (leeg voor het domein zelf), Answer = de ‘Waarde’.\nKlik voor elk record op ‘Add’.\nTip: de optie ‘Porkbun koppelen’ doet dit allemaal voor je."
+      },
+      "generic": {
+        "name": "Andere registrar",
+        "steps": "Open de DNS-zone van je domein (soms DNS-records of Zone-editor genoemd).\nVoeg elk record hieronder toe met hetzelfde type, dezelfde naam en waarde.\nVraagt je registrar om de volledige naam, zet dan je domein achter de Naam.\nSla op en kom terug: we controleren automatisch."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Serverweergaven",
+    "tabs": {
+      "discover": "Ontdekken",
+      "browse": "Bladeren"
+    },
+    "searchLabel": "Servers zoeken",
+    "searchPlaceholder": "Zoeken in de servergids…",
+    "publish": "Mijn server publiceren",
+    "publishCta": {
+      "title": "Jouw server hier",
+      "hint": "Zet je Horizon-server in de gids via de website: hij verschijnt hier en op rustic-launcher.com zodra de automatische controles zijn geslaagd."
+    },
+    "play": "Spelen",
+    "playAria": "Spelen op {{name}}",
+    "view": "Bekijken",
+    "verified": "Geverifieerd",
+    "featured": "Teamkeuze",
+    "verifiedHint": "Geverifieerde servers: het Rustic-team heeft de eigenaar en de regels gecontroleerd.",
+    "online_one": "{{value}} online",
+    "online_other": "{{value}} online",
+    "playersLabel": "Spelers online",
+    "languagesLabel": "Talen",
+    "playsLabel": "Starts deze week",
+    "lastPlayed": "Laatst gespeeld",
+    "lastPlayedOn": "Gespeeld {{when}}",
+    "hero": {
+      "label": "Uitgelichte servers",
+      "eyebrow": "Geverifieerd"
+    },
+    "rows": {
+      "trending": "Trending",
+      "trendingHint": "Deze week het vaakst gestart vanuit Rustic",
+      "players": "Nu de meeste spelers",
+      "playersHint": "Volgens de laatste controle van de cloud",
+      "new": "Nieuw in de gids",
+      "newHint": "Net vermeld door hun eigenaars",
+      "recent": "Onlangs gespeeld",
+      "recentHint": "Uit je serverlijst"
+    },
+    "rowError": "Deze rij kon niet worden geladen.",
+    "retry": "Opnieuw proberen",
+    "empty": {
+      "title": "Nog geen servers vermeld",
+      "hint": "Wees de eerste: publiceer je server via de website."
+    },
+    "emptySearch": {
+      "title": "Geen server gevonden",
+      "hint": "Probeer andere woorden of minder filters."
+    },
+    "sorts": {
+      "trending": "Trending",
+      "players": "Meeste spelers",
+      "new": "Nieuwste",
+      "name": "Naam"
+    },
+    "filters": {
+      "tags": "Speelstijl",
+      "language": "Taal",
+      "engine": "Engine",
+      "rustic": "Rustic",
+      "verifiedOnly": "Alleen geverifieerd",
+      "reset": "Filters herstellen",
+      "remove": "Filter {{filter}} verwijderen"
+    },
+    "tags": {
+      "survival": "Survival",
+      "smp": "SMP",
+      "creative": "Creatief",
+      "minigames": "Minigames",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Roleplay",
+      "factions": "Factions",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Avontuur",
+      "building": "Bouwen",
+      "economy": "Economie",
+      "modded": "Gemod",
+      "anarchy": "Anarchie",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Servers",
+      "status": "Livestatus",
+      "cloudSaw_one": "de cloud zag {{when}} {{value}} speler online",
+      "cloudSaw_other": "de cloud zag {{when}} {{value}} spelers online",
+      "engine": "Engine",
+      "version": "Gameversie",
+      "languages": "Talen",
+      "plays": "Starts deze week",
+      "about": "Over",
+      "noDescription": "Nog geen beschrijving.",
+      "address": "Adres",
+      "copy": "Kopiëren",
+      "openSite": "Openen op de website",
+      "website": "Website",
+      "discord": "Discord",
+      "by": "Vermeld door {{name}}",
+      "byStaff": "Vermeld door het Rustic-team",
+      "report": "Melden",
+      "rusticEdition": "Rustic-editie vereist",
+      "missing": "Deze server is niet beschikbaar",
+      "missingHint": "Hij is misschien privé, verborgen door moderatie of verwijderd."
+    },
+    "report": {
+      "title": "{{name}} melden",
+      "lead": "Vertel het moderatieteam wat er mis is. Elke melding wordt bekeken.",
+      "reason": "Reden",
+      "reasons": {
+        "impersonation": "Doet zich voor als een andere server",
+        "spam": "Spam of misleidend",
+        "inappropriate_content": "Ongepaste inhoud",
+        "cheating": "Valsspelen of kwaadaardige server",
+        "harassment": "Intimidatie",
+        "copyright": "Schendt mijn rechten (merk, naam)",
+        "malware": "Malware",
+        "other": "Overig"
+      },
+      "details": "Details",
+      "detailsHint": "Optioneel, maximaal 2.000 tekens.",
+      "send": "Melding versturen",
+      "sent": "Bedankt, je melding is naar het moderatieteam gegaan.",
+      "signIn": "Log in bij je Rustic-account om een server te melden.",
+      "failed": "De melding kon niet worden verzonden."
+    }
+  }
+}

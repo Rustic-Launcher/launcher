@@ -69,6 +69,10 @@ pub struct State {
     /// The multiplayer screen's Discover tab and the server directory (ADR 0160).
     pub discover: crate::screens::DiscoverUi,
     pub directory: crate::directory::Directory,
+    /// Rustic's server list and world list pages, and its pause menu (ADR 0164).
+    pub servers_page: crate::screens::pages::PageUi,
+    pub worlds_page: crate::screens::pages::PageUi,
+    pub pause: crate::screens::pause::PauseUi,
 }
 
 pub struct Shared {

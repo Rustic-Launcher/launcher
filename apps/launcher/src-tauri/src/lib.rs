@@ -10,6 +10,7 @@ mod relay;
 mod skins;
 mod state;
 mod tasks;
+mod update;
 mod util;
 
 use state::AppState;
@@ -311,6 +312,7 @@ pub fn run() {
                 });
             }
             cmd::instances::forward_game_events(state.clone());
+            update::start(state.clone());
             cmd::servers::watch_servers(state.clone());
             cmd::servers::autostart(state.clone());
             {
@@ -351,7 +353,11 @@ pub fn run() {
                     cmd::auth::autolink_minecraft(&st).await;
                 });
             }
-            tracing::info!(data = %state.paths.data().display(), "ready");
+            tracing::info!(
+                version = %app.package_info().version,
+                data = %state.paths.data().display(),
+                "ready"
+            );
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
@@ -368,8 +374,10 @@ pub fn run() {
             cmd::app::app_open_url,
             cmd::app::app_take_deep_link,
             cmd::app::app_pick_path,
-            cmd::app::app_check_update,
-            cmd::app::app_install_update,
+            cmd::app::app_update_status,
+            cmd::app::app_update_check,
+            cmd::app::app_update_apply,
+            cmd::app::app_take_pending_launch,
             cmd::app::downloads_list,
             cmd::app::download_cancel,
             cmd::app::game_detect_install,

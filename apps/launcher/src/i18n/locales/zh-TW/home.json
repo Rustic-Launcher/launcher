@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "greeting": "歡迎回來，{{name}}",
+    "greetingAnon": "歡迎使用 Rustic",
+    "continue": "繼續：{{name}} · {{when}}玩過",
+    "continueNew": "隨時可以開始：{{name}}",
+    "firstRun": "只要三個步驟就能準備好遊戲。",
+    "playNow": "立即遊玩",
+    "updateAndPlay": "更新並遊玩",
+    "resumeServer": "重新加入 {{server}}",
+    "switch": "切換實例",
+    "stats": {
+      "playtime": "已遊玩 {{time}}",
+      "mods_other": "{{count}} 個模組",
+      "friends_other": "{{count}} 位好友在線上"
+    },
+    "steps": {
+      "signIn": "使用擁有遊戲的 Microsoft 帳戶登入",
+      "prepare": "從你自己的安裝準備遊戲檔案",
+      "create": "建立你的第一個實例"
+    },
+    "getReady": "準備遊戲",
+    "openLocker": "置物櫃",
+    "player": "你的玩家，待機中，未裝備任何裝扮",
+    "playerWearing": "你的玩家，待機中，穿戴：{{items}}"
+  },
+  "recent": {
+    "title": "最近的伺服器和世界",
+    "unknown": "狀態不明",
+    "online": "線上 · {{online}}/{{max}}",
+    "offline": "離線",
+    "world": "世界 · 本機",
+    "joining": "正在加入 {{name}}…",
+    "opening": "正在開啟 {{name}}…",
+    "removed": "已從你的伺服器中移除 {{name}}",
+    "playAria": "遊玩 {{name}}",
+    "more": "{{name}} 的更多動作",
+    "copyAddress": "複製位址",
+    "addServer": "新增伺服器",
+    "empty": "你加入的伺服器和遊玩的世界會顯示在這裡。"
+  },
+  "news": {
+    "title": "新聞與更新",
+    "empty": "目前沒有新聞。",
+    "slide": "第 {{index}} 則，共 {{total}} 則",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "版本資訊",
+      "event": "活動",
+      "blog": "文章"
+    },
+    "readNotes": "閱讀版本資訊",
+    "read": "閱讀"
+  },
+  "friends": {
+    "title": "好友動態",
+    "empty": "你的好友目前都沒有在玩。",
+    "since": "{{when}}開始",
+    "activity": {
+      "server": "正在 {{server}} 遊玩",
+      "hosting": "正在架設 {{server}}",
+      "singleplayer": "正在單人遊玩",
+      "launcher": "正在啟動器中"
+    }
+  },
+  "featured": {
+    "title": "精選伺服器",
+    "verified": "已認證伺服器",
+    "players": "{{online}} / {{max}} 位玩家",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "新裝扮",
+    "owned": "已擁有"
+  },
+  "launchpad": {
+    "welcome": "歡迎*回來*，",
+    "playAs": "遊玩身分",
+    "online": "人正在精選伺服器上遊玩",
+    "heroLabel": "啟動",
+    "instanceSettings": "實例設定",
+    "news": "最新消息",
+    "unread_other": "（{{count}} 則未讀）",
+    "unreadDot": "未讀",
+    "explore": "探索來源",
+    "aside": "伺服器和好友",
+    "joinServer": "加入 {{name}}",
+    "friendsOnline_other": "（{{count}} 位在線上）",
+    "openSocial": "開啟社交",
+    "noNews": "還沒有消息。",
+    "noFriendsOnline": "目前沒有好友在線上。",
+    "socialHint": "聊天、邀請和你的隊伍都在社交視窗中。",
+    "eyebrow": "Launchpad"
+  }
+}

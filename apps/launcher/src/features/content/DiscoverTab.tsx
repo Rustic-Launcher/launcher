@@ -153,7 +153,7 @@ export function DiscoverTab({ ctx, ready }: { ctx: ExploreContext; ready: boolea
         <HeroSkeleton />
       ) : picks.length > 0 ? (
         <HeroCarousel
-          label={t('discover.heroLabel', { kind: t(`kinds.${ctx.kind}`) })}
+          label={t(`discover.heroLabel.${ctx.kind}`)}
           items={picks}
           getKey={(h) => h.id}
           className="h-[clamp(288px,36vw,380px)] w-full"

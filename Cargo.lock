@@ -4974,7 +4974,7 @@ dependencies = [
 
 [[package]]
 name = "rustic-launcher"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
@@ -5002,6 +5002,7 @@ dependencies = [
  "tauri-plugin-single-instance",
  "tauri-plugin-updater",
  "tauri-plugin-window-state",
+ "tempfile",
  "tokio",
  "toml 0.9.12+spec-1.1.0",
  "tracing",
@@ -5010,7 +5011,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-api-client"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "chrono",
  "reqwest 0.12.28",
@@ -5024,7 +5025,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-auth"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
@@ -5045,7 +5046,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-content"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "async-trait",
  "chrono",
@@ -5070,7 +5071,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-cosmetics-format"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "base64 0.22.1",
  "gltf",
@@ -5083,7 +5084,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-hosting"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "async-trait",
  "futures",
@@ -5107,7 +5108,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-instances"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "base64 0.22.1",
  "directories",
@@ -5129,7 +5130,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-launcher-core"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "directories",
  "futures-util",
@@ -5153,7 +5154,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-native"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "flate2",
  "hex",
@@ -5173,7 +5174,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-servers"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "async-trait",
  "futures-util",
@@ -5202,7 +5203,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-tunnel"
-version = "0.1.0"
+version = "0.2.2"
 dependencies = [
  "futures",
  "rustls",

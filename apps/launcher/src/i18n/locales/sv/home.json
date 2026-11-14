@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "greeting": "Välkommen tillbaka, {{name}}",
+    "greetingAnon": "Välkommen till Rustic",
+    "continue": "Fortsätt: {{name}} · spelades {{when}}",
+    "continueNew": "Redo när du är: {{name}}",
+    "firstRun": "Gör spelet redo i tre steg.",
+    "playNow": "Spela nu",
+    "updateAndPlay": "Uppdatera och spela",
+    "resumeServer": "Anslut till {{server}} igen",
+    "switch": "Byt instans",
+    "stats": {
+      "playtime": "{{time}} spelat",
+      "mods_one": "{{count}} mod",
+      "mods_other": "{{count}} moddar",
+      "friends_one": "{{count}} vän online",
+      "friends_other": "{{count}} vänner online"
+    },
+    "steps": {
+      "signIn": "Logga in med Microsoft-kontot som äger spelet",
+      "prepare": "Förbered spelfilerna från din egen installation",
+      "create": "Skapa din första instans"
+    },
+    "getReady": "Gör spelet redo",
+    "openLocker": "Skåp",
+    "player": "Din spelare, stillastående, utan kosmetika",
+    "playerWearing": "Din spelare, stillastående, bär: {{items}}"
+  },
+  "recent": {
+    "title": "Senaste servrar och världar",
+    "unknown": "Okänd status",
+    "online": "Online · {{online}}/{{max}}",
+    "offline": "Offline",
+    "world": "Värld · lokal",
+    "joining": "Ansluter till {{name}}…",
+    "opening": "Öppnar {{name}}…",
+    "removed": "{{name}} har tagits bort från dina servrar",
+    "playAria": "Spela {{name}}",
+    "more": "Fler åtgärder för {{name}}",
+    "copyAddress": "Kopiera adress",
+    "addServer": "Lägg till server",
+    "empty": "Servrar du ansluter till och världar du spelar visas här."
+  },
+  "news": {
+    "title": "Nyheter och uppdateringar",
+    "empty": "Inga nyheter just nu.",
+    "slide": "Nyhet {{index}} av {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Versionsinformation",
+      "event": "Evenemang",
+      "blog": "Artikel"
+    },
+    "readNotes": "Läs versionsinformationen",
+    "read": "Läs"
+  },
+  "friends": {
+    "title": "Vänner just nu",
+    "empty": "Ingen av dina vänner spelar just nu.",
+    "since": "sedan {{when}}",
+    "activity": {
+      "server": "spelar på {{server}}",
+      "hosting": "är värd för {{server}}",
+      "singleplayer": "spelar solo",
+      "launcher": "är i launchern"
+    }
+  },
+  "featured": {
+    "title": "Utvalda servrar",
+    "verified": "Verifierad server",
+    "players": "{{online}} / {{max}} spelare",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Ny kosmetika",
+    "owned": "Ägs"
+  },
+  "launchpad": {
+    "welcome": "Välkommen *tillbaka*,",
+    "playAs": "Spela som",
+    "online": "online på utvalda servrar",
+    "heroLabel": "Starta",
+    "instanceSettings": "Instansinställningar",
+    "news": "Senaste nytt",
+    "unread_one": "({{count}} oläst)",
+    "unread_other": "({{count}} olästa)",
+    "unreadDot": "Oläst",
+    "explore": "Utforska källor",
+    "aside": "Servrar och vänner",
+    "joinServer": "Anslut till {{name}}",
+    "friendsOnline_one": "({{count}} online)",
+    "friendsOnline_other": "({{count}} online)",
+    "openSocial": "Öppna Socialt",
+    "noNews": "Inga nyheter än.",
+    "noFriendsOnline": "Inga vänner online just nu.",
+    "socialHint": "Chattar, inbjudningar och din grupp finns i fönstret Socialt.",
+    "eyebrow": "Launchpad"
+  }
+}

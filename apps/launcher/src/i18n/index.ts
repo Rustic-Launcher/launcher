@@ -1,7 +1,7 @@
 /**
  * i18n (ADR 0025, ADR 0161): i18next + react-i18next, one JSON namespace per area. The language
  * setting is one of the game's 143 locales (`de_de`, `pt_br`, `ja_jp`…, `@rustic/locales`); it reads
- * the best bundle of its chain (`de_at` → `de`, `pt_pt` → `pt-BR`) and English for any text the
+ * the best bundle of its chain (`de_at` → `de`, `ovd` → `sv`) and English for any text the
  * bundle lacks. English ships with the app; every other bundle is its own chunk, loaded when
  * chosen. `locales.test.ts` checks English and French are complete and every other bundle valid.
  */

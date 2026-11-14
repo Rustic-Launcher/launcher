@@ -1,0 +1,112 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Bước {{current}} / {{total}}",
+  "back": "Quay lại",
+  "continue": "Tiếp tục",
+  "skip": "Để sau",
+  "steps": {
+    "welcome": "Chào mừng",
+    "microsoft": "Microsoft",
+    "rustic": "Tài khoản Rustic",
+    "privacy": "Quyền riêng tư",
+    "game": "Tệp trò chơi",
+    "ready": "Sẵn sàng"
+  },
+  "welcome": {
+    "title": "Chào mừng đến với Rustic",
+    "subtitle": "Một launcher nhanh, gắn kết bạn bè cho Horizon. Chỉ vài lựa chọn là bạn đã vào trò chơi.",
+    "language": "Ngôn ngữ",
+    "theme": "Chủ đề",
+    "palette": "Bảng màu"
+  },
+  "microsoft": {
+    "title": "Đăng nhập bằng Microsoft",
+    "subtitle": "Rustic kiểm tra với Microsoft rằng bạn sở hữu trò chơi. Rustic không bao giờ tiếp xúc với mật khẩu của bạn.",
+    "signedInAs": "Đã đăng nhập với tên {{name}}",
+    "ownershipOk": "Đã xác nhận quyền sở hữu: bạn có thể chơi.",
+    "notOwnedTitle": "Bạn cần Minecraft: Java Edition",
+    "notOwnedBody": "Tài khoản Microsoft này không sở hữu trò chơi. Rustic không bao giờ khởi chạy trò chơi khi không có giấy phép.",
+    "buyGame": "Mua trò chơi",
+    "whyTitle": "Tại sao?",
+    "whyBody": "Bắt buộc phải sở hữu trò chơi. Horizon chuẩn bị tệp trò chơi từ bản cài của chính bạn, và hồ sơ ngoại tuyến chỉ được mở khóa sau bước kiểm tra này."
+  },
+  "rustic": {
+    "title": "Tài khoản Rustic của bạn",
+    "subtitle": "Không bắt buộc. Trò chơi vẫn chạy khi không có tài khoản; bạn có thể đăng nhập sau trong Cài đặt.",
+    "perks": {
+      "friends": {
+        "title": "Bạn bè và nhóm",
+        "body": "Xem ai đang trực tuyến và tham gia cùng họ chỉ với một cú nhấp."
+      },
+      "locker": {
+        "title": "Tủ đồ",
+        "body": "Vật phẩm trang trí cho nhân vật của bạn, thuần hình ảnh."
+      },
+      "servers": {
+        "title": "Máy chủ của bạn trực tuyến",
+        "body": "Địa chỉ và tên miền miễn phí cho các máy chủ bạn tự mở."
+      }
+    },
+    "signedInAs": "Đã đăng nhập với tên {{name}}",
+    "signIn": "Đăng nhập hoặc tạo tài khoản",
+    "skipHint": "Hoặc nhấn Tiếp tục để bỏ qua lúc này.",
+    "age": "Tài khoản Rustic dành cho người từ {{min}} tuổi trở lên. Dưới {{consent}} tuổi, cha mẹ phải đồng ý việc xử lý dữ liệu; dưới 18 tuổi, các giao dịch mua cần cha mẹ chấp thuận."
+  },
+  "privacy": {
+    "title": "Lựa chọn quyền riêng tư của bạn",
+    "subtitle": "Mọi thứ đều đang tắt. Chỉ bật những gì bạn sẵn lòng chia sẻ; bạn có thể thay đổi bất cứ lúc nào trong Cài đặt.",
+    "usage": {
+      "title": "Phân tích sử dụng",
+      "body": "Những trang và tính năng nào được dùng, không kèm nội dung hay thông tin định danh."
+    },
+    "performance": {
+      "title": "Báo cáo hiệu năng",
+      "body": "Thời gian khởi chạy và thời gian khung hình, để tìm chỗ chậm."
+    },
+    "crash": {
+      "title": "Báo cáo sự cố",
+      "body": "Tự động gửi khi trò chơi hoặc launcher gặp sự cố. Khi tắt, Rustic sẽ hỏi bạn mỗi lần."
+    },
+    "note": "Chúng tôi không bao giờ bán dữ liệu và không bao giờ chia sẻ dữ liệu cho mục đích quảng cáo.",
+    "policy": "Đọc chính sách quyền riêng tư"
+  },
+  "game": {
+    "title": "Chuẩn bị trò chơi",
+    "subtitle": "Rustic dùng tệp trò chơi từ bản cài của chính bạn (hoặc tải phần còn thiếu từ Mojang), rồi chuẩn bị chúng cho Horizon.",
+    "detecting": "Đang tìm bản cài trò chơi của bạn…",
+    "found": "Đã tìm thấy trò chơi ({{versions}})",
+    "notFound": "Không tìm thấy bản cài nào",
+    "notFoundBody": "Rustic sẽ tải tệp trò chơi từ Mojang cho tài khoản của bạn.",
+    "prepareTitle": "Chuẩn bị tệp trò chơi",
+    "alreadyReady": "Đã chuẩn bị sẵn",
+    "done": "Đã chuẩn bị",
+    "prepareAgain": "Chuẩn bị lại",
+    "prepare": "Chuẩn bị",
+    "steps": {
+      "detect": "Phát hiện",
+      "download": "Tải xuống",
+      "verify": "Xác minh",
+      "compile_exporters": "Trình xuất",
+      "export": "Xuất",
+      "index": "Lập chỉ mục"
+    },
+    "explain": "Tệp trò chơi còn thiếu được lấy từ chính máy chủ của Mojang, không qua bên thứ ba: các tệp đã chuẩn bị luôn nằm trên máy tính này.",
+    "background": "Bạn có thể tiếp tục: quá trình chuẩn bị vẫn chạy trong nền.",
+    "prepareFailed": "Không thể chuẩn bị tệp trò chơi: {{reason}}"
+  },
+  "ready": {
+    "title": "Bạn đã sẵn sàng",
+    "subtitle": "Tạo phiên bản cài đặt đầu tiên ngay bây giờ, hoặc bỏ qua và làm sau.",
+    "finish": "Mở Rustic",
+    "defaultName": "Thế giới đầu tiên của tôi",
+    "createTitle": "Tạo phiên bản cài đặt đầu tiên",
+    "recommended": "Đề xuất",
+    "nameLabel": "Tên phiên bản cài đặt",
+    "existing_other": "Bạn đã có {{count}} phiên bản cài đặt.",
+    "tips": {
+      "play": "Nút CHƠI luôn ở góc dưới bên phải.",
+      "friends": "Bạn bè của bạn ở bên phải; chỉ cần một cú nhấp vào Tham gia.",
+      "servers": "Mở máy chủ cho bạn bè từ trang Máy chủ."
+    }
+  }
+}

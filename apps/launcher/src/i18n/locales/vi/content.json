@@ -1,0 +1,465 @@
+{
+  "title": "Khám phá",
+  "subtitle": "Mod, gói, shader và plugin từ Horizon, Modrinth và Rustic, được kiểm tra với phiên bản cài đặt của bạn.",
+  "kindsLabel": "Loại nội dung",
+  "kinds": {
+    "mod": "Mod",
+    "modpack": "Gói mod",
+    "resourcepack": "Gói tài nguyên",
+    "shader": "Shader",
+    "datapack": "Gói dữ liệu",
+    "plugin": "Plugin"
+  },
+  "searchLabel": "Tìm nội dung",
+  "clear": "Xóa tìm kiếm",
+  "by": "bởi {{author}}",
+  "featured": "Nổi bật",
+  "downloads": "{{value}} lượt tải xuống",
+  "updated": "cập nhật {{when}}",
+  "results_other": "{{count}} kết quả",
+  "loadMore": "Tải thêm ({{shown}} / {{total}})",
+  "target": {
+    "label": "Cài vào",
+    "none": "Chọn nơi cài",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Máy chủ Horizon",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "Máy tính này",
+    "vps": "VPS của bạn",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Sắp xếp theo",
+    "relevance": "Liên quan nhất",
+    "downloads": "Tải xuống nhiều nhất",
+    "updated": "Cập nhật gần đây",
+    "newest": "Mới nhất"
+  },
+  "sources": {
+    "label": "Nguồn",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Kho Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Danh mục Rustic"
+  },
+  "filters": {
+    "category": "Danh mục",
+    "allCategories": "Tất cả danh mục",
+    "compatibleInstance": "Tương thích với phiên bản cài đặt này",
+    "compatibleServer": "Tương thích với máy chủ này",
+    "worksNow": "Biên dịch được trên Horizon hiện tại",
+    "categories": "Danh mục",
+    "viewMore_other": "Xem thêm {{count}}",
+    "viewLess": "Thu gọn",
+    "compatibility": "Khả năng tương thích",
+    "pluginHint": "Plugin chạy trong sandbox, chỉ trên Rustic Server.",
+    "fairPlayHint": "Chỉ liệt kê nội dung chơi công bằng.",
+    "versions": "Phiên bản Horizon",
+    "targetVersion": "Phiên bản cài đặt hoặc máy chủ bạn đã chọn",
+    "checkingAgainst": "Khả năng tương thích được kiểm tra với bản dựng được làm nổi bật.",
+    "rustic": "Marketplace của Rustic",
+    "rusticHint": "Dự án trả phí và đã xác minh chỉ có trên Rustic.",
+    "verifiedOnly": "Chỉ dự án được Rustic xác minh",
+    "price": "Giá",
+    "priceOptions": {
+      "all": "Tất cả",
+      "free": "Miễn phí",
+      "paid": "Trả phí"
+    },
+    "reset": "Đặt lại bộ lọc",
+    "remove": "Bỏ bộ lọc {{filter}}"
+  },
+  "categories": {
+    "performance": "Hiệu năng",
+    "utility": "Tiện ích",
+    "ui": "Giao diện",
+    "pvp": "PvP",
+    "adventure": "Phiêu lưu",
+    "decoration": "Trang trí",
+    "storage": "Lưu trữ",
+    "worldgen": "Tạo thế giới",
+    "library": "Thư viện",
+    "tech": "Công nghệ",
+    "cozy": "Ấm cúng",
+    "multiplayer": "Nhiều người chơi",
+    "realistic": "Chân thực",
+    "simple": "Giữ nét gốc",
+    "lightweight": "Nhẹ",
+    "cinematic": "Điện ảnh",
+    "qol": "Tiện lợi khi chơi",
+    "admin": "Quản trị",
+    "chat": "Trò chuyện",
+    "minigames": "Mini-game",
+    "protection": "Bảo vệ",
+    "integration": "Tích hợp"
+  },
+  "empty": {
+    "title": "Không có kết quả phù hợp",
+    "hint": "Hãy thử từ khóa, nguồn hoặc danh mục khác.",
+    "compatibleHint": "Chỉ hiển thị nội dung chạy được trên mục tiêu này. Tắt bộ lọc để xem tất cả.",
+    "showAll": "Hiện kết quả không tương thích"
+  },
+  "banners": {
+    "mod": "Chỉ liệt kê mod chơi công bằng: không X-ray, không auto-click hay lợi thế bất công nào khác.",
+    "modpack": "Một gói mod sẽ trở thành một phiên bản cài đặt mới với mod và cài đặt riêng.",
+    "resourcepack": "Các gói xếp chồng lên nhau: gói ở đầu thứ tự tải sẽ được ưu tiên.",
+    "shader": "Horizon chạy gói shader WGSL riêng (.hshader, shader API 0.1, thử nghiệm) và các gói định dạng Iris/OptiFine từ kho Horizon. Hãy chọn một gói trong trò chơi tại Cài đặt video › Gói shader.",
+    "datapack": "Gói dữ liệu thuộc về một thế giới: bạn sẽ chọn thế giới khi cài đặt.",
+    "plugin": "Plugin (.rplugin) chạy trong sandbox trên các máy chủ dùng engine Rustic Server. Plugin bị lỗi sẽ bị tắt; máy chủ vẫn tiếp tục chạy."
+  },
+  "resourcepacks": {
+    "manageOrder": "Quản lý thứ tự tải"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Định dạng Iris/OptiFine"
+    },
+    "formatHint": {
+      "horizon": "Định dạng riêng của Horizon (.hshader), shader API 0.1 (thử nghiệm). Được kiểm tra trước khi chạy.",
+      "shaders_dir": "Gói shaders/ theo định dạng Iris/OptiFine, chạy bằng trình tải riêng của Horizon."
+    }
+  },
+  "side": {
+    "client": "Client",
+    "server": "Máy chủ",
+    "both": "Client và máy chủ"
+  },
+  "install": {
+    "install": "Cài đặt",
+    "installAria": "Cài {{name}} vào {{target}}",
+    "installed": "Đã cài đặt",
+    "installing": "Đang cài đặt…",
+    "installingPct": "Đang cài đặt {{pct}}",
+    "createInstance": "Tạo phiên bản cài đặt",
+    "chooseWorld": "Cài vào một thế giới",
+    "noTarget": "Hãy chọn nơi cài trước.",
+    "started": "Đang cài {{name}} vào {{target}}",
+    "withDeps_other": "Kèm {{count}} phần phụ thuộc bắt buộc.",
+    "failed": "Không thể cài đặt {{name}}",
+    "native": "Biên dịch và cài đặt",
+    "update": "Cập nhật",
+    "updateAria": "Cập nhật {{name}} lên {{version}}"
+  },
+  "modpack": {
+    "created": "Đang tạo phiên bản cài đặt {{name}}",
+    "createdHint": "Đang tải xuống. Nó sẽ xuất hiện trong Chơi khi sẵn sàng."
+  },
+  "datapacks": {
+    "pickWorld": "Chọn một thế giới",
+    "noWorlds": "Phiên bản cài đặt này chưa có thế giới nào. Hãy chơi một lần để tạo.",
+    "count_other": "{{count}} gói dữ liệu"
+  },
+  "plugins": {
+    "badge": "Plugin Rustic Server · API {{api}}",
+    "noServerTitle": "Chưa có máy chủ Rustic Server nào",
+    "noServerBody": "Plugin chỉ chạy trên các máy chủ dùng engine Rustic Server. Hãy tạo một máy chủ qua vài bước, rồi quay lại để cài plugin lên đó.",
+    "createServer": "Tạo máy chủ"
+  },
+  "detail": {
+    "breadcrumb": "Đường dẫn",
+    "sections": "Các mục của dự án",
+    "tabs": {
+      "description": "Mô tả",
+      "gallery": "Thư viện ảnh",
+      "versions": "Phiên bản",
+      "changelog": "Nhật ký thay đổi",
+      "dependencies": "Phần phụ thuộc",
+      "compatibility": "Khả năng tương thích"
+    },
+    "galleryLabel": "Thư viện ảnh của {{name}}",
+    "prev": "Ảnh trước",
+    "next": "Ảnh tiếp theo",
+    "slide": "Ảnh {{index}} / {{total}}",
+    "about": "Về dự án này",
+    "categories": "Danh mục",
+    "links": "Liên kết",
+    "link": {
+      "source": "Mã nguồn",
+      "issues": "Báo lỗi",
+      "website": "Trang web",
+      "site": "Trên rustic-launcher.com",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "Chưa có nhật ký thay đổi.",
+    "noGallery": "Chưa có ảnh chụp màn hình.",
+    "notAvailable": {
+      "title": "Dự án này không khả dụng",
+      "body": "Dự án có thể ở chế độ riêng tư, đang chờ duyệt hoặc đã bị người tạo hay người kiểm duyệt gỡ bỏ.",
+      "back": "Quay lại Khám phá"
+    },
+    "native": {
+      "title": "Biên dịch trên máy tính của bạn",
+      "build": "Được biên dịch vào trò chơi của hồ sơ này ở lần chơi đầu tiên: khoảng 10 đến 15 phút, sau đó nhanh hơn.",
+      "review": "Được kiểm duyệt trước khi có thể cài đặt, bởi kho đăng ký của Horizon hoặc quản trị viên Rustic.",
+      "consent": "Không có gì được biên dịch trước khi bạn đọc và chấp nhận một thông báo ngắn.",
+      "more": "Cách mod gốc hoạt động"
+    }
+  },
+  "report": {
+    "button": "Báo cáo",
+    "title": "Báo cáo {{name}}",
+    "sent": "Đã gửi báo cáo",
+    "sentBody": "Cảm ơn bạn. Đội ngũ kiểm duyệt của chúng tôi sẽ xem xét.",
+    "reasons": {
+      "fair_play": "Vi phạm chính sách chơi công bằng",
+      "malware": "Phần mềm độc hại hoặc đánh cắp dữ liệu",
+      "copyright": "Vi phạm bản quyền",
+      "other": "Lý do khác"
+    },
+    "failed": "Không thể gửi báo cáo"
+  },
+  "versions": {
+    "version": "Phiên bản",
+    "horizon": "Bản dựng Horizon",
+    "published": "Ngày phát hành",
+    "downloads": "Lượt tải xuống",
+    "compatibility": "Khả năng tương thích",
+    "actions": "Thao tác",
+    "none": "Không có",
+    "channel": {
+      "release": "Chính thức",
+      "beta": "Beta",
+      "alpha": "Alpha"
+    },
+    "empty": "Chưa có phiên bản nào.",
+    "latest": "Mới nhất"
+  },
+  "deps": {
+    "none": "Không có phần phụ thuộc.",
+    "relation": {
+      "required": "Bắt buộc",
+      "optional": "Tùy chọn",
+      "incompatible": "Không tương thích"
+    },
+    "installed": "Đã cài đặt",
+    "willInstall": "Được cài tự động",
+    "notInstalled": "Chưa cài đặt"
+  },
+  "compatTab": {
+    "for": "cho {{target}}",
+    "builds": "Tác giả có phát hành bản dựng dành cho phiên bản Horizon này.",
+    "format": "Nội dung này chỉ là dữ liệu (kết cấu, shader, gói dữ liệu): nó không phụ thuộc vào bản dựng Horizon.",
+    "unknown": "Hãy chọn một phiên bản cài đặt hoặc máy chủ để kiểm tra khả năng tương thích.",
+    "fairPlay": "Rustic chỉ quảng bá nội dung chơi công bằng. Mọi thứ mang lại lợi thế bất công đều không bao giờ được liệt kê.",
+    "native": "Một mod gốc phù hợp với Horizon này: Rustic Launcher sẽ biên dịch nó vào bản trò chơi riêng của phiên bản cài đặt này trên máy tính của bạn."
+  },
+  "permissions": {
+    "title": "Quyền",
+    "network": "Truy cập mạng: {{value}}",
+    "none": "không",
+    "files": "Tệp: chỉ thư mục dữ liệu riêng của nó."
+  },
+  "stats": {
+    "downloads": "Lượt tải xuống",
+    "follows": "Người theo dõi",
+    "updated": "Cập nhật",
+    "license": "Giấy phép",
+    "size": "Kích thước",
+    "gameVersion": "Phiên bản trò chơi",
+    "version": "Phiên bản mới nhất",
+    "author": "Tác giả",
+    "created": "Ngày phát hành"
+  },
+  "searchSources": {
+    "mod": "Tìm mod trên Horizon, Modrinth và Rustic…",
+    "modpack": "Tìm gói mod trên Horizon, Modrinth và Rustic…",
+    "resourcepack": "Tìm gói tài nguyên trên Horizon, Modrinth và Rustic…",
+    "shader": "Tìm shader trên Horizon, Modrinth và Rustic…",
+    "datapack": "Tìm gói dữ liệu trên Horizon, Modrinth và Rustic…",
+    "plugin": "Tìm plugin trên Horizon, Modrinth và Rustic…"
+  },
+  "filtersLabel": "Bộ lọc",
+  "view": "Xem",
+  "heading": "Tìm *mod* tiếp theo của bạn",
+  "eyebrow": "Khám phá",
+  "kindsServer": "Cho Rustic Server",
+  "tabs": {
+    "label": "Các mục Khám phá",
+    "discover": "Gợi ý",
+    "browse": "Duyệt",
+    "mine": "Nội dung của tôi"
+  },
+  "hero": {
+    "eyebrow": "Nổi bật"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "Mod nổi bật",
+      "modpack": "Gói mod nổi bật",
+      "resourcepack": "Gói tài nguyên nổi bật",
+      "shader": "Shader nổi bật",
+      "datapack": "Gói dữ liệu nổi bật",
+      "plugin": "Plugin nổi bật"
+    },
+    "rows": {
+      "new": "Mới",
+      "newHint": "Vừa phát hành hoặc cập nhật",
+      "horizon": "Phổ biến trên Horizon",
+      "horizonHint": "Được tải xuống nhiều nhất từ kho của Horizon",
+      "verified": "Được Rustic xác minh",
+      "verifiedHint": "Đã được đội ngũ Rustic kiểm tra: đúng như mô tả",
+      "yours": "Cho {{target}}",
+      "yoursHint": "Chạy trên Horizon {{version}}",
+      "community": "Từ cộng đồng",
+      "communityHint": "Mới cập nhật trên Marketplace của Rustic"
+    },
+    "empty": {
+      "title": "Chưa có gì để gợi ý ở đây",
+      "hint": "Chưa có nội dung loại này chạy được trên mục tiêu của bạn. Hãy duyệt toàn bộ thay vào đó.",
+      "browse": "Duyệt tất cả"
+    },
+    "rowError": "Không thể tải mục chọn này.",
+    "retry": "Thử lại"
+  },
+  "verified": {
+    "label": "Đã xác minh",
+    "hint": "Được Rustic xác minh: một người kiểm duyệt đã kiểm tra rằng nó đúng như trang mô tả."
+  },
+  "price": {
+    "soon": "Sắp ra mắt",
+    "soonHint": "Người sáng tạo sẽ sớm có thể bán tác phẩm của mình. Hiện chưa thể mua.",
+    "notOnSale": "Chưa mở bán: tính năng bán hàng cho người sáng tạo sắp ra mắt."
+  },
+  "native": {
+    "badge": "Biên dịch trên máy tính của bạn",
+    "short": "Gốc",
+    "hint": "Mod gốc là mã Rust được biên dịch vào trò chơi trên máy tính của bạn trước khi chạy.",
+    "title": "Một mod gốc",
+    "body": "Mod gốc là mã nguồn Rust được biên dịch vào trò chơi của bạn trên máy tính này (có thể mất từ một phút đến nửa tiếng). Quản trị viên xem xét mọi phiên bản trước khi công khai.",
+    "kind": "Mod gốc",
+    "how": "Rustic Launcher biên dịch chúng trên máy tính của bạn vào bản trò chơi riêng của phiên bản cài đặt này, sau khi bạn chấp nhận thông báo tin cậy. Lần biên dịch đầu mất 10 đến 15 phút; các lần sau chỉ biên dịch lại phần thay đổi. Phiên bản cài đặt không có mod gốc vẫn dùng bản trò chơi dựng sẵn.",
+    "instanceOnly": "Mod gốc được cài vào một phiên bản cài đặt.",
+    "trust": {
+      "title": "Mã gốc: hãy đọc trước khi biên dịch",
+      "lead": "{{name}} là một mod gốc: mã Rust được biên dịch vào trò chơi của “{{instance}}” trên máy tính này.",
+      "unsandboxed": "Mod gốc không chạy trong sandbox. Sau khi biên dịch, chúng chạy với quyền của bạn và có thể đọc, thay đổi hoặc gửi đi mọi thứ mà tài khoản của bạn có thể.",
+      "review": "Chỉ có thể cài mod từ kho của Horizon (được những người duy trì xem xét) và mod được quản trị viên phê duyệt từ Marketplace của Rustic. Việc xem xét giúp giảm rủi ro, nhưng không loại bỏ hoàn toàn.",
+      "build": "Rust sẽ được cài nếu cần, rồi trò chơi được biên dịch cho phiên bản cài đặt này: khoảng 10 đến 15 phút và vài GB trong lần đầu, các lần sau nhanh hơn.",
+      "scope": "Chỉ phiên bản cài đặt này chạy bản trò chơi đã biên dịch. Bạn sẽ không được hỏi lại cho các mod gốc tiếp theo của nó.",
+      "source": "Đọc mã nguồn",
+      "check": "Tôi hiểu rằng mod gốc chạy ngoài sandbox với quyền của tôi, và tôi tin tưởng mod này.",
+      "accept": "Tôi tin tưởng: cài đặt và biên dịch"
+    },
+    "toolchain": {
+      "title": "Cài Rust {{version}}?",
+      "lead": "Biên dịch mod gốc cần trình biên dịch Rust. Rustic Launcher có thể cài nó cho bạn.",
+      "manual": "Biên dịch mod gốc cần trình biên dịch Rust và các công cụ hệ thống mà Rustic Launcher không thể cài cho bạn. Hãy cài những thứ sau, rồi biên dịch lại:",
+      "where": "Từ trang chính thức (static.rust-lang.org), được kiểm tra với mã SHA-256 đã công bố, vào thư mục riêng của launcher: không có gì thay đổi ở nơi khác trên máy tính của bạn.",
+      "size": "Khoảng 1 đến 2,5 GB (kèm trình biên dịch C trên Windows).",
+      "once": "Chỉ một lần cho mọi phiên bản cài đặt; xóa dữ liệu của launcher sẽ xóa nó.",
+      "found": "Đã tìm thấy: {{reason}}.",
+      "install": "Cài Rust",
+      "started": "Đang cài Rust",
+      "startedHint": "Quá trình biên dịch bắt đầu ngay khi Rust sẵn sàng. Theo dõi trong bảng tải xuống.",
+      "failed": "Không thể cài Rust"
+    },
+    "build": {
+      "started": "Đang biên dịch mod gốc cho {{instance}}",
+      "startedHint": "Theo dõi trên trang phiên bản cài đặt hoặc trong bảng tải xuống. Lần biên dịch đầu mất 10 đến 15 phút.",
+      "failed": "Không thể biên dịch các mod gốc của {{instance}}"
+    },
+    "errors": {
+      "notEdition": "Mod gốc chỉ biên dịch được vào phiên bản Rustic: hãy chuyển phiên bản cài đặt này sang phiên bản đó trong phần cài đặt của nó.",
+      "running": "Hãy đóng trò chơi trước: các mod gốc được biên dịch lại khi trò chơi đã dừng.",
+      "disk": "Không đủ dung lượng đĩa trống. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "Không tương thích",
+    "compatible": "Tương thích"
+  },
+  "library": {
+    "add": "Thêm vào thư viện của tôi",
+    "inLibrary": "Có trong thư viện",
+    "added": "Đã thêm {{name}} vào thư viện của bạn",
+    "removed": "Đã xóa {{name}} khỏi thư viện của bạn",
+    "remove": "Xóa {{name}} khỏi thư viện của tôi",
+    "failed": "Không thể cập nhật thư viện của bạn"
+  },
+  "prompt": {
+    "title": "Cài {{name}}?",
+    "body": "Bạn đã mở dự án này từ trang web. Hãy chọn nơi cài và phiên bản, rồi xác nhận.",
+    "dismiss": "Để sau",
+    "version": "Phiên bản",
+    "versionMissing": "Phiên bản {{version}} không còn khả dụng: phiên bản tương thích mới nhất đã được chọn."
+  },
+  "mine": {
+    "searchPlaceholder": "Lọc nội dung của tôi…",
+    "noMatch": "Không có kết quả phù hợp",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Thêm thủ công"
+    },
+    "installed": {
+      "title": "Đã cài đặt",
+      "titleOn": "Đã cài trên {{target}}",
+      "hint": {
+        "mod": "Các mod của mục tiêu này: bật hoặc tắt, cập nhật hoặc gỡ chúng.",
+        "modpack": "Các gói mod của mục tiêu này: bật hoặc tắt, cập nhật hoặc gỡ chúng.",
+        "resourcepack": "Các gói tài nguyên của mục tiêu này: bật hoặc tắt, cập nhật hoặc gỡ chúng.",
+        "shader": "Các shader của mục tiêu này: bật hoặc tắt, cập nhật hoặc gỡ chúng.",
+        "datapack": "Các gói dữ liệu của mục tiêu này: bật hoặc tắt, cập nhật hoặc gỡ chúng.",
+        "plugin": "Các plugin của mục tiêu này: bật hoặc tắt, cập nhật hoặc gỡ chúng."
+      },
+      "modpacksTitle": "Gói mod trở thành hồ sơ",
+      "modpacksHint": "Mỗi gói mod đã cài là một hồ sơ riêng.",
+      "openProfiles": "Mở hồ sơ của tôi",
+      "noTarget": "Hãy chọn nơi cần xem trước.",
+      "serverHint": "Plugin và gói dữ liệu của máy chủ được quản lý trên trang của máy chủ đó.",
+      "manageServer": "Quản lý máy chủ",
+      "updateAll_other": "Cập nhật {{count}} mục",
+      "openProfile": "Mở hồ sơ",
+      "empty": "Chưa cài gì ở đây",
+      "emptyHint": "Hãy tìm thứ gì đó trong Gợi ý hoặc Duyệt.",
+      "discover": "Khám phá nội dung",
+      "updateTo": "Cập nhật lên {{version}}",
+      "incompatible": "Không tương thích",
+      "update": "Cập nhật {{name}}",
+      "toggle": "Bật {{name}}",
+      "remove": "Gỡ {{name}}",
+      "removeTitle": "Gỡ {{name}}?",
+      "removeBody": "Các tệp của nó sẽ bị xóa khỏi hồ sơ này. Bạn có thể cài lại bất cứ lúc nào."
+    },
+    "signIn": {
+      "title": "Thư viện và tác phẩm của bạn",
+      "body": "Đăng nhập tài khoản Rustic để tìm các dự án bạn đã lưu và những dự án bạn phát hành.",
+      "action": "Đăng nhập"
+    },
+    "library": {
+      "title": "Thư viện của tôi",
+      "hint": "Các dự án đã lưu vào tài khoản Rustic của bạn, trên mọi máy tính.",
+      "empty": "Thư viện của bạn đang trống",
+      "emptyHint": "Thêm một dự án Rustic từ trang của nó để tìm thấy ở đây.",
+      "installAria": "Cài {{name}}"
+    },
+    "creations": {
+      "title": "Tác phẩm của tôi",
+      "hint": "Những gì bạn phát hành trên Marketplace của Rustic.",
+      "publish": "Phát hành trên trang web",
+      "empty": "Bạn chưa phát hành gì",
+      "emptyHint": "Chia sẻ một mod, một gói hoặc một shader với mọi người chơi Rustic từ trang web.",
+      "manage": "Quản lý",
+      "manageAria": "Quản lý {{name}} trên trang web",
+      "status": {
+        "public": "Công khai",
+        "unlisted": "Không công khai",
+        "private": "Riêng tư",
+        "pending": "Đang chờ duyệt",
+        "rejected": "Bị từ chối",
+        "takenDown": "Đã bị gỡ"
+      }
+    }
+  }
+}

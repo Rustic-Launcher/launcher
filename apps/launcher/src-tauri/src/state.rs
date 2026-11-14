@@ -55,6 +55,8 @@ pub struct AppState {
     pub skins: crate::skins::SkinCache,
     /// The launcher's HTTP client (proxy, TLS and user agent settings).
     pub http: rusticmc_launcher_core::reqwest::Client,
+    /// Automatic updates of the launcher and the Rustic edition (ADR 0162).
+    pub updates: crate::update::Updates,
 }
 
 /// What the launcher shows of a VPS server (the registry keeps only its reference).
@@ -192,7 +194,13 @@ impl AppState {
             .flatten()
             .unwrap_or_else(|| default_settings(&paths, &config));
         let discord = crate::discord::Discord::start(settings.privacy.discord());
+        let updates = crate::update::Updates::new(
+            paths.config_dir(),
+            &app.package_info().version.to_string(),
+            settings.launcher.auto_update,
+        );
         Ok(Self {
+            updates,
             discord,
             skins: Default::default(),
             http: http.clone(),

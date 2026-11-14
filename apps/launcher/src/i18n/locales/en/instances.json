@@ -44,7 +44,13 @@
     "nightly": "Nightly",
     "installed": "Installed",
     "submit": "Create instance",
-    "created": "{{name}} is ready"
+    "created": "{{name}} is ready",
+    "preview": "Preview",
+    "edition": "Edition",
+    "editionRustic": "Cosmetics, friends and native mods in game.",
+    "editionHorizon": "Horizon as its team publishes it, nothing added.",
+    "noBuild": "No build of this edition is listed right now.",
+    "nightlyHint": "Nightly builds come out every day from Horizon’s latest code: newer, less tested."
   },
   "icons": {
     "grass": "Sprout",
@@ -77,7 +83,15 @@
     },
     "started": "Importing {{name}}",
     "background": "It continues in the background; you can keep using the launcher.",
-    "note": "Only content that works on Horizon is installed; the rest is listed with the reason."
+    "note": "Only content that works on Horizon is installed; the rest is listed with the reason.",
+    "drop": {
+      "title": "Drop a pack or an instance folder here",
+      "hint": "Modrinth .mrpack, CurseForge .zip, or a Prism or MultiMC instance folder",
+      "choose": "Choose a file",
+      "active": "Release to import",
+      "unsupported": "This can’t be imported. Use an .mrpack, a CurseForge .zip or an instance folder."
+    },
+    "formats": "Supported formats"
   },
   "detail": {
     "notFound": "This instance does not exist anymore",

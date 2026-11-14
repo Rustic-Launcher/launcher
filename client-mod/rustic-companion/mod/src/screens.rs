@@ -6,7 +6,9 @@
 //!   press and key while it shows (Escape still leaves the screen, as on the list); Join connects
 //!   at once and Add to list saves the server (`Host::join_server`, `Host::add_server`, Rustic's
 //!   Horizon patch U16); the title's Discover button opens the multiplayer screen on this tab;
-//! - [`language`]: Rustic's language screen over the title.
+//! - [`language`]: Rustic's language screen over the title;
+//! - [`pages`]: the world list and the multiplayer screen's "My servers" tab as the launcher's
+//!   pages, and [`pause`]: the pause menu as a panel (ADR 0164).
 use crate::canvas::{canvas, measure_px};
 use crate::state::{guard, guard_or, lock};
 use horizon_client::mod_api::{
@@ -15,10 +17,13 @@ use horizon_client::mod_api::{
 };
 use rusticmc_companion_core::discover::{self, Hit, Layout, Listing, Query, Tab};
 use rusticmc_companion_core::kit::Kit;
+use rusticmc_companion_core::paint::{self, rescaled, scale_rect};
 use rusticmc_companion_core::title::Weight;
 use std::time::{Duration, Instant};
 
 pub mod language;
+pub mod pages;
+pub mod pause;
 
 /// The multiplayer list's screen id.
 pub const MULTIPLAYER: &str = "multiplayer";
@@ -50,6 +55,8 @@ pub struct DiscoverUi {
     /// Servers joined or added from here this session (shown as in the list at once).
     pub added: Vec<String>,
     pub last_frame: Option<Instant>,
+    /// GUI pixels per layout unit at the last frame (`paint::screen_unit`; 0 before it).
+    pub unit: f32,
 }
 
 /// Registers a piece that can be pressed as one of the screen's widgets, by its label: the
@@ -87,6 +94,12 @@ fn search_query(ui: &DiscoverUi) -> Option<Query> {
 }
 
 pub fn render(host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
+    crate::frame::frames().current.screen = Some(event.screen.id);
+    pause::render(host, event);
+    if let Some(kind) = pages::shown(event.screen.id) {
+        pages::render(host, event, kind);
+        return;
+    }
     guard("screens.render", || {
         if event.screen.id != MULTIPLAYER {
             if event.screen.id == crate::title_menu::TITLE {
@@ -127,9 +140,11 @@ pub fn render(host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
             st.discover.servers_at = Some(now);
         }
         let scale = event.batch.scale.max(1.0);
-        let measure = gui_measure(scale);
-        let gui = [event.batch.width, event.batch.height];
-        let mouse = event.screen.mouse;
+        // Laid out in screen units, drawn in GUI pixels: desktop-like sizes at any GUI scale.
+        let unit = paint::screen_unit(scale, event.batch.height * scale);
+        let measure = gui_measure(scale * unit);
+        let gui = [event.batch.width / unit, event.batch.height / unit];
+        let mouse = [event.screen.mouse[0] / unit, event.screen.mouse[1] / unit];
         let lang = lang();
         let mut st = lock();
         let api = st.cfg.api_base.clone();
@@ -222,18 +237,25 @@ pub fn render(host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
             return;
         }
         if let Some(l) = &layout {
-            c.paint_all(event.batch, &l.paints);
+            c.paint_all(event.batch, &rescaled(&l.paints, unit));
         }
         let mut kit: Kit<'_, Hit> = Kit::new(&measure, mouse);
         discover::switch(&mut kit, gui[0], tab, &lang);
-        c.paint_all(event.batch, &kit.out);
+        c.paint_all(event.batch, &rescaled(&kit.out, unit));
         drop(c);
+        if layout.is_some() {
+            crate::frame::frames().current.covered = true;
+        }
         if let Some(l) = &layout {
             // The list under the tab can't be reached: its widgets go, ours come.
             horizon_client::widgets::cover_frame();
             if l.max_scroll > 0.0 {
                 let ui = &st.discover;
-                horizon_client::widgets::scroll_area(l.area, ui.scroll, l.max_scroll);
+                horizon_client::widgets::scroll_area(
+                    scale_rect(l.area, unit),
+                    ui.scroll * unit,
+                    l.max_scroll * unit,
+                );
             }
         }
         for (r, h) in &kit.hits {
@@ -242,7 +264,10 @@ pub fn render(host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
                     Tab::MyServers => rusticmc_companion_core::i18n::T::MyServers,
                     Tab::Discover => rusticmc_companion_core::i18n::T::Discover,
                 };
-                register(rusticmc_companion_core::i18n::t(key, &lang), *r);
+                register(
+                    rusticmc_companion_core::i18n::t(key, &lang),
+                    scale_rect(*r, unit),
+                );
             }
         }
         if let Some(l) = &layout {
@@ -279,6 +304,11 @@ pub fn render(host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
                         )
                         .to_owned(),
                     },
+                    Hit::Publish => rusticmc_companion_core::i18n::t(
+                        rusticmc_companion_core::i18n::T::PublishHint,
+                        &lang,
+                    )
+                    .to_owned(),
                     Hit::Retry => rusticmc_companion_core::i18n::t(
                         rusticmc_companion_core::i18n::T::Retry,
                         &lang,
@@ -291,10 +321,11 @@ pub fn render(host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
                     .to_owned(),
                     _ => continue,
                 };
-                register(&label, *r);
+                register(&label, scale_rect(*r, unit));
             }
         }
         let ui = &mut st.discover;
+        ui.unit = unit;
         if let Some(l) = &layout {
             ui.scroll = ui.scroll.clamp(0.0, l.max_scroll);
         }
@@ -330,6 +361,9 @@ fn press(host: &dyn Host, hit: Hit) {
             st.discover.typed = None;
         }
         Hit::Retry => lock().directory.retry(),
+        Hit::Publish => {
+            crate::title_menu::open_url(discover::publish_url(&lang()));
+        }
         Hit::Hero(i) => {
             // Turn the hero to that server: move the clock to its turn.
             let mut st = lock();
@@ -370,11 +404,19 @@ fn press(host: &dyn Host, hit: Hit) {
 }
 
 pub fn mouse(host: &dyn Host, event: &mut ScreenMouseButtonPressedPreEvent<'_>) -> Flow {
+    if pause::shown(event.screen.id) {
+        return pause::mouse(host, event);
+    }
+    if let Some(kind) = pages::shown(event.screen.id) {
+        return pages::mouse(host, event, kind);
+    }
     guard_or("screens.mouse", Flow::Continue, || {
         if event.screen.id != MULTIPLAYER || !lock().cfg.title_menu {
             return Flow::Continue;
         }
-        let at = event.screen.mouse;
+        let unit = lock().discover.unit;
+        let unit = if unit > 0.0 { unit } else { 1.0 };
+        let at = [event.screen.mouse[0] / unit, event.screen.mouse[1] / unit];
         let switch_hit = lock()
             .discover
             .switch_hits
@@ -408,6 +450,9 @@ pub fn mouse(host: &dyn Host, event: &mut ScreenMouseButtonPressedPreEvent<'_>) 
 }
 
 pub fn scroll(_host: &dyn Host, event: &mut ScreenMouseScrolledPreEvent<'_>) -> Flow {
+    if let Some(kind) = pages::shown(event.screen.id) {
+        return pages::scroll(event, kind);
+    }
     guard_or("screens.scroll", Flow::Continue, || {
         if !discovering(event.screen.id) {
             return Flow::Continue;
@@ -420,6 +465,12 @@ pub fn scroll(_host: &dyn Host, event: &mut ScreenMouseScrolledPreEvent<'_>) -> 
 }
 
 pub fn key(host: &dyn Host, event: &mut ScreenKeyPressedPreEvent<'_>) -> Flow {
+    if pause::shown(event.screen.id) {
+        return pause::key(host, event);
+    }
+    if let Some(kind) = pages::shown(event.screen.id) {
+        return pages::key(host, event, kind);
+    }
     guard_or("screens.key", Flow::Continue, || {
         if !discovering(event.screen.id) {
             return Flow::Continue;
@@ -495,6 +546,9 @@ pub fn key(host: &dyn Host, event: &mut ScreenKeyPressedPreEvent<'_>) -> Flow {
 }
 
 pub fn chars(_host: &dyn Host, event: &mut ScreenCharTypedPreEvent<'_>) -> Flow {
+    if let Some(kind) = pages::shown(event.screen.id) {
+        return pages::chars(event, kind);
+    }
     guard_or("screens.chars", Flow::Continue, || {
         if !discovering(event.screen.id) {
             return Flow::Continue;

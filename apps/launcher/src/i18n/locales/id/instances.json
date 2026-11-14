@@ -1,0 +1,337 @@
+{
+  "title": "Versi",
+  "errors": {
+    "action": "Itu tidak berhasil"
+  },
+  "card": {
+    "more": "Tindakan lain untuk {{name}}",
+    "pin": "Sematkan",
+    "unpin": "Lepas sematan",
+    "duplicate": "Duplikat",
+    "duplicated": "{{name}} dibuat",
+    "playtime": "Waktu bermain",
+    "never": "Belum pernah",
+    "fromModpack": "Modpack {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Berjalan",
+    "installing": "Memasang",
+    "broken": "Perlu perbaikan"
+  },
+  "delete": {
+    "title": "Hapus {{name}}?",
+    "body": "Mod, pengaturan, dan dunianya akan dihapus dari komputer ini. Tindakan ini tidak dapat dibatalkan.",
+    "confirm": "Hapus instans",
+    "done": "{{name}} dihapus"
+  },
+  "new": {
+    "title": "Instans baru",
+    "description": "Mulai dari awal atau bawa paket yang sudah ada.",
+    "tabs": {
+      "create": "Buat",
+      "import": "Impor"
+    },
+    "name": "Nama",
+    "namePlaceholder": "Dunia survival-ku",
+    "nameRequired": "Beri nama instans ini.",
+    "icon": "Ikon",
+    "color": "Warna",
+    "colorN": "Warna {{n}}",
+    "version": "Build Horizon",
+    "versionHint": "Edisi Rustic menambahkan kosmetik dan teman dalam game. Tidak perlu pengaturan Java atau RAM.",
+    "recommended": "Disarankan",
+    "release": "Rilis",
+    "nightly": "Nightly",
+    "installed": "Terpasang",
+    "submit": "Buat instans",
+    "created": "{{name}} sudah siap",
+    "preview": "Pratinjau",
+    "edition": "Edisi",
+    "editionRustic": "Kosmetik, teman, dan mod native di dalam game.",
+    "editionHorizon": "Horizon seperti yang dirilis timnya, tanpa tambahan.",
+    "noBuild": "Saat ini belum ada build untuk edisi ini.",
+    "nightlyHint": "Build Nightly keluar setiap hari dari kode terbaru Horizon: lebih baru, kurang teruji."
+  },
+  "icons": {
+    "grass": "Tunas",
+    "sword": "Pedang",
+    "pickaxe": "Beliung",
+    "castle": "Kastel",
+    "rocket": "Roket",
+    "gem": "Permata",
+    "flame": "Api",
+    "leaf": "Daun",
+    "star": "Bintang",
+    "compass": "Kompas"
+  },
+  "import": {
+    "folder": {
+      "title": "Folder instans",
+      "description": "Folder instans Prism atau MultiMC, diporting seperti yang dilakukan Horizon."
+    },
+    "mrpack": {
+      "title": "Paket Modrinth (.mrpack)",
+      "description": "Mod dicocokkan dengan build Horizon-nya jika tersedia."
+    },
+    "curseforge_zip": {
+      "title": "Zip CurseForge",
+      "description": "Modpack CurseForge yang diekspor."
+    },
+    "modpack": {
+      "title": "Dari modpack",
+      "description": "Telusuri modpack Horizon, Modrinth, dan Rustic."
+    },
+    "started": "Mengimpor {{name}}",
+    "background": "Proses berlanjut di latar belakang; kamu tetap bisa memakai launcher.",
+    "note": "Hanya konten yang berjalan di Horizon yang dipasang; sisanya dicantumkan beserta alasannya.",
+    "drop": {
+      "title": "Lepaskan pack atau folder instans di sini",
+      "hint": ".mrpack Modrinth, .zip CurseForge, atau folder instans Prism atau MultiMC",
+      "choose": "Pilih file",
+      "active": "Lepaskan untuk mengimpor",
+      "unsupported": "Ini tidak bisa diimpor. Gunakan .mrpack, .zip CurseForge, atau folder instans."
+    },
+    "formats": "Format yang didukung"
+  },
+  "detail": {
+    "notFound": "Instans ini sudah tidak ada",
+    "backToList": "Kembali ke daftar instans",
+    "tabsLabel": "Bagian instans",
+    "tabs": {
+      "overview": "Ringkasan",
+      "content": "Konten",
+      "resourcepacks": "Paket sumber daya",
+      "worlds": "Dunia",
+      "settings": "Pengaturan"
+    }
+  },
+  "overview": {
+    "mods": "Mod",
+    "resourcePacks": "Paket sumber daya",
+    "shaders": "Paket shader",
+    "version": "Build Horizon",
+    "updateAvailable": "Pembaruan tersedia",
+    "upToDate": "Terbaru",
+    "updateNow": "Perbarui sekarang",
+    "changeVersion": "Pilih build Horizon",
+    "applyVersion": "Ganti build",
+    "versionChanging": "Beralih ke {{version}}",
+    "lastSession": "Sesi terakhir",
+    "lastPlayed": "Dimainkan {{when}}",
+    "neverPlayed": "Belum pernah dimainkan",
+    "rejoin": "Gabung lagi",
+    "noServer": "Belum ada server yang dimasuki dari instans ini.",
+    "created": "Dibuat",
+    "folder": "Folder"
+  },
+  "content": {
+    "filter": "Filter menurut jenis",
+    "kinds": {
+      "all": "Semua",
+      "mod": "Mod",
+      "resourcepack": "Paket sumber daya",
+      "shader": "Shader"
+    },
+    "search": "Cari konten terpasang",
+    "updateAll_other": "Perbarui {{count}} item",
+    "browse": "Telusuri konten",
+    "noMatch": "Tidak ada konten terpasang yang cocok dengan pencarianmu.",
+    "empty": {
+      "title": "Belum ada yang terpasang",
+      "description": "Temukan mod, paket sumber daya, dan shader yang berjalan dengan instans ini."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "File lokal"
+    },
+    "updateTo": "Pembaruan: {{version}}",
+    "incompatible": "Tidak kompatibel: {{reason}}",
+    "updateOne": "Perbarui {{name}}",
+    "toggle": "Aktifkan {{name}}",
+    "remove": "Hapus {{name}}",
+    "removeTitle": "Hapus {{name}}?",
+    "removeBody": "File akan dihapus dari instans ini. Kamu bisa memasangnya lagi dari Konten."
+  },
+  "packs": {
+    "hint": "Paket di posisi atas menang jika dua paket mengubah hal yang sama.",
+    "listLabel": "Urutan muat paket sumber daya",
+    "top": "Prioritas tertinggi",
+    "up": "Pindahkan {{name}} ke atas",
+    "down": "Pindahkan {{name}} ke bawah",
+    "moved": "{{name}} dipindahkan ke posisi {{position}} dari {{total}}",
+    "browse": "Cari paket sumber daya",
+    "empty": {
+      "title": "Tidak ada paket sumber daya",
+      "description": "Tambahkan paket untuk mengubah tekstur, suara, dan antarmuka."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Belum ada dunia",
+      "description": "Dunia yang kamu buat dalam game muncul di sini."
+    },
+    "openSaves": "Buka folder saves",
+    "lastPlayed": "Dimainkan {{when}}",
+    "modes": {
+      "survival": "Survival",
+      "creative": "Kreatif",
+      "adventure": "Petualangan",
+      "hardcore": "Hardcore",
+      "spectator": "Penonton"
+    },
+    "datapacks_other": "{{count}} paket data",
+    "play": "Mainkan dunia ini",
+    "addDatapacks": "Tambah paket data"
+  },
+  "settings": {
+    "general": "Umum",
+    "display": "Jendela",
+    "useDefaultResolution": "Gunakan ukuran jendela bawaan",
+    "defaultIs": "Bawaan: {{width}} × {{height}}",
+    "width": "Lebar",
+    "height": "Tinggi",
+    "fullscreen": "Mulai dalam layar penuh",
+    "resolutionError": "Gunakan bilangan bulat, minimal 640 × 360.",
+    "launch": "Opsi peluncuran",
+    "launchHint": "Instans Horizon hanya menetapkan build: tidak ada Java, RAM, atau loader yang perlu diatur.",
+    "gameArgs": "Argumen game tambahan",
+    "gameArgsHint": "Lanjutan. Diteruskan ke Horizon apa adanya.",
+    "folders": "Folder",
+    "folder": {
+      "root": "Instans",
+      "mods": "Mod",
+      "resourcepacks": "Paket sumber daya",
+      "shaderpacks": "Paket shader",
+      "saves": "Dunia",
+      "screenshots": "Tangkapan layar",
+      "logs": "Log"
+    },
+    "unsaved": "Ada perubahan yang belum disimpan.",
+    "allSaved": "Semua perubahan tersimpan.",
+    "saved": "Pengaturan instans tersimpan"
+  },
+  "heading": "*Profil*-mu",
+  "native": {
+    "title": "Mod native",
+    "allOff": "Semua nonaktif: instans memainkan game yang sudah dikompilasi.",
+    "state": {
+      "building": "Mengompilasi…",
+      "up_to_date": "Terbaru",
+      "needs_rebuild": "Perlu kompilasi ulang",
+      "not_built": "Belum dikompilasi",
+      "not_needed": "Game siap pakai"
+    },
+    "build": "Kompilasi",
+    "rebuild": "Kompilasi ulang",
+    "cancel": "Batal",
+    "progress": "Progres kompilasi native",
+    "starting": "Memulai…",
+    "firstBuildHint": "Kompilasi pertama mengompilasi seluruh game (10 sampai 15 menit); berikutnya hanya bagian yang berubah. Kamu tetap bisa memakai launcher.",
+    "failed": "Kompilasi terakhir gagal",
+    "built": "Dikompilasi {{date}} dalam {{duration}} · game {{size}}",
+    "leftOut": {
+      "other": "{{name}} tidak disertakan: mod ini tidak berlaku untuk Horizon ini.",
+      "unsupported": "{{name}} tidak disertakan: Rustic belum bisa mengompilasi yang dibutuhkannya."
+    },
+    "notEdition": "Instans ini memainkan build Horizon biasa: mod native hanya dapat dikompilasi ke edisi Rustic."
+  },
+  "profiles": {
+    "summary_other": "{{count}} profil · {{playtime}} dimainkan",
+    "searchLabel": "Cari profilmu",
+    "searchPlaceholder": "Cari menurut nama, build Horizon, atau modpack…",
+    "source": {
+      "label": "Tampilkan",
+      "all": "Semua profil",
+      "custom": "Profil saya",
+      "modpack": "Dari modpack"
+    },
+    "sorts": {
+      "recent": "Terakhir dimainkan",
+      "name": "Nama",
+      "created": "Baru dibuat",
+      "version": "Build Horizon",
+      "playtime": "Waktu bermain"
+    },
+    "filters": {
+      "version": "Build Horizon",
+      "edition": "Edisi",
+      "editions": {
+        "rustic": "Edisi Rustic",
+        "horizon": "Horizon biasa"
+      },
+      "native": "Mod native",
+      "nativeOnly": "Memiliki mod native",
+      "nativeHint": "Mod native dikompilasi di PC-mu sebelum game dimulai.",
+      "remove": "Hapus filter: {{filter}}",
+      "reset": "Atur ulang filter"
+    },
+    "create": "Buat profil",
+    "createHint": "Build Horizon, ikon, dan nama",
+    "import": "Impor",
+    "importHint": "Folder, .mrpack, atau zip CurseForge",
+    "all": "Semua profil",
+    "listLabel": "Profil",
+    "recent": "Lanjutkan bermain",
+    "recentHint": "Profil yang terakhir kamu mainkan",
+    "card": {
+      "active": "Aktif",
+      "activeHint": "Launchpad memainkan profil ini",
+      "running": "Berjalan",
+      "pinned": "Disematkan",
+      "update": "Perbarui {{version}}",
+      "broken": "Perlu perbaikan",
+      "modpack": "Modpack",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Dimainkan {{when}}",
+      "neverPlayed": "Belum pernah dimainkan",
+      "created": "Dibuat {{date}}",
+      "lastServer": "Terakhir di {{name}}",
+      "rejoin": "Gabung lagi",
+      "rejoinAria": "Gabung lagi ke {{server}} dengan {{name}}",
+      "mods": "Mod",
+      "packs": "Paket sumber daya",
+      "shaders": "Shader",
+      "playtime": "Waktu bermain",
+      "contentCount": "{{mods}} mod · {{packs}} paket · {{shaders}} shader",
+      "open": "Buka {{name}}"
+    },
+    "native": {
+      "label": "Mod native",
+      "count_other": "{{count}} mod native",
+      "building": "Mengompilasi {{pct}}",
+      "buildingNoPct": "Mengompilasi…",
+      "up_to_date": "Mod native siap",
+      "needs_rebuild": "Native: perlu kompilasi ulang",
+      "not_built": "Native: belum dikompilasi",
+      "off": "Mod native nonaktif",
+      "unsupported": "Native: memerlukan edisi Rustic",
+      "hint": {
+        "up_to_date": "Dikompilasi di PC ini untuk build Horizon ini.",
+        "needs_rebuild": "Mod berubah sejak kompilasi terakhir: akan dikompilasi ulang saat kamu bermain.",
+        "not_built": "Dikompilasi di PC-mu saat kamu bermain (10 sampai 15 menit pertama kali).",
+        "off": "Semua mod native nonaktif: game yang sudah dikompilasi yang dimainkan.",
+        "unsupported": "Profil ini memainkan build Horizon biasa: mod native hanya dapat dikompilasi ke edisi Rustic.",
+        "building": "Mengompilasi game dengan mod native profil ini."
+      }
+    },
+    "menu": {
+      "edit": "Edit pengaturan",
+      "activate": "Gunakan di Launchpad",
+      "isActive": "Digunakan di Launchpad",
+      "activated": "{{name}} sekarang ada di Launchpad"
+    },
+    "empty": {
+      "title": "Belum ada profil",
+      "description": "Profil adalah build Horizon dengan mod, paket, dan dunianya sendiri. Buat satu dengan build yang disarankan, atau impor paket yang sudah kamu miliki."
+    },
+    "noMatch": {
+      "title": "Tidak ada profil yang cocok",
+      "description": "Coba pencarian lain atau hapus filter."
+    },
+    "detail": {
+      "banner": "Sampul {{name}}"
+    }
+  }
+}

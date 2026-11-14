@@ -1,0 +1,113 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "{{current}}. lépés / {{total}}",
+  "back": "Vissza",
+  "continue": "Tovább",
+  "skip": "Most kihagyom",
+  "steps": {
+    "welcome": "Üdvözlés",
+    "microsoft": "Microsoft",
+    "rustic": "Rustic-fiók",
+    "privacy": "Adatvédelem",
+    "game": "Játékfájlok",
+    "ready": "Kész"
+  },
+  "welcome": {
+    "title": "Üdv a Rusticban",
+    "subtitle": "Gyors, közösségi launcher a Horizonhoz. Néhány döntés, és már játszol is.",
+    "language": "Nyelv",
+    "theme": "Téma",
+    "palette": "Színpaletta"
+  },
+  "microsoft": {
+    "title": "Bejelentkezés Microsofttal",
+    "subtitle": "A Rustic a Microsoftnál ellenőrzi, hogy rendelkezel-e a játékkal. A jelszavad soha nem jut el a Rustichoz.",
+    "signedInAs": "Bejelentkezve mint {{name}}",
+    "ownershipOk": "Tulajdonjog megerősítve: játszhatsz.",
+    "notOwnedTitle": "Szükséged van a Minecraft: Java Editionre",
+    "notOwnedBody": "Ez a Microsoft-fiók nem rendelkezik a játékkal. A Rustic licenc nélkül soha nem indítja el a játékot.",
+    "buyGame": "Játék beszerzése",
+    "whyTitle": "Miért?",
+    "whyBody": "A játék birtoklása kötelező. A Horizon a saját telepítésedből készíti elő a játékfájlokat, az offline profilok pedig csak ez után az ellenőrzés után oldódnak fel."
+  },
+  "rustic": {
+    "title": "A Rustic-fiókod",
+    "subtitle": "Opcionális. A játék enélkül is működik; később a Beállításokban is bejelentkezhetsz.",
+    "perks": {
+      "friends": {
+        "title": "Barátok és csapatok",
+        "body": "Lásd, ki van online, és csatlakozz hozzájuk egy kattintással."
+      },
+      "locker": {
+        "title": "Szekrény",
+        "body": "Kozmetikumok a játékosodon, tisztán vizuálisan."
+      },
+      "servers": {
+        "title": "Szervereid online",
+        "body": "Ingyenes cím és domainek az általad futtatott szerverekhez."
+      }
+    },
+    "signedInAs": "Bejelentkezve mint {{name}}",
+    "signIn": "Bejelentkezés vagy fiók létrehozása",
+    "skipHint": "Vagy nyomd meg a Tovább gombot, hogy most kihagyd.",
+    "age": "A Rustic-fiókok {{min}} éves kortól használhatók. {{consent}} éves kor alatt egy szülőnek hozzá kell járulnia az adatkezeléshez; 18 éves kor alatt a vásárlásokhoz szülői jóváhagyás kell."
+  },
+  "privacy": {
+    "title": "Adatvédelmi beállításaid",
+    "subtitle": "Minden ki van kapcsolva. Csak azt kapcsold be, amit szívesen megosztasz; bármikor módosíthatod a Beállításokban.",
+    "usage": {
+      "title": "Használati statisztikák",
+      "body": "Mely oldalakat és funkciókat használják, tartalom és azonosítók nélkül."
+    },
+    "performance": {
+      "title": "Teljesítményjelentések",
+      "body": "Indítási és képkockaidők, a lassú pontok felderítéséhez."
+    },
+    "crash": {
+      "title": "Összeomlási jelentések",
+      "body": "Automatikusan elküldve, ha a játék vagy a launcher összeomlik. Kikapcsolva a Rustic minden alkalommal rákérdez."
+    },
+    "note": "Soha nem adunk el adatokat, és soha nem osztjuk meg őket reklámcélokra.",
+    "policy": "Adatvédelmi irányelvek elolvasása"
+  },
+  "game": {
+    "title": "Játék előkészítése",
+    "subtitle": "A Rustic a saját telepítésed játékfájljait használja (vagy letölti a hiányzókat a Mojangtól), majd előkészíti őket a Horizonhoz.",
+    "detecting": "A játéktelepítés keresése…",
+    "found": "Játék megtalálva ({{versions}})",
+    "notFound": "Nem található telepítés",
+    "notFoundBody": "A Rustic letölti a játékfájlokat a Mojangtól a fiókodhoz.",
+    "prepareTitle": "Játékfájlok előkészítése",
+    "alreadyReady": "Már elő van készítve",
+    "done": "Előkészítve",
+    "prepareAgain": "Újbóli előkészítés",
+    "prepare": "Előkészítés",
+    "steps": {
+      "detect": "Észlelés",
+      "download": "Letöltés",
+      "verify": "Ellenőrzés",
+      "compile_exporters": "Exportálók",
+      "export": "Exportálás",
+      "index": "Indexelés"
+    },
+    "explain": "A hiányzó játékfájlok a Mojang saját szervereiről érkeznek, semmi sem harmadik féltől: az előkészített fájlok ezen a gépen maradnak.",
+    "background": "Folytathatod: az előkészítés a háttérben fut tovább.",
+    "prepareFailed": "Nem sikerült előkészíteni a játékfájlokat: {{reason}}"
+  },
+  "ready": {
+    "title": "Minden kész",
+    "subtitle": "Hozd létre most az első példányodat, vagy hagyd ki, és csináld meg később.",
+    "finish": "Rustic megnyitása",
+    "defaultName": "Az első világom",
+    "createTitle": "Az első példányom létrehozása",
+    "recommended": "Ajánlott",
+    "nameLabel": "Példány neve",
+    "existing_one": "Már van {{count}} példányod.",
+    "existing_other": "Már van {{count}} példányod.",
+    "tips": {
+      "play": "A JÁTÉK gomb mindig a jobb alsó sarokban van.",
+      "friends": "A barátaid jobb oldalon vannak; a Csatlakozás egyetlen kattintás.",
+      "servers": "A Szerverek oldalon szervert indíthatsz a barátaidnak."
+    }
+  }
+}

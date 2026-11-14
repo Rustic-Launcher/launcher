@@ -10,7 +10,7 @@
  * - `tier`: 1 = the ~30 main languages (machine-translated first), 2 = other natural languages and
  *   regional ones (community), 3 = constructed, historical and joke languages.
  * - `fallback`: a game code whose translation reads better than English for this locale
- *   (dialects and close varieties: `bar` → German, `pt_pt` → Brazilian Portuguese).
+ *   (dialects and close varieties: `bar` → German, `ovd` → Swedish).
  * - `verify`: the identity of the code is uncertain (private-use codes); its names are a best
  *   guess, to check against the game's list.
  */
@@ -146,7 +146,7 @@ const ROWS: Row[] = [
   ['pl_pl', 'pl-PL', 'Polski', 'Polska', 'Polish', 1],
   ['pls', 'pls', 'Ngiwa', 'México', 'Popoloca', 2, { fallback: 'es_mx' }],
   ['pt_br', 'pt-BR', 'Português', 'Brasil', 'Portuguese (Brazil)', 1],
-  ['pt_pt', 'pt-PT', 'Português', 'Portugal', 'Portuguese (Portugal)', 1, { fallback: 'pt_br' }],
+  ['pt_pt', 'pt-PT', 'Português', 'Portugal', 'Portuguese (Portugal)', 1],
   [
     'qcb_es',
     'es-ES',
@@ -240,6 +240,11 @@ export const PRIMARY: Record<string, string> = {
   'pt-PT': 'pt_pt',
   pl: 'pl_pl',
   nl: 'nl_nl',
+  tr: 'tr_tr',
+  ja: 'ja_jp',
+  ko: 'ko_kr',
+  'zh-CN': 'zh_cn',
+  'zh-TW': 'zh_tw',
   sv: 'sv_se',
   nb: 'no_no',
   no: 'no_no',
@@ -252,4 +257,10 @@ export const PRIMARY: Record<string, string> = {
   ms: 'ms_my',
   ru: 'ru_ru',
   uk: 'uk_ua',
+  cs: 'cs_cz',
+  hu: 'hu_hu',
+  ro: 'ro_ro',
+  id: 'id_id',
+  vi: 'vi_vn',
+  th: 'th_th',
 };

@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "greeting": "Chào mừng trở lại, {{name}}",
+    "greetingAnon": "Chào mừng đến với Rustic",
+    "continue": "Tiếp tục: {{name}} · đã chơi {{when}}",
+    "continueNew": "Sẵn sàng khi bạn muốn: {{name}}",
+    "firstRun": "Chuẩn bị trò chơi trong ba bước.",
+    "playNow": "Chơi ngay",
+    "updateAndPlay": "Cập nhật và chơi",
+    "resumeServer": "Vào lại {{server}}",
+    "switch": "Đổi phiên bản cài đặt",
+    "stats": {
+      "playtime": "Đã chơi {{time}}",
+      "mods_other": "{{count}} mod",
+      "friends_other": "{{count}} bạn đang trực tuyến"
+    },
+    "steps": {
+      "signIn": "Đăng nhập bằng tài khoản Microsoft sở hữu trò chơi",
+      "prepare": "Chuẩn bị tệp trò chơi từ bản cài của chính bạn",
+      "create": "Tạo phiên bản cài đặt đầu tiên"
+    },
+    "getReady": "Chuẩn bị trò chơi",
+    "openLocker": "Tủ đồ",
+    "player": "Nhân vật của bạn, đang đứng yên, không trang bị vật phẩm trang trí nào",
+    "playerWearing": "Nhân vật của bạn, đang đứng yên, đang mặc: {{items}}"
+  },
+  "recent": {
+    "title": "Máy chủ và thế giới gần đây",
+    "unknown": "Không rõ trạng thái",
+    "online": "Trực tuyến · {{online}}/{{max}}",
+    "offline": "Ngoại tuyến",
+    "world": "Thế giới · cục bộ",
+    "joining": "Đang vào {{name}}…",
+    "opening": "Đang mở {{name}}…",
+    "removed": "Đã xóa {{name}} khỏi danh sách máy chủ của bạn",
+    "playAria": "Chơi {{name}}",
+    "more": "Thao tác khác cho {{name}}",
+    "copyAddress": "Sao chép địa chỉ",
+    "addServer": "Thêm máy chủ",
+    "empty": "Các máy chủ bạn vào và thế giới bạn chơi sẽ hiện ở đây."
+  },
+  "news": {
+    "title": "Tin tức và cập nhật",
+    "empty": "Hiện chưa có tin tức nào.",
+    "slide": "Tin {{index}} / {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Ghi chú phát hành",
+      "event": "Sự kiện",
+      "blog": "Bài viết"
+    },
+    "readNotes": "Đọc ghi chú phát hành",
+    "read": "Đọc"
+  },
+  "friends": {
+    "title": "Bạn bè lúc này",
+    "empty": "Hiện không có người bạn nào đang chơi.",
+    "since": "từ {{when}}",
+    "activity": {
+      "server": "đang chơi trên {{server}}",
+      "hosting": "đang mở máy chủ {{server}}",
+      "singleplayer": "đang chơi một mình",
+      "launcher": "đang ở launcher"
+    }
+  },
+  "featured": {
+    "title": "Máy chủ nổi bật",
+    "verified": "Máy chủ đã xác minh",
+    "players": "{{online}} / {{max}} người chơi",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Vật phẩm trang trí mới",
+    "owned": "Đã sở hữu"
+  },
+  "launchpad": {
+    "welcome": "Chào mừng *trở lại*,",
+    "playAs": "Chơi với tư cách",
+    "online": "trực tuyến trên các máy chủ nổi bật",
+    "heroLabel": "Khởi chạy",
+    "instanceSettings": "Cài đặt phiên bản cài đặt",
+    "news": "Tin mới nhất",
+    "unread_other": "({{count}} chưa đọc)",
+    "unreadDot": "Chưa đọc",
+    "explore": "Khám phá nguồn",
+    "aside": "Máy chủ và bạn bè",
+    "joinServer": "Vào {{name}}",
+    "friendsOnline_other": "({{count}} trực tuyến)",
+    "openSocial": "Mở Xã hội",
+    "noNews": "Chưa có tin tức nào.",
+    "noFriendsOnline": "Hiện không có bạn bè nào trực tuyến.",
+    "socialHint": "Trò chuyện, lời mời và nhóm của bạn nằm trong cửa sổ Xã hội.",
+    "eyebrow": "Launchpad"
+  }
+}

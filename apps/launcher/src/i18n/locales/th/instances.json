@@ -1,0 +1,337 @@
+{
+  "title": "เวอร์ชัน",
+  "errors": {
+    "action": "ดำเนินการไม่สำเร็จ"
+  },
+  "card": {
+    "more": "การทำงานเพิ่มเติมสำหรับ {{name}}",
+    "pin": "ปักหมุด",
+    "unpin": "เลิกปักหมุด",
+    "duplicate": "ทำสำเนา",
+    "duplicated": "สร้าง {{name}} แล้ว",
+    "playtime": "เวลาเล่น",
+    "never": "ไม่เคย",
+    "fromModpack": "ม็อดแพ็ก {{name}} {{version}}"
+  },
+  "state": {
+    "running": "กำลังทำงาน",
+    "installing": "กำลังติดตั้ง",
+    "broken": "ต้องซ่อมแซม"
+  },
+  "delete": {
+    "title": "ลบ {{name}} ใช่ไหม",
+    "body": "ม็อด การตั้งค่า และโลกของอินสแตนซ์นี้จะถูกลบออกจากคอมพิวเตอร์เครื่องนี้ ย้อนกลับไม่ได้",
+    "confirm": "ลบอินสแตนซ์",
+    "done": "ลบ {{name}} แล้ว"
+  },
+  "new": {
+    "title": "อินสแตนซ์ใหม่",
+    "description": "เริ่มต้นใหม่หรือนำแพ็กที่มีอยู่มาใช้",
+    "tabs": {
+      "create": "สร้าง",
+      "import": "นำเข้า"
+    },
+    "name": "ชื่อ",
+    "namePlaceholder": "โลกเอาชีวิตรอดของฉัน",
+    "nameRequired": "ตั้งชื่อให้อินสแตนซ์",
+    "icon": "ไอคอน",
+    "color": "สี",
+    "colorN": "สี {{n}}",
+    "version": "บิลด์ Horizon",
+    "versionHint": "รุ่น Rustic เพิ่มไอเทมตกแต่งและเพื่อนในเกม ไม่ต้องตั้งค่า Java หรือ RAM",
+    "recommended": "แนะนำ",
+    "release": "รุ่นเสถียร",
+    "nightly": "รายคืน",
+    "installed": "ติดตั้งแล้ว",
+    "submit": "สร้างอินสแตนซ์",
+    "created": "{{name}} พร้อมแล้ว",
+    "preview": "ตัวอย่าง",
+    "edition": "รุ่น",
+    "editionRustic": "ไอเทมตกแต่ง เพื่อน และม็อดเนทีฟในเกม",
+    "editionHorizon": "Horizon ตามที่ทีมเผยแพร่ ไม่มีส่วนเพิ่มเติม",
+    "noBuild": "ขณะนี้ยังไม่มีบิลด์ของรุ่นนี้",
+    "nightlyHint": "บิลด์รายคืนออกทุกวันจากโค้ดล่าสุดของ Horizon ใหม่กว่า แต่ทดสอบน้อยกว่า"
+  },
+  "icons": {
+    "grass": "ต้นอ่อน",
+    "sword": "ดาบ",
+    "pickaxe": "อีเต้อ",
+    "castle": "ปราสาท",
+    "rocket": "จรวด",
+    "gem": "อัญมณี",
+    "flame": "เปลวไฟ",
+    "leaf": "ใบไม้",
+    "star": "ดาว",
+    "compass": "เข็มทิศ"
+  },
+  "import": {
+    "folder": {
+      "title": "โฟลเดอร์อินสแตนซ์",
+      "description": "โฟลเดอร์อินสแตนซ์ของ Prism หรือ MultiMC แปลงแบบเดียวกับที่ Horizon ทำ"
+    },
+    "mrpack": {
+      "title": "แพ็ก Modrinth (.mrpack)",
+      "description": "ม็อดจะจับคู่กับบิลด์ Horizon ของม็อดนั้นเมื่อมีให้ใช้"
+    },
+    "curseforge_zip": {
+      "title": "ไฟล์ zip ของ CurseForge",
+      "description": "ม็อดแพ็ก CurseForge ที่ส่งออกมา"
+    },
+    "modpack": {
+      "title": "จากม็อดแพ็ก",
+      "description": "เรียกดูม็อดแพ็กจาก Horizon, Modrinth และ Rustic"
+    },
+    "started": "กำลังนำเข้า {{name}}",
+    "background": "ทำงานต่อในเบื้องหลัง ใช้ลันเชอร์ต่อได้ตามปกติ",
+    "note": "ติดตั้งเฉพาะเนื้อหาที่ใช้กับ Horizon ได้ ส่วนที่เหลือจะแสดงพร้อมเหตุผล",
+    "drop": {
+      "title": "วางม็อดแพ็กหรือโฟลเดอร์อินสแตนซ์ที่นี่",
+      "hint": ".mrpack ของ Modrinth, .zip ของ CurseForge หรือโฟลเดอร์อินสแตนซ์ของ Prism หรือ MultiMC",
+      "choose": "เลือกไฟล์",
+      "active": "ปล่อยเพื่อนำเข้า",
+      "unsupported": "นำเข้ารายการนี้ไม่ได้ ใช้ไฟล์ .mrpack, .zip ของ CurseForge หรือโฟลเดอร์อินสแตนซ์"
+    },
+    "formats": "รูปแบบที่รองรับ"
+  },
+  "detail": {
+    "notFound": "ไม่มีอินสแตนซ์นี้แล้ว",
+    "backToList": "กลับไปที่อินสแตนซ์",
+    "tabsLabel": "ส่วนของอินสแตนซ์",
+    "tabs": {
+      "overview": "ภาพรวม",
+      "content": "เนื้อหา",
+      "resourcepacks": "รีซอร์สแพ็ก",
+      "worlds": "โลก",
+      "settings": "การตั้งค่า"
+    }
+  },
+  "overview": {
+    "mods": "ม็อด",
+    "resourcePacks": "รีซอร์สแพ็ก",
+    "shaders": "แพ็กเชเดอร์",
+    "version": "บิลด์ Horizon",
+    "updateAvailable": "มีอัปเดต",
+    "upToDate": "เป็นปัจจุบัน",
+    "updateNow": "อัปเดตตอนนี้",
+    "changeVersion": "เลือกบิลด์ Horizon",
+    "applyVersion": "สลับบิลด์",
+    "versionChanging": "กำลังสลับเป็น {{version}}",
+    "lastSession": "เซสชันล่าสุด",
+    "lastPlayed": "เล่นเมื่อ {{when}}",
+    "neverPlayed": "ยังไม่ได้เล่น",
+    "rejoin": "กลับเข้าเล่น",
+    "noServer": "ยังไม่ได้เข้าเซิร์ฟเวอร์จากอินสแตนซ์นี้",
+    "created": "สร้างเมื่อ",
+    "folder": "โฟลเดอร์"
+  },
+  "content": {
+    "filter": "กรองตามประเภท",
+    "kinds": {
+      "all": "ทั้งหมด",
+      "mod": "ม็อด",
+      "resourcepack": "รีซอร์สแพ็ก",
+      "shader": "เชเดอร์"
+    },
+    "search": "ค้นหาเนื้อหาที่ติดตั้งไว้",
+    "updateAll_other": "อัปเดต {{count}} รายการ",
+    "browse": "เรียกดูเนื้อหา",
+    "noMatch": "ไม่มีสิ่งที่ติดตั้งไว้ตรงกับการค้นหา",
+    "empty": {
+      "title": "ยังไม่ได้ติดตั้งอะไร",
+      "description": "ค้นหาม็อด รีซอร์สแพ็ก และเชเดอร์ที่ใช้กับอินสแตนซ์นี้ได้"
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "ไฟล์ในเครื่อง"
+    },
+    "updateTo": "อัปเดต: {{version}}",
+    "incompatible": "ใช้ร่วมกันไม่ได้: {{reason}}",
+    "updateOne": "อัปเดต {{name}}",
+    "toggle": "เปิดใช้งาน {{name}}",
+    "remove": "นำ {{name}} ออก",
+    "removeTitle": "นำ {{name}} ออกใช่ไหม",
+    "removeBody": "ไฟล์จะถูกลบออกจากอินสแตนซ์นี้ ติดตั้งใหม่ได้จากหน้าเนื้อหา"
+  },
+  "packs": {
+    "hint": "แพ็กที่อยู่ด้านบนจะมีผลเหนือกว่าเมื่อสองแพ็กเปลี่ยนสิ่งเดียวกัน",
+    "listLabel": "ลำดับการโหลดรีซอร์สแพ็ก",
+    "top": "ลำดับความสำคัญสูงสุด",
+    "up": "เลื่อน {{name}} ขึ้น",
+    "down": "เลื่อน {{name}} ลง",
+    "moved": "ย้าย {{name}} ไปที่ลำดับ {{position}} จาก {{total}} แล้ว",
+    "browse": "ค้นหารีซอร์สแพ็ก",
+    "empty": {
+      "title": "ไม่มีรีซอร์สแพ็ก",
+      "description": "เพิ่มแพ็กเพื่อเปลี่ยนเท็กซ์เจอร์ เสียง และอินเทอร์เฟซ"
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "ยังไม่มีโลก",
+      "description": "โลกที่คุณสร้างในเกมจะแสดงที่นี่"
+    },
+    "openSaves": "เปิดโฟลเดอร์ saves",
+    "lastPlayed": "เล่นเมื่อ {{when}}",
+    "modes": {
+      "survival": "เอาชีวิตรอด",
+      "creative": "สร้างสรรค์",
+      "adventure": "ผจญภัย",
+      "hardcore": "ฮาร์ดคอร์",
+      "spectator": "ผู้ชม"
+    },
+    "datapacks_other": "{{count}} ดาต้าแพ็ก",
+    "play": "เล่นโลกนี้",
+    "addDatapacks": "เพิ่มดาต้าแพ็ก"
+  },
+  "settings": {
+    "general": "ทั่วไป",
+    "display": "หน้าต่าง",
+    "useDefaultResolution": "ใช้ขนาดหน้าต่างเริ่มต้น",
+    "defaultIs": "ค่าเริ่มต้น: {{width}} × {{height}}",
+    "width": "ความกว้าง",
+    "height": "ความสูง",
+    "fullscreen": "เริ่มแบบเต็มจอ",
+    "resolutionError": "ใช้จำนวนเต็ม อย่างน้อย 640 × 360",
+    "launch": "ตัวเลือกการเปิดเกม",
+    "launchHint": "อินสแตนซ์ Horizon แค่ระบุบิลด์ ไม่ต้องตั้งค่า Java, RAM หรือ loader",
+    "gameArgs": "อาร์กิวเมนต์เกมเพิ่มเติม",
+    "gameArgsHint": "ขั้นสูง ส่งต่อให้ Horizon ตามที่พิมพ์",
+    "folders": "โฟลเดอร์",
+    "folder": {
+      "root": "อินสแตนซ์",
+      "mods": "ม็อด",
+      "resourcepacks": "รีซอร์สแพ็ก",
+      "shaderpacks": "แพ็กเชเดอร์",
+      "saves": "โลก",
+      "screenshots": "ภาพหน้าจอ",
+      "logs": "บันทึก"
+    },
+    "unsaved": "มีการเปลี่ยนแปลงที่ยังไม่ได้บันทึก",
+    "allSaved": "บันทึกการเปลี่ยนแปลงทั้งหมดแล้ว",
+    "saved": "บันทึกการตั้งค่าอินสแตนซ์แล้ว"
+  },
+  "heading": "*โปรไฟล์*ของคุณ",
+  "native": {
+    "title": "ม็อดเนทีฟ",
+    "allOff": "ปิดทั้งหมด อินสแตนซ์จะเล่นด้วยเกมที่คอมไพล์ไว้แล้ว",
+    "state": {
+      "building": "กำลังคอมไพล์…",
+      "up_to_date": "เป็นปัจจุบัน",
+      "needs_rebuild": "ต้องคอมไพล์ใหม่",
+      "not_built": "ยังไม่ได้คอมไพล์",
+      "not_needed": "เกมที่คอมไพล์ไว้แล้ว"
+    },
+    "build": "คอมไพล์",
+    "rebuild": "คอมไพล์ใหม่",
+    "cancel": "ยกเลิก",
+    "progress": "ความคืบหน้าการคอมไพล์เนทีฟ",
+    "starting": "กำลังเริ่ม…",
+    "firstBuildHint": "การคอมไพล์ครั้งแรกจะคอมไพล์ทั้งเกม (10 ถึง 15 นาที) ครั้งต่อไปจะคอมไพล์เฉพาะส่วนที่เปลี่ยน ใช้ลันเชอร์ต่อได้ตามปกติ",
+    "failed": "การคอมไพล์ครั้งล่าสุดล้มเหลว",
+    "built": "คอมไพล์เมื่อ {{date}} ใช้เวลา {{duration}} · เกม {{size}}",
+    "leftOut": {
+      "other": "ไม่ได้รวม {{name}} เพราะใช้กับ Horizon นี้ไม่ได้",
+      "unsupported": "ไม่ได้รวม {{name}} เพราะ Rustic ยังคอมไพล์สิ่งที่ม็อดนี้ต้องการไม่ได้"
+    },
+    "notEdition": "อินสแตนซ์นี้เล่นด้วยบิลด์ Horizon ธรรมดา ม็อดเนทีฟคอมไพล์ได้เฉพาะในรุ่น Rustic"
+  },
+  "profiles": {
+    "summary_other": "{{count}} โปรไฟล์ · เล่นแล้ว {{playtime}}",
+    "searchLabel": "ค้นหาโปรไฟล์ของคุณ",
+    "searchPlaceholder": "ค้นหาตามชื่อ บิลด์ Horizon หรือม็อดแพ็ก…",
+    "source": {
+      "label": "แสดง",
+      "all": "โปรไฟล์ทั้งหมด",
+      "custom": "โปรไฟล์ของฉัน",
+      "modpack": "จากม็อดแพ็ก"
+    },
+    "sorts": {
+      "recent": "เล่นล่าสุด",
+      "name": "ชื่อ",
+      "created": "สร้างล่าสุด",
+      "version": "บิลด์ Horizon",
+      "playtime": "เวลาเล่น"
+    },
+    "filters": {
+      "version": "บิลด์ Horizon",
+      "edition": "รุ่น",
+      "editions": {
+        "rustic": "รุ่น Rustic",
+        "horizon": "Horizon ธรรมดา"
+      },
+      "native": "ม็อดเนทีฟ",
+      "nativeOnly": "มีม็อดเนทีฟ",
+      "nativeHint": "ม็อดเนทีฟจะถูกคอมไพล์บนพีซีของคุณก่อนเริ่มเกม",
+      "remove": "นำตัวกรองออก: {{filter}}",
+      "reset": "รีเซ็ตตัวกรอง"
+    },
+    "create": "สร้างโปรไฟล์",
+    "createHint": "บิลด์ Horizon ไอคอน และชื่อ",
+    "import": "นำเข้า",
+    "importHint": "โฟลเดอร์ ไฟล์ .mrpack หรือไฟล์ zip ของ CurseForge",
+    "all": "โปรไฟล์ทั้งหมด",
+    "listLabel": "โปรไฟล์",
+    "recent": "กลับไปเล่นต่อ",
+    "recentHint": "โปรไฟล์ที่คุณเล่นล่าสุด",
+    "card": {
+      "active": "ใช้งานอยู่",
+      "activeHint": "Launchpad เล่นโปรไฟล์นี้",
+      "running": "กำลังทำงาน",
+      "pinned": "ปักหมุดแล้ว",
+      "update": "อัปเดต {{version}}",
+      "broken": "ต้องซ่อมแซม",
+      "modpack": "ม็อดแพ็ก",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "เล่นเมื่อ {{when}}",
+      "neverPlayed": "ยังไม่ได้เล่น",
+      "created": "สร้างเมื่อ {{date}}",
+      "lastServer": "ล่าสุดที่ {{name}}",
+      "rejoin": "กลับเข้าเล่น",
+      "rejoinAria": "กลับเข้า {{server}} ด้วย {{name}}",
+      "mods": "ม็อด",
+      "packs": "รีซอร์สแพ็ก",
+      "shaders": "เชเดอร์",
+      "playtime": "เวลาเล่น",
+      "contentCount": "{{mods}} ม็อด · {{packs}} แพ็ก · {{shaders}} เชเดอร์",
+      "open": "เปิด {{name}}"
+    },
+    "native": {
+      "label": "ม็อดเนทีฟ",
+      "count_other": "ม็อดเนทีฟ {{count}} รายการ",
+      "building": "กำลังคอมไพล์ {{pct}}",
+      "buildingNoPct": "กำลังคอมไพล์…",
+      "up_to_date": "ม็อดเนทีฟพร้อมแล้ว",
+      "needs_rebuild": "เนทีฟ: ต้องคอมไพล์ใหม่",
+      "not_built": "เนทีฟ: ยังไม่ได้คอมไพล์",
+      "off": "ปิดม็อดเนทีฟอยู่",
+      "unsupported": "เนทีฟ: ต้องใช้รุ่น Rustic",
+      "hint": {
+        "up_to_date": "คอมไพล์บนพีซีเครื่องนี้สำหรับบิลด์ Horizon นี้แล้ว",
+        "needs_rebuild": "ม็อดเปลี่ยนไปตั้งแต่การคอมไพล์ครั้งล่าสุด จะคอมไพล์ใหม่เมื่อคุณเล่น",
+        "not_built": "จะคอมไพล์บนพีซีของคุณเมื่อเล่น (ครั้งแรกใช้เวลา 10 ถึง 15 นาที)",
+        "off": "ม็อดเนทีฟทุกตัวปิดอยู่ จะเล่นด้วยเกมที่คอมไพล์ไว้แล้ว",
+        "unsupported": "โปรไฟล์นี้เล่นด้วยบิลด์ Horizon ธรรมดา ม็อดเนทีฟคอมไพล์ได้เฉพาะในรุ่น Rustic",
+        "building": "กำลังคอมไพล์เกมพร้อมม็อดเนทีฟของโปรไฟล์นี้"
+      }
+    },
+    "menu": {
+      "edit": "แก้ไขการตั้งค่า",
+      "activate": "ใช้บน Launchpad",
+      "isActive": "ใช้อยู่บน Launchpad",
+      "activated": "ตอนนี้ {{name}} อยู่บน Launchpad แล้ว"
+    },
+    "empty": {
+      "title": "ยังไม่มีโปรไฟล์",
+      "description": "โปรไฟล์คือบิลด์ Horizon ที่มีม็อด แพ็ก และโลกเป็นของตัวเอง สร้างด้วยบิลด์ที่แนะนำ หรือนำเข้าแพ็กที่มีอยู่แล้ว"
+    },
+    "noMatch": {
+      "title": "ไม่มีโปรไฟล์ที่ตรงกัน",
+      "description": "ลองค้นหาด้วยคำอื่นหรือนำตัวกรองออก"
+    },
+    "detail": {
+      "banner": "ภาพปกของ {{name}}"
+    }
+  }
+}

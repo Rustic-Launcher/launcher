@@ -1,0 +1,115 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Krok {{current}} z {{total}}",
+  "back": "Zpět",
+  "continue": "Pokračovat",
+  "skip": "Teď přeskočit",
+  "steps": {
+    "welcome": "Vítej",
+    "microsoft": "Microsoft",
+    "rustic": "Účet Rustic",
+    "privacy": "Soukromí",
+    "game": "Herní soubory",
+    "ready": "Hotovo"
+  },
+  "welcome": {
+    "title": "Vítej v Rusticu",
+    "subtitle": "Rychlý, společenský launcher pro Horizon. Pár voleb a jsi ve hře.",
+    "language": "Jazyk",
+    "theme": "Motiv",
+    "palette": "Paleta"
+  },
+  "microsoft": {
+    "title": "Přihlas se přes Microsoft",
+    "subtitle": "Rustic si u Microsoftu ověří, že hru vlastníš. Tvé heslo se k Rusticu nikdy nedostane.",
+    "signedInAs": "Přihlášeno jako {{name}}",
+    "ownershipOk": "Vlastnictví potvrzeno: můžeš hrát.",
+    "notOwnedTitle": "Potřebuješ Minecraft: Java Edition",
+    "notOwnedBody": "Tento účet Microsoft hru nevlastní. Rustic nikdy nespustí hru bez licence.",
+    "buyGame": "Pořídit hru",
+    "whyTitle": "Proč?",
+    "whyBody": "Vlastnictví hry je povinné. Horizon připravuje herní soubory z tvé vlastní instalace a offline profily se odemknou až po tomto ověření."
+  },
+  "rustic": {
+    "title": "Tvůj účet Rustic",
+    "subtitle": "Volitelné. Hra funguje i bez něj; přihlásit se můžeš později v Nastavení.",
+    "perks": {
+      "friends": {
+        "title": "Přátelé a party",
+        "body": "Uvidíš, kdo je online, a připojíš se k nim jedním kliknutím."
+      },
+      "locker": {
+        "title": "Šatna",
+        "body": "Kosmetika pro tvou postavu, čistě vizuální."
+      },
+      "servers": {
+        "title": "Tvoje servery online",
+        "body": "Bezplatná adresa a domény pro servery, které hostuješ."
+      }
+    },
+    "signedInAs": "Přihlášeno jako {{name}}",
+    "signIn": "Přihlásit se nebo vytvořit účet",
+    "skipHint": "Nebo stiskni Pokračovat a teď to přeskoč.",
+    "age": "Účty Rustic jsou pro osoby od {{min}} let. Pod {{consent}} let musí se zpracováním dat souhlasit rodič; pod 18 let potřebují nákupy souhlas rodiče."
+  },
+  "privacy": {
+    "title": "Tvoje volby soukromí",
+    "subtitle": "Všechno je vypnuté. Zapni jen to, co chceš sdílet; v Nastavení to můžeš kdykoli změnit.",
+    "usage": {
+      "title": "Analýza používání",
+      "body": "Které stránky a funkce se používají, bez obsahu a identifikátorů."
+    },
+    "performance": {
+      "title": "Hlášení o výkonu",
+      "body": "Doba spuštění a snímků, abychom našli pomalá místa."
+    },
+    "crash": {
+      "title": "Hlášení o pádech",
+      "body": "Odesílají se automaticky, když hra nebo launcher spadne. Když je to vypnuté, Rustic se pokaždé zeptá."
+    },
+    "note": "Data nikdy neprodáváme a nikdy je nesdílíme pro reklamu.",
+    "policy": "Přečíst zásady ochrany osobních údajů"
+  },
+  "game": {
+    "title": "Připrav hru",
+    "subtitle": "Rustic použije herní soubory z tvé vlastní instalace (nebo chybějící stáhne od Mojangu) a pak je připraví pro Horizon.",
+    "detecting": "Hledám tvou instalaci hry…",
+    "found": "Hra nalezena ({{versions}})",
+    "notFound": "Nebyla nalezena žádná instalace",
+    "notFoundBody": "Rustic stáhne herní soubory od Mojangu pro tvůj účet.",
+    "prepareTitle": "Připravit herní soubory",
+    "alreadyReady": "Už připraveno",
+    "done": "Připraveno",
+    "prepareAgain": "Připravit znovu",
+    "prepare": "Připravit",
+    "steps": {
+      "detect": "Zjištění",
+      "download": "Stažení",
+      "verify": "Ověření",
+      "compile_exporters": "Exportéry",
+      "export": "Export",
+      "index": "Index"
+    },
+    "explain": "Chybějící herní soubory pocházejí přímo ze serverů Mojangu, nic od třetích stran: připravené soubory zůstávají na tomto počítači.",
+    "background": "Můžeš pokračovat: příprava běží na pozadí.",
+    "prepareFailed": "Herní soubory se nepodařilo připravit: {{reason}}"
+  },
+  "ready": {
+    "title": "Všechno je připraveno",
+    "subtitle": "Vytvoř teď svou první instanci, nebo to přeskoč a udělej později.",
+    "finish": "Otevřít Rustic",
+    "defaultName": "Můj první svět",
+    "createTitle": "Vytvořit mou první instanci",
+    "recommended": "Doporučeno",
+    "nameLabel": "Název instance",
+    "existing_one": "Už máš {{count}} instanci.",
+    "existing_few": "Už máš {{count}} instance.",
+    "existing_many": "Už máš {{count}} instance.",
+    "existing_other": "Už máš {{count}} instancí.",
+    "tips": {
+      "play": "HRÁT je vždy vpravo dole.",
+      "friends": "Tvoji přátelé jsou vpravo; připojení k nim je na jedno kliknutí.",
+      "servers": "Na stránce Servery můžeš hostovat server pro své přátele."
+    }
+  }
+}

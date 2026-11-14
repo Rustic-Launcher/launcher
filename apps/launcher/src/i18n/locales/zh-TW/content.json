@@ -1,0 +1,465 @@
+{
+  "title": "探索",
+  "subtitle": "來自 Horizon、Modrinth 和 Rustic 的模組、資源包、光影和插件，並依你的實例檢查相容性。",
+  "kindsLabel": "內容類型",
+  "kinds": {
+    "mod": "模組",
+    "modpack": "模組包",
+    "resourcepack": "資源包",
+    "shader": "光影",
+    "datapack": "資料包",
+    "plugin": "插件"
+  },
+  "searchLabel": "搜尋內容",
+  "clear": "清除搜尋",
+  "by": "作者：{{author}}",
+  "featured": "精選",
+  "downloads": "{{value}} 次下載",
+  "updated": "{{when}}更新",
+  "results_other": "{{count}} 個結果",
+  "loadMore": "載入更多（{{shown}} / {{total}}）",
+  "target": {
+    "label": "安裝到",
+    "none": "選擇目標",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Horizon 伺服器",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "這台電腦",
+    "vps": "你的 VPS",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "排序方式",
+    "relevance": "相關性",
+    "downloads": "下載次數最多",
+    "updated": "最近更新",
+    "newest": "最新"
+  },
+  "sources": {
+    "label": "來源",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Horizon 登錄庫",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic 目錄"
+  },
+  "filters": {
+    "category": "分類",
+    "allCategories": "所有分類",
+    "compatibleInstance": "與此實例相容",
+    "compatibleServer": "與此伺服器相容",
+    "worksNow": "可在目前的 Horizon 上編譯",
+    "categories": "分類",
+    "viewMore_other": "再顯示 {{count}} 個",
+    "viewLess": "顯示較少",
+    "compatibility": "相容性",
+    "pluginHint": "插件只會在 Rustic Server 上以沙箱隔離執行。",
+    "fairPlayHint": "只列出公平遊戲的內容。",
+    "versions": "Horizon 版本",
+    "targetVersion": "你選取的實例或伺服器",
+    "checkingAgainst": "相容性會依醒目標示的版本檢查。",
+    "rustic": "Rustic Marketplace",
+    "rusticHint": "付費和已認證的專案只在 Rustic 上提供。",
+    "verifiedOnly": "僅限 Rustic 已認證",
+    "price": "價格",
+    "priceOptions": {
+      "all": "全部",
+      "free": "免費",
+      "paid": "付費"
+    },
+    "reset": "重設篩選",
+    "remove": "移除篩選條件 {{filter}}"
+  },
+  "categories": {
+    "performance": "效能",
+    "utility": "實用工具",
+    "ui": "介面",
+    "pvp": "PvP",
+    "adventure": "冒險",
+    "decoration": "裝飾",
+    "storage": "儲物",
+    "worldgen": "世界生成",
+    "library": "程式庫",
+    "tech": "科技",
+    "cozy": "溫馨",
+    "multiplayer": "多人遊戲",
+    "realistic": "寫實",
+    "simple": "原版風格",
+    "lightweight": "輕量",
+    "cinematic": "電影感",
+    "qol": "生活品質",
+    "admin": "管理",
+    "chat": "聊天",
+    "minigames": "小遊戲",
+    "protection": "保護",
+    "integration": "整合"
+  },
+  "empty": {
+    "title": "沒有符合的結果",
+    "hint": "試試其他關鍵字、來源或分類。",
+    "compatibleHint": "只顯示可在此目標上執行的內容。關閉篩選即可查看全部。",
+    "showAll": "顯示不相容的結果"
+  },
+  "banners": {
+    "mod": "只列出公平遊戲的模組：沒有透視、連點器或其他不公平的優勢。",
+    "modpack": "模組包會成為一個新的實例，擁有自己的模組和設定。",
+    "resourcepack": "資源包會疊加：載入順序最上方的資源包優先。",
+    "shader": "Horizon 會執行自己的 WGSL 光影包（.hshader，shader API 0.1，實驗性），以及 Horizon 登錄庫中的 Iris/OptiFine 格式光影包。請在遊戲中的「顯示設定 › 光影包」選擇。",
+    "datapack": "資料包屬於某個世界：安裝時你會選擇世界。",
+    "plugin": "插件（.rplugin）會在使用 Rustic Server 引擎的伺服器上以沙箱隔離執行。有問題的插件會被停用，伺服器繼續運作。"
+  },
+  "resourcepacks": {
+    "manageOrder": "管理載入順序"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Iris/OptiFine 格式"
+    },
+    "formatHint": {
+      "horizon": "Horizon 自己的格式（.hshader），shader API 0.1（實驗性）。執行前會先檢查。",
+      "shaders_dir": "Iris/OptiFine 格式的 shaders/ 光影包，由 Horizon 的獨立載入器執行。"
+    }
+  },
+  "side": {
+    "client": "用戶端",
+    "server": "伺服器",
+    "both": "用戶端與伺服器"
+  },
+  "install": {
+    "install": "安裝",
+    "installAria": "將 {{name}} 安裝到 {{target}}",
+    "installed": "已安裝",
+    "installing": "正在安裝…",
+    "installingPct": "正在安裝 {{pct}}",
+    "createInstance": "建立實例",
+    "chooseWorld": "安裝到世界",
+    "noTarget": "請先選擇安裝位置。",
+    "started": "正在將 {{name}} 安裝到 {{target}}",
+    "withDeps_other": "另加 {{count}} 個必要相依項目。",
+    "failed": "無法安裝 {{name}}",
+    "native": "編譯並安裝",
+    "update": "更新",
+    "updateAria": "將 {{name}} 更新至 {{version}}"
+  },
+  "modpack": {
+    "created": "正在建立實例 {{name}}",
+    "createdHint": "下載進行中。準備好後會出現在「遊玩」中。"
+  },
+  "datapacks": {
+    "pickWorld": "選擇世界",
+    "noWorlds": "此實例還沒有世界。先遊玩一次來建立世界。",
+    "count_other": "{{count}} 個資料包"
+  },
+  "plugins": {
+    "badge": "Rustic Server 插件 · API {{api}}",
+    "noServerTitle": "還沒有 Rustic Server 伺服器",
+    "noServerBody": "插件只會在使用 Rustic Server 引擎的伺服器上執行。只要幾個步驟就能建立一個，然後再回來為它安裝插件。",
+    "createServer": "建立伺服器"
+  },
+  "detail": {
+    "breadcrumb": "導覽路徑",
+    "sections": "專案區段",
+    "tabs": {
+      "description": "說明",
+      "gallery": "圖庫",
+      "versions": "版本",
+      "changelog": "更新日誌",
+      "dependencies": "相依項目",
+      "compatibility": "相容性"
+    },
+    "galleryLabel": "{{name}} 的圖庫",
+    "prev": "上一張圖片",
+    "next": "下一張圖片",
+    "slide": "第 {{index}} 張圖片，共 {{total}} 張",
+    "about": "關於此專案",
+    "categories": "分類",
+    "links": "連結",
+    "link": {
+      "source": "原始碼",
+      "issues": "回報錯誤",
+      "website": "網站",
+      "site": "在 rustic-launcher.com 上",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "還沒有更新日誌。",
+    "noGallery": "還沒有螢幕截圖。",
+    "notAvailable": {
+      "title": "無法取得此專案",
+      "body": "它可能是私人專案、正在等待審核，或已被建立者或管理員移除。",
+      "back": "返回探索"
+    },
+    "native": {
+      "title": "在你的電腦上編譯",
+      "build": "第一次遊玩時編譯進此設定檔的遊戲：首次約 10 到 15 分鐘，之後更快。",
+      "review": "可安裝前已經過 Horizon 登錄檔或 Rustic 管理員審核。",
+      "consent": "在你閱讀並接受一則簡短提示之前，不會編譯任何內容。",
+      "more": "原生模組的運作方式"
+    }
+  },
+  "report": {
+    "button": "檢舉",
+    "title": "檢舉 {{name}}",
+    "sent": "已送出檢舉",
+    "sentBody": "謝謝你。我們的管理員會進行審核。",
+    "reasons": {
+      "fair_play": "違反公平遊戲政策",
+      "malware": "惡意軟體或竊取資料",
+      "copyright": "侵犯著作權",
+      "other": "其他原因"
+    },
+    "failed": "無法送出檢舉"
+  },
+  "versions": {
+    "version": "版本",
+    "horizon": "Horizon 版本",
+    "published": "發布日期",
+    "downloads": "下載次數",
+    "compatibility": "相容性",
+    "actions": "動作",
+    "none": "無",
+    "channel": {
+      "release": "正式版",
+      "beta": "Beta",
+      "alpha": "Alpha"
+    },
+    "empty": "目前還沒有可用的版本。",
+    "latest": "最新"
+  },
+  "deps": {
+    "none": "沒有相依項目。",
+    "relation": {
+      "required": "必要",
+      "optional": "選用",
+      "incompatible": "不相容"
+    },
+    "installed": "已安裝",
+    "willInstall": "自動安裝",
+    "notInstalled": "未安裝"
+  },
+  "compatTab": {
+    "for": "適用於 {{target}}",
+    "builds": "作者發布了專為此 Horizon 版本製作的版本。",
+    "format": "此內容只有資料（材質、光影、資料包）：不依賴特定的 Horizon 版本。",
+    "unknown": "選擇實例或伺服器以檢查相容性。",
+    "fairPlay": "Rustic 只推廣公平遊戲的內容。任何提供不公平優勢的內容都絕不會被列出。",
+    "native": "適合此 Horizon 的原生模組：Rustic Launcher 會在你的電腦上將它編譯進此實例專屬的遊戲。"
+  },
+  "permissions": {
+    "title": "權限",
+    "network": "網路存取：{{value}}",
+    "none": "無",
+    "files": "檔案：僅限它自己的資料夾。"
+  },
+  "stats": {
+    "downloads": "下載次數",
+    "follows": "追蹤者",
+    "updated": "更新日期",
+    "license": "授權",
+    "size": "大小",
+    "gameVersion": "遊戲版本",
+    "version": "最新版本",
+    "author": "作者",
+    "created": "發布日期"
+  },
+  "searchSources": {
+    "mod": "在 Horizon、Modrinth 和 Rustic 上搜尋模組…",
+    "modpack": "在 Horizon、Modrinth 和 Rustic 上搜尋模組包…",
+    "resourcepack": "在 Horizon、Modrinth 和 Rustic 上搜尋資源包…",
+    "shader": "在 Horizon、Modrinth 和 Rustic 上搜尋光影…",
+    "datapack": "在 Horizon、Modrinth 和 Rustic 上搜尋資料包…",
+    "plugin": "在 Horizon、Modrinth 和 Rustic 上搜尋插件…"
+  },
+  "filtersLabel": "篩選",
+  "view": "檢視",
+  "heading": "找到你的下一個*模組*",
+  "eyebrow": "探索",
+  "kindsServer": "適用於 Rustic Server",
+  "tabs": {
+    "label": "探索區段",
+    "discover": "發現",
+    "browse": "瀏覽",
+    "mine": "我的內容"
+  },
+  "hero": {
+    "eyebrow": "精選"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "精選模組",
+      "modpack": "精選模組包",
+      "resourcepack": "精選資源包",
+      "shader": "精選光影",
+      "datapack": "精選資料包",
+      "plugin": "精選插件"
+    },
+    "rows": {
+      "new": "最新",
+      "newHint": "剛發布或剛更新",
+      "horizon": "Horizon 熱門",
+      "horizonHint": "Horizon 登錄庫中下載次數最多的內容",
+      "verified": "Rustic 已認證",
+      "verifiedHint": "經 Rustic 團隊檢查：功能和說明一致",
+      "yours": "適用於 {{target}}",
+      "yoursHint": "可在 Horizon {{version}} 上執行",
+      "community": "來自社群",
+      "communityHint": "Rustic Marketplace 上最近更新的內容"
+    },
+    "empty": {
+      "title": "這裡還沒有可發現的內容",
+      "hint": "目前還沒有這類內容可在你的目標上執行。改為瀏覽全部內容吧。",
+      "browse": "瀏覽全部"
+    },
+    "rowError": "無法載入此精選。",
+    "retry": "重試"
+  },
+  "verified": {
+    "label": "已認證",
+    "hint": "Rustic 已認證：管理員已確認它的功能和頁面說明一致。"
+  },
+  "price": {
+    "soon": "即將推出",
+    "soonHint": "建立者很快就能販售作品。目前還無法購買。",
+    "notOnSale": "尚未開賣：建立者銷售功能即將開放。"
+  },
+  "native": {
+    "badge": "在你的電腦上編譯",
+    "short": "原生",
+    "hint": "原生模組是在執行前於你的電腦上編譯進遊戲的 Rust 程式碼。",
+    "title": "原生模組",
+    "body": "原生模組是在這台電腦上編譯進遊戲的 Rust 原始碼（可能需要一分鐘到半小時）。每個版本公開前都會經過管理員審核。",
+    "kind": "原生模組",
+    "how": "在你接受信任聲明後，Rustic Launcher 會在你的電腦上將它們編譯進此實例專屬的遊戲。第一次編譯需要 10 到 15 分鐘；之後只會重新編譯有變更的部分。沒有原生模組的實例會繼續使用預先編譯的遊戲。",
+    "instanceOnly": "原生模組會安裝到實例中。",
+    "trust": {
+      "title": "原生程式碼：編譯前請先閱讀",
+      "lead": "{{name}} 是原生模組：在這台電腦上編譯進「{{instance}}」遊戲的 Rust 程式碼。",
+      "unsandboxed": "原生模組沒有沙箱隔離。編譯完成後，它們會以你的權限執行，可以讀取、變更或傳送你的帳戶能存取的任何內容。",
+      "review": "只能安裝來自 Horizon 登錄庫（經其維護者審核）的模組，以及 Rustic Marketplace 上經管理員核准的模組。審核可以降低風險，但無法消除風險。",
+      "build": "必要時會安裝 Rust，然後為此實例編譯遊戲：第一次大約需要 10 到 15 分鐘和數 GB 空間，之後會更快。",
+      "scope": "只有此實例會使用編譯好的遊戲。之後為它安裝原生模組時不會再詢問你。",
+      "source": "閱讀原始碼",
+      "check": "我了解原生模組沒有沙箱隔離，會以我的權限執行，而且我信任這個模組。",
+      "accept": "我信任它：安裝並編譯"
+    },
+    "toolchain": {
+      "title": "要安裝 Rust {{version}} 嗎？",
+      "lead": "編譯原生模組需要 Rust 編譯器。Rustic Launcher 可以幫你安裝。",
+      "manual": "編譯原生模組需要 Rust 編譯器，以及 Rustic Launcher 無法替你安裝的系統工具。請先安裝這些項目，再重新編譯：",
+      "where": "從官方網站（static.rust-lang.org）下載，並依其公布的 SHA-256 驗證，安裝到啟動器自己的資料夾：不會變更你電腦上的其他地方。",
+      "size": "約 1 到 2.5 GB（Windows 上含 C 編譯器）。",
+      "once": "所有實例只需安裝一次；移除啟動器的資料時會一併移除。",
+      "found": "已找到：{{reason}}。",
+      "install": "安裝 Rust",
+      "started": "正在安裝 Rust",
+      "startedHint": "準備好後就會立即開始編譯。你可以在下載面板中查看進度。",
+      "failed": "無法安裝 Rust"
+    },
+    "build": {
+      "started": "正在為 {{instance}} 編譯原生模組",
+      "startedHint": "你可以在實例頁面或下載面板中查看進度。第一次編譯需要 10 到 15 分鐘。",
+      "failed": "無法編譯 {{instance}} 的原生模組"
+    },
+    "errors": {
+      "notEdition": "原生模組只能編譯進 Rustic 版：請在此實例的設定中切換為 Rustic 版。",
+      "running": "請先關閉遊戲：原生模組會在遊戲停止時重新編譯。",
+      "disk": "磁碟可用空間不足。{{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "不相容",
+    "compatible": "相容"
+  },
+  "library": {
+    "add": "加入我的收藏庫",
+    "inLibrary": "已在我的收藏庫中",
+    "added": "已將 {{name}} 加入你的收藏庫",
+    "removed": "已從你的收藏庫移除 {{name}}",
+    "remove": "從我的收藏庫移除 {{name}}",
+    "failed": "無法更新你的收藏庫"
+  },
+  "prompt": {
+    "title": "要安裝 {{name}} 嗎？",
+    "body": "你從網站開啟了此專案。請選擇安裝位置和版本，然後確認。",
+    "dismiss": "以後再說",
+    "version": "版本",
+    "versionMissing": "版本 {{version}} 已無法取得：已選取最新的相容版本。"
+  },
+  "mine": {
+    "searchPlaceholder": "篩選我的內容…",
+    "noMatch": "沒有符合的結果",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "手動新增"
+    },
+    "installed": {
+      "title": "已安裝",
+      "titleOn": "已安裝在 {{target}}",
+      "hint": {
+        "mod": "此目標的模組：開啟或關閉、更新或移除它們。",
+        "modpack": "此目標的模組包：開啟或關閉、更新或移除它們。",
+        "resourcepack": "此目標的資源包：開啟或關閉、更新或移除它們。",
+        "shader": "此目標的光影：開啟或關閉、更新或移除它們。",
+        "datapack": "此目標的資料包：開啟或關閉、更新或移除它們。",
+        "plugin": "此目標的插件：開啟或關閉、更新或移除它們。"
+      },
+      "modpacksTitle": "模組包會成為設定檔",
+      "modpacksHint": "每個已安裝的模組包都是一個獨立的設定檔。",
+      "openProfiles": "開啟我的設定檔",
+      "noTarget": "請先選擇要查看的位置。",
+      "serverHint": "伺服器的插件和資料包在伺服器頁面中管理。",
+      "manageServer": "管理伺服器",
+      "updateAll_other": "更新 {{count}} 個項目",
+      "openProfile": "開啟設定檔",
+      "empty": "這裡還沒有安裝任何內容",
+      "emptyHint": "在「發現」或「瀏覽」中找找看吧。",
+      "discover": "發現內容",
+      "updateTo": "更新至 {{version}}",
+      "incompatible": "不相容",
+      "update": "更新 {{name}}",
+      "toggle": "啟用 {{name}}",
+      "remove": "移除 {{name}}",
+      "removeTitle": "要移除 {{name}} 嗎？",
+      "removeBody": "它的檔案會從此設定檔中刪除。你隨時可以再次安裝。"
+    },
+    "signIn": {
+      "title": "你的收藏庫和你的作品",
+      "body": "登入你的 Rustic 帳戶，即可找到你儲存的專案和你發布的專案。",
+      "action": "登入"
+    },
+    "library": {
+      "title": "我的收藏庫",
+      "hint": "儲存在你 Rustic 帳戶中的專案，在每台電腦上都能看到。",
+      "empty": "你的收藏庫是空的",
+      "emptyHint": "從 Rustic 專案的頁面將它加入，就能在這裡找到。",
+      "installAria": "安裝 {{name}}"
+    },
+    "creations": {
+      "title": "我的作品",
+      "hint": "你在 Rustic Marketplace 上發布的內容。",
+      "publish": "在網站上發布",
+      "empty": "你還沒有發布任何內容",
+      "emptyHint": "從網站與所有 Rustic 玩家分享模組、資源包或光影。",
+      "manage": "管理",
+      "manageAria": "在網站上管理 {{name}}",
+      "status": {
+        "public": "公開",
+        "unlisted": "不公開列出",
+        "private": "私人",
+        "pending": "等待審核",
+        "rejected": "已拒絕",
+        "takenDown": "已下架"
+      }
+    }
+  }
+}

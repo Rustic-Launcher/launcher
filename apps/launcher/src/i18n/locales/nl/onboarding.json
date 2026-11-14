@@ -1,0 +1,113 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Stap {{current}} van {{total}}",
+  "back": "Terug",
+  "continue": "Doorgaan",
+  "skip": "Nu overslaan",
+  "steps": {
+    "welcome": "Welkom",
+    "microsoft": "Microsoft",
+    "rustic": "Rustic-account",
+    "privacy": "Privacy",
+    "game": "Gamebestanden",
+    "ready": "Klaar"
+  },
+  "welcome": {
+    "title": "Welkom bij Rustic",
+    "subtitle": "Een snelle, sociale launcher voor Horizon. Een paar keuzes en je zit in de game.",
+    "language": "Taal",
+    "theme": "Thema",
+    "palette": "Kleurenpalet"
+  },
+  "microsoft": {
+    "title": "Inloggen met Microsoft",
+    "subtitle": "Rustic controleert bij Microsoft of je de game bezit. Je wachtwoord komt nooit bij Rustic.",
+    "signedInAs": "Ingelogd als {{name}}",
+    "ownershipOk": "Bezit bevestigd: je kunt spelen.",
+    "notOwnedTitle": "Je hebt Minecraft: Java Edition nodig",
+    "notOwnedBody": "Dit Microsoft-account bezit de game niet. Rustic start de game nooit zonder licentie.",
+    "buyGame": "Game kopen",
+    "whyTitle": "Waarom?",
+    "whyBody": "Het bezit van de game is verplicht. Horizon bereidt de gamebestanden voor vanuit je eigen installatie, en offline profielen worden pas na deze controle ontgrendeld."
+  },
+  "rustic": {
+    "title": "Je Rustic-account",
+    "subtitle": "Optioneel. De game werkt ook zonder; je kunt later inloggen via Instellingen.",
+    "perks": {
+      "friends": {
+        "title": "Vrienden en groepen",
+        "body": "Zie wie er online is en doe met één klik mee."
+      },
+      "locker": {
+        "title": "Kluisje",
+        "body": "Cosmetica op je speler, puur visueel."
+      },
+      "servers": {
+        "title": "Je servers online",
+        "body": "Een gratis adres en domeinen voor de servers die je host."
+      }
+    },
+    "signedInAs": "Ingelogd als {{name}}",
+    "signIn": "Inloggen of account aanmaken",
+    "skipHint": "Of druk op Doorgaan om dit nu over te slaan.",
+    "age": "Rustic-accounts zijn voor gebruikers vanaf {{min}} jaar. Onder {{consent}} jaar moet een ouder instemmen met de gegevensverwerking; onder 18 jaar hebben aankopen goedkeuring van een ouder nodig."
+  },
+  "privacy": {
+    "title": "Je privacykeuzes",
+    "subtitle": "Alles staat uit. Zet alleen aan wat je wilt delen; je kunt het altijd wijzigen in Instellingen.",
+    "usage": {
+      "title": "Gebruiksstatistieken",
+      "body": "Welke pagina’s en functies worden gebruikt, zonder inhoud of identificatiegegevens."
+    },
+    "performance": {
+      "title": "Prestatierapporten",
+      "body": "Start- en frametijden, om trage plekken te vinden."
+    },
+    "crash": {
+      "title": "Crashrapporten",
+      "body": "Automatisch verzonden als de game of de launcher crasht. Staat dit uit, dan vraagt Rustic het elke keer."
+    },
+    "note": "We verkopen nooit gegevens en delen ze nooit voor advertenties.",
+    "policy": "Lees het privacybeleid"
+  },
+  "game": {
+    "title": "Maak de game klaar",
+    "subtitle": "Rustic gebruikt de gamebestanden van je eigen installatie (of downloadt wat ontbreekt bij Mojang) en bereidt ze daarna voor op Horizon.",
+    "detecting": "Je game-installatie zoeken…",
+    "found": "Game gevonden ({{versions}})",
+    "notFound": "Geen installatie gevonden",
+    "notFoundBody": "Rustic downloadt de gamebestanden bij Mojang voor je account.",
+    "prepareTitle": "Gamebestanden voorbereiden",
+    "alreadyReady": "Al voorbereid",
+    "done": "Voorbereid",
+    "prepareAgain": "Opnieuw voorbereiden",
+    "prepare": "Voorbereiden",
+    "steps": {
+      "detect": "Detecteren",
+      "download": "Downloaden",
+      "verify": "Controleren",
+      "compile_exporters": "Exporters",
+      "export": "Exporteren",
+      "index": "Indexeren"
+    },
+    "explain": "Ontbrekende gamebestanden komen van de eigen servers van Mojang, niets van derden: de voorbereide bestanden blijven op deze computer.",
+    "background": "Je kunt doorgaan: het voorbereiden gaat op de achtergrond verder.",
+    "prepareFailed": "De gamebestanden konden niet worden voorbereid: {{reason}}"
+  },
+  "ready": {
+    "title": "Je bent er helemaal klaar voor",
+    "subtitle": "Maak nu je eerste instantie, of sla dit over en doe het later.",
+    "finish": "Rustic openen",
+    "defaultName": "Mijn eerste wereld",
+    "createTitle": "Mijn eerste instantie maken",
+    "recommended": "Aanbevolen",
+    "nameLabel": "Naam van instantie",
+    "existing_one": "Je hebt al {{count}} instantie.",
+    "existing_other": "Je hebt al {{count}} instanties.",
+    "tips": {
+      "play": "SPELEN staat altijd rechtsonder.",
+      "friends": "Je vrienden staan rechts; meedoen kost één klik.",
+      "servers": "Host een server voor je vrienden via de pagina Servers."
+    }
+  }
+}

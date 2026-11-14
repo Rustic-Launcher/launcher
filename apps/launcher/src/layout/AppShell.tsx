@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AddFriendHost } from '@/features/social/AddFriendDialog';
 import { SocialOverlay } from '@/features/social/SocialHosts';
+import { useUpdateNotices } from '@/features/updates/useUpdateNotices';
 import { invoke, listen } from '@/ipc';
 import type { PageDeepLink } from '@/ipc/types/auth';
 import type { Instance } from '@/ipc/types/instances';
@@ -29,6 +30,7 @@ export function AppShell() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const setCommandOpen = useUi((s) => s.setCommandOpen);
   const navigate = useNavigate();
+  useUpdateNotices();
 
   useEffect(() => {
     mainRef.current?.scrollTo({ top: 0 });

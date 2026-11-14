@@ -1,0 +1,514 @@
+{
+  "title": "설정",
+  "subtitle": "계정, 게임, 런처, 외관, 내 데이터.",
+  "sectionsLabel": "설정 섹션",
+  "saving": "저장 중…",
+  "saved": "모든 변경 사항을 저장했어요",
+  "close": "닫기",
+  "cancel": "취소",
+  "sections": {
+    "accounts": "계정 및 보안",
+    "game": "게임 및 인스턴스",
+    "launcher": "런처",
+    "appearance": "외관",
+    "privacy": "개인정보 및 데이터",
+    "parental": "자녀 보호 기능",
+    "about": "정보 및 법적 고지"
+  },
+  "accounts": {
+    "active": "활성",
+    "useThis": "이 프로필 사용",
+    "signOut": "로그아웃",
+    "signedOut": "{{name}} 로그아웃됨",
+    "ownership": {
+      "valid": "게임 보유",
+      "expired": "확인 만료됨",
+      "never": "확인한 적 없음",
+      "failed": "확인 실패",
+      "lastChecked": "{{when}} 확인함",
+      "nextCheck": "다음 확인: {{date}}까지",
+      "checkNow": "지금 확인",
+      "checkedToast": "게임 보유가 확인되었어요",
+      "checkFailed": "Microsoft에 연결하지 못했어요. 나중에 다시 시도하세요."
+    },
+    "microsoft": {
+      "title": "Microsoft 계정",
+      "description": "플레이하려면 게임을 보유해야 해요. Rustic은 Microsoft를 통해 확인하고, 비밀번호는 절대 보지 않아요.",
+      "add": "Microsoft 계정 추가",
+      "keychain": "로그인 토큰은 시스템 키체인에 저장되고, 파일이나 명령줄에는 절대 저장되지 않아요.",
+      "signIn": "Microsoft로 로그인",
+      "step1": "브라우저(또는 다른 기기)에서 Microsoft 페이지를 여세요.",
+      "step2": "아래 코드를 입력하고 로그인하세요.",
+      "step3": "여기로 돌아오세요. 런처가 자동으로 계속 진행해요.",
+      "codeLabel": "로그인 코드",
+      "copyCode": "코드 복사",
+      "copied": "코드를 복사했어요",
+      "openPage": "microsoft.com/link 열기",
+      "waiting": "브라우저에서 로그인하기를 기다리는 중…",
+      "cancel": "취소",
+      "signedInAs": "로그인 계정: {{name}}",
+      "ownershipOk": "게임 보유가 확인되었어요. 플레이할 수 있어요.",
+      "ownershipMissing": "이 계정은 게임을 보유하고 있지 않아요.",
+      "tryAgain": "다시 시도",
+      "failed": {
+        "expired": {
+          "title": "코드가 만료되었어요",
+          "body": "코드는 15분 동안 유효해요. 다시 시작해서 새 코드를 받으세요."
+        },
+        "denied": {
+          "title": "로그인이 취소되었어요",
+          "body": "Microsoft에서 로그인이 거부되었다고 알려 왔어요."
+        },
+        "no_ownership": {
+          "title": "이 계정은 게임을 보유하고 있지 않아요",
+          "body": "Rustic은 Minecraft: Java Edition을 보유한 계정에서만 게임을 실행해요."
+        },
+        "error": {
+          "title": "로그인 실패",
+          "body": "Rustic이 로그인을 완료하지 못했어요. 다시 시도하세요. 계속 실패하면 아래 세부 정보에서 이유를 확인할 수 있어요."
+        },
+        "not_configured": {
+          "title": "이 빌드에는 Microsoft 로그인이 설정되어 있지 않아요",
+          "body": "이 빌드에는 Azure 애플리케이션 ID가 없어서 Microsoft에 게임 라이선스 확인을 요청할 수 없어요. 공식 빌드에는 포함되어 있어요."
+        },
+        "not_approved": {
+          "title": "런처가 Mojang의 승인을 기다리고 있어요",
+          "body": "Microsoft 계정 로그인은 되었지만, 게임 서비스가 아직 이 런처를 허용하지 않아요. 먼저 Mojang이 애플리케이션 ID를 승인해야 해요. 직접 하실 일은 없으니, 승인되면 다시 시도하세요."
+        },
+        "xbox": {
+          "title": "Xbox Live에서 로그인을 거부했어요",
+          "body": "이유는 아래에 있어요(보호자 허락이 없는 자녀 계정, Xbox 프로필 생성 필요, 지원하지 않는 지역 등)."
+        },
+        "rate_limited": {
+          "title": "시도 횟수가 너무 많아요",
+          "body": "짧은 시간에 로그인 요청이 너무 많았어요. 1분 기다린 후 다시 시도하세요."
+        },
+        "network": {
+          "title": "서비스에 연결하지 못했어요",
+          "body": "인터넷 연결을 확인하고 다시 시도하세요."
+        },
+        "detail": "세부 정보: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Rustic 계정",
+      "description": "친구, 보관함, 구매, 서버에 쓰이는 내 Rustic ID예요.",
+      "signedOut": "로그인하지 않았어요. 계정 없이도 게임은 작동하지만, 소셜 기능, 보관함, 상점을 사용하려면 필요해요.",
+      "signIn": "로그인 또는 계정 만들기",
+      "licenceNote": "Rustic 계정은 플랫폼 ID예요. 게임 라이선스를 대신하지 않으므로, 게임을 보유한 Microsoft 계정이 여전히 필요해요."
+    },
+    "offline": {
+      "title": "오프라인 플레이",
+      "description": "LAN 파티나 인터넷 없이 플레이할 때 사용해요. Microsoft 계정의 공식 이름과 UUID로 플레이해요. 마지막으로 게임 보유를 확인한 후 {{days}}일 동안 사용할 수 있고, 그 후에는 Rustic이 Microsoft에 다시 확인해요.",
+      "until": "{{date}}까지 오프라인 플레이 가능",
+      "locked": "먼저 게임을 보유한 Microsoft 계정으로 로그인하세요. 게임 보유가 확인되면 오프라인 플레이가 열려요."
+    },
+    "connections": {
+      "title": "연결",
+      "description": "런처가 나를 대신해 사용하는 서비스예요. 키와 호스트 지문은 시스템 키체인에 보관돼요.",
+      "porkbun": "Porkbun(도메인)",
+      "porkbunHint": "내 Porkbun 계정에서 서버용 DNS 레코드를 만드는 데 사용해요.",
+      "porkbunRemoved": "이 컴퓨터에서 Porkbun 키를 제거했어요",
+      "connected": "연결됨",
+      "notConnected": "연결되지 않음",
+      "remove": "키 제거",
+      "vps": "VPS 호스트",
+      "vpsHint": "SSH로 내 VPS에서 호스팅하는 서버예요. 호스트를 삭제하면 고정된 키도 제거돼요.",
+      "noVps": "없음",
+      "fingerprint": "{{fp}} · {{date}}에 신뢰함",
+      "forget": "삭제"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "연결됨",
+      "notLinked": "연결되지 않음: Microsoft 계정으로도 Rustic에 로그인하세요.",
+      "link": "웹사이트에서 연결",
+      "unlink": "연결 해제",
+      "unlinked": "Microsoft 연결을 해제했어요",
+      "unlinkFailed": "Microsoft 연결을 해제하지 못했어요",
+      "lastMethod": "먼저 웹사이트에서 비밀번호를 추가하세요. 지금은 Microsoft가 유일한 로그인 방법이에요."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "메모리(RAM)",
+      "description": "게임에 할당하는 기본 메모리예요. 인스턴스마다 따로 설정할 수 있어요.",
+      "system": "설치됨 {{total}} · 현재 여유 {{free}}",
+      "warn": "시스템에 남는 메모리가 적어서 전체적으로 느려질 수 있어요.",
+      "perInstance": "팁: 대부분의 인스턴스는 4 GB면 충분해요. 큰 모드팩은 6~8 GB가 필요할 수 있어요."
+    },
+    "prepare": {
+      "title": "게임 파일",
+      "description": "Horizon은 내가 설치한 게임에서 게임 리소스를 준비해요. 제3자로부터 아무것도 다운로드하지 않아요.",
+      "status": "상태",
+      "states": {
+        "missing": "준비되지 않음",
+        "preparing": "준비 중",
+        "ready": "준비됨",
+        "outdated": "다시 준비 필요"
+      },
+      "gameVersion": "게임 {{version}}",
+      "source": "원본 설치본",
+      "sourceHint": "이 컴퓨터에서 찾은 공식 런처의 게임 폴더예요.",
+      "doneToast": "게임 파일이 준비되었어요",
+      "steps": {
+        "detect": "설치본을 찾는 중…",
+        "download": "Mojang에서 게임 파일을 다운로드하는 중…",
+        "verify": "게임 파일 검증 중…",
+        "compile_exporters": "내보내기 도구 빌드 중…",
+        "export": "리소스 내보내는 중…",
+        "index": "색인 생성 중…",
+        "done": "완료"
+      },
+      "legal": "준비된 파일은 이 컴퓨터에만 저장되고 절대 공유되지 않아요.",
+      "again": "다시 준비",
+      "failed": "준비 실패"
+    },
+    "java": {
+      "label": "준비용 Java",
+      "description": "게임 파일 준비(horizon-prepare)에만 사용해요. Horizon 자체는 실행할 때 Java가 필요 없어요.",
+      "pickTitle": "Java 실행 파일 선택",
+      "source": {
+        "bundled": "Rustic에 포함됨",
+        "system": "이 컴퓨터에 설치됨",
+        "custom": "사용자 지정"
+      },
+      "custom": "사용자 지정 경로…",
+      "customHint": "Java 21 이상의 실행 파일을 선택하세요"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "Rustic Server 서버가 실행하는 rustic-server 프로그램이에요(Rustic 플러그인을 지원하는 Horizon 엔진). 서버 게임 버전과 같은 Horizon 커밋에서 나온 것이어야 해요. Rustic 에디션 빌드는 폴더 안에 함께 제공해요.",
+      "program": "사용 중인 프로그램",
+      "notFound": "찾지 못함",
+      "notFoundHint": "이 프로그램이 포함된 Rustic 에디션 빌드를 설치하거나 rustic-server 파일을 선택하세요. 없으면 Rustic Server를 만들 수 없어요.",
+      "configuredMissing": "선택한 파일이 더 이상 존재하지 않아요: {{path}}",
+      "origin": {
+        "server": "서버 자체 프로그램",
+        "configured": "직접 선택함",
+        "build": "빌드 {{build}}에 포함됨",
+        "beside_launcher": "런처와 같은 위치",
+        "path": "PATH에서 찾음"
+      },
+      "choose": "선택…",
+      "pickTitle": "rustic-server 프로그램 선택",
+      "automatic": "자동 사용",
+      "saved": "rustic-server 프로그램을 저장했어요",
+      "automaticSaved": "자동 감지로 되돌렸어요",
+      "invalid": "이 파일은 rustic-server 프로그램이 아니에요(--rustic-version에 응답하지 않아요).",
+      "failed": "이 프로그램을 저장하지 못했어요",
+      "order": "찾는 순서: 직접 선택한 파일, 게임 버전 폴더, 런처와 같은 위치, PATH 순이에요."
+    },
+    "folders": {
+      "title": "폴더",
+      "description": "런처가 데이터, 인스턴스, 서버를 보관하는 위치예요.",
+      "data": "런처 데이터",
+      "instances": "인스턴스",
+      "servers": "서버",
+      "open": "열기",
+      "change": "변경",
+      "changed": "폴더를 변경했어요",
+      "moveNote": "기존 파일은 자동으로 옮겨지지 않아요."
+    },
+    "resolution": {
+      "title": "게임 창",
+      "description": "새 인스턴스의 기본 창 크기예요.",
+      "size": "크기",
+      "width": "너비",
+      "height": "높이",
+      "fullscreen": "전체 화면으로 시작",
+      "hint": "최소 640 × 480."
+    },
+    "native": {
+      "title": "네이티브 모드",
+      "description": "네이티브 모드가 있는 인스턴스는 이 PC에서 컴파일된 전용 게임으로 실행돼요. 여기에서 Rust 컴파일러와 이후 빌드를 빠르게 해 주는 컴파일 캐시를 관리해요.",
+      "rust": "Rust 컴파일러",
+      "rustReady": {
+        "managed": "Rust {{version}}, 런처가 설치함",
+        "rustup": "Rust {{version}}, rustup에서 가져옴",
+        "system": "Rust {{version}}, 이 PC에 설치됨"
+      },
+      "rustMissing": "첫 빌드에는 Rust {{version}}이(가) 필요해요.",
+      "ready": "준비됨",
+      "missing": "설치되지 않음",
+      "installing": "설치 중…",
+      "installRust": "Rust 설치",
+      "rustInstalled": "Rust가 설치되었어요",
+      "rustFailed": "Rust를 설치하지 못했어요",
+      "cache": "컴파일 캐시",
+      "cacheDetail": "캐시 {{cache}} · 다운로드한 crate {{crates}} · Rust {{toolchain}} · 소스 {{source}}. 지워도 빌드된 게임은 남아 있지만, 다음 빌드에서 모두 다시 컴파일해요.",
+      "clear": "지우기",
+      "clearTitle": "컴파일 캐시를 지울까요?",
+      "clearBody": "인스턴스의 빌드된 게임은 그대로 남아요. 다음 네이티브 빌드에서 게임 전체를 다시 컴파일해요(10~15분).",
+      "cleared": "컴파일 캐시를 지웠어요({{size}} 확보)",
+      "limit": "캐시 한도",
+      "limitHint": "빌드 후 캐시가 이 크기보다 크면 지워요(0: 지우지 않음).",
+      "gib": "GiB",
+      "limitSaved": "캐시 한도를 저장했어요",
+      "limitInvalid": "한도는 0~4096 사이의 GiB 단위 정수예요.",
+      "folder": "폴더: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "언어",
+      "description": "런처 전체에 바로 적용돼요.",
+      "label": "언어",
+      "search": "언어 검색",
+      "empty": "일치하는 언어가 없어요",
+      "translated": "번역됨",
+      "others": "기타 언어",
+      "partial": "일부",
+      "english": "현재는 영어로 표시",
+      "via": "현재는 {{lang}}(으)로 표시",
+      "help": "아직 번역되지 않은 텍스트는 영어로 표시돼요. 번역은 커뮤니티에서 제공해요."
+    },
+    "startup": {
+      "title": "시작",
+      "onBoot": "컴퓨터를 켜면 Rustic 열기",
+      "onBootHint": "친구에게 더 빨리 온라인으로 표시되고, 업데이트가 백그라운드에서 다운로드돼요.",
+      "minimized": "최소화 상태로 시작"
+    },
+    "behaviour": {
+      "title": "플레이 중",
+      "onLaunch": "게임이 시작되면",
+      "launchOptions": {
+        "keep_open": "런처 열어 두기",
+        "minimize": "런처 최소화",
+        "hide": "트레이로 숨기기",
+        "close": "런처 닫기"
+      },
+      "onClose": "창을 닫으면",
+      "onCloseHint": "트레이에 두면 친구가 초대할 수 있고 서버도 계속 실행돼요.",
+      "closeOptions": {
+        "tray": "트레이에서 계속 실행",
+        "quit": "Rustic 종료"
+      }
+    },
+    "updates": {
+      "title": "업데이트",
+      "auto": "업데이트 자동 설치",
+      "autoHint": "업데이트는 설치 전에 서명과 검증을 거쳐요.",
+      "check": "Rustic Launcher",
+      "checkNow": "업데이트 확인",
+      "available": "{{version}} 버전 사용 가능",
+      "upToDate": "최신 버전이에요",
+      "failed": "업데이트를 확인하지 못했어요",
+      "lastCheck": "마지막 확인: {{when}}",
+      "neverChecked": "아직 확인하지 않음",
+      "edition": "게임(Rustic 에디션)",
+      "editionNone": "설치된 Rustic 에디션 빌드가 없음",
+      "apply": "업데이트 후 다시 시작",
+      "checking": "확인 중…",
+      "working": "업데이트 중… {{pct}}",
+      "restarting": "다시 시작하는 중…",
+      "deferred": "게임이 닫히길 기다리는 중",
+      "lastError": "마지막 시도가 실패했어요. 자동으로 다시 시도해요."
+    },
+    "performance": {
+      "title": "다운로드 및 성능",
+      "downloads": "동시 다운로드",
+      "downloadsHint": "연결이 느리면 낮추세요.",
+      "hardware": "하드웨어 가속",
+      "hardwareHint": "런처가 깜빡이면 끄세요. 다시 시작한 후 적용돼요."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "테마",
+      "description": "Rustic은 어두운 테마를 기본으로 디자인했어요. 밝은 테마는 환한 곳에서 사용하세요.",
+      "label": "테마",
+      "dark": "어둡게",
+      "light": "밝게",
+      "system": "시스템"
+    },
+    "palette": {
+      "title": "팔레트",
+      "description": "플레이 버튼, 선택 항목, 진행 표시에 쓰이는 강조 색상이에요.",
+      "label": "팔레트",
+      "play": "플레이",
+      "default": "기본값",
+      "names": {
+        "ember": "엠버",
+        "verdigris": "버디그리",
+        "heather": "헤더"
+      },
+      "descriptions": {
+        "ember": "안트라사이트 위의 따뜻한 구리색",
+        "verdigris": "산화된 구리 같은 녹청색",
+        "heather": "차분한 헤더 로즈"
+      }
+    },
+    "motion": {
+      "title": "모션",
+      "body": "Rustic은 시스템의 ‘동작 줄이기’ 설정을 따라요. 애니메이션, 캐러셀, 3D 미리보기가 정지 상태로 바뀌어요."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "공유하는 정보",
+      "description": "여기 있는 항목은 모두 기본적으로 꺼져 있어요. 켜면 Rustic 개선에 도움이 되고, 언제든지 마음을 바꿀 수 있어요.",
+      "usage": "사용 분석",
+      "usageHint": "어떤 페이지와 기능이 사용되는지, 내용이나 식별 정보는 포함하지 않아요.",
+      "performance": "성능 보고서",
+      "performanceHint": "실행 시간과 프레임 시간으로 느린 부분을 찾아요.",
+      "crash": "충돌 보고서",
+      "crashHint": "꺼져 있으면 충돌이 발생할 때마다 Rustic이 물어봐요."
+    },
+    "policyLink": "개인정보 처리방침 읽기",
+    "social": {
+      "title": "친구 및 접속 상태",
+      "activity": "친구에게 플레이 중인 게임 표시",
+      "activityHint": "친구가 내 서버를 보고 클릭 한 번으로 함께할 수 있어요.",
+      "requests": "친구 요청을 보낼 수 있는 사람",
+      "requestsOptions": {
+        "everyone": "모두",
+        "friends_of_friends": "친구의 친구",
+        "nobody": "아무도 없음"
+      },
+      "discoverable": "마주친 플레이어의 추천에 표시",
+      "discoverableHint": "파티를 함께했거나 활동에서 공유한 서버에서 마주친 플레이어가 ‘친구 추가’에서 나를 볼 수 있고, 나도 그 플레이어를 볼 수 있어요. 30일 동안 보관되며, 끄면 삭제돼요.",
+      "discoverableMinor": "18세 미만 계정은 사용할 수 없어요.",
+      "discoverableFailed": "이 설정을 저장하지 못했어요.",
+      "discord": "Discord에 내 활동 표시",
+      "discordHint": "Discord 프로필에 ‘Rustic 플레이 중’ 표시: 런처, 메인 메뉴, 싱글플레이, 서버에서의 상태와 플레이 시간을 보여 줘요.",
+      "discordServer": "Discord에 서버 주소 표시",
+      "discordServerHint": "끄면 Discord에 ‘멀티플레이’로 표시돼요. 사설 주소(LAN, 이 PC)는 절대 표시되지 않아요."
+    },
+    "data": {
+      "title": "내 데이터",
+      "description": "GDPR에 따른 권리: 열람, 이동, 삭제.",
+      "export": "내 데이터 내보내기",
+      "exportHint": "계정, 친구, 구매 내역, 설정이 담긴 JSON 압축 파일이에요.",
+      "exportButton": "내보내기 준비",
+      "exportReady": "내보내기 파일이 준비되었어요",
+      "exportFailed": "내보내기 파일을 준비하지 못했어요",
+      "download": "다운로드({{date}}까지 링크 유효)",
+      "delete": "내 계정 삭제",
+      "deleteHint": "30일의 유예 기간 동안 취소할 수 있고, 그 후 영구 삭제돼요.",
+      "deleteButton": "계정 삭제",
+      "deleteScheduled": "{{date}}에 삭제될 예정이에요. 취소하려면 그 전에 로그인하세요.",
+      "deleteFailed": "계정을 삭제하지 못했어요",
+      "rights": "문의나 불만 사항은 저희 또는 CNIL(프랑스 개인정보 보호 기관)에 연락하세요.",
+      "confirmTitle": "Rustic 계정을 삭제할까요?",
+      "confirmBody": "친구, 치장 아이템, 구매 내역은 30일 후에 삭제돼요. 게임 라이선스와 Microsoft 계정에는 영향이 없어요.",
+      "confirmButton": "내 계정 삭제",
+      "typeUsername": "확인하려면 {{name}} 입력"
+    }
+  },
+  "parental": {
+    "title": "자녀 보호 기능",
+    "description": "Rustic 계정은 {{age}}세 이상만 사용할 수 있어요. 18세 미만 플레이어는 기본적으로 구매 시 보호자의 승인이 필요해요.",
+    "minorNote": "미성년자 계정이에요. 구매 시 보호자의 승인을 요청해요.",
+    "enable": "자녀 보호 기능 켜기",
+    "enableHint": "켜면 아래 설정을 바꿀 때 PIN이 필요해요.",
+    "pinFirst": "자녀 보호 기능을 켜려면 먼저 PIN을 만드세요.",
+    "saveFailed": "변경 사항을 저장하지 못했어요",
+    "lockAgain": "다시 잠그기",
+    "rules": {
+      "title": "규칙",
+      "purchases": "구매",
+      "purchasesHint": "상점 구매는 치장 아이템뿐이에요. 랜덤 박스는 절대 없어요.",
+      "purchaseOptions": {
+        "blocked": "끔",
+        "pin": "보호자에게 묻기",
+        "allowed": "허용"
+      },
+      "limit": "월 지출 한도",
+      "limitHint": "이번 달 지출: {{spent}}. 한도가 없으면 비워 두세요.",
+      "noLimit": "한도 없음",
+      "limitInvalid": "10이나 9.99 같은 금액을 입력하세요.",
+      "chat": "채팅",
+      "chatOptions": {
+        "off": "끔",
+        "friends": "친구만",
+        "everyone": "모두"
+      },
+      "friendRequests": "친구 요청",
+      "friendRequestsHint": "다른 사람이 친구 요청을 보낼 수 있도록 허용해요."
+    },
+    "pin": {
+      "title": "보호자 PIN",
+      "set": "PIN이 설정되어 있어요. 이 설정을 바꾸거나 구매를 승인할 때 필요해요.",
+      "notSet": "아직 PIN이 없어요.",
+      "change": "PIN 변경",
+      "create": "PIN 만들기",
+      "saved": "PIN을 저장했어요",
+      "new": "새 PIN",
+      "confirm": "PIN 확인",
+      "save": "PIN 저장",
+      "hint": "4~6자리 숫자, 단순한 연속 숫자는 안 돼요.",
+      "errors": {
+        "format": "4~6자리 숫자를 입력하세요.",
+        "mismatch": "두 PIN이 달라요.",
+        "weak": "너무 쉽게 추측할 수 있어요. 1234나 0000은 피하세요."
+      }
+    },
+    "unlock": {
+      "title": "잠김",
+      "description": "이 설정을 바꾸려면 보호자 PIN을 입력하세요.",
+      "label": "보호자 PIN",
+      "wrong": "PIN이 틀렸어요.",
+      "button": "잠금 해제"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "버전 {{version}}",
+    "channel": {
+      "stable": "안정",
+      "beta": "베타"
+    },
+    "browserMock": "브라우저 미리보기(모의 데이터)",
+    "horizon": "Horizon",
+    "horizonHint": "추천 게임 빌드.",
+    "licence": "라이선스",
+    "platform": "플랫폼",
+    "legalTitle": "법적 고지",
+    "legalDescription": "정책 및 고지.",
+    "links": {
+      "privacy": "개인정보 처리방침",
+      "terms": "이용 및 판매 약관",
+      "legalNotice": "법적 고지",
+      "fairPlay": "페어플레이 정책",
+      "thirdParty": "오픈 소스 고지",
+      "horizon": "Horizon 프로젝트(MIT)"
+    },
+    "notAffiliated": "Minecraft 공식 제품이 아닙니다. Mojang 또는 Microsoft의 승인을 받지 않았으며 이들과 관련이 없습니다.",
+    "horizonCredit": "기여자들이 만든 MIT 라이선스의 Rust 기반 게임 재작성 프로젝트인 Horizon을 바탕으로 만들었어요.",
+    "company": "발행: [company name], 프랑스 기업(SIREN [number], [address]). 결제는 Stripe를 통해 이루어지며, 판매자는 해당 기업입니다.",
+    "tagline": "Rustic은 Horizon 엔진으로 구동되는 소셜 게임 플랫폼이에요"
+  },
+  "rusticAuth": {
+    "mode": "로그인 또는 계정 만들기",
+    "signIn": "로그인",
+    "signUp": "계정 만들기",
+    "create": "내 계정 만들기",
+    "verify": "인증",
+    "email": "이메일",
+    "password": "비밀번호",
+    "username": "사용자 이름",
+    "dateOfBirth": "생년월일",
+    "country": "국가",
+    "acceptPrivacy": "개인정보 처리방침을 읽었으며 이에 동의해요.",
+    "code": "인증 앱의 코드",
+    "checkInbox": "{{email}}(으)로 인증 링크를 보냈어요. 링크를 연 다음 로그인하세요.",
+    "resend": "다시 보내기",
+    "resent": "인증 이메일을 다시 보냈어요",
+    "signedIn": "Rustic에 로그인했어요",
+    "problems": {
+      "email": "올바른 이메일 주소를 입력하세요.",
+      "password": "비밀번호: 10자 이상.",
+      "username": "사용자 이름: 문자, 숫자, 밑줄로 이루어진 3~20자.",
+      "dateOfBirth": "생년월일을 입력하세요.",
+      "tooYoung": "Rustic 계정은 13세 이상만 사용할 수 있어요.",
+      "privacy": "계속하려면 개인정보 처리방침에 동의하세요."
+    },
+    "microsoft": "Microsoft로 계속하기",
+    "orEmail": "또는 이메일로",
+    "microsoftWaiting": "브라우저에서 로그인을 마치세요. 런처가 자동으로 세션을 가져와요."
+  },
+  "heading": "내 *설정*",
+  "eyebrow": "런처"
+}

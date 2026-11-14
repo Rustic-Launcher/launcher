@@ -421,3 +421,119 @@ async fn installs_a_signed_nightly_and_refuses_a_forged_one() {
     assert!(matches!(err, InstanceError::Signature(_)), "{err}");
     assert!(builds.installed().is_empty());
 }
+
+/// A Rustic edition build from a channel index (ADR 0162): the newest stable build with this
+/// platform's archive is picked, verified under the `rustic release` namespace, and the bundle's
+/// own `rustic-build.json` survives as `rustic-bundle.json`.
+#[tokio::test]
+async fn installs_the_newest_edition_build_of_a_channel() {
+    use std::io::Write;
+    use wiremock::matchers::{method, path};
+    use wiremock::{Mock, MockServer, ResponseTemplate};
+    let Some(suffix) = builds::platform_suffix() else {
+        return;
+    };
+    let archive_name = format!("rustic-horizon-{suffix}");
+    if !archive_name.ends_with(".zip") {
+        return;
+    }
+    let server = MockServer::start().await;
+    let t = tempfile::tempdir().unwrap();
+    let archive = t.path().join(&archive_name);
+    {
+        let file = std::fs::File::create(&archive).unwrap();
+        let mut zip = zip::ZipWriter::new(file);
+        let opts = zip::write::SimpleFileOptions::default();
+        zip.start_file(format!("rustic-edition/{}", exe("horizon-client")), opts)
+            .unwrap();
+        zip.write_all(&std::fs::read(FAKE).unwrap()).unwrap();
+        zip.start_file("rustic-edition/rustic-build.json", opts)
+            .unwrap();
+        zip.write_all(br#"{"horizon":"a84f637"}"#).unwrap();
+        zip.finish().unwrap();
+    }
+    let bytes = std::fs::read(&archive).unwrap();
+    let sha = rusticmc_launcher_core::download::hash_bytes(
+        &bytes,
+        rusticmc_launcher_core::HashAlgo::Sha256,
+    );
+    let sums = format!("{sha}  {archive_name}\n");
+    let pkcs8 =
+        ring::signature::Ed25519KeyPair::generate_pkcs8(&ring::rand::SystemRandom::new()).unwrap();
+    let pair = ring::signature::Ed25519KeyPair::from_pkcs8(pkcs8.as_ref()).unwrap();
+    let public = {
+        use base64::Engine;
+        use ring::signature::KeyPair;
+        base64::engine::general_purpose::STANDARD.encode(pair.public_key().as_ref())
+    };
+    let version = "rustic-edition-2026-11-13-abcdef1";
+    let sig = signing::sign_with(&pair, "rustic release", version, sums.as_bytes());
+    let base = server.uri();
+    Mock::given(method("GET"))
+        .and(path("/channel.json"))
+        .respond_with(ResponseTemplate::new(200).set_body_json(serde_json::json!({
+            "format": 1,
+            "builds": [
+                {"version": "rustic-edition-2026-11-01-0000001", "published_at": "2026-11-01T00:00:00Z",
+                 "base_url": format!("{base}/old/"), "assets": [{"name": archive_name, "size": 1}]},
+                {"version": "rustic-edition-2026-11-20-beta", "published_at": "2026-11-20T00:00:00Z", "prerelease": true,
+                 "base_url": format!("{base}/beta/"), "assets": [{"name": archive_name}]},
+                {"version": version, "published_at": "2026-11-13T00:00:00Z",
+                 "base_url": format!("{base}/new"), "assets": [{"name": archive_name, "size": bytes.len()}]}
+            ]
+        })))
+        .mount(&server)
+        .await;
+    Mock::given(method("GET"))
+        .and(path(format!("/new/{archive_name}")))
+        .respond_with(ResponseTemplate::new(200).set_body_bytes(bytes.clone()))
+        .mount(&server)
+        .await;
+    Mock::given(method("GET"))
+        .and(path("/new/SHA256SUMS"))
+        .respond_with(ResponseTemplate::new(200).set_body_string(sums.clone()))
+        .mount(&server)
+        .await;
+    Mock::given(method("GET"))
+        .and(path("/new/SHA256SUMS.sig"))
+        .respond_with(ResponseTemplate::new(200).set_body_string(format!("{sig}\n")))
+        .mount(&server)
+        .await;
+    let config = rusticmc_launcher_core::LauncherConfig::default()
+        .build_source("rustic-edition")
+        .unwrap()
+        .clone();
+    // A launcher.toml saved before the keys existed still trusts Rustic's built-in ones.
+    let saved = BuildSource::new(BuildSourceConfig {
+        public_keys: Vec::new(),
+        ..config.clone()
+    })
+    .unwrap();
+    assert!(!saved.keys.is_empty());
+    let source = BuildSource::new(BuildSourceConfig {
+        channel_url: Some(format!("{base}/channel.json")),
+        public_keys: vec![public],
+        ..config
+    })
+    .unwrap();
+    let downloads = DownloadManager::new(t.path().join("cache"), 2, 0).unwrap();
+    let builds = BuildManager::new(
+        t.path().join("builds"),
+        rusticmc_launcher_core::http::client().unwrap(),
+        downloads,
+    );
+    let latest = builds.latest(&source).await.unwrap().unwrap();
+    assert_eq!(latest.version, version, "newest stable, beta skipped");
+    assert_eq!(latest.signed_for, version);
+    let installed = builds.install(&source, &latest, |_| {}).await.unwrap();
+    assert_eq!(installed.source, "rustic-edition");
+    assert_eq!(builds.installed()[0].version, version);
+    assert_eq!(
+        std::fs::read_to_string(installed.dir.join(builds::BUNDLE_FILE)).unwrap(),
+        r#"{"horizon":"a84f637"}"#
+    );
+    // Rustic's built-in keys never verify a build signed by another key.
+    builds.remove(version).unwrap();
+    let err = builds.install(&saved, &latest, |_| {}).await.unwrap_err();
+    assert!(matches!(err, InstanceError::Signature(_)), "{err}");
+}

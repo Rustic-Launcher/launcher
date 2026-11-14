@@ -1,0 +1,88 @@
+{
+  "title": "Šatna",
+  "subtitle": "Čistě vizuální předměty. Ve hře je vidí hráči, kteří používají edici Rustic.",
+  "horizonNote": {
+    "badge": "Kosmetika z Horizonu zůstává dostupná",
+    "detail": "Tvoje kosmetika z Horizonu zůstává v klientu edice Rustic. Spravuj ji ve hře; funguje vedle tvých předmětů z Rusticu."
+  },
+  "empty": {
+    "title": "Zatím nevlastníš žádnou kosmetiku.",
+    "description": "Předměty, které koupíš nebo dostaneš, se objeví tady, připravené k nošení.",
+    "browse": "Procházet obchod",
+    "categoryTitle": "Zatím nic v kategorii {{category}}",
+    "categoryDescription": "Zobrazí se tu předměty tohoto druhu, které vlastníš."
+  },
+  "viewer": {
+    "region": "Tvoje postava",
+    "label_one": "Tvoje postava s {{count}} předmětem. Otáčej tažením nebo šipkami, přibližuj plus a minus.",
+    "label_few": "Tvoje postava se {{count}} předměty. Otáčej tažením nebo šipkami, přibližuj plus a minus.",
+    "label_many": "Tvoje postava s {{count}} předmětu. Otáčej tažením nebo šipkami, přibližuj plus a minus.",
+    "label_other": "Tvoje postava s {{count}} předměty. Otáčej tažením nebo šipkami, přibližuj plus a minus.",
+    "hint": "Táhni pro otočení · kolečkem přiblížíš",
+    "animation": "Animace",
+    "playEmote": "Přehrát {{name}}",
+    "noEmote": "Žádný nasazený emote",
+    "reset": "Obnovit pohled"
+  },
+  "animations": {
+    "idle": "V klidu",
+    "walk": "Chůze",
+    "wave": "Mávání",
+    "dance": "Tanec"
+  },
+  "items": {
+    "region": "Tvoje předměty",
+    "nothing": "Nic",
+    "equipped": "Nasazeno"
+  },
+  "categories": {
+    "label": "Kategorie",
+    "all": "Vše",
+    "head": "Čepice",
+    "back": "Záda",
+    "top": "Trup",
+    "shoulder": "Rameno",
+    "nametag": "Jmenovky",
+    "emote": "Emoty",
+    "companion": "Společníci",
+    "trail": "Stopy",
+    "aura": "Aury"
+  },
+  "rarity": {
+    "common": "Běžné",
+    "rare": "Vzácné",
+    "epic": "Epické",
+    "legendary": "Legendární"
+  },
+  "toast": {
+    "equipped": "{{name}} nasazeno",
+    "unequipped": "{{name}} sundáno",
+    "cleared": "{{slot}}: nic nenasazeno",
+    "outfitWorn": "Outfit nasazen",
+    "outfitSaved": "Outfit „{{name}}“ uložen",
+    "equipFailed": "Vzhled se nepodařilo změnit. Zkus to znovu."
+  },
+  "outfits": {
+    "title": "Outfity",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Pojmenuj tento vzhled",
+    "save": "Uložit aktuální vzhled",
+    "full": "Můžeš mít až {{max}} outfitů. Pro uložení nového vzhledu jeden smaž.",
+    "empty": "Ulož svůj aktuální vzhled a nasadíš ho znovu jedním kliknutím.",
+    "items_one": "{{count}} předmět",
+    "items_few": "{{count}} předměty",
+    "items_many": "{{count}} předmětu",
+    "items_other": "{{count}} předmětů",
+    "wearing": "Máš na sobě",
+    "wear": "Nasadit",
+    "delete": "Smazat outfit {{name}}"
+  },
+  "switches": {
+    "showMine": "Zobrazovat mou kosmetiku",
+    "showMineHint": "Ostatní hráči edice Rustic vidí, co nosíš.",
+    "hideOthers": "Skrýt kosmetiku ostatních hráčů",
+    "hideTrailsAuras": "Skrýt stopy a aury"
+  },
+  "heading": "Tvoje *šatna*",
+  "eyebrow": "Kosmetika"
+}

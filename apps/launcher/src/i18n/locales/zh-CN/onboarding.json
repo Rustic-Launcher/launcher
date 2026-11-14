@@ -1,0 +1,112 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "第 {{current}} 步，共 {{total}} 步",
+  "back": "返回",
+  "continue": "继续",
+  "skip": "暂时跳过",
+  "steps": {
+    "welcome": "欢迎",
+    "microsoft": "Microsoft",
+    "rustic": "Rustic 账户",
+    "privacy": "隐私",
+    "game": "游戏文件",
+    "ready": "就绪"
+  },
+  "welcome": {
+    "title": "欢迎使用 Rustic",
+    "subtitle": "一款快速、社交化的 Horizon 启动器。只需做几个选择，就能进入游戏。",
+    "language": "语言",
+    "theme": "主题",
+    "palette": "配色"
+  },
+  "microsoft": {
+    "title": "使用 Microsoft 登录",
+    "subtitle": "Rustic 会向 Microsoft 确认你拥有游戏。你的密码绝不会经过 Rustic。",
+    "signedInAs": "已登录为 {{name}}",
+    "ownershipOk": "已确认拥有游戏：你可以开始游玩了。",
+    "notOwnedTitle": "你需要 Minecraft: Java Edition",
+    "notOwnedBody": "此 Microsoft 账户未拥有游戏。没有许可证，Rustic 绝不会启动游戏。",
+    "buyGame": "获取游戏",
+    "whyTitle": "为什么？",
+    "whyBody": "必须拥有游戏。Horizon 会从你自己的安装中准备游戏文件，离线配置只有在通过此项检查后才会解锁。"
+  },
+  "rustic": {
+    "title": "你的 Rustic 账户",
+    "subtitle": "可选。没有它游戏也能运行；你可以稍后在设置中登录。",
+    "perks": {
+      "friends": {
+        "title": "好友和队伍",
+        "body": "查看谁在线，一键加入他们。"
+      },
+      "locker": {
+        "title": "储物柜",
+        "body": "玩家身上的装扮，纯外观。"
+      },
+      "servers": {
+        "title": "让你的服务器上线",
+        "body": "为你托管的服务器提供免费地址和域名。"
+      }
+    },
+    "signedInAs": "已登录为 {{name}}",
+    "signIn": "登录或创建账户",
+    "skipHint": "也可以点击“继续”暂时跳过。",
+    "age": "Rustic 账户面向 {{min}} 岁及以上的用户。未满 {{consent}} 岁需由家长同意数据处理；未满 18 岁购买需经家长批准。"
+  },
+  "privacy": {
+    "title": "你的隐私选项",
+    "subtitle": "所有选项默认关闭。只开启你愿意分享的内容；你可以随时在设置中更改。",
+    "usage": {
+      "title": "使用情况分析",
+      "body": "使用了哪些页面和功能，不包含内容或标识符。"
+    },
+    "performance": {
+      "title": "性能报告",
+      "body": "启动时间和帧时间，用于找出卡顿之处。"
+    },
+    "crash": {
+      "title": "崩溃报告",
+      "body": "游戏或启动器崩溃时自动发送。关闭后，Rustic 每次都会询问你。"
+    },
+    "note": "我们绝不出售数据，也绝不将其分享用于广告。",
+    "policy": "阅读隐私政策"
+  },
+  "game": {
+    "title": "准备游戏",
+    "subtitle": "Rustic 使用你自己安装中的游戏文件（或从 Mojang 下载缺失的部分），然后为 Horizon 准备这些文件。",
+    "detecting": "正在查找你的游戏安装…",
+    "found": "已找到游戏（{{versions}}）",
+    "notFound": "未找到安装",
+    "notFoundBody": "Rustic 将为你的账户从 Mojang 下载游戏文件。",
+    "prepareTitle": "准备游戏文件",
+    "alreadyReady": "已准备好",
+    "done": "已准备",
+    "prepareAgain": "重新准备",
+    "prepare": "准备",
+    "steps": {
+      "detect": "检测",
+      "download": "下载",
+      "verify": "校验",
+      "compile_exporters": "导出器",
+      "export": "导出",
+      "index": "索引"
+    },
+    "explain": "缺失的游戏文件来自 Mojang 自己的服务器，不经过任何第三方：准备好的文件会保留在这台电脑上。",
+    "background": "你可以继续：准备工作会在后台进行。",
+    "prepareFailed": "无法准备游戏文件：{{reason}}"
+  },
+  "ready": {
+    "title": "一切就绪",
+    "subtitle": "现在创建你的第一个实例，或跳过稍后再做。",
+    "finish": "打开 Rustic",
+    "defaultName": "我的第一个世界",
+    "createTitle": "创建我的第一个实例",
+    "recommended": "推荐",
+    "nameLabel": "实例名称",
+    "existing_other": "你已经有 {{count}} 个实例。",
+    "tips": {
+      "play": "开始游戏的按钮始终在右下角。",
+      "friends": "你的好友在右侧；一键即可加入。",
+      "servers": "在“服务器”页面为你的好友托管服务器。"
+    }
+  }
+}

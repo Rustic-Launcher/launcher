@@ -2,8 +2,11 @@ import { cn } from '@rustic/ui';
 import { PRESET_ICONS } from '@/components/InstanceIcon';
 import type { Instance } from '@/ipc/types/instances';
 
+/** What a cover is drawn from: an id (seeds the hills) and an icon. Profiles, servers, drafts. */
+export type CoverSubject = Pick<Instance, 'id' | 'icon'>;
+
 /** A profile's colour: its preset's, else a neutral slate for picture icons. */
-export function profileColor(instance: Instance): string {
+export function profileColor(instance: CoverSubject): string {
   return instance.icon.kind === 'preset' ? instance.icon.color : '#5b6070';
 }
 
@@ -16,14 +19,25 @@ function seedOf(id: string): number {
 /**
  * A profile's cover (original art drawn in code, no game asset): a sky in the profile's colour,
  * a sun, voxel hills like the catalogue's generated banners, and the profile's glyph (or its
- * picture) large on the right. Fills its positioned parent.
+ * picture) large on the right. Fills its positioned parent. Hosted servers and the create forms'
+ * previews use it too (same `id` + `icon` shape). `wide` draws three times as many hills, for
+ * banners wider than about 3:1.
  */
-export function InstanceCover({ instance, className }: { instance: Instance; className?: string }) {
+export function InstanceCover({
+  instance,
+  className,
+  wide,
+}: {
+  instance: CoverSubject;
+  className?: string;
+  wide?: boolean;
+}) {
   const color = profileColor(instance);
   const Glyph = instance.icon.kind === 'preset' ? PRESET_ICONS[instance.icon.preset] : null;
   const seed = seedOf(instance.id);
-  const hills = Array.from({ length: 16 }, (_, i) => 14 + ((seed * (i + 5)) % 26));
-  const far = Array.from({ length: 8 }, (_, i) => 30 + ((seed * (i + 2)) % 22));
+  const w = wide ? 480 : 160;
+  const hills = Array.from({ length: w / 10 }, (_, i) => 14 + ((seed * (i + 5)) % 26));
+  const far = Array.from({ length: w / 20 }, (_, i) => 30 + ((seed * (i + 2)) % 22));
   return (
     <div
       aria-hidden
@@ -33,11 +47,17 @@ export function InstanceCover({ instance, className }: { instance: Instance; cla
       }}
     >
       <svg
-        viewBox="0 0 160 90"
+        viewBox={`0 0 ${w} 90`}
         preserveAspectRatio="xMidYMax slice"
         className="absolute inset-0 size-full"
       >
-        <circle cx={24 + (seed % 40)} cy="20" r="9" fill="white" fillOpacity="0.28" />
+        <circle
+          cx={(wide ? 60 : 24) + (seed % 40)}
+          cy={wide ? 44 : 20}
+          r="9"
+          fill="white"
+          fillOpacity="0.28"
+        />
         {far.map((h, i) => (
           <rect
             key={`f${i}`}
@@ -74,7 +94,12 @@ export function InstanceCover({ instance, className }: { instance: Instance; cla
       </svg>
       {Glyph ? (
         <Glyph
-          className="absolute top-[10%] right-[7%] size-[58%] rotate-[-8deg] text-white/85 drop-shadow-[0_8px_22px_rgba(0,0,0,0.35)]"
+          className={cn(
+            'absolute rotate-[-8deg] text-white/85 drop-shadow-[0_8px_22px_rgba(0,0,0,0.35)]',
+            wide
+              ? 'top-[8%] right-[6%] aspect-square h-[78%] w-auto'
+              : 'top-[10%] right-[7%] size-[58%]',
+          )}
           strokeWidth={1.3}
         />
       ) : instance.icon.kind === 'image' ? (

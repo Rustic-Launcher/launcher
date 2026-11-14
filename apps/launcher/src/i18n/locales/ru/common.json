@@ -1,0 +1,451 @@
+{
+  "a11y": {
+    "skipToContent": "Перейти к содержимому",
+    "notifications": "Уведомления"
+  },
+  "actions": {
+    "retry": "Повторить",
+    "back": "Назад",
+    "forward": "Вперёд",
+    "cancel": "Отмена",
+    "close": "Закрыть",
+    "clear": "Очистить",
+    "save": "Сохранить",
+    "saved": "Сохранено",
+    "delete": "Удалить",
+    "edit": "Изменить",
+    "open": "Открыть",
+    "install": "Установить",
+    "installed": "Установлено",
+    "remove": "Убрать",
+    "confirm": "Подтвердить",
+    "continue": "Продолжить",
+    "next": "Далее",
+    "previous": "Назад",
+    "done": "Готово",
+    "copy": "Копировать",
+    "copied": "Скопировано",
+    "learnMore": "Подробнее",
+    "seeAll": "Показать все",
+    "create": "Создать",
+    "import": "Импорт",
+    "browse": "Обзор…",
+    "apply": "Применить",
+    "reset": "Сбросить",
+    "enable": "Включить",
+    "disable": "Выключить",
+    "update": "Обновить",
+    "add": "Добавить",
+    "refresh": "Обновить",
+    "openFolder": "Открыть папку",
+    "skip": "Пропустить",
+    "more": "Ещё"
+  },
+  "errors": {
+    "generic": "Что-то пошло не так. Попробуй ещё раз чуть позже.",
+    "page": {
+      "title": "Не удалось показать эту страницу"
+    },
+    "load": {
+      "title": "Не удалось загрузить"
+    },
+    "notFound": {
+      "title": "Здесь ничего нет",
+      "description": "Эта страница не существует или была перемещена."
+    }
+  },
+  "nav": {
+    "label": "Основная навигация",
+    "home": "Главная",
+    "instances": "Профили",
+    "content": "Исследовать",
+    "servers": "Серверы",
+    "locker": "Шкафчик",
+    "store": "Магазин",
+    "settings": "Настройки",
+    "newInstance": "Новый профиль"
+  },
+  "search": {
+    "title": "Поиск",
+    "placeholder": "Искать контент, друзей, серверы, настройки…",
+    "empty": "Ничего не найдено. Попробуй другое слово.",
+    "loading": "Поиск…",
+    "hintNavigate": "перейти",
+    "hintOpen": "открыть",
+    "hintClose": "закрыть",
+    "open": "Открыть",
+    "myServer": "Мой сервер",
+    "playInstance": "Играть: {{name}}",
+    "groups": {
+      "pages": "Страницы",
+      "actions": "Действия",
+      "instances": "Экземпляры",
+      "content": "Контент",
+      "friends": "Друзья",
+      "servers": "Серверы",
+      "settings": "Настройки",
+      "play": "Играть"
+    },
+    "actions": {
+      "newInstance": "Создать экземпляр",
+      "newServer": "Создать сервер",
+      "addFriend": "Добавить друга",
+      "darkTheme": "Включить тёмную тему",
+      "lightTheme": "Включить светлую тему"
+    },
+    "settings": {
+      "accounts": "Аккаунты",
+      "game": "Игра",
+      "launcher": "Лаунчер",
+      "appearance": "Внешний вид",
+      "privacy": "Конфиденциальность и данные",
+      "parental": "Родительский контроль",
+      "about": "О программе"
+    }
+  },
+  "friends": {
+    "title": "Друзья",
+    "onlineCount_one": "{{count}} в сети",
+    "onlineCount_few": "{{count}} в сети",
+    "onlineCount_many": "{{count}} в сети",
+    "onlineCount_other": "{{count}} в сети",
+    "add": "Добавить друга",
+    "search": "Поиск друзей",
+    "requests_one": "Заявка · {{count}}",
+    "requests_few": "Заявки · {{count}}",
+    "requests_many": "Заявки · {{count}}",
+    "requests_other": "Заявки · {{count}}",
+    "incoming": "Хочет дружить",
+    "outgoing": "Заявка отправлена",
+    "accept": "Принять",
+    "decline": "Отклонить",
+    "cancelRequest": "Отменить заявку",
+    "requestSent": "Заявка в друзья отправлена: {{name}}",
+    "error": "Не удалось загрузить друзей.",
+    "empty": "Друзей пока нет. Добавь кого-нибудь по имени пользователя Rustic.",
+    "online_one": "В сети · {{count}}",
+    "online_few": "В сети · {{count}}",
+    "online_many": "В сети · {{count}}",
+    "online_other": "В сети · {{count}}",
+    "offline_one": "Не в сети · {{count}}",
+    "offline_few": "Не в сети · {{count}}",
+    "offline_many": "Не в сети · {{count}}",
+    "offline_other": "Не в сети · {{count}}",
+    "lastSeen": "Был(а) {{when}}",
+    "activity": {
+      "server": "Играет на {{server}}",
+      "singleplayer": "Играет в одиночку",
+      "hosting": "Держит сервер {{server}}",
+      "launcher": "В лаунчере"
+    },
+    "favorite": "Избранное",
+    "makeFavorite": "Добавить в избранное",
+    "unfavorite": "Убрать из избранного",
+    "join": "Присоединиться",
+    "joinAria": "Присоединиться к {{name}}",
+    "joining": "Подключение к {{server}}…",
+    "more": "Другие действия для {{name}}",
+    "remove": "Удалить из друзей",
+    "removeTitle": "Удалить {{name}} из друзей?",
+    "removeBody": "Вы больше не будете видеть активность друг друга. Позже можно отправить новую заявку."
+  },
+  "addFriend": {
+    "title": "Добавить друга",
+    "description": "Найди игрока по имени в Rustic или по привязанному имени в Minecraft либо выбери того, с кем ты играл.",
+    "kind": "Искать по",
+    "kindRustic": "Имени в Rustic",
+    "kindMinecraft": "Имени в Minecraft",
+    "rusticLabel": "Имя пользователя Rustic",
+    "minecraftLabel": "Имя пользователя Minecraft",
+    "rusticPlaceholder": "например, lea_builds",
+    "minecraftPlaceholder": "например, LeaBuilds",
+    "rusticHint": "Точное имя из профиля Rustic.",
+    "minecraftHint": "Точное игровое имя игрока, который вошёл в Rustic с этим профилем Minecraft.",
+    "find": "Найти",
+    "send": "Отправить заявку",
+    "sent": "Заявка отправлена",
+    "friends": "Уже в друзьях",
+    "pending": "Заявка ожидает ответа",
+    "incoming": "Этот игрок уже отправил тебе заявку: прими её.",
+    "minecraftName": "Имя в Minecraft:",
+    "add": "Добавить",
+    "addAria": "Отправить заявку в друзья: {{name}}",
+    "playedWith": "Недавно играли вместе",
+    "playedWithEmpty": "Пока никого. Здесь появятся игроки из твоих групп и с общих серверов (от 10 минут вместе).",
+    "crossed": "Недавно встречались",
+    "crossedEmpty": "Недавно ты никого не встречал на общих серверах.",
+    "reasonParty": "В твоей группе",
+    "reasonServer": "На {{server}}",
+    "reasonSameServer": "На том же сервере",
+    "suggestionsError": "Не удалось загрузить предложения.",
+    "suggestionsOff": "Предложения выключены. Включи «Показывать меня в предложениях игрокам, которых я встречаю» в разделе Настройки › Конфиденциальность и данные, чтобы видеть встреченных игроков.",
+    "suggestionsMinor": "Предложения встреченных игроков недоступны для твоего аккаунта.",
+    "privacyNote": "Предложения берутся из твоих групп и серверов из твоей активности за последние 14 дней. Показываются только те, кто тоже это разрешил.",
+    "errors": {
+      "notFoundRustic": "Аккаунта Rustic с таким именем нет.",
+      "notFoundMinecraft": "Ни один игрок Rustic не привязал это имя Minecraft.",
+      "invalidRustic": "Имя в Rustic — от 3 до 20 букв, цифр или _.",
+      "invalidMinecraft": "Имя в Minecraft — от 3 до 16 букв, цифр или _.",
+      "cannot_add_friend": "Этот игрок не может получать заявки в друзья.",
+      "friend_requests_disabled": "Заявки в друзья отключены для твоего аккаунта (родительский контроль).",
+      "cannot_add_self": "Это же ты!",
+      "already_friends": "Вы уже друзья.",
+      "request_pending": "Заявка уже ожидает ответа.",
+      "incoming_request_exists": "Этот игрок уже отправил тебе заявку: прими её.",
+      "rate_limited": "Слишком много поисков. Подожди минуту и попробуй снова.",
+      "generic": "Что-то пошло не так. Попробуй ещё раз."
+    }
+  },
+  "party": {
+    "title": "Группа",
+    "leave": "Покинуть",
+    "leader": "Лидер группы",
+    "pending": "{{name}} (приглашён)",
+    "invite": "Пригласить в группу",
+    "invited": "{{name}} приглашён в твою группу"
+  },
+  "presence": {
+    "online": "В сети",
+    "in-game": "В игре",
+    "away": "Отошёл",
+    "busy": "Занят",
+    "offline": "Не в сети"
+  },
+  "notifications": {
+    "title": "Уведомления",
+    "markAllRead": "Отметить все как прочитанные",
+    "empty": "Новых уведомлений нет.",
+    "kinds": {
+      "friend_request": "отправил(а) тебе заявку в друзья",
+      "update_available": "доступно для твоих экземпляров",
+      "backup_done": "Плановое резервное копирование завершено",
+      "store_new": "Новое в магазине"
+    }
+  },
+  "account": {
+    "switcher": "Аккаунты",
+    "none": "Нет аккаунта",
+    "rustic": "Аккаунт Rustic",
+    "signInRustic": "Войти в Rustic",
+    "signOutRustic": "Выйти из Rustic",
+    "gameProfiles": "Игровые профили",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Офлайн"
+    },
+    "add": "Добавить аккаунт",
+    "manage": "Управление аккаунтами"
+  },
+  "downloads": {
+    "title": "Загрузки",
+    "global": "Фоновые загрузки",
+    "working": "Выполняется…",
+    "summary_one": "{{count}} загрузка выполняется",
+    "summary_few": "{{count}} загрузки выполняются",
+    "summary_many": "{{count}} загрузок выполняется",
+    "summary_other": "{{count}} загрузки выполняется",
+    "kind": {
+      "game": "Horizon",
+      "content": "Контент",
+      "modpack": "Сборка модов",
+      "server": "Сервер",
+      "java": "Среда Java",
+      "update": "Обновление лаунчера",
+      "prepare": "Подготовка файлов игры",
+      "native-build": "Компиляция нативных модов",
+      "native-toolchain": "Rust для нативных модов"
+    }
+  },
+  "play": {
+    "play": "Играть",
+    "update": "Обновить",
+    "cancel": "Отмена",
+    "stop": "Остановить",
+    "selectInstance": "Выбери экземпляр для игры",
+    "instances": "Экземпляры",
+    "manageInstances": "Управление экземплярами",
+    "newVersion": "Доступна версия {{version}}",
+    "cancelled": "Запуск отменён",
+    "status": {
+      "ready": "Готово к игре",
+      "noInstance": "Нет экземпляра",
+      "running": "Игра запущена",
+      "update": "Нужно обновление",
+      "broken": "Нужно восстановление"
+    },
+    "progress": {
+      "updating": "Обновление…",
+      "downloading": "Загрузка {{pct}}",
+      "checking": "Проверка файлов…",
+      "preparing": "Подготовка…",
+      "launching": "Запуск…",
+      "stopping": "Остановка…",
+      "preparingFiles": "Подготовка файлов игры {{pct}}",
+      "building": "Компиляция нативных модов…",
+      "buildingPct": "Компиляция нативных модов {{pct}}"
+    },
+    "errors": {
+      "launch": "Не удалось запустить игру"
+    },
+    "refusals": {
+      "auth_no_account": "Чтобы играть, войди с учётной записью Microsoft, которая владеет игрой.",
+      "auth_not_owned": "Эта учётная запись Microsoft не владеет игрой.",
+      "auth_not_approved": "Вход через Microsoft для этого лаунчера пока недоступен.",
+      "auth_reauth_required": "Чтобы играть, снова войди в учётную запись Microsoft.",
+      "auth_offline_not_allowed": "Войди один раз с учётной записью Microsoft, которая владеет игрой, и после этого сможешь играть офлайн.",
+      "auth_network": "Не удалось связаться с Microsoft для проверки учётной записи. Проверь подключение.",
+      "build_not_installed": "Сначала установи сборку Horizon.",
+      "prepare_needed": "Файлы игры для этой сборки ещё не подготовлены.",
+      "prepare_failed": "Не удалось подготовить файлы игры: попробуй снова или подготовь их в разделе Настройки › Игра и экземпляры.",
+      "prepare_no_java": "Java не найдена: установи её или выбери в разделе Настройки › Игра и экземпляры.",
+      "prepare_no_minecraft_dir": "Установка игры не найдена: выбери её папку в разделе Настройки › Игра и экземпляры.",
+      "launch_already_running": "Этот экземпляр уже запущен.",
+      "native_consent": "В этом экземпляре есть нативные моды: сначала прими уведомление о доверии на странице экземпляра (Контент).",
+      "native_toolchain": "Нативным модам нужен Rust: установи его на странице экземпляра (Контент) или в разделе Настройки › Игра и экземпляры.",
+      "native_not_edition": "Нативные моды компилируются только в издание Rustic: переключи этот экземпляр на него или выключи его нативные моды.",
+      "native_build_failed": "Не удалось скомпилировать нативные моды",
+      "native_disk": "Недостаточно свободного места на диске для компиляции нативных модов."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (издание Rustic)",
+    "rusticEdition": "Издание Rustic"
+  },
+  "compat": {
+    "buildsOnHorizon": "Компилируется на твоём Horizon",
+    "compatible": "Совместимо",
+    "incompatible": "Несовместимо: {{reason}}",
+    "unknown": "Совместимость неизвестна",
+    "reasons": {
+      "horizon_version": "версия Horizon",
+      "java_only": "только для Java Edition",
+      "side": "только на стороне сервера",
+      "conflict": "конфликтует с установленным модом",
+      "unsupported_format": "формат не поддерживается",
+      "needs_rustic_server": "нужен Rustic Server",
+      "not_fair_play": "не разрешено (честная игра)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Сменить продукт",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Документация Rustic Server"
+  },
+  "crumbs": {
+    "label": "Навигационная цепочка",
+    "horizon": "Horizon",
+    "details": "Подробности",
+    "create": "Создать",
+    "kinds": {
+      "mod": "Моды",
+      "modpack": "Сборки модов",
+      "resourcepack": "Наборы ресурсов",
+      "shader": "Шейдеры",
+      "datapack": "Наборы данных",
+      "plugin": "Плагины"
+    },
+    "servers": {
+      "featured": "Рекомендуемые",
+      "mine": "Мои серверы",
+      "multiplayer": "Список серверов",
+      "discover": "Открытия",
+      "joined": "Список серверов",
+      "browse": "Обзор"
+    }
+  },
+  "social": {
+    "title": "Общение",
+    "description": "Друзья, чаты и твоя группа.",
+    "open": "Открыть общение",
+    "friends": "Друзья",
+    "chats": "Чаты",
+    "message": "Написать сообщение",
+    "searchChats": "Поиск чатов…",
+    "noChats": "Разговоров пока нет. Напиши другу на вкладке «Друзья».",
+    "sayHello": "Поздороваться",
+    "selectTitle": "Выбери разговор",
+    "selectBody": "Выбери друга, чтобы начать общение.",
+    "messagePlaceholder": "Сообщение для {{name}}",
+    "send": "Отправить"
+  },
+  "window": {
+    "minimize": "Свернуть",
+    "maximize": "Развернуть",
+    "restore": "Восстановить",
+    "close": "Закрыть"
+  },
+  "running": {
+    "title": "Запущенные экземпляры",
+    "none": "Игра не запущена.",
+    "count_one": "Запущен {{count}} экземпляр",
+    "count_few": "Запущено {{count}} экземпляра",
+    "count_many": "Запущено {{count}} экземпляров",
+    "count_other": "Запущено {{count}} экземпляра",
+    "downloading": "Загрузка {{pct}}"
+  },
+  "launch": {
+    "launch": "Запустить игру",
+    "update": "Обновить и запустить",
+    "stop": "Остановить игру"
+  },
+  "deepLink": {
+    "authOk": "Вход в Rustic выполнен",
+    "authFailed": "Не удалось войти в Rustic",
+    "joining": "Подключение к {{target}}…",
+    "content": "Открываем {{project}} с сайта"
+  },
+  "catalog": {
+    "sort": "Сортировка",
+    "results_one": "{{count}} результат",
+    "results_few": "{{count}} результата",
+    "results_many": "{{count}} результатов",
+    "results_other": "{{count}} результата",
+    "loadMore": "Загрузить ещё",
+    "loadMoreCount": "Показано {{shown}} из {{total}}",
+    "carousel": {
+      "prev": "Назад",
+      "next": "Далее",
+      "slide": "{{index}} из {{total}}",
+      "pause": "Приостановить слайд-шоу",
+      "play": "Запустить слайд-шоу"
+    },
+    "row": {
+      "seeAll": "Показать все",
+      "seeAllAria": "Показать все: {{title}}",
+      "scrollPrev": "Прокрутить влево",
+      "scrollNext": "Прокрутить вправо"
+    },
+    "filters": {
+      "button": "Фильтры",
+      "buttonCount": "Фильтры · {{count}}",
+      "reset": "Сбросить фильтры"
+    },
+    "layout": {
+      "label": "Вид",
+      "list": "Список",
+      "grid": "Сетка"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Обновление {{pct}}",
+      "installing": "Установка обновления…",
+      "restarting": "Перезапуск…",
+      "deferred": "Обновление после игры",
+      "apply": "Обновить и перезапустить"
+    },
+    "toast": {
+      "launcher": "Загрузка Rustic Launcher {{version}}…",
+      "edition": "Обновление игры (издание Rustic)…",
+      "editionDone": "Игра обновлена: {{version}}",
+      "deferred": "Обновление готово. Оно установится, когда ты закроешь игру.",
+      "restarting": "Rustic Launcher перезапускается, чтобы завершить обновление.",
+      "updated": "Rustic Launcher обновлён до {{version}}",
+      "resuming": "Обновление готово: запускаем игру",
+      "failed": "Не удалось установить обновление. Попробуем позже."
+    }
+  }
+}

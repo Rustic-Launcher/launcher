@@ -1,0 +1,82 @@
+{
+  "title": "Loker",
+  "subtitle": "Item murni visual. Terlihat dalam game oleh pemain yang memakai edisi Rustic.",
+  "horizonNote": {
+    "badge": "Kosmetik Horizon tetap tersedia",
+    "detail": "Kosmetik Horizon-mu tetap ada di klien edisi Rustic. Kelola dalam game; kosmetik itu bisa dipakai bersama item Rustic-mu."
+  },
+  "empty": {
+    "title": "Kamu belum memiliki kosmetik apa pun.",
+    "description": "Item yang kamu beli atau terima muncul di sini, siap dipakai.",
+    "browse": "Telusuri Toko",
+    "categoryTitle": "Belum ada {{category}}",
+    "categoryDescription": "Item jenis ini yang kamu miliki akan muncul di sini."
+  },
+  "viewer": {
+    "region": "Karaktermu",
+    "label_other": "Karaktermu memakai {{count}} item. Seret atau gunakan tombol panah untuk memutar, plus dan minus untuk memperbesar.",
+    "hint": "Seret untuk memutar · gulir untuk memperbesar",
+    "animation": "Animasi",
+    "playEmote": "Mainkan {{name}}",
+    "noEmote": "Tidak ada emote terpasang",
+    "reset": "Atur ulang tampilan"
+  },
+  "animations": {
+    "idle": "Diam",
+    "walk": "Berjalan",
+    "wave": "Melambai",
+    "dance": "Menari"
+  },
+  "items": {
+    "region": "Item-mu",
+    "nothing": "Tidak ada",
+    "equipped": "Terpasang"
+  },
+  "categories": {
+    "label": "Kategori",
+    "all": "Semua",
+    "head": "Topi",
+    "back": "Punggung",
+    "top": "Badan",
+    "shoulder": "Bahu",
+    "nametag": "Label nama",
+    "emote": "Emote",
+    "companion": "Pendamping",
+    "trail": "Jejak",
+    "aura": "Aura"
+  },
+  "rarity": {
+    "common": "Umum",
+    "rare": "Langka",
+    "epic": "Epik",
+    "legendary": "Legendaris"
+  },
+  "toast": {
+    "equipped": "{{name}} dipasang",
+    "unequipped": "{{name}} dilepas",
+    "cleared": "{{slot}}: tidak ada yang terpasang",
+    "outfitWorn": "Pakaian dipakai",
+    "outfitSaved": "Pakaian “{{name}}” tersimpan",
+    "equipFailed": "Tidak dapat mengubah penampilanmu. Coba lagi."
+  },
+  "outfits": {
+    "title": "Pakaian",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Beri nama penampilan ini",
+    "save": "Simpan penampilan saat ini",
+    "full": "Kamu bisa menyimpan hingga {{max}} pakaian. Hapus satu untuk menyimpan penampilan baru.",
+    "empty": "Simpan penampilanmu saat ini untuk memakainya lagi dengan sekali klik.",
+    "items_other": "{{count}} item",
+    "wearing": "Dipakai",
+    "wear": "Pakai",
+    "delete": "Hapus pakaian {{name}}"
+  },
+  "switches": {
+    "showMine": "Tampilkan kosmetikku",
+    "showMineHint": "Pemain edisi Rustic lain dapat melihat apa yang kamu pakai.",
+    "hideOthers": "Sembunyikan kosmetik pemain lain",
+    "hideTrailsAuras": "Sembunyikan jejak dan aura"
+  },
+  "heading": "*Loker*-mu",
+  "eyebrow": "Kosmetik"
+}

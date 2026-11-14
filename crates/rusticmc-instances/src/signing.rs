@@ -16,6 +16,14 @@ pub type PublicKey = [u8; 32];
 /// Horizon's release keys, built in.
 pub const HORIZON_KEYS: &str = include_str!("horizon_release_keys.txt");
 
+/// Rustic's edition release keys, built in (ADR 0162): every source signed under
+/// [`RUSTIC_NAMESPACE`] trusts them, so a `launcher.toml` saved before the keys existed (its
+/// `public_keys = []`) still verifies the edition's builds.
+pub const RUSTIC_KEYS: &str = include_str!("rustic_release_keys.txt");
+
+/// The signature namespace of Rustic's own builds.
+pub const RUSTIC_NAMESPACE: &str = "rustic release";
+
 /// The keys of a keys file: one base64 key per line, `#` comments and blank lines skipped.
 pub fn parse_keys(text: &str) -> Result<Vec<PublicKey>, String> {
     text.lines()
@@ -154,6 +162,11 @@ mod tests {
     #[test]
     fn horizon_keys_parse() {
         assert_eq!(parse_keys(HORIZON_KEYS).unwrap().len(), 1);
+    }
+
+    #[test]
+    fn rustic_keys_parse() {
+        assert!(!parse_keys(RUSTIC_KEYS).unwrap().is_empty());
     }
 
     #[test]

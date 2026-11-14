@@ -10,7 +10,6 @@
     "datapack": "Data packs",
     "plugin": "Plugins"
   },
-  "searchPlaceholder": "Search {{kind}}…",
   "searchLabel": "Search content",
   "clear": "Clear search",
   "by": "by {{author}}",
@@ -201,6 +200,13 @@
       "title": "This project is not available",
       "body": "It may be private, waiting for review or removed by its creator or a moderator.",
       "back": "Back to Explore"
+    },
+    "native": {
+      "title": "Built on your PC",
+      "build": "Compiled into this profile’s game the first time you play: about 10 to 15 minutes, faster afterwards.",
+      "review": "Reviewed before it can be installed, by Horizon’s registry or Rustic’s admins.",
+      "consent": "Nothing is built before you read and accept a short notice.",
+      "more": "How native mods work"
     }
   },
   "report": {
@@ -229,7 +235,8 @@
       "beta": "Beta",
       "alpha": "Alpha"
     },
-    "empty": "No version is available yet."
+    "empty": "No version is available yet.",
+    "latest": "Latest"
   },
   "deps": {
     "none": "No dependencies.",
@@ -267,7 +274,14 @@
     "author": "Author",
     "created": "Published"
   },
-  "searchSources": "Search {{kind}} on Horizon, Modrinth and Rustic…",
+  "searchSources": {
+    "mod": "Search mods on Horizon, Modrinth and Rustic…",
+    "modpack": "Search modpacks on Horizon, Modrinth and Rustic…",
+    "resourcepack": "Search resource packs on Horizon, Modrinth and Rustic…",
+    "shader": "Search shaders on Horizon, Modrinth and Rustic…",
+    "datapack": "Search data packs on Horizon, Modrinth and Rustic…",
+    "plugin": "Search plugins on Horizon, Modrinth and Rustic…"
+  },
   "filtersLabel": "Filters",
   "view": "View",
   "heading": "Find your next *mod*",
@@ -283,7 +297,14 @@
     "eyebrow": "Featured"
   },
   "discover": {
-    "heroLabel": "Featured {{kind}}",
+    "heroLabel": {
+      "mod": "Featured mods",
+      "modpack": "Featured modpacks",
+      "resourcepack": "Featured resource packs",
+      "shader": "Featured shaders",
+      "datapack": "Featured data packs",
+      "plugin": "Featured plugins"
+    },
     "rows": {
       "new": "New",
       "newHint": "Just published or updated",
@@ -388,7 +409,14 @@
     "installed": {
       "title": "Installed",
       "titleOn": "Installed on {{target}}",
-      "hint": "The {{kind}} of this target: switch them on or off, update or remove them.",
+      "hint": {
+        "mod": "The mods of this target: switch them on or off, update or remove them.",
+        "modpack": "The modpacks of this target: switch them on or off, update or remove them.",
+        "resourcepack": "The resource packs of this target: switch them on or off, update or remove them.",
+        "shader": "The shaders of this target: switch them on or off, update or remove them.",
+        "datapack": "The data packs of this target: switch them on or off, update or remove them.",
+        "plugin": "The plugins of this target: switch them on or off, update or remove them."
+      },
       "modpacksTitle": "Modpacks become profiles",
       "modpacksHint": "Each installed modpack is a profile of its own.",
       "openProfiles": "Open my profiles",

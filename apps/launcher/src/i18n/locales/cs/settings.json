@@ -1,0 +1,514 @@
+{
+  "title": "Nastavení",
+  "subtitle": "Účty, hra, launcher, vzhled a tvoje data.",
+  "sectionsLabel": "Sekce nastavení",
+  "saving": "Ukládám…",
+  "saved": "Všechny změny uloženy",
+  "close": "Zavřít",
+  "cancel": "Zrušit",
+  "sections": {
+    "accounts": "Účty a zabezpečení",
+    "game": "Hra a instance",
+    "launcher": "Launcher",
+    "appearance": "Vzhled",
+    "privacy": "Soukromí a data",
+    "parental": "Rodičovská kontrola",
+    "about": "O aplikaci a právní informace"
+  },
+  "accounts": {
+    "active": "Aktivní",
+    "useThis": "Použít tento profil",
+    "signOut": "Odhlásit se",
+    "signedOut": "Účet {{name}} byl odhlášen",
+    "ownership": {
+      "valid": "Vlastní hru",
+      "expired": "Ověření vypršelo",
+      "never": "Nikdy neověřeno",
+      "failed": "Ověření selhalo",
+      "lastChecked": "Ověřeno {{when}}",
+      "nextCheck": "další ověření do {{date}}",
+      "checkNow": "Ověřit teď",
+      "checkedToast": "Vlastnictví potvrzeno",
+      "checkFailed": "Nepodařilo se spojit s Microsoftem. Zkus to později."
+    },
+    "microsoft": {
+      "title": "Účty Microsoft",
+      "description": "Pro hraní je nutné hru vlastnit. Rustic to ověřuje u Microsoftu a tvé heslo nikdy nevidí.",
+      "add": "Přidat účet Microsoft",
+      "keychain": "Přihlašovací tokeny se ukládají do systémové klíčenky, nikdy do souboru ani do příkazového řádku.",
+      "signIn": "Přihlásit se přes Microsoft",
+      "step1": "Otevři stránku Microsoftu v prohlížeči (nebo na jiném zařízení).",
+      "step2": "Zadej kód níže a přihlas se.",
+      "step3": "Vrať se sem: launcher bude pokračovat sám.",
+      "codeLabel": "Přihlašovací kód",
+      "copyCode": "Kopírovat kód",
+      "copied": "Kód zkopírován",
+      "openPage": "Otevřít microsoft.com/link",
+      "waiting": "Čekám, až se přihlásíš v prohlížeči…",
+      "cancel": "Zrušit",
+      "signedInAs": "Přihlášeno jako {{name}}",
+      "ownershipOk": "Vlastnictví potvrzeno: můžeš hrát.",
+      "ownershipMissing": "Tento účet hru nevlastní.",
+      "tryAgain": "Zkusit znovu",
+      "failed": {
+        "expired": {
+          "title": "Platnost kódu vypršela",
+          "body": "Kódy platí 15 minut. Začni znovu a získej nový."
+        },
+        "denied": {
+          "title": "Přihlášení bylo zrušeno",
+          "body": "Microsoft oznámil, že přihlášení bylo odmítnuto."
+        },
+        "no_ownership": {
+          "title": "Tento účet hru nevlastní",
+          "body": "Rustic spouští hru jen pro účty, které vlastní Minecraft: Java Edition."
+        },
+        "error": {
+          "title": "Přihlášení selhalo",
+          "body": "Rustic nemohl přihlášení dokončit. Zkus to znovu; pokud to dál selhává, podrobnosti níže ti řeknou proč."
+        },
+        "not_configured": {
+          "title": "Přihlášení přes Microsoft není v tomto sestavení nastavené",
+          "body": "Toto sestavení nemá ID aplikace Azure, takže nemůže Microsoft požádat o ověření licence hry. Oficiální sestavení ho obsahují."
+        },
+        "not_approved": {
+          "title": "Launcher čeká na schválení od Mojangu",
+          "body": "Tvůj účet Microsoft se přihlásil, ale herní služby tento launcher zatím nepřijímají: Mojang musí nejdřív schválit jeho ID aplikace. Ty nemusíš nic dělat; zkus to znovu, až bude schválen."
+        },
+        "xbox": {
+          "title": "Xbox Live přihlášení odmítl",
+          "body": "Důvod je uvedený níže (dětský účet bez rodičovského svolení, chybějící profil Xbox, nepodporovaná oblast…)."
+        },
+        "rate_limited": {
+          "title": "Příliš mnoho pokusů",
+          "body": "Služby dostaly v krátké době příliš mnoho přihlášení. Počkej minutu a zkus to znovu."
+        },
+        "network": {
+          "title": "Nepodařilo se spojit se službami",
+          "body": "Zkontroluj připojení k internetu a zkus to znovu."
+        },
+        "detail": "Podrobnosti: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Účet Rustic",
+      "description": "Tvoje identita na Rusticu pro přátele, Šatnu, nákupy a servery.",
+      "signedOut": "Nepřihlášeno. Hra funguje i bez něj; společenské funkce, Šatna a Obchod ho potřebují.",
+      "signIn": "Přihlásit se nebo vytvořit účet",
+      "licenceNote": "Účet Rustic je identita na platformě. Nikdy nenahrazuje licenci hry: stále potřebuješ účet Microsoft, který hru vlastní."
+    },
+    "offline": {
+      "title": "Hraní offline",
+      "description": "Pro LAN party a hraní bez internetu: hraješ se svým účtem Microsoft, pod svým oficiálním jménem a UUID. Dostupné {{days}} dní po posledním úspěšném ověření vlastnictví, pak se Rustic zeptá Microsoftu znovu.",
+      "until": "Hraní offline dostupné do {{date}}",
+      "locked": "Nejdřív se přihlas účtem Microsoft, který vlastní hru: hraní offline se odemkne po úspěšném ověření vlastnictví."
+    },
+    "connections": {
+      "title": "Propojení",
+      "description": "Služby, které launcher používá tvým jménem. Klíče a otisky hostitelů zůstávají v systémové klíčence.",
+      "porkbun": "Porkbun (domény)",
+      "porkbunHint": "Slouží k vytváření DNS záznamů pro tvé servery na tvém vlastním účtu Porkbun.",
+      "porkbunRemoved": "Klíče Porkbun byly z tohoto počítače odstraněny",
+      "connected": "Propojeno",
+      "notConnected": "Nepropojeno",
+      "remove": "Odebrat klíče",
+      "vps": "Hostitelé VPS",
+      "vpsHint": "Servery, které hostuješ na vlastním VPS přes SSH. Zapomenutím hostitele se odstraní jeho připnutý klíč.",
+      "noVps": "Žádní",
+      "fingerprint": "{{fp}} · důvěryhodný od {{date}}",
+      "forget": "Zapomenout"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Propojeno",
+      "notLinked": "Nepropojeno: přihlas se do Rusticu i svým účtem Microsoft.",
+      "link": "Propojit na webu",
+      "unlink": "Odpojit",
+      "unlinked": "Microsoft odpojen",
+      "unlinkFailed": "Microsoft se nepodařilo odpojit",
+      "lastMethod": "Nejdřív si (na webu) přidej heslo: Microsoft je tvůj jediný způsob přihlášení."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Paměť (RAM)",
+      "description": "Výchozí paměť přidělená hře. Každá instance ji může přepsat.",
+      "system": "{{total}} nainstalováno · {{free}} teď volné",
+      "warn": "Systému tak zbude málo paměti a všechno se může zpomalit.",
+      "perInstance": "Tip: 4 GB na většinu instancí bohatě stačí; velké modpacky mohou chtít 6 až 8 GB."
+    },
+    "prepare": {
+      "title": "Herní soubory",
+      "description": "Horizon připravuje herní zdroje z tvé vlastní instalace hry. Nic se nestahuje od třetích stran.",
+      "status": "Stav",
+      "states": {
+        "missing": "Nepřipraveno",
+        "preparing": "Připravuje se",
+        "ready": "Připraveno",
+        "outdated": "Je potřeba připravit znovu"
+      },
+      "gameVersion": "Hra {{version}}",
+      "source": "Zdrojová instalace",
+      "sourceHint": "Herní složka oficiálního launcheru nalezená na tomto počítači.",
+      "doneToast": "Herní soubory jsou připravené",
+      "steps": {
+        "detect": "Hledám tvou instalaci…",
+        "download": "Stahuji herní soubory od Mojangu…",
+        "verify": "Ověřuji herní soubory…",
+        "compile_exporters": "Sestavuji exportéry…",
+        "export": "Exportuji zdroje…",
+        "index": "Indexuji…",
+        "done": "Hotovo"
+      },
+      "legal": "Připravené soubory zůstávají na tomto počítači a nikdy se nesdílejí.",
+      "again": "Připravit znovu",
+      "failed": "Příprava selhala"
+    },
+    "java": {
+      "label": "Java pro přípravu",
+      "description": "Používá se jen k přípravě herních souborů (horizon-prepare). Samotný Horizon ke spuštění Javu nepotřebuje.",
+      "pickTitle": "Vyber spustitelný soubor Javy",
+      "source": {
+        "bundled": "Dodávaná s Rusticem",
+        "system": "Nainstalovaná na tomto počítači",
+        "custom": "Vlastní"
+      },
+      "custom": "Vlastní cesta…",
+      "customHint": "Vyber spustitelný soubor Javy 21+"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "Program rustic-server, na kterém běží tvé servery Rustic Server (engine Horizonu s pluginy Rusticu). Musí pocházet ze stejného commitu Horizonu jako verze hry serveru: sestavení edice Rustic ho má ve své složce.",
+      "program": "Používaný program",
+      "notFound": "Nenalezeno",
+      "notFoundHint": "Nainstaluj sestavení edice Rustic, které ho obsahuje, nebo vyber soubor rustic-server. Bez něj vytvoření Rustic Serveru selže.",
+      "configuredMissing": "Vybraný soubor už neexistuje: {{path}}",
+      "origin": {
+        "server": "Vlastní program serveru",
+        "configured": "Vybráno ručně",
+        "build": "Dodáno se sestavením {{build}}",
+        "beside_launcher": "Vedle launcheru",
+        "path": "Nalezeno v PATH"
+      },
+      "choose": "Vybrat…",
+      "pickTitle": "Vyber program rustic-server",
+      "automatic": "Použít automatiku",
+      "saved": "Program rustic-server uložen",
+      "automaticSaved": "Automatické zjišťování obnoveno",
+      "invalid": "Tento soubor není program rustic-server (neodpovídá na --rustic-version).",
+      "failed": "Tento program se nepodařilo uložit",
+      "order": "Pořadí hledání: tvoje volba, pak složka verze hry, pak vedle launcheru, pak PATH."
+    },
+    "folders": {
+      "title": "Složky",
+      "description": "Kde launcher uchovává svá data, tvé instance a tvé servery.",
+      "data": "Data launcheru",
+      "instances": "Instance",
+      "servers": "Servery",
+      "open": "Otevřít",
+      "change": "Změnit",
+      "changed": "Složka změněna",
+      "moveNote": "Existující soubory se automaticky nepřesouvají."
+    },
+    "resolution": {
+      "title": "Okno hry",
+      "description": "Výchozí velikost okna pro nové instance.",
+      "size": "Velikost",
+      "width": "Šířka",
+      "height": "Výška",
+      "fullscreen": "Spustit na celou obrazovku",
+      "hint": "Minimum 640 × 480."
+    },
+    "native": {
+      "title": "Nativní módy",
+      "description": "Instance s nativními módy hrají hru zkompilovanou pro ně na tomto počítači. Zde: kompilátor Rustu a mezipaměť kompilace, která zrychluje další sestavení.",
+      "rust": "Kompilátor Rustu",
+      "rustReady": {
+        "managed": "Rust {{version}}, nainstalovaný launcherem",
+        "rustup": "Rust {{version}}, z tvého rustupu",
+        "system": "Rust {{version}}, nainstalovaný na tomto počítači"
+      },
+      "rustMissing": "Pro první sestavení je potřeba Rust {{version}}.",
+      "ready": "Připraveno",
+      "missing": "Nenainstalováno",
+      "installing": "Instaluji…",
+      "installRust": "Nainstalovat Rust",
+      "rustInstalled": "Rust je nainstalovaný",
+      "rustFailed": "Rust se nepodařilo nainstalovat",
+      "cache": "Mezipaměť kompilace",
+      "cacheDetail": "Mezipaměť {{cache}} · stažené crates {{crates}} · Rust {{toolchain}} · zdroj {{source}}. Vymazáním se sestavené hry zachovají; další sestavení překompiluje vše.",
+      "clear": "Vymazat",
+      "clearTitle": "Vymazat mezipaměť kompilace?",
+      "clearBody": "Instance si ponechají sestavenou hru. Další nativní sestavení zkompiluje celou hru znovu (10 až 15 minut).",
+      "cleared": "Mezipaměť kompilace vymazána (uvolněno {{size}})",
+      "limit": "Limit mezipaměti",
+      "limitHint": "Po sestavení se mezipaměť vymaže, pokud je větší než tato hodnota (0: nikdy).",
+      "gib": "GiB",
+      "limitSaved": "Limit mezipaměti uložen",
+      "limitInvalid": "Limit je celé číslo GiB od 0 do 4096.",
+      "folder": "Složka: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Jazyk",
+      "description": "Projeví se okamžitě v celém launcheru.",
+      "label": "Jazyk",
+      "search": "Hledat jazyky",
+      "empty": "Žádný jazyk neodpovídá",
+      "translated": "Přeloženo",
+      "others": "Další jazyky",
+      "partial": "Částečně",
+      "english": "zatím v angličtině",
+      "via": "zatím v jazyce {{lang}}",
+      "help": "Texty, které ještě nejsou přeložené, se zobrazují anglicky. Překlady pocházejí od komunity."
+    },
+    "startup": {
+      "title": "Spuštění",
+      "onBoot": "Otevřít Rustic při spuštění počítače",
+      "onBootHint": "Přátelé tě uvidí online dřív a aktualizace se stáhnou na pozadí.",
+      "minimized": "Spouštět minimalizovaně"
+    },
+    "behaviour": {
+      "title": "Během hraní",
+      "onLaunch": "Když se hra spustí",
+      "launchOptions": {
+        "keep_open": "Nechat launcher otevřený",
+        "minimize": "Minimalizovat launcher",
+        "hide": "Skrýt do oznamovací oblasti",
+        "close": "Zavřít launcher"
+      },
+      "onClose": "Když zavřu okno",
+      "onCloseHint": "Když zůstane v oznamovací oblasti, přátelé tě mohou pozvat a servery dál běží.",
+      "closeOptions": {
+        "tray": "Nechat běžet v oznamovací oblasti",
+        "quit": "Ukončit Rustic"
+      }
+    },
+    "updates": {
+      "title": "Aktualizace",
+      "auto": "Instalovat aktualizace automaticky",
+      "autoHint": "Aktualizace jsou před instalací podepsané a ověřené.",
+      "check": "Rustic Launcher",
+      "checkNow": "Zkontrolovat aktualizace",
+      "available": "K dispozici je verze {{version}}",
+      "upToDate": "Máš nejnovější verzi",
+      "failed": "Aktualizace se nepodařilo zkontrolovat",
+      "lastCheck": "Naposledy zkontrolováno: {{when}}",
+      "neverChecked": "Zatím nezkontrolováno",
+      "edition": "Hra (Edice Rustic)",
+      "editionNone": "Není nainstalováno žádné sestavení Edice Rustic",
+      "apply": "Aktualizovat a restartovat",
+      "checking": "Kontrola…",
+      "working": "Aktualizace… {{pct}}",
+      "restarting": "Restartování…",
+      "deferred": "Čekám na zavření hry",
+      "lastError": "Poslední pokus selhal. Zopakuje se automaticky."
+    },
+    "performance": {
+      "title": "Stahování a výkon",
+      "downloads": "Souběžná stahování",
+      "downloadsHint": "Na pomalém připojení hodnotu sniž.",
+      "hardware": "Hardwarová akcelerace",
+      "hardwareHint": "Vypni, pokud launcher bliká. Projeví se po restartu."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Motiv",
+      "description": "Rustic je navržený především jako tmavý; světlý motiv je pro světlé místnosti.",
+      "label": "Motiv",
+      "dark": "Tmavý",
+      "light": "Světlý",
+      "system": "Systémový"
+    },
+    "palette": {
+      "title": "Paleta",
+      "description": "Barva zvýraznění pro HRÁT, výběr a průběh.",
+      "label": "Paleta",
+      "play": "Hrát",
+      "default": "Výchozí",
+      "names": {
+        "ember": "Žhavý uhlík",
+        "verdigris": "Měděnka",
+        "heather": "Vřes"
+      },
+      "descriptions": {
+        "ember": "Teplá měď na antracitu",
+        "verdigris": "Zelená patina jako zoxidovaná měď",
+        "heather": "Tlumená vřesová růžová"
+      }
+    },
+    "motion": {
+      "title": "Pohyb",
+      "body": "Rustic respektuje systémové nastavení „omezit pohyb“: animace, karusel a 3D náhled se zastaví."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "Co s námi sdílíš",
+      "description": "Všechno je tu ve výchozím stavu vypnuté. Když něco zapneš, pomůžeš nám Rustic zlepšovat; názor můžeš kdykoli změnit.",
+      "usage": "Analýza používání",
+      "usageHint": "Které stránky a funkce se používají, bez obsahu a identifikátorů.",
+      "performance": "Hlášení o výkonu",
+      "performanceHint": "Doba spuštění a snímků, abychom našli pomalá místa.",
+      "crash": "Hlášení o pádech",
+      "crashHint": "Když je to vypnuté, Rustic se při každém pádu zeptá."
+    },
+    "policyLink": "Přečíst zásady ochrany osobních údajů",
+    "social": {
+      "title": "Přátelé a přítomnost",
+      "activity": "Ukazovat přátelům, co hraju",
+      "activityHint": "Přátelé uvidí tvůj server a připojí se k tobě jedním kliknutím.",
+      "requests": "Kdo mi může posílat žádosti o přátelství",
+      "requestsOptions": {
+        "everyone": "Všichni",
+        "friends_of_friends": "Přátelé přátel",
+        "nobody": "Nikdo"
+      },
+      "discoverable": "Zobrazovat mě v návrzích hráčů, které potkám",
+      "discoverableHint": "Hráči z tvých part nebo ze serverů sdílených ve tvé aktivitě tě uvidí v „Přidat přítele“ a ty uvidíš je. Uchovává se 30 dní; vypnutím se to smaže.",
+      "discoverableMinor": "Není dostupné pro účty mladší 18 let.",
+      "discoverableFailed": "Toto nastavení se nepodařilo uložit.",
+      "discord": "Zobrazovat mou aktivitu na Discordu",
+      "discordHint": "„Hraje Rustic“ na tvém profilu na Discordu: v launcheru, v hlavní nabídce, ve hře jednoho hráče nebo na serveru, s tvým herním časem.",
+      "discordServer": "Zobrazovat adresu serveru na Discordu",
+      "discordServerHint": "Jinak Discord ukazuje „Hra více hráčů“. Soukromé adresy (LAN, tento počítač) se nikdy nezobrazují."
+    },
+    "data": {
+      "title": "Tvoje data",
+      "description": "Tvoje práva podle GDPR: přístup, přenositelnost a výmaz.",
+      "export": "Exportovat moje data",
+      "exportHint": "Archiv JSON s tvým účtem, přáteli, nákupy a nastavením.",
+      "exportButton": "Připravit export",
+      "exportReady": "Tvůj export je připravený",
+      "exportFailed": "Export se nepodařilo připravit",
+      "download": "Stáhnout (odkaz platí do {{date}})",
+      "delete": "Smazat můj účet",
+      "deleteHint": "30denní lhůta, během které můžeš smazání zrušit, pak trvalé smazání.",
+      "deleteButton": "Smazat účet",
+      "deleteScheduled": "Smazání naplánováno na {{date}}. Do té doby se přihlas, pokud ho chceš zrušit.",
+      "deleteFailed": "Účet se nepodařilo smazat",
+      "rights": "Dotazy nebo stížnosti: kontaktuj nás, nebo CNIL (francouzský úřad pro ochranu osobních údajů).",
+      "confirmTitle": "Smazat tvůj účet Rustic?",
+      "confirmBody": "Tví přátelé, kosmetika a nákupy budou po 30 dnech odstraněny. Licence hry a účet Microsoft nejsou dotčeny.",
+      "confirmButton": "Smazat můj účet",
+      "typeUsername": "Pro potvrzení napiš {{name}}"
+    }
+  },
+  "parental": {
+    "title": "Rodičovská kontrola",
+    "description": "Účty Rustic jsou pro osoby od {{age}} let. U hráčů mladších 18 let potřebují nákupy ve výchozím stavu souhlas rodiče.",
+    "minorNote": "Tento účet patří nezletilé osobě: nákupy vyžadují souhlas rodiče.",
+    "enable": "Zapnout rodičovskou kontrolu",
+    "enableHint": "Změny níže pak vyžadují PIN.",
+    "pinFirst": "Pro zapnutí rodičovské kontroly nejdřív vytvoř PIN.",
+    "saveFailed": "Změnu se nepodařilo uložit",
+    "lockAgain": "Znovu zamknout",
+    "rules": {
+      "title": "Pravidla",
+      "purchases": "Nákupy",
+      "purchasesHint": "Nákupy v obchodě jsou jen kosmetické. Nikdy žádné loot boxy.",
+      "purchaseOptions": {
+        "blocked": "Vypnuto",
+        "pin": "Zeptat se rodiče",
+        "allowed": "Povoleno"
+      },
+      "limit": "Měsíční limit útraty",
+      "limitHint": "Utraceno tento měsíc: {{spent}}. Nech prázdné pro žádný limit.",
+      "noLimit": "Bez limitu",
+      "limitInvalid": "Zadej částku jako 10 nebo 9,99.",
+      "chat": "Chat",
+      "chatOptions": {
+        "off": "Vypnuto",
+        "friends": "Jen přátelé",
+        "everyone": "Všichni"
+      },
+      "friendRequests": "Žádosti o přátelství",
+      "friendRequestsHint": "Povolit ostatním posílat žádosti o přátelství."
+    },
+    "pin": {
+      "title": "Rodičovský PIN",
+      "set": "PIN je nastavený. Je potřeba ke změně těchto nastavení a ke schvalování nákupů.",
+      "notSet": "Zatím žádný PIN.",
+      "change": "Změnit PIN",
+      "create": "Vytvořit PIN",
+      "saved": "PIN uložen",
+      "new": "Nový PIN",
+      "confirm": "Potvrdit PIN",
+      "save": "Uložit PIN",
+      "hint": "4 až 6 číslic, ne jednoduchá řada.",
+      "errors": {
+        "format": "Použij 4 až 6 číslic.",
+        "mismatch": "Oba PINy se liší.",
+        "weak": "Příliš snadné uhodnout: vyhni se 1234 nebo 0000."
+      }
+    },
+    "unlock": {
+      "title": "Zamčeno",
+      "description": "Pro změnu těchto nastavení zadej rodičovský PIN.",
+      "label": "Rodičovský PIN",
+      "wrong": "Špatný PIN.",
+      "button": "Odemknout"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Verze {{version}}",
+    "channel": {
+      "stable": "Stabilní",
+      "beta": "Beta"
+    },
+    "browserMock": "Náhled v prohlížeči (ukázková data)",
+    "horizon": "Horizon",
+    "horizonHint": "Doporučené sestavení hry.",
+    "licence": "Licence",
+    "platform": "Platforma",
+    "legalTitle": "Právní informace",
+    "legalDescription": "Zásady a upozornění.",
+    "links": {
+      "privacy": "Zásady ochrany osobních údajů",
+      "terms": "Podmínky použití a prodeje",
+      "legalNotice": "Právní upozornění",
+      "fairPlay": "Zásady fair play",
+      "thirdParty": "Licence open source",
+      "horizon": "Projekt Horizon (MIT)"
+    },
+    "notAffiliated": "Nejde o oficiální produkt Minecraft. Není schválen společností Mojang ani Microsoft ani s nimi není spojen.",
+    "horizonCredit": "Postaveno na Horizonu, přepisu hry do Rustu pod licencí MIT, od jeho přispěvatelů.",
+    "company": "Vydává [company name], francouzská společnost (SIREN [number], [address]). Platby zajišťuje Stripe; prodávajícím je společnost.",
+    "tagline": "Rustic je společenská herní platforma poháněná enginem Horizon"
+  },
+  "rusticAuth": {
+    "mode": "Přihlásit se nebo vytvořit účet",
+    "signIn": "Přihlásit se",
+    "signUp": "Vytvořit účet",
+    "create": "Vytvořit můj účet",
+    "verify": "Ověřit",
+    "email": "E-mail",
+    "password": "Heslo",
+    "username": "Uživatelské jméno",
+    "dateOfBirth": "Datum narození",
+    "country": "Země",
+    "acceptPrivacy": "Beru na vědomí zásady ochrany osobních údajů a souhlasím s nimi.",
+    "code": "Kód z tvé ověřovací aplikace",
+    "checkInbox": "Na {{email}} jsme poslali ověřovací odkaz. Otevři ho a pak se přihlas.",
+    "resend": "Poslat znovu",
+    "resent": "Ověřovací e-mail odeslán znovu",
+    "signedIn": "Přihlášení do Rusticu proběhlo",
+    "problems": {
+      "email": "Zadej platnou e-mailovou adresu.",
+      "password": "Heslo: alespoň 10 znaků.",
+      "username": "Uživatelské jméno: 3 až 20 písmen, číslic nebo podtržítek.",
+      "dateOfBirth": "Zadej datum narození.",
+      "tooYoung": "Účty Rustic jsou pro osoby od 13 let.",
+      "privacy": "Pro pokračování přijmi zásady ochrany osobních údajů."
+    },
+    "microsoft": "Pokračovat přes Microsoft",
+    "orEmail": "nebo e-mailem",
+    "microsoftWaiting": "Dokonči přihlášení v prohlížeči: launcher si tvou relaci převezme automaticky."
+  },
+  "heading": "Tvoje *nastavení*",
+  "eyebrow": "Launcher"
+}

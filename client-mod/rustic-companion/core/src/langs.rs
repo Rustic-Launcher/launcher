@@ -175,7 +175,15 @@ pub fn layout(v: &View<'_>) -> Layout {
             tint: 0xFFFF_FFFF,
         });
         if crate::flags::flag_for(&lang.code).is_none() {
-            let code: String = lang.code.chars().take(3).collect::<String>().to_uppercase();
+            let code: String = lang
+                .code
+                .split('_')
+                .next()
+                .unwrap_or("")
+                .chars()
+                .take(3)
+                .collect::<String>()
+                .to_uppercase();
             k.text(
                 flag[0] + flag[2] / 2.0,
                 flag[1] + fh / 2.0,

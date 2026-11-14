@@ -269,6 +269,7 @@
       "broken": "Réparation requise"
     },
     "progress": {
+      "updating": "Mise à jour…",
       "downloading": "Téléchargement {{pct}}",
       "checking": "Vérification des fichiers…",
       "preparing": "Préparation…",
@@ -419,6 +420,25 @@
       "label": "Affichage",
       "list": "Liste",
       "grid": "Grille"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Mise à jour {{pct}}",
+      "installing": "Installation de la mise à jour…",
+      "restarting": "Redémarrage…",
+      "deferred": "Mise à jour après la partie",
+      "apply": "Mettre à jour et redémarrer"
+    },
+    "toast": {
+      "launcher": "Téléchargement de Rustic Launcher {{version}}…",
+      "edition": "Mise à jour du jeu (édition Rustic)…",
+      "editionDone": "Jeu mis à jour : {{version}}",
+      "deferred": "Une mise à jour est prête. Elle s’installera quand vous fermerez le jeu.",
+      "restarting": "Rustic Launcher redémarre pour terminer la mise à jour.",
+      "updated": "Rustic Launcher mis à jour en {{version}}",
+      "resuming": "Mise à jour terminée : lancement de votre partie",
+      "failed": "La mise à jour n’a pas pu être installée. Nouvel essai plus tard."
     }
   }
 }

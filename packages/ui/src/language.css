@@ -124,6 +124,10 @@
     letter-spacing: -0.01em;
     color: var(--rl-accent-text);
   }
+  /* Han, kana, Hangul and Thai have no italic: a slanted copy reads as a rendering fault. */
+  :is(:lang(ja), :lang(ko), :lang(zh), :lang(th)) .rx-accent {
+    font-style: normal;
+  }
 
   /* Page entrance: children rise from a light blur, 40 ms apart (short, app-appropriate). */
   .rx-page-enter > * {

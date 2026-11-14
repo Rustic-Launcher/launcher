@@ -1,0 +1,480 @@
+{
+  "title": "Prozkoumat",
+  "subtitle": "Módy, balíčky, shadery a pluginy z Horizonu, Modrinthu a Rusticu, ověřené proti tvé instanci.",
+  "kindsLabel": "Typy obsahu",
+  "kinds": {
+    "mod": "Módy",
+    "modpack": "Modpacky",
+    "resourcepack": "Balíčky zdrojů",
+    "shader": "Shadery",
+    "datapack": "Datové balíčky",
+    "plugin": "Pluginy"
+  },
+  "searchLabel": "Hledat obsah",
+  "clear": "Vymazat hledání",
+  "by": "od {{author}}",
+  "featured": "Doporučené",
+  "downloads": "{{value}} stažení",
+  "updated": "aktualizováno {{when}}",
+  "results_one": "{{count}} výsledek",
+  "results_few": "{{count}} výsledky",
+  "results_many": "{{count}} výsledku",
+  "results_other": "{{count}} výsledků",
+  "loadMore": "Načíst další ({{shown}} z {{total}})",
+  "target": {
+    "label": "Instalovat do",
+    "none": "Vyber cíl",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Server Horizon",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "Tento počítač",
+    "vps": "Tvůj VPS",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Řadit podle",
+    "relevance": "Relevance",
+    "downloads": "Nejstahovanější",
+    "updated": "Nedávno aktualizované",
+    "newest": "Nejnovější"
+  },
+  "sources": {
+    "label": "Zdroje",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Registr Horizonu",
+    "modrinth": "Modrinth",
+    "rustic": "Katalog Rusticu"
+  },
+  "filters": {
+    "category": "Kategorie",
+    "allCategories": "Všechny kategorie",
+    "compatibleInstance": "Kompatibilní s touto instancí",
+    "compatibleServer": "Kompatibilní s tímto serverem",
+    "worksNow": "Sestaví se na aktuálním Horizonu",
+    "categories": "Kategorie",
+    "viewMore_one": "Zobrazit {{count}} další",
+    "viewMore_few": "Zobrazit {{count}} další",
+    "viewMore_many": "Zobrazit {{count}} dalšího",
+    "viewMore_other": "Zobrazit {{count}} dalších",
+    "viewLess": "Zobrazit méně",
+    "compatibility": "Kompatibilita",
+    "pluginHint": "Pluginy běží v sandboxu jen na Rustic Serveru.",
+    "fairPlayHint": "Zobrazuje se jen obsah v duchu fair play.",
+    "versions": "Verze Horizonu",
+    "targetVersion": "Tvoje vybraná instance nebo server",
+    "checkingAgainst": "Kompatibilita se ověřuje proti zvýrazněnému sestavení.",
+    "rustic": "Marketplace Rusticu",
+    "rusticHint": "Placené a ověřené projekty jsou jen na Rusticu.",
+    "verifiedOnly": "Jen ověřené Rusticem",
+    "price": "Cena",
+    "priceOptions": {
+      "all": "Vše",
+      "free": "Zdarma",
+      "paid": "Placené"
+    },
+    "reset": "Obnovit filtry",
+    "remove": "Odebrat filtr {{filter}}"
+  },
+  "categories": {
+    "performance": "Výkon",
+    "utility": "Nástroje",
+    "ui": "Rozhraní",
+    "pvp": "PvP",
+    "adventure": "Dobrodružství",
+    "decoration": "Dekorace",
+    "storage": "Úložiště",
+    "worldgen": "Generování světa",
+    "library": "Knihovna",
+    "tech": "Technologie",
+    "cozy": "Útulné",
+    "multiplayer": "Hra více hráčů",
+    "realistic": "Realistické",
+    "simple": "Věrné originálu",
+    "lightweight": "Nenáročné",
+    "cinematic": "Filmové",
+    "qol": "Pohodlí hraní",
+    "admin": "Administrace",
+    "chat": "Chat",
+    "minigames": "Minihry",
+    "protection": "Ochrana",
+    "integration": "Integrace"
+  },
+  "empty": {
+    "title": "Nic neodpovídá",
+    "hint": "Zkus jiné slovo, zdroj nebo kategorii.",
+    "compatibleHint": "Zobrazuje se jen obsah, který na tomto cíli běží. Vypni filtr a uvidíš vše.",
+    "showAll": "Zobrazit nekompatibilní výsledky"
+  },
+  "banners": {
+    "mod": "Zobrazují se jen módy v duchu fair play: žádný X-ray, autoclickery ani jiné nefér výhody.",
+    "modpack": "Z modpacku vznikne nová instance s vlastními módy a nastavením.",
+    "resourcepack": "Balíčky se skládají na sebe: vyhrává ten nahoře v pořadí načítání.",
+    "shader": "Horizon spouští vlastní balíčky shaderů WGSL (.hshader, shader API 0.1, experimentální) a balíčky ve formátu Iris/OptiFine z registru Horizonu. Vyber si jeden ve hře v Nastavení grafiky › Balíčky shaderů.",
+    "datapack": "Datové balíčky patří ke světu: svět vybereš při instalaci.",
+    "plugin": "Pluginy (.rplugin) běží v sandboxu na serverech s enginem Rustic Server. Vadný plugin se vypne a server běží dál."
+  },
+  "resourcepacks": {
+    "manageOrder": "Spravovat pořadí načítání"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Formát Iris/OptiFine"
+    },
+    "formatHint": {
+      "horizon": "Vlastní formát Horizonu (.hshader), shader API 0.1 (experimentální). Před spuštěním se kontroluje.",
+      "shaders_dir": "Balíček shaders/ ve formátu Iris/OptiFine, spouštěný samostatným loaderem Horizonu."
+    }
+  },
+  "side": {
+    "client": "Klient",
+    "server": "Server",
+    "both": "Klient i server"
+  },
+  "install": {
+    "install": "Nainstalovat",
+    "installAria": "Nainstalovat {{name}} do {{target}}",
+    "installed": "Nainstalováno",
+    "installing": "Instalace…",
+    "installingPct": "Instalace {{pct}}",
+    "createInstance": "Vytvořit instanci",
+    "chooseWorld": "Nainstalovat do světa",
+    "noTarget": "Nejdřív vyber, kam instalovat.",
+    "started": "Instaluji {{name}} do {{target}}",
+    "withDeps_one": "Navíc {{count}} povinná závislost.",
+    "withDeps_few": "Navíc {{count}} povinné závislosti.",
+    "withDeps_many": "Navíc {{count}} povinné závislosti.",
+    "withDeps_other": "Navíc {{count}} povinných závislostí.",
+    "failed": "{{name}} se nepodařilo nainstalovat",
+    "native": "Sestavit a nainstalovat",
+    "update": "Aktualizovat",
+    "updateAria": "Aktualizovat {{name}} na {{version}}"
+  },
+  "modpack": {
+    "created": "Vytvářím instanci {{name}}",
+    "createdHint": "Stahování probíhá. Až bude hotovo, objeví se v sekci Hrát."
+  },
+  "datapacks": {
+    "pickWorld": "Vyber svět",
+    "noWorlds": "Tato instance zatím nemá žádný svět. Jednou si zahraj a svět se vytvoří.",
+    "count_one": "{{count}} datový balíček",
+    "count_few": "{{count}} datové balíčky",
+    "count_many": "{{count}} datového balíčku",
+    "count_other": "{{count}} datových balíčků"
+  },
+  "plugins": {
+    "badge": "Plugin pro Rustic Server · API {{api}}",
+    "noServerTitle": "Zatím nemáš žádný Rustic Server",
+    "noServerBody": "Pluginy běží jen na serverech s enginem Rustic Server. Vytvoř si ho v několika krocích a pak se sem vrať instalovat pluginy.",
+    "createServer": "Vytvořit server"
+  },
+  "detail": {
+    "breadcrumb": "Drobečková navigace",
+    "sections": "Sekce projektu",
+    "tabs": {
+      "description": "Popis",
+      "gallery": "Galerie",
+      "versions": "Verze",
+      "changelog": "Seznam změn",
+      "dependencies": "Závislosti",
+      "compatibility": "Kompatibilita"
+    },
+    "galleryLabel": "Galerie: {{name}}",
+    "prev": "Předchozí obrázek",
+    "next": "Další obrázek",
+    "slide": "Obrázek {{index}} z {{total}}",
+    "about": "O projektu",
+    "categories": "Kategorie",
+    "links": "Odkazy",
+    "link": {
+      "source": "Zdrojový kód",
+      "issues": "Nahlásit chybu",
+      "website": "Web",
+      "site": "Na rustic-launcher.com",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "Zatím žádný seznam změn.",
+    "noGallery": "Zatím žádné snímky obrazovky.",
+    "notAvailable": {
+      "title": "Tento projekt není dostupný",
+      "body": "Může být soukromý, čekat na kontrolu nebo ho odstranil autor či moderátor.",
+      "back": "Zpět na Prozkoumat"
+    },
+    "native": {
+      "title": "Sestaví se na tvém PC",
+      "build": "Při prvním hraní se zkompiluje do hry tohoto profilu: asi 10 až 15 minut, potom rychleji.",
+      "review": "Před instalací ho zkontroluje registr Horizonu nebo administrátoři Rusticu.",
+      "consent": "Nic se nesestaví, dokud si nepřečteš a nepřijmeš krátké upozornění.",
+      "more": "Jak fungují nativní módy"
+    }
+  },
+  "report": {
+    "button": "Nahlásit",
+    "title": "Nahlásit {{name}}",
+    "sent": "Nahlášení odesláno",
+    "sentBody": "Děkujeme. Naši moderátoři ho posoudí.",
+    "reasons": {
+      "fair_play": "Porušuje pravidla fair play",
+      "malware": "Malware nebo krádež dat",
+      "copyright": "Porušení autorských práv",
+      "other": "Něco jiného"
+    },
+    "failed": "Nahlášení se nepodařilo odeslat"
+  },
+  "versions": {
+    "version": "Verze",
+    "horizon": "Sestavení Horizonu",
+    "published": "Zveřejněno",
+    "downloads": "Stažení",
+    "compatibility": "Kompatibilita",
+    "actions": "Akce",
+    "none": "Žádné",
+    "channel": {
+      "release": "Stabilní",
+      "beta": "Beta",
+      "alpha": "Alfa"
+    },
+    "empty": "Zatím není dostupná žádná verze.",
+    "latest": "Nejnovější"
+  },
+  "deps": {
+    "none": "Žádné závislosti.",
+    "relation": {
+      "required": "Povinná",
+      "optional": "Volitelná",
+      "incompatible": "Nekompatibilní"
+    },
+    "installed": "Nainstalováno",
+    "willInstall": "Nainstaluje se automaticky",
+    "notInstalled": "Nenainstalováno"
+  },
+  "compatTab": {
+    "for": "pro {{target}}",
+    "builds": "Autor vydává sestavení určené pro tuto verzi Horizonu.",
+    "format": "Tento obsah obsahuje jen data (textury, shadery, datové balíčky): nezávisí na sestavení Horizonu.",
+    "unknown": "Pro ověření kompatibility vyber instanci nebo server.",
+    "fairPlay": "Rustic propaguje jen obsah v duchu fair play. Nic, co dává nefér výhodu, se nikdy nezobrazí.",
+    "native": "Nativní mód, který sedí k tomuto Horizonu: Rustic Launcher ho zkompiluje do vlastní hry této instance na tvém počítači."
+  },
+  "permissions": {
+    "title": "Oprávnění",
+    "network": "Přístup k síti: {{value}}",
+    "none": "žádný",
+    "files": "Soubory: jen vlastní datová složka."
+  },
+  "stats": {
+    "downloads": "Stažení",
+    "follows": "Sledující",
+    "updated": "Aktualizováno",
+    "license": "Licence",
+    "size": "Velikost",
+    "gameVersion": "Verze hry",
+    "version": "Nejnovější verze",
+    "author": "Autor",
+    "created": "Zveřejněno"
+  },
+  "searchSources": {
+    "mod": "Hledej módy na Horizonu, Modrinthu a Rusticu…",
+    "modpack": "Hledej modpacky na Horizonu, Modrinthu a Rusticu…",
+    "resourcepack": "Hledej balíčky zdrojů na Horizonu, Modrinthu a Rusticu…",
+    "shader": "Hledej shadery na Horizonu, Modrinthu a Rusticu…",
+    "datapack": "Hledej datové balíčky na Horizonu, Modrinthu a Rusticu…",
+    "plugin": "Hledej pluginy na Horizonu, Modrinthu a Rusticu…"
+  },
+  "filtersLabel": "Filtry",
+  "view": "Zobrazit",
+  "heading": "Najdi svůj další *mód*",
+  "eyebrow": "Prozkoumat",
+  "kindsServer": "Pro Rustic Server",
+  "tabs": {
+    "label": "Sekce Prozkoumat",
+    "discover": "Objevovat",
+    "browse": "Procházet",
+    "mine": "Můj obsah"
+  },
+  "hero": {
+    "eyebrow": "Doporučené"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "Doporučené módy",
+      "modpack": "Doporučené modpacky",
+      "resourcepack": "Doporučené balíčky zdrojů",
+      "shader": "Doporučené shadery",
+      "datapack": "Doporučené datové balíčky",
+      "plugin": "Doporučené pluginy"
+    },
+    "rows": {
+      "new": "Nové",
+      "newHint": "Právě zveřejněné nebo aktualizované",
+      "horizon": "Populární na Horizonu",
+      "horizonHint": "Nejstahovanější z registru Horizonu",
+      "verified": "Ověřeno Rusticem",
+      "verifiedHint": "Zkontrolováno týmem Rusticu: dělají, co slibují",
+      "yours": "Pro {{target}}",
+      "yoursHint": "Běží na Horizonu {{version}}",
+      "community": "Od komunity",
+      "communityHint": "Nedávno aktualizované na marketplace Rusticu"
+    },
+    "empty": {
+      "title": "Zatím tu není co objevovat",
+      "hint": "Na tvém cíli zatím neběží žádný obsah tohoto typu. Raději procházej vše.",
+      "browse": "Procházet vše"
+    },
+    "rowError": "Tento výběr se nepodařilo načíst.",
+    "retry": "Zkusit znovu"
+  },
+  "verified": {
+    "label": "Ověřeno",
+    "hint": "Ověřeno Rusticem: moderátor zkontroloval, že dělá to, co uvádí jeho stránka."
+  },
+  "price": {
+    "soon": "Již brzy",
+    "soonHint": "Tvůrci budou brzy moci svou práci prodávat. Nákupy zatím nejsou dostupné.",
+    "notOnSale": "Zatím není v prodeji: prodej od tvůrců se brzy spustí."
+  },
+  "native": {
+    "badge": "Sestaví se na tvém PC",
+    "short": "Nativní",
+    "hint": "Nativní mód je kód v Rustu, který se před spuštěním zkompiluje do hry na tvém počítači.",
+    "title": "Nativní mód",
+    "body": "Nativní módy jsou zdrojový kód v Rustu, který se sestaví do tvé hry na tomto počítači (může to trvat od minuty do půl hodiny). Administrátoři kontrolují každou verzi, než se zveřejní.",
+    "kind": "Nativní mód",
+    "how": "Rustic Launcher je zkompiluje na tvém počítači do vlastní hry této instance, jakmile přijmeš upozornění o důvěře. První sestavení trvá 10 až 15 minut, další už překompilují jen to, co se změnilo. Instance bez nativních módů si ponechají předem sestavenou hru.",
+    "instanceOnly": "Nativní módy se instalují do instance.",
+    "trust": {
+      "title": "Nativní kód: přečti si to před sestavením",
+      "lead": "{{name}} je nativní mód: kód v Rustu zkompilovaný do hry instance „{{instance}}“ na tomto počítači.",
+      "unsandboxed": "Nativní módy neběží v sandboxu. Po sestavení běží s tvými právy a mohou číst, měnit nebo odesílat cokoli, k čemu má tvůj účet přístup.",
+      "review": "Nainstalovat lze jen módy z registru Horizonu (kontrolované jeho správci) a módy z marketplace Rusticu schválené administrátory. Kontrola snižuje riziko, ale neodstraňuje ho.",
+      "build": "V případě potřeby se nainstaluje Rust a pak se hra pro tuto instanci zkompiluje: poprvé zhruba 10 až 15 minut a pár GB, potom rychleji.",
+      "scope": "Sestavenou hru hraje jen tato instance. U jejích dalších nativních módů už se tě nikdo ptát nebude.",
+      "source": "Přečíst zdrojový kód",
+      "check": "Rozumím, že nativní módy běží mimo sandbox s mými právy, a tomuto módu důvěřuji.",
+      "accept": "Důvěřuji mu: nainstalovat a sestavit"
+    },
+    "toolchain": {
+      "title": "Nainstalovat Rust {{version}}?",
+      "lead": "K sestavení nativních módů je potřeba kompilátor Rustu. Rustic Launcher ho může nainstalovat za tebe.",
+      "manual": "K sestavení nativních módů je potřeba kompilátor Rustu a systémové nástroje, které Rustic Launcher nainstalovat neumí. Nainstaluj je a pak sestav znovu:",
+      "where": "Z oficiálního webu (static.rust-lang.org), ověřený proti zveřejněnému SHA-256, do vlastní složky launcheru: jinde na tvém počítači se nic nezmění.",
+      "size": "Zhruba 1 až 2,5 GB (ve Windows včetně kompilátoru C).",
+      "once": "Jednou pro všechny instance; odstraněním dat launcheru se odstraní i on.",
+      "found": "Nalezeno: {{reason}}.",
+      "install": "Nainstalovat Rust",
+      "started": "Instaluji Rust",
+      "startedHint": "Sestavení začne, jakmile bude připraven. Sleduj ho v panelu stahování.",
+      "failed": "Rust se nepodařilo nainstalovat"
+    },
+    "build": {
+      "started": "Sestavuji nativní módy pro {{instance}}",
+      "startedHint": "Sleduj to na stránce instance nebo v panelu stahování. První sestavení trvá 10 až 15 minut.",
+      "failed": "Nativní módy instance {{instance}} se nepodařilo sestavit"
+    },
+    "errors": {
+      "notEdition": "Nativní módy se sestavují jen do edice Rustic: přepni na ni tuto instanci v jejím nastavení.",
+      "running": "Nejdřív zavři hru: její nativní módy se znovu sestavují, když je zastavená.",
+      "disk": "Na disku není dost volného místa. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "Nekompatibilní",
+    "compatible": "Kompatibilní"
+  },
+  "library": {
+    "add": "Přidat do knihovny",
+    "inLibrary": "V mé knihovně",
+    "added": "{{name}} přidáno do tvé knihovny",
+    "removed": "{{name}} odebráno z tvé knihovny",
+    "remove": "Odebrat {{name}} z mé knihovny",
+    "failed": "Knihovnu se nepodařilo aktualizovat"
+  },
+  "prompt": {
+    "title": "Nainstalovat {{name}}?",
+    "body": "Tento projekt byl otevřen z webu. Vyber, kam a jakou verzi nainstalovat, a potvrď.",
+    "dismiss": "Teď ne",
+    "version": "Verze",
+    "versionMissing": "Verze {{version}} už není dostupná: vybrána je nejnovější kompatibilní."
+  },
+  "mine": {
+    "searchPlaceholder": "Filtrovat můj obsah…",
+    "noMatch": "Nic neodpovídá",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Přidáno ručně"
+    },
+    "installed": {
+      "title": "Nainstalováno",
+      "titleOn": "Nainstalováno na {{target}}",
+      "hint": {
+        "mod": "Módy tohoto cíle: zapínej je, vypínej, aktualizuj nebo odebírej.",
+        "modpack": "Modpacky tohoto cíle: zapínej je, vypínej, aktualizuj nebo odebírej.",
+        "resourcepack": "Balíčky zdrojů tohoto cíle: zapínej je, vypínej, aktualizuj nebo odebírej.",
+        "shader": "Shadery tohoto cíle: zapínej je, vypínej, aktualizuj nebo odebírej.",
+        "datapack": "Datové balíčky tohoto cíle: zapínej je, vypínej, aktualizuj nebo odebírej.",
+        "plugin": "Pluginy tohoto cíle: zapínej je, vypínej, aktualizuj nebo odebírej."
+      },
+      "modpacksTitle": "Z modpacků jsou profily",
+      "modpacksHint": "Každý nainstalovaný modpack je samostatný profil.",
+      "openProfiles": "Otevřít moje profily",
+      "noTarget": "Nejdřív vyber, kde hledat.",
+      "serverHint": "Pluginy a datové balíčky serveru se spravují na jeho stránce.",
+      "manageServer": "Spravovat server",
+      "updateAll_one": "Aktualizovat {{count}} položku",
+      "updateAll_few": "Aktualizovat {{count}} položky",
+      "updateAll_many": "Aktualizovat {{count}} položky",
+      "updateAll_other": "Aktualizovat {{count}} položek",
+      "openProfile": "Otevřít profil",
+      "empty": "Zatím tu není nic nainstalováno",
+      "emptyHint": "Najdi něco v sekci Objevovat nebo Procházet.",
+      "discover": "Objevovat obsah",
+      "updateTo": "Aktualizovat na {{version}}",
+      "incompatible": "Nekompatibilní",
+      "update": "Aktualizovat {{name}}",
+      "toggle": "Zapnout {{name}}",
+      "remove": "Odebrat {{name}}",
+      "removeTitle": "Odebrat {{name}}?",
+      "removeBody": "Jeho soubory se z tohoto profilu smažou. Kdykoli ho můžeš nainstalovat znovu."
+    },
+    "signIn": {
+      "title": "Tvoje knihovna a tvoje výtvory",
+      "body": "Přihlas se ke svému účtu Rustic a najdeš své uložené projekty i ty, které zveřejňuješ.",
+      "action": "Přihlásit se"
+    },
+    "library": {
+      "title": "Moje knihovna",
+      "hint": "Projekty uložené ve tvém účtu Rustic, na každém počítači.",
+      "empty": "Tvoje knihovna je prázdná",
+      "emptyHint": "Přidej projekt z Rusticu na jeho stránce a najdeš ho tady.",
+      "installAria": "Nainstalovat {{name}}"
+    },
+    "creations": {
+      "title": "Moje výtvory",
+      "hint": "Co zveřejňuješ na marketplace Rusticu.",
+      "publish": "Zveřejnit na webu",
+      "empty": "Zatím nic nezveřejňuješ",
+      "emptyHint": "Sdílej mód, balíček nebo shader se všemi hráči Rusticu z webu.",
+      "manage": "Spravovat",
+      "manageAria": "Spravovat {{name}} na webu",
+      "status": {
+        "public": "Veřejné",
+        "unlisted": "Neveřejné",
+        "private": "Soukromé",
+        "pending": "Čeká na kontrolu",
+        "rejected": "Zamítnuto",
+        "takenDown": "Staženo"
+      }
+    }
+  }
+}

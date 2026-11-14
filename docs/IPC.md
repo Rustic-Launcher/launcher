@@ -4,7 +4,7 @@ Owners: frontend (TypeScript client + browser mock, ADR 0024) and desktop (Rust 
 `apps/launcher/src-tauri`). **Generated** from `apps/launcher/src/ipc/commands.ts` and
 `src/ipc/types/*.ts` by `pnpm --filter @rustic/launcher gen:ipc-doc`: edit the TypeScript, then regenerate.
 
-129 commands, 18 events.
+131 commands, 20 events.
 
 ## Conventions
 
@@ -61,8 +61,10 @@ type InstanceId = { instance_id: string };
 | `app_take_deep_link`<br>The `rustic://content/...` or `rustic://server/...` link that started (or reached) the launcher before the UI listened, taken once (null when none). | — | `PageDeepLink \| null` |
 | `player_skin_url`<br>A player's skin URL (Mojang's session service, cached); `null` without one. | `{ uuid: string }` | `string \| null` |
 | `app_pick_path` | `PickPathRequest` | `string \| null` |
-| `app_check_update` | — | `LauncherUpdate` |
-| `app_install_update` | — | `void` |
+| `app_update_status`<br>The update service's state (ADR 0162). | — | `UpdateStatus` |
+| `app_update_check`<br>"Check now": asks the feeds; automatic updates on, installs what it finds (a running game defers it). | — | `UpdateStatus` |
+| `app_update_apply`<br>"Update and restart": installs what the last check found (`not_found` when nothing); never closes a running game. | — | `UpdateStatus` |
+| `app_take_pending_launch`<br>The launch an update restart interrupted, taken once (null when none or older than 30 min). | — | `PendingLaunch \| null` |
 | `downloads_list` | — | `DownloadTask[]` |
 | `download_cancel` | `Id` | `void` |
 | `game_detect_install` | — | `GameInstallDetection` |
@@ -246,6 +248,8 @@ type InstanceId = { instance_id: string };
 | `deep-link` | `DeepLinkEvent` |
 | `native-build-progress` | `NativeBuildProgress` |
 | `native-changed` | `{ instance_id?: string }` |
+| `update-state` | `UpdateStatus` |
+| `update-installed` | `{ kind: 'edition'; version: string }` |
 
 ## Types
 
@@ -255,6 +259,7 @@ Verbatim from `apps/launcher/src/ipc/types/`. Rust mirrors use the same field na
 
 ```ts
 /** App, system, settings, downloads, game preparation. Mirrors launcher/docs/IPC.md. */
+import type { LaunchOptions } from './instances';
 
 /** ISO-8601 date-time string (UTC). */
 export type IsoDate = string;
@@ -398,10 +403,57 @@ export interface PrepareProgress {
   message?: string;
 }
 
-export interface LauncherUpdate {
-  available: boolean;
-  version: string | null;
+/** A newer launcher or Rustic edition build (ADR 0162). */
+export interface UpdateItem {
+  version: string;
   notes: string | null;
+  size: number | null;
+  published_at: IsoDate | null;
+}
+
+/**
+ * The update service (ADR 0162): checks at start, before Play, when a game exits, every few hours
+ * and on demand; installs without a prompt when `auto` is on, never while a game runs.
+ */
+export interface UpdateStatus {
+  phase:
+    | 'idle'
+    | 'checking'
+    /** Found; automatic updates are off (or a failed install waits): "Update and restart". */
+    | 'available'
+    /** Found while a game runs: applied as soon as it exits. */
+    | 'deferred'
+    | 'downloading'
+    | 'installing'
+    | 'restarting'
+    /** The last check or install failed; retried later, playing is never blocked. */
+    | 'error';
+  current_version: string;
+  channel: 'stable' | 'beta';
+  /** Settings > Launcher > "Install updates automatically". */
+  auto: boolean;
+  last_check: IsoDate | null;
+  launcher: UpdateItem | null;
+  edition: UpdateItem | null;
+  /** The newest installed Rustic edition build. */
+  edition_current: string | null;
+  /** What `downloading`/`installing` works on. */
+  working_on: 'launcher' | 'edition' | null;
+  /** 0..1 when known. */
+  progress: number | null;
+  error: string | null;
+  /** This launcher was just updated from that version (shown once). */
+  updated_from: string | null;
+  /** A launch interrupted by the update, resumed after the restart. */
+  resume_instance: string | null;
+}
+
+/** A launch an update restart interrupted (`app_take_pending_launch`). */
+export interface PendingLaunch {
+  instance_id: string;
+  options: LaunchOptions | null;
+  /** Unix seconds. */
+  created_at: number;
 }
 
 export interface PickPathRequest {
@@ -1028,6 +1080,8 @@ export interface LaunchOptions {
 
 export type LaunchPhase =
   | 'idle'
+  /** Updates first (ADR 0162): the edition build it follows, then the launcher. */
+  | 'updating'
   | 'checking'
   | 'downloading'
   | 'preparing'

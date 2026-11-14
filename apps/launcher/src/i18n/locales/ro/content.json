@@ -1,0 +1,475 @@
+{
+  "title": "Explorează",
+  "subtitle": "Moduri, pachete, shadere și pluginuri din Horizon, Modrinth și Rustic, verificate pentru instanța ta.",
+  "kindsLabel": "Tipuri de conținut",
+  "kinds": {
+    "mod": "Moduri",
+    "modpack": "Modpackuri",
+    "resourcepack": "Pachete de resurse",
+    "shader": "Shadere",
+    "datapack": "Pachete de date",
+    "plugin": "Pluginuri"
+  },
+  "searchLabel": "Caută conținut",
+  "clear": "Șterge căutarea",
+  "by": "de {{author}}",
+  "featured": "Recomandat",
+  "downloads": "Descărcări: {{value}}",
+  "updated": "actualizat {{when}}",
+  "results_one": "{{count}} rezultat",
+  "results_few": "{{count}} rezultate",
+  "results_other": "{{count}} de rezultate",
+  "loadMore": "Încarcă mai multe ({{shown}} din {{total}})",
+  "target": {
+    "label": "Se instalează în",
+    "none": "Alege o destinație",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Server Horizon",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "Acest PC",
+    "vps": "VPS-ul tău",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Sortează după",
+    "relevance": "Relevanță",
+    "downloads": "Cele mai descărcate",
+    "updated": "Actualizate recent",
+    "newest": "Cele mai noi"
+  },
+  "sources": {
+    "label": "Surse",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Registrul Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Catalogul Rustic"
+  },
+  "filters": {
+    "category": "Categorie",
+    "allCategories": "Toate categoriile",
+    "compatibleInstance": "Compatibil cu această instanță",
+    "compatibleServer": "Compatibil cu acest server",
+    "worksNow": "Se compilează pe Horizon-ul actual",
+    "categories": "Categorii",
+    "viewMore_one": "Încă {{count}}",
+    "viewMore_few": "Încă {{count}}",
+    "viewMore_other": "Încă {{count}}",
+    "viewLess": "Mai puțin",
+    "compatibility": "Compatibilitate",
+    "pluginHint": "Pluginurile rulează izolate (sandbox), doar pe Rustic Server.",
+    "fairPlayHint": "Se listează doar conținut fair play.",
+    "versions": "Versiuni Horizon",
+    "targetVersion": "Instanța sau serverul selectat",
+    "checkingAgainst": "Compatibilitatea este verificată pentru build-ul evidențiat.",
+    "rustic": "Marketplace Rustic",
+    "rusticHint": "Proiectele plătite și verificate sunt doar pe Rustic.",
+    "verifiedOnly": "Doar verificate de Rustic",
+    "price": "Preț",
+    "priceOptions": {
+      "all": "Toate",
+      "free": "Gratuite",
+      "paid": "Plătite"
+    },
+    "reset": "Resetează filtrele",
+    "remove": "Elimină filtrul {{filter}}"
+  },
+  "categories": {
+    "performance": "Performanță",
+    "utility": "Utilitare",
+    "ui": "Interfață",
+    "pvp": "PvP",
+    "adventure": "Aventură",
+    "decoration": "Decorațiuni",
+    "storage": "Depozitare",
+    "worldgen": "Generare de lumi",
+    "library": "Bibliotecă",
+    "tech": "Tehnologie",
+    "cozy": "Confortabil",
+    "multiplayer": "Multiplayer",
+    "realistic": "Realist",
+    "simple": "Fidel originalului",
+    "lightweight": "Ușor",
+    "cinematic": "Cinematic",
+    "qol": "Confort în joc",
+    "admin": "Administrare",
+    "chat": "Chat",
+    "minigames": "Minijocuri",
+    "protection": "Protecție",
+    "integration": "Integrări"
+  },
+  "empty": {
+    "title": "Nimic nu se potrivește",
+    "hint": "Încearcă alt cuvânt, altă sursă sau altă categorie.",
+    "compatibleHint": "Se afișează doar conținutul care rulează pe această destinație. Dezactivează filtrul ca să vezi tot.",
+    "showAll": "Arată rezultatele incompatibile"
+  },
+  "banners": {
+    "mod": "Se listează doar moduri fair play: fără X-ray, auto-clickere sau alte avantaje neloiale.",
+    "modpack": "Un modpack devine o instanță nouă, cu propriile moduri și setări.",
+    "resourcepack": "Pachetele se suprapun: cel din vârful ordinii de încărcare câștigă.",
+    "shader": "Horizon rulează propriile pachete de shadere WGSL (.hshader, shader API 0.1, experimental) și pachete în format Iris/OptiFine din registrul Horizon. Alege unul în joc din Setări video › Pachete de shadere.",
+    "datapack": "Pachetele de date aparțin unei lumi: vei alege lumea la instalare.",
+    "plugin": "Pluginurile (.rplugin) rulează izolate (sandbox) pe serverele care folosesc motorul Rustic Server. Un plugin defect este dezactivat; serverul continuă să ruleze."
+  },
+  "resourcepacks": {
+    "manageOrder": "Gestionează ordinea de încărcare"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Format Iris/OptiFine"
+    },
+    "formatHint": {
+      "horizon": "Formatul propriu Horizon (.hshader), shader API 0.1 (experimental). Verificat înainte de a rula.",
+      "shaders_dir": "Un pachet shaders/ în format Iris/OptiFine, rulat de încărcătorul separat al Horizon."
+    }
+  },
+  "side": {
+    "client": "Client",
+    "server": "Server",
+    "both": "Client și server"
+  },
+  "install": {
+    "install": "Instalează",
+    "installAria": "Instalează {{name}} în {{target}}",
+    "installed": "Instalat",
+    "installing": "Se instalează…",
+    "installingPct": "Se instalează {{pct}}",
+    "createInstance": "Creează instanța",
+    "chooseWorld": "Instalează într-o lume",
+    "noTarget": "Alege mai întâi unde instalezi.",
+    "started": "Se instalează {{name}} în {{target}}",
+    "withDeps_one": "Plus {{count}} dependență necesară.",
+    "withDeps_few": "Plus {{count}} dependențe necesare.",
+    "withDeps_other": "Plus {{count}} de dependențe necesare.",
+    "failed": "{{name}} nu a putut fi instalat",
+    "native": "Compilează și instalează",
+    "update": "Actualizează",
+    "updateAria": "Actualizează {{name}} la {{version}}"
+  },
+  "modpack": {
+    "created": "Se creează instanța {{name}}",
+    "createdHint": "Descărcare în curs. Va apărea în Joacă când e gata."
+  },
+  "datapacks": {
+    "pickWorld": "Alege o lume",
+    "noWorlds": "Această instanță nu are încă nicio lume. Joacă o dată ca să creezi una.",
+    "count_one": "{{count}} pachet de date",
+    "count_few": "{{count}} pachete de date",
+    "count_other": "{{count}} de pachete de date"
+  },
+  "plugins": {
+    "badge": "Plugin Rustic Server · API {{api}}",
+    "noServerTitle": "Niciun server Rustic Server încă",
+    "noServerBody": "Pluginurile rulează doar pe serverele care folosesc motorul Rustic Server. Creează unul în câțiva pași, apoi revino ca să instalezi pluginuri pe el.",
+    "createServer": "Creează un server"
+  },
+  "detail": {
+    "breadcrumb": "Fir de navigare",
+    "sections": "Secțiunile proiectului",
+    "tabs": {
+      "description": "Descriere",
+      "gallery": "Galerie",
+      "versions": "Versiuni",
+      "changelog": "Noutăți",
+      "dependencies": "Dependențe",
+      "compatibility": "Compatibilitate"
+    },
+    "galleryLabel": "Galeria proiectului {{name}}",
+    "prev": "Imaginea anterioară",
+    "next": "Imaginea următoare",
+    "slide": "Imaginea {{index}} din {{total}}",
+    "about": "Despre acest proiect",
+    "categories": "Categorii",
+    "links": "Linkuri",
+    "link": {
+      "source": "Cod sursă",
+      "issues": "Raportează o eroare",
+      "website": "Site web",
+      "site": "Pe rustic-launcher.com",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "Nicio noutate încă.",
+    "noGallery": "Nicio captură de ecran încă.",
+    "notAvailable": {
+      "title": "Acest proiect nu este disponibil",
+      "body": "Poate fi privat, în așteptarea verificării sau eliminat de creatorul său ori de un moderator.",
+      "back": "Înapoi la Explorează"
+    },
+    "native": {
+      "title": "Se compilează pe PC-ul tău",
+      "build": "Compilat în jocul acestui profil prima dată când joci: cam 10–15 minute, apoi mai repede.",
+      "review": "Verificat înainte de a putea fi instalat, de registrul Horizon sau de administratorii Rustic.",
+      "consent": "Nimic nu se compilează înainte să citești și să accepți un scurt avertisment.",
+      "more": "Cum funcționează modurile native"
+    }
+  },
+  "report": {
+    "button": "Raportează",
+    "title": "Raportează {{name}}",
+    "sent": "Raport trimis",
+    "sentBody": "Mulțumim. Moderatorii noștri îl vor verifica.",
+    "reasons": {
+      "fair_play": "Încalcă politica de fair play",
+      "malware": "Malware sau furt de date",
+      "copyright": "Încălcarea drepturilor de autor",
+      "other": "Altceva"
+    },
+    "failed": "Raportul nu a putut fi trimis"
+  },
+  "versions": {
+    "version": "Versiune",
+    "horizon": "Build-uri Horizon",
+    "published": "Publicată",
+    "downloads": "Descărcări",
+    "compatibility": "Compatibilitate",
+    "actions": "Acțiuni",
+    "none": "Niciuna",
+    "channel": {
+      "release": "Stabilă",
+      "beta": "Beta",
+      "alpha": "Alpha"
+    },
+    "empty": "Nicio versiune disponibilă încă.",
+    "latest": "Cea mai nouă"
+  },
+  "deps": {
+    "none": "Nicio dependență.",
+    "relation": {
+      "required": "Necesară",
+      "optional": "Opțională",
+      "incompatible": "Incompatibilă"
+    },
+    "installed": "Instalată",
+    "willInstall": "Instalată automat",
+    "notInstalled": "Neinstalată"
+  },
+  "compatTab": {
+    "for": "pentru {{target}}",
+    "builds": "Autorul publică un build făcut pentru această versiune Horizon.",
+    "format": "Acest conținut conține doar date (texturi, shadere, pachete de date): nu depinde de un build Horizon.",
+    "unknown": "Alege o instanță sau un server ca să verifici compatibilitatea.",
+    "fairPlay": "Rustic promovează doar conținut fair play. Nimic din ce oferă un avantaj neloial nu este listat vreodată.",
+    "native": "Un mod nativ potrivit pentru acest Horizon: Rustic Launcher îl compilează în jocul propriu al acestei instanțe, pe PC-ul tău."
+  },
+  "permissions": {
+    "title": "Permisiuni",
+    "network": "Acces la rețea: {{value}}",
+    "none": "niciunul",
+    "files": "Fișiere: doar propriul folder de date."
+  },
+  "stats": {
+    "downloads": "Descărcări",
+    "follows": "Urmăritori",
+    "updated": "Actualizat",
+    "license": "Licență",
+    "size": "Dimensiune",
+    "gameVersion": "Versiunea jocului",
+    "version": "Ultima versiune",
+    "author": "Autor",
+    "created": "Publicat"
+  },
+  "searchSources": {
+    "mod": "Caută moduri pe Horizon, Modrinth și Rustic…",
+    "modpack": "Caută modpackuri pe Horizon, Modrinth și Rustic…",
+    "resourcepack": "Caută pachete de resurse pe Horizon, Modrinth și Rustic…",
+    "shader": "Caută shadere pe Horizon, Modrinth și Rustic…",
+    "datapack": "Caută pachete de date pe Horizon, Modrinth și Rustic…",
+    "plugin": "Caută pluginuri pe Horizon, Modrinth și Rustic…"
+  },
+  "filtersLabel": "Filtre",
+  "view": "Vezi",
+  "heading": "Găsește-ți următorul *mod*",
+  "eyebrow": "Explorează",
+  "kindsServer": "Pentru un Rustic Server",
+  "tabs": {
+    "label": "Secțiunile Explorează",
+    "discover": "Descoperă",
+    "browse": "Răsfoiește",
+    "mine": "Conținutul meu"
+  },
+  "hero": {
+    "eyebrow": "Recomandat"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "Moduri recomandate",
+      "modpack": "Modpackuri recomandate",
+      "resourcepack": "Pachete de resurse recomandate",
+      "shader": "Shadere recomandate",
+      "datapack": "Pachete de date recomandate",
+      "plugin": "Pluginuri recomandate"
+    },
+    "rows": {
+      "new": "Noi",
+      "newHint": "Abia publicate sau actualizate",
+      "horizon": "Populare pe Horizon",
+      "horizonHint": "Cele mai descărcate din registrul Horizon",
+      "verified": "Verificate de Rustic",
+      "verifiedHint": "Verificate de echipa Rustic: fac ce spun",
+      "yours": "Pentru {{target}}",
+      "yoursHint": "Rulează pe Horizon {{version}}",
+      "community": "De la comunitate",
+      "communityHint": "Actualizate recent pe marketplace-ul Rustic"
+    },
+    "empty": {
+      "title": "Nimic de descoperit aici încă",
+      "hint": "Niciun conținut de acest tip nu rulează încă pe destinația ta. Răsfoiește totul în schimb.",
+      "browse": "Răsfoiește tot"
+    },
+    "rowError": "Această selecție nu a putut fi încărcată.",
+    "retry": "Reîncearcă"
+  },
+  "verified": {
+    "label": "Verificat",
+    "hint": "Verificat de Rustic: un moderator a confirmat că face ce scrie pe pagina lui."
+  },
+  "price": {
+    "soon": "În curând",
+    "soonHint": "Creatorii își vor putea vinde curând creațiile. Cumpărarea nu este încă disponibilă.",
+    "notOnSale": "Nu este încă de vânzare: vânzările creatorilor se deschid curând."
+  },
+  "native": {
+    "badge": "Se compilează pe PC-ul tău",
+    "short": "Nativ",
+    "hint": "Un mod nativ este cod Rust compilat în joc pe PC-ul tău înainte de rulare.",
+    "title": "Un mod nativ",
+    "body": "Modurile native sunt cod sursă Rust compilat în jocul tău pe acest PC (poate dura de la un minut la o jumătate de oră). Administratorii verifică fiecare versiune înainte să devină publică.",
+    "kind": "Mod nativ",
+    "how": "Rustic Launcher le compilează pe PC-ul tău în jocul propriu al acestei instanțe, după ce accepți un avertisment de încredere. Prima compilare durează 10–15 minute; următoarele recompilează doar ce s-a schimbat. Instanțele fără moduri native păstrează jocul precompilat.",
+    "instanceOnly": "Modurile native se instalează într-o instanță.",
+    "trust": {
+      "title": "Cod nativ: citește înainte să compilezi",
+      "lead": "{{name}} este un mod nativ: cod Rust compilat în jocul instanței „{{instance}}” pe acest PC.",
+      "unsandboxed": "Modurile native nu sunt izolate (sandbox). Odată compilate, rulează cu drepturile tale și pot citi, modifica sau trimite orice poate și contul tău.",
+      "review": "Se pot instala doar moduri din registrul Horizon (verificate de întreținătorii lui) și moduri aprobate de administratori din marketplace-ul Rustic. O verificare reduce riscul, dar nu îl elimină.",
+      "build": "Rust este instalat dacă e nevoie, apoi jocul este compilat pentru această instanță: aproximativ 10–15 minute și câțiva GB prima dată, mai repede după aceea.",
+      "scope": "Doar această instanță rulează jocul compilat. Nu vei mai fi întrebat pentru următoarele ei moduri native.",
+      "source": "Citește codul sursă",
+      "check": "Înțeleg că modurile native rulează fără sandbox, cu drepturile mele, și am încredere în acest mod.",
+      "accept": "Am încredere: instalează și compilează"
+    },
+    "toolchain": {
+      "title": "Instalezi Rust {{version}}?",
+      "lead": "Compilarea modurilor native necesită compilatorul Rust. Rustic Launcher îl poate instala pentru tine.",
+      "manual": "Compilarea modurilor native necesită compilatorul Rust și unelte de sistem pe care Rustic Launcher nu le poate instala pentru tine. Instalează-le, apoi compilează din nou:",
+      "where": "De pe site-ul oficial (static.rust-lang.org), verificat cu SHA-256-ul publicat, în folderul propriu al launcherului: nimic altceva nu se schimbă pe PC-ul tău.",
+      "size": "Aproximativ 1–2,5 GB (cu un compilator C pe Windows).",
+      "once": "O singură dată pentru toate instanțele; ștergerea datelor launcherului îl elimină.",
+      "found": "Găsit: {{reason}}.",
+      "install": "Instalează Rust",
+      "started": "Se instalează Rust",
+      "startedHint": "Compilarea pornește imediat ce e gata. Urmărește-o în panoul de descărcări.",
+      "failed": "Rust nu a putut fi instalat"
+    },
+    "build": {
+      "started": "Se compilează modurile native pentru {{instance}}",
+      "startedHint": "Urmărește-o pe pagina instanței sau în panoul de descărcări. Prima compilare durează 10–15 minute.",
+      "failed": "Modurile native ale instanței {{instance}} nu au putut fi compilate"
+    },
+    "errors": {
+      "notEdition": "Modurile native se compilează doar în ediția Rustic: trece instanța pe ea din setările ei.",
+      "running": "Închide mai întâi jocul: modurile native se recompilează cât timp e oprit.",
+      "disk": "Nu e destul spațiu liber pe disc. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "Incompatibil",
+    "compatible": "Compatibil"
+  },
+  "library": {
+    "add": "Adaugă în biblioteca mea",
+    "inLibrary": "În biblioteca mea",
+    "added": "{{name}} a fost adăugat în biblioteca ta",
+    "removed": "{{name}} a fost eliminat din biblioteca ta",
+    "remove": "Elimină {{name}} din biblioteca mea",
+    "failed": "Biblioteca ta nu a putut fi actualizată"
+  },
+  "prompt": {
+    "title": "Instalezi {{name}}?",
+    "body": "Ai deschis acest proiect de pe site. Alege unde să-l instalezi și ce versiune, apoi confirmă.",
+    "dismiss": "Nu acum",
+    "version": "Versiune",
+    "versionMissing": "Versiunea {{version}} nu mai este disponibilă: a fost selectată cea mai nouă versiune compatibilă."
+  },
+  "mine": {
+    "searchPlaceholder": "Filtrează conținutul meu…",
+    "noMatch": "Nimic nu se potrivește",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Adăugat manual"
+    },
+    "installed": {
+      "title": "Instalate",
+      "titleOn": "Instalate pe {{target}}",
+      "hint": {
+        "mod": "Modurile acestei destinații: activează-le sau dezactivează-le, actualizează-le sau elimină-le.",
+        "modpack": "Modpackurile acestei destinații: activează-le sau dezactivează-le, actualizează-le sau elimină-le.",
+        "resourcepack": "Pachetele de resurse ale acestei destinații: activează-le sau dezactivează-le, actualizează-le sau elimină-le.",
+        "shader": "Shaderele acestei destinații: activează-le sau dezactivează-le, actualizează-le sau elimină-le.",
+        "datapack": "Pachetele de date ale acestei destinații: activează-le sau dezactivează-le, actualizează-le sau elimină-le.",
+        "plugin": "Pluginurile acestei destinații: activează-le sau dezactivează-le, actualizează-le sau elimină-le."
+      },
+      "modpacksTitle": "Modpackurile devin profiluri",
+      "modpacksHint": "Fiecare modpack instalat este un profil separat.",
+      "openProfiles": "Deschide profilurile mele",
+      "noTarget": "Alege mai întâi unde să cauți.",
+      "serverHint": "Pluginurile și pachetele de date ale unui server se gestionează pe pagina lui.",
+      "manageServer": "Gestionează serverul",
+      "updateAll_one": "Actualizează {{count}} element",
+      "updateAll_few": "Actualizează {{count}} elemente",
+      "updateAll_other": "Actualizează {{count}} de elemente",
+      "openProfile": "Deschide profilul",
+      "empty": "Nimic instalat aici încă",
+      "emptyHint": "Găsește ceva în Descoperă sau Răsfoiește.",
+      "discover": "Descoperă conținut",
+      "updateTo": "Actualizează la {{version}}",
+      "incompatible": "Incompatibil",
+      "update": "Actualizează {{name}}",
+      "toggle": "Activează {{name}}",
+      "remove": "Elimină {{name}}",
+      "removeTitle": "Elimini {{name}}?",
+      "removeBody": "Fișierele sale sunt șterse din acest profil. Îl poți instala din nou oricând."
+    },
+    "signIn": {
+      "title": "Biblioteca și creațiile tale",
+      "body": "Conectează-te la contul Rustic ca să găsești proiectele salvate și pe cele pe care le publici.",
+      "action": "Conectează-te"
+    },
+    "library": {
+      "title": "Biblioteca mea",
+      "hint": "Proiecte salvate în contul tău Rustic, pe fiecare PC.",
+      "empty": "Biblioteca ta este goală",
+      "emptyHint": "Adaugă un proiect Rustic din pagina lui ca să-l găsești aici.",
+      "installAria": "Instalează {{name}}"
+    },
+    "creations": {
+      "title": "Creațiile mele",
+      "hint": "Ce publici pe marketplace-ul Rustic.",
+      "publish": "Publică pe site",
+      "empty": "Încă n-ai publicat nimic",
+      "emptyHint": "Împărtășește un mod, un pachet sau un shader cu toți jucătorii Rustic de pe site.",
+      "manage": "Gestionează",
+      "manageAria": "Gestionează {{name}} pe site",
+      "status": {
+        "public": "Public",
+        "unlisted": "Nelistat",
+        "private": "Privat",
+        "pending": "În așteptarea verificării",
+        "rejected": "Respins",
+        "takenDown": "Retras"
+      }
+    }
+  }
+}

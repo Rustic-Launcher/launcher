@@ -21,6 +21,12 @@ png = "0.18"
 open = "5"
 # In Horizon's Cargo.lock already: the title menu's text, set smooth in Inter (assets/).
 ab_glyph = "0.2"
+# Shaping of the scripts that need it (Arabic, Hebrew, the Indic scripts, Lao, Myanmar, Khmer,
+# Sinhala, Tibetan): HarfBuzz's algorithm in pure Rust, MIT (launcher ADR 0164). It reads the same
+# ttf-parser 0.25 as ab_glyph.
+rustybuzz = "0.20"
+# Already in Horizon's Cargo.lock (the game's own bidi): right-to-left runs ordered for drawing.
+unicode-bidi = "0.3"
 # In Horizon's Cargo.lock already (the game's own HTTP client).
 ureq = { version = "2", default-features = false, features = ["tls"] }
 serde = "1"

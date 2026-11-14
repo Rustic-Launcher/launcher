@@ -1,0 +1,114 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Passo {{current}} de {{total}}",
+  "back": "Voltar",
+  "continue": "Continuar",
+  "skip": "Saltar por agora",
+  "steps": {
+    "welcome": "Boas-vindas",
+    "microsoft": "Microsoft",
+    "rustic": "Conta Rustic",
+    "privacy": "Privacidade",
+    "game": "Ficheiros do jogo",
+    "ready": "Pronto"
+  },
+  "welcome": {
+    "title": "Bem-vindo ao Rustic",
+    "subtitle": "Um launcher rápido e social para o Horizon. Algumas escolhas e estás no jogo.",
+    "language": "Idioma",
+    "theme": "Tema",
+    "palette": "Paleta"
+  },
+  "microsoft": {
+    "title": "Iniciar sessão com a Microsoft",
+    "subtitle": "O Rustic confirma junto da Microsoft que tens o jogo. A tua palavra-passe nunca passa pelo Rustic.",
+    "signedInAs": "Sessão iniciada como {{name}}",
+    "ownershipOk": "Posse confirmada: podes jogar.",
+    "notOwnedTitle": "Precisas do Minecraft: Java Edition",
+    "notOwnedBody": "Esta Conta Microsoft não tem o jogo. O Rustic nunca inicia o jogo sem licença.",
+    "buyGame": "Obter o jogo",
+    "whyTitle": "Porquê?",
+    "whyBody": "Ter o jogo é obrigatório. O Horizon prepara os ficheiros do jogo a partir da tua própria instalação, e os perfis offline só são desbloqueados depois desta verificação."
+  },
+  "rustic": {
+    "title": "A tua conta Rustic",
+    "subtitle": "Opcional. O jogo funciona sem ela; podes iniciar sessão mais tarde nas Definições.",
+    "perks": {
+      "friends": {
+        "title": "Amigos e grupos",
+        "body": "Vê quem está online e junta-te a eles com um clique."
+      },
+      "locker": {
+        "title": "Cacifo",
+        "body": "Cosméticos no teu jogador, puramente visuais."
+      },
+      "servers": {
+        "title": "Os teus servidores online",
+        "body": "Um endereço gratuito e domínios para os servidores que alojas."
+      }
+    },
+    "signedInAs": "Sessão iniciada como {{name}}",
+    "signIn": "Iniciar sessão ou criar conta",
+    "skipHint": "Ou carrega em Continuar para saltar por agora.",
+    "age": "As contas Rustic são para maiores de {{min}} anos. Abaixo dos {{consent}}, um dos pais tem de autorizar o tratamento de dados; abaixo dos 18, as compras precisam da aprovação de um dos pais."
+  },
+  "privacy": {
+    "title": "As tuas escolhas de privacidade",
+    "subtitle": "Está tudo desativado. Ativa só o que quiseres partilhar; podes mudar isto a qualquer momento nas Definições.",
+    "usage": {
+      "title": "Estatísticas de utilização",
+      "body": "Que páginas e funcionalidades são usadas, sem conteúdo nem identificadores."
+    },
+    "performance": {
+      "title": "Relatórios de desempenho",
+      "body": "Tempos de arranque e de fotogramas, para encontrar pontos lentos."
+    },
+    "crash": {
+      "title": "Relatórios de falhas",
+      "body": "Enviados automaticamente quando o jogo ou o launcher falha. Se estiver desativado, o Rustic pergunta de cada vez."
+    },
+    "note": "Nunca vendemos dados nem os partilhamos para publicidade.",
+    "policy": "Ler a política de privacidade"
+  },
+  "game": {
+    "title": "Preparar o jogo",
+    "subtitle": "O Rustic usa os ficheiros do jogo da tua própria instalação (ou transfere o que faltar a partir da Mojang) e depois prepara-os para o Horizon.",
+    "detecting": "A procurar a tua instalação do jogo…",
+    "found": "Jogo encontrado ({{versions}})",
+    "notFound": "Nenhuma instalação encontrada",
+    "notFoundBody": "O Rustic vai transferir os ficheiros do jogo a partir da Mojang para a tua conta.",
+    "prepareTitle": "Preparar os ficheiros do jogo",
+    "alreadyReady": "Já preparados",
+    "done": "Preparados",
+    "prepareAgain": "Preparar novamente",
+    "prepare": "Preparar",
+    "steps": {
+      "detect": "Detetar",
+      "download": "Transferir",
+      "verify": "Verificar",
+      "compile_exporters": "Exportadores",
+      "export": "Exportar",
+      "index": "Indexar"
+    },
+    "explain": "Os ficheiros do jogo em falta vêm dos próprios servidores da Mojang, nada de terceiros: os ficheiros preparados ficam neste computador.",
+    "background": "Podes continuar: a preparação prossegue em segundo plano.",
+    "prepareFailed": "Não foi possível preparar os ficheiros do jogo: {{reason}}"
+  },
+  "ready": {
+    "title": "Está tudo pronto",
+    "subtitle": "Cria já a tua primeira instância ou salta este passo e fá-lo mais tarde.",
+    "finish": "Abrir o Rustic",
+    "defaultName": "O meu primeiro mundo",
+    "createTitle": "Criar a minha primeira instância",
+    "recommended": "Recomendada",
+    "nameLabel": "Nome da instância",
+    "existing_one": "Já tens {{count}} instância.",
+    "existing_many": "Já tens {{count}} instâncias.",
+    "existing_other": "Já tens {{count}} instâncias.",
+    "tips": {
+      "play": "O botão JOGAR está sempre no canto inferior direito.",
+      "friends": "Os teus amigos estão à direita; Juntar-me demora um clique.",
+      "servers": "Aloja um servidor para os teus amigos a partir da página Servidores."
+    }
+  }
+}

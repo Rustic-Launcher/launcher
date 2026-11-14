@@ -1,0 +1,430 @@
+{
+  "a11y": {
+    "skipToContent": "Langsung ke konten",
+    "notifications": "Notifikasi"
+  },
+  "actions": {
+    "retry": "Coba lagi",
+    "back": "Kembali",
+    "forward": "Maju",
+    "cancel": "Batal",
+    "close": "Tutup",
+    "clear": "Bersihkan",
+    "save": "Simpan",
+    "saved": "Tersimpan",
+    "delete": "Hapus",
+    "edit": "Edit",
+    "open": "Buka",
+    "install": "Pasang",
+    "installed": "Terpasang",
+    "remove": "Hapus",
+    "confirm": "Konfirmasi",
+    "continue": "Lanjutkan",
+    "next": "Berikutnya",
+    "previous": "Sebelumnya",
+    "done": "Selesai",
+    "copy": "Salin",
+    "copied": "Tersalin",
+    "learnMore": "Pelajari lebih lanjut",
+    "seeAll": "Lihat semua",
+    "create": "Buat",
+    "import": "Impor",
+    "browse": "Telusuri…",
+    "apply": "Terapkan",
+    "reset": "Atur ulang",
+    "enable": "Aktifkan",
+    "disable": "Nonaktifkan",
+    "update": "Perbarui",
+    "add": "Tambah",
+    "refresh": "Muat ulang",
+    "openFolder": "Buka folder",
+    "skip": "Lewati",
+    "more": "Lainnya"
+  },
+  "errors": {
+    "generic": "Terjadi kesalahan. Coba lagi sebentar lagi.",
+    "page": {
+      "title": "Halaman ini tidak dapat ditampilkan"
+    },
+    "load": {
+      "title": "Tidak dapat memuat ini"
+    },
+    "notFound": {
+      "title": "Tidak ada apa-apa di sini",
+      "description": "Halaman ini tidak ada atau sudah dipindahkan."
+    }
+  },
+  "nav": {
+    "label": "Navigasi utama",
+    "home": "Beranda",
+    "instances": "Profil",
+    "content": "Jelajahi",
+    "servers": "Server",
+    "locker": "Loker",
+    "store": "Toko",
+    "settings": "Pengaturan",
+    "newInstance": "Profil baru"
+  },
+  "search": {
+    "title": "Cari",
+    "placeholder": "Cari konten, teman, server, pengaturan…",
+    "empty": "Tidak ada hasil. Coba kata lain.",
+    "loading": "Mencari…",
+    "hintNavigate": "navigasi",
+    "hintOpen": "buka",
+    "hintClose": "tutup",
+    "open": "Buka",
+    "myServer": "Server saya",
+    "playInstance": "Mainkan {{name}}",
+    "groups": {
+      "pages": "Halaman",
+      "actions": "Tindakan",
+      "instances": "Instans",
+      "content": "Konten",
+      "friends": "Teman",
+      "servers": "Server",
+      "settings": "Pengaturan",
+      "play": "Main"
+    },
+    "actions": {
+      "newInstance": "Buat instans",
+      "newServer": "Buat server",
+      "addFriend": "Tambah teman",
+      "darkTheme": "Beralih ke tema gelap",
+      "lightTheme": "Beralih ke tema terang"
+    },
+    "settings": {
+      "accounts": "Akun",
+      "game": "Game",
+      "launcher": "Launcher",
+      "appearance": "Tampilan",
+      "privacy": "Privasi & data",
+      "parental": "Kontrol orang tua",
+      "about": "Tentang"
+    }
+  },
+  "friends": {
+    "title": "Teman",
+    "onlineCount_other": "{{count}} online",
+    "add": "Tambah teman",
+    "search": "Cari teman",
+    "requests_other": "Permintaan · {{count}}",
+    "incoming": "Ingin berteman",
+    "outgoing": "Permintaan terkirim",
+    "accept": "Terima",
+    "decline": "Tolak",
+    "cancelRequest": "Batalkan permintaan",
+    "requestSent": "Permintaan pertemanan terkirim ke {{name}}",
+    "error": "Teman tidak dapat dimuat.",
+    "empty": "Belum ada teman. Tambahkan dengan nama pengguna Rustic mereka.",
+    "online_other": "Online · {{count}}",
+    "offline_other": "Offline · {{count}}",
+    "lastSeen": "Terlihat {{when}}",
+    "activity": {
+      "server": "Bermain di {{server}}",
+      "singleplayer": "Bermain sendiri",
+      "hosting": "Menjadi host {{server}}",
+      "launcher": "Di launcher"
+    },
+    "favorite": "Favorit",
+    "makeFavorite": "Tambahkan ke favorit",
+    "unfavorite": "Hapus dari favorit",
+    "join": "Gabung",
+    "joinAria": "Gabung dengan {{name}}",
+    "joining": "Bergabung ke {{server}}…",
+    "more": "Tindakan lain untuk {{name}}",
+    "remove": "Hapus teman",
+    "removeTitle": "Hapus {{name}} dari daftar temanmu?",
+    "removeBody": "Kalian tidak akan lagi melihat aktivitas satu sama lain. Kamu bisa mengirim permintaan baru nanti."
+  },
+  "addFriend": {
+    "title": "Tambah teman",
+    "description": "Temukan pemain lewat nama Rustic-nya atau nama Minecraft yang ia tautkan, atau pilih seseorang yang pernah bermain denganmu.",
+    "kind": "Cari berdasarkan",
+    "kindRustic": "Nama Rustic",
+    "kindMinecraft": "Nama Minecraft",
+    "rusticLabel": "Nama pengguna Rustic",
+    "minecraftLabel": "Nama pengguna Minecraft",
+    "rusticPlaceholder": "mis. lea_builds",
+    "minecraftPlaceholder": "mis. LeaBuilds",
+    "rusticHint": "Nama persis di profil Rustic-nya.",
+    "minecraftHint": "Nama dalam game yang persis dari pemain yang masuk ke Rustic dengan profil Minecraft tersebut.",
+    "find": "Cari",
+    "send": "Kirim permintaan",
+    "sent": "Permintaan terkirim",
+    "friends": "Sudah berteman",
+    "pending": "Permintaan tertunda",
+    "incoming": "Dia sudah meminta untuk berteman denganmu: terima permintaannya.",
+    "minecraftName": "Nama Minecraft:",
+    "add": "Tambah",
+    "addAria": "Kirim permintaan pertemanan ke {{name}}",
+    "playedWith": "Baru-baru ini bermain bersama",
+    "playedWithEmpty": "Belum ada siapa pun. Pemain dari party-mu dan dari server yang sama (bersama 10 menit atau lebih) akan muncul di sini.",
+    "crossed": "Baru-baru ini terlihat",
+    "crossedEmpty": "Tidak ada yang berpapasan denganmu baru-baru ini di server yang sama.",
+    "reasonParty": "Di party-mu",
+    "reasonServer": "Di {{server}}",
+    "reasonSameServer": "Di server yang sama",
+    "suggestionsError": "Saran tidak dapat dimuat.",
+    "suggestionsOff": "Saran dinonaktifkan. Aktifkan “Muncul di saran pemain yang kutemui” di Pengaturan › Privasi & data untuk melihat pemain yang kamu temui.",
+    "suggestionsMinor": "Saran pemain yang kamu temui tidak tersedia untuk akunmu.",
+    "privacyNote": "Saran berasal dari party-mu dan server yang kamu bagikan dalam aktivitasmu, selama 14 hari terakhir. Hanya orang yang juga mengizinkannya yang muncul.",
+    "errors": {
+      "notFoundRustic": "Tidak ada akun Rustic dengan nama ini.",
+      "notFoundMinecraft": "Tidak ada pemain Rustic yang menautkan nama Minecraft ini.",
+      "invalidRustic": "Nama Rustic terdiri dari 3 sampai 20 huruf, angka, atau _.",
+      "invalidMinecraft": "Nama Minecraft terdiri dari 3 sampai 16 huruf, angka, atau _.",
+      "cannot_add_friend": "Pemain ini tidak dapat menerima permintaan pertemanan.",
+      "friend_requests_disabled": "Permintaan pertemanan dinonaktifkan untuk akunmu (kontrol orang tua).",
+      "cannot_add_self": "Itu kamu sendiri!",
+      "already_friends": "Kalian sudah berteman.",
+      "request_pending": "Sudah ada permintaan yang tertunda.",
+      "incoming_request_exists": "Dia sudah mengirimimu permintaan: terima saja.",
+      "rate_limited": "Terlalu banyak pencarian. Tunggu satu menit, lalu coba lagi.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
+  },
+  "party": {
+    "title": "Party",
+    "leave": "Keluar",
+    "leader": "Pemimpin party",
+    "pending": "{{name}} (diundang)",
+    "invite": "Undang ke party",
+    "invited": "{{name}} telah diundang ke party-mu"
+  },
+  "presence": {
+    "online": "Online",
+    "in-game": "Dalam game",
+    "away": "Sedang pergi",
+    "busy": "Sibuk",
+    "offline": "Offline"
+  },
+  "notifications": {
+    "title": "Notifikasi",
+    "markAllRead": "Tandai semua sudah dibaca",
+    "empty": "Tidak ada yang baru.",
+    "kinds": {
+      "friend_request": "mengirimimu permintaan pertemanan",
+      "update_available": "tersedia untuk instansmu",
+      "backup_done": "Cadangan terjadwal selesai",
+      "store_new": "Baru di toko"
+    }
+  },
+  "account": {
+    "switcher": "Akun",
+    "none": "Tidak ada akun",
+    "rustic": "Akun Rustic",
+    "signInRustic": "Masuk ke Rustic",
+    "signOutRustic": "Keluar dari Rustic",
+    "gameProfiles": "Profil game",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Offline"
+    },
+    "add": "Tambah akun",
+    "manage": "Kelola akun"
+  },
+  "downloads": {
+    "title": "Unduhan",
+    "global": "Unduhan latar belakang",
+    "working": "Sedang bekerja…",
+    "summary_other": "{{count}} unduhan sedang berjalan",
+    "kind": {
+      "game": "Horizon",
+      "content": "Konten",
+      "modpack": "Modpack",
+      "server": "Server",
+      "java": "Runtime Java",
+      "update": "Pembaruan launcher",
+      "prepare": "Menyiapkan file game",
+      "native-build": "Build mod native",
+      "native-toolchain": "Rust untuk mod native"
+    }
+  },
+  "play": {
+    "play": "Main",
+    "update": "Perbarui",
+    "cancel": "Batal",
+    "stop": "Hentikan",
+    "selectInstance": "Pilih instans untuk dimainkan",
+    "instances": "Instans",
+    "manageInstances": "Kelola instans",
+    "newVersion": "{{version}} tersedia",
+    "cancelled": "Peluncuran dibatalkan",
+    "status": {
+      "ready": "Siap dimainkan",
+      "noInstance": "Tidak ada instans",
+      "running": "Game sedang berjalan",
+      "update": "Perlu pembaruan",
+      "broken": "Perlu perbaikan"
+    },
+    "progress": {
+      "updating": "Memperbarui…",
+      "downloading": "Mengunduh {{pct}}",
+      "checking": "Memeriksa file…",
+      "preparing": "Menyiapkan…",
+      "launching": "Meluncurkan…",
+      "stopping": "Menghentikan…",
+      "preparingFiles": "Menyiapkan file game {{pct}}",
+      "building": "Mengompilasi mod native…",
+      "buildingPct": "Mengompilasi mod native {{pct}}"
+    },
+    "errors": {
+      "launch": "Game tidak dapat dimulai"
+    },
+    "refusals": {
+      "auth_no_account": "Masuk dengan akun Microsoft yang memiliki game untuk bermain.",
+      "auth_not_owned": "Akun Microsoft ini tidak memiliki game.",
+      "auth_not_approved": "Masuk dengan Microsoft belum tersedia untuk launcher ini.",
+      "auth_reauth_required": "Masuk lagi ke akun Microsoft-mu untuk bermain.",
+      "auth_offline_not_allowed": "Masuk sekali dengan akun Microsoft yang memiliki game, setelah itu kamu bisa bermain offline.",
+      "auth_network": "Tidak dapat menghubungi Microsoft untuk memeriksa akun. Periksa koneksimu.",
+      "build_not_installed": "Pasang build Horizon terlebih dahulu.",
+      "prepare_needed": "File game untuk build ini belum disiapkan.",
+      "prepare_failed": "File game tidak dapat disiapkan: coba lagi, atau siapkan di Pengaturan › Game & instans.",
+      "prepare_no_java": "Java tidak ditemukan: pasang atau pilih di Pengaturan › Game & instans.",
+      "prepare_no_minecraft_dir": "Instalasi game-mu tidak ditemukan: pilih foldernya di Pengaturan › Game & instans.",
+      "launch_already_running": "Instans ini sudah berjalan.",
+      "native_consent": "Instans ini memiliki mod native: terima dulu pemberitahuan kepercayaannya di halaman instans (Konten).",
+      "native_toolchain": "Mod native memerlukan Rust: pasang dari halaman instans (Konten) atau Pengaturan › Game & instans.",
+      "native_not_edition": "Mod native hanya dapat dikompilasi ke edisi Rustic: alihkan instans ini ke edisi tersebut, atau nonaktifkan mod native-nya.",
+      "native_build_failed": "Mod native tidak dapat dikompilasi",
+      "native_disk": "Ruang disk kosong tidak cukup untuk mengompilasi mod native."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (edisi Rustic)",
+    "rusticEdition": "Edisi Rustic"
+  },
+  "compat": {
+    "buildsOnHorizon": "Dapat dikompilasi di Horizon-mu",
+    "compatible": "Kompatibel",
+    "incompatible": "Tidak kompatibel: {{reason}}",
+    "unknown": "Kompatibilitas tidak diketahui",
+    "reasons": {
+      "horizon_version": "Versi Horizon",
+      "java_only": "Hanya Java Edition",
+      "side": "hanya sisi server",
+      "conflict": "berkonflik dengan mod yang terpasang",
+      "unsupported_format": "format tidak didukung",
+      "needs_rustic_server": "memerlukan Rustic Server",
+      "not_fair_play": "tidak diizinkan (fair play)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Ganti produk",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Dokumentasi Rustic Server"
+  },
+  "crumbs": {
+    "label": "Jejak navigasi",
+    "horizon": "Horizon",
+    "details": "Detail",
+    "create": "Buat",
+    "kinds": {
+      "mod": "Mod",
+      "modpack": "Modpack",
+      "resourcepack": "Paket sumber daya",
+      "shader": "Shader",
+      "datapack": "Paket data",
+      "plugin": "Plugin"
+    },
+    "servers": {
+      "featured": "Unggulan",
+      "mine": "Server saya",
+      "multiplayer": "Daftar multipemain",
+      "discover": "Temukan",
+      "joined": "Daftar multipemain",
+      "browse": "Telusuri"
+    }
+  },
+  "social": {
+    "title": "Sosial",
+    "description": "Teman, obrolan, dan party-mu.",
+    "open": "Buka sosial",
+    "friends": "Teman",
+    "chats": "Obrolan",
+    "message": "Kirim pesan",
+    "searchChats": "Cari obrolan…",
+    "noChats": "Belum ada percakapan. Kirim pesan ke teman dari tab Teman.",
+    "sayHello": "Sapa",
+    "selectTitle": "Pilih percakapan",
+    "selectBody": "Pilih teman untuk mulai mengobrol.",
+    "messagePlaceholder": "Kirim pesan ke {{name}}",
+    "send": "Kirim"
+  },
+  "window": {
+    "minimize": "Perkecil",
+    "maximize": "Perbesar",
+    "restore": "Pulihkan",
+    "close": "Tutup"
+  },
+  "running": {
+    "title": "Instans yang berjalan",
+    "none": "Tidak ada game yang berjalan.",
+    "count_other": "{{count}} instans sedang berjalan",
+    "downloading": "Mengunduh {{pct}}"
+  },
+  "launch": {
+    "launch": "Luncurkan game",
+    "update": "Perbarui & luncurkan",
+    "stop": "Hentikan game"
+  },
+  "deepLink": {
+    "authOk": "Berhasil masuk ke Rustic",
+    "authFailed": "Gagal masuk ke Rustic",
+    "joining": "Bergabung ke {{target}}…",
+    "content": "Membuka {{project}} dari situs web"
+  },
+  "catalog": {
+    "sort": "Urutkan menurut",
+    "results_other": "{{count}} hasil",
+    "loadMore": "Muat lebih banyak",
+    "loadMoreCount": "Menampilkan {{shown}} dari {{total}}",
+    "carousel": {
+      "prev": "Sebelumnya",
+      "next": "Berikutnya",
+      "slide": "{{index}} dari {{total}}",
+      "pause": "Jeda tayangan slide",
+      "play": "Putar tayangan slide"
+    },
+    "row": {
+      "seeAll": "Lihat semua",
+      "seeAllAria": "Lihat semua: {{title}}",
+      "scrollPrev": "Gulir ke kiri",
+      "scrollNext": "Gulir ke kanan"
+    },
+    "filters": {
+      "button": "Filter",
+      "buttonCount": "Filter · {{count}}",
+      "reset": "Atur ulang filter"
+    },
+    "layout": {
+      "label": "Tata letak",
+      "list": "Daftar",
+      "grid": "Kisi"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Memperbarui {{pct}}",
+      "installing": "Memasang pembaruan…",
+      "restarting": "Memulai ulang…",
+      "deferred": "Perbarui setelah game",
+      "apply": "Perbarui dan mulai ulang"
+    },
+    "toast": {
+      "launcher": "Mengunduh Rustic Launcher {{version}}…",
+      "edition": "Memperbarui game (Edisi Rustic)…",
+      "editionDone": "Game diperbarui: {{version}}",
+      "deferred": "Pembaruan sudah siap. Akan dipasang saat kamu menutup game.",
+      "restarting": "Rustic Launcher dimulai ulang untuk menyelesaikan pembaruan.",
+      "updated": "Rustic Launcher diperbarui ke {{version}}",
+      "resuming": "Pembaruan selesai: menjalankan game-mu",
+      "failed": "Pembaruan tidak dapat dipasang. Akan dicoba lagi nanti."
+    }
+  }
+}

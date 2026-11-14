@@ -1,0 +1,337 @@
+{
+  "title": "Phiên bản",
+  "errors": {
+    "action": "Thao tác không thành công"
+  },
+  "card": {
+    "more": "Thao tác khác cho {{name}}",
+    "pin": "Ghim",
+    "unpin": "Bỏ ghim",
+    "duplicate": "Nhân bản",
+    "duplicated": "Đã tạo {{name}}",
+    "playtime": "Thời gian chơi",
+    "never": "Chưa bao giờ",
+    "fromModpack": "Gói mod {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Đang chạy",
+    "installing": "Đang cài đặt",
+    "broken": "Cần sửa chữa"
+  },
+  "delete": {
+    "title": "Xóa {{name}}?",
+    "body": "Mod, cài đặt và thế giới của nó sẽ bị xóa khỏi máy tính này. Không thể hoàn tác.",
+    "confirm": "Xóa phiên bản cài đặt",
+    "done": "Đã xóa {{name}}"
+  },
+  "new": {
+    "title": "Phiên bản cài đặt mới",
+    "description": "Bắt đầu từ đầu hoặc mang vào một gói có sẵn.",
+    "tabs": {
+      "create": "Tạo",
+      "import": "Nhập"
+    },
+    "name": "Tên",
+    "namePlaceholder": "Thế giới sinh tồn của tôi",
+    "nameRequired": "Hãy đặt tên cho phiên bản cài đặt.",
+    "icon": "Biểu tượng",
+    "color": "Màu",
+    "colorN": "Màu {{n}}",
+    "version": "Bản dựng Horizon",
+    "versionHint": "Phiên bản Rustic bổ sung vật phẩm trang trí và bạn bè trong trò chơi. Không cần cài đặt Java hay RAM.",
+    "recommended": "Đề xuất",
+    "release": "Chính thức",
+    "nightly": "Nightly",
+    "installed": "Đã cài đặt",
+    "submit": "Tạo phiên bản cài đặt",
+    "created": "{{name}} đã sẵn sàng",
+    "preview": "Xem trước",
+    "edition": "Loại phiên bản",
+    "editionRustic": "Vật phẩm trang trí, bạn bè và mod gốc trong trò chơi.",
+    "editionHorizon": "Horizon đúng như đội ngũ của nó phát hành, không thêm gì.",
+    "noBuild": "Hiện chưa có bản dựng nào của loại phiên bản này.",
+    "nightlyHint": "Bản Nightly ra mỗi ngày từ mã mới nhất của Horizon: mới hơn, ít được kiểm thử hơn."
+  },
+  "icons": {
+    "grass": "Mầm cây",
+    "sword": "Kiếm",
+    "pickaxe": "Cuốc chim",
+    "castle": "Lâu đài",
+    "rocket": "Tên lửa",
+    "gem": "Đá quý",
+    "flame": "Ngọn lửa",
+    "leaf": "Lá cây",
+    "star": "Ngôi sao",
+    "compass": "La bàn"
+  },
+  "import": {
+    "folder": {
+      "title": "Thư mục phiên bản cài đặt",
+      "description": "Thư mục instance của Prism hoặc MultiMC, được chuyển đổi theo cách của Horizon."
+    },
+    "mrpack": {
+      "title": "Gói Modrinth (.mrpack)",
+      "description": "Mod được ghép với bản dựng Horizon tương ứng nếu có."
+    },
+    "curseforge_zip": {
+      "title": "Tệp zip CurseForge",
+      "description": "Một gói mod CurseForge đã xuất."
+    },
+    "modpack": {
+      "title": "Từ một gói mod",
+      "description": "Duyệt gói mod của Horizon, Modrinth và Rustic."
+    },
+    "started": "Đang nhập {{name}}",
+    "background": "Quá trình tiếp tục chạy trong nền; bạn vẫn có thể dùng launcher.",
+    "note": "Chỉ nội dung chạy được trên Horizon mới được cài; phần còn lại được liệt kê kèm lý do.",
+    "drop": {
+      "title": "Thả gói mod hoặc thư mục phiên bản cài đặt vào đây",
+      "hint": ".mrpack của Modrinth, .zip của CurseForge, hoặc thư mục phiên bản cài đặt của Prism hay MultiMC",
+      "choose": "Chọn tệp",
+      "active": "Thả ra để nhập",
+      "unsupported": "Không thể nhập mục này. Hãy dùng .mrpack, .zip của CurseForge hoặc thư mục phiên bản cài đặt."
+    },
+    "formats": "Định dạng được hỗ trợ"
+  },
+  "detail": {
+    "notFound": "Phiên bản cài đặt này không còn tồn tại",
+    "backToList": "Quay lại danh sách phiên bản cài đặt",
+    "tabsLabel": "Các mục của phiên bản cài đặt",
+    "tabs": {
+      "overview": "Tổng quan",
+      "content": "Nội dung",
+      "resourcepacks": "Gói tài nguyên",
+      "worlds": "Thế giới",
+      "settings": "Cài đặt"
+    }
+  },
+  "overview": {
+    "mods": "Mod",
+    "resourcePacks": "Gói tài nguyên",
+    "shaders": "Gói shader",
+    "version": "Bản dựng Horizon",
+    "updateAvailable": "Có bản cập nhật",
+    "upToDate": "Đã cập nhật",
+    "updateNow": "Cập nhật ngay",
+    "changeVersion": "Chọn bản dựng Horizon",
+    "applyVersion": "Đổi bản dựng",
+    "versionChanging": "Đang chuyển sang {{version}}",
+    "lastSession": "Phiên chơi gần nhất",
+    "lastPlayed": "Đã chơi {{when}}",
+    "neverPlayed": "Chưa chơi lần nào",
+    "rejoin": "Vào lại",
+    "noServer": "Chưa vào máy chủ nào từ phiên bản cài đặt này.",
+    "created": "Ngày tạo",
+    "folder": "Thư mục"
+  },
+  "content": {
+    "filter": "Lọc theo loại",
+    "kinds": {
+      "all": "Tất cả",
+      "mod": "Mod",
+      "resourcepack": "Gói tài nguyên",
+      "shader": "Shader"
+    },
+    "search": "Tìm nội dung đã cài",
+    "updateAll_other": "Cập nhật {{count}} mục",
+    "browse": "Duyệt nội dung",
+    "noMatch": "Không có nội dung đã cài nào khớp với tìm kiếm.",
+    "empty": {
+      "title": "Chưa cài gì",
+      "description": "Tìm mod, gói tài nguyên và shader chạy được với phiên bản cài đặt này."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Tệp cục bộ"
+    },
+    "updateTo": "Cập nhật: {{version}}",
+    "incompatible": "Không tương thích: {{reason}}",
+    "updateOne": "Cập nhật {{name}}",
+    "toggle": "Bật {{name}}",
+    "remove": "Gỡ {{name}}",
+    "removeTitle": "Gỡ {{name}}?",
+    "removeBody": "Tệp sẽ bị xóa khỏi phiên bản cài đặt này. Bạn có thể cài lại từ Khám phá."
+  },
+  "packs": {
+    "hint": "Khi hai gói cùng thay đổi một thứ, gói ở trên sẽ được ưu tiên.",
+    "listLabel": "Thứ tự tải gói tài nguyên",
+    "top": "Ưu tiên cao nhất",
+    "up": "Đưa {{name}} lên",
+    "down": "Đưa {{name}} xuống",
+    "moved": "Đã chuyển {{name}} đến vị trí {{position}} / {{total}}",
+    "browse": "Tìm gói tài nguyên",
+    "empty": {
+      "title": "Chưa có gói tài nguyên",
+      "description": "Thêm gói để thay đổi kết cấu, âm thanh và giao diện."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Chưa có thế giới",
+      "description": "Các thế giới bạn tạo trong trò chơi sẽ hiện ở đây."
+    },
+    "openSaves": "Mở thư mục lưu",
+    "lastPlayed": "Đã chơi {{when}}",
+    "modes": {
+      "survival": "Sinh tồn",
+      "creative": "Sáng tạo",
+      "adventure": "Phiêu lưu",
+      "hardcore": "Hardcore",
+      "spectator": "Khán giả"
+    },
+    "datapacks_other": "{{count}} gói dữ liệu",
+    "play": "Chơi thế giới này",
+    "addDatapacks": "Thêm gói dữ liệu"
+  },
+  "settings": {
+    "general": "Chung",
+    "display": "Cửa sổ",
+    "useDefaultResolution": "Dùng kích thước cửa sổ mặc định",
+    "defaultIs": "Mặc định: {{width}} × {{height}}",
+    "width": "Chiều rộng",
+    "height": "Chiều cao",
+    "fullscreen": "Khởi động ở chế độ toàn màn hình",
+    "resolutionError": "Hãy dùng số nguyên, tối thiểu 640 × 360.",
+    "launch": "Tùy chọn khởi chạy",
+    "launchHint": "Phiên bản cài đặt Horizon chỉ cố định một bản dựng: không có Java, RAM hay trình tải mod nào cần thiết lập.",
+    "gameArgs": "Tham số trò chơi bổ sung",
+    "gameArgsHint": "Nâng cao. Được truyền nguyên văn cho Horizon.",
+    "folders": "Thư mục",
+    "folder": {
+      "root": "Phiên bản cài đặt",
+      "mods": "Mod",
+      "resourcepacks": "Gói tài nguyên",
+      "shaderpacks": "Gói shader",
+      "saves": "Thế giới",
+      "screenshots": "Ảnh chụp màn hình",
+      "logs": "Nhật ký"
+    },
+    "unsaved": "Bạn có thay đổi chưa lưu.",
+    "allSaved": "Đã lưu mọi thay đổi.",
+    "saved": "Đã lưu cài đặt phiên bản cài đặt"
+  },
+  "heading": "*Hồ sơ* của bạn",
+  "native": {
+    "title": "Mod gốc (native)",
+    "allOff": "Tất cả đã tắt: phiên bản cài đặt chạy bản trò chơi dựng sẵn.",
+    "state": {
+      "building": "Đang biên dịch…",
+      "up_to_date": "Đã cập nhật",
+      "needs_rebuild": "Cần biên dịch lại",
+      "not_built": "Chưa biên dịch",
+      "not_needed": "Trò chơi dựng sẵn"
+    },
+    "build": "Biên dịch",
+    "rebuild": "Biên dịch lại",
+    "cancel": "Hủy",
+    "progress": "Tiến độ biên dịch mod gốc",
+    "starting": "Đang bắt đầu…",
+    "firstBuildHint": "Lần biên dịch đầu tiên sẽ biên dịch toàn bộ trò chơi (10 đến 15 phút); các lần sau chỉ biên dịch phần thay đổi. Bạn vẫn có thể dùng launcher.",
+    "failed": "Lần biên dịch gần nhất đã thất bại",
+    "built": "Đã biên dịch {{date}} trong {{duration}} · trò chơi {{size}}",
+    "leftOut": {
+      "other": "{{name}} đã bị bỏ qua: nó không áp dụng cho Horizon này.",
+      "unsupported": "{{name}} đã bị bỏ qua: Rustic chưa thể biên dịch những gì nó cần."
+    },
+    "notEdition": "Phiên bản cài đặt này chạy bản dựng Horizon thuần: mod gốc chỉ biên dịch được vào phiên bản Rustic."
+  },
+  "profiles": {
+    "summary_other": "{{count}} hồ sơ · đã chơi {{playtime}}",
+    "searchLabel": "Tìm hồ sơ của bạn",
+    "searchPlaceholder": "Tìm theo tên, bản dựng Horizon hoặc gói mod…",
+    "source": {
+      "label": "Hiển thị",
+      "all": "Tất cả hồ sơ",
+      "custom": "Hồ sơ của tôi",
+      "modpack": "Từ gói mod"
+    },
+    "sorts": {
+      "recent": "Chơi gần nhất",
+      "name": "Tên",
+      "created": "Mới tạo gần đây",
+      "version": "Bản dựng Horizon",
+      "playtime": "Thời gian chơi"
+    },
+    "filters": {
+      "version": "Bản dựng Horizon",
+      "edition": "Phiên bản",
+      "editions": {
+        "rustic": "Phiên bản Rustic",
+        "horizon": "Horizon thuần"
+      },
+      "native": "Mod gốc (native)",
+      "nativeOnly": "Có mod gốc",
+      "nativeHint": "Mod gốc được biên dịch trên máy tính của bạn trước khi trò chơi khởi động.",
+      "remove": "Bỏ bộ lọc: {{filter}}",
+      "reset": "Đặt lại bộ lọc"
+    },
+    "create": "Tạo hồ sơ",
+    "createHint": "Một bản dựng Horizon, một biểu tượng và một cái tên",
+    "import": "Nhập",
+    "importHint": "Một thư mục, tệp .mrpack hoặc tệp zip CurseForge",
+    "all": "Tất cả hồ sơ",
+    "listLabel": "Hồ sơ",
+    "recent": "Chơi tiếp",
+    "recentHint": "Các hồ sơ bạn chơi gần nhất",
+    "card": {
+      "active": "Đang dùng",
+      "activeHint": "Launchpad sẽ chạy hồ sơ này",
+      "running": "Đang chạy",
+      "pinned": "Đã ghim",
+      "update": "Cập nhật {{version}}",
+      "broken": "Cần sửa chữa",
+      "modpack": "Gói mod",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Đã chơi {{when}}",
+      "neverPlayed": "Chưa chơi lần nào",
+      "created": "Tạo ngày {{date}}",
+      "lastServer": "Lần cuối trên {{name}}",
+      "rejoin": "Vào lại",
+      "rejoinAria": "Vào lại {{server}} bằng {{name}}",
+      "mods": "Mod",
+      "packs": "Gói tài nguyên",
+      "shaders": "Shader",
+      "playtime": "Thời gian chơi",
+      "contentCount": "{{mods}} mod · {{packs}} gói · {{shaders}} shader",
+      "open": "Mở {{name}}"
+    },
+    "native": {
+      "label": "Mod gốc (native)",
+      "count_other": "{{count}} mod gốc",
+      "building": "Đang biên dịch {{pct}}",
+      "buildingNoPct": "Đang biên dịch…",
+      "up_to_date": "Mod gốc đã sẵn sàng",
+      "needs_rebuild": "Mod gốc: cần biên dịch lại",
+      "not_built": "Mod gốc: chưa biên dịch",
+      "off": "Mod gốc đang tắt",
+      "unsupported": "Mod gốc: cần phiên bản Rustic",
+      "hint": {
+        "up_to_date": "Đã biên dịch trên máy tính này cho bản dựng Horizon này.",
+        "needs_rebuild": "Các mod đã thay đổi kể từ lần biên dịch trước: sẽ biên dịch lại khi bạn chơi.",
+        "not_built": "Được biên dịch trên máy tính của bạn khi bạn chơi (lần đầu mất 10 đến 15 phút).",
+        "off": "Mọi mod gốc đều đang tắt: trò chơi dựng sẵn sẽ chạy.",
+        "unsupported": "Hồ sơ này chạy bản dựng Horizon thuần: mod gốc chỉ biên dịch được vào phiên bản Rustic.",
+        "building": "Đang biên dịch trò chơi với các mod gốc của hồ sơ này."
+      }
+    },
+    "menu": {
+      "edit": "Sửa cài đặt",
+      "activate": "Dùng trên Launchpad",
+      "isActive": "Đang dùng trên Launchpad",
+      "activated": "{{name}} hiện đã ở trên Launchpad"
+    },
+    "empty": {
+      "title": "Chưa có hồ sơ",
+      "description": "Hồ sơ là một bản dựng Horizon với mod, gói và thế giới riêng. Hãy tạo một hồ sơ với bản dựng đề xuất, hoặc nhập một gói bạn đã có."
+    },
+    "noMatch": {
+      "title": "Không có hồ sơ nào khớp",
+      "description": "Hãy thử tìm kiếm khác hoặc bỏ một bộ lọc."
+    },
+    "detail": {
+      "banner": "Ảnh bìa của {{name}}"
+    }
+  }
+}

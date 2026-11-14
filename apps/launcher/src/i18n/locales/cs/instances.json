@@ -1,0 +1,349 @@
+{
+  "title": "Verze",
+  "errors": {
+    "action": "To nevyšlo"
+  },
+  "card": {
+    "more": "Další akce: {{name}}",
+    "pin": "Připnout",
+    "unpin": "Odepnout",
+    "duplicate": "Duplikovat",
+    "duplicated": "{{name}} vytvořeno",
+    "playtime": "Herní čas",
+    "never": "Nikdy",
+    "fromModpack": "Modpack {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Běží",
+    "installing": "Instaluje se",
+    "broken": "Potřebuje opravu"
+  },
+  "delete": {
+    "title": "Smazat {{name}}?",
+    "body": "Její módy, nastavení a světy se z tohoto počítače smažou. Tuto akci nelze vrátit.",
+    "confirm": "Smazat instanci",
+    "done": "{{name}} smazáno"
+  },
+  "new": {
+    "title": "Nová instance",
+    "description": "Začni od nuly nebo přines existující balíček.",
+    "tabs": {
+      "create": "Vytvořit",
+      "import": "Importovat"
+    },
+    "name": "Název",
+    "namePlaceholder": "Můj svět pro přežití",
+    "nameRequired": "Pojmenuj instanci.",
+    "icon": "Ikona",
+    "color": "Barva",
+    "colorN": "Barva {{n}}",
+    "version": "Sestavení Horizonu",
+    "versionHint": "Edice Rustic přidává do hry kosmetiku a přátele. Žádné nastavení Javy ani RAM není potřeba.",
+    "recommended": "Doporučeno",
+    "release": "Stabilní",
+    "nightly": "Nightly",
+    "installed": "Nainstalováno",
+    "submit": "Vytvořit instanci",
+    "created": "{{name}} je připraveno",
+    "preview": "Náhled",
+    "edition": "Edice",
+    "editionRustic": "Kosmetika, přátelé a nativní módy ve hře.",
+    "editionHorizon": "Horizon tak, jak ho vydává jeho tým, nic navíc.",
+    "noBuild": "Momentálně není k dispozici žádné sestavení této edice.",
+    "nightlyHint": "Nightly sestavení vycházejí každý den z nejnovějšího kódu Horizonu: novější, méně otestovaná."
+  },
+  "icons": {
+    "grass": "Výhonek",
+    "sword": "Meče",
+    "pickaxe": "Krumpáč",
+    "castle": "Hrad",
+    "rocket": "Raketa",
+    "gem": "Drahokam",
+    "flame": "Plamen",
+    "leaf": "List",
+    "star": "Hvězda",
+    "compass": "Kompas"
+  },
+  "import": {
+    "folder": {
+      "title": "Složka instance",
+      "description": "Složka instance z Prismu nebo MultiMC, převedená tak, jak to dělá Horizon."
+    },
+    "mrpack": {
+      "title": "Balíček Modrinth (.mrpack)",
+      "description": "Módy se přiřadí k jejich sestavením pro Horizon, pokud existují."
+    },
+    "curseforge_zip": {
+      "title": "Zip z CurseForge",
+      "description": "Exportovaný modpack z CurseForge."
+    },
+    "modpack": {
+      "title": "Z modpacku",
+      "description": "Procházej modpacky z Horizonu, Modrinthu a Rusticu."
+    },
+    "started": "Importuji {{name}}",
+    "background": "Pokračuje to na pozadí; launcher můžeš dál používat.",
+    "note": "Nainstaluje se jen obsah, který funguje na Horizonu; zbytek se vypíše i s důvodem.",
+    "drop": {
+      "title": "Přetáhni sem balíček nebo složku instance",
+      "hint": ".mrpack z Modrinthu, .zip z CurseForge nebo složka instance z Prismu či MultiMC",
+      "choose": "Vybrat soubor",
+      "active": "Pusť pro import",
+      "unsupported": "Tohle nejde importovat. Použij .mrpack, .zip z CurseForge nebo složku instance."
+    },
+    "formats": "Podporované formáty"
+  },
+  "detail": {
+    "notFound": "Tato instance už neexistuje",
+    "backToList": "Zpět na instance",
+    "tabsLabel": "Sekce instance",
+    "tabs": {
+      "overview": "Přehled",
+      "content": "Obsah",
+      "resourcepacks": "Balíčky zdrojů",
+      "worlds": "Světy",
+      "settings": "Nastavení"
+    }
+  },
+  "overview": {
+    "mods": "Módy",
+    "resourcePacks": "Balíčky zdrojů",
+    "shaders": "Balíčky shaderů",
+    "version": "Sestavení Horizonu",
+    "updateAvailable": "Je dostupná aktualizace",
+    "upToDate": "Aktuální",
+    "updateNow": "Aktualizovat teď",
+    "changeVersion": "Vybrat sestavení Horizonu",
+    "applyVersion": "Přepnout sestavení",
+    "versionChanging": "Přepínám na {{version}}",
+    "lastSession": "Poslední relace",
+    "lastPlayed": "Hráno {{when}}",
+    "neverPlayed": "Zatím nehráno",
+    "rejoin": "Znovu připojit",
+    "noServer": "Z této instance zatím nebylo připojení k žádnému serveru.",
+    "created": "Vytvořeno",
+    "folder": "Složka"
+  },
+  "content": {
+    "filter": "Filtrovat podle typu",
+    "kinds": {
+      "all": "Vše",
+      "mod": "Módy",
+      "resourcepack": "Balíčky zdrojů",
+      "shader": "Shadery"
+    },
+    "search": "Hledat v nainstalovaném obsahu",
+    "updateAll_one": "Aktualizovat {{count}} položku",
+    "updateAll_few": "Aktualizovat {{count}} položky",
+    "updateAll_many": "Aktualizovat {{count}} položky",
+    "updateAll_other": "Aktualizovat {{count}} položek",
+    "browse": "Procházet obsah",
+    "noMatch": "Hledání neodpovídá nic z nainstalovaného.",
+    "empty": {
+      "title": "Zatím nic nainstalováno",
+      "description": "Najdi módy, balíčky zdrojů a shadery, které fungují s touto instancí."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Místní soubor"
+    },
+    "updateTo": "Aktualizace: {{version}}",
+    "incompatible": "Nekompatibilní: {{reason}}",
+    "updateOne": "Aktualizovat {{name}}",
+    "toggle": "Zapnout {{name}}",
+    "remove": "Odebrat {{name}}",
+    "removeTitle": "Odebrat {{name}}?",
+    "removeBody": "Soubor se z této instance smaže. Znovu ho můžeš nainstalovat ze sekce Obsah."
+  },
+  "packs": {
+    "hint": "Když dva balíčky mění totéž, vyhrává ten výš.",
+    "listLabel": "Pořadí načítání balíčků zdrojů",
+    "top": "Nejvyšší priorita",
+    "up": "Posunout {{name}} nahoru",
+    "down": "Posunout {{name}} dolů",
+    "moved": "{{name}} přesunuto na pozici {{position}} z {{total}}",
+    "browse": "Najít balíčky zdrojů",
+    "empty": {
+      "title": "Žádný balíček zdrojů",
+      "description": "Přidej balíčky a změň textury, zvuky a rozhraní."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Zatím žádný svět",
+      "description": "Zobrazí se tu světy, které vytvoříš ve hře."
+    },
+    "openSaves": "Otevřít složku uložených her",
+    "lastPlayed": "Hráno {{when}}",
+    "modes": {
+      "survival": "Přežití",
+      "creative": "Tvořivý",
+      "adventure": "Dobrodružství",
+      "hardcore": "Hardcore",
+      "spectator": "Divák"
+    },
+    "datapacks_one": "{{count}} datový balíček",
+    "datapacks_few": "{{count}} datové balíčky",
+    "datapacks_many": "{{count}} datového balíčku",
+    "datapacks_other": "{{count}} datových balíčků",
+    "play": "Hrát tento svět",
+    "addDatapacks": "Přidat datové balíčky"
+  },
+  "settings": {
+    "general": "Obecné",
+    "display": "Okno",
+    "useDefaultResolution": "Použít výchozí velikost okna",
+    "defaultIs": "Výchozí: {{width}} × {{height}}",
+    "width": "Šířka",
+    "height": "Výška",
+    "fullscreen": "Spustit na celou obrazovku",
+    "resolutionError": "Použij celá čísla, alespoň 640 × 360.",
+    "launch": "Možnosti spuštění",
+    "launchHint": "Instance Horizonu jen určují sestavení: nenastavuje se žádná Java, RAM ani loader.",
+    "gameArgs": "Další argumenty hry",
+    "gameArgsHint": "Pokročilé. Předávají se Horizonu beze změny.",
+    "folders": "Složky",
+    "folder": {
+      "root": "Instance",
+      "mods": "Módy",
+      "resourcepacks": "Balíčky zdrojů",
+      "shaderpacks": "Balíčky shaderů",
+      "saves": "Světy",
+      "screenshots": "Snímky obrazovky",
+      "logs": "Logy"
+    },
+    "unsaved": "Máš neuložené změny.",
+    "allSaved": "Všechny změny uloženy.",
+    "saved": "Nastavení instance uloženo"
+  },
+  "heading": "Tvoje *profily*",
+  "native": {
+    "title": "Nativní módy",
+    "allOff": "Všechny vypnuté: instance hraje předem sestavenou hru.",
+    "state": {
+      "building": "Sestavuji…",
+      "up_to_date": "Aktuální",
+      "needs_rebuild": "Je potřeba znovu sestavit",
+      "not_built": "Nesestaveno",
+      "not_needed": "Předem sestavená hra"
+    },
+    "build": "Sestavit",
+    "rebuild": "Znovu sestavit",
+    "cancel": "Zrušit",
+    "progress": "Průběh nativního sestavení",
+    "starting": "Spouštím…",
+    "firstBuildHint": "První sestavení zkompiluje celou hru (10 až 15 minut), další už jen to, co se změnilo. Launcher můžeš dál používat.",
+    "failed": "Poslední sestavení selhalo",
+    "built": "Sestaveno {{date}} za {{duration}} · hra {{size}}",
+    "leftOut": {
+      "other": "{{name}} bylo vynecháno: na tento Horizon se nevztahuje.",
+      "unsupported": "{{name}} bylo vynecháno: Rustic zatím neumí sestavit, co potřebuje."
+    },
+    "notEdition": "Tato instance hraje čisté sestavení Horizonu: nativní módy se sestavují jen do edice Rustic."
+  },
+  "profiles": {
+    "summary_one": "{{count}} profil · odehráno {{playtime}}",
+    "summary_few": "{{count}} profily · odehráno {{playtime}}",
+    "summary_many": "{{count}} profilu · odehráno {{playtime}}",
+    "summary_other": "{{count}} profilů · odehráno {{playtime}}",
+    "searchLabel": "Hledat v profilech",
+    "searchPlaceholder": "Hledej podle názvu, sestavení Horizonu nebo modpacku…",
+    "source": {
+      "label": "Zobrazit",
+      "all": "Všechny profily",
+      "custom": "Moje profily",
+      "modpack": "Z modpacků"
+    },
+    "sorts": {
+      "recent": "Naposledy hrané",
+      "name": "Název",
+      "created": "Nedávno vytvořené",
+      "version": "Sestavení Horizonu",
+      "playtime": "Herní čas"
+    },
+    "filters": {
+      "version": "Sestavení Horizonu",
+      "edition": "Edice",
+      "editions": {
+        "rustic": "Edice Rustic",
+        "horizon": "Čistý Horizon"
+      },
+      "native": "Nativní módy",
+      "nativeOnly": "Má nativní módy",
+      "nativeHint": "Nativní módy se před spuštěním hry zkompilují na tvém počítači.",
+      "remove": "Odebrat filtr: {{filter}}",
+      "reset": "Obnovit filtry"
+    },
+    "create": "Vytvořit profil",
+    "createHint": "Sestavení Horizonu, ikona a název",
+    "import": "Importovat",
+    "importHint": "Složka, .mrpack nebo zip z CurseForge",
+    "all": "Všechny profily",
+    "listLabel": "Profily",
+    "recent": "Vrať se do hry",
+    "recentHint": "Tvoje naposledy hrané profily",
+    "card": {
+      "active": "Aktivní",
+      "activeHint": "Launchpad hraje tento profil",
+      "running": "Běží",
+      "pinned": "Připnuto",
+      "update": "Aktualizace {{version}}",
+      "broken": "Potřebuje opravu",
+      "modpack": "Modpack",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Hráno {{when}}",
+      "neverPlayed": "Zatím nehráno",
+      "created": "Vytvořeno {{date}}",
+      "lastServer": "Naposledy na {{name}}",
+      "rejoin": "Znovu připojit",
+      "rejoinAria": "Znovu se připojit k {{server}} s profilem {{name}}",
+      "mods": "Módy",
+      "packs": "Balíčky zdrojů",
+      "shaders": "Shadery",
+      "playtime": "Herní čas",
+      "contentCount": "Módy: {{mods}} · balíčky: {{packs}} · shadery: {{shaders}}",
+      "open": "Otevřít {{name}}"
+    },
+    "native": {
+      "label": "Nativní módy",
+      "count_one": "{{count}} nativní mód",
+      "count_few": "{{count}} nativní módy",
+      "count_many": "{{count}} nativního módu",
+      "count_other": "{{count}} nativních módů",
+      "building": "Sestavuji {{pct}}",
+      "buildingNoPct": "Sestavuji…",
+      "up_to_date": "Nativní módy připravené",
+      "needs_rebuild": "Nativní: je potřeba znovu sestavit",
+      "not_built": "Nativní: zatím nesestaveno",
+      "off": "Nativní módy vypnuté",
+      "unsupported": "Nativní: vyžaduje edici Rustic",
+      "hint": {
+        "up_to_date": "Sestaveno na tomto počítači pro toto sestavení Horizonu.",
+        "needs_rebuild": "Módy se od posledního sestavení změnily: znovu se sestaví, až začneš hrát.",
+        "not_built": "Zkompiluje se na tvém počítači, až začneš hrát (poprvé 10 až 15 minut).",
+        "off": "Všechny nativní módy jsou vypnuté: hraje se předem sestavená hra.",
+        "unsupported": "Tento profil hraje čisté sestavení Horizonu: nativní módy se sestavují jen do edice Rustic.",
+        "building": "Kompiluji hru s nativními módy tohoto profilu."
+      }
+    },
+    "menu": {
+      "edit": "Upravit nastavení",
+      "activate": "Použít na Launchpadu",
+      "isActive": "Použito na Launchpadu",
+      "activated": "{{name}} je teď na Launchpadu"
+    },
+    "empty": {
+      "title": "Zatím žádný profil",
+      "description": "Profil je sestavení Horizonu s vlastními módy, balíčky a světy. Vytvoř si ho s doporučeným sestavením, nebo importuj balíček, který už máš."
+    },
+    "noMatch": {
+      "title": "Žádný profil neodpovídá",
+      "description": "Zkus jiné hledání nebo odeber filtr."
+    },
+    "detail": {
+      "banner": "Obálka profilu {{name}}"
+    }
+  }
+}

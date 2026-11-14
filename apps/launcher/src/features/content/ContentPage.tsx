@@ -188,9 +188,7 @@ export function ContentPage() {
               label={t('searchLabel')}
               clearLabel={tc('actions.clear')}
               placeholder={
-                tab === 'mine'
-                  ? t('mine.searchPlaceholder')
-                  : t('searchSources', { kind: t(`kinds.${kind}`).toLowerCase() })
+                tab === 'mine' ? t('mine.searchPlaceholder') : t(`searchSources.${kind}`)
               }
               scope={
                 <ScopeMenu
@@ -251,6 +249,7 @@ export function shownVersions<T extends { id: string }>(
 
 function KindBanner({ kind, target }: { kind: ContentKind; target: TargetRef | null }) {
   const { t } = useTranslation('content');
+  if (kind === 'mod') return null;
   let action: ReactNode = null;
   if (kind === 'resourcepack' && target?.kind === 'instance') {
     action = (

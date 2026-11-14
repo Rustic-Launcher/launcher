@@ -293,7 +293,17 @@
       "checkNow": "Cerca aggiornamenti",
       "available": "Versione {{version}} disponibile",
       "upToDate": "Hai l'ultima versione",
-      "failed": "Impossibile cercare aggiornamenti"
+      "failed": "Impossibile cercare aggiornamenti",
+      "lastCheck": "Ultimo controllo {{when}}",
+      "neverChecked": "Non ancora controllato",
+      "edition": "Gioco (edizione Rustic)",
+      "editionNone": "Nessuna build dell’edizione Rustic installata",
+      "apply": "Aggiorna e riavvia",
+      "checking": "Controllo…",
+      "working": "Aggiornamento… {{pct}}",
+      "restarting": "Riavvio…",
+      "deferred": "In attesa della chiusura del gioco",
+      "lastError": "L’ultimo tentativo non è riuscito. Verrà ritentato automaticamente."
     },
     "performance": {
       "title": "Download e prestazioni",

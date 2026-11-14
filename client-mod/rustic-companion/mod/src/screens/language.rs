@@ -11,6 +11,7 @@ use horizon_client::mod_api::{
 };
 use rusticmc_companion_core::i18n::{self, T};
 use rusticmc_companion_core::langs::{self, Hit, Key, Language};
+use rusticmc_companion_core::paint::{self, rescaled, scale_rect};
 use std::time::Instant;
 
 #[derive(Default)]
@@ -25,6 +26,8 @@ pub struct LangScreen {
     pub layout: Option<langs::Layout>,
     /// Scroll to the current language at the next frame.
     pub reveal: bool,
+    /// GUI pixels per layout unit at the last frame (0 before it).
+    pub unit: f32,
 }
 
 /// Opens the screen over the menu.
@@ -51,7 +54,10 @@ fn close() {
 pub fn render(_host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
     let lang = horizon_client::lang::code();
     let scale = event.batch.scale.max(1.0);
-    let measure = gui_measure(scale);
+    // Laid out in screen units, drawn in GUI pixels (as Discover).
+    let unit = paint::screen_unit(scale, event.batch.height * scale);
+    let measure = gui_measure(scale * unit);
+    let mouse = [event.screen.mouse[0] / unit, event.screen.mouse[1] / unit];
     let mut guard = lock();
     let st = &mut *guard;
     let s = &mut st.languages;
@@ -69,8 +75,8 @@ pub fn render(_host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
         .to_owned();
     let back = horizon_client::lang::get_or("gui.done", i18n::t(T::Back, &lang));
     let view = |scroll: f32| langs::View {
-        gui: [event.batch.width, event.batch.height],
-        mouse: event.screen.mouse,
+        gui: [event.batch.width / unit, event.batch.height / unit],
+        mouse,
         shown: &shown,
         current: &s.current,
         query: &s.query,
@@ -97,11 +103,15 @@ pub fn render(_host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
     s.scroll = s.scroll.clamp(0.0, layout.max_scroll);
     let mut c = canvas();
     if c.ready() {
-        c.paint_all(event.batch, &layout.paints);
+        c.paint_all(event.batch, &rescaled(&layout.paints, unit));
     }
     drop(c);
     if layout.max_scroll > 0.0 {
-        horizon_client::widgets::scroll_area(layout.grid, s.scroll, layout.max_scroll);
+        horizon_client::widgets::scroll_area(
+            scale_rect(layout.grid, unit),
+            s.scroll * unit,
+            layout.max_scroll * unit,
+        );
     }
     for (r, h) in &layout.hits {
         let label = match h {
@@ -113,13 +123,14 @@ pub fn render(_host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
             langs::Hit::Back => back.clone(),
             langs::Hit::Search => i18n::t(T::LanguageSearch, &lang).to_owned(),
         };
-        super::register(&label, *r);
+        super::register(&label, scale_rect(*r, unit));
     }
     let count = shown.len();
     if s.focus.is_some_and(|f| f >= count) {
         s.focus = None;
     }
     s.layout = Some(layout);
+    s.unit = unit;
 }
 
 fn pick(host: &dyn Host, code: &str) {
@@ -135,11 +146,16 @@ pub fn mouse(host: &dyn Host, event: &mut ScreenMouseButtonPressedPreEvent<'_>) 
     if event.button != 0 {
         return Flow::Cancel;
     }
-    let hit = lock()
-        .languages
-        .layout
-        .as_ref()
-        .and_then(|l| l.hit(event.screen.mouse));
+    let hit = {
+        let st = lock();
+        let unit = if st.languages.unit > 0.0 {
+            st.languages.unit
+        } else {
+            1.0
+        };
+        let at = [event.screen.mouse[0] / unit, event.screen.mouse[1] / unit];
+        st.languages.layout.as_ref().and_then(|l| l.hit(at))
+    };
     lock().languages.focus = None;
     match hit {
         Some(Hit::Pick(code)) => pick(host, &code),

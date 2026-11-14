@@ -31,7 +31,22 @@
     "error_title": "Impossibile raggiungere l'elenco dei server",
     "retry": "Riprova",
     "publish_hint": "Pubblica il tuo su rustic-launcher.com/servers",
-    "rustic_edition": "Edizione Rustic"
+    "rustic_edition": "Edizione Rustic",
+    "saved_servers": "Server salvati",
+    "local_network": "Rete locale",
+    "search_servers": "Cerca nei tuoi server",
+    "no_servers_title": "Ancora nessun server",
+    "no_servers_body": "Aggiungi un server con il suo indirizzo o trovane uno in Scopri.",
+    "no_worlds_title": "Ancora nessun mondo",
+    "no_worlds_body": "Crea un mondo per iniziare a giocare.",
+    "nothing_found": "Nessun risultato per la tua ricerca",
+    "just_now": "Proprio ora",
+    "minutes_ago": "{n} min fa",
+    "hours_ago": "{n} h fa",
+    "days_ago": "{n} g fa",
+    "lan_empty": "I mondi aperti in LAN sulla tua rete compaiono qui.",
+    "play": "Gioca",
+    "no_mods": "Nessuna mod installata. Trova mod per Rustic in Esplora nel launcher o aggiungi i tuoi file nella cartella delle mod."
   },
   "tags": {
     "survival": "Sopravvivenza",

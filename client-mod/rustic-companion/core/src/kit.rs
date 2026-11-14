@@ -14,6 +14,8 @@ pub enum Look {
     Secondary,
     /// Text only until hovered.
     Ghost,
+    /// A destructive action (Delete, Disconnect): red ink, red when hovered.
+    Danger,
 }
 
 /// Builds a screen: what to draw and where presses land (`H`).
@@ -105,14 +107,31 @@ impl<'a, H: Clone> Kit<'a, H> {
 
     /// A button with its label centred; `focused` lights it as a hover does.
     pub fn button(&mut self, rect: [f32; 4], label: &str, look: Look, focused: bool, h: H) {
-        let lit = focused || self.over(rect);
+        self.button_on(rect, label, look, focused, true, h);
+    }
+
+    /// A button that may be off (dimmed, and no hit box).
+    #[allow(clippy::too_many_arguments)]
+    pub fn button_on(
+        &mut self,
+        rect: [f32; 4],
+        label: &str,
+        look: Look,
+        focused: bool,
+        enabled: bool,
+        h: H,
+    ) {
+        let lit = enabled && (focused || self.over(rect));
         let (fill, border, ink) = match (look, lit) {
+            _ if !enabled => (palette::FACE_OFF, palette::BORDER_OFF, palette::INK_OFF),
             (Look::Primary, false) => (0xF2E8_5F0A, 0, palette::INK),
             (Look::Primary, true) => (palette::ACCENT, 0xFFFF_B37A, 0xFFFF_FFFF),
             (Look::Secondary, false) => (palette::FACE, palette::BORDER, palette::INK),
             (Look::Secondary, true) => (palette::FACE_HOVER, palette::ACCENT, palette::INK),
             (Look::Ghost, false) => (0, 0, palette::MUTED),
             (Look::Ghost, true) => (0x14FF_FFFF, palette::BORDER, palette::INK),
+            (Look::Danger, false) => (palette::FACE, 0x66F0_645A, palette::DANGER),
+            (Look::Danger, true) => (0xF2C2_3B32, palette::DANGER, 0xFFFF_FFFF),
         };
         self.round(rect, (rect[3] * 0.22).clamp(2.0, 5.0), fill, border);
         let size = (rect[3] * 0.42).clamp(5.5, 8.5);
@@ -126,7 +145,74 @@ impl<'a, H: Clone> Kit<'a, H> {
             ink,
             Align::Center,
         );
-        self.hit(rect, h);
+        if enabled {
+            self.hit(rect, h);
+        }
+    }
+
+    /// A button's width for `label` at height `h` (its label's size plus room on both sides).
+    pub fn button_width(&self, label: &str, h: f32) -> f32 {
+        let size = (h * 0.42).clamp(5.5, 8.5);
+        ((self.measure)(label, size, Weight::SemiBold) + h * 1.1).ceil()
+    }
+
+    /// A small pill (a badge): its label in `ink` on `fill`; its width.
+    pub fn pill(&mut self, x: f32, cy: f32, h: f32, label: &str, fill: u32, ink: u32) -> f32 {
+        let size = (h * 0.62).clamp(4.5, 7.0);
+        let w = ((self.measure)(label, size, Weight::SemiBold) + h * 0.9).ceil();
+        self.round([x, cy - h / 2.0, w, h], h / 2.0, fill, 0);
+        self.text(
+            x + w / 2.0,
+            cy,
+            label,
+            size,
+            Weight::SemiBold,
+            ink,
+            Align::Center,
+        );
+        w
+    }
+
+    /// A pill's width for `label` at height `h`.
+    pub fn pill_width(&self, label: &str, h: f32) -> f32 {
+        let size = (h * 0.62).clamp(4.5, 7.0);
+        ((self.measure)(label, size, Weight::SemiBold) + h * 0.9).ceil()
+    }
+
+    /// A line of coloured runs (`(text, ARGB)`) left-aligned at `x`, centred on `cy`, cut with an
+    /// ellipsis at `width`; its width.
+    #[allow(clippy::too_many_arguments)]
+    pub fn runs(
+        &mut self,
+        x: f32,
+        cy: f32,
+        width: f32,
+        runs: &[(String, u32)],
+        size: f32,
+        weight: Weight,
+    ) -> f32 {
+        let mut pen = x;
+        let end = x + width;
+        for (i, (t, argb)) in runs.iter().enumerate() {
+            if t.is_empty() {
+                continue;
+            }
+            let w = (self.measure)(t, size, weight);
+            let rest: f32 = runs[i + 1..]
+                .iter()
+                .map(|(r, _)| (self.measure)(r, size, weight))
+                .sum();
+            if pen + w + rest <= end || (pen + w <= end && i + 1 == runs.len()) {
+                pen += self.text(pen, cy, t, size, weight, *argb, Align::Left);
+            } else {
+                let cut = fit(t, end - pen, size, weight, self.measure);
+                if cut.chars().count() > 1 || cut != "…" {
+                    pen += self.text(pen, cy, &cut, size, weight, *argb, Align::Left);
+                }
+                break;
+            }
+        }
+        pen - x
     }
 
     /// A chip (a category, a segment); the selected one in the accent.
@@ -299,6 +385,26 @@ mod tests {
         k.field([0.0, 40.0, 120.0, 16.0], "", "Search", true, true, 3);
         assert_eq!(k.hits.len(), 3);
         assert_eq!(k.hits[0].1, 1);
+        // An off button is drawn but takes no press.
+        k.button_on(
+            [0.0, 70.0, 40.0, 16.0],
+            "Edit",
+            Look::Danger,
+            false,
+            false,
+            4,
+        );
+        assert_eq!(k.hits.len(), 3);
+        // Runs are cut at their width.
+        let w = k.runs(
+            0.0,
+            100.0,
+            30.0,
+            &[("Hello ".into(), 1), ("world".into(), 2)],
+            8.0,
+            Weight::Medium,
+        );
+        assert!(w <= 30.0 + 0.01, "{w}");
         // The hovered primary button is the full accent.
         assert!(k.out.iter().any(|p| matches!(
             p,

@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "greeting": "ยินดีต้อนรับกลับมา {{name}}",
+    "greetingAnon": "ยินดีต้อนรับสู่ Rustic",
+    "continue": "เล่นต่อ: {{name}} · เล่นเมื่อ {{when}}",
+    "continueNew": "พร้อมเมื่อคุณพร้อม: {{name}}",
+    "firstRun": "เตรียมเกมให้พร้อมใน 3 ขั้นตอน",
+    "playNow": "เล่นเลย",
+    "updateAndPlay": "อัปเดตและเล่น",
+    "resumeServer": "กลับเข้า {{server}}",
+    "switch": "สลับอินสแตนซ์",
+    "stats": {
+      "playtime": "เล่นแล้ว {{time}}",
+      "mods_other": "{{count}} ม็อด",
+      "friends_other": "เพื่อนออนไลน์ {{count}} คน"
+    },
+    "steps": {
+      "signIn": "เข้าสู่ระบบด้วยบัญชี Microsoft ที่เป็นเจ้าของเกม",
+      "prepare": "เตรียมไฟล์เกมจากเกมที่ติดตั้งไว้ของคุณเอง",
+      "create": "สร้างอินสแตนซ์แรกของคุณ"
+    },
+    "getReady": "เตรียมเกมให้พร้อม",
+    "openLocker": "ล็อกเกอร์",
+    "player": "ตัวละครของคุณ ยืนนิ่ง ไม่ได้สวมไอเทมตกแต่ง",
+    "playerWearing": "ตัวละครของคุณ ยืนนิ่ง สวม: {{items}}"
+  },
+  "recent": {
+    "title": "เซิร์ฟเวอร์และโลกล่าสุด",
+    "unknown": "ไม่ทราบสถานะ",
+    "online": "ออนไลน์ · {{online}}/{{max}}",
+    "offline": "ออฟไลน์",
+    "world": "โลก · ในเครื่อง",
+    "joining": "กำลังเข้าร่วม {{name}}…",
+    "opening": "กำลังเปิด {{name}}…",
+    "removed": "นำ {{name}} ออกจากเซิร์ฟเวอร์ของคุณแล้ว",
+    "playAria": "เล่น {{name}}",
+    "more": "การทำงานเพิ่มเติมสำหรับ {{name}}",
+    "copyAddress": "คัดลอกที่อยู่",
+    "addServer": "เพิ่มเซิร์ฟเวอร์",
+    "empty": "เซิร์ฟเวอร์ที่คุณเข้าร่วมและโลกที่คุณเล่นจะแสดงที่นี่"
+  },
+  "news": {
+    "title": "ข่าวสารและอัปเดต",
+    "empty": "ยังไม่มีข่าวในตอนนี้",
+    "slide": "เรื่องที่ {{index}} จาก {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "บันทึกประจำรุ่น",
+      "event": "อีเวนต์",
+      "blog": "บทความ"
+    },
+    "readNotes": "อ่านบันทึกประจำรุ่น",
+    "read": "อ่าน"
+  },
+  "friends": {
+    "title": "เพื่อนตอนนี้",
+    "empty": "ตอนนี้ไม่มีเพื่อนคนไหนกำลังเล่น",
+    "since": "ตั้งแต่ {{when}}",
+    "activity": {
+      "server": "กำลังเล่นใน {{server}}",
+      "hosting": "กำลังโฮสต์ {{server}}",
+      "singleplayer": "กำลังเล่นคนเดียว",
+      "launcher": "อยู่ในลันเชอร์"
+    }
+  },
+  "featured": {
+    "title": "เซิร์ฟเวอร์แนะนำ",
+    "verified": "เซิร์ฟเวอร์ที่ยืนยันแล้ว",
+    "players": "ผู้เล่น {{online}} / {{max}}",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "ไอเทมตกแต่งใหม่",
+    "owned": "มีแล้ว"
+  },
+  "launchpad": {
+    "welcome": "ยินดีต้อนรับ*กลับมา*",
+    "playAs": "เล่นในชื่อ",
+    "online": "ออนไลน์ในเซิร์ฟเวอร์แนะนำ",
+    "heroLabel": "เปิดเกม",
+    "instanceSettings": "การตั้งค่าอินสแตนซ์",
+    "news": "ข่าวล่าสุด",
+    "unread_other": "(ยังไม่อ่าน {{count}})",
+    "unreadDot": "ยังไม่อ่าน",
+    "explore": "สำรวจแหล่งที่มา",
+    "aside": "เซิร์ฟเวอร์และเพื่อน",
+    "joinServer": "เข้าร่วม {{name}}",
+    "friendsOnline_other": "(ออนไลน์ {{count}})",
+    "openSocial": "เปิดโซเชียล",
+    "noNews": "ยังไม่มีข่าว",
+    "noFriendsOnline": "ตอนนี้ไม่มีเพื่อนออนไลน์",
+    "socialHint": "แชต คำเชิญ และปาร์ตี้ของคุณอยู่ในหน้าต่างโซเชียล",
+    "eyebrow": "Launchpad"
+  }
+}

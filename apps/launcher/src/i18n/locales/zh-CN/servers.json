@@ -1,0 +1,1041 @@
+{
+  "list": {
+    "title": "服务器",
+    "description": "为好友托管一个世界，可以在这里，也可以在你自己的 VPS 上，并随时访问你喜爱的服务器。",
+    "create": "创建服务器",
+    "tabs": {
+      "mine": "我的服务器",
+      "joined": "已加入",
+      "discover": "发现"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "原版 Horizon"
+    },
+    "hosting": {
+      "local": "这台电脑",
+      "remote": "远程：{{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "状态",
+    "states": {
+      "running": "运行中",
+      "starting": "正在启动…",
+      "stopping": "正在停止…",
+      "stopped": "已停止",
+      "crashed": "已崩溃",
+      "installing": "正在安装…",
+      "unreachable": "无法访问"
+    },
+    "players": "玩家",
+    "playersCount": "{{online}}/{{max}} 位玩家",
+    "version": "版本",
+    "copyAddress": "复制地址",
+    "copyFailed": "无法复制到剪贴板",
+    "notShared": "尚未共享",
+    "notSharedHint": "在服务器的“访问”标签页中开启临时地址、邀请码或域名。",
+    "start": "启动",
+    "stop": "停止",
+    "startAria": "启动 {{name}}",
+    "stopAria": "停止 {{name}}",
+    "powerFailed": "服务器没有响应",
+    "empty": {
+      "title": "三步为好友托管一个世界",
+      "description": "在这台电脑上免费运行，或让 Rustic 将它安装到你自己的 VPS 上。"
+    },
+    "featured": {
+      "description": "由 Rustic 团队精选的服务器：公平游戏、支持 Horizon、有人管理。",
+      "empty": "目前没有精选服务器。",
+      "verified": "Rustic 已认证",
+      "save": "添加到列表",
+      "inList": "已在你的列表中",
+      "online_other": "{{value}} 人在线",
+      "view": "关于 {{name}}"
+    },
+    "viewLabel": "视图",
+    "views": {
+      "discover": "发现",
+      "mine": "我的服务器"
+    },
+    "searchPlaceholder": {
+      "discover": "搜索精选服务器…",
+      "mine": "搜索你的服务器…"
+    },
+    "clearSearch": "清除搜索",
+    "sortLabel": "排序",
+    "sorts": {
+      "recommended": "推荐",
+      "players": "玩家最多",
+      "name": "名称"
+    },
+    "refreshPing": "刷新延迟和状态",
+    "layoutList": "以列表显示",
+    "layoutGrid": "以网格显示",
+    "createHint": "在这里、在你的 VPS 上，或即将支持的云端",
+    "heading": "在*服务器*上游玩",
+    "eyebrow": "服务器",
+    "sections": {
+      "hosted": "由你托管",
+      "joined": "已加入的服务器"
+    }
+  },
+  "multiplayer": {
+    "description": "游戏的服务器列表，所有实例共享。",
+    "add": "添加服务器",
+    "added": "已将 {{name}} 添加到你的列表",
+    "addFailed": "无法添加此服务器",
+    "name": "服务器名称",
+    "namePlaceholder": "名称",
+    "address": "服务器地址",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "请使用主机名或 IP，可附加 :端口。",
+    "refreshPings": "刷新",
+    "favorites_other": "收藏 · {{count}}",
+    "others_other": "其他服务器 · {{count}}",
+    "favorite": "将 {{name}} 添加到收藏",
+    "unfavorite": "将 {{name}} 从收藏中移除",
+    "offline": "离线",
+    "unreachable": "目前无法连接此服务器",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "加入",
+    "joinAria": "加入 {{name}}",
+    "joinWith": "使用 {{instance}} 加入",
+    "noInstance": "创建一个实例即可加入服务器",
+    "joining": "正在启动并加入 {{name}}…",
+    "more": "{{name}} 的更多操作",
+    "copyAddress": "复制地址",
+    "removed": "已移除 {{name}}",
+    "undo": "撤销",
+    "empty": {
+      "title": "还没有服务器",
+      "description": "通过地址添加一个，或在“发现”中挑选。"
+    }
+  },
+  "wizard": {
+    "title": "创建服务器",
+    "subtitle": "三个步骤：运行什么、在哪里托管、好友如何加入。",
+    "creatingTitle": "正在设置 {{name}}",
+    "stepOf": "第 {{index}} 步，共 {{total}} 步",
+    "steps": {
+      "basics": "基本信息",
+      "hosting": "托管位置",
+      "access": "访问"
+    },
+    "create": "创建服务器",
+    "installOn": "安装到 {{host}}",
+    "createFailed": "无法创建服务器",
+    "noRusticServer": "未找到 rustic-server 程序。请在 设置 › 游戏与实例 › Rustic Server 中选择，或安装附带它的 Rustic 版构建。",
+    "openRusticServerSettings": "打开设置",
+    "fixErrors": "请检查高亮显示的字段后继续。",
+    "discard": {
+      "title": "要放弃此服务器吗？",
+      "body": "你在向导中输入的内容将会丢失。",
+      "keep": "继续编辑",
+      "confirm": "放弃"
+    },
+    "basics": {
+      "name": "服务器名称",
+      "namePlaceholder": "小鹿的生存服",
+      "icon": "图标",
+      "icons": {
+        "grass": "草",
+        "sword": "剑",
+        "pickaxe": "镐",
+        "castle": "城堡",
+        "rocket": "火箭",
+        "gem": "宝石",
+        "flame": "火焰",
+        "leaf": "树叶",
+        "star": "星星",
+        "compass": "指南针"
+      },
+      "color": "颜色",
+      "colorN": "颜色 {{n}}",
+      "type": "类型",
+      "recommended": "推荐",
+      "nightly": "每夜版",
+      "rusticDesc": "插件（.rplugin），沙盒隔离：插件永远不会让你的服务器崩溃。",
+      "horizonDesc": "Horizon 自己的服务器，不支持插件。",
+      "version": "Horizon 版本",
+      "maxPlayers": "最大玩家数",
+      "versionLineRustic": "Rustic Server 0.1，基于 Horizon {{version}}",
+      "versionLineHorizon": "Horizon 服务器 {{version}}",
+      "sameAsClient": "（与你的客户端相同）",
+      "starterPlugins": "入门插件",
+      "starterHint": "官方插件，并列出它们被允许执行的操作。",
+      "capNetwork": "网络",
+      "capNoNetwork": "无网络",
+      "capNoFiles": "无文件",
+      "capDataFolder": "独立的数据文件夹",
+      "eula": "我接受 Minecraft EULA",
+      "eulaHint": "运行服务器需要接受它。由你本人接受；Rustic 不会代你接受。",
+      "eulaRead": "阅读 EULA",
+      "eulaTitle": "Minecraft EULA"
+    },
+    "world": {
+      "title": "世界",
+      "new": "新世界",
+      "import": "导入文件夹",
+      "fromInstance": "来自实例",
+      "seed": "种子",
+      "seedHint": "留空则生成随机世界。",
+      "seedPlaceholder": "可选",
+      "randomSeed": "随机种子",
+      "levelType": "世界类型",
+      "levelTypes": {
+        "default": "默认",
+        "flat": "超平坦",
+        "large_biomes": "巨型生物群系",
+        "amplified": "放大化"
+      },
+      "gamemode": "游戏模式",
+      "gamemodes": {
+        "survival": "生存",
+        "creative": "创造",
+        "adventure": "冒险"
+      },
+      "difficulty": "难度",
+      "difficulties": {
+        "peaceful": "和平",
+        "easy": "简单",
+        "normal": "普通",
+        "hard": "困难"
+      },
+      "structures": "生成结构",
+      "hardcore": "极限",
+      "folder": "世界文件夹",
+      "instance": "实例",
+      "pickInstance": "选择实例",
+      "world": "世界",
+      "pickWorld": "选择世界",
+      "noWorlds": "此实例中没有世界",
+      "newDesc": "由种子生成的全新世界，规则由你决定。",
+      "importDesc": "来自你电脑或备份的世界文件夹。",
+      "fromInstanceDesc": "你在某个配置中玩过的世界。"
+    },
+    "type": {
+      "memory": "服务器内存（RAM）",
+      "memoryHint": "4 GB 适合大多数好友小团体。玩家多或整合包大时，更多内存会有帮助。"
+    },
+    "access": {
+      "intro": "你的好友如何加入。可以同时开启多种方式；之后也可以更改。",
+      "lan": "我网络中的好友（局域网）",
+      "lanDetail": "这台电脑的本地地址，服务器创建后显示。",
+      "publicIp": "公网地址",
+      "publicIpDetail": "你的 VPS 的 IP",
+      "alwaysOn": "始终开启",
+      "relay": "临时地址",
+      "relayDetail": "免费，服务器运行期间可用；无需开放端口",
+      "invite": "邀请码",
+      "inviteDetail": "好友在 Rustic Launcher 中粘贴即可加入的代码。",
+      "domain": "我自己的域名",
+      "domainDetail": "连接 Porkbun · 在 Porkbun 购买 · 使用任意注册商",
+      "domainAfter": "创建后再设置",
+      "safety": "已开启正版验证：只有拥有游戏的玩家才能加入。已开启白名单。"
+    },
+    "summary": {
+      "title": "摘要",
+      "version": "版本",
+      "host": "托管",
+      "world": "世界",
+      "memory": "内存",
+      "players": "最大玩家数",
+      "plugins": "插件",
+      "none": "无",
+      "eulaAccepted": "你已在第 1 步中接受了 Minecraft EULA。"
+    },
+    "errors": {
+      "nameRequired": "请为你的服务器命名。",
+      "nameTooLong": "最多 40 个字符。",
+      "version": "请选择 Horizon 版本。",
+      "maxPlayers": "1 到 1000 位玩家之间。",
+      "importPath": "请选择要导入的世界文件夹。",
+      "world": "请选择一个实例及其中的一个世界。",
+      "seed": "种子最多 64 个字符。",
+      "eula": "接受 EULA 才能运行服务器。",
+      "cloudUnavailable": "Rustic Cloud 暂不可用。",
+      "vpsNotReady": "请先连接你的 VPS 并通过检查。",
+      "memory": "至少 1 GB 内存。",
+      "host": "请输入 IP 地址或主机名。",
+      "port": "端口须在 1 到 65535 之间。",
+      "username": "请输入 Linux 用户名。",
+      "keyPath": "请选择你的私钥文件。",
+      "generateKey": "请先生成密钥，然后将其添加到你的 VPS。",
+      "password": "请输入密码。"
+    },
+    "heading": "创建*服务器*",
+    "stepHints": {
+      "basics": "给它起个名字，选择它运行什么以及初始世界。",
+      "hosting": "选择运行它的机器以及分配给它的内存。",
+      "access": "选择好友加入的方式。之后可以修改。"
+    },
+    "sections": {
+      "identity": "名称和图标"
+    },
+    "preview": {
+      "title": "预览",
+      "unnamed": "你的服务器",
+      "draft": "尚未创建"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "这台电脑（本地）",
+      "free": "免费",
+      "description": "好友游玩期间，你的电脑必须保持开机。",
+      "settings": "在这台电脑上",
+      "reach": "好友可以通过你的网络、Rustic 临时地址或邀请码连接。无需设置路由器。",
+      "startWithLauncher": "随启动器启动",
+      "startWithLauncherHint": "Rustic Launcher 打开时服务器随之启动。"
+    },
+    "vps": {
+      "title": "你的 VPS（SSH）",
+      "description": "你的 Linux 服务器。我们为你安装并运行。",
+      "which": "VPS",
+      "existing_other": "已保存的 VPS（{{count}}）",
+      "new": "添加 VPS",
+      "pinned": "主机密钥已固定",
+      "host": "主机",
+      "port": "端口",
+      "user": "用户",
+      "userPlaceholder": "root 或拥有 sudo 权限的用户",
+      "auth": "登录方式",
+      "authGenerate": "为我生成密钥",
+      "authKey": "已有的密钥文件",
+      "authPassword": "密码（仅一次）",
+      "generateHint": "推荐。Rustic 会创建一对密钥；私钥永远不会离开这台电脑。",
+      "generate": "生成密钥",
+      "addKeyCommand": "在你的 VPS 控制台中运行一次以下命令来授权该密钥：",
+      "keyStored": "私钥已保存在你的系统钥匙串中（{{path}}）",
+      "openFirewall": "在 VPS 防火墙中开放游戏端口",
+      "openFirewallHint": "在 ufw 或 firewalld 中允许 TCP 连接到服务器端口。你的服务商自己的防火墙可能也需要设置。",
+      "keyFile": "私钥",
+      "passphrase": "密码短语",
+      "optional": "可选",
+      "password": "密码",
+      "passwordHint": "仅用于一次性安装密钥，不会被保存。",
+      "test": "测试连接",
+      "reachable": "已连接 · {{ms}} ms",
+      "unreachable": "无法连接此 VPS",
+      "authFailed": "VPS 拒绝了登录"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "即将推出",
+      "description": "运行在 Rustic 机器上的服务器，始终在线。",
+      "waitlist": "Rustic Cloud 开放时通过电子邮件通知我。",
+      "email": "电子邮件地址",
+      "join": "加入候补名单",
+      "joined": "你已在名单中（第 {{position}} 位）。我们会给你发邮件。",
+      "invalidEmail": "请输入有效的电子邮件地址。"
+    },
+    "requirements": {
+      "title": "要求检查",
+      "ram": "内存（可用 {{free}}）",
+      "gameFiles": "游戏文件已准备",
+      "port": "端口 25565 空闲",
+      "hint": "下载服务器文件时会检查磁盘空间。"
+    },
+    "fingerprint": {
+      "title": "要信任 {{host}} 吗？",
+      "description": "首次连接到此 VPS。信任之前，请将此指纹与你服务商控制台中的指纹进行比对。",
+      "warning": "如果不一致，请取消：可能有人在拦截连接。Rustic 会阻止此密钥之后的任何变更。",
+      "trust": "信任并继续"
+    },
+    "testFailed": "连接测试失败",
+    "checkFailed": "VPS 检查失败",
+    "preflight": {
+      "running": "正在检查你的 VPS…",
+      "ok": "你的 VPS 已就绪",
+      "notOk": "你的 VPS 不满足要求",
+      "os": "{{os}} · {{arch}}",
+      "cpu_other": "{{count}} 个 vCPU",
+      "memory": "{{memory}} 内存",
+      "disk": "{{disk}} 可用磁盘空间",
+      "systemd": "systemd 可用",
+      "ip": "公网 IP"
+    },
+    "problems": {
+      "memory": "内存",
+      "disk": "磁盘",
+      "arch": "架构",
+      "os": "操作系统",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "正在安装到 {{host}}",
+      "steps": {
+        "connect": "通过 SSH 连接",
+        "check": "预检",
+        "user": "创建用户“rustic”",
+        "download": "上传已签名的服务器文件",
+        "engine": "配置 Rustic 引擎",
+        "service": "安装服务",
+        "firewall": "开放端口 25565",
+        "world": "准备世界",
+        "start": "启动并检查"
+      },
+      "state": {
+        "pending": "等待中",
+        "running": "进行中",
+        "done": "完成",
+        "failed": "失败",
+        "skipped": "已跳过"
+      },
+      "skippedVanilla": "原版 Horizon 不需要",
+      "log_other": "显示日志（{{count}} 行）",
+      "vpsDone": "{{name}} 正在 {{host}} 上运行",
+      "vpsDoneBody": "像管理本地服务器一样在启动器中管理它：控制台、玩家、插件、备份。",
+      "localDownload": "下载 {{engine}}",
+      "localInit": "准备世界和设置",
+      "localStart": "首次启动",
+      "localReady": "准备启动",
+      "localDone": "{{name}} 正在运行",
+      "localDoneBody": "在“访问”标签页中分享它的地址，或在好友面板中邀请好友。",
+      "open": "打开服务器",
+      "backToList": "返回服务器列表",
+      "retry": "重试",
+      "failed": "安装失败",
+      "crashed": "服务器在首次启动时停止了。请查看控制台。"
+    }
+  },
+  "manage": {
+    "tabsLabel": "服务器分区",
+    "tabs": {
+      "overview": "概览",
+      "console": "控制台",
+      "players": "玩家",
+      "plugins": "插件",
+      "config": "配置文件",
+      "datapacks": "数据包",
+      "backups": "备份",
+      "access": "访问",
+      "danger": "危险区域"
+    },
+    "state": {
+      "stopped": "已停止",
+      "starting": "正在启动…",
+      "running": "运行中",
+      "stopping": "正在停止…",
+      "crashed": "已崩溃",
+      "installing": "正在安装…",
+      "unreachable": "无法访问"
+    },
+    "save": "保存",
+    "cancel": "取消",
+    "close": "关闭",
+    "remove": "移除",
+    "done": "完成",
+    "header": {
+      "back": "服务器",
+      "players": "{{online}}/{{max}} 位玩家",
+      "uptime": "已运行 {{duration}}",
+      "start": "启动",
+      "stop": "停止",
+      "restart": "重启",
+      "join": "加入",
+      "address": "地址",
+      "copyAddress": "复制服务器地址",
+      "powerFailed": "无法更改服务器状态"
+    },
+    "overview": {
+      "stoppedTitle": "服务器已停止",
+      "stoppedBody": "启动服务器以查看实时 CPU、内存、TPS 和刻耗时。",
+      "cpu": "CPU",
+      "cpuChart": "过去两分钟的 CPU 使用率",
+      "ram": "内存",
+      "ramChart": "过去两分钟的内存使用量",
+      "of": "共 {{max}}",
+      "tps": "TPS",
+      "tpsChart": "过去两分钟的每秒刻数",
+      "mspt": "刻耗时",
+      "msptChart": "过去两分钟每刻的耗时（毫秒），含 50 ms 预算线",
+      "msptBudget": "预算 50 ms",
+      "health": {
+        "good": "流畅",
+        "busy": "繁忙",
+        "lagging": "卡顿"
+      },
+      "onlineTitle_other": "{{count}} 位玩家在线",
+      "onlineStopped": "服务器停止期间无人能够加入。",
+      "nobody": "目前没有人在玩。",
+      "infoTitle": "详情",
+      "world": "世界",
+      "version": "Horizon",
+      "port": "端口",
+      "memory": "内存",
+      "created": "创建时间",
+      "folder": "文件夹",
+      "uptime": "运行时长",
+      "startedAt": "自 {{time}} 起",
+      "lastSession": "上次会话",
+      "lastStarted": "上次启动：{{when}}",
+      "neverStarted": "尚未启动过",
+      "lastLines": "控制台最新输出",
+      "noLines": "暂无日志。",
+      "openConsole": "打开控制台",
+      "crashedTitle": "服务器意外停止",
+      "crashedBody": "查看控制台最新输出，然后重新启动。"
+    },
+    "console": {
+      "filter": "筛选行",
+      "filters": {
+        "all": "全部",
+        "info": "信息",
+        "warn": "警告",
+        "error": "错误",
+        "chat": "聊天"
+      },
+      "levels": {
+        "info": "信息",
+        "warn": "警告",
+        "error": "错误",
+        "command": "命令",
+        "chat": "聊天"
+      },
+      "autoScroll": "跟随新行",
+      "logLabel": "服务器控制台",
+      "empty": "暂无内容。",
+      "suggestions": "命令建议",
+      "inputLabel": "服务器命令",
+      "placeholder": "输入命令（Tab 补全，↑ 历史记录）",
+      "offline": "启动服务器后才能发送命令",
+      "send": "发送",
+      "sendFailed": "无法发送命令",
+      "hint": "命令以服务器控制台身份运行，拥有全部权限。无需输入开头的斜杠。"
+    },
+    "players": {
+      "whitelist": "白名单",
+      "whitelistHint": "只有名单上的玩家才能加入。服务器可从互联网访问时推荐开启。",
+      "view": "显示玩家",
+      "views": {
+        "online": "在线",
+        "all": "全部",
+        "ops": "管理员（OP）",
+        "whitelist": "白名单中",
+        "banned": "已封禁"
+      },
+      "search": "查找玩家",
+      "emptyOnline": "没有人在线",
+      "empty": "这里没有玩家",
+      "stoppedHint": "启动服务器以查看谁在玩。",
+      "online": "在线",
+      "offline": "离线",
+      "op": "管理员（OP）",
+      "whitelisted": "白名单中",
+      "banned": "已封禁",
+      "playtime": "已游玩 {{duration}}",
+      "kick": "踢出",
+      "kickAria": "踢出 {{name}}",
+      "more": "{{name}} 的更多操作",
+      "makeOp": "设为管理员（OP）",
+      "deop": "取消管理员（OP）",
+      "whitelistAdd": "加入白名单",
+      "whitelistRemove": "从白名单中移除",
+      "ban": "封禁",
+      "pardon": "解封",
+      "banTitle": "要封禁 {{name}} 吗？",
+      "banBody": "该玩家会被断开连接，在你解封之前无法再次加入。",
+      "reason": "原因（可选，会显示给该玩家）",
+      "failed": "操作失败",
+      "done": {
+        "kick": "已踢出 {{name}}",
+        "ban": "已封禁 {{name}}",
+        "pardon": "已解封 {{name}}",
+        "op": "{{name}} 现在是管理员（OP）",
+        "deop": "{{name}} 不再是管理员（OP）",
+        "whitelist_add": "已将 {{name}} 加入白名单",
+        "whitelist_remove": "已将 {{name}} 从白名单中移除"
+      }
+    },
+    "config": {
+      "mode": "编辑模式",
+      "form": "设置",
+      "raw": "原始文件",
+      "groups": {
+        "general": "常规",
+        "world": "世界",
+        "players": "玩家",
+        "network": "网络",
+        "performance": "性能"
+      },
+      "keys": {
+        "motd": "服务器简介（MOTD）",
+        "max-players": "最大玩家数",
+        "white-list": "白名单",
+        "online-mode": "正版验证（账户检查）",
+        "pvp": "玩家对战（PvP）",
+        "gamemode": "默认游戏模式",
+        "difficulty": "难度",
+        "level-seed": "世界种子",
+        "spawn-protection": "出生点保护半径",
+        "server-port": "端口",
+        "enable-rcon": "远程控制台（RCON）",
+        "view-distance": "视距",
+        "simulation-distance": "模拟距离"
+      },
+      "restart": "重启",
+      "restartNeeded": "部分更改需要重启服务器才能生效",
+      "unsaved_other": "{{count}} 项未保存的更改",
+      "noChanges": "没有更改",
+      "discard": "放弃",
+      "saved": "配置已保存",
+      "saveFailed": "无法保存配置",
+      "rawTitle": "server.toml",
+      "rawWarning": "高级：一个拼写错误就可能导致服务器无法启动。保存时会检查各项值。"
+    },
+    "plugins": {
+      "vanillaTitle": "插件需要 Rustic Server",
+      "vanillaBody": "此服务器运行的是原版 Horizon。Rustic Server 支持沙盒隔离的 .rplugin 插件，插件永远不会让服务器崩溃。创建一个 Rustic Server 并导入此世界即可使用插件。",
+      "createRustic": "创建 Rustic Server",
+      "intro": "插件在沙盒中隔离运行：出错的插件会被禁用并记录一行日志，服务器继续运行。每个插件都会声明它可以访问的内容。",
+      "upload": "添加文件…",
+      "uploadTitle": "选择 .rplugin 文件",
+      "find": "查找插件",
+      "empty": "还没有插件",
+      "emptyBody": "浏览 内容 › 插件，一键添加。",
+      "errored": "出错后已禁用",
+      "disabled": "已关闭",
+      "noDescription": "无描述",
+      "toggle": "启用 {{name}}",
+      "capabilities": "访问权限",
+      "noNetwork": "无网络",
+      "network": "网络：{{domains}}",
+      "fs": {
+        "none": "无文件",
+        "data-folder": "独立的数据文件夹"
+      },
+      "update": "更新到 {{version}}",
+      "updated": "{{name}} 已更新到 {{version}}",
+      "installed": "{{name}} 已安装并启用",
+      "removeTitle": "要移除 {{name}} 吗？",
+      "removeBody": "插件将被卸载，其文件会被删除。它的数据文件夹会保留。",
+      "failed": "插件操作失败"
+    },
+    "datapacks": {
+      "intro": "世界“{{world}}”的数据包。",
+      "find": "查找数据包",
+      "empty": "此世界中没有数据包",
+      "toggle": "启用 {{name}}",
+      "remove": "移除 {{name}}",
+      "reloadHint": "更改在 /reload 或重启后生效。",
+      "failed": "数据包操作失败"
+    },
+    "backups": {
+      "nowTitle": "立即备份",
+      "nowBody": "世界和配置的副本。服务器会继续运行。",
+      "note": "备注",
+      "notePlaceholder": "可选备注，例如“更新前”",
+      "now": "立即备份",
+      "created": "备份已创建",
+      "empty": "还没有备份",
+      "kinds": {
+        "manual": "手动",
+        "scheduled": "计划",
+        "pre_restore": "恢复前"
+      },
+      "restore": "恢复",
+      "restoreTitle": "要恢复此备份吗？",
+      "restoreBody": "世界将回到 {{date}} 的状态。此后建造的一切都会被替换。恢复前会先备份当前世界。",
+      "restored": "备份已恢复",
+      "delete": "删除备份",
+      "deleteTitle": "要删除此备份吗？",
+      "deleteBody": "此备份将被永久删除。",
+      "failed": "备份操作失败",
+      "scheduleTitle": "自动备份",
+      "scheduleBody": "达到上限时会删除最旧的自动备份。",
+      "scheduleEnabled": "自动备份",
+      "every": "每隔",
+      "hours_other": "{{count}} 小时",
+      "keep": "保留",
+      "keepCount_other": "最近 {{count}} 个备份",
+      "scheduleSaved": "备份计划已保存"
+    },
+    "danger": {
+      "deleteTitle": "删除此服务器",
+      "deleteBody": "停止服务器并将其从启动器中移除。你可以保留其文件。",
+      "delete": "删除服务器",
+      "removeVpsTitle": "从你的 VPS 中移除",
+      "removeVpsBody": "停止 {{host}} 上的服务并从中卸载 Rustic。你的 VPS 仍然归你所有。",
+      "removeVps": "从 VPS 中移除",
+      "confirmTitle": "要删除“{{name}}”吗？",
+      "confirmBody": "此操作无法撤销。如果你之后可能还需要这个世界，请先备份。",
+      "deleteFiles": "同时删除世界和所有服务器文件",
+      "typeName": "输入“{{name}}”以确认",
+      "deleted": "已删除 {{name}}",
+      "failed": "无法删除服务器"
+    }
+  },
+  "access": {
+    "intro": "选择好友连接你服务器的方式。可以同时开启多种方式。",
+    "optional": "可选",
+    "lan": {
+      "title": "在你的网络中",
+      "body": "连接同一 Wi-Fi 或网络的玩家可通过此地址加入。",
+      "copy": "复制本地地址"
+    },
+    "public": {
+      "title": "公网地址",
+      "body": "你的 VPS 的 IP 和端口。任何人都能用它加入；域名更便于分享。",
+      "copy": "复制公网地址"
+    },
+    "relay": {
+      "title": "临时地址",
+      "body": "服务器运行期间在 Rustic Relay 上提供的免费地址。无需设置路由器，你的 IP 保持隐藏。",
+      "toggle": "临时地址",
+      "copy": "复制临时地址",
+      "off": "已关闭。开启后即可获得一个可分享的地址。",
+      "label": "地址中的名称",
+      "apply": "应用",
+      "status": {
+        "off": "已关闭",
+        "connecting": "正在等待服务器启动",
+        "online": "现在可以访问",
+        "error": "无法访问中继"
+      },
+      "failed": "无法更改临时地址",
+      "taken": "此名称已被占用，请换一个。",
+      "invalid": "请使用 3 到 32 个小写字母、数字或连字符。"
+    },
+    "invite": {
+      "title": "邀请码",
+      "body": "使用 Rustic Launcher 的好友粘贴此代码即可加入，就像 Horizon 的“与好友一起玩”。",
+      "create": "创建代码",
+      "copy": "复制邀请码",
+      "expires": "{{when}}过期",
+      "revoke": "撤销"
+    },
+    "advanced": "高级：在路由器上开放端口（UPnP）",
+    "upnp": {
+      "title": "UPnP 端口映射",
+      "warning": "这会请求路由器将服务器端口开放到互联网。你的公网 IP 地址会对每位玩家可见，从而暴露你的家庭网络（攻击、位置）。建议优先使用临时地址或域名。",
+      "status": {
+        "off": "已关闭",
+        "mapping": "正在请求路由器…",
+        "mapped": "端口已开放",
+        "failed": "路由器拒绝了请求（UPnP 可能已关闭）"
+      },
+      "mapped": "端口已开放：{{address}}",
+      "copy": "复制公网地址",
+      "failed": "无法开放端口",
+      "prefer": "临时地址和域名无需开放任何端口即可使用。"
+    }
+  },
+  "domains": {
+    "title": "我自己的域名",
+    "intro": "域名就是你服务器的地址，例如 play.yourname.net。你可以连接已有的域名，无需离开启动器即可在 Porkbun 购买，或者使用任意注册商：我们会准确告诉你需要添加什么。",
+    "automatic": "自动",
+    "anyRegistrar": "任意注册商",
+    "otherPaths": "其他方式",
+    "paths": {
+      "porkbun": {
+        "title": "连接 Porkbun",
+        "body": "已经在 Porkbun 拥有域名？连接你的账户，我们会为你创建记录。"
+      },
+      "buy": {
+        "title": "在 Porkbun 购买域名",
+        "body": "找一个可用的名称，在你自己的 Porkbun 账户上购买，即可自动完成设置。"
+      },
+      "manual": {
+        "title": "使用任意注册商的域名",
+        "body": "OVH、Gandi、Namecheap、Cloudflare…：我们会告诉你需要添加什么，并为你检查。"
+      }
+    },
+    "subdomain": "子域名",
+    "subdomainHint": "play 是一个不错的默认值。",
+    "apexHint": "留空：使用域名本身（部分注册商需要 ALIAS/ANAME 记录）。",
+    "invalidSubdomain": "只能使用字母、数字和连字符。",
+    "invalidDomain": "这看起来不像一个域名（example.net）。",
+    "copyAddress": "复制域名地址",
+    "configureFailed": "无法配置域名",
+    "boundBody": "玩家通过此地址加入。",
+    "remove": "移除域名",
+    "removeTitle": "要停止使用 {{domain}} 吗？",
+    "removeBody": "记录被移除后，该地址将不再指向此服务器。域名仍然归你所有。",
+    "status": {
+      "pending": "待处理",
+      "propagating": "正在生效",
+      "verified": "已连接",
+      "error": "错误"
+    },
+    "provider": {
+      "porkbun": "通过 Porkbun 管理",
+      "manual": "在你的注册商处管理"
+    },
+    "connected": "域名已连接",
+    "connectedBody": "Rustic Cloud 会验证 TXT 记录，之后你的地址即可使用。你可以关闭此窗口；我们会通知你。",
+    "porkbun": {
+      "step1": "在 porkbun.com › Account › API Access 中创建 API 密钥。",
+      "openApi": "打开 Porkbun API Access",
+      "step2": "在 Porkbun 的域名页面上，开启“API Access”。",
+      "apiKey": "API 密钥",
+      "secret": "API 私密密钥",
+      "keychain": "保存在你电脑的钥匙串中，绝不会发送给 Rustic。",
+      "connect": "连接",
+      "badApiKey": "API 密钥以 pk1_ 开头。",
+      "badSecret": "API 私密密钥以 sk1_ 开头。",
+      "rejected": "Porkbun 拒绝了这些密钥。请检查，或创建一对新密钥。",
+      "connected": "Porkbun 已连接",
+      "disconnect": "断开连接",
+      "domain": "域名",
+      "pickDomain": "选择你的一个域名",
+      "apiAccessOff": "此域名在 Porkbun 上的 API Access 已关闭",
+      "apiAccessHint": "灰色的域名需要在 Porkbun 上开启“API Access”。",
+      "preview": "我们将进行的更改",
+      "dryRun": "预览",
+      "previewBody": "将在你的域名上添加或替换这些记录，使 {{fqdn}} 指向此服务器。在你应用之前不会有任何更改。",
+      "apply": "自动配置"
+    },
+    "buy": {
+      "intro": "域名会注册在你自己的 Porkbun 账户上，并在那里付款。Rustic 绝不会为此收取费用。",
+      "needsAccount": "购买需要你的 Porkbun 账户：请先连接（你可以在 porkbun.com 免费创建账户）。",
+      "search": "想要的名称",
+      "searchPlaceholder": "例如 loucraft",
+      "searchButton": "搜索",
+      "noResults": "此名称没有结果。",
+      "premium": "高级域名",
+      "price": "首年 {{price}} · 续费 {{renewal}}",
+      "taken": "已被注册",
+      "select": "选择",
+      "overLimit": "超过 100 美元：请在 porkbun.com 购买",
+      "pricesNote": "价格为 Porkbun 当前报价，以美元计。Porkbun 可能会另收税费。",
+      "confirmTitle": "确认在 Porkbun 购买",
+      "seller": "销售方：Porkbun LLC，而非 Rustic。适用其条款、价格、续费和退款政策。",
+      "domain": "域名",
+      "address": "服务器地址",
+      "registrar": "注册商",
+      "registrarValue": "Porkbun，使用你的账户",
+      "firstYear": "首年",
+      "renewal": "每年续费价格",
+      "payment": "使用你的 Porkbun 账户余额或已保存的银行卡支付：现在支付 {{price}}；之后每年以 {{renewal}} 续费，除非你在 Porkbun 关闭自动续费。",
+      "agreeTerms": "我同意 Porkbun 的注册协议和条款",
+      "termsLink": "（阅读条款）",
+      "agreeOrder": "我了解 Rustic 只是代表我将此订单发送给 Porkbun",
+      "refunds": "域名的退款和取消由 Porkbun 根据其条款处理。",
+      "buyButton": "在 Porkbun 购买 · {{price}}",
+      "bought": "{{domain}} 归你了",
+      "boughtBody": "Porkbun 已扣款：{{price}}。正在进行设置…",
+      "configuring": "正在配置你的新域名…",
+      "failed": "购买未成功",
+      "errors": {
+        "price_changed": "Porkbun 的价格已变动。请查看新价格后重试。",
+        "not_available": "此域名刚刚被注册。",
+        "over_limit": "超过 100 美元：请在 porkbun.com 购买。",
+        "porkbun_not_connected": "请先连接你的 Porkbun 账户。",
+        "consent_required": "必须勾选两个复选框。"
+      }
+    },
+    "manual": {
+      "intro": "在你的注册商的 DNS 区域中添加这些记录。我们每 10 秒检查一次，生效后会告诉你。",
+      "domain": "你的域名",
+      "registrar": "注册商",
+      "show": "显示记录",
+      "guideTitle": "在 {{registrar}} 上",
+      "allGuides": "所有注册商的指南"
+    },
+    "records": {
+      "caption": "需要添加的 DNS 记录",
+      "type": "类型",
+      "name": "名称 / 主机",
+      "value": "值 / 目标",
+      "ttl": "TTL",
+      "status": "状态",
+      "optional": "可选",
+      "emptyHost": "（留空）",
+      "copyName": "复制 {{type}} 名称",
+      "copyValue": "复制 {{type}} 值",
+      "srvFields": "优先级 {{priority}} · 权重 {{weight}} · 端口 {{port}}"
+    },
+    "check": {
+      "pending": "未检查",
+      "notNeeded": "不需要",
+      "ok": "正常",
+      "propagating": "正在生效（{{ok}}/{{total}}）",
+      "wrong": "值错误",
+      "found": "检测到：",
+      "expected": "预期：",
+      "missing": "缺失",
+      "first": "首次检查…",
+      "progress": "{{ok}} / {{total}} 条记录正常",
+      "progressLabel": "已验证的记录",
+      "auto": "每 10 秒自动检查",
+      "lastCheck": "上次检查于 {{seconds}} 秒前",
+      "now": "立即检查"
+    },
+    "help": {
+      "txt": "为什么需要 TXT 记录？它能证明域名归你所有，这样别人就无法将它指向他们的服务器。",
+      "propagation": "更改可能需要一分钟到几小时才能对所有人生效。我们会持续检查；你无需停留在此页面。",
+      "apex": "根域名（不带“play.”的 yourname.net）需要 ALIAS/ANAME 记录；并非所有注册商都支持。子域名始终可用。"
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "打开 Web Cloud › Domain names › 你的域名 › DNS zone。\n点击“Add an entry”，选择类型（CNAME、SRV、A 或 TXT）。\nSub-domain 填写下方的“名称”（域名本身则留空），Target 填写“值”。\n对每条记录重复以上步骤，然后确认。OVH 会在几分钟内应用更改。"
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "打开 Domain › 你的域名 › DNS records。\n点击“Add record”，选择类型。\nName 填写下方的“名称”，Value 填写“值”（CNAME/SRV 目标保留末尾的点）。\n逐条保存记录。"
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "打开 Domain List › Manage › Advanced DNS。\n在 Host records 下点击“Add new record”。\nHost 填写下方的“名称”（域名本身填 @），Value/Target 填写“值”。\n点击绿色对勾逐条保存。"
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "打开 My Products › 你的域名 › DNS › Manage DNS。\n点击“Add new record”，选择类型。\nName 填写下方的“名称”（域名本身填 @），Value 填写“值”。\n对于 SRV，Service 填 _minecraft，Protocol 填 _tcp，然后填写优先级、权重和端口。保存。"
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "选择你的站点 › DNS › Records › Add record。\n选择类型，Name 填写下方的“名称”，Target/Content 填写“值”。\n将 Proxy status 设为“DNS only”（灰色云朵）：游戏流量无法通过 Cloudflare 的代理。\n逐条保存记录。"
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "打开 Domains & SSL › 你的域名 › DNS。\n点击“Add record”，选择类型。\nHost name 填写下方的“名称”，Points to / Value 填写“值”。\n保存；IONOS 可能会要求你确认替换默认记录。"
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "打开 Domains › 你的域名 › DNS / Nameservers。\n在“Manage DNS records”下选择类型。\nName 填写下方的“名称”，Points to / Value 填写“值”，TTL 按显示填写。\n每条记录都点击“Add record”。"
+      },
+      "porkbun": {
+        "name": "Porkbun（手动）",
+        "steps": "打开 Domain Management › 你的域名 › DNS。\n选择类型，Host 填写下方的“名称”（域名本身则留空），Answer 填写“值”。\n每条记录都点击“Add”。\n提示：“连接 Porkbun”方式会自动为你完成这一切。"
+      },
+      "generic": {
+        "name": "其他注册商",
+        "steps": "打开你域名的 DNS 区域（有时称为 DNS 记录或区域编辑器）。\n按相同的类型、名称和值添加下方的每条记录。\n如果注册商要求填写完整名称，请在“名称”后加上你的域名。\n保存后回到这里：我们会自动检查。"
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "服务器视图",
+    "tabs": {
+      "discover": "发现",
+      "browse": "浏览"
+    },
+    "searchLabel": "搜索服务器",
+    "searchPlaceholder": "搜索服务器目录…",
+    "publish": "发布我的服务器",
+    "publishCta": {
+      "title": "你的服务器也能在这里",
+      "hint": "在网站上将你的 Horizon 服务器加入目录：通过自动检查后，它会显示在这里和 rustic-launcher.com 上。"
+    },
+    "play": "游玩",
+    "playAria": "在 {{name}} 上游玩",
+    "view": "查看",
+    "verified": "已认证",
+    "featured": "编辑精选",
+    "verifiedHint": "已认证的服务器：Rustic 团队已检查过服务器主人和规则。",
+    "online_other": "{{value}} 人在线",
+    "playersLabel": "在线玩家",
+    "languagesLabel": "语言",
+    "playsLabel": "本周启动次数",
+    "lastPlayed": "最近游玩",
+    "lastPlayedOn": "{{when}}玩过",
+    "hero": {
+      "label": "精选服务器",
+      "eyebrow": "已认证"
+    },
+    "rows": {
+      "trending": "热门",
+      "trendingHint": "本周从 Rustic 启动次数最多",
+      "players": "当前玩家最多",
+      "playersHint": "来自云端的最近一次检查",
+      "new": "目录新上架",
+      "newHint": "服务器主人刚刚列出",
+      "recent": "最近游玩",
+      "recentHint": "来自你的服务器列表"
+    },
+    "rowError": "无法加载这一行。",
+    "retry": "重试",
+    "empty": {
+      "title": "还没有列出的服务器",
+      "hint": "成为第一个：在网站上发布你的服务器。"
+    },
+    "emptySearch": {
+      "title": "没有匹配的服务器",
+      "hint": "换个词，或减少筛选条件试试。"
+    },
+    "sorts": {
+      "trending": "热门",
+      "players": "玩家最多",
+      "new": "最新",
+      "name": "名称"
+    },
+    "filters": {
+      "tags": "游戏风格",
+      "language": "语言",
+      "engine": "引擎",
+      "rustic": "Rustic",
+      "verifiedOnly": "仅显示已认证",
+      "reset": "重置筛选",
+      "remove": "移除筛选条件 {{filter}}"
+    },
+    "tags": {
+      "survival": "生存",
+      "smp": "生存多人（SMP）",
+      "creative": "创造",
+      "minigames": "小游戏",
+      "pvp": "PvP",
+      "skyblock": "空岛",
+      "oneblock": "单方块",
+      "roleplay": "角色扮演",
+      "factions": "派系",
+      "prison": "监狱",
+      "parkour": "跑酷",
+      "adventure": "冒险",
+      "building": "建筑",
+      "economy": "经济",
+      "modded": "模组服",
+      "anarchy": "无政府",
+      "hardcore": "极限",
+      "bedwars": "起床战争",
+      "towny": "城镇",
+      "vanilla": "原版"
+    },
+    "page": {
+      "back": "服务器",
+      "status": "实时状态",
+      "cloudSaw_other": "云端 {{when}}检测到 {{value}} 位玩家在线",
+      "engine": "引擎",
+      "version": "游戏版本",
+      "languages": "语言",
+      "plays": "本周启动次数",
+      "about": "关于",
+      "noDescription": "暂无描述。",
+      "address": "地址",
+      "copy": "复制",
+      "openSite": "在网站上打开",
+      "website": "网站",
+      "discord": "Discord",
+      "by": "由 {{name}} 列出",
+      "byStaff": "由 Rustic 团队列出",
+      "report": "举报",
+      "rusticEdition": "需要 Rustic 版",
+      "missing": "此服务器不可用",
+      "missingHint": "它可能是私有的、已被管理隐藏或已被删除。"
+    },
+    "report": {
+      "title": "举报 {{name}}",
+      "lead": "告诉管理团队哪里有问题。每条举报都会经过审核。",
+      "reason": "原因",
+      "reasons": {
+        "impersonation": "冒充其他服务器",
+        "spam": "垃圾信息或误导性内容",
+        "inappropriate_content": "不当内容",
+        "cheating": "作弊或恶意服务器",
+        "harassment": "骚扰",
+        "copyright": "侵犯我的权利（商标、名称）",
+        "malware": "恶意软件",
+        "other": "其他"
+      },
+      "details": "详情",
+      "detailsHint": "可选，最多 2,000 个字符。",
+      "send": "发送举报",
+      "sent": "谢谢，你的举报已发送给管理团队。",
+      "signIn": "登录你的 Rustic 账户以举报服务器。",
+      "failed": "无法发送举报。"
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "ステップ {{current}}/{{total}}",
+  "back": "戻る",
+  "continue": "続ける",
+  "skip": "今はスキップ",
+  "steps": {
+    "welcome": "ようこそ",
+    "microsoft": "Microsoft",
+    "rustic": "Rustic アカウント",
+    "privacy": "プライバシー",
+    "game": "ゲームファイル",
+    "ready": "完了"
+  },
+  "welcome": {
+    "title": "Rustic へようこそ",
+    "subtitle": "Horizon のための高速でソーシャルなランチャーです。いくつか選ぶだけでゲームを始められます。",
+    "language": "言語",
+    "theme": "テーマ",
+    "palette": "パレット"
+  },
+  "microsoft": {
+    "title": "Microsoft でログイン",
+    "subtitle": "Rustic はゲームを所有しているかを Microsoft に確認します。パスワードが Rustic に渡ることはありません。",
+    "signedInAs": "{{name}} としてログイン中",
+    "ownershipOk": "所有を確認しました。プレイできます。",
+    "notOwnedTitle": "Minecraft: Java Edition が必要です",
+    "notOwnedBody": "この Microsoft アカウントはゲームを所有していません。Rustic はライセンスなしでゲームを起動しません。",
+    "buyGame": "ゲームを入手",
+    "whyTitle": "なぜ？",
+    "whyBody": "ゲームの所有は必須です。Horizon はお使いのインストールからゲームファイルを準備し、オフラインプロファイルはこの確認の後にのみ利用可能になります。"
+  },
+  "rustic": {
+    "title": "あなたの Rustic アカウント",
+    "subtitle": "任意です。なくてもゲームは動作します。あとから設定でログインできます。",
+    "perks": {
+      "friends": {
+        "title": "フレンドとパーティー",
+        "body": "誰がオンラインかを確認して、ワンクリックで合流できます。"
+      },
+      "locker": {
+        "title": "ロッカー",
+        "body": "プレイヤーに付けるコスメティック。見た目だけです。"
+      },
+      "servers": {
+        "title": "あなたのサーバーをオンラインに",
+        "body": "ホストするサーバー用の無料アドレスとドメイン。"
+      }
+    },
+    "signedInAs": "{{name}} としてログイン中",
+    "signIn": "ログインまたはアカウントを作成",
+    "skipHint": "または「続ける」を押して今はスキップします。",
+    "age": "Rustic アカウントは {{min}} 歳以上が対象です。{{consent}} 歳未満の場合はデータ処理に保護者の同意が必要で、18 歳未満の購入には保護者の承認が必要です。"
+  },
+  "privacy": {
+    "title": "プライバシーの選択",
+    "subtitle": "すべてオフになっています。共有してもよいものだけをオンにしてください。設定からいつでも変更できます。",
+    "usage": {
+      "title": "利用状況の分析",
+      "body": "どのページや機能が使われているか。内容や識別子は含みません。"
+    },
+    "performance": {
+      "title": "パフォーマンスレポート",
+      "body": "起動時間とフレーム時間。遅い箇所を見つけるために使います。"
+    },
+    "crash": {
+      "title": "クラッシュレポート",
+      "body": "ゲームやランチャーがクラッシュしたときに自動で送信されます。オフの場合は毎回確認します。"
+    },
+    "note": "データを販売したり、広告目的で共有したりすることはありません。",
+    "policy": "プライバシーポリシーを読む"
+  },
+  "game": {
+    "title": "ゲームの準備",
+    "subtitle": "Rustic はお使いのインストールのゲームファイルを使い（不足分は Mojang からダウンロードし）、Horizon 用に準備します。",
+    "detecting": "ゲームのインストールを探しています…",
+    "found": "ゲームが見つかりました（{{versions}}）",
+    "notFound": "インストールが見つかりません",
+    "notFoundBody": "Rustic があなたのアカウント用にゲームファイルを Mojang からダウンロードします。",
+    "prepareTitle": "ゲームファイルを準備",
+    "alreadyReady": "準備済み",
+    "done": "準備完了",
+    "prepareAgain": "再度準備",
+    "prepare": "準備",
+    "steps": {
+      "detect": "検出",
+      "download": "ダウンロード",
+      "verify": "検証",
+      "compile_exporters": "エクスポーター",
+      "export": "エクスポート",
+      "index": "インデックス"
+    },
+    "explain": "不足しているゲームファイルは Mojang 自身のサーバーから取得し、第三者からは何も取得しません。準備したファイルはこのコンピューターに保存されます。",
+    "background": "続行できます。準備はバックグラウンドで進みます。",
+    "prepareFailed": "ゲームファイルを準備できませんでした：{{reason}}"
+  },
+  "ready": {
+    "title": "準備が整いました",
+    "subtitle": "最初のインスタンスを今すぐ作成するか、スキップしてあとで作成できます。",
+    "finish": "Rustic を開く",
+    "defaultName": "はじめてのワールド",
+    "createTitle": "最初のインスタンスを作成",
+    "recommended": "おすすめ",
+    "nameLabel": "インスタンス名",
+    "existing_other": "すでに {{count}} 個のインスタンスがあります。",
+    "tips": {
+      "play": "「プレイ」ボタンはいつも右下にあります。",
+      "friends": "フレンドは右側に表示され、ワンクリックで参加できます。",
+      "servers": "「サーバー」ページからフレンド向けのサーバーをホストできます。"
+    }
+  }
+}

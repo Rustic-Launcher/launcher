@@ -13,6 +13,7 @@ import { bindRealtime } from './queries/social';
 import { router } from './router';
 import { bindActivity } from './stores/activity';
 import { bindTheme, usePrefs } from './stores/prefs';
+import { bindUpdates } from './stores/updates';
 
 // Theme before first paint.
 bindTheme();
@@ -23,7 +24,7 @@ usePrefs.subscribe((s, prev) => {
 function App() {
   const { t } = useTranslation();
   useEffect(() => {
-    const offs = [bindActivity(), bindCoreEvents(queryClient)];
+    const offs = [bindActivity(), bindUpdates(), bindCoreEvents(queryClient)];
     let offRealtime: (() => void) | undefined;
     void bindRealtime(queryClient).then((off) => (offRealtime = off));
     return () => {

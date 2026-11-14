@@ -1,0 +1,444 @@
+{
+  "a11y": {
+    "skipToContent": "Sari la conținut",
+    "notifications": "Notificări"
+  },
+  "actions": {
+    "retry": "Reîncearcă",
+    "back": "Înapoi",
+    "forward": "Înainte",
+    "cancel": "Anulează",
+    "close": "Închide",
+    "clear": "Golește",
+    "save": "Salvează",
+    "saved": "Salvat",
+    "delete": "Șterge",
+    "edit": "Editează",
+    "open": "Deschide",
+    "install": "Instalează",
+    "installed": "Instalat",
+    "remove": "Elimină",
+    "confirm": "Confirmă",
+    "continue": "Continuă",
+    "next": "Următorul",
+    "previous": "Anterior",
+    "done": "Gata",
+    "copy": "Copiază",
+    "copied": "Copiat",
+    "learnMore": "Află mai multe",
+    "seeAll": "Vezi tot",
+    "create": "Creează",
+    "import": "Importă",
+    "browse": "Răsfoiește…",
+    "apply": "Aplică",
+    "reset": "Resetează",
+    "enable": "Activează",
+    "disable": "Dezactivează",
+    "update": "Actualizează",
+    "add": "Adaugă",
+    "refresh": "Reîmprospătează",
+    "openFolder": "Deschide folderul",
+    "skip": "Sari peste",
+    "more": "Mai mult"
+  },
+  "errors": {
+    "generic": "Ceva n-a mers bine. Încearcă din nou peste câteva clipe.",
+    "page": {
+      "title": "Această pagină nu a putut fi afișată"
+    },
+    "load": {
+      "title": "Nu s-a putut încărca"
+    },
+    "notFound": {
+      "title": "Nimic aici",
+      "description": "Această pagină nu există sau a fost mutată."
+    }
+  },
+  "nav": {
+    "label": "Navigare principală",
+    "home": "Acasă",
+    "instances": "Profiluri",
+    "content": "Explorează",
+    "servers": "Servere",
+    "locker": "Vestiar",
+    "store": "Magazin",
+    "settings": "Setări",
+    "newInstance": "Profil nou"
+  },
+  "search": {
+    "title": "Căutare",
+    "placeholder": "Caută conținut, prieteni, servere, setări…",
+    "empty": "Niciun rezultat. Încearcă alt cuvânt.",
+    "loading": "Se caută…",
+    "hintNavigate": "navighează",
+    "hintOpen": "deschide",
+    "hintClose": "închide",
+    "open": "Deschide",
+    "myServer": "Serverul meu",
+    "playInstance": "Joacă {{name}}",
+    "groups": {
+      "pages": "Pagini",
+      "actions": "Acțiuni",
+      "instances": "Instanțe",
+      "content": "Conținut",
+      "friends": "Prieteni",
+      "servers": "Servere",
+      "settings": "Setări",
+      "play": "Joacă"
+    },
+    "actions": {
+      "newInstance": "Creează o instanță",
+      "newServer": "Creează un server",
+      "addFriend": "Adaugă un prieten",
+      "darkTheme": "Treci la tema întunecată",
+      "lightTheme": "Treci la tema luminoasă"
+    },
+    "settings": {
+      "accounts": "Conturi",
+      "game": "Joc",
+      "launcher": "Launcher",
+      "appearance": "Aspect",
+      "privacy": "Confidențialitate și date",
+      "parental": "Control parental",
+      "about": "Despre"
+    }
+  },
+  "friends": {
+    "title": "Prieteni",
+    "onlineCount_one": "{{count}} online",
+    "onlineCount_few": "{{count}} online",
+    "onlineCount_other": "{{count}} online",
+    "add": "Adaugă un prieten",
+    "search": "Caută prieteni",
+    "requests_one": "Cerere · {{count}}",
+    "requests_few": "Cereri · {{count}}",
+    "requests_other": "Cereri · {{count}}",
+    "incoming": "Vrea să fiți prieteni",
+    "outgoing": "Cerere trimisă",
+    "accept": "Acceptă",
+    "decline": "Refuză",
+    "cancelRequest": "Anulează cererea",
+    "requestSent": "Cerere de prietenie trimisă către {{name}}",
+    "error": "Prietenii nu au putut fi încărcați.",
+    "empty": "Niciun prieten încă. Adaugă unul după numele de utilizator Rustic.",
+    "online_one": "Online · {{count}}",
+    "online_few": "Online · {{count}}",
+    "online_other": "Online · {{count}}",
+    "offline_one": "Offline · {{count}}",
+    "offline_few": "Offline · {{count}}",
+    "offline_other": "Offline · {{count}}",
+    "lastSeen": "Văzut {{when}}",
+    "activity": {
+      "server": "Joacă pe {{server}}",
+      "singleplayer": "Joacă singur",
+      "hosting": "Găzduiește {{server}}",
+      "launcher": "În launcher"
+    },
+    "favorite": "Favorit",
+    "makeFavorite": "Adaugă la favorite",
+    "unfavorite": "Elimină din favorite",
+    "join": "Intră",
+    "joinAria": "Intră la {{name}}",
+    "joining": "Se intră pe {{server}}…",
+    "more": "Mai multe acțiuni pentru {{name}}",
+    "remove": "Elimină prietenul",
+    "removeTitle": "Îl elimini pe {{name}} din prieteni?",
+    "removeBody": "Nu veți mai vedea unul activitatea celuilalt. Poți trimite o nouă cerere mai târziu."
+  },
+  "addFriend": {
+    "title": "Adaugă un prieten",
+    "description": "Găsește un jucător după numele Rustic sau după numele Minecraft pe care l-a asociat, ori alege pe cineva cu care ai jucat.",
+    "kind": "Caută după",
+    "kindRustic": "Nume Rustic",
+    "kindMinecraft": "Nume Minecraft",
+    "rusticLabel": "Nume de utilizator Rustic",
+    "minecraftLabel": "Nume de utilizator Minecraft",
+    "rusticPlaceholder": "ex. lea_builds",
+    "minecraftPlaceholder": "ex. LeaBuilds",
+    "rusticHint": "Numele exact din profilul său Rustic.",
+    "minecraftHint": "Numele exact din joc al unui jucător care s-a conectat la Rustic cu acel profil Minecraft.",
+    "find": "Caută",
+    "send": "Trimite cererea",
+    "sent": "Cerere trimisă",
+    "friends": "Deja prieteni",
+    "pending": "Cerere în așteptare",
+    "incoming": "Ți-a cerut deja prietenia: acceptă-i cererea.",
+    "minecraftName": "Nume Minecraft:",
+    "add": "Adaugă",
+    "addAria": "Trimite o cerere de prietenie către {{name}}",
+    "playedWith": "Ai jucat recent cu",
+    "playedWithEmpty": "Nimeni încă. Jucătorii din grupurile tale și de pe servere comune (10 minute sau mai mult împreună) apar aici.",
+    "crossed": "Văzuți recent",
+    "crossedEmpty": "N-ai întâlnit pe nimeni recent pe un server comun.",
+    "reasonParty": "În grupul tău",
+    "reasonServer": "Pe {{server}}",
+    "reasonSameServer": "Pe același server",
+    "suggestionsError": "Sugestiile nu au putut fi încărcate.",
+    "suggestionsOff": "Sugestiile sunt dezactivate. Activează „Apar în sugestiile jucătorilor pe care îi întâlnesc” în Setări › Confidențialitate și date ca să vezi jucătorii pe care îi întâlnești.",
+    "suggestionsMinor": "Sugestiile de jucători întâlniți nu sunt disponibile pentru contul tău.",
+    "privacyNote": "Sugestiile provin din grupurile tale și din serverele pe care le aveți în comun în activitate, din ultimele 14 zile. Apar doar persoanele care permit și ele acest lucru.",
+    "errors": {
+      "notFoundRustic": "Niciun cont Rustic nu are acest nume.",
+      "notFoundMinecraft": "Niciun jucător Rustic nu a asociat acest nume Minecraft.",
+      "invalidRustic": "Numele Rustic au între 3 și 20 de litere, cifre sau _.",
+      "invalidMinecraft": "Numele Minecraft au între 3 și 16 litere, cifre sau _.",
+      "cannot_add_friend": "Acest jucător nu poate primi cereri de prietenie.",
+      "friend_requests_disabled": "Cererile de prietenie sunt dezactivate pentru contul tău (control parental).",
+      "cannot_add_self": "Ești chiar tu!",
+      "already_friends": "Sunteți deja prieteni.",
+      "request_pending": "O cerere este deja în așteptare.",
+      "incoming_request_exists": "Ți-a trimis deja o cerere: accept-o.",
+      "rate_limited": "Prea multe căutări. Așteaptă un minut, apoi încearcă din nou.",
+      "generic": "Ceva n-a mers bine. Încearcă din nou."
+    }
+  },
+  "party": {
+    "title": "Grup",
+    "leave": "Părăsește",
+    "leader": "Liderul grupului",
+    "pending": "{{name}} (invitat)",
+    "invite": "Invită în grup",
+    "invited": "{{name}} a fost invitat în grupul tău"
+  },
+  "presence": {
+    "online": "Online",
+    "in-game": "În joc",
+    "away": "Absent",
+    "busy": "Ocupat",
+    "offline": "Offline"
+  },
+  "notifications": {
+    "title": "Notificări",
+    "markAllRead": "Marchează toate ca citite",
+    "empty": "Ești la zi cu toate.",
+    "kinds": {
+      "friend_request": "ți-a trimis o cerere de prietenie",
+      "update_available": "este disponibil pentru instanțele tale",
+      "backup_done": "Copia de rezervă programată a fost finalizată",
+      "store_new": "Nou în magazin"
+    }
+  },
+  "account": {
+    "switcher": "Conturi",
+    "none": "Niciun cont",
+    "rustic": "Cont Rustic",
+    "signInRustic": "Conectează-te la Rustic",
+    "signOutRustic": "Deconectează-te de la Rustic",
+    "gameProfiles": "Profiluri de joc",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Offline"
+    },
+    "add": "Adaugă un cont",
+    "manage": "Gestionează conturile"
+  },
+  "downloads": {
+    "title": "Descărcări",
+    "global": "Descărcări în fundal",
+    "working": "Se lucrează…",
+    "summary_one": "{{count}} descărcare în curs",
+    "summary_few": "{{count}} descărcări în curs",
+    "summary_other": "{{count}} de descărcări în curs",
+    "kind": {
+      "game": "Horizon",
+      "content": "Conținut",
+      "modpack": "Modpack",
+      "server": "Server",
+      "java": "Mediu Java",
+      "update": "Actualizare launcher",
+      "prepare": "Pregătirea fișierelor jocului",
+      "native-build": "Compilarea modurilor native",
+      "native-toolchain": "Rust pentru moduri native"
+    }
+  },
+  "play": {
+    "play": "Joacă",
+    "update": "Actualizează",
+    "cancel": "Anulează",
+    "stop": "Oprește",
+    "selectInstance": "Alege instanța cu care joci",
+    "instances": "Instanțe",
+    "manageInstances": "Gestionează instanțele",
+    "newVersion": "{{version}} disponibilă",
+    "cancelled": "Lansare anulată",
+    "status": {
+      "ready": "Gata de joc",
+      "noInstance": "Nicio instanță",
+      "running": "Jocul rulează",
+      "update": "Actualizare necesară",
+      "broken": "Reparare necesară"
+    },
+    "progress": {
+      "updating": "Se actualizează…",
+      "downloading": "Se descarcă {{pct}}",
+      "checking": "Se verifică fișierele…",
+      "preparing": "Se pregătește…",
+      "launching": "Se lansează…",
+      "stopping": "Se oprește…",
+      "preparingFiles": "Se pregătesc fișierele jocului {{pct}}",
+      "building": "Se compilează modurile native…",
+      "buildingPct": "Se compilează modurile native {{pct}}"
+    },
+    "errors": {
+      "launch": "Jocul nu a putut porni"
+    },
+    "refusals": {
+      "auth_no_account": "Conectează-te cu un cont Microsoft care deține jocul ca să joci.",
+      "auth_not_owned": "Acest cont Microsoft nu deține jocul.",
+      "auth_not_approved": "Conectarea Microsoft nu este încă disponibilă pentru acest launcher.",
+      "auth_reauth_required": "Conectează-te din nou la contul Microsoft ca să joci.",
+      "auth_offline_not_allowed": "Conectează-te o dată cu un cont Microsoft care deține jocul, apoi vei putea juca offline.",
+      "auth_network": "Microsoft nu a putut fi contactat pentru verificarea contului. Verifică-ți conexiunea.",
+      "build_not_installed": "Instalează mai întâi un build Horizon.",
+      "prepare_needed": "Fișierele jocului pentru acest build nu sunt încă pregătite.",
+      "prepare_failed": "Fișierele jocului nu au putut fi pregătite: încearcă din nou sau pregătește-le din Setări › Joc și instanțe.",
+      "prepare_no_java": "Java nu a fost găsit: instalează-l sau alege-l în Setări › Joc și instanțe.",
+      "prepare_no_minecraft_dir": "Instalarea jocului nu a fost găsită: alege-i folderul în Setări › Joc și instanțe.",
+      "launch_already_running": "Această instanță rulează deja.",
+      "native_consent": "Această instanță are moduri native: acceptă mai întâi avertismentul de încredere pe pagina instanței (Conținut).",
+      "native_toolchain": "Modurile native au nevoie de Rust: instalează-l din pagina instanței (Conținut) sau din Setări › Joc și instanțe.",
+      "native_not_edition": "Modurile native se compilează doar în ediția Rustic: trece instanța pe ea sau dezactivează-i modurile native.",
+      "native_build_failed": "Modurile native nu au putut fi compilate",
+      "native_disk": "Nu e destul spațiu liber pe disc pentru a compila modurile native."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (ediția Rustic)",
+    "rusticEdition": "Ediția Rustic"
+  },
+  "compat": {
+    "buildsOnHorizon": "Se compilează pe Horizon-ul tău",
+    "compatible": "Compatibil",
+    "incompatible": "Incompatibil: {{reason}}",
+    "unknown": "Compatibilitate necunoscută",
+    "reasons": {
+      "horizon_version": "versiunea Horizon",
+      "java_only": "doar Java Edition",
+      "side": "doar pe server",
+      "conflict": "intră în conflict cu un mod instalat",
+      "unsupported_format": "format neacceptat",
+      "needs_rustic_server": "necesită Rustic Server",
+      "not_fair_play": "nepermis (fair play)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Schimbă produsul",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Documentația Rustic Server"
+  },
+  "crumbs": {
+    "label": "Fir de navigare",
+    "horizon": "Horizon",
+    "details": "Detalii",
+    "create": "Creează",
+    "kinds": {
+      "mod": "Moduri",
+      "modpack": "Modpackuri",
+      "resourcepack": "Pachete de resurse",
+      "shader": "Shadere",
+      "datapack": "Pachete de date",
+      "plugin": "Pluginuri"
+    },
+    "servers": {
+      "featured": "Recomandate",
+      "mine": "Serverele mele",
+      "multiplayer": "Lista multiplayer",
+      "discover": "Descoperă",
+      "joined": "Lista multiplayer",
+      "browse": "Răsfoiește"
+    }
+  },
+  "social": {
+    "title": "Social",
+    "description": "Prieteni, conversații și grupul tău.",
+    "open": "Deschide Social",
+    "friends": "Prieteni",
+    "chats": "Conversații",
+    "message": "Trimite un mesaj",
+    "searchChats": "Caută conversații…",
+    "noChats": "Nicio conversație încă. Scrie-i unui prieten din fila Prieteni.",
+    "sayHello": "Salută",
+    "selectTitle": "Alege o conversație",
+    "selectBody": "Alege un prieten ca să începi o conversație.",
+    "messagePlaceholder": "Mesaj către {{name}}",
+    "send": "Trimite"
+  },
+  "window": {
+    "minimize": "Minimizează",
+    "maximize": "Maximizează",
+    "restore": "Restaurează",
+    "close": "Închide"
+  },
+  "running": {
+    "title": "Instanțe care rulează",
+    "none": "Niciun joc nu rulează.",
+    "count_one": "{{count}} instanță rulează",
+    "count_few": "{{count}} instanțe rulează",
+    "count_other": "{{count}} de instanțe rulează",
+    "downloading": "Se descarcă {{pct}}"
+  },
+  "launch": {
+    "launch": "Lansează jocul",
+    "update": "Actualizează și lansează",
+    "stop": "Oprește jocul"
+  },
+  "deepLink": {
+    "authOk": "Conectat la Rustic",
+    "authFailed": "Conectarea la Rustic a eșuat",
+    "joining": "Se intră pe {{target}}…",
+    "content": "Se deschide {{project}} de pe site"
+  },
+  "catalog": {
+    "sort": "Sortează după",
+    "results_one": "{{count}} rezultat",
+    "results_few": "{{count}} rezultate",
+    "results_other": "{{count}} de rezultate",
+    "loadMore": "Încarcă mai multe",
+    "loadMoreCount": "Se afișează {{shown}} din {{total}}",
+    "carousel": {
+      "prev": "Anterior",
+      "next": "Următorul",
+      "slide": "{{index}} din {{total}}",
+      "pause": "Pune pe pauză prezentarea",
+      "play": "Redă prezentarea"
+    },
+    "row": {
+      "seeAll": "Vezi tot",
+      "seeAllAria": "Vezi tot: {{title}}",
+      "scrollPrev": "Derulează la stânga",
+      "scrollNext": "Derulează la dreapta"
+    },
+    "filters": {
+      "button": "Filtre",
+      "buttonCount": "Filtre · {{count}}",
+      "reset": "Resetează filtrele"
+    },
+    "layout": {
+      "label": "Aspect",
+      "list": "Listă",
+      "grid": "Grilă"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Se actualizează {{pct}}",
+      "installing": "Se instalează actualizarea…",
+      "restarting": "Se repornește…",
+      "deferred": "Actualizare după joc",
+      "apply": "Actualizează și repornește"
+    },
+    "toast": {
+      "launcher": "Se descarcă Rustic Launcher {{version}}…",
+      "edition": "Se actualizează jocul (Ediția Rustic)…",
+      "editionDone": "Joc actualizat: {{version}}",
+      "deferred": "O actualizare e gata. Se instalează când închizi jocul.",
+      "restarting": "Rustic Launcher repornește ca să termine actualizarea.",
+      "updated": "Rustic Launcher actualizat la {{version}}",
+      "resuming": "Actualizare gata: se pornește jocul tău",
+      "failed": "Actualizarea nu a putut fi instalată. Vom încerca din nou mai târziu."
+    }
+  }
+}

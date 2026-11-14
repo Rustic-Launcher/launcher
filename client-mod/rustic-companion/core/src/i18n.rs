@@ -2,7 +2,7 @@
 //! table per language in `core/i18n/<code>.json` (`en`, `fr`, `de`, `pt_br`...), embedded at build
 //! time (`build.rs`), so a translation batch only adds files (ADR 0161, docs/TRANSLATING.md). A
 //! text a table lacks falls back to the language without its region (`fr_ca` -> `fr`), to a table
-//! that `covers` the game's code or its language (`pt_pt` -> `pt_br`, `bar` -> `de`), then to
+//! that `covers` the game's code or its language (`pt` -> `pt_br`, `bar` -> `de`), then to
 //! English, which is complete (tested).
 //!
 //! A table: `{"language": "Deutsch", "covers": ["bar"], "digit_separator": ".",
@@ -45,11 +45,31 @@ pub enum T {
     Retry,
     PublishHint,
     RusticEdition,
+    // The world list and the server list (ADR 0164).
+    SavedServers,
+    LocalNetwork,
+    SearchServers,
+    NoServersTitle,
+    NoServersBody,
+    NoWorldsTitle,
+    NoWorldsBody,
+    NothingFound,
+    JustNow,
+    /// `{n}` is a number of minutes.
+    MinutesAgo,
+    /// `{n}` is a number of hours.
+    HoursAgo,
+    /// `{n}` is a number of days.
+    DaysAgo,
+    LanEmpty,
+    Play,
+    /// The settings' Mods page with no mod.
+    NoMods,
 }
 
 impl T {
     /// Every text.
-    pub const ALL: [T; 29] = [
+    pub const ALL: [T; 44] = [
         T::Store,
         T::StoreNews,
         T::Discover,
@@ -79,6 +99,21 @@ impl T {
         T::Retry,
         T::PublishHint,
         T::RusticEdition,
+        T::SavedServers,
+        T::LocalNetwork,
+        T::SearchServers,
+        T::NoServersTitle,
+        T::NoServersBody,
+        T::NoWorldsTitle,
+        T::NoWorldsBody,
+        T::NothingFound,
+        T::JustNow,
+        T::MinutesAgo,
+        T::HoursAgo,
+        T::DaysAgo,
+        T::LanEmpty,
+        T::Play,
+        T::NoMods,
     ];
 
     /// Its key in the JSON tables.
@@ -113,6 +148,21 @@ impl T {
             T::Retry => "retry",
             T::PublishHint => "publish_hint",
             T::RusticEdition => "rustic_edition",
+            T::SavedServers => "saved_servers",
+            T::LocalNetwork => "local_network",
+            T::SearchServers => "search_servers",
+            T::NoServersTitle => "no_servers_title",
+            T::NoServersBody => "no_servers_body",
+            T::NoWorldsTitle => "no_worlds_title",
+            T::NoWorldsBody => "no_worlds_body",
+            T::NothingFound => "nothing_found",
+            T::JustNow => "just_now",
+            T::MinutesAgo => "minutes_ago",
+            T::HoursAgo => "hours_ago",
+            T::DaysAgo => "days_ago",
+            T::LanEmpty => "lan_empty",
+            T::Play => "play",
+            T::NoMods => "no_mods",
         }
     }
 }
@@ -170,6 +220,27 @@ fn chain(lang: &str) -> Vec<&'static Table> {
         push(en);
     }
     out
+}
+
+/// The code of the table `lang` reads first (`fr_ca` -> `fr`, `pt` -> `pt_br`), `en` when none
+/// of its own: the website has the same complete languages, under `/fr`, `/pt-br`...
+pub fn table_code(lang: &str) -> &'static str {
+    let first = chain(lang).into_iter().next();
+    tables()
+        .iter()
+        .find(|(_, t)| first.is_some_and(|f| std::ptr::eq(f, t)))
+        .map_or("en", |(c, _)| *c)
+}
+
+/// `path` (`/servers/publish`) on Rustic's website, in the language `lang` reads.
+pub fn website(path: &str, lang: &str) -> String {
+    match table_code(lang) {
+        "en" => format!("https://rustic-launcher.com{path}"),
+        code => format!(
+            "https://rustic-launcher.com/{}{path}",
+            code.replace('_', "-")
+        ),
+    }
 }
 
 /// Text `key` in the game's language `lang` (English when no table has it).
@@ -231,7 +302,10 @@ mod tests {
     use super::*;
 
     /// Tables that must be complete: every text and every tag English names.
-    const COMPLETE: &[&str] = &["en", "fr", "de", "es", "it", "pt_br", "pl"];
+    const COMPLETE: &[&str] = &[
+        "en", "fr", "de", "es", "it", "pt_br", "pl", "ru", "tr", "nl", "ja", "ko", "zh_cn", "uk",
+        "zh_tw", "pt_pt", "cs", "sv", "hu", "ro", "id", "vi", "th",
+    ];
 
     fn placeholders(s: &str) -> Vec<String> {
         let mut out: Vec<String> = s
@@ -241,6 +315,23 @@ mod tests {
             .collect();
         out.sort();
         out
+    }
+
+    #[test]
+    fn website_links_follow_the_language() {
+        assert_eq!(
+            website("/servers/publish", "en_us"),
+            "https://rustic-launcher.com/servers/publish"
+        );
+        assert_eq!(
+            website("/servers/publish", "fr_ca"),
+            "https://rustic-launcher.com/fr/servers/publish"
+        );
+        assert_eq!(
+            website("/servers/publish", "pt_br"),
+            "https://rustic-launcher.com/pt-br/servers/publish"
+        );
+        assert_eq!(table_code("xx_yy"), "en");
     }
 
     #[test]
@@ -287,10 +378,26 @@ mod tests {
         assert_eq!(t(T::Discover, "fr_ca"), "Découvrir");
         assert_eq!(t(T::MyServers, "fr_fr"), "Mes serveurs");
         assert_eq!(t(T::Discover, "en_us"), "Discover");
-        assert_eq!(t(T::Discover, "ja_jp"), "Discover");
+        assert_eq!(t(T::Discover, "da_dk"), "Discover");
+        assert_eq!(t(T::Discover, "cs_cz"), "Objevovat");
+        assert_eq!(t(T::Discover, "th_th"), "ค้นพบ");
+        // Elfdalian reads Swedish.
+        assert_eq!(t(T::Join, "ovd"), t(T::Join, "sv_se"));
+        assert_ne!(t(T::Discover, "ja_jp"), "Discover");
+        // Hong Kong and Classical Chinese read Traditional Chinese, Rusyn Ukrainian, Flemish Dutch.
+        assert_eq!(t(T::Loading, "zh_hk"), t(T::Loading, "zh_tw"));
+        assert_eq!(t(T::Loading, "lzh"), t(T::Loading, "zh_tw"));
+        assert_ne!(t(T::Loading, "zh_cn"), t(T::Loading, "zh_tw"));
+        assert_eq!(t(T::Join, "ry_ua"), t(T::Join, "uk_ua"));
+        assert_eq!(t(T::Join, "nl_be"), t(T::Join, "nl_nl"));
+        assert_eq!(t(T::Join, "rpr"), t(T::Join, "ru_ru"));
+        assert_eq!(players_online(1234, "ru_ru"), "В сети: 1\u{a0}234");
         assert_eq!(t(T::Discover, ""), "Discover");
         assert_eq!(t(T::Discover, "de_at"), t(T::Discover, "de_de"));
-        assert_eq!(t(T::Join, "pt_pt"), t(T::Join, "pt_br"));
+        // European Portuguese has its own table; `pt` alone reads Brazilian Portuguese.
+        assert_eq!(t(T::Loading, "pt_pt"), "A carregar servidores…");
+        assert_eq!(t(T::Loading, "pt_br"), "Carregando servidores…");
+        assert_eq!(t(T::Loading, "pt"), t(T::Loading, "pt_br"));
         assert_ne!(t(T::Join, "pt_br"), "Join");
         assert_eq!(t(T::Back, "bar"), t(T::Back, "de_de"));
         assert_eq!(players_online(1234, "en_us"), "1,234 online");

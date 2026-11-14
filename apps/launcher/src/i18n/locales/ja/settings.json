@@ -1,0 +1,514 @@
+{
+  "title": "設定",
+  "subtitle": "アカウント、ゲーム、ランチャー、外観、データ。",
+  "sectionsLabel": "設定のセクション",
+  "saving": "保存中…",
+  "saved": "すべての変更を保存しました",
+  "close": "閉じる",
+  "cancel": "キャンセル",
+  "sections": {
+    "accounts": "アカウントとセキュリティ",
+    "game": "ゲームとインスタンス",
+    "launcher": "ランチャー",
+    "appearance": "外観",
+    "privacy": "プライバシーとデータ",
+    "parental": "ペアレンタルコントロール",
+    "about": "情報と法的事項"
+  },
+  "accounts": {
+    "active": "使用中",
+    "useThis": "このプロフィールを使用",
+    "signOut": "ログアウト",
+    "signedOut": "{{name}} をログアウトしました",
+    "ownership": {
+      "valid": "ゲームを所有",
+      "expired": "確認の期限切れ",
+      "never": "未確認",
+      "failed": "確認に失敗",
+      "lastChecked": "{{when}}に確認",
+      "nextCheck": "次回の確認：{{date}}まで",
+      "checkNow": "今すぐ確認",
+      "checkedToast": "所有を確認しました",
+      "checkFailed": "Microsoft に接続できませんでした。あとでもう一度お試しください。"
+    },
+    "microsoft": {
+      "title": "Microsoft アカウント",
+      "description": "プレイにはゲームの所有が必要です。Rustic は Microsoft に確認し、あなたのパスワードを見ることはありません。",
+      "add": "Microsoft アカウントを追加",
+      "keychain": "ログイントークンはシステムのキーチェーンに保存され、ファイルやコマンドラインに残ることはありません。",
+      "signIn": "Microsoft でログイン",
+      "step1": "ブラウザー（または別のデバイス）で Microsoft のページを開きます。",
+      "step2": "下のコードを入力してログインします。",
+      "step3": "ここに戻ってください。ランチャーが自動で続行します。",
+      "codeLabel": "ログインコード",
+      "copyCode": "コードをコピー",
+      "copied": "コードをコピーしました",
+      "openPage": "microsoft.com/link を開く",
+      "waiting": "ブラウザーでのログインを待っています…",
+      "cancel": "キャンセル",
+      "signedInAs": "{{name}} としてログイン中",
+      "ownershipOk": "所有を確認しました。プレイできます。",
+      "ownershipMissing": "このアカウントはゲームを所有していません。",
+      "tryAgain": "再試行",
+      "failed": {
+        "expired": {
+          "title": "コードの有効期限が切れました",
+          "body": "コードの有効期限は 15 分です。もう一度始めて新しいコードを取得してください。"
+        },
+        "denied": {
+          "title": "ログインがキャンセルされました",
+          "body": "Microsoft からログインが拒否されたと報告されました。"
+        },
+        "no_ownership": {
+          "title": "このアカウントはゲームを所有していません",
+          "body": "Rustic は Minecraft: Java Edition を所有しているアカウントでのみゲームを起動します。"
+        },
+        "error": {
+          "title": "ログインに失敗しました",
+          "body": "Rustic はログインを完了できませんでした。もう一度お試しください。失敗が続く場合は、下の詳細に理由が表示されます。"
+        },
+        "not_configured": {
+          "title": "このビルドでは Microsoft ログインが設定されていません",
+          "body": "このビルドには Azure アプリケーション ID がないため、ゲームライセンスの確認を Microsoft に依頼できません。公式ビルドには含まれています。"
+        },
+        "not_approved": {
+          "title": "ランチャーは Mojang の承認待ちです",
+          "body": "Microsoft アカウントへのログインはできましたが、ゲームサービスはまだこのランチャーを受け付けていません。まず Mojang がアプリケーション ID を承認する必要があります。お客様側での対応は不要です。承認後にもう一度お試しください。"
+        },
+        "xbox": {
+          "title": "Xbox Live がログインを拒否しました",
+          "body": "理由は下に表示されています（保護者の許可がない子どもアカウント、Xbox プロフィールの作成が必要、対象外の地域など）。"
+        },
+        "rate_limited": {
+          "title": "試行回数が多すぎます",
+          "body": "短時間に多くのログインがありました。1 分待ってから再度お試しください。"
+        },
+        "network": {
+          "title": "サービスに接続できませんでした",
+          "body": "インターネット接続を確認して、もう一度お試しください。"
+        },
+        "detail": "詳細：{{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Rustic アカウント",
+      "description": "フレンド、ロッカー、購入、サーバーのためのあなたの Rustic ID。",
+      "signedOut": "ログインしていません。なくてもゲームは動作しますが、ソーシャル機能、ロッカー、ストアにはログインが必要です。",
+      "signIn": "ログインまたはアカウントを作成",
+      "licenceNote": "Rustic アカウントはプラットフォーム上の ID です。ゲームライセンスの代わりにはならないため、ゲームを所有する Microsoft アカウントが引き続き必要です。"
+    },
+    "offline": {
+      "title": "オフラインプレイ",
+      "description": "LAN パーティーやインターネットなしでのプレイ用です。Microsoft アカウントの公式の名前と UUID でプレイします。最後に所有の確認に成功してから {{days}} 日間利用でき、その後 Rustic が再度 Microsoft に確認します。",
+      "until": "{{date}}までオフラインプレイが可能",
+      "locked": "先にゲームを所有する Microsoft アカウントでログインしてください。所有の確認に成功するとオフラインプレイが可能になります。"
+    },
+    "connections": {
+      "title": "連携サービス",
+      "description": "ランチャーがあなたに代わって使用するサービスです。キーとホストのフィンガープリントはシステムのキーチェーンに保存されます。",
+      "porkbun": "Porkbun（ドメイン）",
+      "porkbunHint": "あなた自身の Porkbun アカウントで、サーバー用の DNS レコードを作成するために使います。",
+      "porkbunRemoved": "Porkbun のキーをこのコンピューターから削除しました",
+      "connected": "接続済み",
+      "notConnected": "未接続",
+      "remove": "キーを削除",
+      "vps": "VPS ホスト",
+      "vpsHint": "SSH 経由で自分の VPS にホストしているサーバー。ホストを削除すると、固定されたキーも削除されます。",
+      "noVps": "なし",
+      "fingerprint": "{{fp}}・{{date}}に信頼",
+      "forget": "削除"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "連携済み",
+      "notLinked": "未連携：Microsoft アカウントでも Rustic にログインしてください。",
+      "link": "ウェブサイトで連携",
+      "unlink": "連携を解除",
+      "unlinked": "Microsoft の連携を解除しました",
+      "unlinkFailed": "Microsoft の連携を解除できませんでした",
+      "lastMethod": "先に（ウェブサイトで）パスワードを追加してください。現在 Microsoft が唯一のログイン方法です。"
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "メモリ（RAM）",
+      "description": "ゲームに割り当てるデフォルトのメモリです。インスタンスごとに変更できます。",
+      "system": "搭載 {{total}}・現在の空き {{free}}",
+      "warn": "システムに残るメモリが少なくなり、全体の動作が遅くなる可能性があります。",
+      "perInstance": "ヒント：ほとんどのインスタンスは 4 GB で十分です。大きな MODパックでは 6〜8 GB が必要な場合があります。"
+    },
+    "prepare": {
+      "title": "ゲームファイル",
+      "description": "Horizon はお使いのゲームのインストールからゲームのリソースを準備します。第三者からは何もダウンロードしません。",
+      "status": "状態",
+      "states": {
+        "missing": "未準備",
+        "preparing": "準備中",
+        "ready": "準備完了",
+        "outdated": "再度準備が必要"
+      },
+      "gameVersion": "ゲーム {{version}}",
+      "source": "元のインストール",
+      "sourceHint": "このコンピューターで見つかった公式ランチャーのゲームフォルダー。",
+      "doneToast": "ゲームファイルの準備ができました",
+      "steps": {
+        "detect": "インストールを探しています…",
+        "download": "Mojang からゲームファイルをダウンロードしています…",
+        "verify": "ゲームファイルを検証しています…",
+        "compile_exporters": "エクスポーターをビルドしています…",
+        "export": "リソースをエクスポートしています…",
+        "index": "インデックスを作成しています…",
+        "done": "完了"
+      },
+      "legal": "準備したファイルはこのコンピューターに保存され、共有されることはありません。",
+      "again": "再度準備",
+      "failed": "準備に失敗しました"
+    },
+    "java": {
+      "label": "準備用の Java",
+      "description": "ゲームファイルの準備（horizon-prepare）にのみ使用します。Horizon 自体の実行に Java は不要です。",
+      "pickTitle": "Java 実行ファイルを選択",
+      "source": {
+        "bundled": "Rustic に同梱",
+        "system": "このコンピューターにインストール済み",
+        "custom": "カスタム"
+      },
+      "custom": "カスタムパス…",
+      "customHint": "Java 21 以降の実行ファイルを選択"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "Rustic Server のサーバーが実行する rustic-server プログラム（Horizon のエンジン＋Rustic プラグイン）です。サーバーのゲームバージョンと同じ Horizon のコミットのものである必要があります。Rustic エディションのビルドはフォルダー内に同梱しています。",
+      "program": "使用中のプログラム",
+      "notFound": "見つかりません",
+      "notFoundHint": "これを同梱する Rustic エディションのビルドをインストールするか、rustic-server ファイルを選択してください。これがないと Rustic Server の作成に失敗します。",
+      "configuredMissing": "選択したファイルはもう存在しません：{{path}}",
+      "origin": {
+        "server": "サーバー自身のもの",
+        "configured": "手動で選択",
+        "build": "ビルド {{build}} に同梱",
+        "beside_launcher": "ランチャーと同じ場所",
+        "path": "PATH で検出"
+      },
+      "choose": "選択…",
+      "pickTitle": "rustic-server プログラムを選択",
+      "automatic": "自動検出を使用",
+      "saved": "rustic-server プログラムを保存しました",
+      "automaticSaved": "自動検出に戻しました",
+      "invalid": "このファイルは rustic-server プログラムではありません（--rustic-version に応答しません）。",
+      "failed": "このプログラムを保存できませんでした",
+      "order": "検索順：あなたの選択、ゲームバージョンのフォルダー、ランチャーと同じ場所、PATH の順です。"
+    },
+    "folders": {
+      "title": "フォルダー",
+      "description": "ランチャーのデータ、インスタンス、サーバーの保存場所。",
+      "data": "ランチャーのデータ",
+      "instances": "インスタンス",
+      "servers": "サーバー",
+      "open": "開く",
+      "change": "変更",
+      "changed": "フォルダーを変更しました",
+      "moveNote": "既存のファイルは自動では移動されません。"
+    },
+    "resolution": {
+      "title": "ゲームウィンドウ",
+      "description": "新しいインスタンスのデフォルトのウィンドウサイズ。",
+      "size": "サイズ",
+      "width": "幅",
+      "height": "高さ",
+      "fullscreen": "フルスクリーンで起動",
+      "hint": "最小 640 × 480。"
+    },
+    "native": {
+      "title": "ネイティブMOD",
+      "description": "ネイティブMODを含むインスタンスは、この PC でそのインスタンス用にコンパイルされたゲームでプレイします。ここでは Rust コンパイラーと、2 回目以降のビルドを速くするコンパイルキャッシュを管理します。",
+      "rust": "Rust コンパイラー",
+      "rustReady": {
+        "managed": "Rust {{version}}（ランチャーがインストール）",
+        "rustup": "Rust {{version}}（rustup から）",
+        "system": "Rust {{version}}（この PC にインストール済み）"
+      },
+      "rustMissing": "初回のビルドには Rust {{version}} が必要です。",
+      "ready": "準備完了",
+      "missing": "未インストール",
+      "installing": "インストール中…",
+      "installRust": "Rust をインストール",
+      "rustInstalled": "Rust がインストールされています",
+      "rustFailed": "Rust をインストールできませんでした",
+      "cache": "コンパイルキャッシュ",
+      "cacheDetail": "キャッシュ {{cache}}・ダウンロード済みクレート {{crates}}・Rust {{toolchain}}・ソース {{source}}。クリアしてもビルド済みのゲームは残りますが、次回のビルドではすべてを再コンパイルします。",
+      "clear": "クリア",
+      "clearTitle": "コンパイルキャッシュをクリアしますか？",
+      "clearBody": "インスタンスのビルド済みゲームは残ります。次回のネイティブビルドではゲーム全体を再度コンパイルします（10〜15 分）。",
+      "cleared": "コンパイルキャッシュをクリアしました（{{size}} 解放）",
+      "limit": "キャッシュの上限",
+      "limitHint": "ビルド後、キャッシュがこのサイズを超えるとクリアされます（0：クリアしない）。",
+      "gib": "GiB",
+      "limitSaved": "キャッシュの上限を保存しました",
+      "limitInvalid": "上限は 0〜4096 の整数（GiB）で指定してください。",
+      "folder": "フォルダー：{{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "言語",
+      "description": "ランチャー全体にすぐに適用されます。",
+      "label": "言語",
+      "search": "言語を検索",
+      "empty": "一致する言語がありません",
+      "translated": "翻訳済み",
+      "others": "その他の言語",
+      "partial": "一部翻訳",
+      "english": "現在は英語で表示",
+      "via": "現在は{{lang}}で表示",
+      "help": "まだ翻訳されていないテキストは英語で表示されます。翻訳はコミュニティによるものです。"
+    },
+    "startup": {
+      "title": "起動",
+      "onBoot": "コンピューターの起動時に Rustic を開く",
+      "onBootHint": "フレンドにすぐオンラインと表示され、アップデートもバックグラウンドでダウンロードされます。",
+      "minimized": "最小化して起動"
+    },
+    "behaviour": {
+      "title": "プレイ中",
+      "onLaunch": "ゲームの起動時",
+      "launchOptions": {
+        "keep_open": "ランチャーを開いたままにする",
+        "minimize": "ランチャーを最小化",
+        "hide": "トレイに隠す",
+        "close": "ランチャーを閉じる"
+      },
+      "onClose": "ウィンドウを閉じたとき",
+      "onCloseHint": "トレイに残しておくと、フレンドから招待を受けられ、サーバーも動き続けます。",
+      "closeOptions": {
+        "tray": "トレイで実行し続ける",
+        "quit": "Rustic を終了"
+      }
+    },
+    "updates": {
+      "title": "アップデート",
+      "auto": "アップデートを自動でインストール",
+      "autoHint": "アップデートは署名されており、インストール前に検証されます。",
+      "check": "Rustic Launcher",
+      "checkNow": "アップデートを確認",
+      "available": "バージョン {{version}} が利用可能",
+      "upToDate": "最新の状態です",
+      "failed": "アップデートを確認できませんでした",
+      "lastCheck": "最終確認 {{when}}",
+      "neverChecked": "まだ確認していません",
+      "edition": "ゲーム（Rustic エディション）",
+      "editionNone": "Rustic エディションのビルドがインストールされていません",
+      "apply": "アップデートして再起動",
+      "checking": "確認中…",
+      "working": "アップデート中… {{pct}}",
+      "restarting": "再起動中…",
+      "deferred": "ゲームの終了を待っています",
+      "lastError": "前回の試行は失敗しました。自動的に再試行されます。"
+    },
+    "performance": {
+      "title": "ダウンロードとパフォーマンス",
+      "downloads": "同時ダウンロード数",
+      "downloadsHint": "接続が遅い場合は下げてください。",
+      "hardware": "ハードウェアアクセラレーション",
+      "hardwareHint": "ランチャーがちらつく場合はオフにしてください。再起動後に反映されます。"
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "テーマ",
+      "description": "Rustic はダークテーマを基本にデザインされています。ライトテーマは明るい部屋向けです。",
+      "label": "テーマ",
+      "dark": "ダーク",
+      "light": "ライト",
+      "system": "システム"
+    },
+    "palette": {
+      "title": "パレット",
+      "description": "「プレイ」、選択、進行状況に使うアクセントカラー。",
+      "label": "パレット",
+      "play": "プレイ",
+      "default": "デフォルト",
+      "names": {
+        "ember": "エンバー",
+        "verdigris": "ヴェルディグリ",
+        "heather": "ヘザー"
+      },
+      "descriptions": {
+        "ember": "アンスラサイトに温かみのある銅色",
+        "verdigris": "酸化した銅のような緑青色",
+        "heather": "落ち着いたヘザーローズ"
+      }
+    },
+    "motion": {
+      "title": "モーション",
+      "body": "Rustic はシステムの「視差効果を減らす」設定に従います。アニメーション、カルーセル、3D プレビューが静止します。"
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "共有する情報",
+      "description": "ここにある項目はすべてデフォルトでオフです。オンにすると Rustic の改善に役立ちます。いつでも変更できます。",
+      "usage": "利用状況の分析",
+      "usageHint": "どのページや機能が使われているか。内容や識別子は含みません。",
+      "performance": "パフォーマンスレポート",
+      "performanceHint": "起動時間とフレーム時間。遅い箇所を見つけるために使います。",
+      "crash": "クラッシュレポート",
+      "crashHint": "オフの場合、クラッシュが起きるたびに Rustic が確認します。"
+    },
+    "policyLink": "プライバシーポリシーを読む",
+    "social": {
+      "title": "フレンドとステータス",
+      "activity": "プレイ中のゲームをフレンドに表示",
+      "activityHint": "フレンドがあなたのサーバーを確認し、ワンクリックで合流できます。",
+      "requests": "フレンド申請を送れる人",
+      "requestsOptions": {
+        "everyone": "全員",
+        "friends_of_friends": "フレンドのフレンド",
+        "nobody": "なし"
+      },
+      "discoverable": "出会ったプレイヤーのおすすめに表示する",
+      "discoverableHint": "パーティーを組んだプレイヤーや、アクティビティで共有しているサーバーで出会ったプレイヤーが「フレンドを追加」であなたを見つけられ、あなたも相手を見つけられます。30 日間保持され、オフにすると削除されます。",
+      "discoverableMinor": "18 歳未満のアカウントでは利用できません。",
+      "discoverableFailed": "この設定を保存できませんでした。",
+      "discord": "Discord にアクティビティを表示",
+      "discordHint": "Discord のプロフィールに「Rustic をプレイ中」と表示します。ランチャー、メインメニュー、シングルプレイ、サーバーの状態とプレイ時間も表示されます。",
+      "discordServer": "Discord にサーバーアドレスを表示",
+      "discordServerHint": "オフの場合、Discord には「マルチプレイ」と表示されます。プライベートアドレス（LAN、この PC）は表示されません。"
+    },
+    "data": {
+      "title": "あなたのデータ",
+      "description": "GDPR に基づくあなたの権利：アクセス、ポータビリティ、削除。",
+      "export": "データをエクスポート",
+      "exportHint": "アカウント、フレンド、購入、設定の JSON アーカイブ。",
+      "exportButton": "エクスポートを準備",
+      "exportReady": "エクスポートの準備ができました",
+      "exportFailed": "エクスポートを準備できませんでした",
+      "download": "ダウンロード（リンクの有効期限：{{date}}）",
+      "delete": "アカウントを削除",
+      "deleteHint": "30 日間の猶予期間中はキャンセルでき、その後完全に削除されます。",
+      "deleteButton": "アカウントを削除",
+      "deleteScheduled": "{{date}}に削除される予定です。キャンセルするにはそれまでにログインしてください。",
+      "deleteFailed": "アカウントを削除できませんでした",
+      "rights": "ご質問や苦情は、当社または CNIL（フランスのデータ保護機関）にお問い合わせください。",
+      "confirmTitle": "Rustic アカウントを削除しますか？",
+      "confirmBody": "フレンド、コスメティック、購入履歴は 30 日後に削除されます。ゲームライセンスと Microsoft アカウントには影響しません。",
+      "confirmButton": "アカウントを削除",
+      "typeUsername": "確認のため {{name}} と入力してください"
+    }
+  },
+  "parental": {
+    "title": "ペアレンタルコントロール",
+    "description": "Rustic アカウントは {{age}} 歳以上が対象です。18 歳未満のプレイヤーの購入には、デフォルトで保護者の承認が必要です。",
+    "minorNote": "このアカウントは未成年のものです。購入時に保護者の承認を求めます。",
+    "enable": "ペアレンタルコントロールをオンにする",
+    "enableHint": "以下の変更には PIN が必要になります。",
+    "pinFirst": "ペアレンタルコントロールをオンにするには、先に PIN を作成してください。",
+    "saveFailed": "変更を保存できませんでした",
+    "lockAgain": "再ロック",
+    "rules": {
+      "title": "ルール",
+      "purchases": "購入",
+      "purchasesHint": "ストアで購入できるのはコスメティックのみです。ルートボックスは一切ありません。",
+      "purchaseOptions": {
+        "blocked": "オフ",
+        "pin": "保護者に確認",
+        "allowed": "許可"
+      },
+      "limit": "月間の利用上限",
+      "limitHint": "今月の利用額：{{spent}}。上限なしの場合は空欄のままにしてください。",
+      "noLimit": "上限なし",
+      "limitInvalid": "10 や 9.99 のように金額を入力してください。",
+      "chat": "チャット",
+      "chatOptions": {
+        "off": "オフ",
+        "friends": "フレンドのみ",
+        "everyone": "全員"
+      },
+      "friendRequests": "フレンド申請",
+      "friendRequestsHint": "ほかの人からのフレンド申請を許可します。"
+    },
+    "pin": {
+      "title": "保護者用 PIN",
+      "set": "PIN が設定されています。これらの設定の変更や購入の承認に必要です。",
+      "notSet": "PIN はまだありません。",
+      "change": "PIN を変更",
+      "create": "PIN を作成",
+      "saved": "PIN を保存しました",
+      "new": "新しい PIN",
+      "confirm": "PIN を確認",
+      "save": "PIN を保存",
+      "hint": "4〜6 桁の数字。単純な並びは使えません。",
+      "errors": {
+        "format": "4〜6 桁の数字を使ってください。",
+        "mismatch": "2 つの PIN が一致しません。",
+        "weak": "推測されやすすぎます。1234 や 0000 は避けてください。"
+      }
+    },
+    "unlock": {
+      "title": "ロック中",
+      "description": "これらの設定を変更するには、保護者用 PIN を入力してください。",
+      "label": "保護者用 PIN",
+      "wrong": "PIN が違います。",
+      "button": "ロック解除"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "バージョン {{version}}",
+    "channel": {
+      "stable": "安定版",
+      "beta": "ベータ"
+    },
+    "browserMock": "ブラウザープレビュー（モックデータ）",
+    "horizon": "Horizon",
+    "horizonHint": "おすすめのゲームビルド。",
+    "licence": "ライセンス",
+    "platform": "プラットフォーム",
+    "legalTitle": "法的事項",
+    "legalDescription": "ポリシーと通知。",
+    "links": {
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約および販売条件",
+      "legalNotice": "法的通知",
+      "fairPlay": "フェアプレイポリシー",
+      "thirdParty": "オープンソースに関する通知",
+      "horizon": "Horizon プロジェクト（MIT）"
+    },
+    "notAffiliated": "Minecraft の公式製品ではありません。Mojang および Microsoft による承認を受けておらず、両社とは関係ありません。",
+    "horizonCredit": "Horizon をベースに構築されています。Horizon は、そのコントリビューターによる MIT ライセンスのゲームの Rust による書き直しです。",
+    "company": "発行元：[company name]、フランスの企業（SIREN [number]、[address]）。決済は Stripe によるもので、販売者は当社です。",
+    "tagline": "Rustic は Horizon エンジンで動くソーシャルゲームプラットフォームです"
+  },
+  "rusticAuth": {
+    "mode": "ログインまたはアカウントを作成",
+    "signIn": "ログイン",
+    "signUp": "アカウントを作成",
+    "create": "アカウントを作成",
+    "verify": "確認",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "username": "ユーザー名",
+    "dateOfBirth": "生年月日",
+    "country": "国",
+    "acceptPrivacy": "プライバシーポリシーを読み、同意します。",
+    "code": "認証アプリのコード",
+    "checkInbox": "{{email}} に確認用リンクを送信しました。リンクを開いてからログインしてください。",
+    "resend": "再送信",
+    "resent": "確認メールを再送信しました",
+    "signedIn": "Rustic にログインしました",
+    "problems": {
+      "email": "有効なメールアドレスを入力してください。",
+      "password": "パスワード：10 文字以上。",
+      "username": "ユーザー名：3〜20 文字の英字、数字、アンダースコア。",
+      "dateOfBirth": "生年月日を入力してください。",
+      "tooYoung": "Rustic アカウントは 13 歳以上が対象です。",
+      "privacy": "続行するにはプライバシーポリシーに同意してください。"
+    },
+    "microsoft": "Microsoft で続ける",
+    "orEmail": "またはメールアドレスで",
+    "microsoftWaiting": "ブラウザーでログインを完了してください。ランチャーが自動でセッションを引き継ぎます。"
+  },
+  "heading": "あなたの*設定*",
+  "eyebrow": "ランチャー"
+}

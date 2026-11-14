@@ -804,7 +804,7 @@ pub fn instance_resource_packs_reorder(
 
 // ---- launch ---------------------------------------------------------------------------------
 
-fn set_launch(state: &AppState, status: LaunchStatus) {
+pub(crate) fn set_launch(state: &AppState, status: LaunchStatus) {
     state
         .launches
         .lock()
@@ -813,7 +813,7 @@ fn set_launch(state: &AppState, status: LaunchStatus) {
     let _ = state.app.emit("launch-state", status);
 }
 
-fn phase(id: &str, phase: &'static str, message: Option<String>) -> LaunchStatus {
+pub(crate) fn phase(id: &str, phase: &'static str, message: Option<String>) -> LaunchStatus {
     LaunchStatus {
         instance_id: id.to_owned(),
         phase,
@@ -827,6 +827,30 @@ fn phase(id: &str, phase: &'static str, message: Option<String>) -> LaunchStatus
 #[tauri::command]
 pub async fn instance_launch(state: State<'_>, args: InstanceLaunchArgs) -> Res<LaunchStatus> {
     let id = args.instance_id.clone();
+    state.instances.store.get(&id)?;
+    if state.instances.running().contains(&id) {
+        return Err(IpcError::with_reason(
+            IpcErrorCode::Conflict,
+            "This instance is already running.",
+            "launch.already_running",
+        ));
+    }
+    // Updates first (ADR 0162): the edition build this instance follows, then the launcher,
+    // which restarts and resumes this launch. Never blocks the launch when they fail.
+    set_launch(&state, phase(&id, "updating", None));
+    crate::update::before_play(
+        state.inner(),
+        PendingLaunch {
+            instance_id: id.clone(),
+            options: args
+                .options
+                .as_ref()
+                .and_then(|o| serde_json::to_value(o).ok()),
+            created_at: time::now(),
+        },
+    )
+    .await;
+    // The edition update may have moved the instance to a new build.
     let instance = state.instances.store.get(&id)?;
     set_launch(&state, phase(&id, "checking", None));
     let result = launch_inner(&state, &instance, args.options.unwrap_or_default()).await;
@@ -1078,6 +1102,7 @@ pub fn forward_game_events(state: Arc<AppState>) {
                         game: None,
                         since: rusticmc_launcher_core::time::now(),
                     });
+                    crate::update::on_game_exit(state.clone());
                     let st = state.clone();
                     // The playtime is written by the exit task; refresh the list after it.
                     tauri::async_runtime::spawn(async move {

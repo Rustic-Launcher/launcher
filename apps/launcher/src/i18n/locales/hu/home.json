@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "greeting": "Üdv újra, {{name}}",
+    "greetingAnon": "Üdv a Rusticban",
+    "continue": "Folytatás: {{name}} · utoljára játszva: {{when}}",
+    "continueNew": "Készen áll, amikor te is: {{name}}",
+    "firstRun": "Készítsd elő a játékot három lépésben.",
+    "playNow": "Játék most",
+    "updateAndPlay": "Frissítés és játék",
+    "resumeServer": "Újracsatlakozás: {{server}}",
+    "switch": "Példányváltás",
+    "stats": {
+      "playtime": "Játékidő: {{time}}",
+      "mods_one": "{{count}} mod",
+      "mods_other": "{{count}} mod",
+      "friends_one": "{{count}} barát online",
+      "friends_other": "{{count}} barát online"
+    },
+    "steps": {
+      "signIn": "Jelentkezz be azzal a Microsoft-fiókkal, amely rendelkezik a játékkal",
+      "prepare": "Készítsd elő a játékfájlokat a saját telepítésedből",
+      "create": "Hozd létre az első példányodat"
+    },
+    "getReady": "Játék előkészítése",
+    "openLocker": "Szekrény",
+    "player": "A játékosod, álló helyzetben, felszerelt kozmetikumok nélkül",
+    "playerWearing": "A játékosod, álló helyzetben, rajta: {{items}}"
+  },
+  "recent": {
+    "title": "Legutóbbi szerverek és világok",
+    "unknown": "Ismeretlen állapot",
+    "online": "Online · {{online}}/{{max}}",
+    "offline": "Offline",
+    "world": "Világ · helyi",
+    "joining": "Csatlakozás: {{name}}…",
+    "opening": "Megnyitás: {{name}}…",
+    "removed": "{{name}} eltávolítva a szervereid közül",
+    "playAria": "Játék: {{name}}",
+    "more": "További műveletek – {{name}}",
+    "copyAddress": "Cím másolása",
+    "addServer": "Szerver hozzáadása",
+    "empty": "Itt jelennek meg a szerverek, amelyekhez csatlakozol, és a világok, amelyekben játszol."
+  },
+  "news": {
+    "title": "Hírek és frissítések",
+    "empty": "Most nincsenek hírek.",
+    "slide": "{{index}}. hír / {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Kiadási megjegyzések",
+      "event": "Esemény",
+      "blog": "Cikk"
+    },
+    "readNotes": "Kiadási megjegyzések olvasása",
+    "read": "Olvasás"
+  },
+  "friends": {
+    "title": "Barátok most",
+    "empty": "Most egyik barátod sem játszik.",
+    "since": "{{when}} óta",
+    "activity": {
+      "server": "játszik itt: {{server}}",
+      "hosting": "szervert futtat: {{server}}",
+      "singleplayer": "egyedül játszik",
+      "launcher": "a launcherben van"
+    }
+  },
+  "featured": {
+    "title": "Kiemelt szerverek",
+    "verified": "Ellenőrzött szerver",
+    "players": "{{online}} / {{max}} játékos",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Új kozmetikumok",
+    "owned": "Megvan"
+  },
+  "launchpad": {
+    "welcome": "Üdv *újra*,",
+    "playAs": "Játék mint",
+    "online": "online a kiemelt szervereken",
+    "heroLabel": "Indítás",
+    "instanceSettings": "Példánybeállítások",
+    "news": "Legfrissebb hírek",
+    "unread_one": "({{count}} olvasatlan)",
+    "unread_other": "({{count}} olvasatlan)",
+    "unreadDot": "Olvasatlan",
+    "explore": "Források felfedezése",
+    "aside": "Szerverek és barátok",
+    "joinServer": "Csatlakozás: {{name}}",
+    "friendsOnline_one": "({{count}} online)",
+    "friendsOnline_other": "({{count}} online)",
+    "openSocial": "Közösség megnyitása",
+    "noNews": "Még nincsenek hírek.",
+    "noFriendsOnline": "Most egyik barátod sincs online.",
+    "socialHint": "A csevegések, meghívások és a csapatod a Közösség ablakban vannak.",
+    "eyebrow": "Launchpad"
+  }
+}

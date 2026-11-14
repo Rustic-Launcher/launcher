@@ -3,3 +3,16 @@
 
 /* Scan the design system's sources for class names. */
 @source '../../../packages/ui/src';
+
+/* The launcher is squarer than the website (owner's request, 2026-11-13): every radius step is
+   smaller here, so `rounded-xl` cards and `rounded-2xl` panels read as small/medium corners. The
+   website keeps the design system's own scale. */
+:root {
+  --rl-radius-xs: 4px;
+  --rl-radius-sm: 5px;
+  --rl-radius-md: 6px;
+  --rl-radius-lg: 8px;
+  --rl-radius-xl: 8px;
+  --rl-radius-2xl: 10px;
+  --radius-3xl: 12px;
+}

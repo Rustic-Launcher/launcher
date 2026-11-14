@@ -1,0 +1,514 @@
+{
+  "title": "Cài đặt",
+  "subtitle": "Tài khoản, trò chơi, launcher, giao diện và dữ liệu của bạn.",
+  "sectionsLabel": "Các mục cài đặt",
+  "saving": "Đang lưu…",
+  "saved": "Đã lưu mọi thay đổi",
+  "close": "Đóng",
+  "cancel": "Hủy",
+  "sections": {
+    "accounts": "Tài khoản và bảo mật",
+    "game": "Trò chơi và phiên bản cài đặt",
+    "launcher": "Launcher",
+    "appearance": "Giao diện",
+    "privacy": "Quyền riêng tư và dữ liệu",
+    "parental": "Kiểm soát của phụ huynh",
+    "about": "Giới thiệu và pháp lý"
+  },
+  "accounts": {
+    "active": "Đang dùng",
+    "useThis": "Dùng hồ sơ này",
+    "signOut": "Đăng xuất",
+    "signedOut": "Đã đăng xuất {{name}}",
+    "ownership": {
+      "valid": "Sở hữu trò chơi",
+      "expired": "Lần kiểm tra đã hết hạn",
+      "never": "Chưa kiểm tra lần nào",
+      "failed": "Kiểm tra thất bại",
+      "lastChecked": "Đã kiểm tra {{when}}",
+      "nextCheck": "lần kiểm tra tiếp theo trước {{date}}",
+      "checkNow": "Kiểm tra ngay",
+      "checkedToast": "Đã xác nhận quyền sở hữu",
+      "checkFailed": "Không thể kết nối tới Microsoft. Hãy thử lại sau."
+    },
+    "microsoft": {
+      "title": "Tài khoản Microsoft",
+      "description": "Cần sở hữu trò chơi để chơi. Rustic kiểm tra điều này với Microsoft và không bao giờ thấy mật khẩu của bạn.",
+      "add": "Thêm tài khoản Microsoft",
+      "keychain": "Mã đăng nhập được lưu trong kho khóa của hệ thống, không bao giờ nằm trong tệp hay trên dòng lệnh.",
+      "signIn": "Đăng nhập bằng Microsoft",
+      "step1": "Mở trang Microsoft trong trình duyệt (hoặc trên thiết bị khác).",
+      "step2": "Nhập mã bên dưới và đăng nhập.",
+      "step3": "Quay lại đây: launcher sẽ tự tiếp tục.",
+      "codeLabel": "Mã đăng nhập",
+      "copyCode": "Sao chép mã",
+      "copied": "Đã sao chép mã",
+      "openPage": "Mở microsoft.com/link",
+      "waiting": "Đang chờ bạn đăng nhập trong trình duyệt…",
+      "cancel": "Hủy",
+      "signedInAs": "Đã đăng nhập với tên {{name}}",
+      "ownershipOk": "Đã xác nhận quyền sở hữu: bạn có thể chơi.",
+      "ownershipMissing": "Tài khoản này không sở hữu trò chơi.",
+      "tryAgain": "Thử lại",
+      "failed": {
+        "expired": {
+          "title": "Mã đã hết hạn",
+          "body": "Mã có hiệu lực trong 15 phút. Hãy bắt đầu lại để nhận mã mới."
+        },
+        "denied": {
+          "title": "Đăng nhập đã bị hủy",
+          "body": "Microsoft báo rằng yêu cầu đăng nhập đã bị từ chối."
+        },
+        "no_ownership": {
+          "title": "Tài khoản này không sở hữu trò chơi",
+          "body": "Rustic chỉ khởi chạy trò chơi cho tài khoản sở hữu Minecraft: Java Edition."
+        },
+        "error": {
+          "title": "Đăng nhập thất bại",
+          "body": "Rustic không thể hoàn tất đăng nhập. Hãy thử lại; nếu vẫn lỗi, chi tiết bên dưới sẽ cho biết lý do."
+        },
+        "not_configured": {
+          "title": "Bản dựng này chưa thiết lập đăng nhập Microsoft",
+          "body": "Bản dựng này không có Azure application id, nên không thể yêu cầu Microsoft xác minh giấy phép trò chơi. Các bản dựng chính thức đều có."
+        },
+        "not_approved": {
+          "title": "Launcher đang chờ Mojang phê duyệt",
+          "body": "Tài khoản Microsoft của bạn đã đăng nhập, nhưng dịch vụ trò chơi chưa chấp nhận launcher này: Mojang phải phê duyệt application id của nó trước. Bạn không cần làm gì; hãy thử lại khi đã được phê duyệt."
+        },
+        "xbox": {
+          "title": "Xbox Live đã từ chối đăng nhập",
+          "body": "Lý do ở bên dưới (tài khoản trẻ em chưa có sự cho phép của phụ huynh, cần tạo hồ sơ Xbox, khu vực không được hỗ trợ…)."
+        },
+        "rate_limited": {
+          "title": "Quá nhiều lần thử",
+          "body": "Dịch vụ đã nhận quá nhiều lượt đăng nhập trong thời gian ngắn. Hãy chờ một phút rồi thử lại."
+        },
+        "network": {
+          "title": "Không thể kết nối tới dịch vụ",
+          "body": "Hãy kiểm tra kết nối internet rồi thử lại."
+        },
+        "detail": "Chi tiết: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Tài khoản Rustic",
+      "description": "Danh tính Rustic của bạn cho bạn bè, Tủ đồ, giao dịch mua và máy chủ.",
+      "signedOut": "Chưa đăng nhập. Trò chơi vẫn chạy khi không có tài khoản; tính năng xã hội, Tủ đồ và Cửa hàng thì cần có.",
+      "signIn": "Đăng nhập hoặc tạo tài khoản",
+      "licenceNote": "Tài khoản Rustic là danh tính trên nền tảng. Nó không bao giờ thay thế giấy phép trò chơi: bạn vẫn cần một tài khoản Microsoft sở hữu trò chơi."
+    },
+    "offline": {
+      "title": "Chơi ngoại tuyến",
+      "description": "Dành cho chơi LAN và chơi không có internet: bạn chơi bằng tài khoản Microsoft, với tên và UUID chính thức của mình. Khả dụng trong {{days}} ngày sau lần kiểm tra quyền sở hữu thành công gần nhất, sau đó Rustic sẽ hỏi lại Microsoft.",
+      "until": "Có thể chơi ngoại tuyến đến {{date}}",
+      "locked": "Hãy đăng nhập bằng tài khoản Microsoft sở hữu trò chơi trước: chế độ chơi ngoại tuyến mở ra sau khi kiểm tra quyền sở hữu thành công."
+    },
+    "connections": {
+      "title": "Kết nối",
+      "description": "Các dịch vụ launcher dùng thay cho bạn. Khóa và dấu vân tay máy chủ được giữ trong kho khóa của hệ thống.",
+      "porkbun": "Porkbun (tên miền)",
+      "porkbunHint": "Dùng để tạo bản ghi DNS cho máy chủ của bạn trên tài khoản Porkbun của chính bạn.",
+      "porkbunRemoved": "Đã xóa khóa Porkbun khỏi máy tính này",
+      "connected": "Đã kết nối",
+      "notConnected": "Chưa kết nối",
+      "remove": "Xóa khóa",
+      "vps": "Máy chủ VPS",
+      "vpsHint": "Các máy chủ bạn tự chạy trên VPS của mình qua SSH. Quên một máy chủ sẽ xóa khóa đã ghim của nó.",
+      "noVps": "Không có",
+      "fingerprint": "{{fp}} · tin cậy từ {{date}}",
+      "forget": "Quên"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Đã liên kết",
+      "notLinked": "Chưa liên kết: hãy đăng nhập Rustic bằng cả tài khoản Microsoft của bạn.",
+      "link": "Liên kết trên trang web",
+      "unlink": "Hủy liên kết",
+      "unlinked": "Đã hủy liên kết Microsoft",
+      "unlinkFailed": "Không thể hủy liên kết Microsoft",
+      "lastMethod": "Hãy thêm mật khẩu trước (trên trang web): Microsoft là cách đăng nhập duy nhất của bạn."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Bộ nhớ (RAM)",
+      "description": "Bộ nhớ mặc định cấp cho trò chơi. Mỗi phiên bản cài đặt có thể ghi đè.",
+      "system": "Đã lắp {{total}} · hiện trống {{free}}",
+      "warn": "Mức này để lại rất ít bộ nhớ cho hệ thống và có thể làm mọi thứ chậm đi.",
+      "perInstance": "Mẹo: 4 GB là đủ cho hầu hết phiên bản cài đặt; gói mod lớn có thể cần 6 đến 8 GB."
+    },
+    "prepare": {
+      "title": "Tệp trò chơi",
+      "description": "Horizon chuẩn bị tài nguyên trò chơi từ bản cài trò chơi của chính bạn. Không tải gì từ bên thứ ba.",
+      "status": "Trạng thái",
+      "states": {
+        "missing": "Chưa chuẩn bị",
+        "preparing": "Đang chuẩn bị",
+        "ready": "Sẵn sàng",
+        "outdated": "Cần chuẩn bị lại"
+      },
+      "gameVersion": "Trò chơi {{version}}",
+      "source": "Bản cài nguồn",
+      "sourceHint": "Thư mục trò chơi của launcher chính thức tìm thấy trên máy tính này.",
+      "doneToast": "Tệp trò chơi đã sẵn sàng",
+      "steps": {
+        "detect": "Đang tìm bản cài của bạn…",
+        "download": "Đang tải tệp trò chơi từ Mojang…",
+        "verify": "Đang xác minh tệp trò chơi…",
+        "compile_exporters": "Đang dựng trình xuất…",
+        "export": "Đang xuất tài nguyên…",
+        "index": "Đang lập chỉ mục…",
+        "done": "Xong"
+      },
+      "legal": "Các tệp đã chuẩn bị luôn nằm trên máy tính này và không bao giờ được chia sẻ.",
+      "again": "Chuẩn bị lại",
+      "failed": "Chuẩn bị thất bại"
+    },
+    "java": {
+      "label": "Java để chuẩn bị",
+      "description": "Chỉ dùng để chuẩn bị tệp trò chơi (horizon-prepare). Bản thân Horizon không cần Java để chạy.",
+      "pickTitle": "Chọn tệp thực thi Java",
+      "source": {
+        "bundled": "Đi kèm Rustic",
+        "system": "Đã cài trên máy tính này",
+        "custom": "Tùy chỉnh"
+      },
+      "custom": "Đường dẫn tùy chỉnh…",
+      "customHint": "Chọn tệp thực thi Java 21 trở lên"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "Chương trình rustic-server mà các máy chủ Rustic Server của bạn chạy (engine của Horizon kèm plugin Rustic). Nó phải đến từ cùng commit Horizon với phiên bản trò chơi của máy chủ: bản dựng phiên bản Rustic có sẵn nó trong thư mục.",
+      "program": "Chương trình đang dùng",
+      "notFound": "Không tìm thấy",
+      "notFoundHint": "Hãy cài một bản dựng phiên bản Rustic có kèm nó, hoặc chọn tệp rustic-server. Nếu không có, việc tạo Rustic Server sẽ thất bại.",
+      "configuredMissing": "Tệp đã chọn không còn tồn tại: {{path}}",
+      "origin": {
+        "server": "Của chính máy chủ",
+        "configured": "Chọn thủ công",
+        "build": "Đi kèm bản dựng {{build}}",
+        "beside_launcher": "Bên cạnh launcher",
+        "path": "Tìm thấy trong PATH"
+      },
+      "choose": "Chọn…",
+      "pickTitle": "Chọn chương trình rustic-server",
+      "automatic": "Dùng tự động",
+      "saved": "Đã lưu chương trình rustic-server",
+      "automaticSaved": "Đã khôi phục phát hiện tự động",
+      "invalid": "Tệp này không phải chương trình rustic-server (nó không phản hồi --rustic-version).",
+      "failed": "Không thể lưu chương trình này",
+      "order": "Thứ tự tìm kiếm: lựa chọn của bạn, rồi thư mục của phiên bản trò chơi, rồi bên cạnh launcher, rồi PATH."
+    },
+    "folders": {
+      "title": "Thư mục",
+      "description": "Nơi launcher lưu dữ liệu, phiên bản cài đặt và máy chủ của bạn.",
+      "data": "Dữ liệu launcher",
+      "instances": "Phiên bản cài đặt",
+      "servers": "Máy chủ",
+      "open": "Mở",
+      "change": "Thay đổi",
+      "changed": "Đã đổi thư mục",
+      "moveNote": "Các tệp hiện có không được tự động di chuyển."
+    },
+    "resolution": {
+      "title": "Cửa sổ trò chơi",
+      "description": "Kích thước cửa sổ mặc định cho phiên bản cài đặt mới.",
+      "size": "Kích thước",
+      "width": "Chiều rộng",
+      "height": "Chiều cao",
+      "fullscreen": "Khởi động ở chế độ toàn màn hình",
+      "hint": "Tối thiểu 640 × 480."
+    },
+    "native": {
+      "title": "Mod gốc (native)",
+      "description": "Phiên bản cài đặt có mod gốc chạy một bản trò chơi được biên dịch riêng cho chúng trên máy tính này. Tại đây: trình biên dịch Rust và bộ nhớ đệm biên dịch giúp các lần biên dịch sau nhanh hơn.",
+      "rust": "Trình biên dịch Rust",
+      "rustReady": {
+        "managed": "Rust {{version}}, do launcher cài",
+        "rustup": "Rust {{version}}, từ rustup của bạn",
+        "system": "Rust {{version}}, đã cài trên máy tính này"
+      },
+      "rustMissing": "Cần Rust {{version}} cho lần biên dịch đầu tiên.",
+      "ready": "Sẵn sàng",
+      "missing": "Chưa cài đặt",
+      "installing": "Đang cài đặt…",
+      "installRust": "Cài Rust",
+      "rustInstalled": "Đã cài Rust",
+      "rustFailed": "Không thể cài Rust",
+      "cache": "Bộ nhớ đệm biên dịch",
+      "cacheDetail": "Bộ nhớ đệm {{cache}} · crate đã tải {{crates}} · Rust {{toolchain}} · mã nguồn {{source}}. Xóa bộ nhớ đệm vẫn giữ các bản trò chơi đã biên dịch; lần biên dịch tiếp theo sẽ biên dịch lại mọi thứ.",
+      "clear": "Xóa",
+      "clearTitle": "Xóa bộ nhớ đệm biên dịch?",
+      "clearBody": "Các phiên bản cài đặt vẫn giữ bản trò chơi đã biên dịch. Lần biên dịch mod gốc tiếp theo sẽ biên dịch lại toàn bộ trò chơi (10 đến 15 phút).",
+      "cleared": "Đã xóa bộ nhớ đệm biên dịch (giải phóng {{size}})",
+      "limit": "Giới hạn bộ nhớ đệm",
+      "limitHint": "Sau mỗi lần biên dịch, bộ nhớ đệm sẽ bị xóa nếu lớn hơn mức này (0: không bao giờ).",
+      "gib": "GiB",
+      "limitSaved": "Đã lưu giới hạn bộ nhớ đệm",
+      "limitInvalid": "Giới hạn là số nguyên GiB từ 0 đến 4096.",
+      "folder": "Thư mục: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Ngôn ngữ",
+      "description": "Áp dụng ngay cho toàn bộ launcher.",
+      "label": "Ngôn ngữ",
+      "search": "Tìm ngôn ngữ",
+      "empty": "Không có ngôn ngữ nào phù hợp",
+      "translated": "Đã dịch",
+      "others": "Ngôn ngữ khác",
+      "partial": "Một phần",
+      "english": "tạm thời bằng tiếng Anh",
+      "via": "tạm thời bằng {{lang}}",
+      "help": "Các văn bản chưa được dịch sẽ hiển thị bằng tiếng Anh. Bản dịch do cộng đồng đóng góp."
+    },
+    "startup": {
+      "title": "Khởi động",
+      "onBoot": "Mở Rustic khi máy tính khởi động",
+      "onBootHint": "Bạn bè thấy bạn trực tuyến sớm hơn và bản cập nhật được tải xuống trong nền.",
+      "minimized": "Khởi động ở dạng thu nhỏ"
+    },
+    "behaviour": {
+      "title": "Khi đang chơi",
+      "onLaunch": "Khi trò chơi khởi động",
+      "launchOptions": {
+        "keep_open": "Giữ launcher mở",
+        "minimize": "Thu nhỏ launcher",
+        "hide": "Ẩn xuống khay hệ thống",
+        "close": "Đóng launcher"
+      },
+      "onClose": "Khi tôi đóng cửa sổ",
+      "onCloseHint": "Giữ launcher trong khay hệ thống giúp bạn bè có thể mời bạn và máy chủ tiếp tục chạy.",
+      "closeOptions": {
+        "tray": "Tiếp tục chạy trong khay hệ thống",
+        "quit": "Thoát Rustic"
+      }
+    },
+    "updates": {
+      "title": "Cập nhật",
+      "auto": "Tự động cài bản cập nhật",
+      "autoHint": "Bản cập nhật được ký và xác minh trước khi cài đặt.",
+      "check": "Rustic Launcher",
+      "checkNow": "Kiểm tra cập nhật",
+      "available": "Đã có phiên bản {{version}}",
+      "upToDate": "Bạn đang dùng phiên bản mới nhất",
+      "failed": "Không thể kiểm tra cập nhật",
+      "lastCheck": "Kiểm tra lần cuối {{when}}",
+      "neverChecked": "Chưa kiểm tra",
+      "edition": "Trò chơi (Phiên bản Rustic)",
+      "editionNone": "Chưa cài bản dựng Phiên bản Rustic nào",
+      "apply": "Cập nhật và khởi động lại",
+      "checking": "Đang kiểm tra…",
+      "working": "Đang cập nhật… {{pct}}",
+      "restarting": "Đang khởi động lại…",
+      "deferred": "Đang chờ trò chơi đóng",
+      "lastError": "Lần thử gần nhất thất bại. Sẽ tự động thử lại."
+    },
+    "performance": {
+      "title": "Tải xuống và hiệu năng",
+      "downloads": "Tải xuống song song",
+      "downloadsHint": "Hãy giảm xuống nếu kết nối chậm.",
+      "hardware": "Tăng tốc phần cứng",
+      "hardwareHint": "Tắt nếu launcher bị nhấp nháy. Có hiệu lực sau khi khởi động lại."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Chủ đề",
+      "description": "Rustic được thiết kế ưu tiên giao diện tối; giao diện sáng dành cho phòng nhiều ánh sáng.",
+      "label": "Chủ đề",
+      "dark": "Tối",
+      "light": "Sáng",
+      "system": "Theo hệ thống"
+    },
+    "palette": {
+      "title": "Bảng màu",
+      "description": "Màu nhấn dùng cho nút CHƠI, mục được chọn và thanh tiến độ.",
+      "label": "Bảng màu",
+      "play": "Chơi",
+      "default": "Mặc định",
+      "names": {
+        "ember": "Than hồng",
+        "verdigris": "Gỉ đồng",
+        "heather": "Thạch nam"
+      },
+      "descriptions": {
+        "ember": "Đồng ấm trên nền than antraxit",
+        "verdigris": "Xanh lục gỉ, như đồng bị oxy hóa",
+        "heather": "Hồng thạch nam dịu"
+      }
+    },
+    "motion": {
+      "title": "Chuyển động",
+      "body": "Rustic tuân theo cài đặt “giảm chuyển động” của hệ thống: hoạt ảnh, băng chuyền và bản xem trước 3D sẽ đứng yên."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "Những gì bạn chia sẻ với chúng tôi",
+      "description": "Mọi thứ ở đây đều tắt theo mặc định. Bật một mục sẽ giúp chúng tôi cải thiện Rustic; bạn có thể đổi ý bất cứ lúc nào.",
+      "usage": "Phân tích sử dụng",
+      "usageHint": "Những trang và tính năng nào được dùng, không kèm nội dung hay thông tin định danh.",
+      "performance": "Báo cáo hiệu năng",
+      "performanceHint": "Thời gian khởi chạy và thời gian khung hình, để tìm chỗ chậm.",
+      "crash": "Báo cáo sự cố",
+      "crashHint": "Khi tắt, Rustic sẽ hỏi bạn mỗi khi xảy ra sự cố."
+    },
+    "policyLink": "Đọc chính sách quyền riêng tư",
+    "social": {
+      "title": "Bạn bè và trạng thái hiện diện",
+      "activity": "Cho bạn bè thấy tôi đang chơi gì",
+      "activityHint": "Cho phép bạn bè thấy máy chủ bạn đang chơi và tham gia cùng bạn chỉ với một cú nhấp.",
+      "requests": "Ai có thể gửi lời mời kết bạn cho tôi",
+      "requestsOptions": {
+        "everyone": "Mọi người",
+        "friends_of_friends": "Bạn của bạn bè",
+        "nobody": "Không ai"
+      },
+      "discoverable": "Xuất hiện trong gợi ý của những người chơi tôi gặp",
+      "discoverableHint": "Những người chơi từng ở chung nhóm với bạn hoặc gặp bạn trên một máy chủ bạn chia sẻ trong hoạt động có thể thấy bạn trong “Thêm bạn”, và bạn cũng thấy họ. Lưu trong 30 ngày; tắt mục này sẽ xóa dữ liệu đó.",
+      "discoverableMinor": "Không khả dụng cho tài khoản dưới 18 tuổi.",
+      "discoverableFailed": "Không thể lưu cài đặt này.",
+      "discord": "Hiển thị hoạt động của tôi trên Discord",
+      "discordHint": "“Đang chơi Rustic” trên hồ sơ Discord của bạn: trong launcher, ở menu chính, khi chơi đơn hoặc trên máy chủ, kèm thời gian chơi.",
+      "discordServer": "Hiển thị địa chỉ máy chủ trên Discord",
+      "discordServerHint": "Nếu không, Discord sẽ hiển thị “Nhiều người chơi”. Địa chỉ riêng tư (LAN, máy tính này) không bao giờ được hiển thị."
+    },
+    "data": {
+      "title": "Dữ liệu của bạn",
+      "description": "Quyền của bạn theo GDPR: truy cập, di chuyển và xóa dữ liệu.",
+      "export": "Xuất dữ liệu của tôi",
+      "exportHint": "Một tệp lưu trữ JSON gồm tài khoản, bạn bè, giao dịch mua và cài đặt của bạn.",
+      "exportButton": "Chuẩn bị bản xuất",
+      "exportReady": "Bản xuất của bạn đã sẵn sàng",
+      "exportFailed": "Không thể chuẩn bị bản xuất",
+      "download": "Tải xuống (liên kết có hiệu lực đến {{date}})",
+      "delete": "Xóa tài khoản của tôi",
+      "deleteHint": "Có 30 ngày ân hạn để bạn hủy yêu cầu, sau đó tài khoản bị xóa vĩnh viễn.",
+      "deleteButton": "Xóa tài khoản",
+      "deleteScheduled": "Đã lên lịch xóa vào {{date}}. Hãy đăng nhập trước ngày đó để hủy.",
+      "deleteFailed": "Không thể xóa tài khoản",
+      "rights": "Câu hỏi hoặc khiếu nại: hãy liên hệ chúng tôi, hoặc CNIL (cơ quan bảo vệ dữ liệu của Pháp).",
+      "confirmTitle": "Xóa tài khoản Rustic của bạn?",
+      "confirmBody": "Bạn bè, vật phẩm trang trí và giao dịch mua của bạn sẽ bị xóa sau 30 ngày. Giấy phép trò chơi và tài khoản Microsoft của bạn không bị ảnh hưởng.",
+      "confirmButton": "Xóa tài khoản của tôi",
+      "typeUsername": "Nhập {{name}} để xác nhận"
+    }
+  },
+  "parental": {
+    "title": "Kiểm soát của phụ huynh",
+    "description": "Tài khoản Rustic dành cho người từ {{age}} tuổi trở lên. Với người chơi dưới 18 tuổi, các giao dịch mua mặc định cần cha mẹ chấp thuận.",
+    "minorNote": "Tài khoản này thuộc về người chưa thành niên: các giao dịch mua sẽ yêu cầu cha mẹ chấp thuận.",
+    "enable": "Bật kiểm soát của phụ huynh",
+    "enableHint": "Sau đó, các thay đổi bên dưới sẽ cần mã PIN.",
+    "pinFirst": "Hãy tạo mã PIN trước để bật kiểm soát của phụ huynh.",
+    "saveFailed": "Không thể lưu thay đổi",
+    "lockAgain": "Khóa lại",
+    "rules": {
+      "title": "Quy tắc",
+      "purchases": "Giao dịch mua",
+      "purchasesHint": "Giao dịch mua trong Cửa hàng chỉ là vật phẩm trang trí. Không bao giờ có hộp quà ngẫu nhiên.",
+      "purchaseOptions": {
+        "blocked": "Tắt",
+        "pin": "Hỏi cha mẹ",
+        "allowed": "Cho phép"
+      },
+      "limit": "Giới hạn chi tiêu hằng tháng",
+      "limitHint": "Đã chi tháng này: {{spent}}. Để trống nếu không giới hạn.",
+      "noLimit": "Không giới hạn",
+      "limitInvalid": "Hãy nhập số tiền như 10 hoặc 9.99.",
+      "chat": "Trò chuyện",
+      "chatOptions": {
+        "off": "Tắt",
+        "friends": "Chỉ bạn bè",
+        "everyone": "Mọi người"
+      },
+      "friendRequests": "Lời mời kết bạn",
+      "friendRequestsHint": "Cho phép người khác gửi lời mời kết bạn."
+    },
+    "pin": {
+      "title": "Mã PIN của phụ huynh",
+      "set": "Đã đặt mã PIN. Cần mã này để thay đổi các cài đặt này và phê duyệt giao dịch mua.",
+      "notSet": "Chưa có mã PIN.",
+      "change": "Đổi mã PIN",
+      "create": "Tạo mã PIN",
+      "saved": "Đã lưu mã PIN",
+      "new": "Mã PIN mới",
+      "confirm": "Xác nhận mã PIN",
+      "save": "Lưu mã PIN",
+      "hint": "Từ 4 đến 6 chữ số, không phải dãy số đơn giản.",
+      "errors": {
+        "format": "Hãy dùng 4 đến 6 chữ số.",
+        "mismatch": "Hai mã PIN không khớp.",
+        "weak": "Quá dễ đoán: tránh 1234 hoặc 0000."
+      }
+    },
+    "unlock": {
+      "title": "Đã khóa",
+      "description": "Nhập mã PIN của phụ huynh để thay đổi các cài đặt này.",
+      "label": "Mã PIN của phụ huynh",
+      "wrong": "Sai mã PIN.",
+      "button": "Mở khóa"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Phiên bản {{version}}",
+    "channel": {
+      "stable": "Ổn định",
+      "beta": "Beta"
+    },
+    "browserMock": "Xem trước trên trình duyệt (dữ liệu mẫu)",
+    "horizon": "Horizon",
+    "horizonHint": "Bản dựng trò chơi được đề xuất.",
+    "licence": "Giấy phép",
+    "platform": "Nền tảng",
+    "legalTitle": "Pháp lý",
+    "legalDescription": "Chính sách và thông báo.",
+    "links": {
+      "privacy": "Chính sách quyền riêng tư",
+      "terms": "Điều khoản sử dụng và bán hàng",
+      "legalNotice": "Thông báo pháp lý",
+      "fairPlay": "Chính sách chơi công bằng",
+      "thirdParty": "Thông báo mã nguồn mở",
+      "horizon": "Dự án Horizon (MIT)"
+    },
+    "notAffiliated": "Không phải sản phẩm chính thức của Minecraft. Không được Mojang hay Microsoft phê duyệt hoặc liên kết.",
+    "horizonCredit": "Xây dựng trên Horizon, bản viết lại trò chơi bằng Rust theo giấy phép MIT, do các cộng tác viên của dự án thực hiện.",
+    "company": "Phát hành bởi [company name], một công ty Pháp (SIREN [number], [address]). Thanh toán qua Stripe; công ty là bên bán.",
+    "tagline": "Rustic là nền tảng trò chơi kết nối cộng đồng, vận hành bởi engine Horizon"
+  },
+  "rusticAuth": {
+    "mode": "Đăng nhập hoặc tạo tài khoản",
+    "signIn": "Đăng nhập",
+    "signUp": "Tạo tài khoản",
+    "create": "Tạo tài khoản của tôi",
+    "verify": "Xác minh",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "username": "Tên người dùng",
+    "dateOfBirth": "Ngày sinh",
+    "country": "Quốc gia",
+    "acceptPrivacy": "Tôi đã đọc và chấp nhận chính sách quyền riêng tư.",
+    "code": "Mã từ ứng dụng xác thực của bạn",
+    "checkInbox": "Chúng tôi đã gửi liên kết xác minh đến {{email}}. Hãy mở liên kết đó, rồi đăng nhập.",
+    "resend": "Gửi lại",
+    "resent": "Đã gửi lại email xác minh",
+    "signedIn": "Đã đăng nhập Rustic",
+    "problems": {
+      "email": "Hãy nhập địa chỉ email hợp lệ.",
+      "password": "Mật khẩu: tối thiểu 10 ký tự.",
+      "username": "Tên người dùng: 3 đến 20 chữ cái, chữ số hoặc dấu gạch dưới.",
+      "dateOfBirth": "Hãy nhập ngày sinh của bạn.",
+      "tooYoung": "Tài khoản Rustic dành cho người từ 13 tuổi trở lên.",
+      "privacy": "Hãy chấp nhận chính sách quyền riêng tư để tiếp tục."
+    },
+    "microsoft": "Tiếp tục với Microsoft",
+    "orEmail": "hoặc bằng email",
+    "microsoftWaiting": "Hãy hoàn tất đăng nhập trong trình duyệt: launcher sẽ tự động nhận phiên đăng nhập của bạn."
+  },
+  "heading": "*Cài đặt* của bạn",
+  "eyebrow": "Launcher"
+}

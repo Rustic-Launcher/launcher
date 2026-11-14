@@ -1,0 +1,430 @@
+{
+  "a11y": {
+    "skipToContent": "跳到主要内容",
+    "notifications": "通知"
+  },
+  "actions": {
+    "retry": "重试",
+    "back": "返回",
+    "forward": "前进",
+    "cancel": "取消",
+    "close": "关闭",
+    "clear": "清除",
+    "save": "保存",
+    "saved": "已保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "open": "打开",
+    "install": "安装",
+    "installed": "已安装",
+    "remove": "移除",
+    "confirm": "确认",
+    "continue": "继续",
+    "next": "下一步",
+    "previous": "上一步",
+    "done": "完成",
+    "copy": "复制",
+    "copied": "已复制",
+    "learnMore": "了解更多",
+    "seeAll": "查看全部",
+    "create": "创建",
+    "import": "导入",
+    "browse": "浏览…",
+    "apply": "应用",
+    "reset": "重置",
+    "enable": "启用",
+    "disable": "禁用",
+    "update": "更新",
+    "add": "添加",
+    "refresh": "刷新",
+    "openFolder": "打开文件夹",
+    "skip": "跳过",
+    "more": "更多"
+  },
+  "errors": {
+    "generic": "出了点问题，请稍后重试。",
+    "page": {
+      "title": "无法显示此页面"
+    },
+    "load": {
+      "title": "无法加载此内容"
+    },
+    "notFound": {
+      "title": "这里什么都没有",
+      "description": "此页面不存在或已移动。"
+    }
+  },
+  "nav": {
+    "label": "主导航",
+    "home": "首页",
+    "instances": "配置",
+    "content": "探索",
+    "servers": "服务器",
+    "locker": "储物柜",
+    "store": "商店",
+    "settings": "设置",
+    "newInstance": "新建配置"
+  },
+  "search": {
+    "title": "搜索",
+    "placeholder": "搜索内容、好友、服务器、设置…",
+    "empty": "没有结果，换个词试试。",
+    "loading": "正在搜索…",
+    "hintNavigate": "导航",
+    "hintOpen": "打开",
+    "hintClose": "关闭",
+    "open": "打开",
+    "myServer": "我的服务器",
+    "playInstance": "游玩 {{name}}",
+    "groups": {
+      "pages": "页面",
+      "actions": "操作",
+      "instances": "实例",
+      "content": "内容",
+      "friends": "好友",
+      "servers": "服务器",
+      "settings": "设置",
+      "play": "游玩"
+    },
+    "actions": {
+      "newInstance": "创建实例",
+      "newServer": "创建服务器",
+      "addFriend": "添加好友",
+      "darkTheme": "切换到深色主题",
+      "lightTheme": "切换到浅色主题"
+    },
+    "settings": {
+      "accounts": "账户",
+      "game": "游戏",
+      "launcher": "启动器",
+      "appearance": "外观",
+      "privacy": "隐私与数据",
+      "parental": "家长控制",
+      "about": "关于"
+    }
+  },
+  "friends": {
+    "title": "好友",
+    "onlineCount_other": "{{count}} 位在线",
+    "add": "添加好友",
+    "search": "搜索好友",
+    "requests_other": "请求 · {{count}}",
+    "incoming": "想加你为好友",
+    "outgoing": "请求已发送",
+    "accept": "接受",
+    "decline": "拒绝",
+    "cancelRequest": "取消请求",
+    "requestSent": "已向 {{name}} 发送好友请求",
+    "error": "无法加载好友。",
+    "empty": "还没有好友。使用对方的 Rustic 用户名添加好友。",
+    "online_other": "在线 · {{count}}",
+    "offline_other": "离线 · {{count}}",
+    "lastSeen": "上次在线：{{when}}",
+    "activity": {
+      "server": "正在 {{server}} 上游玩",
+      "singleplayer": "正在单人游玩",
+      "hosting": "正在托管 {{server}}",
+      "launcher": "在启动器中"
+    },
+    "favorite": "收藏",
+    "makeFavorite": "添加到收藏",
+    "unfavorite": "从收藏中移除",
+    "join": "加入",
+    "joinAria": "加入 {{name}}",
+    "joining": "正在加入 {{server}}…",
+    "more": "{{name}} 的更多操作",
+    "remove": "删除好友",
+    "removeTitle": "要将 {{name}} 从好友中删除吗？",
+    "removeBody": "你们将不再看到彼此的动态。你之后可以重新发送请求。"
+  },
+  "addFriend": {
+    "title": "添加好友",
+    "description": "通过 Rustic 名称或对方绑定的 Minecraft 名称查找玩家，或者从一起玩过的人中选择。",
+    "kind": "搜索方式",
+    "kindRustic": "Rustic 名称",
+    "kindMinecraft": "Minecraft 名称",
+    "rusticLabel": "Rustic 用户名",
+    "minecraftLabel": "Minecraft 用户名",
+    "rusticPlaceholder": "例如 lea_builds",
+    "minecraftPlaceholder": "例如 LeaBuilds",
+    "rusticHint": "对方 Rustic 个人资料上的准确名称。",
+    "minecraftHint": "使用该 Minecraft 档案登录过 Rustic 的玩家的准确游戏内名称。",
+    "find": "查找",
+    "send": "发送请求",
+    "sent": "请求已发送",
+    "friends": "已是好友",
+    "pending": "请求待处理",
+    "incoming": "对方已经向你发送了好友请求：接受即可。",
+    "minecraftName": "Minecraft 名称：",
+    "add": "添加",
+    "addAria": "向 {{name}} 发送好友请求",
+    "playedWith": "最近一起玩过",
+    "playedWithEmpty": "还没有人。你队伍中的玩家以及在同一服务器上（一起待了 10 分钟或以上）的玩家会显示在这里。",
+    "crossed": "最近遇到",
+    "crossedEmpty": "最近没有在同一服务器上遇到任何人。",
+    "reasonParty": "在你的队伍中",
+    "reasonServer": "在 {{server}} 上",
+    "reasonSameServer": "在同一服务器上",
+    "suggestionsError": "无法加载推荐。",
+    "suggestionsOff": "推荐已关闭。在 设置 › 隐私与数据 中开启“出现在我遇到的玩家的推荐中”，即可查看你遇到的玩家。",
+    "suggestionsMinor": "你的账户无法使用“遇到的玩家”推荐。",
+    "privacyNote": "推荐来自过去 14 天内你的队伍以及你在动态中共享的服务器。只有同样允许此功能的人才会出现。",
+    "errors": {
+      "notFoundRustic": "没有使用此名称的 Rustic 账户。",
+      "notFoundMinecraft": "没有 Rustic 玩家绑定了此 Minecraft 名称。",
+      "invalidRustic": "Rustic 名称由 3 到 20 个字母、数字或 _ 组成。",
+      "invalidMinecraft": "Minecraft 名称由 3 到 16 个字母、数字或 _ 组成。",
+      "cannot_add_friend": "该玩家无法接收好友请求。",
+      "friend_requests_disabled": "你的账户已关闭好友请求（家长控制）。",
+      "cannot_add_self": "这是你自己！",
+      "already_friends": "你们已经是好友了。",
+      "request_pending": "已有一个待处理的请求。",
+      "incoming_request_exists": "对方已经向你发送了请求：接受即可。",
+      "rate_limited": "搜索次数过多。请等待一分钟后重试。",
+      "generic": "出了点问题，请重试。"
+    }
+  },
+  "party": {
+    "title": "队伍",
+    "leave": "离开",
+    "leader": "队长",
+    "pending": "{{name}}（已邀请）",
+    "invite": "邀请加入队伍",
+    "invited": "已邀请 {{name}} 加入你的队伍"
+  },
+  "presence": {
+    "online": "在线",
+    "in-game": "游戏中",
+    "away": "离开",
+    "busy": "忙碌",
+    "offline": "离线"
+  },
+  "notifications": {
+    "title": "通知",
+    "markAllRead": "全部标为已读",
+    "empty": "你已看完所有通知。",
+    "kinds": {
+      "friend_request": "向你发送了好友请求",
+      "update_available": "可用于你的实例",
+      "backup_done": "计划备份已完成",
+      "store_new": "商店上新"
+    }
+  },
+  "account": {
+    "switcher": "账户",
+    "none": "无账户",
+    "rustic": "Rustic 账户",
+    "signInRustic": "登录 Rustic",
+    "signOutRustic": "退出 Rustic 登录",
+    "gameProfiles": "游戏档案",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "离线"
+    },
+    "add": "添加账户",
+    "manage": "管理账户"
+  },
+  "downloads": {
+    "title": "下载",
+    "global": "后台下载",
+    "working": "处理中…",
+    "summary_other": "{{count}} 个下载正在进行",
+    "kind": {
+      "game": "Horizon",
+      "content": "内容",
+      "modpack": "整合包",
+      "server": "服务器",
+      "java": "Java 运行时",
+      "update": "启动器更新",
+      "prepare": "正在准备游戏文件",
+      "native-build": "原生模组编译",
+      "native-toolchain": "原生模组所需的 Rust"
+    }
+  },
+  "play": {
+    "play": "开始游戏",
+    "update": "更新",
+    "cancel": "取消",
+    "stop": "停止",
+    "selectInstance": "选择要游玩的实例",
+    "instances": "实例",
+    "manageInstances": "管理实例",
+    "newVersion": "{{version}} 可用",
+    "cancelled": "已取消启动",
+    "status": {
+      "ready": "准备就绪",
+      "noInstance": "无实例",
+      "running": "游戏运行中",
+      "update": "需要更新",
+      "broken": "需要修复"
+    },
+    "progress": {
+      "updating": "正在更新…",
+      "downloading": "正在下载 {{pct}}",
+      "checking": "正在检查文件…",
+      "preparing": "正在准备…",
+      "launching": "正在启动…",
+      "stopping": "正在停止…",
+      "preparingFiles": "正在准备游戏文件 {{pct}}",
+      "building": "正在编译原生模组…",
+      "buildingPct": "正在编译原生模组 {{pct}}"
+    },
+    "errors": {
+      "launch": "游戏无法启动"
+    },
+    "refusals": {
+      "auth_no_account": "请使用拥有游戏的 Microsoft 账户登录后再游玩。",
+      "auth_not_owned": "此 Microsoft 账户未拥有游戏。",
+      "auth_not_approved": "此启动器暂不支持 Microsoft 登录。",
+      "auth_reauth_required": "请重新登录你的 Microsoft 账户后再游玩。",
+      "auth_offline_not_allowed": "请先使用拥有游戏的 Microsoft 账户登录一次，之后即可离线游玩。",
+      "auth_network": "无法连接 Microsoft 验证账户。请检查你的网络连接。",
+      "build_not_installed": "请先安装一个 Horizon 版本。",
+      "prepare_needed": "此版本的游戏文件尚未准备好。",
+      "prepare_failed": "无法准备游戏文件：请重试，或在 设置 › 游戏与实例 中准备。",
+      "prepare_no_java": "未找到 Java：请安装 Java，或在 设置 › 游戏与实例 中选择。",
+      "prepare_no_minecraft_dir": "未找到你的游戏安装：请在 设置 › 游戏与实例 中选择其文件夹。",
+      "launch_already_running": "此实例已在运行。",
+      "native_consent": "此实例包含原生模组：请先在实例页面（内容）中接受其信任提示。",
+      "native_toolchain": "原生模组需要 Rust：请在实例页面（内容）或 设置 › 游戏与实例 中安装。",
+      "native_not_edition": "原生模组只能编译进 Rustic 版：请将此实例切换到 Rustic 版，或关闭其原生模组。",
+      "native_build_failed": "无法编译原生模组",
+      "native_disk": "磁盘可用空间不足，无法编译原生模组。"
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}}（Rustic 版）",
+    "rusticEdition": "Rustic 版"
+  },
+  "compat": {
+    "buildsOnHorizon": "可在你的 Horizon 上编译",
+    "compatible": "兼容",
+    "incompatible": "不兼容：{{reason}}",
+    "unknown": "兼容性未知",
+    "reasons": {
+      "horizon_version": "Horizon 版本",
+      "java_only": "仅限 Java 版",
+      "side": "仅限服务端",
+      "conflict": "与已安装的模组冲突",
+      "unsupported_format": "不支持的格式",
+      "needs_rustic_server": "需要 Rustic Server",
+      "not_fair_play": "不允许（公平游戏）"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "切换产品",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Rustic Server 文档"
+  },
+  "crumbs": {
+    "label": "面包屑导航",
+    "horizon": "Horizon",
+    "details": "详情",
+    "create": "创建",
+    "kinds": {
+      "mod": "模组",
+      "modpack": "整合包",
+      "resourcepack": "资源包",
+      "shader": "光影",
+      "datapack": "数据包",
+      "plugin": "插件"
+    },
+    "servers": {
+      "featured": "精选",
+      "mine": "我的服务器",
+      "multiplayer": "多人游戏列表",
+      "discover": "发现",
+      "joined": "多人游戏列表",
+      "browse": "浏览"
+    }
+  },
+  "social": {
+    "title": "社交",
+    "description": "好友、聊天和你的队伍。",
+    "open": "打开社交",
+    "friends": "好友",
+    "chats": "聊天",
+    "message": "发送消息",
+    "searchChats": "搜索聊天…",
+    "noChats": "还没有对话。在“好友”标签页中给好友发消息吧。",
+    "sayHello": "打个招呼",
+    "selectTitle": "选择一个对话",
+    "selectBody": "选择一位好友开始聊天。",
+    "messagePlaceholder": "给 {{name}} 发消息",
+    "send": "发送"
+  },
+  "window": {
+    "minimize": "最小化",
+    "maximize": "最大化",
+    "restore": "还原",
+    "close": "关闭"
+  },
+  "running": {
+    "title": "运行中的实例",
+    "none": "没有正在运行的游戏。",
+    "count_other": "{{count}} 个实例正在运行",
+    "downloading": "正在下载 {{pct}}"
+  },
+  "launch": {
+    "launch": "启动游戏",
+    "update": "更新并启动",
+    "stop": "停止游戏"
+  },
+  "deepLink": {
+    "authOk": "已登录 Rustic",
+    "authFailed": "Rustic 登录失败",
+    "joining": "正在加入 {{target}}…",
+    "content": "正在打开来自网站的 {{project}}"
+  },
+  "catalog": {
+    "sort": "排序方式",
+    "results_other": "{{count}} 个结果",
+    "loadMore": "加载更多",
+    "loadMoreCount": "显示 {{shown}} / {{total}}",
+    "carousel": {
+      "prev": "上一个",
+      "next": "下一个",
+      "slide": "{{index}} / {{total}}",
+      "pause": "暂停轮播",
+      "play": "播放轮播"
+    },
+    "row": {
+      "seeAll": "查看全部",
+      "seeAllAria": "查看全部：{{title}}",
+      "scrollPrev": "向左滚动",
+      "scrollNext": "向右滚动"
+    },
+    "filters": {
+      "button": "筛选",
+      "buttonCount": "筛选 · {{count}}",
+      "reset": "重置筛选"
+    },
+    "layout": {
+      "label": "布局",
+      "list": "列表",
+      "grid": "网格"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "正在更新 {{pct}}",
+      "installing": "正在安装更新…",
+      "restarting": "正在重启…",
+      "deferred": "游戏结束后更新",
+      "apply": "更新并重启"
+    },
+    "toast": {
+      "launcher": "正在下载 Rustic Launcher {{version}}…",
+      "edition": "正在更新游戏（Rustic 版）…",
+      "editionDone": "游戏已更新：{{version}}",
+      "deferred": "更新已就绪，关闭游戏后将自动安装。",
+      "restarting": "Rustic Launcher 正在重启以完成更新。",
+      "updated": "Rustic Launcher 已更新到 {{version}}",
+      "resuming": "更新完成：正在启动你的游戏",
+      "failed": "无法安装更新，稍后将重试。"
+    }
+  }
+}

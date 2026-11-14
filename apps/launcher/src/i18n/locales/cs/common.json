@@ -1,0 +1,451 @@
+{
+  "a11y": {
+    "skipToContent": "Přeskočit na obsah",
+    "notifications": "Oznámení"
+  },
+  "actions": {
+    "retry": "Zkusit znovu",
+    "back": "Zpět",
+    "forward": "Vpřed",
+    "cancel": "Zrušit",
+    "close": "Zavřít",
+    "clear": "Vymazat",
+    "save": "Uložit",
+    "saved": "Uloženo",
+    "delete": "Smazat",
+    "edit": "Upravit",
+    "open": "Otevřít",
+    "install": "Nainstalovat",
+    "installed": "Nainstalováno",
+    "remove": "Odebrat",
+    "confirm": "Potvrdit",
+    "continue": "Pokračovat",
+    "next": "Další",
+    "previous": "Předchozí",
+    "done": "Hotovo",
+    "copy": "Kopírovat",
+    "copied": "Zkopírováno",
+    "learnMore": "Zjistit více",
+    "seeAll": "Zobrazit vše",
+    "create": "Vytvořit",
+    "import": "Importovat",
+    "browse": "Procházet…",
+    "apply": "Použít",
+    "reset": "Obnovit výchozí",
+    "enable": "Zapnout",
+    "disable": "Vypnout",
+    "update": "Aktualizovat",
+    "add": "Přidat",
+    "refresh": "Obnovit",
+    "openFolder": "Otevřít složku",
+    "skip": "Přeskočit",
+    "more": "Více"
+  },
+  "errors": {
+    "generic": "Něco se pokazilo. Zkus to za chvíli znovu.",
+    "page": {
+      "title": "Tuto stránku se nepodařilo zobrazit"
+    },
+    "load": {
+      "title": "Nepodařilo se načíst"
+    },
+    "notFound": {
+      "title": "Nic tu není",
+      "description": "Tato stránka neexistuje nebo byla přesunuta."
+    }
+  },
+  "nav": {
+    "label": "Hlavní navigace",
+    "home": "Domů",
+    "instances": "Profily",
+    "content": "Prozkoumat",
+    "servers": "Servery",
+    "locker": "Šatna",
+    "store": "Obchod",
+    "settings": "Nastavení",
+    "newInstance": "Nový profil"
+  },
+  "search": {
+    "title": "Hledat",
+    "placeholder": "Hledej obsah, přátele, servery, nastavení…",
+    "empty": "Žádné výsledky. Zkus jiné slovo.",
+    "loading": "Hledám…",
+    "hintNavigate": "přejít",
+    "hintOpen": "otevřít",
+    "hintClose": "zavřít",
+    "open": "Otevřít",
+    "myServer": "Můj server",
+    "playInstance": "Hrát: {{name}}",
+    "groups": {
+      "pages": "Stránky",
+      "actions": "Akce",
+      "instances": "Instance",
+      "content": "Obsah",
+      "friends": "Přátelé",
+      "servers": "Servery",
+      "settings": "Nastavení",
+      "play": "Hrát"
+    },
+    "actions": {
+      "newInstance": "Vytvořit instanci",
+      "newServer": "Vytvořit server",
+      "addFriend": "Přidat přítele",
+      "darkTheme": "Přepnout na tmavý motiv",
+      "lightTheme": "Přepnout na světlý motiv"
+    },
+    "settings": {
+      "accounts": "Účty",
+      "game": "Hra",
+      "launcher": "Launcher",
+      "appearance": "Vzhled",
+      "privacy": "Soukromí a data",
+      "parental": "Rodičovská kontrola",
+      "about": "O aplikaci"
+    }
+  },
+  "friends": {
+    "title": "Přátelé",
+    "onlineCount_one": "{{count}} online",
+    "onlineCount_few": "{{count}} online",
+    "onlineCount_many": "{{count}} online",
+    "onlineCount_other": "{{count}} online",
+    "add": "Přidat přítele",
+    "search": "Hledat přátele",
+    "requests_one": "Žádost · {{count}}",
+    "requests_few": "Žádosti · {{count}}",
+    "requests_many": "Žádosti · {{count}}",
+    "requests_other": "Žádosti · {{count}}",
+    "incoming": "Chce se s tebou přátelit",
+    "outgoing": "Žádost odeslána",
+    "accept": "Přijmout",
+    "decline": "Odmítnout",
+    "cancelRequest": "Zrušit žádost",
+    "requestSent": "Žádost o přátelství odeslána hráči {{name}}",
+    "error": "Přátele se nepodařilo načíst.",
+    "empty": "Zatím žádní přátelé. Přidej někoho podle jeho uživatelského jména na Rusticu.",
+    "online_one": "Online · {{count}}",
+    "online_few": "Online · {{count}}",
+    "online_many": "Online · {{count}}",
+    "online_other": "Online · {{count}}",
+    "offline_one": "Offline · {{count}}",
+    "offline_few": "Offline · {{count}}",
+    "offline_many": "Offline · {{count}}",
+    "offline_other": "Offline · {{count}}",
+    "lastSeen": "Naposledy {{when}}",
+    "activity": {
+      "server": "Hraje na {{server}}",
+      "singleplayer": "Hraje sólo",
+      "hosting": "Hostuje {{server}}",
+      "launcher": "V launcheru"
+    },
+    "favorite": "Oblíbený",
+    "makeFavorite": "Přidat do oblíbených",
+    "unfavorite": "Odebrat z oblíbených",
+    "join": "Připojit se",
+    "joinAria": "Připojit se k hráči {{name}}",
+    "joining": "Připojování k {{server}}…",
+    "more": "Další akce: {{name}}",
+    "remove": "Odebrat přítele",
+    "removeTitle": "Odebrat hráče {{name}} z přátel?",
+    "removeBody": "Už navzájem neuvidíte svou aktivitu. Později můžeš poslat novou žádost."
+  },
+  "addFriend": {
+    "title": "Přidat přítele",
+    "description": "Najdi hráče podle jména na Rusticu nebo podle propojeného jména v Minecraftu, nebo vyber někoho z nedávných spoluhráčů.",
+    "kind": "Hledat podle",
+    "kindRustic": "Jméno na Rusticu",
+    "kindMinecraft": "Jméno v Minecraftu",
+    "rusticLabel": "Uživatelské jméno na Rusticu",
+    "minecraftLabel": "Uživatelské jméno v Minecraftu",
+    "rusticPlaceholder": "např. lea_builds",
+    "minecraftPlaceholder": "např. LeaBuilds",
+    "rusticHint": "Přesné jméno z jeho profilu na Rusticu.",
+    "minecraftHint": "Přesné herní jméno hráče, který se do Rusticu přihlásil s tímto profilem Minecraftu.",
+    "find": "Najít",
+    "send": "Poslat žádost",
+    "sent": "Žádost odeslána",
+    "friends": "Už jste přátelé",
+    "pending": "Žádost čeká",
+    "incoming": "Tento hráč už tě požádal o přátelství: přijmi jeho žádost.",
+    "minecraftName": "Jméno v Minecraftu:",
+    "add": "Přidat",
+    "addAria": "Poslat žádost o přátelství hráči {{name}}",
+    "playedWith": "Nedávní spoluhráči",
+    "playedWithEmpty": "Zatím nikdo. Zobrazí se tu hráči z tvých part a ze sdílených serverů (alespoň 10 minut spolu).",
+    "crossed": "Nedávno potkaní",
+    "crossedEmpty": "Na sdílených serverech zatím nikdo nedávno nebyl.",
+    "reasonParty": "Ve tvé partě",
+    "reasonServer": "Na serveru {{server}}",
+    "reasonSameServer": "Na stejném serveru",
+    "suggestionsError": "Návrhy se nepodařilo načíst.",
+    "suggestionsOff": "Návrhy jsou vypnuté. Zapni „Zobrazovat mě v návrzích hráčů, které potkám“ v Nastavení › Soukromí a data a uvidíš hráče, které potkáváš.",
+    "suggestionsMinor": "Návrhy potkaných hráčů nejsou pro tvůj účet dostupné.",
+    "privacyNote": "Návrhy vycházejí z tvých part a serverů, které sdílíš ve své aktivitě, za posledních 14 dní. Zobrazí se jen lidé, kteří to také povolili.",
+    "errors": {
+      "notFoundRustic": "Žádný účet Rustic s tímto jménem neexistuje.",
+      "notFoundMinecraft": "Žádný hráč Rusticu nemá propojené toto jméno z Minecraftu.",
+      "invalidRustic": "Jména na Rusticu mají 3 až 20 písmen, číslic nebo _.",
+      "invalidMinecraft": "Jména v Minecraftu mají 3 až 16 písmen, číslic nebo _.",
+      "cannot_add_friend": "Tento hráč nemůže přijímat žádosti o přátelství.",
+      "friend_requests_disabled": "Žádosti o přátelství jsou pro tvůj účet vypnuté (rodičovská kontrola).",
+      "cannot_add_self": "To jsi ty!",
+      "already_friends": "Už jste přátelé.",
+      "request_pending": "Jedna žádost už čeká.",
+      "incoming_request_exists": "Tento hráč ti už žádost poslal: přijmi ji.",
+      "rate_limited": "Příliš mnoho hledání. Počkej minutu a zkus to znovu.",
+      "generic": "Něco se pokazilo. Zkus to znovu."
+    }
+  },
+  "party": {
+    "title": "Parta",
+    "leave": "Opustit",
+    "leader": "Vůdce party",
+    "pending": "{{name}} (pozvánka odeslána)",
+    "invite": "Pozvat do party",
+    "invited": "Hráč {{name}} byl pozván do tvé party"
+  },
+  "presence": {
+    "online": "Online",
+    "in-game": "Ve hře",
+    "away": "Pryč",
+    "busy": "Nerušit",
+    "offline": "Offline"
+  },
+  "notifications": {
+    "title": "Oznámení",
+    "markAllRead": "Označit vše jako přečtené",
+    "empty": "Máš všechno přečtené.",
+    "kinds": {
+      "friend_request": "ti posílá žádost o přátelství",
+      "update_available": "je k dispozici pro tvé instance",
+      "backup_done": "Plánovaná záloha dokončena",
+      "store_new": "Novinka v obchodě"
+    }
+  },
+  "account": {
+    "switcher": "Účty",
+    "none": "Žádný účet",
+    "rustic": "Účet Rustic",
+    "signInRustic": "Přihlásit se do Rusticu",
+    "signOutRustic": "Odhlásit se z Rusticu",
+    "gameProfiles": "Herní profily",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Offline"
+    },
+    "add": "Přidat účet",
+    "manage": "Spravovat účty"
+  },
+  "downloads": {
+    "title": "Stahování",
+    "global": "Stahování na pozadí",
+    "working": "Pracuji…",
+    "summary_one": "Probíhá {{count}} stahování",
+    "summary_few": "Probíhají {{count}} stahování",
+    "summary_many": "Probíhá {{count}} stahování",
+    "summary_other": "Probíhá {{count}} stahování",
+    "kind": {
+      "game": "Horizon",
+      "content": "Obsah",
+      "modpack": "Modpack",
+      "server": "Server",
+      "java": "Prostředí Java",
+      "update": "Aktualizace launcheru",
+      "prepare": "Příprava herních souborů",
+      "native-build": "Sestavení nativních módů",
+      "native-toolchain": "Rust pro nativní módy"
+    }
+  },
+  "play": {
+    "play": "Hrát",
+    "update": "Aktualizovat",
+    "cancel": "Zrušit",
+    "stop": "Zastavit",
+    "selectInstance": "Vyber instanci, kterou chceš hrát",
+    "instances": "Instance",
+    "manageInstances": "Spravovat instance",
+    "newVersion": "K dispozici je {{version}}",
+    "cancelled": "Spuštění zrušeno",
+    "status": {
+      "ready": "Připraveno ke hře",
+      "noInstance": "Žádná instance",
+      "running": "Hra běží",
+      "update": "Je nutná aktualizace",
+      "broken": "Je nutná oprava"
+    },
+    "progress": {
+      "updating": "Aktualizace…",
+      "downloading": "Stahování {{pct}}",
+      "checking": "Kontrola souborů…",
+      "preparing": "Příprava…",
+      "launching": "Spouštění…",
+      "stopping": "Zastavování…",
+      "preparingFiles": "Příprava herních souborů {{pct}}",
+      "building": "Kompilace nativních módů…",
+      "buildingPct": "Kompilace nativních módů {{pct}}"
+    },
+    "errors": {
+      "launch": "Hru se nepodařilo spustit"
+    },
+    "refusals": {
+      "auth_no_account": "Pro hraní se přihlas účtem Microsoft, který vlastní hru.",
+      "auth_not_owned": "Tento účet Microsoft hru nevlastní.",
+      "auth_not_approved": "Přihlášení přes Microsoft zatím pro tento launcher není dostupné.",
+      "auth_reauth_required": "Pro hraní se znovu přihlas ke svému účtu Microsoft.",
+      "auth_offline_not_allowed": "Jednou se přihlas účtem Microsoft, který vlastní hru, a pak můžeš hrát offline.",
+      "auth_network": "Nepodařilo se spojit s Microsoftem a ověřit účet. Zkontroluj připojení.",
+      "build_not_installed": "Nejdřív nainstaluj sestavení Horizonu.",
+      "prepare_needed": "Herní soubory pro toto sestavení ještě nejsou připravené.",
+      "prepare_failed": "Herní soubory se nepodařilo připravit: zkus to znovu, nebo je připrav v Nastavení › Hra a instance.",
+      "prepare_no_java": "Java nebyla nalezena: nainstaluj ji nebo ji vyber v Nastavení › Hra a instance.",
+      "prepare_no_minecraft_dir": "Instalace hry nebyla nalezena: vyber její složku v Nastavení › Hra a instance.",
+      "launch_already_running": "Tato instance už běží.",
+      "native_consent": "Tato instance má nativní módy: nejdřív přijmi jejich upozornění o důvěře na stránce instance (Obsah).",
+      "native_toolchain": "Nativní módy potřebují Rust: nainstaluj ho ze stránky instance (Obsah) nebo v Nastavení › Hra a instance.",
+      "native_not_edition": "Nativní módy se sestavují jen do edice Rustic: přepni na ni tuto instanci, nebo její nativní módy vypni.",
+      "native_build_failed": "Nativní módy se nepodařilo sestavit",
+      "native_disk": "Na disku není dost volného místa pro sestavení nativních módů."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (edice Rustic)",
+    "rusticEdition": "Edice Rustic"
+  },
+  "compat": {
+    "buildsOnHorizon": "Sestaví se na tvém Horizonu",
+    "compatible": "Kompatibilní",
+    "incompatible": "Nekompatibilní: {{reason}}",
+    "unknown": "Kompatibilita neznámá",
+    "reasons": {
+      "horizon_version": "verze Horizonu",
+      "java_only": "jen Java Edition",
+      "side": "jen na straně serveru",
+      "conflict": "koliduje s nainstalovaným módem",
+      "unsupported_format": "nepodporovaný formát",
+      "needs_rustic_server": "vyžaduje Rustic Server",
+      "not_fair_play": "nepovoleno (fair play)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Přepnout produkt",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Dokumentace Rustic Server"
+  },
+  "crumbs": {
+    "label": "Drobečková navigace",
+    "horizon": "Horizon",
+    "details": "Podrobnosti",
+    "create": "Vytvořit",
+    "kinds": {
+      "mod": "Módy",
+      "modpack": "Modpacky",
+      "resourcepack": "Balíčky zdrojů",
+      "shader": "Shadery",
+      "datapack": "Datové balíčky",
+      "plugin": "Pluginy"
+    },
+    "servers": {
+      "featured": "Doporučené",
+      "mine": "Moje servery",
+      "multiplayer": "Seznam pro hru více hráčů",
+      "discover": "Objevovat",
+      "joined": "Seznam pro hru více hráčů",
+      "browse": "Procházet"
+    }
+  },
+  "social": {
+    "title": "Komunita",
+    "description": "Přátelé, chaty a tvoje parta.",
+    "open": "Otevřít komunitu",
+    "friends": "Přátelé",
+    "chats": "Chaty",
+    "message": "Poslat zprávu",
+    "searchChats": "Hledat v chatech…",
+    "noChats": "Zatím žádné konverzace. Napiš příteli z karty Přátelé.",
+    "sayHello": "Pozdravit",
+    "selectTitle": "Vyber konverzaci",
+    "selectBody": "Vyber přítele a začni chatovat.",
+    "messagePlaceholder": "Zpráva pro {{name}}",
+    "send": "Odeslat"
+  },
+  "window": {
+    "minimize": "Minimalizovat",
+    "maximize": "Maximalizovat",
+    "restore": "Obnovit",
+    "close": "Zavřít"
+  },
+  "running": {
+    "title": "Spuštěné instance",
+    "none": "Žádná hra neběží.",
+    "count_one": "Běží {{count}} instance",
+    "count_few": "Běží {{count}} instance",
+    "count_many": "Běží {{count}} instance",
+    "count_other": "Běží {{count}} instancí",
+    "downloading": "Stahování {{pct}}"
+  },
+  "launch": {
+    "launch": "Spustit hru",
+    "update": "Aktualizovat a spustit",
+    "stop": "Zastavit hru"
+  },
+  "deepLink": {
+    "authOk": "Přihlášení do Rusticu proběhlo",
+    "authFailed": "Přihlášení do Rusticu se nezdařilo",
+    "joining": "Připojování k {{target}}…",
+    "content": "Otevírám {{project}} z webu"
+  },
+  "catalog": {
+    "sort": "Řadit podle",
+    "results_one": "{{count}} výsledek",
+    "results_few": "{{count}} výsledky",
+    "results_many": "{{count}} výsledku",
+    "results_other": "{{count}} výsledků",
+    "loadMore": "Načíst další",
+    "loadMoreCount": "Zobrazeno {{shown}} z {{total}}",
+    "carousel": {
+      "prev": "Předchozí",
+      "next": "Další",
+      "slide": "{{index}} z {{total}}",
+      "pause": "Pozastavit prezentaci",
+      "play": "Spustit prezentaci"
+    },
+    "row": {
+      "seeAll": "Zobrazit vše",
+      "seeAllAria": "Zobrazit vše: {{title}}",
+      "scrollPrev": "Posunout doleva",
+      "scrollNext": "Posunout doprava"
+    },
+    "filters": {
+      "button": "Filtry",
+      "buttonCount": "Filtry · {{count}}",
+      "reset": "Obnovit filtry"
+    },
+    "layout": {
+      "label": "Rozvržení",
+      "list": "Seznam",
+      "grid": "Mřížka"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Aktualizace {{pct}}",
+      "installing": "Instalace aktualizace…",
+      "restarting": "Restartování…",
+      "deferred": "Aktualizace po hře",
+      "apply": "Aktualizovat a restartovat"
+    },
+    "toast": {
+      "launcher": "Stahování Rustic Launcher {{version}}…",
+      "edition": "Aktualizace hry (Edice Rustic)…",
+      "editionDone": "Hra aktualizována: {{version}}",
+      "deferred": "Aktualizace je připravená. Nainstaluje se, až zavřeš hru.",
+      "restarting": "Rustic Launcher se restartuje, aby dokončil aktualizaci.",
+      "updated": "Rustic Launcher aktualizován na verzi {{version}}",
+      "resuming": "Aktualizace hotová: spouštím hru",
+      "failed": "Aktualizaci se nepodařilo nainstalovat. Zkusíme to znovu později."
+    }
+  }
+}

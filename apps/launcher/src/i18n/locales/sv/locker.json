@@ -1,0 +1,84 @@
+{
+  "title": "Skåp",
+  "subtitle": "Rent visuella föremål. Syns i spelet för spelare som använder Rustic-utgåvan.",
+  "horizonNote": {
+    "badge": "Horizon-kosmetika finns kvar",
+    "detail": "Din Horizon-kosmetika finns kvar i klienten för Rustic-utgåvan. Hantera den i spelet; den fungerar tillsammans med dina Rustic-föremål."
+  },
+  "empty": {
+    "title": "Du äger ingen kosmetika än.",
+    "description": "Föremål du köper eller får visas här, redo att bäras.",
+    "browse": "Bläddra i butiken",
+    "categoryTitle": "Inga {{category}} än",
+    "categoryDescription": "Föremål av den här typen som du äger visas här."
+  },
+  "viewer": {
+    "region": "Din karaktär",
+    "label_one": "Din karaktär bär {{count}} föremål. Dra eller använd piltangenterna för att vrida, plus och minus för att zooma.",
+    "label_other": "Din karaktär bär {{count}} föremål. Dra eller använd piltangenterna för att vrida, plus och minus för att zooma.",
+    "hint": "Dra för att vrida · scrolla för att zooma",
+    "animation": "Animation",
+    "playEmote": "Spela upp {{name}}",
+    "noEmote": "Ingen emote vald",
+    "reset": "Återställ vyn"
+  },
+  "animations": {
+    "idle": "Stilla",
+    "walk": "Gå",
+    "wave": "Vinka",
+    "dance": "Dansa"
+  },
+  "items": {
+    "region": "Dina föremål",
+    "nothing": "Inget",
+    "equipped": "På"
+  },
+  "categories": {
+    "label": "Kategorier",
+    "all": "Alla",
+    "head": "Hattar",
+    "back": "Rygg",
+    "top": "Överkropp",
+    "shoulder": "Axel",
+    "nametag": "Namnskyltar",
+    "emote": "Emotes",
+    "companion": "Följeslagare",
+    "trail": "Spår",
+    "aura": "Auror"
+  },
+  "rarity": {
+    "common": "Vanlig",
+    "rare": "Sällsynt",
+    "epic": "Episk",
+    "legendary": "Legendarisk"
+  },
+  "toast": {
+    "equipped": "{{name}} har tagits på",
+    "unequipped": "{{name}} har tagits av",
+    "cleared": "{{slot}}: inget på",
+    "outfitWorn": "Outfit på",
+    "outfitSaved": "Outfiten ”{{name}}” har sparats",
+    "equipFailed": "Det gick inte att ändra ditt utseende. Försök igen."
+  },
+  "outfits": {
+    "title": "Outfits",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Namnge den här looken",
+    "save": "Spara nuvarande look",
+    "full": "Du kan spara upp till {{max}} outfits. Ta bort en för att spara en ny look.",
+    "empty": "Spara din nuvarande look för att bära den igen med ett klick.",
+    "items_one": "{{count}} föremål",
+    "items_other": "{{count}} föremål",
+    "wearing": "Bärs",
+    "wear": "Bär",
+    "delete": "Ta bort outfiten {{name}}"
+  },
+  "switches": {
+    "showMine": "Visa min kosmetika",
+    "showMineHint": "Andra spelare med Rustic-utgåvan ser vad du bär.",
+    "hideOthers": "Dölj andra spelares kosmetika",
+    "hideTrailsAuras": "Dölj spår och auror"
+  },
+  "heading": "Ditt *skåp*",
+  "eyebrow": "Kosmetika"
+}

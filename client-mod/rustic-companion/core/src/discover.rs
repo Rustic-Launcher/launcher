@@ -267,6 +267,8 @@ pub enum Hit {
     Join(String),
     Add(String),
     Retry,
+    /// The "Publish yours" link (the website's publish page).
+    Publish,
     /// The hero's dots.
     Hero(usize),
     /// Anything else inside the screen (eaten, so the list under it gets nothing).
@@ -275,6 +277,17 @@ pub enum Hit {
 
 /// The tab switch at the top of the multiplayer screen ("My servers | Discover").
 pub fn switch(kit: &mut Kit<'_, Hit>, gui_w: f32, tab: Tab, lang: &str) {
+    switch_into(kit, gui_w, tab, lang, &Hit::Tab);
+}
+
+/// [`switch`] in a screen whose presses are `H` (the server list's), `hit` naming a tab's.
+pub fn switch_into<H: Clone>(
+    kit: &mut Kit<'_, H>,
+    gui_w: f32,
+    tab: Tab,
+    lang: &str,
+    hit: &dyn Fn(Tab) -> H,
+) {
     let labels = [
         (Tab::MyServers, i18n::t(T::MyServers, lang)),
         (Tab::Discover, i18n::t(T::Discover, lang)),
@@ -310,7 +323,7 @@ pub fn switch(kit: &mut Kit<'_, Hit>, gui_w: f32, tab: Tab, lang: &str) {
             ink,
             Align::Center,
         );
-        kit.hit(s, Hit::Tab(*t));
+        kit.hit(s, hit(*t));
     }
 }
 
@@ -341,6 +354,11 @@ pub struct View<'a> {
     pub focus: Option<usize>,
 }
 
+/// The website's page to publish a server, in the game's language.
+pub fn publish_url(lang: &str) -> String {
+    i18n::website("/servers/publish", lang)
+}
+
 pub struct Layout {
     pub paints: Vec<Paint>,
     pub hits: Vec<([f32; 4], Hit)>,
@@ -367,7 +385,12 @@ impl Layout {
     pub fn focusable(&self) -> Vec<([f32; 4], Hit)> {
         self.hits
             .iter()
-            .filter(|(_, h)| matches!(h, Hit::Join(_) | Hit::Add(_) | Hit::Category(_)))
+            .filter(|(_, h)| {
+                matches!(
+                    h,
+                    Hit::Join(_) | Hit::Add(_) | Hit::Category(_) | Hit::Publish
+                )
+            })
             .cloned()
             .collect()
     }
@@ -830,20 +853,35 @@ pub fn layout(v: &View<'_>) -> Layout {
         Hit::Search,
     );
     let hint = i18n::t(T::PublishHint, v.lang);
-    if w - sw > (k.measure)(hint, 6.0, Weight::Medium) + 16.0 {
+    let hw = (k.measure)(hint, 6.0, Weight::Medium);
+    // The link is the keyboard's first stop when it shows.
+    let link = w - sw > hw + 16.0;
+    if link {
+        // A link: the accent and an underline when pointed at or focused.
+        let r = [x + w - hw - 2.0, sy + 1.0, hw + 4.0, 14.0];
+        let lit = k.over(r) || v.focus == Some(0);
+        let ink = if lit {
+            palette::ACCENT_TEXT
+        } else {
+            palette::MUTED
+        };
         k.text(
             x + w,
             sy + 8.0,
             hint,
             6.0,
             Weight::Medium,
-            palette::MUTED,
+            ink,
             Align::Right,
         );
+        if lit {
+            k.fill([x + w - hw, sy + 12.0, hw, 0.6], ink);
+        }
+        k.hit(r, Hit::Publish);
     }
     let area = [x - 2.0, sy + 24.0, w + 6.0, gh - sy - 24.0 - 6.0];
     let mut focus = Focus {
-        at: 0,
+        at: usize::from(link),
         want: v.focus,
     };
     let scroll = v.scroll.max(0.0);

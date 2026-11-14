@@ -1,0 +1,514 @@
+{
+  "title": "Setări",
+  "subtitle": "Conturi, joc, launcher, aspect și datele tale.",
+  "sectionsLabel": "Secțiunile setărilor",
+  "saving": "Se salvează…",
+  "saved": "Toate modificările au fost salvate",
+  "close": "Închide",
+  "cancel": "Anulează",
+  "sections": {
+    "accounts": "Conturi și securitate",
+    "game": "Joc și instanțe",
+    "launcher": "Launcher",
+    "appearance": "Aspect",
+    "privacy": "Confidențialitate și date",
+    "parental": "Control parental",
+    "about": "Despre și informații legale"
+  },
+  "accounts": {
+    "active": "Activ",
+    "useThis": "Folosește acest profil",
+    "signOut": "Deconectează-te",
+    "signedOut": "{{name}} a fost deconectat",
+    "ownership": {
+      "valid": "Deține jocul",
+      "expired": "Verificare expirată",
+      "never": "Neverificat niciodată",
+      "failed": "Verificare eșuată",
+      "lastChecked": "Verificat {{when}}",
+      "nextCheck": "următoarea verificare până la {{date}}",
+      "checkNow": "Verifică acum",
+      "checkedToast": "Deținere confirmată",
+      "checkFailed": "Microsoft nu a putut fi contactat. Încearcă din nou mai târziu."
+    },
+    "microsoft": {
+      "title": "Conturi Microsoft",
+      "description": "Deținerea jocului este necesară pentru a juca. Rustic o verifică la Microsoft și nu îți vede niciodată parola.",
+      "add": "Adaugă un cont Microsoft",
+      "keychain": "Tokenurile de conectare sunt stocate în portcheiul de sistem, niciodată într-un fișier sau în linia de comandă.",
+      "signIn": "Conectează-te cu Microsoft",
+      "step1": "Deschide pagina Microsoft în browser (sau pe alt dispozitiv).",
+      "step2": "Introdu codul de mai jos și conectează-te.",
+      "step3": "Revino aici: launcherul continuă singur.",
+      "codeLabel": "Cod de conectare",
+      "copyCode": "Copiază codul",
+      "copied": "Cod copiat",
+      "openPage": "Deschide microsoft.com/link",
+      "waiting": "Se așteaptă să te conectezi în browser…",
+      "cancel": "Anulează",
+      "signedInAs": "Conectat ca {{name}}",
+      "ownershipOk": "Deținere confirmată: poți juca.",
+      "ownershipMissing": "Acest cont nu deține jocul.",
+      "tryAgain": "Încearcă din nou",
+      "failed": {
+        "expired": {
+          "title": "Codul a expirat",
+          "body": "Codurile sunt valabile 15 minute. Începe din nou ca să primești unul nou."
+        },
+        "denied": {
+          "title": "Conectarea a fost anulată",
+          "body": "Microsoft a raportat că conectarea a fost refuzată."
+        },
+        "no_ownership": {
+          "title": "Acest cont nu deține jocul",
+          "body": "Rustic lansează jocul doar pentru conturile care dețin Minecraft: Java Edition."
+        },
+        "error": {
+          "title": "Conectarea a eșuat",
+          "body": "Rustic nu a putut finaliza conectarea. Încearcă din nou; dacă tot eșuează, detaliul de mai jos spune de ce."
+        },
+        "not_configured": {
+          "title": "Conectarea Microsoft nu este configurată în acest build",
+          "body": "Acest build nu are un id de aplicație Azure, deci nu poate cere Microsoft să verifice licența jocului. Build-urile oficiale îl includ."
+        },
+        "not_approved": {
+          "title": "Launcherul așteaptă aprobarea Mojang",
+          "body": "Contul tău Microsoft s-a conectat, dar serviciile jocului nu acceptă încă acest launcher: Mojang trebuie mai întâi să-i aprobe id-ul de aplicație. Nu trebuie să faci nimic; încearcă din nou după aprobare."
+        },
+        "xbox": {
+          "title": "Xbox Live a refuzat conectarea",
+          "body": "Motivul este mai jos (cont de copil fără permisiunea părinților, profil Xbox de creat, regiune neacceptată…)."
+        },
+        "rate_limited": {
+          "title": "Prea multe încercări",
+          "body": "Serviciile au primit prea multe conectări într-un timp scurt. Așteaptă un minut și încearcă din nou."
+        },
+        "network": {
+          "title": "Serviciile nu au putut fi contactate",
+          "body": "Verifică-ți conexiunea la internet și încearcă din nou."
+        },
+        "detail": "Detaliu: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Cont Rustic",
+      "description": "Identitatea ta Rustic pentru prieteni, Vestiar, cumpărături și servere.",
+      "signedOut": "Neconectat. Jocul funcționează și fără, dar funcțiile sociale, Vestiarul și Magazinul au nevoie de el.",
+      "signIn": "Conectează-te sau creează un cont",
+      "licenceNote": "Un cont Rustic este o identitate pe platformă. Nu înlocuiește niciodată licența jocului: ai nevoie în continuare de un cont Microsoft care deține jocul."
+    },
+    "offline": {
+      "title": "Joc offline",
+      "description": "Pentru LAN party și joc fără internet: joci cu contul tău Microsoft, cu numele și UUID-ul tău oficiale. Disponibil timp de {{days}} zile după ultima verificare reușită a deținerii, apoi Rustic întreabă din nou Microsoft.",
+      "until": "Joc offline disponibil până la {{date}}",
+      "locked": "Conectează-te mai întâi cu un cont Microsoft care deține jocul: jocul offline se deblochează după o verificare reușită a deținerii."
+    },
+    "connections": {
+      "title": "Conexiuni",
+      "description": "Servicii pe care launcherul le folosește în numele tău. Cheile și amprentele gazdelor rămân în portcheiul de sistem.",
+      "porkbun": "Porkbun (domenii)",
+      "porkbunHint": "Folosit pentru a crea înregistrări DNS pentru serverele tale în propriul cont Porkbun.",
+      "porkbunRemoved": "Cheile Porkbun au fost eliminate de pe acest computer",
+      "connected": "Conectat",
+      "notConnected": "Neconectat",
+      "remove": "Elimină cheile",
+      "vps": "Gazde VPS",
+      "vpsHint": "Servere pe care le găzduiești pe propriul VPS prin SSH. Uitarea unei gazde îi elimină cheia fixată.",
+      "noVps": "Niciuna",
+      "fingerprint": "{{fp}} · de încredere din {{date}}",
+      "forget": "Uită"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Asociat",
+      "notLinked": "Neasociat: conectează-te la Rustic și cu contul Microsoft.",
+      "link": "Asociază pe site",
+      "unlink": "Disociază",
+      "unlinked": "Microsoft a fost disociat",
+      "unlinkFailed": "Microsoft nu a putut fi disociat",
+      "lastMethod": "Adaugă mai întâi o parolă (pe site): Microsoft este singura ta metodă de conectare."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Memorie (RAM)",
+      "description": "Memoria implicită alocată jocului. Fiecare instanță o poate suprascrie.",
+      "system": "{{total}} instalată · {{free}} liberă acum",
+      "warn": "Asta lasă puțină memorie sistemului și poate încetini totul.",
+      "perInstance": "Sfat: 4 GB sunt suficienți pentru majoritatea instanțelor; modpackurile mari pot cere 6–8 GB."
+    },
+    "prepare": {
+      "title": "Fișierele jocului",
+      "description": "Horizon pregătește resursele jocului din propria ta instalare a jocului. Nimic nu se descarcă de la terți.",
+      "status": "Stare",
+      "states": {
+        "missing": "Nepregătite",
+        "preparing": "Se pregătesc",
+        "ready": "Gata",
+        "outdated": "Trebuie pregătite din nou"
+      },
+      "gameVersion": "Joc {{version}}",
+      "source": "Instalarea sursă",
+      "sourceHint": "Folderul jocului din launcherul oficial, găsit pe acest computer.",
+      "doneToast": "Fișierele jocului sunt gata",
+      "steps": {
+        "detect": "Se caută instalarea ta…",
+        "download": "Se descarcă fișierele jocului de la Mojang…",
+        "verify": "Se verifică fișierele jocului…",
+        "compile_exporters": "Se compilează exportatoarele…",
+        "export": "Se exportă resursele…",
+        "index": "Se indexează…",
+        "done": "Gata"
+      },
+      "legal": "Fișierele pregătite rămân pe acest computer și nu sunt partajate niciodată.",
+      "again": "Pregătește din nou",
+      "failed": "Pregătirea a eșuat"
+    },
+    "java": {
+      "label": "Java pentru pregătire",
+      "description": "Folosit doar pentru pregătirea fișierelor jocului (horizon-prepare). Horizon însuși nu are nevoie de Java ca să ruleze.",
+      "pickTitle": "Alege un executabil Java",
+      "source": {
+        "bundled": "Inclus în Rustic",
+        "system": "Instalat pe acest computer",
+        "custom": "Personalizat"
+      },
+      "custom": "Cale personalizată…",
+      "customHint": "Alege un executabil Java 21+"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "Programul rustic-server pe care îl rulează serverele tale Rustic Server (motorul Horizon cu pluginuri Rustic). Trebuie să provină din același commit Horizon ca versiunea jocului serverului: un build al ediției Rustic îl include în folderul său.",
+      "program": "Program folosit",
+      "notFound": "Negăsit",
+      "notFoundHint": "Instalează un build al ediției Rustic care îl include sau alege fișierul rustic-server. Fără el, crearea unui Rustic Server eșuează.",
+      "configuredMissing": "Fișierul ales nu mai există: {{path}}",
+      "origin": {
+        "server": "Al serverului",
+        "configured": "Ales manual",
+        "build": "Inclus în build-ul {{build}}",
+        "beside_launcher": "Lângă launcher",
+        "path": "Găsit în PATH"
+      },
+      "choose": "Alege…",
+      "pickTitle": "Alege programul rustic-server",
+      "automatic": "Folosește detectarea automată",
+      "saved": "Programul rustic-server a fost salvat",
+      "automaticSaved": "Detectarea automată a fost restabilită",
+      "invalid": "Acest fișier nu este un program rustic-server (nu răspunde la --rustic-version).",
+      "failed": "Acest program nu a putut fi salvat",
+      "order": "Ordinea căutării: alegerea ta, apoi folderul versiunii jocului, apoi lângă launcher, apoi PATH."
+    },
+    "folders": {
+      "title": "Foldere",
+      "description": "Unde își păstrează launcherul datele, instanțele și serverele tale.",
+      "data": "Datele launcherului",
+      "instances": "Instanțe",
+      "servers": "Servere",
+      "open": "Deschide",
+      "change": "Schimbă",
+      "changed": "Folder schimbat",
+      "moveNote": "Fișierele existente nu sunt mutate automat."
+    },
+    "resolution": {
+      "title": "Fereastra jocului",
+      "description": "Dimensiunea implicită a ferestrei pentru instanțele noi.",
+      "size": "Dimensiune",
+      "width": "Lățime",
+      "height": "Înălțime",
+      "fullscreen": "Pornește pe tot ecranul",
+      "hint": "Minimum 640 × 480."
+    },
+    "native": {
+      "title": "Moduri native",
+      "description": "Instanțele cu moduri native rulează un joc compilat pentru ele pe acest PC. Aici: compilatorul Rust și cache-ul de compilare care face rapide compilările următoare.",
+      "rust": "Compilator Rust",
+      "rustReady": {
+        "managed": "Rust {{version}}, instalat de launcher",
+        "rustup": "Rust {{version}}, din rustup-ul tău",
+        "system": "Rust {{version}}, instalat pe acest PC"
+      },
+      "rustMissing": "Rust {{version}} este necesar pentru prima compilare.",
+      "ready": "Gata",
+      "missing": "Neinstalat",
+      "installing": "Se instalează…",
+      "installRust": "Instalează Rust",
+      "rustInstalled": "Rust este instalat",
+      "rustFailed": "Rust nu a putut fi instalat",
+      "cache": "Cache de compilare",
+      "cacheDetail": "Cache {{cache}} · crate-uri descărcate {{crates}} · Rust {{toolchain}} · sursă {{source}}. Golirea lui păstrează jocurile compilate; următoarea compilare recompilează totul.",
+      "clear": "Golește",
+      "clearTitle": "Golești cache-ul de compilare?",
+      "clearBody": "Instanțele își păstrează jocul compilat. Următoarea compilare nativă compilează din nou tot jocul (10–15 minute).",
+      "cleared": "Cache-ul de compilare a fost golit ({{size}} eliberați)",
+      "limit": "Limita cache-ului",
+      "limitHint": "După o compilare, cache-ul este golit când depășește această dimensiune (0: niciodată).",
+      "gib": "GiB",
+      "limitSaved": "Limita cache-ului a fost salvată",
+      "limitInvalid": "Limita este un număr întreg de GiB, de la 0 la 4096.",
+      "folder": "Folder: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Limbă",
+      "description": "Se aplică imediat întregului launcher.",
+      "label": "Limbă",
+      "search": "Caută limbi",
+      "empty": "Nicio limbă nu se potrivește",
+      "translated": "Traduse",
+      "others": "Alte limbi",
+      "partial": "Parțial",
+      "english": "deocamdată în engleză",
+      "via": "deocamdată în {{lang}}",
+      "help": "Textele netraduse încă apar în engleză. Traducerile vin de la comunitate."
+    },
+    "startup": {
+      "title": "Pornire",
+      "onBoot": "Deschide Rustic la pornirea computerului",
+      "onBootHint": "Prietenii te văd online mai repede, iar actualizările se descarcă în fundal.",
+      "minimized": "Pornește minimizat"
+    },
+    "behaviour": {
+      "title": "În timpul jocului",
+      "onLaunch": "Când pornește jocul",
+      "launchOptions": {
+        "keep_open": "Lasă launcherul deschis",
+        "minimize": "Minimizează launcherul",
+        "hide": "Ascunde în zona de notificare",
+        "close": "Închide launcherul"
+      },
+      "onClose": "Când închid fereastra",
+      "onCloseHint": "Dacă îl păstrezi în zona de notificare, prietenii te pot invita și serverele continuă să ruleze.",
+      "closeOptions": {
+        "tray": "Continuă să ruleze în zona de notificare",
+        "quit": "Ieși din Rustic"
+      }
+    },
+    "updates": {
+      "title": "Actualizări",
+      "auto": "Instalează automat actualizările",
+      "autoHint": "Actualizările sunt semnate și verificate înainte de instalare.",
+      "check": "Rustic Launcher",
+      "checkNow": "Caută actualizări",
+      "available": "Versiunea {{version}} este disponibilă",
+      "upToDate": "Ești la zi",
+      "failed": "Nu s-a putut verifica dacă există actualizări",
+      "lastCheck": "Ultima verificare: {{when}}",
+      "neverChecked": "Încă neverificat",
+      "edition": "Joc (Ediția Rustic)",
+      "editionNone": "Nicio versiune a Ediției Rustic instalată",
+      "apply": "Actualizează și repornește",
+      "checking": "Se verifică…",
+      "working": "Se actualizează… {{pct}}",
+      "restarting": "Se repornește…",
+      "deferred": "Se așteaptă închiderea jocului",
+      "lastError": "Ultima încercare a eșuat. Va fi reluată automat."
+    },
+    "performance": {
+      "title": "Descărcări și performanță",
+      "downloads": "Descărcări paralele",
+      "downloadsHint": "Redu numărul pe o conexiune lentă.",
+      "hardware": "Accelerare hardware",
+      "hardwareHint": "Dezactiveaz-o dacă launcherul pâlpâie. Se aplică după repornire."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Temă",
+      "description": "Rustic e gândit în primul rând pentru tema întunecată; tema luminoasă există pentru camerele luminoase.",
+      "label": "Temă",
+      "dark": "Întunecată",
+      "light": "Luminoasă",
+      "system": "Sistem"
+    },
+    "palette": {
+      "title": "Paletă",
+      "description": "Culoarea de accent folosită pentru JOACĂ, selecție și progres.",
+      "label": "Paletă",
+      "play": "Joacă",
+      "default": "Implicită",
+      "names": {
+        "ember": "Jar",
+        "verdigris": "Cocleală",
+        "heather": "Iarbă-neagră"
+      },
+      "descriptions": {
+        "ember": "Cupru cald pe antracit",
+        "verdigris": "Verde de patină, ca arama oxidată",
+        "heather": "Roz estompat de iarbă-neagră"
+      }
+    },
+    "motion": {
+      "title": "Animații",
+      "body": "Rustic respectă setarea „reducere a mișcării” a sistemului: animațiile, caruselul și previzualizarea 3D devin statice."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "Ce împărtășești cu noi",
+      "description": "Totul de aici este dezactivat implicit. Dacă activezi ceva, ne ajuți să îmbunătățim Rustic; te poți răzgândi oricând.",
+      "usage": "Statistici de utilizare",
+      "usageHint": "Ce pagini și funcții sunt folosite, fără conținut sau identificatori.",
+      "performance": "Rapoarte de performanță",
+      "performanceHint": "Timpii de lansare și de cadru, pentru a găsi punctele lente.",
+      "crash": "Rapoarte de blocare",
+      "crashHint": "Când e dezactivat, Rustic te întreabă de fiecare dată când are loc o blocare."
+    },
+    "policyLink": "Citește politica de confidențialitate",
+    "social": {
+      "title": "Prieteni și prezență",
+      "activity": "Arată-le prietenilor ce joc",
+      "activityHint": "Le permite prietenilor să-ți vadă serverul și să ți se alăture dintr-un clic.",
+      "requests": "Cine îmi poate trimite cereri de prietenie",
+      "requestsOptions": {
+        "everyone": "Oricine",
+        "friends_of_friends": "Prietenii prietenilor",
+        "nobody": "Nimeni"
+      },
+      "discoverable": "Apar în sugestiile jucătorilor pe care îi întâlnesc",
+      "discoverableHint": "Jucătorii cu care ai fost în grup sau pe care i-ai întâlnit pe un server pe care îl ai în activitate te pot vedea în „Adaugă un prieten”, iar tu îi vezi pe ei. Păstrat 30 de zile; dezactivarea îl șterge.",
+      "discoverableMinor": "Nu este disponibil pentru conturile sub 18 ani.",
+      "discoverableFailed": "Această setare nu a putut fi salvată.",
+      "discord": "Arată-mi activitatea pe Discord",
+      "discordHint": "„Joacă Rustic” pe profilul tău Discord: în launcher, în meniul principal, în singleplayer sau pe un server, cu timpul de joc.",
+      "discordServer": "Arată adresa serverului pe Discord",
+      "discordServerHint": "Altfel, Discord afișează „Multiplayer”. Adresele private (LAN, acest PC) nu sunt afișate niciodată."
+    },
+    "data": {
+      "title": "Datele tale",
+      "description": "Drepturile tale conform GDPR: acces, portabilitate și ștergere.",
+      "export": "Exportă-mi datele",
+      "exportHint": "O arhivă JSON cu contul, prietenii, cumpărăturile și setările tale.",
+      "exportButton": "Pregătește exportul",
+      "exportReady": "Exportul tău este gata",
+      "exportFailed": "Exportul nu a putut fi pregătit",
+      "download": "Descarcă (link valabil până la {{date}})",
+      "delete": "Șterge-mi contul",
+      "deleteHint": "Perioadă de grație de 30 de zile în care poți anula, apoi ștergere definitivă.",
+      "deleteButton": "Șterge contul",
+      "deleteScheduled": "Ștergere programată pentru {{date}}. Conectează-te înainte de atunci ca s-o anulezi.",
+      "deleteFailed": "Contul nu a putut fi șters",
+      "rights": "Întrebări sau reclamații: contactează-ne pe noi sau CNIL (autoritatea franceză pentru protecția datelor).",
+      "confirmTitle": "Îți ștergi contul Rustic?",
+      "confirmBody": "Prietenii, cosmeticele și cumpărăturile tale vor fi eliminate după 30 de zile. Licența jocului și contul Microsoft nu sunt afectate.",
+      "confirmButton": "Șterge-mi contul",
+      "typeUsername": "Scrie {{name}} pentru a confirma"
+    }
+  },
+  "parental": {
+    "title": "Control parental",
+    "description": "Conturile Rustic sunt pentru vârste de la {{age}} ani în sus. Pentru jucătorii sub 18 ani, cumpărăturile necesită implicit aprobarea unui părinte.",
+    "minorNote": "Acest cont aparține unui minor: cumpărăturile cer aprobarea unui părinte.",
+    "enable": "Activează controlul parental",
+    "enableHint": "Modificările de mai jos vor necesita apoi PIN-ul.",
+    "pinFirst": "Creează mai întâi un PIN ca să activezi controlul parental.",
+    "saveFailed": "Modificarea nu a putut fi salvată",
+    "lockAgain": "Blochează din nou",
+    "rules": {
+      "title": "Reguli",
+      "purchases": "Cumpărături",
+      "purchasesHint": "Cumpărăturile din magazin sunt doar cosmetice. Niciodată cutii cu recompense aleatorii.",
+      "purchaseOptions": {
+        "blocked": "Dezactivate",
+        "pin": "Întreabă un părinte",
+        "allowed": "Permise"
+      },
+      "limit": "Limită lunară de cheltuieli",
+      "limitHint": "Cheltuit luna aceasta: {{spent}}. Lasă gol pentru nicio limită.",
+      "noLimit": "Fără limită",
+      "limitInvalid": "Introdu o sumă precum 10 sau 9,99.",
+      "chat": "Chat",
+      "chatOptions": {
+        "off": "Dezactivat",
+        "friends": "Doar prietenii",
+        "everyone": "Oricine"
+      },
+      "friendRequests": "Cereri de prietenie",
+      "friendRequestsHint": "Permite altora să trimită cereri de prietenie."
+    },
+    "pin": {
+      "title": "PIN parental",
+      "set": "Un PIN este setat. Este necesar pentru a schimba aceste setări și a aproba cumpărăturile.",
+      "notSet": "Niciun PIN încă.",
+      "change": "Schimbă PIN-ul",
+      "create": "Creează un PIN",
+      "saved": "PIN salvat",
+      "new": "PIN nou",
+      "confirm": "Confirmă PIN-ul",
+      "save": "Salvează PIN-ul",
+      "hint": "4–6 cifre, nu o secvență simplă.",
+      "errors": {
+        "format": "Folosește 4–6 cifre.",
+        "mismatch": "Cele două PIN-uri diferă.",
+        "weak": "Prea ușor de ghicit: evită 1234 sau 0000."
+      }
+    },
+    "unlock": {
+      "title": "Blocat",
+      "description": "Introdu PIN-ul parental pentru a schimba aceste setări.",
+      "label": "PIN parental",
+      "wrong": "PIN greșit.",
+      "button": "Deblochează"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Versiunea {{version}}",
+    "channel": {
+      "stable": "Stabil",
+      "beta": "Beta"
+    },
+    "browserMock": "Previzualizare în browser (date simulate)",
+    "horizon": "Horizon",
+    "horizonHint": "Build-ul de joc recomandat.",
+    "licence": "Licență",
+    "platform": "Platformă",
+    "legalTitle": "Informații legale",
+    "legalDescription": "Politici și notificări.",
+    "links": {
+      "privacy": "Politica de confidențialitate",
+      "terms": "Termeni de utilizare și de vânzare",
+      "legalNotice": "Mențiuni legale",
+      "fairPlay": "Politica de fair play",
+      "thirdParty": "Notificări open source",
+      "horizon": "Proiectul Horizon (MIT)"
+    },
+    "notAffiliated": "Nu este un produs oficial Minecraft. Nu este aprobat de Mojang sau Microsoft și nu este asociat cu acestea.",
+    "horizonCredit": "Construit pe Horizon, o rescriere în Rust a jocului sub licență MIT, de către contributorii săi.",
+    "company": "Publicat de [company name], o companie franceză (SIREN [number], [address]). Plăți prin Stripe; vânzătorul este compania.",
+    "tagline": "Rustic este o platformă socială de jocuri, bazată pe motorul Horizon"
+  },
+  "rusticAuth": {
+    "mode": "Conectează-te sau creează un cont",
+    "signIn": "Conectează-te",
+    "signUp": "Creează un cont",
+    "create": "Creează-mi contul",
+    "verify": "Verifică",
+    "email": "E-mail",
+    "password": "Parolă",
+    "username": "Nume de utilizator",
+    "dateOfBirth": "Data nașterii",
+    "country": "Țară",
+    "acceptPrivacy": "Am citit și accept politica de confidențialitate.",
+    "code": "Codul din aplicația de autentificare",
+    "checkInbox": "Am trimis un link de verificare la {{email}}. Deschide-l, apoi conectează-te.",
+    "resend": "Retrimite",
+    "resent": "E-mailul de verificare a fost retrimis",
+    "signedIn": "Conectat la Rustic",
+    "problems": {
+      "email": "Introdu o adresă de e-mail validă.",
+      "password": "Parolă: cel puțin 10 caractere.",
+      "username": "Nume de utilizator: 3–20 de litere, cifre sau liniuță jos (_).",
+      "dateOfBirth": "Introdu data nașterii.",
+      "tooYoung": "Conturile Rustic sunt pentru vârste de la 13 ani în sus.",
+      "privacy": "Acceptă politica de confidențialitate ca să continui."
+    },
+    "microsoft": "Continuă cu Microsoft",
+    "orEmail": "sau cu un e-mail",
+    "microsoftWaiting": "Finalizează conectarea în browser: launcherul îți preia sesiunea automat."
+  },
+  "heading": "*Setările* tale",
+  "eyebrow": "Launcher"
+}

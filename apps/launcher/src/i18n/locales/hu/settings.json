@@ -1,0 +1,514 @@
+{
+  "title": "Beállítások",
+  "subtitle": "Fiókok, játék, launcher, megjelenés és az adataid.",
+  "sectionsLabel": "Beállítások részei",
+  "saving": "Mentés…",
+  "saved": "Minden módosítás mentve",
+  "close": "Bezárás",
+  "cancel": "Mégse",
+  "sections": {
+    "accounts": "Fiókok és biztonság",
+    "game": "Játék és példányok",
+    "launcher": "Launcher",
+    "appearance": "Megjelenés",
+    "privacy": "Adatvédelem és adatok",
+    "parental": "Szülői felügyelet",
+    "about": "Névjegy és jogi információk"
+  },
+  "accounts": {
+    "active": "Aktív",
+    "useThis": "Profil használata",
+    "signOut": "Kijelentkezés",
+    "signedOut": "{{name}} kijelentkezett",
+    "ownership": {
+      "valid": "Rendelkezik a játékkal",
+      "expired": "Az ellenőrzés lejárt",
+      "never": "Még nem ellenőrizve",
+      "failed": "Az ellenőrzés nem sikerült",
+      "lastChecked": "Ellenőrizve: {{when}}",
+      "nextCheck": "következő ellenőrzés legkésőbb: {{date}}",
+      "checkNow": "Ellenőrzés most",
+      "checkedToast": "Tulajdonjog megerősítve",
+      "checkFailed": "Nem sikerült elérni a Microsoftot. Próbáld újra később."
+    },
+    "microsoft": {
+      "title": "Microsoft-fiókok",
+      "description": "A játékhoz rendelkezned kell a játékkal. A Rustic ezt a Microsoftnál ellenőrzi, és soha nem látja a jelszavadat.",
+      "add": "Microsoft-fiók hozzáadása",
+      "keychain": "A bejelentkezési tokeneket a rendszer-kulcstartód tárolja, soha nem fájlban vagy parancssorban.",
+      "signIn": "Bejelentkezés Microsofttal",
+      "step1": "Nyisd meg a Microsoft oldalát a böngésződben (vagy egy másik eszközön).",
+      "step2": "Írd be az alábbi kódot, és jelentkezz be.",
+      "step3": "Gyere vissza ide: a launcher magától folytatja.",
+      "codeLabel": "Bejelentkezési kód",
+      "copyCode": "Kód másolása",
+      "copied": "Kód másolva",
+      "openPage": "microsoft.com/link megnyitása",
+      "waiting": "Várakozás a böngészőben történő bejelentkezésre…",
+      "cancel": "Mégse",
+      "signedInAs": "Bejelentkezve mint {{name}}",
+      "ownershipOk": "Tulajdonjog megerősítve: játszhatsz.",
+      "ownershipMissing": "Ez a fiók nem rendelkezik a játékkal.",
+      "tryAgain": "Újra",
+      "failed": {
+        "expired": {
+          "title": "A kód lejárt",
+          "body": "A kódok 15 percig érvényesek. Kezdd újra, hogy újat kapj."
+        },
+        "denied": {
+          "title": "A bejelentkezés megszakadt",
+          "body": "A Microsoft szerint a bejelentkezést elutasították."
+        },
+        "no_ownership": {
+          "title": "Ez a fiók nem rendelkezik a játékkal",
+          "body": "A Rustic csak olyan fiókokkal indítja el a játékot, amelyek rendelkeznek a Minecraft: Java Editionnel."
+        },
+        "error": {
+          "title": "A bejelentkezés nem sikerült",
+          "body": "A Rustic nem tudta befejezni a bejelentkezést. Próbáld újra; ha továbbra sem sikerül, az alábbi részletekből kiderül, miért."
+        },
+        "not_configured": {
+          "title": "A Microsoft-bejelentkezés nincs beállítva ebben a buildben",
+          "body": "Ebben a buildben nincs Azure-alkalmazásazonosító, így nem tudja kérni a Microsofttól a játéklicenc ellenőrzését. A hivatalos buildek tartalmazzák."
+        },
+        "not_approved": {
+          "title": "A launcher a Mojang jóváhagyására vár",
+          "body": "A Microsoft-fiókod bejelentkezett, de a játékszolgáltatások még nem fogadják el ezt a launchert: előbb a Mojangnak jóvá kell hagynia az alkalmazásazonosítóját. Neked nincs teendőd; próbáld újra, ha megvan a jóváhagyás."
+        },
+        "xbox": {
+          "title": "Az Xbox Live elutasította a bejelentkezést",
+          "body": "Az ok alább látható (gyermekfiók szülői engedély nélkül, létrehozandó Xbox-profil, nem támogatott régió…)."
+        },
+        "rate_limited": {
+          "title": "Túl sok próbálkozás",
+          "body": "A szolgáltatások rövid időn belül túl sok bejelentkezést kaptak. Várj egy percet, és próbáld újra."
+        },
+        "network": {
+          "title": "Nem sikerült elérni a szolgáltatásokat",
+          "body": "Ellenőrizd az internetkapcsolatodat, és próbáld újra."
+        },
+        "detail": "Részletek: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Rustic-fiók",
+      "description": "A Rustic-identitásod a barátokhoz, a Szekrényhez, a vásárlásokhoz és a szerverekhez.",
+      "signedOut": "Nem vagy bejelentkezve. A játék enélkül is működik; a közösségi funkciókhoz, a Szekrényhez és a Bolthoz azonban kell.",
+      "signIn": "Bejelentkezés vagy fiók létrehozása",
+      "licenceNote": "A Rustic-fiók egy platformidentitás. Soha nem helyettesíti a játéklicencet: továbbra is szükséged van egy olyan Microsoft-fiókra, amely rendelkezik a játékkal."
+    },
+    "offline": {
+      "title": "Offline játék",
+      "description": "LAN-partikhoz és internet nélküli játékhoz: a Microsoft-fiókoddal játszol, a hivatalos neveddel és UUID-ddel. A legutóbbi sikeres tulajdonjog-ellenőrzés után {{days}} napig érhető el, utána a Rustic újra megkérdezi a Microsoftot.",
+      "until": "Offline játék elérhető eddig: {{date}}",
+      "locked": "Előbb jelentkezz be egy olyan Microsoft-fiókkal, amely rendelkezik a játékkal: az offline játék egy sikeres tulajdonjog-ellenőrzés után nyílik meg."
+    },
+    "connections": {
+      "title": "Kapcsolatok",
+      "description": "A szolgáltatások, amelyeket a launcher a nevedben használ. A kulcsok és a gazdagép-ujjlenyomatok a rendszer-kulcstartódban maradnak.",
+      "porkbun": "Porkbun (domainek)",
+      "porkbunHint": "DNS-rekordok létrehozására szolgál a szervereidhez a saját Porkbun-fiókodban.",
+      "porkbunRemoved": "Porkbun-kulcsok eltávolítva erről a gépről",
+      "connected": "Csatlakoztatva",
+      "notConnected": "Nincs csatlakoztatva",
+      "remove": "Kulcsok eltávolítása",
+      "vps": "VPS-gazdagépek",
+      "vpsHint": "A saját VPS-eden SSH-n keresztül futtatott szerverek. Egy gazdagép elfelejtése eltávolítja a rögzített kulcsát.",
+      "noVps": "Nincs",
+      "fingerprint": "{{fp}} · megbízhatónak jelölve: {{date}}",
+      "forget": "Elfelejtés"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Összekapcsolva",
+      "notLinked": "Nincs összekapcsolva: jelentkezz be a Rusticba a Microsoft-fiókoddal is.",
+      "link": "Összekapcsolás a weboldalon",
+      "unlink": "Leválasztás",
+      "unlinked": "Microsoft leválasztva",
+      "unlinkFailed": "Nem sikerült leválasztani a Microsoftot",
+      "lastMethod": "Előbb adj meg egy jelszót (a weboldalon): a Microsoft az egyetlen módod a bejelentkezésre."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Memória (RAM)",
+      "description": "A játéknak alapértelmezésként adott memória. Minden példány felülírhatja.",
+      "system": "{{total}} telepítve · {{free}} szabad most",
+      "warn": "Ez kevés memóriát hagy a rendszernek, és mindent lelassíthat.",
+      "perInstance": "Tipp: a legtöbb példánynak bőven elég 4 GB; a nagy modcsomagoknak 6–8 GB kellhet."
+    },
+    "prepare": {
+      "title": "Játékfájlok",
+      "description": "A Horizon a játék erőforrásait a saját játéktelepítésedből készíti elő. Semmi sem töltődik le harmadik féltől.",
+      "status": "Állapot",
+      "states": {
+        "missing": "Nincs előkészítve",
+        "preparing": "Előkészítés",
+        "ready": "Kész",
+        "outdated": "Újra elő kell készíteni"
+      },
+      "gameVersion": "Játék: {{version}}",
+      "source": "Forrástelepítés",
+      "sourceHint": "A hivatalos launcher ezen a gépen talált játékmappája.",
+      "doneToast": "A játékfájlok készen állnak",
+      "steps": {
+        "detect": "A telepítés keresése…",
+        "download": "A játékfájlok letöltése a Mojangtól…",
+        "verify": "Játékfájlok ellenőrzése…",
+        "compile_exporters": "Exportálók fordítása…",
+        "export": "Erőforrások exportálása…",
+        "index": "Indexelés…",
+        "done": "Kész"
+      },
+      "legal": "Az előkészített fájlok ezen a gépen maradnak, és soha nem kerülnek megosztásra.",
+      "again": "Újbóli előkészítés",
+      "failed": "Az előkészítés nem sikerült"
+    },
+    "java": {
+      "label": "Java az előkészítéshez",
+      "description": "Csak a játékfájlok előkészítéséhez kell (horizon-prepare). Maga a Horizon futtatásához nem kell Java.",
+      "pickTitle": "Java futtatható fájl kiválasztása",
+      "source": {
+        "bundled": "A Rustickal együtt szállítva",
+        "system": "Telepítve ezen a gépen",
+        "custom": "Egyéni"
+      },
+      "custom": "Egyéni elérési út…",
+      "customHint": "Válassz egy Java 21+ futtatható fájlt"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "A rustic-server program, amelyet a Rustic Server szervereid futtatnak (a Horizon motorja Rustic-bővítményekkel). Ugyanabból a Horizon-commitból kell származnia, mint a szerver játékverziója: a Rustic kiadású buildek a mappájukban szállítják.",
+      "program": "Használt program",
+      "notFound": "Nem található",
+      "notFoundHint": "Telepíts egy Rustic kiadású buildet, amely tartalmazza, vagy válaszd ki a rustic-server fájlt. Nélküle a Rustic Server létrehozása nem sikerül.",
+      "configuredMissing": "A kiválasztott fájl már nem létezik: {{path}}",
+      "origin": {
+        "server": "A szerver sajátja",
+        "configured": "Kézzel kiválasztva",
+        "build": "A(z) {{build}} builddel szállítva",
+        "beside_launcher": "A launcher mellett",
+        "path": "A PATH-on található"
+      },
+      "choose": "Kiválasztás…",
+      "pickTitle": "A rustic-server program kiválasztása",
+      "automatic": "Automatikus használata",
+      "saved": "rustic-server program mentve",
+      "automaticSaved": "Automatikus észlelés visszaállítva",
+      "invalid": "Ez a fájl nem rustic-server program (nem válaszol a --rustic-version kapcsolóra).",
+      "failed": "Nem sikerült menteni ezt a programot",
+      "order": "Keresési sorrend: a te választásod, aztán a játékverzió mappája, aztán a launcher mellett, végül a PATH."
+    },
+    "folders": {
+      "title": "Mappák",
+      "description": "Ahol a launcher az adatait, a példányaidat és a szervereidet tárolja.",
+      "data": "Launcher-adatok",
+      "instances": "Példányok",
+      "servers": "Szerverek",
+      "open": "Megnyitás",
+      "change": "Módosítás",
+      "changed": "Mappa módosítva",
+      "moveNote": "A meglévő fájlok nem kerülnek át automatikusan."
+    },
+    "resolution": {
+      "title": "Játékablak",
+      "description": "Alapértelmezett ablakméret az új példányokhoz.",
+      "size": "Méret",
+      "width": "Szélesség",
+      "height": "Magasság",
+      "fullscreen": "Indítás teljes képernyőn",
+      "hint": "Legalább 640 × 480."
+    },
+    "native": {
+      "title": "Natív modok",
+      "description": "A natív modokat használó példányok egy nekik ezen a gépen lefordított játékot futtatnak. Itt: a Rust fordítóprogram és a fordítási gyorsítótár, amely gyorsabbá teszi a későbbi fordításokat.",
+      "rust": "Rust fordítóprogram",
+      "rustReady": {
+        "managed": "Rust {{version}}, a launcher telepítette",
+        "rustup": "Rust {{version}}, a rustupodból",
+        "system": "Rust {{version}}, telepítve ezen a gépen"
+      },
+      "rustMissing": "Az első fordításhoz Rust {{version}} kell.",
+      "ready": "Kész",
+      "missing": "Nincs telepítve",
+      "installing": "Telepítés…",
+      "installRust": "Rust telepítése",
+      "rustInstalled": "A Rust telepítve van",
+      "rustFailed": "Nem sikerült telepíteni a Rustot",
+      "cache": "Fordítási gyorsítótár",
+      "cacheDetail": "Gyorsítótár: {{cache}} · letöltött crate-ek: {{crates}} · Rust: {{toolchain}} · forrás: {{source}}. Törlése megtartja a lefordított játékokat; a következő fordítás mindent újrafordít.",
+      "clear": "Törlés",
+      "clearTitle": "Törlöd a fordítási gyorsítótárat?",
+      "clearBody": "A példányok megtartják a lefordított játékukat. A következő natív fordítás újra lefordítja az egész játékot (10–15 perc).",
+      "cleared": "Fordítási gyorsítótár törölve ({{size}} felszabadítva)",
+      "limit": "Gyorsítótár-korlát",
+      "limitHint": "Fordítás után a gyorsítótár törlődik, ha ennél nagyobb (0: soha).",
+      "gib": "GiB",
+      "limitSaved": "Gyorsítótár-korlát mentve",
+      "limitInvalid": "A korlát egy 0 és 4096 közötti egész szám GiB-ban.",
+      "folder": "Mappa: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Nyelv",
+      "description": "Azonnal érvényes az egész launcherre.",
+      "label": "Nyelv",
+      "search": "Nyelvek keresése",
+      "empty": "Nincs egyező nyelv",
+      "translated": "Lefordítva",
+      "others": "További nyelvek",
+      "partial": "Részleges",
+      "english": "egyelőre angolul",
+      "via": "egyelőre ezen a nyelven: {{lang}}",
+      "help": "A még le nem fordított szövegek angolul jelennek meg. A fordítások a közösségtől származnak."
+    },
+    "startup": {
+      "title": "Indítás",
+      "onBoot": "A Rustic megnyitása a számítógép indulásakor",
+      "onBootHint": "A barátaid hamarabb látnak online, a frissítések pedig a háttérben töltődnek le.",
+      "minimized": "Indítás kis méretben"
+    },
+    "behaviour": {
+      "title": "Játék közben",
+      "onLaunch": "Amikor a játék elindul",
+      "launchOptions": {
+        "keep_open": "A launcher maradjon nyitva",
+        "minimize": "A launcher kis méretre váltása",
+        "hide": "Elrejtés a tálcára",
+        "close": "A launcher bezárása"
+      },
+      "onClose": "Amikor bezárom az ablakot",
+      "onCloseHint": "Ha a tálcán marad, a barátaid meghívhatnak, és a szerverek tovább futnak.",
+      "closeOptions": {
+        "tray": "Futás tovább a tálcán",
+        "quit": "Kilépés a Rusticból"
+      }
+    },
+    "updates": {
+      "title": "Frissítések",
+      "auto": "Frissítések automatikus telepítése",
+      "autoHint": "A frissítések telepítés előtt alá vannak írva és ellenőrizve vannak.",
+      "check": "Rustic Launcher",
+      "checkNow": "Frissítések keresése",
+      "available": "Elérhető a(z) {{version}} verzió",
+      "upToDate": "Naprakész vagy",
+      "failed": "Nem sikerült frissítéseket keresni",
+      "lastCheck": "Utolsó ellenőrzés: {{when}}",
+      "neverChecked": "Még nem volt ellenőrzés",
+      "edition": "Játék (Rustic kiadás)",
+      "editionNone": "Nincs telepítve Rustic kiadás",
+      "apply": "Frissítés és újraindítás",
+      "checking": "Ellenőrzés…",
+      "working": "Frissítés… {{pct}}",
+      "restarting": "Újraindítás…",
+      "deferred": "Várakozás a játék bezárására",
+      "lastError": "Az utolsó próbálkozás nem sikerült. Automatikusan újra megpróbáljuk."
+    },
+    "performance": {
+      "title": "Letöltések és teljesítmény",
+      "downloads": "Párhuzamos letöltések",
+      "downloadsHint": "Lassú kapcsolaton csökkentsd.",
+      "hardware": "Hardveres gyorsítás",
+      "hardwareHint": "Kapcsold ki, ha a launcher villog. Újraindítás után lép életbe."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Téma",
+      "description": "A Rustic elsősorban sötét témára készült; a világos téma a világos szobákhoz való.",
+      "label": "Téma",
+      "dark": "Sötét",
+      "light": "Világos",
+      "system": "Rendszer"
+    },
+    "palette": {
+      "title": "Színpaletta",
+      "description": "A JÁTÉK gombhoz, a kijelöléshez és a folyamatjelzőkhöz használt kiemelőszín.",
+      "label": "Színpaletta",
+      "play": "Játék",
+      "default": "Alapértelmezett",
+      "names": {
+        "ember": "Parázs",
+        "verdigris": "Patina",
+        "heather": "Hanga"
+      },
+      "descriptions": {
+        "ember": "Meleg réz antracit alapon",
+        "verdigris": "Patinazöld, mint az oxidált réz",
+        "heather": "Tompa hangarózsaszín"
+      }
+    },
+    "motion": {
+      "title": "Mozgás",
+      "body": "A Rustic követi a rendszered „mozgás csökkentése” beállítását: az animációk, a körhinta és a 3D-előnézet mozdulatlanná válik."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "Amit megosztasz velünk",
+      "description": "Itt alapértelmezetten minden ki van kapcsolva. Ha bekapcsolsz valamit, segítesz fejleszteni a Rusticot; bármikor meggondolhatod magad.",
+      "usage": "Használati statisztikák",
+      "usageHint": "Mely oldalakat és funkciókat használják, tartalom és azonosítók nélkül.",
+      "performance": "Teljesítményjelentések",
+      "performanceHint": "Indítási és képkockaidők, a lassú pontok felderítéséhez.",
+      "crash": "Összeomlási jelentések",
+      "crashHint": "Kikapcsolva a Rustic minden összeomláskor rákérdez."
+    },
+    "policyLink": "Adatvédelmi irányelvek elolvasása",
+    "social": {
+      "title": "Barátok és jelenlét",
+      "activity": "Mutassa a barátaimnak, mivel játszom",
+      "activityHint": "A barátaid látják a szerveredet, és egy kattintással csatlakozhatnak hozzád.",
+      "requests": "Ki küldhet nekem barátkérelmet",
+      "requestsOptions": {
+        "everyone": "Bárki",
+        "friends_of_friends": "Barátok barátai",
+        "nobody": "Senki"
+      },
+      "discoverable": "Megjelenés a találkozott játékosok javaslataiban",
+      "discoverableHint": "Azok a játékosok, akikkel egy csapatban voltál, vagy akikkel a tevékenységedben megosztott szerveren találkoztál, láthatnak téged a „Barát hozzáadása” alatt, és te is őket. 30 napig tároljuk; a kikapcsolás törli.",
+      "discoverableMinor": "18 év alatti fiókok számára nem érhető el.",
+      "discoverableFailed": "Nem sikerült menteni ezt a beállítást.",
+      "discord": "Tevékenységem megjelenítése a Discordon",
+      "discordHint": "„Játszik: Rustic” a Discord-profilodon: a launcherben, a főmenüben, egyjátékos módban vagy szerveren, a játékidőddel.",
+      "discordServer": "A szerver címének megjelenítése a Discordon",
+      "discordServerHint": "Különben a Discord „Többjátékos” feliratot mutat. A privát címek (LAN, ez a gép) soha nem jelennek meg."
+    },
+    "data": {
+      "title": "Az adataid",
+      "description": "A GDPR szerinti jogaid: hozzáférés, hordozhatóság és törlés.",
+      "export": "Adataim exportálása",
+      "exportHint": "JSON-archívum a fiókodról, barátaidról, vásárlásaidról és beállításaidról.",
+      "exportButton": "Exportálás előkészítése",
+      "exportReady": "Az exportálásod elkészült",
+      "exportFailed": "Nem sikerült előkészíteni az exportálást",
+      "download": "Letöltés (a link eddig érvényes: {{date}})",
+      "delete": "Fiókom törlése",
+      "deleteHint": "30 napos türelmi idő, amely alatt visszavonhatod, utána végleges törlés.",
+      "deleteButton": "Fiók törlése",
+      "deleteScheduled": "Törlés ütemezve: {{date}}. A visszavonáshoz jelentkezz be addig.",
+      "deleteFailed": "Nem sikerült törölni a fiókot",
+      "rights": "Kérdések vagy panaszok: lépj kapcsolatba velünk vagy a CNIL-lel (a francia adatvédelmi hatósággal).",
+      "confirmTitle": "Törlöd a Rustic-fiókodat?",
+      "confirmBody": "A barátaid, kozmetikumaid és vásárlásaid 30 nap után törlődnek. A játéklicencedet és a Microsoft-fiókodat ez nem érinti.",
+      "confirmButton": "Fiókom törlése",
+      "typeUsername": "A megerősítéshez írd be: {{name}}"
+    }
+  },
+  "parental": {
+    "title": "Szülői felügyelet",
+    "description": "A Rustic-fiókok {{age}} éves kortól használhatók. 18 év alatti játékosoknál a vásárlásokhoz alapértelmezetten szülői jóváhagyás kell.",
+    "minorNote": "Ez a fiók egy kiskorúé: a vásárlásokhoz szülői jóváhagyás kell.",
+    "enable": "Szülői felügyelet bekapcsolása",
+    "enableHint": "Az alábbi módosításokhoz ezután PIN-kód kell.",
+    "pinFirst": "A szülői felügyelet bekapcsolásához előbb hozz létre egy PIN-kódot.",
+    "saveFailed": "Nem sikerült menteni a módosítást",
+    "lockAgain": "Zárolás újra",
+    "rules": {
+      "title": "Szabályok",
+      "purchases": "Vásárlások",
+      "purchasesHint": "A boltban csak kozmetikumok vásárolhatók. Lootbox soha nincs.",
+      "purchaseOptions": {
+        "blocked": "Kikapcsolva",
+        "pin": "Szülő kérdezése",
+        "allowed": "Engedélyezve"
+      },
+      "limit": "Havi költési korlát",
+      "limitHint": "Ebben a hónapban elköltve: {{spent}}. Hagyd üresen, ha nem kell korlát.",
+      "noLimit": "Nincs korlát",
+      "limitInvalid": "Adj meg egy összeget, pl. 10 vagy 9,99.",
+      "chat": "Csevegés",
+      "chatOptions": {
+        "off": "Kikapcsolva",
+        "friends": "Csak barátok",
+        "everyone": "Bárki"
+      },
+      "friendRequests": "Barátkérelmek",
+      "friendRequestsHint": "Mások küldhetnek barátkérelmet."
+    },
+    "pin": {
+      "title": "Szülői PIN-kód",
+      "set": "PIN-kód beállítva. Ezeknek a beállításoknak a módosításához és a vásárlások jóváhagyásához kell.",
+      "notSet": "Még nincs PIN-kód.",
+      "change": "PIN-kód módosítása",
+      "create": "PIN-kód létrehozása",
+      "saved": "PIN-kód mentve",
+      "new": "Új PIN-kód",
+      "confirm": "PIN-kód megerősítése",
+      "save": "PIN-kód mentése",
+      "hint": "4–6 számjegy, nem egyszerű sorozat.",
+      "errors": {
+        "format": "4–6 számjegyet használj.",
+        "mismatch": "A két PIN-kód eltér.",
+        "weak": "Túl könnyen kitalálható: kerüld az 1234-et vagy a 0000-t."
+      }
+    },
+    "unlock": {
+      "title": "Zárolva",
+      "description": "Ezeknek a beállításoknak a módosításához írd be a szülői PIN-kódot.",
+      "label": "Szülői PIN-kód",
+      "wrong": "Hibás PIN-kód.",
+      "button": "Feloldás"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Verzió: {{version}}",
+    "channel": {
+      "stable": "Stabil",
+      "beta": "Béta"
+    },
+    "browserMock": "Böngészős előnézet (tesztadatok)",
+    "horizon": "Horizon",
+    "horizonHint": "Ajánlott játékbuild.",
+    "licence": "Licenc",
+    "platform": "Platform",
+    "legalTitle": "Jogi információk",
+    "legalDescription": "Szabályzatok és közlemények.",
+    "links": {
+      "privacy": "Adatvédelmi irányelvek",
+      "terms": "Felhasználási és értékesítési feltételek",
+      "legalNotice": "Impresszum",
+      "fairPlay": "Fair play szabályzat",
+      "thirdParty": "Nyílt forráskódú közlemények",
+      "horizon": "Horizon projekt (MIT)"
+    },
+    "notAffiliated": "Nem hivatalos Minecraft-termék. Nem a Mojang vagy a Microsoft hagyta jóvá, és nem áll kapcsolatban velük.",
+    "horizonCredit": "A Horizonra épül, amely a játék MIT-licencű Rust-újraírása, a közreműködőitől.",
+    "company": "Kiadja: [company name], francia vállalat (SIREN [number], [address]). A fizetéseket a Stripe kezeli; az eladó a vállalat.",
+    "tagline": "A Rustic egy közösségi játékplatform, a Horizon motorjával"
+  },
+  "rusticAuth": {
+    "mode": "Bejelentkezés vagy fiók létrehozása",
+    "signIn": "Bejelentkezés",
+    "signUp": "Fiók létrehozása",
+    "create": "Fiókom létrehozása",
+    "verify": "Ellenőrzés",
+    "email": "E-mail",
+    "password": "Jelszó",
+    "username": "Felhasználónév",
+    "dateOfBirth": "Születési dátum",
+    "country": "Ország",
+    "acceptPrivacy": "Elolvastam és elfogadom az adatvédelmi irányelveket.",
+    "code": "Kód a hitelesítő alkalmazásodból",
+    "checkInbox": "Ellenőrző linket küldtünk ide: {{email}}. Nyisd meg, majd jelentkezz be.",
+    "resend": "Újraküldés",
+    "resent": "Ellenőrző e-mail újra elküldve",
+    "signedIn": "Bejelentkeztél a Rusticba",
+    "problems": {
+      "email": "Adj meg egy érvényes e-mail-címet.",
+      "password": "Jelszó: legalább 10 karakter.",
+      "username": "Felhasználónév: 3–20 betű, számjegy vagy aláhúzásjel.",
+      "dateOfBirth": "Add meg a születési dátumodat.",
+      "tooYoung": "A Rustic-fiókok 13 éves kortól használhatók.",
+      "privacy": "A folytatáshoz fogadd el az adatvédelmi irányelveket."
+    },
+    "microsoft": "Folytatás Microsofttal",
+    "orEmail": "vagy e-maillel",
+    "microsoftWaiting": "Fejezd be a bejelentkezést a böngésződben: a launcher automatikusan átveszi a munkamenetedet."
+  },
+  "heading": "A *beállításaid*",
+  "eyebrow": "Launcher"
+}
