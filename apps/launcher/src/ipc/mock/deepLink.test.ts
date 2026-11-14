@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { parseContentLink, parsePageLink, parseServerLink } from './deepLink';
+import { parseContentLink, parseExploreLink, parsePageLink, parseServerLink } from './deepLink';
 
 describe('parseContentLink (mirror of the desktop parser)', () => {
   it('reads project links with an optional version', () => {
@@ -67,5 +67,22 @@ describe('parseServerLink (mirror of the desktop parser)', () => {
       `rustic://server/${'a'.repeat(49)}`,
     ])
       expect(parseServerLink(bad), bad).toBeNull();
+  });
+});
+
+describe('parseExploreLink (mirror of the desktop parser)', () => {
+  it('opens Explore on a kind, or its default', () => {
+    expect(parseExploreLink('rustic://explore/mod')).toEqual({
+      action: 'explore',
+      kind: 'mod',
+      url: 'rustic://explore/mod',
+    });
+    expect(parseExploreLink('rustic://explore')?.kind).toBeNull();
+    expect(parsePageLink('rustic://explore/resourcepack/')?.action).toBe('explore');
+  });
+  it('refuses anything else', () => {
+    expect(parseExploreLink('rustic://explore/mods')).toBeNull();
+    expect(parseExploreLink('rustic://explore/mod?x=1')).toBeNull();
+    expect(parseExploreLink('rustic://explorer')).toBeNull();
   });
 });

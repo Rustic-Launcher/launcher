@@ -329,6 +329,10 @@
     "label": "Verified",
     "hint": "Verified by Rustic: a moderator checked that it does what its page says."
   },
+  "official": {
+    "label": "Official",
+    "hint": "Published by the Rustic team itself."
+  },
   "price": {
     "soon": "Coming soon",
     "soonHint": "Creators will be able to sell their work soon. Buying is not available yet.",

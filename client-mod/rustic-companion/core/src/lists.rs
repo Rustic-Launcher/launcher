@@ -294,8 +294,8 @@ fn action_bar(k: &mut Kit<'_, Hit>, v: &View<'_>, focus_at: &mut usize) {
 }
 
 /// A section's heading at `y`, and an optional muted note after it; its height.
-fn heading(
-    k: &mut Kit<'_, Hit>,
+pub fn heading<H: Clone>(
+    k: &mut Kit<'_, H>,
     x: f32,
     y: f32,
     w: f32,
@@ -335,7 +335,7 @@ fn heading(
 }
 
 /// A card's plate: hovered, selected (the accent) or plain.
-fn plate(k: &mut Kit<'_, Hit>, r: [f32; 4], selected: bool) {
+pub fn plate<H: Clone>(k: &mut Kit<'_, H>, r: [f32; 4], selected: bool) {
     let lit = k.over(r);
     let (fill, border) = match (selected, lit) {
         (true, _) => (0x33FF_6A00, palette::ACCENT),
@@ -355,7 +355,13 @@ fn plate(k: &mut Kit<'_, Hit>, r: [f32; 4], selected: bool) {
 }
 
 /// A square picture with a generated tile under it (shown while it loads, or for none).
-fn picture(k: &mut Kit<'_, Hit>, r: [f32; 4], seed: &str, glyph: Glyph, pic: Option<&Picture>) {
+pub fn picture<H: Clone>(
+    k: &mut Kit<'_, H>,
+    r: [f32; 4],
+    seed: &str,
+    glyph: Glyph,
+    pic: Option<&Picture>,
+) {
     k.out.push(Paint::Picture {
         picture: Picture::Title(Image::Tile {
             hue: hue_of(seed),

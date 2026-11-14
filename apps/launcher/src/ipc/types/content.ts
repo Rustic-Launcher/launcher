@@ -53,6 +53,8 @@ export interface ContentSummary {
   flagged?: boolean;
   /** Rustic: an admin confirmed the project matches its description. */
   verified?: boolean;
+  /** Rustic: published by the official Rustic account (ADR 0166). */
+  official?: boolean;
   /** A paid Rustic project (creator sales are not open yet: shown, never sold); null when free. */
   price?: Money | null;
   /** A wide image for cards (the first screenshot), from an allowed CDN. */

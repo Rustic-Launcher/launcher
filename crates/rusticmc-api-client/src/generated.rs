@@ -280,6 +280,46 @@ impl Client {
         self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/admin/official`
+    pub async fn official_get(&self) -> Result<types::OfficialPublisher, ClientError> {
+        let path = "/v1/admin/official";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/official/projects`: Publishes a project as the official account (same rules as `POST /v1/content/projects`).
+    pub async fn official_publish(&self, body: &types::PublishContentRequest) -> Result<types::PublishContentResponse, ClientError> {
+        let path = "/v1/admin/official/projects";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
+    }
+
+    /// `PATCH /v1/admin/official/projects/{id}`: Edits the page of one of the official account's projects.
+    pub async fn official_update(&self, id: &str, body: &types::UpdateContentProjectRequest) -> Result<types::ContentProject, ClientError> {
+        let path = format!("/v1/admin/official/projects/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PATCH, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/admin/official/projects/{id}/versions`: Adds a version to one of the official account's projects.
+    pub async fn official_add_version(&self, id: &str, body: &types::NewContentVersion) -> Result<types::PublishContentResponse, ClientError> {
+        let path = format!("/v1/admin/official/projects/{}/versions", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/admin/official/uploads`: Uploads a file or an image for the official account (same checks as `/v1/content/uploads`; `plugin` files are accepted here).
+    pub async fn official_upload(&self, purpose: &str, kind: Option<&str>, filename: &str) -> Result<types::ContentUpload, ClientError> {
+        let path = "/v1/admin/official/uploads";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        query.push(("purpose", purpose.to_string()));
+        if let Some(v) = kind {
+            query.push(("kind", v.to_string()));
+        }
+        query.push(("filename", filename.to_string()));
+        self.call(Method::POST, path, &query, None::<&()>).await
+    }
+
     /// `POST /v1/admin/orders/{id}/refund`
     pub async fn admin_refund_order(&self, id: uuid::Uuid) -> Result<(), ClientError> {
         let path = format!("/v1/admin/orders/{}/refund", seg(id));
@@ -843,6 +883,53 @@ impl Client {
         self.call_empty(Method::DELETE, path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/integrations/discord/content/{id}`
+    pub async fn discord_content(&self, id: &str) -> Result<types::DiscordContentSnapshot, ClientError> {
+        let path = format!("/v1/integrations/discord/content/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/integrations/discord/links/{discord_id}`
+    pub async fn discord_link_state(&self, discord_id: &str) -> Result<types::DiscordLinkState, ClientError> {
+        let path = format!("/v1/integrations/discord/links/{}", seg(discord_id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/integrations/discord/profile`
+    pub async fn discord_profile(&self, discord_id: Option<&str>, username: Option<&str>, minecraft_name: Option<&str>, viewer_discord_id: Option<&str>) -> Result<types::DiscordProfile, ClientError> {
+        let path = "/v1/integrations/discord/profile";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = discord_id {
+            query.push(("discord_id", v.to_string()));
+        }
+        if let Some(v) = username {
+            query.push(("username", v.to_string()));
+        }
+        if let Some(v) = minecraft_name {
+            query.push(("minecraft_name", v.to_string()));
+        }
+        if let Some(v) = viewer_discord_id {
+            query.push(("viewer_discord_id", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/integrations/discord/servers/{id}`
+    pub async fn discord_server(&self, id: &str) -> Result<types::DiscordServerSnapshot, ClientError> {
+        let path = format!("/v1/integrations/discord/servers/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/integrations/discord/store/{id}`
+    pub async fn discord_store(&self, id: uuid::Uuid) -> Result<types::DiscordStoreSnapshot, ClientError> {
+        let path = format!("/v1/integrations/discord/store/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/inventory`
     pub async fn inventory_list(&self) -> Result<Vec<types::InventoryItem>, ClientError> {
         let path = "/v1/inventory";
@@ -960,6 +1047,34 @@ impl Client {
         let path = "/v1/me/delete/cancel";
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::POST, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/me/discord`
+    pub async fn discord_get(&self) -> Result<types::DiscordAccount, ClientError> {
+        let path = "/v1/me/discord";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `DELETE /v1/me/discord`
+    pub async fn discord_unlink(&self) -> Result<(), ClientError> {
+        let path = "/v1/me/discord";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::DELETE, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/me/discord/link`
+    pub async fn discord_link_start(&self) -> Result<types::DiscordLinkStart, ClientError> {
+        let path = "/v1/me/discord/link";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/me/discord/link/finish`
+    pub async fn discord_link_finish(&self, body: &types::DiscordLinkFinishRequest) -> Result<types::DiscordLink, ClientError> {
+        let path = "/v1/me/discord/link/finish";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
     }
 
     /// `GET /v1/me/export`
@@ -1641,6 +1756,11 @@ pub const OPERATIONS: &[&str] = &[
     "admin_news_create",
     "admin_news_update",
     "admin_news_delete",
+    "official_get",
+    "official_publish",
+    "official_update",
+    "official_add_version",
+    "official_upload",
     "admin_refund_order",
     "admin_products_list",
     "admin_create_product",
@@ -1715,6 +1835,11 @@ pub const OPERATIONS: &[&str] = &[
     "hosting_waitlist_get",
     "hosting_waitlist_join",
     "hosting_waitlist_leave",
+    "discord_content",
+    "discord_link_state",
+    "discord_profile",
+    "discord_server",
+    "discord_store",
     "inventory_list",
     "invitations_list",
     "invitations_create",
@@ -1732,6 +1857,10 @@ pub const OPERATIONS: &[&str] = &[
     "my_content",
     "gdpr_delete",
     "gdpr_delete_cancel",
+    "discord_get",
+    "discord_unlink",
+    "discord_link_start",
+    "discord_link_finish",
     "gdpr_export",
     "guardian_get",
     "guardian_invite_create",

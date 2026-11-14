@@ -5,7 +5,7 @@
  * A link reaches the mock through `localStorage['rustic.mock.deeplink']` (a "cold start": taken
  * once by `app_take_deep_link`) or `window.rusticMockDeepLink(url)` (the app already running).
  */
-import type { ContentDeepLink, PageDeepLink, ServerDeepLink } from '../types/auth';
+import type { ContentDeepLink, ExploreDeepLink, PageDeepLink, ServerDeepLink } from '../types/auth';
 import { emit } from './runtime';
 
 const PROJECT = /^[a-z0-9_-]{1,64}$/;
@@ -60,9 +60,21 @@ export function parseServerLink(url: string): ServerDeepLink | null {
   return { action: 'server', listing: id, url };
 }
 
-/** A page-opening link (content or server), or null. */
+const EXPLORE_KINDS = ['mod', 'modpack', 'resourcepack', 'shader', 'datapack', 'plugin'] as const;
+
+/** `rustic://explore[/<kind>]` (ADR 0165), or null when refused (as `lib.rs` `explore_link`). */
+export function parseExploreLink(url: string): ExploreDeepLink | null {
+  const rest = url.startsWith('rustic://explore') ? url.slice('rustic://explore'.length) : null;
+  if (rest === null || rest.includes('#') || rest.includes('?')) return null;
+  const kind = rest.replace(/^\/+/, '').replace(/\/+$/, '');
+  if (kind === '') return { action: 'explore', kind: null, url };
+  const known = EXPLORE_KINDS.find((k) => k === kind);
+  return known ? { action: 'explore', kind: known, url } : null;
+}
+
+/** A page-opening link (content, server or explore), or null. */
 export function parsePageLink(url: string): PageDeepLink | null {
-  return parseContentLink(url) ?? parseServerLink(url);
+  return parseContentLink(url) ?? parseServerLink(url) ?? parseExploreLink(url);
 }
 
 const KEY = 'rustic.mock.deeplink';

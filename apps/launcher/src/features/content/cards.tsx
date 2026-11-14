@@ -30,6 +30,7 @@ import {
   PriceBadge,
   ShaderFormatBadge,
   SourceBadge,
+  OfficialBadge,
   VerifiedBadge,
 } from './parts';
 import { formatTarget, type TargetRef } from './target';
@@ -110,6 +111,7 @@ export function ContentRow({ item, ctx }: { item: ContentSummary; ctx: InstallCo
       byline={item.author ? t('by', { author: item.author }) : undefined}
       badges={
         <>
+          {item.official && <OfficialBadge compact />}
           {item.verified && <VerifiedBadge compact />}
           {item.featured && !item.verified && (
             <Badge variant="accent" icon={<Star />}>
@@ -201,6 +203,7 @@ export function ContentCard({
           <span className="truncate">
             {item.author ? t('by', { author: item.author }) : t(`sourceLong.${item.source}`)}
           </span>
+          {item.official && <OfficialBadge compact />}
           {item.verified && (
             <BadgeCheck
               className="text-accent-text size-3.5 shrink-0"

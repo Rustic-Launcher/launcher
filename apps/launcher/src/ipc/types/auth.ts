@@ -68,15 +68,27 @@ export interface ServerDeepLink {
   url: string;
 }
 
+/**
+ * `rustic://explore[/<kind>]` (ADR 0165, the game's "Find mods in the launcher"), parsed strictly
+ * by the desktop side: opens Explore on that kind of content.
+ */
+export interface ExploreDeepLink {
+  action: 'explore';
+  /** `mod`, `resourcepack`... or null for Explore's default. */
+  kind: 'mod' | 'modpack' | 'resourcepack' | 'shader' | 'datapack' | 'plugin' | null;
+  url: string;
+}
+
 /** A link that opens a page (kept for the UI when it arrives before the UI listens). */
-export type PageDeepLink = ContentDeepLink | ServerDeepLink;
+export type PageDeepLink = ContentDeepLink | ServerDeepLink | ExploreDeepLink;
 
 /** Payload of the `deep-link` event (`rustic://join/<target>`, `rustic://auth?ticket=…`, `rustic://content/…`, `rustic://server/…`). */
 export type DeepLinkEvent =
   | { action: 'join'; target: string; url: string }
   | { action: 'auth'; ok: boolean; error?: string | null }
   | ContentDeepLink
-  | ServerDeepLink;
+  | ServerDeepLink
+  | ExploreDeepLink;
 
 /** Rustic platform identity (friends, cosmetics, purchases). Never replaces the game licence. */
 export interface RusticSession {

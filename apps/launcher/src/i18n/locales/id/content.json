@@ -325,6 +325,10 @@
     "label": "Terverifikasi",
     "hint": "Diverifikasi oleh Rustic: moderator telah memeriksa bahwa konten ini sesuai dengan yang tertulis di halamannya."
   },
+  "official": {
+    "label": "Resmi",
+    "hint": "Diterbitkan langsung oleh tim Rustic."
+  },
   "price": {
     "soon": "Segera hadir",
     "soonHint": "Kreator akan segera bisa menjual karya mereka. Pembelian belum tersedia.",

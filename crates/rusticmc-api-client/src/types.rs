@@ -40,6 +40,10 @@ wire! {
         pub id: Uuid,
         pub username: String,
         pub display_name: String,
+        /// The official Rustic account (ADR 0166): shown with an "Official" mark. It publishes
+        /// Rustic's own content and never signs in.
+        #[serde(default)]
+        pub official: bool,
     }
 }
 
@@ -2002,6 +2006,19 @@ wire! {
         pub version: ContentVersion,
     }
 
+    /// The official Rustic publisher account and what it published (ADR 0166, staff only).
+    pub struct OfficialPublisher {
+        /// The account (`official: true`); it never signs in, staff publish as it.
+        pub account: PublicUser,
+        pub projects: Vec<OfficialProject>,
+    }
+
+    /// One project of the official account with every version (yanked and pending included).
+    pub struct OfficialProject {
+        pub project: ContentProject,
+        pub versions: Vec<ContentVersion>,
+    }
+
     /// One gallery image to keep: an existing one by `url`, or a staged upload.
     pub struct GalleryRef {
         #[serde(default)]
@@ -2551,6 +2568,134 @@ impl CosmeticSlot {
 
     pub fn parse(s: &str) -> Option<CosmeticSlot> {
         Self::ALL.into_iter().find(|c| c.as_str() == s)
+    }
+}
+
+// ---------------------------------------------------------------- Discord (ADR 0167)
+
+wire! {
+    /// A Discord account linked to the caller's Rustic account (identity only: it never signs in).
+    pub struct DiscordLink {
+        /// Discord user id (a snowflake, as a string).
+        pub discord_id: String,
+        pub username: String,
+        /// Display name on Discord, when set.
+        pub global_name: Option<String>,
+        /// Discord CDN avatar URL, when the account has one.
+        pub avatar_url: Option<String>,
+        pub linked_at: DateTime<Utc>,
+    }
+
+    /// `GET /v1/me/discord`.
+    pub struct DiscordAccount {
+        /// `false` while the server has no Discord OAuth2 client configured (linking disabled).
+        pub available: bool,
+        pub link: Option<DiscordLink>,
+        /// Invite to the Rustic Discord server, when configured.
+        pub invite_url: Option<String>,
+    }
+
+    /// Step 1: the website sends the browser to `authorize_url` (Discord's consent screen).
+    pub struct DiscordLinkStart {
+        pub authorize_url: String,
+        pub expires_at: DateTime<Utc>,
+    }
+
+    /// Step 2: the website's callback page posts what Discord returned.
+    pub struct DiscordLinkFinishRequest {
+        pub code: String,
+        pub state: String,
+    }
+
+    /// The public snapshot of a marketplace project for the bot's feed (service token, scope
+    /// `discord`). `postable` is the API's decision: public, listed, not taken down, at least one
+    /// public version. When it is `false` the bot removes what it posted.
+    pub struct DiscordContentSnapshot {
+        pub postable: bool,
+        /// `None` when nobody but the owner and staff may see the project.
+        pub project: Option<ContentProject>,
+        /// Public versions, newest first (at most 20).
+        pub versions: Vec<ContentVersion>,
+        /// The project's page on the website.
+        pub page_url: Option<String>,
+        /// `rustic://content/rustic/<id>`: opens the project in the launcher.
+        pub launcher_url: Option<String>,
+    }
+
+    /// The public snapshot of a server listing (ADR 0158) for the bot's feed.
+    pub struct DiscordServerSnapshot {
+        pub postable: bool,
+        pub listing: Option<ServerListing>,
+        pub page_url: Option<String>,
+        /// `rustic://server/<slug>`.
+        pub launcher_url: Option<String>,
+    }
+
+    /// A store product for the bot's feed (active products only).
+    pub struct DiscordStoreSnapshot {
+        pub postable: bool,
+        pub product: Option<Product>,
+        pub page_url: Option<String>,
+    }
+
+    /// A public project in a Discord profile card.
+    pub struct DiscordProjectSummary {
+        pub id: String,
+        pub kind: ContentKind,
+        pub name: String,
+        pub downloads: i64,
+        pub verified: bool,
+        pub page_url: String,
+    }
+
+    /// A public server listing in a Discord profile card.
+    pub struct DiscordServerSummary {
+        pub slug: String,
+        pub name: String,
+        pub address: String,
+        pub players_online: Option<i32>,
+        pub page_url: String,
+    }
+
+    /// Public statistics of an account's published content and servers.
+    pub struct DiscordStats {
+        pub projects: i64,
+        pub versions: i64,
+        pub downloads: i64,
+        pub servers: i64,
+        /// Players online right now on the account's public servers (last ping).
+        pub players_online: i64,
+        /// Public projects per kind (`mod`, `modpack`...), most first.
+        pub projects_by_kind: Vec<DiscordKindCount>,
+    }
+
+    pub struct DiscordKindCount {
+        pub kind: ContentKind,
+        pub count: i64,
+    }
+
+    /// `GET /v1/integrations/discord/profile`: only public data. A minor's Discord link and game
+    /// name are never revealed to others; lookups by game name never resolve a minor.
+    pub struct DiscordProfile {
+        pub user: PublicUser,
+        /// Linked game profile name (adults only, or the member looking at their own profile).
+        pub minecraft_name: Option<String>,
+        /// The Discord account this profile is linked to, when it may be shown.
+        pub discord_id: Option<String>,
+        /// The looked-up account is the asking Discord member's own.
+        pub is_self: bool,
+        pub stats: DiscordStats,
+        /// Most downloaded public projects (at most 5).
+        pub projects: Vec<DiscordProjectSummary>,
+        /// Public server listings (at most 5).
+        pub servers: Vec<DiscordServerSummary>,
+    }
+
+    /// `GET /v1/integrations/discord/links/{discord_id}`: whether a Discord account is linked
+    /// (role sync). Never says to which Rustic account.
+    pub struct DiscordLinkState {
+        pub discord_id: String,
+        pub linked: bool,
     }
 }
 

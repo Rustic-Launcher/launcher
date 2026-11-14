@@ -21,7 +21,9 @@ use tauri::{Emitter, Manager};
 /// `rustic://auth?code=...` completes a Rustic account login (the website's handoff, ADR 0090),
 /// `rustic://content/rustic/<project>[?version=<project>@<version>]` opens the project's page with
 /// an install prompt (never an install: docs/SECURITY.md), `rustic://server/<slug>` opens a server
-/// of the directory (ADR 0158; never joins from the link alone). A content or server link that
+/// of the directory (ADR 0158; never joins from the link alone), `rustic://explore[/<kind>]` opens
+/// Explore on that kind of content (`mod`, `resourcepack`...; the game's "Find mods in the
+/// launcher", ADR 0165). A content, server or explore link that
 /// arrives before the webview listens (the launcher started by the link) waits in
 /// `PENDING_CONTENT` until the UI takes it (`app_take_deep_link`).
 /// A link can arrive twice (the single-instance plugin forwards it to the deep-link plugin, then to
@@ -67,6 +69,16 @@ fn handle_deep_link(app: &tauri::AppHandle, url: &str) {
                 let _ = app.emit("deep-link", payload);
             }
             Err(why) => tracing::warn!("ignored a rustic://server link: {why}"),
+        }
+    } else if rest.starts_with("explore") {
+        match explore_link(rest) {
+            Ok(kind) => {
+                tracing::info!(?kind, "deep link: explore");
+                let payload = serde_json::json!({ "action": "explore", "kind": kind, "url": url });
+                *PENDING_CONTENT.lock().unwrap_or_else(|e| e.into_inner()) = Some(payload.clone());
+                let _ = app.emit("deep-link", payload);
+            }
+            Err(why) => tracing::warn!("ignored a rustic://explore link: {why}"),
         }
     } else if let Some(code) = auth_code(rest) {
         static SEEN: std::sync::Mutex<Vec<String>> = std::sync::Mutex::new(Vec::new());
@@ -232,6 +244,32 @@ fn server_link(rest: &str) -> Result<String, &'static str> {
     } else {
         Err("invalid server slug")
     }
+}
+
+/// Parses `explore[/<kind>]` (what follows `rustic://`) strictly: Explore's content kinds only, one
+/// optional trailing slash, no query or fragment.
+fn explore_link(rest: &str) -> Result<Option<&'static str>, &'static str> {
+    let rest = rest.strip_prefix("explore").ok_or("not an explore link")?;
+    if rest.contains(['#', '?']) {
+        return Err("a query or fragment");
+    }
+    let kind = rest.trim_start_matches('/').trim_end_matches('/');
+    if kind.is_empty() {
+        return Ok(None);
+    }
+    const KINDS: [&str; 6] = [
+        "mod",
+        "modpack",
+        "resourcepack",
+        "shader",
+        "datapack",
+        "plugin",
+    ];
+    KINDS
+        .iter()
+        .find(|k| **k == kind)
+        .map(|k| Some(*k))
+        .ok_or("unknown content kind")
 }
 
 /// The sign-in code of `auth?code=` (also `auth/?code=`, as some browsers rewrite it, and the older
@@ -512,7 +550,22 @@ pub fn run() {
 
 #[cfg(test)]
 mod deep_link_tests {
-    use super::{ContentLink, auth_code, content_link, server_link};
+    use super::{ContentLink, auth_code, content_link, explore_link, server_link};
+
+    #[test]
+    fn reads_explore_links() {
+        assert_eq!(explore_link("explore"), Ok(None));
+        assert_eq!(explore_link("explore/"), Ok(None));
+        assert_eq!(explore_link("explore/mod"), Ok(Some("mod")));
+        assert_eq!(
+            explore_link("explore/resourcepack/"),
+            Ok(Some("resourcepack"))
+        );
+        assert!(explore_link("explore/mods").is_err());
+        assert!(explore_link("explore/mod?x=1").is_err());
+        assert!(explore_link("explore/mod/extra").is_err());
+        assert!(explore_link("explorer").is_err());
+    }
 
     #[test]
     fn reads_server_links() {

@@ -73,6 +73,8 @@ pub struct State {
     pub servers_page: crate::screens::pages::PageUi,
     pub worlds_page: crate::screens::pages::PageUi,
     pub pause: crate::screens::pause::PauseUi,
+    /// Rustic's Resource Packs, Browse Mods and Create World pages (ADR 0165).
+    pub sheets: crate::screens::sheets::SheetsUi,
 }
 
 pub struct Shared {

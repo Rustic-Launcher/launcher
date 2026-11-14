@@ -82,6 +82,8 @@ function toSummary(
     shader_format: p.shader_format,
     flagged: !!p.fair_play_violation,
     verified: !!p.verified,
+    // Rustic's own entries stand for the official Rustic account's (ADR 0166).
+    official: p.source === 'rustic' && p.author === 'Rustic',
     price: p.price_cents ? { amount_minor: p.price_cents, currency: 'EUR' } : null,
     banner_url: p.banner ?? null,
     size_bytes: Math.round(p.size_mb * 1024 ** 2),

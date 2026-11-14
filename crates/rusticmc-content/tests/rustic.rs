@@ -50,6 +50,7 @@ fn project(id: &str, kind: wire::ContentKind) -> wire::ContentProject {
             id: uuid::Uuid::new_v4(),
             username: "lea_builds".into(),
             display_name: "Léa".into(),
+            official: false,
         }),
         visibility: wire::ContentVisibility::Public,
         verified: true,

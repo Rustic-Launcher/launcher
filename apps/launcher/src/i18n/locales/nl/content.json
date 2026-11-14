@@ -329,6 +329,10 @@
     "label": "Geverifieerd",
     "hint": "Geverifieerd door Rustic: een moderator heeft gecontroleerd dat het doet wat de pagina zegt."
   },
+  "official": {
+    "label": "Officieel",
+    "hint": "Gepubliceerd door het Rustic-team zelf."
+  },
   "price": {
     "soon": "Binnenkort",
     "soonHint": "Makers kunnen hun werk binnenkort verkopen. Kopen is nog niet mogelijk.",

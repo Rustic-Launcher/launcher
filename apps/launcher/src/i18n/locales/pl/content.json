@@ -337,6 +337,10 @@
     "label": "Zweryfikowane",
     "hint": "Zweryfikowane przez Rustic: moderator sprawdził, że robi to, co obiecuje strona."
   },
+  "official": {
+    "label": "Oficjalne",
+    "hint": "Opublikowane bezpośrednio przez zespół Rustic."
+  },
   "price": {
     "soon": "Wkrótce",
     "soonHint": "Twórcy wkrótce będą mogli sprzedawać swoje prace. Zakupy nie są jeszcze dostępne.",

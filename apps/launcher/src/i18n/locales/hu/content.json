@@ -329,6 +329,10 @@
     "label": "Ellenőrzött",
     "hint": "A Rustic által ellenőrzött: egy moderátor megnézte, hogy azt teszi, amit az oldala ír."
   },
+  "official": {
+    "label": "Hivatalos",
+    "hint": "Maga a Rustic csapata tette közzé."
+  },
   "price": {
     "soon": "Hamarosan",
     "soonHint": "A készítők hamarosan eladhatják a munkáikat. A vásárlás még nem érhető el.",

@@ -325,6 +325,10 @@
     "label": "Đã xác minh",
     "hint": "Được Rustic xác minh: một người kiểm duyệt đã kiểm tra rằng nó đúng như trang mô tả."
   },
+  "official": {
+    "label": "Chính thức",
+    "hint": "Do chính đội ngũ Rustic phát hành."
+  },
   "price": {
     "soon": "Sắp ra mắt",
     "soonHint": "Người sáng tạo sẽ sớm có thể bán tác phẩm của mình. Hiện chưa thể mua.",

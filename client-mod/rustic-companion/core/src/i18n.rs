@@ -65,11 +65,29 @@ pub enum T {
     Play,
     /// The settings' Mods page with no mod.
     NoMods,
+    PacksAvailable,
+    PacksSelected,
+    LoadOrder,
+    SearchPacks,
+    OpenPackFolder,
+    PacksNoneAvailable,
+    PacksNoneSelected,
+    IncompatiblePack,
+    OriginNative,
+    OriginLocal,
+    FindMods,
+    Updates,
+    Kind,
+    KindContent,
+    BuildInLauncher,
+    /// `{n}` is a number of mods.
+    ModsCount,
+    Enabled,
 }
 
 impl T {
     /// Every text.
-    pub const ALL: [T; 44] = [
+    pub const ALL: [T; 61] = [
         T::Store,
         T::StoreNews,
         T::Discover,
@@ -114,6 +132,23 @@ impl T {
         T::LanEmpty,
         T::Play,
         T::NoMods,
+        T::PacksAvailable,
+        T::PacksSelected,
+        T::LoadOrder,
+        T::SearchPacks,
+        T::OpenPackFolder,
+        T::PacksNoneAvailable,
+        T::PacksNoneSelected,
+        T::IncompatiblePack,
+        T::OriginNative,
+        T::OriginLocal,
+        T::FindMods,
+        T::Updates,
+        T::Kind,
+        T::KindContent,
+        T::BuildInLauncher,
+        T::ModsCount,
+        T::Enabled,
     ];
 
     /// Its key in the JSON tables.
@@ -163,6 +198,23 @@ impl T {
             T::LanEmpty => "lan_empty",
             T::Play => "play",
             T::NoMods => "no_mods",
+            T::PacksAvailable => "packs_available",
+            T::PacksSelected => "packs_selected",
+            T::LoadOrder => "load_order",
+            T::SearchPacks => "search_packs",
+            T::OpenPackFolder => "open_pack_folder",
+            T::PacksNoneAvailable => "packs_none_available",
+            T::PacksNoneSelected => "packs_none_selected",
+            T::IncompatiblePack => "incompatible_pack",
+            T::OriginNative => "origin_native",
+            T::OriginLocal => "origin_local",
+            T::FindMods => "find_mods",
+            T::Updates => "updates",
+            T::Kind => "kind",
+            T::KindContent => "kind_content",
+            T::BuildInLauncher => "build_in_launcher",
+            T::ModsCount => "mods_count",
+            T::Enabled => "enabled",
         }
     }
 }

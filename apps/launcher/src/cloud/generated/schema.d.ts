@@ -372,6 +372,93 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/v1/admin/official': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['official_get'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/admin/official/projects': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /** Publishes a project as the official account (same rules as `POST /v1/content/projects`). */
+    post: operations['official_publish'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/admin/official/projects/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    /** Edits the page of one of the official account's projects. */
+    patch: operations['official_update'];
+    trace?: never;
+  };
+  '/v1/admin/official/projects/{id}/versions': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /** Adds a version to one of the official account's projects. */
+    post: operations['official_add_version'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/admin/official/uploads': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /**
+     * Uploads a file or an image for the official account (same checks as `/v1/content/uploads`;
+     *     `plugin` files are accepted here).
+     */
+    post: operations['official_upload'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/v1/admin/orders/{id}/refund': {
     parameters: {
       query?: never;
@@ -1429,6 +1516,86 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/v1/integrations/discord/content/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['discord_content'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/integrations/discord/links/{discord_id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['discord_link_state'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/integrations/discord/profile': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['discord_profile'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/integrations/discord/servers/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['discord_server'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/integrations/discord/store/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['discord_store'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/v1/inventory': {
     parameters: {
       query?: never;
@@ -1663,6 +1830,54 @@ export interface paths {
     get?: never;
     put?: never;
     post: operations['gdpr_delete_cancel'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/me/discord': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['discord_get'];
+    put?: never;
+    post?: never;
+    delete: operations['discord_unlink'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/me/discord/link': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations['discord_link_start'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/me/discord/link/finish': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post: operations['discord_link_finish'];
     delete?: never;
     options?: never;
     head?: never;
@@ -3539,6 +3754,134 @@ export interface components {
     DenyEntryRequest: {
       reason: string;
     };
+    /** @description `GET /v1/me/discord`. */
+    DiscordAccount: {
+      /** @description `false` while the server has no Discord OAuth2 client configured (linking disabled). */
+      available: boolean;
+      link?: null | components['schemas']['DiscordLink'];
+      /** @description Invite to the Rustic Discord server, when configured. */
+      invite_url?: string | null;
+    };
+    /**
+     * @description The public snapshot of a marketplace project for the bot's feed (service token, scope
+     *     `discord`). `postable` is the API's decision: public, listed, not taken down, at least one
+     *     public version. When it is `false` the bot removes what it posted.
+     */
+    DiscordContentSnapshot: {
+      postable: boolean;
+      project?: null | components['schemas']['ContentProject'];
+      /** @description Public versions, newest first (at most 20). */
+      versions: components['schemas']['ContentVersion'][];
+      /** @description The project's page on the website. */
+      page_url?: string | null;
+      /** @description `rustic://content/rustic/<id>`: opens the project in the launcher. */
+      launcher_url?: string | null;
+    };
+    DiscordKindCount: {
+      kind: components['schemas']['ContentKind'];
+      /** Format: int64 */
+      count: number;
+    };
+    /** @description A Discord account linked to the caller's Rustic account (identity only: it never signs in). */
+    DiscordLink: {
+      /** @description Discord user id (a snowflake, as a string). */
+      discord_id: string;
+      username: string;
+      /** @description Display name on Discord, when set. */
+      global_name?: string | null;
+      /** @description Discord CDN avatar URL, when the account has one. */
+      avatar_url?: string | null;
+      /** Format: date-time */
+      linked_at: string;
+    };
+    /** @description Step 2: the website's callback page posts what Discord returned. */
+    DiscordLinkFinishRequest: {
+      code: string;
+      state: string;
+    };
+    /** @description Step 1: the website sends the browser to `authorize_url` (Discord's consent screen). */
+    DiscordLinkStart: {
+      authorize_url: string;
+      /** Format: date-time */
+      expires_at: string;
+    };
+    /**
+     * @description `GET /v1/integrations/discord/links/{discord_id}`: whether a Discord account is linked
+     *     (role sync). Never says to which Rustic account.
+     */
+    DiscordLinkState: {
+      discord_id: string;
+      linked: boolean;
+    };
+    /**
+     * @description `GET /v1/integrations/discord/profile`: only public data. A minor's Discord link and game
+     *     name are never revealed to others; lookups by game name never resolve a minor.
+     */
+    DiscordProfile: {
+      user: components['schemas']['PublicUser'];
+      /** @description Linked game profile name (adults only, or the member looking at their own profile). */
+      minecraft_name?: string | null;
+      /** @description The Discord account this profile is linked to, when it may be shown. */
+      discord_id?: string | null;
+      /** @description The looked-up account is the asking Discord member's own. */
+      is_self: boolean;
+      stats: components['schemas']['DiscordStats'];
+      /** @description Most downloaded public projects (at most 5). */
+      projects: components['schemas']['DiscordProjectSummary'][];
+      /** @description Public server listings (at most 5). */
+      servers: components['schemas']['DiscordServerSummary'][];
+    };
+    /** @description A public project in a Discord profile card. */
+    DiscordProjectSummary: {
+      id: string;
+      kind: components['schemas']['ContentKind'];
+      name: string;
+      /** Format: int64 */
+      downloads: number;
+      verified: boolean;
+      page_url: string;
+    };
+    /** @description The public snapshot of a server listing (ADR 0158) for the bot's feed. */
+    DiscordServerSnapshot: {
+      postable: boolean;
+      listing?: null | components['schemas']['ServerListing'];
+      page_url?: string | null;
+      /** @description `rustic://server/<slug>`. */
+      launcher_url?: string | null;
+    };
+    /** @description A public server listing in a Discord profile card. */
+    DiscordServerSummary: {
+      slug: string;
+      name: string;
+      address: string;
+      /** Format: int32 */
+      players_online?: number | null;
+      page_url: string;
+    };
+    /** @description Public statistics of an account's published content and servers. */
+    DiscordStats: {
+      /** Format: int64 */
+      projects: number;
+      /** Format: int64 */
+      versions: number;
+      /** Format: int64 */
+      downloads: number;
+      /** Format: int64 */
+      servers: number;
+      /**
+       * Format: int64
+       * @description Players online right now on the account's public servers (last ping).
+       */
+      players_online: number;
+      /** @description Public projects per kind (`mod`, `modpack`...), most first. */
+      projects_by_kind: components['schemas']['DiscordKindCount'][];
+    };
+    /** @description A store product for the bot's feed (active products only). */
+    DiscordStoreSnapshot: {
+      postable: boolean;
+      product?: null | components['schemas']['Product'];
+      page_url?: string | null;
+    };
     /**
      * @description A DNS record to create at the user's registrar (any registrar: by hand, or by the launcher
      *     through the user's own registrar API keys). `name` is relative to the zone (`@` = apex).
@@ -4064,6 +4407,17 @@ export interface components {
       /** Format: date-time */
       read_at?: string | null;
     };
+    /** @description One project of the official account with every version (yanked and pending included). */
+    OfficialProject: {
+      project: components['schemas']['ContentProject'];
+      versions: components['schemas']['ContentVersion'][];
+    };
+    /** @description The official Rustic publisher account and what it published (ADR 0166, staff only). */
+    OfficialPublisher: {
+      /** @description The account (`official: true`); it never signs in, staff publish as it. */
+      account: components['schemas']['PublicUser'];
+      projects: components['schemas']['OfficialProject'][];
+    };
     Order: {
       /** Format: uuid */
       id: string;
@@ -4257,6 +4611,11 @@ export interface components {
       id: string;
       username: string;
       display_name: string;
+      /**
+       * @description The official Rustic account (ADR 0166): shown with an "Official" mark. It publishes
+       *     Rustic's own content and never signs in.
+       */
+      official?: boolean;
     };
     /** @description Publishes a new project with its first version (multi-step form of the website). */
     PublishContentRequest: {
@@ -6152,6 +6511,176 @@ export interface operations {
           [name: string]: unknown;
         };
         content?: never;
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  official_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['OfficialPublisher'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  official_publish: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['PublishContentRequest'];
+      };
+    };
+    responses: {
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['PublishContentResponse'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  official_update: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['UpdateContentProjectRequest'];
+      };
+    };
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentProject'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  official_add_version: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['NewContentVersion'];
+      };
+    };
+    responses: {
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['PublishContentResponse'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  official_upload: {
+    parameters: {
+      query: {
+        /** @description `file`, `icon` or `gallery`. */
+        purpose: string;
+        /** @description The project's kind (`file` uploads). */
+        kind?: string | null;
+        /** @description The file's name (a plain name with the kind's extension). */
+        filename: string;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /** @description The file's bytes */
+    requestBody: {
+      content: {
+        'application/octet-stream': string;
+      };
+    };
+    responses: {
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ContentUpload'];
+        };
       };
       /** @description Error (see `code`) */
       default: {
@@ -8582,6 +9111,167 @@ export interface operations {
       };
     };
   };
+  discord_content: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Project id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['DiscordContentSnapshot'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  discord_link_state: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Discord user id */
+        discord_id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['DiscordLinkState'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  discord_profile: {
+    parameters: {
+      query?: {
+        /** @description The linked Discord account. */
+        discord_id?: string | null;
+        /** @description A Rustic username (exact, case-insensitive). */
+        username?: string | null;
+        /** @description A linked game profile name (exact, case-insensitive; never resolves a minor). */
+        minecraft_name?: string | null;
+        /** @description The Discord member asking (their own profile shows a little more). */
+        viewer_discord_id?: string | null;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['DiscordProfile'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  discord_server: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Listing id or slug */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['DiscordServerSnapshot'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  discord_store: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Product id */
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['DiscordStoreSnapshot'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
   inventory_list: {
     parameters: {
       query?: never;
@@ -9086,6 +9776,121 @@ export interface operations {
         };
         content: {
           'application/json': components['schemas']['DeletionStatus'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  discord_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['DiscordAccount'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  discord_unlink: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Unlinked */
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  discord_link_start: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['DiscordLinkStart'];
+        };
+      };
+      /** @description Error (see `code`) */
+      default: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['ErrorBody'];
+        };
+      };
+    };
+  };
+  discord_link_finish: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['DiscordLinkFinishRequest'];
+      };
+    };
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['DiscordLink'];
         };
       };
       /** @description Error (see `code`) */

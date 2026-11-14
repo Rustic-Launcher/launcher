@@ -24,6 +24,16 @@ use std::time::{Duration, Instant};
 pub mod language;
 pub mod pages;
 pub mod pause;
+pub mod sheets;
+
+/// Where "Find mods in the launcher" and a native mod's "Build it from the launcher" go: the
+/// launcher's Explore, on its mods (`rustic://explore/mod`, launcher ADR 0165).
+pub const FIND_MODS_URL: &str = "rustic://explore/mod";
+
+/// The next of `n` keyboard stops (`rusticmc_companion_core::sheet::step_focus`).
+pub fn sheets_step(at: Option<usize>, n: usize, back: bool) -> Option<usize> {
+    rusticmc_companion_core::sheet::step_focus(at, n, back)
+}
 
 /// The multiplayer list's screen id.
 pub const MULTIPLAYER: &str = "multiplayer";
@@ -96,6 +106,10 @@ fn search_query(ui: &DiscoverUi) -> Option<Query> {
 pub fn render(host: &dyn Host, event: &mut ScreenRenderPostEvent<'_>) {
     crate::frame::frames().current.screen = Some(event.screen.id);
     pause::render(host, event);
+    if let Some(sheet) = sheets::shown(host, event.screen.id) {
+        sheets::render(host, event, sheet);
+        return;
+    }
     if let Some(kind) = pages::shown(event.screen.id) {
         pages::render(host, event, kind);
         return;
@@ -407,6 +421,9 @@ pub fn mouse(host: &dyn Host, event: &mut ScreenMouseButtonPressedPreEvent<'_>) 
     if pause::shown(event.screen.id) {
         return pause::mouse(host, event);
     }
+    if let Some(sheet) = sheets::shown(host, event.screen.id) {
+        return sheets::mouse(host, event, sheet);
+    }
     if let Some(kind) = pages::shown(event.screen.id) {
         return pages::mouse(host, event, kind);
     }
@@ -449,7 +466,10 @@ pub fn mouse(host: &dyn Host, event: &mut ScreenMouseButtonPressedPreEvent<'_>) 
     })
 }
 
-pub fn scroll(_host: &dyn Host, event: &mut ScreenMouseScrolledPreEvent<'_>) -> Flow {
+pub fn scroll(host: &dyn Host, event: &mut ScreenMouseScrolledPreEvent<'_>) -> Flow {
+    if let Some(sheet) = sheets::shown(host, event.screen.id) {
+        return sheets::scroll(event, sheet);
+    }
     if let Some(kind) = pages::shown(event.screen.id) {
         return pages::scroll(event, kind);
     }
@@ -467,6 +487,9 @@ pub fn scroll(_host: &dyn Host, event: &mut ScreenMouseScrolledPreEvent<'_>) -> 
 pub fn key(host: &dyn Host, event: &mut ScreenKeyPressedPreEvent<'_>) -> Flow {
     if pause::shown(event.screen.id) {
         return pause::key(host, event);
+    }
+    if let Some(sheet) = sheets::shown(host, event.screen.id) {
+        return sheets::key(host, event, sheet);
     }
     if let Some(kind) = pages::shown(event.screen.id) {
         return pages::key(host, event, kind);
@@ -545,7 +568,10 @@ pub fn key(host: &dyn Host, event: &mut ScreenKeyPressedPreEvent<'_>) -> Flow {
     })
 }
 
-pub fn chars(_host: &dyn Host, event: &mut ScreenCharTypedPreEvent<'_>) -> Flow {
+pub fn chars(host: &dyn Host, event: &mut ScreenCharTypedPreEvent<'_>) -> Flow {
+    if let Some(sheet) = sheets::shown(host, event.screen.id) {
+        return sheets::chars(host, event, sheet);
+    }
     if let Some(kind) = pages::shown(event.screen.id) {
         return pages::chars(event, kind);
     }

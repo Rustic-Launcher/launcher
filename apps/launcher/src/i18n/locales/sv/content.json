@@ -329,6 +329,10 @@
     "label": "Verifierad",
     "hint": "Verifierad av Rustic: en moderator har kontrollerat att den gör det som sidan säger."
   },
+  "official": {
+    "label": "Officiell",
+    "hint": "Publicerat av Rustic-teamet självt."
+  },
   "price": {
     "soon": "Kommer snart",
     "soonHint": "Snart kan skapare sälja sina verk. Det går inte att köpa än.",

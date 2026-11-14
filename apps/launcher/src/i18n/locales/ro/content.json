@@ -333,6 +333,10 @@
     "label": "Verificat",
     "hint": "Verificat de Rustic: un moderator a confirmat că face ce scrie pe pagina lui."
   },
+  "official": {
+    "label": "Oficial",
+    "hint": "Publicat chiar de echipa Rustic."
+  },
   "price": {
     "soon": "În curând",
     "soonHint": "Creatorii își vor putea vinde curând creațiile. Cumpărarea nu este încă disponibilă.",

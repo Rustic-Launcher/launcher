@@ -329,6 +329,10 @@
     "label": "Doğrulandı",
     "hint": "Rustic tarafından doğrulandı: bir moderatör, sayfasında söylediğini yaptığını kontrol etti."
   },
+  "official": {
+    "label": "Resmi",
+    "hint": "Doğrudan Rustic ekibi tarafından yayımlandı."
+  },
   "price": {
     "soon": "Çok yakında",
     "soonHint": "Yaratıcılar yakında eserlerini satabilecek. Satın alma henüz kullanılamıyor.",

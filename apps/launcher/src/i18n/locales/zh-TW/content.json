@@ -325,6 +325,10 @@
     "label": "已認證",
     "hint": "Rustic 已認證：管理員已確認它的功能和頁面說明一致。"
   },
+  "official": {
+    "label": "官方",
+    "hint": "由 Rustic 團隊官方發布。"
+  },
   "price": {
     "soon": "即將推出",
     "soonHint": "建立者很快就能販售作品。目前還無法購買。",

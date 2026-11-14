@@ -337,6 +337,10 @@
     "label": "Ověřeno",
     "hint": "Ověřeno Rusticem: moderátor zkontroloval, že dělá to, co uvádí jeho stránka."
   },
+  "official": {
+    "label": "Oficiální",
+    "hint": "Zveřejněno přímo týmem Rustic."
+  },
   "price": {
     "soon": "Již brzy",
     "soonHint": "Tvůrci budou brzy moci svou práci prodávat. Nákupy zatím nejsou dostupné.",

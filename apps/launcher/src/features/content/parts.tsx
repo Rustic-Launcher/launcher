@@ -22,6 +22,7 @@ import {
   Layers,
   PackagePlus,
   Server as ServerIcon,
+  ShieldCheck,
   Sparkles,
   Tag,
 } from 'lucide-react';
@@ -81,6 +82,31 @@ export function VerifiedBadge({ compact }: { compact?: boolean }) {
     <Tooltip content={t('verified.hint')}>
       <Badge variant="accent" icon={<BadgeCheck />} tabIndex={0}>
         {t('verified.label')}
+      </Badge>
+    </Tooltip>
+  );
+}
+
+/** Published by the official Rustic account (ADR 0166): Rustic's own plugins and mods. */
+export function OfficialBadge({ compact }: { compact?: boolean }) {
+  const { t } = useTranslation('content');
+  if (compact) {
+    return (
+      <Tooltip content={t('official.hint')}>
+        <ShieldCheck
+          className="text-accent-text size-4 shrink-0"
+          aria-label={t('official.label')}
+          role="img"
+          tabIndex={0}
+          data-testid="official-badge"
+        />
+      </Tooltip>
+    );
+  }
+  return (
+    <Tooltip content={t('official.hint')}>
+      <Badge variant="accent" icon={<ShieldCheck />} tabIndex={0} data-testid="official-badge">
+        {t('official.label')}
       </Badge>
     </Tooltip>
   );

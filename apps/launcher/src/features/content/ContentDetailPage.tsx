@@ -61,6 +61,7 @@ import {
   InstallButton,
   ItemCompatBadge,
   NoRusticServer,
+  OfficialBadge,
   PriceBadge,
   ShaderFormatBadge,
   SideBadge,
@@ -400,6 +401,7 @@ function Hero({
                 {d.author && (
                   <span className="text-fg font-medium">{t('by', { author: d.author })}</span>
                 )}
+                {d.official && <OfficialBadge compact />}
                 {d.license && (
                   <>
                     <span aria-hidden>·</span>
@@ -418,6 +420,7 @@ function Hero({
               <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
                 <ItemCompatBadge item={d} />
                 <SourceBadge source={d.source} />
+                {d.official && <OfficialBadge />}
                 {d.verified && <VerifiedBadge />}
                 <SideBadge side={d.side} />
                 {d.shader_format && <ShaderFormatBadge format={d.shader_format} />}

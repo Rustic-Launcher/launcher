@@ -66,6 +66,8 @@ enum Script {
     Ethiopic,
     /// Runic, Gothic, Old Italic: the game's historic languages.
     Historic,
+    /// Canadian syllabics (Inuktitut, Cree; Upside Down English's `ᗡ`).
+    Canadian,
     /// Anything else Inter lacks (symbols, other scripts).
     Symbol,
 }
@@ -99,6 +101,7 @@ impl Script {
             0x1780..=0x17FF => Khmer,
             0x1200..=0x139F | 0x2D80..=0x2DDF => Ethiopic,
             0x16A0..=0x16FF | 0x10300..=0x1034F => Historic,
+            0x1400..=0x167F | 0x18B0..=0x18FF => Canadian,
             _ => return None,
         })
     }
@@ -107,7 +110,11 @@ impl Script {
     fn shaped(self) -> bool {
         !matches!(
             self,
-            Script::Armenian | Script::Georgian | Script::Ethiopic | Script::Historic
+            Script::Armenian
+                | Script::Georgian
+                | Script::Ethiopic
+                | Script::Historic
+                | Script::Canadian
         )
     }
 
@@ -229,6 +236,12 @@ impl Script {
                 ("Apple Symbols.ttf", 0),
                 ("NotoSansRunic-Regular.ttf", 0),
                 ("NotoSansGothic-Regular.ttf", 0),
+            ],
+            Canadian => &[
+                ("gadugi.ttf", 0),
+                ("EuphemiaCAS.ttc", 0),
+                ("Euphemia UCAS.ttf", 0),
+                ("NotoSansCanadianAboriginal-Regular.ttf", 0),
             ],
             Symbol => &[
                 // Segoe UI first: it has the phonetic letters (Upside Down English's).
@@ -1485,6 +1498,9 @@ mod tests {
             "ລາວ",
             "بهاس ملايو",
             "ᚦᛖ ᛖᚾᚷᛚᛁᛋᚳ",
+            // Upside Down English's name and region line.
+            "ɥsᴉꞁᵷuƎ",
+            "uʍoᗡ ǝpᴉsd∩",
             "ไทย",
             "日本語",
             "한국어",

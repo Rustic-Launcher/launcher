@@ -1640,6 +1640,280 @@
         ]
       }
     },
+    "/v1/admin/official": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "official_get",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfficialPublisher"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/official/projects": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Publishes a project as the official account (same rules as `POST /v1/content/projects`).",
+        "operationId": "official_publish",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublishContentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublishContentResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/official/projects/{id}": {
+      "patch": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Edits the page of one of the official account's projects.",
+        "operationId": "official_update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateContentProjectRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentProject"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/official/projects/{id}/versions": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Adds a version to one of the official account's projects.",
+        "operationId": "official_add_version",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewContentVersion"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublishContentResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/official/uploads": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Uploads a file or an image for the official account (same checks as `/v1/content/uploads`;\n`plugin` files are accepted here).",
+        "operationId": "official_upload",
+        "parameters": [
+          {
+            "name": "purpose",
+            "in": "query",
+            "description": "`file`, `icon` or `gallery`.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kind",
+            "in": "query",
+            "description": "The project's kind (`file` uploads).",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "filename",
+            "in": "query",
+            "description": "The file's name (a plain name with the kind's extension).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The file's bytes",
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentUpload"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/admin/orders/{id}/refund": {
       "post": {
         "tags": [
@@ -5042,6 +5316,276 @@
         ]
       }
     },
+    "/v1/integrations/discord/content/{id}": {
+      "get": {
+        "tags": [
+          "integrations"
+        ],
+        "operationId": "discord_content",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscordContentSnapshot"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "service": []
+          }
+        ]
+      }
+    },
+    "/v1/integrations/discord/links/{discord_id}": {
+      "get": {
+        "tags": [
+          "integrations"
+        ],
+        "operationId": "discord_link_state",
+        "parameters": [
+          {
+            "name": "discord_id",
+            "in": "path",
+            "description": "Discord user id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscordLinkState"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "service": []
+          }
+        ]
+      }
+    },
+    "/v1/integrations/discord/profile": {
+      "get": {
+        "tags": [
+          "integrations"
+        ],
+        "operationId": "discord_profile",
+        "parameters": [
+          {
+            "name": "discord_id",
+            "in": "query",
+            "description": "The linked Discord account.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "description": "A Rustic username (exact, case-insensitive).",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "minecraft_name",
+            "in": "query",
+            "description": "A linked game profile name (exact, case-insensitive; never resolves a minor).",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "viewer_discord_id",
+            "in": "query",
+            "description": "The Discord member asking (their own profile shows a little more).",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscordProfile"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "service": []
+          }
+        ]
+      }
+    },
+    "/v1/integrations/discord/servers/{id}": {
+      "get": {
+        "tags": [
+          "integrations"
+        ],
+        "operationId": "discord_server",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Listing id or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscordServerSnapshot"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "service": []
+          }
+        ]
+      }
+    },
+    "/v1/integrations/discord/store/{id}": {
+      "get": {
+        "tags": [
+          "integrations"
+        ],
+        "operationId": "discord_store",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Product id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscordStoreSnapshot"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "service": []
+          }
+        ]
+      }
+    },
     "/v1/inventory": {
       "get": {
         "tags": [
@@ -5726,6 +6270,147 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeletionStatus"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/me/discord": {
+      "get": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "discord_get",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscordAccount"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "discord_unlink",
+        "responses": {
+          "204": {
+            "description": "Unlinked"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/me/discord/link": {
+      "post": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "discord_link_start",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscordLinkStart"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/me/discord/link/finish": {
+      "post": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "discord_link_finish",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscordLinkFinishRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscordLink"
                 }
               }
             }
@@ -11953,6 +12638,402 @@
           }
         }
       },
+      "DiscordAccount": {
+        "type": "object",
+        "description": "`GET /v1/me/discord`.",
+        "required": [
+          "available"
+        ],
+        "properties": {
+          "available": {
+            "type": "boolean",
+            "description": "`false` while the server has no Discord OAuth2 client configured (linking disabled)."
+          },
+          "link": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/DiscordLink"
+              }
+            ]
+          },
+          "invite_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Invite to the Rustic Discord server, when configured."
+          }
+        }
+      },
+      "DiscordContentSnapshot": {
+        "type": "object",
+        "description": "The public snapshot of a marketplace project for the bot's feed (service token, scope\n`discord`). `postable` is the API's decision: public, listed, not taken down, at least one\npublic version. When it is `false` the bot removes what it posted.",
+        "required": [
+          "postable",
+          "versions"
+        ],
+        "properties": {
+          "postable": {
+            "type": "boolean"
+          },
+          "project": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ContentProject",
+                "description": "`None` when nobody but the owner and staff may see the project."
+              }
+            ]
+          },
+          "versions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentVersion"
+            },
+            "description": "Public versions, newest first (at most 20)."
+          },
+          "page_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The project's page on the website."
+          },
+          "launcher_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "`rustic://content/rustic/<id>`: opens the project in the launcher."
+          }
+        }
+      },
+      "DiscordKindCount": {
+        "type": "object",
+        "required": [
+          "kind",
+          "count"
+        ],
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/ContentKind"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "DiscordLink": {
+        "type": "object",
+        "description": "A Discord account linked to the caller's Rustic account (identity only: it never signs in).",
+        "required": [
+          "discord_id",
+          "username",
+          "linked_at"
+        ],
+        "properties": {
+          "discord_id": {
+            "type": "string",
+            "description": "Discord user id (a snowflake, as a string)."
+          },
+          "username": {
+            "type": "string"
+          },
+          "global_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Display name on Discord, when set."
+          },
+          "avatar_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Discord CDN avatar URL, when the account has one."
+          },
+          "linked_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "DiscordLinkFinishRequest": {
+        "type": "object",
+        "description": "Step 2: the website's callback page posts what Discord returned.",
+        "required": [
+          "code",
+          "state"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          }
+        }
+      },
+      "DiscordLinkStart": {
+        "type": "object",
+        "description": "Step 1: the website sends the browser to `authorize_url` (Discord's consent screen).",
+        "required": [
+          "authorize_url",
+          "expires_at"
+        ],
+        "properties": {
+          "authorize_url": {
+            "type": "string"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "DiscordLinkState": {
+        "type": "object",
+        "description": "`GET /v1/integrations/discord/links/{discord_id}`: whether a Discord account is linked\n(role sync). Never says to which Rustic account.",
+        "required": [
+          "discord_id",
+          "linked"
+        ],
+        "properties": {
+          "discord_id": {
+            "type": "string"
+          },
+          "linked": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DiscordProfile": {
+        "type": "object",
+        "description": "`GET /v1/integrations/discord/profile`: only public data. A minor's Discord link and game\nname are never revealed to others; lookups by game name never resolve a minor.",
+        "required": [
+          "user",
+          "is_self",
+          "stats",
+          "projects",
+          "servers"
+        ],
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/PublicUser"
+          },
+          "minecraft_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Linked game profile name (adults only, or the member looking at their own profile)."
+          },
+          "discord_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The Discord account this profile is linked to, when it may be shown."
+          },
+          "is_self": {
+            "type": "boolean",
+            "description": "The looked-up account is the asking Discord member's own."
+          },
+          "stats": {
+            "$ref": "#/components/schemas/DiscordStats"
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiscordProjectSummary"
+            },
+            "description": "Most downloaded public projects (at most 5)."
+          },
+          "servers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiscordServerSummary"
+            },
+            "description": "Public server listings (at most 5)."
+          }
+        }
+      },
+      "DiscordProjectSummary": {
+        "type": "object",
+        "description": "A public project in a Discord profile card.",
+        "required": [
+          "id",
+          "kind",
+          "name",
+          "downloads",
+          "verified",
+          "page_url"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/ContentKind"
+          },
+          "name": {
+            "type": "string"
+          },
+          "downloads": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "page_url": {
+            "type": "string"
+          }
+        }
+      },
+      "DiscordServerSnapshot": {
+        "type": "object",
+        "description": "The public snapshot of a server listing (ADR 0158) for the bot's feed.",
+        "required": [
+          "postable"
+        ],
+        "properties": {
+          "postable": {
+            "type": "boolean"
+          },
+          "listing": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ServerListing"
+              }
+            ]
+          },
+          "page_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "launcher_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "`rustic://server/<slug>`."
+          }
+        }
+      },
+      "DiscordServerSummary": {
+        "type": "object",
+        "description": "A public server listing in a Discord profile card.",
+        "required": [
+          "slug",
+          "name",
+          "address",
+          "page_url"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "players_online": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "page_url": {
+            "type": "string"
+          }
+        }
+      },
+      "DiscordStats": {
+        "type": "object",
+        "description": "Public statistics of an account's published content and servers.",
+        "required": [
+          "projects",
+          "versions",
+          "downloads",
+          "servers",
+          "players_online",
+          "projects_by_kind"
+        ],
+        "properties": {
+          "projects": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "versions": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "downloads": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "servers": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "players_online": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Players online right now on the account's public servers (last ping)."
+          },
+          "projects_by_kind": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiscordKindCount"
+            },
+            "description": "Public projects per kind (`mod`, `modpack`...), most first."
+          }
+        }
+      },
+      "DiscordStoreSnapshot": {
+        "type": "object",
+        "description": "A store product for the bot's feed (active products only).",
+        "required": [
+          "postable"
+        ],
+        "properties": {
+          "postable": {
+            "type": "boolean"
+          },
+          "product": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Product"
+              }
+            ]
+          },
+          "page_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
       "DnsRecord": {
         "type": "object",
         "description": "A DNS record to create at the user's registrar (any registrar: by hand, or by the launcher\nthrough the user's own registrar API keys). `name` is relative to the zone (`@` = apex).",
@@ -13584,6 +14665,45 @@
           }
         }
       },
+      "OfficialProject": {
+        "type": "object",
+        "description": "One project of the official account with every version (yanked and pending included).",
+        "required": [
+          "project",
+          "versions"
+        ],
+        "properties": {
+          "project": {
+            "$ref": "#/components/schemas/ContentProject"
+          },
+          "versions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentVersion"
+            }
+          }
+        }
+      },
+      "OfficialPublisher": {
+        "type": "object",
+        "description": "The official Rustic publisher account and what it published (ADR 0166, staff only).",
+        "required": [
+          "account",
+          "projects"
+        ],
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/PublicUser",
+            "description": "The account (`official: true`); it never signs in, staff publish as it."
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OfficialProject"
+            }
+          }
+        }
+      },
       "Order": {
         "type": "object",
         "required": [
@@ -14187,6 +15307,10 @@
           },
           "display_name": {
             "type": "string"
+          },
+          "official": {
+            "type": "boolean",
+            "description": "The official Rustic account (ADR 0166): shown with an \"Official\" mark. It publishes\nRustic's own content and never signs in."
           }
         }
       },
@@ -16864,6 +17988,11 @@
         "type": "http",
         "scheme": "bearer",
         "bearerFormat": "JWT"
+      },
+      "service": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "rsvc"
       }
     }
   },
@@ -16936,6 +18065,9 @@
     },
     {
       "name": "news"
+    },
+    {
+      "name": "integrations"
     }
   ]
 }

@@ -295,6 +295,7 @@ fn rustic_compat(
 fn rustic_extras(v: &mut Value, p: &RusticProject) {
     v["author"] = json!(p.author());
     v["verified"] = json!(p.verified);
+    v["official"] = json!(p.is_official());
     v["price"] = match &p.price {
         Some(pr) if pr.is_paid() => {
             json!({ "amount_minor": pr.amount_cents, "currency": pr.currency })

@@ -58,7 +58,7 @@ type InstanceId = { instance_id: string };
 | `rustic_server_set`<br>Sets the manual override after checking the file answers `--rustic-version` (`invalid_argument`, reason `server.not_rustic_server`, otherwise); `path: null` clears it (automatic). | `{ path: string \| null }` | `RusticServerStatus` |
 | `app_open_path` | `{ path: string }` | `void` |
 | `app_open_url` | `{ url: string }` | `void` |
-| `app_take_deep_link`<br>The `rustic://content/...` or `rustic://server/...` link that started (or reached) the launcher before the UI listened, taken once (null when none). | — | `PageDeepLink \| null` |
+| `app_take_deep_link`<br>The `rustic://content/...`, `rustic://server/...` or `rustic://explore/...` link that started (or reached) the launcher before the UI listened, taken once (null when none). | — | `PageDeepLink \| null` |
 | `player_skin_url`<br>A player's skin URL (Mojang's session service, cached); `null` without one. | `{ uuid: string }` | `string \| null` |
 | `app_pick_path` | `PickPathRequest` | `string \| null` |
 | `app_update_status`<br>The update service's state (ADR 0162). | — | `UpdateStatus` |
@@ -555,15 +555,27 @@ export interface ServerDeepLink {
   url: string;
 }
 
-/** A link that opens a page (kept for the UI when it arrives before the UI listens). */
-export type PageDeepLink = ContentDeepLink | ServerDeepLink;
+/**
+ * `rustic://explore[/<kind>]` (ADR 0165, the game's "Find mods in the launcher"), parsed strictly
+ * by the desktop side: opens Explore on that kind of content.
+ */
+export interface ExploreDeepLink {
+  action: 'explore';
+  /** `mod`, `resourcepack`... or null for Explore's default. */
+  kind: 'mod' | 'modpack' | 'resourcepack' | 'shader' | 'datapack' | 'plugin' | null;
+  url: string;
+}
 
-/** Payload of the `deep-link` event (`rustic://join/<target>`, `rustic://auth?ticket=…`, `rustic://content/…`, `rustic://server/…`). */
+/** A link that opens a page (kept for the UI when it arrives before the UI listens). */
+export type PageDeepLink = ContentDeepLink | ServerDeepLink | ExploreDeepLink;
+
+/** Payload of the `deep-link` event (`rustic://join/<target>`, `rustic://auth?ticket=…`, `rustic://content/…`, `rustic://server/…`, `rustic://explore/…`). */
 export type DeepLinkEvent =
   | { action: 'join'; target: string; url: string }
   | { action: 'auth'; ok: boolean; error?: string | null }
   | ContentDeepLink
-  | ServerDeepLink;
+  | ServerDeepLink
+  | ExploreDeepLink;
 
 /** Rustic platform identity (friends, cosmetics, purchases). Never replaces the game licence. */
 export interface RusticSession {
@@ -655,6 +667,8 @@ export interface ContentSummary {
   flagged?: boolean;
   /** Rustic: an admin confirmed the project matches its description. */
   verified?: boolean;
+  /** Rustic: published by the official Rustic account (`owner.official`, ADR 0166). */
+  official?: boolean;
   /** A paid Rustic project (creator sales are not open yet: shown, never sold); null when free. */
   price?: Money | null;
   /** A wide image for cards (the first screenshot), from an allowed CDN. */

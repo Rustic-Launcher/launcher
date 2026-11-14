@@ -24,7 +24,9 @@
 
 pub mod backoff;
 pub mod badge;
+pub mod browse;
 pub mod config;
+pub mod create;
 pub mod discover;
 pub mod flags;
 pub mod i18n;
@@ -32,11 +34,14 @@ pub mod kit;
 pub mod langs;
 pub mod lists;
 pub mod notify;
+pub mod origins;
 pub mod overlay;
+pub mod packs;
 pub mod paint;
 pub mod panel;
 pub mod presence;
 pub mod protocol;
+pub mod sheet;
 pub mod skin;
 pub mod social;
 pub mod store;

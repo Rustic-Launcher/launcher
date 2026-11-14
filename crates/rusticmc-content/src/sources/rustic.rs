@@ -123,6 +123,9 @@ pub struct RusticOwner {
     pub id: String,
     pub username: String,
     pub display_name: String,
+    /// The official Rustic account (ADR 0166): its content carries an "Official" mark.
+    #[serde(default)]
+    pub official: bool,
 }
 
 /// A price; `amount_cents` 0 is free. Creator sales are off: a paid project is shown, never sold
@@ -176,6 +179,11 @@ pub struct RusticProject {
 impl RusticProject {
     pub fn is_paid(&self) -> bool {
         self.price.as_ref().is_some_and(RusticPrice::is_paid)
+    }
+
+    /// Published by the official Rustic account (ADR 0166).
+    pub fn is_official(&self) -> bool {
+        self.owner.as_ref().is_some_and(|o| o.official)
     }
 
     /// Who to credit: the owner's display name, else the first author.

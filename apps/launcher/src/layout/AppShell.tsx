@@ -70,6 +70,10 @@ export function AppShell() {
         void navigate({ to: '/servers/listing/$slug', params: { slug: link.listing } });
         return;
       }
+      if (link.action === 'explore') {
+        void navigate({ to: '/content', search: { kind: link.kind ?? undefined, tab: 'browse' } });
+        return;
+      }
       toast({ tone: 'info', title: t('deepLink.content', { project: link.project }) });
       void navigate({
         to: '/content/$projectId',
@@ -90,7 +94,7 @@ export function AppShell() {
   useEffect(
     () =>
       listen('deep-link', (e) => {
-        if (e.action === 'content' || e.action === 'server') {
+        if (e.action === 'content' || e.action === 'server' || e.action === 'explore') {
           // Taken here: it must not open again from the pending slot.
           void invoke('app_take_deep_link').catch(() => undefined);
           openContentLink(e);
