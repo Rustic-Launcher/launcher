@@ -90,7 +90,7 @@ export function CatalogSearch({
           <span className="bg-border-default h-5 w-px shrink-0" aria-hidden />
         </>
       )}
-      <Search className="text-fg-subtle ml-3 size-4 shrink-0" aria-hidden />
+      <Search className="text-fg-subtle ms-3 size-4 shrink-0" aria-hidden />
       <input
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -112,7 +112,7 @@ export function CatalogSearch({
           label={clearLabel}
           icon={<X />}
           onClick={() => onChange('')}
-          className="mr-1.5"
+          className="me-1.5"
         />
       )}
     </div>
@@ -143,7 +143,7 @@ export function ScopeMenu<T extends string>({
           type="button"
           data-testid={testId}
           aria-label={`${label}: ${current?.label ?? ''}`}
-          className="rx-focus-ring hover:bg-surface-3/60 flex h-full shrink-0 items-center gap-2 rounded-l-xl px-3.5 text-sm font-semibold transition-colors [&_svg]:size-4"
+          className="rx-focus-ring hover:bg-surface-3/60 flex h-full shrink-0 items-center gap-2 rounded-s-xl px-3.5 text-sm font-semibold transition-colors [&_svg]:size-4"
         >
           {current?.icon}
           <span className="max-[1080px]:sr-only">{current?.label}</span>

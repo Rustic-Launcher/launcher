@@ -356,7 +356,8 @@ mod tests {
     /// Tables that must be complete: every text and every tag English names.
     const COMPLETE: &[&str] = &[
         "en", "fr", "de", "es", "it", "pt_br", "pl", "ru", "tr", "nl", "ja", "ko", "zh_cn", "uk",
-        "zh_tw", "pt_pt", "cs", "sv", "hu", "ro", "id", "vi", "th",
+        "zh_tw", "pt_pt", "cs", "sv", "hu", "ro", "id", "vi", "th", "da", "fi", "nb", "el", "ar",
+        "he", "hi",
     ];
 
     fn placeholders(s: &str) -> Vec<String> {
@@ -430,7 +431,20 @@ mod tests {
         assert_eq!(t(T::Discover, "fr_ca"), "Découvrir");
         assert_eq!(t(T::MyServers, "fr_fr"), "Mes serveurs");
         assert_eq!(t(T::Discover, "en_us"), "Discover");
-        assert_eq!(t(T::Discover, "da_dk"), "Discover");
+        assert_eq!(t(T::Discover, "bg_bg"), "Discover");
+        assert_ne!(t(T::Discover, "da_dk"), "Discover");
+        // Norwegian Bokmål is the game's `no_no` (table `nb`, website /nb); Nynorsk reads it.
+        assert_eq!(table_code("no_no"), "nb");
+        assert_eq!(t(T::Join, "nn_no"), t(T::Join, "no_no"));
+        assert_eq!(
+            website("/servers/publish", "no_no"),
+            "https://rustic-launcher.com/nb/servers/publish"
+        );
+        assert_eq!(table_code("ar_sa"), "ar");
+        assert_eq!(table_code("he_il"), "he");
+        assert_eq!(table_code("hi_in"), "hi");
+        assert_eq!(table_code("el_gr"), "el");
+        assert_eq!(table_code("fi_fi"), "fi");
         assert_eq!(t(T::Discover, "cs_cz"), "Objevovat");
         assert_eq!(t(T::Discover, "th_th"), "ค้นพบ");
         // Elfdalian reads Swedish.

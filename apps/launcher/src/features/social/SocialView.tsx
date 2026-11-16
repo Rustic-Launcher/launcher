@@ -1,10 +1,11 @@
 import { cn } from '@rustic/ui';
-import { MessagesSquare, Users } from 'lucide-react';
+import { MessagesSquare, PartyPopper, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useConversations } from '@/queries/social';
+import { useConversations, usePartyInvites } from '@/queries/social';
 import { useUi } from '@/stores/ui';
 import { ConversationList, ConversationPane } from './ChatsTab';
 import { FriendsTab } from './FriendsTab';
+import { PartyChatPane, PartyTab } from './PartyTab';
 
 /**
  * The Social view: Friends / Chats tabs on the left, conversation on the right. Hosted by the
@@ -17,8 +18,14 @@ export function SocialView() {
   const setSocial = useUi((s) => s.setSocial);
   const { data: convs } = useConversations();
   const unread = (convs ?? []).reduce((n, c) => n + c.unread, 0);
+  const { data: invites } = usePartyInvites();
 
-  const tabBtn = (id: 'friends' | 'chats', label: string, Icon: typeof Users, badge?: number) => (
+  const tabBtn = (
+    id: 'friends' | 'chats' | 'party',
+    label: string,
+    Icon: typeof Users,
+    badge?: number,
+  ) => (
     <button
       type="button"
       role="tab"
@@ -53,12 +60,15 @@ export function SocialView() {
         >
           {tabBtn('friends', t('social.friends'), Users)}
           {tabBtn('chats', t('social.chats'), MessagesSquare, unread)}
+          {tabBtn('party', t('party.title'), PartyPopper, invites?.length)}
         </div>
         <div role="tabpanel" className="min-h-0 flex-1">
           {tab === 'friends' ? (
             <FriendsTab
               onMessage={(f) => setSocial({ socialTab: 'chats', socialChatWith: f.id })}
             />
+          ) : tab === 'party' ? (
+            <PartyTab />
           ) : (
             <ConversationList
               selected={chatWith}
@@ -68,7 +78,7 @@ export function SocialView() {
         </div>
       </div>
       <section className="bg-surface-2/60 border-border min-h-0 overflow-hidden rounded-xl border">
-        <ConversationPane userId={chatWith} />
+        {tab === 'party' ? <PartyChatPane /> : <ConversationPane userId={chatWith} />}
       </section>
     </div>
   );

@@ -122,7 +122,7 @@ export function ManualPath({ server, onDone }: { server: Server; onDone: () => v
 function GuideSteps({ registrar }: { registrar: Registrar }) {
   const { t } = useTranslation('servers');
   return (
-    <ol className="text-fg-muted flex list-decimal flex-col gap-1 pl-5 text-sm">
+    <ol className="text-fg-muted flex list-decimal flex-col gap-1 ps-5 text-sm">
       {t(`domains.guides.${registrar}.steps`)
         .split('\n')
         .map((s) => (

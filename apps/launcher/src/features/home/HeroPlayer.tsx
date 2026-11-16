@@ -25,6 +25,8 @@ export default function HeroPlayer() {
       yaw={-0.45}
       skin={skin}
       ambience="forest"
+      // Fixed framing on the Launchpad: no wheel / +- zoom.
+      zoomable={false}
       label={names.length ? t('hero.playerWearing', { items: names.join(', ') }) : t('hero.player')}
     />
   );

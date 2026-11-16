@@ -30,22 +30,57 @@ import { invoke } from '@/ipc';
 import { formatCompact, formatRelative } from '@/lib/format';
 import { qk, useAccounts, useActiveInstance } from '@/queries/core';
 import { sortFriends, useFeaturedServers, useFriends, useNews } from '@/queries/social';
+import { EditionSwitcher } from '@/features/java/EditionSwitcher';
+import { usePrefs } from '@/stores/prefs';
 import { HeroVideo } from './HeroVideo';
 import { coverGradient } from './logic';
 import { AccountAvatar } from '@/components/AccountAvatar';
 
 const HeroPlayer = lazy(() => import('./HeroPlayer'));
 
-/** Launchpad (step 1b): greeting, launch hero, latest news; friends column on the right. */
+const JavaLaunchpad = lazy(() =>
+  import('@/features/java/JavaLaunchpad').then((m) => ({ default: m.JavaLaunchpad })),
+);
+const BedrockPanel = lazy(() =>
+  import('@/features/java/BedrockPanel').then((m) => ({ default: m.BedrockPanel })),
+);
+
+/**
+ * Launchpad (step 1b): greeting, launch hero, latest news; friends column on the right. The game
+ * switcher, in the hero's top-left corner, shows the Java Launchpad or the Bedrock panel instead
+ * (ADR 0172); the greeting stays above whichever game is shown.
+ */
 export function HomePage() {
+  const edition = usePrefs((s) => s.launchpadEdition);
   return (
     <div className="rx-page-enter grid min-h-full grid-cols-[minmax(0,1fr)_minmax(300px,380px)] gap-4 p-4">
-      <div className="flex min-w-0 flex-col gap-5">
-        <Greeting />
-        <LaunchHero />
-        <NewsGrid />
-      </div>
-      <LaunchpadAside />
+      {edition === 'java' ? (
+        <div className="col-span-2 flex min-w-0 flex-col gap-5">
+          <Greeting />
+          <Suspense fallback={<Skeleton className="aspect-[16/7] min-h-72 rounded-2xl" />}>
+            <div className="grid grid-cols-[minmax(0,1fr)_minmax(300px,380px)] gap-4">
+              <JavaLaunchpad />
+            </div>
+          </Suspense>
+        </div>
+      ) : (
+        <>
+          <div className="flex min-w-0 flex-col gap-5">
+            <Greeting />
+            {edition === 'bedrock' ? (
+              <Suspense fallback={<Skeleton className="aspect-[16/7] min-h-72 rounded-2xl" />}>
+                <BedrockPanel />
+              </Suspense>
+            ) : (
+              <>
+                <LaunchHero />
+                <NewsGrid />
+              </>
+            )}
+          </div>
+          <LaunchpadAside />
+        </>
+      )}
     </div>
   );
 }
@@ -125,7 +160,8 @@ function LaunchHero() {
       className="border-border-default relative isolate flex aspect-[16/7] min-h-72 flex-col items-center justify-center overflow-hidden rounded-2xl border"
     >
       <HeroVideo running={play.state === 'running'} />
-      <div className="absolute inset-y-0 left-0 w-[34%] max-w-80">
+      <EditionSwitcher overlay />
+      <div className="absolute inset-y-0 start-0 w-[34%] max-w-80">
         <Suspense fallback={<Skeleton className="m-6 h-4/5 rounded-xl" />}>
           <HeroPlayer />
         </Suspense>
@@ -192,7 +228,7 @@ function LaunchHero() {
             params={{ instanceId: instance.id }}
             search={{ tab: 'settings' }}
             aria-label={t('launchpad.instanceSettings')}
-            className="rx-focus-ring bg-surface/80 text-fg-muted hover:text-fg absolute right-3 bottom-3 grid size-9 place-items-center rounded-lg backdrop-blur"
+            className="rx-focus-ring bg-surface/80 text-fg-muted hover:text-fg absolute end-3 bottom-3 grid size-9 place-items-center rounded-lg backdrop-blur"
           >
             <Settings2 className="size-4.5" />
           </Link>
@@ -200,7 +236,7 @@ function LaunchHero() {
       )}
       <Link
         to="/locker"
-        className="rx-focus-ring bg-surface/70 text-fg-muted hover:text-fg absolute bottom-3 left-3 rounded-lg px-2.5 py-1.5 text-xs font-medium backdrop-blur"
+        className="rx-focus-ring bg-surface/70 text-fg-muted hover:text-fg absolute start-3 bottom-3 rounded-lg px-2.5 py-1.5 text-xs font-medium backdrop-blur"
       >
         {t('hero.openLocker')}
       </Link>
@@ -288,7 +324,7 @@ function NewsGrid() {
           <li key={n.id} className="relative">
             {!read.has(n.id) && (
               <span
-                className="bg-accent ring-surface absolute -top-1 -left-1 z-10 size-3 rounded-full ring-4"
+                className="bg-accent ring-surface absolute -start-1 -top-1 z-10 size-3 rounded-full ring-4"
                 role="img"
                 aria-label={t('launchpad.unreadDot')}
               />
@@ -297,7 +333,7 @@ function NewsGrid() {
               type="button"
               onClick={() => open(n)}
               data-testid={`news-${n.id}`}
-              className="rx-focus-ring group border-border relative flex aspect-[16/9] w-full flex-col justify-end overflow-hidden rounded-xl border p-5 text-left text-white"
+              className="rx-focus-ring group border-border relative flex aspect-[16/9] w-full flex-col justify-end overflow-hidden rounded-xl border p-5 text-start text-white"
               style={{ background: coverGradient(n.hue) }}
             >
               <NewsArt seed={n.hue} />
@@ -316,10 +352,14 @@ function NewsGrid() {
                     · {formatRelative(n.published_at, i18n.language)}
                   </span>
                 </span>
-                <span className="text-xl font-bold tracking-tight">{n.title}</span>
-                <span className="line-clamp-2 text-sm text-white/85">{n.summary}</span>
+                <span dir="auto" className="text-xl font-bold tracking-tight">
+                  {n.title}
+                </span>
+                <span dir="auto" className="line-clamp-2 text-sm text-white/85">
+                  {n.summary}
+                </span>
               </span>
-              <ExternalLink className="absolute top-4 right-4 size-4 text-white/70 opacity-0 transition-opacity group-hover:opacity-100" />
+              <ExternalLink className="absolute end-4 top-4 size-4 text-white/70 opacity-0 transition-opacity group-hover:opacity-100" />
             </button>
           </li>
         ))}
@@ -335,7 +375,7 @@ function NewsArt({ seed }: { seed: number }) {
     return { x: (i % 6) * 34, y: Math.floor(i / 6) * 34, o: v > 70 ? 0.18 : v > 40 ? 0.08 : 0 };
   });
   return (
-    <svg aria-hidden viewBox="0 0 204 136" className="absolute top-4 right-4 h-3/4 w-auto">
+    <svg aria-hidden viewBox="0 0 204 136" className="absolute end-4 top-4 h-3/4 w-auto">
       {cells.map((c, i) => (
         <rect
           key={i}

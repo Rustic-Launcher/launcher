@@ -64,8 +64,8 @@ export function VisualCard({
       {overlay && (
         <div
           className={cn(
-            'absolute top-2.5 left-2.5 flex flex-wrap gap-1.5',
-            corner ? 'right-12' : 'right-2.5',
+            'absolute start-2.5 top-2.5 flex flex-wrap gap-1.5',
+            corner ? 'end-12' : 'end-2.5',
           )}
         >
           {overlay}
@@ -79,7 +79,7 @@ export function VisualCard({
           {coverAction}
         </div>
       )}
-      {corner && <div className="absolute top-2 right-2 z-10">{corner}</div>}
+      {corner && <div className="absolute end-2 top-2 z-10">{corner}</div>}
     </>
   );
   return (

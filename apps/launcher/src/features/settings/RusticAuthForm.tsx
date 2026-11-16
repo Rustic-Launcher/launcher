@@ -258,7 +258,7 @@ export function RusticAuthForm({ onSignedIn }: { onSignedIn?: () => void }) {
         </div>
       )}
       {mode === 'signup' && !mfa && problems.length > 0 && (form.email || form.password) && (
-        <ul className="text-fg-subtle list-disc pl-5 text-xs">
+        <ul className="text-fg-subtle list-disc ps-5 text-xs">
           {problems.map((p) => (
             <li key={p}>{t(`rusticAuth.problems.${p}`)}</li>
           ))}

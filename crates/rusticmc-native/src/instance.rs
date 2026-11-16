@@ -5,7 +5,8 @@
 //! - `bin/`: that client (`rustic-client`), with what it reads beside itself (`native-mods.json`,
 //!   Horizon's `mods/` folder of the edition bundle, the mods' `native-data/`).
 //!
-//! The native mods of an instance are the `.hnmod` files in `game/horizon-native-mods/` that
+//! The native mods of an instance are the `.hnmod` files (and the combined `.hmod`s: content and
+//! code in one file, launcher ADR 0175) in `game/horizon-native-mods/` that
 //! `game/horizon-mods.txt` doesn't turn off (`mod.<id>:false`). A build is up to date when its key
 //! ([`key`]: the edition build, the profile and each mod's id, version and SHA-256) is the one the
 //! instance's mods give now; else the next launch rebuilds (only what changed compiles). With no
@@ -63,8 +64,9 @@ pub fn installed(game_dir: &Path) -> Result<Vec<(NativeModFile, Bundle)>> {
         .map(|e| e.path())
         .filter(|p| {
             p.is_file()
-                && p.extension()
-                    .is_some_and(|e| e.eq_ignore_ascii_case("hnmod"))
+                && p.extension().is_some_and(|e| {
+                    e.eq_ignore_ascii_case("hnmod") || e.eq_ignore_ascii_case("hmod")
+                })
         })
         .collect();
     paths.sort();
@@ -351,18 +353,32 @@ mod tests {
         )
         .unwrap();
         std::fs::write(game.join(MODS_DIR).join("readme.txt"), "x").unwrap();
+        // A combined mod (content and code in one `.hmod`).
+        std::fs::write(
+            game.join(MODS_DIR).join("music-1.0.0.hmod"),
+            hnmod(
+                "music",
+                &[(
+                    "horizon-mod.toml",
+                    b"id = \"music\"
+",
+                )],
+            ),
+        )
+        .unwrap();
         let all = installed(&game).unwrap();
         assert_eq!(
             all.iter().map(|m| m.0.id.as_str()).collect::<Vec<_>>(),
-            ["fps_overlay", "zoom"]
+            ["fps_overlay", "music", "zoom"]
         );
+        assert_eq!(all[1].1.content().len(), 1);
         std::fs::write(
             game.join("horizon-mods.txt"),
             "mod.zoom:false\nmod.fps_overlay:true\n",
         )
         .unwrap();
         let on = enabled(&game).unwrap();
-        assert_eq!(on.len(), 1);
+        assert_eq!(on.len(), 2);
         assert_eq!(on[0].0.id, "fps_overlay");
         // A broken file is named.
         std::fs::write(game.join(MODS_DIR).join("bad.hnmod"), "nope").unwrap();

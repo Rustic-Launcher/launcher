@@ -1,0 +1,357 @@
+{
+  "title": "الإصدارات",
+  "errors": {
+    "action": "لم ينجح ذلك"
+  },
+  "card": {
+    "more": "إجراءات أخرى لـ {{name}}",
+    "pin": "تثبيت في الأعلى",
+    "unpin": "إلغاء التثبيت في الأعلى",
+    "duplicate": "تكرار",
+    "duplicated": "تم إنشاء {{name}}",
+    "playtime": "وقت اللعب",
+    "never": "أبدًا",
+    "fromModpack": "حزمة المودات {{name}} {{version}}"
+  },
+  "state": {
+    "running": "قيد التشغيل",
+    "installing": "جارٍ التثبيت",
+    "broken": "تحتاج إلى إصلاح"
+  },
+  "delete": {
+    "title": "حذف {{name}}؟",
+    "body": "ستُحذف موداتها وإعداداتها وعوالمها من هذا الكمبيوتر. لا يمكن التراجع عن ذلك.",
+    "confirm": "حذف النسخة",
+    "done": "تم حذف {{name}}"
+  },
+  "new": {
+    "title": "نسخة جديدة",
+    "description": "ابدأ من الصفر أو أحضر حزمة موجودة.",
+    "tabs": {
+      "create": "إنشاء",
+      "import": "استيراد"
+    },
+    "name": "الاسم",
+    "namePlaceholder": "عالم البقاء الخاص بي",
+    "nameRequired": "أعطِ النسخة اسمًا.",
+    "icon": "الأيقونة",
+    "color": "اللون",
+    "colorN": "اللون {{n}}",
+    "version": "بنية Horizon",
+    "versionHint": "يضيف إصدار Rustic العناصر التجميلية والأصدقاء داخل اللعبة. لا حاجة لإعدادات Java أو RAM.",
+    "recommended": "موصى به",
+    "release": "مستقر",
+    "nightly": "ليلي",
+    "installed": "مثبّت",
+    "submit": "إنشاء النسخة",
+    "created": "{{name}} جاهزة",
+    "preview": "معاينة",
+    "edition": "الإصدار",
+    "editionRustic": "عناصر تجميلية وأصدقاء ومودات أصلية داخل اللعبة.",
+    "editionHorizon": "Horizon كما ينشره فريقه، دون أي إضافة.",
+    "noBuild": "لا توجد بنية مدرجة لهذا الإصدار حاليًا.",
+    "nightlyHint": "تصدر البنى الليلية كل يوم من أحدث شيفرة لـ Horizon: أحدث، لكنها أقل اختبارًا."
+  },
+  "icons": {
+    "grass": "برعم",
+    "sword": "سيوف",
+    "pickaxe": "معول",
+    "castle": "قلعة",
+    "rocket": "صاروخ",
+    "gem": "جوهرة",
+    "flame": "لهب",
+    "leaf": "ورقة شجر",
+    "star": "نجمة",
+    "compass": "بوصلة"
+  },
+  "import": {
+    "folder": {
+      "title": "مجلد نسخة",
+      "description": "مجلد نسخة من Prism أو MultiMC، يُنقل كما يفعل Horizon."
+    },
+    "mrpack": {
+      "title": "حزمة Modrinth (.mrpack)",
+      "description": "تُطابَق المودات مع بُنى Horizon الخاصة بها عند توفرها."
+    },
+    "curseforge_zip": {
+      "title": "ملف zip من CurseForge",
+      "description": "حزمة مودات مُصدَّرة من CurseForge."
+    },
+    "modpack": {
+      "title": "من حزمة مودات",
+      "description": "تصفّح حزم المودات من Horizon وModrinth وRustic."
+    },
+    "started": "جارٍ استيراد {{name}}",
+    "background": "يستمر ذلك في الخلفية؛ ويمكنك مواصلة استخدام المشغّل.",
+    "note": "لا يُثبَّت إلا المحتوى الذي يعمل على Horizon؛ ويُدرج الباقي مع السبب.",
+    "drop": {
+      "title": "أفلت حزمة أو مجلد نسخة هنا",
+      "hint": "ملف .mrpack من Modrinth، أو ملف .zip من CurseForge، أو مجلد نسخة من Prism أو MultiMC",
+      "choose": "اختيار ملف",
+      "active": "أفلت للاستيراد",
+      "unsupported": "لا يمكن استيراد هذا. استخدم ملف .mrpack أو ملف .zip من CurseForge أو مجلد نسخة."
+    },
+    "formats": "الصيغ المدعومة"
+  },
+  "detail": {
+    "notFound": "هذه النسخة لم تعد موجودة",
+    "backToList": "العودة إلى النسخ",
+    "tabsLabel": "أقسام النسخة",
+    "tabs": {
+      "overview": "نظرة عامة",
+      "content": "المحتوى",
+      "resourcepacks": "حزم الموارد",
+      "worlds": "العوالم",
+      "settings": "الإعدادات"
+    }
+  },
+  "overview": {
+    "mods": "المودات",
+    "resourcePacks": "حزم الموارد",
+    "shaders": "حزم الشيدرات",
+    "version": "بنية Horizon",
+    "updateAvailable": "يتوفر تحديث",
+    "upToDate": "محدّثة",
+    "updateNow": "التحديث الآن",
+    "changeVersion": "اختيار بنية Horizon",
+    "applyVersion": "تبديل البنية",
+    "versionChanging": "جارٍ التبديل إلى {{version}}",
+    "lastSession": "آخر جلسة",
+    "lastPlayed": "آخر لعب: {{when}}",
+    "neverPlayed": "لم تُلعب بعد",
+    "rejoin": "العودة",
+    "noServer": "لم يُنضم إلى أي خادم من هذه النسخة بعد.",
+    "created": "تاريخ الإنشاء",
+    "folder": "المجلد"
+  },
+  "content": {
+    "filter": "التصفية حسب النوع",
+    "kinds": {
+      "all": "الكل",
+      "mod": "المودات",
+      "resourcepack": "حزم الموارد",
+      "shader": "الشيدرات"
+    },
+    "search": "البحث في المحتوى المثبّت",
+    "updateAll_zero": "لا شيء لتحديثه",
+    "updateAll_one": "تحديث عنصر واحد",
+    "updateAll_two": "تحديث عنصرين",
+    "updateAll_few": "تحديث {{count}} عناصر",
+    "updateAll_many": "تحديث {{count}} عنصرًا",
+    "updateAll_other": "تحديث {{count}} عنصر",
+    "browse": "تصفّح المحتوى",
+    "noMatch": "لا شيء مثبّت يطابق بحثك.",
+    "empty": {
+      "title": "لا شيء مثبّت بعد",
+      "description": "اعثر على مودات وحزم موارد وشيدرات تعمل مع هذه النسخة."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "ملف محلي"
+    },
+    "updateTo": "تحديث: {{version}}",
+    "incompatible": "غير متوافق: {{reason}}",
+    "updateOne": "تحديث {{name}}",
+    "toggle": "تفعيل {{name}}",
+    "remove": "إزالة {{name}}",
+    "removeTitle": "إزالة {{name}}؟",
+    "removeBody": "سيُحذف الملف من هذه النسخة. يمكنك تثبيته مجددًا من «المحتوى»."
+  },
+  "packs": {
+    "hint": "الحزم في الأعلى تتغلب عندما تغيّر حزمتان الشيء نفسه.",
+    "listLabel": "ترتيب تحميل حزم الموارد",
+    "top": "الأولوية القصوى",
+    "up": "نقل {{name}} لأعلى",
+    "down": "نقل {{name}} لأسفل",
+    "moved": "نُقلت {{name}} إلى الموضع {{position}} من {{total}}",
+    "browse": "البحث عن حزم موارد",
+    "empty": {
+      "title": "لا توجد حزمة موارد",
+      "description": "أضف حزمًا لتغيير الأنسجة والأصوات والواجهة."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "لا يوجد عالم بعد",
+      "description": "تظهر هنا العوالم التي تنشئها داخل اللعبة."
+    },
+    "openSaves": "فتح مجلد الحفظ",
+    "lastPlayed": "آخر لعب: {{when}}",
+    "modes": {
+      "survival": "البقاء",
+      "creative": "الإبداع",
+      "adventure": "المغامرة",
+      "hardcore": "Hardcore",
+      "spectator": "المتفرج"
+    },
+    "datapacks_zero": "لا حزم بيانات",
+    "datapacks_one": "حزمة بيانات واحدة",
+    "datapacks_two": "حزمتا بيانات",
+    "datapacks_few": "{{count}} حزم بيانات",
+    "datapacks_many": "{{count}} حزمة بيانات",
+    "datapacks_other": "{{count}} حزمة بيانات",
+    "play": "لعب هذا العالم",
+    "addDatapacks": "إضافة حزم بيانات"
+  },
+  "settings": {
+    "general": "عام",
+    "display": "النافذة",
+    "useDefaultResolution": "استخدام حجم النافذة الافتراضي",
+    "defaultIs": "الافتراضي: {{width}} × {{height}}",
+    "width": "العرض",
+    "height": "الارتفاع",
+    "fullscreen": "البدء بملء الشاشة",
+    "resolutionError": "استخدم أعدادًا صحيحة، 640 × 360 على الأقل.",
+    "launch": "خيارات التشغيل",
+    "launchHint": "نسخ Horizon تثبّت بنية فقط: لا يوجد Java أو RAM أو محمّل لضبطه.",
+    "gameArgs": "وسائط إضافية للعبة",
+    "gameArgsHint": "متقدم. تُمرَّر إلى Horizon كما هي.",
+    "folders": "المجلدات",
+    "folder": {
+      "root": "النسخة",
+      "mods": "المودات",
+      "resourcepacks": "حزم الموارد",
+      "shaderpacks": "حزم الشيدرات",
+      "saves": "العوالم",
+      "screenshots": "لقطات الشاشة",
+      "logs": "السجلات"
+    },
+    "unsaved": "لديك تغييرات غير محفوظة.",
+    "allSaved": "حُفظت كل التغييرات.",
+    "saved": "تم حفظ إعدادات النسخة"
+  },
+  "heading": "*ملفات التعريف* الخاصة بك",
+  "native": {
+    "title": "المودات الأصلية",
+    "allOff": "كلها متوقفة: تشغّل النسخة اللعبة المبنية مسبقًا.",
+    "state": {
+      "building": "جارٍ البناء…",
+      "up_to_date": "محدّثة",
+      "needs_rebuild": "تحتاج إلى إعادة البناء",
+      "not_built": "غير مبنية",
+      "not_needed": "لعبة مبنية مسبقًا"
+    },
+    "build": "بناء",
+    "rebuild": "إعادة البناء",
+    "cancel": "إلغاء",
+    "progress": "تقدّم البناء الأصلي",
+    "starting": "جارٍ البدء…",
+    "firstBuildHint": "البناء الأول يجمّع اللعبة كاملة (من 10 إلى 15 دقيقة)؛ وما يليه يجمّع ما تغيّر فقط. يمكنك مواصلة استخدام المشغّل.",
+    "failed": "فشل آخر بناء",
+    "built": "بُنيت في {{date}} خلال {{duration}} · حجم اللعبة {{size}}",
+    "leftOut": {
+      "other": "استُبعد {{name}}: لا ينطبق على إصدار Horizon هذا.",
+      "unsupported": "استُبعد {{name}}: لا يستطيع Rustic بعدُ بناء ما يحتاج إليه."
+    },
+    "notEdition": "هذه النسخة تشغّل بنية Horizon عادية: المودات الأصلية لا تُبنى إلا في إصدار Rustic."
+  },
+  "profiles": {
+    "summary_zero": "لا ملفات تعريف · {{playtime}} من اللعب",
+    "summary_one": "ملف تعريف واحد · {{playtime}} من اللعب",
+    "summary_two": "ملفا تعريف · {{playtime}} من اللعب",
+    "summary_few": "{{count}} ملفات تعريف · {{playtime}} من اللعب",
+    "summary_many": "{{count}} ملف تعريف · {{playtime}} من اللعب",
+    "summary_other": "{{count}} ملف تعريف · {{playtime}} من اللعب",
+    "searchLabel": "البحث في ملفات التعريف",
+    "searchPlaceholder": "ابحث بالاسم أو بنية Horizon أو حزمة المودات…",
+    "source": {
+      "label": "عرض",
+      "all": "كل ملفات التعريف",
+      "custom": "ملفاتي",
+      "modpack": "من حزم المودات"
+    },
+    "sorts": {
+      "recent": "آخر لعب",
+      "name": "الاسم",
+      "created": "المُنشأة مؤخرًا",
+      "version": "بنية Horizon",
+      "playtime": "وقت اللعب"
+    },
+    "filters": {
+      "version": "بنية Horizon",
+      "edition": "الإصدار",
+      "editions": {
+        "rustic": "إصدار Rustic",
+        "horizon": "Horizon العادي"
+      },
+      "native": "المودات الأصلية",
+      "nativeOnly": "تحتوي مودات أصلية",
+      "nativeHint": "تُجمَّع المودات الأصلية على كمبيوترك قبل بدء اللعبة.",
+      "remove": "إزالة عامل التصفية: {{filter}}",
+      "reset": "إعادة ضبط عوامل التصفية"
+    },
+    "create": "إنشاء ملف تعريف",
+    "createHint": "بنية Horizon وأيقونة واسم",
+    "import": "استيراد",
+    "importHint": "مجلد أو ملف .mrpack أو ملف zip من CurseForge",
+    "all": "كل ملفات التعريف",
+    "listLabel": "ملفات التعريف",
+    "recent": "العودة إلى اللعب",
+    "recentHint": "آخر ملفات التعريف التي لعبتها",
+    "card": {
+      "active": "نشط",
+      "activeHint": "يشغّل Launchpad ملف التعريف هذا",
+      "running": "قيد التشغيل",
+      "pinned": "مثبّت في الأعلى",
+      "update": "تحديث {{version}}",
+      "broken": "يحتاج إلى إصلاح",
+      "modpack": "حزمة مودات",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "آخر لعب: {{when}}",
+      "neverPlayed": "لم يُلعب بعد",
+      "created": "أُنشئ في {{date}}",
+      "lastServer": "آخر خادم: {{name}}",
+      "rejoin": "العودة",
+      "rejoinAria": "العودة إلى {{server}} باستخدام {{name}}",
+      "mods": "المودات",
+      "packs": "حزم الموارد",
+      "shaders": "الشيدرات",
+      "playtime": "وقت اللعب",
+      "contentCount": "المودات: {{mods}} · الحزم: {{packs}} · الشيدرات: {{shaders}}",
+      "open": "فتح {{name}}"
+    },
+    "native": {
+      "label": "المودات الأصلية",
+      "count_zero": "لا مودات أصلية",
+      "count_one": "مود أصلي واحد",
+      "count_two": "مودان أصليان",
+      "count_few": "{{count}} مودات أصلية",
+      "count_many": "{{count}} مودًا أصليًا",
+      "count_other": "{{count}} مود أصلي",
+      "building": "جارٍ البناء {{pct}}",
+      "buildingNoPct": "جارٍ البناء…",
+      "up_to_date": "المودات الأصلية جاهزة",
+      "needs_rebuild": "أصلية: تحتاج إلى إعادة البناء",
+      "not_built": "أصلية: لم تُبنَ بعد",
+      "off": "المودات الأصلية متوقفة",
+      "unsupported": "أصلية: تتطلب إصدار Rustic",
+      "hint": {
+        "up_to_date": "بُنيت على هذا الكمبيوتر لبنية Horizon هذه.",
+        "needs_rebuild": "تغيّرت المودات منذ آخر بناء: يُعاد البناء عند اللعب.",
+        "not_built": "تُجمَّع على كمبيوترك عند اللعب (من 10 إلى 15 دقيقة في المرة الأولى).",
+        "off": "كل المودات الأصلية متوقفة: تعمل اللعبة المبنية مسبقًا.",
+        "unsupported": "ملف التعريف هذا يشغّل بنية Horizon عادية: المودات الأصلية لا تُبنى إلا في إصدار Rustic.",
+        "building": "جارٍ تجميع اللعبة مع المودات الأصلية لملف التعريف هذا."
+      }
+    },
+    "menu": {
+      "edit": "تعديل الإعدادات",
+      "activate": "الاستخدام على Launchpad",
+      "isActive": "مستخدم على Launchpad",
+      "activated": "أصبح {{name}} الآن على Launchpad"
+    },
+    "empty": {
+      "title": "لا يوجد ملف تعريف بعد",
+      "description": "ملف التعريف هو بنية Horizon لها موداتها وحزمها وعوالمها الخاصة. أنشئ واحدًا بالبنية الموصى بها، أو استورد حزمة لديك بالفعل."
+    },
+    "noMatch": {
+      "title": "لا يوجد ملف تعريف مطابق",
+      "description": "جرّب بحثًا آخر أو أزل عامل تصفية."
+    },
+    "detail": {
+      "banner": "غلاف {{name}}"
+    }
+  }
+}

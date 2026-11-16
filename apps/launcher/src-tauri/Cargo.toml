@@ -22,11 +22,16 @@ rusticmc-auth = { path = "../../../crates/rusticmc-auth" }
 rusticmc-content = { path = "../../../crates/rusticmc-content" }
 rusticmc-hosting = { path = "../../../crates/rusticmc-hosting" }
 rusticmc-instances = { path = "../../../crates/rusticmc-instances" }
+rusticmc-java = { path = "../../../crates/rusticmc-java" }
 rusticmc-launcher-core = { path = "../../../crates/rusticmc-launcher-core" }
 rusticmc-native = { path = "../../../crates/rusticmc-native" }
 rusticmc-servers = { path = "../../../crates/rusticmc-servers" }
 rusticmc-tunnel = { path = "../../../crates/rusticmc-tunnel" }
 base64 = "0.22"
+# The Discord presence's pictures (ADR 0173): made 64x64 PNGs and named by their SHA-256. The
+# versions already in the workspace's lockfile (services/api, rusticmc-content); MIT/Apache.
+image = { version = "0.25", default-features = false, features = ["png"] }
+sha2 = "0.10"
 percent-encoding = "2.3"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
@@ -45,8 +50,14 @@ toml = "0.9"
 tracing = "0.1"
 uuid = { version = "1", features = ["v4"] }
 
+# Voice (ADR 0176): WebKitGTK's media stream and WebRTC switches on Linux. The exact crate and
+# feature wry already uses (MIT), so nothing new is built.
+[target.'cfg(target_os = "linux")'.dependencies]
+webkit2gtk = { version = "=2.0.2", features = ["v2_38"] }
+
 [dev-dependencies]
 tempfile = "3"
+
 
 [features]
 # `tauri build` turns this on: the frontend is embedded from frontendDist instead of devUrl.

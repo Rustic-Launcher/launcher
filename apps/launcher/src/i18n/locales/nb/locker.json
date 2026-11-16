@@ -1,0 +1,84 @@
+{
+  "title": "Skap",
+  "subtitle": "Rent visuelle gjenstander. Vises i spillet for spillere som bruker Rustic-utgaven.",
+  "horizonNote": {
+    "badge": "Horizon-kosmetikk er fortsatt tilgjengelig",
+    "detail": "Horizon-kosmetikken din beholdes i Rustic-utgavens klient. Administrer den i spillet; den fungerer sammen med Rustic-gjenstandene dine."
+  },
+  "empty": {
+    "title": "Du eier ingen kosmetikk ennå.",
+    "description": "Gjenstander du kjøper eller får, vises her, klare til bruk.",
+    "browse": "Bla gjennom Butikken",
+    "categoryTitle": "{{category}}: ingen ennå",
+    "categoryDescription": "Gjenstander av denne typen som du eier, vises her."
+  },
+  "viewer": {
+    "region": "Figuren din",
+    "label_one": "Figuren din har på seg {{count}} gjenstand. Dra eller bruk piltastene for å snu, pluss og minus for å zoome.",
+    "label_other": "Figuren din har på seg {{count}} gjenstander. Dra eller bruk piltastene for å snu, pluss og minus for å zoome.",
+    "hint": "Dra for å snu · rull for å zoome",
+    "animation": "Animasjon",
+    "playEmote": "Spill av {{name}}",
+    "noEmote": "Ingen emote valgt",
+    "reset": "Tilbakestill visningen"
+  },
+  "animations": {
+    "idle": "I ro",
+    "walk": "Gå",
+    "wave": "Vinke",
+    "dance": "Danse"
+  },
+  "items": {
+    "region": "Gjenstandene dine",
+    "nothing": "Ingenting",
+    "equipped": "I bruk"
+  },
+  "categories": {
+    "label": "Kategorier",
+    "all": "Alle",
+    "head": "Hatter",
+    "back": "Rygg",
+    "top": "Overkropp",
+    "shoulder": "Skulder",
+    "nametag": "Navneskilt",
+    "emote": "Emotes",
+    "companion": "Følgesvenner",
+    "trail": "Spor",
+    "aura": "Auraer"
+  },
+  "rarity": {
+    "common": "Vanlig",
+    "rare": "Sjelden",
+    "epic": "Episk",
+    "legendary": "Legendarisk"
+  },
+  "toast": {
+    "equipped": "{{name}} er tatt på",
+    "unequipped": "{{name}} er tatt av",
+    "cleared": "{{slot}}: ingenting i bruk",
+    "outfitWorn": "Antrekket er tatt på",
+    "outfitSaved": "Antrekket «{{name}}» er lagret",
+    "equipFailed": "Kunne ikke endre utseendet ditt. Prøv igjen."
+  },
+  "outfits": {
+    "title": "Antrekk",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Gi dette utseendet et navn",
+    "save": "Lagre nåværende utseende",
+    "full": "Du kan beholde opptil {{max}} antrekk. Slett ett for å lagre et nytt utseende.",
+    "empty": "Lagre det nåværende utseendet ditt for å ta det på igjen med ett klikk.",
+    "items_one": "{{count}} gjenstand",
+    "items_other": "{{count}} gjenstander",
+    "wearing": "Har på",
+    "wear": "Ta på",
+    "delete": "Slett antrekket {{name}}"
+  },
+  "switches": {
+    "showMine": "Vis kosmetikken min",
+    "showMineHint": "Andre spillere med Rustic-utgaven ser hva du har på deg.",
+    "hideOthers": "Skjul andre spilleres kosmetikk",
+    "hideTrailsAuras": "Skjul spor og auraer"
+  },
+  "heading": "Skapet *ditt*",
+  "eyebrow": "Kosmetikk"
+}

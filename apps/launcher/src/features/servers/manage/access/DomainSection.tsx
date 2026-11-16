@@ -181,7 +181,7 @@ function PathTile({
         onClick={onClick}
         data-testid={testId}
         className={cn(
-          'rx-focus-ring group border-border bg-surface-2/60 hover:border-accent/50 hover:bg-surface-2 flex h-full w-full flex-col gap-3 rounded-2xl border p-4 text-left transition-[border-color,background-color,transform] duration-200 hover:-translate-y-0.5',
+          'rx-focus-ring group border-border bg-surface-2/60 hover:border-accent/50 hover:bg-surface-2 flex h-full w-full flex-col gap-3 rounded-2xl border p-4 text-start transition-[border-color,background-color,transform] duration-200 hover:-translate-y-0.5',
         )}
       >
         <span className="flex items-center justify-between">

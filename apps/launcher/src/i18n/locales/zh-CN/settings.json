@@ -13,7 +13,8 @@
     "appearance": "外观",
     "privacy": "隐私与数据",
     "parental": "家长控制",
-    "about": "关于与法律信息"
+    "about": "关于与法律信息",
+    "voice": "语音"
   },
   "accounts": {
     "active": "当前",
@@ -95,7 +96,8 @@
       "description": "你在好友、储物柜、购买和服务器中使用的 Rustic 身份。",
       "signedOut": "未登录。没有它游戏也能运行；社交功能、储物柜和商店需要登录。",
       "signIn": "登录或创建账户",
-      "licenceNote": "Rustic 账户是平台身份，绝不能代替游戏许可证：你仍然需要一个拥有游戏的 Microsoft 账户。"
+      "licenceNote": "Rustic 账户是平台身份，绝不能代替游戏许可证：你仍然需要一个拥有游戏的 Microsoft 账户。",
+      "manageOnWeb": "在网站上管理"
     },
     "offline": {
       "title": "离线游玩",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "请在浏览器中完成登录：启动器会自动获取你的会话。"
   },
   "heading": "你的*设置*",
-  "eyebrow": "启动器"
+  "eyebrow": "启动器",
+  "voice": {
+    "devices": "设备",
+    "devicesHint": "语音使用的麦克风以及扬声器或耳机。",
+    "input": "麦克风",
+    "output": "输出",
+    "outputVolume": "输出音量",
+    "systemDefault": "系统默认",
+    "deviceN": "设备 {{n}}",
+    "talk": "说话",
+    "talkHint": "检测到你的声音时说话，或仅在按住某个按键时说话。",
+    "mode": "输入模式",
+    "modeVad": "语音检测",
+    "modePtt": "按键说话",
+    "pttKey": "按键说话的按键",
+    "pttKeyHint": "在启动器和游戏内都有效。鼠标侧键也可以。",
+    "pressKey": "请按一个键…",
+    "sensitivity": "灵敏度",
+    "sensitivityHint": "越高越能拾取轻声；越低越能忽略背景噪音。",
+    "test": "麦克风测试",
+    "testMic": "测试",
+    "stopTest": "停止",
+    "level": "麦克风音量",
+    "micDenied": "麦克风访问被拒绝。请在系统隐私设置中允许访问，然后重试。",
+    "micMissing": "未找到麦克风。",
+    "noiseSuppression": "噪音抑制",
+    "echoCancellation": "回声消除",
+    "autoGain": "自动增益",
+    "inGame": "游戏内",
+    "inGameHint": "使用 Rustic 版本时，叠加层会显示谁在说话，按键说话在游戏内也有效。",
+    "overlay": "在游戏内显示语音叠加层",
+    "serverVoice": "服务器距离语音",
+    "serverVoiceHint": "Rustic Server 可以按距离与服务器上的所有玩家语音。未满 18 岁需要监护人允许。",
+    "serverAsk": "询问我",
+    "serverAuto": "自动加入",
+    "serverOff": "从不",
+    "servers": {
+      "title": "为你的服务器开启距离语音",
+      "description": "添加服务器，然后把它的密钥填入 proximity-voice 插件的 config.toml。你可以随时关闭。",
+      "namePlaceholder": "服务器名称",
+      "add": "添加",
+      "status": "在线玩家：{{count}}",
+      "enabled": "{{name}} 的距离语音",
+      "newKey": "新密钥",
+      "remove": "移除 {{name}}",
+      "keyOnce": "请立即复制此密钥：它只显示一次。新密钥会替换它。",
+      "tooMany": "最多可添加 10 个服务器。"
+    }
+  }
 }

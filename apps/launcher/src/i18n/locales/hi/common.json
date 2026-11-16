@@ -1,0 +1,503 @@
+{
+  "a11y": {
+    "skipToContent": "कंटेंट पर जाएँ",
+    "notifications": "सूचनाएँ"
+  },
+  "actions": {
+    "retry": "फिर से कोशिश करें",
+    "back": "वापस",
+    "forward": "आगे",
+    "cancel": "रद्द करें",
+    "close": "बंद करें",
+    "clear": "साफ़ करें",
+    "save": "सेव करें",
+    "saved": "सेव हो गया",
+    "delete": "हटाएँ",
+    "edit": "बदलें",
+    "open": "खोलें",
+    "install": "इंस्टॉल करें",
+    "installed": "इंस्टॉल है",
+    "remove": "हटाएँ",
+    "confirm": "पुष्टि करें",
+    "continue": "जारी रखें",
+    "next": "अगला",
+    "previous": "पिछला",
+    "done": "हो गया",
+    "copy": "कॉपी करें",
+    "copied": "कॉपी हो गया",
+    "learnMore": "और जानें",
+    "seeAll": "सभी देखें",
+    "create": "बनाएँ",
+    "import": "इम्पोर्ट करें",
+    "browse": "ब्राउज़ करें…",
+    "apply": "लागू करें",
+    "reset": "रीसेट करें",
+    "enable": "चालू करें",
+    "disable": "बंद करें",
+    "update": "अपडेट करें",
+    "add": "जोड़ें",
+    "refresh": "रीफ़्रेश करें",
+    "openFolder": "फ़ोल्डर खोलें",
+    "skip": "छोड़ें",
+    "more": "और"
+  },
+  "errors": {
+    "generic": "कुछ गड़बड़ हो गई। थोड़ी देर में फिर से कोशिश करें।",
+    "page": {
+      "title": "यह पेज नहीं दिखाया जा सका"
+    },
+    "load": {
+      "title": "इसे लोड नहीं किया जा सका"
+    },
+    "notFound": {
+      "title": "यहाँ कुछ नहीं है",
+      "description": "यह पेज मौजूद नहीं है या कहीं और चला गया है।"
+    }
+  },
+  "nav": {
+    "label": "मुख्य नेविगेशन",
+    "home": "होम",
+    "instances": "प्रोफ़ाइलें",
+    "content": "एक्सप्लोर करें",
+    "servers": "सर्वर",
+    "locker": "लॉकर",
+    "store": "स्टोर",
+    "settings": "सेटिंग्स",
+    "newInstance": "नई प्रोफ़ाइल"
+  },
+  "search": {
+    "title": "खोजें",
+    "placeholder": "कंटेंट, दोस्त, सर्वर, सेटिंग्स खोजें…",
+    "empty": "कोई नतीजा नहीं। कोई और शब्द आज़माएँ।",
+    "loading": "खोज रहे हैं…",
+    "hintNavigate": "नेविगेट करें",
+    "hintOpen": "खोलें",
+    "hintClose": "बंद करें",
+    "open": "खोलें",
+    "myServer": "मेरा सर्वर",
+    "playInstance": "{{name}} खेलें",
+    "groups": {
+      "pages": "पेज",
+      "actions": "कार्रवाइयाँ",
+      "instances": "इंस्टेंस",
+      "content": "कंटेंट",
+      "friends": "दोस्त",
+      "servers": "सर्वर",
+      "settings": "सेटिंग्स",
+      "play": "खेलें"
+    },
+    "actions": {
+      "newInstance": "इंस्टेंस बनाएँ",
+      "newServer": "सर्वर बनाएँ",
+      "addFriend": "दोस्त जोड़ें",
+      "darkTheme": "डार्क थीम पर जाएँ",
+      "lightTheme": "लाइट थीम पर जाएँ"
+    },
+    "settings": {
+      "accounts": "खाते",
+      "game": "गेम",
+      "launcher": "लॉन्चर",
+      "appearance": "दिखावट",
+      "privacy": "निजता और डेटा",
+      "parental": "पैरेंटल कंट्रोल",
+      "about": "जानकारी",
+      "voice": "वॉइस"
+    }
+  },
+  "friends": {
+    "title": "दोस्त",
+    "onlineCount_one": "{{count}} ऑनलाइन",
+    "onlineCount_other": "{{count}} ऑनलाइन",
+    "add": "दोस्त जोड़ें",
+    "search": "दोस्त खोजें",
+    "requests_one": "रिक्वेस्ट · {{count}}",
+    "requests_other": "रिक्वेस्ट · {{count}}",
+    "incoming": "दोस्त बनना चाहते हैं",
+    "outgoing": "रिक्वेस्ट भेजी गई",
+    "accept": "स्वीकार करें",
+    "decline": "अस्वीकार करें",
+    "cancelRequest": "रिक्वेस्ट रद्द करें",
+    "requestSent": "{{name}} को फ़्रेंड रिक्वेस्ट भेजी गई",
+    "error": "दोस्त लोड नहीं हो सके।",
+    "empty": "अभी कोई दोस्त नहीं। उनके Rustic यूज़रनेम से किसी को जोड़ें।",
+    "online_one": "ऑनलाइन · {{count}}",
+    "online_other": "ऑनलाइन · {{count}}",
+    "offline_one": "ऑफ़लाइन · {{count}}",
+    "offline_other": "ऑफ़लाइन · {{count}}",
+    "lastSeen": "{{when}} देखा गया",
+    "activity": {
+      "server": "{{server}} पर खेल रहे हैं",
+      "singleplayer": "अकेले खेल रहे हैं",
+      "hosting": "{{server}} होस्ट कर रहे हैं",
+      "launcher": "लॉन्चर में"
+    },
+    "favorite": "पसंदीदा",
+    "makeFavorite": "पसंदीदा में जोड़ें",
+    "unfavorite": "पसंदीदा से हटाएँ",
+    "join": "जुड़ें",
+    "joinAria": "{{name}} से जुड़ें",
+    "joining": "{{server}} से जुड़ रहे हैं…",
+    "more": "{{name}} के लिए और कार्रवाइयाँ",
+    "remove": "दोस्त हटाएँ",
+    "removeTitle": "{{name}} को अपने दोस्तों से हटाएँ?",
+    "removeBody": "आप एक-दूसरे की गतिविधि अब नहीं देख पाएँगे। आप बाद में नई रिक्वेस्ट भेज सकते हैं।"
+  },
+  "addFriend": {
+    "title": "दोस्त जोड़ें",
+    "description": "किसी खिलाड़ी को उसके Rustic नाम या उससे जुड़े Minecraft नाम से ढूँढें, या किसी ऐसे को चुनें जिसके साथ आप खेले हैं।",
+    "kind": "इससे खोजें",
+    "kindRustic": "Rustic नाम",
+    "kindMinecraft": "Minecraft नाम",
+    "rusticLabel": "Rustic यूज़रनेम",
+    "minecraftLabel": "Minecraft यूज़रनेम",
+    "rusticPlaceholder": "जैसे lea_builds",
+    "minecraftPlaceholder": "जैसे LeaBuilds",
+    "rusticHint": "उनकी Rustic प्रोफ़ाइल पर लिखा सटीक नाम।",
+    "minecraftHint": "उस खिलाड़ी का सटीक इन-गेम नाम जिसने उस Minecraft प्रोफ़ाइल से Rustic में साइन इन किया है।",
+    "find": "ढूँढें",
+    "send": "रिक्वेस्ट भेजें",
+    "sent": "रिक्वेस्ट भेजी गई",
+    "friends": "पहले से दोस्त",
+    "pending": "रिक्वेस्ट लंबित",
+    "incoming": "उन्होंने पहले ही आपसे दोस्ती की रिक्वेस्ट भेजी है: उनकी रिक्वेस्ट स्वीकार करें।",
+    "minecraftName": "Minecraft नाम:",
+    "add": "जोड़ें",
+    "addAria": "{{name}} को फ़्रेंड रिक्वेस्ट भेजें",
+    "playedWith": "हाल में साथ खेले",
+    "playedWithEmpty": "अभी कोई नहीं। आपकी पार्टियों और साझा सर्वरों (10 मिनट या उससे ज़्यादा साथ) के खिलाड़ी यहाँ दिखेंगे।",
+    "crossed": "हाल में देखे गए",
+    "crossedEmpty": "हाल में किसी साझा सर्वर पर कोई नहीं मिला।",
+    "reasonParty": "आपकी पार्टी में",
+    "reasonServer": "{{server}} पर",
+    "reasonSameServer": "उसी सर्वर पर",
+    "suggestionsError": "सुझाव लोड नहीं हो सके।",
+    "suggestionsOff": "सुझाव बंद हैं। जिन खिलाड़ियों से आप मिलते हैं उन्हें देखने के लिए सेटिंग्स › निजता और डेटा में “जिन खिलाड़ियों से मैं मिलूँ, उनके सुझावों में दिखूँ” चालू करें।",
+    "suggestionsMinor": "जिन खिलाड़ियों से आप मिलते हैं उनके सुझाव आपके खाते के लिए उपलब्ध नहीं हैं।",
+    "privacyNote": "सुझाव पिछले 14 दिनों की आपकी पार्टियों और आपकी गतिविधि में साझा सर्वरों से आते हैं। सिर्फ़ वही लोग दिखते हैं जो इसकी अनुमति देते हैं।",
+    "errors": {
+      "notFoundRustic": "इस नाम का कोई Rustic खाता नहीं है।",
+      "notFoundMinecraft": "किसी भी Rustic खिलाड़ी ने यह Minecraft नाम नहीं जोड़ा है।",
+      "invalidRustic": "Rustic नाम 3 से 20 अक्षरों, अंकों या _ के होते हैं।",
+      "invalidMinecraft": "Minecraft नाम 3 से 16 अक्षरों, अंकों या _ के होते हैं।",
+      "cannot_add_friend": "यह खिलाड़ी फ़्रेंड रिक्वेस्ट नहीं पा सकता।",
+      "friend_requests_disabled": "आपके खाते के लिए फ़्रेंड रिक्वेस्ट बंद हैं (पैरेंटल कंट्रोल)।",
+      "cannot_add_self": "यह तो आप हैं!",
+      "already_friends": "आप पहले से दोस्त हैं।",
+      "request_pending": "एक रिक्वेस्ट पहले से लंबित है।",
+      "incoming_request_exists": "उन्होंने पहले ही आपको रिक्वेस्ट भेजी है: उसे स्वीकार करें।",
+      "rate_limited": "बहुत ज़्यादा खोजें। एक मिनट रुकें, फिर से कोशिश करें।",
+      "generic": "कुछ गड़बड़ हो गई। फिर से कोशिश करें।"
+    }
+  },
+  "party": {
+    "title": "पार्टी",
+    "leave": "छोड़ें",
+    "leader": "पार्टी लीडर",
+    "pending": "{{name}} (आमंत्रित)",
+    "invite": "पार्टी में आमंत्रित करें",
+    "invited": "{{name}} को आपकी पार्टी में आमंत्रित किया गया",
+    "invitesTitle": "पार्टी के आमंत्रण",
+    "invitedBy": "{{name}} आपको अपनी पार्टी में बुला रहे हैं",
+    "accept": "शामिल हों",
+    "decline": "मना करें",
+    "makeLeader": "पार्टी लीडर बनाएँ",
+    "kick": "पार्टी से हटाएँ",
+    "proximity": "नज़दीकी वॉइस",
+    "proximityHint": "एक ही सर्वर पर मौजूद सदस्य दूरी के हिसाब से एक-दूसरे को सुनते हैं",
+    "range": "दायरा (ब्लॉक)",
+    "emptyTitle": "अभी कोई पार्टी नहीं",
+    "emptyBody": "एक पार्टी बनाएँ, फिर दोस्त टैब में दोस्तों के मेनू से उन्हें आमंत्रित करें।",
+    "create": "पार्टी बनाएँ",
+    "inviteHint": "दोस्त टैब में दोस्तों के मेनू से उन्हें आमंत्रित करें।",
+    "chatTitle": "पार्टी चैट",
+    "chatEmpty": "सदस्यों से चैट करने के लिए किसी पार्टी में शामिल हों या एक बनाएँ।",
+    "chatPlaceholder": "पार्टी को संदेश भेजें",
+    "formerMember": "पूर्व सदस्य",
+    "errors": {
+      "party_full": "पार्टी भर चुकी है।",
+      "party_not_allowed": "यह खिलाड़ी इस पार्टी में नहीं हो सकता: 18 साल से कम उम्र के खिलाड़ी सिर्फ़ अपने दोस्तों की पार्टी में शामिल होते हैं।",
+      "already_in_party": "पहले अपनी मौजूदा पार्टी छोड़ें।",
+      "not_party_leader": "यह सिर्फ़ पार्टी लीडर कर सकता है।"
+    }
+  },
+  "presence": {
+    "online": "ऑनलाइन",
+    "in-game": "गेम में",
+    "away": "दूर",
+    "busy": "व्यस्त",
+    "offline": "ऑफ़लाइन"
+  },
+  "notifications": {
+    "title": "सूचनाएँ",
+    "markAllRead": "सभी को पढ़ा हुआ मार्क करें",
+    "empty": "आपने सब कुछ देख लिया है।",
+    "kinds": {
+      "friend_request": "ने आपको फ़्रेंड रिक्वेस्ट भेजी",
+      "update_available": "आपके इंस्टेंस के लिए उपलब्ध है",
+      "backup_done": "निर्धारित बैकअप पूरा हुआ",
+      "store_new": "स्टोर में नया"
+    }
+  },
+  "account": {
+    "switcher": "खाते",
+    "none": "कोई खाता नहीं",
+    "rustic": "Rustic खाता",
+    "signInRustic": "Rustic में साइन इन करें",
+    "signOutRustic": "Rustic से साइन आउट करें",
+    "gameProfiles": "गेम प्रोफ़ाइलें",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "ऑफ़लाइन"
+    },
+    "add": "खाता जोड़ें",
+    "manage": "खाते मैनेज करें"
+  },
+  "downloads": {
+    "title": "डाउनलोड",
+    "global": "बैकग्राउंड डाउनलोड",
+    "working": "काम चल रहा है…",
+    "summary_one": "{{count}} डाउनलोड जारी है",
+    "summary_other": "{{count}} डाउनलोड जारी हैं",
+    "kind": {
+      "game": "Horizon",
+      "content": "कंटेंट",
+      "modpack": "मॉडपैक",
+      "server": "सर्वर",
+      "java": "Java रनटाइम",
+      "update": "लॉन्चर अपडेट",
+      "prepare": "गेम फ़ाइलें तैयार हो रही हैं",
+      "native-build": "नेटिव मॉड्स बिल्ड",
+      "native-toolchain": "नेटिव मॉड्स के लिए Rust"
+    }
+  },
+  "play": {
+    "play": "खेलें",
+    "update": "अपडेट करें",
+    "cancel": "रद्द करें",
+    "stop": "रोकें",
+    "selectInstance": "खेलने के लिए इंस्टेंस चुनें",
+    "instances": "इंस्टेंस",
+    "manageInstances": "इंस्टेंस मैनेज करें",
+    "newVersion": "{{version}} उपलब्ध है",
+    "cancelled": "लॉन्च रद्द किया गया",
+    "status": {
+      "ready": "खेलने के लिए तैयार",
+      "noInstance": "कोई इंस्टेंस नहीं",
+      "running": "गेम चल रहा है",
+      "update": "अपडेट ज़रूरी",
+      "broken": "मरम्मत ज़रूरी"
+    },
+    "progress": {
+      "updating": "अपडेट हो रहा है…",
+      "downloading": "डाउनलोड हो रहा है {{pct}}",
+      "checking": "फ़ाइलें जाँच रहे हैं…",
+      "preparing": "तैयार हो रहा है…",
+      "launching": "लॉन्च हो रहा है…",
+      "stopping": "रुक रहा है…",
+      "preparingFiles": "गेम फ़ाइलें तैयार हो रही हैं {{pct}}",
+      "building": "नेटिव मॉड्स कंपाइल हो रहे हैं…",
+      "buildingPct": "नेटिव मॉड्स कंपाइल हो रहे हैं {{pct}}"
+    },
+    "errors": {
+      "launch": "गेम शुरू नहीं हो सका"
+    },
+    "refusals": {
+      "auth_no_account": "खेलने के लिए उस Microsoft खाते से साइन इन करें जिसके पास गेम है।",
+      "auth_not_owned": "इस Microsoft खाते के पास गेम नहीं है।",
+      "auth_not_approved": "इस लॉन्चर के लिए Microsoft साइन-इन अभी उपलब्ध नहीं है।",
+      "auth_reauth_required": "खेलने के लिए अपने Microsoft खाते में फिर से साइन इन करें।",
+      "auth_offline_not_allowed": "एक बार उस Microsoft खाते से साइन इन करें जिसके पास गेम है, फिर आप ऑफ़लाइन खेल सकते हैं।",
+      "auth_network": "खाता जाँचने के लिए Microsoft तक नहीं पहुँचा जा सका। अपना कनेक्शन जाँचें।",
+      "build_not_installed": "पहले एक Horizon बिल्ड इंस्टॉल करें।",
+      "prepare_needed": "इस बिल्ड की गेम फ़ाइलें अभी तैयार नहीं हैं।",
+      "prepare_failed": "गेम फ़ाइलें तैयार नहीं की जा सकीं: फिर से कोशिश करें, या सेटिंग्स › गेम और इंस्टेंस में उन्हें तैयार करें।",
+      "prepare_no_java": "Java नहीं मिला: इसे इंस्टॉल करें या सेटिंग्स › गेम और इंस्टेंस में चुनें।",
+      "prepare_no_minecraft_dir": "आपका गेम इंस्टॉलेशन नहीं मिला: सेटिंग्स › गेम और इंस्टेंस में उसका फ़ोल्डर चुनें।",
+      "launch_already_running": "यह इंस्टेंस पहले से चल रहा है।",
+      "native_consent": "इस इंस्टेंस में नेटिव मॉड्स हैं: पहले इंस्टेंस पेज (कंटेंट) पर उनकी भरोसा सूचना स्वीकार करें।",
+      "native_toolchain": "नेटिव मॉड्स को Rust चाहिए: इसे इंस्टेंस पेज (कंटेंट) या सेटिंग्स › गेम और इंस्टेंस से इंस्टॉल करें।",
+      "native_not_edition": "नेटिव मॉड्स सिर्फ़ Rustic एडिशन में बिल्ड होते हैं: इस इंस्टेंस को उस पर बदलें, या इसके नेटिव मॉड्स बंद करें।",
+      "native_build_failed": "नेटिव मॉड्स बिल्ड नहीं हो सके",
+      "native_disk": "नेटिव मॉड्स बिल्ड करने के लिए डिस्क पर पर्याप्त खाली जगह नहीं है।"
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (Rustic एडिशन)",
+    "rusticEdition": "Rustic एडिशन"
+  },
+  "compat": {
+    "buildsOnHorizon": "आपके Horizon पर बिल्ड होता है",
+    "compatible": "संगत",
+    "incompatible": "असंगत: {{reason}}",
+    "unknown": "संगतता अज्ञात",
+    "reasons": {
+      "horizon_version": "Horizon वर्ज़न",
+      "java_only": "सिर्फ़ Java Edition",
+      "side": "सिर्फ़ सर्वर साइड",
+      "conflict": "किसी इंस्टॉल मॉड से टकराता है",
+      "unsupported_format": "फ़ॉर्मैट समर्थित नहीं",
+      "needs_rustic_server": "Rustic Server ज़रूरी",
+      "not_fair_play": "अनुमति नहीं (निष्पक्ष खेल)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "प्रोडक्ट बदलें",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Rustic Server दस्तावेज़"
+  },
+  "crumbs": {
+    "label": "ब्रेडक्रम्ब",
+    "horizon": "Horizon",
+    "details": "विवरण",
+    "create": "बनाएँ",
+    "kinds": {
+      "mod": "मॉड्स",
+      "modpack": "मॉडपैक",
+      "resourcepack": "रिसोर्स पैक",
+      "shader": "शेडर्स",
+      "datapack": "डेटा पैक",
+      "plugin": "प्लगइन"
+    },
+    "servers": {
+      "featured": "फ़ीचर्ड",
+      "mine": "मेरे सर्वर",
+      "multiplayer": "मल्टीप्लेयर सूची",
+      "discover": "डिस्कवर",
+      "joined": "मल्टीप्लेयर सूची",
+      "browse": "ब्राउज़ करें"
+    }
+  },
+  "social": {
+    "title": "सोशल",
+    "description": "दोस्त, चैट और आपकी पार्टी।",
+    "open": "सोशल खोलें",
+    "friends": "दोस्त",
+    "chats": "चैट",
+    "message": "मैसेज भेजें",
+    "searchChats": "चैट खोजें…",
+    "noChats": "अभी कोई बातचीत नहीं। दोस्त टैब से किसी दोस्त को मैसेज करें।",
+    "sayHello": "हैलो कहें",
+    "selectTitle": "एक बातचीत चुनें",
+    "selectBody": "चैट शुरू करने के लिए एक दोस्त चुनें।",
+    "messagePlaceholder": "{{name}} को मैसेज करें",
+    "send": "भेजें"
+  },
+  "window": {
+    "minimize": "छोटा करें",
+    "maximize": "बड़ा करें",
+    "restore": "पहले जैसा करें",
+    "close": "बंद करें"
+  },
+  "running": {
+    "title": "चल रहे इंस्टेंस",
+    "none": "कोई गेम नहीं चल रहा।",
+    "count_one": "{{count}} इंस्टेंस चल रहा है",
+    "count_other": "{{count}} इंस्टेंस चल रहे हैं",
+    "downloading": "डाउनलोड हो रहा है {{pct}}"
+  },
+  "launch": {
+    "launch": "गेम लॉन्च करें",
+    "update": "अपडेट और लॉन्च करें",
+    "stop": "गेम रोकें"
+  },
+  "deepLink": {
+    "authOk": "Rustic में साइन इन हो गए",
+    "authFailed": "Rustic साइन-इन विफल रहा",
+    "joining": "{{target}} से जुड़ रहे हैं…",
+    "content": "वेबसाइट से {{project}} खोल रहे हैं"
+  },
+  "catalog": {
+    "sort": "इससे क्रमबद्ध करें",
+    "results_one": "{{count}} नतीजा",
+    "results_other": "{{count}} नतीजे",
+    "loadMore": "और लोड करें",
+    "loadMoreCount": "{{total}} में से {{shown}} दिखाए जा रहे हैं",
+    "carousel": {
+      "prev": "पिछला",
+      "next": "अगला",
+      "slide": "{{index}} / {{total}}",
+      "pause": "स्लाइड शो रोकें",
+      "play": "स्लाइड शो चलाएँ"
+    },
+    "row": {
+      "seeAll": "सभी देखें",
+      "seeAllAria": "सभी देखें: {{title}}",
+      "scrollPrev": "बाएँ स्क्रॉल करें",
+      "scrollNext": "दाएँ स्क्रॉल करें"
+    },
+    "filters": {
+      "button": "फ़िल्टर",
+      "buttonCount": "फ़िल्टर · {{count}}",
+      "reset": "फ़िल्टर रीसेट करें"
+    },
+    "layout": {
+      "label": "लेआउट",
+      "list": "सूची",
+      "grid": "ग्रिड"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "अपडेट हो रहा है {{pct}}",
+      "installing": "अपडेट इंस्टॉल हो रहा है…",
+      "restarting": "फिर से शुरू हो रहा है…",
+      "deferred": "आपके गेम के बाद अपडेट",
+      "apply": "अपडेट करें और फिर से शुरू करें"
+    },
+    "toast": {
+      "launcher": "Rustic Launcher {{version}} डाउनलोड हो रहा है…",
+      "edition": "गेम अपडेट हो रहा है (Rustic एडिशन)…",
+      "editionDone": "गेम अपडेट हुआ: {{version}}",
+      "deferred": "एक अपडेट तैयार है। गेम बंद करने पर यह इंस्टॉल होगा।",
+      "restarting": "अपडेट पूरा करने के लिए Rustic Launcher फिर से शुरू होता है।",
+      "updated": "Rustic Launcher {{version}} पर अपडेट हुआ",
+      "resuming": "अपडेट पूरा: आपका गेम लॉन्च हो रहा है",
+      "failed": "अपडेट इंस्टॉल नहीं हो सका। बाद में फिर से कोशिश की जाएगी।"
+    }
+  },
+  "voice": {
+    "title": "वॉइस",
+    "join": "वॉइस में शामिल हों",
+    "leave": "वॉइस छोड़ें",
+    "mute": "माइक बंद करें",
+    "unmute": "माइक चालू करें",
+    "deafen": "आवाज़ बंद करें",
+    "undeafen": "आवाज़ चालू करें",
+    "speaking": "बोल रहे हैं",
+    "micMuted": "म्यूट",
+    "outOfRange": "दायरे से बाहर",
+    "muteFor": "अपने लिए {{name}} को म्यूट करें",
+    "unmuteFor": "{{name}} को फिर से सुनें",
+    "reportAria": "{{name}} की रिपोर्ट करें",
+    "memberVolume": "{{name}} की आवाज़",
+    "report": "रिपोर्ट करें",
+    "reportTitle": "{{name}} की रिपोर्ट करें?",
+    "reportBody": "हमारे मॉडरेटर रिपोर्ट की जाँच करेंगे। वॉइस कभी रिकॉर्ड नहीं होती। यह खिलाड़ी आपके लिए तुरंत म्यूट हो जाता है।",
+    "reported": "{{name}} की रिपोर्ट की गई",
+    "reasons": {
+      "harassment": "उत्पीड़न या नफ़रत",
+      "inappropriate_content": "अनुचित सामग्री",
+      "spam": "स्पैम या शोर",
+      "other": "कुछ और"
+    },
+    "proximityOn": "नज़दीकी, दायरा {{range}}",
+    "you": "आप",
+    "listenOnly": "सिर्फ़ सुन रहे हैं",
+    "alone": "वॉइस में अभी कोई और नहीं है।",
+    "serverOffer": "{{server}} पर नज़दीकी वॉइस है",
+    "serverRoom": "सर्वर वॉइस",
+    "partyRoom": "पार्टी वॉइस",
+    "errors": {
+      "voice_unavailable": "वॉइस अभी उपलब्ध नहीं है। बाद में फिर कोशिश करें।",
+      "voice_not_allowed": "आपके खाते के लिए वॉइस उपलब्ध नहीं है।",
+      "mic_denied": "माइक की अनुमति नहीं मिली: आप सुन सकते हैं, बोल नहीं सकते। सिस्टम की निजता सेटिंग में इसकी अनुमति दें।",
+      "mic_missing": "कोई माइक नहीं मिला: आप सुन सकते हैं, बोल नहीं सकते।",
+      "connect_failed": "वॉइस से कनेक्ट नहीं हो सका। अपना कनेक्शन जाँचें और फिर कोशिश करें।",
+      "kicked": "आपको वॉइस रूम से हटा दिया गया।",
+      "not_on_voice_server": "इस सर्वर पर नज़दीकी वॉइस नहीं है।"
+    }
+  }
+}

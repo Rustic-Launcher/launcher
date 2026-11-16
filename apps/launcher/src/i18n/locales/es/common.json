@@ -100,7 +100,8 @@
       "appearance": "Apariencia",
       "privacy": "Privacidad y datos",
       "parental": "Control parental",
-      "about": "Acerca de"
+      "about": "Acerca de",
+      "voice": "Voz"
     }
   },
   "friends": {
@@ -198,7 +199,30 @@
     "leader": "Líder del grupo",
     "pending": "{{name}} (invitado)",
     "invite": "Invitar al grupo",
-    "invited": "{{name}} ha sido invitado a tu grupo"
+    "invited": "{{name}} ha sido invitado a tu grupo",
+    "invitesTitle": "Invitaciones de grupo",
+    "invitedBy": "{{name}} te invita a su grupo",
+    "accept": "Unirse",
+    "decline": "Rechazar",
+    "makeLeader": "Nombrar líder del grupo",
+    "kick": "Quitar del grupo",
+    "proximity": "Voz por proximidad",
+    "proximityHint": "Los miembros en el mismo servidor se oyen según la distancia",
+    "range": "Alcance (bloques)",
+    "emptyTitle": "Aún no hay grupo",
+    "emptyBody": "Crea un grupo y luego invita a tus amigos desde su menú en la pestaña Amigos.",
+    "create": "Crear un grupo",
+    "inviteHint": "Invita a tus amigos desde su menú en la pestaña Amigos.",
+    "chatTitle": "Chat del grupo",
+    "chatEmpty": "Únete a un grupo o crea uno para chatear con sus miembros.",
+    "chatPlaceholder": "Escribe al grupo",
+    "formerMember": "Antiguo miembro",
+    "errors": {
+      "party_full": "El grupo está lleno.",
+      "party_not_allowed": "Este jugador no puede estar en este grupo: los menores de 18 solo se unen a grupos de sus amigos.",
+      "already_in_party": "Sal primero de tu grupo actual.",
+      "not_party_leader": "Solo el líder del grupo puede hacer esto."
+    }
   },
   "presence": {
     "online": "Conectado",
@@ -439,6 +463,48 @@
       "updated": "Rustic Launcher actualizado a {{version}}",
       "resuming": "Actualización lista: iniciando tu partida",
       "failed": "No se pudo instalar la actualización. Se volverá a intentar más tarde."
+    }
+  },
+  "voice": {
+    "title": "Voz",
+    "join": "Unirse a la voz",
+    "leave": "Salir de la voz",
+    "mute": "Silenciar micrófono",
+    "unmute": "Activar micrófono",
+    "deafen": "Ensordecer",
+    "undeafen": "Dejar de ensordecer",
+    "speaking": "Hablando",
+    "micMuted": "Silenciado",
+    "outOfRange": "Fuera de alcance",
+    "muteFor": "Silenciar a {{name}} para ti",
+    "unmuteFor": "Volver a oír a {{name}}",
+    "reportAria": "Denunciar a {{name}}",
+    "memberVolume": "Volumen de {{name}}",
+    "report": "Denunciar",
+    "reportTitle": "¿Denunciar a {{name}}?",
+    "reportBody": "Nuestros moderadores revisarán la denuncia. La voz nunca se graba. Este jugador queda silenciado para ti al instante.",
+    "reported": "{{name}} ha sido denunciado",
+    "reasons": {
+      "harassment": "Acoso u odio",
+      "inappropriate_content": "Contenido inapropiado",
+      "spam": "Spam o ruido",
+      "other": "Otra cosa"
+    },
+    "proximityOn": "proximidad, alcance {{range}}",
+    "you": "Tú",
+    "listenOnly": "Solo escuchando",
+    "alone": "Todavía no hay nadie más en la voz.",
+    "serverOffer": "{{server}} tiene voz por proximidad",
+    "serverRoom": "Voz del servidor",
+    "partyRoom": "Voz del grupo",
+    "errors": {
+      "voice_unavailable": "La voz no está disponible ahora. Vuelve a intentarlo más tarde.",
+      "voice_not_allowed": "La voz no está disponible para tu cuenta.",
+      "mic_denied": "Se denegó el acceso al micrófono: puedes escuchar pero no hablar. Permítelo en los ajustes de privacidad de tu sistema.",
+      "mic_missing": "No se encontró ningún micrófono: puedes escuchar pero no hablar.",
+      "connect_failed": "No se pudo conectar a la voz. Revisa tu conexión y vuelve a intentarlo.",
+      "kicked": "Te han quitado de la sala de voz.",
+      "not_on_voice_server": "Este servidor no tiene voz por proximidad."
     }
   }
 }

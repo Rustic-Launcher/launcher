@@ -12,6 +12,8 @@ rusticmc-cosmetics-format = { path = "../../../packages/cosmetics-format", defau
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 sha2 = "0.10"
+# Already in Horizon's Cargo.lock: the presence line carries the place's icon in base64.
+base64 = "0.22"
 
 [lints]
 workspace = true

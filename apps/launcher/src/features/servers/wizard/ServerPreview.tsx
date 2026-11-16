@@ -129,7 +129,7 @@ export function ServerPreview({
           {rows.map(([k, v]) => (
             <div key={k} className="flex justify-between gap-3">
               <dt className="text-fg-subtle shrink-0">{k}</dt>
-              <dd className="text-fg truncate text-right font-medium" title={v}>
+              <dd className="text-fg truncate text-end font-medium" title={v}>
                 {v}
               </dd>
             </div>

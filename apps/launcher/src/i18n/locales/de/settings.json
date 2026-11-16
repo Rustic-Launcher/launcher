@@ -13,7 +13,8 @@
     "appearance": "Darstellung",
     "privacy": "Datenschutz & Daten",
     "parental": "Jugendschutz",
-    "about": "Über & Rechtliches"
+    "about": "Über & Rechtliches",
+    "voice": "Sprachchat"
   },
   "accounts": {
     "active": "Aktiv",
@@ -95,7 +96,8 @@
       "description": "Deine Rustic-Identität für Freunde, den Spind, Käufe und Server.",
       "signedOut": "Nicht angemeldet. Das Spiel funktioniert auch ohne; soziale Funktionen, der Spind und der Shop brauchen es.",
       "signIn": "Anmelden oder Konto erstellen",
-      "licenceNote": "Ein Rustic-Konto ist eine Plattform-Identität. Es ersetzt nie die Spiellizenz: Du brauchst weiterhin ein Microsoft-Konto, das das Spiel besitzt."
+      "licenceNote": "Ein Rustic-Konto ist eine Plattform-Identität. Es ersetzt nie die Spiellizenz: Du brauchst weiterhin ein Microsoft-Konto, das das Spiel besitzt.",
+      "manageOnWeb": "Auf der Website verwalten"
     },
     "offline": {
       "title": "Offline spielen",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Schließ die Anmeldung in deinem Browser ab: Der Launcher übernimmt deine Sitzung automatisch."
   },
   "heading": "Deine *Einstellungen*",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Geräte",
+    "devicesHint": "Das Mikrofon und die Lautsprecher oder das Headset für den Sprachchat.",
+    "input": "Mikrofon",
+    "output": "Ausgabe",
+    "outputVolume": "Ausgabelautstärke",
+    "systemDefault": "Systemstandard",
+    "deviceN": "Gerät {{n}}",
+    "talk": "Sprechen",
+    "talkHint": "Sprich, wenn deine Stimme erkannt wird, oder nur, während du eine Taste hältst.",
+    "mode": "Eingabemodus",
+    "modeVad": "Sprachaktivierung",
+    "modePtt": "Push-to-Talk",
+    "pttKey": "Push-to-Talk-Taste",
+    "pttKeyHint": "Funktioniert im Launcher und im Spiel. Seitentasten der Maus gehen auch.",
+    "pressKey": "Drücke eine Taste…",
+    "sensitivity": "Empfindlichkeit",
+    "sensitivityHint": "Höher erfasst leisere Stimmen; niedriger ignoriert mehr Hintergrundgeräusche.",
+    "test": "Mikrofontest",
+    "testMic": "Testen",
+    "stopTest": "Stopp",
+    "level": "Mikrofonpegel",
+    "micDenied": "Der Mikrofonzugriff wurde verweigert. Erlaube ihn in den Datenschutzeinstellungen deines Systems und versuche es erneut.",
+    "micMissing": "Kein Mikrofon gefunden.",
+    "noiseSuppression": "Rauschunterdrückung",
+    "echoCancellation": "Echounterdrückung",
+    "autoGain": "Automatische Verstärkung",
+    "inGame": "Im Spiel",
+    "inGameHint": "Mit der Rustic-Edition zeigt eine Einblendung, wer spricht, und die Push-to-Talk-Taste funktioniert im Spiel.",
+    "overlay": "Sprachchat-Einblendung im Spiel zeigen",
+    "serverVoice": "Näherungs-Sprachchat auf Servern",
+    "serverVoiceHint": "Rustic Servers können Sprachchat nach Entfernung mit allen Spielern dort anbieten. Unter 18 muss ein Erziehungsberechtigter zustimmen.",
+    "serverAsk": "Nachfragen",
+    "serverAuto": "Automatisch beitreten",
+    "serverOff": "Nie",
+    "servers": {
+      "title": "Näherungs-Sprachchat für deine Server",
+      "description": "Füge einen Server hinzu und trage seinen Schlüssel in die config.toml des Plugins proximity-voice ein. Du kannst ihn jederzeit abschalten.",
+      "namePlaceholder": "Servername",
+      "add": "Hinzufügen",
+      "status": "Spieler online: {{count}}",
+      "enabled": "Näherungs-Sprachchat auf {{name}}",
+      "newKey": "Neuer Schlüssel",
+      "remove": "{{name}} entfernen",
+      "keyOnce": "Kopiere diesen Schlüssel jetzt: Er wird nur einmal angezeigt. Ein neuer Schlüssel ersetzt ihn.",
+      "tooMany": "Du kannst bis zu 10 Server hinzufügen."
+    }
+  }
 }

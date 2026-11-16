@@ -110,7 +110,7 @@ export function NativeSettingsCard() {
               max={4096}
               step={1}
               inputMode="numeric"
-              className="w-24 text-right tabular-nums"
+              className="w-24 text-end tabular-nums"
               value={limit}
               onChange={(e) => setLimit(e.target.value)}
               onBlur={saveLimit}

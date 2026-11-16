@@ -135,7 +135,7 @@ function RelayCard({ server, access }: { server: Server; access: ServerAccess })
           {t('access.relay.label')}
         </label>
         <div className="flex items-center gap-2">
-          <div className="border-border-strong/50 bg-surface-2 focus-within:border-accent flex min-w-0 flex-1 items-center rounded-md border pr-2">
+          <div className="border-border-strong/50 bg-surface-2 focus-within:border-accent flex min-w-0 flex-1 items-center rounded-md border pe-2">
             <input
               id={inputId}
               value={label}
@@ -185,7 +185,7 @@ function InviteCard({ server, access }: { server: Server; access: ServerAccess }
     >
       {code ? (
         <div className="flex flex-col gap-2">
-          <div className="border-border bg-surface-2 flex items-center gap-2 rounded-md border py-1 pr-1 pl-3">
+          <div className="border-border bg-surface-2 flex items-center gap-2 rounded-md border py-1 ps-3 pe-1">
             <code
               className="text-fg flex-1 font-mono text-base font-semibold tracking-wider"
               data-testid="invite-code"

@@ -122,7 +122,7 @@ export function Toaster({ closeLabel, regionLabel }: { closeLabel: string; regio
           </T.Root>
         ))}
       </AnimatePresence>
-      <T.Viewport className="pointer-events-none fixed right-4 bottom-[calc(var(--rl-bottombar-height)+16px)] z-[80] flex flex-col gap-2 outline-none" />
+      <T.Viewport className="pointer-events-none fixed end-4 bottom-[calc(var(--rl-bottombar-height)+16px)] z-[80] flex flex-col gap-2 outline-none" />
     </T.Provider>
   );
 }

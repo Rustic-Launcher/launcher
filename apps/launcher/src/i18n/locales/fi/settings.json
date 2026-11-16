@@ -1,0 +1,581 @@
+{
+  "title": "Asetukset",
+  "subtitle": "Tilit, peli, käynnistin, ulkoasu ja tietosi.",
+  "sectionsLabel": "Asetusten osiot",
+  "saving": "Tallennetaan…",
+  "saved": "Kaikki muutokset tallennettu",
+  "close": "Sulje",
+  "cancel": "Peruuta",
+  "sections": {
+    "accounts": "Tilit ja turvallisuus",
+    "game": "Peli ja instanssit",
+    "launcher": "Käynnistin",
+    "appearance": "Ulkoasu",
+    "privacy": "Yksityisyys ja tiedot",
+    "parental": "Lapsilukko",
+    "about": "Tietoja ja juridiikka",
+    "voice": "Ääni"
+  },
+  "accounts": {
+    "active": "Aktiivinen",
+    "useThis": "Käytä tätä profiilia",
+    "signOut": "Kirjaudu ulos",
+    "signedOut": "{{name}} kirjattiin ulos",
+    "ownership": {
+      "valid": "Omistaa pelin",
+      "expired": "Tarkistus vanhentunut",
+      "never": "Ei koskaan tarkistettu",
+      "failed": "Tarkistus epäonnistui",
+      "lastChecked": "Tarkistettu {{when}}",
+      "nextCheck": "seuraava tarkistus viimeistään {{date}}",
+      "checkNow": "Tarkista nyt",
+      "checkedToast": "Omistus vahvistettu",
+      "checkFailed": "Microsoftiin ei saatu yhteyttä. Yritä myöhemmin uudelleen."
+    },
+    "microsoft": {
+      "title": "Microsoft-tilit",
+      "description": "Pelaaminen edellyttää pelin omistamista. Rustic tarkistaa sen Microsoftilta eikä koskaan näe salasanaasi.",
+      "add": "Lisää Microsoft-tili",
+      "keychain": "Kirjautumistunnukset tallennetaan järjestelmäsi avainnippuun, ei koskaan tiedostoon tai komentoriville.",
+      "signIn": "Kirjaudu Microsoftilla",
+      "step1": "Avaa Microsoftin sivu selaimessasi (tai toisella laitteella).",
+      "step2": "Syötä alla oleva koodi ja kirjaudu sisään.",
+      "step3": "Palaa tänne: käynnistin jatkaa itsestään.",
+      "codeLabel": "Kirjautumiskoodi",
+      "copyCode": "Kopioi koodi",
+      "copied": "Koodi kopioitu",
+      "openPage": "Avaa microsoft.com/link",
+      "waiting": "Odotetaan, että kirjaudut sisään selaimessa…",
+      "cancel": "Peruuta",
+      "signedInAs": "Kirjautunut: {{name}}",
+      "ownershipOk": "Omistus vahvistettu: voit pelata.",
+      "ownershipMissing": "Tämä tili ei omista peliä.",
+      "tryAgain": "Yritä uudelleen",
+      "failed": {
+        "expired": {
+          "title": "Koodi vanheni",
+          "body": "Koodit ovat voimassa 15 minuuttia. Aloita alusta saadaksesi uuden."
+        },
+        "denied": {
+          "title": "Kirjautuminen peruttiin",
+          "body": "Microsoft ilmoitti, että kirjautuminen evättiin."
+        },
+        "no_ownership": {
+          "title": "Tämä tili ei omista peliä",
+          "body": "Rustic käynnistää pelin vain tileille, jotka omistavat Minecraft: Java Editionin."
+        },
+        "error": {
+          "title": "Kirjautuminen epäonnistui",
+          "body": "Rustic ei voinut viimeistellä kirjautumista. Yritä uudelleen; jos se epäonnistuu edelleen, alla oleva tieto kertoo syyn."
+        },
+        "not_configured": {
+          "title": "Microsoft-kirjautumista ei ole määritetty tässä koontiversiossa",
+          "body": "Tässä koontiversiossa ei ole Azure-sovellustunnusta, joten se ei voi pyytää Microsoftia tarkistamaan pelin lisenssiä. Viralliset koontiversiot sisältävät sen."
+        },
+        "not_approved": {
+          "title": "Käynnistin odottaa Mojangin hyväksyntää",
+          "body": "Microsoft-tilisi kirjautui sisään, mutta pelipalvelut eivät vielä hyväksy tätä käynnistintä: Mojangin on ensin hyväksyttävä sen sovellustunnus. Sinun ei tarvitse tehdä mitään; yritä uudelleen, kun se on hyväksytty."
+        },
+        "xbox": {
+          "title": "Xbox Live hylkäsi kirjautumisen",
+          "body": "Syy on alla (lapsen tili ilman huoltajan lupaa, luotava Xbox-profiili, tukematon alue…)."
+        },
+        "rate_limited": {
+          "title": "Liian monta yritystä",
+          "body": "Palvelut saivat liian monta kirjautumista lyhyessä ajassa. Odota minuutti ja yritä uudelleen."
+        },
+        "network": {
+          "title": "Palveluihin ei saatu yhteyttä",
+          "body": "Tarkista internetyhteytesi ja yritä uudelleen."
+        },
+        "detail": "Tieto: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Rustic-tili",
+      "description": "Rustic-identiteettisi kavereita, kaappia, ostoksia ja palvelimia varten.",
+      "signedOut": "Ei kirjautunut. Peli toimii ilman sitä; sosiaaliset ominaisuudet, kaappi ja kauppa vaativat sen.",
+      "signIn": "Kirjaudu sisään tai luo tili",
+      "licenceNote": "Rustic-tili on alustan identiteetti. Se ei koskaan korvaa pelin lisenssiä: tarvitset edelleen Microsoft-tilin, joka omistaa pelin.",
+      "manageOnWeb": "Hallitse verkkosivulla"
+    },
+    "offline": {
+      "title": "Offline-pelaaminen",
+      "description": "Lähiverkkojuhliin ja pelaamiseen ilman internetiä: pelaat Microsoft-tililläsi, virallisella nimelläsi ja UUID:lläsi. Käytettävissä {{days}} päivää viimeisimmän onnistuneen omistustarkistuksen jälkeen, minkä jälkeen Rustic kysyy Microsoftilta uudelleen.",
+      "until": "Offline-pelaaminen käytettävissä {{date}} asti",
+      "locked": "Kirjaudu ensin Microsoft-tilillä, joka omistaa pelin: offline-pelaaminen avautuu onnistuneen omistustarkistuksen jälkeen."
+    },
+    "connections": {
+      "title": "Yhteydet",
+      "description": "Palvelut, joita käynnistin käyttää puolestasi. Avaimet ja palvelinten sormenjäljet pysyvät järjestelmäsi avainnipussa.",
+      "porkbun": "Porkbun (verkkotunnukset)",
+      "porkbunHint": "Käytetään DNS-tietueiden luomiseen palvelimillesi omalla Porkbun-tililläsi.",
+      "porkbunRemoved": "Porkbun-avaimet poistettu tältä tietokoneelta",
+      "connected": "Yhdistetty",
+      "notConnected": "Ei yhdistetty",
+      "remove": "Poista avaimet",
+      "vps": "VPS-palvelimet",
+      "vpsHint": "Palvelimet, joita ylläpidät omalla VPS:lläsi SSH:n kautta. Palvelimen unohtaminen poistaa sen kiinnitetyn avaimen.",
+      "noVps": "Ei mitään",
+      "fingerprint": "{{fp}} · luotettu {{date}}",
+      "forget": "Unohda"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Yhdistetty",
+      "notLinked": "Ei yhdistetty: kirjaudu Rusticiin myös Microsoft-tililläsi.",
+      "link": "Yhdistä verkkosivulla",
+      "unlink": "Poista yhteys",
+      "unlinked": "Microsoft-yhteys poistettu",
+      "unlinkFailed": "Microsoft-yhteyttä ei voitu poistaa",
+      "lastMethod": "Lisää ensin salasana (verkkosivulla): Microsoft on ainoa tapasi kirjautua."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Muisti (RAM)",
+      "description": "Pelille annettava oletusmuisti. Jokainen instanssi voi ohittaa sen.",
+      "system": "{{total}} asennettu · {{free}} vapaana nyt",
+      "warn": "Tämä jättää järjestelmällesi vähän muistia ja voi hidastaa kaikkea.",
+      "perInstance": "Vinkki: 4 Gt riittää useimmille instansseille; suuret modipaketit voivat tarvita 6–8 Gt."
+    },
+    "prepare": {
+      "title": "Pelitiedostot",
+      "description": "Horizon valmistelee pelin resurssit omasta peliasennuksestasi. Mitään ei ladata kolmansilta osapuolilta.",
+      "status": "Tila",
+      "states": {
+        "missing": "Ei valmisteltu",
+        "preparing": "Valmistellaan",
+        "ready": "Valmis",
+        "outdated": "Valmisteltava uudelleen"
+      },
+      "gameVersion": "Peli {{version}}",
+      "source": "Lähdeasennus",
+      "sourceHint": "Tältä tietokoneelta löytynyt virallisen käynnistimen pelikansio.",
+      "doneToast": "Pelitiedostot ovat valmiita",
+      "steps": {
+        "detect": "Etsitään asennustasi…",
+        "download": "Ladataan pelitiedostoja Mojangilta…",
+        "verify": "Tarkistetaan pelitiedostoja…",
+        "compile_exporters": "Kootaan viejiä…",
+        "export": "Viedään resursseja…",
+        "index": "Indeksoidaan…",
+        "done": "Valmis"
+      },
+      "legal": "Valmistellut tiedostot pysyvät tällä tietokoneella eikä niitä koskaan jaeta.",
+      "again": "Valmistele uudelleen",
+      "failed": "Valmistelu epäonnistui"
+    },
+    "java": {
+      "label": "Java valmistelua varten",
+      "description": "Käytetään vain pelitiedostojen valmisteluun (horizon-prepare). Horizon itse ei tarvitse Javaa toimiakseen.",
+      "pickTitle": "Valitse Java-ohjelmatiedosto",
+      "source": {
+        "bundled": "Rusticin mukana",
+        "system": "Asennettu tähän tietokoneeseen",
+        "custom": "Mukautettu"
+      },
+      "custom": "Mukautettu polku…",
+      "customHint": "Valitse Java 21+ -ohjelmatiedosto"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "rustic-server-ohjelma, jota Rustic Server -palvelimesi ajavat (Horizonin moottori Rustic-lisäosilla). Sen on oltava samasta Horizon-commitista kuin palvelimen pelin versio: Rustic-version koontiversio toimittaa sen kansiossaan.",
+      "program": "Käytössä oleva ohjelma",
+      "notFound": "Ei löytynyt",
+      "notFoundHint": "Asenna Rustic-version koontiversio, joka sisältää sen, tai valitse rustic-server-tiedosto. Ilman sitä Rustic Serverin luonti epäonnistuu.",
+      "configuredMissing": "Valittua tiedostoa ei ole enää olemassa: {{path}}",
+      "origin": {
+        "server": "Palvelimen oma",
+        "configured": "Valittu käsin",
+        "build": "Toimitettu koontiversion {{build}} mukana",
+        "beside_launcher": "Käynnistimen vieressä",
+        "path": "Löytyi PATH-polulta"
+      },
+      "choose": "Valitse…",
+      "pickTitle": "Valitse rustic-server-ohjelma",
+      "automatic": "Käytä automaattista",
+      "saved": "rustic-server-ohjelma tallennettu",
+      "automaticSaved": "Automaattinen tunnistus palautettu",
+      "invalid": "Tämä tiedosto ei ole rustic-server-ohjelma (se ei vastaa komentoon --rustic-version).",
+      "failed": "Tätä ohjelmaa ei voitu tallentaa",
+      "order": "Hakujärjestys: oma valintasi, sitten pelin version kansio, sitten käynnistimen vierestä ja lopuksi PATH."
+    },
+    "folders": {
+      "title": "Kansiot",
+      "description": "Missä käynnistin säilyttää tietonsa, instanssisi ja palvelimesi.",
+      "data": "Käynnistimen tiedot",
+      "instances": "Instanssit",
+      "servers": "Palvelimet",
+      "open": "Avaa",
+      "change": "Vaihda",
+      "changed": "Kansio vaihdettu",
+      "moveNote": "Olemassa olevia tiedostoja ei siirretä automaattisesti."
+    },
+    "resolution": {
+      "title": "Peli-ikkuna",
+      "description": "Uusien instanssien ikkunan oletuskoko.",
+      "size": "Koko",
+      "width": "Leveys",
+      "height": "Korkeus",
+      "fullscreen": "Käynnistä koko näytössä",
+      "hint": "Vähintään 640 × 480."
+    },
+    "native": {
+      "title": "Natiivit modit",
+      "description": "Natiiveja modeja sisältävät instanssit pelaavat peliä, joka on käännetty niille tällä tietokoneella. Täällä: Rust-kääntäjä ja käännösvälimuisti, joka nopeuttaa myöhempiä kokoamisia.",
+      "rust": "Rust-kääntäjä",
+      "rustReady": {
+        "managed": "Rust {{version}}, käynnistimen asentama",
+        "rustup": "Rust {{version}}, rustupistasi",
+        "system": "Rust {{version}}, asennettu tähän tietokoneeseen"
+      },
+      "rustMissing": "Rust {{version}} tarvitaan ensimmäiseen kokoamiseen.",
+      "ready": "Valmis",
+      "missing": "Ei asennettu",
+      "installing": "Asennetaan…",
+      "installRust": "Asenna Rust",
+      "rustInstalled": "Rust on asennettu",
+      "rustFailed": "Rustia ei voitu asentaa",
+      "cache": "Käännösvälimuisti",
+      "cacheDetail": "Välimuisti {{cache}} · ladatut paketit {{crates}} · Rust {{toolchain}} · lähdekoodi {{source}}. Tyhjentäminen säilyttää kootut pelit; seuraava kokoaminen kääntää kaiken uudelleen.",
+      "clear": "Tyhjennä",
+      "clearTitle": "Tyhjennetäänkö käännösvälimuisti?",
+      "clearBody": "Instanssit säilyttävät kootun pelinsä. Seuraava natiivi kokoaminen kääntää koko pelin uudelleen (10–15 minuuttia).",
+      "cleared": "Käännösvälimuisti tyhjennetty ({{size}} vapautettu)",
+      "limit": "Välimuistin raja",
+      "limitHint": "Kokoamisen jälkeen välimuisti tyhjennetään, kun se on tätä suurempi (0: ei koskaan).",
+      "gib": "GiB",
+      "limitSaved": "Välimuistin raja tallennettu",
+      "limitInvalid": "Raja on kokonaisluku 0–4096 GiB.",
+      "folder": "Kansio: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Kieli",
+      "description": "Otetaan heti käyttöön koko käynnistimessä.",
+      "label": "Kieli",
+      "search": "Hae kieliä",
+      "empty": "Mikään kieli ei vastaa hakua",
+      "translated": "Käännetyt",
+      "others": "Muut kielet",
+      "partial": "Osittainen",
+      "english": "toistaiseksi englanniksi",
+      "via": "toistaiseksi kielellä {{lang}}",
+      "help": "Vielä kääntämättömät tekstit näkyvät englanniksi. Käännökset tulevat yhteisöltä."
+    },
+    "startup": {
+      "title": "Käynnistys",
+      "onBoot": "Avaa Rustic, kun tietokone käynnistyy",
+      "onBootHint": "Kaverit näkevät sinut paikalla aiemmin ja päivitykset latautuvat taustalla.",
+      "minimized": "Käynnistä pienennettynä"
+    },
+    "behaviour": {
+      "title": "Pelatessa",
+      "onLaunch": "Kun peli käynnistyy",
+      "launchOptions": {
+        "keep_open": "Pidä käynnistin auki",
+        "minimize": "Pienennä käynnistin",
+        "hide": "Piilota ilmoitusalueelle",
+        "close": "Sulje käynnistin"
+      },
+      "onClose": "Kun suljen ikkunan",
+      "onCloseHint": "Ilmoitusalueella pitäminen antaa kavereiden kutsua sinut ja pitää palvelimet käynnissä.",
+      "closeOptions": {
+        "tray": "Jatka toimintaa ilmoitusalueella",
+        "quit": "Lopeta Rustic"
+      }
+    },
+    "updates": {
+      "title": "Päivitykset",
+      "auto": "Asenna päivitykset automaattisesti",
+      "autoHint": "Päivitykset allekirjoitetaan ja tarkistetaan ennen asennusta.",
+      "check": "Rustic Launcher",
+      "checkNow": "Tarkista päivitykset",
+      "available": "Versio {{version}} saatavilla",
+      "upToDate": "Olet ajan tasalla",
+      "failed": "Päivityksiä ei voitu tarkistaa",
+      "lastCheck": "Tarkistettu viimeksi {{when}}",
+      "neverChecked": "Ei vielä tarkistettu",
+      "edition": "Peli (Rustic-versio)",
+      "editionNone": "Rustic-version koontiversiota ei ole asennettu",
+      "apply": "Päivitä ja käynnistä uudelleen",
+      "checking": "Tarkistetaan…",
+      "working": "Päivitetään… {{pct}}",
+      "restarting": "Käynnistetään uudelleen…",
+      "deferred": "Odotetaan pelin sulkemista",
+      "lastError": "Viimeisin yritys epäonnistui. Sitä yritetään automaattisesti uudelleen."
+    },
+    "performance": {
+      "title": "Lataukset ja suorituskyky",
+      "downloads": "Rinnakkaiset lataukset",
+      "downloadsHint": "Pienennä tätä hitaalla yhteydellä.",
+      "hardware": "Laitteistokiihdytys",
+      "hardwareHint": "Poista käytöstä, jos käynnistin välkkyy. Tulee voimaan uudelleenkäynnistyksen jälkeen."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Teema",
+      "description": "Rustic on suunniteltu ensisijaisesti tummaksi; vaalea teema on valoisia huoneita varten.",
+      "label": "Teema",
+      "dark": "Tumma",
+      "light": "Vaalea",
+      "system": "Järjestelmä"
+    },
+    "palette": {
+      "title": "Väripaletti",
+      "description": "Korostusväri, jota käytetään PELAA-painikkeessa, valinnoissa ja edistymisessä.",
+      "label": "Väripaletti",
+      "play": "Pelaa",
+      "default": "Oletus",
+      "names": {
+        "ember": "Hiillos",
+        "verdigris": "Patina",
+        "heather": "Kanerva"
+      },
+      "descriptions": {
+        "ember": "Lämmin kupari antrasiitilla",
+        "verdigris": "Patinanvihreä, kuin hapettunut kupari",
+        "heather": "Hillitty kanervanpunainen"
+      }
+    },
+    "motion": {
+      "title": "Liike",
+      "body": "Rustic noudattaa järjestelmäsi ”vähennä liikettä” -asetusta: animaatiot, karuselli ja 3D-esikatselu pysähtyvät."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "Mitä jaat kanssamme",
+      "description": "Kaikki täällä on oletuksena pois päältä. Käyttöönotto auttaa meitä parantamaan Rusticia; voit muuttaa mieltäsi milloin tahansa.",
+      "usage": "Käyttöanalytiikka",
+      "usageHint": "Mitä sivuja ja ominaisuuksia käytetään, ilman sisältöä tai tunnisteita.",
+      "performance": "Suorituskykyraportit",
+      "performanceHint": "Käynnistys- ja ruutuajat hitaiden kohtien löytämiseksi.",
+      "crash": "Kaatumisraportit",
+      "crashHint": "Kun asetus on pois päältä, Rustic kysyy sinulta joka kerta, kun kaatuminen tapahtuu."
+    },
+    "policyLink": "Lue tietosuojakäytäntö",
+    "social": {
+      "title": "Kaverit ja läsnäolo",
+      "activity": "Näytä kavereilleni, mitä pelaan",
+      "activityHint": "Kaverit näkevät palvelimesi ja voivat liittyä seuraasi yhdellä napsautuksella.",
+      "requests": "Kuka voi lähettää minulle kaveripyyntöjä",
+      "requestsOptions": {
+        "everyone": "Kaikki",
+        "friends_of_friends": "Kavereiden kaverit",
+        "nobody": "Ei kukaan"
+      },
+      "discoverable": "Näy tapaamieni pelaajien ehdotuksissa",
+      "discoverableHint": "Pelaajat, joiden kanssa olit samassa porukassa tai jotka tapasit toimintasi jakamalla palvelimella, näkevät sinut kohdassa ”Lisää kaveri”, ja sinä näet heidät. Säilytetään 30 päivää; asetuksen poistaminen käytöstä poistaa tiedot.",
+      "discoverableMinor": "Ei käytettävissä alle 18-vuotiaiden tileillä.",
+      "discoverableFailed": "Tätä asetusta ei voitu tallentaa.",
+      "discord": "Näytä toimintani Discordissa",
+      "discordHint": "”Pelaa Rusticia” Discord-profiilissasi: käynnistimessä, päävalikossa, yksinpelissä tai palvelimella, peliajan kanssa.",
+      "discordServer": "Näytä palvelimen osoite Discordissa",
+      "discordServerHint": "Muuten Discord näyttää ”Moninpeli”. Yksityisiä osoitteita (lähiverkko, tämä tietokone) ei koskaan näytetä."
+    },
+    "data": {
+      "title": "Tietosi",
+      "description": "Oikeutesi GDPR:n nojalla: pääsy, siirrettävyys ja poistaminen.",
+      "export": "Vie tietoni",
+      "exportHint": "JSON-arkisto tilistäsi, kavereistasi, ostoksistasi ja asetuksistasi.",
+      "exportButton": "Valmistele vienti",
+      "exportReady": "Vientisi on valmis",
+      "exportFailed": "Vientiä ei voitu valmistella",
+      "download": "Lataa (linkki voimassa {{date}} asti)",
+      "delete": "Poista tilini",
+      "deleteHint": "30 päivän harkinta-aika, jonka aikana voit perua, minkä jälkeen pysyvä poisto.",
+      "deleteButton": "Poista tili",
+      "deleteScheduled": "Poisto ajastettu päivälle {{date}}. Kirjaudu sisään ennen sitä peruaksesi.",
+      "deleteFailed": "Tiliä ei voitu poistaa",
+      "rights": "Kysymykset tai valitukset: ota yhteyttä meihin tai CNIL:iin (Ranskan tietosuojaviranomainen).",
+      "confirmTitle": "Poistetaanko Rustic-tilisi?",
+      "confirmBody": "Kaverisi, kosmetiikkasi ja ostoksesi poistetaan 30 päivän kuluttua. Pelilisenssisi ja Microsoft-tilisi eivät muutu.",
+      "confirmButton": "Poista tilini",
+      "typeUsername": "Vahvista kirjoittamalla {{name}}"
+    },
+    "profile": {
+      "title": "Rustic-profiili",
+      "description": "Sivusi sivustolla rustic-launcher.com, yhteiset asetukset verkkosivun kanssa.",
+      "visibility": "Kuka näkee profiilini",
+      "visibilityHint": "Kaikki muut näkevät vain pääsi ja nimesi.",
+      "minor": "Alle 18-vuotiaiden pelaajien profiilit eivät ole koskaan julkisia.",
+      "options": {
+        "public": "Kaikki",
+        "friends": "Vain kaverit",
+        "private": "Vain minä"
+      },
+      "playStats": "Jaa pelitilastot",
+      "playStatsHint": "Pelatut tunnit, versio ja julkiset palvelimet profiiliasi varten. Maailmoja ei koskaan nimetä; lähiverkko- ja yksityisiä osoitteita ei koskaan lähetetä.",
+      "signedOut": "Kirjaudu Rusticiin valitaksesi, kuka näkee profiilisi.",
+      "open": "Avaa profiilini",
+      "failed": "Asetusta ei voitu tallentaa"
+    }
+  },
+  "parental": {
+    "title": "Lapsilukko",
+    "description": "Rustic-tilit ovat vähintään {{age}}-vuotiaille. Alle 18-vuotiaiden pelaajien ostot vaativat oletuksena huoltajan hyväksynnän.",
+    "minorNote": "Tämä tili kuuluu alaikäiselle: ostoihin pyydetään huoltajan hyväksyntä.",
+    "enable": "Ota lapsilukko käyttöön",
+    "enableHint": "Alla olevat muutokset vaativat sen jälkeen PIN-koodin.",
+    "pinFirst": "Luo ensin PIN-koodi ottaaksesi lapsilukon käyttöön.",
+    "saveFailed": "Muutosta ei voitu tallentaa",
+    "lockAgain": "Lukitse uudelleen",
+    "rules": {
+      "title": "Säännöt",
+      "purchases": "Ostokset",
+      "purchasesHint": "Kaupan ostokset ovat vain kosmeettisia. Ei koskaan aarrearkkuja.",
+      "purchaseOptions": {
+        "blocked": "Pois",
+        "pin": "Kysy huoltajalta",
+        "allowed": "Sallittu"
+      },
+      "limit": "Kuukauden kulutusraja",
+      "limitHint": "Käytetty tässä kuussa: {{spent}}. Jätä tyhjäksi, jos rajaa ei ole.",
+      "noLimit": "Ei rajaa",
+      "limitInvalid": "Syötä summa, kuten 10 tai 9,99.",
+      "chat": "Chat",
+      "chatOptions": {
+        "off": "Pois",
+        "friends": "Vain kaverit",
+        "everyone": "Kaikki"
+      },
+      "friendRequests": "Kaveripyynnöt",
+      "friendRequestsHint": "Salli muiden lähettää kaveripyyntöjä."
+    },
+    "pin": {
+      "title": "Lapsilukon PIN-koodi",
+      "set": "PIN-koodi on asetettu. Sitä tarvitaan näiden asetusten muuttamiseen ja ostosten hyväksymiseen.",
+      "notSet": "PIN-koodia ei ole vielä.",
+      "change": "Vaihda PIN-koodi",
+      "create": "Luo PIN-koodi",
+      "saved": "PIN-koodi tallennettu",
+      "new": "Uusi PIN-koodi",
+      "confirm": "Vahvista PIN-koodi",
+      "save": "Tallenna PIN-koodi",
+      "hint": "4–6 numeroa, ei yksinkertainen sarja.",
+      "errors": {
+        "format": "Käytä 4–6 numeroa.",
+        "mismatch": "PIN-koodit eivät täsmää.",
+        "weak": "Liian helppo arvata: vältä 1234 tai 0000."
+      }
+    },
+    "unlock": {
+      "title": "Lukittu",
+      "description": "Syötä lapsilukon PIN-koodi muuttaaksesi näitä asetuksia.",
+      "label": "Lapsilukon PIN-koodi",
+      "wrong": "Väärä PIN-koodi.",
+      "button": "Avaa lukitus"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Versio {{version}}",
+    "channel": {
+      "stable": "Vakaa",
+      "beta": "Beta"
+    },
+    "browserMock": "Selaimen esikatselu (testidata)",
+    "horizon": "Horizon",
+    "horizonHint": "Suositeltu pelin koontiversio.",
+    "licence": "Lisenssi",
+    "platform": "Alusta",
+    "legalTitle": "Juridiset tiedot",
+    "legalDescription": "Käytännöt ja ilmoitukset.",
+    "links": {
+      "privacy": "Tietosuojakäytäntö",
+      "terms": "Käyttö- ja myyntiehdot",
+      "legalNotice": "Oikeudellinen ilmoitus",
+      "fairPlay": "Reilun pelin käytäntö",
+      "thirdParty": "Avoimen lähdekoodin ilmoitukset",
+      "horizon": "Horizon-projekti (MIT)"
+    },
+    "notAffiliated": "Ei virallinen Minecraft-tuote. Mojang tai Microsoft ei ole hyväksynyt sitä eikä se liity niihin.",
+    "horizonCredit": "Rakennettu Horizonin pohjalle: sen tekijöiden MIT-lisensoima pelin uudelleentoteutus Rustilla.",
+    "company": "Julkaisija [company name], ranskalainen yritys (SIREN [number], [address]). Maksut Stripen kautta; yritys on myyjä.",
+    "tagline": "Rustic on sosiaalinen pelialusta, jonka voimanlähteenä on Horizon-moottori"
+  },
+  "rusticAuth": {
+    "mode": "Kirjaudu sisään tai luo tili",
+    "signIn": "Kirjaudu sisään",
+    "signUp": "Luo tili",
+    "create": "Luo tilini",
+    "verify": "Vahvista",
+    "email": "Sähköposti",
+    "password": "Salasana",
+    "username": "Käyttäjänimi",
+    "dateOfBirth": "Syntymäaika",
+    "country": "Maa",
+    "acceptPrivacy": "Olen lukenut tietosuojakäytännön ja hyväksyn sen.",
+    "code": "Koodi todennussovelluksestasi",
+    "checkInbox": "Lähetimme vahvistuslinkin osoitteeseen {{email}}. Avaa se ja kirjaudu sitten sisään.",
+    "resend": "Lähetä uudelleen",
+    "resent": "Vahvistussähköposti lähetetty uudelleen",
+    "signedIn": "Kirjautunut Rusticiin",
+    "problems": {
+      "email": "Syötä kelvollinen sähköpostiosoite.",
+      "password": "Salasana: vähintään 10 merkkiä.",
+      "username": "Käyttäjänimi: 3–20 kirjainta, numeroa tai alaviivaa.",
+      "dateOfBirth": "Syötä syntymäaikasi.",
+      "tooYoung": "Rustic-tilit ovat vähintään 13-vuotiaille.",
+      "privacy": "Hyväksy tietosuojakäytäntö jatkaaksesi."
+    },
+    "microsoft": "Jatka Microsoftilla",
+    "orEmail": "tai sähköpostilla",
+    "microsoftWaiting": "Viimeistele kirjautuminen selaimessasi: käynnistin ottaa istuntosi käyttöön automaattisesti."
+  },
+  "heading": "Omat *asetukset*",
+  "eyebrow": "Käynnistin",
+  "voice": {
+    "devices": "Laitteet",
+    "devicesHint": "Mikrofoni sekä kaiuttimet tai kuulokkeet, joita ääni käyttää.",
+    "input": "Mikrofoni",
+    "output": "Toisto",
+    "outputVolume": "Toiston äänenvoimakkuus",
+    "systemDefault": "Järjestelmän oletus",
+    "deviceN": "Laite {{n}}",
+    "talk": "Puhuminen",
+    "talkHint": "Puhu, kun äänesi tunnistetaan, tai vain pitäessäsi näppäintä pohjassa.",
+    "mode": "Syöttötila",
+    "modeVad": "Äänen tunnistus",
+    "modePtt": "Paina ja puhu",
+    "pttKey": "Puhenäppäin",
+    "pttKeyHint": "Toimii käynnistimessä ja pelissä. Myös hiiren sivunäppäimet käyvät.",
+    "pressKey": "Paina näppäintä…",
+    "sensitivity": "Herkkyys",
+    "sensitivityHint": "Korkeampi tunnistaa hiljaisemmat äänet; matalampi suodattaa enemmän taustamelua.",
+    "test": "Mikrofonitesti",
+    "testMic": "Testaa",
+    "stopTest": "Lopeta",
+    "level": "Mikrofonin taso",
+    "micDenied": "Pääsy mikrofoniin estettiin. Salli se järjestelmän tietosuoja-asetuksissa ja yritä uudelleen.",
+    "micMissing": "Mikrofonia ei löytynyt.",
+    "noiseSuppression": "Melunvaimennus",
+    "echoCancellation": "Kaiunpoisto",
+    "autoGain": "Automaattinen vahvistus",
+    "inGame": "Pelissä",
+    "inGameHint": "Rustic-versiossa näkymä kertoo, kuka puhuu, ja puhenäppäin toimii pelissä.",
+    "overlay": "Näytä äänipeitto pelissä",
+    "serverVoice": "Palvelimien läheisyysääni",
+    "serverVoiceHint": "Rustic Server -palvelimet voivat tarjota etäisyyden mukaista ääntä kaikkien pelaajien kanssa. Alle 18-vuotiaalla huoltajan on sallittava se.",
+    "serverAsk": "Kysy minulta",
+    "serverAuto": "Liity automaattisesti",
+    "serverOff": "Ei koskaan",
+    "servers": {
+      "title": "Läheisyysääni palvelimillesi",
+      "description": "Lisää palvelin ja laita sen avain proximity-voice-lisäosan config.toml-tiedostoon. Voit poistaa sen käytöstä milloin tahansa.",
+      "namePlaceholder": "Palvelimen nimi",
+      "add": "Lisää",
+      "status": "Pelaajia paikalla: {{count}}",
+      "enabled": "Läheisyysääni palvelimella {{name}}",
+      "newKey": "Uusi avain",
+      "remove": "Poista {{name}}",
+      "keyOnce": "Kopioi avain nyt: se näytetään vain kerran. Uusi avain korvaa sen.",
+      "tooMany": "Voit lisätä enintään 10 palvelinta."
+    }
+  }
+}

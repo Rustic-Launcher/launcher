@@ -1,0 +1,581 @@
+{
+  "title": "Indstillinger",
+  "subtitle": "Konti, spil, launcher, udseende og dine data.",
+  "sectionsLabel": "Sektioner i Indstillinger",
+  "saving": "Gemmer…",
+  "saved": "Alle ændringer er gemt",
+  "close": "Luk",
+  "cancel": "Annuller",
+  "sections": {
+    "accounts": "Konti og sikkerhed",
+    "game": "Spil og instanser",
+    "launcher": "Launcher",
+    "appearance": "Udseende",
+    "privacy": "Privatliv og data",
+    "parental": "Forældrekontrol",
+    "about": "Om og juridisk",
+    "voice": "Stemme"
+  },
+  "accounts": {
+    "active": "Aktiv",
+    "useThis": "Brug denne profil",
+    "signOut": "Log ud",
+    "signedOut": "{{name}} er logget ud",
+    "ownership": {
+      "valid": "Ejer spillet",
+      "expired": "Tjek udløbet",
+      "never": "Aldrig tjekket",
+      "failed": "Tjek mislykkedes",
+      "lastChecked": "Tjekket {{when}}",
+      "nextCheck": "næste tjek senest {{date}}",
+      "checkNow": "Tjek nu",
+      "checkedToast": "Ejerskab bekræftet",
+      "checkFailed": "Microsoft kunne ikke nås. Prøv igen senere."
+    },
+    "microsoft": {
+      "title": "Microsoft-konti",
+      "description": "Du skal eje spillet for at spille. Rustic tjekker det hos Microsoft og ser aldrig din adgangskode.",
+      "add": "Tilføj en Microsoft-konto",
+      "keychain": "Login-tokens gemmes i dit systems nøglering, aldrig i en fil eller på en kommandolinje.",
+      "signIn": "Log ind med Microsoft",
+      "step1": "Åbn Microsoft-siden i din browser (eller på en anden enhed).",
+      "step2": "Indtast koden nedenfor, og log ind.",
+      "step3": "Kom tilbage hertil: launcheren fortsætter af sig selv.",
+      "codeLabel": "Login-kode",
+      "copyCode": "Kopiér kode",
+      "copied": "Koden er kopieret",
+      "openPage": "Åbn microsoft.com/link",
+      "waiting": "Venter på, at du logger ind i browseren…",
+      "cancel": "Annuller",
+      "signedInAs": "Logget ind som {{name}}",
+      "ownershipOk": "Ejerskab bekræftet: du kan spille.",
+      "ownershipMissing": "Denne konto ejer ikke spillet.",
+      "tryAgain": "Prøv igen",
+      "failed": {
+        "expired": {
+          "title": "Koden er udløbet",
+          "body": "Koder er gyldige i 15 minutter. Start forfra for at få en ny."
+        },
+        "denied": {
+          "title": "Login blev annulleret",
+          "body": "Microsoft meldte, at login blev afvist."
+        },
+        "no_ownership": {
+          "title": "Denne konto ejer ikke spillet",
+          "body": "Rustic starter kun spillet for konti, der ejer Minecraft: Java Edition."
+        },
+        "error": {
+          "title": "Login mislykkedes",
+          "body": "Rustic kunne ikke gøre login færdigt. Prøv igen; hvis det bliver ved med at mislykkes, fortæller detaljen nedenfor hvorfor."
+        },
+        "not_configured": {
+          "title": "Microsoft-login er ikke sat op i dette build",
+          "body": "Dette build har intet Azure-program-id, så det kan ikke bede Microsoft om at bekræfte spillicensen. Officielle builds har det."
+        },
+        "not_approved": {
+          "title": "Launcheren venter på godkendelse fra Mojang",
+          "body": "Din Microsoft-konto loggede ind, men spiltjenesterne accepterer endnu ikke denne launcher: Mojang skal først godkende dens program-id. Du skal ikke gøre noget; prøv igen, når den er godkendt."
+        },
+        "xbox": {
+          "title": "Xbox Live afviste login",
+          "body": "Årsagen står nedenfor (børnekonto uden forældretilladelse, Xbox-profil, der skal oprettes, region, der ikke understøttes…)."
+        },
+        "rate_limited": {
+          "title": "For mange forsøg",
+          "body": "Tjenesterne har modtaget for mange login på kort tid. Vent et minut, og prøv igen."
+        },
+        "network": {
+          "title": "Tjenesterne kunne ikke nås",
+          "body": "Tjek din internetforbindelse, og prøv igen."
+        },
+        "detail": "Detalje: {{detail}}"
+      }
+    },
+    "rustic": {
+      "title": "Rustic-konto",
+      "description": "Din Rustic-identitet til venner, Skab, køb og servere.",
+      "signedOut": "Ikke logget ind. Spillet virker uden; sociale funktioner, Skab og Butik kræver det.",
+      "signIn": "Log ind eller opret en konto",
+      "licenceNote": "En Rustic-konto er en platformsidentitet. Den erstatter aldrig spillicensen: du skal stadig have en Microsoft-konto, der ejer spillet.",
+      "manageOnWeb": "Administrer på hjemmesiden"
+    },
+    "offline": {
+      "title": "Offlinespil",
+      "description": "Til LAN-fester og spil uden internet: du spiller med din Microsoft-konto, under dit officielle navn og UUID. Tilgængeligt i {{days}} dage efter det seneste vellykkede ejerskabstjek, hvorefter Rustic spørger Microsoft igen.",
+      "until": "Offlinespil tilgængeligt indtil {{date}}",
+      "locked": "Log først ind med en Microsoft-konto, der ejer spillet: offlinespil låses op efter et vellykket ejerskabstjek."
+    },
+    "connections": {
+      "title": "Forbindelser",
+      "description": "Tjenester, launcheren bruger på dine vegne. Nøgler og værtsfingeraftryk bliver i dit systems nøglering.",
+      "porkbun": "Porkbun (domæner)",
+      "porkbunHint": "Bruges til at oprette DNS-poster for dine servere på din egen Porkbun-konto.",
+      "porkbunRemoved": "Porkbun-nøgler er fjernet fra denne computer",
+      "connected": "Forbundet",
+      "notConnected": "Ikke forbundet",
+      "remove": "Fjern nøgler",
+      "vps": "VPS-værter",
+      "vpsHint": "Servere, du er vært for på din egen VPS via SSH. Hvis du glemmer en vært, fjernes dens fastgjorte nøgle.",
+      "noVps": "Ingen",
+      "fingerprint": "{{fp}} · betroet {{date}}",
+      "forget": "Glem"
+    },
+    "linked": {
+      "microsoft": "Microsoft",
+      "linked": "Forbundet",
+      "notLinked": "Ikke forbundet: log også ind på Rustic med din Microsoft-konto.",
+      "link": "Forbind på hjemmesiden",
+      "unlink": "Fjern forbindelse",
+      "unlinked": "Forbindelsen til Microsoft er fjernet",
+      "unlinkFailed": "Forbindelsen til Microsoft kunne ikke fjernes",
+      "lastMethod": "Tilføj først en adgangskode (på hjemmesiden): Microsoft er din eneste måde at logge ind på."
+    }
+  },
+  "game": {
+    "memory": {
+      "title": "Hukommelse (RAM)",
+      "description": "Standardhukommelse, som spillet får. Hver instans kan tilsidesætte den.",
+      "system": "{{total}} installeret · {{free}} ledig nu",
+      "warn": "Det efterlader kun lidt hukommelse til dit system og kan gøre alt langsommere.",
+      "perInstance": "Tip: 4 GB er rigeligt til de fleste instanser; store modpakker kan have brug for 6 til 8 GB."
+    },
+    "prepare": {
+      "title": "Spilfiler",
+      "description": "Horizon forbereder spillets ressourcer fra din egen installation af spillet. Intet hentes fra tredjeparter.",
+      "status": "Status",
+      "states": {
+        "missing": "Ikke forberedt",
+        "preparing": "Forbereder",
+        "ready": "Klar",
+        "outdated": "Skal forberedes igen"
+      },
+      "gameVersion": "Spil {{version}}",
+      "source": "Kildeinstallation",
+      "sourceHint": "Den officielle launchers spilmappe, der blev fundet på denne computer.",
+      "doneToast": "Spilfilerne er klar",
+      "steps": {
+        "detect": "Leder efter din installation…",
+        "download": "Henter spilfilerne fra Mojang…",
+        "verify": "Bekræfter spilfiler…",
+        "compile_exporters": "Bygger eksportører…",
+        "export": "Eksporterer ressourcer…",
+        "index": "Indekserer…",
+        "done": "Færdig"
+      },
+      "legal": "De forberedte filer bliver på denne computer og deles aldrig.",
+      "again": "Forbered igen",
+      "failed": "Forberedelsen mislykkedes"
+    },
+    "java": {
+      "label": "Java til forberedelse",
+      "description": "Bruges kun til at forberede spilfiler (horizon-prepare). Horizon selv kræver ikke Java for at køre.",
+      "pickTitle": "Vælg en Java-programfil",
+      "source": {
+        "bundled": "Følger med Rustic",
+        "system": "Installeret på denne computer",
+        "custom": "Brugerdefineret"
+      },
+      "custom": "Brugerdefineret sti…",
+      "customHint": "Vælg en Java 21+-programfil"
+    },
+    "rusticServer": {
+      "title": "Rustic Server",
+      "description": "Programmet rustic-server, som dine Rustic Server-servere kører (Horizons motor med Rustic-plugins). Det skal komme fra samme Horizon-commit som serverens spilversion: et build af Rustic-udgaven har det med i sin mappe.",
+      "program": "Program i brug",
+      "notFound": "Ikke fundet",
+      "notFoundHint": "Installer et build af Rustic-udgaven, der har det med, eller vælg filen rustic-server. Uden den mislykkes oprettelsen af en Rustic Server.",
+      "configuredMissing": "Den valgte fil findes ikke længere: {{path}}",
+      "origin": {
+        "server": "Serverens eget",
+        "configured": "Valgt manuelt",
+        "build": "Fulgte med build {{build}}",
+        "beside_launcher": "Ved siden af launcheren",
+        "path": "Fundet i PATH"
+      },
+      "choose": "Vælg…",
+      "pickTitle": "Vælg programmet rustic-server",
+      "automatic": "Brug automatisk",
+      "saved": "Programmet rustic-server er gemt",
+      "automaticSaved": "Automatisk registrering er gendannet",
+      "invalid": "Denne fil er ikke et rustic-server-program (den svarer ikke på --rustic-version).",
+      "failed": "Dette program kunne ikke gemmes",
+      "order": "Søgerækkefølge: dit valg, derefter spilversionens mappe, derefter ved siden af launcheren, derefter PATH."
+    },
+    "folders": {
+      "title": "Mapper",
+      "description": "Hvor launcheren gemmer sine data, dine instanser og dine servere.",
+      "data": "Launcher-data",
+      "instances": "Instanser",
+      "servers": "Servere",
+      "open": "Åbn",
+      "change": "Skift",
+      "changed": "Mappen er skiftet",
+      "moveNote": "Eksisterende filer flyttes ikke automatisk."
+    },
+    "resolution": {
+      "title": "Spilvindue",
+      "description": "Standardvinduesstørrelse for nye instanser.",
+      "size": "Størrelse",
+      "width": "Bredde",
+      "height": "Højde",
+      "fullscreen": "Start i fuld skærm",
+      "hint": "Mindst 640 × 480."
+    },
+    "native": {
+      "title": "Native mods",
+      "description": "Instanser med native mods spiller et spil, der er kompileret til dem på denne pc. Her: Rust-compileren og den kompileringscache, der gør senere builds hurtige.",
+      "rust": "Rust-compiler",
+      "rustReady": {
+        "managed": "Rust {{version}}, installeret af launcheren",
+        "rustup": "Rust {{version}}, fra din rustup",
+        "system": "Rust {{version}}, installeret på denne pc"
+      },
+      "rustMissing": "Rust {{version}} kræves til det første build.",
+      "ready": "Klar",
+      "missing": "Ikke installeret",
+      "installing": "Installerer…",
+      "installRust": "Installer Rust",
+      "rustInstalled": "Rust er installeret",
+      "rustFailed": "Rust kunne ikke installeres",
+      "cache": "Kompileringscache",
+      "cacheDetail": "Cache {{cache}} · hentede crates {{crates}} · Rust {{toolchain}} · kilde {{source}}. Hvis du rydder den, bevares de byggede spil; det næste build kompilerer alt igen.",
+      "clear": "Ryd",
+      "clearTitle": "Vil du rydde kompileringscachen?",
+      "clearBody": "Instanser beholder deres byggede spil. Det næste native build kompilerer hele spillet igen (10 til 15 minutter).",
+      "cleared": "Kompileringscachen er ryddet ({{size}} frigjort)",
+      "limit": "Grænse for cache",
+      "limitHint": "Efter et build ryddes cachen, når den er større end dette (0: aldrig).",
+      "gib": "GiB",
+      "limitSaved": "Grænsen for cache er gemt",
+      "limitInvalid": "Grænsen er et helt antal GiB fra 0 til 4096.",
+      "folder": "Mappe: {{path}}"
+    }
+  },
+  "launcher": {
+    "language": {
+      "title": "Sprog",
+      "description": "Gælder med det samme for hele launcheren.",
+      "label": "Sprog",
+      "search": "Søg efter sprog",
+      "empty": "Intet sprog passer",
+      "translated": "Oversat",
+      "others": "Andre sprog",
+      "partial": "Delvis",
+      "english": "på engelsk indtil videre",
+      "via": "på {{lang}} indtil videre",
+      "help": "Tekster, der ikke er oversat endnu, vises på engelsk. Oversættelserne kommer fra fællesskabet."
+    },
+    "startup": {
+      "title": "Opstart",
+      "onBoot": "Åbn Rustic, når computeren starter",
+      "onBootHint": "Venner ser dig online hurtigere, og opdateringer hentes i baggrunden.",
+      "minimized": "Start minimeret"
+    },
+    "behaviour": {
+      "title": "Mens du spiller",
+      "onLaunch": "Når spillet starter",
+      "launchOptions": {
+        "keep_open": "Hold launcheren åben",
+        "minimize": "Minimer launcheren",
+        "hide": "Skjul i systembakken",
+        "close": "Luk launcheren"
+      },
+      "onClose": "Når jeg lukker vinduet",
+      "onCloseHint": "Hvis den bliver i systembakken, kan venner invitere dig, og servere kan blive ved med at køre.",
+      "closeOptions": {
+        "tray": "Kør videre i systembakken",
+        "quit": "Afslut Rustic"
+      }
+    },
+    "updates": {
+      "title": "Opdateringer",
+      "auto": "Installer opdateringer automatisk",
+      "autoHint": "Opdateringer er signerede og bekræftes før installation.",
+      "check": "Rustic Launcher",
+      "checkNow": "Søg efter opdateringer",
+      "available": "Version {{version}} er tilgængelig",
+      "upToDate": "Du er opdateret",
+      "failed": "Der kunne ikke søges efter opdateringer",
+      "lastCheck": "Sidst tjekket {{when}}",
+      "neverChecked": "Ikke tjekket endnu",
+      "edition": "Spil (Rustic-udgave)",
+      "editionNone": "Intet build af Rustic-udgaven installeret",
+      "apply": "Opdater og genstart",
+      "checking": "Tjekker…",
+      "working": "Opdaterer… {{pct}}",
+      "restarting": "Genstarter…",
+      "deferred": "Venter på, at spillet lukkes",
+      "lastError": "Det seneste forsøg mislykkedes. Der prøves automatisk igen."
+    },
+    "performance": {
+      "title": "Downloads og ydelse",
+      "downloads": "Samtidige downloads",
+      "downloadsHint": "Sænk tallet på en langsom forbindelse.",
+      "hardware": "Hardwareacceleration",
+      "hardwareHint": "Slå fra, hvis launcheren flimrer. Træder i kraft efter en genstart."
+    }
+  },
+  "appearance": {
+    "theme": {
+      "title": "Tema",
+      "description": "Rustic er først og fremmest designet mørkt; det lyse tema er til lyse rum.",
+      "label": "Tema",
+      "dark": "Mørkt",
+      "light": "Lyst",
+      "system": "System"
+    },
+    "palette": {
+      "title": "Farvepalet",
+      "description": "Den accentfarve, der bruges til SPIL, markering og fremskridt.",
+      "label": "Farvepalet",
+      "play": "Spil",
+      "default": "Standard",
+      "names": {
+        "ember": "Glød",
+        "verdigris": "Ærgg",
+        "heather": "Lyng"
+      },
+      "descriptions": {
+        "ember": "Varmt kobber på antracit",
+        "verdigris": "Patinagrøn, som oxideret kobber",
+        "heather": "Dæmpet lyngrosa"
+      }
+    },
+    "motion": {
+      "title": "Bevægelse",
+      "body": "Rustic følger dit systems indstilling for »reducer bevægelse«: animationer, karrusellen og 3D-forhåndsvisningen står stille."
+    }
+  },
+  "privacy": {
+    "telemetry": {
+      "title": "Hvad du deler med os",
+      "description": "Alt her er slået fra som standard. Hvis du slår noget til, hjælper du os med at forbedre Rustic; du kan altid ombestemme dig.",
+      "usage": "Brugsstatistik",
+      "usageHint": "Hvilke sider og funktioner der bruges, uden indhold eller identifikatorer.",
+      "performance": "Ydelsesrapporter",
+      "performanceHint": "Opstartstider og billedtider, så langsomme steder kan findes.",
+      "crash": "Nedbrudsrapporter",
+      "crashHint": "Når det er slået fra, spørger Rustic dig hver gang, der sker et nedbrud."
+    },
+    "policyLink": "Læs privatlivspolitikken",
+    "social": {
+      "title": "Venner og tilstedeværelse",
+      "activity": "Vis mine venner, hvad jeg spiller",
+      "activityHint": "Lader venner se din server og slutte sig til dig med ét klik.",
+      "requests": "Hvem der kan sende mig venneanmodninger",
+      "requestsOptions": {
+        "everyone": "Alle",
+        "friends_of_friends": "Venners venner",
+        "nobody": "Ingen"
+      },
+      "discoverable": "Vis mig i forslag til spillere, jeg møder",
+      "discoverableHint": "Spillere, du har været i gruppe med eller mødt på en server, du deler i din aktivitet, kan se dig under »Tilføj en ven«, og du ser dem. Gemmes i 30 dage; slår du dette fra, slettes det.",
+      "discoverableMinor": "Ikke tilgængeligt for konti under 18 år.",
+      "discoverableFailed": "Denne indstilling kunne ikke gemmes.",
+      "discord": "Vis min aktivitet på Discord",
+      "discordHint": "»Spiller Rustic« på din Discord-profil: i launcheren, i hovedmenuen, i singleplayer eller på en server, med din spilletid.",
+      "discordServer": "Vis serveradressen på Discord",
+      "discordServerHint": "Ellers viser Discord »Multiplayer«. Private adresser (LAN, denne pc) vises aldrig."
+    },
+    "data": {
+      "title": "Dine data",
+      "description": "Dine rettigheder efter GDPR: indsigt, dataportabilitet og sletning.",
+      "export": "Eksportér mine data",
+      "exportHint": "Et JSON-arkiv med din konto, venner, køb og indstillinger.",
+      "exportButton": "Forbered eksport",
+      "exportReady": "Din eksport er klar",
+      "exportFailed": "Eksporten kunne ikke forberedes",
+      "download": "Download (linket er gyldigt indtil {{date}})",
+      "delete": "Slet min konto",
+      "deleteHint": "En frist på 30 dage, hvor du kan annullere, og derefter permanent sletning.",
+      "deleteButton": "Slet konto",
+      "deleteScheduled": "Sletning planlagt til {{date}}. Log ind inden da for at annullere.",
+      "deleteFailed": "Kontoen kunne ikke slettes",
+      "rights": "Spørgsmål eller klager: kontakt os eller CNIL (den franske databeskyttelsesmyndighed).",
+      "confirmTitle": "Vil du slette din Rustic-konto?",
+      "confirmBody": "Dine venner, din kosmetik og dine køb fjernes efter 30 dage. Din spillicens og din Microsoft-konto berøres ikke.",
+      "confirmButton": "Slet min konto",
+      "typeUsername": "Skriv {{name}} for at bekræfte"
+    },
+    "profile": {
+      "title": "Rustic-profil",
+      "description": "Din side på rustic-launcher.com, delt med hjemmesidens indstillinger.",
+      "visibility": "Hvem der kan se min profil",
+      "visibilityHint": "Alle andre ser kun dit hoved og dit navn.",
+      "minor": "Profiler for spillere under 18 år er aldrig offentlige.",
+      "options": {
+        "public": "Alle",
+        "friends": "Kun venner",
+        "private": "Kun mig"
+      },
+      "playStats": "Del spillestatistik",
+      "playStatsHint": "Timer spillet, udgave og offentlige servere til din profil. Verdener navngives aldrig; LAN- og private adresser sendes aldrig.",
+      "signedOut": "Log ind på Rustic for at vælge, hvem der kan se din profil.",
+      "open": "Åbn min profil",
+      "failed": "Indstillingen kunne ikke gemmes"
+    }
+  },
+  "parental": {
+    "title": "Forældrekontrol",
+    "description": "Rustic-konti er for personer på {{age}} år og derover. For spillere under 18 kræver køb som standard en forælders godkendelse.",
+    "minorNote": "Denne konto tilhører en mindreårig: køb kræver en forælders godkendelse.",
+    "enable": "Slå forældrekontrol til",
+    "enableHint": "Ændringer nedenfor kræver derefter PIN-koden.",
+    "pinFirst": "Opret først en PIN-kode for at slå forældrekontrol til.",
+    "saveFailed": "Ændringen kunne ikke gemmes",
+    "lockAgain": "Lås igen",
+    "rules": {
+      "title": "Regler",
+      "purchases": "Køb",
+      "purchasesHint": "Køb i Butik er kun kosmetiske. Aldrig loot boxes.",
+      "purchaseOptions": {
+        "blocked": "Fra",
+        "pin": "Spørg en forælder",
+        "allowed": "Tilladt"
+      },
+      "limit": "Månedlig forbrugsgrænse",
+      "limitHint": "Brugt denne måned: {{spent}}. Lad feltet være tomt for ingen grænse.",
+      "noLimit": "Ingen grænse",
+      "limitInvalid": "Skriv et beløb som 10 eller 9,99.",
+      "chat": "Chat",
+      "chatOptions": {
+        "off": "Fra",
+        "friends": "Kun venner",
+        "everyone": "Alle"
+      },
+      "friendRequests": "Venneanmodninger",
+      "friendRequestsHint": "Tillad andre at sende venneanmodninger."
+    },
+    "pin": {
+      "title": "Forældre-PIN",
+      "set": "Der er sat en PIN-kode. Den kræves for at ændre disse indstillinger og godkende køb.",
+      "notSet": "Ingen PIN-kode endnu.",
+      "change": "Skift PIN-kode",
+      "create": "Opret en PIN-kode",
+      "saved": "PIN-koden er gemt",
+      "new": "Ny PIN-kode",
+      "confirm": "Bekræft PIN-kode",
+      "save": "Gem PIN-kode",
+      "hint": "4 til 6 cifre, ikke en simpel talrække.",
+      "errors": {
+        "format": "Brug 4 til 6 cifre.",
+        "mismatch": "De to PIN-koder er forskellige.",
+        "weak": "For let at gætte: undgå 1234 eller 0000."
+      }
+    },
+    "unlock": {
+      "title": "Låst",
+      "description": "Indtast forældre-PIN-koden for at ændre disse indstillinger.",
+      "label": "Forældre-PIN",
+      "wrong": "Forkert PIN-kode.",
+      "button": "Lås op"
+    }
+  },
+  "about": {
+    "title": "Rustic Launcher",
+    "product": "Rustic Launcher",
+    "version": "Version {{version}}",
+    "channel": {
+      "stable": "Stabil",
+      "beta": "Beta"
+    },
+    "browserMock": "Forhåndsvisning i browser (testdata)",
+    "horizon": "Horizon",
+    "horizonHint": "Anbefalet spilbuild.",
+    "licence": "Licens",
+    "platform": "Platform",
+    "legalTitle": "Juridisk",
+    "legalDescription": "Politikker og meddelelser.",
+    "links": {
+      "privacy": "Privatlivspolitik",
+      "terms": "Vilkår for brug og salg",
+      "legalNotice": "Juridisk meddelelse",
+      "fairPlay": "Fair play-politik",
+      "thirdParty": "Open source-meddelelser",
+      "horizon": "Horizon-projektet (MIT)"
+    },
+    "notAffiliated": "Ikke et officielt Minecraft-produkt. Ikke godkendt af eller tilknyttet Mojang eller Microsoft.",
+    "horizonCredit": "Bygget på Horizon, en MIT-licenseret omskrivning af spillet i Rust, lavet af projektets bidragydere.",
+    "company": "Udgivet af [company name], en fransk virksomhed (SIREN [number], [address]). Betalinger via Stripe; virksomheden er sælger.",
+    "tagline": "Rustic er en social spilplatform, drevet af Horizon-motoren"
+  },
+  "rusticAuth": {
+    "mode": "Log ind eller opret en konto",
+    "signIn": "Log ind",
+    "signUp": "Opret en konto",
+    "create": "Opret min konto",
+    "verify": "Bekræft",
+    "email": "E-mail",
+    "password": "Adgangskode",
+    "username": "Brugernavn",
+    "dateOfBirth": "Fødselsdato",
+    "country": "Land",
+    "acceptPrivacy": "Jeg har læst og accepterer privatlivspolitikken.",
+    "code": "Kode fra din godkendelsesapp",
+    "checkInbox": "Vi har sendt et bekræftelseslink til {{email}}. Åbn det, og log derefter ind.",
+    "resend": "Send igen",
+    "resent": "Bekræftelsesmailen er sendt igen",
+    "signedIn": "Logget ind på Rustic",
+    "problems": {
+      "email": "Skriv en gyldig e-mailadresse.",
+      "password": "Adgangskode: mindst 10 tegn.",
+      "username": "Brugernavn: 3 til 20 bogstaver, tal eller understregning.",
+      "dateOfBirth": "Skriv din fødselsdato.",
+      "tooYoung": "Rustic-konti er for personer på 13 år og derover.",
+      "privacy": "Accepter privatlivspolitikken for at fortsætte."
+    },
+    "microsoft": "Fortsæt med Microsoft",
+    "orEmail": "eller med en e-mail",
+    "microsoftWaiting": "Gør login færdigt i din browser: launcheren henter din session automatisk."
+  },
+  "heading": "Dine *indstillinger*",
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Enheder",
+    "devicesHint": "Mikrofonen og højttalerne eller headsettet til stemme.",
+    "input": "Mikrofon",
+    "output": "Output",
+    "outputVolume": "Outputlydstyrke",
+    "systemDefault": "Systemstandard",
+    "deviceN": "Enhed {{n}}",
+    "talk": "Tale",
+    "talkHint": "Tal, når din stemme registreres, eller kun mens du holder en tast nede.",
+    "mode": "Inputtilstand",
+    "modeVad": "Stemmeaktivitet",
+    "modePtt": "Tryk for at tale",
+    "pttKey": "Tast for at tale",
+    "pttKeyHint": "Virker i launcheren og i spillet. Musens sideknapper virker også.",
+    "pressKey": "Tryk på en tast…",
+    "sensitivity": "Følsomhed",
+    "sensitivityHint": "Højere fanger svagere stemmer; lavere ignorerer mere baggrundsstøj.",
+    "test": "Mikrofontest",
+    "testMic": "Test",
+    "stopTest": "Stop",
+    "level": "Mikrofonniveau",
+    "micDenied": "Adgang til mikrofonen blev afvist. Tillad den i systemets privatlivsindstillinger, og prøv igen.",
+    "micMissing": "Ingen mikrofon fundet.",
+    "noiseSuppression": "Støjdæmpning",
+    "echoCancellation": "Ekkodæmpning",
+    "autoGain": "Automatisk forstærkning",
+    "inGame": "I spillet",
+    "inGameHint": "Med Rustic-udgaven viser et overlay, hvem der taler, og tasten for at tale virker i spillet.",
+    "overlay": "Vis stemmeoverlay i spillet",
+    "serverVoice": "Nærhedsstemme på servere",
+    "serverVoiceHint": "Rustic Servers kan tilbyde stemme efter afstand med alle spillere der. Under 18 skal en forælder tillade det.",
+    "serverAsk": "Spørg mig",
+    "serverAuto": "Deltag automatisk",
+    "serverOff": "Aldrig",
+    "servers": {
+      "title": "Nærhedsstemme til dine servere",
+      "description": "Tilføj en server, og sæt dens nøgle i config.toml for pluginet proximity-voice. Du kan slå den fra når som helst.",
+      "namePlaceholder": "Servernavn",
+      "add": "Tilføj",
+      "status": "Spillere online: {{count}}",
+      "enabled": "Nærhedsstemme på {{name}}",
+      "newKey": "Ny nøgle",
+      "remove": "Fjern {{name}}",
+      "keyOnce": "Kopiér nøglen nu: den vises kun én gang. En ny nøgle erstatter den.",
+      "tooMany": "Du kan tilføje op til 10 servere."
+    }
+  }
+}

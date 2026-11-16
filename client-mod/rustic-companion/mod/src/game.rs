@@ -48,6 +48,18 @@ impl Hooks for Companion {
 
     fn key(&self, host: &mut dyn Host, event: &mut KeyEvent<'_>) {
         guard("key", || {
+            // Push-to-talk for the launcher's voice (launcher ADR 0176): down and up, in any
+            // screen but text input is not told apart here (the launcher's key is the player's).
+            {
+                let mut st = lock();
+                if st.voice.file.current.is_ptt(event.key) && st.voice.ptt_down != event.pressed {
+                    st.voice.ptt_down = event.pressed;
+                    println!(
+                        "{}",
+                        rusticmc_companion_core::voice::ptt_line(event.pressed)
+                    );
+                }
+            }
             if !event.pressed {
                 return;
             }
@@ -278,6 +290,7 @@ impl Hooks for Companion {
     }
 
     fn hud(&self, host: &mut dyn Host, event: &mut HudEvent<'_>) {
+        guard("hud_voice", || voice_hud(host, event));
         guard("hud", || {
             let mut st = lock();
             // The badge is set at the size of the text the HUD draws.
@@ -315,6 +328,36 @@ impl Hooks for Companion {
     }
 }
 
+/// The icon of where the player is, read from what the game keeps on disk: the server list's
+/// favicon of the server joined (`servers.dat`, written by the list's pings), or the
+/// singleplayer world's `icon.png`. Read without the companion's lock (host calls, files).
+fn place_icon(
+    host: &dyn Host,
+    place: &rusticmc_companion_core::presence::Place,
+    cs: &horizon_client::mod_api::NativeClientState,
+) -> Option<Vec<u8>> {
+    use horizon_client::mod_api::NativeWorldId;
+    use rusticmc_companion_core::presence::{self, Place};
+    let game = host.instance_dir();
+    match (place, cs.world.as_ref()) {
+        (Place::Singleplayer, Some(NativeWorldId::Singleplayer(folder))) => {
+            presence::world_icon(&game.join("saves"), folder)
+        }
+        (Place::Server(_), _) => {
+            let address = cs.server_address.as_deref()?;
+            let (shown, hidden) = horizon_protocol::servers::load_all(&game.join("servers.dat"));
+            presence::server_icon(
+                shown
+                    .iter()
+                    .chain(hidden.iter())
+                    .map(|e| (e.ip.as_str(), e.icon.as_deref())),
+                address,
+            )
+        }
+        _ => None,
+    }
+}
+
 /// The wheel's emotes: the owned ones, at most 8.
 fn wheel_items(owned: &[WornItem]) -> Vec<WornItem> {
     owned.iter().take(wheel::MAX_SLICES).cloned().collect()
@@ -333,14 +376,24 @@ fn client_tick(host: &mut dyn Host) {
         return;
     };
     let now = Instant::now();
-    // Discord Rich Presence: the launcher reads this line from the game's output.
+    // Discord Rich Presence: the launcher reads this line from the game's output, with the
+    // place's own icon when the game has one on disk (launcher ADR 0173).
     let place = rusticmc_companion_core::presence::Place::of(
         cs.world.is_some(),
         cs.server_address.as_deref(),
     );
-    if let Some(line) = lock().presence.report(place) {
-        println!("{line}");
+    if lock().presence_icon.due(&place, now) {
+        let icon = place_icon(host, &place, &cs);
+        lock().presence_icon.found(icon, now);
     }
+    {
+        let mut st = lock();
+        let st = &mut *st;
+        if let Some(line) = st.presence.report(place, st.presence_icon.icon()) {
+            println!("{line}");
+        }
+    }
+    voice_tick(host, &cs, now);
     if !lock().started {
         let text = host.config_dir().ok().and_then(|d| {
             std::fs::read_to_string(d.join(rusticmc_companion_core::config::FILE)).ok()
@@ -419,5 +472,65 @@ fn client_tick(host: &mut dyn Host) {
             Text::literal(n.body),
             false,
         );
+    }
+}
+
+/// The launcher's voice (launcher ADR 0176): follows `rustic/voice.json` and, while the room uses
+/// proximity, prints where the player is (rate-limited).
+fn voice_tick(host: &dyn Host, cs: &horizon_client::mod_api::NativeClientState, now: Instant) {
+    use rusticmc_companion_core::voice::Position;
+    let dir = std::env::current_dir().unwrap_or_default();
+    let mut st = lock();
+    st.voice.file.poll(&dir, now, std::time::SystemTime::now());
+    let voice = &mut st.voice;
+    if !voice.file.current.active && voice.ptt_down {
+        voice.ptt_down = false;
+        println!("{}", rusticmc_companion_core::voice::ptt_line(false));
+    }
+    if !(voice.file.current.active && voice.file.current.positions) {
+        voice.reporter.reset();
+        return;
+    }
+    let server = match (&cs.world, cs.server_address.as_deref()) {
+        (Some(_), Some(a)) if !a.trim().is_empty() && a.trim() != "local" => {
+            Some(rusticmc_companion_core::presence::Place::of(true, Some(a)))
+        }
+        _ => None,
+    };
+    let pos = match (server, cs.eye_position) {
+        (Some(rusticmc_companion_core::presence::Place::Server(host_name)), Some([x, y, z])) => {
+            Some(Position {
+                server: host_name.to_ascii_lowercase(),
+                dim: host.dimension().to_owned(),
+                x,
+                y,
+                z,
+                yaw: f64::from(cs.yaw),
+            })
+        }
+        _ => None,
+    };
+    if let Some(line) = voice.reporter.next(pos, now) {
+        println!("{line}");
+    }
+}
+
+/// The voice room's members in the top-left corner, the speaking ones lit.
+fn voice_hud(host: &mut dyn Host, event: &mut HudEvent<'_>) {
+    let voice = lock().voice.file.current.clone();
+    let draws = rusticmc_companion_core::voice::layout(&voice, [0.0, 0.0], |s| host.text_width(s));
+    let Some(Draw::Fill { rect, .. }) = draws.first() else {
+        return;
+    };
+    let (x, y) = event.corners.place(Corner::TopLeft, rect[2], rect[3]);
+    for d in draws {
+        match d {
+            Draw::Fill { rect: r, argb } => {
+                host.fill(event.batch, [r[0] + x, r[1] + y, r[2], r[3]], argb)
+            }
+            Draw::Text { at, text, rgb } => {
+                host.text(event.batch, &text, [at[0] + x, at[1] + y], rgb, true)
+            }
+        }
     }
 }

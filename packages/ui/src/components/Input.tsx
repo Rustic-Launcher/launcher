@@ -26,17 +26,17 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   return (
     <div className={cn('relative flex items-center', className)}>
       {leftIcon && (
-        <span className="text-fg-subtle pointer-events-none absolute left-3 [&_svg]:size-4">
+        <span className="text-fg-subtle pointer-events-none absolute start-3 [&_svg]:size-4">
           {leftIcon}
         </span>
       )}
       <input
         ref={ref}
         aria-invalid={invalid || undefined}
-        className={cn(fieldBase, 'h-9 px-3', leftIcon && 'pl-9', rightSlot && 'pr-20')}
+        className={cn(fieldBase, 'h-9 px-3', leftIcon && 'ps-9', rightSlot && 'pe-20')}
         {...props}
       />
-      {rightSlot && <span className="absolute right-2 flex items-center gap-1">{rightSlot}</span>}
+      {rightSlot && <span className="absolute end-2 flex items-center gap-1">{rightSlot}</span>}
     </div>
   );
 });

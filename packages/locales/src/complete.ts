@@ -28,5 +28,12 @@ export const COMPLETE = [
   'id',
   'vi',
   'th',
+  'da',
+  'fi',
+  'nb',
+  'el',
+  'ar',
+  'he',
+  'hi',
 ] as const;
 export type CompleteBundle = (typeof COMPLETE)[number];

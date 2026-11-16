@@ -31,7 +31,7 @@ export function Markdown({ source }: { source: string }) {
       out.push(
         <ul
           key={out.length}
-          className="text-fg-muted marker:text-accent-text flex list-disc flex-col gap-1 pl-5 text-sm"
+          className="text-fg-muted marker:text-accent-text flex list-disc flex-col gap-1 ps-5 text-sm"
         >
           {list.map((l, j) => (
             <li key={j}>{inline(l)}</li>

@@ -273,12 +273,12 @@ export function ContentDetailPage() {
                 {d.changelog.length === 0 ? (
                   <p className="text-fg-muted text-sm">{t('detail.noChangelog')}</p>
                 ) : (
-                  <ol className="border-border ml-1 flex max-w-[72ch] flex-col gap-6 border-l pl-6">
+                  <ol className="border-border ms-1 flex max-w-[72ch] flex-col gap-6 border-s ps-6">
                     {d.changelog.map((c) => (
                       <li key={c.version} className="relative">
                         <span
                           aria-hidden
-                          className="bg-accent ring-bg absolute top-1.5 -left-[1.86rem] size-2.5 rounded-full ring-4"
+                          className="bg-accent ring-bg absolute -start-[1.86rem] top-1.5 size-2.5 rounded-full ring-4"
                         />
                         <p className="text-sm font-semibold">
                           {c.version}{' '}
@@ -615,7 +615,7 @@ function InstallPrompt({
             />
           </div>
         )}
-        <div className="ml-auto">
+        <div className="ms-auto">
           <InstallButton
             item={d}
             target={target}
@@ -706,7 +706,7 @@ function ReportButton({ detail: d, compact }: { detail: ContentDetail; compact?:
                 <button
                   type="button"
                   onClick={() => send(r)}
-                  className="rx-focus-ring hover:bg-surface-3 w-full rounded-lg px-2 py-2 text-left text-sm"
+                  className="rx-focus-ring hover:bg-surface-3 w-full rounded-lg px-2 py-2 text-start text-sm"
                 >
                   {t(`report.reasons.${r}`)}
                 </button>
@@ -734,7 +734,7 @@ function Versions({
     return <p className="text-fg-muted text-sm">{t('versions.empty')}</p>;
   return (
     <div className="border-border overflow-x-auto rounded-xl border">
-      <table className="w-full text-left text-sm">
+      <table className="w-full text-start text-sm">
         <thead className="text-fg-subtle border-border border-b text-xs">
           <tr>
             <th scope="col" className="px-4 py-2.5 font-medium">
@@ -746,13 +746,13 @@ function Versions({
             <th scope="col" className="px-4 py-2.5 font-medium">
               {t('versions.published')}
             </th>
-            <th scope="col" className="px-4 py-2.5 text-right font-medium">
+            <th scope="col" className="px-4 py-2.5 text-end font-medium">
               {t('versions.downloads')}
             </th>
             <th scope="col" className="px-4 py-2.5 font-medium">
               {t('versions.compatibility')}
             </th>
-            <th scope="col" className="px-4 py-2.5 text-right font-medium">
+            <th scope="col" className="px-4 py-2.5 text-end font-medium">
               <span className="sr-only">{t('versions.actions')}</span>
             </th>
           </tr>
@@ -796,13 +796,13 @@ function Versions({
               <td className="text-fg-muted px-4 py-3 text-xs whitespace-nowrap">
                 {formatDate(v.published_at, i18n.language)}
               </td>
-              <td className="text-fg-muted px-4 py-3 text-right text-xs tabular-nums">
+              <td className="text-fg-muted px-4 py-3 text-end text-xs tabular-nums">
                 {formatCompact(v.downloads, i18n.language)}
               </td>
               <td className="px-4 py-3">
                 <ItemCompatBadge item={{ native: d.native, compatibility: v.compatibility }} />
               </td>
-              <td className="px-4 py-3 text-right">
+              <td className="px-4 py-3 text-end">
                 {installed ? (
                   i === 0 ? (
                     <Badge variant="success">{t('install.installed')}</Badge>
@@ -1031,7 +1031,7 @@ function LinkRow({ url, icon, label }: { url: string; icon: React.ReactNode; lab
       type="button"
       onClick={() => void invoke('app_open_url', { url })}
       className={cn(
-        'rx-focus-ring text-accent-text flex items-center gap-2 rounded-md px-1 py-1.5 text-left text-sm hover:underline',
+        'rx-focus-ring text-accent-text flex items-center gap-2 rounded-md px-1 py-1.5 text-start text-sm hover:underline',
       )}
     >
       {icon}

@@ -214,6 +214,37 @@ impl ApiCloud {
             .map(|_| ())
     }
 
+    /// A Discord presence picture (ADR 0173): a 64x64 PNG the cloud re-encodes and serves from
+    /// its CDN, the same URL for every player who sends the same picture.
+    pub async fn presence_icon(
+        &self,
+        access: &Secret,
+        png: Vec<u8>,
+    ) -> Result<rusticmc_api_client::types::PresenceIcon> {
+        let resp = self
+            .http
+            .post(format!("{}/v1/me/presence-icons", self.base))
+            .bearer_auth(access.expose())
+            .header(reqwest::header::CONTENT_TYPE, "image/png")
+            .body(png)
+            .send()
+            .await
+            .map_err(|e| AuthError::Network {
+                service: "Rustic Cloud",
+                message: e.without_url().to_string(),
+            })?;
+        let status = resp.status();
+        let bytes = resp.bytes().await.unwrap_or_default();
+        if !status.is_success() {
+            return Err(match serde_json::from_slice::<ErrorBody>(&bytes) {
+                Ok(e) => cloud_err(Some(status.as_u16()), &e.error.code, &e.error.message),
+                Err(_) => cloud_err(Some(status.as_u16()), status.as_str(), ""),
+            });
+        }
+        serde_json::from_slice(&bytes)
+            .map_err(|e| AuthError::Unexpected(format!("Rustic Cloud answer: {e}")))
+    }
+
     /// The game closed.
     pub async fn play_session_end(&self, access: &Secret, run: &str) -> Result<()> {
         let path = format!("/v1/me/play-sessions/{run}/end");

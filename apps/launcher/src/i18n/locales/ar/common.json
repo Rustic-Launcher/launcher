@@ -1,0 +1,531 @@
+{
+  "a11y": {
+    "skipToContent": "التخطي إلى المحتوى",
+    "notifications": "الإشعارات"
+  },
+  "actions": {
+    "retry": "إعادة المحاولة",
+    "back": "رجوع",
+    "forward": "تقدّم",
+    "cancel": "إلغاء",
+    "close": "إغلاق",
+    "clear": "مسح",
+    "save": "حفظ",
+    "saved": "تم الحفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "open": "فتح",
+    "install": "تثبيت",
+    "installed": "مثبّت",
+    "remove": "إزالة",
+    "confirm": "تأكيد",
+    "continue": "متابعة",
+    "next": "التالي",
+    "previous": "السابق",
+    "done": "تم",
+    "copy": "نسخ",
+    "copied": "تم النسخ",
+    "learnMore": "معرفة المزيد",
+    "seeAll": "عرض الكل",
+    "create": "إنشاء",
+    "import": "استيراد",
+    "browse": "استعراض…",
+    "apply": "تطبيق",
+    "reset": "إعادة ضبط",
+    "enable": "تفعيل",
+    "disable": "تعطيل",
+    "update": "تحديث",
+    "add": "إضافة",
+    "refresh": "تحديث العرض",
+    "openFolder": "فتح المجلد",
+    "skip": "تخطي",
+    "more": "المزيد"
+  },
+  "errors": {
+    "generic": "حدث خطأ ما. حاول مجددًا بعد قليل.",
+    "page": {
+      "title": "تعذّر عرض هذه الصفحة"
+    },
+    "load": {
+      "title": "تعذّر تحميل هذا المحتوى"
+    },
+    "notFound": {
+      "title": "لا شيء هنا",
+      "description": "هذه الصفحة غير موجودة أو نُقلت."
+    }
+  },
+  "nav": {
+    "label": "التنقل الرئيسي",
+    "home": "الرئيسية",
+    "instances": "ملفات التعريف",
+    "content": "استكشاف",
+    "servers": "الخوادم",
+    "locker": "الخزانة",
+    "store": "المتجر",
+    "settings": "الإعدادات",
+    "newInstance": "ملف تعريف جديد"
+  },
+  "search": {
+    "title": "البحث",
+    "placeholder": "ابحث عن محتوى أو أصدقاء أو خوادم أو إعدادات…",
+    "empty": "لا نتائج. جرّب كلمة أخرى.",
+    "loading": "جارٍ البحث…",
+    "hintNavigate": "تنقّل",
+    "hintOpen": "فتح",
+    "hintClose": "إغلاق",
+    "open": "فتح",
+    "myServer": "خادمي",
+    "playInstance": "لعب {{name}}",
+    "groups": {
+      "pages": "الصفحات",
+      "actions": "الإجراءات",
+      "instances": "النسخ",
+      "content": "المحتوى",
+      "friends": "الأصدقاء",
+      "servers": "الخوادم",
+      "settings": "الإعدادات",
+      "play": "اللعب"
+    },
+    "actions": {
+      "newInstance": "إنشاء نسخة",
+      "newServer": "إنشاء خادم",
+      "addFriend": "إضافة صديق",
+      "darkTheme": "التبديل إلى السمة الداكنة",
+      "lightTheme": "التبديل إلى السمة الفاتحة"
+    },
+    "settings": {
+      "accounts": "الحسابات",
+      "game": "اللعبة",
+      "launcher": "المشغّل",
+      "appearance": "المظهر",
+      "privacy": "الخصوصية والبيانات",
+      "parental": "الرقابة الأبوية",
+      "about": "حول",
+      "voice": "الصوت"
+    }
+  },
+  "friends": {
+    "title": "الأصدقاء",
+    "onlineCount_zero": "لا أحد متصل",
+    "onlineCount_one": "واحد متصل",
+    "onlineCount_two": "اثنان متصلان",
+    "onlineCount_few": "{{count}} متصلون",
+    "onlineCount_many": "{{count}} متصلًا",
+    "onlineCount_other": "{{count}} متصل",
+    "add": "إضافة صديق",
+    "search": "البحث في الأصدقاء",
+    "requests_zero": "الطلبات · 0",
+    "requests_one": "طلب · {{count}}",
+    "requests_two": "الطلبات · {{count}}",
+    "requests_few": "الطلبات · {{count}}",
+    "requests_many": "الطلبات · {{count}}",
+    "requests_other": "الطلبات · {{count}}",
+    "incoming": "يريد أن يكون صديقك",
+    "outgoing": "تم إرسال الطلب",
+    "accept": "قبول",
+    "decline": "رفض",
+    "cancelRequest": "إلغاء الطلب",
+    "requestSent": "أُرسل طلب صداقة إلى {{name}}",
+    "error": "تعذّر تحميل الأصدقاء.",
+    "empty": "لا أصدقاء بعد. أضف صديقًا باسم المستخدم الخاص به على Rustic.",
+    "online_zero": "متصل · 0",
+    "online_one": "متصل · {{count}}",
+    "online_two": "متصل · {{count}}",
+    "online_few": "متصل · {{count}}",
+    "online_many": "متصل · {{count}}",
+    "online_other": "متصل · {{count}}",
+    "offline_zero": "غير متصل · 0",
+    "offline_one": "غير متصل · {{count}}",
+    "offline_two": "غير متصل · {{count}}",
+    "offline_few": "غير متصل · {{count}}",
+    "offline_many": "غير متصل · {{count}}",
+    "offline_other": "غير متصل · {{count}}",
+    "lastSeen": "آخر ظهور: {{when}}",
+    "activity": {
+      "server": "يلعب على {{server}}",
+      "singleplayer": "يلعب منفردًا",
+      "hosting": "يستضيف {{server}}",
+      "launcher": "في المشغّل"
+    },
+    "favorite": "مفضّل",
+    "makeFavorite": "إضافة إلى المفضّلة",
+    "unfavorite": "إزالة من المفضّلة",
+    "join": "انضمام",
+    "joinAria": "الانضمام إلى {{name}}",
+    "joining": "جارٍ الانضمام إلى {{server}}…",
+    "more": "إجراءات أخرى لـ {{name}}",
+    "remove": "إزالة الصديق",
+    "removeTitle": "إزالة {{name}} من أصدقائك؟",
+    "removeBody": "لن يرى أحدكما نشاط الآخر بعد الآن. يمكنك إرسال طلب جديد لاحقًا."
+  },
+  "addFriend": {
+    "title": "إضافة صديق",
+    "description": "اعثر على لاعب باسمه على Rustic أو باسم Minecraft الذي ربطه، أو اختر شخصًا لعبت معه.",
+    "kind": "البحث حسب",
+    "kindRustic": "اسم Rustic",
+    "kindMinecraft": "اسم Minecraft",
+    "rusticLabel": "اسم المستخدم على Rustic",
+    "minecraftLabel": "اسم المستخدم في Minecraft",
+    "rusticPlaceholder": "مثل lea_builds",
+    "minecraftPlaceholder": "مثل LeaBuilds",
+    "rusticHint": "الاسم الدقيق في ملفه الشخصي على Rustic.",
+    "minecraftHint": "الاسم الدقيق داخل اللعبة للاعب سجّل الدخول إلى Rustic بملف Minecraft هذا.",
+    "find": "بحث",
+    "send": "إرسال الطلب",
+    "sent": "تم إرسال الطلب",
+    "friends": "أصدقاء بالفعل",
+    "pending": "الطلب قيد الانتظار",
+    "incoming": "طلب صداقتك بالفعل: اقبل طلبه.",
+    "minecraftName": "اسم Minecraft:",
+    "add": "إضافة",
+    "addAria": "إرسال طلب صداقة إلى {{name}}",
+    "playedWith": "لعبت معهم مؤخرًا",
+    "playedWithEmpty": "لا أحد بعد. يظهر هنا لاعبون من مجموعاتك ومن الخوادم المشتركة (10 دقائق معًا أو أكثر).",
+    "crossed": "صادفتهم مؤخرًا",
+    "crossedEmpty": "لم تصادف أحدًا مؤخرًا على خادم مشترك.",
+    "reasonParty": "في مجموعتك",
+    "reasonServer": "على {{server}}",
+    "reasonSameServer": "على الخادم نفسه",
+    "suggestionsError": "تعذّر تحميل الاقتراحات.",
+    "suggestionsOff": "الاقتراحات متوقفة. فعّل «الظهور في اقتراحات اللاعبين الذين ألتقيهم» في الإعدادات › الخصوصية والبيانات لترى اللاعبين الذين تلتقيهم.",
+    "suggestionsMinor": "اقتراحات اللاعبين الذين تلتقيهم غير متاحة لحسابك.",
+    "privacyNote": "تأتي الاقتراحات من مجموعاتك والخوادم التي تتشاركها في نشاطك، خلال آخر 14 يومًا. لا يظهر إلا من يسمح بذلك أيضًا.",
+    "errors": {
+      "notFoundRustic": "لا يوجد حساب Rustic بهذا الاسم.",
+      "notFoundMinecraft": "لم يربط أي لاعب على Rustic اسم Minecraft هذا.",
+      "invalidRustic": "أسماء Rustic من 3 إلى 20 حرفًا أو رقمًا أو _.",
+      "invalidMinecraft": "أسماء Minecraft من 3 إلى 16 حرفًا أو رقمًا أو _.",
+      "cannot_add_friend": "لا يمكن لهذا اللاعب تلقي طلبات الصداقة.",
+      "friend_requests_disabled": "طلبات الصداقة متوقفة لحسابك (الرقابة الأبوية).",
+      "cannot_add_self": "هذا أنت!",
+      "already_friends": "أنتما صديقان بالفعل.",
+      "request_pending": "هناك طلب قيد الانتظار بالفعل.",
+      "incoming_request_exists": "أرسل إليك طلبًا بالفعل: اقبله.",
+      "rate_limited": "عمليات بحث كثيرة جدًا. انتظر دقيقة، ثم حاول مجددًا.",
+      "generic": "حدث خطأ ما. حاول مجددًا."
+    }
+  },
+  "party": {
+    "title": "المجموعة",
+    "leave": "مغادرة",
+    "leader": "قائد المجموعة",
+    "pending": "{{name}} (مدعو)",
+    "invite": "دعوة إلى المجموعة",
+    "invited": "دُعي {{name}} إلى مجموعتك",
+    "invitesTitle": "دعوات المجموعات",
+    "invitedBy": "{{name}} يدعوك إلى مجموعته",
+    "accept": "انضمام",
+    "decline": "رفض",
+    "makeLeader": "تعيين قائدًا للمجموعة",
+    "kick": "إزالة من المجموعة",
+    "proximity": "الصوت حسب القرب",
+    "proximityHint": "يسمع الأعضاء على الخادم نفسه بعضهم بعضًا حسب المسافة",
+    "range": "المدى (بالمكعبات)",
+    "emptyTitle": "لا توجد مجموعة بعد",
+    "emptyBody": "أنشئ مجموعة، ثم ادعُ أصدقاءك من قائمتهم في تبويب الأصدقاء.",
+    "create": "إنشاء مجموعة",
+    "inviteHint": "ادعُ أصدقاءك من قائمتهم في تبويب الأصدقاء.",
+    "chatTitle": "دردشة المجموعة",
+    "chatEmpty": "انضم إلى مجموعة أو أنشئ واحدة للدردشة مع أعضائها.",
+    "chatPlaceholder": "راسل المجموعة",
+    "formerMember": "عضو سابق",
+    "errors": {
+      "party_full": "المجموعة ممتلئة.",
+      "party_not_allowed": "لا يمكن لهذا اللاعب أن يكون في هذه المجموعة: من هم دون 18 عامًا ينضمون إلى مجموعات أصدقائهم فقط.",
+      "already_in_party": "غادر مجموعتك الحالية أولًا.",
+      "not_party_leader": "لا يستطيع فعل هذا إلا قائد المجموعة."
+    }
+  },
+  "presence": {
+    "online": "متصل",
+    "in-game": "في اللعبة",
+    "away": "بعيد",
+    "busy": "مشغول",
+    "offline": "غير متصل"
+  },
+  "notifications": {
+    "title": "الإشعارات",
+    "markAllRead": "تعليم الكل كمقروء",
+    "empty": "لا جديد لديك.",
+    "kinds": {
+      "friend_request": "أرسل إليك طلب صداقة",
+      "update_available": "متاح لنسخك",
+      "backup_done": "اكتمل النسخ الاحتياطي المجدول",
+      "store_new": "جديد في المتجر"
+    }
+  },
+  "account": {
+    "switcher": "الحسابات",
+    "none": "لا يوجد حساب",
+    "rustic": "حساب Rustic",
+    "signInRustic": "تسجيل الدخول إلى Rustic",
+    "signOutRustic": "تسجيل الخروج من Rustic",
+    "gameProfiles": "ملفات اللعب",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "دون اتصال"
+    },
+    "add": "إضافة حساب",
+    "manage": "إدارة الحسابات"
+  },
+  "downloads": {
+    "title": "التنزيلات",
+    "global": "التنزيلات في الخلفية",
+    "working": "جارٍ العمل…",
+    "summary_zero": "لا تنزيلات جارية",
+    "summary_one": "تنزيل واحد جارٍ",
+    "summary_two": "تنزيلان جاريان",
+    "summary_few": "{{count}} تنزيلات جارية",
+    "summary_many": "{{count}} تنزيلًا جاريًا",
+    "summary_other": "{{count}} تنزيل جارٍ",
+    "kind": {
+      "game": "Horizon",
+      "content": "المحتوى",
+      "modpack": "حزمة مودات",
+      "server": "خادم",
+      "java": "بيئة تشغيل Java",
+      "update": "تحديث المشغّل",
+      "prepare": "تجهيز ملفات اللعبة",
+      "native-build": "بناء المودات الأصلية",
+      "native-toolchain": "Rust للمودات الأصلية"
+    }
+  },
+  "play": {
+    "play": "لعب",
+    "update": "تحديث",
+    "cancel": "إلغاء",
+    "stop": "إيقاف",
+    "selectInstance": "اختر النسخة التي تريد لعبها",
+    "instances": "النسخ",
+    "manageInstances": "إدارة النسخ",
+    "newVersion": "يتوفر {{version}}",
+    "cancelled": "أُلغي التشغيل",
+    "status": {
+      "ready": "جاهز للعب",
+      "noInstance": "لا توجد نسخة",
+      "running": "اللعبة قيد التشغيل",
+      "update": "يلزم التحديث",
+      "broken": "يلزم الإصلاح"
+    },
+    "progress": {
+      "updating": "جارٍ التحديث…",
+      "downloading": "جارٍ التنزيل {{pct}}",
+      "checking": "جارٍ فحص الملفات…",
+      "preparing": "جارٍ التجهيز…",
+      "launching": "جارٍ التشغيل…",
+      "stopping": "جارٍ الإيقاف…",
+      "preparingFiles": "جارٍ تجهيز ملفات اللعبة {{pct}}",
+      "building": "جارٍ تجميع المودات الأصلية…",
+      "buildingPct": "جارٍ تجميع المودات الأصلية {{pct}}"
+    },
+    "errors": {
+      "launch": "تعذّر بدء اللعبة"
+    },
+    "refusals": {
+      "auth_no_account": "سجّل الدخول بحساب Microsoft يملك اللعبة لتلعب.",
+      "auth_not_owned": "حساب Microsoft هذا لا يملك اللعبة.",
+      "auth_not_approved": "تسجيل الدخول عبر Microsoft غير متاح لهذا المشغّل بعد.",
+      "auth_reauth_required": "سجّل الدخول إلى حساب Microsoft مجددًا لتلعب.",
+      "auth_offline_not_allowed": "سجّل الدخول مرة واحدة بحساب Microsoft يملك اللعبة، وبعدها يمكنك اللعب دون اتصال.",
+      "auth_network": "تعذّر الوصول إلى Microsoft للتحقق من الحساب. تحقق من اتصالك.",
+      "build_not_installed": "ثبّت بنية Horizon أولًا.",
+      "prepare_needed": "ملفات اللعبة لهذه البنية غير مجهّزة بعد.",
+      "prepare_failed": "تعذّر تجهيز ملفات اللعبة: حاول مجددًا، أو جهّزها من الإعدادات › اللعبة والنسخ.",
+      "prepare_no_java": "لم يُعثر على Java: ثبّته أو اختره في الإعدادات › اللعبة والنسخ.",
+      "prepare_no_minecraft_dir": "لم يُعثر على تثبيت اللعبة: اختر مجلده في الإعدادات › اللعبة والنسخ.",
+      "launch_already_running": "هذه النسخة قيد التشغيل بالفعل.",
+      "native_consent": "تحتوي هذه النسخة على مودات أصلية: اقبل أولًا إشعار الثقة الخاص بها في صفحة النسخة (المحتوى).",
+      "native_toolchain": "تحتاج المودات الأصلية إلى Rust: ثبّته من صفحة النسخة (المحتوى) أو من الإعدادات › اللعبة والنسخ.",
+      "native_not_edition": "المودات الأصلية لا تُبنى إلا في إصدار Rustic: حوّل هذه النسخة إليه، أو أوقف موداتها الأصلية.",
+      "native_build_failed": "تعذّر بناء المودات الأصلية",
+      "native_disk": "لا توجد مساحة قرص كافية لبناء المودات الأصلية."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (إصدار Rustic)",
+    "rusticEdition": "إصدار Rustic"
+  },
+  "compat": {
+    "buildsOnHorizon": "يُبنى على Horizon الخاص بك",
+    "compatible": "متوافق",
+    "incompatible": "غير متوافق: {{reason}}",
+    "unknown": "التوافق غير معروف",
+    "reasons": {
+      "horizon_version": "إصدار Horizon",
+      "java_only": "لـ Java Edition فقط",
+      "side": "لجهة الخادم فقط",
+      "conflict": "يتعارض مع مود مثبّت",
+      "unsupported_format": "صيغة غير مدعومة",
+      "needs_rustic_server": "يتطلب Rustic Server",
+      "not_fair_play": "غير مسموح به (اللعب النظيف)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "تبديل المنتج",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "وثائق Rustic Server"
+  },
+  "crumbs": {
+    "label": "مسار التنقل",
+    "horizon": "Horizon",
+    "details": "التفاصيل",
+    "create": "إنشاء",
+    "kinds": {
+      "mod": "المودات",
+      "modpack": "حزم المودات",
+      "resourcepack": "حزم الموارد",
+      "shader": "الشيدرات",
+      "datapack": "حزم البيانات",
+      "plugin": "الإضافات"
+    },
+    "servers": {
+      "featured": "المميّزة",
+      "mine": "خوادمي",
+      "multiplayer": "قائمة اللعب الجماعي",
+      "discover": "اكتشاف",
+      "joined": "قائمة اللعب الجماعي",
+      "browse": "تصفّح"
+    }
+  },
+  "social": {
+    "title": "اجتماعي",
+    "description": "الأصدقاء والمحادثات ومجموعتك.",
+    "open": "فتح النافذة الاجتماعية",
+    "friends": "الأصدقاء",
+    "chats": "المحادثات",
+    "message": "إرسال رسالة",
+    "searchChats": "البحث في المحادثات…",
+    "noChats": "لا محادثات بعد. راسل صديقًا من تبويب «الأصدقاء».",
+    "sayHello": "قل مرحبًا",
+    "selectTitle": "اختر محادثة",
+    "selectBody": "اختر صديقًا لتبدأ الدردشة.",
+    "messagePlaceholder": "رسالة إلى {{name}}",
+    "send": "إرسال"
+  },
+  "window": {
+    "minimize": "تصغير",
+    "maximize": "تكبير",
+    "restore": "استعادة",
+    "close": "إغلاق"
+  },
+  "running": {
+    "title": "النسخ قيد التشغيل",
+    "none": "لا توجد لعبة قيد التشغيل.",
+    "count_zero": "لا نسخ قيد التشغيل",
+    "count_one": "نسخة واحدة قيد التشغيل",
+    "count_two": "نسختان قيد التشغيل",
+    "count_few": "{{count}} نسخ قيد التشغيل",
+    "count_many": "{{count}} نسخة قيد التشغيل",
+    "count_other": "{{count}} نسخة قيد التشغيل",
+    "downloading": "جارٍ التنزيل {{pct}}"
+  },
+  "launch": {
+    "launch": "تشغيل اللعبة",
+    "update": "تحديث وتشغيل",
+    "stop": "إيقاف اللعبة"
+  },
+  "deepLink": {
+    "authOk": "تم تسجيل الدخول إلى Rustic",
+    "authFailed": "فشل تسجيل الدخول إلى Rustic",
+    "joining": "جارٍ الانضمام إلى {{target}}…",
+    "content": "جارٍ فتح {{project}} من الموقع"
+  },
+  "catalog": {
+    "sort": "الترتيب حسب",
+    "results_zero": "لا نتائج",
+    "results_one": "نتيجة واحدة",
+    "results_two": "نتيجتان",
+    "results_few": "{{count}} نتائج",
+    "results_many": "{{count}} نتيجة",
+    "results_other": "{{count}} نتيجة",
+    "loadMore": "تحميل المزيد",
+    "loadMoreCount": "عرض {{shown}} من {{total}}",
+    "carousel": {
+      "prev": "السابق",
+      "next": "التالي",
+      "slide": "{{index}} من {{total}}",
+      "pause": "إيقاف العرض المتتابع مؤقتًا",
+      "play": "تشغيل العرض المتتابع"
+    },
+    "row": {
+      "seeAll": "عرض الكل",
+      "seeAllAria": "عرض الكل: {{title}}",
+      "scrollPrev": "التمرير إلى الخلف",
+      "scrollNext": "التمرير إلى الأمام"
+    },
+    "filters": {
+      "button": "عوامل التصفية",
+      "buttonCount": "عوامل التصفية · {{count}}",
+      "reset": "إعادة ضبط عوامل التصفية"
+    },
+    "layout": {
+      "label": "التخطيط",
+      "list": "قائمة",
+      "grid": "شبكة"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "جارٍ التحديث {{pct}}",
+      "installing": "جارٍ تثبيت التحديث…",
+      "restarting": "جارٍ إعادة التشغيل…",
+      "deferred": "التحديث بعد انتهاء لعبتك",
+      "apply": "التحديث وإعادة التشغيل"
+    },
+    "toast": {
+      "launcher": "جارٍ تنزيل Rustic Launcher {{version}}…",
+      "edition": "جارٍ تحديث اللعبة (إصدار Rustic)…",
+      "editionDone": "تم تحديث اللعبة: {{version}}",
+      "deferred": "التحديث جاهز. سيُثبَّت عند إغلاق اللعبة.",
+      "restarting": "يُعاد تشغيل Rustic Launcher لإكمال التحديث.",
+      "updated": "تم تحديث Rustic Launcher إلى {{version}}",
+      "resuming": "اكتمل التحديث: جارٍ تشغيل لعبتك",
+      "failed": "تعذّر تثبيت التحديث. ستُعاد المحاولة لاحقًا."
+    }
+  },
+  "voice": {
+    "title": "الصوت",
+    "join": "الانضمام إلى الصوت",
+    "leave": "مغادرة الصوت",
+    "mute": "كتم الميكروفون",
+    "unmute": "تشغيل الميكروفون",
+    "deafen": "كتم الصوت",
+    "undeafen": "تشغيل الصوت",
+    "speaking": "يتحدث",
+    "micMuted": "مكتوم",
+    "outOfRange": "خارج المدى",
+    "muteFor": "كتم {{name}} لديك",
+    "unmuteFor": "سماع {{name}} مجددًا",
+    "reportAria": "الإبلاغ عن {{name}}",
+    "memberVolume": "مستوى صوت {{name}}",
+    "report": "إبلاغ",
+    "reportTitle": "الإبلاغ عن {{name}}؟",
+    "reportBody": "سيراجع المشرفون البلاغ. لا يُسجَّل الصوت أبدًا. يُكتم هذا اللاعب لديك فورًا.",
+    "reported": "تم الإبلاغ عن {{name}}",
+    "reasons": {
+      "harassment": "تحرش أو كراهية",
+      "inappropriate_content": "محتوى غير لائق",
+      "spam": "إزعاج أو ضوضاء",
+      "other": "شيء آخر"
+    },
+    "proximityOn": "حسب القرب، المدى {{range}}",
+    "you": "أنت",
+    "listenOnly": "استماع فقط",
+    "alone": "لا يوجد أحد آخر في الصوت بعد.",
+    "serverOffer": "يوفر {{server}} الصوت حسب القرب",
+    "serverRoom": "صوت الخادم",
+    "partyRoom": "صوت المجموعة",
+    "errors": {
+      "voice_unavailable": "الصوت غير متاح الآن. حاول مجددًا لاحقًا.",
+      "voice_not_allowed": "الصوت غير متاح لحسابك.",
+      "mic_denied": "رُفض الوصول إلى الميكروفون: يمكنك الاستماع دون التحدث. اسمح به في إعدادات الخصوصية في نظامك.",
+      "mic_missing": "لم يُعثر على ميكروفون: يمكنك الاستماع دون التحدث.",
+      "connect_failed": "تعذر الاتصال بالصوت. تحقق من اتصالك وحاول مجددًا.",
+      "kicked": "أُزلت من غرفة الصوت.",
+      "not_on_voice_server": "لا يوفر هذا الخادم الصوت حسب القرب."
+    }
+  }
+}

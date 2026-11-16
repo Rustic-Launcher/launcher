@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "greeting": "Tervetuloa takaisin, {{name}}",
+    "greetingAnon": "Tervetuloa Rusticiin",
+    "continue": "Jatka: {{name}} · pelattu {{when}}",
+    "continueNew": "Valmiina, kun sinä olet: {{name}}",
+    "firstRun": "Valmistele peli kolmessa vaiheessa.",
+    "playNow": "Pelaa nyt",
+    "updateAndPlay": "Päivitä ja pelaa",
+    "resumeServer": "Palaa palvelimelle {{server}}",
+    "switch": "Vaihda instanssia",
+    "stats": {
+      "playtime": "Peliaika {{time}}",
+      "mods_one": "{{count}} modi",
+      "mods_other": "{{count}} modia",
+      "friends_one": "{{count}} kaveri paikalla",
+      "friends_other": "{{count}} kaveria paikalla"
+    },
+    "steps": {
+      "signIn": "Kirjaudu sisään Microsoft-tilillä, joka omistaa pelin",
+      "prepare": "Valmistele pelitiedostot omasta asennuksestasi",
+      "create": "Luo ensimmäinen instanssisi"
+    },
+    "getReady": "Valmistele peli",
+    "openLocker": "Kaappi",
+    "player": "Pelaajasi levossa, ei kosmetiikkaa päällä",
+    "playerWearing": "Pelaajasi levossa, päällä: {{items}}"
+  },
+  "recent": {
+    "title": "Viimeisimmät palvelimet ja maailmat",
+    "unknown": "Tila tuntematon",
+    "online": "Paikalla · {{online}}/{{max}}",
+    "offline": "Offline",
+    "world": "Maailma · paikallinen",
+    "joining": "Liitytään: {{name}}…",
+    "opening": "Avataan: {{name}}…",
+    "removed": "{{name}} poistettiin palvelimistasi",
+    "playAria": "Pelaa: {{name}}",
+    "more": "Lisää toimintoja: {{name}}",
+    "copyAddress": "Kopioi osoite",
+    "addServer": "Lisää palvelin",
+    "empty": "Palvelimet, joille liityt, ja maailmat, joita pelaat, näkyvät tässä."
+  },
+  "news": {
+    "title": "Uutiset ja päivitykset",
+    "empty": "Ei uutisia juuri nyt.",
+    "slide": "Juttu {{index}}/{{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Julkaisutiedot",
+      "event": "Tapahtuma",
+      "blog": "Artikkeli"
+    },
+    "readNotes": "Lue julkaisutiedot",
+    "read": "Lue"
+  },
+  "friends": {
+    "title": "Kaverit juuri nyt",
+    "empty": "Kukaan kavereistasi ei pelaa juuri nyt.",
+    "since": "alkaen {{when}}",
+    "activity": {
+      "server": "pelaa palvelimella {{server}}",
+      "hosting": "ylläpitää palvelinta {{server}}",
+      "singleplayer": "pelaa yksin",
+      "launcher": "on käynnistimessä"
+    }
+  },
+  "featured": {
+    "title": "Esittelyssä olevat palvelimet",
+    "verified": "Vahvistettu palvelin",
+    "players": "Pelaajia {{online}} / {{max}}",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Uutta kosmetiikkaa",
+    "owned": "Omistettu"
+  },
+  "launchpad": {
+    "welcome": "Tervetuloa *takaisin*,",
+    "playAs": "Pelaa nimellä",
+    "online": "paikalla esittelyssä olevilla palvelimilla",
+    "heroLabel": "Käynnistä",
+    "instanceSettings": "Instanssin asetukset",
+    "news": "Uusimmat uutiset",
+    "unread_one": "({{count}} lukematon)",
+    "unread_other": "({{count}} lukematonta)",
+    "unreadDot": "Lukematon",
+    "explore": "Tutki lähteitä",
+    "aside": "Palvelimet ja kaverit",
+    "joinServer": "Liity: {{name}}",
+    "friendsOnline_one": "({{count}} paikalla)",
+    "friendsOnline_other": "({{count}} paikalla)",
+    "openSocial": "Avaa Yhteisö",
+    "noNews": "Ei vielä uutisia.",
+    "noFriendsOnline": "Ei kavereita paikalla juuri nyt.",
+    "socialHint": "Keskustelut, kutsut ja porukkasi löytyvät Yhteisö-ikkunasta.",
+    "eyebrow": "Launchpad"
+  }
+}

@@ -13,7 +13,8 @@
     "appearance": "Utseende",
     "privacy": "Integritet och data",
     "parental": "Föräldrakontroll",
-    "about": "Om och juridik"
+    "about": "Om och juridik",
+    "voice": "Röst"
   },
   "accounts": {
     "active": "Aktiv",
@@ -95,7 +96,8 @@
       "description": "Din Rustic-identitet för vänner, skåpet, köp och servrar.",
       "signedOut": "Inte inloggad. Spelet fungerar utan det; sociala funktioner, skåpet och butiken kräver det.",
       "signIn": "Logga in eller skapa ett konto",
-      "licenceNote": "Ett Rustic-konto är en plattformsidentitet. Det ersätter aldrig spellicensen: du behöver fortfarande ett Microsoft-konto som äger spelet."
+      "licenceNote": "Ett Rustic-konto är en plattformsidentitet. Det ersätter aldrig spellicensen: du behöver fortfarande ett Microsoft-konto som äger spelet.",
+      "manageOnWeb": "Hantera på webbplatsen"
     },
     "offline": {
       "title": "Spela offline",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Slutför inloggningen i webbläsaren: launchern hämtar din session automatiskt."
   },
   "heading": "Dina *inställningar*",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Enheter",
+    "devicesHint": "Mikrofonen och högtalarna eller headsetet för röst.",
+    "input": "Mikrofon",
+    "output": "Utgång",
+    "outputVolume": "Utgångsvolym",
+    "systemDefault": "Systemstandard",
+    "deviceN": "Enhet {{n}}",
+    "talk": "Prata",
+    "talkHint": "Prata när din röst känns igen, eller bara medan du håller in en tangent.",
+    "mode": "Inmatningsläge",
+    "modeVad": "Röstaktivitet",
+    "modePtt": "Tryck för att prata",
+    "pttKey": "Tangent för att prata",
+    "pttKeyHint": "Fungerar i launchern och i spelet. Musens sidoknappar fungerar också.",
+    "pressKey": "Tryck på en tangent…",
+    "sensitivity": "Känslighet",
+    "sensitivityHint": "Högre fångar svagare röster; lägre ignorerar mer bakgrundsljud.",
+    "test": "Mikrofontest",
+    "testMic": "Testa",
+    "stopTest": "Stoppa",
+    "level": "Mikrofonnivå",
+    "micDenied": "Åtkomst till mikrofonen nekades. Tillåt den i systemets integritetsinställningar och försök igen.",
+    "micMissing": "Ingen mikrofon hittades.",
+    "noiseSuppression": "Brusreducering",
+    "echoCancellation": "Ekoreducering",
+    "autoGain": "Automatisk förstärkning",
+    "inGame": "I spelet",
+    "inGameHint": "Med Rustic-utgåvan visar ett överlägg vem som pratar och tangenten för att prata fungerar i spelet.",
+    "overlay": "Visa röstöverlägget i spelet",
+    "serverVoice": "Närhetsröst på servrar",
+    "serverVoiceHint": "Rustic Servers kan erbjuda röst efter avstånd med alla spelare där. Under 18 måste en vårdnadshavare tillåta det.",
+    "serverAsk": "Fråga mig",
+    "serverAuto": "Gå med automatiskt",
+    "serverOff": "Aldrig",
+    "servers": {
+      "title": "Närhetsröst för dina servrar",
+      "description": "Lägg till en server och lägg sedan dess nyckel i config.toml för pluginet proximity-voice. Du kan stänga av den när som helst.",
+      "namePlaceholder": "Servernamn",
+      "add": "Lägg till",
+      "status": "Spelare online: {{count}}",
+      "enabled": "Närhetsröst på {{name}}",
+      "newKey": "Ny nyckel",
+      "remove": "Ta bort {{name}}",
+      "keyOnce": "Kopiera nyckeln nu: den visas bara en gång. En ny nyckel ersätter den.",
+      "tooMany": "Du kan lägga till upp till 10 servrar."
+    }
+  }
 }

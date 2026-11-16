@@ -97,9 +97,11 @@
  * Chinese, Japanese and Korean: Inter and Instrument Serif have no CJK glyphs, so the page's
  * language (html `lang`, set by both apps) picks the system's own font for that script, in the
  * right regional forms (Japanese, Simplified, Traditional, Korean Han differ). Thai the same way
- * (Leelawadee UI on Windows, Thonburi / Sukhumvit Set on macOS, Noto Sans Thai on Linux). System
- * fonts only: nothing is downloaded (docs/PERFORMANCE.md). Cyrillic, Greek and Vietnamese are in
- * Inter itself.
+ * (Leelawadee UI on Windows, Thonburi / Sukhumvit Set on macOS, Noto Sans Thai on Linux), and
+ * Arabic, Hebrew and Devanagari (Segoe UI / Nirmala UI on Windows, the system's Arabic, Hebrew and
+ * Devanagari faces on macOS, Noto on Linux; ADR 0174): the browser shapes them (joining forms,
+ * conjuncts, matras) and Inter still draws their Latin words and digits. System fonts only:
+ * nothing is downloaded (docs/PERFORMANCE.md). Cyrillic, Greek and Vietnamese are in Inter itself.
  */
 :root:lang(ja) {
   --rl-font-sans:
@@ -142,4 +144,39 @@
   --rl-font-serif:
     'Instrument Serif', 'Noto Serif Thai', 'Leelawadee UI', 'Thonburi', 'Noto Sans Thai', 'Tahoma',
     ui-serif, serif;
+}
+:root:lang(ar) {
+  /* Mono labels in the script's UI font: JetBrains Mono's wide spaces and the generic monospace
+     fallback (a Courier) break Arabic lines. Code keeps JetBrains Mono (language.css). */
+  --rl-font-mono:
+    'Segoe UI', 'SF Arabic', 'Geeza Pro', 'Noto Sans Arabic', 'JetBrains Mono Variable',
+    'JetBrains Mono', Tahoma, ui-monospace, monospace;
+  --rl-font-sans:
+    'Inter Variable', 'Inter', 'Segoe UI', 'SF Arabic', 'Geeza Pro', 'Noto Sans Arabic UI',
+    'Noto Sans Arabic', 'Noto Naskh Arabic', Tahoma, ui-sans-serif, system-ui, sans-serif;
+  --rl-font-serif:
+    'Instrument Serif', 'Noto Naskh Arabic', 'Geeza Pro', 'Segoe UI', 'Noto Sans Arabic', Tahoma,
+    ui-serif, serif;
+}
+:root:lang(he) {
+  --rl-font-mono:
+    'Segoe UI', 'SF Hebrew', 'Arial Hebrew', 'Noto Sans Hebrew', 'JetBrains Mono Variable',
+    'JetBrains Mono', ui-monospace, monospace;
+  --rl-font-sans:
+    'Inter Variable', 'Inter', 'Segoe UI', 'SF Hebrew', 'Arial Hebrew', 'Noto Sans Hebrew', Arial,
+    ui-sans-serif, system-ui, sans-serif;
+  --rl-font-serif:
+    'Instrument Serif', 'Noto Serif Hebrew', 'New Peninim MT', 'Segoe UI', 'Noto Sans Hebrew',
+    ui-serif, serif;
+}
+:root:lang(hi) {
+  --rl-font-mono:
+    'Nirmala UI', 'Kohinoor Devanagari', 'Noto Sans Devanagari', 'JetBrains Mono Variable',
+    'JetBrains Mono', Mangal, ui-monospace, monospace;
+  --rl-font-sans:
+    'Inter Variable', 'Inter', 'Nirmala UI', 'Kohinoor Devanagari', 'Devanagari Sangam MN',
+    'Noto Sans Devanagari UI', 'Noto Sans Devanagari', Mangal, ui-sans-serif, system-ui, sans-serif;
+  --rl-font-serif:
+    'Instrument Serif', 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Nirmala UI',
+    'Noto Sans Devanagari', Mangal, ui-serif, serif;
 }

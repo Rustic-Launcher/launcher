@@ -13,7 +13,8 @@
     "appearance": "外觀",
     "privacy": "隱私權與資料",
     "parental": "家長監護",
-    "about": "關於與法律資訊"
+    "about": "關於與法律資訊",
+    "voice": "語音"
   },
   "accounts": {
     "active": "使用中",
@@ -95,7 +96,8 @@
       "description": "你在 Rustic 的身分，用於好友、置物櫃、購買和伺服器。",
       "signedOut": "未登入。沒有帳戶遊戲也能執行；社交功能、置物櫃和商店則需要帳戶。",
       "signIn": "登入或建立帳戶",
-      "licenceNote": "Rustic 帳戶是平台身分，絕不會取代遊戲授權：你仍然需要擁有遊戲的 Microsoft 帳戶。"
+      "licenceNote": "Rustic 帳戶是平台身分，絕不會取代遊戲授權：你仍然需要擁有遊戲的 Microsoft 帳戶。",
+      "manageOnWeb": "在網站上管理"
     },
     "offline": {
       "title": "離線遊玩",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "請在瀏覽器中完成登入：啟動器會自動取得你的工作階段。"
   },
   "heading": "你的*設定*",
-  "eyebrow": "啟動器"
+  "eyebrow": "啟動器",
+  "voice": {
+    "devices": "裝置",
+    "devicesHint": "語音使用的麥克風以及喇叭或耳機。",
+    "input": "麥克風",
+    "output": "輸出",
+    "outputVolume": "輸出音量",
+    "systemDefault": "系統預設",
+    "deviceN": "裝置 {{n}}",
+    "talk": "說話",
+    "talkHint": "偵測到你的聲音時說話，或只在按住某個按鍵時說話。",
+    "mode": "輸入模式",
+    "modeVad": "語音偵測",
+    "modePtt": "按鍵說話",
+    "pttKey": "按鍵說話的按鍵",
+    "pttKeyHint": "在啟動器和遊戲內都有效。滑鼠側鍵也可以。",
+    "pressKey": "請按一個鍵…",
+    "sensitivity": "靈敏度",
+    "sensitivityHint": "越高越能收到小聲說話；越低越能忽略背景噪音。",
+    "test": "麥克風測試",
+    "testMic": "測試",
+    "stopTest": "停止",
+    "level": "麥克風音量",
+    "micDenied": "麥克風存取遭拒。請在系統隱私權設定中允許存取，然後再試一次。",
+    "micMissing": "找不到麥克風。",
+    "noiseSuppression": "噪音抑制",
+    "echoCancellation": "回音消除",
+    "autoGain": "自動增益",
+    "inGame": "遊戲內",
+    "inGameHint": "使用 Rustic 版本時，疊加層會顯示誰在說話，按鍵說話在遊戲內也有效。",
+    "overlay": "在遊戲內顯示語音疊加層",
+    "serverVoice": "伺服器距離語音",
+    "serverVoiceHint": "Rustic Server 可以依距離與伺服器上的所有玩家語音。未滿 18 歲需要監護人允許。",
+    "serverAsk": "詢問我",
+    "serverAuto": "自動加入",
+    "serverOff": "永不",
+    "servers": {
+      "title": "為你的伺服器開啟距離語音",
+      "description": "新增伺服器，然後把它的金鑰填入 proximity-voice 外掛的 config.toml。你可以隨時關閉。",
+      "namePlaceholder": "伺服器名稱",
+      "add": "新增",
+      "status": "線上玩家：{{count}}",
+      "enabled": "{{name}} 的距離語音",
+      "newKey": "新金鑰",
+      "remove": "移除 {{name}}",
+      "keyOnce": "請立即複製這個金鑰：它只會顯示一次。新金鑰會取代它。",
+      "tooMany": "最多可新增 10 個伺服器。"
+    }
+  }
 }

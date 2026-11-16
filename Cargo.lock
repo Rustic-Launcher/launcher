@@ -533,6 +533,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
 
 [[package]]
+name = "byteorder-lite"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8f1fe948ff07f4bd06c30984e69f5b4899c516a3ef74f34df92a2df2ab535495"
+
+[[package]]
 name = "bytes"
 version = "1.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2690,6 +2696,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "image"
+version = "0.25.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "85ab80394333c02fe689eaf900ab500fbd0c2213da414687ebf995a65d5a6104"
+dependencies = [
+ "bytemuck",
+ "byteorder-lite",
+ "moxcms",
+ "num-traits",
+ "png",
+]
+
+[[package]]
 name = "indexmap"
 version = "1.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3274,6 +3293,16 @@ dependencies = [
  "smallvec",
  "tagptr",
  "uuid",
+]
+
+[[package]]
+name = "moxcms"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bb85c154ba489f01b25c0d36ae69a87e4a1c73a72631fc6c0eb6dde34a73e44b"
+dependencies = [
+ "num-traits",
+ "pxfm",
 ]
 
 [[package]]
@@ -4438,6 +4467,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "pxfm"
+version = "0.1.30"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d55d956fa96f5ec02be2e13af0e20391a5aa83d6a074e3ad368959d0fab299ea"
+
+[[package]]
 name = "quick-xml"
 version = "0.42.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4974,23 +5009,26 @@ dependencies = [
 
 [[package]]
 name = "rustic-launcher"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
  "chrono",
+ "image",
  "percent-encoding",
  "rusticmc-api-client",
  "rusticmc-auth",
  "rusticmc-content",
  "rusticmc-hosting",
  "rusticmc-instances",
+ "rusticmc-java",
  "rusticmc-launcher-core",
  "rusticmc-native",
  "rusticmc-servers",
  "rusticmc-tunnel",
  "serde",
  "serde_json",
+ "sha2 0.10.9",
  "sysinfo",
  "tauri",
  "tauri-build",
@@ -5007,11 +5045,12 @@ dependencies = [
  "toml 0.9.12+spec-1.1.0",
  "tracing",
  "uuid",
+ "webkit2gtk",
 ]
 
 [[package]]
 name = "rusticmc-api-client"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "chrono",
  "reqwest 0.12.28",
@@ -5025,7 +5064,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-auth"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
@@ -5046,7 +5085,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-content"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "async-trait",
  "chrono",
@@ -5071,7 +5110,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-cosmetics-format"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "base64 0.22.1",
  "gltf",
@@ -5084,7 +5123,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-hosting"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "async-trait",
  "futures",
@@ -5108,7 +5147,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-instances"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "base64 0.22.1",
  "directories",
@@ -5129,8 +5168,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "rusticmc-java"
+version = "0.2.8"
+dependencies = [
+ "futures-util",
+ "regex",
+ "rusticmc-launcher-core",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "thiserror 2.0.21",
+ "tokio",
+ "tracing",
+ "uuid",
+ "wiremock",
+ "zip 2.6.1",
+]
+
+[[package]]
 name = "rusticmc-launcher-core"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "directories",
  "futures-util",
@@ -5154,7 +5211,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-native"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "flate2",
  "hex",
@@ -5174,7 +5231,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-servers"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "async-trait",
  "futures-util",
@@ -5203,7 +5260,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-tunnel"
-version = "0.2.5"
+version = "0.2.8"
 dependencies = [
  "futures",
  "rustls",

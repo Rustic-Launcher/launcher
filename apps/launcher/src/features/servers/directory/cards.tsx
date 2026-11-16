@@ -231,7 +231,7 @@ export function ListingHeroSlide({ listing }: { listing: ServerListing }) {
         aria-hidden
         className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
       />
-      <div className="relative flex h-full max-w-[720px] flex-col justify-end gap-3 py-8 pr-8 pb-12 pl-16 text-white">
+      <div className="relative flex h-full max-w-[720px] flex-col justify-end gap-3 py-8 ps-16 pe-8 pb-12 text-white">
         <div className="flex flex-wrap items-center gap-1.5">
           <OverlayBadge tone="accent">
             {listing.featured ? t('directory.featured') : t('directory.hero.eyebrow')}

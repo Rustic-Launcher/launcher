@@ -35,9 +35,11 @@ export function CardRow({
   const measure = useCallback(() => {
     const el = scroller.current;
     if (!el) return;
+    // Right to left, scrollLeft runs from 0 down to negative values: its size is the distance.
+    const at = Math.abs(el.scrollLeft);
     setEdges({
-      start: el.scrollLeft <= 4,
-      end: el.scrollLeft + el.clientWidth >= el.scrollWidth - 4,
+      start: at <= 4,
+      end: at + el.clientWidth >= el.scrollWidth - 4,
     });
   }, []);
 
@@ -55,7 +57,11 @@ export function CardRow({
     const el = scroller.current;
     if (!el) return;
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    el.scrollBy({ left: d * el.clientWidth * 0.9, behavior: reduced ? 'auto' : 'smooth' });
+    const forward = getComputedStyle(el).direction === 'rtl' ? -1 : 1;
+    el.scrollBy({
+      left: forward * d * el.clientWidth * 0.9,
+      behavior: reduced ? 'auto' : 'smooth',
+    });
   };
 
   return (
@@ -84,7 +90,7 @@ export function CardRow({
               type="button"
               onClick={onSeeAll}
               aria-label={t('catalog.row.seeAllAria', { title })}
-              className="rx-focus-ring text-fg-muted hover:text-fg mr-1 flex items-center gap-1 rounded-md px-1.5 py-1 text-sm font-medium"
+              className="rx-focus-ring text-fg-muted hover:text-fg me-1 flex items-center gap-1 rounded-md px-1.5 py-1 text-sm font-medium"
               data-testid={testId ? `${testId}-see-all` : undefined}
             >
               {t('catalog.row.seeAll')}
@@ -140,8 +146,8 @@ function RowArrow({
       className={cn(
         'pointer-events-none absolute inset-y-0 flex w-16 items-center pb-2 transition-opacity duration-200',
         prev
-          ? 'from-surface -left-1 justify-start bg-gradient-to-r to-transparent pl-1'
-          : 'from-surface -right-1 justify-end bg-gradient-to-l to-transparent pr-1',
+          ? 'from-surface -start-1 justify-start bg-gradient-to-r to-transparent ps-1'
+          : 'from-surface -end-1 justify-end bg-gradient-to-l to-transparent pe-1',
         hidden ? 'opacity-0' : 'opacity-100',
       )}
     >

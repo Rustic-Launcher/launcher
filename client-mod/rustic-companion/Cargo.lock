@@ -3047,6 +3047,7 @@ dependencies = [
  "horizon-client",
  "horizon-core",
  "horizon-hooks",
+ "horizon-protocol",
  "log",
  "open",
  "png",
@@ -3063,6 +3064,7 @@ dependencies = [
 name = "rusticmc-companion-core"
 version = "0.1.0"
 dependencies = [
+ "base64",
  "rusticmc-cosmetics-format",
  "serde",
  "serde_json",
@@ -3071,7 +3073,7 @@ dependencies = [
 
 [[package]]
 name = "rusticmc-cosmetics-format"
-version = "0.2.2"
+version = "0.2.7"
 dependencies = [
  "base64",
  "png",

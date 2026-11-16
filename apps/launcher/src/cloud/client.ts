@@ -5,6 +5,7 @@
  */
 import type {
   AccountSettings,
+  CloudBanner,
   AppNotification,
   ChatMessage,
   ContentReportReason,
@@ -24,6 +25,9 @@ import type {
   Outfit,
   ParentalControls,
   Party,
+  PartyChatMessage,
+  PartyInviteLite,
+  PartyVoiceSettings,
   PurchaseRequest,
   PurchaseResult,
   RealtimeEvent,
@@ -34,6 +38,11 @@ import type {
   StoreProduct,
   UserLite,
   UserLookup,
+  UserReportContext,
+  UserReportReason,
+  VoiceRoomKind,
+  VoiceServerInfo,
+  VoiceTokenInfo,
 } from './types';
 
 export interface CloudClient {
@@ -55,8 +64,43 @@ export interface CloudClient {
   removeFriend(id: string): Promise<void>;
   setFavoriteFriend(id: string, favorite: boolean): Promise<void>;
   party(): Promise<Party | null>;
+  /** `POST /v1/parties` (refused with `already_in_party`). */
+  createParty(): Promise<Party>;
+  /** Creates the party first when there is none. */
   inviteToParty(userId: string): Promise<Party>;
   leaveParty(): Promise<void>;
+  /** Invites received and still pending. */
+  partyInvites(): Promise<PartyInviteLite[]>;
+  /** Accept (the party joined) or decline (null). Errors: `party_full`, `party_not_allowed`... */
+  respondPartyInvite(id: string, accept: boolean): Promise<Party | null>;
+  /** Leader only. */
+  kickFromParty(userId: string): Promise<Party | null>;
+  transferPartyLeader(userId: string): Promise<Party>;
+  updatePartyVoice(patch: Partial<PartyVoiceSettings>): Promise<Party>;
+  /** The party chat since the caller joined, oldest first. */
+  partyMessages(): Promise<PartyChatMessage[]>;
+  sendPartyMessage(body: string): Promise<PartyChatMessage>;
+  /** Voice (ADR 0176): a LiveKit token for the party's room or the current server's. */
+  voiceToken(room: VoiceRoomKind): Promise<VoiceTokenInfo>;
+  /** `POST /v1/reports` about a user (voice rooms, party chat). */
+  reportUser(r: {
+    user_id: string;
+    reason: UserReportReason;
+    details?: string;
+    context?: UserReportContext;
+    party_message_id?: string;
+  }): Promise<void>;
+  /** Rustic Servers this account registered for proximity voice. */
+  voiceServers(): Promise<VoiceServerInfo[]>;
+  /** The key is returned once: it goes in the plugin's `config.toml`. */
+  createVoiceServer(name: string): Promise<{ server: VoiceServerInfo; key: string }>;
+  updateVoiceServer(
+    id: string,
+    patch: { name?: string; enabled?: boolean },
+  ): Promise<VoiceServerInfo>;
+  deleteVoiceServer(id: string): Promise<void>;
+  rotateVoiceServerKey(id: string): Promise<{ server: VoiceServerInfo; key: string }>;
+
   subscribe(handler: (e: RealtimeEvent) => void): () => void;
   // chats (Social window)
   conversations(): Promise<Conversation[]>;
@@ -65,6 +109,8 @@ export interface CloudClient {
   markConversationRead(userId: string): Promise<void>;
   // content feeds
   news(): Promise<NewsItem[]>;
+  /** `GET /v1/banners?surface=launcher`: live announcements in `lang` (ADR 0171). */
+  banners(lang: string): Promise<CloudBanner[]>;
   featuredServers(): Promise<FeaturedServer[]>;
   // server directory (public; ADR 0158)
   /** `GET /v1/server-listings`: search, filters, sorts, paging. */

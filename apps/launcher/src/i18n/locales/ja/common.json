@@ -100,7 +100,8 @@
       "appearance": "外観",
       "privacy": "プライバシーとデータ",
       "parental": "ペアレンタルコントロール",
-      "about": "情報"
+      "about": "情報",
+      "voice": "ボイス"
     }
   },
   "friends": {
@@ -190,7 +191,30 @@
     "leader": "パーティーリーダー",
     "pending": "{{name}}（招待中）",
     "invite": "パーティーに招待",
-    "invited": "{{name}} さんをパーティーに招待しました"
+    "invited": "{{name}} さんをパーティーに招待しました",
+    "invitesTitle": "パーティーへの招待",
+    "invitedBy": "{{name}}さんがパーティーに招待しています",
+    "accept": "参加",
+    "decline": "辞退",
+    "makeLeader": "パーティーリーダーにする",
+    "kick": "パーティーから外す",
+    "proximity": "近接ボイス",
+    "proximityHint": "同じサーバーのメンバーは距離に応じて聞こえます",
+    "range": "範囲（ブロック）",
+    "emptyTitle": "パーティーはまだありません",
+    "emptyBody": "パーティーを作成してから、フレンドタブでフレンドのメニューから招待しましょう。",
+    "create": "パーティーを作成",
+    "inviteHint": "フレンドタブでフレンドのメニューから招待できます。",
+    "chatTitle": "パーティーチャット",
+    "chatEmpty": "パーティーに参加するか作成すると、メンバーとチャットできます。",
+    "chatPlaceholder": "パーティーにメッセージ",
+    "formerMember": "元メンバー",
+    "errors": {
+      "party_full": "パーティーは満員です。",
+      "party_not_allowed": "このプレイヤーはこのパーティーに入れません。18歳未満のプレイヤーはフレンドのパーティーにのみ参加できます。",
+      "already_in_party": "先に今のパーティーを退出してください。",
+      "not_party_leader": "これはパーティーリーダーだけが行えます。"
+    }
   },
   "presence": {
     "online": "オンライン",
@@ -425,6 +449,48 @@
       "updated": "Rustic Launcher を {{version}} にアップデートしました",
       "resuming": "アップデート完了：ゲームを起動しています",
       "failed": "アップデートをインストールできませんでした。後でもう一度試します。"
+    }
+  },
+  "voice": {
+    "title": "ボイス",
+    "join": "ボイスに参加",
+    "leave": "ボイスから退出",
+    "mute": "マイクをミュート",
+    "unmute": "マイクのミュート解除",
+    "deafen": "スピーカーをミュート",
+    "undeafen": "スピーカーのミュート解除",
+    "speaking": "話し中",
+    "micMuted": "ミュート中",
+    "outOfRange": "範囲外",
+    "muteFor": "{{name}}さんを自分だけミュート",
+    "unmuteFor": "{{name}}さんのミュートを解除",
+    "reportAria": "{{name}}さんを通報",
+    "memberVolume": "{{name}}さんの音量",
+    "report": "通報",
+    "reportTitle": "{{name}}さんを通報しますか？",
+    "reportBody": "モデレーターが通報を確認します。ボイスが録音されることはありません。このプレイヤーはすぐにあなたに対してミュートされます。",
+    "reported": "{{name}}さんを通報しました",
+    "reasons": {
+      "harassment": "嫌がらせ・ヘイト",
+      "inappropriate_content": "不適切な内容",
+      "spam": "スパム・騒音",
+      "other": "その他"
+    },
+    "proximityOn": "近接、範囲 {{range}}",
+    "you": "あなた",
+    "listenOnly": "聞くだけ",
+    "alone": "ボイスにはまだ誰もいません。",
+    "serverOffer": "{{server}}には近接ボイスがあります",
+    "serverRoom": "サーバーボイス",
+    "partyRoom": "パーティーボイス",
+    "errors": {
+      "voice_unavailable": "現在ボイスは利用できません。しばらくしてからもう一度お試しください。",
+      "voice_not_allowed": "あなたのアカウントではボイスを利用できません。",
+      "mic_denied": "マイクへのアクセスが拒否されました。聞くことはできますが、話すことはできません。システムのプライバシー設定で許可してください。",
+      "mic_missing": "マイクが見つかりません。聞くことはできますが、話すことはできません。",
+      "connect_failed": "ボイスに接続できませんでした。接続を確認してもう一度お試しください。",
+      "kicked": "ボイスルームから外されました。",
+      "not_on_voice_server": "このサーバーには近接ボイスがありません。"
     }
   }
 }

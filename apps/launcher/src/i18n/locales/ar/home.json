@@ -1,0 +1,121 @@
+{
+  "hero": {
+    "greeting": "مرحبًا بعودتك، {{name}}",
+    "greetingAnon": "مرحبًا بك في Rustic",
+    "continue": "متابعة: {{name}} · آخر لعب {{when}}",
+    "continueNew": "جاهز متى شئت: {{name}}",
+    "firstRun": "جهّز اللعبة في ثلاث خطوات.",
+    "playNow": "العب الآن",
+    "updateAndPlay": "تحديث ولعب",
+    "resumeServer": "العودة إلى {{server}}",
+    "switch": "تبديل النسخة",
+    "stats": {
+      "playtime": "وقت اللعب: {{time}}",
+      "mods_zero": "لا مودات",
+      "mods_one": "مود واحد",
+      "mods_two": "مودان",
+      "mods_few": "{{count}} مودات",
+      "mods_many": "{{count}} مودًا",
+      "mods_other": "{{count}} مود",
+      "friends_zero": "لا أصدقاء متصلون",
+      "friends_one": "صديق واحد متصل",
+      "friends_two": "صديقان متصلان",
+      "friends_few": "{{count}} أصدقاء متصلون",
+      "friends_many": "{{count}} صديقًا متصلًا",
+      "friends_other": "{{count}} صديق متصل"
+    },
+    "steps": {
+      "signIn": "سجّل الدخول بحساب Microsoft الذي يملك اللعبة",
+      "prepare": "جهّز ملفات اللعبة من تثبيتك الخاص",
+      "create": "أنشئ نسختك الأولى"
+    },
+    "getReady": "تجهيز اللعبة",
+    "openLocker": "الخزانة",
+    "player": "شخصيتك في وضع الراحة، دون أي عنصر تجميلي",
+    "playerWearing": "شخصيتك في وضع الراحة، وترتدي: {{items}}"
+  },
+  "recent": {
+    "title": "الخوادم والعوالم الأخيرة",
+    "unknown": "الحالة غير معروفة",
+    "online": "متصل · {{online}}/{{max}}",
+    "offline": "غير متصل",
+    "world": "عالم · محلي",
+    "joining": "جارٍ الانضمام إلى {{name}}…",
+    "opening": "جارٍ فتح {{name}}…",
+    "removed": "أُزيل {{name}} من خوادمك",
+    "playAria": "لعب {{name}}",
+    "more": "إجراءات أخرى لـ {{name}}",
+    "copyAddress": "نسخ العنوان",
+    "addServer": "إضافة خادم",
+    "empty": "تظهر هنا الخوادم التي تنضم إليها والعوالم التي تلعبها."
+  },
+  "news": {
+    "title": "الأخبار والتحديثات",
+    "empty": "لا أخبار حاليًا.",
+    "slide": "الخبر {{index}} من {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "ملاحظات الإصدار",
+      "event": "فعالية",
+      "blog": "مقال"
+    },
+    "readNotes": "قراءة ملاحظات الإصدار",
+    "read": "قراءة"
+  },
+  "friends": {
+    "title": "الأصدقاء الآن",
+    "empty": "لا أحد من أصدقائك يلعب الآن.",
+    "since": "منذ {{when}}",
+    "activity": {
+      "server": "يلعب على {{server}}",
+      "hosting": "يستضيف {{server}}",
+      "singleplayer": "يلعب منفردًا",
+      "launcher": "في المشغّل"
+    }
+  },
+  "featured": {
+    "title": "خوادم مميّزة",
+    "verified": "خادم موثَّق",
+    "players": "اللاعبون: {{online}} / {{max}}",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "عناصر تجميلية جديدة",
+    "owned": "مملوك"
+  },
+  "launchpad": {
+    "welcome": "مرحبًا *بعودتك*،",
+    "playAs": "اللعب باسم",
+    "online": "متصلون على الخوادم المميّزة",
+    "heroLabel": "تشغيل",
+    "instanceSettings": "إعدادات النسخة",
+    "news": "آخر الأخبار",
+    "unread_zero": "(لا شيء غير مقروء)",
+    "unread_one": "(واحد غير مقروء)",
+    "unread_two": "(اثنان غير مقروءين)",
+    "unread_few": "({{count}} غير مقروءة)",
+    "unread_many": "({{count}} غير مقروء)",
+    "unread_other": "({{count}} غير مقروء)",
+    "unreadDot": "غير مقروء",
+    "explore": "استكشاف المصادر",
+    "aside": "الخوادم والأصدقاء",
+    "joinServer": "الانضمام إلى {{name}}",
+    "friendsOnline_zero": "(لا أحد متصل)",
+    "friendsOnline_one": "(واحد متصل)",
+    "friendsOnline_two": "(اثنان متصلان)",
+    "friendsOnline_few": "({{count}} متصلون)",
+    "friendsOnline_many": "({{count}} متصلًا)",
+    "friendsOnline_other": "({{count}} متصل)",
+    "openSocial": "فتح النافذة الاجتماعية",
+    "noNews": "لا أخبار بعد.",
+    "noFriendsOnline": "لا أصدقاء متصلون الآن.",
+    "socialHint": "المحادثات والدعوات ومجموعتك موجودة في النافذة الاجتماعية.",
+    "eyebrow": "Launchpad"
+  }
+}

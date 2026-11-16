@@ -81,11 +81,11 @@ export function RadioCard({
             />
             <span className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
             {icon && (
-              <span className="absolute bottom-2.5 left-3 grid size-9 place-items-center rounded-lg bg-black/45 text-white backdrop-blur-sm [&_svg]:size-5">
+              <span className="absolute start-3 bottom-2.5 grid size-9 place-items-center rounded-lg bg-black/45 text-white backdrop-blur-sm [&_svg]:size-5">
                 {icon}
               </span>
             )}
-            {checked && <span className="absolute top-2.5 right-2.5">{tick}</span>}
+            {checked && <span className="absolute end-2.5 top-2.5">{tick}</span>}
           </span>
           <span className="flex min-w-0 flex-1 flex-col gap-1 px-3.5 pt-2.5 pb-3.5">
             <span className="text-fg flex flex-wrap items-center gap-2 text-sm font-semibold">

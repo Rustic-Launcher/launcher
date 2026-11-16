@@ -8,7 +8,7 @@ export const socialRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/social',
   validateSearch: (s: Record<string, unknown>): { tab?: SocialTab; with?: string } => ({
-    tab: s.tab === 'chats' || s.tab === 'friends' ? s.tab : undefined,
+    tab: s.tab === 'chats' || s.tab === 'friends' || s.tab === 'party' ? s.tab : undefined,
     with: typeof s.with === 'string' ? s.with : undefined,
   }),
   component: function SocialRouteComponent() {

@@ -13,7 +13,8 @@
     "appearance": "Uiterlijk",
     "privacy": "Privacy en gegevens",
     "parental": "Ouderlijk toezicht",
-    "about": "Over en juridisch"
+    "about": "Over en juridisch",
+    "voice": "Spraak"
   },
   "accounts": {
     "active": "Actief",
@@ -95,7 +96,8 @@
       "description": "Je Rustic-identiteit voor vrienden, het Kluisje, aankopen en servers.",
       "signedOut": "Niet ingelogd. De game werkt zonder; sociale functies, het Kluisje en de Winkel hebben het nodig.",
       "signIn": "Inloggen of account aanmaken",
-      "licenceNote": "Een Rustic-account is een platformidentiteit. Het vervangt nooit de gamelicentie: je hebt nog steeds een Microsoft-account nodig dat de game bezit."
+      "licenceNote": "Een Rustic-account is een platformidentiteit. Het vervangt nooit de gamelicentie: je hebt nog steeds een Microsoft-account nodig dat de game bezit.",
+      "manageOnWeb": "Beheren op de website"
     },
     "offline": {
       "title": "Offline spelen",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Rond het inloggen af in je browser: de launcher neemt je sessie automatisch over."
   },
   "heading": "Jouw *instellingen*",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Apparaten",
+    "devicesHint": "De microfoon en de luidsprekers of headset voor spraak.",
+    "input": "Microfoon",
+    "output": "Uitvoer",
+    "outputVolume": "Uitvoervolume",
+    "systemDefault": "Systeemstandaard",
+    "deviceN": "Apparaat {{n}}",
+    "talk": "Praten",
+    "talkHint": "Praat wanneer je stem wordt herkend, of alleen terwijl je een toets ingedrukt houdt.",
+    "mode": "Invoermodus",
+    "modeVad": "Spraakactiviteit",
+    "modePtt": "Drukken om te praten",
+    "pttKey": "Toets om te praten",
+    "pttKeyHint": "Werkt in de launcher en in het spel. Zijknoppen van de muis ook.",
+    "pressKey": "Druk op een toets…",
+    "sensitivity": "Gevoeligheid",
+    "sensitivityHint": "Hoger vangt zachtere stemmen op; lager negeert meer achtergrondgeluid.",
+    "test": "Microfoontest",
+    "testMic": "Testen",
+    "stopTest": "Stoppen",
+    "level": "Microfoonniveau",
+    "micDenied": "Toegang tot de microfoon is geweigerd. Sta het toe in de privacyinstellingen van je systeem en probeer het opnieuw.",
+    "micMissing": "Geen microfoon gevonden.",
+    "noiseSuppression": "Ruisonderdrukking",
+    "echoCancellation": "Echo-onderdrukking",
+    "autoGain": "Automatische versterking",
+    "inGame": "In het spel",
+    "inGameHint": "Met de Rustic-editie laat een overlay zien wie er praat en werkt de toets om te praten in het spel.",
+    "overlay": "Spraakoverlay in het spel tonen",
+    "serverVoice": "Nabijheidsspraak op servers",
+    "serverVoiceHint": "Rustic Servers kunnen spraak op afstand aanbieden met alle spelers daar. Onder de 18 moet een ouder of voogd het toestaan.",
+    "serverAsk": "Vraag het me",
+    "serverAuto": "Automatisch deelnemen",
+    "serverOff": "Nooit",
+    "servers": {
+      "title": "Nabijheidsspraak voor je servers",
+      "description": "Voeg een server toe en zet de sleutel in de config.toml van de plugin proximity-voice. Je kunt het altijd uitzetten.",
+      "namePlaceholder": "Servernaam",
+      "add": "Toevoegen",
+      "status": "Spelers online: {{count}}",
+      "enabled": "Nabijheidsspraak op {{name}}",
+      "newKey": "Nieuwe sleutel",
+      "remove": "{{name}} verwijderen",
+      "keyOnce": "Kopieer deze sleutel nu: hij wordt maar één keer getoond. Een nieuwe sleutel vervangt hem.",
+      "tooMany": "Je kunt maximaal 10 servers toevoegen."
+    }
+  }
 }

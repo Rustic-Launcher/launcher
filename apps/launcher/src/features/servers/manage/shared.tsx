@@ -70,7 +70,7 @@ export function CopyField({
   return (
     <div
       className={cn(
-        'border-border bg-surface-2 flex min-w-0 items-center gap-1 rounded-md border py-1 pr-1 pl-3',
+        'border-border bg-surface-2 flex min-w-0 items-center gap-1 rounded-md border py-1 ps-3 pe-1',
         className,
       )}
     >
@@ -117,7 +117,7 @@ export function Collapsible({
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen((o) => !o)}
-        className="rx-focus-ring text-fg hover:bg-surface-2/60 flex w-full items-center gap-2 rounded-xl px-4 py-3 text-left text-sm font-medium [&_svg]:size-4"
+        className="rx-focus-ring text-fg hover:bg-surface-2/60 flex w-full items-center gap-2 rounded-xl px-4 py-3 text-start text-sm font-medium [&_svg]:size-4"
       >
         {icon}
         <span className="flex-1">{title}</span>

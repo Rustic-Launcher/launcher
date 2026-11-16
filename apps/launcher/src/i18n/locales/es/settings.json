@@ -13,7 +13,8 @@
     "appearance": "Apariencia",
     "privacy": "Privacidad y datos",
     "parental": "Control parental",
-    "about": "Acerca de y legal"
+    "about": "Acerca de y legal",
+    "voice": "Voz"
   },
   "accounts": {
     "active": "Activa",
@@ -95,7 +96,8 @@
       "description": "Tu identidad de Rustic para los amigos, la Taquilla, las compras y los servidores.",
       "signedOut": "No has iniciado sesión. El juego funciona sin ella; las funciones sociales, la Taquilla y la Tienda la necesitan.",
       "signIn": "Iniciar sesión o crear una cuenta",
-      "licenceNote": "Una cuenta de Rustic es una identidad en la plataforma. Nunca sustituye a la licencia del juego: sigues necesitando una cuenta de Microsoft que tenga el juego."
+      "licenceNote": "Una cuenta de Rustic es una identidad en la plataforma. Nunca sustituye a la licencia del juego: sigues necesitando una cuenta de Microsoft que tenga el juego.",
+      "manageOnWeb": "Gestionar en la web"
     },
     "offline": {
       "title": "Juego sin conexión",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Termina de iniciar sesión en tu navegador: el launcher recogerá tu sesión automáticamente."
   },
   "heading": "Tus *ajustes*",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Dispositivos",
+    "devicesHint": "El micrófono y los altavoces o auriculares que usa la voz.",
+    "input": "Micrófono",
+    "output": "Salida",
+    "outputVolume": "Volumen de salida",
+    "systemDefault": "Predeterminado del sistema",
+    "deviceN": "Dispositivo {{n}}",
+    "talk": "Hablar",
+    "talkHint": "Habla cuando se detecte tu voz, o solo mientras mantienes una tecla.",
+    "mode": "Modo de entrada",
+    "modeVad": "Actividad de voz",
+    "modePtt": "Pulsar para hablar",
+    "pttKey": "Tecla para hablar",
+    "pttKeyHint": "Funciona en el launcher y en el juego. También los botones laterales del ratón.",
+    "pressKey": "Pulsa una tecla…",
+    "sensitivity": "Sensibilidad",
+    "sensitivityHint": "Más alta capta voces más bajas; más baja ignora más ruido de fondo.",
+    "test": "Prueba del micrófono",
+    "testMic": "Probar",
+    "stopTest": "Detener",
+    "level": "Nivel del micrófono",
+    "micDenied": "Se denegó el acceso al micrófono. Permítelo en los ajustes de privacidad de tu sistema y vuelve a intentarlo.",
+    "micMissing": "No se encontró ningún micrófono.",
+    "noiseSuppression": "Supresión de ruido",
+    "echoCancellation": "Cancelación de eco",
+    "autoGain": "Ganancia automática",
+    "inGame": "En el juego",
+    "inGameHint": "Con la edición Rustic, un indicador muestra quién habla y la tecla para hablar funciona en el juego.",
+    "overlay": "Mostrar la voz en el juego",
+    "serverVoice": "Voz por proximidad en servidores",
+    "serverVoiceHint": "Los Rustic Servers pueden ofrecer voz según la distancia con todos sus jugadores. Si tienes menos de 18 años, un tutor debe permitirlo.",
+    "serverAsk": "Preguntarme",
+    "serverAuto": "Unirse automáticamente",
+    "serverOff": "Nunca",
+    "servers": {
+      "title": "Voz por proximidad para tus servidores",
+      "description": "Añade un servidor y pon su clave en el config.toml del plugin proximity-voice. Puedes desactivarla en cualquier momento.",
+      "namePlaceholder": "Nombre del servidor",
+      "add": "Añadir",
+      "status": "Jugadores conectados: {{count}}",
+      "enabled": "Voz por proximidad en {{name}}",
+      "newKey": "Nueva clave",
+      "remove": "Quitar {{name}}",
+      "keyOnce": "Copia esta clave ahora: solo se muestra una vez. Una clave nueva la sustituye.",
+      "tooMany": "Puedes añadir hasta 10 servidores."
+    }
+  }
 }

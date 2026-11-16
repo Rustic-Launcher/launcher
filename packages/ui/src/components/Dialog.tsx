@@ -92,7 +92,7 @@ export function Dialog({
                         {icon}
                       </span>
                     )}
-                    <div className="flex min-w-0 flex-1 flex-col gap-1 pr-6">
+                    <div className="flex min-w-0 flex-1 flex-col gap-1 pe-6">
                       <D.Title className="text-fg text-lg font-semibold">{title}</D.Title>
                       {description ? (
                         <D.Description className="text-fg-muted text-sm">
@@ -112,7 +112,7 @@ export function Dialog({
                   {!footer && <div className="pb-6" />}
                   <D.Close
                     aria-label={closeLabel}
-                    className="rx-focus-ring text-fg-subtle hover:bg-surface-2 hover:text-fg absolute top-4 right-4 rounded-md p-1.5"
+                    className="rx-focus-ring text-fg-subtle hover:bg-surface-2 hover:text-fg absolute end-4 top-4 rounded-md p-1.5"
                   >
                     <X className="size-4" />
                   </D.Close>

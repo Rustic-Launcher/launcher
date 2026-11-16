@@ -8,6 +8,7 @@ export const SETTINGS_SECTIONS = [
   'launcher',
   'appearance',
   'privacy',
+  'voice',
   'parental',
   'about',
 ] as const;

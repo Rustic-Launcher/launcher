@@ -1,0 +1,1053 @@
+{
+  "list": {
+    "title": "Servere",
+    "description": "Vær vært for en verden for dine venner, her eller på din egen VPS, og hav dine yndlingsservere lige ved hånden.",
+    "create": "Opret server",
+    "tabs": {
+      "mine": "Mine servere",
+      "joined": "Deltaget",
+      "discover": "Opdag"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Vanilla Horizon"
+    },
+    "hosting": {
+      "local": "Denne pc",
+      "remote": "Fjern: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Tilstand",
+    "states": {
+      "running": "Kører",
+      "starting": "Starter…",
+      "stopping": "Stopper…",
+      "stopped": "Stoppet",
+      "crashed": "Gået ned",
+      "installing": "Installerer…",
+      "unreachable": "Kan ikke nås"
+    },
+    "players": "Spillere",
+    "playersCount": "{{online}}/{{max}} spillere",
+    "version": "Version",
+    "copyAddress": "Kopiér adresse",
+    "copyFailed": "Kunne ikke kopiere til udklipsholderen",
+    "notShared": "Ikke delt endnu",
+    "notSharedHint": "Slå en midlertidig adresse, en invitationskode eller et domæne til under serverens fane Adgang.",
+    "start": "Start",
+    "stop": "Stop",
+    "startAria": "Start {{name}}",
+    "stopAria": "Stop {{name}}",
+    "powerFailed": "Serveren svarede ikke",
+    "empty": {
+      "title": "Vær vært for en verden for dine venner i 3 trin",
+      "description": "Kør den gratis på denne pc, eller lad Rustic installere den på din egen VPS."
+    },
+    "featured": {
+      "description": "Servere udvalgt af Rustic-holdet: fair play, klar til Horizon, modereret.",
+      "empty": "Ingen udvalgte servere lige nu.",
+      "verified": "Bekræftet af Rustic",
+      "save": "Føj til listen",
+      "inList": "På din liste",
+      "online_one": "{{value}} online",
+      "online_other": "{{value}} online",
+      "view": "Om {{name}}"
+    },
+    "viewLabel": "Visning",
+    "views": {
+      "discover": "Opdag",
+      "mine": "Mine servere"
+    },
+    "searchPlaceholder": {
+      "discover": "Søg i udvalgte servere…",
+      "mine": "Søg i dine servere…"
+    },
+    "clearSearch": "Ryd søgningen",
+    "sortLabel": "Sortér",
+    "sorts": {
+      "recommended": "Anbefalet",
+      "players": "Flest spillere",
+      "name": "Navn"
+    },
+    "refreshPing": "Opdater ping og status",
+    "layoutList": "Vis som liste",
+    "layoutGrid": "Vis som gitter",
+    "createHint": "Her, på din VPS eller snart i skyen",
+    "heading": "Spil på *servere*",
+    "eyebrow": "Servere",
+    "sections": {
+      "hosted": "Med dig som vært",
+      "joined": "Servere, du har deltaget i"
+    }
+  },
+  "multiplayer": {
+    "description": "Spillets serverliste, delt af alle dine instanser.",
+    "add": "Tilføj en server",
+    "added": "{{name}} er føjet til din liste",
+    "addFailed": "Kunne ikke tilføje denne server",
+    "name": "Servernavn",
+    "namePlaceholder": "Navn",
+    "address": "Serveradresse",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Brug et værtsnavn eller en IP med en valgfri :port.",
+    "refreshPings": "Opdater",
+    "favorites_one": "Favorit · {{count}}",
+    "favorites_other": "Favoritter · {{count}}",
+    "others_one": "Anden server · {{count}}",
+    "others_other": "Andre servere · {{count}}",
+    "favorite": "Føj {{name}} til favoritter",
+    "unfavorite": "Fjern {{name}} fra favoritter",
+    "offline": "Offline",
+    "unreachable": "Kan ikke nå denne server lige nu",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Deltag",
+    "joinAria": "Deltag i {{name}}",
+    "joinWith": "Deltager med {{instance}}",
+    "noInstance": "Opret en instans for at deltage i servere",
+    "joining": "Starter og deltager i {{name}}…",
+    "more": "Flere handlinger for {{name}}",
+    "copyAddress": "Kopiér adresse",
+    "removed": "{{name}} er fjernet",
+    "undo": "Fortryd",
+    "empty": {
+      "title": "Ingen servere endnu",
+      "description": "Tilføj en med dens adresse, eller vælg en under Opdag."
+    }
+  },
+  "wizard": {
+    "title": "Opret en server",
+    "subtitle": "Tre trin: hvad der skal køre, hvor den skal hostes, og hvordan venner deltager.",
+    "creatingTitle": "Sætter {{name}} op",
+    "stepOf": "Trin {{index}} af {{total}}",
+    "steps": {
+      "basics": "Grundlæggende",
+      "hosting": "Hvor den skal hostes",
+      "access": "Adgang"
+    },
+    "create": "Opret server",
+    "installOn": "Installer på {{host}}",
+    "createFailed": "Serveren kunne ikke oprettes",
+    "noRusticServer": "Programmet rustic-server blev ikke fundet. Vælg det under Indstillinger › Spil og instanser › Rustic Server, eller installer en build af Rustic-udgaven, der indeholder det.",
+    "openRusticServerSettings": "Åbn indstillinger",
+    "fixErrors": "Tjek de markerede felter for at fortsætte.",
+    "discard": {
+      "title": "Kassér denne server?",
+      "body": "Det, du har indtastet i guiden, går tabt.",
+      "keep": "Fortsæt redigering",
+      "confirm": "Kassér"
+    },
+    "basics": {
+      "name": "Servernavn",
+      "namePlaceholder": "Lous SMP",
+      "icon": "Ikon",
+      "icons": {
+        "grass": "Græs",
+        "sword": "Sværd",
+        "pickaxe": "Hakke",
+        "castle": "Borg",
+        "rocket": "Raket",
+        "gem": "Ædelsten",
+        "flame": "Flamme",
+        "leaf": "Blad",
+        "star": "Stjerne",
+        "compass": "Kompas"
+      },
+      "color": "Farve",
+      "colorN": "Farve {{n}}",
+      "type": "Type",
+      "recommended": "Anbefalet",
+      "nightly": "Nightly",
+      "rusticDesc": "Plugins (.rplugin) i sandkasse: et plugin kan aldrig få din server til at gå ned.",
+      "horizonDesc": "Horizons egen server, ingen plugins.",
+      "version": "Horizon-version",
+      "maxPlayers": "Maks. spillere",
+      "versionLineRustic": "Rustic Server 0.1 på Horizon {{version}}",
+      "versionLineHorizon": "Horizon-server {{version}}",
+      "sameAsClient": "(samme som din klient)",
+      "starterPlugins": "Startplugins",
+      "starterHint": "Officielle plugins med det, de har lov til at gøre.",
+      "capNetwork": "Netværk",
+      "capNoNetwork": "Intet netværk",
+      "capNoFiles": "Ingen filer",
+      "capDataFolder": "Egen datamappe",
+      "eula": "Jeg accepterer Minecraft-EULA'en",
+      "eulaHint": "Det kræves for at køre en server. Du accepterer den selv; Rustic accepterer den ikke for dig.",
+      "eulaRead": "Læs EULA'en",
+      "eulaTitle": "Minecraft-EULA"
+    },
+    "world": {
+      "title": "Verden",
+      "new": "Ny verden",
+      "import": "Importér en mappe",
+      "fromInstance": "Fra en instans",
+      "seed": "Seed",
+      "seedHint": "Lad feltet stå tomt for en tilfældig verden.",
+      "seedPlaceholder": "Valgfri",
+      "randomSeed": "Tilfældigt seed",
+      "levelType": "Verdenstype",
+      "levelTypes": {
+        "default": "Standard",
+        "flat": "Superflad",
+        "large_biomes": "Store biomer",
+        "amplified": "Forstærket"
+      },
+      "gamemode": "Spiltilstand",
+      "gamemodes": {
+        "survival": "Survival",
+        "creative": "Kreativ",
+        "adventure": "Eventyr"
+      },
+      "difficulty": "Sværhedsgrad",
+      "difficulties": {
+        "peaceful": "Fredelig",
+        "easy": "Let",
+        "normal": "Normal",
+        "hard": "Svær"
+      },
+      "structures": "Generér strukturer",
+      "hardcore": "Hardcore",
+      "folder": "Verdensmappe",
+      "instance": "Instans",
+      "pickInstance": "Vælg en instans",
+      "world": "Verden",
+      "pickWorld": "Vælg en verden",
+      "noWorlds": "Ingen verdener i denne instans",
+      "newDesc": "En ny verden fra et seed, med dine regler.",
+      "importDesc": "En verdensmappe fra din pc eller en backup.",
+      "fromInstanceDesc": "En verden, du har spillet i en af dine profiler."
+    },
+    "type": {
+      "memory": "Serverhukommelse (RAM)",
+      "memoryHint": "4 GB passer til de fleste vennegrupper. Mere hjælper med mange spillere eller store modpakker."
+    },
+    "access": {
+      "intro": "Hvordan dine venner deltager. Flere kan være slået til på én gang; du kan ændre dem senere.",
+      "lan": "Venner på mit netværk (LAN)",
+      "lanDetail": "Denne pc's lokale adresse, vises når serveren findes.",
+      "publicIp": "Offentlig adresse",
+      "publicIpDetail": "din VPS' IP",
+      "alwaysOn": "Altid slået til",
+      "relay": "Midlertidig adresse",
+      "relayDetail": "gratis, mens serveren kører; ingen port skal åbnes",
+      "invite": "Invitationskode",
+      "inviteDetail": "En kode, som venner indsætter i Rustic Launcher for at deltage.",
+      "domain": "Mit eget domæne",
+      "domainDetail": "Forbind Porkbun · Køb hos Porkbun · Brug en hvilken som helst registrator",
+      "domainAfter": "Sæt op efter oprettelsen",
+      "safety": "Onlinetilstand slået til: kun spillere, der ejer spillet, kan deltage. Whitelist slået til."
+    },
+    "summary": {
+      "title": "Oversigt",
+      "version": "Version",
+      "host": "Hosting",
+      "world": "Verden",
+      "memory": "Hukommelse",
+      "players": "Maks. spillere",
+      "plugins": "Plugins",
+      "none": "Ingen",
+      "eulaAccepted": "Du accepterede Minecraft-EULA'en i trin 1."
+    },
+    "errors": {
+      "nameRequired": "Giv din server et navn.",
+      "nameTooLong": "Brug højst 40 tegn.",
+      "version": "Vælg en Horizon-version.",
+      "maxPlayers": "Mellem 1 og 1000 spillere.",
+      "importPath": "Vælg den verdensmappe, der skal importeres.",
+      "world": "Vælg en instans og en af dens verdener.",
+      "seed": "Seeds er højst 64 tegn.",
+      "eula": "Acceptér EULA'en for at køre en server.",
+      "cloudUnavailable": "Rustic Cloud er ikke tilgængelig endnu.",
+      "vpsNotReady": "Forbind først din VPS, og bestå tjekkene.",
+      "memory": "Mindst 1 GB hukommelse.",
+      "host": "Indtast en IP-adresse eller et værtsnavn.",
+      "port": "Port mellem 1 og 65535.",
+      "username": "Indtast Linux-brugernavnet.",
+      "keyPath": "Vælg din private nøglefil.",
+      "generateKey": "Generér først en nøgle, og tilføj den så til din VPS.",
+      "password": "Indtast adgangskoden."
+    },
+    "heading": "Opret en *server*",
+    "stepHints": {
+      "basics": "Navngiv den, vælg hvad den kører og den verden, den starter med.",
+      "hosting": "Vælg den maskine, der kører den, og hvor meget hukommelse den får.",
+      "access": "Vælg, hvordan dine venner deltager. Du kan ændre det senere."
+    },
+    "sections": {
+      "identity": "Identitet"
+    },
+    "preview": {
+      "title": "Forhåndsvisning",
+      "unnamed": "Din server",
+      "draft": "ikke oprettet endnu"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "Denne pc (lokal)",
+      "free": "Gratis",
+      "description": "Din pc skal være tændt, mens venner spiller.",
+      "settings": "På denne pc",
+      "reach": "Venner når den på dit netværk, via en midlertidig Rustic-adresse eller med en invitationskode. Ingen routeropsætning nødvendig.",
+      "startWithLauncher": "Start med launcheren",
+      "startWithLauncherHint": "Serveren starter, når Rustic Launcher åbner."
+    },
+    "vps": {
+      "title": "Din VPS (SSH)",
+      "description": "Din Linux-server. Vi installerer og kører den for dig.",
+      "which": "VPS",
+      "existing_one": "Gemt VPS ({{count}})",
+      "existing_other": "Gemte VPS'er ({{count}})",
+      "new": "Tilføj en VPS",
+      "pinned": "Værtsnøgle fastgjort",
+      "host": "Vært",
+      "port": "Port",
+      "user": "Bruger",
+      "userPlaceholder": "root eller en sudo-bruger",
+      "auth": "Login",
+      "authGenerate": "Generér en nøgle til mig",
+      "authKey": "Eksisterende nøglefil",
+      "authPassword": "Adgangskode (én gang)",
+      "generateHint": "Anbefalet. Rustic opretter et nøglepar; den private nøgle forlader aldrig denne pc.",
+      "generate": "Generér en nøgle",
+      "addKeyCommand": "Kør dette én gang i din VPS-konsol for at godkende nøglen:",
+      "keyStored": "Privat nøgle gemt i din systemnøglering ({{path}})",
+      "openFirewall": "Åbn spilporten i VPS'ens firewall",
+      "openFirewallHint": "Tillader TCP til serverens port i ufw eller firewalld. Din udbyders egen firewall kan også kræve det.",
+      "keyFile": "Privat nøgle",
+      "passphrase": "Adgangssætning",
+      "optional": "Valgfri",
+      "password": "Adgangskode",
+      "passwordHint": "Bruges én gang til at installere en nøgle. Den gemmes ikke.",
+      "test": "Test forbindelsen",
+      "reachable": "Forbundet · {{ms}} ms",
+      "unreachable": "Vi kunne ikke nå denne VPS",
+      "authFailed": "VPS'en afviste login"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Kommer snart",
+      "description": "Servere på Rustics maskiner, altid tændt.",
+      "waitlist": "Få en e-mail, når Rustic Cloud åbner.",
+      "email": "E-mailadresse",
+      "join": "Skriv dig på ventelisten",
+      "joined": "Du er på listen (#{{position}}). Vi sender dig en e-mail.",
+      "invalidEmail": "Indtast en gyldig e-mailadresse."
+    },
+    "requirements": {
+      "title": "Tjek af krav",
+      "ram": "Hukommelse ({{free}} ledig)",
+      "gameFiles": "Spilfiler forberedt",
+      "port": "Port 25565 ledig",
+      "hint": "Diskplads tjekkes, når serverfilerne hentes."
+    },
+    "fingerprint": {
+      "title": "Stol på {{host}}?",
+      "description": "Første forbindelse til denne VPS. Sammenlign dette fingeraftryk med det i din udbyders konsol, før du stoler på det.",
+      "warning": "Hvis det ikke passer, så annuller: nogen opsnapper måske forbindelsen. Rustic blokerer enhver senere ændring af denne nøgle.",
+      "trust": "Stol på og fortsæt"
+    },
+    "testFailed": "Forbindelsestesten fejlede",
+    "checkFailed": "Tjekket af VPS'en fejlede",
+    "preflight": {
+      "running": "Tjekker din VPS…",
+      "ok": "Din VPS er klar",
+      "notOk": "Din VPS opfylder ikke kravene",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_other": "{{count}} vCPU'er",
+      "memory": "{{memory}} hukommelse",
+      "disk": "{{disk}} ledig disk",
+      "systemd": "systemd tilgængelig",
+      "ip": "Offentlig IP"
+    },
+    "problems": {
+      "memory": "Hukommelse",
+      "disk": "Disk",
+      "arch": "Arkitektur",
+      "os": "Styresystem",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Installerer på {{host}}",
+      "steps": {
+        "connect": "Forbind via SSH",
+        "check": "Indledende tjek",
+        "user": "Opret brugeren »rustic«",
+        "download": "Upload signerede serverfiler",
+        "engine": "Konfigurer Rustic-motoren",
+        "service": "Installer tjenesten",
+        "firewall": "Åbn port 25565",
+        "world": "Forbered verdenen",
+        "start": "Start og tjek"
+      },
+      "state": {
+        "pending": "venter",
+        "running": "i gang",
+        "done": "færdig",
+        "failed": "fejlede",
+        "skipped": "sprunget over"
+      },
+      "skippedVanilla": "Ikke nødvendigt for vanilla Horizon",
+      "log_one": "Vis log ({{count}} linje)",
+      "log_other": "Vis log ({{count}} linjer)",
+      "vpsDone": "{{name}} kører på {{host}}",
+      "vpsDoneBody": "Administrer den fra launcheren som en lokal server: konsol, spillere, plugins, backups.",
+      "localDownload": "Hent {{engine}}",
+      "localInit": "Forbered verdenen og indstillingerne",
+      "localStart": "Første start",
+      "localReady": "Klar til start",
+      "localDone": "{{name}} kører",
+      "localDoneBody": "Del dens adresse fra fanen Adgang, eller inviter venner fra vennepanelet.",
+      "open": "Åbn server",
+      "backToList": "Tilbage til servere",
+      "retry": "Prøv igen",
+      "failed": "Installationen fejlede",
+      "crashed": "Serveren stoppede under sin første start. Tjek konsollen."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Serverens sektioner",
+    "tabs": {
+      "overview": "Oversigt",
+      "console": "Konsol",
+      "players": "Spillere",
+      "plugins": "Plugins",
+      "config": "Konfiguration",
+      "datapacks": "Datapakker",
+      "backups": "Backups",
+      "access": "Adgang",
+      "danger": "Farezone"
+    },
+    "state": {
+      "stopped": "Stoppet",
+      "starting": "Starter…",
+      "running": "Kører",
+      "stopping": "Stopper…",
+      "crashed": "Gået ned",
+      "installing": "Installerer…",
+      "unreachable": "Kan ikke nås"
+    },
+    "save": "Gem",
+    "cancel": "Annuller",
+    "close": "Luk",
+    "remove": "Fjern",
+    "done": "Færdig",
+    "header": {
+      "back": "Servere",
+      "players": "{{online}}/{{max}} spillere",
+      "uptime": "oppe i {{duration}}",
+      "start": "Start",
+      "stop": "Stop",
+      "restart": "Genstart",
+      "join": "Deltag",
+      "address": "Adresse",
+      "copyAddress": "Kopiér serverens adresse",
+      "powerFailed": "Serveren kunne ikke skifte tilstand"
+    },
+    "overview": {
+      "stoppedTitle": "Serveren er stoppet",
+      "stoppedBody": "Start den for at se CPU, hukommelse, TPS og tick-tid live.",
+      "cpu": "CPU",
+      "cpuChart": "CPU-forbrug de seneste to minutter",
+      "ram": "Hukommelse",
+      "ramChart": "Brugt hukommelse de seneste to minutter",
+      "of": "af {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Ticks pr. sekund de seneste to minutter",
+      "mspt": "Tick-tid",
+      "msptChart": "Millisekunder pr. tick de seneste to minutter, budgetlinje på 50 ms",
+      "msptBudget": "budget 50 ms",
+      "health": {
+        "good": "Glidende",
+        "busy": "Travl",
+        "lagging": "Hakker"
+      },
+      "onlineTitle_one": "{{count}} spiller online",
+      "onlineTitle_other": "{{count}} spillere online",
+      "onlineStopped": "Ingen kan deltage, mens serveren er stoppet.",
+      "nobody": "Ingen spiller lige nu.",
+      "infoTitle": "Detaljer",
+      "world": "Verden",
+      "version": "Horizon",
+      "port": "Port",
+      "memory": "Hukommelse",
+      "created": "Oprettet",
+      "folder": "Mappe",
+      "uptime": "Oppetid",
+      "startedAt": "Siden {{time}}",
+      "lastSession": "Seneste session",
+      "lastStarted": "Senest startet {{when}}",
+      "neverStarted": "Ikke startet endnu",
+      "lastLines": "Seneste konsollinjer",
+      "noLines": "Intet logget endnu.",
+      "openConsole": "Åbn konsollen",
+      "crashedTitle": "Serveren stoppede uventet",
+      "crashedBody": "Tjek de seneste konsollinjer, og start den så igen."
+    },
+    "console": {
+      "filter": "Filtrér linjer",
+      "filters": {
+        "all": "Alle",
+        "info": "Info",
+        "warn": "Advarsler",
+        "error": "Fejl",
+        "chat": "Chat"
+      },
+      "levels": {
+        "info": "info",
+        "warn": "advarsel",
+        "error": "fejl",
+        "command": "kmd",
+        "chat": "chat"
+      },
+      "autoScroll": "Følg nye linjer",
+      "logLabel": "Serverkonsol",
+      "empty": "Ingen linjer endnu.",
+      "suggestions": "Kommandoforslag",
+      "inputLabel": "Serverkommando",
+      "placeholder": "Skriv en kommando (Tab fuldfører, ↑ historik)",
+      "offline": "Start serveren for at sende kommandoer",
+      "send": "Send",
+      "sendFailed": "Kommandoen kunne ikke sendes",
+      "hint": "Kommandoer køres som serverkonsollen med alle tilladelser. Ingen skråstreg i starten nødvendig."
+    },
+    "players": {
+      "whitelist": "Whitelist",
+      "whitelistHint": "Kun spillere på listen kan deltage. Anbefales, når serveren kan nås fra internettet.",
+      "view": "Vis spillere",
+      "views": {
+        "online": "Online",
+        "all": "Alle",
+        "ops": "Operatører",
+        "whitelist": "På whitelist",
+        "banned": "Udelukket"
+      },
+      "search": "Find en spiller",
+      "emptyOnline": "Ingen er online",
+      "empty": "Ingen spillere her",
+      "stoppedHint": "Start serveren for at se, hvem der spiller.",
+      "online": "Online",
+      "offline": "Offline",
+      "op": "Operatør",
+      "whitelisted": "På whitelist",
+      "banned": "Udelukket",
+      "playtime": "{{duration}} spillet",
+      "kick": "Smid ud",
+      "kickAria": "Smid {{name}} ud",
+      "more": "Flere handlinger for {{name}}",
+      "makeOp": "Gør til operatør",
+      "deop": "Fjern som operatør",
+      "whitelistAdd": "Føj til whitelist",
+      "whitelistRemove": "Fjern fra whitelist",
+      "ban": "Udeluk",
+      "pardon": "Ophæv udelukkelse",
+      "banTitle": "Udeluk {{name}}?",
+      "banBody": "Spilleren afbrydes og kan ikke deltage igen, før du ophæver udelukkelsen.",
+      "reason": "Årsag (valgfri, vises for spilleren)",
+      "failed": "Handlingen fejlede",
+      "done": {
+        "kick": "{{name}} blev smidt ud",
+        "ban": "{{name}} blev udelukket",
+        "pardon": "Udelukkelsen af {{name}} er ophævet",
+        "op": "{{name}} er nu operatør",
+        "deop": "{{name}} er ikke længere operatør",
+        "whitelist_add": "{{name}} er føjet til whitelisten",
+        "whitelist_remove": "{{name}} er fjernet fra whitelisten"
+      }
+    },
+    "config": {
+      "mode": "Redigeringstilstand",
+      "form": "Indstillinger",
+      "raw": "Rå fil",
+      "groups": {
+        "general": "Generelt",
+        "world": "Verden",
+        "players": "Spillere",
+        "network": "Netværk",
+        "performance": "Ydelse"
+      },
+      "keys": {
+        "motd": "Dagens besked",
+        "max-players": "Maksimalt antal spillere",
+        "white-list": "Whitelist",
+        "online-mode": "Onlinetilstand (kontotjek)",
+        "pvp": "Spiller mod spiller",
+        "gamemode": "Standardspiltilstand",
+        "difficulty": "Sværhedsgrad",
+        "level-seed": "Verdens-seed",
+        "spawn-protection": "Radius for spawnbeskyttelse",
+        "server-port": "Port",
+        "enable-rcon": "Fjernkonsol (RCON)",
+        "view-distance": "Synsafstand",
+        "simulation-distance": "Simuleringsafstand"
+      },
+      "restart": "Genstart",
+      "restartNeeded": "Genstart serveren for at anvende nogle ændringer",
+      "unsaved_one": "{{count}} ændring, der ikke er gemt",
+      "unsaved_other": "{{count}} ændringer, der ikke er gemt",
+      "noChanges": "Ingen ændringer",
+      "discard": "Kassér",
+      "saved": "Konfigurationen er gemt",
+      "saveFailed": "Konfigurationen kunne ikke gemmes",
+      "rawTitle": "server.toml",
+      "rawWarning": "Avanceret: en tastefejl kan forhindre serveren i at starte. Værdierne tjekkes, når du gemmer."
+    },
+    "plugins": {
+      "vanillaTitle": "Plugins kræver Rustic Server",
+      "vanillaBody": "Denne server kører vanilla Horizon. Rustic Server tilføjer .rplugin-plugins i sandkasse, der aldrig kan få den til at gå ned. Opret en Rustic Server, og importér denne verden for at bruge plugins.",
+      "createRustic": "Opret en Rustic Server",
+      "intro": "Plugins kører i sandkasse: et plugin, der fejler, deaktiveres med en loglinje, og serveren fortsætter. Hvert plugin angiver, hvad det må tilgå.",
+      "upload": "Tilføj en fil…",
+      "uploadTitle": "Vælg en .rplugin-fil",
+      "find": "Find plugins",
+      "empty": "Ingen plugins endnu",
+      "emptyBody": "Gennemse Indhold › Plugins for at tilføje et med ét klik.",
+      "errored": "Deaktiveret efter en fejl",
+      "disabled": "Slået fra",
+      "noDescription": "Ingen beskrivelse",
+      "toggle": "Aktivér {{name}}",
+      "capabilities": "Adgang",
+      "noNetwork": "Intet netværk",
+      "network": "Netværk: {{domains}}",
+      "fs": {
+        "none": "Ingen filer",
+        "data-folder": "Egen datamappe"
+      },
+      "update": "Opdater til {{version}}",
+      "updated": "{{name}} er opdateret til {{version}}",
+      "installed": "{{name}} er installeret og aktiveret",
+      "removeTitle": "Fjern {{name}}?",
+      "removeBody": "Pluginet fjernes fra hukommelsen, og dets fil slettes. Dets datamappe bevares.",
+      "failed": "Pluginhandlingen fejlede"
+    },
+    "datapacks": {
+      "intro": "Datapakker i verdenen »{{world}}«.",
+      "find": "Find datapakker",
+      "empty": "Ingen datapakker i denne verden",
+      "toggle": "Aktivér {{name}}",
+      "remove": "Fjern {{name}}",
+      "reloadHint": "Ændringer træder i kraft efter /reload eller en genstart.",
+      "failed": "Handlingen med datapakken fejlede"
+    },
+    "backups": {
+      "nowTitle": "Tag backup nu",
+      "nowBody": "En kopi af verdenen og konfigurationen. Serveren kører videre.",
+      "note": "Note",
+      "notePlaceholder": "Valgfri note, f.eks. »før opdateringen«",
+      "now": "Tag backup nu",
+      "created": "Backup oprettet",
+      "empty": "Ingen backups endnu",
+      "kinds": {
+        "manual": "Manuel",
+        "scheduled": "Planlagt",
+        "pre_restore": "Før gendannelse"
+      },
+      "restore": "Gendan",
+      "restoreTitle": "Gendan denne backup?",
+      "restoreBody": "Verdenen går tilbage til {{date}}. Alt, der er bygget siden, erstattes. Der tages først en backup af den nuværende verden.",
+      "restored": "Backup gendannet",
+      "delete": "Slet backup",
+      "deleteTitle": "Slet denne backup?",
+      "deleteBody": "Denne backup fjernes for altid.",
+      "failed": "Handlingen med backuppen fejlede",
+      "scheduleTitle": "Automatiske backups",
+      "scheduleBody": "De ældste automatiske backups fjernes, når grænsen er nået.",
+      "scheduleEnabled": "Tag backup automatisk",
+      "every": "Hver",
+      "hours_one": "{{count}} time",
+      "hours_other": "{{count}} timer",
+      "keep": "Behold",
+      "keepCount_one": "den seneste {{count}} backup",
+      "keepCount_other": "de seneste {{count}} backups",
+      "scheduleSaved": "Backupplanen er gemt"
+    },
+    "danger": {
+      "deleteTitle": "Slet denne server",
+      "deleteBody": "Stopper serveren og fjerner den fra launcheren. Du kan beholde dens filer.",
+      "delete": "Slet server",
+      "removeVpsTitle": "Fjern fra din VPS",
+      "removeVpsBody": "Stopper tjenesten på {{host}} og afinstallerer Rustic derfra. Din VPS forbliver din.",
+      "removeVps": "Fjern fra VPS",
+      "confirmTitle": "Slet »{{name}}«?",
+      "confirmBody": "Det kan ikke fortrydes. Tag en backup først, hvis du kan få brug for verdenen igen.",
+      "deleteFiles": "Slet også verdenen og alle serverfiler",
+      "typeName": "Skriv »{{name}}« for at bekræfte",
+      "deleted": "{{name}} er slettet",
+      "failed": "Serveren kunne ikke slettes"
+    }
+  },
+  "access": {
+    "intro": "Vælg, hvordan venner når din server. Du kan slå flere til på én gang.",
+    "optional": "Valgfri",
+    "lan": {
+      "title": "På dit netværk",
+      "body": "Spillere på samme wi-fi eller netværk deltager med denne adresse.",
+      "copy": "Kopiér den lokale adresse"
+    },
+    "public": {
+      "title": "Offentlig adresse",
+      "body": "Din VPS' IP og port. Alle kan deltage med den; et domæne er nemmere at dele.",
+      "copy": "Kopiér den offentlige adresse"
+    },
+    "relay": {
+      "title": "Midlertidig adresse",
+      "body": "En gratis adresse på Rustic Relay, mens serveren kører. Ingen routeropsætning, og din IP forbliver skjult.",
+      "toggle": "Midlertidig adresse",
+      "copy": "Kopiér den midlertidige adresse",
+      "off": "Slået fra. Slå den til for at få en adresse, du kan dele.",
+      "label": "Navn i adressen",
+      "apply": "Anvend",
+      "status": {
+        "off": "Slået fra",
+        "connecting": "Venter på, at serveren starter",
+        "online": "Kan nås nu",
+        "error": "Relay kan ikke nås"
+      },
+      "failed": "Den midlertidige adresse kunne ikke ændres",
+      "taken": "Dette navn er taget. Prøv et andet.",
+      "invalid": "Brug 3 til 32 små bogstaver, tal eller bindestreger."
+    },
+    "invite": {
+      "title": "Invitationskode",
+      "body": "Venner, der bruger Rustic Launcher, indsætter denne kode for at deltage, ligesom Horizons Spil med venner.",
+      "create": "Opret en kode",
+      "copy": "Kopiér invitationskoden",
+      "expires": "Udløber {{when}}",
+      "revoke": "Tilbagekald"
+    },
+    "advanced": "Avanceret: åbn en port på din router (UPnP)",
+    "upnp": {
+      "title": "UPnP-portviderestilling",
+      "warning": "Dette beder din router om at åbne serverens port mod internettet. Din offentlige IP-adresse bliver synlig for alle spillere, hvilket udsætter din hjemmeforbindelse (angreb, placering). Brug hellere den midlertidige adresse eller et domæne.",
+      "status": {
+        "off": "Slået fra",
+        "mapping": "Spørger routeren…",
+        "mapped": "Port åben",
+        "failed": "Routeren afviste (UPnP er måske slået fra)"
+      },
+      "mapped": "Port åben: {{address}}",
+      "copy": "Kopiér den offentlige adresse",
+      "failed": "Porten kunne ikke åbnes",
+      "prefer": "Den midlertidige adresse og domæner virker uden at åbne nogen port."
+    }
+  },
+  "domains": {
+    "title": "Mit eget domæne",
+    "intro": "Et domæne er din servers adresse, f.eks. play.ditnavn.net. Du kan forbinde et, du allerede har, købe et hos Porkbun uden at forlade launcheren eller bruge en hvilken som helst registrator: vi viser dig præcis, hvad du skal tilføje.",
+    "automatic": "Automatisk",
+    "anyRegistrar": "Enhver registrator",
+    "otherPaths": "Andre måder",
+    "paths": {
+      "porkbun": {
+        "title": "Forbind Porkbun",
+        "body": "Har du allerede et domæne hos Porkbun? Forbind din konto, så opretter vi posterne for dig."
+      },
+      "buy": {
+        "title": "Køb et domæne hos Porkbun",
+        "body": "Find et ledigt navn, køb det på din egen Porkbun-konto, så sættes det automatisk op."
+      },
+      "manual": {
+        "title": "Brug et domæne fra en hvilken som helst registrator",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: vi viser, hvad der skal tilføjes, og tjekker det for dig."
+      }
+    },
+    "subdomain": "Subdomæne",
+    "subdomainHint": "play er et godt standardvalg.",
+    "apexHint": "Tom: selve domænet (kræver ALIAS/ANAME hos nogle registratorer).",
+    "invalidSubdomain": "Kun bogstaver, tal og bindestreger.",
+    "invalidDomain": "Det ligner ikke et domæne (example.net).",
+    "copyAddress": "Kopiér domæneadressen",
+    "configureFailed": "Domænet kunne ikke konfigureres",
+    "boundBody": "Spillere deltager med denne adresse.",
+    "remove": "Fjern domæne",
+    "removeTitle": "Stop med at bruge {{domain}}?",
+    "removeBody": "Adressen holder op med at pege på denne server, når posterne er fjernet. Domænet forbliver dit.",
+    "status": {
+      "pending": "Afventer",
+      "propagating": "Udbredes",
+      "verified": "Forbundet",
+      "error": "Fejl"
+    },
+    "provider": {
+      "porkbun": "Administreres via Porkbun",
+      "manual": "Administreres hos din registrator"
+    },
+    "connected": "Domænet er forbundet",
+    "connectedBody": "Rustic Cloud bekræfter TXT-posten, og så begynder din adresse at virke. Du kan lukke dette; vi giver dig besked.",
+    "porkbun": {
+      "step1": "På porkbun.com › Account › API Access skal du oprette en API-nøgle.",
+      "openApi": "Åbn Porkbun API Access",
+      "step2": "Slå »API Access« til på domænets side hos Porkbun.",
+      "apiKey": "API-nøgle",
+      "secret": "Hemmelig API-nøgle",
+      "keychain": "Gemt i din computers nøglering, sendes aldrig til Rustic.",
+      "connect": "Forbind",
+      "badApiKey": "En API-nøgle starter med pk1_.",
+      "badSecret": "En hemmelig API-nøgle starter med sk1_.",
+      "rejected": "Porkbun afviste disse nøgler. Tjek dem, eller opret et nyt par.",
+      "connected": "Porkbun er forbundet",
+      "disconnect": "Afbryd forbindelsen",
+      "domain": "Domæne",
+      "pickDomain": "Vælg et af dine domæner",
+      "apiAccessOff": "API Access er slået fra for dette domæne hos Porkbun",
+      "apiAccessHint": "Nedtonede domæner kræver, at »API Access« er slået til hos Porkbun.",
+      "preview": "Ændringer, vi foretager",
+      "dryRun": "Forhåndsvis",
+      "previewBody": "Disse poster tilføjes eller erstattes på dit domæne, så {{fqdn}} når denne server. Intet ændres, før du anvender dem.",
+      "apply": "Konfigurer automatisk"
+    },
+    "buy": {
+      "intro": "Domænet registreres på din egen Porkbun-konto og betales der. Rustic tager aldrig imod betaling for det.",
+      "needsAccount": "Køb kræver din Porkbun-konto: forbind den først (du kan oprette en gratis på porkbun.com).",
+      "search": "Ønsket navn",
+      "searchPlaceholder": "f.eks. loucraft",
+      "searchButton": "Søg",
+      "noResults": "Ingen resultater for dette navn.",
+      "premium": "Premium",
+      "price": "{{price}} første år · fornyes til {{renewal}}",
+      "taken": "Taget",
+      "select": "Vælg",
+      "overLimit": "Over 100 $: køb det på porkbun.com",
+      "pricesNote": "Priserne er Porkbuns, i amerikanske dollar, som de er oplyst nu. Der kan komme skat på hos Porkbun.",
+      "confirmTitle": "Bekræft køb hos Porkbun",
+      "seller": "Sælger: Porkbun LLC, ikke Rustic. Deres vilkår, priser, fornyelser og refusioner gælder.",
+      "domain": "Domæne",
+      "address": "Serveradresse",
+      "registrar": "Registrator",
+      "registrarValue": "Porkbun, på din konto",
+      "firstYear": "Første år",
+      "renewal": "Fornyes årligt til",
+      "payment": "Betales med kredit på din Porkbun-konto eller et gemt kort: {{price}} nu; fornyes årligt til {{renewal}}, medmindre du slår automatisk fornyelse fra hos Porkbun.",
+      "agreeTerms": "Jeg accepterer Porkbuns registreringsaftale og vilkår",
+      "termsLink": "(læs dem)",
+      "agreeOrder": "Jeg forstår, at Rustic kun sender denne ordre til Porkbun på mine vegne",
+      "refunds": "Refusion og annullering af domæner håndteres af Porkbun efter deres vilkår.",
+      "buyButton": "Køb hos Porkbun · {{price}}",
+      "bought": "{{domain}} er dit",
+      "boughtBody": "Opkrævet af Porkbun: {{price}}. Sætter det op nu…",
+      "configuring": "Konfigurerer dit nye domæne…",
+      "failed": "Købet gik ikke igennem",
+      "errors": {
+        "price_changed": "Prisen er ændret hos Porkbun. Tjek den nye pris, og prøv igen.",
+        "not_available": "Dette domæne er lige blevet taget.",
+        "over_limit": "Over 100 $: køb det på porkbun.com.",
+        "porkbun_not_connected": "Forbind først din Porkbun-konto.",
+        "consent_required": "Begge felter skal være markeret."
+      }
+    },
+    "manual": {
+      "intro": "Tilføj disse poster i din registrators DNS-zone. Vi tjekker dem hvert 10. sekund og giver besked, når det virker.",
+      "domain": "Dit domæne",
+      "registrar": "Registrator",
+      "show": "Vis posterne",
+      "guideTitle": "Hos {{registrar}}",
+      "allGuides": "Vejledninger til alle registratorer"
+    },
+    "records": {
+      "caption": "DNS-poster, der skal tilføjes",
+      "type": "Type",
+      "name": "Navn / vært",
+      "value": "Værdi / mål",
+      "ttl": "TTL",
+      "status": "Status",
+      "optional": "valgfri",
+      "emptyHost": "(lad stå tomt)",
+      "copyName": "Kopiér {{type}}-navnet",
+      "copyValue": "Kopiér {{type}}-værdien",
+      "srvFields": "prioritet {{priority}} · vægt {{weight}} · port {{port}}"
+    },
+    "check": {
+      "pending": "Ikke tjekket",
+      "notNeeded": "Ikke nødvendig",
+      "ok": "OK",
+      "propagating": "Udbredes ({{ok}}/{{total}})",
+      "wrong": "Forkert værdi",
+      "found": "Fundet:",
+      "expected": "Forventet:",
+      "missing": "Mangler",
+      "first": "Første tjek…",
+      "progress": "{{ok}} af {{total}} poster OK",
+      "progressLabel": "Poster bekræftet",
+      "auto": "Tjekker automatisk hvert 10. sekund",
+      "lastCheck": "seneste tjek for {{seconds}} s siden",
+      "now": "Tjek nu"
+    },
+    "help": {
+      "txt": "Hvorfor en TXT-post? Den beviser, at domænet er dit, så ingen andre kan pege det mod deres server.",
+      "propagation": "Ændringer kan tage fra et minut til et par timer om at nå ud til alle. Vi bliver ved med at tjekke; du behøver ikke blive her.",
+      "apex": "Roddomæner (ditnavn.net uden »play.«) kræver en ALIAS/ANAME-post; ikke alle registratorer har en. Et subdomæne virker altid."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › dit domæne › DNS zone.\nKlik på »Add an entry«, og vælg typen (CNAME, SRV, A eller TXT).\nSub-domain = Navn nedenfor (tomt for selve domænet), Target = Værdi.\nGentag for hver post, og bekræft. OVH anvender ændringerne inden for få minutter."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › dit domæne › DNS records.\nKlik på »Add record«, og vælg typen.\nName = Navn nedenfor, Value = Værdi (behold det afsluttende punktum for CNAME/SRV-mål).\nGem hver post."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nUnder Host records: »Add new record«.\nHost = Navn nedenfor (@ for selve domænet), Value/Target = Værdi.\nKlik på det grønne flueben for at gemme hver post."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › dit domæne › DNS › Manage DNS.\nKlik på »Add new record«, og vælg typen.\nName = Navn nedenfor (@ for selve domænet), Value = Værdi.\nFor SRV: udfyld Service _minecraft, Protocol _tcp og derefter prioritet, vægt og port. Gem."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Vælg dit websted › DNS › Records › Add record.\nVælg typen, Name = Navn nedenfor, Target/Content = Værdi.\nSæt Proxy status til »DNS only« (grå sky): spiltrafikken kan ikke gå gennem Cloudflares proxy.\nGem hver post."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › dit domæne › DNS.\nKlik på »Add record«, og vælg typen.\nHost name = Navn nedenfor, Points to / Value = Værdi.\nGem; IONOS beder dig måske bekræfte, at en standardpost erstattes."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › dit domæne › DNS / Nameservers.\nUnder »Manage DNS records« vælger du typen.\nName = Navn nedenfor, Points to / Value = Værdi, TTL som vist.\nKlik på »Add record« for hver post."
+      },
+      "porkbun": {
+        "name": "Porkbun (manuelt)",
+        "steps": "Domain Management › dit domæne › DNS.\nVælg typen, Host = Navn nedenfor (tomt for selve domænet), Answer = Værdi.\nKlik på »Add« for hver post.\nTip: Forbind Porkbun klarer alt dette for dig."
+      },
+      "generic": {
+        "name": "Anden registrator",
+        "steps": "Åbn dit domænes DNS-zone (kaldes nogle gange DNS-poster eller zoneeditor).\nTilføj hver post nedenfor med samme type, navn og værdi.\nHvis din registrator beder om det fulde navn, så tilføj dit domæne efter Navn.\nGem, og kom tilbage: vi tjekker automatisk."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Servervisninger",
+    "tabs": {
+      "discover": "Opdag",
+      "browse": "Gennemse"
+    },
+    "searchLabel": "Søg efter servere",
+    "searchPlaceholder": "Søg i serveroversigten…",
+    "publish": "Udgiv min server",
+    "publishCta": {
+      "title": "Din server her",
+      "hint": "Opfør din Horizon-server i oversigten fra hjemmesiden: den vises her og på rustic-launcher.com, når de automatiske tjek er bestået."
+    },
+    "play": "Spil",
+    "playAria": "Spil på {{name}}",
+    "view": "Vis",
+    "verified": "Bekræftet",
+    "featured": "Holdets valg",
+    "verifiedHint": "Bekræftede servere: Rustic-holdet har tjekket ejeren og reglerne.",
+    "online_one": "{{value}} online",
+    "online_other": "{{value}} online",
+    "playersLabel": "Spillere online",
+    "languagesLabel": "Sprog",
+    "playsLabel": "Starter denne uge",
+    "lastPlayed": "Senest spillet",
+    "lastPlayedOn": "Spillet {{when}}",
+    "hero": {
+      "label": "Udvalgte servere",
+      "eyebrow": "Bekræftet"
+    },
+    "rows": {
+      "trending": "Populært nu",
+      "trendingHint": "Startet mest fra Rustic denne uge",
+      "players": "Flest spillere nu",
+      "playersHint": "Fra skyens seneste tjek",
+      "new": "Nyt i oversigten",
+      "newHint": "Lige opført af deres ejere",
+      "recent": "Spillet for nylig",
+      "recentHint": "Fra din serverliste"
+    },
+    "rowError": "Denne række kunne ikke indlæses.",
+    "retry": "Prøv igen",
+    "empty": {
+      "title": "Ingen servere opført endnu",
+      "hint": "Vær den første: udgiv din server fra hjemmesiden."
+    },
+    "emptySearch": {
+      "title": "Ingen server passer",
+      "hint": "Prøv andre ord eller færre filtre."
+    },
+    "sorts": {
+      "trending": "Populært nu",
+      "players": "Flest spillere",
+      "new": "Nyeste",
+      "name": "Navn"
+    },
+    "filters": {
+      "tags": "Spilstil",
+      "language": "Sprog",
+      "engine": "Motor",
+      "rustic": "Rustic",
+      "verifiedOnly": "Kun bekræftede",
+      "reset": "Nulstil filtrene",
+      "remove": "Fjern filteret {{filter}}"
+    },
+    "tags": {
+      "survival": "Survival",
+      "smp": "SMP",
+      "creative": "Kreativ",
+      "minigames": "Minispil",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Rollespil",
+      "factions": "Factions",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Eventyr",
+      "building": "Byggeri",
+      "economy": "Økonomi",
+      "modded": "Moddet",
+      "anarchy": "Anarki",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Servere",
+      "status": "Live-status",
+      "cloudSaw_one": "skyen så {{value}} spiller online {{when}}",
+      "cloudSaw_other": "skyen så {{value}} spillere online {{when}}",
+      "engine": "Motor",
+      "version": "Spilversion",
+      "languages": "Sprog",
+      "plays": "Starter denne uge",
+      "about": "Om",
+      "noDescription": "Ingen beskrivelse endnu.",
+      "address": "Adresse",
+      "copy": "Kopiér",
+      "openSite": "Åbn på hjemmesiden",
+      "website": "Hjemmeside",
+      "discord": "Discord",
+      "by": "Opført af {{name}}",
+      "byStaff": "Opført af Rustic-holdet",
+      "report": "Anmeld",
+      "rusticEdition": "Kræver Rustic-udgaven",
+      "missing": "Denne server er ikke tilgængelig",
+      "missingHint": "Den kan være privat, skjult af moderering eller slettet."
+    },
+    "report": {
+      "title": "Anmeld {{name}}",
+      "lead": "Fortæl moderatorerne, hvad der er galt. Alle anmeldelser gennemgås.",
+      "reason": "Årsag",
+      "reasons": {
+        "impersonation": "Udgiver sig for at være en anden server",
+        "spam": "Spam eller vildledende",
+        "inappropriate_content": "Upassende indhold",
+        "cheating": "Snyd eller ondsindet server",
+        "harassment": "Chikane",
+        "copyright": "Krænker mine rettigheder (varemærke, navn)",
+        "malware": "Malware",
+        "other": "Andet"
+      },
+      "details": "Detaljer",
+      "detailsHint": "Valgfrit, højst 2.000 tegn.",
+      "send": "Send anmeldelsen",
+      "sent": "Tak, din anmeldelse er sendt til moderatorerne.",
+      "signIn": "Log ind på din Rustic-konto for at anmelde en server.",
+      "failed": "Anmeldelsen kunne ikke sendes."
+    }
+  }
+}

@@ -263,4 +263,10 @@ export const PRIMARY: Record<string, string> = {
   id: 'id_id',
   vi: 'vi_vn',
   th: 'th_th',
+  da: 'da_dk',
+  fi: 'fi_fi',
+  el: 'el_gr',
+  ar: 'ar_sa',
+  he: 'he_il',
+  hi: 'hi_in',
 };

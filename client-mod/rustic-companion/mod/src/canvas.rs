@@ -637,22 +637,30 @@ fn layout(text: &str, px: f32, weight: Weight) -> (Vec<LaidGlyph>, f32) {
 }
 
 /// Laid-out lines of the shaped scripts, kept (they are shaped once, not every frame).
-type Shaped = HashMap<(String, u32, Weight), (Vec<LaidGlyph>, f32)>;
+type Shaped = HashMap<(String, u32, Weight, bool), (Vec<LaidGlyph>, f32)>;
 static SHAPED: LazyLock<Mutex<Shaped>> = LazyLock::new(|| Mutex::new(HashMap::new()));
 
 /// [`layout`] of a line with a script that needs shaping: the Unicode bidirectional algorithm
 /// orders its runs (right-to-left ones drawn from the right), each run of a shaped script goes
 /// through rustybuzz in its system font (joining forms, conjuncts, reordered vowels, marks on
-/// their anchors), the rest as [`simple_layout`] does.
+/// their anchors), the rest as [`simple_layout`] does. When the game's language is written right
+/// to left (Arabic, Hebrew: `ClientLanguage.defaultRightToLeft`), a line's base direction is
+/// right to left, so a line of Rustic's Arabic texts that starts with a number, a name or a Latin
+/// word keeps its order (launcher ADR 0174).
 fn shaped_layout(text: &str, px: f32, weight: Weight) -> (Vec<LaidGlyph>, f32) {
-    let key = (text.to_owned(), px.to_bits(), weight);
+    shaped_layout_in(text, px, weight, horizon_client::lang::bidirectional())
+}
+
+fn shaped_layout_in(text: &str, px: f32, weight: Weight, rtl_page: bool) -> (Vec<LaidGlyph>, f32) {
+    let key = (text.to_owned(), px.to_bits(), weight, rtl_page);
     if let Some(hit) = SHAPED.lock().unwrap_or_else(|e| e.into_inner()).get(&key) {
         return hit.clone();
     }
     let mut out = Vec::new();
     let mut pen = 0.0f32;
     let mut regions = None;
-    let bidi = unicode_bidi::BidiInfo::new(text, None);
+    let base = rtl_page.then(unicode_bidi::Level::rtl);
+    let bidi = unicode_bidi::BidiInfo::new(text, base);
     for para in &bidi.paragraphs {
         let (levels, runs) = bidi.visual_runs(para, para.range.clone());
         for run in runs {
@@ -1554,6 +1562,139 @@ mod tests {
         let f = face_font(glyphs[0].face).expect("font");
         assert_eq!(glyphs[1].id, f.glyph_id('ע'));
         assert!(glyphs[1].pen > glyphs[0].pen);
+    }
+
+    /// Rustic's Arabic, Hebrew and Hindi texts (batch 2c): every glyph a real one after shaping.
+    #[test]
+    fn the_right_to_left_and_indic_tables_shape_to_real_glyphs() {
+        for (script, table) in [
+            (Script::Arabic, include_str!("../../core/i18n/ar.json")),
+            (Script::Hebrew, include_str!("../../core/i18n/he.json")),
+            (Script::Devanagari, include_str!("../../core/i18n/hi.json")),
+        ] {
+            if script_font(script).is_none() {
+                assert!(
+                    std::env::var_os("WINDIR").is_none(),
+                    "no {script:?} font on Windows"
+                );
+                println!("no system font for {script:?} here: skipped");
+                continue;
+            }
+            let json: serde_json::Value = serde_json::from_str(table).expect("table");
+            let texts = json["texts"].as_object().expect("texts");
+            for (key, text) in texts {
+                let text = text.as_str().expect("text").replace("{n}", "12");
+                let (glyphs, width) = layout(&text, 24.0, Weight::Medium);
+                assert!(width > 0.0, "{script:?} {key}");
+                assert!(
+                    glyphs.iter().all(|g| g.id.0 != 0),
+                    "{script:?} {key}: .notdef after shaping in {text}"
+                );
+            }
+        }
+    }
+
+    #[test]
+    fn arabic_letters_join_and_lam_alef_is_one_glyph() {
+        let Some(sf) = script_font(Script::Arabic) else {
+            return;
+        };
+        let isolated = sf.font.glyph_id('ب');
+        // Three beh in a row: initial, medial and final forms, none of them the isolated one.
+        let (word, _) = layout("ببب", 24.0, Weight::Medium);
+        assert_eq!(word.len(), 3);
+        assert!(word.iter().all(|g| g.id != isolated), "{word:?}");
+        // Drawn from the right: visual order is the reverse of the logical one, so the initial
+        // form (first letter) is the right-most glyph and differs from the final (left-most).
+        assert!(word[0].pen < word[2].pen);
+        assert_ne!(word[0].id, word[2].id);
+        // Lam then alef make the lam-alef ligature: one glyph in most fonts, two special forms in
+        // others (Segoe UI); never the plain isolated letters.
+        let (la, _) = layout("لا", 24.0, Weight::Medium);
+        let (lam, alef) = (sf.font.glyph_id('ل'), sf.font.glyph_id('ا'));
+        assert!(!la.is_empty() && la.len() <= 2, "{la:?}");
+        assert!(la.iter().all(|g| g.id != lam && g.id != alef), "{la:?}");
+    }
+
+    #[test]
+    fn a_right_to_left_page_puts_a_leading_latin_word_on_the_right() {
+        if script_font(Script::Arabic).is_none() {
+            return;
+        }
+        let latin_on_the_right = |rtl_page: bool| {
+            let (glyphs, _) = shaped_layout_in("Rustic متصل", 24.0, Weight::Medium, rtl_page);
+            let latin = glyphs
+                .iter()
+                .filter(|g| matches!(g.face, Face::Inter(_)))
+                .map(|g| g.pen)
+                .fold(f32::MIN, f32::max);
+            let arabic = glyphs
+                .iter()
+                .filter(|g| matches!(g.face, Face::Script(Script::Arabic)))
+                .map(|g| g.pen)
+                .fold(f32::MIN, f32::max);
+            latin > arabic
+        };
+        // Left to right (an English game), the Latin word comes first, on the left; in an Arabic
+        // or Hebrew game the line starts at the right.
+        assert!(!latin_on_the_right(false));
+        assert!(latin_on_the_right(true));
+    }
+
+    #[test]
+    fn devanagari_vowel_signs_and_conjuncts_are_shaped() {
+        let Some(sf) = script_font(Script::Devanagari) else {
+            assert!(
+                std::env::var_os("WINDIR").is_none(),
+                "no Devanagari font on Windows"
+            );
+            return;
+        };
+        let ka = sf.font.glyph_id('क');
+        // कि: the i-matra is typed after its consonant and drawn before it.
+        let (ki, _) = layout("कि", 24.0, Weight::Medium);
+        assert_eq!(ki.len(), 2, "{ki:?}");
+        assert_eq!(ki[1].id, ka);
+        assert_ne!(ki[0].id, ka);
+        assert!(ki[0].pen < ki[1].pen);
+        // क्ष (ka, virama, ssa): a conjunct, fewer glyphs than characters.
+        let (ksha, _) = layout("क्ष", 24.0, Weight::Medium);
+        assert!(ksha.len() < 3, "{ksha:?}");
+        // स्टोर: the half form of sa joins ta, no visible virama glyph left.
+        let virama = sf.font.glyph_id('\u{094D}');
+        let (store, _) = layout("स्टोर", 24.0, Weight::Medium);
+        assert!(store.iter().all(|g| g.id != virama), "{store:?}");
+    }
+
+    /// Writes sample lines as PNGs to look at (`RUSTIC_TEXT_DIR=<folder>`); asserts they have ink.
+    #[test]
+    fn right_to_left_and_indic_samples_render() {
+        let samples = [
+            ("arabic", "تحميل الخوادم… أضف إلى القائمة 12 متصل"),
+            ("hebrew", "טוען שרתים… הוספה לרשימה 12 מחוברים"),
+            ("hindi", "सर्वर लोड हो रहे हैं… सूची में जोड़ें क्षमा कि स्टोर"),
+            ("greek", "Φόρτωση διακομιστών… Προσθήκη στη λίστα"),
+        ];
+        for (name, text) in samples {
+            if text
+                .chars()
+                .find_map(Script::of)
+                .is_some_and(|s| script_font(s).is_none())
+            {
+                continue;
+            }
+            let line = render_line(text, 40.0);
+            assert!(line.pixels.chunks(4).any(|p| p[0] > 200), "{name}");
+            if let Some(dir) = std::env::var_os("RUSTIC_TEXT_DIR") {
+                let path = std::path::Path::new(&dir).join(format!("ingame-{name}.png"));
+                let file = std::fs::File::create(path).expect("png file");
+                let mut enc = png::Encoder::new(file, line.width, line.height);
+                enc.set_color(png::ColorType::Rgba);
+                enc.set_depth(png::BitDepth::Eight);
+                let mut w = enc.write_header().expect("png header");
+                w.write_image_data(&line.pixels).expect("png data");
+            }
+        }
     }
 
     #[test]

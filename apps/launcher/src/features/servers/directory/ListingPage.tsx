@@ -337,7 +337,7 @@ export function ListingPage() {
             <span className="text-fg-subtle text-xs font-semibold tracking-wider uppercase">
               {t('directory.page.address')}
             </span>
-            <div className="bg-surface-2 flex items-center gap-2 rounded-lg py-1.5 pr-1.5 pl-3">
+            <div className="bg-surface-2 flex items-center gap-2 rounded-lg py-1.5 ps-3 pe-1.5">
               <code
                 className="min-w-0 flex-1 truncate font-mono text-sm"
                 data-testid="listing-address"

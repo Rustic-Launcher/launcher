@@ -59,8 +59,12 @@ pub struct AppState {
     pub updates: crate::update::Updates,
     /// Play sessions reported for the Rustic profile's statistics (ADR 0168).
     pub play_stats: crate::play_stats::PlayStats,
+    /// The Discord presence's own pictures, sent to Rustic's CDN (ADR 0173).
+    pub presence_icons: crate::presence_icons::PresenceIcons,
     /// Settings › Privacy › "Share play statistics", read by the reporter's task.
     pub play_stats_enabled: Arc<std::sync::atomic::AtomicBool>,
+    /// The Java Edition launcher and the Bedrock panel (ADR 0172).
+    pub java: Arc<crate::cmd::java::JavaLauncher>,
 }
 
 /// What the launcher shows of a VPS server (the registry keeps only its reference).
@@ -210,15 +214,24 @@ impl AppState {
                 Arc::new(move || on.load(std::sync::atomic::Ordering::Relaxed)),
             )
         };
+        let presence_icons = crate::presence_icons::PresenceIcons::start(
+            cloud.clone(),
+            rustic.clone(),
+            discord.clone(),
+            paths.config_dir().join("presence-icons.json"),
+        );
         let updates = crate::update::Updates::new(
             paths.config_dir(),
             &app.package_info().version.to_string(),
             settings.launcher.auto_update,
         );
+        let java = Arc::new(crate::cmd::java::JavaLauncher::new(&paths, http.clone()));
         Ok(Self {
+            java,
             updates,
             discord,
             play_stats,
+            presence_icons,
             play_stats_enabled,
             skins: Default::default(),
             http: http.clone(),

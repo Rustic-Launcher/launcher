@@ -13,7 +13,8 @@
     "appearance": "外観",
     "privacy": "プライバシーとデータ",
     "parental": "ペアレンタルコントロール",
-    "about": "情報と法的事項"
+    "about": "情報と法的事項",
+    "voice": "ボイス"
   },
   "accounts": {
     "active": "使用中",
@@ -95,7 +96,8 @@
       "description": "フレンド、ロッカー、購入、サーバーのためのあなたの Rustic ID。",
       "signedOut": "ログインしていません。なくてもゲームは動作しますが、ソーシャル機能、ロッカー、ストアにはログインが必要です。",
       "signIn": "ログインまたはアカウントを作成",
-      "licenceNote": "Rustic アカウントはプラットフォーム上の ID です。ゲームライセンスの代わりにはならないため、ゲームを所有する Microsoft アカウントが引き続き必要です。"
+      "licenceNote": "Rustic アカウントはプラットフォーム上の ID です。ゲームライセンスの代わりにはならないため、ゲームを所有する Microsoft アカウントが引き続き必要です。",
+      "manageOnWeb": "サイトで管理"
     },
     "offline": {
       "title": "オフラインプレイ",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "ブラウザーでログインを完了してください。ランチャーが自動でセッションを引き継ぎます。"
   },
   "heading": "あなたの*設定*",
-  "eyebrow": "ランチャー"
+  "eyebrow": "ランチャー",
+  "voice": {
+    "devices": "デバイス",
+    "devicesHint": "ボイスで使うマイクとスピーカーまたはヘッドセット。",
+    "input": "マイク",
+    "output": "出力",
+    "outputVolume": "出力音量",
+    "systemDefault": "システムの既定",
+    "deviceN": "デバイス {{n}}",
+    "talk": "発言",
+    "talkHint": "声を検出したときに話すか、キーを押している間だけ話します。",
+    "mode": "入力モード",
+    "modeVad": "音声検出",
+    "modePtt": "プッシュトゥトーク",
+    "pttKey": "プッシュトゥトークのキー",
+    "pttKeyHint": "ランチャーでもゲーム内でも使えます。マウスのサイドボタンも使えます。",
+    "pressKey": "キーを押してください…",
+    "sensitivity": "感度",
+    "sensitivityHint": "高いほど小さな声も拾い、低いほど周囲の雑音を無視します。",
+    "test": "マイクテスト",
+    "testMic": "テスト",
+    "stopTest": "停止",
+    "level": "マイクのレベル",
+    "micDenied": "マイクへのアクセスが拒否されました。システムのプライバシー設定で許可してから、もう一度お試しください。",
+    "micMissing": "マイクが見つかりません。",
+    "noiseSuppression": "ノイズ抑制",
+    "echoCancellation": "エコーキャンセル",
+    "autoGain": "自動ゲイン",
+    "inGame": "ゲーム内",
+    "inGameHint": "Rustic エディションでは、誰が話しているかをオーバーレイで表示し、プッシュトゥトークのキーがゲーム内でも使えます。",
+    "overlay": "ゲーム内にボイスのオーバーレイを表示",
+    "serverVoice": "サーバーの近接ボイス",
+    "serverVoiceHint": "Rustic Server では、そこにいる全プレイヤーと距離に応じたボイスを使える場合があります。18歳未満は保護者の許可が必要です。",
+    "serverAsk": "確認する",
+    "serverAuto": "自動で参加",
+    "serverOff": "参加しない",
+    "servers": {
+      "title": "あなたのサーバーの近接ボイス",
+      "description": "サーバーを追加し、そのキーを proximity-voice プラグインの config.toml に入れてください。いつでもオフにできます。",
+      "namePlaceholder": "サーバー名",
+      "add": "追加",
+      "status": "オンラインのプレイヤー: {{count}}",
+      "enabled": "{{name}}の近接ボイス",
+      "newKey": "新しいキー",
+      "remove": "{{name}}を削除",
+      "keyOnce": "このキーを今コピーしてください。表示されるのは一度だけです。新しいキーを作ると置き換わります。",
+      "tooMany": "追加できるサーバーは10個までです。"
+    }
+  }
 }

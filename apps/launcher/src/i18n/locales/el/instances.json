@@ -1,0 +1,341 @@
+{
+  "title": "Εκδόσεις",
+  "errors": {
+    "action": "Αυτό δεν λειτούργησε"
+  },
+  "card": {
+    "more": "Περισσότερες ενέργειες για: {{name}}",
+    "pin": "Καρφίτσωμα",
+    "unpin": "Ξεκαρφίτσωμα",
+    "duplicate": "Δημιουργία αντιγράφου",
+    "duplicated": "Δημιουργήθηκε: {{name}}",
+    "playtime": "Χρόνος παιχνιδιού",
+    "never": "Ποτέ",
+    "fromModpack": "Modpack {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Εκτελείται",
+    "installing": "Εγκατάσταση",
+    "broken": "Χρειάζεται επιδιόρθωση"
+  },
+  "delete": {
+    "title": "Διαγραφή του {{name}};",
+    "body": "Τα mods, οι ρυθμίσεις και οι κόσμοι του διαγράφονται από αυτόν τον υπολογιστή. Αυτό δεν αναιρείται.",
+    "confirm": "Διαγραφή στιγμιότυπου",
+    "done": "Διαγράφηκε: {{name}}"
+  },
+  "new": {
+    "title": "Νέο στιγμιότυπο",
+    "description": "Ξεκίνα από την αρχή ή φέρε ένα υπάρχον πακέτο.",
+    "tabs": {
+      "create": "Δημιουργία",
+      "import": "Εισαγωγή"
+    },
+    "name": "Όνομα",
+    "namePlaceholder": "Ο κόσμος επιβίωσής μου",
+    "nameRequired": "Δώσε ένα όνομα στο στιγμιότυπο.",
+    "icon": "Εικονίδιο",
+    "color": "Χρώμα",
+    "colorN": "Χρώμα {{n}}",
+    "version": "Build του Horizon",
+    "versionHint": "Η έκδοση Rustic προσθέτει διακοσμητικά και φίλους στο παιχνίδι. Δεν χρειάζονται ρυθμίσεις Java ή RAM.",
+    "recommended": "Προτείνεται",
+    "release": "Σταθερή",
+    "nightly": "Nightly",
+    "installed": "Εγκατεστημένο",
+    "submit": "Δημιουργία στιγμιότυπου",
+    "created": "Το {{name}} είναι έτοιμο",
+    "preview": "Προεπισκόπηση",
+    "edition": "Έκδοση",
+    "editionRustic": "Διακοσμητικά, φίλοι και εγγενή mods στο παιχνίδι.",
+    "editionHorizon": "Το Horizon όπως το δημοσιεύει η ομάδα του, χωρίς προσθήκες.",
+    "noBuild": "Δεν υπάρχει διαθέσιμο build αυτής της έκδοσης αυτή τη στιγμή.",
+    "nightlyHint": "Τα Nightly builds βγαίνουν κάθε μέρα από τον πιο πρόσφατο κώδικα του Horizon: πιο νέα, λιγότερο δοκιμασμένα."
+  },
+  "icons": {
+    "grass": "Βλαστάρι",
+    "sword": "Σπαθιά",
+    "pickaxe": "Αξίνα",
+    "castle": "Κάστρο",
+    "rocket": "Πύραυλος",
+    "gem": "Πολύτιμος λίθος",
+    "flame": "Φλόγα",
+    "leaf": "Φύλλο",
+    "star": "Αστέρι",
+    "compass": "Πυξίδα"
+  },
+  "import": {
+    "folder": {
+      "title": "Φάκελος στιγμιότυπου",
+      "description": "Ένας φάκελος στιγμιότυπου Prism ή MultiMC, μεταφερμένος όπως το κάνει το Horizon."
+    },
+    "mrpack": {
+      "title": "Πακέτο Modrinth (.mrpack)",
+      "description": "Τα mods αντιστοιχίζονται στα builds τους για το Horizon όταν υπάρχουν."
+    },
+    "curseforge_zip": {
+      "title": "Zip του CurseForge",
+      "description": "Ένα modpack που εξάχθηκε από το CurseForge."
+    },
+    "modpack": {
+      "title": "Από modpack",
+      "description": "Περιήγηση σε modpacks του Horizon, του Modrinth και του Rustic."
+    },
+    "started": "Εισαγωγή: {{name}}",
+    "background": "Συνεχίζεται στο παρασκήνιο· μπορείς να συνεχίσεις να χρησιμοποιείς το launcher.",
+    "note": "Εγκαθίσταται μόνο περιεχόμενο που λειτουργεί στο Horizon· τα υπόλοιπα εμφανίζονται με τον λόγο.",
+    "drop": {
+      "title": "Άφησε εδώ ένα πακέτο ή έναν φάκελο στιγμιότυπου",
+      "hint": ".mrpack του Modrinth, .zip του CurseForge ή φάκελος στιγμιότυπου Prism ή MultiMC",
+      "choose": "Επιλογή αρχείου",
+      "active": "Άφησέ το για εισαγωγή",
+      "unsupported": "Αυτό δεν μπορεί να εισαχθεί. Χρησιμοποίησε ένα .mrpack, ένα .zip του CurseForge ή έναν φάκελο στιγμιότυπου."
+    },
+    "formats": "Υποστηριζόμενες μορφές"
+  },
+  "detail": {
+    "notFound": "Αυτό το στιγμιότυπο δεν υπάρχει πια",
+    "backToList": "Πίσω στα στιγμιότυπα",
+    "tabsLabel": "Ενότητες στιγμιότυπου",
+    "tabs": {
+      "overview": "Επισκόπηση",
+      "content": "Περιεχόμενο",
+      "resourcepacks": "Πακέτα πόρων",
+      "worlds": "Κόσμοι",
+      "settings": "Ρυθμίσεις"
+    }
+  },
+  "overview": {
+    "mods": "Mods",
+    "resourcePacks": "Πακέτα πόρων",
+    "shaders": "Πακέτα shaders",
+    "version": "Build του Horizon",
+    "updateAvailable": "Διαθέσιμη ενημέρωση",
+    "upToDate": "Ενημερωμένο",
+    "updateNow": "Ενημέρωση τώρα",
+    "changeVersion": "Επίλεξε build του Horizon",
+    "applyVersion": "Αλλαγή build",
+    "versionChanging": "Αλλαγή σε {{version}}",
+    "lastSession": "Τελευταία συνεδρία",
+    "lastPlayed": "Παίχτηκε {{when}}",
+    "neverPlayed": "Δεν έχει παιχτεί ακόμη",
+    "rejoin": "Επανασύνδεση",
+    "noServer": "Δεν έχεις μπει ακόμη σε διακομιστή από αυτό το στιγμιότυπο.",
+    "created": "Δημιουργήθηκε",
+    "folder": "Φάκελος"
+  },
+  "content": {
+    "filter": "Φιλτράρισμα κατά τύπο",
+    "kinds": {
+      "all": "Όλα",
+      "mod": "Mods",
+      "resourcepack": "Πακέτα πόρων",
+      "shader": "Shaders"
+    },
+    "search": "Αναζήτηση στο εγκατεστημένο περιεχόμενο",
+    "updateAll_one": "Ενημέρωση {{count}} στοιχείου",
+    "updateAll_other": "Ενημέρωση {{count}} στοιχείων",
+    "browse": "Περιήγηση στο περιεχόμενο",
+    "noMatch": "Τίποτα εγκατεστημένο δεν ταιριάζει με την αναζήτησή σου.",
+    "empty": {
+      "title": "Τίποτα εγκατεστημένο ακόμη",
+      "description": "Βρες mods, πακέτα πόρων και shaders που λειτουργούν με αυτό το στιγμιότυπο."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Τοπικό αρχείο"
+    },
+    "updateTo": "Ενημέρωση: {{version}}",
+    "incompatible": "Μη συμβατό: {{reason}}",
+    "updateOne": "Ενημέρωση: {{name}}",
+    "toggle": "Ενεργοποίηση: {{name}}",
+    "remove": "Αφαίρεση: {{name}}",
+    "removeTitle": "Αφαίρεση του {{name}};",
+    "removeBody": "Το αρχείο διαγράφεται από αυτό το στιγμιότυπο. Μπορείς να το εγκαταστήσεις ξανά από το Περιεχόμενο."
+  },
+  "packs": {
+    "hint": "Τα πακέτα στην κορυφή υπερισχύουν όταν δύο πακέτα αλλάζουν το ίδιο πράγμα.",
+    "listLabel": "Σειρά φόρτωσης πακέτων πόρων",
+    "top": "Υψηλότερη προτεραιότητα",
+    "up": "Μετακίνηση του {{name}} πάνω",
+    "down": "Μετακίνηση του {{name}} κάτω",
+    "moved": "Το {{name}} μετακινήθηκε στη θέση {{position}} από {{total}}",
+    "browse": "Εύρεση πακέτων πόρων",
+    "empty": {
+      "title": "Κανένα πακέτο πόρων",
+      "description": "Πρόσθεσε πακέτα για να αλλάξεις υφές, ήχους και τη διεπαφή."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Κανένας κόσμος ακόμη",
+      "description": "Οι κόσμοι που δημιουργείς στο παιχνίδι εμφανίζονται εδώ."
+    },
+    "openSaves": "Άνοιγμα φακέλου αποθηκεύσεων",
+    "lastPlayed": "Παίχτηκε {{when}}",
+    "modes": {
+      "survival": "Επιβίωση",
+      "creative": "Δημιουργικό",
+      "adventure": "Περιπέτεια",
+      "hardcore": "Hardcore",
+      "spectator": "Θεατής"
+    },
+    "datapacks_one": "{{count}} πακέτο δεδομένων",
+    "datapacks_other": "{{count}} πακέτα δεδομένων",
+    "play": "Παίξε σε αυτόν τον κόσμο",
+    "addDatapacks": "Προσθήκη πακέτων δεδομένων"
+  },
+  "settings": {
+    "general": "Γενικά",
+    "display": "Παράθυρο",
+    "useDefaultResolution": "Χρήση του προεπιλεγμένου μεγέθους παραθύρου",
+    "defaultIs": "Προεπιλογή: {{width}} × {{height}}",
+    "width": "Πλάτος",
+    "height": "Ύψος",
+    "fullscreen": "Εκκίνηση σε πλήρη οθόνη",
+    "resolutionError": "Χρησιμοποίησε ακέραιους αριθμούς, τουλάχιστον 640 × 360.",
+    "launch": "Επιλογές εκκίνησης",
+    "launchHint": "Τα στιγμιότυπα Horizon απλώς ορίζουν ένα build: δεν υπάρχει Java, RAM ή loader για ρύθμιση.",
+    "gameArgs": "Επιπλέον ορίσματα παιχνιδιού",
+    "gameArgsHint": "Για προχωρημένους. Περνούν στο Horizon ως έχουν.",
+    "folders": "Φάκελοι",
+    "folder": {
+      "root": "Στιγμιότυπο",
+      "mods": "Mods",
+      "resourcepacks": "Πακέτα πόρων",
+      "shaderpacks": "Πακέτα shaders",
+      "saves": "Κόσμοι",
+      "screenshots": "Στιγμιότυπα οθόνης",
+      "logs": "Καταγραφές"
+    },
+    "unsaved": "Έχεις μη αποθηκευμένες αλλαγές.",
+    "allSaved": "Όλες οι αλλαγές αποθηκεύτηκαν.",
+    "saved": "Οι ρυθμίσεις του στιγμιότυπου αποθηκεύτηκαν"
+  },
+  "heading": "Τα *προφίλ* σου",
+  "native": {
+    "title": "Εγγενή mods",
+    "allOff": "Όλα απενεργοποιημένα: το στιγμιότυπο παίζει το προκατασκευασμένο παιχνίδι.",
+    "state": {
+      "building": "Δημιουργία build…",
+      "up_to_date": "Ενημερωμένο",
+      "needs_rebuild": "Χρειάζεται νέο build",
+      "not_built": "Χωρίς build",
+      "not_needed": "Προκατασκευασμένο παιχνίδι"
+    },
+    "build": "Build",
+    "rebuild": "Νέο build",
+    "cancel": "Ακύρωση",
+    "progress": "Πρόοδος εγγενούς build",
+    "starting": "Εκκίνηση…",
+    "firstBuildHint": "Το πρώτο build μεταγλωττίζει όλο το παιχνίδι (10 έως 15 λεπτά)· τα επόμενα μόνο ό,τι άλλαξε. Μπορείς να συνεχίσεις να χρησιμοποιείς το launcher.",
+    "failed": "Το τελευταίο build απέτυχε",
+    "built": "Build στις {{date}} σε {{duration}} · παιχνίδι {{size}}",
+    "leftOut": {
+      "other": "Το {{name}} παραλείφθηκε: δεν ισχύει για αυτό το Horizon.",
+      "unsupported": "Το {{name}} παραλείφθηκε: το Rustic δεν μπορεί ακόμη να κάνει build ό,τι χρειάζεται."
+    },
+    "notEdition": "Αυτό το στιγμιότυπο παίζει ένα απλό build του Horizon: τα εγγενή mods μπαίνουν μόνο στην έκδοση Rustic."
+  },
+  "profiles": {
+    "summary_one": "{{count}} προφίλ · {{playtime}} παιχνίδι",
+    "summary_other": "{{count}} προφίλ · {{playtime}} παιχνίδι",
+    "searchLabel": "Αναζήτηση στα προφίλ σου",
+    "searchPlaceholder": "Αναζήτηση κατά όνομα, build του Horizon ή modpack…",
+    "source": {
+      "label": "Εμφάνιση",
+      "all": "Όλα τα προφίλ",
+      "custom": "Τα προφίλ μου",
+      "modpack": "Από modpacks"
+    },
+    "sorts": {
+      "recent": "Τελευταίο παιχνίδι",
+      "name": "Όνομα",
+      "created": "Πρόσφατα δημιουργημένα",
+      "version": "Build του Horizon",
+      "playtime": "Χρόνος παιχνιδιού"
+    },
+    "filters": {
+      "version": "Build του Horizon",
+      "edition": "Έκδοση",
+      "editions": {
+        "rustic": "Έκδοση Rustic",
+        "horizon": "Απλό Horizon"
+      },
+      "native": "Εγγενή mods",
+      "nativeOnly": "Με εγγενή mods",
+      "nativeHint": "Τα εγγενή mods μεταγλωττίζονται στον υπολογιστή σου πριν ξεκινήσει το παιχνίδι.",
+      "remove": "Αφαίρεση του φίλτρου: {{filter}}",
+      "reset": "Επαναφορά φίλτρων"
+    },
+    "create": "Δημιουργία προφίλ",
+    "createHint": "Ένα build του Horizon, ένα εικονίδιο και ένα όνομα",
+    "import": "Εισαγωγή",
+    "importHint": "Ένας φάκελος, ένα .mrpack ή ένα zip του CurseForge",
+    "all": "Όλα τα προφίλ",
+    "listLabel": "Προφίλ",
+    "recent": "Συνέχισε από εκεί που έμεινες",
+    "recentHint": "Τα προφίλ που έπαιξες τελευταία",
+    "card": {
+      "active": "Ενεργό",
+      "activeHint": "Το Launchpad παίζει αυτό το προφίλ",
+      "running": "Εκτελείται",
+      "pinned": "Καρφιτσωμένο",
+      "update": "Ενημέρωση {{version}}",
+      "broken": "Χρειάζεται επιδιόρθωση",
+      "modpack": "Modpack",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Παίχτηκε {{when}}",
+      "neverPlayed": "Δεν έχει παιχτεί ακόμη",
+      "created": "Δημιουργήθηκε {{date}}",
+      "lastServer": "Τελευταία φορά: {{name}}",
+      "rejoin": "Επανασύνδεση",
+      "rejoinAria": "Επανασύνδεση στο {{server}} με το {{name}}",
+      "mods": "Mods",
+      "packs": "Πακέτα πόρων",
+      "shaders": "Shaders",
+      "playtime": "Χρόνος παιχνιδιού",
+      "contentCount": "{{mods}} mods · {{packs}} πακέτα · {{shaders}} shaders",
+      "open": "Άνοιγμα: {{name}}"
+    },
+    "native": {
+      "label": "Εγγενή mods",
+      "count_one": "{{count}} εγγενές mod",
+      "count_other": "{{count}} εγγενή mods",
+      "building": "Build {{pct}}",
+      "buildingNoPct": "Δημιουργία build…",
+      "up_to_date": "Τα εγγενή mods είναι έτοιμα",
+      "needs_rebuild": "Εγγενή: χρειάζεται νέο build",
+      "not_built": "Εγγενή: χωρίς build ακόμη",
+      "off": "Εγγενή mods απενεργοποιημένα",
+      "unsupported": "Εγγενή: χρειάζεται την έκδοση Rustic",
+      "hint": {
+        "up_to_date": "Έγινε build σε αυτόν τον υπολογιστή για αυτό το build του Horizon.",
+        "needs_rebuild": "Τα mods άλλαξαν από το τελευταίο build: θα γίνει νέο build όταν παίξεις.",
+        "not_built": "Μεταγλωττίζεται στον υπολογιστή σου όταν παίξεις (10 έως 15 λεπτά την πρώτη φορά).",
+        "off": "Όλα τα εγγενή mods είναι απενεργοποιημένα: παίζει το προκατασκευασμένο παιχνίδι.",
+        "unsupported": "Αυτό το προφίλ παίζει ένα απλό build του Horizon: τα εγγενή mods μπαίνουν μόνο στην έκδοση Rustic.",
+        "building": "Μεταγλώττιση του παιχνιδιού με τα εγγενή mods αυτού του προφίλ."
+      }
+    },
+    "menu": {
+      "edit": "Επεξεργασία ρυθμίσεων",
+      "activate": "Χρήση στο Launchpad",
+      "isActive": "Χρησιμοποιείται στο Launchpad",
+      "activated": "Το {{name}} είναι τώρα στο Launchpad"
+    },
+    "empty": {
+      "title": "Κανένα προφίλ ακόμη",
+      "description": "Ένα προφίλ είναι ένα build του Horizon με δικά του mods, πακέτα και κόσμους. Δημιούργησε ένα με το προτεινόμενο build ή εισήγαγε ένα πακέτο που ήδη έχεις."
+    },
+    "noMatch": {
+      "title": "Κανένα προφίλ δεν ταιριάζει",
+      "description": "Δοκίμασε άλλη αναζήτηση ή αφαίρεσε ένα φίλτρο."
+    },
+    "detail": {
+      "banner": "Εξώφυλλο: {{name}}"
+    }
+  }
+}

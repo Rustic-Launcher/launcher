@@ -13,7 +13,8 @@
     "appearance": "Aspect",
     "privacy": "Confidențialitate și date",
     "parental": "Control parental",
-    "about": "Despre și informații legale"
+    "about": "Despre și informații legale",
+    "voice": "Voce"
   },
   "accounts": {
     "active": "Activ",
@@ -95,7 +96,8 @@
       "description": "Identitatea ta Rustic pentru prieteni, Vestiar, cumpărături și servere.",
       "signedOut": "Neconectat. Jocul funcționează și fără, dar funcțiile sociale, Vestiarul și Magazinul au nevoie de el.",
       "signIn": "Conectează-te sau creează un cont",
-      "licenceNote": "Un cont Rustic este o identitate pe platformă. Nu înlocuiește niciodată licența jocului: ai nevoie în continuare de un cont Microsoft care deține jocul."
+      "licenceNote": "Un cont Rustic este o identitate pe platformă. Nu înlocuiește niciodată licența jocului: ai nevoie în continuare de un cont Microsoft care deține jocul.",
+      "manageOnWeb": "Gestionează pe site"
     },
     "offline": {
       "title": "Joc offline",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Finalizează conectarea în browser: launcherul îți preia sesiunea automat."
   },
   "heading": "*Setările* tale",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Dispozitive",
+    "devicesHint": "Microfonul și difuzoarele sau căștile folosite pentru voce.",
+    "input": "Microfon",
+    "output": "Ieșire",
+    "outputVolume": "Volumul ieșirii",
+    "systemDefault": "Implicit în sistem",
+    "deviceN": "Dispozitivul {{n}}",
+    "talk": "Vorbire",
+    "talkHint": "Vorbește când vocea ta e detectată, sau doar cât ții apăsată o tastă.",
+    "mode": "Mod de intrare",
+    "modeVad": "Activitate vocală",
+    "modePtt": "Apasă ca să vorbești",
+    "pttKey": "Tasta pentru vorbit",
+    "pttKeyHint": "Funcționează în launcher și în joc. Și butoanele laterale ale mouse-ului.",
+    "pressKey": "Apasă o tastă…",
+    "sensitivity": "Sensibilitate",
+    "sensitivityHint": "Mai mare prinde vocile mai slabe; mai mică ignoră mai mult zgomotul de fundal.",
+    "test": "Test microfon",
+    "testMic": "Testează",
+    "stopTest": "Oprește",
+    "level": "Nivelul microfonului",
+    "micDenied": "Accesul la microfon a fost refuzat. Permite-l în setările de confidențialitate ale sistemului, apoi încearcă din nou.",
+    "micMissing": "Niciun microfon găsit.",
+    "noiseSuppression": "Suprimarea zgomotului",
+    "echoCancellation": "Anularea ecoului",
+    "autoGain": "Câștig automat",
+    "inGame": "În joc",
+    "inGameHint": "Cu ediția Rustic, un panou arată cine vorbește, iar tasta pentru vorbit funcționează în joc.",
+    "overlay": "Arată vocea în joc",
+    "serverVoice": "Voce de proximitate pe servere",
+    "serverVoiceHint": "Rustic Server poate oferi voce după distanță cu toți jucătorii de acolo. Sub 18 ani, un părinte trebuie să permită asta.",
+    "serverAsk": "Întreabă-mă",
+    "serverAuto": "Intră automat",
+    "serverOff": "Niciodată",
+    "servers": {
+      "title": "Voce de proximitate pentru serverele tale",
+      "description": "Adaugă un server, apoi pune cheia lui în config.toml al pluginului proximity-voice. O poți opri oricând.",
+      "namePlaceholder": "Numele serverului",
+      "add": "Adaugă",
+      "status": "Jucători online: {{count}}",
+      "enabled": "Voce de proximitate pe {{name}}",
+      "newKey": "Cheie nouă",
+      "remove": "Elimină {{name}}",
+      "keyOnce": "Copiază acum această cheie: e afișată o singură dată. O cheie nouă o înlocuiește.",
+      "tooMany": "Poți adăuga până la 10 servere."
+    }
+  }
 }

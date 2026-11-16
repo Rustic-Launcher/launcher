@@ -13,6 +13,8 @@ rusticmc-cosmetics-format = { path = "../../../packages/cosmetics-format", defau
 # Horizon's game library (trait mod API) and its platform hooks (player layers, sprites).
 horizon-client = { path = "../../../../server/horizon/crates/horizon-client" }
 horizon-hooks = { path = "../../../../server/horizon/crates/horizon-hooks" }
+# servers.dat as the game reads it (the presence's server icon, launcher ADR 0173).
+horizon-protocol = { path = "../../../../server/horizon/crates/horizon-protocol" }
 # The game's version for the title menu's footer.
 horizon-core = { path = "../../../../server/horizon/crates/horizon-core" }
 # In Horizon's Cargo.lock already (the game's own PNG decoder): the logo and the player's skin.

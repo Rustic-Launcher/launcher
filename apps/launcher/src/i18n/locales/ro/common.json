@@ -100,7 +100,8 @@
       "appearance": "Aspect",
       "privacy": "Confidențialitate și date",
       "parental": "Control parental",
-      "about": "Despre"
+      "about": "Despre",
+      "voice": "Voce"
     }
   },
   "friends": {
@@ -198,7 +199,30 @@
     "leader": "Liderul grupului",
     "pending": "{{name}} (invitat)",
     "invite": "Invită în grup",
-    "invited": "{{name}} a fost invitat în grupul tău"
+    "invited": "{{name}} a fost invitat în grupul tău",
+    "invitesTitle": "Invitații în grup",
+    "invitedBy": "{{name}} te invită în grupul său",
+    "accept": "Intră",
+    "decline": "Refuză",
+    "makeLeader": "Fă-l lider de grup",
+    "kick": "Scoate din grup",
+    "proximity": "Voce de proximitate",
+    "proximityHint": "Membrii de pe același server se aud în funcție de distanță",
+    "range": "Rază (blocuri)",
+    "emptyTitle": "Încă niciun grup",
+    "emptyBody": "Creează un grup, apoi invită prieteni din meniul lor din fila Prieteni.",
+    "create": "Creează un grup",
+    "inviteHint": "Invită prieteni din meniul lor din fila Prieteni.",
+    "chatTitle": "Chatul grupului",
+    "chatEmpty": "Intră într-un grup sau creează unul ca să vorbești cu membrii lui.",
+    "chatPlaceholder": "Mesaj pentru grup",
+    "formerMember": "Fost membru",
+    "errors": {
+      "party_full": "Grupul este plin.",
+      "party_not_allowed": "Acest jucător nu poate fi în acest grup: jucătorii sub 18 ani intră doar în grupurile prietenilor lor.",
+      "already_in_party": "Părăsește mai întâi grupul actual.",
+      "not_party_leader": "Doar liderul grupului poate face asta."
+    }
   },
   "presence": {
     "online": "Online",
@@ -439,6 +463,48 @@
       "updated": "Rustic Launcher actualizat la {{version}}",
       "resuming": "Actualizare gata: se pornește jocul tău",
       "failed": "Actualizarea nu a putut fi instalată. Vom încerca din nou mai târziu."
+    }
+  },
+  "voice": {
+    "title": "Voce",
+    "join": "Intră pe voce",
+    "leave": "Ieși de pe voce",
+    "mute": "Oprește microfonul",
+    "unmute": "Pornește microfonul",
+    "deafen": "Oprește sunetul",
+    "undeafen": "Pornește sunetul",
+    "speaking": "Vorbește",
+    "micMuted": "Microfon oprit",
+    "outOfRange": "În afara razei",
+    "muteFor": "Oprește-l pe {{name}} pentru tine",
+    "unmuteFor": "Ascultă-l din nou pe {{name}}",
+    "reportAria": "Raportează-l pe {{name}}",
+    "memberVolume": "Volumul lui {{name}}",
+    "report": "Raportează",
+    "reportTitle": "Îl raportezi pe {{name}}?",
+    "reportBody": "Moderatorii noștri vor analiza raportul. Vocea nu este niciodată înregistrată. Acest jucător este oprit imediat pentru tine.",
+    "reported": "{{name}} a fost raportat",
+    "reasons": {
+      "harassment": "Hărțuire sau ură",
+      "inappropriate_content": "Conținut nepotrivit",
+      "spam": "Spam sau zgomot",
+      "other": "Altceva"
+    },
+    "proximityOn": "proximitate, rază {{range}}",
+    "you": "Tu",
+    "listenOnly": "Doar ascultare",
+    "alone": "Încă nu mai e nimeni pe voce.",
+    "serverOffer": "{{server}} are voce de proximitate",
+    "serverRoom": "Vocea serverului",
+    "partyRoom": "Vocea grupului",
+    "errors": {
+      "voice_unavailable": "Vocea nu este disponibilă acum. Încearcă din nou mai târziu.",
+      "voice_not_allowed": "Vocea nu este disponibilă pentru contul tău.",
+      "mic_denied": "Accesul la microfon a fost refuzat: poți asculta, dar nu poți vorbi. Permite-l în setările de confidențialitate ale sistemului.",
+      "mic_missing": "Niciun microfon găsit: poți asculta, dar nu poți vorbi.",
+      "connect_failed": "Nu s-a putut face conexiunea la voce. Verifică-ți conexiunea și încearcă din nou.",
+      "kicked": "Ai fost scos din camera de voce.",
+      "not_on_voice_server": "Acest server nu are voce de proximitate."
     }
   }
 }

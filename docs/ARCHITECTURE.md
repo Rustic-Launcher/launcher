@@ -137,6 +137,16 @@ Horizon's 7-day Nightly deletion does not break pinned instances (HF A9).
    the crash report path (last stderr line) and "Send report" (only with crash-report consent).
 8. Presence: realtime "in game (instance X)"; with "share server" on, the server address for "Join".
 
+### 4b. Minecraft: Java Edition and Bedrock (ADR 0172)
+
+The Launchpad's game switcher (Rustic | Java Edition | Bedrock Edition) shows, for Java, profiles
+kept apart from Rustic instances (`rusticmc-java`): `java_profile_launch` runs the same owner gate,
+installs what is missing from Mojang's and the loaders' official hosts into the shared game folder
+(`<data>/minecraft`, official layout), Mojang's Java runtime, Fabric/Quilt profiles or the
+Forge/NeoForge installers run headless, then builds the argument list from the version file (token
+in a private Java argument file on Java 9+), streams the game's output (`java-log`) and reports
+crashes (`java-state`). Bedrock is started through its Microsoft Store package on Windows.
+
 ## 5. Content install
 
 1. Search fan-out to sources (Horizon registry index cached 10 min; Modrinth API with our User-Agent; Rustic

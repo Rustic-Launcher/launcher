@@ -3,6 +3,7 @@ import { Link, useNavigate } from '@tanstack/react-router';
 import {
   Baby,
   Gamepad2,
+  Headphones,
   Info,
   Palette,
   Rocket,
@@ -22,6 +23,7 @@ import { GameSection } from './sections/GameSection';
 import { LauncherSection } from './sections/LauncherSection';
 import { ParentalSection } from './sections/ParentalSection';
 import { PrivacySection } from './sections/PrivacySection';
+import { VoiceSection } from './sections/VoiceSection';
 
 const ICONS: Record<SettingsSection, LucideIcon> = {
   accounts: UserRound,
@@ -29,6 +31,7 @@ const ICONS: Record<SettingsSection, LucideIcon> = {
   launcher: Rocket,
   appearance: Palette,
   privacy: ShieldCheck,
+  voice: Headphones,
   parental: Baby,
   about: Info,
 };
@@ -39,6 +42,7 @@ const VIEWS: Record<SettingsSection, () => ReactNode> = {
   launcher: LauncherSection,
   appearance: AppearanceSection,
   privacy: PrivacySection,
+  voice: VoiceSection,
   parental: ParentalSection,
   about: AboutSection,
 };

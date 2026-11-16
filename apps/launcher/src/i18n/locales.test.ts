@@ -61,9 +61,14 @@ describe('locales', () => {
     expect(bundleChain('nl_be')).toEqual(['nl', 'en']);
     expect(bundleChain('cs_cz')).toEqual(['cs', 'en']);
     expect(bundleChain('th_th')).toEqual(['th', 'en']);
-    // Elfdalian reads Swedish; Danish has no translation yet.
+    // Elfdalian reads Swedish; Nynorsk reads Bokmål (the game's `no_no`); Bulgarian has no
+    // translation yet.
     expect(bundleChain('ovd')).toEqual(['sv', 'en']);
-    expect(bundleChain('da_dk')).toEqual(['en']);
+    expect(bundleChain('da_dk')).toEqual(['da', 'en']);
+    expect(bundleChain('no_no')).toEqual(['nb', 'en']);
+    expect(bundleChain('nn_no')).toEqual(['nb', 'en']);
+    expect(bundleChain('ar_sa')).toEqual(['ar', 'en']);
+    expect(bundleChain('bg_bg')).toEqual(['en']);
     expect(bundleChain('en_gb')).toEqual(['en']);
   });
 });

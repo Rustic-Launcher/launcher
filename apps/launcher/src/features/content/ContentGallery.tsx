@@ -39,7 +39,7 @@ function Thumb({
       title={g.title}
       data-testid={`gallery-thumb-${index}`}
       className={cn(
-        'group/thumb rx-focus-ring relative block overflow-hidden rounded-xl text-left',
+        'group/thumb rx-focus-ring relative block overflow-hidden rounded-xl text-start',
         className,
       )}
     >
@@ -68,7 +68,7 @@ function Thumb({
         ) : (
           <span
             aria-hidden
-            className="absolute top-2 right-2 grid size-7 place-items-center rounded-lg bg-black/50 text-white opacity-0 backdrop-blur-sm transition-opacity group-hover/thumb:opacity-100 group-focus-visible/thumb:opacity-100"
+            className="absolute end-2 top-2 grid size-7 place-items-center rounded-lg bg-black/50 text-white opacity-0 backdrop-blur-sm transition-opacity group-hover/thumb:opacity-100 group-focus-visible/thumb:opacity-100"
           >
             <Maximize2 className="size-3.5" />
           </span>
@@ -216,13 +216,13 @@ export function Lightbox({
                   icon={<ChevronLeft />}
                   onClick={() => go(-1)}
                   data-autofocus
-                  className="absolute top-1/2 left-3 -translate-y-1/2 bg-black/55 text-white backdrop-blur-sm hover:bg-black/75 hover:text-white"
+                  className="absolute start-3 top-1/2 -translate-y-1/2 bg-black/55 text-white backdrop-blur-sm hover:bg-black/75 hover:text-white"
                 />
                 <IconButton
                   label={t('detail.next')}
                   icon={<ChevronRight />}
                   onClick={() => go(1)}
-                  className="absolute top-1/2 right-3 -translate-y-1/2 bg-black/55 text-white backdrop-blur-sm hover:bg-black/75 hover:text-white"
+                  className="absolute end-3 top-1/2 -translate-y-1/2 bg-black/55 text-white backdrop-blur-sm hover:bg-black/75 hover:text-white"
                 />
               </>
             )}

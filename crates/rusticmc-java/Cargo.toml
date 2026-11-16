@@ -1,0 +1,27 @@
+[package]
+name = "rusticmc-java"
+description = "Rustic Launcher's Java Edition launcher: Mojang's version manifest and version files, rules and arguments, libraries, assets and Java runtimes from the official hosts, Fabric/Quilt/Forge/NeoForge loaders, profiles, launch and logs; Bedrock detection on Windows (ADR 0172)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+futures-util = { version = "0.3", default-features = false, features = ["std"] }
+regex = { version = "1", default-features = false, features = ["std", "unicode-perl"] }
+rusticmc-launcher-core = { path = "../rusticmc-launcher-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "process", "io-util", "fs", "sync", "time"] }
+tracing = "0.1"
+uuid = { version = "1", features = ["v4"] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+tempfile = "3"
+wiremock = "0.6"
+
+[lints]
+workspace = true

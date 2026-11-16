@@ -1,6 +1,7 @@
 export * from './lib/cn';
 export * from './lib/format';
 export * from './lib/useReducedMotion';
+export * from './lib/direction';
 export * from './lib/skinHead';
 export * from './tokens/palettes';
 export * from './tokens/tokens';

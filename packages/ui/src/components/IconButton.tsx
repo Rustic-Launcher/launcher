@@ -63,7 +63,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
       {badge ? (
         <span
           aria-hidden
-          className="bg-accent text-2xs text-accent-fg ring-bg-elevated absolute -top-0.5 -right-0.5 flex min-w-4 items-center justify-center rounded-full px-1 leading-4 font-bold ring-2"
+          className="bg-accent text-2xs text-accent-fg ring-bg-elevated absolute -end-0.5 -top-0.5 flex min-w-4 items-center justify-center rounded-full px-1 leading-4 font-bold ring-2"
         >
           {typeof badge === 'number' ? (badge > 9 ? '9+' : badge) : null}
         </span>

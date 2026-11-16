@@ -40,7 +40,7 @@ test.describe('settings', () => {
     // Translated first; a language shown in English says so.
     const groups = list.locator('[cmdk-group-heading]');
     await expect(groups).toHaveText(['Translated', 'Other languages']);
-    await expect(app.getByTestId('language-select-da_dk')).toContainText('in English for now');
+    await expect(app.getByTestId('language-select-bg_bg')).toContainText('in English for now');
     await expect(app.getByTestId('language-select-de_de').locator('[data-flag] svg')).toBeVisible();
     // Search by English name, native name or code, accents ignored.
     await app.getByTestId('language-select-search').fill('portugues');
@@ -52,7 +52,7 @@ test.describe('settings', () => {
     await expect(app.getByRole('heading', { level: 1, name: 'Einstellungen' })).toBeVisible();
   });
 
-  test('Japanese, Russian, Chinese, Czech, Thai and European Portuguese are translated', async ({
+  test('Japanese, Russian, Chinese, Czech, Thai, European Portuguese and batch 2c are translated', async ({
     app,
   }) => {
     await app.goto('/#/settings?section=launcher');
@@ -63,6 +63,11 @@ test.describe('settings', () => {
       ['czech', 'cs_cz', 'Domů', 'Nastavení', /^cs/],
       ['thai', 'th_th', 'หน้าหลัก', 'การตั้งค่า', /^th/],
       ['portugal', 'pt_pt', 'Início', 'Definições', /^pt-PT/],
+      ['danish', 'da_dk', 'Hjem', 'Indstillinger', /^da/],
+      ['finnish', 'fi_fi', 'Koti', 'Asetukset', /^fi/],
+      ['bokmal', 'no_no', 'Hjem', 'Innstillingene', /^nb/],
+      ['greek', 'el_gr', 'Αρχική', 'Ρυθμίσεις', /^el/],
+      ['hindi', 'hi_in', 'होम', 'सेटिंग्स', /^hi/],
     ] as const) {
       await app.getByTestId('language-select').click();
       await app.getByTestId('language-select-search').fill(search);
@@ -75,15 +80,27 @@ test.describe('settings', () => {
     await app.getByTestId('language-select-en_us').click();
   });
 
-  test('a language without a translation shows English, right to left when it is written so', async ({
+  test('Arabic and Hebrew are right to left; an untranslated right-to-left locale stays left to right in English', async ({
     app,
   }) => {
     await app.goto('/#/settings?section=launcher');
+    for (const [search, code, home, title, lang] of [
+      ['arabic', 'ar_sa', 'الرئيسية', 'إعداداتك', 'ar-SA'],
+      ['hebrew', 'he_il', 'ראשי', 'הגדרות', 'he-IL'],
+    ] as const) {
+      await app.getByTestId('language-select').click();
+      await app.getByTestId('language-select-search').fill(search);
+      await app.getByTestId(`language-select-${code}`).click();
+      await expect(app.locator('html')).toHaveAttribute('dir', 'rtl');
+      await expect(app.locator('html')).toHaveAttribute('lang', lang);
+      await expect(app.getByTestId('rail-home')).toHaveAccessibleName(home);
+      await expect(app.getByRole('heading', { level: 1, name: title })).toBeVisible();
+    }
+    // Persian has no translation yet: English texts, so left to right.
     await app.getByTestId('language-select').click();
-    await app.getByTestId('language-select-search').fill('arabic');
-    await app.getByTestId('language-select-ar_sa').click();
-    await expect(app.locator('html')).toHaveAttribute('dir', 'rtl');
-    await expect(app.locator('html')).toHaveAttribute('lang', 'ar-SA');
+    await app.getByTestId('language-select-search').fill('persian');
+    await app.getByTestId('language-select-fa_ir').click();
+    await expect(app.locator('html')).toHaveAttribute('dir', 'ltr');
     await expect(app.getByRole('heading', { level: 1, name: 'Settings' })).toBeVisible();
     await app.getByTestId('language-select').click();
     await app.getByTestId('language-select-en_us').click();
@@ -163,8 +180,8 @@ test.describe('settings', () => {
     await expect(app.getByTestId('settings-nav-privacy')).toHaveAttribute('aria-current', 'page');
     await app.getByTestId('settings-nav-privacy').focus();
     await app.keyboard.press('ArrowDown');
-    await expect(app).toHaveURL(/section=parental/);
-    await expect(app.getByTestId('settings-nav-parental')).toBeFocused();
+    await expect(app).toHaveURL(/section=voice/);
+    await expect(app.getByTestId('settings-nav-voice')).toBeFocused();
   });
 
   test('Rustic account: Microsoft sign-in first, email below; linked Microsoft can be unlinked', async ({

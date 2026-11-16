@@ -1045,13 +1045,33 @@ pub fn forward_game_events(state: Arc<AppState>) {
         while let Ok(e) = rx.recv().await {
             match e.event {
                 GameEvent::Log { stream, line } => {
-                    if let Some(place) = crate::discord::place_from_game_line(&line) {
+                    // Voice lines (push-to-talk, positions) go to the voice engine, not the log.
+                    if let Some(v) = crate::voice::parse_game_line(&line) {
+                        let _ = state.app.emit(
+                            "voice-game",
+                            crate::voice::VoiceGameEvent::of_line(&e.instance_id, v),
+                        );
+                        continue;
+                    }
+                    if let Some(report) = crate::discord::report_from_game_line(&line) {
+                        let place = report.place;
+                        let _ = state.app.emit(
+                            "voice-game",
+                            crate::voice::VoiceGameEvent::of_place(&e.instance_id, &place),
+                        );
                         state.play_stats.send(crate::play_stats::Event::Moved {
                             instance: e.instance_id.clone(),
                             place: place.clone(),
                         });
-                        state.discord.set_place(place);
+                        state.discord.set_place(place.clone());
+                        // The place's own picture, only where the player lets it show (ADR 0173).
+                        if let Some(png) = report.icon
+                            && crate::discord::icon_allowed(&place, state.discord.options())
+                        {
+                            state.presence_icons.send(place, png);
+                        }
                     }
+                    let line = crate::discord::loggable_line(line);
                     let lower = line.to_ascii_lowercase();
                     let level = if lower.contains("error") || lower.contains("panicked") {
                         "error"
@@ -1084,6 +1104,10 @@ pub fn forward_game_events(state: Arc<AppState>) {
                         ExitOutcome::Other { code } => (code.unwrap_or(-1), code.unwrap_or(0) != 0),
                     };
                     let _ = state.app.emit(
+                        "voice-game",
+                        crate::voice::VoiceGameEvent::exited(&e.instance_id),
+                    );
+                    let _ = state.app.emit(
                         "game-exited",
                         GameExited {
                             instance_id: e.instance_id.clone(),
@@ -1101,11 +1125,11 @@ pub fn forward_game_events(state: Arc<AppState>) {
                             None,
                         ),
                     );
-                    state.discord.set(crate::discord::Presence {
-                        place: crate::discord::Place::Launcher,
-                        game: None,
-                        since: rusticmc_launcher_core::time::now(),
-                    });
+                    state.discord.set(crate::discord::Presence::at(
+                        crate::discord::Place::Launcher,
+                        None,
+                        rusticmc_launcher_core::time::now(),
+                    ));
                     state.play_stats.send(crate::play_stats::Event::Exited {
                         instance: e.instance_id.clone(),
                     });
@@ -1148,11 +1172,11 @@ pub fn forward_game_events(state: Arc<AppState>) {
                         .to_owned(),
                         game_version: version.clone(),
                     });
-                    state.discord.set(crate::discord::Presence {
-                        place: crate::discord::Place::Menu,
-                        game: Some(game),
-                        since: rusticmc_launcher_core::time::now(),
-                    });
+                    state.discord.set(crate::discord::Presence::at(
+                        crate::discord::Place::Menu,
+                        Some(game),
+                        rusticmc_launcher_core::time::now(),
+                    ));
                 }
             }
         }

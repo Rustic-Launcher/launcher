@@ -1,0 +1,84 @@
+{
+  "title": "Skab",
+  "subtitle": "Rent visuelle genstande. Ses i spillet af spillere, der bruger Rustic-udgaven.",
+  "horizonNote": {
+    "badge": "Horizon-kosmetik er stadig tilgængelig",
+    "detail": "Din Horizon-kosmetik bevares i Rustic-udgavens klient. Administrer den i spillet; den fungerer sammen med dine Rustic-genstande."
+  },
+  "empty": {
+    "title": "Du ejer ikke noget kosmetik endnu.",
+    "description": "Genstande, du køber eller får, vises her, klar til at blive båret.",
+    "browse": "Gennemse Butikken",
+    "categoryTitle": "{{category}}: ingen endnu",
+    "categoryDescription": "Genstande af denne type, som du ejer, vises her."
+  },
+  "viewer": {
+    "region": "Din figur",
+    "label_one": "Din figur bærer {{count}} genstand. Træk eller brug piletasterne for at dreje, plus og minus for at zoome.",
+    "label_other": "Din figur bærer {{count}} genstande. Træk eller brug piletasterne for at dreje, plus og minus for at zoome.",
+    "hint": "Træk for at dreje · scroll for at zoome",
+    "animation": "Animation",
+    "playEmote": "Afspil {{name}}",
+    "noEmote": "Ingen emote på",
+    "reset": "Nulstil visning"
+  },
+  "animations": {
+    "idle": "I hvile",
+    "walk": "Gå",
+    "wave": "Vink",
+    "dance": "Dans"
+  },
+  "items": {
+    "region": "Dine genstande",
+    "nothing": "Intet",
+    "equipped": "På"
+  },
+  "categories": {
+    "label": "Kategorier",
+    "all": "Alle",
+    "head": "Hatte",
+    "back": "Ryg",
+    "top": "Overkrop",
+    "shoulder": "Skulder",
+    "nametag": "Navneskilte",
+    "emote": "Emotes",
+    "companion": "Følgesvende",
+    "trail": "Spor",
+    "aura": "Auraer"
+  },
+  "rarity": {
+    "common": "Almindelig",
+    "rare": "Sjælden",
+    "epic": "Episk",
+    "legendary": "Legendarisk"
+  },
+  "toast": {
+    "equipped": "{{name}} er taget på",
+    "unequipped": "{{name}} er taget af",
+    "cleared": "{{slot}}: intet på",
+    "outfitWorn": "Outfit taget på",
+    "outfitSaved": "Outfit »{{name}}« er gemt",
+    "equipFailed": "Dit udseende kunne ikke ændres. Prøv igen."
+  },
+  "outfits": {
+    "title": "Outfits",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Navngiv dette look",
+    "save": "Gem nuværende look",
+    "full": "Du kan have op til {{max}} outfits. Slet et for at gemme et nyt look.",
+    "empty": "Gem dit nuværende look for at tage det på igen med ét klik.",
+    "items_one": "{{count}} genstand",
+    "items_other": "{{count}} genstande",
+    "wearing": "Har på",
+    "wear": "Tag på",
+    "delete": "Slet outfittet {{name}}"
+  },
+  "switches": {
+    "showMine": "Vis min kosmetik",
+    "showMineHint": "Andre spillere med Rustic-udgaven ser, hvad du har på.",
+    "hideOthers": "Skjul andre spilleres kosmetik",
+    "hideTrailsAuras": "Skjul spor og auraer"
+  },
+  "heading": "Dit *skab*",
+  "eyebrow": "Kosmetik"
+}

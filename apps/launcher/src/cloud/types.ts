@@ -80,7 +80,60 @@ export interface Party {
   members: (UserLite & { presence: PresenceStatus })[];
   max_size: number;
   pending_invites: UserLite[];
+  /** How members hear each other (ADR 0176). */
+  voice: PartyVoiceSettings;
 }
+
+/** Proximity: members on the same server hear each other by distance (8-128 blocks). */
+export interface PartyVoiceSettings {
+  proximity: boolean;
+  range: number;
+}
+
+/** A party invite the signed-in user received. */
+export interface PartyInviteLite {
+  id: string;
+  party_id: string;
+  from: UserLite;
+  expires_at: string;
+}
+
+/** A message of the party's text chat. */
+export interface PartyChatMessage {
+  id: string;
+  party_id: string;
+  from_id: string;
+  body: string;
+  sent_at: string;
+}
+
+export type VoiceRoomKind = 'party' | 'server';
+
+/** `POST /v1/voice/token`: what the voice engine needs to join a LiveKit room (ADR 0176). */
+export interface VoiceTokenInfo {
+  url: string;
+  token: string;
+  room: string;
+  kind: VoiceRoomKind;
+  identity: string;
+  expires_at: string;
+  proximity: boolean;
+  range: number;
+  server_name: string | null;
+}
+
+/** A Rustic Server registered for proximity voice (its owner's view). */
+export interface VoiceServerInfo {
+  id: string;
+  name: string;
+  enabled: boolean;
+  created_at: string;
+  last_seen_at: string | null;
+  online: number;
+}
+
+export type UserReportReason = 'spam' | 'harassment' | 'inappropriate_content' | 'other';
+export type UserReportContext = 'party_voice' | 'server_voice' | 'party_chat';
 
 export interface Me extends UserLite {
   email: string;
@@ -94,6 +147,25 @@ export interface Me extends UserLite {
   discoverable: boolean;
   /** False for minors: the setting is forced off and cannot be changed. */
   discoverable_allowed: boolean;
+  /** Party voice (ADR 0176): the chat rules plus a guardian's switch. */
+  can_party_voice: boolean;
+  /** The proximity voice of Rustic Servers, with strangers: adults, or a guardian's consent. */
+  can_server_voice: boolean;
+}
+
+/** An announcement written in the website's back-office for the launcher (ADR 0171). */
+export interface CloudBanner {
+  id: string;
+  severity: 'info' | 'success' | 'warning' | 'critical';
+  /** The language of the text (the asked one, or `en`). */
+  lang: string;
+  title: string;
+  /** Markdown (rendered as safe text). */
+  body: string;
+  dismissible: boolean;
+  ends_at?: string | null;
+  /** A dismissal is remembered per id and version. */
+  updated_at: string;
 }
 
 export interface NewsItem {
@@ -298,6 +370,8 @@ export type RealtimeEvent =
   /** A friendship was made (request accepted) or ended elsewhere: refetch the roster. */
   | { type: 'friends-changed' }
   | { type: 'party'; party: Party | null }
+  | { type: 'party-invite'; invite: PartyInviteLite }
+  | { type: 'party-message'; message: PartyChatMessage }
   | { type: 'notification'; notification: AppNotification }
   | { type: 'message'; message: ChatMessage }
   | { type: 'messages-read'; reader_id: string; read_at: string }

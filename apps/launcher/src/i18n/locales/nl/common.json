@@ -100,7 +100,8 @@
       "appearance": "Uiterlijk",
       "privacy": "Privacy en gegevens",
       "parental": "Ouderlijk toezicht",
-      "about": "Over"
+      "about": "Over",
+      "voice": "Spraak"
     }
   },
   "friends": {
@@ -194,7 +195,30 @@
     "leader": "Groepsleider",
     "pending": "{{name}} (uitgenodigd)",
     "invite": "Uitnodigen voor groep",
-    "invited": "{{name}} is uitgenodigd voor je groep"
+    "invited": "{{name}} is uitgenodigd voor je groep",
+    "invitesTitle": "Groepsuitnodigingen",
+    "invitedBy": "{{name}} nodigt je uit voor de groep",
+    "accept": "Meedoen",
+    "decline": "Weigeren",
+    "makeLeader": "Groepsleider maken",
+    "kick": "Uit de groep verwijderen",
+    "proximity": "Nabijheidsspraak",
+    "proximityHint": "Leden op dezelfde server horen elkaar afhankelijk van de afstand",
+    "range": "Bereik (blokken)",
+    "emptyTitle": "Nog geen groep",
+    "emptyBody": "Maak een groep en nodig daarna vrienden uit via hun menu op het tabblad Vrienden.",
+    "create": "Groep maken",
+    "inviteHint": "Nodig vrienden uit via hun menu op het tabblad Vrienden.",
+    "chatTitle": "Groepschat",
+    "chatEmpty": "Word lid van een groep of maak er een om met de leden te chatten.",
+    "chatPlaceholder": "Bericht aan de groep",
+    "formerMember": "Voormalig lid",
+    "errors": {
+      "party_full": "De groep is vol.",
+      "party_not_allowed": "Deze speler kan niet in deze groep: spelers onder de 18 komen alleen in groepen van hun vrienden.",
+      "already_in_party": "Verlaat eerst je huidige groep.",
+      "not_party_leader": "Alleen de groepsleider kan dit doen."
+    }
   },
   "presence": {
     "online": "Online",
@@ -432,6 +456,48 @@
       "updated": "Rustic Launcher bijgewerkt naar {{version}}",
       "resuming": "Update klaar: je spel wordt gestart",
       "failed": "De update kon niet worden geïnstalleerd. Het wordt later opnieuw geprobeerd."
+    }
+  },
+  "voice": {
+    "title": "Spraak",
+    "join": "Spraak deelnemen",
+    "leave": "Spraak verlaten",
+    "mute": "Microfoon dempen",
+    "unmute": "Microfoon aan",
+    "deafen": "Geluid uit",
+    "undeafen": "Geluid aan",
+    "speaking": "Praat",
+    "micMuted": "Gedempt",
+    "outOfRange": "Buiten bereik",
+    "muteFor": "{{name}} voor jezelf dempen",
+    "unmuteFor": "{{name}} weer horen",
+    "reportAria": "{{name}} melden",
+    "memberVolume": "Volume van {{name}}",
+    "report": "Melden",
+    "reportTitle": "{{name}} melden?",
+    "reportBody": "Onze moderators bekijken de melding. Spraak wordt nooit opgenomen. Deze speler wordt direct voor je gedempt.",
+    "reported": "{{name}} is gemeld",
+    "reasons": {
+      "harassment": "Intimidatie of haat",
+      "inappropriate_content": "Ongepaste inhoud",
+      "spam": "Spam of lawaai",
+      "other": "Iets anders"
+    },
+    "proximityOn": "nabijheid, bereik {{range}}",
+    "you": "Jij",
+    "listenOnly": "Alleen luisteren",
+    "alone": "Nog niemand anders in de spraak.",
+    "serverOffer": "{{server}} heeft nabijheidsspraak",
+    "serverRoom": "Serverspraak",
+    "partyRoom": "Groepsspraak",
+    "errors": {
+      "voice_unavailable": "Spraak is nu niet beschikbaar. Probeer het later opnieuw.",
+      "voice_not_allowed": "Spraak is niet beschikbaar voor je account.",
+      "mic_denied": "Toegang tot de microfoon is geweigerd: je kunt luisteren maar niet praten. Sta het toe in de privacyinstellingen van je systeem.",
+      "mic_missing": "Geen microfoon gevonden: je kunt luisteren maar niet praten.",
+      "connect_failed": "Kon geen verbinding maken met spraak. Controleer je verbinding en probeer het opnieuw.",
+      "kicked": "Je bent uit de spraakruimte verwijderd.",
+      "not_on_voice_server": "Deze server heeft geen nabijheidsspraak."
     }
   }
 }

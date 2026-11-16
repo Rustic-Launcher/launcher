@@ -7,12 +7,14 @@ mod cmd;
 mod discord;
 mod dto;
 mod play_stats;
+mod presence_icons;
 mod relay;
 mod skins;
 mod state;
 mod tasks;
 mod update;
 mod util;
+mod voice;
 
 use state::AppState;
 use std::sync::Arc;
@@ -334,6 +336,8 @@ pub fn run() {
         // The webview's log calls reach our tracing files (the Rust side already set the logger).
         .plugin(tauri_plugin_log::Builder::new().skip_logger().build())
         .plugin(tauri_plugin_updater::Builder::new().build())
+        // The voice engine's microphone (ADR 0176): the main window only, never camera/screen.
+        .on_permission_request(|webview, kind| voice::permission(webview.label(), kind))
         .setup(move |app| {
             let handle = app.handle().clone();
             let state =
@@ -351,6 +355,9 @@ pub fn run() {
                 });
             }
             cmd::instances::forward_game_events(state.clone());
+            if let Some(w) = app.get_webview_window(voice::ENGINE_WINDOW) {
+                voice::enable_media(&w);
+            }
             update::start(state.clone());
             cmd::servers::watch_servers(state.clone());
             cmd::servers::autostart(state.clone());
@@ -381,11 +388,11 @@ pub fn run() {
                     handle_deep_link(&handle, url.as_str());
                 }
             }
-            state.discord.set(discord::Presence {
-                place: discord::Place::Launcher,
-                game: None,
-                since: rusticmc_launcher_core::time::now(),
-            });
+            state.discord.set(discord::Presence::at(
+                discord::Place::Launcher,
+                None,
+                rusticmc_launcher_core::time::now(),
+            ));
             {
                 let st = state.clone();
                 tauri::async_runtime::spawn(async move {
@@ -402,6 +409,8 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             // app / system
             cmd::app::app_info,
+            // voice (ADR 0176)
+            voice::voice_overlay_set,
             cmd::app::player_skin_url,
             cmd::app::system_info,
             cmd::app::settings_get,
@@ -460,6 +469,28 @@ pub fn run() {
             cmd::instances::instance_launch_cancel,
             cmd::instances::instance_stop,
             cmd::instances::launch_status,
+            // Java Edition and Bedrock (ADR 0172)
+            cmd::java::java_versions_list,
+            cmd::java::java_loader_versions,
+            cmd::java::java_profiles_list,
+            cmd::java::java_profile_create,
+            cmd::java::java_profile_update,
+            cmd::java::java_profile_delete,
+            cmd::java::java_profile_install,
+            cmd::java::java_profile_launch,
+            cmd::java::java_profile_stop,
+            cmd::java::java_run_states,
+            cmd::java::java_profile_log,
+            cmd::java::java_profile_open_folder,
+            cmd::java::java_mods_search,
+            cmd::java::java_mods_list,
+            cmd::java::java_mod_install,
+            cmd::java::java_mod_set_enabled,
+            cmd::java::java_mod_remove,
+            cmd::java::bedrock_status,
+            cmd::java::bedrock_launch,
+            cmd::java::bedrock_open_store,
+            cmd::java::edition_icon,
             // content
             cmd::content::content_search,
             cmd::content::content_get,

@@ -56,7 +56,7 @@ export function ConversationList({
               aria-current={selected === c.user.id || undefined}
               data-testid={`chat-${c.user.username}`}
               className={cn(
-                'rx-focus-ring flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left',
+                'rx-focus-ring flex w-full items-center gap-3 rounded-lg px-2 py-2 text-start',
                 selected === c.user.id ? 'bg-surface-3' : 'hover:bg-surface-2',
               )}
             >
@@ -175,8 +175,8 @@ export function ConversationPane({ userId }: { userId: string | null }) {
                   className={cn(
                     'max-w-[75%] rounded-2xl px-3 py-2 text-sm',
                     mine
-                      ? 'bg-accent text-accent-fg rounded-br-md'
-                      : 'bg-surface-3 text-fg rounded-bl-md',
+                      ? 'bg-accent text-accent-fg rounded-ee-md'
+                      : 'bg-surface-3 text-fg rounded-es-md',
                   )}
                 >
                   {m.body}

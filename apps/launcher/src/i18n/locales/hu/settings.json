@@ -13,7 +13,8 @@
     "appearance": "Megjelenés",
     "privacy": "Adatvédelem és adatok",
     "parental": "Szülői felügyelet",
-    "about": "Névjegy és jogi információk"
+    "about": "Névjegy és jogi információk",
+    "voice": "Hangcsevegés"
   },
   "accounts": {
     "active": "Aktív",
@@ -95,7 +96,8 @@
       "description": "A Rustic-identitásod a barátokhoz, a Szekrényhez, a vásárlásokhoz és a szerverekhez.",
       "signedOut": "Nem vagy bejelentkezve. A játék enélkül is működik; a közösségi funkciókhoz, a Szekrényhez és a Bolthoz azonban kell.",
       "signIn": "Bejelentkezés vagy fiók létrehozása",
-      "licenceNote": "A Rustic-fiók egy platformidentitás. Soha nem helyettesíti a játéklicencet: továbbra is szükséged van egy olyan Microsoft-fiókra, amely rendelkezik a játékkal."
+      "licenceNote": "A Rustic-fiók egy platformidentitás. Soha nem helyettesíti a játéklicencet: továbbra is szükséged van egy olyan Microsoft-fiókra, amely rendelkezik a játékkal.",
+      "manageOnWeb": "Kezelés a weboldalon"
     },
     "offline": {
       "title": "Offline játék",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Fejezd be a bejelentkezést a böngésződben: a launcher automatikusan átveszi a munkamenetedet."
   },
   "heading": "A *beállításaid*",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Eszközök",
+    "devicesHint": "A hangcsevegéshez használt mikrofon és hangszóró vagy fejhallgató.",
+    "input": "Mikrofon",
+    "output": "Kimenet",
+    "outputVolume": "Kimeneti hangerő",
+    "systemDefault": "Rendszer alapértelmezése",
+    "deviceN": "{{n}}. eszköz",
+    "talk": "Beszéd",
+    "talkHint": "Beszélj, amikor a hangodat érzékeli, vagy csak amíg lenyomva tartasz egy billentyűt.",
+    "mode": "Bemeneti mód",
+    "modeVad": "Hangaktivitás",
+    "modePtt": "Nyomd és beszélj",
+    "pttKey": "Beszéd billentyű",
+    "pttKeyHint": "Működik a launcherben és a játékban. Az egér oldalsó gombjai is.",
+    "pressKey": "Nyomj meg egy billentyűt…",
+    "sensitivity": "Érzékenység",
+    "sensitivityHint": "Magasabb értéken a halkabb hangot is érzékeli; alacsonyabbon jobban kiszűri a háttérzajt.",
+    "test": "Mikrofonteszt",
+    "testMic": "Teszt",
+    "stopTest": "Leállítás",
+    "level": "Mikrofonszint",
+    "micDenied": "A mikrofonhoz való hozzáférés el lett utasítva. Engedélyezd a rendszer adatvédelmi beállításaiban, majd próbáld újra.",
+    "micMissing": "Nem található mikrofon.",
+    "noiseSuppression": "Zajszűrés",
+    "echoCancellation": "Visszhangszűrés",
+    "autoGain": "Automatikus erősítés",
+    "inGame": "Játékban",
+    "inGameHint": "A Rustic kiadásban egy felület mutatja, ki beszél, és a beszéd billentyű a játékban is működik.",
+    "overlay": "Hangcsevegés megjelenítése a játékban",
+    "serverVoice": "Közelségi hang a szervereken",
+    "serverVoiceHint": "A Rustic Serverek távolság szerinti hangot kínálhatnak az összes ott lévő játékossal. 18 év alatt ezt egy szülőnek kell engedélyeznie.",
+    "serverAsk": "Kérdezzen meg",
+    "serverAuto": "Automatikus csatlakozás",
+    "serverOff": "Soha",
+    "servers": {
+      "title": "Közelségi hang a szervereidhez",
+      "description": "Adj hozzá egy szervert, majd írd a kulcsát a proximity-voice plugin config.toml fájljába. Bármikor kikapcsolhatod.",
+      "namePlaceholder": "Szerver neve",
+      "add": "Hozzáadás",
+      "status": "Online játékosok: {{count}}",
+      "enabled": "Közelségi hang itt: {{name}}",
+      "newKey": "Új kulcs",
+      "remove": "{{name}} eltávolítása",
+      "keyOnce": "Másold ki most ezt a kulcsot: csak egyszer jelenik meg. Egy új kulcs lecseréli.",
+      "tooMany": "Legfeljebb 10 szervert adhatsz hozzá."
+    }
+  }
 }

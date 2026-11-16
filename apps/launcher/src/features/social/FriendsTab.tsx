@@ -234,6 +234,7 @@ export function PartyCard() {
   const { t } = useTranslation();
   const qc = useQueryClient();
   const { data: party, isLoading } = useParty();
+  const setSocial = useUi((s) => s.setSocial);
   if (isLoading) return <Skeleton className="mx-2 h-20" />;
   if (!party) return null;
   return (
@@ -243,12 +244,19 @@ export function PartyCard() {
       data-testid="party-card"
     >
       <div className="mb-2 flex items-center justify-between">
-        <h3 className="flex items-center gap-1.5 text-xs font-semibold">
-          <PartyPopper className="text-accent-text size-3.5" />
-          {t('party.title')}
-          <span className="text-fg-subtle font-normal">
-            {party.members.length}/{party.max_size}
-          </span>
+        <h3 className="text-xs font-semibold">
+          <button
+            type="button"
+            className="rx-focus-ring flex items-center gap-1.5 rounded"
+            data-testid="party-card-open"
+            onClick={() => setSocial({ socialTab: 'party' })}
+          >
+            <PartyPopper className="text-accent-text size-3.5" />
+            {t('party.title')}
+            <span className="text-fg-subtle font-normal">
+              {party.members.length}/{party.max_size}
+            </span>
+          </button>
         </h3>
         <Button
           variant="ghost"

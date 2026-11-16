@@ -1,7 +1,7 @@
 {
   "name": "@rustic/launcher",
   "private": true,
-  "version": "0.2.5",
+  "version": "0.2.8",
   "license": "MIT OR Apache-2.0",
   "type": "module",
   "scripts": {
@@ -24,6 +24,7 @@
     "@tanstack/react-router": "1.170.46",
     "@tauri-apps/api": "2.12.4",
     "i18next": "27.1.0",
+    "livekit-client": "2.23.0",
     "lucide-react": "1.70.0",
     "motion": "14.11.1",
     "openapi-fetch": "0.17.0",

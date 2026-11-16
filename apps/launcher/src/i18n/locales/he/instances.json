@@ -1,0 +1,345 @@
+{
+  "title": "גרסאות",
+  "errors": {
+    "action": "זה לא הצליח"
+  },
+  "card": {
+    "more": "פעולות נוספות עבור {{name}}",
+    "pin": "הצמדה",
+    "unpin": "ביטול הצמדה",
+    "duplicate": "שכפול",
+    "duplicated": "{{name}} נוצר",
+    "playtime": "זמן משחק",
+    "never": "אף פעם",
+    "fromModpack": "חבילת המודים {{name}} {{version}}"
+  },
+  "state": {
+    "running": "פועל",
+    "installing": "בהתקנה",
+    "broken": "דורש תיקון"
+  },
+  "delete": {
+    "title": "למחוק את {{name}}?",
+    "body": "המודים, ההגדרות והעולמות שלו יימחקו מהמחשב הזה. אי אפשר לבטל את הפעולה.",
+    "confirm": "מחיקת המופע",
+    "done": "{{name}} נמחק"
+  },
+  "new": {
+    "title": "מופע חדש",
+    "description": "להתחיל מאפס או להביא חבילה קיימת.",
+    "tabs": {
+      "create": "יצירה",
+      "import": "ייבוא"
+    },
+    "name": "שם",
+    "namePlaceholder": "עולם ההישרדות שלי",
+    "nameRequired": "צריך לתת שם למופע.",
+    "icon": "סמל",
+    "color": "צבע",
+    "colorN": "צבע {{n}}",
+    "version": "build של Horizon",
+    "versionHint": "מהדורת Rustic מוסיפה פריטים קוסמטיים וחברים במשחק. אין צורך בהגדרות Java או RAM.",
+    "recommended": "מומלץ",
+    "release": "יציבה",
+    "nightly": "לילית",
+    "installed": "מותקן",
+    "submit": "יצירת המופע",
+    "created": "{{name}} מוכן",
+    "preview": "תצוגה מקדימה",
+    "edition": "מהדורה",
+    "editionRustic": "פריטים קוסמטיים, חברים ומודים נייטיב במשחק.",
+    "editionHorizon": "Horizon כפי שהצוות שלו מפרסם אותו, בלי תוספות.",
+    "noBuild": "כרגע לא מופיע אף build של המהדורה הזו.",
+    "nightlyHint": "גרסאות build ליליות יוצאות כל יום מהקוד העדכני ביותר של Horizon: חדשות יותר, פחות נבדקות."
+  },
+  "icons": {
+    "grass": "נבט",
+    "sword": "חרבות",
+    "pickaxe": "מכוש",
+    "castle": "טירה",
+    "rocket": "טיל",
+    "gem": "אבן חן",
+    "flame": "להבה",
+    "leaf": "עלה",
+    "star": "כוכב",
+    "compass": "מצפן"
+  },
+  "import": {
+    "folder": {
+      "title": "תיקיית מופע",
+      "description": "תיקיית מופע של Prism או MultiMC, מועברת כמו ש-Horizon עושה."
+    },
+    "mrpack": {
+      "title": "חבילת Modrinth (.mrpack)",
+      "description": "המודים מותאמים לגרסאות ה-build שלהם ל-Horizon כשהן זמינות."
+    },
+    "curseforge_zip": {
+      "title": "קובץ zip של CurseForge",
+      "description": "חבילת מודים מיוצאת מ-CurseForge."
+    },
+    "modpack": {
+      "title": "מחבילת מודים",
+      "description": "עיון בחבילות מודים של Horizon, Modrinth ו-Rustic."
+    },
+    "started": "מייבאים את {{name}}",
+    "background": "זה ממשיך ברקע; אפשר להמשיך להשתמש בלאנצ'ר.",
+    "note": "רק תוכן שעובד ב-Horizon מותקן; השאר מופיע ברשימה עם הסיבה.",
+    "drop": {
+      "title": "אפשר לגרור לכאן חבילה או תיקיית מופע",
+      "hint": ".mrpack של Modrinth, .zip של CurseForge, או תיקיית מופע של Prism או MultiMC",
+      "choose": "בחירת קובץ",
+      "active": "לשחרר כדי לייבא",
+      "unsupported": "אי אפשר לייבא את זה. צריך להשתמש בקובץ .mrpack, בקובץ .zip של CurseForge או בתיקיית מופע."
+    },
+    "formats": "פורמטים נתמכים"
+  },
+  "detail": {
+    "notFound": "המופע הזה כבר לא קיים",
+    "backToList": "חזרה למופעים",
+    "tabsLabel": "חלקי המופע",
+    "tabs": {
+      "overview": "סקירה",
+      "content": "תוכן",
+      "resourcepacks": "חבילות משאבים",
+      "worlds": "עולמות",
+      "settings": "הגדרות"
+    }
+  },
+  "overview": {
+    "mods": "מודים",
+    "resourcePacks": "חבילות משאבים",
+    "shaders": "חבילות שיידרים",
+    "version": "build של Horizon",
+    "updateAvailable": "יש עדכון זמין",
+    "upToDate": "מעודכן",
+    "updateNow": "לעדכן עכשיו",
+    "changeVersion": "בחירת build של Horizon",
+    "applyVersion": "החלפת build",
+    "versionChanging": "עוברים אל {{version}}",
+    "lastSession": "הסשן האחרון",
+    "lastPlayed": "שיחקת {{when}}",
+    "neverPlayed": "עדיין לא שיחקת",
+    "rejoin": "הצטרפות מחדש",
+    "noServer": "עדיין לא הצטרפת לשרת מהמופע הזה.",
+    "created": "נוצר",
+    "folder": "תיקייה"
+  },
+  "content": {
+    "filter": "סינון לפי סוג",
+    "kinds": {
+      "all": "הכול",
+      "mod": "מודים",
+      "resourcepack": "חבילות משאבים",
+      "shader": "שיידרים"
+    },
+    "search": "חיפוש בתוכן המותקן",
+    "updateAll_one": "עדכון פריט אחד",
+    "updateAll_two": "עדכון 2 פריטים",
+    "updateAll_other": "עדכון {{count}} פריטים",
+    "browse": "עיון בתוכן",
+    "noMatch": "שום דבר מותקן לא תואם לחיפוש שלך.",
+    "empty": {
+      "title": "עדיין לא הותקן כלום",
+      "description": "אפשר למצוא מודים, חבילות משאבים ושיידרים שעובדים עם המופע הזה."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "קובץ מקומי"
+    },
+    "updateTo": "עדכון: {{version}}",
+    "incompatible": "לא תואם: {{reason}}",
+    "updateOne": "עדכון {{name}}",
+    "toggle": "הפעלת {{name}}",
+    "remove": "הסרת {{name}}",
+    "removeTitle": "להסיר את {{name}}?",
+    "removeBody": "הקובץ יימחק מהמופע הזה. אפשר להתקין אותו שוב מהתוכן."
+  },
+  "packs": {
+    "hint": "כששתי חבילות משנות את אותו הדבר, החבילה שלמעלה גוברת.",
+    "listLabel": "סדר הטעינה של חבילות המשאבים",
+    "top": "העדיפות הגבוהה ביותר",
+    "up": "הזזת {{name}} למעלה",
+    "down": "הזזת {{name}} למטה",
+    "moved": "{{name}} הועבר למיקום {{position}} מתוך {{total}}",
+    "browse": "חיפוש חבילות משאבים",
+    "empty": {
+      "title": "אין חבילת משאבים",
+      "description": "אפשר להוסיף חבילות כדי לשנות טקסטורות, צלילים והממשק."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "עדיין אין עולם",
+      "description": "עולמות שיוצרים במשחק מופיעים כאן."
+    },
+    "openSaves": "פתיחת תיקיית השמירות",
+    "lastPlayed": "שיחקת {{when}}",
+    "modes": {
+      "survival": "הישרדות",
+      "creative": "יצירתי",
+      "adventure": "הרפתקה",
+      "hardcore": "הארדקור",
+      "spectator": "צופה"
+    },
+    "datapacks_one": "חבילת נתונים אחת",
+    "datapacks_two": "2 חבילות נתונים",
+    "datapacks_other": "{{count}} חבילות נתונים",
+    "play": "לשחק בעולם הזה",
+    "addDatapacks": "הוספת חבילות נתונים"
+  },
+  "settings": {
+    "general": "כללי",
+    "display": "חלון",
+    "useDefaultResolution": "שימוש בגודל החלון המוגדר כברירת מחדל",
+    "defaultIs": "ברירת מחדל: {{width}} × {{height}}",
+    "width": "רוחב",
+    "height": "גובה",
+    "fullscreen": "הפעלה במסך מלא",
+    "resolutionError": "צריך מספרים שלמים, לפחות 640 × 360.",
+    "launch": "אפשרויות הפעלה",
+    "launchHint": "מופעי Horizon רק נועלים build: אין Java, RAM או טוען להגדיר.",
+    "gameArgs": "ארגומנטים נוספים למשחק",
+    "gameArgsHint": "מתקדם. מועברים ל-Horizon כמו שהם.",
+    "folders": "תיקיות",
+    "folder": {
+      "root": "מופע",
+      "mods": "מודים",
+      "resourcepacks": "חבילות משאבים",
+      "shaderpacks": "חבילות שיידרים",
+      "saves": "עולמות",
+      "screenshots": "צילומי מסך",
+      "logs": "יומנים"
+    },
+    "unsaved": "יש לך שינויים שלא נשמרו.",
+    "allSaved": "כל השינויים נשמרו.",
+    "saved": "הגדרות המופע נשמרו"
+  },
+  "heading": "*הפרופילים* שלך",
+  "native": {
+    "title": "מודים נייטיב",
+    "allOff": "הכול כבוי: המופע מפעיל את המשחק הבנוי מראש.",
+    "state": {
+      "building": "בונים…",
+      "up_to_date": "מעודכן",
+      "needs_rebuild": "נדרשת בנייה מחדש",
+      "not_built": "לא נבנה",
+      "not_needed": "משחק בנוי מראש"
+    },
+    "build": "בנייה",
+    "rebuild": "בנייה מחדש",
+    "cancel": "ביטול",
+    "progress": "התקדמות הבנייה הנייטיב",
+    "starting": "מתחילים…",
+    "firstBuildHint": "הבנייה הראשונה מהדרת את כל המשחק (10 עד 15 דקות); הבאות רק את מה שהשתנה. אפשר להמשיך להשתמש בלאנצ'ר.",
+    "failed": "הבנייה האחרונה נכשלה",
+    "built": "נבנה {{date}} תוך {{duration}} · משחק {{size}}",
+    "leftOut": {
+      "other": "{{name}} לא נכלל: הוא לא רלוונטי ל-Horizon הזה.",
+      "unsupported": "{{name}} לא נכלל: Rustic עדיין לא יודע לבנות את מה שהוא צריך."
+    },
+    "notEdition": "המופע הזה מפעיל build רגיל של Horizon: מודים נייטיב נבנים רק לתוך מהדורת Rustic."
+  },
+  "profiles": {
+    "summary_one": "פרופיל אחד · זמן משחק: {{playtime}}",
+    "summary_two": "2 פרופילים · זמן משחק: {{playtime}}",
+    "summary_other": "{{count}} פרופילים · זמן משחק: {{playtime}}",
+    "searchLabel": "חיפוש בפרופילים שלך",
+    "searchPlaceholder": "חיפוש לפי שם, build של Horizon או חבילת מודים…",
+    "source": {
+      "label": "הצגה",
+      "all": "כל הפרופילים",
+      "custom": "הפרופילים שלי",
+      "modpack": "מחבילות מודים"
+    },
+    "sorts": {
+      "recent": "שיחקת לאחרונה",
+      "name": "שם",
+      "created": "נוצרו לאחרונה",
+      "version": "build של Horizon",
+      "playtime": "זמן משחק"
+    },
+    "filters": {
+      "version": "build של Horizon",
+      "edition": "מהדורה",
+      "editions": {
+        "rustic": "מהדורת Rustic",
+        "horizon": "Horizon רגיל"
+      },
+      "native": "מודים נייטיב",
+      "nativeOnly": "עם מודים נייטיב",
+      "nativeHint": "מודים נייטיב מהודרים במחשב שלך לפני שהמשחק מתחיל.",
+      "remove": "הסרת המסנן: {{filter}}",
+      "reset": "איפוס המסננים"
+    },
+    "create": "יצירת פרופיל",
+    "createHint": "build של Horizon, סמל ושם",
+    "import": "ייבוא",
+    "importHint": "תיקייה, קובץ .mrpack או zip של CurseForge",
+    "all": "כל הפרופילים",
+    "listLabel": "פרופילים",
+    "recent": "לחזור למשחק",
+    "recentHint": "הפרופילים ששיחקת בהם לאחרונה",
+    "card": {
+      "active": "פעיל",
+      "activeHint": "ה-Launchpad מפעיל את הפרופיל הזה",
+      "running": "פועל",
+      "pinned": "מוצמד",
+      "update": "עדכון {{version}}",
+      "broken": "דורש תיקון",
+      "modpack": "חבילת מודים",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "שיחקת {{when}}",
+      "neverPlayed": "עדיין לא שיחקת",
+      "created": "נוצר {{date}}",
+      "lastServer": "לאחרונה ב-{{name}}",
+      "rejoin": "הצטרפות מחדש",
+      "rejoinAria": "הצטרפות מחדש אל {{server}} עם {{name}}",
+      "mods": "מודים",
+      "packs": "חבילות משאבים",
+      "shaders": "שיידרים",
+      "playtime": "זמן משחק",
+      "contentCount": "מודים: {{mods}} · חבילות: {{packs}} · שיידרים: {{shaders}}",
+      "open": "פתיחת {{name}}"
+    },
+    "native": {
+      "label": "מודים נייטיב",
+      "count_one": "מוד נייטיב אחד",
+      "count_two": "2 מודים נייטיב",
+      "count_other": "{{count}} מודים נייטיב",
+      "building": "בונים {{pct}}",
+      "buildingNoPct": "בונים…",
+      "up_to_date": "המודים הנייטיב מוכנים",
+      "needs_rebuild": "נייטיב: נדרשת בנייה מחדש",
+      "not_built": "נייטיב: עדיין לא נבנה",
+      "off": "המודים הנייטיב כבויים",
+      "unsupported": "נייטיב: דורש את מהדורת Rustic",
+      "hint": {
+        "up_to_date": "נבנה במחשב הזה עבור ה-build הזה של Horizon.",
+        "needs_rebuild": "המודים השתנו מאז הבנייה האחרונה: הם ייבנו מחדש כשתשחק.",
+        "not_built": "מהודר במחשב שלך כשמשחקים (10 עד 15 דקות בפעם הראשונה).",
+        "off": "כל המודים הנייטיב כבויים: המשחק הבנוי מראש פועל.",
+        "unsupported": "הפרופיל הזה מפעיל build רגיל של Horizon: מודים נייטיב נבנים רק לתוך מהדורת Rustic.",
+        "building": "מהדרים את המשחק עם המודים הנייטיב של הפרופיל הזה."
+      }
+    },
+    "menu": {
+      "edit": "עריכת ההגדרות",
+      "activate": "שימוש ב-Launchpad",
+      "isActive": "בשימוש ב-Launchpad",
+      "activated": "{{name}} נמצא עכשיו ב-Launchpad"
+    },
+    "empty": {
+      "title": "עדיין אין פרופיל",
+      "description": "פרופיל הוא build של Horizon עם מודים, חבילות ועולמות משלו. אפשר ליצור אחד עם ה-build המומלץ, או לייבא חבילה שכבר יש לך."
+    },
+    "noMatch": {
+      "title": "אין פרופיל תואם",
+      "description": "כדאי לנסות חיפוש אחר או להסיר מסנן."
+    },
+    "detail": {
+      "banner": "תמונת השער של {{name}}"
+    }
+  }
+}

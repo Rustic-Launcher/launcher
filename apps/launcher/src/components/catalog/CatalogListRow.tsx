@@ -54,7 +54,7 @@ export function CatalogListRow({
         )}
       </div>
       {actions && (
-        <div className="ml-auto flex shrink-0 items-center gap-2 max-[980px]:w-full max-[980px]:justify-end">
+        <div className="ms-auto flex shrink-0 items-center gap-2 max-[980px]:w-full max-[980px]:justify-end">
           {actions}
         </div>
       )}

@@ -462,7 +462,7 @@ function WorldPicker({
               <button
                 type="button"
                 onClick={() => onPick(w.id)}
-                className="rx-focus-ring hover:bg-surface-3 flex w-full items-center gap-2.5 rounded-lg px-2 py-2 text-left text-sm"
+                className="rx-focus-ring hover:bg-surface-3 flex w-full items-center gap-2.5 rounded-lg px-2 py-2 text-start text-sm"
               >
                 <Layers className="text-fg-subtle size-4" />
                 <span className="flex-1 truncate">{w.name}</span>

@@ -6,5 +6,7 @@ export type * from './types/content';
 export type * from './types/dns';
 export type * from './types/hosting';
 export type * from './types/instances';
+export type * from './types/java';
 export type * from './types/multiplayer';
 export type * from './types/servers';
+export type * from './types/voice';

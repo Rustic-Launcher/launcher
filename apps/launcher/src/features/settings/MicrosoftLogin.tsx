@@ -91,7 +91,7 @@ export function MicrosoftLogin({
         className="border-border bg-surface-2/60 flex flex-col gap-4 rounded-xl border p-4"
         data-testid="ms-device-code"
       >
-        <ol className="text-fg-muted flex list-decimal flex-col gap-1 pl-5 text-sm">
+        <ol className="text-fg-muted flex list-decimal flex-col gap-1 ps-5 text-sm">
           <li>{t('accounts.microsoft.step1')}</li>
           <li>{t('accounts.microsoft.step2')}</li>
           <li>{t('accounts.microsoft.step3')}</li>

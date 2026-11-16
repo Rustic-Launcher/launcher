@@ -1,0 +1,479 @@
+{
+  "title": "סיור",
+  "subtitle": "מודים, חבילות, שיידרים ותוספים מ-Horizon, Modrinth ו-Rustic, שנבדקים מול המופע שלך.",
+  "kindsLabel": "סוגי תוכן",
+  "kinds": {
+    "mod": "מודים",
+    "modpack": "חבילות מודים",
+    "resourcepack": "חבילות משאבים",
+    "shader": "שיידרים",
+    "datapack": "חבילות נתונים",
+    "plugin": "תוספים"
+  },
+  "searchLabel": "חיפוש תוכן",
+  "clear": "ניקוי החיפוש",
+  "by": "מאת {{author}}",
+  "featured": "מומלצים",
+  "downloads": "{{value}} הורדות",
+  "updated": "עודכן {{when}}",
+  "results_one": "תוצאה אחת",
+  "results_two": "2 תוצאות",
+  "results_other": "{{count}} תוצאות",
+  "loadMore": "טעינת עוד ({{shown}} מתוך {{total}})",
+  "target": {
+    "label": "מתקינים אל",
+    "none": "בחירת יעד",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "שרת Horizon",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "המחשב הזה",
+    "vps": "ה-VPS שלך",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "מיון לפי",
+    "relevance": "רלוונטיות",
+    "downloads": "הכי הרבה הורדות",
+    "updated": "עודכנו לאחרונה",
+    "newest": "החדשים ביותר"
+  },
+  "sources": {
+    "label": "מקורות",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "המאגר של Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "הקטלוג של Rustic"
+  },
+  "filters": {
+    "category": "קטגוריה",
+    "allCategories": "כל הקטגוריות",
+    "compatibleInstance": "תואם למופע הזה",
+    "compatibleServer": "תואם לשרת הזה",
+    "worksNow": "נבנה על ה-Horizon הנוכחי",
+    "categories": "קטגוריות",
+    "viewMore_one": "עוד אחת",
+    "viewMore_two": "עוד 2",
+    "viewMore_other": "עוד {{count}}",
+    "viewLess": "פחות",
+    "compatibility": "תאימות",
+    "pluginHint": "תוספים רצים בארגז חול ב-Rustic Server בלבד.",
+    "fairPlayHint": "מוצג רק תוכן של משחק הוגן.",
+    "versions": "גרסאות Horizon",
+    "targetVersion": "המופע או השרת שבחרת",
+    "checkingAgainst": "התאימות נבדקת מול ה-build המודגש.",
+    "rustic": "Marketplace של Rustic",
+    "rusticHint": "פרויקטים בתשלום ופרויקטים מאומתים נמצאים רק ב-Rustic.",
+    "verifiedOnly": "מאומתים על ידי Rustic בלבד",
+    "price": "מחיר",
+    "priceOptions": {
+      "all": "הכול",
+      "free": "חינם",
+      "paid": "בתשלום"
+    },
+    "reset": "איפוס המסננים",
+    "remove": "הסרת המסנן {{filter}}"
+  },
+  "categories": {
+    "performance": "ביצועים",
+    "utility": "כלים",
+    "ui": "ממשק",
+    "pvp": "PvP",
+    "adventure": "הרפתקה",
+    "decoration": "קישוט",
+    "storage": "אחסון",
+    "worldgen": "יצירת עולם",
+    "library": "ספרייה",
+    "tech": "טכנולוגיה",
+    "cozy": "נעים",
+    "multiplayer": "מרובה משתתפים",
+    "realistic": "ריאליסטי",
+    "simple": "נאמן למקור",
+    "lightweight": "קל משקל",
+    "cinematic": "קולנועי",
+    "qol": "נוחות שימוש",
+    "admin": "ניהול",
+    "chat": "צ'אט",
+    "minigames": "מיני-משחקים",
+    "protection": "הגנה",
+    "integration": "שילובים"
+  },
+  "empty": {
+    "title": "אין התאמות",
+    "hint": "כדאי לנסות מילה, מקור או קטגוריה אחרים.",
+    "compatibleHint": "מוצג רק תוכן שרץ על היעד הזה. אפשר לכבות את המסנן כדי לראות הכול.",
+    "showAll": "הצגת תוצאות לא תואמות"
+  },
+  "banners": {
+    "mod": "מוצגים רק מודים של משחק הוגן: בלי X-ray, בלי קליקרים אוטומטיים ובלי יתרונות לא הוגנים אחרים.",
+    "modpack": "חבילת מודים הופכת למופע חדש עם מודים והגדרות משלו.",
+    "resourcepack": "החבילות נערמות זו על זו: זו שבראש סדר הטעינה גוברת.",
+    "shader": "Horizon מריץ חבילות שיידרים משלו ב-WGSL (.hshader, shader API 0.1, ניסיוני) וחבילות בפורמט Iris/OptiFine מהמאגר של Horizon. אפשר לבחור אחת במשחק תחת Video Settings › Shader Packs.",
+    "datapack": "חבילות נתונים שייכות לעולם: בוחרים את העולם בזמן ההתקנה.",
+    "plugin": "תוספים (.rplugin) רצים בארגז חול בשרתים שמשתמשים במנוע Rustic Server. תוסף תקול מושבת; השרת ממשיך לפעול."
+  },
+  "resourcepacks": {
+    "manageOrder": "ניהול סדר הטעינה"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "פורמט Iris/OptiFine"
+    },
+    "formatHint": {
+      "horizon": "הפורמט של Horizon עצמו (.hshader), shader API 0.1 (ניסיוני). נבדק לפני שהוא רץ.",
+      "shaders_dir": "חבילת shaders/ בפורמט Iris/OptiFine, שמורצת על ידי הטוען הנפרד של Horizon."
+    }
+  },
+  "side": {
+    "client": "לקוח",
+    "server": "שרת",
+    "both": "לקוח ושרת"
+  },
+  "install": {
+    "install": "התקנה",
+    "installAria": "התקנת {{name}} אל {{target}}",
+    "installed": "מותקן",
+    "installing": "מתקינים…",
+    "installingPct": "מתקינים {{pct}}",
+    "createInstance": "יצירת מופע",
+    "chooseWorld": "התקנה בעולם",
+    "noTarget": "קודם צריך לבחור לאן להתקין.",
+    "started": "מתקינים את {{name}} אל {{target}}",
+    "withDeps_one": "ועוד תלות נדרשת אחת.",
+    "withDeps_two": "ועוד 2 תלויות נדרשות.",
+    "withDeps_other": "ועוד {{count}} תלויות נדרשות.",
+    "failed": "לא ניתן היה להתקין את {{name}}",
+    "native": "בנייה והתקנה",
+    "update": "עדכון",
+    "updateAria": "עדכון {{name}} לגרסה {{version}}"
+  },
+  "modpack": {
+    "created": "יוצרים את המופע {{name}}",
+    "createdHint": "ההורדה בתהליך. המופע יופיע תחת \"לשחק\" כשיהיה מוכן."
+  },
+  "datapacks": {
+    "pickWorld": "בחירת עולם",
+    "noWorlds": "במופע הזה עדיין אין עולם. צריך לשחק פעם אחת כדי ליצור אחד.",
+    "count_one": "חבילת נתונים אחת",
+    "count_two": "2 חבילות נתונים",
+    "count_other": "{{count}} חבילות נתונים"
+  },
+  "plugins": {
+    "badge": "תוסף Rustic Server · API {{api}}",
+    "noServerTitle": "עדיין אין שרת Rustic Server",
+    "noServerBody": "תוספים רצים רק בשרתים שמשתמשים במנוע Rustic Server. אפשר ליצור שרת כזה בכמה שלבים, ואז לחזור כדי להתקין עליו תוספים.",
+    "createServer": "יצירת שרת"
+  },
+  "detail": {
+    "breadcrumb": "פירורי לחם",
+    "sections": "חלקי הפרויקט",
+    "tabs": {
+      "description": "תיאור",
+      "gallery": "גלריה",
+      "versions": "גרסאות",
+      "changelog": "יומן שינויים",
+      "dependencies": "תלויות",
+      "compatibility": "תאימות"
+    },
+    "galleryLabel": "הגלריה של {{name}}",
+    "prev": "התמונה הקודמת",
+    "next": "התמונה הבאה",
+    "slide": "תמונה {{index}} מתוך {{total}}",
+    "about": "על הפרויקט",
+    "categories": "קטגוריות",
+    "links": "קישורים",
+    "link": {
+      "source": "קוד מקור",
+      "issues": "דיווח על באג",
+      "website": "אתר",
+      "site": "ב-rustic-launcher.com",
+      "wiki": "ויקי",
+      "discord": "Discord"
+    },
+    "noChangelog": "עדיין אין יומן שינויים.",
+    "noGallery": "עדיין אין צילומי מסך.",
+    "notAvailable": {
+      "title": "הפרויקט הזה לא זמין",
+      "body": "ייתכן שהוא פרטי, ממתין לבדיקה או הוסר על ידי היוצר שלו או על ידי מנהל קהילה.",
+      "back": "חזרה לסיור"
+    },
+    "native": {
+      "title": "נבנה במחשב שלך",
+      "build": "מהודר לתוך המשחק של הפרופיל הזה בפעם הראשונה שמשחקים: בערך 10 עד 15 דקות, ואחר כך מהר יותר.",
+      "review": "נבדק לפני שאפשר להתקין אותו, על ידי המאגר של Horizon או על ידי מנהלי Rustic.",
+      "consent": "שום דבר לא נבנה לפני שקוראים ומאשרים הודעה קצרה.",
+      "more": "איך מודים נייטיב עובדים"
+    }
+  },
+  "report": {
+    "button": "דיווח",
+    "title": "דיווח על {{name}}",
+    "sent": "הדיווח נשלח",
+    "sentBody": "תודה. מנהלי הקהילה שלנו יבדקו אותו.",
+    "reasons": {
+      "fair_play": "מפר את מדיניות המשחק ההוגן",
+      "malware": "תוכנה זדונית או גניבת נתונים",
+      "copyright": "הפרת זכויות יוצרים",
+      "other": "משהו אחר"
+    },
+    "failed": "לא ניתן היה לשלוח את הדיווח"
+  },
+  "versions": {
+    "version": "גרסה",
+    "horizon": "גרסאות build של Horizon",
+    "published": "פורסם",
+    "downloads": "הורדות",
+    "compatibility": "תאימות",
+    "actions": "פעולות",
+    "none": "אין",
+    "channel": {
+      "release": "יציבה",
+      "beta": "בטא",
+      "alpha": "אלפא"
+    },
+    "empty": "עדיין אין גרסה זמינה.",
+    "latest": "האחרונה"
+  },
+  "deps": {
+    "none": "אין תלויות.",
+    "relation": {
+      "required": "נדרש",
+      "optional": "אופציונלי",
+      "incompatible": "לא תואם"
+    },
+    "installed": "מותקן",
+    "willInstall": "יותקן אוטומטית",
+    "notInstalled": "לא מותקן"
+  },
+  "compatTab": {
+    "for": "עבור {{target}}",
+    "builds": "היוצר מפרסם build שנבנה לגרסה הזו של Horizon.",
+    "format": "התוכן הזה הוא נתונים בלבד (טקסטורות, שיידרים, חבילות נתונים): הוא לא תלוי ב-build של Horizon.",
+    "unknown": "כדי לבדוק תאימות, צריך לבחור מופע או שרת.",
+    "fairPlay": "Rustic מקדם רק תוכן של משחק הוגן. שום דבר שנותן יתרון לא הוגן לא מוצג אף פעם.",
+    "native": "מוד נייטיב שמתאים ל-Horizon הזה: Rustic Launcher מהדר אותו לתוך המשחק של המופע הזה במחשב שלך."
+  },
+  "permissions": {
+    "title": "הרשאות",
+    "network": "גישה לרשת: {{value}}",
+    "none": "אין",
+    "files": "קבצים: רק תיקיית הנתונים שלו."
+  },
+  "stats": {
+    "downloads": "הורדות",
+    "follows": "עוקבים",
+    "updated": "עודכן",
+    "license": "רישיון",
+    "size": "גודל",
+    "gameVersion": "גרסת המשחק",
+    "version": "הגרסה האחרונה",
+    "author": "יוצר",
+    "created": "פורסם"
+  },
+  "searchSources": {
+    "mod": "חיפוש מודים ב-Horizon, Modrinth ו-Rustic…",
+    "modpack": "חיפוש חבילות מודים ב-Horizon, Modrinth ו-Rustic…",
+    "resourcepack": "חיפוש חבילות משאבים ב-Horizon, Modrinth ו-Rustic…",
+    "shader": "חיפוש שיידרים ב-Horizon, Modrinth ו-Rustic…",
+    "datapack": "חיפוש חבילות נתונים ב-Horizon, Modrinth ו-Rustic…",
+    "plugin": "חיפוש תוספים ב-Horizon, Modrinth ו-Rustic…"
+  },
+  "filtersLabel": "מסננים",
+  "view": "תצוגה",
+  "heading": "מוצאים את *המוד* הבא שלך",
+  "eyebrow": "סיור",
+  "kindsServer": "עבור Rustic Server",
+  "tabs": {
+    "label": "חלקי הסיור",
+    "discover": "גילוי",
+    "browse": "עיון",
+    "mine": "התוכן שלי"
+  },
+  "hero": {
+    "eyebrow": "מומלצים"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "מודים מומלצים",
+      "modpack": "חבילות מודים מומלצות",
+      "resourcepack": "חבילות משאבים מומלצות",
+      "shader": "שיידרים מומלצים",
+      "datapack": "חבילות נתונים מומלצות",
+      "plugin": "תוספים מומלצים"
+    },
+    "rows": {
+      "new": "חדש",
+      "newHint": "פורסמו או עודכנו זה עתה",
+      "horizon": "פופולרי ב-Horizon",
+      "horizonHint": "הכי הרבה הורדות מהמאגר של Horizon",
+      "verified": "מאומתים על ידי Rustic",
+      "verifiedHint": "נבדקו על ידי צוות Rustic: הם עושים את מה שהם מבטיחים",
+      "yours": "עבור {{target}}",
+      "yoursHint": "רץ על Horizon {{version}}",
+      "community": "מהקהילה",
+      "communityHint": "עודכנו לאחרונה ב-Marketplace של Rustic"
+    },
+    "empty": {
+      "title": "עדיין אין כאן מה לגלות",
+      "hint": "עדיין אין תוכן מהסוג הזה שרץ על היעד שלך. אפשר לעיין בכל התוכן במקום זאת.",
+      "browse": "עיון בהכול"
+    },
+    "rowError": "לא ניתן היה לטעון את המבחר הזה.",
+    "retry": "ניסיון חוזר"
+  },
+  "verified": {
+    "label": "מאומת",
+    "hint": "מאומת על ידי Rustic: מנהל קהילה בדק שהוא עושה את מה שכתוב בדף שלו."
+  },
+  "official": {
+    "label": "רשמי",
+    "hint": "פורסם על ידי צוות Rustic עצמו."
+  },
+  "price": {
+    "soon": "בקרוב",
+    "soonHint": "בקרוב יוצרים יוכלו למכור את היצירות שלהם. עדיין אי אפשר לקנות.",
+    "notOnSale": "עדיין לא במכירה: מכירות של יוצרים ייפתחו בקרוב."
+  },
+  "native": {
+    "badge": "נבנה במחשב שלך",
+    "short": "נייטיב",
+    "hint": "מוד נייטיב הוא קוד Rust שמהודר לתוך המשחק במחשב שלך לפני שהוא רץ.",
+    "title": "מוד נייטיב",
+    "body": "מודים נייטיב הם קוד מקור ב-Rust שנבנה לתוך המשחק שלך במחשב הזה (זה יכול לקחת בין דקה לחצי שעה). המנהלים בודקים כל גרסה לפני שהיא מתפרסמת.",
+    "kind": "מוד נייטיב",
+    "how": "Rustic Launcher מהדר אותם במחשב שלך לתוך המשחק של המופע הזה, אחרי שמאשרים הודעת אמון. הבנייה הראשונה לוקחת 10 עד 15 דקות; הבאות מהדרות מחדש רק את מה שהשתנה. מופעים בלי מודים נייטיב שומרים על המשחק הבנוי מראש.",
+    "instanceOnly": "מודים נייטיב נכנסים למופע.",
+    "trust": {
+      "title": "קוד נייטיב: כדאי לקרוא לפני הבנייה",
+      "lead": "{{name}} הוא מוד נייטיב: קוד Rust שמהודר לתוך המשחק של \"{{instance}}\" במחשב הזה.",
+      "unsandboxed": "מודים נייטיב לא רצים בארגז חול. אחרי שהם נבנים, הם רצים עם ההרשאות שלך ויכולים לקרוא, לשנות או לשלוח כל דבר שהחשבון שלך יכול.",
+      "review": "אפשר להתקין רק מודים מהמאגר של Horizon (שנבדקים על ידי המתחזקים שלו) ומודים שאושרו על ידי המנהלים ב-Marketplace של Rustic. בדיקה מקטינה את הסיכון; היא לא מבטלת אותו.",
+      "build": "Rust יותקן אם צריך, ואז המשחק יהודר עבור המופע הזה: בערך 10 עד 15 דקות וכמה GB בפעם הראשונה, ואחר כך מהר יותר.",
+      "scope": "רק המופע הזה מפעיל את המשחק הבנוי. לא נשאל שוב לגבי המודים הנייטיב הבאים שלו.",
+      "source": "לקריאת קוד המקור",
+      "check": "אני מבין שמודים נייטיב רצים מחוץ לארגז חול עם ההרשאות שלי, ואני סומך על המוד הזה.",
+      "accept": "אני סומך עליו: התקנה ובנייה"
+    },
+    "toolchain": {
+      "title": "להתקין את Rust {{version}}?",
+      "lead": "בניית מודים נייטיב דורשת את המהדר של Rust. Rustic Launcher יכול להתקין אותו בשבילך.",
+      "manual": "בניית מודים נייטיב דורשת את המהדר של Rust וכלי מערכת ש-Rustic Launcher לא יכול להתקין בשבילך. צריך להתקין אותם ואז לבנות שוב:",
+      "where": "מהאתר הרשמי (static.rust-lang.org), נבדק מול ה-SHA-256 שפורסם שם, לתוך התיקייה של הלאנצ'ר עצמו: שום דבר לא משתנה במקום אחר במחשב שלך.",
+      "size": "בערך 1 עד 2.5 GB (עם מהדר C ב-Windows).",
+      "once": "פעם אחת לכל המופעים; מחיקת הנתונים של הלאנצ'ר מסירה אותו.",
+      "found": "נמצא: {{reason}}.",
+      "install": "התקנת Rust",
+      "started": "מתקינים את Rust",
+      "startedHint": "הבנייה תתחיל ברגע שהוא יהיה מוכן. אפשר לעקוב אחריה בחלונית ההורדות.",
+      "failed": "לא ניתן היה להתקין את Rust"
+    },
+    "build": {
+      "started": "בונים מודים נייטיב עבור {{instance}}",
+      "startedHint": "אפשר לעקוב אחריה בדף המופע או בחלונית ההורדות. הבנייה הראשונה לוקחת 10 עד 15 דקות.",
+      "failed": "לא ניתן היה לבנות את המודים הנייטיב של {{instance}}"
+    },
+    "errors": {
+      "notEdition": "מודים נייטיב נבנים רק לתוך מהדורת Rustic: צריך להעביר את המופע הזה אליה בהגדרות שלו.",
+      "running": "קודם צריך לסגור את המשחק: המודים הנייטיב שלו נבנים מחדש כשהוא עצור.",
+      "disk": "אין מספיק מקום פנוי בדיסק. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "לא תואם",
+    "compatible": "תואם"
+  },
+  "library": {
+    "add": "הוספה לספרייה שלי",
+    "inLibrary": "בספרייה שלי",
+    "added": "{{name}} נוסף לספרייה שלך",
+    "removed": "{{name}} הוסר מהספרייה שלך",
+    "remove": "הסרת {{name}} מהספרייה שלי",
+    "failed": "לא ניתן היה לעדכן את הספרייה שלך"
+  },
+  "prompt": {
+    "title": "להתקין את {{name}}?",
+    "body": "פתחת את הפרויקט הזה מהאתר. צריך לבחור לאן להתקין אותו ואיזו גרסה, ואז לאשר.",
+    "dismiss": "לא עכשיו",
+    "version": "גרסה",
+    "versionMissing": "הגרסה {{version}} כבר לא זמינה: נבחרה הגרסה התואמת החדשה ביותר."
+  },
+  "mine": {
+    "searchPlaceholder": "סינון התוכן שלי…",
+    "noMatch": "אין התאמות",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "נוסף ידנית"
+    },
+    "installed": {
+      "title": "מותקנים",
+      "titleOn": "מותקנים ב-{{target}}",
+      "hint": {
+        "mod": "המודים של היעד הזה: אפשר להפעיל או לכבות, לעדכן או להסיר אותם.",
+        "modpack": "חבילות המודים של היעד הזה: אפשר להפעיל או לכבות, לעדכן או להסיר אותן.",
+        "resourcepack": "חבילות המשאבים של היעד הזה: אפשר להפעיל או לכבות, לעדכן או להסיר אותן.",
+        "shader": "השיידרים של היעד הזה: אפשר להפעיל או לכבות, לעדכן או להסיר אותם.",
+        "datapack": "חבילות הנתונים של היעד הזה: אפשר להפעיל או לכבות, לעדכן או להסיר אותן.",
+        "plugin": "התוספים של היעד הזה: אפשר להפעיל או לכבות, לעדכן או להסיר אותם."
+      },
+      "modpacksTitle": "חבילות מודים הופכות לפרופילים",
+      "modpacksHint": "כל חבילת מודים מותקנת היא פרופיל בפני עצמו.",
+      "openProfiles": "פתיחת הפרופילים שלי",
+      "noTarget": "קודם צריך לבחור איפה לחפש.",
+      "serverHint": "תוספים וחבילות נתונים של שרת מנוהלים בדף שלו.",
+      "manageServer": "ניהול השרת",
+      "updateAll_one": "עדכון פריט אחד",
+      "updateAll_two": "עדכון 2 פריטים",
+      "updateAll_other": "עדכון {{count}} פריטים",
+      "openProfile": "פתיחת הפרופיל",
+      "empty": "עדיין לא הותקן כאן כלום",
+      "emptyHint": "אפשר למצוא משהו בגילוי או בעיון.",
+      "discover": "גילוי תוכן",
+      "updateTo": "עדכון לגרסה {{version}}",
+      "incompatible": "לא תואם",
+      "update": "עדכון {{name}}",
+      "toggle": "הפעלת {{name}}",
+      "remove": "הסרת {{name}}",
+      "removeTitle": "להסיר את {{name}}?",
+      "removeBody": "הקבצים שלו יימחקו מהפרופיל הזה. אפשר להתקין אותו שוב בכל רגע."
+    },
+    "signIn": {
+      "title": "הספרייה והיצירות שלך",
+      "body": "כדי למצוא את הפרויקטים ששמרת ואת אלה שאתה מפרסם, צריך להתחבר לחשבון ה-Rustic שלך.",
+      "action": "התחברות"
+    },
+    "library": {
+      "title": "הספרייה שלי",
+      "hint": "פרויקטים שנשמרו בחשבון ה-Rustic שלך, בכל מחשב.",
+      "empty": "הספרייה שלך ריקה",
+      "emptyHint": "אפשר להוסיף פרויקט Rustic מהדף שלו כדי למצוא אותו כאן.",
+      "installAria": "התקנת {{name}}"
+    },
+    "creations": {
+      "title": "היצירות שלי",
+      "hint": "מה שאתה מפרסם ב-Marketplace של Rustic.",
+      "publish": "פרסום באתר",
+      "empty": "עדיין לא פרסמת כלום",
+      "emptyHint": "אפשר לשתף מוד, חבילה או שיידר עם כל שחקני Rustic דרך האתר.",
+      "manage": "ניהול",
+      "manageAria": "ניהול {{name}} באתר",
+      "status": {
+        "public": "ציבורי",
+        "unlisted": "לא רשום",
+        "private": "פרטי",
+        "pending": "ממתין לבדיקה",
+        "rejected": "נדחה",
+        "takenDown": "הוסר"
+      }
+    }
+  }
+}

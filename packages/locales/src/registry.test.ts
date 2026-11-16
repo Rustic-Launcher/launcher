@@ -58,7 +58,13 @@ describe('registry', () => {
     expect(resolveBundle('cs_cz', have)).toBe('cs');
     expect(resolveBundle('th_th', have)).toBe('th');
     expect(resolveBundle('ovd', have)).toBe('sv');
-    expect(resolveBundle('da_dk', have)).toBe('en');
+    expect(resolveBundle('da_dk', have)).toBe('da');
+    // Norwegian Bokmål is the game's `no_no`; Nynorsk and Northern Sami read it.
+    expect(resolveBundle('no_no', have)).toBe('nb');
+    expect(resolveBundle('nn_no', have)).toBe('nb');
+    expect(resolveBundle('ar_sa', have)).toBe('ar');
+    expect(resolveBundle('hi_in', have)).toBe('hi');
+    expect(resolveBundle('bg_bg', have)).toBe('en');
     expect(resolveBundle('ja_jp', have)).toBe('ja');
     // Hong Kong and Classical Chinese read Traditional Chinese, Rusyn Ukrainian, Brabantian Dutch.
     expect(resolveBundle('zh_hk', have)).toBe('zh-TW');
@@ -73,8 +79,10 @@ describe('registry', () => {
     expect(translationStatus('ja_jp', have)).toBe('complete');
     expect(translationStatus('nl_be', have)).toBe('complete');
     expect(translationStatus('cs_cz', have)).toBe('complete');
-    expect(translationStatus('da_dk', have)).toBe('none');
-    expect(translationStatus('da_dk', [...have, 'da'])).toBe('partial');
+    expect(translationStatus('da_dk', have)).toBe('complete');
+    expect(translationStatus('he_il', have)).toBe('complete');
+    expect(translationStatus('bg_bg', have)).toBe('none');
+    expect(translationStatus('bg_bg', [...have, 'bg'])).toBe('partial');
     // Dialects and close varieties read another language; joke languages read English.
     expect(translationStatus('bar', have)).toBe('fallback');
     expect(translationStatus('pt_pt', have)).toBe('complete');
@@ -95,9 +103,11 @@ describe('registry', () => {
     expect(negotiate(['pt-AO'], offered)).toBe('pt-BR');
     expect(negotiate(['vi-VN'], offered)).toBe('vi');
     expect(negotiate(['es-MX', 'en'], offered)).toBe('es');
-    expect(negotiate(['da', 'fr-FR'], offered)).toBe('fr');
+    expect(negotiate(['bg', 'fr-FR'], offered)).toBe('fr');
+    expect(negotiate(['nb-NO'], offered)).toBe('nb');
+    expect(negotiate(['ar-EG'], offered)).toBe('ar');
     expect(negotiate(['cs'], offered)).toBe('cs');
-    expect(negotiate(['da'], offered)).toBeNull();
+    expect(negotiate(['bg'], offered)).toBeNull();
     expect(negotiate(['ja'], offered)).toBe('ja');
     expect(negotiate(['zh-HK'], offered)).toBe('zh-TW');
     expect(negotiate(['zh-CN'], offered)).toBe('zh-CN');

@@ -192,7 +192,7 @@ export function SettingsTab({ instance }: { instance: Instance }) {
       </Card>
 
       <div className="border-border bg-bg-elevated/90 sticky bottom-0 z-10 flex items-center justify-end gap-2 rounded-xl border px-4 py-3 backdrop-blur-md">
-        <span className="text-fg-muted mr-auto text-sm" aria-live="polite">
+        <span className="text-fg-muted me-auto text-sm" aria-live="polite">
           {dirty ? t('settings.unsaved') : t('settings.allSaved')}
         </span>
         <Button disabled={!dirty} onClick={() => setDraft(toDraft(instance))}>

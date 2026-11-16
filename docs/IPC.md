@@ -4,7 +4,7 @@ Owners: frontend (TypeScript client + browser mock, ADR 0024) and desktop (Rust 
 `apps/launcher/src-tauri`). **Generated** from `apps/launcher/src/ipc/commands.ts` and
 `src/ipc/types/*.ts` by `pnpm --filter @rustic/launcher gen:ipc-doc`: edit the TypeScript, then regenerate.
 
-131 commands, 20 events.
+152 commands, 23 events.
 
 ## Conventions
 
@@ -121,6 +121,32 @@ type InstanceId = { instance_id: string };
 | `instance_stop` | `InstanceId` | `LaunchStatus` |
 | `launch_status` | — | `LaunchStatus[]` |
 
+### Java Edition and Bedrock (ADR 0172)
+
+| Command | `args` (Rust: `<Name>Args`) | Result |
+|---|---|---|
+| `java_versions_list`<br>Mojang's version manifest: releases, plus snapshots and old betas/alphas when asked (the last copy offline). | `{ snapshots?: boolean; old?: boolean }` | `JavaGameVersion[]` |
+| `java_loader_versions`<br>A loader's builds for a game version, newest first (empty for vanilla or an unsupported version). | `{ loader: JavaLoader; game_version: string }` | `JavaLoaderVersion[]` |
+| `java_profiles_list` | — | `JavaProfile[]` |
+| `java_profile_create` | `NewJavaProfile` | `JavaProfile` |
+| `java_profile_update`<br>A new game version, loader or loader build forgets the installed version file (reinstalled at the next launch). | `Id & { patch: JavaProfilePatch }` | `JavaProfile` |
+| `java_profile_delete`<br>`delete_files` removes the launcher's own folder of the profile (never a folder the player chose); `conflict` while it runs. | `Id & { delete_files?: boolean }` | `void` |
+| `java_profile_install`<br>Installs the game files, the loader and Java as a task (`java`), without starting; the owner gate first, as a launch. | `Id` | `{ task_id: string }` |
+| `java_profile_launch`<br>The owner gate first (`ownership_required`, reasons `auth.no_account`, `auth.not_owned`), then installs what is missing as a task and starts the game; follow `java-state`. `server`: join on start (versions with quick play). | `Id & { server?: string }` | `JavaRunState` |
+| `java_profile_stop`<br>Stops the game, or cancels the install task (`conflict`, reason `java.not_running`, otherwise). | `Id` | `JavaRunState` |
+| `java_run_states` | — | `JavaRunState[]` |
+| `java_profile_log`<br>The last 2000 lines of the profile's output (this session). | `Id` | `JavaLogLine[]` |
+| `java_profile_open_folder` | `Id & { folder: JavaFolder }` | `void` |
+| `java_mods_search`<br>Modrinth mods for the profile's game version and loader; fair-play blocked ones left out (`invalid_argument`, reason `java.vanilla_mods`, for vanilla). | `{ profile_id: string; query?: string; offset?: number; limit?: number }` | `JavaModSearch,` |
+| `java_mods_list` | `{ profile_id: string }` | `JavaModFile[]` |
+| `java_mod_install`<br>Installs the newest compatible version and its required dependencies into the profile's `mods/` (reasons `content.fair_play`, `java.mod_incompatible`). | `{ profile_id: string; project_id: string }` | `JavaModFile` |
+| `java_mod_set_enabled` | `{ profile_id: string; file_name: string; enabled: boolean }` | `JavaModFile` |
+| `java_mod_remove` | `{ profile_id: string; file_name: string }` | `void` |
+| `bedrock_status`<br>Bedrock Edition on Windows (its Microsoft Store package); `supported: false` elsewhere. | — | `BedrockStatus` |
+| `bedrock_launch` | — | `void` |
+| `bedrock_open_store`<br>Opens Minecraft for Windows in the Microsoft Store. | — | `void` |
+| `edition_icon`<br>The official edition icon, fetched at run time from minecraft.net (a `data:` URL; the browser mock answers its URL); `null` offline or on failure. | `{ edition: 'java' \| 'bedrock' }` | `string \| null` |
+
 ### Content (Horizon registry, Modrinth, Rustic)
 
 | Command | `args` (Rust: `<Name>Args`) | Result |
@@ -226,6 +252,18 @@ type InstanceId = { instance_id: string };
 | `dns_verify` | `DomainTarget` | `DnsVerification` |
 | `dns_remove_binding` | `ServerId` | `void` |
 
+### Voice (ADR 0176)
+
+| Command | `args` (Rust: `<Name>Args`) | Result |
+|---|---|---|
+| `voice_overlay_set` | `{ overlay: VoiceOverlay }` | `void` (written to `<instance>/game/rustic/voice.json` of every running instance, atomically; bounded: 32 members, short labels, a key name of the form `key.keyboard.*` / `key.mouse.*`) |
+
+The voice engine itself is not IPC: it runs in the main window's webview (`features/voice/`,
+`livekit-client`). The Social window drives it with the Tauri events `voice-command`
+(`VoiceCommand`, `features/voice/store.ts`) and mirrors it with `voice-state` (`VoiceState`),
+emitted by the main window. The webview's microphone permission is granted to the `main` window
+only (`src-tauri/src/voice.rs`).
+
 ## Events
 
 | Event | Payload |
@@ -249,7 +287,11 @@ type InstanceId = { instance_id: string };
 | `native-build-progress` | `NativeBuildProgress` |
 | `native-changed` | `{ instance_id?: string }` |
 | `update-state` | `UpdateStatus` |
+| `java-state` | `JavaRunState` |
+| `java-log` | `JavaLogLine` |
+| `java-profiles-changed` | `JavaProfile[]` |
 | `update-installed` | `{ kind: 'edition'; version: string }` |
+| `voice-game` | `VoiceGameEvent` (the companion's `rustic-voice` lines: `ptt`, `position`; the presence line's `place`/`server`; `exited`) |
 
 ## Types
 
@@ -1135,6 +1177,159 @@ export interface GameExited {
 }
 ```
 
+### java.ts
+
+```ts
+/**
+ * The Java Edition launcher and the Bedrock panel (ADR 0172): Mojang's versions, Java profiles
+ * (kept apart from Rustic instances), installs, launch state, logs, Modrinth mods for a profile's
+ * loader, and Bedrock Edition on Windows. Times are Unix seconds.
+ */
+
+export type JavaLoader = 'vanilla' | 'fabric' | 'quilt' | 'forge' | 'neoforge';
+
+export type JavaVersionKind = 'release' | 'snapshot' | 'old_beta' | 'old_alpha';
+
+/** A version of Mojang's manifest. */
+export interface JavaGameVersion {
+  id: string;
+  kind: JavaVersionKind;
+  release_time: string;
+  /** Its version file is in the launcher's game folder. */
+  installed: boolean;
+}
+
+export interface JavaLoaderVersion {
+  version: string;
+  /** Fabric's `stable`, Forge's recommended build, NeoForge without `-beta`. */
+  stable: boolean;
+}
+
+export interface JavaResolution {
+  width: number;
+  height: number;
+}
+
+export interface JavaProfile {
+  id: string;
+  name: string;
+  game_version: string;
+  loader: JavaLoader;
+  /** None: the newest stable build at install time. */
+  loader_version: string | null;
+  /** The version file the profile starts, once installed (`fabric-loader-0.17.2-1.21.1`). */
+  version_id: string | null;
+  memory_min_mb: number;
+  memory_max_mb: number;
+  resolution: JavaResolution | null;
+  fullscreen: boolean;
+  /** A Java executable or home; none: Mojang's runtime for the version. */
+  java_path: string | null;
+  jvm_args: string[];
+  /** A folder of the player's choice; none: the launcher's own per-profile folder. */
+  game_dir: string | null;
+  created_at: number;
+  last_played_at: number | null;
+  /** Seconds played. */
+  play_time: number;
+  /** The resolved game folder. */
+  game_dir_path: string;
+  installed: boolean;
+  running: boolean;
+}
+
+export interface NewJavaProfile {
+  name: string;
+  game_version: string;
+  loader: JavaLoader;
+  loader_version?: string | null;
+  memory_max_mb?: number;
+}
+
+/** Fields to change; `null` clears a nullable one. */
+export interface JavaProfilePatch {
+  name?: string;
+  game_version?: string;
+  loader?: JavaLoader;
+  loader_version?: string | null;
+  memory_min_mb?: number;
+  memory_max_mb?: number;
+  resolution?: JavaResolution | null;
+  fullscreen?: boolean;
+  java_path?: string | null;
+  jvm_args?: string[];
+  game_dir?: string | null;
+}
+
+export type JavaInstallStep = 'metadata' | 'loader' | 'libraries' | 'assets' | 'java';
+
+export type JavaRunPhase = 'idle' | 'installing' | 'launching' | 'running' | 'crashed';
+
+/** What a profile is doing (`java-state`). */
+export interface JavaRunState {
+  profile_id: string;
+  state: JavaRunPhase;
+  step?: JavaInstallStep;
+  /** 0..1 while installing. */
+  progress?: number;
+  task_id?: string;
+  /** The last failure, in English. */
+  message?: string;
+  /** Its stable code: `auth.not_owned`, `auth.no_account`, `java.no_runtime`, `java.installer`... */
+  reason?: string;
+  started_at?: number;
+  exit_code?: number;
+  crash_report?: string;
+  /** Started offline: no network, the owner's last check is recent enough. */
+  offline: boolean;
+}
+
+export type JavaLogLevel = 'info' | 'warn' | 'error' | 'debug';
+
+/** One line of a profile's output (`java-log`). */
+export interface JavaLogLine {
+  profile_id: string;
+  level: JavaLogLevel;
+  thread: string | null;
+  text: string;
+  time: number;
+}
+
+export interface JavaModHit {
+  project_id: string;
+  slug: string;
+  name: string;
+  summary: string;
+  author: string;
+  icon_url: string | null;
+  downloads: number;
+  /** Fair in single player, not on every server: installable with a notice. */
+  flagged: boolean;
+  installed: boolean;
+}
+
+export interface JavaModSearch {
+  hits: JavaModHit[];
+  total: number;
+}
+
+export interface JavaModFile {
+  file_name: string;
+  enabled: boolean;
+  size: number;
+  project_id?: string;
+}
+
+export type JavaFolder = 'game' | 'mods' | 'logs' | 'crash_reports' | 'screenshots';
+
+export interface BedrockStatus {
+  /** Windows: Bedrock Edition exists for this system. */
+  supported: boolean;
+  installed: boolean;
+  version: string | null;
+}
+```
+
 ### multiplayer.ts
 
 ```ts
@@ -1473,6 +1668,41 @@ export interface ServerAccess {
 }
 ```
 
+### voice.ts
+
+```ts
+/** Voice (ADR 0176): the companion's lines and the in-game overlay. See IPC.md "Voice". */
+
+/** What the in-game overlay shows (`voice_overlay_set`). */
+export interface VoiceOverlay {
+  active: boolean;
+  positions: boolean;
+  ptt_key: string | null;
+  room: string;
+  you: string;
+  self_speaking: boolean;
+  self_muted: boolean;
+  deafened: boolean;
+  members: { name: string; speaking: boolean; muted: boolean }[];
+  show: boolean;
+}
+
+/** `voice-game`: a running game's voice report. */
+export interface VoiceGameEvent {
+  instance_id: string;
+  ptt?: boolean;
+  position?: unknown; // {server, dim, x, y, z, yaw} | null
+  place?: 'menu' | 'singleplayer' | 'server';
+  server?: string;
+  exited?: boolean;
+}
+```
+
+The companion's lines (stdout, read with the presence line, never shown in the game log):
+`rustic-voice {"ptt":true|false}` and, only while the overlay asks for positions,
+`rustic-voice {"pos":{"server":"play.example.org","dim":"minecraft:overworld","x":1.5,"y":64,"z":-3,"yaw":90}}`
+or `{"pos":null}` (at most 5 a second, at least 1).
+
 ## Appendix: Rustic Cloud API expected by the UI (not IPC)
 
 Pages use the `CloudClient` interface (`apps/launcher/src/cloud/client.ts`, ADR 0027). Default build: mock. With
@@ -1500,8 +1730,43 @@ export interface CloudClient {
   removeFriend(id: string): Promise<void>;
   setFavoriteFriend(id: string, favorite: boolean): Promise<void>;
   party(): Promise<Party | null>;
+  /** `POST /v1/parties` (refused with `already_in_party`). */
+  createParty(): Promise<Party>;
+  /** Creates the party first when there is none. */
   inviteToParty(userId: string): Promise<Party>;
   leaveParty(): Promise<void>;
+  /** Invites received and still pending. */
+  partyInvites(): Promise<PartyInviteLite[]>;
+  /** Accept (the party joined) or decline (null). Errors: `party_full`, `party_not_allowed`... */
+  respondPartyInvite(id: string, accept: boolean): Promise<Party | null>;
+  /** Leader only. */
+  kickFromParty(userId: string): Promise<Party | null>;
+  transferPartyLeader(userId: string): Promise<Party>;
+  updatePartyVoice(patch: Partial<PartyVoiceSettings>): Promise<Party>;
+  /** The party chat since the caller joined, oldest first. */
+  partyMessages(): Promise<PartyChatMessage[]>;
+  sendPartyMessage(body: string): Promise<PartyChatMessage>;
+  /** Voice (ADR 0176): a LiveKit token for the party's room or the current server's. */
+  voiceToken(room: VoiceRoomKind): Promise<VoiceTokenInfo>;
+  /** `POST /v1/reports` about a user (voice rooms, party chat). */
+  reportUser(r: {
+    user_id: string;
+    reason: UserReportReason;
+    details?: string;
+    context?: UserReportContext;
+    party_message_id?: string;
+  }): Promise<void>;
+  /** Rustic Servers this account registered for proximity voice. */
+  voiceServers(): Promise<VoiceServerInfo[]>;
+  /** The key is returned once: it goes in the plugin's `config.toml`. */
+  createVoiceServer(name: string): Promise<{ server: VoiceServerInfo; key: string }>;
+  updateVoiceServer(
+    id: string,
+    patch: { name?: string; enabled?: boolean },
+  ): Promise<VoiceServerInfo>;
+  deleteVoiceServer(id: string): Promise<void>;
+  rotateVoiceServerKey(id: string): Promise<{ server: VoiceServerInfo; key: string }>;
+
   subscribe(handler: (e: RealtimeEvent) => void): () => void;
   // chats (Social window)
   conversations(): Promise<Conversation[]>;

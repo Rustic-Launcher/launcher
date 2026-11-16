@@ -1,7 +1,7 @@
 /** Transient shell UI state. */
 import { create } from 'zustand';
 
-export type SocialTab = 'friends' | 'chats';
+export type SocialTab = 'friends' | 'chats' | 'party';
 
 interface UiState {
   commandOpen: boolean;

@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "greeting": "Velkommen tilbage, {{name}}",
+    "greetingAnon": "Velkommen til Rustic",
+    "continue": "Fortsæt: {{name}} · spillet {{when}}",
+    "continueNew": "Klar, når du er: {{name}}",
+    "firstRun": "Gør spillet klar i tre trin.",
+    "playNow": "Spil nu",
+    "updateAndPlay": "Opdater og spil",
+    "resumeServer": "Gå tilbage til {{server}}",
+    "switch": "Skift instans",
+    "stats": {
+      "playtime": "{{time}} spillet",
+      "mods_one": "{{count}} mod",
+      "mods_other": "{{count}} mods",
+      "friends_one": "{{count}} ven online",
+      "friends_other": "{{count}} venner online"
+    },
+    "steps": {
+      "signIn": "Log ind med den Microsoft-konto, der ejer spillet",
+      "prepare": "Forbered spilfilerne fra din egen installation",
+      "create": "Opret din første instans"
+    },
+    "getReady": "Gør spillet klar",
+    "openLocker": "Skab",
+    "player": "Din spiller, i hvile, uden kosmetik",
+    "playerWearing": "Din spiller, i hvile, iført: {{items}}"
+  },
+  "recent": {
+    "title": "Seneste servere og verdener",
+    "unknown": "Status ukendt",
+    "online": "Online · {{online}}/{{max}}",
+    "offline": "Offline",
+    "world": "Verden · lokal",
+    "joining": "Forbinder til {{name}}…",
+    "opening": "Åbner {{name}}…",
+    "removed": "{{name}} er fjernet fra dine servere",
+    "playAria": "Spil {{name}}",
+    "more": "Flere handlinger for {{name}}",
+    "copyAddress": "Kopiér adresse",
+    "addServer": "Tilføj server",
+    "empty": "Servere, du deltager i, og verdener, du spiller, vises her."
+  },
+  "news": {
+    "title": "Nyheder og opdateringer",
+    "empty": "Ingen nyheder lige nu.",
+    "slide": "Historie {{index}} af {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Udgivelsesnoter",
+      "event": "Begivenhed",
+      "blog": "Artikel"
+    },
+    "readNotes": "Læs udgivelsesnoterne",
+    "read": "Læs"
+  },
+  "friends": {
+    "title": "Venner lige nu",
+    "empty": "Ingen af dine venner spiller lige nu.",
+    "since": "siden {{when}}",
+    "activity": {
+      "server": "spiller på {{server}}",
+      "hosting": "er vært for {{server}}",
+      "singleplayer": "spiller solo",
+      "launcher": "er i launcheren"
+    }
+  },
+  "featured": {
+    "title": "Udvalgte servere",
+    "verified": "Bekræftet server",
+    "players": "{{online}} / {{max}} spillere",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Ny kosmetik",
+    "owned": "Ejet"
+  },
+  "launchpad": {
+    "welcome": "Velkommen *tilbage*,",
+    "playAs": "Spil som",
+    "online": "online på udvalgte servere",
+    "heroLabel": "Start",
+    "instanceSettings": "Indstillinger for instansen",
+    "news": "Seneste nyheder",
+    "unread_one": "({{count}} ulæst)",
+    "unread_other": "({{count}} ulæste)",
+    "unreadDot": "Ulæst",
+    "explore": "Udforsk kilder",
+    "aside": "Servere og venner",
+    "joinServer": "Deltag i {{name}}",
+    "friendsOnline_one": "({{count}} online)",
+    "friendsOnline_other": "({{count}} online)",
+    "openSocial": "Åbn Socialt",
+    "noNews": "Ingen nyheder endnu.",
+    "noFriendsOnline": "Ingen venner online lige nu.",
+    "socialHint": "Chats, invitationer og din gruppe findes i vinduet Socialt.",
+    "eyebrow": "Launchpad"
+  }
+}

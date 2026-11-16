@@ -59,6 +59,9 @@ Owner: spec. Facts: [HORIZON_FACTS.md](HORIZON_FACTS.md). Impact: H/M/L. Likelih
 | R-34 | No in-game way to connect to a server from a mod: accepting an invite needs the launcher to restart the game | L | H | Cloud event to the launcher; quick-play relaunch (`--quickPlayMultiplayer`) |
 | R-35 | Horizon docs disagree on data pack coverage (mod-browser.md: functions/predicates/item modifiers only; datapack-upgrade.md: most worldgen) | L | M | Badge "Partly" with both statements; verify per bump |
 | R-36 | Fair-play term matching has false positives/negatives | L | M | Cloud deny/allow lists authoritative; flagged items stay installable (ADR 0066) |
+| R-37 | Java Edition launcher drift (ADR 0172): Mojang's version format (new rule kinds such as `versionRange`), Fabric/Quilt meta, Forge/NeoForge numbering and installer options can change | M | M | Lenient parsing; the by-hand `real_install` example against the real hosts per release; the installers are run, not reimplemented |
+| R-38 | The official edition icons are loaded from minecraft.net, whose CDN only answers browser-like user agents; a CDN change or a takedown request removes them | L | M | Neutral fallback icon always; never bundled (ADR 0172); stop fetching on request |
+| R-39 | Java 8 versions (before 1.17) receive the account token on the command line (no argument files in Java 8) | L | H | Java 9+ use a private argument file deleted at start; logs mask the token (ADR 0172) |
 
 ## 3. Unknowns / open questions for the user
 

@@ -56,8 +56,8 @@ export function DropdownCheckboxItem({
   ...props
 }: ComponentProps<typeof M.CheckboxItem>) {
   return (
-    <M.CheckboxItem className={cn(itemCls, 'pl-8', className)} {...props}>
-      <M.ItemIndicator className="absolute left-2.5">
+    <M.CheckboxItem className={cn(itemCls, 'ps-8', className)} {...props}>
+      <M.ItemIndicator className="absolute start-2.5">
         <Check />
       </M.ItemIndicator>
       {children}

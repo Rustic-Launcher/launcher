@@ -9,7 +9,7 @@ use uuid::Uuid;
 
 use crate::types::{
     Activity, EquippedSlot, FriendRequest, Invitation, Message, Notification, Party, PartyInvite,
-    Presence, PresenceStatus, PublicUser,
+    PartyMessage, Presence, PresenceStatus, PublicUser,
 };
 
 /// Client → server frames.
@@ -76,6 +76,10 @@ pub enum ServerMessage {
     PartyUpdated {
         party_id: Uuid,
         party: Option<Party>,
+    },
+    /// A message of the party's text chat, to every member (the sender too). ADR 0176.
+    PartyMessageReceived {
+        message: PartyMessage,
     },
     InvitationReceived {
         invitation: Invitation,

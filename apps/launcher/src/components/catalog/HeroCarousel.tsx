@@ -119,7 +119,7 @@ export function HeroCarousel<T>({
             aria-label={t('catalog.carousel.prev')}
             aria-controls={`${id}-slides`}
             onClick={() => go(index - 1, -1)}
-            className="rx-focus-ring absolute top-1/2 left-3 z-10 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-black/45 text-white backdrop-blur-sm transition-colors hover:bg-black/65"
+            className="rx-focus-ring absolute start-3 top-1/2 z-10 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-black/45 text-white backdrop-blur-sm transition-colors hover:bg-black/65"
             data-testid={testId ? `${testId}-prev` : undefined}
           >
             <ChevronLeft className="size-5" />
@@ -129,12 +129,12 @@ export function HeroCarousel<T>({
             aria-label={t('catalog.carousel.next')}
             aria-controls={`${id}-slides`}
             onClick={() => go(index + 1, 1)}
-            className="rx-focus-ring absolute top-1/2 right-3 z-10 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-black/45 text-white backdrop-blur-sm transition-colors hover:bg-black/65"
+            className="rx-focus-ring absolute end-3 top-1/2 z-10 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-black/45 text-white backdrop-blur-sm transition-colors hover:bg-black/65"
             data-testid={testId ? `${testId}-next` : undefined}
           >
             <ChevronRight className="size-5" />
           </button>
-          <div className="absolute right-4 bottom-4 z-10 flex items-center gap-2 rounded-full bg-black/40 px-2 py-1.5 backdrop-blur-sm">
+          <div className="absolute end-4 bottom-4 z-10 flex items-center gap-2 rounded-full bg-black/40 px-2 py-1.5 backdrop-blur-sm">
             {!reduced && intervalMs > 0 && (
               <button
                 type="button"

@@ -63,7 +63,7 @@ function Metric({
           </span>
           {label}
         </span>
-        <span className="text-right">
+        <span className="text-end">
           <span
             className={cn(
               'block font-mono text-xl font-semibold tabular-nums',
@@ -299,11 +299,11 @@ export function OverviewTab({ server }: { server: Server }) {
                     name={p.name}
                     size="sm"
                     shape="circle"
-                    className="ring-surface -mr-2 ring-2"
+                    className="ring-surface -me-2 ring-2"
                   />
                 ))}
                 {online.length > 8 && (
-                  <span className="text-fg-subtle ml-3 text-xs tabular-nums">
+                  <span className="text-fg-subtle ms-3 text-xs tabular-nums">
                     +{online.length - 8}
                   </span>
                 )}
@@ -425,7 +425,7 @@ export function OverviewTab({ server }: { server: Server }) {
                 {online.map((p) => (
                   <li
                     key={p.uuid}
-                    className="border-border bg-surface-2/60 flex min-w-0 items-center gap-3 rounded-xl border p-2 pr-3"
+                    className="border-border bg-surface-2/60 flex min-w-0 items-center gap-3 rounded-xl border p-2 pe-3"
                   >
                     <PlayerAvatar
                       uuid={p.uuid}

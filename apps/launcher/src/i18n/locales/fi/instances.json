@@ -1,0 +1,341 @@
+{
+  "title": "Versiot",
+  "errors": {
+    "action": "Se ei onnistunut"
+  },
+  "card": {
+    "more": "Lisää toimintoja: {{name}}",
+    "pin": "Kiinnitä",
+    "unpin": "Irrota",
+    "duplicate": "Monista",
+    "duplicated": "{{name}} luotu",
+    "playtime": "Peliaika",
+    "never": "Ei koskaan",
+    "fromModpack": "Modipaketti {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Käynnissä",
+    "installing": "Asennetaan",
+    "broken": "Vaatii korjausta"
+  },
+  "delete": {
+    "title": "Poistetaanko {{name}}?",
+    "body": "Sen modit, asetukset ja maailmat poistetaan tältä tietokoneelta. Tätä ei voi perua.",
+    "confirm": "Poista instanssi",
+    "done": "{{name}} poistettu"
+  },
+  "new": {
+    "title": "Uusi instanssi",
+    "description": "Aloita alusta tai tuo olemassa oleva paketti.",
+    "tabs": {
+      "create": "Luo",
+      "import": "Tuo"
+    },
+    "name": "Nimi",
+    "namePlaceholder": "Selviytymismaailmani",
+    "nameRequired": "Anna instanssille nimi.",
+    "icon": "Kuvake",
+    "color": "Väri",
+    "colorN": "Väri {{n}}",
+    "version": "Horizon-koontiversio",
+    "versionHint": "Rustic-versio lisää peliin kosmetiikan ja kaverit. Java- tai RAM-asetuksia ei tarvita.",
+    "recommended": "Suositeltu",
+    "release": "Vakaa",
+    "nightly": "Nightly",
+    "installed": "Asennettu",
+    "submit": "Luo instanssi",
+    "created": "{{name}} on valmis",
+    "preview": "Esikatselu",
+    "edition": "Versio",
+    "editionRustic": "Kosmetiikka, kaverit ja natiivit modit pelissä.",
+    "editionHorizon": "Horizon sellaisena kuin sen tiimi julkaisee, ilman lisäyksiä.",
+    "noBuild": "Tästä versiosta ei ole juuri nyt koontiversiota listattuna.",
+    "nightlyHint": "Nightly-koontiversiot julkaistaan joka päivä Horizonin uusimmasta koodista: uudempia, vähemmän testattuja."
+  },
+  "icons": {
+    "grass": "Verso",
+    "sword": "Miekat",
+    "pickaxe": "Hakku",
+    "castle": "Linna",
+    "rocket": "Raketti",
+    "gem": "Jalokivi",
+    "flame": "Liekki",
+    "leaf": "Lehti",
+    "star": "Tähti",
+    "compass": "Kompassi"
+  },
+  "import": {
+    "folder": {
+      "title": "Instanssikansio",
+      "description": "Prism- tai MultiMC-instanssikansio, siirrettynä samoin kuin Horizon sen tekee."
+    },
+    "mrpack": {
+      "title": "Modrinth-paketti (.mrpack)",
+      "description": "Modit yhdistetään niiden Horizon-koontiversioihin, kun sellaiset ovat saatavilla."
+    },
+    "curseforge_zip": {
+      "title": "CurseForge-zip",
+      "description": "Viety CurseForge-modipaketti."
+    },
+    "modpack": {
+      "title": "Modipaketista",
+      "description": "Selaa Horizonin, Modrinthin ja Rusticin modipaketteja."
+    },
+    "started": "Tuodaan: {{name}}",
+    "background": "Tuonti jatkuu taustalla; voit jatkaa käynnistimen käyttöä.",
+    "note": "Vain Horizonilla toimiva sisältö asennetaan; loput luetellaan syineen.",
+    "drop": {
+      "title": "Pudota paketti tai instanssikansio tähän",
+      "hint": "Modrinth .mrpack, CurseForge .zip tai Prism- tai MultiMC-instanssikansio",
+      "choose": "Valitse tiedosto",
+      "active": "Tuo vapauttamalla",
+      "unsupported": "Tätä ei voi tuoda. Käytä .mrpack-tiedostoa, CurseForge .zip -tiedostoa tai instanssikansiota."
+    },
+    "formats": "Tuetut muodot"
+  },
+  "detail": {
+    "notFound": "Tätä instanssia ei ole enää olemassa",
+    "backToList": "Takaisin instansseihin",
+    "tabsLabel": "Instanssin osiot",
+    "tabs": {
+      "overview": "Yleiskatsaus",
+      "content": "Sisältö",
+      "resourcepacks": "Resurssipaketit",
+      "worlds": "Maailmat",
+      "settings": "Asetukset"
+    }
+  },
+  "overview": {
+    "mods": "Modit",
+    "resourcePacks": "Resurssipaketit",
+    "shaders": "Varjostinpaketit",
+    "version": "Horizon-koontiversio",
+    "updateAvailable": "Päivitys saatavilla",
+    "upToDate": "Ajan tasalla",
+    "updateNow": "Päivitä nyt",
+    "changeVersion": "Valitse Horizon-koontiversio",
+    "applyVersion": "Vaihda koontiversio",
+    "versionChanging": "Vaihdetaan versioon {{version}}",
+    "lastSession": "Viimeisin istunto",
+    "lastPlayed": "Pelattu {{when}}",
+    "neverPlayed": "Ei vielä pelattu",
+    "rejoin": "Liity uudelleen",
+    "noServer": "Tästä instanssista ei ole vielä liitytty millekään palvelimelle.",
+    "created": "Luotu",
+    "folder": "Kansio"
+  },
+  "content": {
+    "filter": "Suodata tyypin mukaan",
+    "kinds": {
+      "all": "Kaikki",
+      "mod": "Modit",
+      "resourcepack": "Resurssipaketit",
+      "shader": "Varjostimet"
+    },
+    "search": "Hae asennetusta sisällöstä",
+    "updateAll_one": "Päivitä {{count}} kohde",
+    "updateAll_other": "Päivitä {{count}} kohdetta",
+    "browse": "Selaa sisältöä",
+    "noMatch": "Mikään asennettu ei vastaa hakua.",
+    "empty": {
+      "title": "Mitään ei ole vielä asennettu",
+      "description": "Löydä modeja, resurssipaketteja ja varjostimia, jotka toimivat tämän instanssin kanssa."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Paikallinen tiedosto"
+    },
+    "updateTo": "Päivitys: {{version}}",
+    "incompatible": "Ei yhteensopiva: {{reason}}",
+    "updateOne": "Päivitä {{name}}",
+    "toggle": "Ota käyttöön: {{name}}",
+    "remove": "Poista {{name}}",
+    "removeTitle": "Poistetaanko {{name}}?",
+    "removeBody": "Tiedosto poistetaan tästä instanssista. Voit asentaa sen uudelleen Sisältö-osiosta."
+  },
+  "packs": {
+    "hint": "Ylimpänä olevat paketit voittavat, kun kaksi pakettia muuttaa samaa asiaa.",
+    "listLabel": "Resurssipakettien latausjärjestys",
+    "top": "Korkein prioriteetti",
+    "up": "Siirrä {{name}} ylös",
+    "down": "Siirrä {{name}} alas",
+    "moved": "{{name}} siirretty sijalle {{position}}/{{total}}",
+    "browse": "Etsi resurssipaketteja",
+    "empty": {
+      "title": "Ei resurssipakettia",
+      "description": "Lisää paketteja muuttaaksesi tekstuureja, ääniä ja käyttöliittymää."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Ei vielä maailmaa",
+      "description": "Pelissä luomasi maailmat näkyvät tässä."
+    },
+    "openSaves": "Avaa tallennuskansio",
+    "lastPlayed": "Pelattu {{when}}",
+    "modes": {
+      "survival": "Selviytyminen",
+      "creative": "Luova",
+      "adventure": "Seikkailu",
+      "hardcore": "Hardcore",
+      "spectator": "Katsoja"
+    },
+    "datapacks_one": "{{count}} datapaketti",
+    "datapacks_other": "{{count}} datapakettia",
+    "play": "Pelaa tätä maailmaa",
+    "addDatapacks": "Lisää datapaketteja"
+  },
+  "settings": {
+    "general": "Yleiset",
+    "display": "Ikkuna",
+    "useDefaultResolution": "Käytä ikkunan oletuskokoa",
+    "defaultIs": "Oletus: {{width}} × {{height}}",
+    "width": "Leveys",
+    "height": "Korkeus",
+    "fullscreen": "Käynnistä koko näytössä",
+    "resolutionError": "Käytä kokonaislukuja, vähintään 640 × 360.",
+    "launch": "Käynnistysasetukset",
+    "launchHint": "Horizon-instanssit lukitsevat vain koontiversion: Javaa, RAM-muistia tai lataajaa ei tarvitse asettaa.",
+    "gameArgs": "Pelin lisäargumentit",
+    "gameArgsHint": "Edistynyt. Välitetään Horizonille sellaisenaan.",
+    "folders": "Kansiot",
+    "folder": {
+      "root": "Instanssi",
+      "mods": "Modit",
+      "resourcepacks": "Resurssipaketit",
+      "shaderpacks": "Varjostinpaketit",
+      "saves": "Maailmat",
+      "screenshots": "Kuvakaappaukset",
+      "logs": "Lokit"
+    },
+    "unsaved": "Sinulla on tallentamattomia muutoksia.",
+    "allSaved": "Kaikki muutokset tallennettu.",
+    "saved": "Instanssin asetukset tallennettu"
+  },
+  "heading": "Omat *profiilit*",
+  "native": {
+    "title": "Natiivit modit",
+    "allOff": "Kaikki pois päältä: instanssi pelaa valmiiksi koottua peliä.",
+    "state": {
+      "building": "Kootaan…",
+      "up_to_date": "Ajan tasalla",
+      "needs_rebuild": "Uudelleenkokoaminen tarvitaan",
+      "not_built": "Ei koottu",
+      "not_needed": "Valmiiksi koottu peli"
+    },
+    "build": "Kokoa",
+    "rebuild": "Kokoa uudelleen",
+    "cancel": "Peruuta",
+    "progress": "Natiivin kokoamisen edistyminen",
+    "starting": "Käynnistetään…",
+    "firstBuildHint": "Ensimmäinen kokoaminen kääntää koko pelin (10–15 minuuttia); seuraavat vain muuttuneet osat. Voit jatkaa käynnistimen käyttöä.",
+    "failed": "Viimeisin kokoaminen epäonnistui",
+    "built": "Koottu {{date}}, kesto {{duration}} · peli {{size}}",
+    "leftOut": {
+      "other": "{{name}} jätettiin pois: se ei koske tätä Horizonia.",
+      "unsupported": "{{name}} jätettiin pois: Rustic ei vielä osaa koota sen tarvitsemaa."
+    },
+    "notEdition": "Tämä instanssi pelaa tavallista Horizon-koontiversiota: natiivit modit kootaan vain Rustic-versioon."
+  },
+  "profiles": {
+    "summary_one": "{{count}} profiili · peliaika {{playtime}}",
+    "summary_other": "{{count}} profiilia · peliaika {{playtime}}",
+    "searchLabel": "Hae profiileistasi",
+    "searchPlaceholder": "Hae nimellä, Horizon-koontiversiolla tai modipaketilla…",
+    "source": {
+      "label": "Näytä",
+      "all": "Kaikki profiilit",
+      "custom": "Omat profiilit",
+      "modpack": "Modipaketeista"
+    },
+    "sorts": {
+      "recent": "Viimeksi pelattu",
+      "name": "Nimi",
+      "created": "Äskettäin luotu",
+      "version": "Horizon-koontiversio",
+      "playtime": "Peliaika"
+    },
+    "filters": {
+      "version": "Horizon-koontiversio",
+      "edition": "Versio",
+      "editions": {
+        "rustic": "Rustic-versio",
+        "horizon": "Tavallinen Horizon"
+      },
+      "native": "Natiivit modit",
+      "nativeOnly": "Sisältää natiiveja modeja",
+      "nativeHint": "Natiivit modit käännetään tietokoneellasi ennen pelin käynnistymistä.",
+      "remove": "Poista suodatin: {{filter}}",
+      "reset": "Nollaa suodattimet"
+    },
+    "create": "Luo profiili",
+    "createHint": "Horizon-koontiversio, kuvake ja nimi",
+    "import": "Tuo",
+    "importHint": "Kansio, .mrpack tai CurseForge-zip",
+    "all": "Kaikki profiilit",
+    "listLabel": "Profiilit",
+    "recent": "Jatka pelaamista",
+    "recentHint": "Viimeksi pelaamasi profiilit",
+    "card": {
+      "active": "Aktiivinen",
+      "activeHint": "Launchpad pelaa tätä profiilia",
+      "running": "Käynnissä",
+      "pinned": "Kiinnitetty",
+      "update": "Päivitys {{version}}",
+      "broken": "Vaatii korjausta",
+      "modpack": "Modipaketti",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Pelattu {{when}}",
+      "neverPlayed": "Ei vielä pelattu",
+      "created": "Luotu {{date}}",
+      "lastServer": "Viimeksi palvelimella {{name}}",
+      "rejoin": "Liity uudelleen",
+      "rejoinAria": "Liity uudelleen palvelimelle {{server}} profiililla {{name}}",
+      "mods": "Modit",
+      "packs": "Resurssipaketit",
+      "shaders": "Varjostimet",
+      "playtime": "Peliaika",
+      "contentCount": "Modit {{mods}} · paketit {{packs}} · varjostimet {{shaders}}",
+      "open": "Avaa {{name}}"
+    },
+    "native": {
+      "label": "Natiivit modit",
+      "count_one": "{{count}} natiivi modi",
+      "count_other": "{{count}} natiivia modia",
+      "building": "Kootaan {{pct}}",
+      "buildingNoPct": "Kootaan…",
+      "up_to_date": "Natiivit modit valmiina",
+      "needs_rebuild": "Natiivit: uudelleenkokoaminen tarvitaan",
+      "not_built": "Natiivit: ei vielä koottu",
+      "off": "Natiivit modit pois päältä",
+      "unsupported": "Natiivit: vaatii Rustic-version",
+      "hint": {
+        "up_to_date": "Koottu tällä tietokoneella tälle Horizon-koontiversiolle.",
+        "needs_rebuild": "Modit ovat muuttuneet viimeisimmän kokoamisen jälkeen: se kootaan uudelleen, kun pelaat.",
+        "not_built": "Käännetään tietokoneellasi, kun pelaat (ensimmäisellä kerralla 10–15 minuuttia).",
+        "off": "Kaikki natiivit modit ovat pois päältä: valmiiksi koottu peli käynnistyy.",
+        "unsupported": "Tämä profiili pelaa tavallista Horizon-koontiversiota: natiivit modit kootaan vain Rustic-versioon.",
+        "building": "Käännetään peliä tämän profiilin natiiveilla modeilla."
+      }
+    },
+    "menu": {
+      "edit": "Muokkaa asetuksia",
+      "activate": "Käytä Launchpadissa",
+      "isActive": "Käytössä Launchpadissa",
+      "activated": "{{name}} on nyt Launchpadissa"
+    },
+    "empty": {
+      "title": "Ei vielä profiilia",
+      "description": "Profiili on Horizon-koontiversio omine modeineen, paketteineen ja maailmoineen. Luo sellainen suositellulla koontiversiolla tai tuo jo olemassa oleva paketti."
+    },
+    "noMatch": {
+      "title": "Mikään profiili ei vastaa",
+      "description": "Kokeile toista hakua tai poista suodatin."
+    },
+    "detail": {
+      "banner": "Kansikuva: {{name}}"
+    }
+  }
+}

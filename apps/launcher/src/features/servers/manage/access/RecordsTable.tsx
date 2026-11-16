@@ -26,7 +26,7 @@ export function RecordsTable({
   const { t } = useTranslation('servers');
   return (
     <div className="border-border overflow-x-auto rounded-xl border">
-      <table className="w-full min-w-[640px] text-left text-sm" data-testid="records-table">
+      <table className="w-full min-w-[640px] text-start text-sm" data-testid="records-table">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead className="bg-surface-2/70 text-2xs text-fg-subtle font-semibold tracking-wider uppercase">
           <tr>

@@ -1,0 +1,503 @@
+{
+  "a11y": {
+    "skipToContent": "Siirry sisältöön",
+    "notifications": "Ilmoitukset"
+  },
+  "actions": {
+    "retry": "Yritä uudelleen",
+    "back": "Takaisin",
+    "forward": "Eteenpäin",
+    "cancel": "Peruuta",
+    "close": "Sulje",
+    "clear": "Tyhjennä",
+    "save": "Tallenna",
+    "saved": "Tallennettu",
+    "delete": "Poista",
+    "edit": "Muokkaa",
+    "open": "Avaa",
+    "install": "Asenna",
+    "installed": "Asennettu",
+    "remove": "Poista",
+    "confirm": "Vahvista",
+    "continue": "Jatka",
+    "next": "Seuraava",
+    "previous": "Edellinen",
+    "done": "Valmis",
+    "copy": "Kopioi",
+    "copied": "Kopioitu",
+    "learnMore": "Lue lisää",
+    "seeAll": "Näytä kaikki",
+    "create": "Luo",
+    "import": "Tuo",
+    "browse": "Selaa…",
+    "apply": "Käytä",
+    "reset": "Palauta",
+    "enable": "Ota käyttöön",
+    "disable": "Poista käytöstä",
+    "update": "Päivitä",
+    "add": "Lisää",
+    "refresh": "Päivitä näkymä",
+    "openFolder": "Avaa kansio",
+    "skip": "Ohita",
+    "more": "Lisää"
+  },
+  "errors": {
+    "generic": "Jokin meni pieleen. Yritä hetken kuluttua uudelleen.",
+    "page": {
+      "title": "Tätä sivua ei voitu näyttää"
+    },
+    "load": {
+      "title": "Tätä ei voitu ladata"
+    },
+    "notFound": {
+      "title": "Täällä ei ole mitään",
+      "description": "Tätä sivua ei ole tai se on siirretty."
+    }
+  },
+  "nav": {
+    "label": "Päänavigaatio",
+    "home": "Koti",
+    "instances": "Profiilit",
+    "content": "Tutki",
+    "servers": "Palvelimet",
+    "locker": "Kaappi",
+    "store": "Kauppa",
+    "settings": "Asetukset",
+    "newInstance": "Uusi profiili"
+  },
+  "search": {
+    "title": "Haku",
+    "placeholder": "Hae sisältöä, kavereita, palvelimia, asetuksia…",
+    "empty": "Ei tuloksia. Kokeile toista sanaa.",
+    "loading": "Haetaan…",
+    "hintNavigate": "siirry",
+    "hintOpen": "avaa",
+    "hintClose": "sulje",
+    "open": "Avaa",
+    "myServer": "Oma palvelin",
+    "playInstance": "Pelaa: {{name}}",
+    "groups": {
+      "pages": "Sivut",
+      "actions": "Toiminnot",
+      "instances": "Instanssit",
+      "content": "Sisältö",
+      "friends": "Kaverit",
+      "servers": "Palvelimet",
+      "settings": "Asetukset",
+      "play": "Pelaa"
+    },
+    "actions": {
+      "newInstance": "Luo instanssi",
+      "newServer": "Luo palvelin",
+      "addFriend": "Lisää kaveri",
+      "darkTheme": "Vaihda tummaan teemaan",
+      "lightTheme": "Vaihda vaaleaan teemaan"
+    },
+    "settings": {
+      "accounts": "Tilit",
+      "game": "Peli",
+      "launcher": "Käynnistin",
+      "appearance": "Ulkoasu",
+      "privacy": "Yksityisyys ja tiedot",
+      "parental": "Lapsilukko",
+      "about": "Tietoja",
+      "voice": "Ääni"
+    }
+  },
+  "friends": {
+    "title": "Kaverit",
+    "onlineCount_one": "{{count}} paikalla",
+    "onlineCount_other": "{{count}} paikalla",
+    "add": "Lisää kaveri",
+    "search": "Hae kavereita",
+    "requests_one": "Pyyntö · {{count}}",
+    "requests_other": "Pyynnöt · {{count}}",
+    "incoming": "Haluaa kaveriksi",
+    "outgoing": "Pyyntö lähetetty",
+    "accept": "Hyväksy",
+    "decline": "Hylkää",
+    "cancelRequest": "Peru pyyntö",
+    "requestSent": "Kaveripyyntö lähetetty: {{name}}",
+    "error": "Kavereita ei voitu ladata.",
+    "empty": "Ei vielä kavereita. Lisää kaveri hänen Rustic-käyttäjänimellään.",
+    "online_one": "Paikalla · {{count}}",
+    "online_other": "Paikalla · {{count}}",
+    "offline_one": "Offline · {{count}}",
+    "offline_other": "Offline · {{count}}",
+    "lastSeen": "Nähty {{when}}",
+    "activity": {
+      "server": "Pelaa palvelimella {{server}}",
+      "singleplayer": "Pelaa yksin",
+      "hosting": "Ylläpitää palvelinta {{server}}",
+      "launcher": "Käynnistimessä"
+    },
+    "favorite": "Suosikki",
+    "makeFavorite": "Lisää suosikkeihin",
+    "unfavorite": "Poista suosikeista",
+    "join": "Liity",
+    "joinAria": "Liity seuraan: {{name}}",
+    "joining": "Liitytään palvelimelle {{server}}…",
+    "more": "Lisää toimintoja: {{name}}",
+    "remove": "Poista kaveri",
+    "removeTitle": "Poistetaanko {{name}} kavereistasi?",
+    "removeBody": "Ette enää näe toistenne toimintaa. Voit lähettää uuden pyynnön myöhemmin."
+  },
+  "addFriend": {
+    "title": "Lisää kaveri",
+    "description": "Etsi pelaaja hänen Rustic-nimellään tai hänen yhdistämällään Minecraft-nimellä, tai valitse joku, jonka kanssa olet pelannut.",
+    "kind": "Hakuperuste",
+    "kindRustic": "Rustic-nimi",
+    "kindMinecraft": "Minecraft-nimi",
+    "rusticLabel": "Rustic-käyttäjänimi",
+    "minecraftLabel": "Minecraft-käyttäjänimi",
+    "rusticPlaceholder": "esim. lea_builds",
+    "minecraftPlaceholder": "esim. LeaBuilds",
+    "rusticHint": "Tarkka nimi hänen Rustic-profiilissaan.",
+    "minecraftHint": "Tarkka pelinsisäinen nimi pelaajalta, joka on kirjautunut Rusticiin kyseisellä Minecraft-profiililla.",
+    "find": "Etsi",
+    "send": "Lähetä pyyntö",
+    "sent": "Pyyntö lähetetty",
+    "friends": "Jo kavereita",
+    "pending": "Pyyntö odottaa",
+    "incoming": "Hän on jo pyytänyt sinua kaverikseen: hyväksy pyyntö.",
+    "minecraftName": "Minecraft-nimi:",
+    "add": "Lisää",
+    "addAria": "Lähetä kaveripyyntö: {{name}}",
+    "playedWith": "Pelattu kanssa äskettäin",
+    "playedWithEmpty": "Ei vielä ketään. Porukoistasi ja yhteisiltä palvelimilta (vähintään 10 minuuttia yhdessä) tutut pelaajat näkyvät tässä.",
+    "crossed": "Nähty äskettäin",
+    "crossedEmpty": "Kukaan ei ole osunut kohdallesi äskettäin yhteisellä palvelimella.",
+    "reasonParty": "Porukassasi",
+    "reasonServer": "Palvelimella {{server}}",
+    "reasonSameServer": "Samalla palvelimella",
+    "suggestionsError": "Ehdotuksia ei voitu ladata.",
+    "suggestionsOff": "Ehdotukset ovat pois päältä. Ota käyttöön ”Näy tapaamieni pelaajien ehdotuksissa” kohdassa Asetukset › Yksityisyys ja tiedot nähdäksesi tapaamasi pelaajat.",
+    "suggestionsMinor": "Tapaamiesi pelaajien ehdotukset eivät ole käytettävissä tilillesi.",
+    "privacyNote": "Ehdotukset tulevat porukoistasi ja palvelimista, jotka jaat toiminnassasi, viimeisten 14 päivän ajalta. Vain henkilöt, jotka myös sallivat sen, näkyvät.",
+    "errors": {
+      "notFoundRustic": "Millään Rustic-tilillä ei ole tätä nimeä.",
+      "notFoundMinecraft": "Yksikään Rustic-pelaaja ei ole yhdistänyt tätä Minecraft-nimeä.",
+      "invalidRustic": "Rustic-nimissä on 3–20 kirjainta, numeroa tai _-merkkiä.",
+      "invalidMinecraft": "Minecraft-nimissä on 3–16 kirjainta, numeroa tai _-merkkiä.",
+      "cannot_add_friend": "Tämä pelaaja ei voi vastaanottaa kaveripyyntöjä.",
+      "friend_requests_disabled": "Kaveripyynnöt ovat pois päältä tililläsi (lapsilukko).",
+      "cannot_add_self": "Sehän olet sinä!",
+      "already_friends": "Olette jo kavereita.",
+      "request_pending": "Pyyntö odottaa jo.",
+      "incoming_request_exists": "Hän on jo lähettänyt sinulle pyynnön: hyväksy se.",
+      "rate_limited": "Liian monta hakua. Odota minuutti ja yritä sitten uudelleen.",
+      "generic": "Jokin meni pieleen. Yritä uudelleen."
+    }
+  },
+  "party": {
+    "title": "Porukka",
+    "leave": "Poistu",
+    "leader": "Porukan johtaja",
+    "pending": "{{name}} (kutsuttu)",
+    "invite": "Kutsu porukkaan",
+    "invited": "{{name}} kutsuttiin porukkaasi",
+    "invitesTitle": "Porukkakutsut",
+    "invitedBy": "{{name}} kutsuu sinut porukkaansa",
+    "accept": "Liity",
+    "decline": "Hylkää",
+    "makeLeader": "Tee porukan johtajaksi",
+    "kick": "Poista porukasta",
+    "proximity": "Läheisyysääni",
+    "proximityHint": "Samalla palvelimella olevat jäsenet kuulevat toisensa etäisyyden mukaan",
+    "range": "Kantama (kuutiot)",
+    "emptyTitle": "Ei vielä porukkaa",
+    "emptyBody": "Luo porukka ja kutsu sitten kavereita heidän valikostaan Kaverit-välilehdellä.",
+    "create": "Luo porukka",
+    "inviteHint": "Kutsu kavereita heidän valikostaan Kaverit-välilehdellä.",
+    "chatTitle": "Porukan chat",
+    "chatEmpty": "Liity porukkaan tai luo sellainen jutellaksesi sen jäsenten kanssa.",
+    "chatPlaceholder": "Viesti porukalle",
+    "formerMember": "Entinen jäsen",
+    "errors": {
+      "party_full": "Porukka on täynnä.",
+      "party_not_allowed": "Tämä pelaaja ei voi olla tässä porukassa: alle 18-vuotiaat liittyvät vain kavereidensa porukoihin.",
+      "already_in_party": "Poistu ensin nykyisestä porukastasi.",
+      "not_party_leader": "Vain porukan johtaja voi tehdä tämän."
+    }
+  },
+  "presence": {
+    "online": "Paikalla",
+    "in-game": "Pelissä",
+    "away": "Poissa",
+    "busy": "Varattu",
+    "offline": "Offline"
+  },
+  "notifications": {
+    "title": "Ilmoitukset",
+    "markAllRead": "Merkitse kaikki luetuiksi",
+    "empty": "Olet ajan tasalla.",
+    "kinds": {
+      "friend_request": "lähetti sinulle kaveripyynnön",
+      "update_available": "on saatavilla instansseillesi",
+      "backup_done": "Ajastettu varmuuskopio valmis",
+      "store_new": "Uutta kaupassa"
+    }
+  },
+  "account": {
+    "switcher": "Tilit",
+    "none": "Ei tiliä",
+    "rustic": "Rustic-tili",
+    "signInRustic": "Kirjaudu Rusticiin",
+    "signOutRustic": "Kirjaudu ulos Rusticista",
+    "gameProfiles": "Peliprofiilit",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Offline"
+    },
+    "add": "Lisää tili",
+    "manage": "Hallitse tilejä"
+  },
+  "downloads": {
+    "title": "Lataukset",
+    "global": "Taustalataukset",
+    "working": "Työskennellään…",
+    "summary_one": "{{count}} lataus käynnissä",
+    "summary_other": "{{count}} latausta käynnissä",
+    "kind": {
+      "game": "Horizon",
+      "content": "Sisältö",
+      "modpack": "Modipaketti",
+      "server": "Palvelin",
+      "java": "Java-ajonaikainen ympäristö",
+      "update": "Käynnistimen päivitys",
+      "prepare": "Valmistellaan pelitiedostoja",
+      "native-build": "Natiivien modien kokoaminen",
+      "native-toolchain": "Rust natiiveille modeille"
+    }
+  },
+  "play": {
+    "play": "Pelaa",
+    "update": "Päivitä",
+    "cancel": "Peruuta",
+    "stop": "Pysäytä",
+    "selectInstance": "Valitse pelattava instanssi",
+    "instances": "Instanssit",
+    "manageInstances": "Hallitse instansseja",
+    "newVersion": "{{version}} saatavilla",
+    "cancelled": "Käynnistys peruttu",
+    "status": {
+      "ready": "Valmis pelattavaksi",
+      "noInstance": "Ei instanssia",
+      "running": "Peli käynnissä",
+      "update": "Päivitys vaaditaan",
+      "broken": "Korjaus vaaditaan"
+    },
+    "progress": {
+      "updating": "Päivitetään…",
+      "downloading": "Ladataan {{pct}}",
+      "checking": "Tarkistetaan tiedostoja…",
+      "preparing": "Valmistellaan…",
+      "launching": "Käynnistetään…",
+      "stopping": "Pysäytetään…",
+      "preparingFiles": "Valmistellaan pelitiedostoja {{pct}}",
+      "building": "Käännetään natiiveja modeja…",
+      "buildingPct": "Käännetään natiiveja modeja {{pct}}"
+    },
+    "errors": {
+      "launch": "Peliä ei voitu käynnistää"
+    },
+    "refusals": {
+      "auth_no_account": "Kirjaudu sisään Microsoft-tilillä, joka omistaa pelin, pelataksesi.",
+      "auth_not_owned": "Tämä Microsoft-tili ei omista peliä.",
+      "auth_not_approved": "Microsoft-kirjautuminen ei ole vielä käytettävissä tälle käynnistimelle.",
+      "auth_reauth_required": "Kirjaudu Microsoft-tilillesi uudelleen pelataksesi.",
+      "auth_offline_not_allowed": "Kirjaudu kerran sisään Microsoft-tilillä, joka omistaa pelin, niin voit pelata offline-tilassa.",
+      "auth_network": "Microsoftiin ei saatu yhteyttä tilin tarkistamiseksi. Tarkista yhteytesi.",
+      "build_not_installed": "Asenna ensin Horizon-koontiversio.",
+      "prepare_needed": "Tämän koontiversion pelitiedostoja ei ole vielä valmisteltu.",
+      "prepare_failed": "Pelitiedostoja ei voitu valmistella: yritä uudelleen tai valmistele ne kohdassa Asetukset › Peli ja instanssit.",
+      "prepare_no_java": "Javaa ei löytynyt: asenna se tai valitse se kohdassa Asetukset › Peli ja instanssit.",
+      "prepare_no_minecraft_dir": "Peliasennustasi ei löytynyt: valitse sen kansio kohdassa Asetukset › Peli ja instanssit.",
+      "launch_already_running": "Tämä instanssi on jo käynnissä.",
+      "native_consent": "Tässä instanssissa on natiiveja modeja: hyväksy ensin niiden luottamusilmoitus instanssin sivulla (Sisältö).",
+      "native_toolchain": "Natiivit modit tarvitsevat Rustin: asenna se instanssin sivulta (Sisältö) tai kohdasta Asetukset › Peli ja instanssit.",
+      "native_not_edition": "Natiivit modit kootaan vain Rustic-versioon: vaihda tämä instanssi siihen tai poista sen natiivit modit käytöstä.",
+      "native_build_failed": "Natiiveja modeja ei voitu koota",
+      "native_disk": "Levytilaa ei ole tarpeeksi natiivien modien kokoamiseen."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (Rustic-versio)",
+    "rusticEdition": "Rustic-versio"
+  },
+  "compat": {
+    "buildsOnHorizon": "Kootaan Horizonillesi",
+    "compatible": "Yhteensopiva",
+    "incompatible": "Ei yhteensopiva: {{reason}}",
+    "unknown": "Yhteensopivuus tuntematon",
+    "reasons": {
+      "horizon_version": "Horizon-versio",
+      "java_only": "vain Java Edition",
+      "side": "vain palvelinpuoli",
+      "conflict": "ristiriidassa asennetun modin kanssa",
+      "unsupported_format": "muotoa ei tueta",
+      "needs_rustic_server": "vaatii Rustic Serverin",
+      "not_fair_play": "ei sallittu (reilu peli)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Vaihda tuotetta",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Rustic Serverin ohjeet"
+  },
+  "crumbs": {
+    "label": "Murupolku",
+    "horizon": "Horizon",
+    "details": "Tiedot",
+    "create": "Luo",
+    "kinds": {
+      "mod": "Modit",
+      "modpack": "Modipaketit",
+      "resourcepack": "Resurssipaketit",
+      "shader": "Varjostimet",
+      "datapack": "Datapaketit",
+      "plugin": "Lisäosat"
+    },
+    "servers": {
+      "featured": "Esittelyssä",
+      "mine": "Omat palvelimet",
+      "multiplayer": "Moninpelilista",
+      "discover": "Löydä",
+      "joined": "Moninpelilista",
+      "browse": "Selaa"
+    }
+  },
+  "social": {
+    "title": "Yhteisö",
+    "description": "Kaverit, keskustelut ja porukkasi.",
+    "open": "Avaa Yhteisö",
+    "friends": "Kaverit",
+    "chats": "Keskustelut",
+    "message": "Lähetä viesti",
+    "searchChats": "Hae keskusteluista…",
+    "noChats": "Ei vielä keskusteluja. Lähetä kaverille viesti Kaverit-välilehdeltä.",
+    "sayHello": "Sano hei",
+    "selectTitle": "Valitse keskustelu",
+    "selectBody": "Valitse kaveri aloittaaksesi keskustelun.",
+    "messagePlaceholder": "Viesti käyttäjälle {{name}}",
+    "send": "Lähetä"
+  },
+  "window": {
+    "minimize": "Pienennä",
+    "maximize": "Suurenna",
+    "restore": "Palauta",
+    "close": "Sulje"
+  },
+  "running": {
+    "title": "Käynnissä olevat instanssit",
+    "none": "Mikään peli ei ole käynnissä.",
+    "count_one": "{{count}} instanssi käynnissä",
+    "count_other": "{{count}} instanssia käynnissä",
+    "downloading": "Ladataan {{pct}}"
+  },
+  "launch": {
+    "launch": "Käynnistä peli",
+    "update": "Päivitä ja käynnistä",
+    "stop": "Pysäytä peli"
+  },
+  "deepLink": {
+    "authOk": "Kirjautunut Rusticiin",
+    "authFailed": "Rustic-kirjautuminen epäonnistui",
+    "joining": "Liitytään: {{target}}…",
+    "content": "Avataan {{project}} verkkosivulta"
+  },
+  "catalog": {
+    "sort": "Järjestys",
+    "results_one": "{{count}} tulos",
+    "results_other": "{{count}} tulosta",
+    "loadMore": "Lataa lisää",
+    "loadMoreCount": "Näytetään {{shown}}/{{total}}",
+    "carousel": {
+      "prev": "Edellinen",
+      "next": "Seuraava",
+      "slide": "{{index}}/{{total}}",
+      "pause": "Keskeytä diaesitys",
+      "play": "Toista diaesitys"
+    },
+    "row": {
+      "seeAll": "Näytä kaikki",
+      "seeAllAria": "Näytä kaikki: {{title}}",
+      "scrollPrev": "Vieritä taaksepäin",
+      "scrollNext": "Vieritä eteenpäin"
+    },
+    "filters": {
+      "button": "Suodattimet",
+      "buttonCount": "Suodattimet · {{count}}",
+      "reset": "Nollaa suodattimet"
+    },
+    "layout": {
+      "label": "Asettelu",
+      "list": "Lista",
+      "grid": "Ruudukko"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Päivitetään {{pct}}",
+      "installing": "Asennetaan päivitystä…",
+      "restarting": "Käynnistetään uudelleen…",
+      "deferred": "Päivitä pelin jälkeen",
+      "apply": "Päivitä ja käynnistä uudelleen"
+    },
+    "toast": {
+      "launcher": "Ladataan Rustic Launcher {{version}}…",
+      "edition": "Päivitetään peliä (Rustic-versio)…",
+      "editionDone": "Peli päivitetty: {{version}}",
+      "deferred": "Päivitys on valmis. Se asennetaan, kun suljet pelin.",
+      "restarting": "Rustic Launcher käynnistyy uudelleen päivityksen viimeistelemiseksi.",
+      "updated": "Rustic Launcher päivitetty versioon {{version}}",
+      "resuming": "Päivitys valmis: käynnistetään peliäsi",
+      "failed": "Päivitystä ei voitu asentaa. Sitä yritetään myöhemmin uudelleen."
+    }
+  },
+  "voice": {
+    "title": "Ääni",
+    "join": "Liity äänikanavalle",
+    "leave": "Poistu äänikanavalta",
+    "mute": "Mykistä mikrofoni",
+    "unmute": "Poista mikrofonin mykistys",
+    "deafen": "Hiljennä äänet",
+    "undeafen": "Palauta äänet",
+    "speaking": "Puhuu",
+    "micMuted": "Mykistetty",
+    "outOfRange": "Kantaman ulkopuolella",
+    "muteFor": "Mykistä {{name}} itseltäsi",
+    "unmuteFor": "Kuule {{name}} taas",
+    "reportAria": "Ilmianna {{name}}",
+    "memberVolume": "Äänenvoimakkuus: {{name}}",
+    "report": "Ilmianna",
+    "reportTitle": "Ilmianna {{name}}?",
+    "reportBody": "Moderaattorimme käyvät ilmiannon läpi. Ääntä ei koskaan tallenneta. Pelaaja mykistetään sinulta heti.",
+    "reported": "{{name}} on ilmiannettu",
+    "reasons": {
+      "harassment": "Häirintä tai viha",
+      "inappropriate_content": "Sopimaton sisältö",
+      "spam": "Roskaviestit tai melu",
+      "other": "Jokin muu"
+    },
+    "proximityOn": "läheisyys, kantama {{range}}",
+    "you": "Sinä",
+    "listenOnly": "Vain kuuntelu",
+    "alone": "Äänikanavalla ei ole vielä muita.",
+    "serverOffer": "Palvelimella {{server}} on läheisyysääni",
+    "serverRoom": "Palvelimen ääni",
+    "partyRoom": "Porukan ääni",
+    "errors": {
+      "voice_unavailable": "Ääni ei ole juuri nyt käytettävissä. Yritä myöhemmin uudelleen.",
+      "voice_not_allowed": "Ääni ei ole käytettävissä tilillesi.",
+      "mic_denied": "Pääsy mikrofoniin estettiin: voit kuunnella mutta et puhua. Salli se järjestelmän tietosuoja-asetuksissa.",
+      "mic_missing": "Mikrofonia ei löytynyt: voit kuunnella mutta et puhua.",
+      "connect_failed": "Äänikanavalle ei saatu yhteyttä. Tarkista yhteys ja yritä uudelleen.",
+      "kicked": "Sinut poistettiin äänihuoneesta.",
+      "not_on_voice_server": "Tällä palvelimella ei ole läheisyysääntä."
+    }
+  }
+}

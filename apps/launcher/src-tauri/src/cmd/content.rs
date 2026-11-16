@@ -1468,11 +1468,15 @@ pub async fn install_project(
         .await
         .map_err(content_err)?;
     // A native mod's package passes the builder's own checks (only Rust, TOML and data files
-    // under `mixins/<id>/`, sizes, no links) before it stays: else it is removed again.
+    // under `mixins/<id>/`, sizes, no links) before it stays: else it is removed again. A
+    // combined `.hmod` (content and code, ADR 0175) goes to the native folder too.
     for d in &done {
-        if d.path.extension().is_some_and(|e| e == "hnmod")
-            && let Err(e) = rusticmc_native::bundle::Bundle::read(&d.path)
-        {
+        let native_file = d.path.extension().is_some_and(|e| e == "hnmod")
+            || (d.path.extension().is_some_and(|e| e == "hmod")
+                && d.path
+                    .parent()
+                    .is_some_and(|p| p.ends_with(rusticmc_native::instance::MODS_DIR)));
+        if native_file && let Err(e) = rusticmc_native::bundle::Bundle::read(&d.path) {
             let _ = std::fs::remove_file(&d.path);
             return Err(IpcError::with_reason(
                 IpcErrorCode::Conflict,

@@ -100,7 +100,8 @@
       "appearance": "Giao diện",
       "privacy": "Quyền riêng tư và dữ liệu",
       "parental": "Kiểm soát của phụ huynh",
-      "about": "Giới thiệu"
+      "about": "Giới thiệu",
+      "voice": "Giọng nói"
     }
   },
   "friends": {
@@ -190,7 +191,30 @@
     "leader": "Trưởng nhóm",
     "pending": "{{name}} (đã mời)",
     "invite": "Mời vào nhóm",
-    "invited": "Đã mời {{name}} vào nhóm của bạn"
+    "invited": "Đã mời {{name}} vào nhóm của bạn",
+    "invitesTitle": "Lời mời vào nhóm",
+    "invitedBy": "{{name}} mời bạn vào nhóm",
+    "accept": "Tham gia",
+    "decline": "Từ chối",
+    "makeLeader": "Đặt làm trưởng nhóm",
+    "kick": "Xóa khỏi nhóm",
+    "proximity": "Giọng nói theo khoảng cách",
+    "proximityHint": "Thành viên trên cùng máy chủ nghe nhau theo khoảng cách",
+    "range": "Phạm vi (khối)",
+    "emptyTitle": "Chưa có nhóm",
+    "emptyBody": "Tạo nhóm, rồi mời bạn bè từ menu của họ trong thẻ Bạn bè.",
+    "create": "Tạo nhóm",
+    "inviteHint": "Mời bạn bè từ menu của họ trong thẻ Bạn bè.",
+    "chatTitle": "Trò chuyện nhóm",
+    "chatEmpty": "Tham gia hoặc tạo nhóm để trò chuyện với các thành viên.",
+    "chatPlaceholder": "Nhắn cho nhóm",
+    "formerMember": "Cựu thành viên",
+    "errors": {
+      "party_full": "Nhóm đã đầy.",
+      "party_not_allowed": "Người chơi này không thể ở trong nhóm này: người dưới 18 tuổi chỉ tham gia nhóm của bạn bè.",
+      "already_in_party": "Hãy rời nhóm hiện tại trước.",
+      "not_party_leader": "Chỉ trưởng nhóm mới làm được việc này."
+    }
   },
   "presence": {
     "online": "Trực tuyến",
@@ -425,6 +449,48 @@
       "updated": "Đã cập nhật Rustic Launcher lên {{version}}",
       "resuming": "Cập nhật xong: đang khởi chạy trò chơi của bạn",
       "failed": "Không thể cài đặt bản cập nhật. Sẽ thử lại sau."
+    }
+  },
+  "voice": {
+    "title": "Giọng nói",
+    "join": "Vào kênh thoại",
+    "leave": "Rời kênh thoại",
+    "mute": "Tắt micro",
+    "unmute": "Bật micro",
+    "deafen": "Tắt âm thanh",
+    "undeafen": "Bật âm thanh",
+    "speaking": "Đang nói",
+    "micMuted": "Đã tắt tiếng",
+    "outOfRange": "Ngoài phạm vi",
+    "muteFor": "Tắt tiếng {{name}} cho bạn",
+    "unmuteFor": "Nghe lại {{name}}",
+    "reportAria": "Báo cáo {{name}}",
+    "memberVolume": "Âm lượng của {{name}}",
+    "report": "Báo cáo",
+    "reportTitle": "Báo cáo {{name}}?",
+    "reportBody": "Đội ngũ kiểm duyệt sẽ xem xét báo cáo. Giọng nói không bao giờ được ghi âm. Người chơi này sẽ bị tắt tiếng với bạn ngay lập tức.",
+    "reported": "Đã báo cáo {{name}}",
+    "reasons": {
+      "harassment": "Quấy rối hoặc thù ghét",
+      "inappropriate_content": "Nội dung không phù hợp",
+      "spam": "Spam hoặc tiếng ồn",
+      "other": "Lý do khác"
+    },
+    "proximityOn": "theo khoảng cách, phạm vi {{range}}",
+    "you": "Bạn",
+    "listenOnly": "Chỉ nghe",
+    "alone": "Chưa có ai khác trong kênh thoại.",
+    "serverOffer": "{{server}} có giọng nói theo khoảng cách",
+    "serverRoom": "Kênh thoại máy chủ",
+    "partyRoom": "Kênh thoại nhóm",
+    "errors": {
+      "voice_unavailable": "Hiện chưa dùng được giọng nói. Hãy thử lại sau.",
+      "voice_not_allowed": "Tài khoản của bạn không dùng được giọng nói.",
+      "mic_denied": "Quyền truy cập micro bị từ chối: bạn có thể nghe nhưng không nói được. Hãy cho phép trong cài đặt quyền riêng tư của hệ thống.",
+      "mic_missing": "Không tìm thấy micro: bạn có thể nghe nhưng không nói được.",
+      "connect_failed": "Không kết nối được kênh thoại. Hãy kiểm tra kết nối và thử lại.",
+      "kicked": "Bạn đã bị xóa khỏi phòng thoại.",
+      "not_on_voice_server": "Máy chủ này không có giọng nói theo khoảng cách."
     }
   }
 }

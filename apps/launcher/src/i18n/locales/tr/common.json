@@ -100,7 +100,8 @@
       "appearance": "Görünüm",
       "privacy": "Gizlilik ve veriler",
       "parental": "Ebeveyn denetimleri",
-      "about": "Hakkında"
+      "about": "Hakkında",
+      "voice": "Sesli sohbet"
     }
   },
   "friends": {
@@ -194,7 +195,30 @@
     "leader": "Grup lideri",
     "pending": "{{name}} (davet edildi)",
     "invite": "Gruba davet et",
-    "invited": "{{name}} grubuna davet edildi"
+    "invited": "{{name}} grubuna davet edildi",
+    "invitesTitle": "Grup davetleri",
+    "invitedBy": "{{name}} seni grubuna davet ediyor",
+    "accept": "Katıl",
+    "decline": "Reddet",
+    "makeLeader": "Grup lideri yap",
+    "kick": "Gruptan çıkar",
+    "proximity": "Yakınlık sesi",
+    "proximityHint": "Aynı sunucudaki üyeler birbirini mesafeye göre duyar",
+    "range": "Menzil (blok)",
+    "emptyTitle": "Henüz grup yok",
+    "emptyBody": "Bir grup oluştur, sonra Arkadaşlar sekmesinde arkadaşlarını kendi menülerinden davet et.",
+    "create": "Grup oluştur",
+    "inviteHint": "Arkadaşlarını Arkadaşlar sekmesindeki menülerinden davet et.",
+    "chatTitle": "Grup sohbeti",
+    "chatEmpty": "Üyeleriyle sohbet etmek için bir gruba katıl ya da grup oluştur.",
+    "chatPlaceholder": "Gruba mesaj yaz",
+    "formerMember": "Eski üye",
+    "errors": {
+      "party_full": "Grup dolu.",
+      "party_not_allowed": "Bu oyuncu bu grupta olamaz: 18 yaş altındakiler yalnızca arkadaşlarının gruplarına katılır.",
+      "already_in_party": "Önce mevcut grubundan ayrıl.",
+      "not_party_leader": "Bunu yalnızca grup lideri yapabilir."
+    }
   },
   "presence": {
     "online": "Çevrimiçi",
@@ -432,6 +456,48 @@
       "updated": "Rustic Launcher güncellendi: {{version}}",
       "resuming": "Güncelleme tamam: oyunun başlatılıyor",
       "failed": "Güncelleme yüklenemedi. Daha sonra yeniden denenecek."
+    }
+  },
+  "voice": {
+    "title": "Sesli sohbet",
+    "join": "Sesliye katıl",
+    "leave": "Sesliden ayrıl",
+    "mute": "Mikrofonu kapat",
+    "unmute": "Mikrofonu aç",
+    "deafen": "Sesi kapat",
+    "undeafen": "Sesi aç",
+    "speaking": "Konuşuyor",
+    "micMuted": "Sessizde",
+    "outOfRange": "Menzil dışında",
+    "muteFor": "{{name}} adlı oyuncuyu kendin için sustur",
+    "unmuteFor": "{{name}} adlı oyuncuyu yeniden duy",
+    "reportAria": "{{name}} adlı oyuncuyu bildir",
+    "memberVolume": "{{name}} ses düzeyi",
+    "report": "Bildir",
+    "reportTitle": "{{name}} bildirilsin mi?",
+    "reportBody": "Moderatörlerimiz bildirimi inceleyecek. Ses asla kaydedilmez. Bu oyuncu senin için hemen susturulur.",
+    "reported": "{{name}} bildirildi",
+    "reasons": {
+      "harassment": "Taciz veya nefret",
+      "inappropriate_content": "Uygunsuz içerik",
+      "spam": "Spam veya gürültü",
+      "other": "Başka bir şey"
+    },
+    "proximityOn": "yakınlık, menzil {{range}}",
+    "you": "Sen",
+    "listenOnly": "Yalnızca dinleme",
+    "alone": "Seslide henüz başka kimse yok.",
+    "serverOffer": "{{server}} yakınlık sesi sunuyor",
+    "serverRoom": "Sunucu sesi",
+    "partyRoom": "Grup sesi",
+    "errors": {
+      "voice_unavailable": "Sesli sohbet şu anda kullanılamıyor. Daha sonra tekrar dene.",
+      "voice_not_allowed": "Sesli sohbet hesabın için kullanılamıyor.",
+      "mic_denied": "Mikrofon erişimi reddedildi: dinleyebilirsin ama konuşamazsın. Sisteminin gizlilik ayarlarından izin ver.",
+      "mic_missing": "Mikrofon bulunamadı: dinleyebilirsin ama konuşamazsın.",
+      "connect_failed": "Sesliye bağlanılamadı. Bağlantını kontrol et ve tekrar dene.",
+      "kicked": "Ses odasından çıkarıldın.",
+      "not_on_voice_server": "Bu sunucuda yakınlık sesi yok."
     }
   }
 }

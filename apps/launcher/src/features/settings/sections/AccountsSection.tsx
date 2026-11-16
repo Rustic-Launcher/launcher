@@ -10,6 +10,7 @@ import { invoke } from '@/ipc';
 import type { Account } from '@/ipc/types/auth';
 import { formatDate, formatRelative } from '@/lib/format';
 import { qk, useAccounts, useRusticSession } from '@/queries/core';
+import { useMe } from '@/queries/social';
 import { SettingsCard } from '../components';
 import { MicrosoftLogin } from '../MicrosoftLogin';
 import { OFFLINE_GRACE_DAYS, WEB_BASE } from '../legal';
@@ -177,6 +178,8 @@ function RusticAccount() {
   const { t } = useTranslation('settings');
   const qc = useQueryClient();
   const { data: session, isLoading } = useRusticSession();
+  // The Rustic profile (avatar) once signed in; initials meanwhile.
+  const { data: me } = useMe();
   const signOut = useMutation({
     mutationFn: () => invoke('auth_rustic_logout'),
     onSuccess: (s) => qc.setQueryData(qk.rustic, s),
@@ -192,11 +195,25 @@ function RusticAccount() {
       ) : session?.signed_in ? (
         <div className="flex flex-col gap-3">
           <div className="border-border bg-surface-2/50 flex flex-wrap items-center gap-3 rounded-xl border p-3">
-            <Avatar name={session.username ?? '?'} size="md" shape="circle" />
+            <Avatar
+              name={session.username ?? '?'}
+              src={me?.avatar_url ?? undefined}
+              size="md"
+              shape="circle"
+            />
             <div className="flex min-w-0 flex-1 flex-col">
               <span className="text-sm font-semibold">{session.username}</span>
               <span className="text-fg-subtle text-xs">{session.email}</span>
             </div>
+            <Button
+              size="sm"
+              variant="secondary"
+              leftIcon={<ExternalLink />}
+              onClick={() => void invoke('app_open_url', { url: `${WEB_BASE}/account/settings` })}
+              data-testid="rustic-manage-web"
+            >
+              {t('accounts.rustic.manageOnWeb')}
+            </Button>
             <Button
               size="sm"
               variant="ghost"

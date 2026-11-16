@@ -356,7 +356,7 @@ function CosmeticTile({
       onBlur={() => onPreview(false)}
       title={c.description}
       className={cn(
-        'rx-surface rx-focus-ring group relative flex w-full flex-col overflow-hidden rounded-xl text-left transition-[border-color,transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-md',
+        'rx-surface rx-focus-ring group relative flex w-full flex-col overflow-hidden rounded-xl text-start transition-[border-color,transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-md',
         equipped ? 'border-accent shadow-glow' : 'border-border hover:border-border-strong/60',
       )}
     >
@@ -373,7 +373,7 @@ function CosmeticTile({
         </span>
       </span>
       {equipped && (
-        <span className="bg-accent text-2xs text-accent-fg absolute top-2 right-2 inline-flex items-center gap-1 rounded-full px-2 py-0.5 font-semibold">
+        <span className="bg-accent text-2xs text-accent-fg absolute end-2 top-2 inline-flex items-center gap-1 rounded-full px-2 py-0.5 font-semibold">
           <Check className="size-3" strokeWidth={3} aria-hidden />
           {t('items.equipped')}
         </span>

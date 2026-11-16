@@ -79,7 +79,7 @@ export const PlayButton = forwardRef<HTMLButtonElement, PlayButtonProps>(functio
             <span className="animate-indeterminate bg-accent/70 absolute inset-y-0 w-1/2" />
           ) : (
             <motion.span
-              className="bg-accent absolute inset-y-0 left-0"
+              className="bg-accent absolute inset-y-0 start-0"
               initial={false}
               animate={{ width: `${pct * 100}%` }}
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}

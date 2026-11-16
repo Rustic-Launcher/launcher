@@ -15,6 +15,8 @@ const me: Me = {
   balance: null,
   discoverable: true,
   discoverable_allowed: true,
+  can_party_voice: true,
+  can_server_voice: true,
 };
 me.discoverable = persistGet<boolean>('discoverable', true);
 

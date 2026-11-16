@@ -223,7 +223,7 @@ export function VpsSetup({ state, update }: Props) {
                   onClick={() => check.mutate(c.id)}
                   aria-pressed={on}
                   className={cn(
-                    'rx-focus-ring flex w-full items-center gap-3 rounded-lg border px-3 py-2.5 text-left transition-colors',
+                    'rx-focus-ring flex w-full items-center gap-3 rounded-lg border px-3 py-2.5 text-start transition-colors',
                     on
                       ? 'border-accent bg-accent-soft'
                       : 'border-border hover:border-border-strong/60',

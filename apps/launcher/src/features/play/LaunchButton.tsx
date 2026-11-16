@@ -60,7 +60,7 @@ export function LaunchButton({
             <span className="animate-indeterminate bg-accent/60 absolute inset-y-0 w-1/2" />
           ) : (
             <motion.span
-              className="bg-accent absolute inset-y-0 left-0"
+              className="bg-accent absolute inset-y-0 start-0"
               initial={false}
               animate={{ width: `${pct * 100}%` }}
               transition={{ duration: 0.25 }}
@@ -101,7 +101,7 @@ export function LaunchButton({
             data-testid="instance-selector"
             aria-label={t('play.selectInstance')}
             className={cn(
-              'rx-focus-ring relative grid w-10 place-items-center border-l',
+              'rx-focus-ring relative grid w-10 place-items-center border-s',
               play.state === 'running' || play.state === 'progress'
                 ? 'border-border-default text-fg hover:bg-surface-2'
                 : 'text-accent-fg hover:bg-accent-hover border-black/15',

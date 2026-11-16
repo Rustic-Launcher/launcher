@@ -1,0 +1,494 @@
+{
+  "title": "استكشاف",
+  "subtitle": "مودات وحزم وشيدرات وإضافات من Horizon وModrinth وRustic، مع التحقق من توافقها مع نسختك.",
+  "kindsLabel": "أنواع المحتوى",
+  "kinds": {
+    "mod": "المودات",
+    "modpack": "حزم المودات",
+    "resourcepack": "حزم الموارد",
+    "shader": "الشيدرات",
+    "datapack": "حزم البيانات",
+    "plugin": "الإضافات"
+  },
+  "searchLabel": "البحث في المحتوى",
+  "clear": "مسح البحث",
+  "by": "من {{author}}",
+  "featured": "مميّز",
+  "downloads": "التنزيلات: {{value}}",
+  "updated": "حُدّث {{when}}",
+  "results_zero": "لا نتائج",
+  "results_one": "نتيجة واحدة",
+  "results_two": "نتيجتان",
+  "results_few": "{{count}} نتائج",
+  "results_many": "{{count}} نتيجة",
+  "results_other": "{{count}} نتيجة",
+  "loadMore": "تحميل المزيد ({{shown}} من {{total}})",
+  "target": {
+    "label": "التثبيت في",
+    "none": "اختر وجهة",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "خادم Horizon",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "هذا الكمبيوتر",
+    "vps": "خادم VPS الخاص بك",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "الترتيب حسب",
+    "relevance": "الصلة",
+    "downloads": "الأكثر تنزيلًا",
+    "updated": "المحدَّثة مؤخرًا",
+    "newest": "الأحدث"
+  },
+  "sources": {
+    "label": "المصادر",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "سجل Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "كتالوج Rustic"
+  },
+  "filters": {
+    "category": "الفئة",
+    "allCategories": "كل الفئات",
+    "compatibleInstance": "متوافق مع هذه النسخة",
+    "compatibleServer": "متوافق مع هذا الخادم",
+    "worksNow": "يُبنى على Horizon الحالي",
+    "categories": "الفئات",
+    "viewMore_zero": "لا مزيد",
+    "viewMore_one": "عرض واحدة أخرى",
+    "viewMore_two": "عرض اثنتين أخريين",
+    "viewMore_few": "عرض {{count}} أخرى",
+    "viewMore_many": "عرض {{count}} أخرى",
+    "viewMore_other": "عرض {{count}} أخرى",
+    "viewLess": "عرض أقل",
+    "compatibility": "التوافق",
+    "pluginHint": "تعمل الإضافات معزولة في Rustic Server فقط.",
+    "fairPlayHint": "لا يُدرج إلا المحتوى الملتزم باللعب النظيف.",
+    "versions": "إصدارات Horizon",
+    "targetVersion": "النسخة أو الخادم المحدد",
+    "checkingAgainst": "يُتحقق من التوافق مع البنية المظلّلة.",
+    "rustic": "Marketplace الخاص بـ Rustic",
+    "rusticHint": "المشاريع المدفوعة والموثّقة متاحة على Rustic فقط.",
+    "verifiedOnly": "الموثّقة من Rustic فقط",
+    "price": "السعر",
+    "priceOptions": {
+      "all": "الكل",
+      "free": "مجاني",
+      "paid": "مدفوع"
+    },
+    "reset": "إعادة ضبط عوامل التصفية",
+    "remove": "إزالة عامل التصفية {{filter}}"
+  },
+  "categories": {
+    "performance": "الأداء",
+    "utility": "أدوات مساعدة",
+    "ui": "الواجهة",
+    "pvp": "PvP",
+    "adventure": "المغامرة",
+    "decoration": "الديكور",
+    "storage": "التخزين",
+    "worldgen": "توليد العالم",
+    "library": "مكتبة",
+    "tech": "التقنية",
+    "cozy": "أجواء دافئة",
+    "multiplayer": "اللعب الجماعي",
+    "realistic": "واقعي",
+    "simple": "وفيّ للأصل",
+    "lightweight": "خفيف",
+    "cinematic": "سينمائي",
+    "qol": "تحسينات الاستخدام",
+    "admin": "الإدارة",
+    "chat": "الدردشة",
+    "minigames": "ألعاب مصغّرة",
+    "protection": "الحماية",
+    "integration": "التكاملات"
+  },
+  "empty": {
+    "title": "لا شيء مطابق",
+    "hint": "جرّب كلمة أو مصدرًا أو فئة أخرى.",
+    "compatibleHint": "لا يُعرض إلا المحتوى الذي يعمل على هذه الوجهة. أوقف عامل التصفية لترى كل شيء.",
+    "showAll": "إظهار النتائج غير المتوافقة"
+  },
+  "banners": {
+    "mod": "لا تُدرج إلا المودات الملتزمة باللعب النظيف: لا X-ray ولا نقرات تلقائية ولا أي ميزات غير عادلة أخرى.",
+    "modpack": "تصبح حزمة المودات نسخة جديدة لها موداتها وإعداداتها الخاصة.",
+    "resourcepack": "الحزم تتراكب: الحزمة في أعلى ترتيب التحميل هي التي تتغلب.",
+    "shader": "يشغّل Horizon حزم شيدرات WGSL الخاصة به (.hshader، واجهة الشيدرات 0.1، تجريبية) وحزمًا بصيغة Iris/OptiFine من سجل Horizon. اختر واحدة داخل اللعبة من إعدادات الفيديو › حزم الشيدرات.",
+    "datapack": "حزم البيانات تخص عالمًا معيّنًا: ستختار العالم عند التثبيت.",
+    "plugin": "تعمل الإضافات (.rplugin) معزولة على الخوادم التي تستخدم محرك Rustic Server. الإضافة المعطوبة تُعطَّل، ويستمر الخادم في العمل."
+  },
+  "resourcepacks": {
+    "manageOrder": "إدارة ترتيب التحميل"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "صيغة Iris/OptiFine"
+    },
+    "formatHint": {
+      "horizon": "صيغة Horizon الخاصة (.hshader)، واجهة الشيدرات 0.1 (تجريبية). يُفحص قبل تشغيله.",
+      "shaders_dir": "حزمة shaders/ بصيغة Iris/OptiFine، يشغّلها المحمّل المنفصل في Horizon."
+    }
+  },
+  "side": {
+    "client": "العميل",
+    "server": "الخادم",
+    "both": "العميل والخادم"
+  },
+  "install": {
+    "install": "تثبيت",
+    "installAria": "تثبيت {{name}} في {{target}}",
+    "installed": "مثبّت",
+    "installing": "جارٍ التثبيت…",
+    "installingPct": "جارٍ التثبيت {{pct}}",
+    "createInstance": "إنشاء نسخة",
+    "chooseWorld": "التثبيت في عالم",
+    "noTarget": "اختر أولًا مكان التثبيت.",
+    "started": "جارٍ تثبيت {{name}} في {{target}}",
+    "withDeps_zero": "دون اعتماديات مطلوبة.",
+    "withDeps_one": "بالإضافة إلى اعتمادية مطلوبة واحدة.",
+    "withDeps_two": "بالإضافة إلى اعتماديتين مطلوبتين.",
+    "withDeps_few": "بالإضافة إلى {{count}} اعتماديات مطلوبة.",
+    "withDeps_many": "بالإضافة إلى {{count}} اعتمادية مطلوبة.",
+    "withDeps_other": "بالإضافة إلى {{count}} اعتمادية مطلوبة.",
+    "failed": "تعذّر تثبيت {{name}}",
+    "native": "بناء وتثبيت",
+    "update": "تحديث",
+    "updateAria": "تحديث {{name}} إلى {{version}}"
+  },
+  "modpack": {
+    "created": "جارٍ إنشاء النسخة {{name}}",
+    "createdHint": "التنزيل جارٍ. ستظهر في «لعب» عندما تجهز."
+  },
+  "datapacks": {
+    "pickWorld": "اختر عالمًا",
+    "noWorlds": "لا يوجد عالم في هذه النسخة بعد. العب مرة لإنشاء واحد.",
+    "count_zero": "لا حزم بيانات",
+    "count_one": "حزمة بيانات واحدة",
+    "count_two": "حزمتا بيانات",
+    "count_few": "{{count}} حزم بيانات",
+    "count_many": "{{count}} حزمة بيانات",
+    "count_other": "{{count}} حزمة بيانات"
+  },
+  "plugins": {
+    "badge": "إضافة Rustic Server · API {{api}}",
+    "noServerTitle": "لا يوجد خادم Rustic Server بعد",
+    "noServerBody": "لا تعمل الإضافات إلا على الخوادم التي تستخدم محرك Rustic Server. أنشئ واحدًا في بضع خطوات، ثم عد لتثبيت الإضافات عليه.",
+    "createServer": "إنشاء خادم"
+  },
+  "detail": {
+    "breadcrumb": "مسار التنقل",
+    "sections": "أقسام المشروع",
+    "tabs": {
+      "description": "الوصف",
+      "gallery": "المعرض",
+      "versions": "الإصدارات",
+      "changelog": "سجل التغييرات",
+      "dependencies": "الاعتماديات",
+      "compatibility": "التوافق"
+    },
+    "galleryLabel": "معرض {{name}}",
+    "prev": "الصورة السابقة",
+    "next": "الصورة التالية",
+    "slide": "الصورة {{index}} من {{total}}",
+    "about": "حول هذا المشروع",
+    "categories": "الفئات",
+    "links": "الروابط",
+    "link": {
+      "source": "الشيفرة المصدرية",
+      "issues": "الإبلاغ عن خلل",
+      "website": "الموقع",
+      "site": "على rustic-launcher.com",
+      "wiki": "الويكي",
+      "discord": "Discord"
+    },
+    "noChangelog": "لا يوجد سجل تغييرات بعد.",
+    "noGallery": "لا توجد لقطات شاشة بعد.",
+    "notAvailable": {
+      "title": "هذا المشروع غير متاح",
+      "body": "ربما يكون خاصًا، أو بانتظار المراجعة، أو أزاله صانعه أو أحد المشرفين.",
+      "back": "العودة إلى «استكشاف»"
+    },
+    "native": {
+      "title": "يُبنى على كمبيوترك",
+      "build": "يُجمَّع داخل لعبة ملف التعريف هذا في أول مرة تلعب فيها: من 10 إلى 15 دقيقة تقريبًا، وأسرع بعد ذلك.",
+      "review": "تتم مراجعته قبل إمكانية تثبيته، من قِبل سجل Horizon أو مسؤولي Rustic.",
+      "consent": "لا يُبنى شيء قبل أن تقرأ إشعارًا قصيرًا وتقبله.",
+      "more": "كيف تعمل المودات الأصلية"
+    }
+  },
+  "report": {
+    "button": "إبلاغ",
+    "title": "الإبلاغ عن {{name}}",
+    "sent": "تم إرسال البلاغ",
+    "sentBody": "شكرًا لك. سيراجعه مشرفونا.",
+    "reasons": {
+      "fair_play": "يخالف سياسة اللعب النظيف",
+      "malware": "برمجية خبيثة أو سرقة بيانات",
+      "copyright": "انتهاك حقوق النشر",
+      "other": "أمر آخر"
+    },
+    "failed": "تعذّر إرسال البلاغ"
+  },
+  "versions": {
+    "version": "الإصدار",
+    "horizon": "بُنى Horizon",
+    "published": "تاريخ النشر",
+    "downloads": "التنزيلات",
+    "compatibility": "التوافق",
+    "actions": "الإجراءات",
+    "none": "لا شيء",
+    "channel": {
+      "release": "مستقر",
+      "beta": "بيتا",
+      "alpha": "ألفا"
+    },
+    "empty": "لا يتوفر أي إصدار بعد.",
+    "latest": "الأحدث"
+  },
+  "deps": {
+    "none": "لا اعتماديات.",
+    "relation": {
+      "required": "مطلوبة",
+      "optional": "اختيارية",
+      "incompatible": "غير متوافقة"
+    },
+    "installed": "مثبّتة",
+    "willInstall": "تُثبَّت تلقائيًا",
+    "notInstalled": "غير مثبّتة"
+  },
+  "compatTab": {
+    "for": "لـ {{target}}",
+    "builds": "ينشر المؤلف بنية مصنوعة لإصدار Horizon هذا.",
+    "format": "هذا المحتوى بيانات فقط (أنسجة، شيدرات، حزم بيانات): لا يعتمد على بنية Horizon.",
+    "unknown": "اختر نسخة أو خادمًا للتحقق من التوافق.",
+    "fairPlay": "لا يروّج Rustic إلا للمحتوى الملتزم باللعب النظيف. أي شيء يمنح ميزة غير عادلة لا يُدرج أبدًا.",
+    "native": "مود أصلي يناسب Horizon هذا: يجمّعه Rustic Launcher داخل لعبة هذه النسخة على كمبيوترك."
+  },
+  "permissions": {
+    "title": "الأذونات",
+    "network": "الوصول إلى الشبكة: {{value}}",
+    "none": "لا يوجد",
+    "files": "الملفات: مجلد بياناته الخاص فقط."
+  },
+  "stats": {
+    "downloads": "التنزيلات",
+    "follows": "المتابعون",
+    "updated": "آخر تحديث",
+    "license": "الترخيص",
+    "size": "الحجم",
+    "gameVersion": "إصدار اللعبة",
+    "version": "أحدث إصدار",
+    "author": "المؤلف",
+    "created": "تاريخ النشر"
+  },
+  "searchSources": {
+    "mod": "ابحث عن مودات في Horizon وModrinth وRustic…",
+    "modpack": "ابحث عن حزم مودات في Horizon وModrinth وRustic…",
+    "resourcepack": "ابحث عن حزم موارد في Horizon وModrinth وRustic…",
+    "shader": "ابحث عن شيدرات في Horizon وModrinth وRustic…",
+    "datapack": "ابحث عن حزم بيانات في Horizon وModrinth وRustic…",
+    "plugin": "ابحث عن إضافات في Horizon وModrinth وRustic…"
+  },
+  "filtersLabel": "عوامل التصفية",
+  "view": "العرض",
+  "heading": "اعثر على *مودك* التالي",
+  "eyebrow": "استكشاف",
+  "kindsServer": "لخادم Rustic Server",
+  "tabs": {
+    "label": "أقسام الاستكشاف",
+    "discover": "اكتشاف",
+    "browse": "تصفّح",
+    "mine": "محتواي"
+  },
+  "hero": {
+    "eyebrow": "مميّز"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "مودات مميّزة",
+      "modpack": "حزم مودات مميّزة",
+      "resourcepack": "حزم موارد مميّزة",
+      "shader": "شيدرات مميّزة",
+      "datapack": "حزم بيانات مميّزة",
+      "plugin": "إضافات مميّزة"
+    },
+    "rows": {
+      "new": "جديد",
+      "newHint": "نُشر أو حُدّث للتو",
+      "horizon": "الأكثر شعبية على Horizon",
+      "horizonHint": "الأكثر تنزيلًا من سجل Horizon",
+      "verified": "موثَّق من Rustic",
+      "verifiedHint": "فحصها فريق Rustic: تفعل ما تَعِد به",
+      "yours": "لـ {{target}}",
+      "yoursHint": "يعمل على Horizon {{version}}",
+      "community": "من المجتمع",
+      "communityHint": "المحدَّثة مؤخرًا على Marketplace الخاص بـ Rustic"
+    },
+    "empty": {
+      "title": "لا شيء لاكتشافه هنا بعد",
+      "hint": "لا يوجد محتوى من هذا النوع يعمل على وجهتك بعد. تصفّح كل شيء بدلًا من ذلك.",
+      "browse": "تصفّح كل شيء"
+    },
+    "rowError": "تعذّر تحميل هذه المجموعة.",
+    "retry": "إعادة المحاولة"
+  },
+  "verified": {
+    "label": "موثَّق",
+    "hint": "موثَّق من Rustic: تحقق أحد المشرفين من أنه يفعل ما تقوله صفحته."
+  },
+  "official": {
+    "label": "رسمي",
+    "hint": "نشره فريق Rustic نفسه."
+  },
+  "price": {
+    "soon": "قريبًا",
+    "soonHint": "سيتمكن صنّاع المحتوى قريبًا من بيع أعمالهم. الشراء غير متاح بعد.",
+    "notOnSale": "غير معروض للبيع بعد: مبيعات صنّاع المحتوى تُفتح قريبًا."
+  },
+  "native": {
+    "badge": "يُبنى على كمبيوترك",
+    "short": "أصلي",
+    "hint": "المود الأصلي شيفرة Rust تُجمَّع داخل اللعبة على كمبيوترك قبل تشغيلها.",
+    "title": "مود أصلي",
+    "body": "المودات الأصلية شيفرة مصدرية بلغة Rust تُبنى داخل لعبتك على هذا الكمبيوتر (قد يستغرق ذلك من دقيقة إلى نصف ساعة). يراجع المسؤولون كل إصدار قبل أن يصبح عامًا.",
+    "kind": "مود أصلي",
+    "how": "يجمّعها Rustic Launcher على كمبيوترك داخل لعبة هذه النسخة، بعد أن تقبل إشعار ثقة. يستغرق البناء الأول من 10 إلى 15 دقيقة؛ وما يليه يعيد تجميع ما تغيّر فقط. تحتفظ النسخ التي لا تحتوي على مودات أصلية باللعبة المبنية مسبقًا.",
+    "instanceOnly": "تُثبَّت المودات الأصلية في نسخة.",
+    "trust": {
+      "title": "شيفرة أصلية: اقرأ قبل البناء",
+      "lead": "المود {{name}} مود أصلي: شيفرة Rust تُجمَّع داخل لعبة «{{instance}}» على هذا الكمبيوتر.",
+      "unsandboxed": "المودات الأصلية غير معزولة. بعد بنائها، تعمل بصلاحياتك ويمكنها قراءة أو تغيير أو إرسال أي شيء يستطيعه حسابك.",
+      "review": "لا يمكن تثبيت إلا المودات من سجل Horizon (يراجعها مشرفوه) والمودات التي وافق عليها المسؤولون في Marketplace الخاص بـ Rustic. المراجعة تقلل الخطر؛ لكنها لا تزيله.",
+      "build": "يُثبَّت Rust عند الحاجة، ثم تُجمَّع اللعبة لهذه النسخة: من 10 إلى 15 دقيقة تقريبًا وبضعة GB في المرة الأولى، وأسرع بعد ذلك.",
+      "scope": "هذه النسخة وحدها تشغّل اللعبة المبنية. لن يُطلب منك ذلك مجددًا لموداتها الأصلية التالية.",
+      "source": "قراءة الشيفرة المصدرية",
+      "check": "أفهم أن المودات الأصلية تعمل دون عزل وبصلاحياتي، وأثق بهذا المود.",
+      "accept": "أثق به: التثبيت والبناء"
+    },
+    "toolchain": {
+      "title": "تثبيت Rust {{version}}؟",
+      "lead": "يتطلب بناء المودات الأصلية مترجم Rust. يمكن لـ Rustic Launcher تثبيته لك.",
+      "manual": "يتطلب بناء المودات الأصلية مترجم Rust وأدوات نظام لا يستطيع Rustic Launcher تثبيتها لك. ثبّت ما يلي، ثم أعد البناء:",
+      "where": "من الموقع الرسمي (static.rust-lang.org)، مع التحقق من بصمة SHA-256 المنشورة، داخل مجلد المشغّل نفسه: لا يتغير شيء آخر على كمبيوترك.",
+      "size": "من 1 إلى 2.5 GB تقريبًا (مع مترجم C على Windows).",
+      "once": "مرة واحدة لكل النسخ؛ وحذف بيانات المشغّل يزيله.",
+      "found": "تم العثور على: {{reason}}.",
+      "install": "تثبيت Rust",
+      "started": "جارٍ تثبيت Rust",
+      "startedHint": "يبدأ البناء فور جاهزيته. تابعه في لوحة التنزيلات.",
+      "failed": "تعذّر تثبيت Rust"
+    },
+    "build": {
+      "started": "جارٍ بناء المودات الأصلية لـ {{instance}}",
+      "startedHint": "تابعه في صفحة النسخة أو في لوحة التنزيلات. يستغرق البناء الأول من 10 إلى 15 دقيقة.",
+      "failed": "تعذّر بناء المودات الأصلية لـ {{instance}}"
+    },
+    "errors": {
+      "notEdition": "المودات الأصلية لا تُبنى إلا في إصدار Rustic: حوّل هذه النسخة إليه من إعداداتها.",
+      "running": "أغلق اللعبة أولًا: يُعاد بناء موداتها الأصلية وهي متوقفة.",
+      "disk": "لا توجد مساحة قرص كافية. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "غير متوافق",
+    "compatible": "متوافق"
+  },
+  "library": {
+    "add": "إضافة إلى مكتبتي",
+    "inLibrary": "في مكتبتي",
+    "added": "أُضيف {{name}} إلى مكتبتك",
+    "removed": "أُزيل {{name}} من مكتبتك",
+    "remove": "إزالة {{name}} من مكتبتي",
+    "failed": "تعذّر تحديث مكتبتك"
+  },
+  "prompt": {
+    "title": "تثبيت {{name}}؟",
+    "body": "فتحت هذا المشروع من الموقع. اختر مكان تثبيته والإصدار، ثم أكّد.",
+    "dismiss": "ليس الآن",
+    "version": "الإصدار",
+    "versionMissing": "الإصدار {{version}} لم يعد متاحًا: حُدّد أحدث إصدار متوافق."
+  },
+  "mine": {
+    "searchPlaceholder": "تصفية محتواي…",
+    "noMatch": "لا شيء مطابق",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "أُضيف يدويًا"
+    },
+    "installed": {
+      "title": "المثبّت",
+      "titleOn": "المثبّت على {{target}}",
+      "hint": {
+        "mod": "مودات هذه الوجهة: فعّلها أو أوقفها، أو حدّثها أو أزلها.",
+        "modpack": "حزم المودات لهذه الوجهة: فعّلها أو أوقفها، أو حدّثها أو أزلها.",
+        "resourcepack": "حزم الموارد لهذه الوجهة: فعّلها أو أوقفها، أو حدّثها أو أزلها.",
+        "shader": "شيدرات هذه الوجهة: فعّلها أو أوقفها، أو حدّثها أو أزلها.",
+        "datapack": "حزم البيانات لهذه الوجهة: فعّلها أو أوقفها، أو حدّثها أو أزلها.",
+        "plugin": "إضافات هذه الوجهة: فعّلها أو أوقفها، أو حدّثها أو أزلها."
+      },
+      "modpacksTitle": "تصبح حزم المودات ملفات تعريف",
+      "modpacksHint": "كل حزمة مودات مثبّتة هي ملف تعريف مستقل.",
+      "openProfiles": "فتح ملفات التعريف",
+      "noTarget": "اختر أولًا أين تبحث.",
+      "serverHint": "تُدار إضافات الخادم وحزم بياناته من صفحته.",
+      "manageServer": "إدارة الخادم",
+      "updateAll_zero": "لا شيء لتحديثه",
+      "updateAll_one": "تحديث عنصر واحد",
+      "updateAll_two": "تحديث عنصرين",
+      "updateAll_few": "تحديث {{count}} عناصر",
+      "updateAll_many": "تحديث {{count}} عنصرًا",
+      "updateAll_other": "تحديث {{count}} عنصر",
+      "openProfile": "فتح ملف التعريف",
+      "empty": "لا شيء مثبّت هنا بعد",
+      "emptyHint": "اعثر على شيء في «اكتشاف» أو «تصفّح».",
+      "discover": "اكتشاف المحتوى",
+      "updateTo": "التحديث إلى {{version}}",
+      "incompatible": "غير متوافق",
+      "update": "تحديث {{name}}",
+      "toggle": "تفعيل {{name}}",
+      "remove": "إزالة {{name}}",
+      "removeTitle": "إزالة {{name}}؟",
+      "removeBody": "ستُحذف ملفاته من ملف التعريف هذا. يمكنك تثبيته مجددًا في أي وقت."
+    },
+    "signIn": {
+      "title": "مكتبتك وإبداعاتك",
+      "body": "سجّل الدخول إلى حسابك على Rustic لتجد المشاريع التي حفظتها والمشاريع التي تنشرها.",
+      "action": "تسجيل الدخول"
+    },
+    "library": {
+      "title": "مكتبتي",
+      "hint": "المشاريع المحفوظة في حسابك على Rustic، على كل كمبيوتر.",
+      "empty": "مكتبتك فارغة",
+      "emptyHint": "أضف مشروع Rustic من صفحته لتجده هنا.",
+      "installAria": "تثبيت {{name}}"
+    },
+    "creations": {
+      "title": "إبداعاتي",
+      "hint": "ما تنشره على Marketplace الخاص بـ Rustic.",
+      "publish": "النشر على الموقع",
+      "empty": "لم تنشر أي شيء بعد",
+      "emptyHint": "شارك مودًا أو حزمة أو شيدر مع كل لاعبي Rustic من الموقع.",
+      "manage": "إدارة",
+      "manageAria": "إدارة {{name}} على الموقع",
+      "status": {
+        "public": "عام",
+        "unlisted": "غير مدرج",
+        "private": "خاص",
+        "pending": "بانتظار المراجعة",
+        "rejected": "مرفوض",
+        "takenDown": "أُزيل"
+      }
+    }
+  }
+}

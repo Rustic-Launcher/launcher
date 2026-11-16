@@ -1,0 +1,503 @@
+{
+  "a11y": {
+    "skipToContent": "Gå til indhold",
+    "notifications": "Notifikationer"
+  },
+  "actions": {
+    "retry": "Prøv igen",
+    "back": "Tilbage",
+    "forward": "Frem",
+    "cancel": "Annuller",
+    "close": "Luk",
+    "clear": "Ryd",
+    "save": "Gem",
+    "saved": "Gemt",
+    "delete": "Slet",
+    "edit": "Rediger",
+    "open": "Åbn",
+    "install": "Installer",
+    "installed": "Installeret",
+    "remove": "Fjern",
+    "confirm": "Bekræft",
+    "continue": "Fortsæt",
+    "next": "Næste",
+    "previous": "Forrige",
+    "done": "Færdig",
+    "copy": "Kopiér",
+    "copied": "Kopieret",
+    "learnMore": "Læs mere",
+    "seeAll": "Se alle",
+    "create": "Opret",
+    "import": "Importér",
+    "browse": "Gennemse…",
+    "apply": "Anvend",
+    "reset": "Nulstil",
+    "enable": "Slå til",
+    "disable": "Slå fra",
+    "update": "Opdater",
+    "add": "Tilføj",
+    "refresh": "Opdater",
+    "openFolder": "Åbn mappe",
+    "skip": "Spring over",
+    "more": "Mere"
+  },
+  "errors": {
+    "generic": "Noget gik galt. Prøv igen om et øjeblik.",
+    "page": {
+      "title": "Denne side kunne ikke vises"
+    },
+    "load": {
+      "title": "Dette kunne ikke indlæses"
+    },
+    "notFound": {
+      "title": "Intet her",
+      "description": "Denne side findes ikke eller er flyttet."
+    }
+  },
+  "nav": {
+    "label": "Hovednavigation",
+    "home": "Hjem",
+    "instances": "Profiler",
+    "content": "Udforsk",
+    "servers": "Servere",
+    "locker": "Skab",
+    "store": "Butik",
+    "settings": "Indstillinger",
+    "newInstance": "Ny profil"
+  },
+  "search": {
+    "title": "Søg",
+    "placeholder": "Søg efter indhold, venner, servere, indstillinger…",
+    "empty": "Ingen resultater. Prøv et andet ord.",
+    "loading": "Søger…",
+    "hintNavigate": "naviger",
+    "hintOpen": "åbn",
+    "hintClose": "luk",
+    "open": "Åbn",
+    "myServer": "Min server",
+    "playInstance": "Spil {{name}}",
+    "groups": {
+      "pages": "Sider",
+      "actions": "Handlinger",
+      "instances": "Instanser",
+      "content": "Indhold",
+      "friends": "Venner",
+      "servers": "Servere",
+      "settings": "Indstillinger",
+      "play": "Spil"
+    },
+    "actions": {
+      "newInstance": "Opret en instans",
+      "newServer": "Opret en server",
+      "addFriend": "Tilføj en ven",
+      "darkTheme": "Skift til mørkt tema",
+      "lightTheme": "Skift til lyst tema"
+    },
+    "settings": {
+      "accounts": "Konti",
+      "game": "Spil",
+      "launcher": "Launcher",
+      "appearance": "Udseende",
+      "privacy": "Privatliv og data",
+      "parental": "Forældrekontrol",
+      "about": "Om",
+      "voice": "Stemme"
+    }
+  },
+  "friends": {
+    "title": "Venner",
+    "onlineCount_one": "{{count}} online",
+    "onlineCount_other": "{{count}} online",
+    "add": "Tilføj en ven",
+    "search": "Søg i venner",
+    "requests_one": "Anmodning · {{count}}",
+    "requests_other": "Anmodninger · {{count}}",
+    "incoming": "Vil gerne være venner",
+    "outgoing": "Anmodning sendt",
+    "accept": "Accepter",
+    "decline": "Afvis",
+    "cancelRequest": "Annuller anmodning",
+    "requestSent": "Venneanmodning sendt til {{name}}",
+    "error": "Venner kunne ikke indlæses.",
+    "empty": "Ingen venner endnu. Tilføj en med vedkommendes Rustic-brugernavn.",
+    "online_one": "Online · {{count}}",
+    "online_other": "Online · {{count}}",
+    "offline_one": "Offline · {{count}}",
+    "offline_other": "Offline · {{count}}",
+    "lastSeen": "Set {{when}}",
+    "activity": {
+      "server": "Spiller på {{server}}",
+      "singleplayer": "Spiller alene",
+      "hosting": "Er vært for {{server}}",
+      "launcher": "I launcheren"
+    },
+    "favorite": "Favorit",
+    "makeFavorite": "Føj til favoritter",
+    "unfavorite": "Fjern fra favoritter",
+    "join": "Tilslut",
+    "joinAria": "Slut dig til {{name}}",
+    "joining": "Tilslutter til {{server}}…",
+    "more": "Flere handlinger for {{name}}",
+    "remove": "Fjern ven",
+    "removeTitle": "Vil du fjerne {{name}} fra dine venner?",
+    "removeBody": "I kan ikke længere se hinandens aktivitet. Du kan sende en ny anmodning senere."
+  },
+  "addFriend": {
+    "title": "Tilføj en ven",
+    "description": "Find en spiller ud fra vedkommendes Rustic-navn eller det Minecraft-navn, der er forbundet, eller vælg en, du har spillet med.",
+    "kind": "Søg efter",
+    "kindRustic": "Rustic-navn",
+    "kindMinecraft": "Minecraft-navn",
+    "rusticLabel": "Rustic-brugernavn",
+    "minecraftLabel": "Minecraft-brugernavn",
+    "rusticPlaceholder": "fx lea_builds",
+    "minecraftPlaceholder": "fx LeaBuilds",
+    "rusticHint": "Det præcise navn på vedkommendes Rustic-profil.",
+    "minecraftHint": "Det præcise navn i spillet for en spiller, der har logget ind på Rustic med den Minecraft-profil.",
+    "find": "Find",
+    "send": "Send anmodning",
+    "sent": "Anmodning sendt",
+    "friends": "Allerede venner",
+    "pending": "Anmodning afventer",
+    "incoming": "Vedkommende har allerede spurgt, om I skal være venner: accepter anmodningen.",
+    "minecraftName": "Minecraft-navn:",
+    "add": "Tilføj",
+    "addAria": "Send en venneanmodning til {{name}}",
+    "playedWith": "Spillet med for nylig",
+    "playedWithEmpty": "Ingen endnu. Spillere fra dine grupper og fra fælles servere (10 minutter eller mere sammen) vises her.",
+    "crossed": "Set for nylig",
+    "crossedEmpty": "Du har ikke mødt nogen på en fælles server for nylig.",
+    "reasonParty": "I din gruppe",
+    "reasonServer": "På {{server}}",
+    "reasonSameServer": "På samme server",
+    "suggestionsError": "Forslag kunne ikke indlæses.",
+    "suggestionsOff": "Forslag er slået fra. Slå »Vis mig i forslag til spillere, jeg møder« til under Indstillinger › Privatliv og data for at se de spillere, du møder.",
+    "suggestionsMinor": "Forslag til spillere, du møder, er ikke tilgængelige for din konto.",
+    "privacyNote": "Forslag kommer fra dine grupper og de servere, du deler i din aktivitet, inden for de seneste 14 dage. Kun personer, der også tillader det, vises.",
+    "errors": {
+      "notFoundRustic": "Ingen Rustic-konto har dette navn.",
+      "notFoundMinecraft": "Ingen Rustic-spiller har forbundet dette Minecraft-navn.",
+      "invalidRustic": "Rustic-navne består af 3 til 20 bogstaver, tal eller _.",
+      "invalidMinecraft": "Minecraft-navne består af 3 til 16 bogstaver, tal eller _.",
+      "cannot_add_friend": "Denne spiller kan ikke modtage venneanmodninger.",
+      "friend_requests_disabled": "Venneanmodninger er slået fra for din konto (forældrekontrol).",
+      "cannot_add_self": "Det er dig selv!",
+      "already_friends": "I er allerede venner.",
+      "request_pending": "En anmodning afventer allerede.",
+      "incoming_request_exists": "Vedkommende har allerede sendt dig en anmodning: accepter den.",
+      "rate_limited": "For mange søgninger. Vent et minut, og prøv så igen.",
+      "generic": "Noget gik galt. Prøv igen."
+    }
+  },
+  "party": {
+    "title": "Gruppe",
+    "leave": "Forlad",
+    "leader": "Gruppeleder",
+    "pending": "{{name}} (inviteret)",
+    "invite": "Inviter til gruppe",
+    "invited": "{{name}} er inviteret til din gruppe",
+    "invitesTitle": "Gruppeinvitationer",
+    "invitedBy": "{{name}} inviterer dig til sin gruppe",
+    "accept": "Deltag",
+    "decline": "Afvis",
+    "makeLeader": "Gør til gruppeleder",
+    "kick": "Fjern fra gruppen",
+    "proximity": "Nærhedsstemme",
+    "proximityHint": "Medlemmer på samme server hører hinanden efter afstand",
+    "range": "Rækkevidde (blokke)",
+    "emptyTitle": "Ingen gruppe endnu",
+    "emptyBody": "Opret en gruppe, og inviter derefter venner fra deres menu under fanen Venner.",
+    "create": "Opret en gruppe",
+    "inviteHint": "Inviter venner fra deres menu under fanen Venner.",
+    "chatTitle": "Gruppechat",
+    "chatEmpty": "Deltag i en gruppe, eller opret en, for at chatte med medlemmerne.",
+    "chatPlaceholder": "Skriv til gruppen",
+    "formerMember": "Tidligere medlem",
+    "errors": {
+      "party_full": "Gruppen er fuld.",
+      "party_not_allowed": "Denne spiller kan ikke være i gruppen: spillere under 18 deltager kun i deres venners grupper.",
+      "already_in_party": "Forlad først din nuværende gruppe.",
+      "not_party_leader": "Kun gruppelederen kan gøre det."
+    }
+  },
+  "presence": {
+    "online": "Online",
+    "in-game": "I spillet",
+    "away": "Væk",
+    "busy": "Optaget",
+    "offline": "Offline"
+  },
+  "notifications": {
+    "title": "Notifikationer",
+    "markAllRead": "Markér alle som læst",
+    "empty": "Du er helt opdateret.",
+    "kinds": {
+      "friend_request": "har sendt dig en venneanmodning",
+      "update_available": "er tilgængelig til dine instanser",
+      "backup_done": "Planlagt backup fuldført",
+      "store_new": "Nyt i butikken"
+    }
+  },
+  "account": {
+    "switcher": "Konti",
+    "none": "Ingen konto",
+    "rustic": "Rustic-konto",
+    "signInRustic": "Log ind på Rustic",
+    "signOutRustic": "Log ud af Rustic",
+    "gameProfiles": "Spilprofiler",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "Offline"
+    },
+    "add": "Tilføj en konto",
+    "manage": "Administrer konti"
+  },
+  "downloads": {
+    "title": "Downloads",
+    "global": "Downloads i baggrunden",
+    "working": "Arbejder…",
+    "summary_one": "{{count}} download i gang",
+    "summary_other": "{{count}} downloads i gang",
+    "kind": {
+      "game": "Horizon",
+      "content": "Indhold",
+      "modpack": "Modpakke",
+      "server": "Server",
+      "java": "Java-runtime",
+      "update": "Launcher-opdatering",
+      "prepare": "Forbereder spilfiler",
+      "native-build": "Build af native mods",
+      "native-toolchain": "Rust til native mods"
+    }
+  },
+  "play": {
+    "play": "Spil",
+    "update": "Opdater",
+    "cancel": "Annuller",
+    "stop": "Stop",
+    "selectInstance": "Vælg den instans, du vil spille",
+    "instances": "Instanser",
+    "manageInstances": "Administrer instanser",
+    "newVersion": "{{version}} er tilgængelig",
+    "cancelled": "Start annulleret",
+    "status": {
+      "ready": "Klar til at spille",
+      "noInstance": "Ingen instans",
+      "running": "Spillet kører",
+      "update": "Opdatering påkrævet",
+      "broken": "Reparation påkrævet"
+    },
+    "progress": {
+      "updating": "Opdaterer…",
+      "downloading": "Henter {{pct}}",
+      "checking": "Tjekker filer…",
+      "preparing": "Forbereder…",
+      "launching": "Starter…",
+      "stopping": "Stopper…",
+      "preparingFiles": "Forbereder spilfiler {{pct}}",
+      "building": "Kompilerer native mods…",
+      "buildingPct": "Kompilerer native mods {{pct}}"
+    },
+    "errors": {
+      "launch": "Spillet kunne ikke starte"
+    },
+    "refusals": {
+      "auth_no_account": "Log ind med en Microsoft-konto, der ejer spillet, for at spille.",
+      "auth_not_owned": "Denne Microsoft-konto ejer ikke spillet.",
+      "auth_not_approved": "Microsoft-login er endnu ikke tilgængeligt for denne launcher.",
+      "auth_reauth_required": "Log ind på din Microsoft-konto igen for at spille.",
+      "auth_offline_not_allowed": "Log ind én gang med en Microsoft-konto, der ejer spillet, så kan du spille offline.",
+      "auth_network": "Microsoft kunne ikke nås for at tjekke kontoen. Tjek din forbindelse.",
+      "build_not_installed": "Installer først et Horizon-build.",
+      "prepare_needed": "Spilfilerne til dette build er ikke forberedt endnu.",
+      "prepare_failed": "Spilfilerne kunne ikke forberedes: prøv igen, eller forbered dem under Indstillinger › Spil og instanser.",
+      "prepare_no_java": "Java blev ikke fundet: installer det, eller vælg det under Indstillinger › Spil og instanser.",
+      "prepare_no_minecraft_dir": "Din spilinstallation blev ikke fundet: vælg dens mappe under Indstillinger › Spil og instanser.",
+      "launch_already_running": "Denne instans kører allerede.",
+      "native_consent": "Denne instans har native mods: accepter først deres tillidsmeddelelse på instansens side (Indhold).",
+      "native_toolchain": "Native mods kræver Rust: installer det fra instansens side (Indhold) eller under Indstillinger › Spil og instanser.",
+      "native_not_edition": "Native mods bygges kun ind i Rustic-udgaven: skift denne instans til den, eller slå dens native mods fra.",
+      "native_build_failed": "De native mods kunne ikke bygges",
+      "native_disk": "Ikke nok ledig diskplads til at bygge de native mods."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (Rustic-udgave)",
+    "rusticEdition": "Rustic-udgave"
+  },
+  "compat": {
+    "buildsOnHorizon": "Bygges på din Horizon",
+    "compatible": "Kompatibel",
+    "incompatible": "Ikke kompatibel: {{reason}}",
+    "unknown": "Kompatibilitet ukendt",
+    "reasons": {
+      "horizon_version": "Horizon-version",
+      "java_only": "kun Java Edition",
+      "side": "kun serverside",
+      "conflict": "er i konflikt med en installeret mod",
+      "unsupported_format": "format understøttes ikke",
+      "needs_rustic_server": "kræver Rustic Server",
+      "not_fair_play": "ikke tilladt (fair play)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "Skift produkt",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "Dokumentation for Rustic Server"
+  },
+  "crumbs": {
+    "label": "Brødkrummesti",
+    "horizon": "Horizon",
+    "details": "Detaljer",
+    "create": "Opret",
+    "kinds": {
+      "mod": "Mods",
+      "modpack": "Modpakker",
+      "resourcepack": "Ressourcepakker",
+      "shader": "Shaders",
+      "datapack": "Datapakker",
+      "plugin": "Plugins"
+    },
+    "servers": {
+      "featured": "Udvalgt",
+      "mine": "Mine servere",
+      "multiplayer": "Multiplayer-liste",
+      "discover": "Opdag",
+      "joined": "Multiplayer-liste",
+      "browse": "Gennemse"
+    }
+  },
+  "social": {
+    "title": "Socialt",
+    "description": "Venner, chats og din gruppe.",
+    "open": "Åbn Socialt",
+    "friends": "Venner",
+    "chats": "Chats",
+    "message": "Send en besked",
+    "searchChats": "Søg i chats…",
+    "noChats": "Ingen samtaler endnu. Skriv til en ven fra fanen Venner.",
+    "sayHello": "Sig hej",
+    "selectTitle": "Vælg en samtale",
+    "selectBody": "Vælg en ven for at begynde at chatte.",
+    "messagePlaceholder": "Skriv til {{name}}",
+    "send": "Send"
+  },
+  "window": {
+    "minimize": "Minimer",
+    "maximize": "Maksimer",
+    "restore": "Gendan",
+    "close": "Luk"
+  },
+  "running": {
+    "title": "Kørende instanser",
+    "none": "Intet spil kører.",
+    "count_one": "{{count}} instans kører",
+    "count_other": "{{count}} instanser kører",
+    "downloading": "Henter {{pct}}"
+  },
+  "launch": {
+    "launch": "Start spil",
+    "update": "Opdater og start",
+    "stop": "Stop spil"
+  },
+  "deepLink": {
+    "authOk": "Logget ind på Rustic",
+    "authFailed": "Login på Rustic mislykkedes",
+    "joining": "Tilslutter til {{target}}…",
+    "content": "Åbner {{project}} fra hjemmesiden"
+  },
+  "catalog": {
+    "sort": "Sortér efter",
+    "results_one": "{{count}} resultat",
+    "results_other": "{{count}} resultater",
+    "loadMore": "Indlæs flere",
+    "loadMoreCount": "Viser {{shown}} af {{total}}",
+    "carousel": {
+      "prev": "Forrige",
+      "next": "Næste",
+      "slide": "{{index}} af {{total}}",
+      "pause": "Sæt diasshowet på pause",
+      "play": "Afspil diasshowet"
+    },
+    "row": {
+      "seeAll": "Se alle",
+      "seeAllAria": "Se alle: {{title}}",
+      "scrollPrev": "Rul til venstre",
+      "scrollNext": "Rul til højre"
+    },
+    "filters": {
+      "button": "Filtre",
+      "buttonCount": "Filtre · {{count}}",
+      "reset": "Nulstil filtre"
+    },
+    "layout": {
+      "label": "Layout",
+      "list": "Liste",
+      "grid": "Gitter"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "Opdaterer {{pct}}",
+      "installing": "Installerer opdateringen…",
+      "restarting": "Genstarter…",
+      "deferred": "Opdater efter dit spil",
+      "apply": "Opdater og genstart"
+    },
+    "toast": {
+      "launcher": "Henter Rustic Launcher {{version}}…",
+      "edition": "Opdaterer spillet (Rustic-udgave)…",
+      "editionDone": "Spillet er opdateret: {{version}}",
+      "deferred": "En opdatering er klar. Den installeres, når du lukker spillet.",
+      "restarting": "Rustic Launcher genstarter for at afslutte opdateringen.",
+      "updated": "Rustic Launcher er opdateret til {{version}}",
+      "resuming": "Opdateringen er færdig: starter dit spil",
+      "failed": "Opdateringen kunne ikke installeres. Der prøves igen senere."
+    }
+  },
+  "voice": {
+    "title": "Stemme",
+    "join": "Deltag i stemme",
+    "leave": "Forlad stemme",
+    "mute": "Slå mikrofonen fra",
+    "unmute": "Slå mikrofonen til",
+    "deafen": "Slå lyden fra",
+    "undeafen": "Slå lyden til",
+    "speaking": "Taler",
+    "micMuted": "Slået fra",
+    "outOfRange": "Uden for rækkevidde",
+    "muteFor": "Gør {{name}} lydløs for dig",
+    "unmuteFor": "Hør {{name}} igen",
+    "reportAria": "Anmeld {{name}}",
+    "memberVolume": "Lydstyrke for {{name}}",
+    "report": "Anmeld",
+    "reportTitle": "Anmeld {{name}}?",
+    "reportBody": "Vores moderatorer gennemgår anmeldelsen. Stemme optages aldrig. Spilleren gøres lydløs for dig med det samme.",
+    "reported": "{{name}} er anmeldt",
+    "reasons": {
+      "harassment": "Chikane eller had",
+      "inappropriate_content": "Upassende indhold",
+      "spam": "Spam eller støj",
+      "other": "Noget andet"
+    },
+    "proximityOn": "nærhed, rækkevidde {{range}}",
+    "you": "Dig",
+    "listenOnly": "Lytter kun",
+    "alone": "Ingen andre i stemme endnu.",
+    "serverOffer": "{{server}} har nærhedsstemme",
+    "serverRoom": "Serverstemme",
+    "partyRoom": "Gruppestemme",
+    "errors": {
+      "voice_unavailable": "Stemme er ikke tilgængelig lige nu. Prøv igen senere.",
+      "voice_not_allowed": "Stemme er ikke tilgængelig for din konto.",
+      "mic_denied": "Adgang til mikrofonen blev afvist: du kan lytte, men ikke tale. Tillad den i systemets privatlivsindstillinger.",
+      "mic_missing": "Ingen mikrofon fundet: du kan lytte, men ikke tale.",
+      "connect_failed": "Kunne ikke oprette forbindelse til stemme. Tjek din forbindelse, og prøv igen.",
+      "kicked": "Du blev fjernet fra stemmerummet.",
+      "not_on_voice_server": "Denne server har ikke nærhedsstemme."
+    }
+  }
+}

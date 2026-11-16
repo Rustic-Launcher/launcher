@@ -13,7 +13,8 @@
     "appearance": "Appearance",
     "privacy": "Privacy & data",
     "parental": "Parental controls",
-    "about": "About & legal"
+    "about": "About & legal",
+    "voice": "Voice"
   },
   "accounts": {
     "active": "Active",
@@ -95,7 +96,8 @@
       "description": "Your Rustic identity for friends, the Locker, purchases and servers.",
       "signedOut": "Not signed in. The game works without it; social features, the Locker and the Store need it.",
       "signIn": "Sign in or create an account",
-      "licenceNote": "A Rustic account is a platform identity. It never replaces the game licence: you still need a Microsoft account that owns the game."
+      "licenceNote": "A Rustic account is a platform identity. It never replaces the game licence: you still need a Microsoft account that owns the game.",
+      "manageOnWeb": "Manage on the website"
     },
     "offline": {
       "title": "Offline play",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Finish signing in in your browser: the launcher picks up your session automatically."
   },
   "heading": "Your *settings*",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Devices",
+    "devicesHint": "The microphone and the speakers or headset used for voice.",
+    "input": "Microphone",
+    "output": "Output",
+    "outputVolume": "Output volume",
+    "systemDefault": "System default",
+    "deviceN": "Device {{n}}",
+    "talk": "Talking",
+    "talkHint": "Talk when your voice is detected, or only while you hold a key.",
+    "mode": "Input mode",
+    "modeVad": "Voice activity",
+    "modePtt": "Push to talk",
+    "pttKey": "Push-to-talk key",
+    "pttKeyHint": "Works in the launcher and in game. Mouse side buttons work too.",
+    "pressKey": "Press a key…",
+    "sensitivity": "Sensitivity",
+    "sensitivityHint": "Higher picks up quieter voices; lower ignores more background noise.",
+    "test": "Microphone test",
+    "testMic": "Test",
+    "stopTest": "Stop",
+    "level": "Microphone level",
+    "micDenied": "Microphone access was refused. Allow it in your system's privacy settings, then try again.",
+    "micMissing": "No microphone found.",
+    "noiseSuppression": "Noise suppression",
+    "echoCancellation": "Echo cancellation",
+    "autoGain": "Automatic gain",
+    "inGame": "In game",
+    "inGameHint": "With the Rustic edition, an overlay shows who is speaking and the push-to-talk key works in game.",
+    "overlay": "Show the voice overlay in game",
+    "serverVoice": "Server proximity voice",
+    "serverVoiceHint": "Rustic Servers can offer voice by distance with every player there. Under 18, a guardian must allow it.",
+    "serverAsk": "Ask me",
+    "serverAuto": "Join automatically",
+    "serverOff": "Never",
+    "servers": {
+      "title": "Proximity voice for your servers",
+      "description": "Add a server, then put its key in the proximity-voice plugin's config.toml. You can turn it off at any time.",
+      "namePlaceholder": "Server name",
+      "add": "Add",
+      "status": "Players online: {{count}}",
+      "enabled": "Proximity voice on {{name}}",
+      "newKey": "New key",
+      "remove": "Remove {{name}}",
+      "keyOnce": "Copy this key now: it is shown only once. A new key replaces it.",
+      "tooMany": "You can add up to 10 servers."
+    }
+  }
 }

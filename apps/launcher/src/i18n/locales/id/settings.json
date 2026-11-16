@@ -13,7 +13,8 @@
     "appearance": "Tampilan",
     "privacy": "Privasi & data",
     "parental": "Kontrol orang tua",
-    "about": "Tentang & hukum"
+    "about": "Tentang & hukum",
+    "voice": "Suara"
   },
   "accounts": {
     "active": "Aktif",
@@ -95,7 +96,8 @@
       "description": "Identitas Rustic-mu untuk teman, Loker, pembelian, dan server.",
       "signedOut": "Belum masuk. Game tetap berjalan tanpanya; fitur sosial, Loker, dan Toko memerlukannya.",
       "signIn": "Masuk atau buat akun",
-      "licenceNote": "Akun Rustic adalah identitas platform. Akun ini tidak pernah menggantikan lisensi game: kamu tetap memerlukan akun Microsoft yang memiliki game."
+      "licenceNote": "Akun Rustic adalah identitas platform. Akun ini tidak pernah menggantikan lisensi game: kamu tetap memerlukan akun Microsoft yang memiliki game.",
+      "manageOnWeb": "Kelola di situs web"
     },
     "offline": {
       "title": "Bermain offline",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Selesaikan proses masuk di browser-mu: launcher akan mengambil sesimu secara otomatis."
   },
   "heading": "*Pengaturan*-mu",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Perangkat",
+    "devicesHint": "Mikrofon dan speaker atau headset untuk suara.",
+    "input": "Mikrofon",
+    "output": "Keluaran",
+    "outputVolume": "Volume keluaran",
+    "systemDefault": "Bawaan sistem",
+    "deviceN": "Perangkat {{n}}",
+    "talk": "Bicara",
+    "talkHint": "Bicara saat suaramu terdeteksi, atau hanya saat menahan sebuah tombol.",
+    "mode": "Mode masukan",
+    "modeVad": "Aktivitas suara",
+    "modePtt": "Tekan untuk bicara",
+    "pttKey": "Tombol tekan untuk bicara",
+    "pttKeyHint": "Berfungsi di launcher dan di game. Tombol samping mouse juga bisa.",
+    "pressKey": "Tekan sebuah tombol…",
+    "sensitivity": "Sensitivitas",
+    "sensitivityHint": "Lebih tinggi menangkap suara yang lebih pelan; lebih rendah mengabaikan lebih banyak bising latar.",
+    "test": "Tes mikrofon",
+    "testMic": "Tes",
+    "stopTest": "Berhenti",
+    "level": "Level mikrofon",
+    "micDenied": "Akses mikrofon ditolak. Izinkan di pengaturan privasi sistem, lalu coba lagi.",
+    "micMissing": "Mikrofon tidak ditemukan.",
+    "noiseSuppression": "Peredam bising",
+    "echoCancellation": "Pembatal gema",
+    "autoGain": "Penguatan otomatis",
+    "inGame": "Di dalam game",
+    "inGameHint": "Dengan edisi Rustic, overlay menunjukkan siapa yang bicara dan tombol tekan untuk bicara berfungsi di game.",
+    "overlay": "Tampilkan overlay suara di game",
+    "serverVoice": "Suara jarak dekat di server",
+    "serverVoiceHint": "Rustic Server bisa menawarkan suara sesuai jarak dengan semua pemain di sana. Di bawah 18 tahun, wali harus mengizinkannya.",
+    "serverAsk": "Tanya saya",
+    "serverAuto": "Gabung otomatis",
+    "serverOff": "Tidak pernah",
+    "servers": {
+      "title": "Suara jarak dekat untuk server-mu",
+      "description": "Tambahkan server, lalu masukkan kuncinya ke config.toml plugin proximity-voice. Kamu bisa mematikannya kapan saja.",
+      "namePlaceholder": "Nama server",
+      "add": "Tambah",
+      "status": "Pemain online: {{count}}",
+      "enabled": "Suara jarak dekat di {{name}}",
+      "newKey": "Kunci baru",
+      "remove": "Hapus {{name}}",
+      "keyOnce": "Salin kunci ini sekarang: hanya ditampilkan sekali. Kunci baru akan menggantikannya.",
+      "tooMany": "Kamu bisa menambahkan hingga 10 server."
+    }
+  }
 }

@@ -1,0 +1,341 @@
+{
+  "title": "वर्ज़न",
+  "errors": {
+    "action": "यह काम नहीं किया"
+  },
+  "card": {
+    "more": "{{name}} के लिए और कार्रवाइयाँ",
+    "pin": "पिन करें",
+    "unpin": "अनपिन करें",
+    "duplicate": "डुप्लिकेट करें",
+    "duplicated": "{{name}} बनाया गया",
+    "playtime": "खेलने का समय",
+    "never": "कभी नहीं",
+    "fromModpack": "मॉडपैक {{name}} {{version}}"
+  },
+  "state": {
+    "running": "चल रहा है",
+    "installing": "इंस्टॉल हो रहा है",
+    "broken": "मरम्मत ज़रूरी"
+  },
+  "delete": {
+    "title": "{{name}} हटाएँ?",
+    "body": "इसके मॉड्स, सेटिंग्स और दुनियाएँ इस कंप्यूटर से हटा दी जाती हैं। इसे वापस नहीं किया जा सकता।",
+    "confirm": "इंस्टेंस हटाएँ",
+    "done": "{{name}} हटाया गया"
+  },
+  "new": {
+    "title": "नया इंस्टेंस",
+    "description": "नए सिरे से शुरू करें या कोई मौजूदा पैक लाएँ।",
+    "tabs": {
+      "create": "बनाएँ",
+      "import": "इम्पोर्ट करें"
+    },
+    "name": "नाम",
+    "namePlaceholder": "मेरी सर्वाइवल दुनिया",
+    "nameRequired": "इंस्टेंस को एक नाम दें।",
+    "icon": "आइकन",
+    "color": "रंग",
+    "colorN": "रंग {{n}}",
+    "version": "Horizon बिल्ड",
+    "versionHint": "Rustic एडिशन गेम में कॉस्मेटिक्स और दोस्त जोड़ता है। Java या RAM की कोई सेटिंग ज़रूरी नहीं।",
+    "recommended": "सुझाया गया",
+    "release": "स्टेबल",
+    "nightly": "नाइटली",
+    "installed": "इंस्टॉल है",
+    "submit": "इंस्टेंस बनाएँ",
+    "created": "{{name}} तैयार है",
+    "preview": "प्रीव्यू",
+    "edition": "एडिशन",
+    "editionRustic": "गेम में कॉस्मेटिक्स, दोस्त और नेटिव मॉड्स।",
+    "editionHorizon": "Horizon, जैसा उसकी टीम प्रकाशित करती है, कुछ भी जोड़ा नहीं गया।",
+    "noBuild": "अभी इस एडिशन का कोई बिल्ड सूचीबद्ध नहीं है।",
+    "nightlyHint": "नाइटली बिल्ड हर दिन Horizon के नवीनतम कोड से आते हैं: नए, पर कम परखे हुए।"
+  },
+  "icons": {
+    "grass": "अंकुर",
+    "sword": "तलवारें",
+    "pickaxe": "गैंती",
+    "castle": "किला",
+    "rocket": "रॉकेट",
+    "gem": "रत्न",
+    "flame": "लौ",
+    "leaf": "पत्ता",
+    "star": "तारा",
+    "compass": "कम्पास"
+  },
+  "import": {
+    "folder": {
+      "title": "इंस्टेंस फ़ोल्डर",
+      "description": "एक Prism या MultiMC इंस्टेंस फ़ोल्डर, जिसे Horizon की तरह पोर्ट किया जाता है।"
+    },
+    "mrpack": {
+      "title": "Modrinth पैक (.mrpack)",
+      "description": "उपलब्ध होने पर मॉड्स को उनके Horizon बिल्ड से मिलाया जाता है।"
+    },
+    "curseforge_zip": {
+      "title": "CurseForge zip",
+      "description": "एक्सपोर्ट किया गया CurseForge मॉडपैक।"
+    },
+    "modpack": {
+      "title": "किसी मॉडपैक से",
+      "description": "Horizon, Modrinth और Rustic के मॉडपैक ब्राउज़ करें।"
+    },
+    "started": "{{name}} इम्पोर्ट हो रहा है",
+    "background": "यह बैकग्राउंड में चलता रहता है; आप लॉन्चर इस्तेमाल करते रह सकते हैं।",
+    "note": "सिर्फ़ वही कंटेंट इंस्टॉल होता है जो Horizon पर काम करता है; बाकी कारण के साथ सूचीबद्ध होता है।",
+    "drop": {
+      "title": "कोई पैक या इंस्टेंस फ़ोल्डर यहाँ छोड़ें",
+      "hint": "Modrinth .mrpack, CurseForge .zip, या एक Prism या MultiMC इंस्टेंस फ़ोल्डर",
+      "choose": "एक फ़ाइल चुनें",
+      "active": "इम्पोर्ट करने के लिए छोड़ें",
+      "unsupported": "इसे इम्पोर्ट नहीं किया जा सकता। एक .mrpack, CurseForge .zip या इंस्टेंस फ़ोल्डर इस्तेमाल करें।"
+    },
+    "formats": "समर्थित फ़ॉर्मैट"
+  },
+  "detail": {
+    "notFound": "यह इंस्टेंस अब मौजूद नहीं है",
+    "backToList": "इंस्टेंस पर वापस जाएँ",
+    "tabsLabel": "इंस्टेंस के सेक्शन",
+    "tabs": {
+      "overview": "अवलोकन",
+      "content": "कंटेंट",
+      "resourcepacks": "रिसोर्स पैक",
+      "worlds": "दुनियाएँ",
+      "settings": "सेटिंग्स"
+    }
+  },
+  "overview": {
+    "mods": "मॉड्स",
+    "resourcePacks": "रिसोर्स पैक",
+    "shaders": "शेडर पैक",
+    "version": "Horizon बिल्ड",
+    "updateAvailable": "अपडेट उपलब्ध है",
+    "upToDate": "अप टू डेट",
+    "updateNow": "अभी अपडेट करें",
+    "changeVersion": "एक Horizon बिल्ड चुनें",
+    "applyVersion": "बिल्ड बदलें",
+    "versionChanging": "{{version}} पर बदल रहे हैं",
+    "lastSession": "पिछला सेशन",
+    "lastPlayed": "{{when}} खेला",
+    "neverPlayed": "अभी तक नहीं खेला",
+    "rejoin": "फिर से जुड़ें",
+    "noServer": "इस इंस्टेंस से अभी तक किसी सर्वर से नहीं जुड़े।",
+    "created": "बनाया गया",
+    "folder": "फ़ोल्डर"
+  },
+  "content": {
+    "filter": "प्रकार से छाँटें",
+    "kinds": {
+      "all": "सभी",
+      "mod": "मॉड्स",
+      "resourcepack": "रिसोर्स पैक",
+      "shader": "शेडर्स"
+    },
+    "search": "इंस्टॉल किया कंटेंट खोजें",
+    "updateAll_one": "{{count}} आइटम अपडेट करें",
+    "updateAll_other": "{{count}} आइटम अपडेट करें",
+    "browse": "कंटेंट ब्राउज़ करें",
+    "noMatch": "इंस्टॉल किया कुछ भी आपकी खोज से मेल नहीं खाता।",
+    "empty": {
+      "title": "अभी कुछ भी इंस्टॉल नहीं",
+      "description": "ऐसे मॉड्स, रिसोर्स पैक और शेडर्स ढूँढें जो इस इंस्टेंस के साथ काम करते हैं।"
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "लोकल फ़ाइल"
+    },
+    "updateTo": "अपडेट: {{version}}",
+    "incompatible": "असंगत: {{reason}}",
+    "updateOne": "{{name}} अपडेट करें",
+    "toggle": "{{name}} चालू करें",
+    "remove": "{{name}} हटाएँ",
+    "removeTitle": "{{name}} हटाएँ?",
+    "removeBody": "फ़ाइल इस इंस्टेंस से हटा दी जाती है। आप इसे कंटेंट से फिर से इंस्टॉल कर सकते हैं।"
+  },
+  "packs": {
+    "hint": "जब दो पैक एक ही चीज़ बदलते हैं, तो ऊपर वाला पैक जीतता है।",
+    "listLabel": "रिसोर्स पैक लोड करने का क्रम",
+    "top": "सबसे ऊँची प्राथमिकता",
+    "up": "{{name}} ऊपर ले जाएँ",
+    "down": "{{name}} नीचे ले जाएँ",
+    "moved": "{{name}} को {{total}} में से स्थान {{position}} पर ले जाया गया",
+    "browse": "रिसोर्स पैक ढूँढें",
+    "empty": {
+      "title": "कोई रिसोर्स पैक नहीं",
+      "description": "टेक्सचर, आवाज़ें और इंटरफ़ेस बदलने के लिए पैक जोड़ें।"
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "अभी कोई दुनिया नहीं",
+      "description": "आप गेम में जो दुनियाएँ बनाते हैं, वे यहाँ दिखती हैं।"
+    },
+    "openSaves": "सेव फ़ोल्डर खोलें",
+    "lastPlayed": "{{when}} खेला",
+    "modes": {
+      "survival": "सर्वाइवल",
+      "creative": "क्रिएटिव",
+      "adventure": "एडवेंचर",
+      "hardcore": "हार्डकोर",
+      "spectator": "दर्शक"
+    },
+    "datapacks_one": "{{count}} डेटा पैक",
+    "datapacks_other": "{{count}} डेटा पैक",
+    "play": "यह दुनिया खेलें",
+    "addDatapacks": "डेटा पैक जोड़ें"
+  },
+  "settings": {
+    "general": "सामान्य",
+    "display": "विंडो",
+    "useDefaultResolution": "डिफ़ॉल्ट विंडो आकार इस्तेमाल करें",
+    "defaultIs": "डिफ़ॉल्ट: {{width}} × {{height}}",
+    "width": "चौड़ाई",
+    "height": "ऊँचाई",
+    "fullscreen": "फ़ुल स्क्रीन में शुरू करें",
+    "resolutionError": "पूर्ण संख्याएँ इस्तेमाल करें, कम से कम 640 × 360।",
+    "launch": "लॉन्च विकल्प",
+    "launchHint": "Horizon इंस्टेंस सिर्फ़ एक बिल्ड तय करते हैं: Java, RAM या लोडर सेट करने की ज़रूरत नहीं।",
+    "gameArgs": "अतिरिक्त गेम आर्गुमेंट",
+    "gameArgsHint": "एडवांस्ड। Horizon को जैसे हैं वैसे ही भेजे जाते हैं।",
+    "folders": "फ़ोल्डर",
+    "folder": {
+      "root": "इंस्टेंस",
+      "mods": "मॉड्स",
+      "resourcepacks": "रिसोर्स पैक",
+      "shaderpacks": "शेडर पैक",
+      "saves": "दुनियाएँ",
+      "screenshots": "स्क्रीनशॉट",
+      "logs": "लॉग"
+    },
+    "unsaved": "आपके कुछ बदलाव सेव नहीं हुए हैं।",
+    "allSaved": "सभी बदलाव सेव हो गए।",
+    "saved": "इंस्टेंस सेटिंग्स सेव की गईं"
+  },
+  "heading": "आपकी *प्रोफ़ाइलें*",
+  "native": {
+    "title": "नेटिव मॉड्स",
+    "allOff": "सब बंद हैं: इंस्टेंस पहले से बना गेम चलाता है।",
+    "state": {
+      "building": "बिल्ड हो रहा है…",
+      "up_to_date": "अप टू डेट",
+      "needs_rebuild": "फिर से बिल्ड ज़रूरी",
+      "not_built": "बिल्ड नहीं हुआ",
+      "not_needed": "पहले से बना गेम"
+    },
+    "build": "बिल्ड करें",
+    "rebuild": "फिर से बिल्ड करें",
+    "cancel": "रद्द करें",
+    "progress": "नेटिव बिल्ड की प्रगति",
+    "starting": "शुरू हो रहा है…",
+    "firstBuildHint": "पहला बिल्ड पूरे गेम को कंपाइल करता है (10 से 15 मिनट); बाद वाले सिर्फ़ बदले हुए हिस्से को। आप लॉन्चर इस्तेमाल करते रह सकते हैं।",
+    "failed": "पिछला बिल्ड विफल रहा",
+    "built": "{{date}} को {{duration}} में बिल्ड हुआ · गेम {{size}}",
+    "leftOut": {
+      "other": "{{name}} छोड़ दिया गया: यह इस Horizon पर लागू नहीं होता।",
+      "unsupported": "{{name}} छोड़ दिया गया: Rustic अभी वह नहीं बना सकता जिसकी इसे ज़रूरत है।"
+    },
+    "notEdition": "यह इंस्टेंस सादा Horizon बिल्ड चलाता है: नेटिव मॉड्स सिर्फ़ Rustic एडिशन में बिल्ड होते हैं।"
+  },
+  "profiles": {
+    "summary_one": "{{count}} प्रोफ़ाइल · {{playtime}} खेला",
+    "summary_other": "{{count}} प्रोफ़ाइलें · {{playtime}} खेला",
+    "searchLabel": "अपनी प्रोफ़ाइलें खोजें",
+    "searchPlaceholder": "नाम, Horizon बिल्ड या मॉडपैक से खोजें…",
+    "source": {
+      "label": "दिखाएँ",
+      "all": "सभी प्रोफ़ाइलें",
+      "custom": "मेरी प्रोफ़ाइलें",
+      "modpack": "मॉडपैक से"
+    },
+    "sorts": {
+      "recent": "पिछली बार खेला",
+      "name": "नाम",
+      "created": "हाल में बनाई गईं",
+      "version": "Horizon बिल्ड",
+      "playtime": "खेलने का समय"
+    },
+    "filters": {
+      "version": "Horizon बिल्ड",
+      "edition": "एडिशन",
+      "editions": {
+        "rustic": "Rustic एडिशन",
+        "horizon": "सादा Horizon"
+      },
+      "native": "नेटिव मॉड्स",
+      "nativeOnly": "नेटिव मॉड्स वाली",
+      "nativeHint": "नेटिव मॉड्स गेम शुरू होने से पहले आपके PC पर कंपाइल होते हैं।",
+      "remove": "फ़िल्टर हटाएँ: {{filter}}",
+      "reset": "फ़िल्टर रीसेट करें"
+    },
+    "create": "प्रोफ़ाइल बनाएँ",
+    "createHint": "एक Horizon बिल्ड, एक आइकन और एक नाम",
+    "import": "इम्पोर्ट करें",
+    "importHint": "एक फ़ोल्डर, एक .mrpack या एक CurseForge zip",
+    "all": "सभी प्रोफ़ाइलें",
+    "listLabel": "प्रोफ़ाइलें",
+    "recent": "फिर से शुरू करें",
+    "recentHint": "आपकी पिछली बार खेली गई प्रोफ़ाइलें",
+    "card": {
+      "active": "सक्रिय",
+      "activeHint": "Launchpad यह प्रोफ़ाइल चलाता है",
+      "running": "चल रहा है",
+      "pinned": "पिन की गई",
+      "update": "अपडेट {{version}}",
+      "broken": "मरम्मत ज़रूरी",
+      "modpack": "मॉडपैक",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "{{when}} खेला",
+      "neverPlayed": "अभी तक नहीं खेला",
+      "created": "{{date}} को बनाई गई",
+      "lastServer": "पिछली बार: {{name}}",
+      "rejoin": "फिर से जुड़ें",
+      "rejoinAria": "{{name}} के साथ {{server}} से फिर से जुड़ें",
+      "mods": "मॉड्स",
+      "packs": "रिसोर्स पैक",
+      "shaders": "शेडर्स",
+      "playtime": "खेलने का समय",
+      "contentCount": "{{mods}} मॉड्स · {{packs}} पैक · {{shaders}} शेडर्स",
+      "open": "{{name}} खोलें"
+    },
+    "native": {
+      "label": "नेटिव मॉड्स",
+      "count_one": "{{count}} नेटिव मॉड",
+      "count_other": "{{count}} नेटिव मॉड्स",
+      "building": "बिल्ड हो रहा है {{pct}}",
+      "buildingNoPct": "बिल्ड हो रहा है…",
+      "up_to_date": "नेटिव मॉड्स तैयार",
+      "needs_rebuild": "नेटिव: फिर से बिल्ड ज़रूरी",
+      "not_built": "नेटिव: अभी बिल्ड नहीं हुआ",
+      "off": "नेटिव मॉड्स बंद",
+      "unsupported": "नेटिव: Rustic एडिशन ज़रूरी",
+      "hint": {
+        "up_to_date": "इस PC पर इस Horizon बिल्ड के लिए बिल्ड किया गया।",
+        "needs_rebuild": "पिछले बिल्ड के बाद मॉड्स बदल गए हैं: खेलने पर यह फिर से बिल्ड होगा।",
+        "not_built": "खेलने पर आपके PC पर कंपाइल होता है (पहली बार 10 से 15 मिनट)।",
+        "off": "हर नेटिव मॉड बंद है: पहले से बना गेम चलता है।",
+        "unsupported": "यह प्रोफ़ाइल सादा Horizon बिल्ड चलाती है: नेटिव मॉड्स सिर्फ़ Rustic एडिशन में बिल्ड होते हैं।",
+        "building": "इस प्रोफ़ाइल के नेटिव मॉड्स के साथ गेम कंपाइल हो रहा है।"
+      }
+    },
+    "menu": {
+      "edit": "सेटिंग्स बदलें",
+      "activate": "Launchpad पर इस्तेमाल करें",
+      "isActive": "Launchpad पर इस्तेमाल हो रही है",
+      "activated": "{{name}} अब Launchpad पर है"
+    },
+    "empty": {
+      "title": "अभी कोई प्रोफ़ाइल नहीं",
+      "description": "प्रोफ़ाइल एक Horizon बिल्ड है जिसके अपने मॉड्स, पैक और दुनियाएँ होती हैं। सुझाए गए बिल्ड के साथ एक बनाएँ, या कोई पैक इम्पोर्ट करें जो आपके पास पहले से है।"
+    },
+    "noMatch": {
+      "title": "कोई प्रोफ़ाइल मेल नहीं खाती",
+      "description": "कोई और खोज आज़माएँ या एक फ़िल्टर हटाएँ।"
+    },
+    "detail": {
+      "banner": "{{name}} का कवर"
+    }
+  }
+}

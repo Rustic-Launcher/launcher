@@ -180,7 +180,7 @@ export function ConsoleTab({ server }: { server: Server }) {
             id={listId}
             role="listbox"
             aria-label={t('manage.console.suggestions')}
-            className="rx-glass-strong absolute bottom-full left-0 z-20 mb-2 max-h-56 w-full max-w-lg overflow-y-auto rounded-xl p-1 shadow-lg"
+            className="rx-glass-strong absolute start-0 bottom-full z-20 mb-2 max-h-56 w-full max-w-lg overflow-y-auto rounded-xl p-1 shadow-lg"
           >
             {suggestions.map((s, i) => (
               <li
@@ -202,7 +202,7 @@ export function ConsoleTab({ server }: { server: Server }) {
             ))}
           </ul>
         )}
-        <div className="border-border-strong/50 bg-surface-2 focus-within:border-accent focus-within:ring-accent/35 flex items-center gap-2 rounded-xl border py-1 pr-1 pl-3 focus-within:ring-2">
+        <div className="border-border-strong/50 bg-surface-2 focus-within:border-accent focus-within:ring-accent/35 flex items-center gap-2 rounded-xl border py-1 ps-3 pe-1 focus-within:ring-2">
           <ChevronRight className="text-accent-text size-4 shrink-0" aria-hidden />
           <input
             value={input}

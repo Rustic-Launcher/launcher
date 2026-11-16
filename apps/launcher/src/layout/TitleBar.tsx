@@ -43,6 +43,7 @@ import type { AppNotification } from '@/cloud/types';
 import { InstanceIcon } from '@/components/InstanceIcon';
 import { LEGAL_URLS, siteUrlFor } from '@/features/settings/legal';
 import { openSocial } from '@/features/social/openSocial';
+import { VoiceBar } from '@/features/voice/VoiceControls';
 import { UpdatePill } from '@/features/updates/UpdatePill';
 import { invoke, isNative } from '@/ipc';
 import { formatPercent, formatRelative, formatSpeed } from '@/lib/format';
@@ -69,10 +70,10 @@ export function TitleBar() {
   return (
     <header
       data-tauri-drag-region={drag}
-      className="z-20 col-span-2 row-start-1 flex items-center gap-2 pr-2 pl-3 select-none"
+      className="z-20 col-span-2 row-start-1 flex items-center gap-2 ps-3 pe-2 select-none"
     >
       <ProductSwitcher />
-      <div className="ml-1 flex items-center">
+      <div className="ms-1 flex items-center">
         <IconButton
           size="sm"
           label={t('actions.back')}
@@ -98,6 +99,7 @@ export function TitleBar() {
           onClick={() => setCommandOpen(true)}
           data-testid="global-search"
         />
+        <VoiceBar />
         <NotificationsButton />
         <IconButton
           size="sm"
@@ -112,7 +114,7 @@ export function TitleBar() {
         <UpdatePill />
         <RunningPill />
       </div>
-      <WindowControls className="ml-1" />
+      <WindowControls className="ms-1" />
     </header>
   );
 }
@@ -286,7 +288,7 @@ function NotificationsButton() {
               <button
                 type="button"
                 onClick={() => n.href && openNotification(n.href)}
-                className="rx-focus-ring hover:bg-surface-3 flex w-full items-start gap-3 rounded-lg px-3 py-2.5 text-left"
+                className="rx-focus-ring hover:bg-surface-3 flex w-full items-start gap-3 rounded-lg px-3 py-2.5 text-start"
               >
                 <span
                   className={cn(
@@ -333,7 +335,7 @@ function AccountPill() {
           type="button"
           data-testid="account-switcher"
           aria-label={t('account.switcher')}
-          className="rx-focus-ring border-accent/40 bg-accent-soft hover:bg-accent/20 flex h-8 items-center gap-2 rounded-lg border py-1 pr-2 pl-1"
+          className="rx-focus-ring border-accent/40 bg-accent-soft hover:bg-accent/20 flex h-8 items-center gap-2 rounded-lg border py-1 ps-1 pe-2"
         >
           {active ? <AccountAvatar account={active} size="xs" /> : <Avatar name="?" size="xs" />}
           <span className="max-w-32 truncate text-sm font-semibold">
@@ -377,7 +379,7 @@ function AccountPill() {
               <Badge variant={a.kind === 'microsoft' ? 'info' : 'neutral'}>
                 {t(`account.kind.${a.kind}`)}
               </Badge>
-              {a.active && <Check className="text-accent-text ml-auto size-4" />}
+              {a.active && <Check className="text-accent-text ms-auto size-4" />}
             </span>
           </DropdownItem>
         ))}

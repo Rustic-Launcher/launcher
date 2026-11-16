@@ -13,7 +13,8 @@
     "appearance": "Giao diện",
     "privacy": "Quyền riêng tư và dữ liệu",
     "parental": "Kiểm soát của phụ huynh",
-    "about": "Giới thiệu và pháp lý"
+    "about": "Giới thiệu và pháp lý",
+    "voice": "Giọng nói"
   },
   "accounts": {
     "active": "Đang dùng",
@@ -95,7 +96,8 @@
       "description": "Danh tính Rustic của bạn cho bạn bè, Tủ đồ, giao dịch mua và máy chủ.",
       "signedOut": "Chưa đăng nhập. Trò chơi vẫn chạy khi không có tài khoản; tính năng xã hội, Tủ đồ và Cửa hàng thì cần có.",
       "signIn": "Đăng nhập hoặc tạo tài khoản",
-      "licenceNote": "Tài khoản Rustic là danh tính trên nền tảng. Nó không bao giờ thay thế giấy phép trò chơi: bạn vẫn cần một tài khoản Microsoft sở hữu trò chơi."
+      "licenceNote": "Tài khoản Rustic là danh tính trên nền tảng. Nó không bao giờ thay thế giấy phép trò chơi: bạn vẫn cần một tài khoản Microsoft sở hữu trò chơi.",
+      "manageOnWeb": "Quản lý trên trang web"
     },
     "offline": {
       "title": "Chơi ngoại tuyến",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Hãy hoàn tất đăng nhập trong trình duyệt: launcher sẽ tự động nhận phiên đăng nhập của bạn."
   },
   "heading": "*Cài đặt* của bạn",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Thiết bị",
+    "devicesHint": "Micro và loa hoặc tai nghe dùng cho giọng nói.",
+    "input": "Micro",
+    "output": "Đầu ra",
+    "outputVolume": "Âm lượng đầu ra",
+    "systemDefault": "Mặc định của hệ thống",
+    "deviceN": "Thiết bị {{n}}",
+    "talk": "Nói",
+    "talkHint": "Nói khi giọng của bạn được phát hiện, hoặc chỉ khi giữ một phím.",
+    "mode": "Chế độ nhập",
+    "modeVad": "Phát hiện giọng nói",
+    "modePtt": "Nhấn để nói",
+    "pttKey": "Phím nhấn để nói",
+    "pttKeyHint": "Dùng được trong launcher và trong game. Nút bên của chuột cũng được.",
+    "pressKey": "Nhấn một phím…",
+    "sensitivity": "Độ nhạy",
+    "sensitivityHint": "Cao hơn bắt được giọng nhỏ hơn; thấp hơn bỏ qua nhiều tiếng ồn nền hơn.",
+    "test": "Kiểm tra micro",
+    "testMic": "Kiểm tra",
+    "stopTest": "Dừng",
+    "level": "Mức micro",
+    "micDenied": "Quyền truy cập micro bị từ chối. Hãy cho phép trong cài đặt quyền riêng tư của hệ thống rồi thử lại.",
+    "micMissing": "Không tìm thấy micro.",
+    "noiseSuppression": "Khử tiếng ồn",
+    "echoCancellation": "Khử tiếng vang",
+    "autoGain": "Tự động điều chỉnh âm lượng",
+    "inGame": "Trong game",
+    "inGameHint": "Với phiên bản Rustic, lớp phủ cho biết ai đang nói và phím nhấn để nói hoạt động trong game.",
+    "overlay": "Hiện lớp phủ giọng nói trong game",
+    "serverVoice": "Giọng nói theo khoảng cách trên máy chủ",
+    "serverVoiceHint": "Rustic Server có thể có giọng nói theo khoảng cách với mọi người chơi ở đó. Dưới 18 tuổi cần phụ huynh cho phép.",
+    "serverAsk": "Hỏi tôi",
+    "serverAuto": "Tự động tham gia",
+    "serverOff": "Không bao giờ",
+    "servers": {
+      "title": "Giọng nói theo khoảng cách cho máy chủ của bạn",
+      "description": "Thêm máy chủ, rồi đặt khóa của nó vào config.toml của plugin proximity-voice. Bạn có thể tắt bất cứ lúc nào.",
+      "namePlaceholder": "Tên máy chủ",
+      "add": "Thêm",
+      "status": "Người chơi trực tuyến: {{count}}",
+      "enabled": "Giọng nói theo khoảng cách trên {{name}}",
+      "newKey": "Khóa mới",
+      "remove": "Xóa {{name}}",
+      "keyOnce": "Hãy sao chép khóa này ngay: nó chỉ hiện một lần. Khóa mới sẽ thay thế nó.",
+      "tooMany": "Bạn có thể thêm tối đa 10 máy chủ."
+    }
+  }
 }

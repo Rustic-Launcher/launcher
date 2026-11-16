@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "greeting": "Καλώς ήρθες ξανά, {{name}}",
+    "greetingAnon": "Καλώς ήρθες στο Rustic",
+    "continue": "Συνέχεια: {{name}} · έπαιξες {{when}}",
+    "continueNew": "Έτοιμο όποτε θέλεις: {{name}}",
+    "firstRun": "Ετοίμασε το παιχνίδι σε τρία βήματα.",
+    "playNow": "Παίξε τώρα",
+    "updateAndPlay": "Ενημέρωση και παιχνίδι",
+    "resumeServer": "Επανασύνδεση: {{server}}",
+    "switch": "Αλλαγή στιγμιότυπου",
+    "stats": {
+      "playtime": "Χρόνος παιχνιδιού: {{time}}",
+      "mods_one": "{{count}} mod",
+      "mods_other": "{{count}} mods",
+      "friends_one": "{{count}} φίλος online",
+      "friends_other": "{{count}} φίλοι online"
+    },
+    "steps": {
+      "signIn": "Συνδέσου με τον λογαριασμό Microsoft που κατέχει το παιχνίδι",
+      "prepare": "Ετοίμασε τα αρχεία του παιχνιδιού από τη δική σου εγκατάσταση",
+      "create": "Δημιούργησε το πρώτο σου στιγμιότυπο"
+    },
+    "getReady": "Ετοίμασε το παιχνίδι",
+    "openLocker": "Ντουλάπι",
+    "player": "Ο παίκτης σου, σε αδράνεια, χωρίς διακοσμητικά",
+    "playerWearing": "Ο παίκτης σου, σε αδράνεια, φοράει: {{items}}"
+  },
+  "recent": {
+    "title": "Πρόσφατοι διακομιστές και κόσμοι",
+    "unknown": "Άγνωστη κατάσταση",
+    "online": "Online · {{online}}/{{max}}",
+    "offline": "Offline",
+    "world": "Κόσμος · τοπικός",
+    "joining": "Σύνδεση: {{name}}…",
+    "opening": "Άνοιγμα: {{name}}…",
+    "removed": "Ο διακομιστής {{name}} αφαιρέθηκε από τους διακομιστές σου",
+    "playAria": "Παίξε: {{name}}",
+    "more": "Περισσότερες ενέργειες για: {{name}}",
+    "copyAddress": "Αντιγραφή διεύθυνσης",
+    "addServer": "Προσθήκη διακομιστή",
+    "empty": "Οι διακομιστές στους οποίους μπαίνεις και οι κόσμοι που παίζεις εμφανίζονται εδώ."
+  },
+  "news": {
+    "title": "Νέα και ενημερώσεις",
+    "empty": "Δεν υπάρχουν νέα αυτή τη στιγμή.",
+    "slide": "Ιστορία {{index}} από {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Σημειώσεις έκδοσης",
+      "event": "Εκδήλωση",
+      "blog": "Άρθρο"
+    },
+    "readNotes": "Διάβασε τις σημειώσεις έκδοσης",
+    "read": "Ανάγνωση"
+  },
+  "friends": {
+    "title": "Φίλοι αυτή τη στιγμή",
+    "empty": "Κανένας από τους φίλους σου δεν παίζει αυτή τη στιγμή.",
+    "since": "από {{when}}",
+    "activity": {
+      "server": "παίζει στο {{server}}",
+      "hosting": "φιλοξενεί το {{server}}",
+      "singleplayer": "παίζει μόνος/η",
+      "launcher": "είναι στο launcher"
+    }
+  },
+  "featured": {
+    "title": "Προτεινόμενοι διακομιστές",
+    "verified": "Επαληθευμένος διακομιστής",
+    "players": "{{online}} / {{max}} παίκτες",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Νέα διακοσμητικά",
+    "owned": "Στην κατοχή σου"
+  },
+  "launchpad": {
+    "welcome": "Καλώς ήρθες *ξανά*,",
+    "playAs": "Παίξε ως",
+    "online": "online σε προτεινόμενους διακομιστές",
+    "heroLabel": "Εκκίνηση",
+    "instanceSettings": "Ρυθμίσεις στιγμιότυπου",
+    "news": "Τελευταία νέα",
+    "unread_one": "({{count}} μη αναγνωσμένο)",
+    "unread_other": "({{count}} μη αναγνωσμένα)",
+    "unreadDot": "Μη αναγνωσμένο",
+    "explore": "Εξερεύνηση πηγών",
+    "aside": "Διακομιστές και φίλοι",
+    "joinServer": "Σύνδεση: {{name}}",
+    "friendsOnline_one": "({{count}} online)",
+    "friendsOnline_other": "({{count}} online)",
+    "openSocial": "Άνοιγμα Κοινότητας",
+    "noNews": "Δεν υπάρχουν νέα ακόμη.",
+    "noFriendsOnline": "Κανένας φίλος online αυτή τη στιγμή.",
+    "socialHint": "Οι συνομιλίες, οι προσκλήσεις και η ομάδα σου βρίσκονται στο παράθυρο Κοινότητα.",
+    "eyebrow": "Launchpad"
+  }
+}

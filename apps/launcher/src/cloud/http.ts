@@ -14,6 +14,7 @@ import { CloudError } from './errors';
 import type { components, paths } from './generated/schema';
 import type {
   AccountSettings,
+  CloudBanner,
   AppNotification,
   ChatMessage,
   Conversation,
@@ -29,10 +30,13 @@ import type {
   NewsItem,
   Outfit,
   Party,
+  PartyChatMessage,
+  PartyInviteLite,
   PresenceStatus,
   RealtimeEvent,
   ServerListing,
   StoreProduct,
+  VoiceServerInfo,
 } from './types';
 
 type S = components['schemas'];
@@ -46,6 +50,20 @@ export { CloudError };
 function realtimeUrl(): string | null {
   const u = import.meta.env.VITE_REALTIME_URL as string | undefined;
   return u ? u.replace(/\/$/, '') : null;
+}
+
+export function mapPartyMessage(m: S['PartyMessage']): PartyChatMessage {
+  return {
+    id: m.id,
+    party_id: m.party_id,
+    from_id: m.sender_id,
+    body: m.body,
+    sent_at: m.created_at,
+  };
+}
+
+export function mapPartyInvite(i: S['PartyInvite']): PartyInviteLite {
+  return { id: i.id, party_id: i.party_id, from: i.from, expires_at: i.expires_at };
 }
 
 export function mapMessage(m: S['Message']): ChatMessage {
@@ -451,6 +469,8 @@ export function createHttpCloud(baseUrl: string, fallback: CloudClient): CloudCl
       balance,
       discoverable: m.discoverable ?? false,
       discoverable_allowed: m.capabilities.discoverable_allowed ?? false,
+      can_party_voice: m.capabilities.can_party_voice ?? false,
+      can_server_voice: m.capabilities.can_server_voice ?? false,
     };
   }
   const slugToId = new Map<string, string>();
@@ -475,9 +495,25 @@ export function createHttpCloud(baseUrl: string, fallback: CloudClient): CloudCl
       leader_id: p.leader_id,
       max_size: p.max_size,
       members: p.members.map((m) => ({ ...m.user, presence: presenceOf(m.user.id) })),
-      pending_invites: [],
+      pending_invites: p.pending_invites ?? [],
+      voice: { proximity: p.voice?.proximity ?? false, range: p.voice?.range ?? 48 },
     };
   }
+
+  async function requireParty(): Promise<S['Party']> {
+    const p = await currentParty();
+    if (!p) throw new CloudError('not_found', 'not in a party', 404);
+    return p;
+  }
+
+  const mapVoiceServer = (s: S['VoiceServer']): VoiceServerInfo => ({
+    id: s.id,
+    name: s.name,
+    enabled: s.enabled,
+    created_at: s.created_at,
+    last_seen_at: s.last_seen_at ?? null,
+    online: s.online,
+  });
 
   const client: CloudClient = {
     async me() {
@@ -582,6 +618,110 @@ export function createHttpCloud(baseUrl: string, fallback: CloudClient): CloudCl
       const p = await currentParty();
       if (p) await ok(api.POST('/v1/parties/{id}/leave', { params: { path: { id: p.id } } }));
     },
+    async createParty() {
+      return (await toParty(await data(api.POST('/v1/parties'))))!;
+    },
+    async partyInvites() {
+      const list = await data(api.GET('/v1/parties/invites'));
+      return list.map(mapPartyInvite);
+    },
+    async respondPartyInvite(id, accept) {
+      if (!accept) {
+        await ok(api.POST('/v1/parties/invites/{id}/decline', { params: { path: { id } } }));
+        return null;
+      }
+      return toParty(
+        await data(api.POST('/v1/parties/invites/{id}/accept', { params: { path: { id } } })),
+      );
+    },
+    async kickFromParty(userId) {
+      const p = await requireParty();
+      return toParty(
+        await data(
+          api.POST('/v1/parties/{id}/kick', {
+            params: { path: { id: p.id } },
+            body: { user_id: userId },
+          }),
+        ),
+      );
+    },
+    async transferPartyLeader(userId) {
+      const p = await requireParty();
+      return (await toParty(
+        await data(
+          api.POST('/v1/parties/{id}/leader', {
+            params: { path: { id: p.id } },
+            body: { user_id: userId },
+          }),
+        ),
+      ))!;
+    },
+    async updatePartyVoice(patch) {
+      const p = await requireParty();
+      return (await toParty(
+        await data(
+          api.PATCH('/v1/parties/{id}', {
+            params: { path: { id: p.id } },
+            body: { proximity: patch.proximity, range: patch.range },
+          }),
+        ),
+      ))!;
+    },
+    async partyMessages() {
+      const p = await currentParty();
+      if (!p) return [];
+      const list = await data(
+        api.GET('/v1/parties/{id}/messages', { params: { path: { id: p.id } } }),
+      );
+      return list.map(mapPartyMessage).reverse();
+    },
+    async sendPartyMessage(body) {
+      const p = await requireParty();
+      return mapPartyMessage(
+        await data(
+          api.POST('/v1/parties/{id}/messages', {
+            params: { path: { id: p.id } },
+            body: { body },
+          }),
+        ),
+      );
+    },
+    async voiceToken(room) {
+      const t = await data(api.POST('/v1/voice/token', { body: { room } }));
+      return { ...t, server_name: t.server_name ?? null };
+    },
+    async reportUser(r) {
+      await data(
+        api.POST('/v1/reports', {
+          body: {
+            target_user_id: r.user_id,
+            reason: r.reason,
+            details: r.details,
+            context: r.context,
+            party_message_id: r.party_message_id,
+          },
+        }),
+      );
+    },
+    async voiceServers() {
+      return (await data(api.GET('/v1/voice/servers'))).map(mapVoiceServer);
+    },
+    async createVoiceServer(name) {
+      const r = await data(api.POST('/v1/voice/servers', { body: { name } }));
+      return { server: mapVoiceServer(r.server), key: r.key };
+    },
+    async updateVoiceServer(id, patch) {
+      return mapVoiceServer(
+        await data(api.PATCH('/v1/voice/servers/{id}', { params: { path: { id } }, body: patch })),
+      );
+    },
+    async deleteVoiceServer(id) {
+      await ok(api.DELETE('/v1/voice/servers/{id}', { params: { path: { id } } }));
+    },
+    async rotateVoiceServerKey(id) {
+      const r = await data(api.POST('/v1/voice/servers/{id}/key', { params: { path: { id } } }));
+      return { server: mapVoiceServer(r.server), key: r.key };
+    },
     subscribe(handler: (e: RealtimeEvent) => void) {
       // Realtime gateway (docs/API.md "Realtime WebSocket"): `?access_token=` on the URL, JSON
       // frames tagged by `type`. Without VITE_REALTIME_URL, presence is polled every 30 s.
@@ -639,6 +779,18 @@ export function createHttpCloud(baseUrl: string, fallback: CloudClient): CloudCl
     },
     async featuredServers() {
       return (await data(api.GET('/v1/featured-servers'))).map(mapFeatured);
+    },
+    // Announcements from the website's back-office (ADR 0171), cached a minute by the API.
+    async banners(lang) {
+      const list = await data(
+        api.GET('/v1/banners', { params: { query: { surface: 'launcher', lang } } }),
+      );
+      return list.map((b) => ({
+        ...b,
+        severity: (['success', 'warning', 'critical'].includes(b.severity)
+          ? b.severity
+          : 'info') as CloudBanner['severity'],
+      }));
     },
     // Server directory (ADR 0158): public reads, cacheable a minute by the API.
     async serverListings(q) {
@@ -926,6 +1078,12 @@ export function createHttpCloud(baseUrl: string, fallback: CloudClient): CloudCl
           break;
         case 'party_updated':
           handler({ type: 'party', party: await toParty(frame.party ?? null) });
+          break;
+        case 'party_invite_received':
+          handler({ type: 'party-invite', invite: mapPartyInvite(frame.invite) });
+          break;
+        case 'party_message_received':
+          handler({ type: 'party-message', message: mapPartyMessage(frame.message) });
           break;
         case 'notification_created':
           handler({ type: 'notification', notification: mapNotification(frame.notification) });

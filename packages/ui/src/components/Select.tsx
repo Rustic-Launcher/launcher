@@ -69,14 +69,14 @@ export function Select({
                 key={o.value}
                 value={o.value}
                 disabled={o.disabled}
-                className="text-fg data-[highlighted]:bg-surface-3 relative flex cursor-pointer items-center gap-2 rounded-md py-2 pr-8 pl-2.5 text-sm outline-none select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-45 [&_svg]:size-4"
+                className="text-fg data-[highlighted]:bg-surface-3 relative flex cursor-pointer items-center gap-2 rounded-md py-2 ps-2.5 pe-8 text-sm outline-none select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-45 [&_svg]:size-4"
               >
                 {o.icon}
                 <div className="flex flex-col">
                   <S.ItemText>{o.label}</S.ItemText>
                   {o.description && <span className="text-fg-subtle text-xs">{o.description}</span>}
                 </div>
-                <S.ItemIndicator className="text-accent-text absolute right-2">
+                <S.ItemIndicator className="text-accent-text absolute end-2">
                   <Check />
                 </S.ItemIndicator>
               </S.Item>

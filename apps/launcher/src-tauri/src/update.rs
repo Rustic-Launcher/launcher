@@ -84,6 +84,9 @@ struct Persisted {
     /// A launcher version whose install did not complete, and when.
     #[serde(default)]
     failed: Option<(String, u64)>,
+    /// Day number (UTC, days since 1970) of the last anonymous ping (ADR 0169).
+    #[serde(default)]
+    pinged_day: Option<u64>,
 }
 
 /// The update service, one per app.
@@ -391,7 +394,15 @@ async fn check(state: &Arc<AppState>, timeout: Duration) -> Result<(), String> {
     let now = time::now();
     let mut p = state.updates.persisted();
     p.last_check = Some(now);
+    let ping = ping_due(p.pinged_day, now);
+    if ping {
+        p.pinged_day = Some(now / 86_400);
+    }
     state.updates.save(&p);
+    if ping {
+        let state = state.clone();
+        tauri::async_runtime::spawn(async move { send_ping(&state).await });
+    }
     let launcher_item = launcher.as_ref().map(|u| UpdateItem {
         version: u.version.clone(),
         notes: u.body.clone(),
@@ -808,5 +819,77 @@ mod tests {
         )
         .unwrap();
         assert!(u.take_pending_launch().is_none(), "too old to resume");
+    }
+}
+
+// ------------------------------------------------------------------ anonymous daily ping
+
+/// Set to anything to never send the daily ping.
+pub const NO_PING_ENV: &str = "RUSTIC_NO_PING";
+
+/// Once per UTC day, on the first update check of the day; never from a debug build.
+fn ping_due(last_day: Option<u64>, now: u64) -> bool {
+    !cfg!(debug_assertions)
+        && std::env::var_os(NO_PING_ENV).is_none()
+        && last_day != Some(now / 86_400)
+}
+
+/// The ping's body: the version, the system and the channel, nothing that identifies the install
+/// or the person (no account, no install id; the API keeps no address). ADR 0169.
+fn ping_body(version: &str) -> serde_json::Value {
+    let os = match std::env::consts::OS {
+        "windows" => "windows",
+        "macos" => "macos",
+        _ => "linux",
+    };
+    let arch = if std::env::consts::ARCH == "aarch64" {
+        "aarch64"
+    } else {
+        "x86_64"
+    };
+    let channel = if version.contains('-') {
+        "beta"
+    } else {
+        "stable"
+    };
+    serde_json::json!({ "version": version, "os": os, "arch": arch, "channel": channel })
+}
+
+/// Counts this launcher in the daily active installs (`POST /v1/telemetry/launcher`). Best
+/// effort: a failure is only logged.
+async fn send_ping(state: &AppState) {
+    let base = crate::cloud_link::api_base(&state.config().cloud.api_base);
+    let body = ping_body(&state.app.package_info().version.to_string());
+    let res = state
+        .http
+        .post(format!("{base}/v1/telemetry/launcher"))
+        .timeout(Duration::from_secs(10))
+        .json(&body)
+        .send()
+        .await;
+    if let Err(e) = res.and_then(|r| r.error_for_status()) {
+        tracing::debug!(error = %e, "daily ping not sent");
+    }
+}
+
+#[cfg(test)]
+mod ping_tests {
+    use super::*;
+
+    #[test]
+    fn the_ping_carries_no_identifier() {
+        let b = ping_body("0.2.5");
+        let keys: Vec<&str> = b.as_object().unwrap().keys().map(String::as_str).collect();
+        assert_eq!(keys, ["arch", "channel", "os", "version"]);
+        assert_eq!(b["channel"], "stable");
+        assert_eq!(ping_body("0.3.0-beta.1")["channel"], "beta");
+    }
+
+    #[test]
+    fn once_a_day_and_never_in_debug() {
+        let day = 20_000 * 86_400 + 10;
+        // Tests are debug builds: never due.
+        assert!(!ping_due(None, day));
+        assert!(!ping_due(Some(19_999), day));
     }
 }

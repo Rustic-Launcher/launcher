@@ -100,7 +100,8 @@
       "appearance": "Utseende",
       "privacy": "Integritet och data",
       "parental": "Föräldrakontroll",
-      "about": "Om"
+      "about": "Om",
+      "voice": "Röst"
     }
   },
   "friends": {
@@ -194,7 +195,30 @@
     "leader": "Gruppledare",
     "pending": "{{name}} (inbjuden)",
     "invite": "Bjud in till gruppen",
-    "invited": "{{name}} har bjudits in till din grupp"
+    "invited": "{{name}} har bjudits in till din grupp",
+    "invitesTitle": "Gruppinbjudningar",
+    "invitedBy": "{{name}} bjuder in dig till sin grupp",
+    "accept": "Gå med",
+    "decline": "Avböj",
+    "makeLeader": "Gör till gruppledare",
+    "kick": "Ta bort från gruppen",
+    "proximity": "Närhetsröst",
+    "proximityHint": "Medlemmar på samma server hör varandra efter avstånd",
+    "range": "Räckvidd (block)",
+    "emptyTitle": "Ingen grupp än",
+    "emptyBody": "Skapa en grupp och bjud sedan in vänner från deras meny på fliken Vänner.",
+    "create": "Skapa en grupp",
+    "inviteHint": "Bjud in vänner från deras meny på fliken Vänner.",
+    "chatTitle": "Gruppchatt",
+    "chatEmpty": "Gå med i en grupp eller skapa en för att chatta med medlemmarna.",
+    "chatPlaceholder": "Skriv till gruppen",
+    "formerMember": "Tidigare medlem",
+    "errors": {
+      "party_full": "Gruppen är full.",
+      "party_not_allowed": "Den här spelaren kan inte vara i gruppen: spelare under 18 går bara med i sina vänners grupper.",
+      "already_in_party": "Lämna din nuvarande grupp först.",
+      "not_party_leader": "Bara gruppledaren kan göra det."
+    }
   },
   "presence": {
     "online": "Online",
@@ -432,6 +456,48 @@
       "updated": "Rustic Launcher uppdaterad till {{version}}",
       "resuming": "Uppdateringen klar: ditt spel startar",
       "failed": "Uppdateringen kunde inte installeras. Den provas igen senare."
+    }
+  },
+  "voice": {
+    "title": "Röst",
+    "join": "Gå med i röst",
+    "leave": "Lämna röst",
+    "mute": "Stäng av mikrofonen",
+    "unmute": "Slå på mikrofonen",
+    "deafen": "Stäng av ljudet",
+    "undeafen": "Slå på ljudet",
+    "speaking": "Pratar",
+    "micMuted": "Avstängd",
+    "outOfRange": "Utom räckhåll",
+    "muteFor": "Tysta {{name}} för dig",
+    "unmuteFor": "Hör {{name}} igen",
+    "reportAria": "Anmäl {{name}}",
+    "memberVolume": "Volym för {{name}}",
+    "report": "Anmäl",
+    "reportTitle": "Anmäla {{name}}?",
+    "reportBody": "Våra moderatorer granskar anmälan. Röst spelas aldrig in. Spelaren tystas för dig direkt.",
+    "reported": "{{name}} har anmälts",
+    "reasons": {
+      "harassment": "Trakasserier eller hat",
+      "inappropriate_content": "Olämpligt innehåll",
+      "spam": "Spam eller oljud",
+      "other": "Något annat"
+    },
+    "proximityOn": "närhet, räckvidd {{range}}",
+    "you": "Du",
+    "listenOnly": "Lyssnar bara",
+    "alone": "Ingen annan i röst än.",
+    "serverOffer": "{{server}} har närhetsröst",
+    "serverRoom": "Serverröst",
+    "partyRoom": "Gruppröst",
+    "errors": {
+      "voice_unavailable": "Röst är inte tillgänglig just nu. Försök igen senare.",
+      "voice_not_allowed": "Röst är inte tillgänglig för ditt konto.",
+      "mic_denied": "Åtkomst till mikrofonen nekades: du kan lyssna men inte prata. Tillåt den i systemets integritetsinställningar.",
+      "mic_missing": "Ingen mikrofon hittades: du kan lyssna men inte prata.",
+      "connect_failed": "Kunde inte ansluta till röst. Kontrollera anslutningen och försök igen.",
+      "kicked": "Du togs bort från röstrummet.",
+      "not_on_voice_server": "Den här servern har ingen närhetsröst."
     }
   }
 }

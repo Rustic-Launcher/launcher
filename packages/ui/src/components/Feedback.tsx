@@ -63,7 +63,7 @@ export function Progress({
       ) : (
         <motion.span
           className={cn(
-            'absolute inset-y-0 left-0 rounded-full',
+            'absolute inset-y-0 start-0 rounded-full',
             tone === 'accent' && 'bg-accent',
             tone === 'success' && 'bg-success',
             tone === 'warning' && 'bg-warning',

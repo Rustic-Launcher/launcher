@@ -20,6 +20,8 @@
 //!   pause menu as a panel (ADR 0164).
 //! - [`notify`]: discreet notifications (at most a few, deduplicated, rate-limited).
 //! - [`trail`]: trail particles placed from distance walked and age only (deterministic).
+//! - [`voice`]: the launcher's voice in game (launcher ADR 0176): the overlay file it writes,
+//!   the push-to-talk and position lines the companion prints, the members' list.
 #![forbid(unsafe_code)]
 
 pub mod backoff;
@@ -47,6 +49,7 @@ pub mod social;
 pub mod store;
 pub mod title;
 pub mod trail;
+pub mod voice;
 pub mod wheel;
 pub mod worn;
 

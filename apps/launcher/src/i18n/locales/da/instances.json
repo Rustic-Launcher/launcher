@@ -1,0 +1,341 @@
+{
+  "title": "Versioner",
+  "errors": {
+    "action": "Det virkede ikke"
+  },
+  "card": {
+    "more": "Flere handlinger for {{name}}",
+    "pin": "Fastgør",
+    "unpin": "Frigør",
+    "duplicate": "Dupliker",
+    "duplicated": "{{name}} er oprettet",
+    "playtime": "Spilletid",
+    "never": "Aldrig",
+    "fromModpack": "Modpakke {{name}} {{version}}"
+  },
+  "state": {
+    "running": "Kører",
+    "installing": "Installerer",
+    "broken": "Skal repareres"
+  },
+  "delete": {
+    "title": "Slet {{name}}?",
+    "body": "Dens mods, indstillinger og verdener slettes fra denne computer. Det kan ikke fortrydes.",
+    "confirm": "Slet instans",
+    "done": "{{name}} er slettet"
+  },
+  "new": {
+    "title": "Ny instans",
+    "description": "Start forfra, eller tag en eksisterende pakke med.",
+    "tabs": {
+      "create": "Opret",
+      "import": "Importér"
+    },
+    "name": "Navn",
+    "namePlaceholder": "Min survival-verden",
+    "nameRequired": "Giv instansen et navn.",
+    "icon": "Ikon",
+    "color": "Farve",
+    "colorN": "Farve {{n}}",
+    "version": "Horizon-build",
+    "versionHint": "Rustic-udgaven tilføjer kosmetik og venner i spillet. Ingen Java- eller RAM-indstillinger nødvendige.",
+    "recommended": "Anbefalet",
+    "release": "Stabil",
+    "nightly": "Nightly",
+    "installed": "Installeret",
+    "submit": "Opret instans",
+    "created": "{{name}} er klar",
+    "preview": "Forhåndsvisning",
+    "edition": "Udgave",
+    "editionRustic": "Kosmetik, venner og native mods i spillet.",
+    "editionHorizon": "Horizon, som holdet udgiver det, uden tilføjelser.",
+    "noBuild": "Der er ingen build af denne udgave lige nu.",
+    "nightlyHint": "Nightly-builds udkommer hver dag fra Horizons nyeste kode: nyere, mindre testet."
+  },
+  "icons": {
+    "grass": "Spire",
+    "sword": "Sværd",
+    "pickaxe": "Hakke",
+    "castle": "Borg",
+    "rocket": "Raket",
+    "gem": "Ædelsten",
+    "flame": "Flamme",
+    "leaf": "Blad",
+    "star": "Stjerne",
+    "compass": "Kompas"
+  },
+  "import": {
+    "folder": {
+      "title": "Instansmappe",
+      "description": "En instansmappe fra Prism eller MultiMC, overført som Horizon gør det."
+    },
+    "mrpack": {
+      "title": "Modrinth-pakke (.mrpack)",
+      "description": "Mods matches med deres Horizon-builds, når de findes."
+    },
+    "curseforge_zip": {
+      "title": "CurseForge-zip",
+      "description": "En eksporteret CurseForge-modpakke."
+    },
+    "modpack": {
+      "title": "Fra en modpakke",
+      "description": "Gennemse modpakker fra Horizon, Modrinth og Rustic."
+    },
+    "started": "Importerer {{name}}",
+    "background": "Det fortsætter i baggrunden; du kan blive ved med at bruge launcheren.",
+    "note": "Kun indhold, der virker på Horizon, installeres; resten vises med årsagen.",
+    "drop": {
+      "title": "Slip en pakke eller en instansmappe her",
+      "hint": "Modrinth .mrpack, CurseForge .zip eller en instansmappe fra Prism eller MultiMC",
+      "choose": "Vælg en fil",
+      "active": "Slip for at importere",
+      "unsupported": "Det kan ikke importeres. Brug en .mrpack, en CurseForge .zip eller en instansmappe."
+    },
+    "formats": "Understøttede formater"
+  },
+  "detail": {
+    "notFound": "Denne instans findes ikke længere",
+    "backToList": "Tilbage til instanser",
+    "tabsLabel": "Instansens sektioner",
+    "tabs": {
+      "overview": "Oversigt",
+      "content": "Indhold",
+      "resourcepacks": "Ressourcepakker",
+      "worlds": "Verdener",
+      "settings": "Indstillinger"
+    }
+  },
+  "overview": {
+    "mods": "Mods",
+    "resourcePacks": "Ressourcepakker",
+    "shaders": "Shaderpakker",
+    "version": "Horizon-build",
+    "updateAvailable": "Opdatering tilgængelig",
+    "upToDate": "Opdateret",
+    "updateNow": "Opdater nu",
+    "changeVersion": "Vælg en Horizon-build",
+    "applyVersion": "Skift build",
+    "versionChanging": "Skifter til {{version}}",
+    "lastSession": "Seneste session",
+    "lastPlayed": "Spillet {{when}}",
+    "neverPlayed": "Ikke spillet endnu",
+    "rejoin": "Deltag igen",
+    "noServer": "Der er ikke deltaget i nogen server fra denne instans endnu.",
+    "created": "Oprettet",
+    "folder": "Mappe"
+  },
+  "content": {
+    "filter": "Filtrér efter type",
+    "kinds": {
+      "all": "Alle",
+      "mod": "Mods",
+      "resourcepack": "Ressourcepakker",
+      "shader": "Shaders"
+    },
+    "search": "Søg i installeret indhold",
+    "updateAll_one": "Opdater {{count}} element",
+    "updateAll_other": "Opdater {{count}} elementer",
+    "browse": "Gennemse indhold",
+    "noMatch": "Intet installeret passer til din søgning.",
+    "empty": {
+      "title": "Intet installeret endnu",
+      "description": "Find mods, ressourcepakker og shaders, der virker med denne instans."
+    },
+    "sources": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Lokal fil"
+    },
+    "updateTo": "Opdatering: {{version}}",
+    "incompatible": "Ikke kompatibel: {{reason}}",
+    "updateOne": "Opdater {{name}}",
+    "toggle": "Aktivér {{name}}",
+    "remove": "Fjern {{name}}",
+    "removeTitle": "Fjern {{name}}?",
+    "removeBody": "Filen slettes fra denne instans. Du kan installere den igen fra Indhold."
+  },
+  "packs": {
+    "hint": "Pakker øverst vinder, når to pakker ændrer det samme.",
+    "listLabel": "Indlæsningsrækkefølge for ressourcepakker",
+    "top": "Højeste prioritet",
+    "up": "Flyt {{name}} op",
+    "down": "Flyt {{name}} ned",
+    "moved": "{{name}} er flyttet til plads {{position}} af {{total}}",
+    "browse": "Find ressourcepakker",
+    "empty": {
+      "title": "Ingen ressourcepakke",
+      "description": "Tilføj pakker for at ændre teksturer, lyde og brugerfladen."
+    }
+  },
+  "worlds": {
+    "empty": {
+      "title": "Ingen verden endnu",
+      "description": "Verdener, du opretter i spillet, vises her."
+    },
+    "openSaves": "Åbn mappen med gemte spil",
+    "lastPlayed": "Spillet {{when}}",
+    "modes": {
+      "survival": "Survival",
+      "creative": "Kreativ",
+      "adventure": "Eventyr",
+      "hardcore": "Hardcore",
+      "spectator": "Tilskuer"
+    },
+    "datapacks_one": "{{count}} datapakke",
+    "datapacks_other": "{{count}} datapakker",
+    "play": "Spil denne verden",
+    "addDatapacks": "Tilføj datapakker"
+  },
+  "settings": {
+    "general": "Generelt",
+    "display": "Vindue",
+    "useDefaultResolution": "Brug standardstørrelsen for vinduet",
+    "defaultIs": "Standard: {{width}} × {{height}}",
+    "width": "Bredde",
+    "height": "Højde",
+    "fullscreen": "Start i fuld skærm",
+    "resolutionError": "Brug hele tal, mindst 640 × 360.",
+    "launch": "Startindstillinger",
+    "launchHint": "Horizon-instanser låser kun en build: der er ingen Java, RAM eller loader at indstille.",
+    "gameArgs": "Ekstra spilargumenter",
+    "gameArgsHint": "Avanceret. Sendes uændret til Horizon.",
+    "folders": "Mapper",
+    "folder": {
+      "root": "Instans",
+      "mods": "Mods",
+      "resourcepacks": "Ressourcepakker",
+      "shaderpacks": "Shaderpakker",
+      "saves": "Verdener",
+      "screenshots": "Skærmbilleder",
+      "logs": "Logs"
+    },
+    "unsaved": "Du har ændringer, der ikke er gemt.",
+    "allSaved": "Alle ændringer er gemt.",
+    "saved": "Instansindstillingerne er gemt"
+  },
+  "heading": "Dine *profiler*",
+  "native": {
+    "title": "Native mods",
+    "allOff": "Alle er slået fra: instansen spiller det færdigbyggede spil.",
+    "state": {
+      "building": "Bygger…",
+      "up_to_date": "Opdateret",
+      "needs_rebuild": "Skal genbygges",
+      "not_built": "Ikke bygget",
+      "not_needed": "Færdigbygget spil"
+    },
+    "build": "Byg",
+    "rebuild": "Genbyg",
+    "cancel": "Annuller",
+    "progress": "Fremskridt for native build",
+    "starting": "Starter…",
+    "firstBuildHint": "Den første build kompilerer hele spillet (10 til 15 minutter); de næste kun det, der er ændret. Du kan blive ved med at bruge launcheren.",
+    "failed": "Den seneste build fejlede",
+    "built": "Bygget {{date}} på {{duration}} · spil {{size}}",
+    "leftOut": {
+      "other": "{{name}} blev udeladt: den gælder ikke for denne Horizon.",
+      "unsupported": "{{name}} blev udeladt: Rustic kan endnu ikke bygge det, den kræver."
+    },
+    "notEdition": "Denne instans spiller en almindelig Horizon-build: native mods bygges kun ind i Rustic-udgaven."
+  },
+  "profiles": {
+    "summary_one": "{{count}} profil · {{playtime}} spillet",
+    "summary_other": "{{count}} profiler · {{playtime}} spillet",
+    "searchLabel": "Søg i dine profiler",
+    "searchPlaceholder": "Søg efter navn, Horizon-build eller modpakke…",
+    "source": {
+      "label": "Vis",
+      "all": "Alle profiler",
+      "custom": "Mine profiler",
+      "modpack": "Fra modpakker"
+    },
+    "sorts": {
+      "recent": "Senest spillet",
+      "name": "Navn",
+      "created": "Senest oprettet",
+      "version": "Horizon-build",
+      "playtime": "Spilletid"
+    },
+    "filters": {
+      "version": "Horizon-build",
+      "edition": "Udgave",
+      "editions": {
+        "rustic": "Rustic-udgave",
+        "horizon": "Almindelig Horizon"
+      },
+      "native": "Native mods",
+      "nativeOnly": "Har native mods",
+      "nativeHint": "Native mods kompileres på din pc, før spillet starter.",
+      "remove": "Fjern filteret: {{filter}}",
+      "reset": "Nulstil filtre"
+    },
+    "create": "Opret profil",
+    "createHint": "En Horizon-build, et ikon og et navn",
+    "import": "Importér",
+    "importHint": "En mappe, en .mrpack eller en CurseForge-zip",
+    "all": "Alle profiler",
+    "listLabel": "Profiler",
+    "recent": "Spil videre",
+    "recentHint": "Dine senest spillede profiler",
+    "card": {
+      "active": "Aktiv",
+      "activeHint": "Launchpad spiller denne profil",
+      "running": "Kører",
+      "pinned": "Fastgjort",
+      "update": "Opdater {{version}}",
+      "broken": "Skal repareres",
+      "modpack": "Modpakke",
+      "fromModpack": "{{name}} {{version}}",
+      "played": "Spillet {{when}}",
+      "neverPlayed": "Ikke spillet endnu",
+      "created": "Oprettet {{date}}",
+      "lastServer": "Sidst på {{name}}",
+      "rejoin": "Deltag igen",
+      "rejoinAria": "Deltag igen i {{server}} med {{name}}",
+      "mods": "Mods",
+      "packs": "Ressourcepakker",
+      "shaders": "Shaders",
+      "playtime": "Spilletid",
+      "contentCount": "{{mods}} mods · {{packs}} pakker · {{shaders}} shaders",
+      "open": "Åbn {{name}}"
+    },
+    "native": {
+      "label": "Native mods",
+      "count_one": "{{count}} native mod",
+      "count_other": "{{count}} native mods",
+      "building": "Bygger {{pct}}",
+      "buildingNoPct": "Bygger…",
+      "up_to_date": "Native mods er klar",
+      "needs_rebuild": "Native: skal genbygges",
+      "not_built": "Native: ikke bygget endnu",
+      "off": "Native mods er slået fra",
+      "unsupported": "Native: kræver Rustic-udgaven",
+      "hint": {
+        "up_to_date": "Bygget på denne pc til denne Horizon-build.",
+        "needs_rebuild": "Modsene er ændret siden seneste build: den genbygges, når du spiller.",
+        "not_built": "Kompileres på din pc, når du spiller (10 til 15 minutter første gang).",
+        "off": "Alle native mods er slået fra: det færdigbyggede spil kører.",
+        "unsupported": "Denne profil spiller en almindelig Horizon-build: native mods bygges kun ind i Rustic-udgaven.",
+        "building": "Kompilerer spillet med denne profils native mods."
+      }
+    },
+    "menu": {
+      "edit": "Rediger indstillinger",
+      "activate": "Brug på Launchpad",
+      "isActive": "Bruges på Launchpad",
+      "activated": "{{name}} er nu på Launchpad"
+    },
+    "empty": {
+      "title": "Ingen profil endnu",
+      "description": "En profil er en Horizon-build med egne mods, pakker og verdener. Opret en med den anbefalede build, eller importér en pakke, du allerede har."
+    },
+    "noMatch": {
+      "title": "Ingen profil passer",
+      "description": "Prøv en anden søgning, eller fjern et filter."
+    },
+    "detail": {
+      "banner": "Forsidebillede for {{name}}"
+    }
+  }
+}

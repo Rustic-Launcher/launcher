@@ -3,6 +3,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { Outlet, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CloudBanners } from '@/components/CloudBanner';
 import { AddFriendHost } from '@/features/social/AddFriendDialog';
 import { SocialOverlay } from '@/features/social/SocialHosts';
 import { useUpdateNotices } from '@/features/updates/useUpdateNotices';
@@ -135,7 +136,7 @@ export function AppShell() {
           e.preventDefault();
           mainRef.current?.focus();
         }}
-        className="bg-accent text-accent-fg sr-only z-[90] rounded-md px-3 py-2 focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
+        className="bg-accent text-accent-fg sr-only z-[90] rounded-md px-3 py-2 focus:not-sr-only focus:fixed focus:start-2 focus:top-2"
       >
         {t('a11y.skipToContent')}
       </a>
@@ -145,8 +146,9 @@ export function AppShell() {
         id="main"
         ref={mainRef}
         tabIndex={-1}
-        className="rx-panel border-border relative col-start-2 row-start-2 mr-2 mb-2 overflow-y-auto rounded-2xl border outline-none"
+        className="rx-panel border-border relative col-start-2 row-start-2 me-2 mb-2 overflow-y-auto rounded-2xl border outline-none"
       >
+        <CloudBanners />
         <Outlet />
       </main>
       <CommandMenu />

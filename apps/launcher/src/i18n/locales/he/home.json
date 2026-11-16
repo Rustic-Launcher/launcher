@@ -1,0 +1,109 @@
+{
+  "hero": {
+    "greeting": "שמחים שחזרת, {{name}}",
+    "greetingAnon": "ברוכים הבאים ל-Rustic",
+    "continue": "להמשיך: {{name}} · שיחקת {{when}}",
+    "continueNew": "הכול מוכן: {{name}}",
+    "firstRun": "הכנת המשחק בשלושה שלבים.",
+    "playNow": "לשחק עכשיו",
+    "updateAndPlay": "עדכון ומשחק",
+    "resumeServer": "חזרה אל {{server}}",
+    "switch": "החלפת מופע",
+    "stats": {
+      "playtime": "זמן משחק: {{time}}",
+      "mods_one": "מוד אחד",
+      "mods_two": "2 מודים",
+      "mods_other": "{{count}} מודים",
+      "friends_one": "חבר אחד מחובר",
+      "friends_two": "2 חברים מחוברים",
+      "friends_other": "{{count}} חברים מחוברים"
+    },
+    "steps": {
+      "signIn": "התחברות עם חשבון ה-Microsoft שבבעלותו המשחק",
+      "prepare": "הכנת קבצי המשחק מההתקנה שלך",
+      "create": "יצירת המופע הראשון שלך"
+    },
+    "getReady": "הכנת המשחק",
+    "openLocker": "ארונית",
+    "player": "השחקן שלך, במנוחה, בלי פריטים קוסמטיים",
+    "playerWearing": "השחקן שלך, במנוחה, לובש: {{items}}"
+  },
+  "recent": {
+    "title": "שרתים ועולמות אחרונים",
+    "unknown": "מצב לא ידוע",
+    "online": "מחובר · {{online}}/{{max}}",
+    "offline": "לא מחובר",
+    "world": "עולם · מקומי",
+    "joining": "מצטרפים אל {{name}}…",
+    "opening": "פותחים את {{name}}…",
+    "removed": "{{name}} הוסר מהשרתים שלך",
+    "playAria": "לשחק ב-{{name}}",
+    "more": "פעולות נוספות עבור {{name}}",
+    "copyAddress": "העתקת הכתובת",
+    "addServer": "הוספת שרת",
+    "empty": "שרתים שהצטרפת אליהם ועולמות ששיחקת בהם יופיעו כאן."
+  },
+  "news": {
+    "title": "חדשות ועדכונים",
+    "empty": "אין חדשות כרגע.",
+    "slide": "כתבה {{index}} מתוך {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "הערות גרסה",
+      "event": "אירוע",
+      "blog": "מאמר"
+    },
+    "readNotes": "לקריאת הערות הגרסה",
+    "read": "לקריאה"
+  },
+  "friends": {
+    "title": "חברים עכשיו",
+    "empty": "אף אחד מהחברים שלך לא משחק כרגע.",
+    "since": "מאז {{when}}",
+    "activity": {
+      "server": "משחק ב-{{server}}",
+      "hosting": "מארח את {{server}}",
+      "singleplayer": "משחק לבד",
+      "launcher": "נמצא בלאנצ'ר"
+    }
+  },
+  "featured": {
+    "title": "שרתים מומלצים",
+    "verified": "שרת מאומת",
+    "players": "{{online}} / {{max}} שחקנים",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "פריטים קוסמטיים חדשים",
+    "owned": "בבעלותך"
+  },
+  "launchpad": {
+    "welcome": "שמחים *שחזרת*,",
+    "playAs": "לשחק בתור",
+    "online": "מחוברים בשרתים המומלצים",
+    "heroLabel": "הפעלה",
+    "instanceSettings": "הגדרות המופע",
+    "news": "חדשות אחרונות",
+    "unread_one": "(אחת שלא נקראה)",
+    "unread_two": "(2 שלא נקראו)",
+    "unread_other": "({{count}} שלא נקראו)",
+    "unreadDot": "לא נקרא",
+    "explore": "סיור במקורות",
+    "aside": "שרתים וחברים",
+    "joinServer": "הצטרפות אל {{name}}",
+    "friendsOnline_one": "(אחד מחובר)",
+    "friendsOnline_two": "(2 מחוברים)",
+    "friendsOnline_other": "({{count}} מחוברים)",
+    "openSocial": "פתיחת חברתי",
+    "noNews": "אין חדשות עדיין.",
+    "noFriendsOnline": "אין חברים מחוברים כרגע.",
+    "socialHint": "צ'אטים, הזמנות והקבוצה שלך נמצאים בחלון חברתי.",
+    "eyebrow": "Launchpad"
+  }
+}

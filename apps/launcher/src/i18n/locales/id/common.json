@@ -100,7 +100,8 @@
       "appearance": "Tampilan",
       "privacy": "Privasi & data",
       "parental": "Kontrol orang tua",
-      "about": "Tentang"
+      "about": "Tentang",
+      "voice": "Suara"
     }
   },
   "friends": {
@@ -190,7 +191,30 @@
     "leader": "Pemimpin party",
     "pending": "{{name}} (diundang)",
     "invite": "Undang ke party",
-    "invited": "{{name}} telah diundang ke party-mu"
+    "invited": "{{name}} telah diundang ke party-mu",
+    "invitesTitle": "Undangan party",
+    "invitedBy": "{{name}} mengundangmu ke party",
+    "accept": "Gabung",
+    "decline": "Tolak",
+    "makeLeader": "Jadikan pemimpin party",
+    "kick": "Keluarkan dari party",
+    "proximity": "Suara jarak dekat",
+    "proximityHint": "Anggota di server yang sama saling mendengar sesuai jarak",
+    "range": "Jangkauan (blok)",
+    "emptyTitle": "Belum ada party",
+    "emptyBody": "Buat party, lalu undang teman dari menu mereka di tab Teman.",
+    "create": "Buat party",
+    "inviteHint": "Undang teman dari menu mereka di tab Teman.",
+    "chatTitle": "Obrolan party",
+    "chatEmpty": "Gabung atau buat party untuk mengobrol dengan anggotanya.",
+    "chatPlaceholder": "Kirim pesan ke party",
+    "formerMember": "Mantan anggota",
+    "errors": {
+      "party_full": "Party sudah penuh.",
+      "party_not_allowed": "Pemain ini tidak bisa ada di party ini: pemain di bawah 18 tahun hanya bergabung ke party teman mereka.",
+      "already_in_party": "Keluar dulu dari party-mu saat ini.",
+      "not_party_leader": "Hanya pemimpin party yang bisa melakukannya."
+    }
   },
   "presence": {
     "online": "Online",
@@ -425,6 +449,48 @@
       "updated": "Rustic Launcher diperbarui ke {{version}}",
       "resuming": "Pembaruan selesai: menjalankan game-mu",
       "failed": "Pembaruan tidak dapat dipasang. Akan dicoba lagi nanti."
+    }
+  },
+  "voice": {
+    "title": "Suara",
+    "join": "Gabung suara",
+    "leave": "Keluar dari suara",
+    "mute": "Matikan mikrofon",
+    "unmute": "Nyalakan mikrofon",
+    "deafen": "Matikan suara",
+    "undeafen": "Nyalakan suara",
+    "speaking": "Sedang bicara",
+    "micMuted": "Dibisukan",
+    "outOfRange": "Di luar jangkauan",
+    "muteFor": "Bisukan {{name}} untukmu",
+    "unmuteFor": "Dengar {{name}} lagi",
+    "reportAria": "Laporkan {{name}}",
+    "memberVolume": "Volume {{name}}",
+    "report": "Laporkan",
+    "reportTitle": "Laporkan {{name}}?",
+    "reportBody": "Moderator kami akan meninjau laporan. Suara tidak pernah direkam. Pemain ini langsung dibisukan untukmu.",
+    "reported": "{{name}} telah dilaporkan",
+    "reasons": {
+      "harassment": "Pelecehan atau kebencian",
+      "inappropriate_content": "Konten tidak pantas",
+      "spam": "Spam atau kebisingan",
+      "other": "Lainnya"
+    },
+    "proximityOn": "jarak dekat, jangkauan {{range}}",
+    "you": "Kamu",
+    "listenOnly": "Hanya mendengar",
+    "alone": "Belum ada orang lain di suara.",
+    "serverOffer": "{{server}} punya suara jarak dekat",
+    "serverRoom": "Suara server",
+    "partyRoom": "Suara party",
+    "errors": {
+      "voice_unavailable": "Suara sedang tidak tersedia. Coba lagi nanti.",
+      "voice_not_allowed": "Suara tidak tersedia untuk akunmu.",
+      "mic_denied": "Akses mikrofon ditolak: kamu bisa mendengar tetapi tidak bisa bicara. Izinkan di pengaturan privasi sistem.",
+      "mic_missing": "Mikrofon tidak ditemukan: kamu bisa mendengar tetapi tidak bisa bicara.",
+      "connect_failed": "Tidak bisa terhubung ke suara. Periksa koneksimu dan coba lagi.",
+      "kicked": "Kamu dikeluarkan dari ruang suara.",
+      "not_on_voice_server": "Server ini tidak punya suara jarak dekat."
     }
   }
 }

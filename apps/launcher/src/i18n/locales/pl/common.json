@@ -100,7 +100,8 @@
       "appearance": "Wygląd",
       "privacy": "Prywatność i dane",
       "parental": "Kontrola rodzicielska",
-      "about": "O aplikacji"
+      "about": "O aplikacji",
+      "voice": "Czat głosowy"
     }
   },
   "friends": {
@@ -202,7 +203,30 @@
     "leader": "Lider drużyny",
     "pending": "{{name}} (zaproszenie)",
     "invite": "Zaproś do drużyny",
-    "invited": "Zaproszono do drużyny: {{name}}"
+    "invited": "Zaproszono do drużyny: {{name}}",
+    "invitesTitle": "Zaproszenia do drużyny",
+    "invitedBy": "{{name}} zaprasza cię do drużyny",
+    "accept": "Dołącz",
+    "decline": "Odrzuć",
+    "makeLeader": "Uczyń liderem drużyny",
+    "kick": "Usuń z drużyny",
+    "proximity": "Czat głosowy zbliżeniowy",
+    "proximityHint": "Członkowie na tym samym serwerze słyszą się zależnie od odległości",
+    "range": "Zasięg (bloki)",
+    "emptyTitle": "Nie masz jeszcze drużyny",
+    "emptyBody": "Utwórz drużynę, a potem zaproś znajomych z ich menu w karcie Znajomi.",
+    "create": "Utwórz drużynę",
+    "inviteHint": "Zaproś znajomych z ich menu w karcie Znajomi.",
+    "chatTitle": "Czat drużyny",
+    "chatEmpty": "Dołącz do drużyny lub utwórz ją, aby rozmawiać z jej członkami.",
+    "chatPlaceholder": "Napisz do drużyny",
+    "formerMember": "Były członek",
+    "errors": {
+      "party_full": "Drużyna jest pełna.",
+      "party_not_allowed": "Ten gracz nie może być w tej drużynie: osoby poniżej 18 lat dołączają tylko do drużyn swoich znajomych.",
+      "already_in_party": "Najpierw opuść obecną drużynę.",
+      "not_party_leader": "Tylko lider drużyny może to zrobić."
+    }
   },
   "presence": {
     "online": "Online",
@@ -446,6 +470,48 @@
       "updated": "Rustic Launcher zaktualizowany do wersji {{version}}",
       "resuming": "Aktualizacja zakończona: uruchamianie gry",
       "failed": "Nie udało się zainstalować aktualizacji. Spróbujemy ponownie później."
+    }
+  },
+  "voice": {
+    "title": "Czat głosowy",
+    "join": "Dołącz do czatu głosowego",
+    "leave": "Opuść czat głosowy",
+    "mute": "Wycisz mikrofon",
+    "unmute": "Włącz mikrofon",
+    "deafen": "Wyłącz dźwięk",
+    "undeafen": "Włącz dźwięk",
+    "speaking": "Mówi",
+    "micMuted": "Wyciszony",
+    "outOfRange": "Poza zasięgiem",
+    "muteFor": "Wycisz {{name}} dla siebie",
+    "unmuteFor": "Znów słuchaj {{name}}",
+    "reportAria": "Zgłoś {{name}}",
+    "memberVolume": "Głośność: {{name}}",
+    "report": "Zgłoś",
+    "reportTitle": "Zgłosić {{name}}?",
+    "reportBody": "Nasi moderatorzy sprawdzą zgłoszenie. Głos nigdy nie jest nagrywany. Ten gracz zostaje od razu wyciszony dla ciebie.",
+    "reported": "Zgłoszono: {{name}}",
+    "reasons": {
+      "harassment": "Nękanie lub nienawiść",
+      "inappropriate_content": "Nieodpowiednie treści",
+      "spam": "Spam lub hałas",
+      "other": "Coś innego"
+    },
+    "proximityOn": "zbliżeniowy, zasięg {{range}}",
+    "you": "Ty",
+    "listenOnly": "Tylko słuchanie",
+    "alone": "Na razie nikogo więcej na czacie głosowym.",
+    "serverOffer": "{{server}} ma czat głosowy zbliżeniowy",
+    "serverRoom": "Czat głosowy serwera",
+    "partyRoom": "Czat głosowy drużyny",
+    "errors": {
+      "voice_unavailable": "Czat głosowy jest teraz niedostępny. Spróbuj ponownie później.",
+      "voice_not_allowed": "Czat głosowy jest niedostępny dla twojego konta.",
+      "mic_denied": "Odmówiono dostępu do mikrofonu: możesz słuchać, ale nie mówić. Zezwól na niego w ustawieniach prywatności systemu.",
+      "mic_missing": "Nie znaleziono mikrofonu: możesz słuchać, ale nie mówić.",
+      "connect_failed": "Nie udało się połączyć z czatem głosowym. Sprawdź połączenie i spróbuj ponownie.",
+      "kicked": "Usunięto cię z pokoju głosowego.",
+      "not_on_voice_server": "Ten serwer nie ma czatu głosowego zbliżeniowego."
     }
   }
 }

@@ -125,13 +125,13 @@ export function OnboardingPage() {
   return (
     <div className="rx-ambient flex h-screen w-screen flex-col overflow-y-auto">
       <header
-        className="flex items-center gap-3 pt-6 pr-3 pl-8"
+        className="flex items-center gap-3 ps-8 pe-3 pt-6"
         data-tauri-drag-region={isNative() ? true : undefined}
       >
         <RusticMark size={36} />
         <span className="text-base font-semibold">{t('brand')}</span>
         <span
-          className="text-fg-subtle ml-auto self-stretch pr-2 text-xs leading-9"
+          className="text-fg-subtle ms-auto self-stretch pe-2 text-xs leading-9"
           data-tauri-drag-region={isNative() ? true : undefined}
         >
           {t('stepOf', { current: index + 1, total: STEPS.length })}

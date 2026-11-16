@@ -13,7 +13,8 @@
     "appearance": "Wygląd",
     "privacy": "Prywatność i dane",
     "parental": "Kontrola rodzicielska",
-    "about": "O aplikacji i informacje prawne"
+    "about": "O aplikacji i informacje prawne",
+    "voice": "Czat głosowy"
   },
   "accounts": {
     "active": "Aktywne",
@@ -95,7 +96,8 @@
       "description": "Twoja tożsamość w Rustic dla znajomych, szafki, zakupów i serwerów.",
       "signedOut": "Nie zalogowano. Gra działa bez konta; funkcje społecznościowe, szafka i sklep go wymagają.",
       "signIn": "Zaloguj się lub utwórz konto",
-      "licenceNote": "Konto Rustic to tożsamość na platformie. Nigdy nie zastępuje licencji gry: nadal potrzebujesz konta Microsoft, które ma grę."
+      "licenceNote": "Konto Rustic to tożsamość na platformie. Nigdy nie zastępuje licencji gry: nadal potrzebujesz konta Microsoft, które ma grę.",
+      "manageOnWeb": "Zarządzaj na stronie"
     },
     "offline": {
       "title": "Gra offline",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Dokończ logowanie w przeglądarce: launcher automatycznie przejmie sesję."
   },
   "heading": "Twoje *ustawienia*",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Urządzenia",
+    "devicesHint": "Mikrofon oraz głośniki lub słuchawki używane do czatu głosowego.",
+    "input": "Mikrofon",
+    "output": "Wyjście",
+    "outputVolume": "Głośność wyjścia",
+    "systemDefault": "Domyślne systemowe",
+    "deviceN": "Urządzenie {{n}}",
+    "talk": "Mówienie",
+    "talkHint": "Mów, gdy twój głos zostanie wykryty, albo tylko podczas przytrzymania klawisza.",
+    "mode": "Tryb wejścia",
+    "modeVad": "Aktywność głosu",
+    "modePtt": "Naciśnij, aby mówić",
+    "pttKey": "Klawisz mówienia",
+    "pttKeyHint": "Działa w launcherze i w grze. Boczne przyciski myszy też.",
+    "pressKey": "Naciśnij klawisz…",
+    "sensitivity": "Czułość",
+    "sensitivityHint": "Wyższa wychwytuje cichsze głosy; niższa ignoruje więcej szumów tła.",
+    "test": "Test mikrofonu",
+    "testMic": "Testuj",
+    "stopTest": "Zatrzymaj",
+    "level": "Poziom mikrofonu",
+    "micDenied": "Odmówiono dostępu do mikrofonu. Zezwól na niego w ustawieniach prywatności systemu i spróbuj ponownie.",
+    "micMissing": "Nie znaleziono mikrofonu.",
+    "noiseSuppression": "Tłumienie szumów",
+    "echoCancellation": "Usuwanie echa",
+    "autoGain": "Automatyczne wzmocnienie",
+    "inGame": "W grze",
+    "inGameHint": "W edycji Rustic nakładka pokazuje, kto mówi, a klawisz mówienia działa w grze.",
+    "overlay": "Pokazuj nakładkę czatu głosowego w grze",
+    "serverVoice": "Czat zbliżeniowy na serwerach",
+    "serverVoiceHint": "Serwery Rustic Server mogą oferować czat głosowy zależny od odległości ze wszystkimi graczami. Poniżej 18 lat musi na to zezwolić opiekun.",
+    "serverAsk": "Pytaj mnie",
+    "serverAuto": "Dołączaj automatycznie",
+    "serverOff": "Nigdy",
+    "servers": {
+      "title": "Czat zbliżeniowy na twoich serwerach",
+      "description": "Dodaj serwer, a potem wpisz jego klucz do config.toml pluginu proximity-voice. Możesz go wyłączyć w każdej chwili.",
+      "namePlaceholder": "Nazwa serwera",
+      "add": "Dodaj",
+      "status": "Gracze online: {{count}}",
+      "enabled": "Czat zbliżeniowy na {{name}}",
+      "newKey": "Nowy klucz",
+      "remove": "Usuń {{name}}",
+      "keyOnce": "Skopiuj ten klucz teraz: jest pokazywany tylko raz. Nowy klucz go zastępuje.",
+      "tooMany": "Możesz dodać do 10 serwerów."
+    }
+  }
 }

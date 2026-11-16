@@ -100,7 +100,8 @@
       "appearance": "Darstellung",
       "privacy": "Datenschutz & Daten",
       "parental": "Jugendschutz",
-      "about": "Über"
+      "about": "Über",
+      "voice": "Sprachchat"
     }
   },
   "friends": {
@@ -194,7 +195,30 @@
     "leader": "Gruppenleiter",
     "pending": "{{name}} (eingeladen)",
     "invite": "In Gruppe einladen",
-    "invited": "{{name}} wurde in deine Gruppe eingeladen"
+    "invited": "{{name}} wurde in deine Gruppe eingeladen",
+    "invitesTitle": "Gruppeneinladungen",
+    "invitedBy": "{{name}} lädt dich in die Gruppe ein",
+    "accept": "Beitreten",
+    "decline": "Ablehnen",
+    "makeLeader": "Zum Gruppenleiter machen",
+    "kick": "Aus der Gruppe entfernen",
+    "proximity": "Näherungs-Sprachchat",
+    "proximityHint": "Mitglieder auf demselben Server hören sich je nach Entfernung",
+    "range": "Reichweite (Blöcke)",
+    "emptyTitle": "Noch keine Gruppe",
+    "emptyBody": "Erstelle eine Gruppe und lade dann Freunde über ihr Menü im Tab Freunde ein.",
+    "create": "Gruppe erstellen",
+    "inviteHint": "Lade Freunde über ihr Menü im Tab Freunde ein.",
+    "chatTitle": "Gruppenchat",
+    "chatEmpty": "Tritt einer Gruppe bei oder erstelle eine, um mit ihren Mitgliedern zu chatten.",
+    "chatPlaceholder": "Nachricht an die Gruppe",
+    "formerMember": "Ehemaliges Mitglied",
+    "errors": {
+      "party_full": "Die Gruppe ist voll.",
+      "party_not_allowed": "Dieser Spieler kann nicht in dieser Gruppe sein: Spieler unter 18 treten nur Gruppen ihrer Freunde bei.",
+      "already_in_party": "Verlasse zuerst deine aktuelle Gruppe.",
+      "not_party_leader": "Nur der Gruppenleiter kann das tun."
+    }
   },
   "presence": {
     "online": "Online",
@@ -432,6 +456,48 @@
       "updated": "Rustic Launcher auf {{version}} aktualisiert",
       "resuming": "Update fertig: dein Spiel startet",
       "failed": "Das Update konnte nicht installiert werden. Es wird später erneut versucht."
+    }
+  },
+  "voice": {
+    "title": "Sprachchat",
+    "join": "Sprachchat beitreten",
+    "leave": "Sprachchat verlassen",
+    "mute": "Stummschalten",
+    "unmute": "Stummschaltung aufheben",
+    "deafen": "Ton aus",
+    "undeafen": "Ton an",
+    "speaking": "Spricht",
+    "micMuted": "Stumm",
+    "outOfRange": "Außer Reichweite",
+    "muteFor": "{{name}} für dich stummschalten",
+    "unmuteFor": "{{name}} wieder hören",
+    "reportAria": "{{name}} melden",
+    "memberVolume": "Lautstärke von {{name}}",
+    "report": "Melden",
+    "reportTitle": "{{name}} melden?",
+    "reportBody": "Unsere Moderatoren prüfen die Meldung. Sprache wird nie aufgezeichnet. Dieser Spieler wird für dich sofort stummgeschaltet.",
+    "reported": "{{name}} wurde gemeldet",
+    "reasons": {
+      "harassment": "Belästigung oder Hass",
+      "inappropriate_content": "Unangemessene Inhalte",
+      "spam": "Spam oder Lärm",
+      "other": "Etwas anderes"
+    },
+    "proximityOn": "Näherung, Reichweite {{range}}",
+    "you": "Du",
+    "listenOnly": "Nur zuhören",
+    "alone": "Noch niemand sonst im Sprachchat.",
+    "serverOffer": "{{server}} bietet Näherungs-Sprachchat",
+    "serverRoom": "Server-Sprachchat",
+    "partyRoom": "Gruppen-Sprachchat",
+    "errors": {
+      "voice_unavailable": "Der Sprachchat ist gerade nicht verfügbar. Versuche es später erneut.",
+      "voice_not_allowed": "Der Sprachchat ist für dein Konto nicht verfügbar.",
+      "mic_denied": "Der Mikrofonzugriff wurde verweigert: Du kannst zuhören, aber nicht sprechen. Erlaube ihn in den Datenschutzeinstellungen deines Systems.",
+      "mic_missing": "Kein Mikrofon gefunden: Du kannst zuhören, aber nicht sprechen.",
+      "connect_failed": "Verbindung zum Sprachchat fehlgeschlagen. Prüfe deine Verbindung und versuche es erneut.",
+      "kicked": "Du wurdest aus dem Sprachraum entfernt.",
+      "not_on_voice_server": "Dieser Server hat keinen Näherungs-Sprachchat."
     }
   }
 }

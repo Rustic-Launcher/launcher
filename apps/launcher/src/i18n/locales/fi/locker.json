@@ -1,0 +1,84 @@
+{
+  "title": "Kaappi",
+  "subtitle": "Pelkästään visuaalisia esineitä. Rustic-versiota käyttävät pelaajat näkevät ne pelissä.",
+  "horizonNote": {
+    "badge": "Horizon-kosmetiikka on yhä käytettävissä",
+    "detail": "Horizon-kosmetiikkasi säilyy Rustic-version asiakasohjelmassa. Hallitse sitä pelissä; se toimii Rustic-esineidesi rinnalla."
+  },
+  "empty": {
+    "title": "Sinulla ei ole vielä kosmetiikkaa.",
+    "description": "Ostamasi tai saamasi esineet näkyvät tässä valmiina käyttöön.",
+    "browse": "Selaa kauppaa",
+    "categoryTitle": "{{category}}: ei vielä mitään",
+    "categoryDescription": "Omistamasi tämän tyypin esineet näkyvät tässä."
+  },
+  "viewer": {
+    "region": "Hahmosi",
+    "label_one": "Hahmollasi on {{count}} esine. Käännä vetämällä tai nuolinäppäimillä, zoomaa plus- ja miinusnäppäimillä.",
+    "label_other": "Hahmollasi on {{count}} esinettä. Käännä vetämällä tai nuolinäppäimillä, zoomaa plus- ja miinusnäppäimillä.",
+    "hint": "Käännä vetämällä · zoomaa vierittämällä",
+    "animation": "Animaatio",
+    "playEmote": "Toista: {{name}}",
+    "noEmote": "Ei emotea valittuna",
+    "reset": "Palauta näkymä"
+  },
+  "animations": {
+    "idle": "Levossa",
+    "walk": "Kävely",
+    "wave": "Vilkutus",
+    "dance": "Tanssi"
+  },
+  "items": {
+    "region": "Esineesi",
+    "nothing": "Ei mitään",
+    "equipped": "Käytössä"
+  },
+  "categories": {
+    "label": "Kategoriat",
+    "all": "Kaikki",
+    "head": "Hatut",
+    "back": "Selkä",
+    "top": "Vartalo",
+    "shoulder": "Olka",
+    "nametag": "Nimikyltit",
+    "emote": "Emotet",
+    "companion": "Seuralaiset",
+    "trail": "Vanat",
+    "aura": "Aurat"
+  },
+  "rarity": {
+    "common": "Tavallinen",
+    "rare": "Harvinainen",
+    "epic": "Eeppinen",
+    "legendary": "Legendaarinen"
+  },
+  "toast": {
+    "equipped": "{{name}} on käytössä",
+    "unequipped": "{{name}} poistettu",
+    "cleared": "{{slot}}: ei mitään käytössä",
+    "outfitWorn": "Asu puettu",
+    "outfitSaved": "Asu ”{{name}}” tallennettu",
+    "equipFailed": "Ulkonäköä ei voitu muuttaa. Yritä uudelleen."
+  },
+  "outfits": {
+    "title": "Asut",
+    "count": "{{count}}/{{max}}",
+    "namePlaceholder": "Nimeä tämä tyyli",
+    "save": "Tallenna nykyinen tyyli",
+    "full": "Voit säilyttää enintään {{max}} asua. Poista yksi tallentaaksesi uuden tyylin.",
+    "empty": "Tallenna nykyinen tyylisi, niin voit pukea sen uudelleen yhdellä napsautuksella.",
+    "items_one": "{{count}} esine",
+    "items_other": "{{count}} esinettä",
+    "wearing": "Päällä",
+    "wear": "Pue",
+    "delete": "Poista asu {{name}}"
+  },
+  "switches": {
+    "showMine": "Näytä kosmetiikkani",
+    "showMineHint": "Muut Rustic-version pelaajat näkevät, mitä sinulla on päällä.",
+    "hideOthers": "Piilota muiden pelaajien kosmetiikka",
+    "hideTrailsAuras": "Piilota vanat ja aurat"
+  },
+  "heading": "Oma *kaappi*",
+  "eyebrow": "Kosmetiikka"
+}

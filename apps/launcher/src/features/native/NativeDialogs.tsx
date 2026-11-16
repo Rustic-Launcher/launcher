@@ -55,7 +55,7 @@ export function NativeTrustDialog({
       }
     >
       <div className="flex flex-col gap-3 text-sm" data-testid="native-trust-dialog">
-        <ul className="text-fg-muted flex list-disc flex-col gap-1.5 pl-5">
+        <ul className="text-fg-muted flex list-disc flex-col gap-1.5 ps-5">
           <li>{t('native.trust.unsandboxed')}</li>
           <li>{t('native.trust.review')}</li>
           <li>{t('native.trust.build')}</li>
@@ -128,14 +128,14 @@ export function NativeToolchainDialog({
     >
       <div className="flex flex-col gap-2 text-sm" data-testid="native-toolchain-dialog">
         {installable && (
-          <ul className="text-fg-muted flex list-disc flex-col gap-1.5 pl-5">
+          <ul className="text-fg-muted flex list-disc flex-col gap-1.5 ps-5">
             <li>{t('native.toolchain.where')}</li>
             <li>{t('native.toolchain.size')}</li>
             <li>{t('native.toolchain.once')}</li>
           </ul>
         )}
         {toolchain?.prerequisites.length ? (
-          <ul className="text-fg flex list-disc flex-col gap-1 pl-5">
+          <ul className="text-fg flex list-disc flex-col gap-1 ps-5">
             {toolchain.prerequisites.map((p) => (
               <li key={p}>
                 <code className="text-xs">{p}</code>

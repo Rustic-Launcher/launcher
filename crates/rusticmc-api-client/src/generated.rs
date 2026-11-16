@@ -39,6 +39,133 @@ impl Client {
         self.call(Method::GET, path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/admin/audit/export`
+    pub async fn admin_audit_export(&self, q: Option<&str>, actor: Option<&str>, action: Option<&str>, target_type: Option<&str>, target_id: Option<&str>, from: Option<&str>, to: Option<&str>, ip: Option<&str>, user_agent: Option<&str>, severity: Option<&str>, limit: Option<i64>, offset: Option<i64>, format: Option<&str>) -> Result<(), ClientError> {
+        let path = "/v1/admin/audit/export";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = actor {
+            query.push(("actor", v.to_string()));
+        }
+        if let Some(v) = action {
+            query.push(("action", v.to_string()));
+        }
+        if let Some(v) = target_type {
+            query.push(("target_type", v.to_string()));
+        }
+        if let Some(v) = target_id {
+            query.push(("target_id", v.to_string()));
+        }
+        if let Some(v) = from {
+            query.push(("from", v.to_string()));
+        }
+        if let Some(v) = to {
+            query.push(("to", v.to_string()));
+        }
+        if let Some(v) = ip {
+            query.push(("ip", v.to_string()));
+        }
+        if let Some(v) = user_agent {
+            query.push(("user_agent", v.to_string()));
+        }
+        if let Some(v) = severity {
+            query.push(("severity", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        if let Some(v) = format {
+            query.push(("format", v.to_string()));
+        }
+        self.call_empty(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/audit/facets`
+    pub async fn admin_audit_facets(&self) -> Result<types::AuditFacets, ClientError> {
+        let path = "/v1/admin/audit/facets";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/audit/search`
+    pub async fn admin_audit_search(&self, q: Option<&str>, actor: Option<&str>, action: Option<&str>, target_type: Option<&str>, target_id: Option<&str>, from: Option<&str>, to: Option<&str>, ip: Option<&str>, user_agent: Option<&str>, severity: Option<&str>, limit: Option<i64>, offset: Option<i64>, format: Option<&str>) -> Result<types::AuditPage, ClientError> {
+        let path = "/v1/admin/audit/search";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = actor {
+            query.push(("actor", v.to_string()));
+        }
+        if let Some(v) = action {
+            query.push(("action", v.to_string()));
+        }
+        if let Some(v) = target_type {
+            query.push(("target_type", v.to_string()));
+        }
+        if let Some(v) = target_id {
+            query.push(("target_id", v.to_string()));
+        }
+        if let Some(v) = from {
+            query.push(("from", v.to_string()));
+        }
+        if let Some(v) = to {
+            query.push(("to", v.to_string()));
+        }
+        if let Some(v) = ip {
+            query.push(("ip", v.to_string()));
+        }
+        if let Some(v) = user_agent {
+            query.push(("user_agent", v.to_string()));
+        }
+        if let Some(v) = severity {
+            query.push(("severity", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        if let Some(v) = format {
+            query.push(("format", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/banners`
+    pub async fn admin_banners_list(&self) -> Result<Vec<types::AdminBanner>, ClientError> {
+        let path = "/v1/admin/banners";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/banners`
+    pub async fn admin_banner_create(&self, body: &types::BannerInput) -> Result<types::AdminBanner, ClientError> {
+        let path = "/v1/admin/banners";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
+    }
+
+    /// `PUT /v1/admin/banners/{id}`
+    pub async fn admin_banner_update(&self, id: uuid::Uuid, body: &types::BannerInput) -> Result<types::AdminBanner, ClientError> {
+        let path = format!("/v1/admin/banners/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, &path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/admin/banners/{id}`
+    pub async fn admin_banner_delete(&self, id: uuid::Uuid) -> Result<(), ClientError> {
+        let path = format!("/v1/admin/banners/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
     /// `POST /v1/admin/bans`
     pub async fn admin_ban(&self, body: &types::CreateBanRequest) -> Result<types::Ban, ClientError> {
         let path = "/v1/admin/bans";
@@ -203,6 +330,167 @@ impl Client {
         self.call(Method::PUT, &path, &query, Some(body)).await
     }
 
+    /// `GET /v1/admin/discord`
+    pub async fn admin_discord_overview(&self) -> Result<types::AdminDiscordOverview, ClientError> {
+        let path = "/v1/admin/discord";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/discord/activity`
+    pub async fn admin_discord_activity(&self, kind: Option<&str>, limit: Option<i64>, offset: Option<i64>) -> Result<types::DiscordActivityPage, ClientError> {
+        let path = "/v1/admin/discord/activity";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = kind {
+            query.push(("kind", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/discord/cases`
+    pub async fn admin_discord_cases(&self, q: Option<&str>, action: Option<&str>, state: Option<&str>, limit: Option<i64>, offset: Option<i64>) -> Result<types::AdminDiscordCasePage, ClientError> {
+        let path = "/v1/admin/discord/cases";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = action {
+            query.push(("action", v.to_string()));
+        }
+        if let Some(v) = state {
+            query.push(("state", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/discord/cases/{id}`
+    pub async fn admin_discord_case(&self, id: i64) -> Result<types::AdminDiscordCase, ClientError> {
+        let path = format!("/v1/admin/discord/cases/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `PATCH /v1/admin/discord/cases/{id}`
+    pub async fn admin_discord_case_update(&self, id: i64, body: &types::UpdateDiscordCaseRequest) -> Result<types::AdminDiscordCase, ClientError> {
+        let path = format!("/v1/admin/discord/cases/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PATCH, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/admin/discord/cases/{id}/revoke`
+    pub async fn admin_discord_case_revoke(&self, id: i64, body: &types::RevokeDiscordCaseRequest) -> Result<types::AdminDiscordCase, ClientError> {
+        let path = format!("/v1/admin/discord/cases/{}/revoke", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/admin/discord/settings`
+    pub async fn admin_discord_settings(&self) -> Result<types::AdminDiscordSettings, ClientError> {
+        let path = "/v1/admin/discord/settings";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `PUT /v1/admin/discord/settings`
+    pub async fn admin_discord_settings_update(&self, body: &types::UpdateDiscordSettingsRequest) -> Result<types::AdminDiscordSettings, ClientError> {
+        let path = "/v1/admin/discord/settings";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/admin/discord/tickets`
+    pub async fn admin_discord_tickets(&self, q: Option<&str>, status: Option<&str>, limit: Option<i64>, offset: Option<i64>) -> Result<types::AdminDiscordTicketPage, ClientError> {
+        let path = "/v1/admin/discord/tickets";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = status {
+            query.push(("status", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/emails`
+    pub async fn admin_emails_list(&self, limit: Option<i64>, offset: Option<i64>) -> Result<types::AdminEmailPage, ClientError> {
+        let path = "/v1/admin/emails";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/emails`
+    pub async fn admin_email_create(&self, body: &types::EmailCampaignInput) -> Result<types::AdminEmailCampaign, ClientError> {
+        let path = "/v1/admin/emails";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/admin/emails/{id}`
+    pub async fn admin_email_get(&self, id: uuid::Uuid) -> Result<types::AdminEmailCampaign, ClientError> {
+        let path = format!("/v1/admin/emails/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `PUT /v1/admin/emails/{id}`
+    pub async fn admin_email_update(&self, id: uuid::Uuid, body: &types::EmailCampaignInput) -> Result<types::AdminEmailCampaign, ClientError> {
+        let path = format!("/v1/admin/emails/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, &path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/admin/emails/{id}`
+    pub async fn admin_email_delete(&self, id: uuid::Uuid) -> Result<(), ClientError> {
+        let path = format!("/v1/admin/emails/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/emails/{id}/cancel`
+    pub async fn admin_email_cancel(&self, id: uuid::Uuid) -> Result<types::AdminEmailCampaign, ClientError> {
+        let path = format!("/v1/admin/emails/{}/cancel", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/emails/{id}/send`
+    pub async fn admin_email_send(&self, id: uuid::Uuid) -> Result<types::AdminEmailCampaign, ClientError> {
+        let path = format!("/v1/admin/emails/{}/send", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/emails/{id}/test`
+    pub async fn admin_email_test(&self, id: uuid::Uuid) -> Result<types::AdminEmailCampaign, ClientError> {
+        let path = format!("/v1/admin/emails/{}/test", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/admin/featured-servers`
     pub async fn admin_featured_list(&self) -> Result<Vec<types::AdminFeaturedServer>, ClientError> {
         let path = "/v1/admin/featured-servers";
@@ -229,6 +517,68 @@ impl Client {
         let path = format!("/v1/admin/featured-servers/{}", seg(id));
         let query: Vec<(&str, String)> = Vec::new();
         self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/flags`
+    pub async fn admin_flags_list(&self) -> Result<Vec<types::FeatureFlag>, ClientError> {
+        let path = "/v1/admin/flags";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `PUT /v1/admin/flags/{key}`
+    pub async fn admin_flag_update(&self, key: &str, body: &types::UpdateFeatureFlagRequest) -> Result<types::FeatureFlag, ClientError> {
+        let path = format!("/v1/admin/flags/{}", seg(key));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, &path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/admin/gdpr`
+    pub async fn admin_gdpr_overview(&self, status: Option<&str>, kind: Option<&str>) -> Result<types::GdprOverview, ClientError> {
+        let path = "/v1/admin/gdpr";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = status {
+            query.push(("status", v.to_string()));
+        }
+        if let Some(v) = kind {
+            query.push(("kind", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/gdpr/deletions/{user}/cancel`
+    pub async fn admin_gdpr_deletion_cancel(&self, user: uuid::Uuid, body: &types::AdminReasonRequest) -> Result<(), ClientError> {
+        let path = format!("/v1/admin/gdpr/deletions/{}/cancel", seg(user));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/admin/gdpr/deletions/{user}/expedite`
+    pub async fn admin_gdpr_deletion_expedite(&self, user: uuid::Uuid, body: &types::AdminReasonRequest) -> Result<(), ClientError> {
+        let path = format!("/v1/admin/gdpr/deletions/{}/expedite", seg(user));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/admin/gdpr/requests`
+    pub async fn admin_gdpr_request_create(&self, body: &types::GdprRequestCreate) -> Result<types::GdprRequest, ClientError> {
+        let path = "/v1/admin/gdpr/requests";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
+    }
+
+    /// `PATCH /v1/admin/gdpr/requests/{id}`
+    pub async fn admin_gdpr_request_update(&self, id: uuid::Uuid, body: &types::GdprRequestUpdate) -> Result<types::GdprRequest, ClientError> {
+        let path = format!("/v1/admin/gdpr/requests/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PATCH, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/admin/gdpr/requests/{id}/export`
+    pub async fn admin_gdpr_run_export(&self, id: uuid::Uuid) -> Result<serde_json::Value, ClientError> {
+        let path = format!("/v1/admin/gdpr/requests/{}/export", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, None::<&()>).await
     }
 
     /// `POST /v1/admin/gift-cards`
@@ -327,6 +677,116 @@ impl Client {
         self.call_empty(Method::POST, &path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/admin/payments/orders`
+    pub async fn admin_orders_list(&self, q: Option<&str>, status: Option<&str>, currency: Option<&str>, from: Option<&str>, to: Option<&str>, sort: Option<&str>, user_id: Option<uuid::Uuid>, limit: Option<i64>, offset: Option<i64>) -> Result<types::AdminOrderPage, ClientError> {
+        let path = "/v1/admin/payments/orders";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = status {
+            query.push(("status", v.to_string()));
+        }
+        if let Some(v) = currency {
+            query.push(("currency", v.to_string()));
+        }
+        if let Some(v) = from {
+            query.push(("from", v.to_string()));
+        }
+        if let Some(v) = to {
+            query.push(("to", v.to_string()));
+        }
+        if let Some(v) = sort {
+            query.push(("sort", v.to_string()));
+        }
+        if let Some(v) = user_id {
+            query.push(("user_id", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/payments/orders/export`
+    pub async fn admin_orders_export(&self, q: Option<&str>, status: Option<&str>, currency: Option<&str>, from: Option<&str>, to: Option<&str>, sort: Option<&str>, user_id: Option<uuid::Uuid>, limit: Option<i64>, offset: Option<i64>) -> Result<(), ClientError> {
+        let path = "/v1/admin/payments/orders/export";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = status {
+            query.push(("status", v.to_string()));
+        }
+        if let Some(v) = currency {
+            query.push(("currency", v.to_string()));
+        }
+        if let Some(v) = from {
+            query.push(("from", v.to_string()));
+        }
+        if let Some(v) = to {
+            query.push(("to", v.to_string()));
+        }
+        if let Some(v) = sort {
+            query.push(("sort", v.to_string()));
+        }
+        if let Some(v) = user_id {
+            query.push(("user_id", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        self.call_empty(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/payments/orders/{id}`
+    pub async fn admin_order_detail(&self, id: uuid::Uuid) -> Result<types::AdminOrderDetail, ClientError> {
+        let path = format!("/v1/admin/payments/orders/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/payments/orders/{id}/refund`
+    pub async fn admin_order_refund(&self, id: uuid::Uuid, body: &types::RefundOrderRequest) -> Result<types::AdminOrderDetail, ClientError> {
+        let path = format!("/v1/admin/payments/orders/{}/refund", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/admin/payments/refunds`
+    pub async fn admin_refunds_list(&self, q: Option<&str>, status: Option<&str>, source: Option<&str>, from: Option<&str>, to: Option<&str>, limit: Option<i64>, offset: Option<i64>) -> Result<types::AdminRefundPage, ClientError> {
+        let path = "/v1/admin/payments/refunds";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = status {
+            query.push(("status", v.to_string()));
+        }
+        if let Some(v) = source {
+            query.push(("source", v.to_string()));
+        }
+        if let Some(v) = from {
+            query.push(("from", v.to_string()));
+        }
+        if let Some(v) = to {
+            query.push(("to", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/admin/products`
     pub async fn admin_products_list(&self) -> Result<Vec<types::AdminProduct>, ClientError> {
         let path = "/v1/admin/products";
@@ -348,11 +808,65 @@ impl Client {
         self.call(Method::PATCH, &path, &query, Some(body)).await
     }
 
+    /// `GET /v1/admin/promo-codes`
+    pub async fn admin_promos_list(&self, q: Option<&str>, state: Option<&str>, limit: Option<i64>, offset: Option<i64>) -> Result<types::AdminPromoPage, ClientError> {
+        let path = "/v1/admin/promo-codes";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = state {
+            query.push(("state", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
     /// `POST /v1/admin/promo-codes`
-    pub async fn admin_create_promo(&self, body: &types::CreatePromoCodeRequest) -> Result<types::PromoCode, ClientError> {
+    pub async fn admin_create_promo(&self, body: &types::CreatePromoCodeRequest) -> Result<types::AdminPromoCode, ClientError> {
         let path = "/v1/admin/promo-codes";
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::POST, path, &query, Some(body)).await
+    }
+
+    /// `PUT /v1/admin/promo-codes/{id}`
+    pub async fn admin_update_promo(&self, id: uuid::Uuid, body: &types::UpdatePromoCodeRequest) -> Result<types::AdminPromoCode, ClientError> {
+        let path = format!("/v1/admin/promo-codes/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, &path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/admin/releases`
+    pub async fn admin_releases(&self) -> Result<types::AdminReleases, ClientError> {
+        let path = "/v1/admin/releases";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/releases/{product}/{version}/prerelease`
+    pub async fn admin_release_prerelease(&self, product: &str, version: &str, body: &types::ReleasePrereleaseRequest) -> Result<types::AdminReleases, ClientError> {
+        let path = format!("/v1/admin/releases/{}/{}/prerelease", seg(product), seg(version));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/admin/releases/{product}/{version}/pull`
+    pub async fn admin_release_pull(&self, product: &str, version: &str, body: &types::ReleasePullRequest) -> Result<types::AdminReleases, ClientError> {
+        let path = format!("/v1/admin/releases/{}/{}/pull", seg(product), seg(version));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/admin/releases/{product}/{version}/restore`
+    pub async fn admin_release_restore(&self, product: &str, version: &str, body: &types::ReleasePullRequest) -> Result<types::AdminReleases, ClientError> {
+        let path = format!("/v1/admin/releases/{}/{}/restore", seg(product), seg(version));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
     }
 
     /// `GET /v1/admin/reports`
@@ -370,6 +884,16 @@ impl Client {
         let path = format!("/v1/admin/reports/{}/resolve", seg(id));
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/admin/search`
+    pub async fn admin_search(&self, q: Option<&str>) -> Result<types::AdminSearchResult, ClientError> {
+        let path = "/v1/admin/search";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
     }
 
     /// `GET /v1/admin/server-listings`
@@ -436,6 +960,19 @@ impl Client {
         self.call(Method::DELETE, &path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/admin/stats`
+    pub async fn admin_stats(&self, from: Option<&str>, to: Option<&str>) -> Result<types::StatsReport, ClientError> {
+        let path = "/v1/admin/stats";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = from {
+            query.push(("from", v.to_string()));
+        }
+        if let Some(v) = to {
+            query.push(("to", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
     /// `PUT /v1/admin/store/trending`
     pub async fn admin_set_trending(&self, body: &types::SetTrendingRequest) -> Result<(), ClientError> {
         let path = "/v1/admin/store/trending";
@@ -443,11 +980,120 @@ impl Client {
         self.call_empty(Method::PUT, path, &query, Some(body)).await
     }
 
+    /// `GET /v1/admin/system`
+    pub async fn admin_system(&self) -> Result<types::SystemHealth, ClientError> {
+        let path = "/v1/admin/system";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/users`
+    pub async fn admin_users_list(&self, q: Option<&str>, role: Option<&str>, status: Option<&str>, sort: Option<&str>, limit: Option<i64>, offset: Option<i64>) -> Result<types::AdminUserPage, ClientError> {
+        let path = "/v1/admin/users";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = q {
+            query.push(("q", v.to_string()));
+        }
+        if let Some(v) = role {
+            query.push(("role", v.to_string()));
+        }
+        if let Some(v) = status {
+            query.push(("status", v.to_string()));
+        }
+        if let Some(v) = sort {
+            query.push(("sort", v.to_string()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/admin/users/{id}`
+    pub async fn admin_user_sheet(&self, id: uuid::Uuid) -> Result<types::AdminUserSheet, ClientError> {
+        let path = format!("/v1/admin/users/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/users/{id}/ban`
+    pub async fn admin_user_ban(&self, id: uuid::Uuid, body: &types::AdminReasonRequest) -> Result<types::Ban, ClientError> {
+        let path = format!("/v1/admin/users/{}/ban", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
     /// `GET /v1/admin/users/{id}/bans`
     pub async fn admin_user_bans(&self, id: uuid::Uuid) -> Result<Vec<types::Ban>, ClientError> {
         let path = format!("/v1/admin/users/{}/bans", seg(id));
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/users/{id}/notes`
+    pub async fn admin_user_note_add(&self, id: uuid::Uuid, body: &types::StaffNoteRequest) -> Result<types::StaffNote, ClientError> {
+        let path = format!("/v1/admin/users/{}/notes", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/admin/users/{id}/notes/{note}`
+    pub async fn admin_user_note_delete(&self, id: uuid::Uuid, note: uuid::Uuid) -> Result<(), ClientError> {
+        let path = format!("/v1/admin/users/{}/notes/{}", seg(id), seg(note));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/users/{id}/resend-verification`
+    pub async fn admin_user_resend_verification(&self, id: uuid::Uuid) -> Result<(), ClientError> {
+        let path = format!("/v1/admin/users/{}/resend-verification", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/users/{id}/reset-2fa`
+    pub async fn admin_user_reset_2fa(&self, id: uuid::Uuid, body: &types::AdminReasonRequest) -> Result<(), ClientError> {
+        let path = format!("/v1/admin/users/{}/reset-2fa", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `PUT /v1/admin/users/{id}/role`
+    pub async fn admin_user_role(&self, id: uuid::Uuid, body: &types::AdminRoleRequest) -> Result<types::AdminUserRow, ClientError> {
+        let path = format!("/v1/admin/users/{}/role", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, &path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/admin/users/{id}/sessions/{session}`
+    pub async fn admin_user_revoke_session(&self, id: uuid::Uuid, session: uuid::Uuid) -> Result<(), ClientError> {
+        let path = format!("/v1/admin/users/{}/sessions/{}", seg(id), seg(session));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/admin/users/{id}/sign-out`
+    pub async fn admin_user_sign_out(&self, id: uuid::Uuid, body: &types::AdminReasonRequest) -> Result<(), ClientError> {
+        let path = format!("/v1/admin/users/{}/sign-out", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/admin/users/{id}/suspend`
+    pub async fn admin_user_suspend(&self, id: uuid::Uuid, body: &types::AdminSuspendRequest) -> Result<types::Ban, ClientError> {
+        let path = format!("/v1/admin/users/{}/suspend", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/admin/users/{id}/unsuspend`
+    pub async fn admin_user_unsuspend(&self, id: uuid::Uuid, body: &types::AdminReasonRequest) -> Result<(), ClientError> {
+        let path = format!("/v1/admin/users/{}/unsuspend", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, &path, &query, Some(body)).await
     }
 
     /// `POST /v1/auth/handoff`
@@ -573,6 +1219,17 @@ impl Client {
     pub async fn avatars_defaults(&self) -> Result<Vec<types::DefaultAvatar>, ClientError> {
         let path = "/v1/avatars/defaults";
         let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/banners`
+    pub async fn banners_public(&self, surface: &str, lang: Option<&str>) -> Result<Vec<types::PublicBanner>, ClientError> {
+        let path = "/v1/banners";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        query.push(("surface", surface.to_string()));
+        if let Some(v) = lang {
+            query.push(("lang", v.to_string()));
+        }
         self.call(Method::GET, path, &query, None::<&()>).await
     }
 
@@ -750,6 +1407,22 @@ impl Client {
         self.call(Method::POST, path, &query, Some(body)).await
     }
 
+    /// `GET /v1/email/unsubscribe`
+    pub async fn email_unsubscribe_page(&self, token: &str) -> Result<(), ClientError> {
+        let path = "/v1/email/unsubscribe";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        query.push(("token", token.to_string()));
+        self.call_empty(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/email/unsubscribe`
+    pub async fn email_unsubscribe(&self, token: &str) -> Result<(), ClientError> {
+        let path = "/v1/email/unsubscribe";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        query.push(("token", token.to_string()));
+        self.call_empty(Method::POST, path, &query, None::<&()>).await
+    }
+
     /// `POST /v1/emotes/playing`
     pub async fn emotes_playing(&self, body: &types::EmotePlayingRequest) -> Result<(), ClientError> {
         let path = "/v1/emotes/playing";
@@ -760,6 +1433,13 @@ impl Client {
     /// `GET /v1/featured-servers`: Staff picks: the featured server listings (ADR 0158) by rank, then any row still active in the legacy table (older back-offices). Player counts come from the cloud's last ping.
     pub async fn featured_servers_list(&self) -> Result<Vec<types::FeaturedServer>, ClientError> {
         let path = "/v1/featured-servers";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/flags`
+    pub async fn flags_public(&self) -> Result<types::PublicFlags, ClientError> {
+        let path = "/v1/flags";
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::GET, path, &query, None::<&()>).await
     }
@@ -904,6 +1584,20 @@ impl Client {
         self.call_empty(Method::DELETE, path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/integrations/discord/actions`
+    pub async fn discord_service_actions(&self) -> Result<Vec<types::DiscordAdminAction>, ClientError> {
+        let path = "/v1/integrations/discord/actions";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/integrations/discord/actions/{id}`
+    pub async fn discord_service_action_done(&self, id: i64, body: &types::DiscordActionResult) -> Result<(), ClientError> {
+        let path = format!("/v1/integrations/discord/actions/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, &path, &query, Some(body)).await
+    }
+
     /// `GET /v1/integrations/discord/contact/{id}`: `GET /v1/integrations/discord/contact/{id}`: the notice the bot posts for the staff (no email address, a short excerpt only).
     pub async fn discord_contact(&self, id: uuid::Uuid) -> Result<types::DiscordContactNotice, ClientError> {
         let path = format!("/v1/integrations/discord/contact/{}", seg(id));
@@ -949,6 +1643,13 @@ impl Client {
         let path = format!("/v1/integrations/discord/servers/{}", seg(id));
         let query: Vec<(&str, String)> = Vec::new();
         self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/integrations/discord/settings`
+    pub async fn discord_service_settings(&self) -> Result<types::DiscordServiceSettings, ClientError> {
+        let path = "/v1/integrations/discord/settings";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
     }
 
     /// `GET /v1/integrations/discord/store/{id}`
@@ -1421,6 +2122,13 @@ impl Client {
         self.call_empty(Method::POST, &path, &query, None::<&()>).await
     }
 
+    /// `PATCH /v1/parties/{id}`
+    pub async fn party_update(&self, id: uuid::Uuid, body: &types::PartySettingsRequest) -> Result<types::Party, ClientError> {
+        let path = format!("/v1/parties/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PATCH, &path, &query, Some(body)).await
+    }
+
     /// `POST /v1/parties/{id}/invites`
     pub async fn party_invite(&self, id: uuid::Uuid, body: &types::UserIdRequest) -> Result<types::PartyInvite, ClientError> {
         let path = format!("/v1/parties/{}/invites", seg(id));
@@ -1447,6 +2155,26 @@ impl Client {
         let path = format!("/v1/parties/{}/leave", seg(id));
         let query: Vec<(&str, String)> = Vec::new();
         self.call_empty(Method::POST, &path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/parties/{id}/messages`
+    pub async fn party_messages(&self, id: uuid::Uuid, before: Option<chrono::DateTime<chrono::Utc>>, limit: Option<i64>) -> Result<Vec<types::PartyMessage>, ClientError> {
+        let path = format!("/v1/parties/{}/messages", seg(id));
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = before {
+            query.push(("before", v.to_rfc3339()));
+        }
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        self.call(Method::GET, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/parties/{id}/messages`
+    pub async fn party_message_send(&self, id: uuid::Uuid, body: &types::SendMessageRequest) -> Result<types::PartyMessage, ClientError> {
+        let path = format!("/v1/parties/{}/messages", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
     }
 
     /// `PUT /v1/presence`
@@ -1775,6 +2503,13 @@ impl Client {
         self.call(Method::POST, path, &query, Some(body)).await
     }
 
+    /// `POST /v1/telemetry/launcher`
+    pub async fn launcher_ping(&self, body: &types::LauncherPing) -> Result<(), ClientError> {
+        let path = "/v1/telemetry/launcher";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::POST, path, &query, Some(body)).await
+    }
+
     /// `GET /v1/users/lookup`: Exact-match lookup before a friend request (ADR 0145). Same checks and error codes as `friend_request_send`, so blocked users and accounts that may not receive requests are indistinguishable (`cannot_add_friend`); the relation is returned instead of the conflicts.
     pub async fn users_lookup(&self, username: Option<&str>, minecraft_name: Option<&str>) -> Result<types::UserLookup, ClientError> {
         let path = "/v1/users/lookup";
@@ -1803,6 +2538,55 @@ impl Client {
         self.call(Method::GET, &path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/voice/servers`
+    pub async fn voice_servers_list(&self) -> Result<Vec<types::VoiceServer>, ClientError> {
+        let path = "/v1/voice/servers";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/voice/servers`
+    pub async fn voice_server_create(&self, body: &types::CreateVoiceServerRequest) -> Result<types::VoiceServerKey, ClientError> {
+        let path = "/v1/voice/servers";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
+    }
+
+    /// `PATCH /v1/voice/servers/{id}`
+    pub async fn voice_server_update(&self, id: uuid::Uuid, body: &types::UpdateVoiceServerRequest) -> Result<types::VoiceServer, ClientError> {
+        let path = format!("/v1/voice/servers/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PATCH, &path, &query, Some(body)).await
+    }
+
+    /// `DELETE /v1/voice/servers/{id}`
+    pub async fn voice_server_delete(&self, id: uuid::Uuid) -> Result<(), ClientError> {
+        let path = format!("/v1/voice/servers/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::DELETE, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/voice/servers/{id}/key`
+    pub async fn voice_server_rotate_key(&self, id: uuid::Uuid) -> Result<types::VoiceServerKey, ClientError> {
+        let path = format!("/v1/voice/servers/{}/key", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, None::<&()>).await
+    }
+
+    /// `POST /v1/voice/servers/{id}/roster`
+    pub async fn voice_server_roster(&self, id: uuid::Uuid, body: &types::VoiceRosterRequest) -> Result<types::VoiceRosterAnswer, ClientError> {
+        let path = format!("/v1/voice/servers/{}/roster", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, &path, &query, Some(body)).await
+    }
+
+    /// `POST /v1/voice/token`
+    pub async fn voice_token(&self, body: &types::VoiceTokenRequest) -> Result<types::VoiceToken, ClientError> {
+        let path = "/v1/voice/token";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::POST, path, &query, Some(body)).await
+    }
+
     /// `GET /v1/wallet`
     pub async fn wallet_get(&self) -> Result<types::Wallet, ClientError> {
         let path = "/v1/wallet";
@@ -1823,6 +2607,13 @@ pub const OPERATIONS: &[&str] = &[
     "health_live",
     "health_ready",
     "admin_audit",
+    "admin_audit_export",
+    "admin_audit_facets",
+    "admin_audit_search",
+    "admin_banners_list",
+    "admin_banner_create",
+    "admin_banner_update",
+    "admin_banner_delete",
     "admin_ban",
     "admin_unban",
     "admin_collections_list",
@@ -1843,10 +2634,35 @@ pub const OPERATIONS: &[&str] = &[
     "admin_create_creator_code",
     "admin_daily_offers_list",
     "admin_set_daily_offers",
+    "admin_discord_overview",
+    "admin_discord_activity",
+    "admin_discord_cases",
+    "admin_discord_case",
+    "admin_discord_case_update",
+    "admin_discord_case_revoke",
+    "admin_discord_settings",
+    "admin_discord_settings_update",
+    "admin_discord_tickets",
+    "admin_emails_list",
+    "admin_email_create",
+    "admin_email_get",
+    "admin_email_update",
+    "admin_email_delete",
+    "admin_email_cancel",
+    "admin_email_send",
+    "admin_email_test",
     "admin_featured_list",
     "admin_featured_create",
     "admin_featured_update",
     "admin_featured_delete",
+    "admin_flags_list",
+    "admin_flag_update",
+    "admin_gdpr_overview",
+    "admin_gdpr_deletion_cancel",
+    "admin_gdpr_deletion_expedite",
+    "admin_gdpr_request_create",
+    "admin_gdpr_request_update",
+    "admin_gdpr_run_export",
     "admin_create_gift_card",
     "admin_items_list",
     "admin_create_item",
@@ -1860,12 +2676,24 @@ pub const OPERATIONS: &[&str] = &[
     "official_add_version",
     "official_upload",
     "admin_refund_order",
+    "admin_orders_list",
+    "admin_orders_export",
+    "admin_order_detail",
+    "admin_order_refund",
+    "admin_refunds_list",
     "admin_products_list",
     "admin_create_product",
     "admin_update_product",
+    "admin_promos_list",
     "admin_create_promo",
+    "admin_update_promo",
+    "admin_releases",
+    "admin_release_prerelease",
+    "admin_release_pull",
+    "admin_release_restore",
     "admin_reports",
     "admin_resolve_report",
+    "admin_search",
     "admin_listings",
     "admin_listing_feature",
     "admin_listing_unfeature",
@@ -1873,8 +2701,22 @@ pub const OPERATIONS: &[&str] = &[
     "admin_listing_unhide",
     "admin_listing_verify",
     "admin_listing_unverify",
+    "admin_stats",
     "admin_set_trending",
+    "admin_system",
+    "admin_users_list",
+    "admin_user_sheet",
+    "admin_user_ban",
     "admin_user_bans",
+    "admin_user_note_add",
+    "admin_user_note_delete",
+    "admin_user_resend_verification",
+    "admin_user_reset_2fa",
+    "admin_user_role",
+    "admin_user_revoke_session",
+    "admin_user_sign_out",
+    "admin_user_suspend",
+    "admin_user_unsuspend",
     "handoff_create",
     "handoff_exchange",
     "auth_login",
@@ -1893,6 +2735,7 @@ pub const OPERATIONS: &[&str] = &[
     "auth_verify_email",
     "auth_resend_verification",
     "avatars_defaults",
+    "banners_public",
     "blocks_list",
     "blocks_add",
     "blocks_remove",
@@ -1914,8 +2757,11 @@ pub const OPERATIONS: &[&str] = &[
     "equipped_get",
     "equipped_set",
     "cosmetics_worn",
+    "email_unsubscribe_page",
+    "email_unsubscribe",
     "emotes_playing",
     "featured_servers_list",
+    "flags_public",
     "friends_list",
     "friend_requests_list",
     "friend_request_send",
@@ -1936,11 +2782,14 @@ pub const OPERATIONS: &[&str] = &[
     "hosting_waitlist_get",
     "hosting_waitlist_join",
     "hosting_waitlist_leave",
+    "discord_service_actions",
+    "discord_service_action_done",
     "discord_contact",
     "discord_content",
     "discord_link_state",
     "discord_profile",
     "discord_server",
+    "discord_service_settings",
     "discord_store",
     "inventory_list",
     "invitations_list",
@@ -2006,10 +2855,13 @@ pub const OPERATIONS: &[&str] = &[
     "party_invites_list",
     "party_invite_accept",
     "party_invite_decline",
+    "party_update",
     "party_invite",
     "party_kick",
     "party_transfer_leader",
     "party_leave",
+    "party_messages",
+    "party_message_send",
     "presence_update",
     "profile_get",
     "minecraft_lookup_batch",
@@ -2051,9 +2903,17 @@ pub const OPERATIONS: &[&str] = &[
     "premium_waitlist_leave",
     "store_product",
     "store_quote",
+    "launcher_ping",
     "users_lookup",
     "users_search",
     "users_get",
+    "voice_servers_list",
+    "voice_server_create",
+    "voice_server_update",
+    "voice_server_delete",
+    "voice_server_rotate_key",
+    "voice_server_roster",
+    "voice_token",
     "wallet_get",
     "wallet_redeem",
 ];

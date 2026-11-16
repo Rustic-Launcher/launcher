@@ -5,6 +5,9 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { normaliseLanguage, type Language } from '@/i18n';
 import type { Currency } from '@/ipc/types/dns';
 
+/** The game the Launchpad shows (ADR 0172): the Rustic edition, the official Java or Bedrock edition. */
+export type LaunchpadEdition = 'rustic' | 'java' | 'bedrock';
+
 export interface PrefsState {
   theme: ThemePreference;
   palette: PaletteId;
@@ -19,6 +22,10 @@ export interface PrefsState {
   serversLayout: 'list' | 'grid';
   /** Profiles page: visual grid or dense list. */
   profilesLayout: 'list' | 'grid';
+  /** The Launchpad's game switcher (remembered between sessions). */
+  launchpadEdition: LaunchpadEdition;
+  /** The Java Launchpad's selected profile. */
+  javaProfileId: string | null;
   setTheme: (t: ThemePreference) => void;
   setPalette: (p: PaletteId) => void;
   setLanguage: (l: Language) => void;
@@ -28,6 +35,8 @@ export interface PrefsState {
   setContentLayout: (v: 'list' | 'grid') => void;
   setServersLayout: (v: 'list' | 'grid') => void;
   setProfilesLayout: (v: 'list' | 'grid') => void;
+  setLaunchpadEdition: (v: LaunchpadEdition) => void;
+  setJavaProfileId: (id: string | null) => void;
 }
 
 export const usePrefs = create<PrefsState>()(
@@ -42,6 +51,8 @@ export const usePrefs = create<PrefsState>()(
       contentLayout: 'list',
       serversLayout: 'grid',
       profilesLayout: 'grid',
+      launchpadEdition: 'rustic',
+      javaProfileId: null,
       setTheme: (theme) => set({ theme }),
       setPalette: (palette) => set({ palette }),
       setLanguage: (language) => set({ language }),
@@ -51,6 +62,8 @@ export const usePrefs = create<PrefsState>()(
       setContentLayout: (contentLayout) => set({ contentLayout }),
       setServersLayout: (serversLayout) => set({ serversLayout }),
       setProfilesLayout: (profilesLayout) => set({ profilesLayout }),
+      setLaunchpadEdition: (launchpadEdition) => set({ launchpadEdition }),
+      setJavaProfileId: (javaProfileId) => set({ javaProfileId }),
     }),
     {
       name: 'rustic.prefs',
@@ -71,6 +84,8 @@ export const usePrefs = create<PrefsState>()(
         contentLayout,
         serversLayout,
         profilesLayout,
+        launchpadEdition,
+        javaProfileId,
       }) => ({
         theme,
         palette,
@@ -81,6 +96,8 @@ export const usePrefs = create<PrefsState>()(
         contentLayout,
         serversLayout,
         profilesLayout,
+        launchpadEdition,
+        javaProfileId,
       }),
     },
   ),

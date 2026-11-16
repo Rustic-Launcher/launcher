@@ -1,0 +1,113 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Trin {{current}} af {{total}}",
+  "back": "Tilbage",
+  "continue": "Fortsæt",
+  "skip": "Spring over for nu",
+  "steps": {
+    "welcome": "Velkommen",
+    "microsoft": "Microsoft",
+    "rustic": "Rustic-konto",
+    "privacy": "Privatliv",
+    "game": "Spilfiler",
+    "ready": "Klar"
+  },
+  "welcome": {
+    "title": "Velkommen til Rustic",
+    "subtitle": "En hurtig, social launcher til Horizon. Et par valg, så er du i spillet.",
+    "language": "Sprog",
+    "theme": "Tema",
+    "palette": "Farvepalet"
+  },
+  "microsoft": {
+    "title": "Log ind med Microsoft",
+    "subtitle": "Rustic tjekker hos Microsoft, at du ejer spillet. Din adgangskode kommer aldrig i nærheden af Rustic.",
+    "signedInAs": "Logget ind som {{name}}",
+    "ownershipOk": "Ejerskab bekræftet: du kan spille.",
+    "notOwnedTitle": "Du skal have Minecraft: Java Edition",
+    "notOwnedBody": "Denne Microsoft-konto ejer ikke spillet. Rustic starter aldrig spillet uden en licens.",
+    "buyGame": "Køb spillet",
+    "whyTitle": "Hvorfor?",
+    "whyBody": "Det er et krav, at du ejer spillet. Horizon forbereder spilfilerne fra din egen installation, og offlineprofiler låses først op efter dette tjek."
+  },
+  "rustic": {
+    "title": "Din Rustic-konto",
+    "subtitle": "Valgfri. Spillet fungerer uden den; du kan logge ind senere under Indstillinger.",
+    "perks": {
+      "friends": {
+        "title": "Venner og grupper",
+        "body": "Se, hvem der er online, og deltag med ét klik."
+      },
+      "locker": {
+        "title": "Skab",
+        "body": "Kosmetik på din spiller, rent visuelt."
+      },
+      "servers": {
+        "title": "Dine servere online",
+        "body": "En gratis adresse og domæner til de servere, du er vært for."
+      }
+    },
+    "signedInAs": "Logget ind som {{name}}",
+    "signIn": "Log ind eller opret en konto",
+    "skipHint": "Eller tryk på Fortsæt for at springe over for nu.",
+    "age": "Rustic-konti er for personer på {{min}} år og derover. Under {{consent}} år skal en forælder give samtykke til databehandling; under 18 år kræver køb en forælders godkendelse."
+  },
+  "privacy": {
+    "title": "Dine valg om privatliv",
+    "subtitle": "Alt er slået fra. Slå kun det til, du gerne vil dele; du kan altid ændre det under Indstillinger.",
+    "usage": {
+      "title": "Brugsstatistik",
+      "body": "Hvilke sider og funktioner der bruges, uden indhold eller identifikatorer."
+    },
+    "performance": {
+      "title": "Ydelsesrapporter",
+      "body": "Start- og billedtider, så langsomme steder kan findes."
+    },
+    "crash": {
+      "title": "Nedbrudsrapporter",
+      "body": "Sendes automatisk, når spillet eller launcheren går ned. Når det er slået fra, spørger Rustic hver gang."
+    },
+    "note": "Vi sælger aldrig data og deler dem aldrig til annoncering.",
+    "policy": "Læs privatlivspolitikken"
+  },
+  "game": {
+    "title": "Gør spillet klar",
+    "subtitle": "Rustic bruger spilfilerne fra din egen installation (eller henter det, der mangler, fra Mojang) og forbereder dem derefter til Horizon.",
+    "detecting": "Leder efter din spilinstallation…",
+    "found": "Spil fundet ({{versions}})",
+    "notFound": "Ingen installation fundet",
+    "notFoundBody": "Rustic henter spilfilerne fra Mojang til din konto.",
+    "prepareTitle": "Forbered spilfiler",
+    "alreadyReady": "Allerede forberedt",
+    "done": "Forberedt",
+    "prepareAgain": "Forbered igen",
+    "prepare": "Forbered",
+    "steps": {
+      "detect": "Find",
+      "download": "Download",
+      "verify": "Bekræft",
+      "compile_exporters": "Eksportører",
+      "export": "Eksport",
+      "index": "Indeks"
+    },
+    "explain": "Manglende spilfiler kommer fra Mojangs egne servere, intet fra tredjeparter: de forberedte filer bliver på denne computer.",
+    "background": "Du kan fortsætte: forberedelsen kører videre i baggrunden.",
+    "prepareFailed": "Spilfilerne kunne ikke forberedes: {{reason}}"
+  },
+  "ready": {
+    "title": "Du er klar",
+    "subtitle": "Opret din første instans nu, eller spring over og gør det senere.",
+    "finish": "Åbn Rustic",
+    "defaultName": "Min første verden",
+    "createTitle": "Opret min første instans",
+    "recommended": "Anbefalet",
+    "nameLabel": "Instansens navn",
+    "existing_one": "Du har allerede {{count}} instans.",
+    "existing_other": "Du har allerede {{count}} instanser.",
+    "tips": {
+      "play": "SPIL er altid nederst til højre.",
+      "friends": "Dine venner er til højre; Deltag kræver ét klik.",
+      "servers": "Vær vært for en server for dine venner fra siden Servere."
+    }
+  }
+}

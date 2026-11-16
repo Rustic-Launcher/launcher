@@ -387,12 +387,19 @@ impl Builder {
             0.0,
             "Installing the built client",
         ));
+        // The built mods' content (a combined `.hmod`'s sounds, textures...), loaded by the game.
+        let contents: Vec<&Bundle> = mods
+            .iter()
+            .filter(|(m, _)| built.iter().any(|b| b.id == m.id))
+            .map(|(_, b)| b)
+            .collect();
         let (client, client_bytes) = install_client(
             &req.instance_dir,
             &program,
             &req.base_build_dir,
             &stage_root.join(source::HORIZON),
             &built,
+            &contents,
             &req.base_build,
             &prepared.horizon_commit,
         )?;
@@ -461,15 +468,21 @@ fn shorten(text: &str, max: usize) -> String {
 /// own content) and its licence.
 const BESIDE: &[&str] = &["mods", "LICENSE"];
 
-/// Puts the built `program` into `<instance>/native/bin/` with what it reads beside itself, then
-/// swaps it in place of the previous build. Returns the client's path (relative to
-/// `<instance>/native/`) and size.
+/// Where the built client finds its mods' content (Horizon's `game/mods.rs`, `content_root`).
+pub const NATIVE_CONTENT: &str = "native-content";
+
+/// Puts the built `program` into `<instance>/native/bin/` with what it reads beside itself (the
+/// combined mods' content in `native-content/<id>/`, owned by this build: a later update of the
+/// installed file cannot change it), then swaps it in place of the previous build. Returns the
+/// client's path (relative to `<instance>/native/`) and size.
+#[allow(clippy::too_many_arguments)]
 pub fn install_client(
     instance_dir: &Path,
     program: &Path,
     base_build_dir: &Path,
     stage_horizon: &Path,
     built: &[ModRef],
+    contents: &[&Bundle],
     base_build: &str,
     horizon_commit: &str,
 ) -> Result<(String, u64)> {
@@ -492,6 +505,9 @@ pub fn install_client(
     let data = stage_horizon.join("native-data");
     if data.is_dir() {
         copy_dir(&data, &next.join("native-data"))?;
+    }
+    for bundle in contents {
+        bundle.install_content(&next.join(NATIVE_CONTENT))?;
     }
     let info = serde_json::json!({
         "mods": built.iter().map(|m| serde_json::json!({"id": m.id, "version": m.version})).collect::<Vec<_>>(),
@@ -553,12 +569,21 @@ mod tests {
             version: "2.0.0".into(),
             sha256: "x".into(),
         }];
+        let combined = crate::bundle::Bundle::from_bytes(&crate::bundle::tests::hnmod(
+            "zoom",
+            &[
+                ("horizon-mod.toml", b"id = \"zoom\"\n"),
+                ("assets/zoom/sounds.json", b"{}"),
+            ],
+        ))
+        .unwrap();
         let (rel, size) = install_client(
             &inst,
             &program,
             &base,
             &stage,
             &built,
+            &[&combined],
             "rustic-edition-x",
             "abc",
         )
@@ -570,6 +595,11 @@ mod tests {
         assert!(bin.join("LICENSE").is_file());
         assert!(!bin.join("horizon-server.exe").exists());
         assert!(bin.join("native-data/zoom/a.bin").is_file());
+        assert!(bin.join("native-content/zoom/horizon-mod.toml").is_file());
+        assert!(
+            bin.join("native-content/zoom/assets/zoom/sounds.json")
+                .is_file()
+        );
         let info: serde_json::Value =
             serde_json::from_slice(&std::fs::read(bin.join(instance::BUILD_INFO)).unwrap())
                 .unwrap();
@@ -581,10 +611,15 @@ mod tests {
             &base,
             &stage,
             &built,
+            &[],
             "rustic-edition-x",
             "abc",
         )
         .unwrap();
+        assert!(
+            !bin.join("native-content").exists(),
+            "a build without the mod keeps none of its content"
+        );
         assert_eq!(
             std::fs::read_to_string(bin.join(crate::exe("rustic-client"))).unwrap(),
             "client-2"

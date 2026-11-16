@@ -217,12 +217,12 @@ export function UpdatesCard({
       </SettingRow>
       <div className="mt-3 flex flex-wrap items-center justify-end gap-3">
         {stateText && (
-          <span className="text-fg-muted mr-auto text-sm" role="status">
+          <span className="text-fg-muted me-auto text-sm" role="status">
             {stateText}
           </span>
         )}
         {!stateText && status?.error && (
-          <span className="text-warning-text mr-auto text-sm" title={status.error ?? undefined}>
+          <span className="text-warning-text me-auto text-sm" title={status.error ?? undefined}>
             {t('launcher.updates.lastError')}
           </span>
         )}

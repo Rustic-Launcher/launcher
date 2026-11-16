@@ -100,7 +100,8 @@
       "appearance": "Appearance",
       "privacy": "Privacy & data",
       "parental": "Parental controls",
-      "about": "About"
+      "about": "About",
+      "voice": "Voice"
     }
   },
   "friends": {
@@ -194,7 +195,30 @@
     "leader": "Party leader",
     "pending": "{{name}} (invited)",
     "invite": "Invite to party",
-    "invited": "{{name}} was invited to your party"
+    "invited": "{{name}} was invited to your party",
+    "invitesTitle": "Party invites",
+    "invitedBy": "{{name}} invites you to their party",
+    "accept": "Join",
+    "decline": "Decline",
+    "makeLeader": "Make party leader",
+    "kick": "Remove from the party",
+    "proximity": "Proximity voice",
+    "proximityHint": "Members on the same server hear each other by distance",
+    "range": "Range (blocks)",
+    "emptyTitle": "No party yet",
+    "emptyBody": "Create a party, then invite friends from their menu in the Friends tab.",
+    "create": "Create a party",
+    "inviteHint": "Invite friends from their menu in the Friends tab.",
+    "chatTitle": "Party chat",
+    "chatEmpty": "Join or create a party to chat with its members.",
+    "chatPlaceholder": "Message the party",
+    "formerMember": "Former member",
+    "errors": {
+      "party_full": "The party is full.",
+      "party_not_allowed": "This player can't be in this party: players under 18 only join parties of their friends.",
+      "already_in_party": "Leave your current party first.",
+      "not_party_leader": "Only the party leader can do this."
+    }
   },
   "presence": {
     "online": "Online",
@@ -432,6 +456,48 @@
       "updated": "Rustic Launcher updated to {{version}}",
       "resuming": "Update done: launching your game",
       "failed": "The update could not be installed. It will be retried later."
+    }
+  },
+  "voice": {
+    "title": "Voice",
+    "join": "Join voice",
+    "leave": "Leave voice",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "deafen": "Deafen",
+    "undeafen": "Undeafen",
+    "speaking": "Speaking",
+    "micMuted": "Muted",
+    "outOfRange": "Out of range",
+    "muteFor": "Mute {{name}} for you",
+    "unmuteFor": "Unmute {{name}} for you",
+    "reportAria": "Report {{name}}",
+    "memberVolume": "Volume of {{name}}",
+    "report": "Report",
+    "reportTitle": "Report {{name}}?",
+    "reportBody": "Our moderators will review the report. Voice is never recorded. This player is muted for you right away.",
+    "reported": "{{name}} was reported",
+    "reasons": {
+      "harassment": "Harassment or hate",
+      "inappropriate_content": "Inappropriate content",
+      "spam": "Spam or noise",
+      "other": "Something else"
+    },
+    "proximityOn": "proximity, range {{range}}",
+    "you": "You",
+    "listenOnly": "Listening only",
+    "alone": "Nobody else in voice yet.",
+    "serverOffer": "{{server}} has proximity voice",
+    "serverRoom": "Server voice",
+    "partyRoom": "Party voice",
+    "errors": {
+      "voice_unavailable": "Voice is not available right now. Try again later.",
+      "voice_not_allowed": "Voice is not available for your account.",
+      "mic_denied": "Microphone access was refused: you can listen but not talk. Allow it in your system's privacy settings.",
+      "mic_missing": "No microphone found: you can listen but not talk.",
+      "connect_failed": "Could not connect to voice. Check your connection and try again.",
+      "kicked": "You were removed from the voice room.",
+      "not_on_voice_server": "This server has no proximity voice."
     }
   }
 }

@@ -13,7 +13,8 @@
     "appearance": "Görünüm",
     "privacy": "Gizlilik ve veriler",
     "parental": "Ebeveyn denetimleri",
-    "about": "Hakkında ve yasal"
+    "about": "Hakkında ve yasal",
+    "voice": "Sesli sohbet"
   },
   "accounts": {
     "active": "Etkin",
@@ -95,7 +96,8 @@
       "description": "Arkadaşlar, Dolap, satın almalar ve sunucular için Rustic kimliğin.",
       "signedOut": "Giriş yapılmadı. Oyun onsuz çalışır; sosyal özellikler, Dolap ve Mağaza için gereklidir.",
       "signIn": "Giriş yap veya hesap oluştur",
-      "licenceNote": "Rustic hesabı bir platform kimliğidir. Oyun lisansının yerini asla tutmaz: yine de oyuna sahip bir Microsoft hesabına ihtiyacın var."
+      "licenceNote": "Rustic hesabı bir platform kimliğidir. Oyun lisansının yerini asla tutmaz: yine de oyuna sahip bir Microsoft hesabına ihtiyacın var.",
+      "manageOnWeb": "Web sitesinde yönet"
     },
     "offline": {
       "title": "Çevrimdışı oyun",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Girişi tarayıcında tamamla: başlatıcı oturumunu otomatik olarak alır."
   },
   "heading": "Senin *ayarların*",
-  "eyebrow": "Başlatıcı"
+  "eyebrow": "Başlatıcı",
+  "voice": {
+    "devices": "Cihazlar",
+    "devicesHint": "Sesli sohbet için kullanılan mikrofon ve hoparlör ya da kulaklık.",
+    "input": "Mikrofon",
+    "output": "Çıkış",
+    "outputVolume": "Çıkış ses düzeyi",
+    "systemDefault": "Sistem varsayılanı",
+    "deviceN": "Cihaz {{n}}",
+    "talk": "Konuşma",
+    "talkHint": "Sesin algılandığında konuş ya da yalnızca bir tuşu basılı tutarken.",
+    "mode": "Giriş modu",
+    "modeVad": "Ses etkinliği",
+    "modePtt": "Bas konuş",
+    "pttKey": "Bas konuş tuşu",
+    "pttKeyHint": "Başlatıcıda ve oyunda çalışır. Farenin yan tuşları da olur.",
+    "pressKey": "Bir tuşa bas…",
+    "sensitivity": "Hassasiyet",
+    "sensitivityHint": "Yüksek değer daha kısık sesleri yakalar; düşük değer daha çok arka plan gürültüsünü yok sayar.",
+    "test": "Mikrofon testi",
+    "testMic": "Test et",
+    "stopTest": "Durdur",
+    "level": "Mikrofon düzeyi",
+    "micDenied": "Mikrofon erişimi reddedildi. Sisteminin gizlilik ayarlarından izin ver, sonra tekrar dene.",
+    "micMissing": "Mikrofon bulunamadı.",
+    "noiseSuppression": "Gürültü bastırma",
+    "echoCancellation": "Yankı engelleme",
+    "autoGain": "Otomatik kazanç",
+    "inGame": "Oyunda",
+    "inGameHint": "Rustic sürümüyle bir katman kimin konuştuğunu gösterir ve bas konuş tuşu oyunda çalışır.",
+    "overlay": "Sesli sohbet katmanını oyunda göster",
+    "serverVoice": "Sunucularda yakınlık sesi",
+    "serverVoiceHint": "Rustic Server'lar oradaki tüm oyuncularla mesafeye göre ses sunabilir. 18 yaş altında bir vasinin izin vermesi gerekir.",
+    "serverAsk": "Bana sor",
+    "serverAuto": "Otomatik katıl",
+    "serverOff": "Asla",
+    "servers": {
+      "title": "Sunucuların için yakınlık sesi",
+      "description": "Bir sunucu ekle, sonra anahtarını proximity-voice eklentisinin config.toml dosyasına yaz. İstediğin zaman kapatabilirsin.",
+      "namePlaceholder": "Sunucu adı",
+      "add": "Ekle",
+      "status": "Çevrimiçi oyuncu: {{count}}",
+      "enabled": "{{name}} için yakınlık sesi",
+      "newKey": "Yeni anahtar",
+      "remove": "{{name}} sunucusunu kaldır",
+      "keyOnce": "Bu anahtarı şimdi kopyala: yalnızca bir kez gösterilir. Yeni bir anahtar onun yerini alır.",
+      "tooMany": "En fazla 10 sunucu ekleyebilirsin."
+    }
+  }
 }

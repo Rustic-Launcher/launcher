@@ -100,7 +100,8 @@
       "appearance": "Megjelenés",
       "privacy": "Adatvédelem és adatok",
       "parental": "Szülői felügyelet",
-      "about": "Névjegy"
+      "about": "Névjegy",
+      "voice": "Hangcsevegés"
     }
   },
   "friends": {
@@ -194,7 +195,30 @@
     "leader": "Csapatvezető",
     "pending": "{{name}} (meghívva)",
     "invite": "Meghívás a csapatba",
-    "invited": "{{name}} meghívást kapott a csapatodba"
+    "invited": "{{name}} meghívást kapott a csapatodba",
+    "invitesTitle": "Csapatmeghívások",
+    "invitedBy": "{{name}} meghív a csapatába",
+    "accept": "Csatlakozás",
+    "decline": "Elutasítás",
+    "makeLeader": "Legyen a csapat vezetője",
+    "kick": "Eltávolítás a csapatból",
+    "proximity": "Közelségi hang",
+    "proximityHint": "Az ugyanazon a szerveren lévő tagok a távolság szerint hallják egymást",
+    "range": "Hatótáv (blokk)",
+    "emptyTitle": "Még nincs csapatod",
+    "emptyBody": "Hozz létre egy csapatot, majd hívd meg a barátaidat a menüjükből a Barátok fülön.",
+    "create": "Csapat létrehozása",
+    "inviteHint": "A barátaidat a menüjükből hívhatod meg a Barátok fülön.",
+    "chatTitle": "Csapatcsevegés",
+    "chatEmpty": "Csatlakozz egy csapathoz, vagy hozz létre egyet, hogy csevegj a tagjaival.",
+    "chatPlaceholder": "Üzenet a csapatnak",
+    "formerMember": "Korábbi tag",
+    "errors": {
+      "party_full": "A csapat megtelt.",
+      "party_not_allowed": "Ez a játékos nem lehet ebben a csapatban: a 18 év alattiak csak a barátaik csapatához csatlakoznak.",
+      "already_in_party": "Előbb lépj ki a jelenlegi csapatodból.",
+      "not_party_leader": "Ezt csak a csapat vezetője teheti meg."
+    }
   },
   "presence": {
     "online": "Online",
@@ -432,6 +456,48 @@
       "updated": "Rustic Launcher frissítve. Új verzió: {{version}}",
       "resuming": "A frissítés kész: indul a játékod",
       "failed": "A frissítést nem sikerült telepíteni. Később újra próbálkozunk."
+    }
+  },
+  "voice": {
+    "title": "Hangcsevegés",
+    "join": "Csatlakozás a hanghoz",
+    "leave": "Kilépés a hangból",
+    "mute": "Mikrofon némítása",
+    "unmute": "Mikrofon bekapcsolása",
+    "deafen": "Hang kikapcsolása",
+    "undeafen": "Hang bekapcsolása",
+    "speaking": "Beszél",
+    "micMuted": "Némítva",
+    "outOfRange": "Hatótávon kívül",
+    "muteFor": "{{name}} némítása magadnak",
+    "unmuteFor": "{{name}} újra hallható",
+    "reportAria": "{{name}} jelentése",
+    "memberVolume": "{{name}} hangereje",
+    "report": "Jelentés",
+    "reportTitle": "Jelented: {{name}}?",
+    "reportBody": "A moderátoraink átnézik a jelentést. A hangot soha nem rögzítjük. Ezt a játékost azonnal lenémítjuk neked.",
+    "reported": "{{name}} jelentve",
+    "reasons": {
+      "harassment": "Zaklatás vagy gyűlöletkeltés",
+      "inappropriate_content": "Nem helyénvaló tartalom",
+      "spam": "Spam vagy zaj",
+      "other": "Valami más"
+    },
+    "proximityOn": "közelségi, hatótáv {{range}}",
+    "you": "Te",
+    "listenOnly": "Csak hallgatás",
+    "alone": "Még senki más nincs a hangcsevegésben.",
+    "serverOffer": "{{server}} közelségi hangot kínál",
+    "serverRoom": "Szerver hangcsevegése",
+    "partyRoom": "Csapat hangcsevegése",
+    "errors": {
+      "voice_unavailable": "A hangcsevegés most nem érhető el. Próbáld újra később.",
+      "voice_not_allowed": "A hangcsevegés nem érhető el a fiókodhoz.",
+      "mic_denied": "A mikrofonhoz való hozzáférés el lett utasítva: hallgatni tudsz, beszélni nem. Engedélyezd a rendszer adatvédelmi beállításaiban.",
+      "mic_missing": "Nem található mikrofon: hallgatni tudsz, beszélni nem.",
+      "connect_failed": "Nem sikerült csatlakozni a hanghoz. Ellenőrizd a kapcsolatot, és próbáld újra.",
+      "kicked": "Eltávolítottak a hangszobából.",
+      "not_on_voice_server": "Ezen a szerveren nincs közelségi hang."
     }
   }
 }

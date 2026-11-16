@@ -4,6 +4,11 @@
 //! limits on what may be inside, then unpacked for horizon-mixins with the bundle re-pinned to the
 //! build's Horizon commit (its `[compatibility] horizon_revision`, which horizon-mixins checks), as
 //! Horizon's launcher does for mods that name hook points rather than a commit.
+//!
+//! A combined `.hmod` also carries content beside the bundle (`horizon-mod.toml`, `assets/`,
+//! `data/`: its sounds, textures, lang files...). That part is not compiled: it is kept here and
+//! snapshotted beside the built client (`native-content/<id>/`), where the game loads it as a
+//! content mod, as Horizon's launcher does (`native_mods/source.rs`, `install_content`).
 use crate::error::{IoContext, NativeError, Result};
 use serde::{Deserialize, Serialize};
 use std::io::Read;
@@ -44,7 +49,18 @@ pub struct Bundle {
     pub sha256: String,
     /// The bundle's files under `mixins/<id>/`, relative to that folder.
     files: Vec<(String, Vec<u8>)>,
+    /// A combined mod's content (`horizon-mod.toml`, `assets/...`, `data/...`), relative to the
+    /// archive's root; empty for a code-only mod.
+    content: Vec<(String, Vec<u8>)>,
 }
+
+/// A combined mod's content entry: its manifest, or a file under `assets/` or `data/`.
+fn content_entry(name: &str) -> bool {
+    name == CONTENT_MANIFEST || name.starts_with("assets/") || name.starts_with("data/")
+}
+
+/// A content mod's manifest (Horizon's `horizon_mods::manifest::MANIFEST`).
+pub const CONTENT_MANIFEST: &str = "horizon-mod.toml";
 
 /// A mod id as Horizon allows them: lowercase letters, digits, `_` and `-`, 1 to 64.
 pub fn valid_id(id: &str) -> bool {
@@ -127,12 +143,16 @@ impl Bundle {
         }
         let prefix = format!("mixins/{}/", manifest.id);
         let mut files = Vec::new();
+        let mut content = Vec::new();
         for (name, data) in entries {
             let Some(rel) = name.strip_prefix(&prefix) else {
                 if name.starts_with("mixins/") {
                     return Err(format!("{name}: outside mixins/{}/", manifest.id));
                 }
-                // A combined mod's content (`horizon-mod.toml`, assets): not part of the build.
+                // A combined mod's content: not part of the build, installed beside the client.
+                if content_entry(&name) {
+                    content.push((name, data));
+                }
                 continue;
             };
             let in_data = rel.starts_with("data/") || rel.contains("/data/");
@@ -148,15 +168,42 @@ impl Bundle {
             return Err(format!("no {prefix}{MIXIN_MANIFEST}"));
         }
         files.sort();
+        // Content without its manifest is not a content mod: the game would not load it.
+        if !content.iter().any(|(n, _)| n == CONTENT_MANIFEST) {
+            content.clear();
+        }
+        content.sort();
         Ok(Self {
             manifest,
             sha256,
             files,
+            content,
         })
     }
 
     pub fn id(&self) -> &str {
         &self.manifest.id
+    }
+
+    /// A combined mod's content files (relative to the archive's root), none for code only.
+    pub fn content(&self) -> &[(String, Vec<u8>)] {
+        &self.content
+    }
+
+    /// Writes the content into `<dir>/<id>/`, the folder the game loads as a content mod.
+    pub fn install_content(&self, dir: &Path) -> Result<()> {
+        if self.content.is_empty() {
+            return Ok(());
+        }
+        let root = dir.join(self.id());
+        for (rel, data) in &self.content {
+            let to = root.join(rel);
+            if let Some(parent) = to.parent() {
+                std::fs::create_dir_all(parent).at(parent)?;
+            }
+            std::fs::write(&to, data).at(&to)?;
+        }
+        Ok(())
     }
 
     /// Unpacks the bundle into `<mods>/<id>/`, its `horizon_revision` set to `commit`.
@@ -290,12 +337,34 @@ pub(crate) mod tests {
             let err = Bundle::from_bytes(&bytes).unwrap_err();
             assert!(err.contains(why), "{name}: {err}");
         }
-        // Content files of a combined mod are allowed and ignored.
+        // Content files of a combined mod are allowed and kept apart from the bundle.
         let bytes = hnmod(
             "x",
-            &[("horizon-mod.toml", b"[mod]\n"), ("assets/a.png", b"p")],
+            &[
+                ("horizon-mod.toml", b"[mod]\n"),
+                ("assets/x/a.png", b"p"),
+                ("data/x/tags/t.json", b"{}"),
+                ("README.md", b"not content"),
+            ],
         );
-        assert!(Bundle::from_bytes(&bytes).is_ok());
+        let b = Bundle::from_bytes(&bytes).unwrap();
+        let names: Vec<&str> = b.content().iter().map(|(n, _)| n.as_str()).collect();
+        assert_eq!(
+            names,
+            ["assets/x/a.png", "data/x/tags/t.json", "horizon-mod.toml"]
+        );
+        let t = tempfile::tempdir().unwrap();
+        b.install_content(t.path()).unwrap();
+        assert_eq!(
+            std::fs::read(t.path().join("x/assets/x/a.png")).unwrap(),
+            b"p"
+        );
+        assert!(t.path().join("x/horizon-mod.toml").is_file());
+        let unpacked = b.unpack_for(&t.path().join("mods"), "abc").unwrap();
+        assert!(!unpacked.join("assets").exists(), "content is not compiled");
+        // Assets without a manifest are no content mod.
+        let b = Bundle::from_bytes(&hnmod("y", &[("assets/y/a.png", b"p")])).unwrap();
+        assert!(b.content().is_empty());
         assert!(Bundle::from_bytes(b"not a zip").is_err());
     }
 

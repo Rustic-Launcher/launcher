@@ -92,7 +92,7 @@ export function Carousel<T>({
             type="button"
             aria-label={prevLabel}
             onClick={() => go(index - 1, -1)}
-            className="rx-focus-ring rx-glass text-fg absolute top-1/2 left-3 grid size-9 -translate-y-1/2 place-items-center rounded-full opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100"
+            className="rx-focus-ring rx-glass text-fg absolute start-3 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-full opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100"
           >
             <ChevronLeft className="size-4.5" />
           </button>
@@ -100,11 +100,11 @@ export function Carousel<T>({
             type="button"
             aria-label={nextLabel}
             onClick={() => go(index + 1, 1)}
-            className="rx-focus-ring rx-glass text-fg absolute top-1/2 right-3 grid size-9 -translate-y-1/2 place-items-center rounded-full opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100"
+            className="rx-focus-ring rx-glass text-fg absolute end-3 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-full opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100"
           >
             <ChevronRight className="size-4.5" />
           </button>
-          <div className="absolute right-5 bottom-4 flex gap-1.5">
+          <div className="absolute end-5 bottom-4 flex gap-1.5">
             {items.map((it, i) => (
               <button
                 key={getKey(it)}

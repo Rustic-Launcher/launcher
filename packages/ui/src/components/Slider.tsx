@@ -57,8 +57,8 @@ export function Slider({
           {warnAbove != null && (
             <span
               aria-hidden
-              className="bg-warning/25 absolute inset-y-0 right-0"
-              style={{ left: `${pct(warnAbove)}%` }}
+              className="bg-warning/25 absolute inset-y-0 end-0"
+              style={{ insetInlineStart: `${pct(warnAbove)}%` }}
             />
           )}
           <S.Range
@@ -76,8 +76,8 @@ export function Slider({
           {marks.map((m) => (
             <span
               key={m.value}
-              className="absolute -translate-x-1/2 tabular-nums"
-              style={{ left: `${pct(m.value)}%` }}
+              className="absolute -translate-x-1/2 tabular-nums rtl:translate-x-1/2"
+              style={{ insetInlineStart: `${pct(m.value)}%` }}
             >
               {m.label ?? formatValue(m.value)}
             </span>

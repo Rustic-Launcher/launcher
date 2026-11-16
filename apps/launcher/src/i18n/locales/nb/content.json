@@ -1,0 +1,474 @@
+{
+  "title": "Utforsk",
+  "subtitle": "Mods, pakker, shadere og programtillegg fra Horizon, Modrinth og Rustic, sjekket mot instansen din.",
+  "kindsLabel": "Innholdstyper",
+  "kinds": {
+    "mod": "Mods",
+    "modpack": "Modpakker",
+    "resourcepack": "Ressurspakker",
+    "shader": "Shadere",
+    "datapack": "Datapakker",
+    "plugin": "Programtillegg"
+  },
+  "searchLabel": "Søk i innhold",
+  "clear": "Tøm søket",
+  "by": "av {{author}}",
+  "featured": "Utvalgt",
+  "downloads": "{{value}} nedlastinger",
+  "updated": "oppdatert {{when}}",
+  "results_one": "{{count}} resultat",
+  "results_other": "{{count}} resultater",
+  "loadMore": "Last inn flere ({{shown}} av {{total}})",
+  "target": {
+    "label": "Installerer i",
+    "none": "Velg et mål",
+    "serverDescription": "{{engine}} · {{hosting}}"
+  },
+  "engine": {
+    "horizon": "Horizon-server",
+    "rustic": "Rustic Server"
+  },
+  "hosting": {
+    "local": "Denne PC-en",
+    "vps": "Din VPS",
+    "cloud": "Rustic Cloud"
+  },
+  "sort": {
+    "label": "Sorter etter",
+    "relevance": "Relevans",
+    "downloads": "Mest nedlastet",
+    "updated": "Nylig oppdatert",
+    "newest": "Nyeste"
+  },
+  "sources": {
+    "label": "Kilder",
+    "horizon": "Horizon",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic"
+  },
+  "sourceLong": {
+    "horizon": "Horizon-registeret",
+    "modrinth": "Modrinth",
+    "rustic": "Rustic-katalogen"
+  },
+  "filters": {
+    "category": "Kategori",
+    "allCategories": "Alle kategorier",
+    "compatibleInstance": "Kompatibel med denne instansen",
+    "compatibleServer": "Kompatibel med denne serveren",
+    "worksNow": "Bygges på nåværende Horizon",
+    "categories": "Kategorier",
+    "viewMore_one": "Vis {{count}} til",
+    "viewMore_other": "Vis {{count}} til",
+    "viewLess": "Vis færre",
+    "compatibility": "Kompatibilitet",
+    "pluginHint": "Programtillegg kjører isolert, bare på Rustic Server.",
+    "fairPlayHint": "Bare innhold for fair play vises.",
+    "versions": "Horizon-versjoner",
+    "targetVersion": "Valgt instans eller server",
+    "checkingAgainst": "Kompatibiliteten sjekkes mot det uthevede bygget.",
+    "rustic": "Rustic Marketplace",
+    "rusticHint": "Betalte og bekreftede prosjekter finnes bare på Rustic.",
+    "verifiedOnly": "Bare bekreftet av Rustic",
+    "price": "Pris",
+    "priceOptions": {
+      "all": "Alle",
+      "free": "Gratis",
+      "paid": "Betalt"
+    },
+    "reset": "Tilbakestill filtre",
+    "remove": "Fjern filteret {{filter}}"
+  },
+  "categories": {
+    "performance": "Ytelse",
+    "utility": "Verktøy",
+    "ui": "Grensesnitt",
+    "pvp": "PvP",
+    "adventure": "Eventyr",
+    "decoration": "Dekorasjon",
+    "storage": "Lagring",
+    "worldgen": "Verdensgenerering",
+    "library": "Bibliotek",
+    "tech": "Teknologi",
+    "cozy": "Koselig",
+    "multiplayer": "Flerspiller",
+    "realistic": "Realistisk",
+    "simple": "Tro mot originalen",
+    "lightweight": "Lett",
+    "cinematic": "Filmatisk",
+    "qol": "Livskvalitet",
+    "admin": "Administrasjon",
+    "chat": "Chat",
+    "minigames": "Minispill",
+    "protection": "Beskyttelse",
+    "integration": "Integrasjoner"
+  },
+  "empty": {
+    "title": "Ingenting passer",
+    "hint": "Prøv et annet ord, en annen kilde eller kategori.",
+    "compatibleHint": "Bare innhold som kjører på dette målet, vises. Slå av filteret for å se alt.",
+    "showAll": "Vis inkompatible resultater"
+  },
+  "banners": {
+    "mod": "Bare mods for fair play vises: ingen X-ray, autoklikkere eller andre urettferdige fordeler.",
+    "modpack": "En modpakke blir en ny instans med egne mods og innstillinger.",
+    "resourcepack": "Pakker stables: den øverst i innlastingsrekkefølgen vinner.",
+    "shader": "Horizon kjører sine egne WGSL-shaderpakker (.hshader, shader API 0.1, eksperimentelt) og pakker i Iris/OptiFine-format fra Horizon-registeret. Velg en i spillet under Videoinnstillinger › Shaderpakker.",
+    "datapack": "Datapakker hører til en verden: du velger verdenen når du installerer.",
+    "plugin": "Programtillegg (.rplugin) kjører isolert på servere som bruker Rustic Server-motoren. Et feilaktig programtillegg deaktiveres; serveren fortsetter å kjøre."
+  },
+  "resourcepacks": {
+    "manageOrder": "Administrer innlastingsrekkefølgen"
+  },
+  "shaders": {
+    "format": {
+      "horizon": "Horizon WGSL",
+      "shaders_dir": "Iris/OptiFine-format"
+    },
+    "formatHint": {
+      "horizon": "Horizons eget format (.hshader), shader API 0.1 (eksperimentelt). Sjekkes før det kjører.",
+      "shaders_dir": "En shaders/-pakke i Iris/OptiFine-format, kjørt av Horizons egen laster."
+    }
+  },
+  "side": {
+    "client": "Klient",
+    "server": "Server",
+    "both": "Klient og server"
+  },
+  "install": {
+    "install": "Installer",
+    "installAria": "Installer {{name}} i {{target}}",
+    "installed": "Installert",
+    "installing": "Installerer…",
+    "installingPct": "Installerer {{pct}}",
+    "createInstance": "Opprett instans",
+    "chooseWorld": "Installer i en verden",
+    "noTarget": "Velg hvor det skal installeres først.",
+    "started": "Installerer {{name}} i {{target}}",
+    "withDeps_one": "Pluss {{count}} påkrevd avhengighet.",
+    "withDeps_other": "Pluss {{count}} påkrevde avhengigheter.",
+    "failed": "{{name}} kunne ikke installeres",
+    "native": "Bygg og installer",
+    "update": "Oppdater",
+    "updateAria": "Oppdater {{name}} til {{version}}"
+  },
+  "modpack": {
+    "created": "Oppretter instansen {{name}}",
+    "createdHint": "Nedlasting pågår. Den vises under Spill når den er klar."
+  },
+  "datapacks": {
+    "pickWorld": "Velg en verden",
+    "noWorlds": "Denne instansen har ingen verden ennå. Spill én gang for å opprette en.",
+    "count_one": "{{count}} datapakke",
+    "count_other": "{{count}} datapakker"
+  },
+  "plugins": {
+    "badge": "Programtillegg for Rustic Server · API {{api}}",
+    "noServerTitle": "Ingen Rustic Server-server ennå",
+    "noServerBody": "Programtillegg kjører bare på servere som bruker Rustic Server-motoren. Opprett en i noen få trinn, og kom tilbake for å installere programtillegg på den.",
+    "createServer": "Opprett en server"
+  },
+  "detail": {
+    "breadcrumb": "Brødsmulesti",
+    "sections": "Prosjektets deler",
+    "tabs": {
+      "description": "Beskrivelse",
+      "gallery": "Galleri",
+      "versions": "Versjoner",
+      "changelog": "Endringslogg",
+      "dependencies": "Avhengigheter",
+      "compatibility": "Kompatibilitet"
+    },
+    "galleryLabel": "Galleri for {{name}}",
+    "prev": "Forrige bilde",
+    "next": "Neste bilde",
+    "slide": "Bilde {{index}} av {{total}}",
+    "about": "Om dette prosjektet",
+    "categories": "Kategorier",
+    "links": "Lenker",
+    "link": {
+      "source": "Kildekode",
+      "issues": "Rapporter en feil",
+      "website": "Nettsted",
+      "site": "På rustic-launcher.com",
+      "wiki": "Wiki",
+      "discord": "Discord"
+    },
+    "noChangelog": "Ingen endringslogg ennå.",
+    "noGallery": "Ingen skjermbilder ennå.",
+    "notAvailable": {
+      "title": "Dette prosjektet er ikke tilgjengelig",
+      "body": "Det kan være privat, venter på gjennomgang eller er fjernet av skaperen eller en moderator.",
+      "back": "Tilbake til Utforsk"
+    },
+    "native": {
+      "title": "Bygget på PC-en din",
+      "build": "Kompileres inn i denne profilens spill første gang du spiller: rundt 10 til 15 minutter, raskere etterpå.",
+      "review": "Gjennomgått før det kan installeres, av Horizon-registeret eller Rustics administratorer.",
+      "consent": "Ingenting bygges før du har lest og godtatt et kort varsel.",
+      "more": "Slik fungerer native mods"
+    }
+  },
+  "report": {
+    "button": "Rapporter",
+    "title": "Rapporter {{name}}",
+    "sent": "Rapporten er sendt",
+    "sentBody": "Takk. Moderatorene våre går gjennom den.",
+    "reasons": {
+      "fair_play": "Bryter retningslinjene for fair play",
+      "malware": "Skadelig programvare eller datatyveri",
+      "copyright": "Brudd på opphavsrett",
+      "other": "Noe annet"
+    },
+    "failed": "Rapporten kunne ikke sendes"
+  },
+  "versions": {
+    "version": "Versjon",
+    "horizon": "Horizon-bygg",
+    "published": "Publisert",
+    "downloads": "Nedlastinger",
+    "compatibility": "Kompatibilitet",
+    "actions": "Handlinger",
+    "none": "Ingen",
+    "channel": {
+      "release": "Utgivelse",
+      "beta": "Beta",
+      "alpha": "Alfa"
+    },
+    "empty": "Ingen versjon er tilgjengelig ennå.",
+    "latest": "Nyeste"
+  },
+  "deps": {
+    "none": "Ingen avhengigheter.",
+    "relation": {
+      "required": "Påkrevd",
+      "optional": "Valgfri",
+      "incompatible": "Inkompatibel"
+    },
+    "installed": "Installert",
+    "willInstall": "Installeres automatisk",
+    "notInstalled": "Ikke installert"
+  },
+  "compatTab": {
+    "for": "for {{target}}",
+    "builds": "Forfatteren publiserer et bygg laget for denne Horizon-versjonen.",
+    "format": "Dette innholdet er bare data (teksturer, shadere, datapakker): det avhenger ikke av et Horizon-bygg.",
+    "unknown": "Velg en instans eller en server for å sjekke kompatibiliteten.",
+    "fairPlay": "Rustic fremhever bare innhold for fair play. Det som gir en urettferdig fordel, vises aldri.",
+    "native": "En native mod som passer denne Horizon: Rustic Launcher kompilerer den inn i denne instansens eget spill på PC-en din."
+  },
+  "permissions": {
+    "title": "Tillatelser",
+    "network": "Nettverkstilgang: {{value}}",
+    "none": "ingen",
+    "files": "Filer: bare sin egen datamappe."
+  },
+  "stats": {
+    "downloads": "Nedlastinger",
+    "follows": "Følgere",
+    "updated": "Oppdatert",
+    "license": "Lisens",
+    "size": "Størrelse",
+    "gameVersion": "Spillversjon",
+    "version": "Nyeste versjon",
+    "author": "Forfatter",
+    "created": "Publisert"
+  },
+  "searchSources": {
+    "mod": "Søk etter mods på Horizon, Modrinth og Rustic…",
+    "modpack": "Søk etter modpakker på Horizon, Modrinth og Rustic…",
+    "resourcepack": "Søk etter ressurspakker på Horizon, Modrinth og Rustic…",
+    "shader": "Søk etter shadere på Horizon, Modrinth og Rustic…",
+    "datapack": "Søk etter datapakker på Horizon, Modrinth og Rustic…",
+    "plugin": "Søk etter programtillegg på Horizon, Modrinth og Rustic…"
+  },
+  "filtersLabel": "Filtre",
+  "view": "Vis",
+  "heading": "Finn din neste *mod*",
+  "eyebrow": "Utforsk",
+  "kindsServer": "For en Rustic Server",
+  "tabs": {
+    "label": "Deler av Utforsk",
+    "discover": "Oppdag",
+    "browse": "Bla gjennom",
+    "mine": "Mitt innhold"
+  },
+  "hero": {
+    "eyebrow": "Utvalgt"
+  },
+  "discover": {
+    "heroLabel": {
+      "mod": "Utvalgte mods",
+      "modpack": "Utvalgte modpakker",
+      "resourcepack": "Utvalgte ressurspakker",
+      "shader": "Utvalgte shadere",
+      "datapack": "Utvalgte datapakker",
+      "plugin": "Utvalgte programtillegg"
+    },
+    "rows": {
+      "new": "Nytt",
+      "newHint": "Nettopp publisert eller oppdatert",
+      "horizon": "Populært på Horizon",
+      "horizonHint": "De mest nedlastede fra Horizon-registeret",
+      "verified": "Bekreftet av Rustic",
+      "verifiedHint": "Sjekket av Rustic-teamet: de gjør det de sier",
+      "yours": "For {{target}}",
+      "yoursHint": "Kjører på Horizon {{version}}",
+      "community": "Fra fellesskapet",
+      "communityHint": "Nylig oppdatert på Rustics markedsplass"
+    },
+    "empty": {
+      "title": "Ingenting å oppdage her ennå",
+      "hint": "Ingen innhold av denne typen kjører på målet ditt ennå. Bla gjennom alt i stedet.",
+      "browse": "Bla gjennom alt"
+    },
+    "rowError": "Dette utvalget kunne ikke lastes inn.",
+    "retry": "Prøv igjen"
+  },
+  "verified": {
+    "label": "Bekreftet",
+    "hint": "Bekreftet av Rustic: en moderator har sjekket at det gjør det siden sier."
+  },
+  "official": {
+    "label": "Offisiell",
+    "hint": "Publisert av Rustic-teamet selv."
+  },
+  "price": {
+    "soon": "Kommer snart",
+    "soonHint": "Skapere kan snart selge arbeidet sitt. Kjøp er ikke tilgjengelig ennå.",
+    "notOnSale": "Ikke til salgs ennå: salg for skapere åpner snart."
+  },
+  "native": {
+    "badge": "Bygges på PC-en din",
+    "short": "Native",
+    "hint": "En native mod er Rust-kode som kompileres inn i spillet på PC-en din før det kjører.",
+    "title": "En native mod",
+    "body": "Native mods er Rust-kildekode som bygges inn i spillet ditt på denne PC-en (det kan ta fra ett minutt til en halvtime). Administratorer går gjennom hver versjon før den blir offentlig.",
+    "kind": "Native mod",
+    "how": "Rustic Launcher kompilerer dem på PC-en din inn i denne instansens eget spill, etter at du har godtatt et tillitsvarsel. Det første bygget tar 10 til 15 minutter; senere kompileres bare det som er endret. Instanser uten native mods beholder det ferdigbygde spillet.",
+    "instanceOnly": "Native mods går inn i en instans.",
+    "trust": {
+      "title": "Native kode: les før du bygger",
+      "lead": "{{name}} er en native mod: Rust-kode som kompileres inn i spillet til «{{instance}}» på denne PC-en.",
+      "unsandboxed": "Native mods kjører ikke isolert. Når de er bygget, kjører de med dine rettigheter og kan lese, endre eller sende alt kontoen din har tilgang til.",
+      "review": "Bare mods fra Horizon-registeret (gjennomgått av vedlikeholderne) og mods godkjent av administratorer på Rustics markedsplass kan installeres. En gjennomgang reduserer risikoen; den fjerner den ikke.",
+      "build": "Rust installeres ved behov, deretter kompileres spillet for denne instansen: rundt 10 til 15 minutter og noen få GB første gang, raskere etterpå.",
+      "scope": "Bare denne instansen spiller det bygde spillet. Du blir ikke spurt igjen for de neste native modsene.",
+      "source": "Les kildekoden",
+      "check": "Jeg forstår at native mods kjører uten isolasjon med mine rettigheter, og jeg stoler på denne modden.",
+      "accept": "Jeg stoler på den: installer og bygg"
+    },
+    "toolchain": {
+      "title": "Installere Rust {{version}}?",
+      "lead": "Bygging av native mods krever Rust-kompilatoren. Rustic Launcher kan installere den for deg.",
+      "manual": "Bygging av native mods krever Rust-kompilatoren og systemverktøy som Rustic Launcher ikke kan installere for deg. Installer disse, og bygg på nytt:",
+      "where": "Fra det offisielle nettstedet (static.rust-lang.org), sjekket mot den publiserte SHA-256-summen, inn i launcherens egen mappe: ingenting annet på PC-en din endres.",
+      "size": "Rundt 1 til 2,5 GB (med en C-kompilator på Windows).",
+      "once": "Én gang for alle instanser; fjerner du launcherens data, fjernes den.",
+      "found": "Funnet: {{reason}}.",
+      "install": "Installer Rust",
+      "started": "Installerer Rust",
+      "startedHint": "Byggingen starter så snart den er klar. Følg den i nedlastingspanelet.",
+      "failed": "Rust kunne ikke installeres"
+    },
+    "build": {
+      "started": "Bygger native mods for {{instance}}",
+      "startedHint": "Følg det på instanssiden eller i nedlastingspanelet. Det første bygget tar 10 til 15 minutter.",
+      "failed": "De native modsene til {{instance}} kunne ikke bygges"
+    },
+    "errors": {
+      "notEdition": "Native mods bygges bare inn i Rustic-utgaven: bytt denne instansen til den i innstillingene.",
+      "running": "Lukk spillet først: de native modsene bygges på nytt mens det er stoppet.",
+      "disk": "Ikke nok ledig diskplass. {{detail}}"
+    }
+  },
+  "card": {
+    "incompatible": "Inkompatibel",
+    "compatible": "Kompatibel"
+  },
+  "library": {
+    "add": "Legg til i biblioteket mitt",
+    "inLibrary": "I biblioteket mitt",
+    "added": "{{name}} er lagt til i biblioteket ditt",
+    "removed": "{{name}} er fjernet fra biblioteket ditt",
+    "remove": "Fjern {{name}} fra biblioteket mitt",
+    "failed": "Biblioteket ditt kunne ikke oppdateres"
+  },
+  "prompt": {
+    "title": "Installere {{name}}?",
+    "body": "Du åpnet dette prosjektet fra nettstedet. Velg hvor det skal installeres og hvilken versjon, og bekreft.",
+    "dismiss": "Ikke nå",
+    "version": "Versjon",
+    "versionMissing": "Versjon {{version}} er ikke lenger tilgjengelig: den nyeste kompatible er valgt."
+  },
+  "mine": {
+    "searchPlaceholder": "Filtrer innholdet mitt…",
+    "noMatch": "Ingenting passer",
+    "source": {
+      "horizon": "Horizon",
+      "modrinth": "Modrinth",
+      "rustic": "Rustic",
+      "local": "Lagt til for hånd"
+    },
+    "installed": {
+      "title": "Installert",
+      "titleOn": "Installert på {{target}}",
+      "hint": {
+        "mod": "Modsene til dette målet: slå dem av eller på, oppdater eller fjern dem.",
+        "modpack": "Modpakkene til dette målet: slå dem av eller på, oppdater eller fjern dem.",
+        "resourcepack": "Ressurspakkene til dette målet: slå dem av eller på, oppdater eller fjern dem.",
+        "shader": "Shaderne til dette målet: slå dem av eller på, oppdater eller fjern dem.",
+        "datapack": "Datapakkene til dette målet: slå dem av eller på, oppdater eller fjern dem.",
+        "plugin": "Programtilleggene til dette målet: slå dem av eller på, oppdater eller fjern dem."
+      },
+      "modpacksTitle": "Modpakker blir profiler",
+      "modpacksHint": "Hver installerte modpakke er en egen profil.",
+      "openProfiles": "Åpne profilene mine",
+      "noTarget": "Velg hvor du vil se først.",
+      "serverHint": "Programtillegg og datapakker for en server administreres på siden dens.",
+      "manageServer": "Administrer serveren",
+      "updateAll_one": "Oppdater {{count}} element",
+      "updateAll_other": "Oppdater {{count}} elementer",
+      "openProfile": "Åpne profilen",
+      "empty": "Ingenting er installert her ennå",
+      "emptyHint": "Finn noe under Oppdag eller Bla gjennom.",
+      "discover": "Oppdag innhold",
+      "updateTo": "Oppdater til {{version}}",
+      "incompatible": "Inkompatibel",
+      "update": "Oppdater {{name}}",
+      "toggle": "Aktiver {{name}}",
+      "remove": "Fjern {{name}}",
+      "removeTitle": "Fjerne {{name}}?",
+      "removeBody": "Filene slettes fra denne profilen. Du kan installere den igjen når som helst."
+    },
+    "signIn": {
+      "title": "Biblioteket ditt og det du har laget",
+      "body": "Logg inn på Rustic-kontoen din for å finne prosjektene du har lagret og de du publiserer.",
+      "action": "Logg inn"
+    },
+    "library": {
+      "title": "Biblioteket mitt",
+      "hint": "Prosjekter lagret på Rustic-kontoen din, på alle PC-er.",
+      "empty": "Biblioteket ditt er tomt",
+      "emptyHint": "Legg til et Rustic-prosjekt fra siden dets for å finne det her.",
+      "installAria": "Installer {{name}}"
+    },
+    "creations": {
+      "title": "Det jeg har laget",
+      "hint": "Det du publiserer på Rustics markedsplass.",
+      "publish": "Publiser på nettstedet",
+      "empty": "Du har ikke publisert noe ennå",
+      "emptyHint": "Del en mod, en pakke eller en shader med alle Rustic-spillere fra nettstedet.",
+      "manage": "Administrer",
+      "manageAria": "Administrer {{name}} på nettstedet",
+      "status": {
+        "public": "Offentlig",
+        "unlisted": "Ikke oppført",
+        "private": "Privat",
+        "pending": "Venter på gjennomgang",
+        "rejected": "Avvist",
+        "takenDown": "Fjernet"
+      }
+    }
+  }
+}

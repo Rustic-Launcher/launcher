@@ -100,7 +100,8 @@
       "appearance": "Vzhled",
       "privacy": "Soukromí a data",
       "parental": "Rodičovská kontrola",
-      "about": "O aplikaci"
+      "about": "O aplikaci",
+      "voice": "Hlasový chat"
     }
   },
   "friends": {
@@ -202,7 +203,30 @@
     "leader": "Vůdce party",
     "pending": "{{name}} (pozvánka odeslána)",
     "invite": "Pozvat do party",
-    "invited": "Hráč {{name}} byl pozván do tvé party"
+    "invited": "Hráč {{name}} byl pozván do tvé party",
+    "invitesTitle": "Pozvánky do party",
+    "invitedBy": "{{name}} tě zve do své party",
+    "accept": "Připojit se",
+    "decline": "Odmítnout",
+    "makeLeader": "Udělat vůdcem party",
+    "kick": "Odebrat z party",
+    "proximity": "Hlas podle vzdálenosti",
+    "proximityHint": "Členové na stejném serveru se slyší podle vzdálenosti",
+    "range": "Dosah (bloky)",
+    "emptyTitle": "Zatím žádná parta",
+    "emptyBody": "Vytvoř partu a pak pozvi přátele z jejich nabídky na kartě Přátelé.",
+    "create": "Vytvořit partu",
+    "inviteHint": "Pozvi přátele z jejich nabídky na kartě Přátelé.",
+    "chatTitle": "Chat party",
+    "chatEmpty": "Připoj se k partě nebo ji vytvoř a piš si s jejími členy.",
+    "chatPlaceholder": "Zpráva pro partu",
+    "formerMember": "Bývalý člen",
+    "errors": {
+      "party_full": "Parta je plná.",
+      "party_not_allowed": "Tento hráč nemůže být v této partě: hráči mladší 18 let se připojují jen k partám svých přátel.",
+      "already_in_party": "Nejdřív opusť svou současnou partu.",
+      "not_party_leader": "Tohle může jen vůdce party."
+    }
   },
   "presence": {
     "online": "Online",
@@ -446,6 +470,48 @@
       "updated": "Rustic Launcher aktualizován na verzi {{version}}",
       "resuming": "Aktualizace hotová: spouštím hru",
       "failed": "Aktualizaci se nepodařilo nainstalovat. Zkusíme to znovu později."
+    }
+  },
+  "voice": {
+    "title": "Hlasový chat",
+    "join": "Připojit se k hlasu",
+    "leave": "Opustit hlas",
+    "mute": "Ztlumit mikrofon",
+    "unmute": "Zapnout mikrofon",
+    "deafen": "Vypnout zvuk",
+    "undeafen": "Zapnout zvuk",
+    "speaking": "Mluví",
+    "micMuted": "Ztlumeno",
+    "outOfRange": "Mimo dosah",
+    "muteFor": "Ztlumit {{name}} pro sebe",
+    "unmuteFor": "Znovu slyšet {{name}}",
+    "reportAria": "Nahlásit {{name}}",
+    "memberVolume": "Hlasitost: {{name}}",
+    "report": "Nahlásit",
+    "reportTitle": "Nahlásit {{name}}?",
+    "reportBody": "Naši moderátoři hlášení posoudí. Hlas se nikdy nenahrává. Tento hráč je pro tebe hned ztlumen.",
+    "reported": "{{name}} byl nahlášen",
+    "reasons": {
+      "harassment": "Obtěžování nebo nenávist",
+      "inappropriate_content": "Nevhodný obsah",
+      "spam": "Spam nebo hluk",
+      "other": "Něco jiného"
+    },
+    "proximityOn": "podle vzdálenosti, dosah {{range}}",
+    "you": "Ty",
+    "listenOnly": "Jen poslech",
+    "alone": "V hlasovém chatu zatím nikdo další není.",
+    "serverOffer": "{{server}} má hlas podle vzdálenosti",
+    "serverRoom": "Hlas serveru",
+    "partyRoom": "Hlas party",
+    "errors": {
+      "voice_unavailable": "Hlasový chat teď není dostupný. Zkus to později.",
+      "voice_not_allowed": "Hlasový chat není pro tvůj účet dostupný.",
+      "mic_denied": "Přístup k mikrofonu byl odepřen: můžeš poslouchat, ale ne mluvit. Povol ho v nastavení soukromí systému.",
+      "mic_missing": "Nenašel se žádný mikrofon: můžeš poslouchat, ale ne mluvit.",
+      "connect_failed": "Připojení k hlasu se nepodařilo. Zkontroluj připojení a zkus to znovu.",
+      "kicked": "Byl jsi odebrán z hlasové místnosti.",
+      "not_on_voice_server": "Tento server nemá hlas podle vzdálenosti."
     }
   }
 }

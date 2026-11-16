@@ -325,7 +325,7 @@ function EditionCard({
       disabled={disabled}
       data-testid={`new-edition-${value}`}
       className={cn(
-        'rx-focus-ring flex flex-col items-start gap-1 rounded-xl border p-3 text-left transition-[border-color,background-color] duration-150',
+        'rx-focus-ring flex flex-col items-start gap-1 rounded-xl border p-3 text-start transition-[border-color,background-color] duration-150',
         checked
           ? 'border-accent bg-accent-soft'
           : 'border-border bg-surface-2/50 hover:border-border-strong/70',
@@ -571,7 +571,7 @@ function ImportPanel({ active, onDone }: { active: boolean; onDone: () => void }
           to="/content"
           search={{ kind: 'modpack' }}
           onClick={onDone}
-          className="rx-focus-ring border-border hover:bg-surface-2 flex items-center gap-3 rounded-xl border border-dashed p-3 text-left"
+          className="rx-focus-ring border-border hover:bg-surface-2 flex items-center gap-3 rounded-xl border border-dashed p-3 text-start"
         >
           <span className="bg-surface-3 text-fg grid size-9 shrink-0 place-items-center rounded-lg [&_svg]:size-4">
             <PackageSearch />
@@ -606,7 +606,7 @@ function ImportOption({
       onClick={() => onPick(kind)}
       disabled={disabled}
       data-testid={`import-${kind}`}
-      className="rx-focus-ring border-border bg-surface-2/60 hover:border-border-strong/60 hover:bg-surface-2 flex items-center gap-3 rounded-xl border p-3 text-left transition-colors disabled:opacity-50"
+      className="rx-focus-ring border-border bg-surface-2/60 hover:border-border-strong/60 hover:bg-surface-2 flex items-center gap-3 rounded-xl border p-3 text-start transition-colors disabled:opacity-50"
     >
       <span className="bg-accent-soft text-accent-text grid size-9 shrink-0 place-items-center rounded-lg [&_svg]:size-4">
         {icon}

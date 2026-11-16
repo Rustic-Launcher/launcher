@@ -62,7 +62,7 @@ export function Rail() {
         {active && (
           <motion.span
             layoutId="rail-active"
-            className="bg-accent absolute top-1/2 left-0 h-6 w-1 -translate-y-1/2 rounded-r-full"
+            className="bg-accent absolute start-0 top-1/2 h-6 w-1 -translate-y-1/2 rounded-e-full"
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
           />
         )}

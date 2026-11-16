@@ -162,9 +162,9 @@ export function OverviewTab({ instance }: { instance: Instance }) {
           )}
           <dl className="mt-4 grid grid-cols-2 gap-2 text-xs">
             <dt className="text-fg-subtle">{t('overview.created')}</dt>
-            <dd className="text-right">{formatDate(instance.created_at, lang)}</dd>
+            <dd className="text-end">{formatDate(instance.created_at, lang)}</dd>
             <dt className="text-fg-subtle">{t('overview.folder')}</dt>
-            <dd className="truncate text-right font-mono" title={instance.folder}>
+            <dd className="truncate text-end font-mono" title={instance.folder}>
               {instance.folder}
             </dd>
           </dl>

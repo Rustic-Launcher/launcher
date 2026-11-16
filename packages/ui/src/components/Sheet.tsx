@@ -54,7 +54,7 @@ export function Sheet({
                 style={{ width: `min(${width}px, 100vw)` }}
                 className={cn(
                   'rx-glass fixed inset-y-0 z-[50] flex flex-col shadow-lg outline-none',
-                  side === 'right' ? 'right-0 rounded-l-2xl' : 'left-0 rounded-r-2xl',
+                  side === 'right' ? 'end-0 rounded-s-2xl' : 'start-0 rounded-e-2xl',
                   className,
                 )}
               >

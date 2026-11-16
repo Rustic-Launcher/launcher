@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "greeting": "फिर से स्वागत है, {{name}}",
+    "greetingAnon": "Rustic में आपका स्वागत है",
+    "continue": "जारी रखें: {{name}} · {{when}} खेला",
+    "continueNew": "जब आप तैयार हों: {{name}}",
+    "firstRun": "तीन चरणों में गेम तैयार करें।",
+    "playNow": "अभी खेलें",
+    "updateAndPlay": "अपडेट करें और खेलें",
+    "resumeServer": "{{server}} में फिर से जुड़ें",
+    "switch": "इंस्टेंस बदलें",
+    "stats": {
+      "playtime": "{{time}} खेला",
+      "mods_one": "{{count}} मॉड",
+      "mods_other": "{{count}} मॉड्स",
+      "friends_one": "{{count}} दोस्त ऑनलाइन",
+      "friends_other": "{{count}} दोस्त ऑनलाइन"
+    },
+    "steps": {
+      "signIn": "उस Microsoft खाते से साइन इन करें जिसके पास गेम है",
+      "prepare": "अपने इंस्टॉलेशन से गेम फ़ाइलें तैयार करें",
+      "create": "अपना पहला इंस्टेंस बनाएँ"
+    },
+    "getReady": "गेम तैयार करें",
+    "openLocker": "लॉकर",
+    "player": "आपका प्लेयर, खड़ा हुआ, बिना किसी कॉस्मेटिक के",
+    "playerWearing": "आपका प्लेयर, खड़ा हुआ, पहने हुए: {{items}}"
+  },
+  "recent": {
+    "title": "हाल के सर्वर और दुनियाएँ",
+    "unknown": "स्थिति अज्ञात",
+    "online": "ऑनलाइन · {{online}}/{{max}}",
+    "offline": "ऑफ़लाइन",
+    "world": "दुनिया · लोकल",
+    "joining": "{{name}} से जुड़ रहे हैं…",
+    "opening": "{{name}} खुल रहा है…",
+    "removed": "{{name}} आपके सर्वरों से हटाया गया",
+    "playAria": "{{name}} खेलें",
+    "more": "{{name}} के लिए और कार्रवाइयाँ",
+    "copyAddress": "पता कॉपी करें",
+    "addServer": "सर्वर जोड़ें",
+    "empty": "जिन सर्वरों से आप जुड़ते हैं और जिन दुनियाओं में खेलते हैं, वे यहाँ दिखेंगे।"
+  },
+  "news": {
+    "title": "समाचार और अपडेट",
+    "empty": "अभी कोई समाचार नहीं है।",
+    "slide": "कहानी {{index}} / {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "रिलीज़ नोट्स",
+      "event": "इवेंट",
+      "blog": "लेख"
+    },
+    "readNotes": "रिलीज़ नोट्स पढ़ें",
+    "read": "पढ़ें"
+  },
+  "friends": {
+    "title": "अभी खेल रहे दोस्त",
+    "empty": "अभी आपका कोई भी दोस्त नहीं खेल रहा है।",
+    "since": "{{when}} से",
+    "activity": {
+      "server": "{{server}} पर खेल रहे हैं",
+      "hosting": "{{server}} होस्ट कर रहे हैं",
+      "singleplayer": "अकेले खेल रहे हैं",
+      "launcher": "लॉन्चर में हैं"
+    }
+  },
+  "featured": {
+    "title": "फ़ीचर्ड सर्वर",
+    "verified": "सत्यापित सर्वर",
+    "players": "{{online}} / {{max}} खिलाड़ी",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "नए कॉस्मेटिक्स",
+    "owned": "आपके पास है"
+  },
+  "launchpad": {
+    "welcome": "फिर से *स्वागत है*,",
+    "playAs": "इस रूप में खेलें",
+    "online": "फ़ीचर्ड सर्वरों पर ऑनलाइन",
+    "heroLabel": "लॉन्च",
+    "instanceSettings": "इंस्टेंस सेटिंग्स",
+    "news": "ताज़ा समाचार",
+    "unread_one": "({{count}} अपठित)",
+    "unread_other": "({{count}} अपठित)",
+    "unreadDot": "अपठित",
+    "explore": "स्रोत एक्सप्लोर करें",
+    "aside": "सर्वर और दोस्त",
+    "joinServer": "{{name}} से जुड़ें",
+    "friendsOnline_one": "({{count}} ऑनलाइन)",
+    "friendsOnline_other": "({{count}} ऑनलाइन)",
+    "openSocial": "सोशल खोलें",
+    "noNews": "अभी कोई समाचार नहीं।",
+    "noFriendsOnline": "अभी कोई दोस्त ऑनलाइन नहीं है।",
+    "socialHint": "चैट, आमंत्रण और आपकी पार्टी सोशल विंडो में हैं।",
+    "eyebrow": "Launchpad"
+  }
+}

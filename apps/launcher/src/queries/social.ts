@@ -1,7 +1,15 @@
 /** Friends, presence, party, notifications (Rustic Cloud). */
 import { useMutation, useQuery, useQueryClient, type QueryClient } from '@tanstack/react-query';
 import { cloud } from '@/cloud/client';
-import type { ChatMessage, Friend, FriendTarget, Party } from '@/cloud/types';
+import type {
+  ChatMessage,
+  Friend,
+  FriendTarget,
+  Party,
+  PartyChatMessage,
+  PartyInviteLite,
+  PartyVoiceSettings,
+} from '@/cloud/types';
 
 export const sk = {
   me: ['me'] as const,
@@ -9,6 +17,8 @@ export const sk = {
   requests: ['friend-requests'] as const,
   suggestions: ['friend-suggestions'] as const,
   party: ['party'] as const,
+  partyInvites: ['party-invites'] as const,
+  partyMessages: ['party-messages'] as const,
   notifications: ['notifications'] as const,
   news: ['news'] as const,
   featured: ['featured-servers'] as const,
@@ -84,6 +94,79 @@ export function useSetDiscoverable() {
 
 export const useParty = () =>
   useQuery({ queryKey: sk.party, queryFn: async () => (await cloud()).party() });
+export const usePartyInvites = () =>
+  useQuery({ queryKey: sk.partyInvites, queryFn: async () => (await cloud()).partyInvites() });
+export const usePartyMessages = (enabled: boolean) =>
+  useQuery({
+    queryKey: sk.partyMessages,
+    queryFn: async () => (await cloud()).partyMessages(),
+    enabled,
+  });
+
+/** Adds a party chat message once (send answer, realtime echo, refetch). */
+export function appendPartyMessage(
+  list: PartyChatMessage[],
+  m: PartyChatMessage,
+): PartyChatMessage[] {
+  return list.some((x) => x.id === m.id) ? list : [...list, m];
+}
+
+export function useSendPartyMessage() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: async (body: string) => (await cloud()).sendPartyMessage(body),
+    onSuccess: (m) =>
+      qc.setQueryData<PartyChatMessage[]>(sk.partyMessages, (old) =>
+        appendPartyMessage(old ?? [], m),
+      ),
+  });
+}
+
+/** Create, answer invites, leave, kick, hand over the lead, voice settings. */
+export function usePartyActions() {
+  const qc = useQueryClient();
+  const set = (p: Party | null) => {
+    qc.setQueryData(sk.party, p);
+    if (!p) qc.setQueryData(sk.partyMessages, []);
+  };
+  return {
+    create: useMutation({
+      mutationFn: async () => (await cloud()).createParty(),
+      onSuccess: set,
+    }),
+    respond: useMutation({
+      mutationFn: async (v: { id: string; accept: boolean }) =>
+        (await cloud()).respondPartyInvite(v.id, v.accept),
+      onSuccess: (p, v) => {
+        qc.setQueryData<PartyInviteLite[]>(sk.partyInvites, (old) =>
+          (old ?? []).filter((i) => i.id !== v.id),
+        );
+        if (v.accept) {
+          set(p);
+          void qc.invalidateQueries({ queryKey: sk.partyMessages });
+        }
+      },
+      onError: () => void qc.invalidateQueries({ queryKey: sk.partyInvites }),
+    }),
+    leave: useMutation({
+      mutationFn: async () => (await cloud()).leaveParty(),
+      onSuccess: () => set(null),
+    }),
+    kick: useMutation({
+      mutationFn: async (userId: string) => (await cloud()).kickFromParty(userId),
+      onSuccess: set,
+    }),
+    transfer: useMutation({
+      mutationFn: async (userId: string) => (await cloud()).transferPartyLeader(userId),
+      onSuccess: set,
+    }),
+    voice: useMutation({
+      mutationFn: async (patch: Partial<PartyVoiceSettings>) =>
+        (await cloud()).updatePartyVoice(patch),
+      onSuccess: set,
+    }),
+  };
+}
 export const useNotifications = () =>
   useQuery({ queryKey: sk.notifications, queryFn: async () => (await cloud()).notifications() });
 export const useNews = () =>
@@ -159,7 +242,18 @@ export async function bindRealtime(qc: QueryClient): Promise<() => void> {
         old?.map((f) => (f.id === e.friend.id ? e.friend : f)),
       );
     } else if (e.type === 'party') {
+      const before = qc.getQueryData<Party | null>(sk.party);
       qc.setQueryData<Party | null>(sk.party, e.party);
+      if (!e.party) qc.setQueryData(sk.partyMessages, []);
+      else if (before?.id !== e.party.id) void qc.invalidateQueries({ queryKey: sk.partyMessages });
+    } else if (e.type === 'party-invite') {
+      qc.setQueryData<PartyInviteLite[]>(sk.partyInvites, (old) =>
+        old?.some((i) => i.id === e.invite.id) ? old : [...(old ?? []), e.invite],
+      );
+    } else if (e.type === 'party-message') {
+      qc.setQueryData<PartyChatMessage[]>(sk.partyMessages, (old) =>
+        old ? appendPartyMessage(old, e.message) : old,
+      );
     } else if (e.type === 'friend-request') {
       void qc.invalidateQueries({ queryKey: sk.requests });
     } else if (e.type === 'friends-changed') {

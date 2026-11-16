@@ -78,7 +78,7 @@ export function Avatar({
           role="img"
           aria-label={presenceLabel ?? presence}
           className={cn(
-            'ring-bg-elevated absolute -right-0.5 -bottom-0.5 rounded-full ring-2',
+            'ring-bg-elevated absolute -end-0.5 -bottom-0.5 rounded-full ring-2',
             dot[size],
             presenceColor[presence],
           )}

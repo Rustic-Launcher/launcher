@@ -1,0 +1,1065 @@
+{
+  "list": {
+    "title": "שרתים",
+    "description": "אפשר לארח עולם לחברים שלך, כאן או ב-VPS שלך, ולשמור את השרתים האהובים עליך בהישג יד.",
+    "create": "יצירת שרת",
+    "tabs": {
+      "mine": "השרתים שלי",
+      "joined": "שהצטרפתי אליהם",
+      "discover": "גילוי"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon רגיל"
+    },
+    "hosting": {
+      "local": "המחשב הזה",
+      "remote": "מרוחק: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "מצב",
+    "states": {
+      "running": "פועל",
+      "starting": "מופעל…",
+      "stopping": "נעצר…",
+      "stopped": "עצור",
+      "crashed": "קרס",
+      "installing": "בהתקנה…",
+      "unreachable": "לא נגיש"
+    },
+    "players": "שחקנים",
+    "playersCount": "{{online}}/{{max}} שחקנים",
+    "version": "גרסה",
+    "copyAddress": "העתקת הכתובת",
+    "copyFailed": "לא ניתן היה להעתיק ללוח",
+    "notShared": "עדיין לא משותף",
+    "notSharedHint": "אפשר להפעיל כתובת זמנית, קוד הזמנה או דומיין בלשונית הגישה של השרת.",
+    "start": "הפעלה",
+    "stop": "עצירה",
+    "startAria": "הפעלת {{name}}",
+    "stopAria": "עצירת {{name}}",
+    "powerFailed": "השרת לא הגיב",
+    "empty": {
+      "title": "לארח עולם לחברים בשלושה שלבים",
+      "description": "אפשר להריץ אותו במחשב הזה בחינם, או לתת ל-Rustic להתקין אותו ב-VPS שלך."
+    },
+    "featured": {
+      "description": "שרתים שנבחרו על ידי צוות Rustic: משחק הוגן, מוכנים ל-Horizon, עם ניהול קהילה.",
+      "empty": "אין שרתים מומלצים כרגע.",
+      "verified": "מאומת על ידי Rustic",
+      "save": "הוספה לרשימה",
+      "inList": "ברשימה שלך",
+      "online_one": "{{value}} מחובר",
+      "online_two": "{{value}} מחוברים",
+      "online_other": "{{value}} מחוברים",
+      "view": "על {{name}}"
+    },
+    "viewLabel": "תצוגה",
+    "views": {
+      "discover": "גילוי",
+      "mine": "השרתים שלי"
+    },
+    "searchPlaceholder": {
+      "discover": "חיפוש שרתים מומלצים…",
+      "mine": "חיפוש בשרתים שלך…"
+    },
+    "clearSearch": "ניקוי החיפוש",
+    "sortLabel": "מיון",
+    "sorts": {
+      "recommended": "מומלצים",
+      "players": "הכי הרבה שחקנים",
+      "name": "שם"
+    },
+    "refreshPing": "רענון הפינג והמצב",
+    "layoutList": "הצגה כרשימה",
+    "layoutGrid": "הצגה כרשת",
+    "createHint": "כאן, ב-VPS שלך, או בקרוב בענן",
+    "heading": "לשחק *בשרתים*",
+    "eyebrow": "שרתים",
+    "sections": {
+      "hosted": "שרתים שאתה מארח",
+      "joined": "שרתים שהצטרפת אליהם"
+    }
+  },
+  "multiplayer": {
+    "description": "רשימת השרתים של המשחק, משותפת לכל המופעים שלך.",
+    "add": "הוספת שרת",
+    "added": "{{name}} נוסף לרשימה שלך",
+    "addFailed": "לא ניתן היה להוסיף את השרת הזה",
+    "name": "שם השרת",
+    "namePlaceholder": "שם",
+    "address": "כתובת השרת",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "צריך שם מארח או IP, עם :port אופציונלי.",
+    "refreshPings": "רענון",
+    "favorites_one": "מועדף · {{count}}",
+    "favorites_two": "מועדפים · {{count}}",
+    "favorites_other": "מועדפים · {{count}}",
+    "others_one": "שרת אחר · {{count}}",
+    "others_two": "שרתים אחרים · {{count}}",
+    "others_other": "שרתים אחרים · {{count}}",
+    "favorite": "הוספת {{name}} למועדפים",
+    "unfavorite": "הסרת {{name}} מהמועדפים",
+    "offline": "לא מחובר",
+    "unreachable": "אי אפשר להגיע לשרת הזה כרגע",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "הצטרפות",
+    "joinAria": "הצטרפות אל {{name}}",
+    "joinWith": "מצטרפים עם {{instance}}",
+    "noInstance": "כדי להצטרף לשרתים, צריך ליצור מופע",
+    "joining": "מפעילים ומצטרפים אל {{name}}…",
+    "more": "פעולות נוספות עבור {{name}}",
+    "copyAddress": "העתקת הכתובת",
+    "removed": "{{name}} הוסר",
+    "undo": "ביטול",
+    "empty": {
+      "title": "עדיין אין שרתים",
+      "description": "אפשר להוסיף שרת לפי הכתובת שלו, או לבחור אחד בגילוי."
+    }
+  },
+  "wizard": {
+    "title": "יצירת שרת",
+    "subtitle": "שלושה שלבים: מה להריץ, איפה לארח, ואיך החברים מצטרפים.",
+    "creatingTitle": "מגדירים את {{name}}",
+    "stepOf": "שלב {{index}} מתוך {{total}}",
+    "steps": {
+      "basics": "בסיס",
+      "hosting": "איפה לארח",
+      "access": "גישה"
+    },
+    "create": "יצירת שרת",
+    "installOn": "התקנה ב-{{host}}",
+    "createFailed": "לא ניתן היה ליצור את השרת",
+    "noRusticServer": "התוכנה rustic-server לא נמצאה. אפשר לבחור אותה בהגדרות › משחק ומופעים › Rustic Server, או להתקין build של מהדורת Rustic שכולל אותה.",
+    "openRusticServerSettings": "פתיחת ההגדרות",
+    "fixErrors": "כדי להמשיך, צריך לבדוק את השדות המסומנים.",
+    "discard": {
+      "title": "לבטל את השרת הזה?",
+      "body": "מה שהזנת באשף יאבד.",
+      "keep": "המשך עריכה",
+      "confirm": "ביטול השרת"
+    },
+    "basics": {
+      "name": "שם השרת",
+      "namePlaceholder": "ה-SMP של לו",
+      "icon": "סמל",
+      "icons": {
+        "grass": "דשא",
+        "sword": "חרב",
+        "pickaxe": "מכוש",
+        "castle": "טירה",
+        "rocket": "טיל",
+        "gem": "אבן חן",
+        "flame": "להבה",
+        "leaf": "עלה",
+        "star": "כוכב",
+        "compass": "מצפן"
+      },
+      "color": "צבע",
+      "colorN": "צבע {{n}}",
+      "type": "סוג",
+      "recommended": "מומלץ",
+      "nightly": "לילית",
+      "rusticDesc": "תוספים (.rplugin) בארגז חול: תוסף אף פעם לא יכול להקריס את השרת שלך.",
+      "horizonDesc": "השרת של Horizon עצמו, בלי תוספים.",
+      "version": "גרסת Horizon",
+      "maxPlayers": "מספר שחקנים מרבי",
+      "versionLineRustic": "Rustic Server 0.1 על Horizon {{version}}",
+      "versionLineHorizon": "שרת Horizon {{version}}",
+      "sameAsClient": "(כמו הלקוח שלך)",
+      "starterPlugins": "תוספים להתחלה",
+      "starterHint": "תוספים רשמיים, עם מה שמותר להם לעשות.",
+      "capNetwork": "רשת",
+      "capNoNetwork": "בלי רשת",
+      "capNoFiles": "בלי קבצים",
+      "capDataFolder": "תיקיית נתונים משלו",
+      "eula": "אני מקבל את ה-EULA של Minecraft",
+      "eulaHint": "הרצת שרת דורשת את זה. אתה מקבל אותו בעצמך; Rustic לא מקבל אותו בשמך.",
+      "eulaRead": "לקריאת ה-EULA",
+      "eulaTitle": "ה-EULA של Minecraft"
+    },
+    "world": {
+      "title": "עולם",
+      "new": "עולם חדש",
+      "import": "ייבוא תיקייה",
+      "fromInstance": "ממופע",
+      "seed": "seed",
+      "seedHint": "אפשר להשאיר ריק לעולם אקראי.",
+      "seedPlaceholder": "אופציונלי",
+      "randomSeed": "seed אקראי",
+      "levelType": "סוג העולם",
+      "levelTypes": {
+        "default": "ברירת מחדל",
+        "flat": "שטוח לגמרי",
+        "large_biomes": "ביומות גדולות",
+        "amplified": "מוגבר"
+      },
+      "gamemode": "מצב משחק",
+      "gamemodes": {
+        "survival": "הישרדות",
+        "creative": "יצירתי",
+        "adventure": "הרפתקה"
+      },
+      "difficulty": "רמת קושי",
+      "difficulties": {
+        "peaceful": "שליו",
+        "easy": "קל",
+        "normal": "רגיל",
+        "hard": "קשה"
+      },
+      "structures": "יצירת מבנים",
+      "hardcore": "הארדקור",
+      "folder": "תיקיית העולם",
+      "instance": "מופע",
+      "pickInstance": "בחירת מופע",
+      "world": "עולם",
+      "pickWorld": "בחירת עולם",
+      "noWorlds": "אין עולמות במופע הזה",
+      "newDesc": "עולם חדש מ-seed, עם הכללים שלך.",
+      "importDesc": "תיקיית עולם מהמחשב שלך או מגיבוי.",
+      "fromInstanceDesc": "עולם ששיחקת בו באחד הפרופילים שלך."
+    },
+    "type": {
+      "memory": "זיכרון השרת (RAM)",
+      "memoryHint": "4 GB מתאימים לרוב קבוצות החברים. יותר עוזר עם הרבה שחקנים או חבילות מודים גדולות."
+    },
+    "access": {
+      "intro": "איך החברים שלך מצטרפים. אפשר להפעיל כמה שיטות בבת אחת; אפשר לשנות אותן מאוחר יותר.",
+      "lan": "חברים ברשת שלי (LAN)",
+      "lanDetail": "הכתובת המקומית של המחשב הזה, מוצגת אחרי שהשרת נוצר.",
+      "publicIp": "כתובת ציבורית",
+      "publicIpDetail": "ה-IP של ה-VPS שלך",
+      "alwaysOn": "תמיד פועל",
+      "relay": "כתובת זמנית",
+      "relayDetail": "חינם, כל עוד השרת פועל; אין צורך לפתוח פורט",
+      "invite": "קוד הזמנה",
+      "inviteDetail": "קוד שחברים מדביקים ב-Rustic Launcher כדי להצטרף.",
+      "domain": "הדומיין שלי",
+      "domainDetail": "חיבור Porkbun · קנייה ב-Porkbun · שימוש בכל רשם דומיינים",
+      "domainAfter": "הגדרה אחרי היצירה",
+      "safety": "מצב מקוון פועל: רק שחקנים שהמשחק בבעלותם יכולים להצטרף. רשימת ההיתרים פועלת."
+    },
+    "summary": {
+      "title": "סיכום",
+      "version": "גרסה",
+      "host": "אירוח",
+      "world": "עולם",
+      "memory": "זיכרון",
+      "players": "מספר שחקנים מרבי",
+      "plugins": "תוספים",
+      "none": "אין",
+      "eulaAccepted": "קיבלת את ה-EULA של Minecraft בשלב 1."
+    },
+    "errors": {
+      "nameRequired": "צריך לתת שם לשרת.",
+      "nameTooLong": "עד 40 תווים.",
+      "version": "צריך לבחור גרסת Horizon.",
+      "maxPlayers": "בין 1 ל-1000 שחקנים.",
+      "importPath": "צריך לבחור את תיקיית העולם לייבוא.",
+      "world": "צריך לבחור מופע ואחד מהעולמות שלו.",
+      "seed": "seed יכול להכיל עד 64 תווים.",
+      "eula": "כדי להריץ שרת, צריך לקבל את ה-EULA.",
+      "cloudUnavailable": "Rustic Cloud עדיין לא זמין.",
+      "vpsNotReady": "קודם צריך לחבר את ה-VPS שלך ולעבור את הבדיקות.",
+      "memory": "לפחות 1 GB זיכרון.",
+      "host": "צריך להזין כתובת IP או שם מארח.",
+      "port": "פורט בין 1 ל-65535.",
+      "username": "צריך להזין את שם המשתמש ב-Linux.",
+      "keyPath": "צריך לבחור את קובץ המפתח הפרטי שלך.",
+      "generateKey": "קודם צריך ליצור מפתח, ואז להוסיף אותו ל-VPS שלך.",
+      "password": "צריך להזין את הסיסמה."
+    },
+    "heading": "יצירת *שרת*",
+    "stepHints": {
+      "basics": "לתת לו שם, לבחור מה הוא מריץ ואת העולם שאיתו הוא מתחיל.",
+      "hosting": "לבחור את המכונה שמריצה אותו וכמה זיכרון הוא מקבל.",
+      "access": "לבחור איך החברים שלך מצטרפים. אפשר לשנות את זה מאוחר יותר."
+    },
+    "sections": {
+      "identity": "זהות"
+    },
+    "preview": {
+      "title": "תצוגה מקדימה",
+      "unnamed": "השרת שלך",
+      "draft": "עדיין לא נוצר"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "המחשב הזה (מקומי)",
+      "free": "חינם",
+      "description": "המחשב שלך צריך להישאר דלוק בזמן שהחברים משחקים.",
+      "settings": "במחשב הזה",
+      "reach": "חברים מגיעים אליו ברשת שלך, דרך כתובת Rustic זמנית או עם קוד הזמנה. אין צורך בהגדרת נתב.",
+      "startWithLauncher": "הפעלה יחד עם הלאנצ'ר",
+      "startWithLauncherHint": "השרת מופעל כש-Rustic Launcher נפתח."
+    },
+    "vps": {
+      "title": "ה-VPS שלך (SSH)",
+      "description": "שרת ה-Linux שלך. אנחנו מתקינים ומריצים אותו בשבילך.",
+      "which": "VPS",
+      "existing_one": "VPS שמור ({{count}})",
+      "existing_two": "VPS שמורים ({{count}})",
+      "existing_other": "VPS שמורים ({{count}})",
+      "new": "הוספת VPS",
+      "pinned": "מפתח המארח הוצמד",
+      "host": "מארח",
+      "port": "פורט",
+      "user": "משתמש",
+      "userPlaceholder": "root או משתמש sudo",
+      "auth": "התחברות",
+      "authGenerate": "ליצור לי מפתח",
+      "authKey": "קובץ מפתח קיים",
+      "authPassword": "סיסמה (פעם אחת)",
+      "generateHint": "מומלץ. Rustic יוצר זוג מפתחות; המפתח הפרטי אף פעם לא יוצא מהמחשב הזה.",
+      "generate": "יצירת מפתח",
+      "addKeyCommand": "צריך להריץ את זה פעם אחת במסוף של ה-VPS כדי לאשר את המפתח:",
+      "keyStored": "המפתח הפרטי נשמר במחזיק המפתחות של המערכת ({{path}})",
+      "openFirewall": "פתיחת פורט המשחק בחומת האש של ה-VPS",
+      "openFirewallHint": "מאפשר TCP לפורט של השרת ב-ufw או ב-firewalld. ייתכן שגם חומת האש של הספק שלך צריכה את זה.",
+      "keyFile": "מפתח פרטי",
+      "passphrase": "ביטוי סיסמה",
+      "optional": "אופציונלי",
+      "password": "סיסמה",
+      "passwordHint": "משמשת פעם אחת להתקנת מפתח. היא לא נשמרת.",
+      "test": "בדיקת החיבור",
+      "reachable": "מחובר · {{ms}} ms",
+      "unreachable": "לא הצלחנו להגיע ל-VPS הזה",
+      "authFailed": "ה-VPS דחה את ההתחברות"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "בקרוב",
+      "description": "שרתים במכונות של Rustic, תמיד פועלים.",
+      "waitlist": "לקבל אימייל כש-Rustic Cloud ייפתח.",
+      "email": "כתובת אימייל",
+      "join": "הצטרפות לרשימת ההמתנה",
+      "joined": "נרשמת לרשימה (#{{position}}). נשלח לך אימייל.",
+      "invalidEmail": "צריך להזין כתובת אימייל תקינה."
+    },
+    "requirements": {
+      "title": "בדיקת דרישות",
+      "ram": "זיכרון ({{free}} פנוי)",
+      "gameFiles": "קבצי המשחק הוכנו",
+      "port": "פורט 25565 פנוי",
+      "hint": "המקום בדיסק נבדק כשקבצי השרת יורדים."
+    },
+    "fingerprint": {
+      "title": "לסמוך על {{host}}?",
+      "description": "חיבור ראשון ל-VPS הזה. כדאי להשוות את טביעת האצבע הזו לזו שבמסוף של הספק שלך לפני שסומכים עליה.",
+      "warning": "אם היא לא תואמת, צריך לבטל: ייתכן שמישהו מיירט את החיבור. Rustic יחסום כל שינוי עתידי של המפתח הזה.",
+      "trust": "לסמוך ולהמשיך"
+    },
+    "testFailed": "בדיקת החיבור נכשלה",
+    "checkFailed": "בדיקת ה-VPS נכשלה",
+    "preflight": {
+      "running": "בודקים את ה-VPS שלך…",
+      "ok": "ה-VPS שלך מוכן",
+      "notOk": "ה-VPS שלך לא עומד בדרישות",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_two": "{{count}} vCPU",
+      "cpu_other": "{{count}} vCPU",
+      "memory": "זיכרון: {{memory}}",
+      "disk": "מקום פנוי בדיסק: {{disk}}",
+      "systemd": "systemd זמין",
+      "ip": "IP ציבורי"
+    },
+    "problems": {
+      "memory": "זיכרון",
+      "disk": "דיסק",
+      "arch": "ארכיטקטורה",
+      "os": "מערכת הפעלה",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "מתקינים ב-{{host}}",
+      "steps": {
+        "connect": "התחברות דרך SSH",
+        "check": "בדיקות מקדימות",
+        "user": "יצירת המשתמש 'rustic'",
+        "download": "העלאת קבצי שרת חתומים",
+        "engine": "הגדרת המנוע של Rustic",
+        "service": "התקנת השירות",
+        "firewall": "פתיחת פורט 25565",
+        "world": "הכנת העולם",
+        "start": "הפעלה ובדיקה"
+      },
+      "state": {
+        "pending": "ממתין",
+        "running": "בתהליך",
+        "done": "הסתיים",
+        "failed": "נכשל",
+        "skipped": "דולג"
+      },
+      "skippedVanilla": "לא נדרש ל-Horizon רגיל",
+      "log_one": "הצגת היומן (שורה אחת)",
+      "log_two": "הצגת היומן (2 שורות)",
+      "log_other": "הצגת היומן ({{count}} שורות)",
+      "vpsDone": "{{name}} פועל ב-{{host}}",
+      "vpsDoneBody": "אפשר לנהל אותו מהלאנצ'ר כמו שרת מקומי: מסוף, שחקנים, תוספים, גיבויים.",
+      "localDownload": "הורדת {{engine}}",
+      "localInit": "הכנת העולם וההגדרות",
+      "localStart": "הפעלה ראשונה",
+      "localReady": "מוכן להפעלה",
+      "localDone": "{{name}} פועל",
+      "localDoneBody": "אפשר לשתף את הכתובת שלו מהלשונית גישה, או להזמין חברים מחלונית החברים.",
+      "open": "פתיחת השרת",
+      "backToList": "חזרה לשרתים",
+      "retry": "ניסיון חוזר",
+      "failed": "ההתקנה נכשלה",
+      "crashed": "השרת נעצר במהלך ההפעלה הראשונה שלו. כדאי לבדוק את המסוף."
+    }
+  },
+  "manage": {
+    "tabsLabel": "חלקי השרת",
+    "tabs": {
+      "overview": "סקירה",
+      "console": "מסוף",
+      "players": "שחקנים",
+      "plugins": "תוספים",
+      "config": "תצורה",
+      "datapacks": "חבילות נתונים",
+      "backups": "גיבויים",
+      "access": "גישה",
+      "danger": "אזור מסוכן"
+    },
+    "state": {
+      "stopped": "עצור",
+      "starting": "מופעל…",
+      "running": "פועל",
+      "stopping": "נעצר…",
+      "crashed": "קרס",
+      "installing": "בהתקנה…",
+      "unreachable": "לא נגיש"
+    },
+    "save": "שמירה",
+    "cancel": "ביטול",
+    "close": "סגירה",
+    "remove": "הסרה",
+    "done": "סיום",
+    "header": {
+      "back": "שרתים",
+      "players": "{{online}}/{{max}} שחקנים",
+      "uptime": "פועל {{duration}}",
+      "start": "הפעלה",
+      "stop": "עצירה",
+      "restart": "הפעלה מחדש",
+      "join": "הצטרפות",
+      "address": "כתובת",
+      "copyAddress": "העתקת כתובת השרת",
+      "powerFailed": "לא ניתן היה לשנות את מצב השרת"
+    },
+    "overview": {
+      "stoppedTitle": "השרת עצור",
+      "stoppedBody": "צריך להפעיל אותו כדי לראות בזמן אמת את ה-CPU, הזיכרון, ה-TPS וזמן ה-tick.",
+      "cpu": "CPU",
+      "cpuChart": "שימוש ב-CPU בשתי הדקות האחרונות",
+      "ram": "זיכרון",
+      "ramChart": "זיכרון בשימוש בשתי הדקות האחרונות",
+      "of": "מתוך {{max}}",
+      "tps": "TPS",
+      "tpsChart": "ticks לשנייה בשתי הדקות האחרונות",
+      "mspt": "זמן tick",
+      "msptChart": "אלפיות שנייה לכל tick בשתי הדקות האחרונות, קו תקציב של 50 ms",
+      "msptBudget": "תקציב 50 ms",
+      "health": {
+        "good": "חלק",
+        "busy": "עמוס",
+        "lagging": "מגמגם"
+      },
+      "onlineTitle_one": "שחקן אחד מחובר",
+      "onlineTitle_two": "2 שחקנים מחוברים",
+      "onlineTitle_other": "{{count}} שחקנים מחוברים",
+      "onlineStopped": "אף אחד לא יכול להצטרף כשהשרת עצור.",
+      "nobody": "אף אחד לא משחק כרגע.",
+      "infoTitle": "פרטים",
+      "world": "עולם",
+      "version": "Horizon",
+      "port": "פורט",
+      "memory": "זיכרון",
+      "created": "נוצר",
+      "folder": "תיקייה",
+      "uptime": "זמן פעולה",
+      "startedAt": "מאז {{time}}",
+      "lastSession": "הסשן האחרון",
+      "lastStarted": "הופעל לאחרונה {{when}}",
+      "neverStarted": "עדיין לא הופעל",
+      "lastLines": "השורות האחרונות במסוף",
+      "noLines": "עדיין לא נרשם כלום.",
+      "openConsole": "פתיחת המסוף",
+      "crashedTitle": "השרת נעצר באופן בלתי צפוי",
+      "crashedBody": "כדאי לבדוק את השורות האחרונות במסוף, ואז להפעיל אותו שוב."
+    },
+    "console": {
+      "filter": "סינון שורות",
+      "filters": {
+        "all": "הכול",
+        "info": "מידע",
+        "warn": "אזהרות",
+        "error": "שגיאות",
+        "chat": "צ'אט"
+      },
+      "levels": {
+        "info": "מידע",
+        "warn": "אזהרה",
+        "error": "שגיאה",
+        "command": "פקודה",
+        "chat": "צ'אט"
+      },
+      "autoScroll": "מעקב אחרי שורות חדשות",
+      "logLabel": "מסוף השרת",
+      "empty": "עדיין אין שורות.",
+      "suggestions": "הצעות לפקודות",
+      "inputLabel": "פקודת שרת",
+      "placeholder": "הקלדת פקודה (Tab משלים, ↑ היסטוריה)",
+      "offline": "כדי לשלוח פקודות, צריך להפעיל את השרת",
+      "send": "שליחה",
+      "sendFailed": "לא ניתן היה לשלוח את הפקודה",
+      "hint": "הפקודות רצות כמסוף השרת, עם כל ההרשאות. אין צורך בלוכסן בהתחלה."
+    },
+    "players": {
+      "whitelist": "רשימת היתרים",
+      "whitelistHint": "רק שחקנים שברשימה יכולים להצטרף. מומלץ כשאפשר להגיע לשרת מהאינטרנט.",
+      "view": "הצגת שחקנים",
+      "views": {
+        "online": "מחוברים",
+        "all": "הכול",
+        "ops": "מפעילים (OP)",
+        "whitelist": "ברשימת ההיתרים",
+        "banned": "חסומים"
+      },
+      "search": "חיפוש שחקן",
+      "emptyOnline": "אף אחד לא מחובר",
+      "empty": "אין כאן שחקנים",
+      "stoppedHint": "כדי לראות מי משחק, צריך להפעיל את השרת.",
+      "online": "מחובר",
+      "offline": "לא מחובר",
+      "op": "מפעיל (OP)",
+      "whitelisted": "ברשימת ההיתרים",
+      "banned": "חסום",
+      "playtime": "זמן משחק: {{duration}}",
+      "kick": "הרחקה",
+      "kickAria": "הרחקת {{name}}",
+      "more": "פעולות נוספות עבור {{name}}",
+      "makeOp": "מינוי למפעיל",
+      "deop": "הסרת הרשאות מפעיל",
+      "whitelistAdd": "הוספה לרשימת ההיתרים",
+      "whitelistRemove": "הסרה מרשימת ההיתרים",
+      "ban": "חסימה",
+      "pardon": "ביטול חסימה",
+      "banTitle": "לחסום את {{name}}?",
+      "banBody": "השחקן ינותק ולא יוכל להצטרף שוב עד שתבטל את החסימה.",
+      "reason": "סיבה (אופציונלי, מוצגת לשחקן)",
+      "failed": "הפעולה נכשלה",
+      "done": {
+        "kick": "{{name}} הורחק",
+        "ban": "{{name}} נחסם",
+        "pardon": "החסימה של {{name}} בוטלה",
+        "op": "{{name}} הוא עכשיו מפעיל",
+        "deop": "{{name}} כבר לא מפעיל",
+        "whitelist_add": "{{name}} נוסף לרשימת ההיתרים",
+        "whitelist_remove": "{{name}} הוסר מרשימת ההיתרים"
+      }
+    },
+    "config": {
+      "mode": "מצב עריכה",
+      "form": "הגדרות",
+      "raw": "קובץ גולמי",
+      "groups": {
+        "general": "כללי",
+        "world": "עולם",
+        "players": "שחקנים",
+        "network": "רשת",
+        "performance": "ביצועים"
+      },
+      "keys": {
+        "motd": "הודעת היום",
+        "max-players": "מספר שחקנים מרבי",
+        "white-list": "רשימת היתרים",
+        "online-mode": "מצב מקוון (בדיקת חשבון)",
+        "pvp": "שחקן נגד שחקן",
+        "gamemode": "מצב משחק ברירת מחדל",
+        "difficulty": "רמת קושי",
+        "level-seed": "ה-seed של העולם",
+        "spawn-protection": "רדיוס הגנת נקודת ההופעה",
+        "server-port": "פורט",
+        "enable-rcon": "מסוף מרוחק (RCON)",
+        "view-distance": "טווח ראייה",
+        "simulation-distance": "טווח סימולציה"
+      },
+      "restart": "הפעלה מחדש",
+      "restartNeeded": "כדי להחיל חלק מהשינויים, צריך להפעיל מחדש את השרת",
+      "unsaved_one": "שינוי אחד שלא נשמר",
+      "unsaved_two": "2 שינויים שלא נשמרו",
+      "unsaved_other": "{{count}} שינויים שלא נשמרו",
+      "noChanges": "אין שינויים",
+      "discard": "ביטול השינויים",
+      "saved": "התצורה נשמרה",
+      "saveFailed": "לא ניתן היה לשמור את התצורה",
+      "rawTitle": "server.toml",
+      "rawWarning": "מתקדם: שגיאת הקלדה עלולה למנוע מהשרת לעלות. הערכים נבדקים בזמן השמירה."
+    },
+    "plugins": {
+      "vanillaTitle": "תוספים דורשים Rustic Server",
+      "vanillaBody": "השרת הזה מריץ Horizon רגיל. Rustic Server מוסיף תוספי .rplugin בארגז חול שאף פעם לא יכולים להקריס אותו. כדי להשתמש בתוספים, צריך ליצור Rustic Server ולייבא אליו את העולם הזה.",
+      "createRustic": "יצירת Rustic Server",
+      "intro": "התוספים רצים בארגז חול: תוסף שנכשל מושבת עם שורה ביומן, והשרת ממשיך לפעול. כל תוסף מצהיר למה הוא רשאי לגשת.",
+      "upload": "הוספת קובץ…",
+      "uploadTitle": "בחירת קובץ .rplugin",
+      "find": "חיפוש תוספים",
+      "empty": "עדיין אין תוספים",
+      "emptyBody": "אפשר לעיין בתוכן › תוספים כדי להוסיף תוסף בלחיצה.",
+      "errored": "הושבת אחרי שגיאה",
+      "disabled": "כבוי",
+      "noDescription": "אין תיאור",
+      "toggle": "הפעלת {{name}}",
+      "capabilities": "גישה",
+      "noNetwork": "בלי רשת",
+      "network": "רשת: {{domains}}",
+      "fs": {
+        "none": "בלי קבצים",
+        "data-folder": "תיקיית נתונים משלו"
+      },
+      "update": "עדכון לגרסה {{version}}",
+      "updated": "{{name}} עודכן לגרסה {{version}}",
+      "installed": "{{name}} הותקן והופעל",
+      "removeTitle": "להסיר את {{name}}?",
+      "removeBody": "התוסף נפרק והקובץ שלו נמחק. תיקיית הנתונים שלו נשמרת.",
+      "failed": "הפעולה על התוסף נכשלה"
+    },
+    "datapacks": {
+      "intro": "חבילות הנתונים של העולם \"{{world}}\".",
+      "find": "חיפוש חבילות נתונים",
+      "empty": "אין חבילות נתונים בעולם הזה",
+      "toggle": "הפעלת {{name}}",
+      "remove": "הסרת {{name}}",
+      "reloadHint": "השינויים חלים אחרי /reload או הפעלה מחדש.",
+      "failed": "הפעולה על חבילת הנתונים נכשלה"
+    },
+    "backups": {
+      "nowTitle": "גיבוי עכשיו",
+      "nowBody": "עותק של העולם ושל התצורה. השרת ממשיך לפעול.",
+      "note": "הערה",
+      "notePlaceholder": "הערה אופציונלית, למשל \"לפני העדכון\"",
+      "now": "גיבוי עכשיו",
+      "created": "הגיבוי נוצר",
+      "empty": "עדיין אין גיבויים",
+      "kinds": {
+        "manual": "ידני",
+        "scheduled": "מתוזמן",
+        "pre_restore": "לפני שחזור"
+      },
+      "restore": "שחזור",
+      "restoreTitle": "לשחזר את הגיבוי הזה?",
+      "restoreBody": "העולם יחזור למצב של {{date}}. כל מה שנבנה מאז יוחלף. קודם ייווצר גיבוי של העולם הנוכחי.",
+      "restored": "הגיבוי שוחזר",
+      "delete": "מחיקת הגיבוי",
+      "deleteTitle": "למחוק את הגיבוי הזה?",
+      "deleteBody": "הגיבוי הזה יוסר לצמיתות.",
+      "failed": "פעולת הגיבוי נכשלה",
+      "scheduleTitle": "גיבויים אוטומטיים",
+      "scheduleBody": "הגיבויים האוטומטיים הישנים ביותר מוסרים כשמגיעים למגבלה.",
+      "scheduleEnabled": "גיבוי אוטומטי",
+      "every": "כל",
+      "hours_one": "שעה",
+      "hours_two": "שעתיים",
+      "hours_other": "{{count}} שעות",
+      "keep": "לשמור את",
+      "keepCount_one": "הגיבוי האחרון",
+      "keepCount_two": "2 הגיבויים האחרונים",
+      "keepCount_other": "{{count}} הגיבויים האחרונים",
+      "scheduleSaved": "לוח הזמנים של הגיבויים נשמר"
+    },
+    "danger": {
+      "deleteTitle": "מחיקת השרת הזה",
+      "deleteBody": "עוצר את השרת ומסיר אותו מהלאנצ'ר. אפשר לשמור את הקבצים שלו.",
+      "delete": "מחיקת השרת",
+      "removeVpsTitle": "הסרה מה-VPS שלך",
+      "removeVpsBody": "עוצר את השירות ב-{{host}} ומסיר ממנו את Rustic. ה-VPS נשאר שלך.",
+      "removeVps": "הסרה מה-VPS",
+      "confirmTitle": "למחוק את \"{{name}}\"?",
+      "confirmBody": "אי אפשר לבטל את הפעולה. אם ייתכן שתצטרך את העולם שוב, כדאי לגבות אותו קודם.",
+      "deleteFiles": "למחוק גם את העולם ואת כל קבצי השרת",
+      "typeName": "כדי לאשר, צריך להקליד \"{{name}}\"",
+      "deleted": "{{name}} נמחק",
+      "failed": "לא ניתן היה למחוק את השרת"
+    }
+  },
+  "access": {
+    "intro": "בוחרים איך חברים מגיעים לשרת שלך. אפשר להפעיל כמה שיטות בבת אחת.",
+    "optional": "אופציונלי",
+    "lan": {
+      "title": "ברשת שלך",
+      "body": "שחקנים באותה רשת Wi-Fi או באותה רשת מצטרפים עם הכתובת הזו.",
+      "copy": "העתקת הכתובת המקומית"
+    },
+    "public": {
+      "title": "כתובת ציבורית",
+      "body": "ה-IP והפורט של ה-VPS שלך. כל אחד יכול להצטרף איתם; קל יותר לשתף דומיין.",
+      "copy": "העתקת הכתובת הציבורית"
+    },
+    "relay": {
+      "title": "כתובת זמנית",
+      "body": "כתובת חינמית ב-Rustic Relay כל עוד השרת פועל. בלי הגדרת נתב, וה-IP שלך נשאר מוסתר.",
+      "toggle": "כתובת זמנית",
+      "copy": "העתקת הכתובת הזמנית",
+      "off": "כבוי. אפשר להפעיל כדי לקבל כתובת לשיתוף.",
+      "label": "השם בכתובת",
+      "apply": "החלה",
+      "status": {
+        "off": "כבוי",
+        "connecting": "ממתינים שהשרת יופעל",
+        "online": "נגיש עכשיו",
+        "error": "ה-Relay לא נגיש"
+      },
+      "failed": "לא ניתן היה לשנות את הכתובת הזמנית",
+      "taken": "השם הזה תפוס. כדאי לנסות שם אחר.",
+      "invalid": "צריך 3 עד 32 אותיות לטיניות קטנות, ספרות או מקפים."
+    },
+    "invite": {
+      "title": "קוד הזמנה",
+      "body": "חברים שמשתמשים ב-Rustic Launcher מדביקים את הקוד הזה כדי להצטרף, כמו Play with Friends של Horizon.",
+      "create": "יצירת קוד",
+      "copy": "העתקת קוד ההזמנה",
+      "expires": "יפוג {{when}}",
+      "revoke": "ביטול"
+    },
+    "advanced": "מתקדם: פתיחת פורט בנתב (UPnP)",
+    "upnp": {
+      "title": "מיפוי פורטים ב-UPnP",
+      "warning": "זה מבקש מהנתב שלך לפתוח את הפורט של השרת לאינטרנט. כתובת ה-IP הציבורית שלך נחשפת לכל שחקן, וזה חושף את החיבור הביתי שלך (מתקפות, מיקום). עדיף להשתמש בכתובת הזמנית או בדומיין.",
+      "status": {
+        "off": "כבוי",
+        "mapping": "פונים לנתב…",
+        "mapped": "הפורט פתוח",
+        "failed": "הנתב סירב (ייתכן ש-UPnP כבוי)"
+      },
+      "mapped": "הפורט פתוח: {{address}}",
+      "copy": "העתקת הכתובת הציבורית",
+      "failed": "לא ניתן היה לפתוח את הפורט",
+      "prefer": "הכתובת הזמנית ודומיינים עובדים בלי לפתוח שום פורט."
+    }
+  },
+  "domains": {
+    "title": "הדומיין שלי",
+    "intro": "דומיין הוא הכתובת של השרת שלך, למשל play.yourname.net. אפשר לחבר דומיין שכבר יש לך, לקנות אחד ב-Porkbun בלי לצאת מהלאנצ'ר, או להשתמש בכל רשם דומיינים: נראה לך בדיוק מה להוסיף.",
+    "automatic": "אוטומטי",
+    "anyRegistrar": "כל רשם דומיינים",
+    "otherPaths": "דרכים אחרות",
+    "paths": {
+      "porkbun": {
+        "title": "חיבור Porkbun",
+        "body": "כבר יש לך דומיין ב-Porkbun? אפשר לחבר את החשבון שלך ואנחנו ניצור את הרשומות בשבילך."
+      },
+      "buy": {
+        "title": "קניית דומיין ב-Porkbun",
+        "body": "מוצאים שם פנוי, קונים אותו בחשבון ה-Porkbun שלך, והוא מוגדר אוטומטית."
+      },
+      "manual": {
+        "title": "שימוש בדומיין מכל רשם דומיינים",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: נראה לך מה להוסיף ונבדוק את זה בשבילך."
+      }
+    },
+    "subdomain": "תת-דומיין",
+    "subdomainHint": "play היא ברירת מחדל טובה.",
+    "apexHint": "ריק: הדומיין עצמו (אצל חלק מרשמי הדומיינים נדרש ALIAS/ANAME).",
+    "invalidSubdomain": "אותיות, ספרות ומקפים בלבד.",
+    "invalidDomain": "זה לא נראה כמו דומיין (example.net).",
+    "copyAddress": "העתקת כתובת הדומיין",
+    "configureFailed": "לא ניתן היה להגדיר את הדומיין",
+    "boundBody": "שחקנים מצטרפים עם הכתובת הזו.",
+    "remove": "הסרת הדומיין",
+    "removeTitle": "להפסיק להשתמש ב-{{domain}}?",
+    "removeBody": "הכתובת תפסיק להפנות לשרת הזה אחרי שהרשומות יוסרו. הדומיין נשאר שלך.",
+    "status": {
+      "pending": "ממתין",
+      "propagating": "בהפצה",
+      "verified": "מחובר",
+      "error": "שגיאה"
+    },
+    "provider": {
+      "porkbun": "מנוהל דרך Porkbun",
+      "manual": "מנוהל אצל רשם הדומיינים שלך"
+    },
+    "connected": "הדומיין חובר",
+    "connectedBody": "Rustic Cloud מאמת את רשומת ה-TXT, ואז הכתובת שלך מתחילה לעבוד. אפשר לסגור את זה; נעדכן אותך.",
+    "porkbun": {
+      "step1": "ב-porkbun.com › Account › API Access, ליצור מפתח API.",
+      "openApi": "פתיחת API Access של Porkbun",
+      "step2": "בדף של הדומיין ב-Porkbun, להפעיל את \"API Access\".",
+      "apiKey": "מפתח API",
+      "secret": "מפתח API סודי",
+      "keychain": "נשמר במחזיק המפתחות של המחשב שלך, אף פעם לא נשלח ל-Rustic.",
+      "connect": "חיבור",
+      "badApiKey": "מפתח API מתחיל ב-pk1_.",
+      "badSecret": "מפתח API סודי מתחיל ב-sk1_.",
+      "rejected": "Porkbun דחה את המפתחות האלה. כדאי לבדוק אותם, או ליצור זוג חדש.",
+      "connected": "Porkbun חובר",
+      "disconnect": "ניתוק",
+      "domain": "דומיין",
+      "pickDomain": "בחירת אחד מהדומיינים שלך",
+      "apiAccessOff": "API Access כבוי לדומיין הזה ב-Porkbun",
+      "apiAccessHint": "דומיינים באפור צריכים הפעלה של \"API Access\" ב-Porkbun.",
+      "preview": "השינויים שנבצע",
+      "dryRun": "תצוגה מקדימה",
+      "previewBody": "הרשומות האלה יתווספו או יוחלפו בדומיין שלך כדי ש-{{fqdn}} יגיע לשרת הזה. שום דבר לא משתנה עד שמחילים.",
+      "apply": "הגדרה אוטומטית"
+    },
+    "buy": {
+      "intro": "הדומיין נרשם בחשבון ה-Porkbun שלך ומשולם שם. Rustic אף פעם לא גובה עליו תשלום.",
+      "needsAccount": "כדי לקנות, צריך את חשבון ה-Porkbun שלך: קודם צריך לחבר אותו (אפשר ליצור חשבון בחינם ב-porkbun.com).",
+      "search": "השם שאתה רוצה",
+      "searchPlaceholder": "למשל loucraft",
+      "searchButton": "חיפוש",
+      "noResults": "אין תוצאות לשם הזה.",
+      "premium": "פרימיום",
+      "price": "{{price}} לשנה הראשונה · חידוש ב-{{renewal}}",
+      "taken": "תפוס",
+      "select": "בחירה",
+      "overLimit": "מעל 100$: אפשר לקנות אותו ב-porkbun.com",
+      "pricesNote": "המחירים הם של Porkbun, בדולר אמריקאי, כפי שהם מוצעים עכשיו. ייתכנו מיסים ב-Porkbun.",
+      "confirmTitle": "אישור הרכישה ב-Porkbun",
+      "seller": "המוכר: Porkbun LLC, לא Rustic. התנאים, המחירים, החידושים וההחזרים שלהם חלים.",
+      "domain": "דומיין",
+      "address": "כתובת השרת",
+      "registrar": "רשם דומיינים",
+      "registrarValue": "Porkbun, בחשבון שלך",
+      "firstYear": "שנה ראשונה",
+      "renewal": "חידוש שנתי במחיר",
+      "payment": "משולם מהיתרה בחשבון ה-Porkbun שלך או מהכרטיס השמור: {{price}} עכשיו; מתחדש מדי שנה ב-{{renewal}} אלא אם מכבים את החידוש האוטומטי ב-Porkbun.",
+      "agreeTerms": "אני מסכים להסכם הרישום ולתנאים של Porkbun",
+      "termsLink": "(לקריאתם)",
+      "agreeOrder": "אני מבין ש-Rustic רק שולח את ההזמנה הזו ל-Porkbun בשמי",
+      "refunds": "החזרים וביטולים של דומיינים מטופלים על ידי Porkbun לפי התנאים שלה.",
+      "buyButton": "קנייה ב-Porkbun · {{price}}",
+      "bought": "הדומיין {{domain}} שלך",
+      "boughtBody": "חויב על ידי Porkbun: {{price}}. מגדירים אותו עכשיו…",
+      "configuring": "מגדירים את הדומיין החדש שלך…",
+      "failed": "הרכישה לא עברה",
+      "errors": {
+        "price_changed": "המחיר השתנה ב-Porkbun. כדאי לבדוק את המחיר החדש ולנסות שוב.",
+        "not_available": "הדומיין הזה נתפס הרגע.",
+        "over_limit": "מעל 100$: אפשר לקנות אותו ב-porkbun.com.",
+        "porkbun_not_connected": "קודם צריך לחבר את חשבון ה-Porkbun שלך.",
+        "consent_required": "צריך לסמן את שתי התיבות."
+      }
+    },
+    "manual": {
+      "intro": "צריך להוסיף את הרשומות האלה באזור ה-DNS של רשם הדומיינים שלך. אנחנו בודקים אותן כל 10 שניות ומודיעים לך כשזה עובד.",
+      "domain": "הדומיין שלך",
+      "registrar": "רשם דומיינים",
+      "show": "הצגת הרשומות",
+      "guideTitle": "אצל {{registrar}}",
+      "allGuides": "מדריכים לכל רשמי הדומיינים"
+    },
+    "records": {
+      "caption": "רשומות DNS להוספה",
+      "type": "סוג",
+      "name": "שם / מארח",
+      "value": "ערך / יעד",
+      "ttl": "TTL",
+      "status": "מצב",
+      "optional": "אופציונלי",
+      "emptyHost": "(להשאיר ריק)",
+      "copyName": "העתקת השם של {{type}}",
+      "copyValue": "העתקת הערך של {{type}}",
+      "srvFields": "עדיפות {{priority}} · משקל {{weight}} · פורט {{port}}"
+    },
+    "check": {
+      "pending": "לא נבדק",
+      "notNeeded": "לא נדרש",
+      "ok": "תקין",
+      "propagating": "בהפצה ({{ok}}/{{total}})",
+      "wrong": "ערך שגוי",
+      "found": "נמצא:",
+      "expected": "צפוי:",
+      "missing": "חסר",
+      "first": "בדיקה ראשונה…",
+      "progress": "{{ok}} מתוך {{total}} רשומות תקינות",
+      "progressLabel": "רשומות שאומתו",
+      "auto": "בדיקה אוטומטית כל 10 שנ'",
+      "lastCheck": "בדיקה אחרונה לפני {{seconds}} שנ'",
+      "now": "לבדוק עכשיו"
+    },
+    "help": {
+      "txt": "למה רשומת TXT? היא מוכיחה שהדומיין שלך, כך שאף אחד אחר לא יכול להפנות אותו לשרת שלו.",
+      "propagation": "שינויים יכולים לקחת בין דקה לכמה שעות עד שהם מגיעים לכולם. אנחנו ממשיכים לבדוק; אין צורך להישאר כאן.",
+      "apex": "דומיינים ראשיים (yourname.net בלי \"play.\") צריכים רשומת ALIAS/ANAME; לא אצל כל רשם דומיינים יש כזו. תת-דומיין תמיד עובד."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › הדומיין שלך › DNS zone.\nללחוץ על \"Add an entry\" ולבחור את הסוג (CNAME, SRV, A או TXT).\nSub-domain = השם שלמטה (להשאיר ריק עבור הדומיין עצמו), Target = הערך.\nלחזור על זה לכל רשומה, ואז לאשר. OVH מחיל את השינויים תוך כמה דקות."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › הדומיין שלך › DNS records.\nללחוץ על \"Add record\" ולבחור את הסוג.\nName = השם שלמטה, Value = הערך (לשמור את הנקודה בסוף ביעדים של CNAME/SRV).\nלשמור כל רשומה."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nתחת Host records, \"Add new record\".\nHost = השם שלמטה (@ עבור הדומיין עצמו), Value/Target = הערך.\nללחוץ על סימן ה-V הירוק כדי לשמור כל אחת."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › הדומיין שלך › DNS › Manage DNS.\nללחוץ על \"Add new record\" ולבחור את הסוג.\nName = השם שלמטה (@ עבור הדומיין עצמו), Value = הערך.\nעבור SRV, למלא Service _minecraft, Protocol _tcp, ואז עדיפות, משקל ופורט. לשמור."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "לבחור את האתר שלך › DNS › Records › Add record.\nלבחור את הסוג, Name = השם שלמטה, Target/Content = הערך.\nלהגדיר את Proxy status ל-\"DNS only\" (ענן אפור): תעבורת המשחק לא יכולה לעבור דרך ה-proxy של Cloudflare.\nלשמור כל רשומה."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › הדומיין שלך › DNS.\nללחוץ על \"Add record\" ולבחור את הסוג.\nHost name = השם שלמטה, Points to / Value = הערך.\nלשמור; ייתכן ש-IONOS יבקש לאשר החלפה של רשומת ברירת מחדל."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › הדומיין שלך › DNS / Nameservers.\nתחת \"Manage DNS records\", לבחור את הסוג.\nName = השם שלמטה, Points to / Value = הערך, TTL כפי שמוצג.\nללחוץ על \"Add record\" לכל אחת."
+      },
+      "porkbun": {
+        "name": "Porkbun (ידנית)",
+        "steps": "Domain Management › הדומיין שלך › DNS.\nלבחור את הסוג, Host = השם שלמטה (ריק עבור הדומיין עצמו), Answer = הערך.\nללחוץ על \"Add\" לכל רשומה.\nטיפ: האפשרות \"חיבור Porkbun\" עושה את כל זה בשבילך."
+      },
+      "generic": {
+        "name": "רשם דומיינים אחר",
+        "steps": "לפתוח את אזור ה-DNS של הדומיין שלך (לפעמים נקרא DNS records או Zone editor).\nלהוסיף כל רשומה שלמטה עם אותו סוג, שם וערך.\nאם רשם הדומיינים מבקש את השם המלא, להוסיף את הדומיין שלך אחרי השם.\nלשמור, ואז לחזור: אנחנו בודקים אוטומטית."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "תצוגות השרתים",
+    "tabs": {
+      "discover": "גילוי",
+      "browse": "עיון"
+    },
+    "searchLabel": "חיפוש שרתים",
+    "searchPlaceholder": "חיפוש במדריך השרתים…",
+    "publish": "פרסום השרת שלי",
+    "publishCta": {
+      "title": "השרת שלך כאן",
+      "hint": "אפשר לרשום את שרת ה-Horizon שלך במדריך דרך האתר: הוא יופיע כאן וב-rustic-launcher.com אחרי שהבדיקות האוטומטיות יעברו."
+    },
+    "play": "לשחק",
+    "playAria": "לשחק ב-{{name}}",
+    "view": "הצגה",
+    "verified": "מאומת",
+    "featured": "בחירת הצוות",
+    "verifiedHint": "שרתים מאומתים: צוות Rustic בדק את הבעלים ואת הכללים.",
+    "online_one": "{{value}} מחובר",
+    "online_two": "{{value}} מחוברים",
+    "online_other": "{{value}} מחוברים",
+    "playersLabel": "שחקנים מחוברים",
+    "languagesLabel": "שפות",
+    "playsLabel": "הפעלות השבוע",
+    "lastPlayed": "שיחקת לאחרונה",
+    "lastPlayedOn": "שיחקת {{when}}",
+    "hero": {
+      "label": "שרתים מומלצים",
+      "eyebrow": "מאומת"
+    },
+    "rows": {
+      "trending": "פופולרי עכשיו",
+      "trendingHint": "הכי הרבה הפעלות מ-Rustic השבוע",
+      "players": "הכי הרבה שחקנים עכשיו",
+      "playersHint": "לפי הבדיקה האחרונה של הענן",
+      "new": "חדשים במדריך",
+      "newHint": "נרשמו זה עתה על ידי הבעלים שלהם",
+      "recent": "שיחקת לאחרונה",
+      "recentHint": "מרשימת השרתים שלך"
+    },
+    "rowError": "לא ניתן היה לטעון את השורה הזו.",
+    "retry": "ניסיון חוזר",
+    "empty": {
+      "title": "עדיין אין שרתים רשומים",
+      "hint": "אפשר להיות הראשון: לפרסם את השרת שלך דרך האתר."
+    },
+    "emptySearch": {
+      "title": "אין שרת תואם",
+      "hint": "כדאי לנסות מילים אחרות או פחות מסננים."
+    },
+    "sorts": {
+      "trending": "פופולרי עכשיו",
+      "players": "הכי הרבה שחקנים",
+      "new": "החדשים ביותר",
+      "name": "שם"
+    },
+    "filters": {
+      "tags": "סגנון משחק",
+      "language": "שפה",
+      "engine": "מנוע",
+      "rustic": "Rustic",
+      "verifiedOnly": "מאומתים בלבד",
+      "reset": "איפוס המסננים",
+      "remove": "הסרת המסנן {{filter}}"
+    },
+    "tags": {
+      "survival": "הישרדות",
+      "smp": "SMP",
+      "creative": "יצירתי",
+      "minigames": "מיני-משחקים",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "משחק תפקידים",
+      "factions": "Factions",
+      "prison": "Prison",
+      "parkour": "פארקור",
+      "adventure": "הרפתקה",
+      "building": "בנייה",
+      "economy": "כלכלה",
+      "modded": "עם מודים",
+      "anarchy": "אנרכיה",
+      "hardcore": "הארדקור",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "שרתים",
+      "status": "מצב חי",
+      "cloudSaw_one": "הענן ראה {{value}} שחקן מחובר {{when}}",
+      "cloudSaw_two": "הענן ראה {{value}} שחקנים מחוברים {{when}}",
+      "cloudSaw_other": "הענן ראה {{value}} שחקנים מחוברים {{when}}",
+      "engine": "מנוע",
+      "version": "גרסת המשחק",
+      "languages": "שפות",
+      "plays": "הפעלות השבוע",
+      "about": "אודות",
+      "noDescription": "עדיין אין תיאור.",
+      "address": "כתובת",
+      "copy": "העתקה",
+      "openSite": "פתיחה באתר",
+      "website": "אתר",
+      "discord": "Discord",
+      "by": "נרשם על ידי {{name}}",
+      "byStaff": "נרשם על ידי צוות Rustic",
+      "report": "דיווח",
+      "rusticEdition": "נדרשת מהדורת Rustic",
+      "missing": "השרת הזה לא זמין",
+      "missingHint": "ייתכן שהוא פרטי, הוסתר על ידי ניהול הקהילה, או נמחק."
+    },
+    "report": {
+      "title": "דיווח על {{name}}",
+      "lead": "אפשר לספר לצוות ניהול הקהילה מה לא בסדר. כל דיווח נבדק.",
+      "reason": "סיבה",
+      "reasons": {
+        "impersonation": "מתחזה לשרת אחר",
+        "spam": "ספאם או הטעיה",
+        "inappropriate_content": "תוכן לא הולם",
+        "cheating": "רמאות או שרת זדוני",
+        "harassment": "הטרדה",
+        "copyright": "מפר את הזכויות שלי (סימן מסחרי, שם)",
+        "malware": "תוכנה זדונית",
+        "other": "אחר"
+      },
+      "details": "פרטים",
+      "detailsHint": "אופציונלי, עד 2,000 תווים.",
+      "send": "שליחת הדיווח",
+      "sent": "תודה, הדיווח שלך נשלח לצוות ניהול הקהילה.",
+      "signIn": "כדי לדווח על שרת, צריך להתחבר לחשבון ה-Rustic שלך.",
+      "failed": "לא ניתן היה לשלוח את הדיווח."
+    }
+  }
+}

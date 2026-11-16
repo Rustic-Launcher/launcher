@@ -7,6 +7,11 @@
 //! the "Connecting to <host>, <port>" log line as a fallback for builds without the companion.
 //! Discord not running is normal: the launcher tries again now and then, silently.
 //! Off, or the server address left out, in Settings > Privacy.
+//!
+//! The small image is the place's own picture when the game has one (ADR 0173): the server's
+//! favicon or the singleplayer world's icon, sent by the companion on the same line, uploaded once
+//! to Rustic's CDN by [`crate::presence_icons`] (Discord shows images by URL only). The generic
+//! art assets stay the fallback: offline, signed out, no picture, or the server hidden.
 
 use serde::Deserialize;
 use serde_json::{Value, json};
@@ -42,6 +47,31 @@ pub struct Presence {
     pub game: Option<String>,
     /// When this activity began (unix seconds): the launcher's start, then the game's.
     pub since: u64,
+    /// The place's own picture on Rustic's CDN (an https URL), once uploaded.
+    pub icon: Option<String>,
+}
+
+impl Presence {
+    /// A presence at `place` without a picture yet.
+    pub fn at(place: Place, game: Option<String>, since: u64) -> Self {
+        Self {
+            place,
+            game,
+            since,
+            icon: None,
+        }
+    }
+}
+
+/// Whether the place's own picture may be shown, and so sent to Rustic's CDN at all: the presence
+/// on, and for a server only when its address may be shown (a public host, the setting on).
+pub fn icon_allowed(place: &Place, o: Options) -> bool {
+    o.enabled
+        && match place {
+            Place::Singleplayer => true,
+            Place::Server(host) => o.show_server && is_shareable_host(host),
+            Place::Launcher | Place::Menu => false,
+        }
 }
 
 /// The small image: the place's own icon (an https URL: the server's or the world's icon,
@@ -92,7 +122,8 @@ pub fn activity(p: &Presence, o: Options) -> Value {
     if let Some(state) = state {
         a["state"] = state.into();
     }
-    if let Some((image, text)) = small_image(&p.place, None) {
+    let icon = p.icon.as_deref().filter(|_| icon_allowed(&p.place, o));
+    if let Some((image, text)) = small_image(&p.place, icon) {
         a["assets"]["small_image"] = image.into();
         a["assets"]["small_text"] = text.into();
     }
@@ -119,42 +150,115 @@ fn is_shareable_host(host: &str) -> bool {
             .all(|c| c.is_ascii_alphanumeric() || c == '-' || c == '.')
 }
 
+/// What a line of the game's output reports: where the player is, and that place's own picture
+/// (a PNG) when the companion sent one.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct GameReport {
+    pub place: Place,
+    pub icon: Option<Vec<u8>>,
+}
+
+/// The largest picture taken from a line (the companion sends 64x64 PNGs of a few KiB).
+pub const MAX_ICON_BYTES: usize = 128 * 1024;
+
+const PNG_MAGIC: &[u8] = b"\x89PNG\r\n\x1a\n";
+
 /// The place a line of the game's output reports, if it reports one.
+#[cfg(test)]
 pub fn place_from_game_line(line: &str) -> Option<Place> {
+    report_from_game_line(line).map(|r| r.place)
+}
+
+/// The place, and its picture, a line of the game's output reports.
+pub fn report_from_game_line(line: &str) -> Option<GameReport> {
     #[derive(Deserialize)]
     struct Report {
         place: String,
         #[serde(default)]
         server: Option<String>,
+        #[serde(default)]
+        icon: Option<String>,
     }
     let line = line.trim();
     if let Some(json) = line.split_once("rustic-presence ").map(|(_, j)| j) {
         let r: Report = serde_json::from_str(json).ok()?;
-        return match r.place.as_str() {
-            "menu" => Some(Place::Menu),
-            "singleplayer" => Some(Place::Singleplayer),
+        let place = match r.place.as_str() {
+            "menu" => Place::Menu,
+            "singleplayer" => Place::Singleplayer,
             // Horizon's integrated (singleplayer) server is a session at "local".
-            "server" if r.server.as_deref() == Some("local") => Some(Place::Singleplayer),
-            "server" => Some(Place::Server(r.server.filter(|s| !s.is_empty())?)),
-            _ => None,
+            "server" if r.server.as_deref() == Some("local") => Place::Singleplayer,
+            "server" => Place::Server(r.server.filter(|s| !s.is_empty())?),
+            _ => return None,
         };
+        let icon = r
+            .icon
+            .filter(|b| place != Place::Menu && b.len() <= MAX_ICON_BYTES / 3 * 4 + 4)
+            .and_then(|b| {
+                use base64::Engine as _;
+                base64::engine::general_purpose::STANDARD.decode(b).ok()
+            })
+            .filter(|png| png.len() <= MAX_ICON_BYTES && png.starts_with(PNG_MAGIC));
+        return Some(GameReport { place, icon });
     }
     // Fallback (a build without the companion): "[Server Connector #1/INFO]: Connecting to <host>, <port>".
     let rest = line.split_once("Connecting to ").map(|(_, r)| r)?;
     let host = rest.split(',').next()?.trim();
-    (!host.is_empty() && !host.contains(' ')).then(|| Place::Server(host.to_owned()))
+    (!host.is_empty() && !host.contains(' ')).then(|| GameReport {
+        place: Place::Server(host.to_owned()),
+        icon: None,
+    })
 }
 
-/// The presence service: set what to show; a background task keeps Discord in step.
+/// The line as the launcher's game log shows it: a presence picture's base64 left out.
+pub fn loggable_line(line: String) -> String {
+    const KEY: &str = r#""icon":""#;
+    if !line.contains("rustic-presence ") {
+        return line;
+    }
+    let Some(from) = line.find(KEY).map(|i| i + KEY.len()) else {
+        return line;
+    };
+    let Some(len) = line[from..].find('"') else {
+        return line;
+    };
+    format!("{}…{}", &line[..from], &line[from + len..])
+}
+
+/// The presence service: set what to show; a background task keeps Discord in step. Clones share
+/// the same presence.
+#[derive(Clone)]
 pub struct Discord {
-    tx: watch::Sender<(Option<Presence>, Options)>,
+    tx: std::sync::Arc<watch::Sender<(Option<Presence>, Options)>>,
 }
 
 impl Discord {
     pub fn start(options: Options) -> Self {
         let (tx, rx) = watch::channel((None, options));
         tauri::async_runtime::spawn(run(rx));
-        Self { tx }
+        Self {
+            tx: std::sync::Arc::new(tx),
+        }
+    }
+
+    /// The player's choices as they are now.
+    pub fn options(&self) -> Options {
+        self.tx.borrow().1
+    }
+
+    /// Where the player is now.
+    pub fn place(&self) -> Option<Place> {
+        self.tx.borrow().0.as_ref().map(|p| p.place.clone())
+    }
+
+    /// The picture of `place`, once uploaded: shown if the player is still there.
+    pub fn set_icon(&self, place: &Place, url: String) {
+        self.tx.send_if_modified(|(p, _)| match p {
+            Some(p) if p.place == *place && p.icon.as_deref() != Some(url.as_str()) => {
+                p.icon = Some(url);
+                true
+            }
+            _ => false,
+        });
     }
 
     pub fn set(&self, presence: Presence) {
@@ -166,6 +270,8 @@ impl Discord {
         self.tx.send_if_modified(|(p, _)| match p {
             Some(p) if p.place != place => {
                 p.place = place;
+                // A new place: its own picture comes with it, or none.
+                p.icon = None;
                 true
             }
             _ => false,
@@ -343,23 +449,12 @@ mod tests {
     };
 
     fn at(place: Place) -> Presence {
-        Presence {
-            place,
-            game: Some("Horizon 26.3".into()),
-            since: 100,
-        }
+        Presence::at(place, Some("Horizon 26.3".into()), 100)
     }
 
     #[test]
     fn the_activity_follows_the_place() {
-        let a = activity(
-            &Presence {
-                place: Place::Launcher,
-                game: None,
-                since: 7,
-            },
-            ON,
-        );
+        let a = activity(&Presence::at(Place::Launcher, None, 7), ON);
         assert_eq!(a["details"], "In the launcher");
         assert!(a.get("state").is_none());
         assert_eq!(a["timestamps"]["start"], 7);
@@ -401,6 +496,49 @@ mod tests {
             small_image(&p, Some("data:image/png;base64,AA")).unwrap().0,
             "rustic_multiplayer"
         );
+    }
+
+    #[test]
+    fn the_place_s_own_picture_is_the_small_image_unless_the_server_is_hidden() {
+        let url = "https://cdn.rustic-launcher.com/presence/ab.png";
+        let mut server = at(Place::Server("play.example.com".into()));
+        server.icon = Some(url.into());
+        assert_eq!(activity(&server, ON)["assets"]["small_image"], url);
+        assert_eq!(activity(&server, ON)["assets"]["small_text"], "Multiplayer");
+        let hidden = Options {
+            enabled: true,
+            show_server: false,
+        };
+        assert_eq!(
+            activity(&server, hidden)["assets"]["small_image"],
+            "rustic_multiplayer",
+            "a hidden server's favicon would tell which server it is"
+        );
+        let mut lan = at(Place::Server("192.168.1.20".into()));
+        lan.icon = Some(url.into());
+        assert_eq!(
+            activity(&lan, ON)["assets"]["small_image"],
+            "rustic_multiplayer"
+        );
+        let mut world = at(Place::Singleplayer);
+        world.icon = Some(url.into());
+        assert_eq!(activity(&world, ON)["assets"]["small_image"], url);
+        assert_eq!(activity(&world, hidden)["assets"]["small_image"], url);
+        // What may be uploaded at all.
+        let off = Options {
+            enabled: false,
+            show_server: true,
+        };
+        assert!(icon_allowed(&Place::Singleplayer, ON));
+        assert!(!icon_allowed(&Place::Singleplayer, off));
+        assert!(icon_allowed(&Place::Server("play.example.com".into()), ON));
+        assert!(!icon_allowed(
+            &Place::Server("play.example.com".into()),
+            hidden
+        ));
+        assert!(!icon_allowed(&Place::Server("localhost".into()), ON));
+        assert!(!icon_allowed(&Place::Menu, ON));
+        assert!(!icon_allowed(&Place::Launcher, ON));
     }
 
     #[test]
@@ -458,6 +596,44 @@ mod tests {
             Some(Place::Server("play.playhorizon.dev".into()))
         );
         assert_eq!(place_from_game_line("[CHAT] Bob joined the game"), None);
+    }
+
+    #[test]
+    fn the_game_sends_the_place_s_picture_with_it() {
+        use base64::Engine as _;
+        let png = b"\x89PNG\r\n\x1a\nfavicon".to_vec();
+        let b64 = base64::engine::general_purpose::STANDARD.encode(&png);
+        let line = format!(
+            r#"rustic-presence {{"place":"server","server":"mc.example.org","icon":"{b64}"}}"#
+        );
+        let r = report_from_game_line(&line).unwrap();
+        assert_eq!(r.place, Place::Server("mc.example.org".into()));
+        assert_eq!(r.icon, Some(png.clone()));
+        // Not a PNG, not base64, too big, or on a menu: no picture, the place still counts.
+        for bad in ["R0lGODlh", "@@@"] {
+            let line = format!(r#"rustic-presence {{"place":"singleplayer","icon":"{bad}"}}"#);
+            let r = report_from_game_line(&line).unwrap();
+            assert_eq!((r.place, r.icon), (Place::Singleplayer, None));
+        }
+        let mut huge = png.clone();
+        huge.resize(MAX_ICON_BYTES + 1, 0);
+        let line = format!(
+            r#"rustic-presence {{"place":"singleplayer","icon":"{}"}}"#,
+            base64::engine::general_purpose::STANDARD.encode(&huge)
+        );
+        assert_eq!(report_from_game_line(&line).unwrap().icon, None);
+        let line = format!(r#"rustic-presence {{"place":"menu","icon":"{b64}"}}"#);
+        assert_eq!(report_from_game_line(&line).unwrap().icon, None);
+        // The launcher's game log never shows the picture's base64.
+        let shown = loggable_line(format!(
+            r#"rustic-presence {{"place":"server","server":"mc.example.org","icon":"{b64}"}}"#
+        ));
+        assert_eq!(
+            shown,
+            r#"rustic-presence {"place":"server","server":"mc.example.org","icon":"…"}"#
+        );
+        let chat = r#"[CHAT] "icon":"x""#.to_owned();
+        assert_eq!(loggable_line(chat.clone()), chat);
     }
 
     #[test]

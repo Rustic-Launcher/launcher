@@ -13,7 +13,8 @@
     "appearance": "외관",
     "privacy": "개인정보 및 데이터",
     "parental": "자녀 보호 기능",
-    "about": "정보 및 법적 고지"
+    "about": "정보 및 법적 고지",
+    "voice": "음성"
   },
   "accounts": {
     "active": "활성",
@@ -95,7 +96,8 @@
       "description": "친구, 보관함, 구매, 서버에 쓰이는 내 Rustic ID예요.",
       "signedOut": "로그인하지 않았어요. 계정 없이도 게임은 작동하지만, 소셜 기능, 보관함, 상점을 사용하려면 필요해요.",
       "signIn": "로그인 또는 계정 만들기",
-      "licenceNote": "Rustic 계정은 플랫폼 ID예요. 게임 라이선스를 대신하지 않으므로, 게임을 보유한 Microsoft 계정이 여전히 필요해요."
+      "licenceNote": "Rustic 계정은 플랫폼 ID예요. 게임 라이선스를 대신하지 않으므로, 게임을 보유한 Microsoft 계정이 여전히 필요해요.",
+      "manageOnWeb": "웹사이트에서 관리"
     },
     "offline": {
       "title": "오프라인 플레이",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "브라우저에서 로그인을 마치세요. 런처가 자동으로 세션을 가져와요."
   },
   "heading": "내 *설정*",
-  "eyebrow": "런처"
+  "eyebrow": "런처",
+  "voice": {
+    "devices": "장치",
+    "devicesHint": "음성에 쓰는 마이크와 스피커 또는 헤드셋이에요.",
+    "input": "마이크",
+    "output": "출력",
+    "outputVolume": "출력 음량",
+    "systemDefault": "시스템 기본값",
+    "deviceN": "장치 {{n}}",
+    "talk": "말하기",
+    "talkHint": "목소리가 감지되면 말하거나, 키를 누르고 있는 동안에만 말해요.",
+    "mode": "입력 모드",
+    "modeVad": "음성 감지",
+    "modePtt": "눌러서 말하기",
+    "pttKey": "눌러서 말하기 키",
+    "pttKeyHint": "런처와 게임 안에서 모두 작동해요. 마우스 측면 버튼도 돼요.",
+    "pressKey": "키를 누르세요…",
+    "sensitivity": "감도",
+    "sensitivityHint": "높을수록 작은 목소리도 잡고, 낮을수록 배경 소음을 더 무시해요.",
+    "test": "마이크 테스트",
+    "testMic": "테스트",
+    "stopTest": "중지",
+    "level": "마이크 레벨",
+    "micDenied": "마이크 접근이 거부되었어요. 시스템 개인정보 설정에서 허용한 뒤 다시 시도하세요.",
+    "micMissing": "마이크를 찾을 수 없어요.",
+    "noiseSuppression": "소음 억제",
+    "echoCancellation": "에코 제거",
+    "autoGain": "자동 게인",
+    "inGame": "게임 안",
+    "inGameHint": "Rustic 에디션에서는 오버레이로 누가 말하는지 보여 주고, 눌러서 말하기 키가 게임 안에서도 작동해요.",
+    "overlay": "게임 안에 음성 오버레이 표시",
+    "serverVoice": "서버 근접 음성",
+    "serverVoiceHint": "Rustic Server는 그곳의 모든 플레이어와 거리에 따른 음성을 제공할 수 있어요. 18세 미만은 보호자의 허락이 필요해요.",
+    "serverAsk": "물어보기",
+    "serverAuto": "자동으로 참가",
+    "serverOff": "참가 안 함",
+    "servers": {
+      "title": "내 서버의 근접 음성",
+      "description": "서버를 추가한 다음 그 키를 proximity-voice 플러그인의 config.toml에 넣으세요. 언제든지 끌 수 있어요.",
+      "namePlaceholder": "서버 이름",
+      "add": "추가",
+      "status": "온라인 플레이어: {{count}}",
+      "enabled": "{{name}}의 근접 음성",
+      "newKey": "새 키",
+      "remove": "{{name}} 삭제",
+      "keyOnce": "지금 이 키를 복사하세요. 한 번만 표시돼요. 새 키를 만들면 바뀌어요.",
+      "tooMany": "서버는 최대 10개까지 추가할 수 있어요."
+    }
+  }
 }

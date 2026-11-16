@@ -1,0 +1,113 @@
+{
+  "brand": "Rustic Launcher",
+  "stepOf": "Vaihe {{current}}/{{total}}",
+  "back": "Takaisin",
+  "continue": "Jatka",
+  "skip": "Ohita toistaiseksi",
+  "steps": {
+    "welcome": "Tervetuloa",
+    "microsoft": "Microsoft",
+    "rustic": "Rustic-tili",
+    "privacy": "Yksityisyys",
+    "game": "Pelitiedostot",
+    "ready": "Valmis"
+  },
+  "welcome": {
+    "title": "Tervetuloa Rusticiin",
+    "subtitle": "Nopea ja sosiaalinen käynnistin Horizonille. Muutama valinta, niin olet pelissä.",
+    "language": "Kieli",
+    "theme": "Teema",
+    "palette": "Väripaletti"
+  },
+  "microsoft": {
+    "title": "Kirjaudu Microsoftilla",
+    "subtitle": "Rustic tarkistaa Microsoftilta, että omistat pelin. Salasanasi ei koskaan päädy Rusticille.",
+    "signedInAs": "Kirjautunut: {{name}}",
+    "ownershipOk": "Omistus vahvistettu: voit pelata.",
+    "notOwnedTitle": "Tarvitset Minecraft: Java Editionin",
+    "notOwnedBody": "Tämä Microsoft-tili ei omista peliä. Rustic ei koskaan käynnistä peliä ilman lisenssiä.",
+    "buyGame": "Hanki peli",
+    "whyTitle": "Miksi?",
+    "whyBody": "Pelin omistaminen on pakollista. Horizon valmistelee pelitiedostot omasta asennuksestasi, ja offline-profiilit avautuvat vasta tämän tarkistuksen jälkeen."
+  },
+  "rustic": {
+    "title": "Rustic-tilisi",
+    "subtitle": "Valinnainen. Peli toimii ilman sitä; voit kirjautua myöhemmin asetuksista.",
+    "perks": {
+      "friends": {
+        "title": "Kaverit ja porukat",
+        "body": "Näe, kuka on paikalla, ja liity mukaan yhdellä napsautuksella."
+      },
+      "locker": {
+        "title": "Kaappi",
+        "body": "Kosmetiikkaa pelaajallesi, pelkästään visuaalista."
+      },
+      "servers": {
+        "title": "Palvelimesi verkossa",
+        "body": "Ilmainen osoite ja verkkotunnukset ylläpitämillesi palvelimille."
+      }
+    },
+    "signedInAs": "Kirjautunut: {{name}}",
+    "signIn": "Kirjaudu sisään tai luo tili",
+    "skipHint": "Tai ohita toistaiseksi painamalla Jatka.",
+    "age": "Rustic-tilit ovat vähintään {{min}}-vuotiaille. Alle {{consent}}-vuotiaiden huoltajan on hyväksyttävä tietojen käsittely; alle 18-vuotiaiden ostot vaativat huoltajan hyväksynnän."
+  },
+  "privacy": {
+    "title": "Yksityisyysvalintasi",
+    "subtitle": "Kaikki on pois päältä. Ota käyttöön vain se, mitä haluat jakaa; voit muuttaa valintoja milloin tahansa asetuksista.",
+    "usage": {
+      "title": "Käyttöanalytiikka",
+      "body": "Mitä sivuja ja ominaisuuksia käytetään, ilman sisältöä tai tunnisteita."
+    },
+    "performance": {
+      "title": "Suorituskykyraportit",
+      "body": "Käynnistys- ja ruutuajat hitaiden kohtien löytämiseksi."
+    },
+    "crash": {
+      "title": "Kaatumisraportit",
+      "body": "Lähetetään automaattisesti, kun peli tai käynnistin kaatuu. Kun asetus on pois päältä, Rustic kysyy joka kerta."
+    },
+    "note": "Emme koskaan myy tietoja emmekä jaa niitä mainontaan.",
+    "policy": "Lue tietosuojakäytäntö"
+  },
+  "game": {
+    "title": "Valmistele peli",
+    "subtitle": "Rustic käyttää oman asennuksesi pelitiedostoja (tai lataa puuttuvat Mojangilta) ja valmistelee ne sitten Horizonia varten.",
+    "detecting": "Etsitään peliasennustasi…",
+    "found": "Peli löytyi ({{versions}})",
+    "notFound": "Asennusta ei löytynyt",
+    "notFoundBody": "Rustic lataa pelitiedostot Mojangilta tilillesi.",
+    "prepareTitle": "Valmistele pelitiedostot",
+    "alreadyReady": "Jo valmisteltu",
+    "done": "Valmisteltu",
+    "prepareAgain": "Valmistele uudelleen",
+    "prepare": "Valmistele",
+    "steps": {
+      "detect": "Tunnista",
+      "download": "Lataa",
+      "verify": "Tarkista",
+      "compile_exporters": "Viejät",
+      "export": "Vienti",
+      "index": "Indeksi"
+    },
+    "explain": "Puuttuvat pelitiedostot tulevat Mojangin omilta palvelimilta, ei mitään kolmansilta osapuolilta: valmistellut tiedostot pysyvät tällä tietokoneella.",
+    "background": "Voit jatkaa: valmistelu jatkuu taustalla.",
+    "prepareFailed": "Pelitiedostoja ei voitu valmistella: {{reason}}"
+  },
+  "ready": {
+    "title": "Kaikki on valmista",
+    "subtitle": "Luo ensimmäinen instanssisi nyt tai ohita ja tee se myöhemmin.",
+    "finish": "Avaa Rustic",
+    "defaultName": "Ensimmäinen maailmani",
+    "createTitle": "Luo ensimmäinen instanssini",
+    "recommended": "Suositeltu",
+    "nameLabel": "Instanssin nimi",
+    "existing_one": "Sinulla on jo {{count}} instanssi.",
+    "existing_other": "Sinulla on jo {{count}} instanssia.",
+    "tips": {
+      "play": "PELAA on aina oikeassa alakulmassa.",
+      "friends": "Kaverisi ovat oikealla; liittyminen vaatii yhden napsautuksen.",
+      "servers": "Ylläpidä palvelinta kavereillesi Palvelimet-sivulta."
+    }
+  }
+}

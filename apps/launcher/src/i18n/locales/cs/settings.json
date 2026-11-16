@@ -13,7 +13,8 @@
     "appearance": "Vzhled",
     "privacy": "Soukromí a data",
     "parental": "Rodičovská kontrola",
-    "about": "O aplikaci a právní informace"
+    "about": "O aplikaci a právní informace",
+    "voice": "Hlasový chat"
   },
   "accounts": {
     "active": "Aktivní",
@@ -95,7 +96,8 @@
       "description": "Tvoje identita na Rusticu pro přátele, Šatnu, nákupy a servery.",
       "signedOut": "Nepřihlášeno. Hra funguje i bez něj; společenské funkce, Šatna a Obchod ho potřebují.",
       "signIn": "Přihlásit se nebo vytvořit účet",
-      "licenceNote": "Účet Rustic je identita na platformě. Nikdy nenahrazuje licenci hry: stále potřebuješ účet Microsoft, který hru vlastní."
+      "licenceNote": "Účet Rustic je identita na platformě. Nikdy nenahrazuje licenci hry: stále potřebuješ účet Microsoft, který hru vlastní.",
+      "manageOnWeb": "Spravovat na webu"
     },
     "offline": {
       "title": "Hraní offline",
@@ -527,5 +529,53 @@
     "microsoftWaiting": "Dokonči přihlášení v prohlížeči: launcher si tvou relaci převezme automaticky."
   },
   "heading": "Tvoje *nastavení*",
-  "eyebrow": "Launcher"
+  "eyebrow": "Launcher",
+  "voice": {
+    "devices": "Zařízení",
+    "devicesHint": "Mikrofon a reproduktory nebo sluchátka pro hlasový chat.",
+    "input": "Mikrofon",
+    "output": "Výstup",
+    "outputVolume": "Hlasitost výstupu",
+    "systemDefault": "Výchozí systémové",
+    "deviceN": "Zařízení {{n}}",
+    "talk": "Mluvení",
+    "talkHint": "Mluv, když se zachytí tvůj hlas, nebo jen při držení klávesy.",
+    "mode": "Režim vstupu",
+    "modeVad": "Hlasová aktivita",
+    "modePtt": "Stiskni a mluv",
+    "pttKey": "Klávesa pro mluvení",
+    "pttKeyHint": "Funguje v launcheru i ve hře. Boční tlačítka myši také.",
+    "pressKey": "Stiskni klávesu…",
+    "sensitivity": "Citlivost",
+    "sensitivityHint": "Vyšší zachytí tišší hlasy; nižší víc ignoruje hluk v pozadí.",
+    "test": "Test mikrofonu",
+    "testMic": "Otestovat",
+    "stopTest": "Zastavit",
+    "level": "Úroveň mikrofonu",
+    "micDenied": "Přístup k mikrofonu byl odepřen. Povol ho v nastavení soukromí systému a zkus to znovu.",
+    "micMissing": "Nenašel se žádný mikrofon.",
+    "noiseSuppression": "Potlačení šumu",
+    "echoCancellation": "Potlačení ozvěny",
+    "autoGain": "Automatické zesílení",
+    "inGame": "Ve hře",
+    "inGameHint": "S edicí Rustic ukazuje překryv, kdo mluví, a klávesa pro mluvení funguje ve hře.",
+    "overlay": "Zobrazovat hlasový překryv ve hře",
+    "serverVoice": "Hlas podle vzdálenosti na serverech",
+    "serverVoiceHint": "Rustic Servery mohou nabízet hlas podle vzdálenosti se všemi hráči. Do 18 let to musí povolit rodič.",
+    "serverAsk": "Zeptat se",
+    "serverAuto": "Připojit automaticky",
+    "serverOff": "Nikdy",
+    "servers": {
+      "title": "Hlas podle vzdálenosti pro tvé servery",
+      "description": "Přidej server a pak vlož jeho klíč do config.toml pluginu proximity-voice. Kdykoli ho můžeš vypnout.",
+      "namePlaceholder": "Název serveru",
+      "add": "Přidat",
+      "status": "Hráči online: {{count}}",
+      "enabled": "Hlas podle vzdálenosti na {{name}}",
+      "newKey": "Nový klíč",
+      "remove": "Odebrat {{name}}",
+      "keyOnce": "Zkopíruj si tento klíč hned: zobrazí se jen jednou. Nový klíč ho nahradí.",
+      "tooMany": "Můžeš přidat až 10 serverů."
+    }
+  }
 }

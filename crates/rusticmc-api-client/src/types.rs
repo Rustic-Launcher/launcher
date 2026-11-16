@@ -310,6 +310,14 @@ wire! {
         /// May appear in (and see) friend suggestions of players met (ADR 0145): adults only.
         #[serde(default)]
         pub discoverable_allowed: bool,
+        /// May talk in party voice (party members are friends; ADR 0176): the chat rules, plus a
+        /// linked guardian's `party_voice` switch.
+        #[serde(default)]
+        pub can_party_voice: bool,
+        /// May join the proximity voice of a Rustic Server, with strangers (ADR 0176): adults,
+        /// and minors whose linked guardian turned `server_voice` on.
+        #[serde(default)]
+        pub can_server_voice: bool,
     }
 
     pub struct Me {
@@ -385,6 +393,12 @@ wire! {
         pub spend_limit_currency: Currency,
         pub chat_mode: ChatMode,
         pub friend_requests_allowed: bool,
+        /// Party voice with friends (ADR 0176; on by default, off when chat is disabled).
+        #[serde(default = "crate::types::yes")]
+        pub party_voice: bool,
+        /// The proximity voice of Rustic Servers, with strangers (ADR 0176; off by default).
+        #[serde(default)]
+        pub server_voice: bool,
     }
 
     pub struct ChildSummary {
@@ -606,6 +620,39 @@ wire! {
         pub max_size: i32,
         pub members: Vec<PartyMember>,
         pub created_at: DateTime<Utc>,
+        /// The party's voice settings (ADR 0176).
+        #[serde(default)]
+        pub voice: PartyVoice,
+        /// Invites sent and still pending (who was asked and has not answered).
+        #[serde(default)]
+        pub pending_invites: Vec<PublicUser>,
+    }
+
+    #[derive(Default)]
+    /// How party members hear each other (ADR 0176).
+    pub struct PartyVoice {
+        /// `true`: members on the same server hear each other by distance in game; `false`:
+        /// everyone at full volume, wherever they are.
+        pub proximity: bool,
+        /// Blocks beyond which a member is silent in proximity mode (8-128, default 48).
+        pub range: i32,
+    }
+
+    /// `PATCH /v1/parties/{id}` (leader only): a field left out is kept.
+    pub struct PartySettingsRequest {
+        #[serde(default)]
+        pub proximity: Option<bool>,
+        #[serde(default)]
+        pub range: Option<i32>,
+    }
+
+    /// A message of the party's text chat.
+    pub struct PartyMessage {
+        pub id: Uuid,
+        pub party_id: Uuid,
+        pub sender_id: Uuid,
+        pub body: String,
+        pub created_at: DateTime<Utc>,
     }
 
     pub struct UserIdRequest {
@@ -673,6 +720,20 @@ wire! {
         pub reason: ReportReason,
         #[serde(default)]
         pub details: Option<String>,
+        /// Where it happened: a voice room or the party chat (ADR 0176).
+        #[serde(default)]
+        pub context: Option<ReportContext>,
+        /// A party chat message the target sent (`context` = `party_chat`).
+        #[serde(default)]
+        pub party_message_id: Option<Uuid>,
+    }
+
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum ReportContext {
+        PartyVoice,
+        ServerVoice,
+        PartyChat,
     }
 
     pub struct ReportCreated {
@@ -1187,6 +1248,17 @@ wire! {
         pub max_redemptions: Option<i32>,
         #[serde(default)]
         pub valid_until: Option<DateTime<Utc>>,
+        /// Not usable before (ADR 0171).
+        #[serde(default)]
+        pub starts_at: Option<DateTime<Utc>>,
+        /// Uses per account (default 1).
+        #[serde(default)]
+        pub per_user_limit: Option<i32>,
+        /// Minimum basket in `currency` (needs a currency).
+        #[serde(default)]
+        pub min_subtotal_minor: Option<i64>,
+        #[serde(default)]
+        pub note: Option<String>,
     }
 
     pub struct PromoCode {
@@ -1496,6 +1568,12 @@ wire! {
         /// A server listing report (the target is its owner). ADR 0158.
         #[serde(default, skip_serializing_if = "Option::is_none")]
         pub server_listing: Option<ReportedServer>,
+        /// A voice room or the party chat (ADR 0176).
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub context: Option<ReportContext>,
+        /// The reported party chat message.
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        pub party_message: Option<PartyMessage>,
     }
 
     pub struct ReportedServer {
@@ -1566,7 +1644,23 @@ wire! {
         #[cfg_attr(feature = "openapi", schema(value_type = Object))]
         pub data: serde_json::Value,
         pub created_at: DateTime<Utc>,
+        /// Caller address when recorded (deleted with the actor's account).
+        #[serde(default)]
+        pub ip: Option<String>,
+        /// Caller user agent when recorded (back-office actions since ADR 0169).
+        #[serde(default)]
+        pub user_agent: Option<String>,
+        /// `info`, `notice`, `warning` or `critical`, from the action (ADR 0169).
+        #[serde(default = "default_severity")]
+        pub severity: String,
+        /// The actor's account when it still exists.
+        #[serde(default)]
+        pub actor: Option<AdminUserRef>,
     }
+}
+
+fn default_severity() -> String {
+    "info".into()
 }
 
 // ---------------------------------------------------------------- content registry
@@ -2846,6 +2940,16 @@ wire! {
         pub default_id: i32,
     }
 
+    /// `POST /v1/me/presence-icons` (launcher ADR 0173): a Discord Rich Presence small image (the
+    /// server's favicon or the world's icon) as the CDN serves it: a 64x64 PNG named by its
+    /// SHA-256, the same for every player who sent the same picture.
+    pub struct PresenceIcon {
+        /// SHA-256 (hex) of the stored file.
+        pub sha256: String,
+        /// `https://cdn…/presence/<sha256>.png`.
+        pub url: String,
+    }
+
     /// What the viewer was allowed to see.
     #[derive(Copy, Eq, Hash)]
     #[serde(rename_all = "snake_case")]
@@ -3090,6 +3194,941 @@ wire! {
     }
 }
 
+// ---------------------------------------------------------------- back-office (ADR 0169)
+
+wire! {
+    /// An account as the back-office names it (staff only: carries the email).
+    pub struct AdminUserRef {
+        pub id: Uuid,
+        pub username: String,
+        pub display_name: String,
+        pub email: Option<String>,
+        pub avatar_url: Option<String>,
+    }
+
+    /// A row of the accounts table.
+    pub struct AdminUserRow {
+        pub id: Uuid,
+        pub username: String,
+        pub display_name: String,
+        pub email: Option<String>,
+        pub email_verified: bool,
+        pub role: Role,
+        /// `active`, `pending_deletion`.
+        pub status: String,
+        /// The official Rustic publisher (ADR 0166): never editable here.
+        pub official: bool,
+        pub country: Option<String>,
+        pub locale: Option<String>,
+        pub avatar_url: Option<String>,
+        pub created_at: DateTime<Utc>,
+        pub last_online_at: Option<DateTime<Utc>>,
+        /// `banned` (permanent), `suspended` (until a date), `chat` (chat restricted) or null.
+        pub restriction: Option<String>,
+        pub restricted_until: Option<DateTime<Utc>>,
+        pub is_minor: bool,
+        pub totp_enabled: bool,
+    }
+
+    pub struct AdminUserPage {
+        pub items: Vec<AdminUserRow>,
+        pub total: i64,
+    }
+
+    pub struct AdminSession {
+        pub id: Uuid,
+        pub device_name: Option<String>,
+        pub user_agent: Option<String>,
+        pub ip: Option<String>,
+        pub created_at: DateTime<Utc>,
+        pub last_seen_at: DateTime<Utc>,
+    }
+
+    /// A linked identity: `microsoft`, `discord` or `game` (a verified game profile).
+    pub struct AdminLinkedAccount {
+        pub provider: String,
+        pub label: Option<String>,
+        pub linked_at: DateTime<Utc>,
+    }
+
+    pub struct AdminSpend {
+        pub currency: String,
+        pub total_minor: i64,
+    }
+
+    pub struct AdminPlaySummary {
+        pub total_seconds: i64,
+        pub sessions: i32,
+        pub last_played_at: Option<DateTime<Utc>>,
+    }
+
+    pub struct AdminGuardianInfo {
+        pub is_minor: bool,
+        /// Below the digital consent age of the account's country without a linked guardian.
+        pub needs_guardian: bool,
+        pub age: Option<u32>,
+        pub guardian: Option<AdminUserRef>,
+        pub children: Vec<AdminUserRef>,
+        pub approvals_pending: i64,
+    }
+
+    pub struct StaffNote {
+        pub id: Uuid,
+        pub author: Option<AdminUserRef>,
+        pub body: String,
+        pub created_at: DateTime<Utc>,
+    }
+
+    pub struct StaffNoteRequest {
+        pub body: String,
+    }
+
+    /// Everything staff need about one account.
+    pub struct AdminUserSheet {
+        pub user: AdminUserRow,
+        pub date_of_birth: Option<NaiveDate>,
+        pub has_password: bool,
+        pub sessions: Vec<AdminSession>,
+        pub linked: Vec<AdminLinkedAccount>,
+        pub orders: Vec<AdminOrderRow>,
+        pub orders_count: i64,
+        pub spend: Vec<AdminSpend>,
+        pub projects: Vec<AdminProjectHit>,
+        pub listings: Vec<AdminServerHit>,
+        pub reports_against: i64,
+        pub reports_filed: i64,
+        pub bans: Vec<Ban>,
+        pub friends: i64,
+        pub play: Option<AdminPlaySummary>,
+        pub deletion_scheduled_for: Option<DateTime<Utc>>,
+        pub gdpr_requests: Vec<GdprRequest>,
+        pub guardian: AdminGuardianInfo,
+        pub notes: Vec<StaffNote>,
+    }
+
+    pub struct AdminSuspendRequest {
+        pub reason: String,
+        /// End of the suspension (future).
+        pub until: DateTime<Utc>,
+    }
+
+    pub struct AdminReasonRequest {
+        pub reason: String,
+    }
+
+    pub struct AdminRoleRequest {
+        pub role: Role,
+        pub reason: String,
+    }
+
+    // ------------------------------------------------------------ search
+
+    pub struct AdminProjectHit {
+        pub id: String,
+        pub slug: String,
+        pub name: String,
+        pub kind: String,
+        pub taken_down: bool,
+    }
+
+    pub struct AdminServerHit {
+        pub id: Uuid,
+        pub slug: String,
+        pub name: String,
+        pub address: String,
+        pub hidden: bool,
+    }
+
+    pub struct AdminOrderHit {
+        pub id: Uuid,
+        pub status: String,
+        pub total_minor: i64,
+        pub currency: String,
+        pub created_at: DateTime<Utc>,
+        pub username: Option<String>,
+    }
+
+    /// The top bar's search: accounts, projects, servers and (admins) orders.
+    pub struct AdminSearchResult {
+        pub users: Vec<AdminUserRow>,
+        pub projects: Vec<AdminProjectHit>,
+        pub servers: Vec<AdminServerHit>,
+        pub orders: Vec<AdminOrderHit>,
+    }
+
+    // ------------------------------------------------------------ payments
+
+    pub struct AdminOrderRow {
+        pub id: Uuid,
+        pub status: String,
+        pub currency: String,
+        pub country: String,
+        pub subtotal_minor: i64,
+        pub discount_minor: i64,
+        pub wallet_applied_minor: i64,
+        pub total_minor: i64,
+        pub created_at: DateTime<Utc>,
+        pub paid_at: Option<DateTime<Utc>>,
+        pub refunded_at: Option<DateTime<Utc>>,
+        /// Null once anonymised (account deleted).
+        pub user: Option<AdminUserRef>,
+        pub anonymized: bool,
+        pub products: Vec<String>,
+        pub stripe_checkout_session_id: Option<String>,
+        pub stripe_payment_intent_id: Option<String>,
+        pub stripe_invoice_id: Option<String>,
+        pub invoice_url: Option<String>,
+        /// Refunded so far (Stripe's cumulative amount; the whole total once `refunded`).
+        #[serde(default)]
+        pub refunded_minor: i64,
+    }
+
+    pub struct AdminOrderPage {
+        pub items: Vec<AdminOrderRow>,
+        pub total: i64,
+        /// Sum of `total_minor` of the paid orders matching the filters, per currency.
+        pub paid_totals: Vec<AdminSpend>,
+    }
+
+    pub struct AdminOrderLine {
+        pub product_id: Uuid,
+        pub name: String,
+        pub unit_price_minor: i64,
+    }
+
+    /// One step of an order's history: `order` (its own dates), `stripe` (a webhook event as
+    /// recorded) or `audit` (an audit row about it).
+    pub struct OrderTimelineEvent {
+        pub at: DateTime<Utc>,
+        pub source: String,
+        pub kind: String,
+        #[cfg_attr(feature = "openapi", schema(value_type = Object))]
+        pub detail: serde_json::Value,
+    }
+
+    pub struct AdminOrderDetail {
+        pub order: AdminOrderRow,
+        pub lines: Vec<AdminOrderLine>,
+        pub promo_code: Option<String>,
+        pub creator_code: Option<String>,
+        pub consent_immediate_execution: bool,
+        pub consent_withdrawal_waiver: bool,
+        pub consent_wording_version: String,
+        pub consent_recorded_at: DateTime<Utc>,
+        pub timeline: Vec<OrderTimelineEvent>,
+        /// Refunds of the order, oldest first (ADR 0171).
+        #[serde(default)]
+        pub refunds: Vec<AdminRefund>,
+        /// What can still be refunded (0 unless paid).
+        #[serde(default)]
+        pub refundable_minor: i64,
+    }
+
+    // ------------------------------------------------------------ audit
+
+    pub struct AuditPage {
+        pub items: Vec<AuditEntry>,
+        pub total: i64,
+    }
+
+    /// Distinct values for the audit filters.
+    pub struct AuditFacets {
+        pub actions: Vec<String>,
+        pub target_types: Vec<String>,
+        /// How long rows are kept (days); null = kept (accounts' ids are erased on deletion).
+        pub retention_days: Option<i64>,
+    }
+
+    // ------------------------------------------------------------ GDPR
+
+    /// A data-subject request in the register (export, deletion...), self-service or received.
+    pub struct GdprRequest {
+        pub id: Uuid,
+        pub user: Option<AdminUserRef>,
+        /// The account's handle when recorded (`deleted account` after the purge).
+        pub username: String,
+        /// `export`, `deletion`, `rectification`, `other`.
+        pub kind: String,
+        /// `pending`, `processing`, `done`, `refused`, `cancelled`.
+        pub status: String,
+        /// `self_service`, `email`, `contact_form`, `staff`.
+        pub source: String,
+        pub requested_at: DateTime<Utc>,
+        /// The legal deadline (one month, GDPR art. 12(3)).
+        pub due_at: DateTime<Utc>,
+        pub handled_by: Option<AdminUserRef>,
+        pub handled_at: Option<DateTime<Utc>>,
+        pub note: Option<String>,
+        pub overdue: bool,
+    }
+
+    pub struct GdprRequestCreate {
+        pub user_id: Uuid,
+        pub kind: String,
+        pub source: String,
+        pub note: Option<String>,
+    }
+
+    pub struct GdprRequestUpdate {
+        pub status: String,
+        pub note: Option<String>,
+    }
+
+    pub struct ScheduledDeletion {
+        pub user: AdminUserRef,
+        pub scheduled_for: DateTime<Utc>,
+        pub requested_at: Option<DateTime<Utc>>,
+    }
+
+    /// A minor below the digital consent age with no guardian linked yet (or no birth date).
+    pub struct PendingMinor {
+        pub user: AdminUserRef,
+        pub age: Option<u32>,
+        pub country: Option<String>,
+        pub created_at: DateTime<Utc>,
+    }
+
+    pub struct GdprOverview {
+        pub requests: Vec<GdprRequest>,
+        pub deletions: Vec<ScheduledDeletion>,
+        pub minors: Vec<PendingMinor>,
+        /// Purchases waiting for a guardian's decision.
+        pub approvals_pending: i64,
+        pub grace_days: i64,
+    }
+
+    // ------------------------------------------------------------ statistics
+
+    pub struct StatPoint {
+        pub day: NaiveDate,
+        pub value: f64,
+    }
+
+    /// A daily series (`signups`, `active_users`, `play_hours`, `revenue_eur`...).
+    pub struct StatSeries {
+        pub key: String,
+        pub points: Vec<StatPoint>,
+    }
+
+    /// A headline number for the range, with the same measure over the previous range.
+    pub struct StatKpi {
+        pub key: String,
+        pub value: f64,
+        pub previous: Option<f64>,
+        /// `count`, `hours` or a currency code for amounts in minor units.
+        pub unit: String,
+    }
+
+    pub struct StatItem {
+        pub key: String,
+        pub value: f64,
+    }
+
+    /// A split of the range (`signup_country`, `downloads_os`, `launcher_version`...).
+    pub struct StatBreakdown {
+        pub key: String,
+        pub items: Vec<StatItem>,
+    }
+
+    pub struct StatsReport {
+        pub from: NaiveDate,
+        pub to: NaiveDate,
+        pub generated_at: DateTime<Utc>,
+        pub kpis: Vec<StatKpi>,
+        pub series: Vec<StatSeries>,
+        pub breakdowns: Vec<StatBreakdown>,
+        /// False while no subscription product exists (Rustic Premium is a waitlist).
+        pub subscriptions_offered: bool,
+    }
+
+    // ------------------------------------------------------------ anonymous counters
+
+    /// The launcher's daily anonymous ping (no account, no install id; ADR 0169).
+    pub struct LauncherPing {
+        pub version: String,
+        /// `windows`, `macos`, `linux`.
+        pub os: String,
+        /// `x86_64`, `aarch64`.
+        #[serde(default)]
+        pub arch: Option<String>,
+        /// `stable`, `beta`, `dev`.
+        #[serde(default)]
+        pub channel: Option<String>,
+    }
+}
+
+// ---------------------------------------------------------------- back-office, part B (ADR 0171)
+
+wire! {
+    // ------------------------------------------------------------ system health
+
+    /// One service as the API sees it.
+    pub struct ServiceHealth {
+        /// `api`, `realtime`, `relay`, `discord-bot`.
+        pub name: String,
+        /// `ok`, `degraded`, `down`, `unconfigured` (no health address for it).
+        pub status: String,
+        pub latency_ms: Option<i64>,
+        pub detail: Option<String>,
+    }
+
+    pub struct DatabaseHealth {
+        pub ok: bool,
+        pub latency_ms: Option<i64>,
+        pub size_bytes: Option<i64>,
+        /// The newest migration applied to the database.
+        pub migration_version: Option<i64>,
+        /// The newest migration this API embeds.
+        pub migration_latest: i64,
+        pub connections: Option<i64>,
+    }
+
+    pub struct CdnSection {
+        pub name: String,
+        pub bytes: i64,
+        pub files: i64,
+    }
+
+    pub struct CdnHealth {
+        /// The CDN folder is readable by the API.
+        pub readable: bool,
+        pub used_bytes: Option<i64>,
+        pub files: Option<i64>,
+        /// The walk stopped at its file limit: the figures are a lower bound.
+        pub truncated: bool,
+        pub disk_total_bytes: Option<i64>,
+        pub disk_free_bytes: Option<i64>,
+        pub sections: Vec<CdnSection>,
+        /// When these figures were measured (cached for 10 minutes).
+        pub measured_at: DateTime<Utc>,
+    }
+
+    /// Answers of this API process (counted in memory since it started).
+    pub struct ErrorCounts {
+        pub since: DateTime<Utc>,
+        pub requests_last_hour: i64,
+        pub server_errors_last_hour: i64,
+        pub server_errors_last_24h: i64,
+        pub client_errors_last_hour: i64,
+        pub rate_limited_last_hour: i64,
+        /// Stripe webhook events received but not processed (last 24 hours).
+        pub stripe_events_unprocessed_24h: i64,
+    }
+
+    pub struct EmailHealth {
+        /// SMTP is configured (otherwise mails stay in memory).
+        pub configured: bool,
+        pub sent: i64,
+        pub failed: i64,
+        pub last_sent_at: Option<DateTime<Utc>>,
+        pub last_failure_at: Option<DateTime<Utc>>,
+        pub last_error: Option<String>,
+        pub campaigns_sending: i64,
+        pub campaign_failures_24h: i64,
+    }
+
+    pub struct DiscordFeedHealth {
+        /// Outbox changes the bot has not consumed yet.
+        pub pending: i64,
+        pub oldest_pending_at: Option<DateTime<Utc>>,
+        /// Age of the oldest change not consumed (0 when caught up).
+        pub lag_seconds: i64,
+        pub cursor_updated_at: Option<DateTime<Utc>>,
+        pub last_post_at: Option<DateTime<Utc>>,
+        /// Back-office actions waiting for the bot.
+        pub pending_actions: i64,
+    }
+
+    pub struct SystemHealth {
+        pub checked_at: DateTime<Utc>,
+        pub api_version: String,
+        pub api_started_at: DateTime<Utc>,
+        pub services: Vec<ServiceHealth>,
+        pub database: DatabaseHealth,
+        pub cdn: CdnHealth,
+        pub errors: ErrorCounts,
+        pub email: EmailHealth,
+        pub discord: DiscordFeedHealth,
+        /// Stripe keys are configured.
+        pub payments_configured: bool,
+    }
+
+    // ------------------------------------------------------------ releases
+
+    pub struct ReleaseAdoption {
+        /// Launchers of this version that pinged yesterday (UTC).
+        pub installs_yesterday: i64,
+        /// Their share of yesterday's pings, 0 to 1.
+        pub share_yesterday: f64,
+        /// Pings of the last 7 days (an install pings at most once a day).
+        pub pings_7d: i64,
+    }
+
+    pub struct AdminRelease {
+        /// `launcher`, `edition`.
+        pub product: String,
+        pub version: String,
+        pub published_at: Option<DateTime<Utc>>,
+        pub notes: String,
+        pub prerelease: bool,
+        pub pulled_at: Option<DateTime<Utc>>,
+        pub pulled_by: Option<AdminUserRef>,
+        pub pull_reason: Option<String>,
+        /// Listed by the live manifest.
+        pub live: bool,
+        /// The version updates install now (the launcher feed's version, the edition channel's
+        /// newest stable build).
+        pub current: bool,
+        pub first_seen_at: DateTime<Utc>,
+        pub last_seen_at: DateTime<Utc>,
+        /// From the launcher's anonymous daily ping; none for edition builds (not reported).
+        pub adoption: Option<ReleaseAdoption>,
+    }
+
+    pub struct AdminReleases {
+        pub launcher: Vec<AdminRelease>,
+        pub edition: Vec<AdminRelease>,
+        /// `files` (the API reads the CDN folder and can act), `cdn` (read over HTTPS only,
+        /// read-only), `none` (no manifest reachable).
+        pub source: String,
+        /// Pull / restore / pre-release act (the manifests are writable by the API).
+        pub writable: bool,
+        pub synced_at: DateTime<Utc>,
+        pub problems: Vec<String>,
+        /// Launcher pings yesterday, all versions.
+        pub launcher_pings_yesterday: i64,
+    }
+
+    pub struct ReleasePullRequest {
+        pub reason: String,
+    }
+
+    pub struct ReleasePrereleaseRequest {
+        pub prerelease: bool,
+        pub reason: String,
+    }
+
+    // ------------------------------------------------------------ banners
+
+    pub struct BannerText {
+        pub title: String,
+        /// Markdown (the website's renderer: no HTML).
+        pub body: String,
+    }
+
+    pub struct AdminBanner {
+        pub id: Uuid,
+        /// `site`, `launcher`, `both`.
+        pub surface: String,
+        /// `info`, `success`, `warning`, `critical`.
+        pub severity: String,
+        /// Per language (`en`, `fr`, `pt-BR`...).
+        pub texts: std::collections::BTreeMap<String, BannerText>,
+        pub fallback_en: bool,
+        pub dismissible: bool,
+        pub starts_at: Option<DateTime<Utc>>,
+        pub ends_at: Option<DateTime<Utc>>,
+        pub active: bool,
+        /// Shown right now (active and inside its window).
+        pub live: bool,
+        pub created_by: Option<AdminUserRef>,
+        pub created_at: DateTime<Utc>,
+        pub updated_at: DateTime<Utc>,
+    }
+
+    pub struct BannerInput {
+        pub surface: String,
+        pub severity: String,
+        pub texts: std::collections::BTreeMap<String, BannerText>,
+        #[serde(default = "crate::types::yes")]
+        pub fallback_en: bool,
+        #[serde(default = "crate::types::yes")]
+        pub dismissible: bool,
+        #[serde(default)]
+        pub starts_at: Option<DateTime<Utc>>,
+        #[serde(default)]
+        pub ends_at: Option<DateTime<Utc>>,
+        #[serde(default = "crate::types::yes")]
+        pub active: bool,
+    }
+
+    /// A banner as the website or the launcher shows it, in the asked language.
+    pub struct PublicBanner {
+        pub id: Uuid,
+        pub severity: String,
+        /// The language of the text (the asked one, or `en` as the fallback).
+        pub lang: String,
+        pub title: String,
+        pub body: String,
+        pub dismissible: bool,
+        pub ends_at: Option<DateTime<Utc>>,
+        /// Changes when the banner is edited: a dismissal is remembered per id and version.
+        pub updated_at: DateTime<Utc>,
+    }
+
+    // ------------------------------------------------------------ feature flags
+
+    pub struct FeatureFlag {
+        /// `signups`, `store`, `marketplace_publishing`, `native_mods`, `server_listings`.
+        pub key: String,
+        pub enabled: bool,
+        /// Exposed to the clients by `GET /v1/flags`.
+        pub public: bool,
+        pub note: String,
+        /// What the API refuses while it is off.
+        pub gates: Vec<String>,
+        pub updated_by: Option<AdminUserRef>,
+        pub updated_at: DateTime<Utc>,
+    }
+
+    pub struct UpdateFeatureFlagRequest {
+        pub enabled: bool,
+        #[serde(default)]
+        pub public: Option<bool>,
+        #[serde(default)]
+        pub note: Option<String>,
+        pub reason: String,
+    }
+
+    /// The public flags (`true`: available).
+    pub struct PublicFlags {
+        pub flags: std::collections::BTreeMap<String, bool>,
+    }
+
+    // ------------------------------------------------------------ promo codes
+
+    pub struct AdminPromoCode {
+        pub id: Uuid,
+        pub code: String,
+        pub percent_off: Option<i32>,
+        pub amount_off_minor: Option<i64>,
+        pub currency: Option<Currency>,
+        pub max_redemptions: Option<i32>,
+        /// Orders holding the code (pending, awaiting a guardian or paid).
+        pub redeemed_count: i32,
+        pub per_user_limit: i32,
+        pub min_subtotal_minor: Option<i64>,
+        pub starts_at: Option<DateTime<Utc>>,
+        pub valid_until: Option<DateTime<Utc>>,
+        pub active: bool,
+        /// `active`, `scheduled`, `expired`, `exhausted`, `disabled`.
+        pub state: String,
+        pub note: String,
+        pub paid_orders: i64,
+        /// Discounts granted on paid orders, per currency.
+        pub discount_given: Vec<AdminSpend>,
+        pub created_by: Option<AdminUserRef>,
+        pub created_at: DateTime<Utc>,
+        pub updated_at: DateTime<Utc>,
+    }
+
+    pub struct AdminPromoPage {
+        pub items: Vec<AdminPromoCode>,
+        pub total: i64,
+    }
+
+    /// The editable part of a code (the code, its discount and currency are fixed once created:
+    /// orders refer to them).
+    pub struct UpdatePromoCodeRequest {
+        pub active: bool,
+        #[serde(default)]
+        pub max_redemptions: Option<i32>,
+        pub per_user_limit: i32,
+        #[serde(default)]
+        pub min_subtotal_minor: Option<i64>,
+        #[serde(default)]
+        pub starts_at: Option<DateTime<Utc>>,
+        #[serde(default)]
+        pub valid_until: Option<DateTime<Utc>>,
+        #[serde(default)]
+        pub note: String,
+    }
+
+    // ------------------------------------------------------------ refunds
+
+    pub struct AdminRefund {
+        pub id: Uuid,
+        pub order_id: Uuid,
+        pub amount_minor: i64,
+        pub currency: String,
+        pub full_refund: bool,
+        pub reason: Option<String>,
+        /// `admin` (the back-office) or `stripe` (seen in a webhook: the Stripe dashboard).
+        pub source: String,
+        /// `pending`, `requires_action`, `succeeded`, `failed`, `canceled`.
+        pub status: String,
+        pub stripe_refund_id: Option<String>,
+        pub failure_reason: Option<String>,
+        pub created_by: Option<AdminUserRef>,
+        pub created_at: DateTime<Utc>,
+        pub updated_at: DateTime<Utc>,
+    }
+
+    pub struct AdminRefundRow {
+        pub refund: AdminRefund,
+        pub buyer: Option<AdminUserRef>,
+        pub order_total_minor: i64,
+        pub order_status: String,
+    }
+
+    pub struct AdminRefundPage {
+        pub items: Vec<AdminRefundRow>,
+        pub total: i64,
+        /// Succeeded refunds of the filtered rows, per currency.
+        pub refunded_totals: Vec<AdminSpend>,
+    }
+
+    pub struct RefundOrderRequest {
+        /// Minor units; none: everything still refundable (a full refund, items revoked).
+        #[serde(default)]
+        pub amount_minor: Option<i64>,
+        pub reason: String,
+    }
+
+    // ------------------------------------------------------------ bulk emails
+
+    pub struct EmailCampaignCounts {
+        pub total: i64,
+        pub pending: i64,
+        pub sent: i64,
+        pub failed: i64,
+        pub skipped: i64,
+    }
+
+    pub struct AdminEmailCampaign {
+        pub id: Uuid,
+        pub subject: String,
+        /// Markdown, sent as plain text.
+        pub body: String,
+        pub locale: Option<String>,
+        /// `draft`, `sending`, `sent`, `cancelled`.
+        pub status: String,
+        pub counts: EmailCampaignCounts,
+        pub created_by: Option<AdminUserRef>,
+        pub created_at: DateTime<Utc>,
+        pub updated_at: DateTime<Utc>,
+        pub tested_at: Option<DateTime<Utc>>,
+        pub started_at: Option<DateTime<Utc>>,
+        pub finished_at: Option<DateTime<Utc>>,
+    }
+
+    pub struct EmailLocaleCount {
+        pub locale: Option<String>,
+        pub count: i64,
+    }
+
+    /// Accounts a campaign would reach today (opted in, verified address, active).
+    pub struct EmailAudience {
+        pub opted_in: i64,
+        pub by_locale: Vec<EmailLocaleCount>,
+    }
+
+    pub struct AdminEmailPage {
+        pub items: Vec<AdminEmailCampaign>,
+        pub total: i64,
+        pub audience: EmailAudience,
+        /// The worker's pace.
+        pub per_minute: i64,
+        /// SMTP is configured.
+        pub delivers: bool,
+    }
+
+    pub struct EmailCampaignInput {
+        pub subject: String,
+        pub body: String,
+        #[serde(default)]
+        pub locale: Option<String>,
+    }
+
+    // ------------------------------------------------------------ Discord bot
+
+    /// A moderation case. Discord ids are strings (they exceed JavaScript's safe integers).
+    pub struct AdminDiscordCase {
+        pub id: i64,
+        pub action: String,
+        pub target_id: Option<String>,
+        /// The Rustic account linked to the target, if any.
+        pub target_account: Option<AdminUserRef>,
+        pub channel_id: Option<String>,
+        pub moderator_id: String,
+        pub reason: Option<String>,
+        pub duration_secs: Option<i64>,
+        pub expires_at: Option<DateTime<Utc>>,
+        pub automatic: bool,
+        #[cfg_attr(feature = "openapi", schema(value_type = Object))]
+        pub details: serde_json::Value,
+        pub created_at: DateTime<Utc>,
+        pub edited_at: Option<DateTime<Utc>>,
+        pub revoked_at: Option<DateTime<Utc>>,
+        pub revoked_by: Option<AdminUserRef>,
+        pub revoke_reason: Option<String>,
+        /// Still in force (a ban not lifted, a mute not over, a warning not cleared).
+        pub in_force: bool,
+        /// Can be revoked from the back-office (bans, mutes and warnings, not yet revoked).
+        pub revocable: bool,
+    }
+
+    pub struct AdminDiscordCasePage {
+        pub items: Vec<AdminDiscordCase>,
+        pub total: i64,
+    }
+
+    pub struct UpdateDiscordCaseRequest {
+        pub reason: String,
+    }
+
+    pub struct RevokeDiscordCaseRequest {
+        pub reason: String,
+    }
+
+    pub struct AdminDiscordTicket {
+        pub id: i64,
+        pub thread_id: String,
+        pub opener_id: String,
+        pub opener_name: Option<String>,
+        pub opener_account: Option<AdminUserRef>,
+        pub category: String,
+        pub subject: String,
+        /// `open`, `closed`.
+        pub status: String,
+        /// 1 Normal, 2 High, 3 Urgent.
+        pub priority: i16,
+        pub claimed_by: Option<String>,
+        pub closed_by: Option<String>,
+        pub close_reason: Option<String>,
+        pub created_at: DateTime<Utc>,
+        pub closed_at: Option<DateTime<Utc>>,
+        pub transcripts: i64,
+        pub last_transcript_url: Option<String>,
+    }
+
+    pub struct AdminDiscordTicketPage {
+        pub items: Vec<AdminDiscordTicket>,
+        pub total: i64,
+    }
+
+    /// Something the bot did: a feed post or its removal, an automatic sanction, a back-office
+    /// action, a GitHub delivery.
+    pub struct DiscordActivityItem {
+        pub at: DateTime<Utc>,
+        /// `post`, `post_removed`, `auto_case`, `admin_action`, `github`.
+        pub kind: String,
+        pub subject: Option<String>,
+        #[cfg_attr(feature = "openapi", schema(value_type = Object))]
+        pub detail: serde_json::Value,
+    }
+
+    pub struct DiscordActivityPage {
+        pub items: Vec<DiscordActivityItem>,
+        pub total: i64,
+    }
+
+    pub struct DiscordFeedToggles {
+        pub content: bool,
+        pub servers: bool,
+        pub store: bool,
+        pub releases: bool,
+        pub github: bool,
+    }
+
+    /// An automatic sanction at a number of active warnings.
+    pub struct DiscordThreshold {
+        pub count: i32,
+        /// `mute`, `kick`, `ban`.
+        pub action: String,
+        /// Mutes (up to 28 days) and temporary bans (up to 365 days); none for a kick or a
+        /// permanent ban.
+        #[serde(default)]
+        pub duration_secs: Option<i64>,
+    }
+
+    pub struct DiscordActivity {
+        /// `playing`, `watching`, `listening`, `competing`.
+        pub kind: String,
+        pub text: String,
+    }
+
+    pub struct DiscordBotSettings {
+        pub feeds: DiscordFeedToggles,
+        /// Empty: no automatic sanctions.
+        pub warn_thresholds: Vec<DiscordThreshold>,
+        /// The rotating activity, in order.
+        pub activities: Vec<DiscordActivity>,
+        /// Seconds each activity shows (30 to 3600).
+        pub activity_every_secs: i32,
+    }
+
+    pub struct AdminDiscordSettings {
+        /// Saved from the back-office (otherwise the bot runs on its environment and these are
+        /// the built-in defaults).
+        pub configured: bool,
+        pub settings: DiscordBotSettings,
+        pub updated_by: Option<AdminUserRef>,
+        pub updated_at: Option<DateTime<Utc>>,
+    }
+
+    pub struct UpdateDiscordSettingsRequest {
+        pub settings: DiscordBotSettings,
+    }
+
+    pub struct AdminDiscordOverview {
+        pub linked_accounts: i64,
+        pub open_tickets: i64,
+        pub tickets_30d: i64,
+        pub cases_30d: i64,
+        pub automatic_cases_30d: i64,
+        pub active_temp_bans: i64,
+        pub active_warnings: i64,
+        pub pending_actions: i64,
+        pub posts_live: i64,
+        pub last_post_at: Option<DateTime<Utc>>,
+        /// The back-office's latest requests to the bot, newest first.
+        pub recent_actions: Vec<DiscordAdminAction>,
+        /// The outbox the feeds consume.
+        pub feed: DiscordFeedHealth,
+    }
+
+    /// The settings the bot applies (`GET /v1/integrations/discord/settings`).
+    pub struct DiscordServiceSettings {
+        /// False: no row saved, the bot keeps its environment.
+        pub configured: bool,
+        pub settings: Option<DiscordBotSettings>,
+        pub updated_at: Option<DateTime<Utc>>,
+    }
+
+    /// A back-office request the bot applies on Discord.
+    pub struct DiscordAdminAction {
+        pub id: i64,
+        /// `unban`, `unmute`.
+        pub kind: String,
+        pub guild_id: String,
+        pub target_id: String,
+        pub case_id: Option<i64>,
+        pub reason: String,
+        pub requested_by_name: String,
+        /// `pending`, `done`, `failed`.
+        pub status: String,
+        pub result_case_id: Option<i64>,
+        pub error: Option<String>,
+        pub created_at: DateTime<Utc>,
+        pub done_at: Option<DateTime<Utc>>,
+    }
+
+    pub struct DiscordActionResult {
+        pub ok: bool,
+        #[serde(default)]
+        pub error: Option<String>,
+        /// The case the bot recorded for it.
+        #[serde(default)]
+        pub case_id: Option<i64>,
+    }
+}
+
+/// `true`, for `#[serde(default = ...)]`.
+pub fn yes() -> bool {
+    true
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -3117,5 +4156,90 @@ mod tests {
         let r: LoginRequest = serde_json::from_str(r#"{"email":"a@b.c","password":"x"}"#).unwrap();
         assert_eq!(r.client, ClientKind::Launcher);
         assert!(r.device_name.is_none());
+    }
+}
+
+// ---------------------------------------------------------------- voice (ADR 0176)
+
+wire! {
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum VoiceRoomKind {
+        /// The caller's party.
+        Party,
+        /// The proximity voice of the Rustic Server the caller is playing on.
+        Server,
+    }
+
+    pub struct VoiceTokenRequest {
+        pub room: VoiceRoomKind,
+    }
+
+    /// What the launcher needs to join a voice room on Rustic's SFU (LiveKit).
+    pub struct VoiceToken {
+        /// The SFU's WebSocket address (`wss://voice.rustic-launcher.com`).
+        pub url: String,
+        /// A LiveKit access token for `room` only, short-lived (join before `expires_at`).
+        pub token: String,
+        pub room: String,
+        pub kind: VoiceRoomKind,
+        /// The caller's identity in the room (their Rustic user id).
+        pub identity: String,
+        pub expires_at: DateTime<Utc>,
+        /// Distance-based volume (always for a server room; the party's setting otherwise).
+        pub proximity: bool,
+        /// Blocks beyond which a speaker is silent.
+        pub range: i32,
+        /// The server's name (its owner's label), for a server room.
+        #[serde(default)]
+        pub server_name: Option<String>,
+    }
+
+    /// A Rustic Server registered for proximity voice (its owner's view).
+    pub struct VoiceServer {
+        pub id: Uuid,
+        pub name: String,
+        pub enabled: bool,
+        pub created_at: DateTime<Utc>,
+        pub last_seen_at: Option<DateTime<Utc>>,
+        /// Players in the last roster the plugin sent (0 once it is stale).
+        pub online: i64,
+    }
+
+    pub struct CreateVoiceServerRequest {
+        /// 1-64 characters, shown to players in the launcher's voice panel.
+        pub name: String,
+    }
+
+    pub struct UpdateVoiceServerRequest {
+        #[serde(default)]
+        pub name: Option<String>,
+        #[serde(default)]
+        pub enabled: Option<bool>,
+    }
+
+    /// The key is shown once: it goes in the plugin's `config.toml`.
+    pub struct VoiceServerKey {
+        pub server: VoiceServer,
+        /// `rvk_` + 43 URL-safe characters.
+        pub key: String,
+    }
+
+    /// `POST /v1/voice/servers/{id}/roster` from the proximity voice plugin (bearer = its key).
+    pub struct VoiceRosterRequest {
+        /// The Minecraft UUIDs online now (32 hex or dashed), at most 500.
+        pub players: Vec<String>,
+        /// The plugin's range in blocks (8-128, default 48).
+        #[serde(default)]
+        pub range: Option<i32>,
+    }
+
+    pub struct VoiceRosterAnswer {
+        /// Players kept (well-formed UUIDs).
+        pub accepted: i64,
+        /// Seconds the roster stays valid without a new one.
+        pub ttl_secs: i64,
+        /// `false` when the owner disabled the server in the cloud: the plugin stops sending.
+        pub enabled: bool,
     }
 }

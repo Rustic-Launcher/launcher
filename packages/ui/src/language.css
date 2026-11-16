@@ -124,9 +124,49 @@
     letter-spacing: -0.01em;
     color: var(--rl-accent-text);
   }
-  /* Han, kana, Hangul and Thai have no italic: a slanted copy reads as a rendering fault. */
-  :is(:lang(ja), :lang(ko), :lang(zh), :lang(th)) .rx-accent {
+  /* Han, kana, Hangul, Thai, Arabic, Hebrew and Devanagari have no italic: a slanted copy reads
+     as a rendering fault. */
+  :is(:lang(ja), :lang(ko), :lang(zh), :lang(th), :lang(ar), :lang(he), :lang(hi)) .rx-accent {
     font-style: normal;
+  }
+  /* Right to left (Arabic, Hebrew; ADR 0174): icons that point along the line (back, next,
+     chevrons, send, sign in/out, undo) are mirrored; logos, media and the others are not. */
+  [dir='rtl']
+    :is(
+      .lucide-chevron-left,
+      .lucide-chevron-right,
+      .lucide-chevrons-left,
+      .lucide-chevrons-right,
+      .lucide-arrow-left,
+      .lucide-arrow-right,
+      .lucide-arrow-up-right,
+      .lucide-corner-down-left,
+      .lucide-undo-2,
+      .lucide-send,
+      .lucide-send-horizontal,
+      .lucide-log-in,
+      .lucide-log-out
+    ) {
+    transform: scaleX(-1);
+  }
+  /* Code, commands, addresses and keys read left to right inside a right-to-left page. */
+  [dir='rtl'] :is(code, kbd, samp, pre),
+  [dir='rtl'] input:is([type='email'], [type='url'], [type='password']) {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+  [dir='rtl'] input:is([type='email'], [type='url'], [type='password']) {
+    text-align: right;
+  }
+  /* Code stays in JetBrains Mono where the mono labels take the script's font (tokens.css). */
+  :is(:lang(ar), :lang(he), :lang(hi)) :is(code, kbd, samp, pre) {
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  }
+  /* Arabic letters join and Devanagari letters hang from one headline: letter-spacing would cut
+     both (tracked labels, uppercase eyebrows). Only these pages; others keep their tracking. */
+  :is(:lang(ar), :lang(hi)),
+  :is(:lang(ar), :lang(hi)) * {
+    letter-spacing: normal !important;
   }
 
   /* Page entrance: children rise from a light blur, 40 ms apart (short, app-appropriate). */

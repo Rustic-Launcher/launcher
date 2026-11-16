@@ -75,6 +75,20 @@ import type {
   LaunchStatus,
   World,
 } from './types/instances';
+import type {
+  BedrockStatus,
+  JavaFolder,
+  JavaGameVersion,
+  JavaLoader,
+  JavaLoaderVersion,
+  JavaLogLine,
+  JavaModFile,
+  JavaModSearch,
+  JavaProfile,
+  JavaProfilePatch,
+  JavaRunState,
+  NewJavaProfile,
+} from './types/java';
 import type { MultiplayerEntry, ServerPing } from './types/multiplayer';
 import type {
   NativeBuildProgress,
@@ -100,6 +114,7 @@ import type {
   ServerStats,
   StarterPlugin,
 } from './types/servers';
+import type { VoiceGameEvent, VoiceOverlay } from './types/voice';
 
 type Id = { id: string };
 type ServerId = { server_id: string };
@@ -185,6 +200,45 @@ export interface IpcCommands {
   instance_launch_cancel: [InstanceId, LaunchStatus];
   instance_stop: [InstanceId, LaunchStatus];
   launch_status: [void, LaunchStatus[]];
+
+  // ---- Java Edition and Bedrock (ADR 0172) ----
+  /** Mojang's version manifest: releases, plus snapshots and old betas/alphas when asked (the last copy offline). */
+  java_versions_list: [{ snapshots?: boolean; old?: boolean }, JavaGameVersion[]];
+  /** A loader's builds for a game version, newest first (empty for vanilla or an unsupported version). */
+  java_loader_versions: [{ loader: JavaLoader; game_version: string }, JavaLoaderVersion[]];
+  java_profiles_list: [void, JavaProfile[]];
+  java_profile_create: [NewJavaProfile, JavaProfile];
+  /** A new game version, loader or loader build forgets the installed version file (reinstalled at the next launch). */
+  java_profile_update: [Id & { patch: JavaProfilePatch }, JavaProfile];
+  /** `delete_files` removes the launcher's own folder of the profile (never a folder the player chose); `conflict` while it runs. */
+  java_profile_delete: [Id & { delete_files?: boolean }, void];
+  /** Installs the game files, the loader and Java as a task (`java`), without starting; the owner gate first, as a launch. */
+  java_profile_install: [Id, { task_id: string }];
+  /** The owner gate first (`ownership_required`, reasons `auth.no_account`, `auth.not_owned`), then installs what is missing as a task and starts the game; follow `java-state`. `server`: join on start (versions with quick play). */
+  java_profile_launch: [Id & { server?: string }, JavaRunState];
+  /** Stops the game, or cancels the install task (`conflict`, reason `java.not_running`, otherwise). */
+  java_profile_stop: [Id, JavaRunState];
+  java_run_states: [void, JavaRunState[]];
+  /** The last 2000 lines of the profile's output (this session). */
+  java_profile_log: [Id, JavaLogLine[]];
+  java_profile_open_folder: [Id & { folder: JavaFolder }, void];
+  /** Modrinth mods for the profile's game version and loader; fair-play blocked ones left out (`invalid_argument`, reason `java.vanilla_mods`, for vanilla). */
+  java_mods_search: [
+    { profile_id: string; query?: string; offset?: number; limit?: number },
+    JavaModSearch,
+  ];
+  java_mods_list: [{ profile_id: string }, JavaModFile[]];
+  /** Installs the newest compatible version and its required dependencies into the profile's `mods/` (reasons `content.fair_play`, `java.mod_incompatible`). */
+  java_mod_install: [{ profile_id: string; project_id: string }, JavaModFile];
+  java_mod_set_enabled: [{ profile_id: string; file_name: string; enabled: boolean }, JavaModFile];
+  java_mod_remove: [{ profile_id: string; file_name: string }, void];
+  /** Bedrock Edition on Windows (its Microsoft Store package); `supported: false` elsewhere. */
+  bedrock_status: [void, BedrockStatus];
+  bedrock_launch: [void, void];
+  /** Opens Minecraft for Windows in the Microsoft Store. */
+  bedrock_open_store: [void, void];
+  /** The official edition icon, fetched at run time from minecraft.net (a `data:` URL; the browser mock answers its URL); `null` offline or on failure. */
+  edition_icon: [{ edition: 'java' | 'bedrock' }, string | null];
 
   // ---- content (Horizon registry, Modrinth, Rustic) ----
   content_search: [ContentSearchQuery, ContentSearchResult];
@@ -297,6 +351,10 @@ export interface IpcCommands {
   dns_required_records: [DomainTarget, RequiredRecords];
   dns_verify: [DomainTarget, DnsVerification];
   dns_remove_binding: [ServerId, void];
+
+  // ---- voice (ADR 0176) ----
+  /** The in-game overlay's state, written for the running instances' companions. */
+  voice_overlay_set: [{ overlay: VoiceOverlay }, void];
 }
 
 /** event name -> payload */
@@ -323,8 +381,15 @@ export interface IpcEvents {
   'native-changed': { instance_id?: string };
   /** The update service's state changed (checks, progress, deferral, restart). */
   'update-state': UpdateStatus;
+  /** A Java profile's run state changed (install progress, running, crashed, idle). */
+  'java-state': JavaRunState;
+  /** A line of a Java profile's output (installer, game). */
+  'java-log': JavaLogLine;
+  'java-profiles-changed': JavaProfile[];
   /** An update was installed without a restart (a Rustic edition build). */
   'update-installed': { kind: 'edition'; version: string };
+  /** A running game's voice report: push-to-talk, position, place, exit (ADR 0176). */
+  'voice-game': VoiceGameEvent;
 }
 
 export type CommandName = keyof IpcCommands;

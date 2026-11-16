@@ -14,7 +14,7 @@ stack; this page holds the loading budget and how it is met.
 | Anton (condensed titles of the Rustic Server panels, ADR 0144) | n/a | 18.6 KB | with the home's lower sections, not preloaded |
 | Site backdrop (badlands scene: CSS sky first, canvases on idle) | ≤ 1 ms per frame | 0.13–0.35 ms average (Playwright, 1440 × 900 and 390 × 844) | lazy chunk after idle |
 | App JavaScript of the first screen (entry + shared + router + runtime) | ≤ 160 KB | **161.7 KB (over)** | phones: after the hero has painted; desktop: at once (the footer is its own chunk) |
-| One language (one of the 23 complete bundles, never two; ADR 0161) | ≤ 17 KB (≤ 20 KB for non-Latin scripts: Cyrillic, Greek, Thai, CJK; raised from 15 KB on 2026-11-13, lead decision) | en 14.0, fr 15.5, de 15.9, es 15.4, it 15.1, pt-BR 15.2, pt-PT 15.4, pl 15.9, tr 15.4, nl 15.2, sv 15.1, cs 16.0, hu 16.5, ro 15.6, id 14.5, vi 15.8, ko 16.2, zh-CN 16.1, zh-TW 16.2, uk 18.2, ru 18.3 KB; **ja 17.1 and th 17.1 (over by 0.1 KB: Thai costs three bytes a letter before gzip; decide whether Thai and Japanese get the 20 KB of the non-Latin scripts)**. Measured 2026-11-13 after batch 2b (gzip -9 of the built chunk) | with the app (preloaded by an inline script) |
+| One language (one of the 30 complete bundles, never two; ADR 0161) | ≤ 17 KB (≤ 20 KB for non-Latin scripts: Cyrillic, Greek, Thai, CJK, Arabic, Hebrew, Devanagari; raised from 15 KB on 2026-11-13, lead decision) | Measured 2026-11-15 after batch 2c (gzip -9 of the built chunk; every language grew since batch 2b with the new texts): en 14.7, fr 16.4, de 16.7, da 15.7, fi 16.3, nb 15.8, he 16.6, ar 17.7, ja 17.8, th 18.2, hi 18.9, uk 19.1, ru 19.2 KB, **el 20.0 KB (at the limit)** | with the app (preloaded by an inline script) |
 | Language menu (registry of the game's 143 locales + `LanguageSelect`) and its flags | n/a | 4.5 KB + 4 KB (flags) | when idle (a globe button stands in), never on the first screen |
 | Below the hero (`home/Rest` + the Rustic Server parts it shares with /server) | ≤ 10 KB | 6.3 + 3.0 KB | when idle; its sections mount two screens ahead of the scroll |
 | GSAP + ScrollTrigger | ≤ 45 KB | 44 KB | desktop full show only (intro, pinned scenes), on demand |
@@ -65,3 +65,27 @@ runs are not comparable. Before this work: mobile 59, desktop 95 (2026-11-11 mor
 Command: `npx lighthouse@12.8.2 http://localhost:5173/ [--preset=desktop] --chrome-flags="--headless=new
 --use-angle=swiftshader --enable-unsafe-swiftshader"` against `vite preview` of a build made with
 `VITE_API_URL=http://localhost:8080`.
+
+## Block-world look (ADR 0170, 2026-11-15)
+
+Production build, `vite preview`, Playwright Chromium (no throttling), median of 3 runs; "before"
+is the same measurement on a build of the previous commit (7f92388).
+
+| What | Before | After |
+|---|---|---|
+| CSS (gzip -9, render-blocking) | 29.1 KB | 31.2 KB (+2.1 KB: `blocks.css`) |
+| Entry JavaScript (gzip) | 78.9 KB | 78.9 KB (+0.07 KB: the motion toggle) |
+| Block textures (`public/media/blocks`, fetched by the stylesheet, not preloaded) | n/a | ~5 KB, 27 PNGs |
+| Home, desktop: LCP / CLS on load / CLS after scrolling the page | 672 ms / 0.009 / 1.947 | 668 ms / 0.000 / 0.000 |
+| /download, desktop | 280 ms / 0.048 / 0.048 | 492 ms / 0.045 / 0.045 |
+| /server, desktop | 408 ms / 0 / 0 | 336 ms / 0 / 0 |
+| /store, desktop | 256 ms / 0 / 0 | 452 ms / 0 / 0 |
+| Home, phone (390 × 844) | 320 ms / 0 / 4.881 | 356 ms / 0 / 0 |
+| /download, /server, /store, phone | 272 / 280 / 236 ms, CLS 0 | 432 / 292 / 404 ms, CLS ≤ 0.002 |
+
+- The CLS after scrolling (sections mounting under the home's strata) is gone: the strata layers
+  are now placed with transforms, which never count as layout shifts.
+- LCP on /download and /store grows by about 0.2 s: the landing strata, now behind every page, is
+  the largest paint there. Still far under the 2.5 s "good" threshold.
+- The portal costs 0.6–1.6 ms per frame at 10 frames a second (Playwright, desktop) and draws
+  nothing off screen; hover particles draw only while some are alive.

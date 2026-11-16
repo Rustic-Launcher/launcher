@@ -11,11 +11,15 @@ import type {
   FriendTarget,
   NewsItem,
   Party,
+  PartyChatMessage,
+  PartyInviteLite,
   RealtimeEvent,
   UserLite,
+  VoiceServerInfo,
 } from '../types';
 import { latency, minutesAgo, daysAgo, uid, sleep } from '../../ipc/mock/runtime';
 import { mockDiscoverable } from './account';
+import { devLiveKitToken } from './livekitDev';
 
 const clone = <T>(v: T): T => structuredClone(v);
 
@@ -142,7 +146,51 @@ let partyDb: Party | null = {
     { id: 'u_lea', username: 'lea_builds', display_name: 'Léa', presence: 'in-game' },
   ],
   pending_invites: [],
+  voice: { proximity: false, range: 48 },
 };
+
+/** The party chat (example lines). */
+let partyChatDb: PartyChatMessage[] = [
+  {
+    id: 'pm_1',
+    party_id: 'party_1',
+    from_id: 'u_lea',
+    body: 'On se retrouve au spawn ?',
+    sent_at: minutesAgo(6),
+  },
+];
+
+/** Invites received (example: none until a script sends one). */
+let partyInvitesDb: PartyInviteLite[] = [];
+
+/** Voice servers the mock account registered. */
+let voiceServersDb: VoiceServerInfo[] = [];
+
+const ME_LITE: Party['members'][number] = {
+  id: 'usr_sam',
+  username: 'samcrafte',
+  display_name: 'Sam',
+  presence: 'online',
+};
+
+function notFound(what: string): never {
+  throw new CloudError('not_found', `${what} not found`, 404);
+}
+
+function requireLeader(): Party {
+  if (!partyDb) notFound('party');
+  if (partyDb.leader_id !== ME)
+    throw new CloudError('not_party_leader', 'only the party leader can do this', 403);
+  return partyDb;
+}
+
+function mockKey(): string {
+  const bytes = crypto.getRandomValues(new Uint8Array(32));
+  return `rvk_${btoa(String.fromCharCode(...bytes))
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/, '')}`;
+}
 
 /** Rustic accounts the mock knows, with their linked Minecraft name (example data). */
 interface DirectoryEntry extends UserLite {
@@ -507,6 +555,32 @@ export const socialScript = {
   quiet() {
     for (const f of friendsDb) this.presence(f.id, 'offline');
   },
+  /** A friend invites the user to their party (e2e). */
+  partyInvite(fromId: string) {
+    const f = friendsDb.find((x) => x.id === fromId);
+    if (!f) return;
+    const invite: PartyInviteLite = {
+      id: uid('pinv'),
+      party_id: uid('party'),
+      from: { id: f.id, username: f.username, display_name: f.display_name },
+      expires_at: new Date(Date.now() + 15 * 60_000).toISOString(),
+    };
+    partyInvitesDb.push(invite);
+    push({ type: 'party-invite', invite: clone(invite) });
+  },
+  /** A party member writes in the party chat (e2e). */
+  partySay(fromId: string, body: string) {
+    if (!partyDb) return;
+    const m: PartyChatMessage = {
+      id: uid('pm'),
+      party_id: partyDb.id,
+      from_id: fromId,
+      body,
+      sent_at: new Date().toISOString(),
+    };
+    partyChatDb.push(m);
+    push({ type: 'party-message', message: clone(m) });
+  },
 };
 if (typeof window !== 'undefined') {
   (window as unknown as { __rusticSocialMock?: typeof socialScript }).__rusticSocialMock =
@@ -690,11 +764,11 @@ export const socialMock: Partial<CloudClient> = {
         id: uid('party'),
         leader_id: 'usr_sam',
         max_size: 8,
-        members: [
-          { id: 'usr_sam', username: 'samcrafte', display_name: 'Sam', presence: 'online' },
-        ],
+        members: [{ ...ME_LITE }],
         pending_invites: [],
+        voice: { proximity: false, range: 48 },
       };
+      partyChatDb = [];
     }
     if (
       f &&
@@ -726,8 +800,165 @@ export const socialMock: Partial<CloudClient> = {
   async leaveParty() {
     await latency();
     partyDb = null;
+    partyChatDb = [];
     push({ type: 'party', party: null });
   },
+  async createParty() {
+    await latency();
+    if (partyDb) throw new CloudError('already_in_party', 'leave your current party first', 409);
+    partyDb = {
+      id: uid('party'),
+      leader_id: ME,
+      max_size: 8,
+      members: [{ ...ME_LITE }],
+      pending_invites: [],
+      voice: { proximity: false, range: 48 },
+    };
+    partyChatDb = [];
+    push({ type: 'party', party: clone(partyDb) });
+    return clone(partyDb);
+  },
+  async partyInvites() {
+    await latency(0.4);
+    return clone(partyInvitesDb.filter((i) => Date.parse(i.expires_at) > Date.now()));
+  },
+  async respondPartyInvite(id, accept) {
+    await latency();
+    const invite = partyInvitesDb.find((i) => i.id === id);
+    if (!invite) notFound('party invite');
+    partyInvitesDb = partyInvitesDb.filter((i) => i.id !== id);
+    if (!accept) return null;
+    if (partyDb) throw new CloudError('already_in_party', 'leave your current party first', 409);
+    const f = friendsDb.find((x) => x.id === invite.from.id);
+    partyDb = {
+      id: invite.party_id,
+      leader_id: invite.from.id,
+      max_size: 8,
+      members: [{ ...invite.from, presence: f?.presence ?? 'online' }, { ...ME_LITE }],
+      pending_invites: [],
+      voice: { proximity: false, range: 48 },
+    };
+    partyChatDb = [];
+    push({ type: 'party', party: clone(partyDb) });
+    return clone(partyDb);
+  },
+  async kickFromParty(userId) {
+    await latency();
+    const p = requireLeader();
+    p.members = p.members.filter((m) => m.id !== userId);
+    push({ type: 'party', party: clone(p) });
+    return clone(p);
+  },
+  async transferPartyLeader(userId) {
+    await latency();
+    const p = requireLeader();
+    if (!p.members.some((m) => m.id === userId)) notFound('party member');
+    p.leader_id = userId;
+    push({ type: 'party', party: clone(p) });
+    return clone(p);
+  },
+  async updatePartyVoice(patch) {
+    await latency(0.4);
+    const p = requireLeader();
+    if (patch.range !== undefined && (patch.range < 8 || patch.range > 128))
+      throw new CloudError('invalid_input', 'range must be 8-128 blocks', 400);
+    p.voice = { ...p.voice, ...patch };
+    push({ type: 'party', party: clone(p) });
+    return clone(p);
+  },
+  async partyMessages() {
+    await latency(0.4);
+    return partyDb ? clone(partyChatDb.filter((m) => m.party_id === partyDb!.id)) : [];
+  },
+  async sendPartyMessage(body) {
+    await latency(0.3);
+    if (!partyDb) notFound('party');
+    const text = body.trim();
+    if (!text || text.length > 1000)
+      throw new CloudError('invalid_input', 'body must be 1-1000 characters', 400);
+    const m: PartyChatMessage = {
+      id: uid('pm'),
+      party_id: partyDb.id,
+      from_id: ME,
+      body: text,
+      sent_at: new Date().toISOString(),
+    };
+    partyChatDb.push(m);
+    push({ type: 'party-message', message: clone(m) });
+    return clone(m);
+  },
+  async voiceToken(room) {
+    await latency(0.3);
+    if (room === 'party' && !partyDb) notFound('party');
+    const url = import.meta.env.VITE_VOICE_DEV_URL as string | undefined;
+    if (!url) throw new CloudError('voice_unavailable', 'voice is not available right now', 503);
+    if (room === 'server')
+      throw new CloudError('not_on_voice_server', 'not on a server with proximity voice', 404);
+    let identity = ME;
+    let name = 'Sam';
+    try {
+      // Several browsers in one e2e test each speak as someone else.
+      identity = window.localStorage.getItem('rustic.mock.voiceIdentity') ?? ME;
+      name = window.localStorage.getItem('rustic.mock.voiceName') ?? name;
+    } catch {
+      /* storage blocked: the default identity */
+    }
+    const roomName = `party_${partyDb!.id}`;
+    const { token, expires_at } = await devLiveKitToken({
+      key: (import.meta.env.VITE_VOICE_DEV_KEY as string | undefined) ?? 'devkey',
+      secret: (import.meta.env.VITE_VOICE_DEV_SECRET as string | undefined) ?? 'secret',
+      room: roomName,
+      identity,
+      name,
+    });
+    return {
+      url,
+      token,
+      room: roomName,
+      kind: 'party' as const,
+      identity,
+      expires_at,
+      proximity: partyDb!.voice.proximity,
+      range: partyDb!.voice.range,
+      server_name: null,
+    };
+  },
+  async reportUser() {
+    await latency(0.5);
+  },
+  async voiceServers() {
+    await latency(0.4);
+    return clone(voiceServersDb);
+  },
+  async createVoiceServer(name) {
+    await latency();
+    const server: VoiceServerInfo = {
+      id: uid('vsrv'),
+      name: name.trim(),
+      enabled: true,
+      created_at: new Date().toISOString(),
+      last_seen_at: null,
+      online: 0,
+    };
+    voiceServersDb.push(server);
+    return { server: clone(server), key: mockKey() };
+  },
+  async updateVoiceServer(id, patch) {
+    await latency(0.4);
+    const s = voiceServersDb.find((x) => x.id === id) ?? notFound('voice server');
+    Object.assign(s, patch);
+    return clone(s);
+  },
+  async deleteVoiceServer(id) {
+    await latency(0.4);
+    voiceServersDb = voiceServersDb.filter((x) => x.id !== id);
+  },
+  async rotateVoiceServerKey(id) {
+    await latency(0.4);
+    const s = voiceServersDb.find((x) => x.id === id) ?? notFound('voice server');
+    return { server: clone(s), key: mockKey() };
+  },
+
   subscribe(handler) {
     subscribers.add(handler);
     startPresence();
@@ -740,6 +971,10 @@ export const socialMock: Partial<CloudClient> = {
   async featuredServers() {
     await latency(1.1);
     return clone(featuredDb);
+  },
+  // No announcement offline (the screenshots and e2e journeys stay as they are).
+  async banners() {
+    return [];
   },
   async notifications() {
     await latency(0.6);

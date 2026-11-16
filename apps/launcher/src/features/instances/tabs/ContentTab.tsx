@@ -75,7 +75,7 @@ export function ContentTab({ instance }: { instance: Instance }) {
           clearLabel={tc('actions.clear')}
           className="w-60"
         />
-        <div className="ml-auto flex gap-2">
+        <div className="ms-auto flex gap-2">
           {updates.length > 0 && (
             <Button
               leftIcon={<ArrowUpCircle />}

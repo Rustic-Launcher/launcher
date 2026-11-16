@@ -1,0 +1,1053 @@
+{
+  "list": {
+    "title": "Palvelimet",
+    "description": "Ylläpidä maailmaa kavereillesi täällä tai omalla VPS:lläsi, ja pidä suosikkipalvelimesi käden ulottuvilla.",
+    "create": "Luo palvelin",
+    "tabs": {
+      "mine": "Omat palvelimet",
+      "joined": "Liitytyt",
+      "discover": "Löydä"
+    },
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Vanilla Horizon"
+    },
+    "hosting": {
+      "local": "Tämä tietokone",
+      "remote": "Etä: {{host}}",
+      "cloud": "Rustic Cloud · {{region}}"
+    },
+    "state": "Tila",
+    "states": {
+      "running": "Käynnissä",
+      "starting": "Käynnistetään…",
+      "stopping": "Pysäytetään…",
+      "stopped": "Pysäytetty",
+      "crashed": "Kaatunut",
+      "installing": "Asennetaan…",
+      "unreachable": "Ei tavoitettavissa"
+    },
+    "players": "Pelaajat",
+    "playersCount": "Pelaajia {{online}}/{{max}}",
+    "version": "Versio",
+    "copyAddress": "Kopioi osoite",
+    "copyFailed": "Leikepöydälle kopiointi epäonnistui",
+    "notShared": "Ei vielä jaettu",
+    "notSharedHint": "Ota käyttöön väliaikainen osoite, kutsukoodi tai verkkotunnus palvelimen Pääsy-välilehdellä.",
+    "start": "Käynnistä",
+    "stop": "Pysäytä",
+    "startAria": "Käynnistä {{name}}",
+    "stopAria": "Pysäytä {{name}}",
+    "powerFailed": "Palvelin ei vastannut",
+    "empty": {
+      "title": "Ylläpidä maailmaa kavereillesi kolmessa vaiheessa",
+      "description": "Aja sitä ilmaiseksi tällä tietokoneella tai anna Rusticin asentaa se omalle VPS:llesi."
+    },
+    "featured": {
+      "description": "Rusticin tiimin valitsemat palvelimet: reilu peli, valmis Horizonille, valvottu.",
+      "empty": "Ei esittelyssä olevia palvelimia juuri nyt.",
+      "verified": "Rusticin vahvistama",
+      "save": "Lisää listalle",
+      "inList": "Listallasi",
+      "online_one": "{{value}} paikalla",
+      "online_other": "{{value}} paikalla",
+      "view": "Tietoja: {{name}}"
+    },
+    "viewLabel": "Näkymä",
+    "views": {
+      "discover": "Löydä",
+      "mine": "Omat palvelimet"
+    },
+    "searchPlaceholder": {
+      "discover": "Hae esittelyssä olevia palvelimia…",
+      "mine": "Hae palvelimistasi…"
+    },
+    "clearSearch": "Tyhjennä haku",
+    "sortLabel": "Järjestys",
+    "sorts": {
+      "recommended": "Suositeltu",
+      "players": "Eniten pelaajia",
+      "name": "Nimi"
+    },
+    "refreshPing": "Päivitä ping ja tila",
+    "layoutList": "Näytä listana",
+    "layoutGrid": "Näytä ruudukkona",
+    "createHint": "Täällä, omalla VPS:lläsi tai pian pilvessä",
+    "heading": "Pelaa *palvelimilla*",
+    "eyebrow": "Palvelimet",
+    "sections": {
+      "hosted": "Sinun ylläpitämäsi",
+      "joined": "Palvelimet, joille olet liittynyt"
+    }
+  },
+  "multiplayer": {
+    "description": "Pelin palvelinlista, yhteinen kaikille instansseillesi.",
+    "add": "Lisää palvelin",
+    "added": "{{name}} lisätty listallesi",
+    "addFailed": "Tätä palvelinta ei voitu lisätä",
+    "name": "Palvelimen nimi",
+    "namePlaceholder": "Nimi",
+    "address": "Palvelimen osoite",
+    "addressPlaceholder": "play.example.net:25565",
+    "addressInvalid": "Käytä isäntänimeä tai IP-osoitetta ja valinnaista :porttia.",
+    "refreshPings": "Päivitä",
+    "favorites_one": "Suosikki · {{count}}",
+    "favorites_other": "Suosikit · {{count}}",
+    "others_one": "Muu palvelin · {{count}}",
+    "others_other": "Muut palvelimet · {{count}}",
+    "favorite": "Lisää {{name}} suosikkeihin",
+    "unfavorite": "Poista {{name}} suosikeista",
+    "offline": "Offline",
+    "unreachable": "Tähän palvelimeen ei saada yhteyttä juuri nyt",
+    "ping": "{{ms}} ms",
+    "players": "{{online}}/{{max}}",
+    "join": "Liity",
+    "joinAria": "Liity: {{name}}",
+    "joinWith": "Liittyy instanssilla {{instance}}",
+    "noInstance": "Luo instanssi liittyäksesi palvelimille",
+    "joining": "Käynnistetään ja liitytään: {{name}}…",
+    "more": "Lisää toimintoja: {{name}}",
+    "copyAddress": "Kopioi osoite",
+    "removed": "{{name}} poistettu",
+    "undo": "Kumoa",
+    "empty": {
+      "title": "Ei vielä palvelimia",
+      "description": "Lisää palvelin sen osoitteella tai valitse sellainen Löydä-välilehdeltä."
+    }
+  },
+  "wizard": {
+    "title": "Luo palvelin",
+    "subtitle": "Kolme vaihetta: mitä ajetaan, missä sitä ylläpidetään ja miten kaverit liittyvät.",
+    "creatingTitle": "Määritetään: {{name}}",
+    "stepOf": "Vaihe {{index}}/{{total}}",
+    "steps": {
+      "basics": "Perustiedot",
+      "hosting": "Ylläpitopaikka",
+      "access": "Pääsy"
+    },
+    "create": "Luo palvelin",
+    "installOn": "Asenna kohteeseen {{host}}",
+    "createFailed": "Palvelinta ei voitu luoda",
+    "noRusticServer": "rustic-server-ohjelmaa ei löytynyt. Valitse se kohdassa Asetukset › Peli ja instanssit › Rustic Server tai asenna Rustic-version koontiversio, joka sisältää sen.",
+    "openRusticServerSettings": "Avaa asetukset",
+    "fixErrors": "Tarkista korostetut kentät jatkaaksesi.",
+    "discard": {
+      "title": "Hylätäänkö tämä palvelin?",
+      "body": "Ohjattuun toimintoon syöttämäsi tiedot menetetään.",
+      "keep": "Jatka muokkausta",
+      "confirm": "Hylkää"
+    },
+    "basics": {
+      "name": "Palvelimen nimi",
+      "namePlaceholder": "Loun SMP",
+      "icon": "Kuvake",
+      "icons": {
+        "grass": "Ruoho",
+        "sword": "Miekka",
+        "pickaxe": "Hakku",
+        "castle": "Linna",
+        "rocket": "Raketti",
+        "gem": "Jalokivi",
+        "flame": "Liekki",
+        "leaf": "Lehti",
+        "star": "Tähti",
+        "compass": "Kompassi"
+      },
+      "color": "Väri",
+      "colorN": "Väri {{n}}",
+      "type": "Tyyppi",
+      "recommended": "Suositeltu",
+      "nightly": "Nightly",
+      "rusticDesc": "Lisäosat (.rplugin) eristettyinä: lisäosa ei voi koskaan kaataa palvelintasi.",
+      "horizonDesc": "Horizonin oma palvelin, ei lisäosia.",
+      "version": "Horizon-versio",
+      "maxPlayers": "Pelaajia enintään",
+      "versionLineRustic": "Rustic Server 0.1 Horizonilla {{version}}",
+      "versionLineHorizon": "Horizon-palvelin {{version}}",
+      "sameAsClient": "(sama kuin asiakasohjelmasi)",
+      "starterPlugins": "Aloituslisäosat",
+      "starterHint": "Viralliset lisäosat ja se, mitä niillä on lupa tehdä.",
+      "capNetwork": "Verkko",
+      "capNoNetwork": "Ei verkkoa",
+      "capNoFiles": "Ei tiedostoja",
+      "capDataFolder": "Oma datakansio",
+      "eula": "Hyväksyn Minecraftin EULA-ehdot",
+      "eulaHint": "Palvelimen ajaminen edellyttää sitä. Hyväksyt sen itse; Rustic ei hyväksy sitä puolestasi.",
+      "eulaRead": "Lue EULA",
+      "eulaTitle": "Minecraftin EULA"
+    },
+    "world": {
+      "title": "Maailma",
+      "new": "Uusi maailma",
+      "import": "Tuo kansio",
+      "fromInstance": "Instanssista",
+      "seed": "Siemen",
+      "seedHint": "Jätä tyhjäksi satunnaista maailmaa varten.",
+      "seedPlaceholder": "Valinnainen",
+      "randomSeed": "Satunnainen siemen",
+      "levelType": "Maailman tyyppi",
+      "levelTypes": {
+        "default": "Oletus",
+        "flat": "Superlitteä",
+        "large_biomes": "Suuret biomit",
+        "amplified": "Vahvistettu"
+      },
+      "gamemode": "Pelitila",
+      "gamemodes": {
+        "survival": "Selviytyminen",
+        "creative": "Luova",
+        "adventure": "Seikkailu"
+      },
+      "difficulty": "Vaikeustaso",
+      "difficulties": {
+        "peaceful": "Rauhallinen",
+        "easy": "Helppo",
+        "normal": "Normaali",
+        "hard": "Vaikea"
+      },
+      "structures": "Luo rakennelmat",
+      "hardcore": "Hardcore",
+      "folder": "Maailman kansio",
+      "instance": "Instanssi",
+      "pickInstance": "Valitse instanssi",
+      "world": "Maailma",
+      "pickWorld": "Valitse maailma",
+      "noWorlds": "Tässä instanssissa ei ole maailmoja",
+      "newDesc": "Uusi maailma siemenestä, omilla säännöilläsi.",
+      "importDesc": "Maailmakansio tietokoneeltasi tai varmuuskopiosta.",
+      "fromInstanceDesc": "Maailma, jota pelasit jossakin profiilissasi."
+    },
+    "type": {
+      "memory": "Palvelimen muisti (RAM)",
+      "memoryHint": "4 Gt riittää useimmille kaveriporukoille. Lisämuisti auttaa, jos pelaajia on paljon tai modipaketit ovat suuria."
+    },
+    "access": {
+      "intro": "Miten kaverisi liittyvät. Useita voi olla käytössä yhtä aikaa; voit muuttaa niitä myöhemmin.",
+      "lan": "Kaverit verkossani (LAN)",
+      "lanDetail": "Tämän tietokoneen paikallinen osoite, näytetään kun palvelin on luotu.",
+      "publicIp": "Julkinen osoite",
+      "publicIpDetail": "VPS:si IP-osoite",
+      "alwaysOn": "Aina käytössä",
+      "relay": "Väliaikainen osoite",
+      "relayDetail": "ilmainen palvelimen ollessa käynnissä; porttia ei tarvitse avata",
+      "invite": "Kutsukoodi",
+      "inviteDetail": "Koodi, jonka kaverit liittävät Rustic Launcheriin liittyäkseen.",
+      "domain": "Oma verkkotunnus",
+      "domainDetail": "Yhdistä Porkbun · Osta Porkbunilta · Käytä mitä tahansa rekisteröijää",
+      "domainAfter": "Määritä luomisen jälkeen",
+      "safety": "Online-tila käytössä: vain pelin omistavat pelaajat voivat liittyä. Sallittujen lista käytössä."
+    },
+    "summary": {
+      "title": "Yhteenveto",
+      "version": "Versio",
+      "host": "Ylläpito",
+      "world": "Maailma",
+      "memory": "Muisti",
+      "players": "Pelaajia enintään",
+      "plugins": "Lisäosat",
+      "none": "Ei mitään",
+      "eulaAccepted": "Hyväksyit Minecraftin EULA-ehdot vaiheessa 1."
+    },
+    "errors": {
+      "nameRequired": "Anna palvelimellesi nimi.",
+      "nameTooLong": "Käytä enintään 40 merkkiä.",
+      "version": "Valitse Horizon-versio.",
+      "maxPlayers": "1–1000 pelaajaa.",
+      "importPath": "Valitse tuotava maailmakansio.",
+      "world": "Valitse instanssi ja yksi sen maailmoista.",
+      "seed": "Siemenessä on enintään 64 merkkiä.",
+      "eula": "Hyväksy EULA ajaaksesi palvelinta.",
+      "cloudUnavailable": "Rustic Cloud ei ole vielä saatavilla.",
+      "vpsNotReady": "Yhdistä ensin VPS:si ja läpäise tarkistukset.",
+      "memory": "Vähintään 1 Gt muistia.",
+      "host": "Syötä IP-osoite tai isäntänimi.",
+      "port": "Portti välillä 1–65535.",
+      "username": "Syötä Linux-käyttäjänimi.",
+      "keyPath": "Valitse yksityisen avaimen tiedosto.",
+      "generateKey": "Luo ensin avain ja lisää se sitten VPS:llesi.",
+      "password": "Syötä salasana."
+    },
+    "heading": "Luo *palvelin*",
+    "stepHints": {
+      "basics": "Nimeä se, valitse mitä se ajaa ja millä maailmalla se alkaa.",
+      "hosting": "Valitse kone, joka ajaa sitä, ja kuinka paljon muistia se saa.",
+      "access": "Valitse, miten kaverisi liittyvät. Voit muuttaa tätä myöhemmin."
+    },
+    "sections": {
+      "identity": "Identiteetti"
+    },
+    "preview": {
+      "title": "Esikatselu",
+      "unnamed": "Palvelimesi",
+      "draft": "ei vielä luotu"
+    }
+  },
+  "hosting": {
+    "local": {
+      "title": "Tämä tietokone (paikallinen)",
+      "free": "Ilmainen",
+      "description": "Tietokoneesi on oltava päällä, kun kaverit pelaavat.",
+      "settings": "Tällä tietokoneella",
+      "reach": "Kaverit tavoittavat sen verkossasi, väliaikaisen Rustic-osoitteen kautta tai kutsukoodilla. Reitittimen asetuksia ei tarvita.",
+      "startWithLauncher": "Käynnistä käynnistimen kanssa",
+      "startWithLauncherHint": "Palvelin käynnistyy, kun Rustic Launcher avautuu."
+    },
+    "vps": {
+      "title": "Oma VPS (SSH)",
+      "description": "Linux-palvelimesi. Asennamme ja ajamme sen puolestasi.",
+      "which": "VPS",
+      "existing_one": "Tallennettu VPS ({{count}})",
+      "existing_other": "Tallennetut VPS:t ({{count}})",
+      "new": "Lisää VPS",
+      "pinned": "Isäntäavain kiinnitetty",
+      "host": "Isäntä",
+      "port": "Portti",
+      "user": "Käyttäjä",
+      "userPlaceholder": "root tai sudo-käyttäjä",
+      "auth": "Kirjautuminen",
+      "authGenerate": "Luo avain puolestani",
+      "authKey": "Olemassa oleva avaintiedosto",
+      "authPassword": "Salasana (kerran)",
+      "generateHint": "Suositeltu. Rustic luo avainparin; yksityinen avain ei koskaan poistu tältä tietokoneelta.",
+      "generate": "Luo avain",
+      "addKeyCommand": "Aja tämä kerran VPS:si konsolissa avaimen valtuuttamiseksi:",
+      "keyStored": "Yksityinen avain tallennettu järjestelmäsi avainnippuun ({{path}})",
+      "openFirewall": "Avaa peliportti VPS:n palomuurissa",
+      "openFirewallHint": "Sallii TCP-liikenteen palvelimen porttiin ufw:ssä tai firewalld:ssä. Palveluntarjoajasi oma palomuuri voi myös vaatia sitä.",
+      "keyFile": "Yksityinen avain",
+      "passphrase": "Tunnuslause",
+      "optional": "Valinnainen",
+      "password": "Salasana",
+      "passwordHint": "Käytetään kerran avaimen asentamiseen. Sitä ei tallenneta.",
+      "test": "Testaa yhteys",
+      "reachable": "Yhdistetty · {{ms}} ms",
+      "unreachable": "Tähän VPS:ään ei saatu yhteyttä",
+      "authFailed": "VPS hylkäsi kirjautumisen"
+    },
+    "cloud": {
+      "title": "Rustic Cloud",
+      "soon": "Tulossa pian",
+      "description": "Palvelimet Rusticin koneilla, aina päällä.",
+      "waitlist": "Saat sähköpostin, kun Rustic Cloud avautuu.",
+      "email": "Sähköpostiosoite",
+      "join": "Liity jonotuslistalle",
+      "joined": "Olet listalla (#{{position}}). Lähetämme sinulle sähköpostia.",
+      "invalidEmail": "Syötä kelvollinen sähköpostiosoite."
+    },
+    "requirements": {
+      "title": "Vaatimusten tarkistus",
+      "ram": "Muisti ({{free}} vapaana)",
+      "gameFiles": "Pelitiedostot valmisteltu",
+      "port": "Portti 25565 vapaana",
+      "hint": "Levytila tarkistetaan, kun palvelintiedostot ladataan."
+    },
+    "fingerprint": {
+      "title": "Luotetaanko kohteeseen {{host}}?",
+      "description": "Ensimmäinen yhteys tähän VPS:ään. Vertaa tätä sormenjälkeä palveluntarjoajasi konsolissa näkyvään ennen kuin luotat siihen.",
+      "warning": "Jos se ei täsmää, peruuta: joku saattaa siepata yhteyden. Rustic estää kaikki tämän avaimen myöhemmät muutokset.",
+      "trust": "Luota ja jatka"
+    },
+    "testFailed": "Yhteystesti epäonnistui",
+    "checkFailed": "VPS:n tarkistus epäonnistui",
+    "preflight": {
+      "running": "Tarkistetaan VPS:ääsi…",
+      "ok": "VPS:si on valmis",
+      "notOk": "VPS:si ei täytä vaatimuksia",
+      "os": "{{os}} · {{arch}}",
+      "cpu_one": "{{count}} vCPU",
+      "cpu_other": "{{count}} vCPU:ta",
+      "memory": "Muistia {{memory}}",
+      "disk": "Vapaata levytilaa {{disk}}",
+      "systemd": "systemd saatavilla",
+      "ip": "Julkinen IP"
+    },
+    "problems": {
+      "memory": "Muisti",
+      "disk": "Levy",
+      "arch": "Arkkitehtuuri",
+      "os": "Käyttöjärjestelmä",
+      "systemd": "systemd",
+      "sudo": "sudo"
+    },
+    "install": {
+      "vpsTitle": "Asennetaan kohteeseen {{host}}",
+      "steps": {
+        "connect": "Yhdistä SSH:lla",
+        "check": "Esitarkistukset",
+        "user": "Luo käyttäjä ”rustic”",
+        "download": "Lähetä allekirjoitetut palvelintiedostot",
+        "engine": "Määritä Rustic-moottori",
+        "service": "Asenna palvelu",
+        "firewall": "Avaa portti 25565",
+        "world": "Valmistele maailma",
+        "start": "Käynnistä ja tarkista"
+      },
+      "state": {
+        "pending": "odottaa",
+        "running": "käynnissä",
+        "done": "valmis",
+        "failed": "epäonnistui",
+        "skipped": "ohitettu"
+      },
+      "skippedVanilla": "Ei tarvita vanilla-Horizonille",
+      "log_one": "Näytä loki ({{count}} rivi)",
+      "log_other": "Näytä loki ({{count}} riviä)",
+      "vpsDone": "{{name}} on käynnissä kohteessa {{host}}",
+      "vpsDoneBody": "Hallitse sitä käynnistimestä kuin paikallista palvelinta: konsoli, pelaajat, lisäosat, varmuuskopiot.",
+      "localDownload": "Lataa {{engine}}",
+      "localInit": "Valmistele maailma ja asetukset",
+      "localStart": "Ensimmäinen käynnistys",
+      "localReady": "Valmis käynnistettäväksi",
+      "localDone": "{{name}} on käynnissä",
+      "localDoneBody": "Jaa sen osoite Pääsy-välilehdeltä tai kutsu kavereita kaveripaneelista.",
+      "open": "Avaa palvelin",
+      "backToList": "Takaisin palvelimiin",
+      "retry": "Yritä uudelleen",
+      "failed": "Asennus epäonnistui",
+      "crashed": "Palvelin pysähtyi ensimmäisen käynnistyksensä aikana. Tarkista konsoli."
+    }
+  },
+  "manage": {
+    "tabsLabel": "Palvelimen osiot",
+    "tabs": {
+      "overview": "Yleiskatsaus",
+      "console": "Konsoli",
+      "players": "Pelaajat",
+      "plugins": "Lisäosat",
+      "config": "Määritykset",
+      "datapacks": "Datapaketit",
+      "backups": "Varmuuskopiot",
+      "access": "Pääsy",
+      "danger": "Vaaravyöhyke"
+    },
+    "state": {
+      "stopped": "Pysäytetty",
+      "starting": "Käynnistetään…",
+      "running": "Käynnissä",
+      "stopping": "Pysäytetään…",
+      "crashed": "Kaatunut",
+      "installing": "Asennetaan…",
+      "unreachable": "Ei tavoitettavissa"
+    },
+    "save": "Tallenna",
+    "cancel": "Peruuta",
+    "close": "Sulje",
+    "remove": "Poista",
+    "done": "Valmis",
+    "header": {
+      "back": "Palvelimet",
+      "players": "Pelaajia {{online}}/{{max}}",
+      "uptime": "käynnissä {{duration}}",
+      "start": "Käynnistä",
+      "stop": "Pysäytä",
+      "restart": "Käynnistä uudelleen",
+      "join": "Liity",
+      "address": "Osoite",
+      "copyAddress": "Kopioi palvelimen osoite",
+      "powerFailed": "Palvelimen tilaa ei voitu vaihtaa"
+    },
+    "overview": {
+      "stoppedTitle": "Palvelin on pysäytetty",
+      "stoppedBody": "Käynnistä se nähdäksesi suorittimen, muistin, TPS:n ja tick-ajan reaaliajassa.",
+      "cpu": "Suoritin",
+      "cpuChart": "Suorittimen käyttö kahden viime minuutin aikana",
+      "ram": "Muisti",
+      "ramChart": "Käytetty muisti kahden viime minuutin aikana",
+      "of": "/ {{max}}",
+      "tps": "TPS",
+      "tpsChart": "Tickejä sekunnissa kahden viime minuutin aikana",
+      "mspt": "Tick-aika",
+      "msptChart": "Millisekunteja tickiä kohden kahden viime minuutin aikana, 50 ms:n budjettiviiva",
+      "msptBudget": "budjetti 50 ms",
+      "health": {
+        "good": "Sujuva",
+        "busy": "Kuormitettu",
+        "lagging": "Tökkii"
+      },
+      "onlineTitle_one": "{{count}} pelaaja paikalla",
+      "onlineTitle_other": "{{count}} pelaajaa paikalla",
+      "onlineStopped": "Kukaan ei voi liittyä, kun palvelin on pysäytetty.",
+      "nobody": "Kukaan ei pelaa juuri nyt.",
+      "infoTitle": "Tiedot",
+      "world": "Maailma",
+      "version": "Horizon",
+      "port": "Portti",
+      "memory": "Muisti",
+      "created": "Luotu",
+      "folder": "Kansio",
+      "uptime": "Käyntiaika",
+      "startedAt": "Alkaen {{time}}",
+      "lastSession": "Viimeisin istunto",
+      "lastStarted": "Käynnistetty viimeksi {{when}}",
+      "neverStarted": "Ei vielä käynnistetty",
+      "lastLines": "Viimeisimmät konsolirivit",
+      "noLines": "Mitään ei ole vielä kirjattu.",
+      "openConsole": "Avaa konsoli",
+      "crashedTitle": "Palvelin pysähtyi odottamatta",
+      "crashedBody": "Tarkista viimeisimmät konsolirivit ja käynnistä se sitten uudelleen."
+    },
+    "console": {
+      "filter": "Suodata rivejä",
+      "filters": {
+        "all": "Kaikki",
+        "info": "Tiedot",
+        "warn": "Varoitukset",
+        "error": "Virheet",
+        "chat": "Chat"
+      },
+      "levels": {
+        "info": "tieto",
+        "warn": "varoitus",
+        "error": "virhe",
+        "command": "komento",
+        "chat": "chat"
+      },
+      "autoScroll": "Seuraa uusia rivejä",
+      "logLabel": "Palvelimen konsoli",
+      "empty": "Ei vielä rivejä.",
+      "suggestions": "Komentoehdotukset",
+      "inputLabel": "Palvelinkomento",
+      "placeholder": "Kirjoita komento (Tab täydentää, ↑ historia)",
+      "offline": "Käynnistä palvelin lähettääksesi komentoja",
+      "send": "Lähetä",
+      "sendFailed": "Komentoa ei voitu lähettää",
+      "hint": "Komennot ajetaan palvelimen konsolina kaikin oikeuksin. Alkukauttaviivaa ei tarvita."
+    },
+    "players": {
+      "whitelist": "Sallittujen lista",
+      "whitelistHint": "Vain listalla olevat pelaajat voivat liittyä. Suositellaan, kun palvelin on tavoitettavissa internetistä.",
+      "view": "Näytä pelaajat",
+      "views": {
+        "online": "Paikalla",
+        "all": "Kaikki",
+        "ops": "Operaattorit",
+        "whitelist": "Sallittujen listalla",
+        "banned": "Estetyt"
+      },
+      "search": "Etsi pelaaja",
+      "emptyOnline": "Kukaan ei ole paikalla",
+      "empty": "Ei pelaajia täällä",
+      "stoppedHint": "Käynnistä palvelin nähdäksesi, kuka pelaa.",
+      "online": "Paikalla",
+      "offline": "Offline",
+      "op": "Operaattori",
+      "whitelisted": "Sallittujen listalla",
+      "banned": "Estetty",
+      "playtime": "Pelattu {{duration}}",
+      "kick": "Potkaise",
+      "kickAria": "Potkaise {{name}}",
+      "more": "Lisää toimintoja: {{name}}",
+      "makeOp": "Tee operaattoriksi",
+      "deop": "Poista operaattorioikeudet",
+      "whitelistAdd": "Lisää sallittujen listalle",
+      "whitelistRemove": "Poista sallittujen listalta",
+      "ban": "Estä",
+      "pardon": "Poista esto",
+      "banTitle": "Estetäänkö {{name}}?",
+      "banBody": "Pelaajan yhteys katkaistaan, eikä hän voi liittyä uudelleen ennen kuin poistat eston.",
+      "reason": "Syy (valinnainen, näytetään pelaajalle)",
+      "failed": "Toiminto epäonnistui",
+      "done": {
+        "kick": "{{name}} potkaistiin",
+        "ban": "{{name}} estettiin",
+        "pardon": "Käyttäjän {{name}} esto poistettiin",
+        "op": "{{name}} on nyt operaattori",
+        "deop": "{{name}} ei ole enää operaattori",
+        "whitelist_add": "{{name}} lisättiin sallittujen listalle",
+        "whitelist_remove": "{{name}} poistettiin sallittujen listalta"
+      }
+    },
+    "config": {
+      "mode": "Muokkaustila",
+      "form": "Asetukset",
+      "raw": "Raakatiedosto",
+      "groups": {
+        "general": "Yleiset",
+        "world": "Maailma",
+        "players": "Pelaajat",
+        "network": "Verkko",
+        "performance": "Suorituskyky"
+      },
+      "keys": {
+        "motd": "Päivän viesti",
+        "max-players": "Pelaajia enintään",
+        "white-list": "Sallittujen lista",
+        "online-mode": "Online-tila (tilin tarkistus)",
+        "pvp": "Pelaaja vastaan pelaaja",
+        "gamemode": "Oletuspelitila",
+        "difficulty": "Vaikeustaso",
+        "level-seed": "Maailman siemen",
+        "spawn-protection": "Syntymäpisteen suojauksen säde",
+        "server-port": "Portti",
+        "enable-rcon": "Etäkonsoli (RCON)",
+        "view-distance": "Näköetäisyys",
+        "simulation-distance": "Simulaatioetäisyys"
+      },
+      "restart": "Käynnistä uudelleen",
+      "restartNeeded": "Käynnistä palvelin uudelleen ottaaksesi osan muutoksista käyttöön",
+      "unsaved_one": "{{count}} tallentamaton muutos",
+      "unsaved_other": "{{count}} tallentamatonta muutosta",
+      "noChanges": "Ei muutoksia",
+      "discard": "Hylkää",
+      "saved": "Määritykset tallennettu",
+      "saveFailed": "Määrityksiä ei voitu tallentaa",
+      "rawTitle": "server.toml",
+      "rawWarning": "Edistynyt: kirjoitusvirhe voi estää palvelimen käynnistymisen. Arvot tarkistetaan tallennettaessa."
+    },
+    "plugins": {
+      "vanillaTitle": "Lisäosat vaativat Rustic Serverin",
+      "vanillaBody": "Tämä palvelin ajaa vanilla-Horizonia. Rustic Server lisää eristetyt .rplugin-lisäosat, jotka eivät voi koskaan kaataa sitä. Luo Rustic Server ja tuo tämä maailma käyttääksesi lisäosia.",
+      "createRustic": "Luo Rustic Server",
+      "intro": "Lisäosat toimivat eristettyinä: epäonnistuva lisäosa poistetaan käytöstä lokirivin kera, ja palvelin jatkaa. Jokainen ilmoittaa, mihin sillä on pääsy.",
+      "upload": "Lisää tiedosto…",
+      "uploadTitle": "Valitse .rplugin-tiedosto",
+      "find": "Etsi lisäosia",
+      "empty": "Ei vielä lisäosia",
+      "emptyBody": "Selaa kohtaa Sisältö › Lisäosat lisätäksesi sellaisen yhdellä napsautuksella.",
+      "errored": "Poistettu käytöstä virheen jälkeen",
+      "disabled": "Pois",
+      "noDescription": "Ei kuvausta",
+      "toggle": "Ota käyttöön: {{name}}",
+      "capabilities": "Pääsy",
+      "noNetwork": "Ei verkkoa",
+      "network": "Verkko: {{domains}}",
+      "fs": {
+        "none": "Ei tiedostoja",
+        "data-folder": "Oma datakansio"
+      },
+      "update": "Päivitä versioon {{version}}",
+      "updated": "{{name}} päivitetty versioon {{version}}",
+      "installed": "{{name}} asennettu ja otettu käyttöön",
+      "removeTitle": "Poistetaanko {{name}}?",
+      "removeBody": "Lisäosa poistetaan muistista ja sen tiedosto poistetaan. Sen datakansio säilytetään.",
+      "failed": "Lisäosan toiminto epäonnistui"
+    },
+    "datapacks": {
+      "intro": "Maailman ”{{world}}” datapaketit.",
+      "find": "Etsi datapaketteja",
+      "empty": "Tässä maailmassa ei ole datapaketteja",
+      "toggle": "Ota käyttöön: {{name}}",
+      "remove": "Poista {{name}}",
+      "reloadHint": "Muutokset tulevat voimaan komennon /reload tai uudelleenkäynnistyksen jälkeen.",
+      "failed": "Datapaketin toiminto epäonnistui"
+    },
+    "backups": {
+      "nowTitle": "Varmuuskopioi nyt",
+      "nowBody": "Kopio maailmasta ja määrityksistä. Palvelin jatkaa toimintaansa.",
+      "note": "Huomautus",
+      "notePlaceholder": "Valinnainen huomautus, esim. ”ennen päivitystä”",
+      "now": "Varmuuskopioi nyt",
+      "created": "Varmuuskopio luotu",
+      "empty": "Ei vielä varmuuskopioita",
+      "kinds": {
+        "manual": "Manuaalinen",
+        "scheduled": "Ajastettu",
+        "pre_restore": "Ennen palautusta"
+      },
+      "restore": "Palauta",
+      "restoreTitle": "Palautetaanko tämä varmuuskopio?",
+      "restoreBody": "Maailma palaa ajankohtaan {{date}}. Kaikki sen jälkeen rakennettu korvataan. Nykyisestä maailmasta tehdään ensin varmuuskopio.",
+      "restored": "Varmuuskopio palautettu",
+      "delete": "Poista varmuuskopio",
+      "deleteTitle": "Poistetaanko tämä varmuuskopio?",
+      "deleteBody": "Tämä varmuuskopio poistetaan lopullisesti.",
+      "failed": "Varmuuskopion toiminto epäonnistui",
+      "scheduleTitle": "Automaattiset varmuuskopiot",
+      "scheduleBody": "Vanhimmat automaattiset varmuuskopiot poistetaan, kun raja täyttyy.",
+      "scheduleEnabled": "Varmuuskopioi automaattisesti",
+      "every": "Joka",
+      "hours_one": "{{count}} tunti",
+      "hours_other": "{{count}} tuntia",
+      "keep": "Säilytä",
+      "keepCount_one": "viimeisin {{count}} varmuuskopio",
+      "keepCount_other": "viimeisimmät {{count}} varmuuskopiota",
+      "scheduleSaved": "Varmuuskopioaikataulu tallennettu"
+    },
+    "danger": {
+      "deleteTitle": "Poista tämä palvelin",
+      "deleteBody": "Pysäyttää palvelimen ja poistaa sen käynnistimestä. Voit säilyttää sen tiedostot.",
+      "delete": "Poista palvelin",
+      "removeVpsTitle": "Poista VPS:ltäsi",
+      "removeVpsBody": "Pysäyttää palvelun kohteessa {{host}} ja poistaa Rusticin sieltä. VPS pysyy sinun.",
+      "removeVps": "Poista VPS:ltä",
+      "confirmTitle": "Poistetaanko ”{{name}}”?",
+      "confirmBody": "Tätä ei voi perua. Tee ensin varmuuskopio, jos saatat tarvita maailmaa vielä.",
+      "deleteFiles": "Poista myös maailma ja kaikki palvelintiedostot",
+      "typeName": "Vahvista kirjoittamalla ”{{name}}”",
+      "deleted": "{{name}} poistettu",
+      "failed": "Palvelinta ei voitu poistaa"
+    }
+  },
+  "access": {
+    "intro": "Valitse, miten kaverit tavoittavat palvelimesi. Voit ottaa useita käyttöön yhtä aikaa.",
+    "optional": "Valinnainen",
+    "lan": {
+      "title": "Verkossasi",
+      "body": "Samassa Wi-Fi-verkossa tai verkossa olevat pelaajat liittyvät tällä osoitteella.",
+      "copy": "Kopioi paikallinen osoite"
+    },
+    "public": {
+      "title": "Julkinen osoite",
+      "body": "VPS:si IP-osoite ja portti. Kuka tahansa voi liittyä sillä; verkkotunnus on helpompi jakaa.",
+      "copy": "Kopioi julkinen osoite"
+    },
+    "relay": {
+      "title": "Väliaikainen osoite",
+      "body": "Ilmainen osoite Rustic Relayssa palvelimen ollessa käynnissä. Ei reititinasetuksia, ja IP-osoitteesi pysyy piilossa.",
+      "toggle": "Väliaikainen osoite",
+      "copy": "Kopioi väliaikainen osoite",
+      "off": "Pois päältä. Ota käyttöön saadaksesi jaettavan osoitteen.",
+      "label": "Nimi osoitteessa",
+      "apply": "Käytä",
+      "status": {
+        "off": "Pois",
+        "connecting": "Odotetaan palvelimen käynnistymistä",
+        "online": "Tavoitettavissa nyt",
+        "error": "Relay ei tavoitettavissa"
+      },
+      "failed": "Väliaikaista osoitetta ei voitu muuttaa",
+      "taken": "Tämä nimi on varattu. Kokeile toista.",
+      "invalid": "Käytä 3–32 pientä kirjainta, numeroa tai yhdysviivaa."
+    },
+    "invite": {
+      "title": "Kutsukoodi",
+      "body": "Rustic Launcheria käyttävät kaverit liittävät tämän koodin liittyäkseen, kuten Horizonin Pelaa kavereiden kanssa -toiminnossa.",
+      "create": "Luo koodi",
+      "copy": "Kopioi kutsukoodi",
+      "expires": "Vanhenee {{when}}",
+      "revoke": "Mitätöi"
+    },
+    "advanced": "Edistynyt: avaa portti reitittimessäsi (UPnP)",
+    "upnp": {
+      "title": "UPnP-porttiohjaus",
+      "warning": "Tämä pyytää reititintäsi avaamaan palvelimen portin internetiin. Julkinen IP-osoitteesi näkyy jokaiselle pelaajalle, mikä altistaa kotiyhteytesi (hyökkäykset, sijainti). Käytä mieluummin väliaikaista osoitetta tai verkkotunnusta.",
+      "status": {
+        "off": "Pois",
+        "mapping": "Kysytään reitittimeltä…",
+        "mapped": "Portti auki",
+        "failed": "Reititin kieltäytyi (UPnP voi olla pois päältä)"
+      },
+      "mapped": "Portti auki: {{address}}",
+      "copy": "Kopioi julkinen osoite",
+      "failed": "Porttia ei voitu avata",
+      "prefer": "Väliaikainen osoite ja verkkotunnukset toimivat avaamatta mitään porttia."
+    }
+  },
+  "domains": {
+    "title": "Oma verkkotunnus",
+    "intro": "Verkkotunnus on palvelimesi osoite, kuten play.nimesi.net. Voit yhdistää jo omistamasi, ostaa sellaisen Porkbunilta poistumatta käynnistimestä tai käyttää mitä tahansa rekisteröijää: näytämme tarkalleen, mitä lisätä.",
+    "automatic": "Automaattinen",
+    "anyRegistrar": "Mikä tahansa rekisteröijä",
+    "otherPaths": "Muut tavat",
+    "paths": {
+      "porkbun": {
+        "title": "Yhdistä Porkbun",
+        "body": "Onko sinulla jo verkkotunnus Porkbunissa? Yhdistä tilisi, niin luomme tietueet puolestasi."
+      },
+      "buy": {
+        "title": "Osta verkkotunnus Porkbunilta",
+        "body": "Löydä vapaa nimi, osta se omalla Porkbun-tililläsi, ja se määritetään automaattisesti."
+      },
+      "manual": {
+        "title": "Käytä minkä tahansa rekisteröijän verkkotunnusta",
+        "body": "OVH, Gandi, Namecheap, Cloudflare…: näytämme, mitä lisätä, ja tarkistamme sen puolestasi."
+      }
+    },
+    "subdomain": "Aliverkkotunnus",
+    "subdomainHint": "play on hyvä oletus.",
+    "apexHint": "Tyhjä: itse verkkotunnus (vaatii joillakin rekisteröijillä ALIAS/ANAME-tietueen).",
+    "invalidSubdomain": "Vain kirjaimia, numeroita ja yhdysviivoja.",
+    "invalidDomain": "Tämä ei näytä verkkotunnukselta (example.net).",
+    "copyAddress": "Kopioi verkkotunnuksen osoite",
+    "configureFailed": "Verkkotunnusta ei voitu määrittää",
+    "boundBody": "Pelaajat liittyvät tällä osoitteella.",
+    "remove": "Poista verkkotunnus",
+    "removeTitle": "Lopetetaanko verkkotunnuksen {{domain}} käyttö?",
+    "removeBody": "Osoite lakkaa osoittamasta tähän palvelimeen, kun tietueet on poistettu. Verkkotunnus pysyy sinun.",
+    "status": {
+      "pending": "Odottaa",
+      "propagating": "Leviää",
+      "verified": "Yhdistetty",
+      "error": "Virhe"
+    },
+    "provider": {
+      "porkbun": "Hallitaan Porkbunin kautta",
+      "manual": "Hallitaan rekisteröijälläsi"
+    },
+    "connected": "Verkkotunnus yhdistetty",
+    "connectedBody": "Rustic Cloud vahvistaa TXT-tietueen, minkä jälkeen osoitteesi alkaa toimia. Voit sulkea tämän; ilmoitamme sinulle.",
+    "porkbun": {
+      "step1": "Luo API-avain kohdassa porkbun.com › Account › API Access.",
+      "openApi": "Avaa Porkbun API Access",
+      "step2": "Ota ”API Access” käyttöön verkkotunnuksen sivulla Porkbunissa.",
+      "apiKey": "API-avain",
+      "secret": "Salainen API-avain",
+      "keychain": "Tallennetaan tietokoneesi avainnippuun, ei koskaan lähetetä Rusticille.",
+      "connect": "Yhdistä",
+      "badApiKey": "API-avain alkaa merkeillä pk1_.",
+      "badSecret": "Salainen API-avain alkaa merkeillä sk1_.",
+      "rejected": "Porkbun hylkäsi nämä avaimet. Tarkista ne tai luo uusi pari.",
+      "connected": "Porkbun yhdistetty",
+      "disconnect": "Katkaise yhteys",
+      "domain": "Verkkotunnus",
+      "pickDomain": "Valitse jokin verkkotunnuksistasi",
+      "apiAccessOff": "API Access on pois päältä tälle verkkotunnukselle Porkbunissa",
+      "apiAccessHint": "Harmaina näkyvät verkkotunnukset tarvitsevat ”API Access” -asetuksen käyttöön Porkbunissa.",
+      "preview": "Tekemämme muutokset",
+      "dryRun": "Esikatsele",
+      "previewBody": "Nämä tietueet lisätään tai korvataan verkkotunnuksellasi, jotta {{fqdn}} ohjautuu tälle palvelimelle. Mitään ei muuteta ennen kuin otat ne käyttöön.",
+      "apply": "Määritä automaattisesti"
+    },
+    "buy": {
+      "intro": "Verkkotunnus rekisteröidään omalle Porkbun-tilillesi ja maksetaan siellä. Rustic ei koskaan ota siitä maksua.",
+      "needsAccount": "Ostaminen vaatii Porkbun-tilisi: yhdistä se ensin (voit luoda sellaisen ilmaiseksi osoitteessa porkbun.com).",
+      "search": "Haluamasi nimi",
+      "searchPlaceholder": "esim. loucraft",
+      "searchButton": "Hae",
+      "noResults": "Ei tuloksia tälle nimelle.",
+      "premium": "Premium",
+      "price": "{{price}} ensimmäinen vuosi · uusitaan hintaan {{renewal}}",
+      "taken": "Varattu",
+      "select": "Valitse",
+      "overLimit": "Yli 100 $: osta se osoitteesta porkbun.com",
+      "pricesNote": "Hinnat ovat Porkbunin, Yhdysvaltain dollareina, tämänhetkisen tarjouksen mukaan. Porkbun voi lisätä veroja.",
+      "confirmTitle": "Vahvista osto Porkbunissa",
+      "seller": "Myyjä: Porkbun LLC, ei Rustic. Sen ehdot, hinnat, uusimiset ja hyvitykset ovat voimassa.",
+      "domain": "Verkkotunnus",
+      "address": "Palvelimen osoite",
+      "registrar": "Rekisteröijä",
+      "registrarValue": "Porkbun, omalla tililläsi",
+      "firstYear": "Ensimmäinen vuosi",
+      "renewal": "Uusitaan vuosittain hintaan",
+      "payment": "Maksetaan Porkbun-tilisi saldolla tai tallennetulla kortilla: {{price}} nyt; uusitaan vuosittain hintaan {{renewal}}, ellet poista automaattista uusimista käytöstä Porkbunissa.",
+      "agreeTerms": "Hyväksyn Porkbunin rekisteröintisopimuksen ja ehdot",
+      "termsLink": "(lue ne)",
+      "agreeOrder": "Ymmärrän, että Rustic vain lähettää tämän tilauksen Porkbunille puolestani",
+      "refunds": "Verkkotunnusten hyvitykset ja peruutukset hoitaa Porkbun ehtojensa mukaisesti.",
+      "buyButton": "Osta Porkbunilta · {{price}}",
+      "bought": "{{domain}} on sinun",
+      "boughtBody": "Porkbunin veloittama: {{price}}. Määritetään nyt…",
+      "configuring": "Määritetään uutta verkkotunnustasi…",
+      "failed": "Osto ei mennyt läpi",
+      "errors": {
+        "price_changed": "Hinta muuttui Porkbunissa. Tarkista uusi hinta ja yritä uudelleen.",
+        "not_available": "Tämä verkkotunnus varattiin juuri.",
+        "over_limit": "Yli 100 $: osta se osoitteesta porkbun.com.",
+        "porkbun_not_connected": "Yhdistä ensin Porkbun-tilisi.",
+        "consent_required": "Molemmat ruudut on valittava."
+      }
+    },
+    "manual": {
+      "intro": "Lisää nämä tietueet rekisteröijäsi DNS-vyöhykkeeseen. Tarkistamme ne 10 sekunnin välein ja kerromme, kun se toimii.",
+      "domain": "Verkkotunnuksesi",
+      "registrar": "Rekisteröijä",
+      "show": "Näytä tietueet",
+      "guideTitle": "Rekisteröijällä {{registrar}}",
+      "allGuides": "Ohjeet kaikille rekisteröijille"
+    },
+    "records": {
+      "caption": "Lisättävät DNS-tietueet",
+      "type": "Tyyppi",
+      "name": "Nimi / isäntä",
+      "value": "Arvo / kohde",
+      "ttl": "TTL",
+      "status": "Tila",
+      "optional": "valinnainen",
+      "emptyHost": "(jätä tyhjäksi)",
+      "copyName": "Kopioi {{type}}-nimi",
+      "copyValue": "Kopioi {{type}}-arvo",
+      "srvFields": "prioriteetti {{priority}} · paino {{weight}} · portti {{port}}"
+    },
+    "check": {
+      "pending": "Ei tarkistettu",
+      "notNeeded": "Ei tarvita",
+      "ok": "OK",
+      "propagating": "Leviää ({{ok}}/{{total}})",
+      "wrong": "Väärä arvo",
+      "found": "Löytyi:",
+      "expected": "Odotettu:",
+      "missing": "Puuttuu",
+      "first": "Ensimmäinen tarkistus…",
+      "progress": "{{ok}}/{{total}} tietuetta OK",
+      "progressLabel": "Vahvistetut tietueet",
+      "auto": "Tarkistetaan automaattisesti 10 s välein",
+      "lastCheck": "viimeisin tarkistus {{seconds}} s sitten",
+      "now": "Tarkista nyt"
+    },
+    "help": {
+      "txt": "Miksi TXT-tietue? Se todistaa, että verkkotunnus on sinun, joten kukaan muu ei voi ohjata sitä omalle palvelimelleen.",
+      "propagation": "Muutosten leviäminen kaikille voi kestää minuutista muutamaan tuntiin. Jatkamme tarkistamista; sinun ei tarvitse pysyä täällä.",
+      "apex": "Juuriverkkotunnukset (nimesi.net ilman ”play.”) vaativat ALIAS/ANAME-tietueen; kaikilla rekisteröijillä sellaista ei ole. Aliverkkotunnus toimii aina."
+    },
+    "guides": {
+      "ovh": {
+        "name": "OVHcloud",
+        "steps": "Web Cloud › Domain names › verkkotunnuksesi › DNS zone.\nNapsauta ”Add an entry” ja valitse tyyppi (CNAME, SRV, A tai TXT).\nSub-domain = alla oleva Nimi (tyhjä itse verkkotunnukselle), Target = Arvo.\nToista jokaiselle tietueelle ja vahvista. OVH ottaa muutokset käyttöön muutamassa minuutissa."
+      },
+      "gandi": {
+        "name": "Gandi",
+        "steps": "Domain › verkkotunnuksesi › DNS records.\nNapsauta ”Add record” ja valitse tyyppi.\nName = alla oleva Nimi, Value = Arvo (säilytä loppupiste CNAME/SRV-kohteissa).\nTallenna jokainen tietue."
+      },
+      "namecheap": {
+        "name": "Namecheap",
+        "steps": "Domain List › Manage › Advanced DNS.\nKohdassa Host records: ”Add new record”.\nHost = alla oleva Nimi (@ itse verkkotunnukselle), Value/Target = Arvo.\nTallenna jokainen napsauttamalla vihreää valintamerkkiä."
+      },
+      "godaddy": {
+        "name": "GoDaddy",
+        "steps": "My Products › verkkotunnuksesi › DNS › Manage DNS.\nNapsauta ”Add new record” ja valitse tyyppi.\nName = alla oleva Nimi (@ itse verkkotunnukselle), Value = Arvo.\nSRV:lle täytä Service _minecraft, Protocol _tcp ja sitten prioriteetti, paino ja portti. Tallenna."
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "steps": "Valitse sivustosi › DNS › Records › Add record.\nValitse tyyppi, Name = alla oleva Nimi, Target/Content = Arvo.\nAseta Proxy status tilaan ”DNS only” (harmaa pilvi): peliliikenne ei voi kulkea Cloudflaren välityspalvelimen kautta.\nTallenna jokainen tietue."
+      },
+      "ionos": {
+        "name": "IONOS",
+        "steps": "Domains & SSL › verkkotunnuksesi › DNS.\nNapsauta ”Add record” ja valitse tyyppi.\nHost name = alla oleva Nimi, Points to / Value = Arvo.\nTallenna; IONOS saattaa pyytää vahvistamaan oletustietueen korvaamisen."
+      },
+      "hostinger": {
+        "name": "Hostinger",
+        "steps": "Domains › verkkotunnuksesi › DNS / Nameservers.\nValitse tyyppi kohdassa ”Manage DNS records”.\nName = alla oleva Nimi, Points to / Value = Arvo, TTL kuten näytetty.\nNapsauta ”Add record” jokaiselle."
+      },
+      "porkbun": {
+        "name": "Porkbun (käsin)",
+        "steps": "Domain Management › verkkotunnuksesi › DNS.\nValitse tyyppi, Host = alla oleva Nimi (tyhjä itse verkkotunnukselle), Answer = Arvo.\nNapsauta ”Add” jokaiselle tietueelle.\nVinkki: Yhdistä Porkbun -polku tekee kaiken tämän puolestasi."
+      },
+      "generic": {
+        "name": "Muu rekisteröijä",
+        "steps": "Avaa verkkotunnuksesi DNS-vyöhyke (joskus nimeltään DNS-tietueet tai vyöhykkeen muokkain).\nLisää jokainen alla oleva tietue samalla tyypillä, nimellä ja arvolla.\nJos rekisteröijä pyytää koko nimeä, lisää verkkotunnuksesi Nimen perään.\nTallenna ja palaa: tarkistamme automaattisesti."
+      }
+    }
+  },
+  "directory": {
+    "tabsLabel": "Palvelinnäkymät",
+    "tabs": {
+      "discover": "Löydä",
+      "browse": "Selaa"
+    },
+    "searchLabel": "Hae palvelimia",
+    "searchPlaceholder": "Hae palvelinhakemistosta…",
+    "publish": "Julkaise palvelimeni",
+    "publishCta": {
+      "title": "Palvelimesi tähän",
+      "hint": "Listaa Horizon-palvelimesi hakemistoon verkkosivulla: se näkyy täällä ja sivustolla rustic-launcher.com, kun automaattiset tarkistukset menevät läpi."
+    },
+    "play": "Pelaa",
+    "playAria": "Pelaa palvelimella {{name}}",
+    "view": "Näytä",
+    "verified": "Vahvistettu",
+    "featured": "Tiimin valinta",
+    "verifiedHint": "Vahvistetut palvelimet: Rusticin tiimi tarkisti omistajan ja säännöt.",
+    "online_one": "{{value}} paikalla",
+    "online_other": "{{value}} paikalla",
+    "playersLabel": "Pelaajia paikalla",
+    "languagesLabel": "Kielet",
+    "playsLabel": "Käynnistyksiä tällä viikolla",
+    "lastPlayed": "Viimeksi pelattu",
+    "lastPlayedOn": "Pelattu {{when}}",
+    "hero": {
+      "label": "Esittelyssä olevat palvelimet",
+      "eyebrow": "Vahvistettu"
+    },
+    "rows": {
+      "trending": "Suosittua nyt",
+      "trendingHint": "Käynnistetyimmät Rusticista tällä viikolla",
+      "players": "Eniten pelaajia nyt",
+      "playersHint": "Pilven viimeisimmästä tarkistuksesta",
+      "new": "Uutta hakemistossa",
+      "newHint": "Omistajiensa juuri listaamat",
+      "recent": "Viimeksi pelatut",
+      "recentHint": "Palvelinlistaltasi"
+    },
+    "rowError": "Tätä riviä ei voitu ladata.",
+    "retry": "Yritä uudelleen",
+    "empty": {
+      "title": "Palvelimia ei ole vielä listattu",
+      "hint": "Ole ensimmäinen: julkaise palvelimesi verkkosivulla."
+    },
+    "emptySearch": {
+      "title": "Mikään palvelin ei vastaa",
+      "hint": "Kokeile muita sanoja tai vähemmän suodattimia."
+    },
+    "sorts": {
+      "trending": "Suosittua nyt",
+      "players": "Eniten pelaajia",
+      "new": "Uusimmat",
+      "name": "Nimi"
+    },
+    "filters": {
+      "tags": "Pelityyli",
+      "language": "Kieli",
+      "engine": "Moottori",
+      "rustic": "Rustic",
+      "verifiedOnly": "Vain vahvistetut",
+      "reset": "Nollaa suodattimet",
+      "remove": "Poista suodatin {{filter}}"
+    },
+    "tags": {
+      "survival": "Selviytyminen",
+      "smp": "SMP",
+      "creative": "Luova",
+      "minigames": "Minipelit",
+      "pvp": "PvP",
+      "skyblock": "Skyblock",
+      "oneblock": "OneBlock",
+      "roleplay": "Roolipeli",
+      "factions": "Factions",
+      "prison": "Prison",
+      "parkour": "Parkour",
+      "adventure": "Seikkailu",
+      "building": "Rakentaminen",
+      "economy": "Talous",
+      "modded": "Modattu",
+      "anarchy": "Anarkia",
+      "hardcore": "Hardcore",
+      "bedwars": "Bedwars",
+      "towny": "Towny",
+      "vanilla": "Vanilla"
+    },
+    "page": {
+      "back": "Palvelimet",
+      "status": "Reaaliaikainen tila",
+      "cloudSaw_one": "pilvi näki {{value}} pelaajan paikalla {{when}}",
+      "cloudSaw_other": "pilvi näki {{value}} pelaajaa paikalla {{when}}",
+      "engine": "Moottori",
+      "version": "Pelin versio",
+      "languages": "Kielet",
+      "plays": "Käynnistyksiä tällä viikolla",
+      "about": "Tietoja",
+      "noDescription": "Ei vielä kuvausta.",
+      "address": "Osoite",
+      "copy": "Kopioi",
+      "openSite": "Avaa verkkosivulla",
+      "website": "Verkkosivusto",
+      "discord": "Discord",
+      "by": "Listannut {{name}}",
+      "byStaff": "Rusticin tiimin listaama",
+      "report": "Ilmoita",
+      "rusticEdition": "Rustic-versio vaaditaan",
+      "missing": "Tämä palvelin ei ole saatavilla",
+      "missingHint": "Se voi olla yksityinen, valvonnan piilottama tai poistettu."
+    },
+    "report": {
+      "title": "Ilmoita: {{name}}",
+      "lead": "Kerro valvojille, mikä on vialla. Jokainen ilmoitus tarkistetaan.",
+      "reason": "Syy",
+      "reasons": {
+        "impersonation": "Esiintyy toisena palvelimena",
+        "spam": "Roskapostia tai harhaanjohtavaa",
+        "inappropriate_content": "Sopimatonta sisältöä",
+        "cheating": "Huijaaminen tai haitallinen palvelin",
+        "harassment": "Häirintä",
+        "copyright": "Loukkaa oikeuksiani (tavaramerkki, nimi)",
+        "malware": "Haittaohjelma",
+        "other": "Muu"
+      },
+      "details": "Lisätiedot",
+      "detailsHint": "Valinnainen, enintään 2 000 merkkiä.",
+      "send": "Lähetä ilmoitus",
+      "sent": "Kiitos, ilmoituksesi lähetettiin valvojille.",
+      "signIn": "Kirjaudu Rustic-tilillesi ilmoittaaksesi palvelimesta.",
+      "failed": "Ilmoitusta ei voitu lähettää."
+    }
+  }
+}

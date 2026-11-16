@@ -100,7 +100,8 @@
       "appearance": "外观",
       "privacy": "隐私与数据",
       "parental": "家长控制",
-      "about": "关于"
+      "about": "关于",
+      "voice": "语音"
     }
   },
   "friends": {
@@ -190,7 +191,30 @@
     "leader": "队长",
     "pending": "{{name}}（已邀请）",
     "invite": "邀请加入队伍",
-    "invited": "已邀请 {{name}} 加入你的队伍"
+    "invited": "已邀请 {{name}} 加入你的队伍",
+    "invitesTitle": "队伍邀请",
+    "invitedBy": "{{name}} 邀请你加入队伍",
+    "accept": "加入",
+    "decline": "拒绝",
+    "makeLeader": "设为队长",
+    "kick": "移出队伍",
+    "proximity": "距离语音",
+    "proximityHint": "同一服务器上的成员按距离听到彼此",
+    "range": "范围（方块）",
+    "emptyTitle": "还没有队伍",
+    "emptyBody": "创建队伍后，在“好友”标签页通过好友的菜单邀请他们。",
+    "create": "创建队伍",
+    "inviteHint": "在“好友”标签页通过好友的菜单邀请他们。",
+    "chatTitle": "队伍聊天",
+    "chatEmpty": "加入或创建队伍即可与成员聊天。",
+    "chatPlaceholder": "给队伍发消息",
+    "formerMember": "前成员",
+    "errors": {
+      "party_full": "队伍已满。",
+      "party_not_allowed": "该玩家不能加入此队伍：未满 18 岁的玩家只能加入好友的队伍。",
+      "already_in_party": "请先离开你当前的队伍。",
+      "not_party_leader": "只有队长能这样做。"
+    }
   },
   "presence": {
     "online": "在线",
@@ -425,6 +449,48 @@
       "updated": "Rustic Launcher 已更新到 {{version}}",
       "resuming": "更新完成：正在启动你的游戏",
       "failed": "无法安装更新，稍后将重试。"
+    }
+  },
+  "voice": {
+    "title": "语音",
+    "join": "加入语音",
+    "leave": "离开语音",
+    "mute": "关闭麦克风",
+    "unmute": "打开麦克风",
+    "deafen": "关闭声音",
+    "undeafen": "打开声音",
+    "speaking": "正在说话",
+    "micMuted": "已静音",
+    "outOfRange": "超出范围",
+    "muteFor": "仅对你静音 {{name}}",
+    "unmuteFor": "重新收听 {{name}}",
+    "reportAria": "举报 {{name}}",
+    "memberVolume": "{{name}} 的音量",
+    "report": "举报",
+    "reportTitle": "要举报 {{name}} 吗？",
+    "reportBody": "我们的管理员会审核举报。语音从不录制。该玩家会立即对你静音。",
+    "reported": "已举报 {{name}}",
+    "reasons": {
+      "harassment": "骚扰或仇恨",
+      "inappropriate_content": "不当内容",
+      "spam": "刷屏或噪音",
+      "other": "其他"
+    },
+    "proximityOn": "距离语音，范围 {{range}}",
+    "you": "你",
+    "listenOnly": "仅收听",
+    "alone": "语音中还没有其他人。",
+    "serverOffer": "{{server}} 提供距离语音",
+    "serverRoom": "服务器语音",
+    "partyRoom": "队伍语音",
+    "errors": {
+      "voice_unavailable": "语音暂时不可用，请稍后再试。",
+      "voice_not_allowed": "你的账户无法使用语音。",
+      "mic_denied": "麦克风访问被拒绝：你可以收听但无法说话。请在系统隐私设置中允许访问。",
+      "mic_missing": "未找到麦克风：你可以收听但无法说话。",
+      "connect_failed": "无法连接到语音。请检查网络连接后重试。",
+      "kicked": "你已被移出语音房间。",
+      "not_on_voice_server": "此服务器没有距离语音。"
     }
   }
 }

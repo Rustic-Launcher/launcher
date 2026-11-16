@@ -97,7 +97,7 @@ export function HeroVideo({ running }: { running: boolean }) {
       {/* Grade: keep the launch button and its text readable, sink the edges into the card. */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,transparent_0%,rgba(8,9,12,0.25)_55%,rgba(8,9,12,0.7)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/60 to-transparent" />
-      <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black/30 to-transparent" />
+      <div className="absolute inset-y-0 start-0 w-1/3 bg-gradient-to-r from-black/30 to-transparent" />
     </div>
   );
 }

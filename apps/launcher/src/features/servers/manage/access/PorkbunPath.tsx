@@ -30,7 +30,7 @@ export function PorkbunAccount() {
         variant="ghost"
         size="sm"
         leftIcon={<Unplug />}
-        className="ml-auto"
+        className="ms-auto"
         loading={disconnect.isPending}
         onClick={() => disconnect.mutate()}
       >

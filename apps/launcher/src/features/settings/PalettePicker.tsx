@@ -50,7 +50,7 @@ export function PalettePicker({ className }: { className?: string }) {
             onClick={() => setPalette(id)}
             onKeyDown={(e) => onKey(e, i)}
             className={cn(
-              'rx-focus-ring group relative flex flex-col gap-3 rounded-2xl border p-3 text-left transition-[border-color,transform] duration-200 hover:-translate-y-0.5',
+              'rx-focus-ring group relative flex flex-col gap-3 rounded-2xl border p-3 text-start transition-[border-color,transform] duration-200 hover:-translate-y-0.5',
               selected ? 'border-accent' : 'border-border hover:border-border-strong/60',
             )}
           >
@@ -105,7 +105,7 @@ export function PalettePicker({ className }: { className?: string }) {
               )}
             </span>
             {id === 'ember' && (
-              <span className="text-2xs absolute top-2 right-2 rounded-full bg-black/45 px-2 py-0.5 font-medium text-white">
+              <span className="text-2xs absolute end-2 top-2 rounded-full bg-black/45 px-2 py-0.5 font-medium text-white">
                 {t('appearance.palette.default')}
               </span>
             )}

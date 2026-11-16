@@ -22,6 +22,7 @@ import enCommon from './locales/en/common.json';
 import enContent from './locales/en/content.json';
 import enHome from './locales/en/home.json';
 import enInstances from './locales/en/instances.json';
+import enJava from './locales/en/java.json';
 import enLocker from './locales/en/locker.json';
 import enOnboarding from './locales/en/onboarding.json';
 import enServers from './locales/en/servers.json';
@@ -42,6 +43,7 @@ export const resources = {
     locker: enLocker,
     settings: enSettings,
     onboarding: enOnboarding,
+    java: enJava,
   },
 } as const;
 
@@ -133,9 +135,23 @@ export async function changeLanguage(code: Language): Promise<void> {
   const tag = l?.tag ?? 'en';
   current = l?.code ?? DEFAULT_LANGUAGE;
   fallbacks.set(tag, [...bundles, 'en']);
+  // Right to left only when the texts are (a locale that reads English stays left to right).
+  const rtl = l?.dir === 'rtl' && RTL_BUNDLE.test(bundles[0] ?? 'en');
+  document.documentElement.dir = rtl ? 'rtl' : 'ltr';
   await i18n.changeLanguage(tag);
   document.documentElement.lang = tag;
-  document.documentElement.dir = l?.dir ?? 'ltr';
+}
+
+/** Bundles of right-to-left languages (ADR 0174). */
+const RTL_BUNDLE = /^(ar|he|fa|ur|yi|ps|ckb)(-|$)/;
+
+/**
+ * Every interpolated value (a player's name, a version, a number) is bidi-isolated in a
+ * right-to-left page (U+2068 … U+2069), so `Steve_99` or `1.21.4` keeps its order inside Arabic
+ * or Hebrew; a no-op left to right.
+ */
+function isolate(value: string): string {
+  return document.documentElement.dir === 'rtl' ? `⁨${value}⁩` : value;
 }
 
 void i18n.use(initReactI18next).init({
@@ -144,7 +160,8 @@ void i18n.use(initReactI18next).init({
   fallbackLng: (code: string) => fallbacks.get(code) ?? ['en'],
   ns: NAMESPACES,
   defaultNS: 'common',
-  interpolation: { escapeValue: false },
+  // `escape` only isolates (React escapes markup itself).
+  interpolation: { escapeValue: true, escape: isolate },
   returnNull: false,
 });
 

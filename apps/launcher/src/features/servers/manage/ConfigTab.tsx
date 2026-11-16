@@ -162,7 +162,7 @@ function ConfigForm({ server }: { server: Server }) {
         })}
       </div>
       <div className="border-border bg-bg-elevated/90 sticky bottom-0 flex items-center justify-end gap-3 rounded-xl border px-4 py-3 backdrop-blur">
-        <span className="text-fg-muted mr-auto text-sm" aria-live="polite">
+        <span className="text-fg-muted me-auto text-sm" aria-live="polite">
           {changedCount > 0
             ? t('manage.config.unsaved', { count: changedCount }) +
               (needsRestart ? ` · ${t('manage.config.restartNeeded')}` : '')

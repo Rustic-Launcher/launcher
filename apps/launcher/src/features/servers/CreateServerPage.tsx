@@ -163,7 +163,7 @@ export function CreateServerPage() {
             <>
               <header className="flex flex-col gap-0.5 px-1" data-testid="wizard-step-header">
                 <h2 className="text-fg text-xl font-semibold tracking-tight">
-                  <span className="text-accent-text mr-2 font-mono text-base tabular-nums">
+                  <span className="text-accent-text me-2 font-mono text-base tabular-nums">
                     {step + 1}/{WIZARD_STEPS.length}
                   </span>
                   {stepTitles[step]}

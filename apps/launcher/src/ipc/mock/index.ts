@@ -4,17 +4,20 @@ import { coreHandlers } from './handlers/core';
 import { contentHandlers } from './handlers/content';
 import { dnsHandlers } from './handlers/dns';
 import { hostingHandlers } from './handlers/hosting';
+import { javaHandlers } from './handlers/java';
 import { multiplayerHandlers } from './handlers/multiplayer';
 import { nativeHandlers } from './handlers/native';
 import { serverAdminHandlers } from './handlers/serverAdmin';
 import { serversHandlers } from './handlers/servers';
 import { updateHandlers } from './handlers/updates';
+import { voiceHandlers } from './handlers/voice';
 import { fail, on, type MockHandler, type MockHandlers } from './runtime';
 import type { CommandName } from '../commands';
 
 const handlers: MockHandlers = {
   ...coreHandlers,
   ...contentHandlers,
+  ...javaHandlers,
   ...nativeHandlers,
   ...multiplayerHandlers,
   ...serversHandlers,
@@ -22,6 +25,7 @@ const handlers: MockHandlers = {
   ...hostingHandlers,
   ...dnsHandlers,
   ...updateHandlers,
+  ...voiceHandlers,
 };
 
 export function createMockTransport(): IpcTransport {

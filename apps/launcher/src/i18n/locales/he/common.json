@@ -1,0 +1,510 @@
+{
+  "a11y": {
+    "skipToContent": "דילוג לתוכן",
+    "notifications": "התראות"
+  },
+  "actions": {
+    "retry": "ניסיון חוזר",
+    "back": "חזרה",
+    "forward": "קדימה",
+    "cancel": "ביטול",
+    "close": "סגירה",
+    "clear": "ניקוי",
+    "save": "שמירה",
+    "saved": "נשמר",
+    "delete": "מחיקה",
+    "edit": "עריכה",
+    "open": "פתיחה",
+    "install": "התקנה",
+    "installed": "מותקן",
+    "remove": "הסרה",
+    "confirm": "אישור",
+    "continue": "המשך",
+    "next": "הבא",
+    "previous": "הקודם",
+    "done": "סיום",
+    "copy": "העתקה",
+    "copied": "הועתק",
+    "learnMore": "מידע נוסף",
+    "seeAll": "הצגת הכול",
+    "create": "יצירה",
+    "import": "ייבוא",
+    "browse": "עיון…",
+    "apply": "החלה",
+    "reset": "איפוס",
+    "enable": "הפעלה",
+    "disable": "השבתה",
+    "update": "עדכון",
+    "add": "הוספה",
+    "refresh": "רענון",
+    "openFolder": "פתיחת התיקייה",
+    "skip": "דילוג",
+    "more": "עוד"
+  },
+  "errors": {
+    "generic": "משהו השתבש. כדאי לנסות שוב בעוד רגע.",
+    "page": {
+      "title": "לא ניתן היה להציג את הדף הזה"
+    },
+    "load": {
+      "title": "לא ניתן היה לטעון את זה"
+    },
+    "notFound": {
+      "title": "אין כאן כלום",
+      "description": "הדף הזה לא קיים או שהוא הועבר."
+    }
+  },
+  "nav": {
+    "label": "ניווט ראשי",
+    "home": "ראשי",
+    "instances": "פרופילים",
+    "content": "סיור",
+    "servers": "שרתים",
+    "locker": "ארונית",
+    "store": "חנות",
+    "settings": "הגדרות",
+    "newInstance": "פרופיל חדש"
+  },
+  "search": {
+    "title": "חיפוש",
+    "placeholder": "חיפוש תוכן, חברים, שרתים, הגדרות…",
+    "empty": "אין תוצאות. כדאי לנסות מילה אחרת.",
+    "loading": "מחפשים…",
+    "hintNavigate": "ניווט",
+    "hintOpen": "פתיחה",
+    "hintClose": "סגירה",
+    "open": "פתיחה",
+    "myServer": "השרת שלי",
+    "playInstance": "לשחק ב-{{name}}",
+    "groups": {
+      "pages": "דפים",
+      "actions": "פעולות",
+      "instances": "מופעים",
+      "content": "תוכן",
+      "friends": "חברים",
+      "servers": "שרתים",
+      "settings": "הגדרות",
+      "play": "משחק"
+    },
+    "actions": {
+      "newInstance": "יצירת מופע",
+      "newServer": "יצירת שרת",
+      "addFriend": "הוספת חבר",
+      "darkTheme": "מעבר לערכת נושא כהה",
+      "lightTheme": "מעבר לערכת נושא בהירה"
+    },
+    "settings": {
+      "accounts": "חשבונות",
+      "game": "משחק",
+      "launcher": "לאנצ'ר",
+      "appearance": "מראה",
+      "privacy": "פרטיות ונתונים",
+      "parental": "בקרת הורים",
+      "about": "אודות",
+      "voice": "קול"
+    }
+  },
+  "friends": {
+    "title": "חברים",
+    "onlineCount_one": "אחד מחובר",
+    "onlineCount_two": "2 מחוברים",
+    "onlineCount_other": "{{count}} מחוברים",
+    "add": "הוספת חבר",
+    "search": "חיפוש חברים",
+    "requests_one": "בקשה · {{count}}",
+    "requests_two": "בקשות · {{count}}",
+    "requests_other": "בקשות · {{count}}",
+    "incoming": "רוצה להיות חבר שלך",
+    "outgoing": "הבקשה נשלחה",
+    "accept": "אישור",
+    "decline": "דחייה",
+    "cancelRequest": "ביטול הבקשה",
+    "requestSent": "בקשת חברות נשלחה אל {{name}}",
+    "error": "לא ניתן היה לטעון את החברים.",
+    "empty": "עדיין אין חברים. אפשר להוסיף חבר לפי שם המשתמש שלו ב-Rustic.",
+    "online_one": "מחוברים · {{count}}",
+    "online_two": "מחוברים · {{count}}",
+    "online_other": "מחוברים · {{count}}",
+    "offline_one": "לא מחוברים · {{count}}",
+    "offline_two": "לא מחוברים · {{count}}",
+    "offline_other": "לא מחוברים · {{count}}",
+    "lastSeen": "נראה לאחרונה {{when}}",
+    "activity": {
+      "server": "משחק ב-{{server}}",
+      "singleplayer": "משחק לבד",
+      "hosting": "מארח את {{server}}",
+      "launcher": "בלאנצ'ר"
+    },
+    "favorite": "מועדף",
+    "makeFavorite": "הוספה למועדפים",
+    "unfavorite": "הסרה מהמועדפים",
+    "join": "הצטרפות",
+    "joinAria": "הצטרפות אל {{name}}",
+    "joining": "מצטרפים אל {{server}}…",
+    "more": "פעולות נוספות עבור {{name}}",
+    "remove": "הסרת חבר",
+    "removeTitle": "להסיר את {{name}} מהחברים שלך?",
+    "removeBody": "לא תראו יותר את הפעילות זה של זה. אפשר לשלוח בקשה חדשה מאוחר יותר."
+  },
+  "addFriend": {
+    "title": "הוספת חבר",
+    "description": "אפשר למצוא שחקן לפי השם שלו ב-Rustic או שם ה-Minecraft שהוא קישר, או לבחור מישהו ששיחקת איתו.",
+    "kind": "חיפוש לפי",
+    "kindRustic": "שם ב-Rustic",
+    "kindMinecraft": "שם ב-Minecraft",
+    "rusticLabel": "שם משתמש ב-Rustic",
+    "minecraftLabel": "שם משתמש ב-Minecraft",
+    "rusticPlaceholder": "למשל lea_builds",
+    "minecraftPlaceholder": "למשל LeaBuilds",
+    "rusticHint": "השם המדויק בפרופיל ה-Rustic שלו.",
+    "minecraftHint": "השם המדויק במשחק של שחקן שהתחבר ל-Rustic עם פרופיל ה-Minecraft הזה.",
+    "find": "חיפוש",
+    "send": "שליחת בקשה",
+    "sent": "הבקשה נשלחה",
+    "friends": "כבר חברים",
+    "pending": "הבקשה ממתינה",
+    "incoming": "השחקן כבר ביקש להיות חבר שלך: אפשר לאשר את הבקשה שלו.",
+    "minecraftName": "שם ב-Minecraft:",
+    "add": "הוספה",
+    "addAria": "שליחת בקשת חברות אל {{name}}",
+    "playedWith": "שיחקתם יחד לאחרונה",
+    "playedWithEmpty": "עדיין אף אחד. שחקנים מהקבוצות שלך ומשרתים משותפים (10 דקות או יותר יחד) יופיעו כאן.",
+    "crossed": "נראו לאחרונה",
+    "crossedEmpty": "לא פגשת לאחרונה אף אחד בשרת משותף.",
+    "reasonParty": "בקבוצה שלך",
+    "reasonServer": "ב-{{server}}",
+    "reasonSameServer": "באותו שרת",
+    "suggestionsError": "לא ניתן היה לטעון את ההצעות.",
+    "suggestionsOff": "ההצעות כבויות. כדי לראות את השחקנים שפגשת, צריך להפעיל את \"להופיע בהצעות של שחקנים שאני פוגש\" בהגדרות › פרטיות ונתונים.",
+    "suggestionsMinor": "הצעות של שחקנים שפגשת אינן זמינות בחשבון שלך.",
+    "privacyNote": "ההצעות מגיעות מהקבוצות שלך ומהשרתים המשותפים בפעילות שלך, ב-14 הימים האחרונים. מופיעים רק אנשים שגם הם מאפשרים זאת.",
+    "errors": {
+      "notFoundRustic": "אין חשבון Rustic עם השם הזה.",
+      "notFoundMinecraft": "אף שחקן Rustic לא קישר את שם ה-Minecraft הזה.",
+      "invalidRustic": "שמות ב-Rustic כוללים 3 עד 20 אותיות, ספרות או _.",
+      "invalidMinecraft": "שמות ב-Minecraft כוללים 3 עד 16 אותיות, ספרות או _.",
+      "cannot_add_friend": "השחקן הזה לא יכול לקבל בקשות חברות.",
+      "friend_requests_disabled": "בקשות חברות כבויות בחשבון שלך (בקרת הורים).",
+      "cannot_add_self": "זה אתה!",
+      "already_friends": "אתם כבר חברים.",
+      "request_pending": "כבר יש בקשה ממתינה.",
+      "incoming_request_exists": "השחקן כבר שלח לך בקשה: אפשר לאשר אותה.",
+      "rate_limited": "יותר מדי חיפושים. כדאי לחכות דקה ואז לנסות שוב.",
+      "generic": "משהו השתבש. כדאי לנסות שוב."
+    }
+  },
+  "party": {
+    "title": "קבוצה",
+    "leave": "עזיבה",
+    "leader": "מוביל הקבוצה",
+    "pending": "{{name}} (הוזמן)",
+    "invite": "הזמנה לקבוצה",
+    "invited": "{{name}} הוזמן לקבוצה שלך",
+    "invitesTitle": "הזמנות לקבוצה",
+    "invitedBy": "{{name}} מזמין אותך לקבוצה",
+    "accept": "הצטרפות",
+    "decline": "דחייה",
+    "makeLeader": "מינוי למנהיג הקבוצה",
+    "kick": "הסרה מהקבוצה",
+    "proximity": "קול לפי קרבה",
+    "proximityHint": "חברים באותו שרת שומעים זה את זה לפי המרחק",
+    "range": "טווח (בלוקים)",
+    "emptyTitle": "עדיין אין קבוצה",
+    "emptyBody": "כדאי ליצור קבוצה ואז להזמין חברים מהתפריט שלהם בלשונית החברים.",
+    "create": "יצירת קבוצה",
+    "inviteHint": "אפשר להזמין חברים מהתפריט שלהם בלשונית החברים.",
+    "chatTitle": "צ'אט הקבוצה",
+    "chatEmpty": "כדי לשוחח עם החברים, יש להצטרף לקבוצה או ליצור אחת.",
+    "chatPlaceholder": "הודעה לקבוצה",
+    "formerMember": "חבר לשעבר",
+    "errors": {
+      "party_full": "הקבוצה מלאה.",
+      "party_not_allowed": "השחקן הזה לא יכול להיות בקבוצה: שחקנים מתחת לגיל 18 מצטרפים רק לקבוצות של החברים שלהם.",
+      "already_in_party": "יש לעזוב קודם את הקבוצה הנוכחית.",
+      "not_party_leader": "רק מנהיג הקבוצה יכול לעשות את זה."
+    }
+  },
+  "presence": {
+    "online": "מחובר",
+    "in-game": "במשחק",
+    "away": "לא ליד המחשב",
+    "busy": "עסוק",
+    "offline": "לא מחובר"
+  },
+  "notifications": {
+    "title": "התראות",
+    "markAllRead": "סימון הכול כנקרא",
+    "empty": "אין שום דבר חדש.",
+    "kinds": {
+      "friend_request": "שלח לך בקשת חברות",
+      "update_available": "זמין עבור המופעים שלך",
+      "backup_done": "הגיבוי המתוזמן הושלם",
+      "store_new": "חדש בחנות"
+    }
+  },
+  "account": {
+    "switcher": "חשבונות",
+    "none": "אין חשבון",
+    "rustic": "חשבון Rustic",
+    "signInRustic": "התחברות ל-Rustic",
+    "signOutRustic": "התנתקות מ-Rustic",
+    "gameProfiles": "פרופילי משחק",
+    "kind": {
+      "microsoft": "Microsoft",
+      "offline": "לא מקוון"
+    },
+    "add": "הוספת חשבון",
+    "manage": "ניהול חשבונות"
+  },
+  "downloads": {
+    "title": "הורדות",
+    "global": "הורדות ברקע",
+    "working": "בעבודה…",
+    "summary_one": "הורדה אחת בתהליך",
+    "summary_two": "2 הורדות בתהליך",
+    "summary_other": "{{count}} הורדות בתהליך",
+    "kind": {
+      "game": "Horizon",
+      "content": "תוכן",
+      "modpack": "חבילת מודים",
+      "server": "שרת",
+      "java": "סביבת ריצה של Java",
+      "update": "עדכון הלאנצ'ר",
+      "prepare": "הכנת קבצי המשחק",
+      "native-build": "בניית מודים נייטיב",
+      "native-toolchain": "Rust למודים נייטיב"
+    }
+  },
+  "play": {
+    "play": "לשחק",
+    "update": "עדכון",
+    "cancel": "ביטול",
+    "stop": "עצירה",
+    "selectInstance": "בחירת המופע למשחק",
+    "instances": "מופעים",
+    "manageInstances": "ניהול מופעים",
+    "newVersion": "{{version}} זמינה",
+    "cancelled": "ההפעלה בוטלה",
+    "status": {
+      "ready": "מוכן למשחק",
+      "noInstance": "אין מופע",
+      "running": "המשחק פועל",
+      "update": "נדרש עדכון",
+      "broken": "נדרש תיקון"
+    },
+    "progress": {
+      "updating": "מעדכנים…",
+      "downloading": "מורידים {{pct}}",
+      "checking": "בודקים קבצים…",
+      "preparing": "מכינים…",
+      "launching": "מפעילים…",
+      "stopping": "עוצרים…",
+      "preparingFiles": "מכינים את קבצי המשחק {{pct}}",
+      "building": "מהדרים מודים נייטיב…",
+      "buildingPct": "מהדרים מודים נייטיב {{pct}}"
+    },
+    "errors": {
+      "launch": "לא ניתן היה להפעיל את המשחק"
+    },
+    "refusals": {
+      "auth_no_account": "כדי לשחק, צריך להתחבר עם חשבון Microsoft שבבעלותו המשחק.",
+      "auth_not_owned": "המשחק לא בבעלות חשבון ה-Microsoft הזה.",
+      "auth_not_approved": "התחברות עם Microsoft עדיין לא זמינה בלאנצ'ר הזה.",
+      "auth_reauth_required": "כדי לשחק, צריך להתחבר שוב לחשבון ה-Microsoft שלך.",
+      "auth_offline_not_allowed": "צריך להתחבר פעם אחת עם חשבון Microsoft שבבעלותו המשחק, ואז אפשר לשחק במצב לא מקוון.",
+      "auth_network": "לא ניתן היה להתחבר ל-Microsoft כדי לבדוק את החשבון. כדאי לבדוק את החיבור.",
+      "build_not_installed": "קודם צריך להתקין build של Horizon.",
+      "prepare_needed": "קבצי המשחק ל-build הזה עדיין לא הוכנו.",
+      "prepare_failed": "לא ניתן היה להכין את קבצי המשחק: כדאי לנסות שוב, או להכין אותם בהגדרות › משחק ומופעים.",
+      "prepare_no_java": "Java לא נמצא: צריך להתקין אותו או לבחור אותו בהגדרות › משחק ומופעים.",
+      "prepare_no_minecraft_dir": "התקנת המשחק שלך לא נמצאה: צריך לבחור את התיקייה שלה בהגדרות › משחק ומופעים.",
+      "launch_already_running": "המופע הזה כבר פועל.",
+      "native_consent": "במופע הזה יש מודים נייטיב: קודם צריך לאשר את הודעת האמון שלהם בדף המופע (תוכן).",
+      "native_toolchain": "מודים נייטיב צריכים את Rust: אפשר להתקין אותו מדף המופע (תוכן) או מהגדרות › משחק ומופעים.",
+      "native_not_edition": "מודים נייטיב נבנים רק לתוך מהדורת Rustic: צריך להעביר את המופע הזה אליה, או לכבות את המודים הנייטיב שלו.",
+      "native_build_failed": "לא ניתן היה לבנות את המודים הנייטיב",
+      "native_disk": "אין מספיק מקום פנוי בדיסק כדי לבנות את המודים הנייטיב."
+    }
+  },
+  "horizon": {
+    "version": "Horizon {{version}}",
+    "versionRustic": "Horizon {{version}} (מהדורת Rustic)",
+    "rusticEdition": "מהדורת Rustic"
+  },
+  "compat": {
+    "buildsOnHorizon": "נבנה על ה-Horizon שלך",
+    "compatible": "תואם",
+    "incompatible": "לא תואם: {{reason}}",
+    "unknown": "התאימות לא ידועה",
+    "reasons": {
+      "horizon_version": "גרסת Horizon",
+      "java_only": "Java Edition בלבד",
+      "side": "צד שרת בלבד",
+      "conflict": "מתנגש עם מוד מותקן",
+      "unsupported_format": "הפורמט לא נתמך",
+      "needs_rustic_server": "דורש Rustic Server",
+      "not_fair_play": "לא מותר (משחק הוגן)"
+    }
+  },
+  "product": {
+    "name": "Rustic",
+    "switcher": "החלפת מוצר",
+    "label": "Rustic",
+    "launcher": "Rustic Launcher",
+    "serverDocs": "התיעוד של Rustic Server"
+  },
+  "crumbs": {
+    "label": "פירורי לחם",
+    "horizon": "Horizon",
+    "details": "פרטים",
+    "create": "יצירה",
+    "kinds": {
+      "mod": "מודים",
+      "modpack": "חבילות מודים",
+      "resourcepack": "חבילות משאבים",
+      "shader": "שיידרים",
+      "datapack": "חבילות נתונים",
+      "plugin": "תוספים"
+    },
+    "servers": {
+      "featured": "מומלצים",
+      "mine": "השרתים שלי",
+      "multiplayer": "רשימת מרובה משתתפים",
+      "discover": "גילוי",
+      "joined": "רשימת מרובה משתתפים",
+      "browse": "עיון"
+    }
+  },
+  "social": {
+    "title": "חברתי",
+    "description": "חברים, צ'אטים והקבוצה שלך.",
+    "open": "פתיחת חברתי",
+    "friends": "חברים",
+    "chats": "צ'אטים",
+    "message": "שליחת הודעה",
+    "searchChats": "חיפוש צ'אטים…",
+    "noChats": "עדיין אין שיחות. אפשר לשלוח הודעה לחבר מהלשונית חברים.",
+    "sayHello": "להגיד שלום",
+    "selectTitle": "בחירת שיחה",
+    "selectBody": "בוחרים חבר כדי להתחיל לשוחח.",
+    "messagePlaceholder": "הודעה אל {{name}}",
+    "send": "שליחה"
+  },
+  "window": {
+    "minimize": "מזעור",
+    "maximize": "הגדלה",
+    "restore": "שחזור",
+    "close": "סגירה"
+  },
+  "running": {
+    "title": "מופעים פועלים",
+    "none": "אין משחק פועל.",
+    "count_one": "מופע אחד פועל",
+    "count_two": "2 מופעים פועלים",
+    "count_other": "{{count}} מופעים פועלים",
+    "downloading": "מורידים {{pct}}"
+  },
+  "launch": {
+    "launch": "הפעלת המשחק",
+    "update": "עדכון והפעלה",
+    "stop": "עצירת המשחק"
+  },
+  "deepLink": {
+    "authOk": "התחברת ל-Rustic",
+    "authFailed": "ההתחברות ל-Rustic נכשלה",
+    "joining": "מצטרפים אל {{target}}…",
+    "content": "פותחים את {{project}} מהאתר"
+  },
+  "catalog": {
+    "sort": "מיון לפי",
+    "results_one": "תוצאה אחת",
+    "results_two": "2 תוצאות",
+    "results_other": "{{count}} תוצאות",
+    "loadMore": "טעינת עוד",
+    "loadMoreCount": "מוצגות {{shown}} מתוך {{total}}",
+    "carousel": {
+      "prev": "הקודם",
+      "next": "הבא",
+      "slide": "{{index}} מתוך {{total}}",
+      "pause": "השהיית המצגת",
+      "play": "הפעלת המצגת"
+    },
+    "row": {
+      "seeAll": "הצגת הכול",
+      "seeAllAria": "הצגת הכול: {{title}}",
+      "scrollPrev": "גלילה אחורה",
+      "scrollNext": "גלילה קדימה"
+    },
+    "filters": {
+      "button": "מסננים",
+      "buttonCount": "מסננים · {{count}}",
+      "reset": "איפוס המסננים"
+    },
+    "layout": {
+      "label": "פריסה",
+      "list": "רשימה",
+      "grid": "רשת"
+    }
+  },
+  "updates": {
+    "pill": {
+      "downloading": "מעדכנים {{pct}}",
+      "installing": "מתקינים את העדכון…",
+      "restarting": "מפעילים מחדש…",
+      "deferred": "עדכון אחרי המשחק",
+      "apply": "עדכון והפעלה מחדש"
+    },
+    "toast": {
+      "launcher": "מורידים את Rustic Launcher {{version}}…",
+      "edition": "מעדכנים את המשחק (מהדורת Rustic)…",
+      "editionDone": "המשחק עודכן: {{version}}",
+      "deferred": "עדכון מוכן. הוא יותקן כשתסגור את המשחק.",
+      "restarting": "Rustic Launcher מופעל מחדש כדי לסיים את העדכון.",
+      "updated": "Rustic Launcher עודכן לגרסה {{version}}",
+      "resuming": "העדכון הסתיים: מפעילים את המשחק שלך",
+      "failed": "לא ניתן היה להתקין את העדכון. ננסה שוב מאוחר יותר."
+    }
+  },
+  "voice": {
+    "title": "קול",
+    "join": "הצטרפות לקול",
+    "leave": "יציאה מהקול",
+    "mute": "השתקת המיקרופון",
+    "unmute": "הפעלת המיקרופון",
+    "deafen": "השתקת השמע",
+    "undeafen": "הפעלת השמע",
+    "speaking": "מדבר",
+    "micMuted": "מושתק",
+    "outOfRange": "מחוץ לטווח",
+    "muteFor": "השתקת {{name}} אצלך",
+    "unmuteFor": "לשמוע שוב את {{name}}",
+    "reportAria": "דיווח על {{name}}",
+    "memberVolume": "עוצמת הקול של {{name}}",
+    "report": "דיווח",
+    "reportTitle": "לדווח על {{name}}?",
+    "reportBody": "המנחים שלנו יבדקו את הדיווח. הקול לעולם לא מוקלט. השחקן מושתק אצלך מיד.",
+    "reported": "נשלח דיווח על {{name}}",
+    "reasons": {
+      "harassment": "הטרדה או שנאה",
+      "inappropriate_content": "תוכן לא הולם",
+      "spam": "ספאם או רעש",
+      "other": "משהו אחר"
+    },
+    "proximityOn": "לפי קרבה, טווח {{range}}",
+    "you": "את/ה",
+    "listenOnly": "האזנה בלבד",
+    "alone": "עדיין אין אף אחד אחר בקול.",
+    "serverOffer": "ב-{{server}} יש קול לפי קרבה",
+    "serverRoom": "הקול של השרת",
+    "partyRoom": "הקול של הקבוצה",
+    "errors": {
+      "voice_unavailable": "הקול לא זמין כרגע. כדאי לנסות שוב מאוחר יותר.",
+      "voice_not_allowed": "הקול לא זמין לחשבון שלך.",
+      "mic_denied": "הגישה למיקרופון נדחתה: אפשר להאזין אבל לא לדבר. יש לאשר אותה בהגדרות הפרטיות של המערכת.",
+      "mic_missing": "לא נמצא מיקרופון: אפשר להאזין אבל לא לדבר.",
+      "connect_failed": "לא ניתן להתחבר לקול. כדאי לבדוק את החיבור ולנסות שוב.",
+      "kicked": "הוסרת מחדר הקול.",
+      "not_on_voice_server": "בשרת הזה אין קול לפי קרבה."
+    }
+  }
+}

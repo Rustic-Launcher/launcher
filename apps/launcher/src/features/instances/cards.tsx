@@ -332,7 +332,7 @@ export function ProfileRow({
           <InstanceIcon
             icon={instance.icon}
             size="sm"
-            className="ring-surface absolute right-1 bottom-1 ring-2"
+            className="ring-surface absolute end-1 bottom-1 ring-2"
           />
         </span>
       }

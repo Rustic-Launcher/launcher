@@ -45,6 +45,8 @@ pub struct State {
     pub cfg: CompanionConfig,
     /// Where the player is, told to the launcher for Discord (`presence`).
     pub presence: rusticmc_companion_core::presence::Reporter,
+    /// The place's own icon (the server's favicon, the world's `icon.png`), for the presence.
+    pub presence_icon: rusticmc_companion_core::presence::IconLookup,
     pub started: bool,
     pub worn: WornCache,
     pub store: CosmeticStore,
@@ -75,6 +77,17 @@ pub struct State {
     pub pause: crate::screens::pause::PauseUi,
     /// Rustic's Resource Packs, Browse Mods and Create World pages (ADR 0165).
     pub sheets: crate::screens::sheets::SheetsUi,
+    /// The launcher's voice in game (launcher ADR 0176).
+    pub voice: Voice,
+}
+
+/// The launcher's voice room as the game shows it, and what the companion reports back.
+#[derive(Default)]
+pub struct Voice {
+    pub file: rusticmc_companion_core::voice::OverlayFile,
+    pub reporter: rusticmc_companion_core::voice::PositionReporter,
+    /// Push-to-talk held (reported once per change).
+    pub ptt_down: bool,
 }
 
 pub struct Shared {

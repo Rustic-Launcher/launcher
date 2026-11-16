@@ -187,7 +187,7 @@ export function PluginsTab({ server }: { server: Server }) {
                   {t(`manage.plugins.fs.${p.capabilities.filesystem}`)}
                 </Badge>
                 <span className="text-2xs text-fg-subtle">· API {p.api}</span>
-                <span className="ml-auto flex gap-1.5">
+                <span className="ms-auto flex gap-1.5">
                   {p.update_available && (
                     <Button
                       size="sm"

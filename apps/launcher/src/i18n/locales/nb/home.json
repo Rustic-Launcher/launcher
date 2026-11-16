@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "greeting": "Velkommen tilbake, {{name}}",
+    "greetingAnon": "Velkommen til Rustic",
+    "continue": "Fortsett: {{name}} · spilt {{when}}",
+    "continueNew": "Klar når du er: {{name}}",
+    "firstRun": "Gjør spillet klart i tre trinn.",
+    "playNow": "Spill nå",
+    "updateAndPlay": "Oppdater og spill",
+    "resumeServer": "Bli med på {{server}} igjen",
+    "switch": "Bytt instans",
+    "stats": {
+      "playtime": "{{time}} spilt",
+      "mods_one": "{{count}} mod",
+      "mods_other": "{{count}} mods",
+      "friends_one": "{{count}} venn pålogget",
+      "friends_other": "{{count}} venner pålogget"
+    },
+    "steps": {
+      "signIn": "Logg inn med Microsoft-kontoen som eier spillet",
+      "prepare": "Klargjør spillfilene fra din egen installasjon",
+      "create": "Opprett din første instans"
+    },
+    "getReady": "Gjør spillet klart",
+    "openLocker": "Skap",
+    "player": "Spilleren din, i ro, uten kosmetikk",
+    "playerWearing": "Spilleren din, i ro, iført: {{items}}"
+  },
+  "recent": {
+    "title": "Nylige servere og verdener",
+    "unknown": "Ukjent status",
+    "online": "Pålogget · {{online}}/{{max}}",
+    "offline": "Frakoblet",
+    "world": "Verden · lokal",
+    "joining": "Kobler til {{name}}…",
+    "opening": "Åpner {{name}}…",
+    "removed": "{{name}} er fjernet fra serverne dine",
+    "playAria": "Spill {{name}}",
+    "more": "Flere handlinger for {{name}}",
+    "copyAddress": "Kopier adresse",
+    "addServer": "Legg til server",
+    "empty": "Servere du blir med på og verdener du spiller, vises her."
+  },
+  "news": {
+    "title": "Nyheter og oppdateringer",
+    "empty": "Ingen nyheter akkurat nå.",
+    "slide": "Sak {{index}} av {{total}}",
+    "source": {
+      "horizon": "Horizon",
+      "rustic": "Rustic"
+    },
+    "kind": {
+      "patch_notes": "Versjonsmerknader",
+      "event": "Arrangement",
+      "blog": "Artikkel"
+    },
+    "readNotes": "Les versjonsmerknadene",
+    "read": "Les"
+  },
+  "friends": {
+    "title": "Venner akkurat nå",
+    "empty": "Ingen av vennene dine spiller akkurat nå.",
+    "since": "siden {{when}}",
+    "activity": {
+      "server": "spiller på {{server}}",
+      "hosting": "er vert for {{server}}",
+      "singleplayer": "spiller alene",
+      "launcher": "er i launcheren"
+    }
+  },
+  "featured": {
+    "title": "Utvalgte servere",
+    "verified": "Bekreftet server",
+    "players": "{{online}} / {{max}} spillere",
+    "engine": {
+      "rustic": "Rustic Server",
+      "horizon": "Horizon"
+    }
+  },
+  "store": {
+    "title": "Ny kosmetikk",
+    "owned": "Eid"
+  },
+  "launchpad": {
+    "welcome": "Velkommen *tilbake*,",
+    "playAs": "Spill som",
+    "online": "pålogget på utvalgte servere",
+    "heroLabel": "Start",
+    "instanceSettings": "Innstillinger for instansen",
+    "news": "Siste nytt",
+    "unread_one": "({{count}} ulest)",
+    "unread_other": "({{count}} uleste)",
+    "unreadDot": "Ulest",
+    "explore": "Utforsk kilder",
+    "aside": "Servere og venner",
+    "joinServer": "Bli med på {{name}}",
+    "friendsOnline_one": "({{count}} pålogget)",
+    "friendsOnline_other": "({{count}} pålogget)",
+    "openSocial": "Åpne Sosialt",
+    "noNews": "Ingen nyheter ennå.",
+    "noFriendsOnline": "Ingen venner pålogget akkurat nå.",
+    "socialHint": "Chatter, invitasjoner og gruppen din finner du i vinduet Sosialt.",
+    "eyebrow": "Launchpad"
+  }
+}
