@@ -2347,14 +2347,28 @@ wire! {
         pub at: Option<DateTime<Utc>>,
     }
 
+    /// A repository of an entry: one, or every mirror the same commits were pushed to (ADR 0178).
+    pub struct NewsActivityRepo {
+        pub name: String,
+        pub private: bool,
+        /// That repository's compare page; null for a private repository.
+        pub url: Option<String>,
+    }
+
     /// An entry of the updates feed: a push, a GitHub release or a CDN release. Entries of private
-    /// repositories never carry a URL (`url` and every commit's `url` are null).
+    /// repositories never carry a URL (`url` and every commit's `url` are null). The pushes of one
+    /// monorepo sync to several mirror repositories are one entry listing them all in `repos`.
     pub struct NewsActivity {
         pub id: i64,
         pub kind: NewsActivityKind,
-        /// Repository name (`rustic`), or `launcher` / `edition` for CDN releases.
+        /// Repository name (`rustic`), or `launcher` / `edition` for CDN releases; for a grouped
+        /// push, the first public repository of `repos` (or the first one).
         pub repo: String,
+        /// Whether `repo` is private (for a grouped push: every repository is private).
         pub private: bool,
+        /// Every repository of the entry, `repo` first (one for releases).
+        #[serde(default)]
+        pub repos: Vec<NewsActivityRepo>,
         pub branch: Option<String>,
         /// Compare page (push), release page (GitHub release) or the download page (CDN release).
         pub url: Option<String>,
@@ -2398,6 +2412,41 @@ wire! {
 
     pub struct NewsActivityPatch {
         /// Hide the entry from the public feed (true) or show it again (false).
+        pub hidden: bool,
+    }
+
+    /// A person who committed to the organisation's repositories (ADR 0178).
+    pub struct NewsContributor {
+        /// GitHub login.
+        pub login: String,
+        /// Commits across every repository (GitHub's contributors statistics).
+        pub commits: i64,
+        /// The avatar, served by this API (`/v1/news/contributors/{login}/avatar?v=…`); null when
+        /// there is none (the website draws an identicon).
+        pub avatar_url: Option<String>,
+        /// `https://github.com/{login}`.
+        pub profile_url: String,
+    }
+
+    /// The contributors wall, most commits first.
+    pub struct NewsContributorsPage {
+        /// Contributors shown on the website (can be more than `items`).
+        pub total: i64,
+        pub items: Vec<NewsContributor>,
+    }
+
+    /// A contributor as staff see it in the back-office.
+    pub struct AdminNewsContributor {
+        pub contributor: NewsContributor,
+        pub hidden: bool,
+    }
+
+    pub struct AdminNewsContributorsPage {
+        pub items: Vec<AdminNewsContributor>,
+    }
+
+    pub struct NewsContributorPatch {
+        /// Hide the contributor from the website (true) or show them again (false).
         pub hidden: bool,
     }
 

@@ -639,6 +639,20 @@ impl Client {
         self.call(Method::PATCH, &path, &query, Some(body)).await
     }
 
+    /// `GET /v1/admin/news/contributors`
+    pub async fn admin_contributors_list(&self) -> Result<types::AdminNewsContributorsPage, ClientError> {
+        let path = "/v1/admin/news/contributors";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `PATCH /v1/admin/news/contributors/{login}`
+    pub async fn admin_contributor_patch(&self, login: &str, body: &types::NewsContributorPatch) -> Result<types::AdminNewsContributor, ClientError> {
+        let path = format!("/v1/admin/news/contributors/{}", seg(login));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PATCH, &path, &query, Some(body)).await
+    }
+
     /// `PUT /v1/admin/news/{id}`
     pub async fn admin_news_update(&self, id: uuid::Uuid, body: &types::NewsUpsertRequest) -> Result<types::AdminNewsItem, ClientError> {
         let path = format!("/v1/admin/news/{}", seg(id));
@@ -2049,6 +2063,23 @@ impl Client {
         self.call(Method::GET, &path, &query, None::<&()>).await
     }
 
+    /// `GET /v1/news/contributors`
+    pub async fn contributors_list(&self, limit: Option<i64>) -> Result<types::NewsContributorsPage, ClientError> {
+        let path = "/v1/news/contributors";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/news/contributors/{login}/avatar`
+    pub async fn contributor_avatar(&self, login: &str) -> Result<(), ClientError> {
+        let path = format!("/v1/news/contributors/{}/avatar", seg(login));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call_empty(Method::GET, &path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/news/{slug}`
     pub async fn news_get(&self, slug: &str) -> Result<types::NewsItem, ClientError> {
         let path = format!("/v1/news/{}", seg(slug));
@@ -2719,6 +2750,8 @@ pub const OPERATIONS: &[&str] = &[
     "admin_news_create",
     "admin_activity_list",
     "admin_activity_patch",
+    "admin_contributors_list",
+    "admin_contributor_patch",
     "admin_news_update",
     "admin_news_delete",
     "official_get",
@@ -2891,6 +2924,8 @@ pub const OPERATIONS: &[&str] = &[
     "news_list",
     "activity_list",
     "activity_get",
+    "contributors_list",
+    "contributor_avatar",
     "news_get",
     "notifications_list",
     "notifications_read_all",

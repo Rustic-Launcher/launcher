@@ -3589,6 +3589,97 @@
         ]
       }
     },
+    "/v1/admin/news/contributors": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_contributors_list",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminNewsContributorsPage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/news/contributors/{login}": {
+      "patch": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_contributor_patch",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "path",
+            "description": "GitHub login",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewsContributorPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminNewsContributor"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/admin/news/{id}": {
       "put": {
         "tags": [
@@ -12061,6 +12152,103 @@
         }
       }
     },
+    "/v1/news/contributors": {
+      "get": {
+        "tags": [
+          "news"
+        ],
+        "operationId": "contributors_list",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "1-500, default 500.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NewsContributorsPage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/news/contributors/{login}/avatar": {
+      "get": {
+        "tags": [
+          "news"
+        ],
+        "operationId": "contributor_avatar",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "path",
+            "description": "GitHub login",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The avatar (PNG or JPEG, at most 64 KiB), downloaded from GitHub once by the Discord bot. Its URL carries a version (`?v=`), so it is cached for a year.",
+            "headers": {
+              "cache-control": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "`public, max-age=31536000, immutable`"
+              }
+            },
+            "content": {
+              "image/png": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvatarImage"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown or hidden contributor, or no avatar (draw an identicon)"
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/news/{slug}": {
       "get": {
         "tags": [
@@ -16573,6 +16761,36 @@
           }
         }
       },
+      "AdminNewsContributor": {
+        "type": "object",
+        "description": "A contributor as staff see it in the back-office.",
+        "required": [
+          "contributor",
+          "hidden"
+        ],
+        "properties": {
+          "contributor": {
+            "$ref": "#/components/schemas/NewsContributor"
+          },
+          "hidden": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AdminNewsContributorsPage": {
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminNewsContributor"
+            }
+          }
+        }
+      },
       "AdminNewsItem": {
         "type": "object",
         "description": "A news item as staff see it (drafts included).",
@@ -18019,6 +18237,11 @@
             "format": "int64"
           }
         }
+      },
+      "AvatarImage": {
+        "type": "string",
+        "format": "binary",
+        "description": "OpenAPI schema of an avatar image."
       },
       "AvatarInfo": {
         "type": "object",
@@ -23189,7 +23412,7 @@
       },
       "NewsActivity": {
         "type": "object",
-        "description": "An entry of the updates feed: a push, a GitHub release or a CDN release. Entries of private\nrepositories never carry a URL (`url` and every commit's `url` are null).",
+        "description": "An entry of the updates feed: a push, a GitHub release or a CDN release. Entries of private\nrepositories never carry a URL (`url` and every commit's `url` are null). The pushes of one\nmonorepo sync to several mirror repositories are one entry listing them all in `repos`.",
         "required": [
           "id",
           "kind",
@@ -23211,10 +23434,18 @@
           },
           "repo": {
             "type": "string",
-            "description": "Repository name (`rustic`), or `launcher` / `edition` for CDN releases."
+            "description": "Repository name (`rustic`), or `launcher` / `edition` for CDN releases; for a grouped\npush, the first public repository of `repos` (or the first one)."
           },
           "private": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether `repo` is private (for a grouped push: every repository is private)."
+          },
+          "repos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NewsActivityRepo"
+            },
+            "description": "Every repository of the entry, `repo` first (one for releases)."
           },
           "branch": {
             "type": [
@@ -23364,6 +23595,93 @@
           "hidden": {
             "type": "boolean",
             "description": "Hide the entry from the public feed (true) or show it again (false)."
+          }
+        }
+      },
+      "NewsActivityRepo": {
+        "type": "object",
+        "description": "A repository of an entry: one, or every mirror the same commits were pushed to (ADR 0178).",
+        "required": [
+          "name",
+          "private"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "private": {
+            "type": "boolean"
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "That repository's compare page; null for a private repository."
+          }
+        }
+      },
+      "NewsContributor": {
+        "type": "object",
+        "description": "A person who committed to the organisation's repositories (ADR 0178).",
+        "required": [
+          "login",
+          "commits",
+          "profile_url"
+        ],
+        "properties": {
+          "login": {
+            "type": "string",
+            "description": "GitHub login."
+          },
+          "commits": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Commits across every repository (GitHub's contributors statistics)."
+          },
+          "avatar_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The avatar, served by this API (`/v1/news/contributors/{login}/avatar?v=…`); null when\nthere is none (the website draws an identicon)."
+          },
+          "profile_url": {
+            "type": "string",
+            "description": "`https://github.com/{login}`."
+          }
+        }
+      },
+      "NewsContributorPatch": {
+        "type": "object",
+        "required": [
+          "hidden"
+        ],
+        "properties": {
+          "hidden": {
+            "type": "boolean",
+            "description": "Hide the contributor from the website (true) or show them again (false)."
+          }
+        }
+      },
+      "NewsContributorsPage": {
+        "type": "object",
+        "description": "The contributors wall, most commits first.",
+        "required": [
+          "total",
+          "items"
+        ],
+        "properties": {
+          "total": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Contributors shown on the website (can be more than `items`)."
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NewsContributor"
+            }
           }
         }
       },
