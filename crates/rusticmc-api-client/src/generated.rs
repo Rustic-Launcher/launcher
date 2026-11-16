@@ -616,6 +616,29 @@ impl Client {
         self.call(Method::POST, path, &query, Some(body)).await
     }
 
+    /// `GET /v1/admin/news/activity`
+    pub async fn admin_activity_list(&self, limit: Option<i64>, before: Option<&str>, repo: Option<&str>) -> Result<types::AdminNewsActivityPage, ClientError> {
+        let path = "/v1/admin/news/activity";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = before {
+            query.push(("before", v.to_string()));
+        }
+        if let Some(v) = repo {
+            query.push(("repo", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `PATCH /v1/admin/news/activity/{id}`
+    pub async fn admin_activity_patch(&self, id: i64, body: &types::NewsActivityPatch) -> Result<types::AdminNewsActivity, ClientError> {
+        let path = format!("/v1/admin/news/activity/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PATCH, &path, &query, Some(body)).await
+    }
+
     /// `PUT /v1/admin/news/{id}`
     pub async fn admin_news_update(&self, id: uuid::Uuid, body: &types::NewsUpsertRequest) -> Result<types::AdminNewsItem, ClientError> {
         let path = format!("/v1/admin/news/{}", seg(id));
@@ -1988,7 +2011,7 @@ impl Client {
     }
 
     /// `GET /v1/news`
-    pub async fn news_list(&self, locale: Option<&str>, limit: Option<i64>) -> Result<Vec<types::NewsItem>, ClientError> {
+    pub async fn news_list(&self, locale: Option<&str>, limit: Option<i64>, offset: Option<i64>) -> Result<Vec<types::NewsItem>, ClientError> {
         let path = "/v1/news";
         let mut query: Vec<(&str, String)> = Vec::new();
         if let Some(v) = locale {
@@ -1997,7 +2020,33 @@ impl Client {
         if let Some(v) = limit {
             query.push(("limit", v.to_string()));
         }
+        if let Some(v) = offset {
+            query.push(("offset", v.to_string()));
+        }
         self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/news/activity`
+    pub async fn activity_list(&self, limit: Option<i64>, before: Option<&str>, repo: Option<&str>) -> Result<types::NewsActivityPage, ClientError> {
+        let path = "/v1/news/activity";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        if let Some(v) = limit {
+            query.push(("limit", v.to_string()));
+        }
+        if let Some(v) = before {
+            query.push(("before", v.to_string()));
+        }
+        if let Some(v) = repo {
+            query.push(("repo", v.to_string()));
+        }
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `GET /v1/news/activity/{id}`
+    pub async fn activity_get(&self, id: i64) -> Result<types::NewsActivity, ClientError> {
+        let path = format!("/v1/news/activity/{}", seg(id));
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, &path, &query, None::<&()>).await
     }
 
     /// `GET /v1/news/{slug}`
@@ -2668,6 +2717,8 @@ pub const OPERATIONS: &[&str] = &[
     "admin_create_item",
     "admin_news_list",
     "admin_news_create",
+    "admin_activity_list",
+    "admin_activity_patch",
     "admin_news_update",
     "admin_news_delete",
     "official_get",
@@ -2838,6 +2889,8 @@ pub const OPERATIONS: &[&str] = &[
     "minecraft_link_finish",
     "minecraft_link_start",
     "news_list",
+    "activity_list",
+    "activity_get",
     "news_get",
     "notifications_list",
     "notifications_read_all",

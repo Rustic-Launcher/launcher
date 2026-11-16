@@ -3458,6 +3458,137 @@
         ]
       }
     },
+    "/v1/admin/news/activity": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_activity_list",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "1-50, default 20.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "description": "The `next` cursor of the previous page.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "repo",
+            "in": "query",
+            "description": "Only this repository (`rustic`, or `launcher` / `edition` for CDN releases).",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminNewsActivityPage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/news/activity/{id}": {
+      "patch": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_activity_patch",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entry id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewsActivityPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminNewsActivity"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/admin/news/{id}": {
       "put": {
         "tags": [
@@ -11777,6 +11908,19 @@
               ],
               "format": "int64"
             }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Items to skip (the website's article list pages), 0-5000, default 0.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
           }
         ],
         "responses": {
@@ -11789,6 +11933,117 @@
                   "items": {
                     "$ref": "#/components/schemas/NewsItem"
                   }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/news/activity": {
+      "get": {
+        "tags": [
+          "news"
+        ],
+        "operationId": "activity_list",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "1-50, default 20.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "description": "The `next` cursor of the previous page.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "repo",
+            "in": "query",
+            "description": "Only this repository (`rustic`, or `launcher` / `edition` for CDN releases).",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NewsActivityPage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/news/activity/{id}": {
+      "get": {
+        "tags": [
+          "news"
+        ],
+        "operationId": "activity_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entry id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NewsActivity"
                 }
               }
             }
@@ -16279,6 +16534,42 @@
           "linked_at": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "AdminNewsActivity": {
+        "type": "object",
+        "description": "An entry as staff see it in the back-office.",
+        "required": [
+          "entry",
+          "hidden"
+        ],
+        "properties": {
+          "entry": {
+            "$ref": "#/components/schemas/NewsActivity"
+          },
+          "hidden": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AdminNewsActivityPage": {
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminNewsActivity"
+            }
+          },
+          "next": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         }
       },
@@ -22893,6 +23184,186 @@
               "type": "string"
             },
             "description": "Game versions it is for (`26.3`); the manifest's when empty."
+          }
+        }
+      },
+      "NewsActivity": {
+        "type": "object",
+        "description": "An entry of the updates feed: a push, a GitHub release or a CDN release. Entries of private\nrepositories never carry a URL (`url` and every commit's `url` are null).",
+        "required": [
+          "id",
+          "kind",
+          "repo",
+          "private",
+          "prerelease",
+          "forced",
+          "commits",
+          "commit_count",
+          "created_at"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/NewsActivityKind"
+          },
+          "repo": {
+            "type": "string",
+            "description": "Repository name (`rustic`), or `launcher` / `edition` for CDN releases."
+          },
+          "private": {
+            "type": "boolean"
+          },
+          "branch": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Compare page (push), release page (GitHub release) or the download page (CDN release)."
+          },
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Tag or version (releases)."
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Release name."
+          },
+          "prerelease": {
+            "type": "boolean"
+          },
+          "forced": {
+            "type": "boolean"
+          },
+          "actor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Who pushed or published (GitHub login)."
+          },
+          "commits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NewsActivityCommit"
+            },
+            "description": "The push's commits, newest first: at most 5 in lists, every recorded one (≤ 50) on the\nentry itself."
+          },
+          "commit_count": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Commits in the push (can be more than `commits`)."
+          },
+          "body": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Release notes (Markdown), only on the entry itself (`GET /v1/news/activity/{id}`)."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewsActivityCommit": {
+        "type": "object",
+        "description": "One commit of a push. `url` is null for private repositories.",
+        "required": [
+          "sha",
+          "message",
+          "author"
+        ],
+        "properties": {
+          "sha": {
+            "type": "string",
+            "description": "Short sha (7 characters)."
+          },
+          "message": {
+            "type": "string",
+            "description": "The first line of the message (secrets, tokens and emails redacted)."
+          },
+          "author": {
+            "type": "string",
+            "description": "GitHub login or name."
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      },
+      "NewsActivityKind": {
+        "type": "string",
+        "enum": [
+          "push",
+          "release",
+          "cdn_release"
+        ]
+      },
+      "NewsActivityPage": {
+        "type": "object",
+        "description": "A page of the updates feed, newest first.",
+        "required": [
+          "items",
+          "repos"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NewsActivity"
+            }
+          },
+          "next": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Pass as `before` for the next page; null on the last page."
+          },
+          "repos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Repositories that have entries (for filters), by name."
+          }
+        }
+      },
+      "NewsActivityPatch": {
+        "type": "object",
+        "required": [
+          "hidden"
+        ],
+        "properties": {
+          "hidden": {
+            "type": "boolean",
+            "description": "Hide the entry from the public feed (true) or show it again (false)."
           }
         }
       },

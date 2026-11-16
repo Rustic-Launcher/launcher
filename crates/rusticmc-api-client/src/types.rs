@@ -2322,6 +2322,85 @@ wire! {
         pub published: bool,
     }
 
+    // ------------------------------------------------ the news page's updates feed (ADR 0177)
+
+    #[derive(Copy, Eq, Hash)]
+    #[serde(rename_all = "snake_case")]
+    pub enum NewsActivityKind {
+        /// Commits pushed to a repository's default branch.
+        Push,
+        /// A GitHub release.
+        Release,
+        /// A launcher version or Rustic edition build published on the CDN.
+        CdnRelease,
+    }
+
+    /// One commit of a push. `url` is null for private repositories.
+    pub struct NewsActivityCommit {
+        /// Short sha (7 characters).
+        pub sha: String,
+        /// The first line of the message (secrets, tokens and emails redacted).
+        pub message: String,
+        /// GitHub login or name.
+        pub author: String,
+        pub url: Option<String>,
+        pub at: Option<DateTime<Utc>>,
+    }
+
+    /// An entry of the updates feed: a push, a GitHub release or a CDN release. Entries of private
+    /// repositories never carry a URL (`url` and every commit's `url` are null).
+    pub struct NewsActivity {
+        pub id: i64,
+        pub kind: NewsActivityKind,
+        /// Repository name (`rustic`), or `launcher` / `edition` for CDN releases.
+        pub repo: String,
+        pub private: bool,
+        pub branch: Option<String>,
+        /// Compare page (push), release page (GitHub release) or the download page (CDN release).
+        pub url: Option<String>,
+        /// Tag or version (releases).
+        pub version: Option<String>,
+        /// Release name.
+        pub title: Option<String>,
+        pub prerelease: bool,
+        pub forced: bool,
+        /// Who pushed or published (GitHub login).
+        pub actor: Option<String>,
+        /// The push's commits, newest first: at most 5 in lists, every recorded one (≤ 50) on the
+        /// entry itself.
+        pub commits: Vec<NewsActivityCommit>,
+        /// Commits in the push (can be more than `commits`).
+        pub commit_count: i32,
+        /// Release notes (Markdown), only on the entry itself (`GET /v1/news/activity/{id}`).
+        pub body: Option<String>,
+        pub created_at: DateTime<Utc>,
+    }
+
+    /// A page of the updates feed, newest first.
+    pub struct NewsActivityPage {
+        pub items: Vec<NewsActivity>,
+        /// Pass as `before` for the next page; null on the last page.
+        pub next: Option<String>,
+        /// Repositories that have entries (for filters), by name.
+        pub repos: Vec<String>,
+    }
+
+    /// An entry as staff see it in the back-office.
+    pub struct AdminNewsActivity {
+        pub entry: NewsActivity,
+        pub hidden: bool,
+    }
+
+    pub struct AdminNewsActivityPage {
+        pub items: Vec<AdminNewsActivity>,
+        pub next: Option<String>,
+    }
+
+    pub struct NewsActivityPatch {
+        /// Hide the entry from the public feed (true) or show it again (false).
+        pub hidden: bool,
+    }
+
     #[derive(Copy, Eq, Hash)]
     #[serde(rename_all = "snake_case")]
     pub enum FeaturedEngine {
