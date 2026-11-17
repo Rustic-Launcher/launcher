@@ -40,6 +40,28 @@ describe('HeroLoop', () => {
     vi.useRealTimers();
   });
 
+  it('starts the HD clip where the bundled one is when they are the same loop', () => {
+    const { container } = render(<HeroLoop fallback={FALLBACK} hd={HD} playing />);
+    const low = container.querySelector<HTMLVideoElement>('video[data-hero="fallback"]')!;
+    const hd = container.querySelector<HTMLVideoElement>('video[data-hero="hd"]')!;
+    Object.defineProperty(low, 'duration', { value: 21.96, configurable: true });
+    Object.defineProperty(low, 'currentTime', { value: 7.5, configurable: true, writable: true });
+    Object.defineProperty(hd, 'duration', { value: 21.96, configurable: true });
+    let set = -1;
+    Object.defineProperty(hd, 'currentTime', {
+      configurable: true,
+      get: () => set,
+      set: (v: number) => (set = v),
+    });
+    fireEvent.loadedMetadata(hd);
+    expect(set).toBeCloseTo(7.5);
+    // Another clip (another length): it starts from its own beginning.
+    set = -1;
+    Object.defineProperty(hd, 'duration', { value: 12, configurable: true });
+    fireEvent.loadedMetadata(hd);
+    expect(set).toBe(-1);
+  });
+
   it('keeps the fallback when the HD clip fails, and reports when nothing plays', () => {
     const onFail = vi.fn();
     const { container } = render(<HeroLoop fallback={FALLBACK} hd={HD} playing onFail={onFail} />);

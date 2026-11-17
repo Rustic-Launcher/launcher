@@ -83,6 +83,7 @@ export function ProfileSheet({
   onDeleted: () => void;
 }) {
   const { t } = useTranslation('java');
+  const { t: ts } = useTranslation('settings');
   const { t: tc } = useTranslation();
   const qc = useQueryClient();
   const { data: settings } = useSettings();
@@ -97,6 +98,8 @@ export function ProfileSheet({
   const versions = useJavaVersions(snapshots, old);
   const loaders = useLoaderVersions(d.loader, d.game_version);
   const maxMemory = memoryMax(system ? system.total_memory_mb * 1024 * 1024 : undefined);
+  const memory = Math.min(d.memory_max_mb, maxMemory);
+  const memoryWarn = Math.max(2048, maxMemory - 2048);
 
   useEffect(() => {
     if (!open) return;
@@ -325,16 +328,46 @@ export function ProfileSheet({
           )}
           <Field label={t('form.memory')} hint={t('form.memoryHint')}>
             {() => (
-              <Slider
-                value={Math.min(d.memory_max_mb, maxMemory)}
-                onValueChange={(v) => set('memory_max_mb', v)}
-                min={1024}
-                max={maxMemory}
-                step={512}
-                label={t('form.memory')}
-                formatValue={formatMemory}
-                warnAbove={Math.max(2048, maxMemory - 2048)}
-              />
+              // The amount itself, what the PC has, and a few landmarks: a bare slider says nothing.
+              <div className="flex flex-col gap-2" data-testid="profile-memory">
+                <div className="flex items-baseline justify-between gap-3">
+                  <span
+                    className="text-fg text-lg font-semibold tabular-nums"
+                    data-testid="profile-memory-value"
+                  >
+                    {formatMemory(memory)}
+                  </span>
+                  {system && (
+                    <span className="text-fg-subtle text-xs">
+                      {ts('game.memory.system', {
+                        total: formatMemory(system.total_memory_mb),
+                        free: formatMemory(system.available_memory_mb),
+                      })}
+                    </span>
+                  )}
+                </div>
+                <Slider
+                  value={memory}
+                  onValueChange={(v) => set('memory_max_mb', v)}
+                  min={1024}
+                  max={maxMemory}
+                  step={512}
+                  label={t('form.memory')}
+                  formatValue={formatMemory}
+                  warnAbove={memoryWarn}
+                  marks={[4096, 8192, 16384]
+                    .filter((v) => v < maxMemory)
+                    .map((value) => ({ value }))}
+                />
+                <p
+                  className={
+                    memory > memoryWarn ? 'text-warning-text text-xs' : 'text-fg-subtle text-xs'
+                  }
+                  role={memory > memoryWarn ? 'note' : undefined}
+                >
+                  {memory > memoryWarn ? ts('game.memory.warn') : ts('game.memory.perInstance')}
+                </p>
+              </div>
             )}
           </Field>
           <SwitchRow

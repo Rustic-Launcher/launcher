@@ -10,6 +10,7 @@ import {
 import { useNavigate } from '@tanstack/react-router';
 import { motion } from 'motion/react';
 import { Check, ChevronDown, Plus } from 'lucide-react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHorizonVersionLabel } from '@/components/HorizonVersion';
 import { InstanceIcon } from '@/components/InstanceIcon';
@@ -34,6 +35,9 @@ export function LaunchButton({
   const versionLabel = useHorizonVersionLabel();
   const { data: instances } = useInstances();
   const setActive = usePrefs((s) => s.setActiveInstance);
+  // The instance menu spans the whole button (measured when it opens), not just the caret.
+  const box = useRef<HTMLDivElement>(null);
+  const [menuWidth, setMenuWidth] = useState<number>();
 
   const line1 =
     play.state === 'update'
@@ -48,6 +52,7 @@ export function LaunchButton({
 
   return (
     <div
+      ref={box}
       className={cn(
         'shadow-glow relative flex h-[72px] w-[min(340px,100%)] overflow-hidden rounded-xl',
         play.state === 'running' ? 'bg-surface-3 shadow-none' : 'bg-accent',
@@ -94,7 +99,7 @@ export function LaunchButton({
         </span>
         <span className="text-xs font-semibold opacity-80">{line2}</span>
       </button>
-      <Dropdown>
+      <Dropdown onOpenChange={(o) => o && setMenuWidth(box.current?.offsetWidth)}>
         <DropdownTrigger asChild>
           <button
             type="button"
@@ -111,7 +116,12 @@ export function LaunchButton({
             <span className="sr-only">{instance?.name}</span>
           </button>
         </DropdownTrigger>
-        <DropdownContent align="end" className="w-80">
+        <DropdownContent
+          align="end"
+          className="w-80"
+          style={menuWidth ? { width: menuWidth } : undefined}
+          data-testid="launch-menu"
+        >
           <DropdownLabel>{t('play.instances')}</DropdownLabel>
           {instances?.map((i) => (
             <DropdownItem

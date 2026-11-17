@@ -3008,6 +3008,22 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/me/featured": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["featured_set"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/me/guardian": {
         parameters: {
             query?: never;
@@ -7459,6 +7475,8 @@ export interface components {
             friends?: null | components["schemas"]["ProfileFriends"];
             servers?: components["schemas"]["ProfileServer"][] | null;
             content?: components["schemas"]["ProfileProject"][] | null;
+            /** @description The creations the owner puts forward (ADR 0180), in their order; with `content`. */
+            featured?: components["schemas"]["ProfileProject"][] | null;
             locker?: null | components["schemas"]["ProfileLocker"];
             settings?: null | components["schemas"]["AccountSettings"];
         };
@@ -8062,6 +8080,13 @@ export interface components {
         /** @description Replaces the offers of one day (at most 12). */
         SetDailyOffersRequest: {
             offers: components["schemas"]["DailyOfferInput"][];
+        };
+        /**
+         * @description `PUT /v1/me/featured` (ADR 0180): the creations put forward on the profile, in order (at
+         *     most 6 of the account's own listed marketplace projects; empty clears them).
+         */
+        SetFeaturedRequest: {
+            projects: string[];
         };
         /** @description First password of an account created with Microsoft. */
         SetPasswordRequest: {
@@ -15713,6 +15738,46 @@ export interface operations {
                 };
                 content: {
                     "application/json": Record<string, never>;
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    featured_set: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["SetFeaturedRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProfileProject"][];
+                };
+            };
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
                 };
             };
             /** @description Error (see `code`) */

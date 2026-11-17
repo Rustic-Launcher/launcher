@@ -11087,6 +11087,64 @@
         ]
       }
     },
+    "/v1/me/featured": {
+      "put": {
+        "tags": [
+          "me"
+        ],
+        "operationId": "featured_set",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetFeaturedRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProfileProject"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/me/guardian": {
       "get": {
         "tags": [
@@ -25587,6 +25645,16 @@
               "$ref": "#/components/schemas/ProfileProject"
             }
           },
+          "featured": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ProfileProject"
+            },
+            "description": "The creations the owner puts forward (ADR 0180), in their order; with `content`."
+          },
           "locker": {
             "oneOf": [
               {
@@ -27557,6 +27625,21 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DailyOfferInput"
+            }
+          }
+        }
+      },
+      "SetFeaturedRequest": {
+        "type": "object",
+        "description": "`PUT /v1/me/featured` (ADR 0180): the creations put forward on the profile, in order (at\nmost 6 of the account's own listed marketplace projects; empty clears them).",
+        "required": [
+          "projects"
+        ],
+        "properties": {
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           }
         }

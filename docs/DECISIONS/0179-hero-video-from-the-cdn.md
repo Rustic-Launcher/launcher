@@ -105,3 +105,51 @@ so it can change without a release.
 - **A crossfade loop** of a longer excerpt: ghosting of trunks during the fade with a moving camera.
 - **Mixkit, Pixabay, Coverr**: Pexels had the best match and the highest source bitrate; the
   Pixabay ("Ray of light", CC0) and other 4K candidates were brighter, greyer or busier.
+
+## Addendum (2026-11-17): Rustic's own in-game cinematic
+
+**Context.** The owner wanted gameplay footage of the game itself as the hero, with no Mojang
+texture in the picture, filmed by Rustic in the Rustic edition of Horizon. No free stock clip of
+vanilla gameplay exists at 1440p or more, and stock licences exclude recognisable brands (Pixabay).
+
+**Decision.**
+
+- **Engine**: the Rustic edition (`rustic-edition-dev-a84f637`), offscreen at 3840 × 2160, driven by
+  `horizon-ctl` in a scratch game folder (never the player's). Horizon loads Java resource packs and
+  runs OptiFine/Iris shader packs through its own translator (`crates/horizon-shaders`), so the look
+  comes from a free resource pack and a shader pack whose licence allows commercial videos.
+- **Textures**: Pixel Perfection Legacy 26.3-97.2 (XSSheep, Nova_Wostra; CC BY-SA 4.0), reduced to
+  the world's folders; plus a dry foliage colour map Rustic derived from the pack's foliage map
+  (leaf litter is tinted by it and the pack has none). Under them, during the whole render, a
+  generated pack replaced *every* vanilla texture with plain magenta (only names and sizes read):
+  any texture the free packs miss would show magenta, and every frame is checked for it
+  (`magenta_check.py`); none showed. Two Horizon facts met on the way: a pack file with a space in
+  its name fails the whole reload ("invalid resource identifier", where vanilla skips the file), and
+  colour maps are read only at start (a reload keeps the old ones).
+- **Shaders**: Photon (SixthSurge; its licence: "Use Photon Shaders, including for commercially
+  published screenshots and videos"), unmodified.
+- **Shooting**: seed 1234, morning (time 2600), clear weather, mobs and items removed, spectator,
+  HUD hidden, the world frozen with `HORIZON_STILL=1`. Each frame: `tp` and `look` along a scripted
+  path (a lateral move with a slight rise and pan, eased with smootherstep so the camera starts and
+  ends at rest), then `screenshot-sequence 40 33.333333`, which restarts the shader pack and draws
+  40 frames on a fixed clock: every frame is deterministic, its exposure settled, the clouds still.
+  330 frames (11 s), made a 22 s ping-pong loop by `scripts/hero-video/make_set.py`, which reverses
+  without a jolt because the path's speed is zero at both ends.
+- **Licence of the set**: CC BY-SA 4.0 (ShareAlike of the textures), credit in the manifest. Since
+  the picture holds no Mojang texture, the apps' bundled 480p clip and poster are this loop too
+  (`make_set.py --bundle`), so the first paint and the HD set are the same picture: `HeroLoop`
+  starts the HD clip at the bundled one's position, and the crossfade only sharpens it. The API's
+  built-in set (`hero_default.json`) points at it: `ec6b8b4f981e`, 658 frames, 21.96 s, encoded
+  with `--crf-shift 12` (a clean render compresses far better than filmed foliage): AV1 0.8 / 1.9 /
+  4.5 / 9.4 / 32.7 MB, VP9 0.6 / 1.7 / 4.8 / 12.8 / 60.6 MB, H.264 1.6 / 5.2 / 13.4 / 27.4 /
+  84.9 MB (480p / 720p / 1080p / 1440p / 2160p); bundled 480p 0.54 MB (VP9) and 0.57 MB (H.264),
+  poster 35 KB. The forest set stays on the CDN, one back-office choice away.
+
+**Consequences.** A launcher release ships the new bundled clip; until then 0.2.9's forest fallback
+fades to the cinematic once the API serves it. What remains of Mojang's design is the landscape's
+shape (Horizon re-implements the world generator) and cube block shapes: no texture, sound, logo or
+text (RISKS R-50).
+
+**Alternatives.** The official Java game with Iris (refused by the owner: Rustic edition only);
+Horizon's own WGSL pack format with the MIT `golden_hour` example (far plainer than Photon); a
+real-time capture of `fly` (frame pacing and the shader's wall clock make the motion uneven).

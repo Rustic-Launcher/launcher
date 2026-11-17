@@ -15,8 +15,9 @@ import { HeroArt } from './HeroArt';
 import { batterySaver, shouldRun } from './HeroLight';
 
 /**
- * The bundled forest loop (`public/media/hero-480.*`, ADR 0179, see docs/THIRD_PARTY.md): a small
- * 480p clip that plays at once and offline. The HD rendition comes from the CDN.
+ * The bundled loop (`public/media/hero-480.*`, ADR 0179 and its addendum, see docs/THIRD_PARTY.md):
+ * the 480p of the built-in set, which plays at once and offline. The HD rendition comes from the
+ * CDN and takes over at the same point of the loop.
  */
 export const HERO_VIDEO = {
   webm: '/media/hero-480.webm',

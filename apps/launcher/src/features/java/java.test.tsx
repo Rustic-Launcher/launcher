@@ -9,6 +9,7 @@ import { BedrockPanel } from './BedrockPanel';
 import { EditionLogo } from './EditionLogo';
 import { EditionSwitcher } from './EditionSwitcher';
 import { JavaLaunchpad } from './JavaLaunchpad';
+import { ProfileSheet } from './ProfileSheet';
 
 function wrap(ui: ReactNode) {
   const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
@@ -76,6 +77,22 @@ describe('java launchpad', () => {
     await waitFor(() =>
       expect(screen.getByTestId('java-play')).toHaveAttribute('data-action', 'launch'),
     );
+  });
+});
+
+describe('java profile sheet', () => {
+  it('shows the memory it gives the game and what the PC has', async () => {
+    wrap(
+      <ProfileSheet
+        open
+        onOpenChange={() => undefined}
+        profile={undefined}
+        onCreated={() => undefined}
+        onDeleted={() => undefined}
+      />,
+    );
+    expect(await screen.findByTestId('profile-memory-value')).toHaveTextContent(/^\d+(\.\d)? GB$/);
+    expect(await screen.findByTestId('profile-memory')).toHaveTextContent(/installed/);
   });
 });
 

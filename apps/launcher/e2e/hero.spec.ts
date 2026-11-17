@@ -5,7 +5,7 @@ import { expect, seed, test } from './fixtures';
 const SKIN = `data:image/png;base64,${readFileSync(new URL('./assets/sample-skin.png', import.meta.url)).toString('base64')}`;
 
 test.describe('Launchpad hero', () => {
-  test('the forest video plays behind the launch button, with the player in their skin', async ({
+  test('the hero video plays behind the launch button, with the player in their skin', async ({
     page,
   }) => {
     await seed(page);

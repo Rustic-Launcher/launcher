@@ -3063,6 +3063,12 @@ wire! {
         pub show_role: Option<bool>,
     }
 
+    /// `PUT /v1/me/featured` (ADR 0180): the creations put forward on the profile, in order (at
+    /// most 6 of the account's own listed marketplace projects; empty clears them).
+    pub struct SetFeaturedRequest {
+        pub projects: Vec<String>,
+    }
+
     /// `PUT /v1/me/avatar`: one of the default heads.
     pub struct ChooseAvatarRequest {
         pub default_id: i32,
@@ -3220,6 +3226,9 @@ wire! {
         pub friends: Option<ProfileFriends>,
         pub servers: Option<Vec<ProfileServer>>,
         pub content: Option<Vec<ProfileProject>>,
+        /// The creations the owner puts forward (ADR 0180), in their order; with `content`.
+        #[serde(default)]
+        pub featured: Option<Vec<ProfileProject>>,
         pub locker: Option<ProfileLocker>,
         /// The owner's own view: what applies to others.
         pub settings: Option<AccountSettings>,

@@ -1886,6 +1886,13 @@ impl Client {
         self.call(Method::GET, path, &query, None::<&()>).await
     }
 
+    /// `PUT /v1/me/featured`
+    pub async fn featured_set(&self, body: &types::SetFeaturedRequest) -> Result<Vec<types::ProfileProject>, ClientError> {
+        let path = "/v1/me/featured";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, path, &query, Some(body)).await
+    }
+
     /// `GET /v1/me/guardian`
     pub async fn guardian_get(&self) -> Result<types::GuardianInfo, ClientError> {
         let path = "/v1/me/guardian";
@@ -2931,6 +2938,7 @@ pub const OPERATIONS: &[&str] = &[
     "discord_link_start",
     "discord_link_finish",
     "gdpr_export",
+    "featured_set",
     "guardian_get",
     "guardian_invite_create",
     "identities_list",

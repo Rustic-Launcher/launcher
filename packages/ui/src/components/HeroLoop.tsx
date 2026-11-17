@@ -23,8 +23,9 @@ export interface HeroLoopProps {
 
 /**
  * A muted looping backdrop video (ADR 0179): the bundled low-resolution clip plays first, then the
- * HD rendition — once it actually plays — crossfades in over it, and the fallback is dropped. A
- * failing HD clip leaves the fallback in place.
+ * HD rendition — once it actually plays — crossfades in over it, and the fallback is dropped. When
+ * both are the same loop (same length), the HD one starts at the fallback's position. A failing HD
+ * clip leaves the fallback in place.
  */
 export function HeroLoop({
   fallback,
@@ -113,6 +114,14 @@ export function HeroLoop({
           preload="auto"
           data-hero="hd"
           data-shown={hdShown ? 'true' : 'false'}
+          // The same loop at another size (the bundled clip is the set's 480p): start the HD one
+          // where the small one is, so the crossfade only sharpens the picture.
+          onLoadedMetadata={(e) => {
+            const lo = low.current;
+            const hi = e.currentTarget;
+            if (lo && Number.isFinite(lo.duration) && Math.abs(lo.duration - hi.duration) < 0.25)
+              hi.currentTime = lo.currentTime % hi.duration;
+          }}
           onPlaying={() => setHdShown(true)}
           // Paused (window hidden, game running): show it once it can play anyway.
           onCanPlay={() => !playing && setHdShown(true)}
