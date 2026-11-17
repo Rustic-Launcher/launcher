@@ -6,6 +6,7 @@
 import type {
   AccountSettings,
   CloudBanner,
+  HeroMedia,
   AppNotification,
   ChatMessage,
   ContentReportReason,
@@ -111,6 +112,8 @@ export interface CloudClient {
   news(): Promise<NewsItem[]>;
   /** `GET /v1/banners?surface=launcher`: live announcements in `lang` (ADR 0171). */
   banners(lang: string): Promise<CloudBanner[]>;
+  /** `GET /v1/media/hero`: the Launchpad's video set (ADR 0179); `null` when there is none. */
+  heroMedia(): Promise<HeroMedia | null>;
   featuredServers(): Promise<FeaturedServer[]>;
   // server directory (public; ADR 0158)
   /** `GET /v1/server-listings`: search, filters, sorts, paging. */

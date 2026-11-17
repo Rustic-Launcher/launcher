@@ -355,6 +355,19 @@ export interface IpcCommands {
   // ---- voice (ADR 0176) ----
   /** The in-game overlay's state, written for the running instances' companions. */
   voice_overlay_set: [{ overlay: VoiceOverlay }, void];
+
+  // ---- hero video (ADR 0179) ----
+  /**
+   * The local path of a hero rendition of the CDN (`https://cdn.rustic-launcher.com/media/hero/`),
+   * downloaded once into the cache (resumed, checked against `sha256` and `bytes`; the other
+   * files are removed). With `download: false` (offline, data saver) only a file already cached is
+   * answered, else `null`. Played with `convertFileSrc`. The mock answers `null`: the browser
+   * build streams the CDN URL itself.
+   */
+  hero_media_fetch: [
+    { url: string; sha256: string; bytes: number; download: boolean },
+    string | null,
+  ];
 }
 
 /** event name -> payload */

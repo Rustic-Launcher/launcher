@@ -35,7 +35,7 @@
         "img-src": "'self' asset: http://asset.localhost data: blob: https://textures.minecraft.net https://crafatar.com https://cdn.modrinth.com https://cdn.rustic-launcher.com https://horizon-rust.github.io",
         "font-src": "'self' data:",
         "connect-src": "'self' ipc: http://ipc.localhost https://api.rustic-launcher.com wss://realtime.rustic-launcher.com https://cdn.rustic-launcher.com wss://voice.rustic-launcher.com https://voice.rustic-launcher.com",
-        "media-src": "'self' https://cdn.rustic-launcher.com",
+        "media-src": "'self' https://cdn.rustic-launcher.com asset: http://asset.localhost",
         "object-src": "'none'",
         "base-uri": "'self'",
         "form-action": "'none'",
@@ -43,7 +43,7 @@
       },
       "freezePrototype": true,
       "assetProtocol": {
-        "enable": false,
+        "enable": true,
         "scope": []
       }
     }

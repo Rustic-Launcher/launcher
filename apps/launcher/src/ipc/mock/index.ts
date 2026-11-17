@@ -10,6 +10,7 @@ import { nativeHandlers } from './handlers/native';
 import { serverAdminHandlers } from './handlers/serverAdmin';
 import { serversHandlers } from './handlers/servers';
 import { updateHandlers } from './handlers/updates';
+import { heroMediaHandlers } from './handlers/heroMedia';
 import { voiceHandlers } from './handlers/voice';
 import { fail, on, type MockHandler, type MockHandlers } from './runtime';
 import type { CommandName } from '../commands';
@@ -26,6 +27,7 @@ const handlers: MockHandlers = {
   ...dnsHandlers,
   ...updateHandlers,
   ...voiceHandlers,
+  ...heroMediaHandlers,
 };
 
 export function createMockTransport(): IpcTransport {

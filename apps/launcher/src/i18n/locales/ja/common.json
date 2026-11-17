@@ -214,7 +214,10 @@
       "party_not_allowed": "このプレイヤーはこのパーティーに入れません。18歳未満のプレイヤーはフレンドのパーティーにのみ参加できます。",
       "already_in_party": "先に今のパーティーを退出してください。",
       "not_party_leader": "これはパーティーリーダーだけが行えます。"
-    }
+    },
+    "hearing": "聞こえる距離",
+    "rangeBlocks_other": "{{count}} ブロック",
+    "rangeHelp": "{{near}}以内はフル音量、離れるほど小さくなり、{{far}}を超えると聞こえません。"
   },
   "presence": {
     "online": "オンライン",

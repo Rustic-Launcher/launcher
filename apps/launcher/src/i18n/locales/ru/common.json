@@ -226,7 +226,13 @@
       "party_not_allowed": "Этот игрок не может быть в этой группе: игроки младше 18 лет вступают только в группы своих друзей.",
       "already_in_party": "Сначала покинь текущую группу.",
       "not_party_leader": "Это может сделать только лидер группы."
-    }
+    },
+    "hearing": "Дальность слышимости",
+    "rangeBlocks_one": "{{count}} блок",
+    "rangeBlocks_few": "{{count}} блока",
+    "rangeBlocks_many": "{{count}} блоков",
+    "rangeBlocks_other": "{{count}} блока",
+    "rangeHelp": "Полная громкость: ≤ {{near}}, затем всё тише; тишина: ≥ {{far}}."
   },
   "presence": {
     "online": "В сети",

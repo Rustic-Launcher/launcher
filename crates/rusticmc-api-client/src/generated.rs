@@ -602,6 +602,28 @@ impl Client {
         self.call(Method::POST, path, &query, Some(body)).await
     }
 
+    /// `GET /v1/admin/media/hero`
+    pub async fn admin_hero_media(&self) -> Result<types::AdminHeroMedia, ClientError> {
+        let path = "/v1/admin/media/hero";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
+    /// `PUT /v1/admin/media/hero`
+    pub async fn admin_hero_media_update(&self, body: &types::HeroMediaUpdate) -> Result<types::AdminHeroMedia, ClientError> {
+        let path = "/v1/admin/media/hero";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::PUT, path, &query, Some(body)).await
+    }
+
+    /// `GET /v1/admin/media/hero/preview`
+    pub async fn admin_hero_media_preview(&self, source: &str) -> Result<types::HeroMedia, ClientError> {
+        let path = "/v1/admin/media/hero/preview";
+        let mut query: Vec<(&str, String)> = Vec::new();
+        query.push(("source", source.to_string()));
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/admin/news`
     pub async fn admin_news_list(&self) -> Result<Vec<types::AdminNewsItem>, ClientError> {
         let path = "/v1/admin/news";
@@ -1969,6 +1991,13 @@ impl Client {
         self.call(Method::PATCH, path, &query, Some(body)).await
     }
 
+    /// `GET /v1/media/hero`
+    pub async fn hero_media_public(&self) -> Result<types::HeroMedia, ClientError> {
+        let path = "/v1/media/hero";
+        let query: Vec<(&str, String)> = Vec::new();
+        self.call(Method::GET, path, &query, None::<&()>).await
+    }
+
     /// `GET /v1/messages/{user_id}`
     pub async fn messages_history(&self, user_id: uuid::Uuid, before: Option<chrono::DateTime<chrono::Utc>>, limit: Option<i64>) -> Result<Vec<types::Message>, ClientError> {
         let path = format!("/v1/messages/{}", seg(user_id));
@@ -2746,6 +2775,9 @@ pub const OPERATIONS: &[&str] = &[
     "admin_create_gift_card",
     "admin_items_list",
     "admin_create_item",
+    "admin_hero_media",
+    "admin_hero_media_update",
+    "admin_hero_media_preview",
     "admin_news_list",
     "admin_news_create",
     "admin_activity_list",
@@ -2914,6 +2946,7 @@ pub const OPERATIONS: &[&str] = &[
     "my_listings",
     "settings_get",
     "settings_update",
+    "hero_media_public",
     "messages_history",
     "messages_send",
     "messages_mark_read",

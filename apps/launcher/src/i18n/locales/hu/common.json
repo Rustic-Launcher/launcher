@@ -218,7 +218,11 @@
       "party_not_allowed": "Ez a játékos nem lehet ebben a csapatban: a 18 év alattiak csak a barátaik csapatához csatlakoznak.",
       "already_in_party": "Előbb lépj ki a jelenlegi csapatodból.",
       "not_party_leader": "Ezt csak a csapat vezetője teheti meg."
-    }
+    },
+    "hearing": "Hallótávolság",
+    "rangeBlocks_one": "{{count}} blokk",
+    "rangeBlocks_other": "{{count}} blokk",
+    "rangeHelp": "Teljes hangerő: ≤ {{near}}, utána egyre halkabb; csend: ≥ {{far}}."
   },
   "presence": {
     "online": "Online",

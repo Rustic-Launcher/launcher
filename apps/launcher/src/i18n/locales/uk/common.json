@@ -226,7 +226,13 @@
       "party_not_allowed": "Цей гравець не може бути в цій групі: гравці до 18 років приєднуються лише до груп своїх друзів.",
       "already_in_party": "Спершу вийди з поточної групи.",
       "not_party_leader": "Це може зробити лише лідер групи."
-    }
+    },
+    "hearing": "Дальність чутності",
+    "rangeBlocks_one": "{{count}} блок",
+    "rangeBlocks_few": "{{count}} блоки",
+    "rangeBlocks_many": "{{count}} блоків",
+    "rangeBlocks_other": "{{count}} блока",
+    "rangeHelp": "Повна гучність: ≤ {{near}}, далі все тихіше; тиша: ≥ {{far}}."
   },
   "presence": {
     "online": "У мережі",

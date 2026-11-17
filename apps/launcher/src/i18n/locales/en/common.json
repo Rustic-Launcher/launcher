@@ -218,7 +218,11 @@
       "party_not_allowed": "This player can't be in this party: players under 18 only join parties of their friends.",
       "already_in_party": "Leave your current party first.",
       "not_party_leader": "Only the party leader can do this."
-    }
+    },
+    "hearing": "Hearing distance",
+    "rangeBlocks_one": "{{count}} block",
+    "rangeBlocks_other": "{{count}} blocks",
+    "rangeHelp": "Full volume up to {{near}}, then quieter and quieter, silent beyond {{far}}."
   },
   "presence": {
     "online": "Online",

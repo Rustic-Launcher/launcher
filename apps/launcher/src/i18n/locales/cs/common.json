@@ -226,7 +226,13 @@
       "party_not_allowed": "Tento hráč nemůže být v této partě: hráči mladší 18 let se připojují jen k partám svých přátel.",
       "already_in_party": "Nejdřív opusť svou současnou partu.",
       "not_party_leader": "Tohle může jen vůdce party."
-    }
+    },
+    "hearing": "Dosah slyšení",
+    "rangeBlocks_one": "{{count}} blok",
+    "rangeBlocks_few": "{{count}} bloky",
+    "rangeBlocks_many": "{{count}} bloku",
+    "rangeBlocks_other": "{{count}} bloků",
+    "rangeHelp": "Plná hlasitost: ≤ {{near}}, pak stále tišeji; ticho: ≥ {{far}}."
   },
   "presence": {
     "online": "Online",

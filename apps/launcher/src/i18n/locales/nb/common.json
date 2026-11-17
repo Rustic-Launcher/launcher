@@ -218,7 +218,11 @@
       "party_not_allowed": "Denne spilleren kan ikke være i gruppen: spillere under 18 blir bare med i vennenes grupper.",
       "already_in_party": "Forlat gruppen du er i først.",
       "not_party_leader": "Bare gruppelederen kan gjøre dette."
-    }
+    },
+    "hearing": "Høreavstand",
+    "rangeBlocks_one": "{{count}} blokk",
+    "rangeBlocks_other": "{{count}} blokker",
+    "rangeHelp": "Full lydstyrke opptil {{near}}, deretter svakere og svakere, stille etter {{far}}."
   },
   "presence": {
     "online": "Pålogget",

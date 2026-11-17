@@ -6,6 +6,7 @@ mod cloud_link;
 mod cmd;
 mod discord;
 mod dto;
+mod hero_media;
 mod play_stats;
 mod presence_icons;
 mod relay;
@@ -343,6 +344,7 @@ pub fn run() {
             let state =
                 Arc::new(AppState::new(handle.clone(), paths.clone()).map_err(|e| e.message)?);
             app.manage(state.clone());
+            hero_media::allow_asset_scope(&handle, state.hero_media.dir());
 
             // Background work: downloads into the task list, game events, server watch, renewals.
             {
@@ -411,6 +413,8 @@ pub fn run() {
             cmd::app::app_info,
             // voice (ADR 0176)
             voice::voice_overlay_set,
+            // the Launchpad's hero video (ADR 0179)
+            hero_media::hero_media_fetch,
             cmd::app::player_skin_url,
             cmd::app::system_info,
             cmd::app::settings_get,

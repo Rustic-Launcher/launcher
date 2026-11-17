@@ -52,6 +52,14 @@ export function clampRange(r: number): number {
   return Math.min(MAX_RANGE, Math.max(MIN_RANGE, Math.round(Number.isFinite(r) ? r : 48)));
 }
 
+/** Share of the range heard at full volume (see `proximityGain`). */
+export const FULL_VOLUME_SHARE = 0.15;
+
+/** Blocks within which a voice is at full volume, for the range setting's explanation. */
+export function fullVolumeWithin(range: number): number {
+  return Math.max(1, Math.round(clampRange(range) * FULL_VOLUME_SHARE));
+}
+
 export function sameWorld(a: GamePosition, b: GamePosition): boolean {
   return a.server === b.server && a.dim === b.dim;
 }
@@ -66,7 +74,7 @@ export function distance(a: GamePosition, b: GamePosition): number {
  */
 export function proximityGain(d: number, range: number): number {
   const r = clampRange(range);
-  const near = r * 0.15;
+  const near = r * FULL_VOLUME_SHARE;
   if (!(d >= 0)) return 0;
   if (d <= near) return 1;
   if (d >= r) return 0;

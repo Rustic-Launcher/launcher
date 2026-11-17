@@ -168,6 +168,28 @@ export interface CloudBanner {
   updated_at: string;
 }
 
+/** One encoding of the hero video on the CDN (ADR 0179). */
+export interface HeroRendition {
+  width: number;
+  height: number;
+  /** `av1`, `vp9`, `h264`. */
+  codec: string;
+  /** With its codecs: `video/mp4; codecs="av01.0.08M.08"`. */
+  mime: string;
+  url: string;
+  bytes: number;
+  sha256: string;
+}
+
+/** `GET /v1/media/hero`: the active hero video set (ADR 0179). */
+export interface HeroMedia {
+  id: string;
+  duration_ms: number;
+  renditions: HeroRendition[];
+  posters: { width: number; height: number; mime: string; url: string }[];
+  credit: { title: string; author: string; source_url: string; licence: string };
+}
+
 export interface NewsItem {
   id: string;
   source: 'horizon' | 'rustic';

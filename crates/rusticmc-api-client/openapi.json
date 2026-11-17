@@ -3377,6 +3377,130 @@
         ]
       }
     },
+    "/v1/admin/media/hero": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_hero_media",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminHeroMedia"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_hero_media_update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HeroMediaUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminHeroMedia"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/v1/admin/media/hero/preview": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "admin_hero_media_preview",
+        "parameters": [
+          {
+            "name": "source",
+            "in": "query",
+            "description": "A set id, its manifest URL on the CDN, or `default`.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The set, checked, without saving it",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeroMedia"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "/v1/admin/news": {
       "get": {
         "tags": [
@@ -11632,6 +11756,36 @@
         ]
       }
     },
+    "/v1/media/hero": {
+      "get": {
+        "tags": [
+          "content"
+        ],
+        "operationId": "hero_media_public",
+        "responses": {
+          "200": {
+            "description": "The active hero video set (cached 5 minutes)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeroMedia"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error (see `code`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorBody"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/messages/{user_id}": {
       "get": {
         "tags": [
@@ -16699,6 +16853,41 @@
           "approvals_pending": {
             "type": "integer",
             "format": "int64"
+          }
+        }
+      },
+      "AdminHeroMedia": {
+        "type": "object",
+        "description": "The back-office's view of the hero video.",
+        "required": [
+          "active",
+          "default_id",
+          "available"
+        ],
+        "properties": {
+          "active": {
+            "$ref": "#/components/schemas/HeroMedia"
+          },
+          "default_id": {
+            "type": "string",
+            "description": "The id of the set built into the API (what \"Restore the default\" brings back)."
+          },
+          "available": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sets found in the CDN folder (`media/hero/<id>/manifest.json`), newest first."
+          },
+          "updated_by": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/AdminUserRef"
+              }
+            ]
           }
         }
       },
@@ -22485,6 +22674,184 @@
           },
           "version": {
             "type": "string"
+          }
+        }
+      },
+      "HeroCredit": {
+        "type": "object",
+        "description": "Where the footage comes from and under which licence.",
+        "required": [
+          "title",
+          "author",
+          "source_url",
+          "licence"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "source_url": {
+            "type": "string",
+            "description": "The page the clip was downloaded from."
+          },
+          "licence": {
+            "type": "string",
+            "description": "`Pexels License`, `CC0-1.0`..."
+          },
+          "licence_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "HeroMedia": {
+        "type": "object",
+        "description": "The video set behind the launcher's Launchpad and the website's account pages.",
+        "required": [
+          "id",
+          "duration_ms",
+          "renditions",
+          "posters",
+          "credit",
+          "builtin"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The set's content hash: its folder `media/hero/<id>/` on the CDN."
+          },
+          "duration_ms": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "renditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeroRendition"
+            },
+            "description": "Every rendition; the clients pick by codec support, then by size."
+          },
+          "posters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeroPoster"
+            }
+          },
+          "credit": {
+            "$ref": "#/components/schemas/HeroCredit"
+          },
+          "builtin": {
+            "type": "boolean",
+            "description": "No choice saved in the back-office: the set built into the API."
+          },
+          "updated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      },
+      "HeroMediaUpdate": {
+        "type": "object",
+        "description": "`PUT /v1/admin/media/hero`.",
+        "required": [
+          "source",
+          "reason"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "A set id (8 to 64 hexadecimal characters), its manifest URL on the CDN\n(`https://cdn…/media/hero/<id>/manifest.json`), or `default` for the built-in set."
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why (3 to 500 characters), kept in the audit log."
+          }
+        }
+      },
+      "HeroPoster": {
+        "type": "object",
+        "description": "A still of the loop's first frame (the `poster` and the reduced-motion picture).",
+        "required": [
+          "width",
+          "height",
+          "mime",
+          "url",
+          "bytes",
+          "sha256"
+        ],
+        "properties": {
+          "width": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mime": {
+            "type": "string",
+            "description": "`image/jpeg`, `image/webp` or `image/avif`."
+          },
+          "url": {
+            "type": "string"
+          },
+          "bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sha256": {
+            "type": "string"
+          }
+        }
+      },
+      "HeroRendition": {
+        "type": "object",
+        "description": "One encoding of the hero loop, on the CDN.",
+        "required": [
+          "width",
+          "height",
+          "codec",
+          "mime",
+          "url",
+          "bytes",
+          "sha256"
+        ],
+        "properties": {
+          "width": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codec": {
+            "type": "string",
+            "description": "`av1`, `vp9` or `h264`."
+          },
+          "mime": {
+            "type": "string",
+            "description": "The type with its codecs, for `<source type>`, `canPlayType` and\n`MediaSource.isTypeSupported`: `video/mp4; codecs=\"av01.0.08M.08\"`."
+          },
+          "url": {
+            "type": "string",
+            "description": "Absolute URL on the CDN (an immutable, content-addressed folder)."
+          },
+          "bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sha256": {
+            "type": "string",
+            "description": "Lowercase hex SHA-256 of the file (the launcher checks its cached copy against it)."
           }
         }
       },

@@ -214,7 +214,10 @@
       "party_not_allowed": "Pemain ini tidak bisa ada di party ini: pemain di bawah 18 tahun hanya bergabung ke party teman mereka.",
       "already_in_party": "Keluar dulu dari party-mu saat ini.",
       "not_party_leader": "Hanya pemimpin party yang bisa melakukannya."
-    }
+    },
+    "hearing": "Jarak dengar",
+    "rangeBlocks_other": "{{count}} blok",
+    "rangeHelp": "Volume penuh hingga {{near}}, lalu makin pelan, senyap setelah {{far}}."
   },
   "presence": {
     "online": "Online",

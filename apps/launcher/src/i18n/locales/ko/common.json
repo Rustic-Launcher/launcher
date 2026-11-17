@@ -214,7 +214,10 @@
       "party_not_allowed": "이 플레이어는 이 파티에 있을 수 없어요. 18세 미만 플레이어는 친구의 파티에만 참가해요.",
       "already_in_party": "먼저 지금 파티에서 나가세요.",
       "not_party_leader": "파티장만 할 수 있어요."
-    }
+    },
+    "hearing": "들리는 거리",
+    "rangeBlocks_other": "{{count}}블록",
+    "rangeHelp": "{{near}} 이내는 최대 음량, 멀어질수록 작아지고 {{far}}을 넘으면 들리지 않습니다."
   },
   "presence": {
     "online": "온라인",

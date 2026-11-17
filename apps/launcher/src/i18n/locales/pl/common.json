@@ -226,7 +226,13 @@
       "party_not_allowed": "Ten gracz nie może być w tej drużynie: osoby poniżej 18 lat dołączają tylko do drużyn swoich znajomych.",
       "already_in_party": "Najpierw opuść obecną drużynę.",
       "not_party_leader": "Tylko lider drużyny może to zrobić."
-    }
+    },
+    "hearing": "Zasięg słyszenia",
+    "rangeBlocks_one": "{{count}} blok",
+    "rangeBlocks_few": "{{count}} bloki",
+    "rangeBlocks_many": "{{count}} bloków",
+    "rangeBlocks_other": "{{count}} bloku",
+    "rangeHelp": "Pełna głośność: ≤ {{near}}, potem coraz ciszej; cisza: ≥ {{far}}."
   },
   "presence": {
     "online": "Online",

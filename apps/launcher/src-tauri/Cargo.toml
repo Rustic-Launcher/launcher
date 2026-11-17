@@ -36,7 +36,8 @@ percent-encoding = "2.3"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 sysinfo = { version = "0.37", default-features = false, features = ["system"] }
-tauri = { version = "2.12", features = [] }
+# `protocol-asset`: the hero video plays from the cache folder (ADR 0179; scope set at run time).
+tauri = { version = "2.12", features = ["protocol-asset"] }
 tauri-plugin-deep-link = "2.6"
 tauri-plugin-dialog = "2"
 tauri-plugin-log = "2.10"

@@ -43,7 +43,13 @@ import {
 } from '@/queries/social';
 import { VoicePanel } from '@/features/voice/VoiceControls';
 import { useVoice } from '@/features/voice/store';
-import { clampRange } from '@/features/voice/proximity';
+import {
+  clampRange,
+  DEFAULT_RANGE,
+  fullVolumeWithin,
+  MAX_RANGE,
+  MIN_RANGE,
+} from '@/features/voice/proximity';
 
 function useErrorToast() {
   const { t } = useTranslation();
@@ -190,17 +196,36 @@ function ProximitySetting({ party, leader }: { party: Party; leader: boolean }) 
         />
       </label>
       {party.voice.proximity && (
-        <Slider
-          label={t('party.range')}
-          value={range}
-          min={8}
-          max={128}
-          step={4}
-          disabled={!leader}
-          formatValue={(v) => String(v)}
-          onValueChange={setRange}
-          onValueCommit={(v) => voice.mutate({ range: clampRange(v) }, { onError })}
-        />
+        <div className="flex flex-col gap-1.5" data-testid="party-range">
+          <div className="flex items-baseline justify-between gap-3 text-xs">
+            <span className="text-fg-muted font-medium">{t('party.hearing')}</span>
+            <span className="font-semibold text-white tabular-nums" data-testid="party-range-value">
+              {t('party.rangeBlocks', { count: range })}
+            </span>
+          </div>
+          <Slider
+            label={t('party.hearing')}
+            value={range}
+            min={MIN_RANGE}
+            max={MAX_RANGE}
+            step={4}
+            disabled={!leader}
+            formatValue={(v) => t('party.rangeBlocks', { count: v })}
+            marks={[MIN_RANGE, DEFAULT_RANGE, MAX_RANGE].map((value) => ({
+              value,
+              label: String(value),
+            }))}
+            onValueChange={setRange}
+            onValueCommit={(v) => voice.mutate({ range: clampRange(v) }, { onError })}
+          />
+          {/* The real curve (proximityGain): full volume within 15 % of the range, then a fade. */}
+          <p className="text-fg-subtle text-xs">
+            {t('party.rangeHelp', {
+              near: t('party.rangeBlocks', { count: fullVolumeWithin(range) }),
+              far: t('party.rangeBlocks', { count: range }),
+            })}
+          </p>
+        </div>
       )}
     </div>
   );

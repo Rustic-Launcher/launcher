@@ -218,7 +218,11 @@
       "party_not_allowed": "Deze speler kan niet in deze groep: spelers onder de 18 komen alleen in groepen van hun vrienden.",
       "already_in_party": "Verlaat eerst je huidige groep.",
       "not_party_leader": "Alleen de groepsleider kan dit doen."
-    }
+    },
+    "hearing": "Gehoorafstand",
+    "rangeBlocks_one": "{{count}} blok",
+    "rangeBlocks_other": "{{count}} blokken",
+    "rangeHelp": "Volle volume tot {{near}}, daarna steeds zachter, stilte voorbij {{far}}."
   },
   "presence": {
     "online": "Online",

@@ -792,6 +792,10 @@ export function createHttpCloud(baseUrl: string, fallback: CloudClient): CloudCl
           : 'info') as CloudBanner['severity'],
       }));
     },
+    // The hero video set (ADR 0179), cached five minutes by the API.
+    async heroMedia() {
+      return await data(api.GET('/v1/media/hero'));
+    },
     // Server directory (ADR 0158): public reads, cacheable a minute by the API.
     async serverListings(q) {
       const page = await data(

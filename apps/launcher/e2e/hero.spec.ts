@@ -16,7 +16,7 @@ test.describe('Launchpad hero', () => {
     const hero = page.getByTestId('hero-video');
     await expect(hero).toBeVisible({ timeout: 30_000 });
     const video = hero.locator('video');
-    await expect(video).toHaveAttribute('poster', '/media/hero-forest.webp');
+    await expect(video).toHaveAttribute('poster', '/media/hero-poster.webp');
     await expect(hero).toHaveAttribute('data-state', 'playing');
     await expect
       .poll(() => video.evaluate((v: HTMLVideoElement) => v.readyState >= 2 && !v.paused), {

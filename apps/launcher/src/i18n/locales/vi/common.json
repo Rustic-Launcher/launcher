@@ -214,7 +214,10 @@
       "party_not_allowed": "Người chơi này không thể ở trong nhóm này: người dưới 18 tuổi chỉ tham gia nhóm của bạn bè.",
       "already_in_party": "Hãy rời nhóm hiện tại trước.",
       "not_party_leader": "Chỉ trưởng nhóm mới làm được việc này."
-    }
+    },
+    "hearing": "Khoảng cách nghe",
+    "rangeBlocks_other": "{{count}} khối",
+    "rangeHelp": "Âm lượng tối đa trong {{near}}, sau đó nhỏ dần, im lặng khi xa hơn {{far}}."
   },
   "presence": {
     "online": "Trực tuyến",

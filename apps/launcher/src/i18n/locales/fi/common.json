@@ -218,7 +218,11 @@
       "party_not_allowed": "Tämä pelaaja ei voi olla tässä porukassa: alle 18-vuotiaat liittyvät vain kavereidensa porukoihin.",
       "already_in_party": "Poistu ensin nykyisestä porukastasi.",
       "not_party_leader": "Vain porukan johtaja voi tehdä tämän."
-    }
+    },
+    "hearing": "Kuuloetäisyys",
+    "rangeBlocks_one": "{{count}} kuutio",
+    "rangeBlocks_other": "{{count}} kuutiota",
+    "rangeHelp": "Täysi äänenvoimakkuus: ≤ {{near}}, sitten yhä hiljempää; hiljaisuus: ≥ {{far}}."
   },
   "presence": {
     "online": "Paikalla",

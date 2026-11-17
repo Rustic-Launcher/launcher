@@ -234,7 +234,15 @@
       "party_not_allowed": "لا يمكن لهذا اللاعب أن يكون في هذه المجموعة: من هم دون 18 عامًا ينضمون إلى مجموعات أصدقائهم فقط.",
       "already_in_party": "غادر مجموعتك الحالية أولًا.",
       "not_party_leader": "لا يستطيع فعل هذا إلا قائد المجموعة."
-    }
+    },
+    "hearing": "مسافة السمع",
+    "rangeBlocks_zero": "{{count}} كتلة",
+    "rangeBlocks_one": "كتلة واحدة",
+    "rangeBlocks_two": "كتلتان",
+    "rangeBlocks_few": "{{count}} كتل",
+    "rangeBlocks_many": "{{count}} كتلة",
+    "rangeBlocks_other": "{{count}} كتلة",
+    "rangeHelp": "صوت كامل حتى {{near}}، ثم يخفت تدريجيًا، ولا يُسمع شيء بعد {{far}}."
   },
   "presence": {
     "online": "متصل",

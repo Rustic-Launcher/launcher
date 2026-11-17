@@ -222,7 +222,12 @@
       "party_not_allowed": "השחקן הזה לא יכול להיות בקבוצה: שחקנים מתחת לגיל 18 מצטרפים רק לקבוצות של החברים שלהם.",
       "already_in_party": "יש לעזוב קודם את הקבוצה הנוכחית.",
       "not_party_leader": "רק מנהיג הקבוצה יכול לעשות את זה."
-    }
+    },
+    "hearing": "טווח שמיעה",
+    "rangeBlocks_one": "בלוק אחד",
+    "rangeBlocks_two": "{{count}} בלוקים",
+    "rangeBlocks_other": "{{count}} בלוקים",
+    "rangeHelp": "עוצמה מלאה עד {{near}}, אחר כך יותר ויותר חלש, שקט מעבר ל־{{far}}."
   },
   "presence": {
     "online": "מחובר",

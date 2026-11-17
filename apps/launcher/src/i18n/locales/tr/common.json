@@ -218,7 +218,11 @@
       "party_not_allowed": "Bu oyuncu bu grupta olamaz: 18 yaş altındakiler yalnızca arkadaşlarının gruplarına katılır.",
       "already_in_party": "Önce mevcut grubundan ayrıl.",
       "not_party_leader": "Bunu yalnızca grup lideri yapabilir."
-    }
+    },
+    "hearing": "Duyma mesafesi",
+    "rangeBlocks_one": "{{count}} blok",
+    "rangeBlocks_other": "{{count}} blok",
+    "rangeHelp": "Tam ses: ≤ {{near}}, sonra giderek azalır; sessizlik: ≥ {{far}}."
   },
   "presence": {
     "online": "Çevrimiçi",

@@ -65,6 +65,8 @@ pub struct AppState {
     pub play_stats_enabled: Arc<std::sync::atomic::AtomicBool>,
     /// The Java Edition launcher and the Bedrock panel (ADR 0172).
     pub java: Arc<crate::cmd::java::JavaLauncher>,
+    /// The Launchpad's hero video, cached from the CDN (ADR 0179).
+    pub hero_media: crate::hero_media::HeroMedia,
 }
 
 /// What the launcher shows of a VPS server (the registry keeps only its reference).
@@ -226,8 +228,10 @@ impl AppState {
             settings.launcher.auto_update,
         );
         let java = Arc::new(crate::cmd::java::JavaLauncher::new(&paths, http.clone()));
+        let hero_media = crate::hero_media::HeroMedia::new(paths.cache(), http.clone());
         Ok(Self {
             java,
+            hero_media,
             updates,
             discord,
             play_stats,

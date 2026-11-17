@@ -976,6 +976,10 @@ export const socialMock: Partial<CloudClient> = {
   async banners() {
     return [];
   },
+  // No CDN offline: the Launchpad keeps its bundled clip (screenshots and e2e unchanged).
+  async heroMedia() {
+    return null;
+  },
   async notifications() {
     await latency(0.6);
     return clone(notificationsDb);

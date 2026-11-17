@@ -218,7 +218,11 @@
       "party_not_allowed": "Dieser Spieler kann nicht in dieser Gruppe sein: Spieler unter 18 treten nur Gruppen ihrer Freunde bei.",
       "already_in_party": "Verlasse zuerst deine aktuelle Gruppe.",
       "not_party_leader": "Nur der Gruppenleiter kann das tun."
-    }
+    },
+    "hearing": "Hörweite",
+    "rangeBlocks_one": "{{count}} Block",
+    "rangeBlocks_other": "{{count}} Blöcke",
+    "rangeHelp": "Volle Lautstärke bis {{near}}, dann immer leiser, Stille über {{far}}."
   },
   "presence": {
     "online": "Online",

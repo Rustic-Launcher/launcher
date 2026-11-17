@@ -740,6 +740,38 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/admin/media/hero": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_hero_media"];
+        put: operations["admin_hero_media_update"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/media/hero/preview": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_hero_media_preview"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/admin/news": {
         parameters: {
             query?: never;
@@ -754,6 +786,70 @@ export interface paths {
         options?: never;
         head?: never;
         patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/news/activity": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_activity_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/news/activity/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch: operations["admin_activity_patch"];
+        trace?: never;
+    };
+    "/v1/admin/news/contributors": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["admin_contributors_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/news/contributors/{login}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch: operations["admin_contributor_patch"];
         trace?: never;
     };
     "/v1/admin/news/{id}": {
@@ -3137,6 +3233,22 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/media/hero": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["hero_media_public"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/messages/{user_id}": {
         parameters: {
             query?: never;
@@ -3241,6 +3353,70 @@ export interface paths {
             cookie?: never;
         };
         get: operations["news_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/news/activity": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["activity_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/news/activity/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["activity_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/news/contributors": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["contributors_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/news/contributors/{login}/avatar": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["contributor_avatar"];
         put?: never;
         post?: never;
         delete?: never;
@@ -4530,12 +4706,38 @@ export interface components {
             /** Format: int64 */
             approvals_pending: number;
         };
+        /** @description The back-office's view of the hero video. */
+        AdminHeroMedia: {
+            active: components["schemas"]["HeroMedia"];
+            /** @description The id of the set built into the API (what "Restore the default" brings back). */
+            default_id: string;
+            /** @description Sets found in the CDN folder (`media/hero/<id>/manifest.json`), newest first. */
+            available: string[];
+            updated_by?: null | components["schemas"]["AdminUserRef"];
+        };
         /** @description A linked identity: `microsoft`, `discord` or `game` (a verified game profile). */
         AdminLinkedAccount: {
             provider: string;
             label?: string | null;
             /** Format: date-time */
             linked_at: string;
+        };
+        /** @description An entry as staff see it in the back-office. */
+        AdminNewsActivity: {
+            entry: components["schemas"]["NewsActivity"];
+            hidden: boolean;
+        };
+        AdminNewsActivityPage: {
+            items: components["schemas"]["AdminNewsActivity"][];
+            next?: string | null;
+        };
+        /** @description A contributor as staff see it in the back-office. */
+        AdminNewsContributor: {
+            contributor: components["schemas"]["NewsContributor"];
+            hidden: boolean;
+        };
+        AdminNewsContributorsPage: {
+            items: components["schemas"]["AdminNewsContributor"][];
         };
         /** @description A news item as staff see it (drafts included). */
         AdminNewsItem: {
@@ -4951,6 +5153,11 @@ export interface components {
             /** Format: int64 */
             total: number;
         };
+        /**
+         * Format: binary
+         * @description OpenAPI schema of an avatar image.
+         */
+        AvatarImage: string;
         AvatarInfo: {
             url?: string | null;
             kind: components["schemas"]["AvatarKind"];
@@ -6287,6 +6494,74 @@ export interface components {
             status: string;
             version: string;
         };
+        /** @description Where the footage comes from and under which licence. */
+        HeroCredit: {
+            title: string;
+            author: string;
+            /** @description The page the clip was downloaded from. */
+            source_url: string;
+            /** @description `Pexels License`, `CC0-1.0`... */
+            licence: string;
+            licence_url?: string | null;
+        };
+        /** @description The video set behind the launcher's Launchpad and the website's account pages. */
+        HeroMedia: {
+            /** @description The set's content hash: its folder `media/hero/<id>/` on the CDN. */
+            id: string;
+            /** Format: int64 */
+            duration_ms: number;
+            /** @description Every rendition; the clients pick by codec support, then by size. */
+            renditions: components["schemas"]["HeroRendition"][];
+            posters: components["schemas"]["HeroPoster"][];
+            credit: components["schemas"]["HeroCredit"];
+            /** @description No choice saved in the back-office: the set built into the API. */
+            builtin: boolean;
+            /** Format: date-time */
+            updated_at?: string | null;
+        };
+        /** @description `PUT /v1/admin/media/hero`. */
+        HeroMediaUpdate: {
+            /**
+             * @description A set id (8 to 64 hexadecimal characters), its manifest URL on the CDN
+             *     (`https://cdn…/media/hero/<id>/manifest.json`), or `default` for the built-in set.
+             */
+            source: string;
+            /** @description Why (3 to 500 characters), kept in the audit log. */
+            reason: string;
+        };
+        /** @description A still of the loop's first frame (the `poster` and the reduced-motion picture). */
+        HeroPoster: {
+            /** Format: int32 */
+            width: number;
+            /** Format: int32 */
+            height: number;
+            /** @description `image/jpeg`, `image/webp` or `image/avif`. */
+            mime: string;
+            url: string;
+            /** Format: int64 */
+            bytes: number;
+            sha256: string;
+        };
+        /** @description One encoding of the hero loop, on the CDN. */
+        HeroRendition: {
+            /** Format: int32 */
+            width: number;
+            /** Format: int32 */
+            height: number;
+            /** @description `av1`, `vp9` or `h264`. */
+            codec: string;
+            /**
+             * @description The type with its codecs, for `<source type>`, `canPlayType` and
+             *     `MediaSource.isTypeSupported`: `video/mp4; codecs="av01.0.08M.08"`.
+             */
+            mime: string;
+            /** @description Absolute URL on the CDN (an immutable, content-addressed folder). */
+            url: string;
+            /** Format: int64 */
+            bytes: number;
+            /** @description Lowercase hex SHA-256 of the file (the launcher checks its cached copy against it). */
+            sha256: string;
+        };
         /** @enum {string} */
         HostingAvailability: "coming_soon" | "available";
         /** @description Rustic Cloud hosting (coming soon): catalog preview, no provisioning. */
@@ -6584,6 +6859,113 @@ export interface components {
             channel?: components["schemas"]["ContentChannel"];
             /** @description Game versions it is for (`26.3`); the manifest's when empty. */
             game_versions?: string[];
+        };
+        /**
+         * @description An entry of the updates feed: a push, a GitHub release or a CDN release. Entries of private
+         *     repositories never carry a URL (`url` and every commit's `url` are null). The pushes of one
+         *     monorepo sync to several mirror repositories are one entry listing them all in `repos`.
+         */
+        NewsActivity: {
+            /** Format: int64 */
+            id: number;
+            kind: components["schemas"]["NewsActivityKind"];
+            /**
+             * @description Repository name (`rustic`), or `launcher` / `edition` for CDN releases; for a grouped
+             *     push, the first public repository of `repos` (or the first one).
+             */
+            repo: string;
+            /** @description Whether `repo` is private (for a grouped push: every repository is private). */
+            private: boolean;
+            /** @description Every repository of the entry, `repo` first (one for releases). */
+            repos?: components["schemas"]["NewsActivityRepo"][];
+            branch?: string | null;
+            /** @description Compare page (push), release page (GitHub release) or the download page (CDN release). */
+            url?: string | null;
+            /** @description Tag or version (releases). */
+            version?: string | null;
+            /** @description Release name. */
+            title?: string | null;
+            prerelease: boolean;
+            forced: boolean;
+            /** @description Who pushed or published (GitHub login). */
+            actor?: string | null;
+            /**
+             * @description The push's commits, newest first: at most 5 in lists, every recorded one (≤ 50) on the
+             *     entry itself.
+             */
+            commits: components["schemas"]["NewsActivityCommit"][];
+            /**
+             * Format: int32
+             * @description Commits in the push (can be more than `commits`).
+             */
+            commit_count: number;
+            /** @description Release notes (Markdown), only on the entry itself (`GET /v1/news/activity/{id}`). */
+            body?: string | null;
+            /** Format: date-time */
+            created_at: string;
+        };
+        /** @description One commit of a push. `url` is null for private repositories. */
+        NewsActivityCommit: {
+            /** @description Short sha (7 characters). */
+            sha: string;
+            /** @description The first line of the message (secrets, tokens and emails redacted). */
+            message: string;
+            /** @description GitHub login or name. */
+            author: string;
+            url?: string | null;
+            /** Format: date-time */
+            at?: string | null;
+        };
+        /** @enum {string} */
+        NewsActivityKind: "push" | "release" | "cdn_release";
+        /** @description A page of the updates feed, newest first. */
+        NewsActivityPage: {
+            items: components["schemas"]["NewsActivity"][];
+            /** @description Pass as `before` for the next page; null on the last page. */
+            next?: string | null;
+            /** @description Repositories that have entries (for filters), by name. */
+            repos: string[];
+        };
+        NewsActivityPatch: {
+            /** @description Hide the entry from the public feed (true) or show it again (false). */
+            hidden: boolean;
+        };
+        /** @description A repository of an entry: one, or every mirror the same commits were pushed to (ADR 0178). */
+        NewsActivityRepo: {
+            name: string;
+            private: boolean;
+            /** @description That repository's compare page; null for a private repository. */
+            url?: string | null;
+        };
+        /** @description A person who committed to the organisation's repositories (ADR 0178). */
+        NewsContributor: {
+            /** @description GitHub login. */
+            login: string;
+            /**
+             * Format: int64
+             * @description Commits across every repository (GitHub's contributors statistics).
+             */
+            commits: number;
+            /**
+             * @description The avatar, served by this API (`/v1/news/contributors/{login}/avatar?v=…`); null when
+             *     there is none (the website draws an identicon).
+             */
+            avatar_url?: string | null;
+            /** @description `https://github.com/{login}`. */
+            profile_url: string;
+        };
+        NewsContributorPatch: {
+            /** @description Hide the contributor from the website (true) or show them again (false). */
+            hidden: boolean;
+        };
+        /** @description The contributors wall, most commits first. */
+        NewsContributorsPage: {
+            /**
+             * Format: int64
+             * @description Contributors shown on the website (can be more than `items`).
+             */
+            total: number;
+            items: components["schemas"]["NewsContributor"][];
         };
         /** @description A published news item (public). */
         NewsItem: {
@@ -10190,6 +10572,98 @@ export interface operations {
             };
         };
     };
+    admin_hero_media: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminHeroMedia"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_hero_media_update: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["HeroMediaUpdate"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminHeroMedia"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_hero_media_preview: {
+        parameters: {
+            query: {
+                /** @description A set id, its manifest URL on the CDN, or `default`. */
+                source: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description The set, checked, without saving it */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HeroMedia"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
     admin_news_list: {
         parameters: {
             query?: never;
@@ -10237,6 +10711,139 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["AdminNewsItem"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_activity_list: {
+        parameters: {
+            query?: {
+                /** @description 1-50, default 20. */
+                limit?: number | null;
+                /** @description The `next` cursor of the previous page. */
+                before?: string | null;
+                /** @description Only this repository (`rustic`, or `launcher` / `edition` for CDN releases). */
+                repo?: string | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminNewsActivityPage"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_activity_patch: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Entry id */
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["NewsActivityPatch"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminNewsActivity"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_contributors_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminNewsContributorsPage"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    admin_contributor_patch: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description GitHub login */
+                login: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["NewsContributorPatch"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminNewsContributor"];
                 };
             };
             /** @description Error (see `code`) */
@@ -15637,6 +16244,35 @@ export interface operations {
             };
         };
     };
+    hero_media_public: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description The active hero video set (cached 5 minutes) */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HeroMedia"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
     messages_history: {
         parameters: {
             query?: {
@@ -15864,6 +16500,8 @@ export interface operations {
                 locale?: string | null;
                 /** @description 1-50, default 20. */
                 limit?: number | null;
+                /** @description Items to skip (the website's article list pages), 0-5000, default 0. */
+                offset?: number | null;
             };
             header?: never;
             path?: never;
@@ -15878,6 +16516,144 @@ export interface operations {
                 content: {
                     "application/json": components["schemas"]["NewsItem"][];
                 };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    activity_list: {
+        parameters: {
+            query?: {
+                /** @description 1-50, default 20. */
+                limit?: number | null;
+                /** @description The `next` cursor of the previous page. */
+                before?: string | null;
+                /** @description Only this repository (`rustic`, or `launcher` / `edition` for CDN releases). */
+                repo?: string | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NewsActivityPage"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    activity_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Entry id */
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NewsActivity"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    contributors_list: {
+        parameters: {
+            query?: {
+                /** @description 1-500, default 500. */
+                limit?: number | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NewsContributorsPage"];
+                };
+            };
+            /** @description Error (see `code`) */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorBody"];
+                };
+            };
+        };
+    };
+    contributor_avatar: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description GitHub login */
+                login: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description The avatar (PNG or JPEG, at most 64 KiB), downloaded from GitHub once by the Discord bot. Its URL carries a version (`?v=`), so it is cached for a year. */
+            200: {
+                headers: {
+                    /** @description `public, max-age=31536000, immutable` */
+                    "cache-control"?: string;
+                    [name: string]: unknown;
+                };
+                content: {
+                    "image/png": components["schemas"]["AvatarImage"];
+                };
+            };
+            /** @description Unknown or hidden contributor, or no avatar (draw an identicon) */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
             };
             /** @description Error (see `code`) */
             default: {

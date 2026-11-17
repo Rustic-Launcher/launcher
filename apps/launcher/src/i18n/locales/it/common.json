@@ -222,7 +222,12 @@
       "party_not_allowed": "Questo giocatore non può stare in questo gruppo: chi ha meno di 18 anni entra solo nei gruppi dei suoi amici.",
       "already_in_party": "Prima esci dal tuo gruppo attuale.",
       "not_party_leader": "Solo il capogruppo può farlo."
-    }
+    },
+    "hearing": "Distanza di ascolto",
+    "rangeBlocks_one": "{{count}} blocco",
+    "rangeBlocks_many": "{{count}} blocchi",
+    "rangeBlocks_other": "{{count}} blocchi",
+    "rangeHelp": "Volume pieno fino a {{near}}, poi sempre più basso, silenzio oltre {{far}}."
   },
   "presence": {
     "online": "Online",

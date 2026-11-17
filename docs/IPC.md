@@ -264,6 +264,12 @@ The voice engine itself is not IPC: it runs in the main window's webview (`featu
 emitted by the main window. The webview's microphone permission is granted to the `main` window
 only (`src-tauri/src/voice.rs`).
 
+### Hero video (ADR 0179)
+
+| Command | Args | Returns |
+|---|---|---|
+| `hero_media_fetch` | `{ url: string; sha256: string; bytes: number; download: boolean }` | `string \| null`: the local path of the rendition in `<cache>/hero-media/<sha256>.<ext>` (played with `convertFileSrc`; the asset protocol's scope is that folder only). Only `https://cdn.rustic-launcher.com/media/hero/<set id>/<file>.mp4\|webm`; resumed and checked against `sha256` and `bytes`; the other files of the folder are removed. With `download: false` (offline, data saver) only a file already cached is answered, else `null`. The mock answers `null` (the browser build streams the CDN URL). |
+
 ## Events
 
 | Event | Payload |

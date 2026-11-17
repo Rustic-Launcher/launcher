@@ -222,7 +222,12 @@
       "party_not_allowed": "Acest jucător nu poate fi în acest grup: jucătorii sub 18 ani intră doar în grupurile prietenilor lor.",
       "already_in_party": "Părăsește mai întâi grupul actual.",
       "not_party_leader": "Doar liderul grupului poate face asta."
-    }
+    },
+    "hearing": "Distanța de auz",
+    "rangeBlocks_one": "{{count}} bloc",
+    "rangeBlocks_few": "{{count}} blocuri",
+    "rangeBlocks_other": "{{count}} de blocuri",
+    "rangeHelp": "Volum maxim până la {{near}}, apoi tot mai încet, liniște dincolo de {{far}}."
   },
   "presence": {
     "online": "Online",

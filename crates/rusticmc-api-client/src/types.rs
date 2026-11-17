@@ -4371,3 +4371,79 @@ wire! {
         pub enabled: bool,
     }
 }
+
+// ---------------------------------------------------------------- hero video (ADR 0179)
+
+wire! {
+    /// One encoding of the hero loop, on the CDN.
+    pub struct HeroRendition {
+        pub width: i32,
+        pub height: i32,
+        /// `av1`, `vp9` or `h264`.
+        pub codec: String,
+        /// The type with its codecs, for `<source type>`, `canPlayType` and
+        /// `MediaSource.isTypeSupported`: `video/mp4; codecs="av01.0.08M.08"`.
+        pub mime: String,
+        /// Absolute URL on the CDN (an immutable, content-addressed folder).
+        pub url: String,
+        pub bytes: i64,
+        /// Lowercase hex SHA-256 of the file (the launcher checks its cached copy against it).
+        pub sha256: String,
+    }
+
+    /// A still of the loop's first frame (the `poster` and the reduced-motion picture).
+    pub struct HeroPoster {
+        pub width: i32,
+        pub height: i32,
+        /// `image/jpeg`, `image/webp` or `image/avif`.
+        pub mime: String,
+        pub url: String,
+        pub bytes: i64,
+        pub sha256: String,
+    }
+
+    /// Where the footage comes from and under which licence.
+    pub struct HeroCredit {
+        pub title: String,
+        pub author: String,
+        /// The page the clip was downloaded from.
+        pub source_url: String,
+        /// `Pexels License`, `CC0-1.0`...
+        pub licence: String,
+        #[serde(default)]
+        pub licence_url: Option<String>,
+    }
+
+    /// The video set behind the launcher's Launchpad and the website's account pages.
+    pub struct HeroMedia {
+        /// The set's content hash: its folder `media/hero/<id>/` on the CDN.
+        pub id: String,
+        pub duration_ms: i64,
+        /// Every rendition; the clients pick by codec support, then by size.
+        pub renditions: Vec<HeroRendition>,
+        pub posters: Vec<HeroPoster>,
+        pub credit: HeroCredit,
+        /// No choice saved in the back-office: the set built into the API.
+        pub builtin: bool,
+        pub updated_at: Option<DateTime<Utc>>,
+    }
+
+    /// The back-office's view of the hero video.
+    pub struct AdminHeroMedia {
+        pub active: HeroMedia,
+        /// The id of the set built into the API (what "Restore the default" brings back).
+        pub default_id: String,
+        /// Sets found in the CDN folder (`media/hero/<id>/manifest.json`), newest first.
+        pub available: Vec<String>,
+        pub updated_by: Option<AdminUserRef>,
+    }
+
+    /// `PUT /v1/admin/media/hero`.
+    pub struct HeroMediaUpdate {
+        /// A set id (8 to 64 hexadecimal characters), its manifest URL on the CDN
+        /// (`https://cdn…/media/hero/<id>/manifest.json`), or `default` for the built-in set.
+        pub source: String,
+        /// Why (3 to 500 characters), kept in the audit log.
+        pub reason: String,
+    }
+}

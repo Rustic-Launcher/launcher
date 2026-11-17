@@ -214,7 +214,10 @@
       "party_not_allowed": "這位玩家不能加入此隊伍：未滿 18 歲的玩家只能加入好友的隊伍。",
       "already_in_party": "請先離開目前的隊伍。",
       "not_party_leader": "只有隊長能這麼做。"
-    }
+    },
+    "hearing": "收聽距離",
+    "rangeBlocks_other": "{{count}} 格",
+    "rangeHelp": "{{near}}以內全音量，越遠越小，超過{{far}}就聽不到。"
   },
   "presence": {
     "online": "線上",

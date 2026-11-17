@@ -218,7 +218,11 @@
       "party_not_allowed": "Den här spelaren kan inte vara i gruppen: spelare under 18 går bara med i sina vänners grupper.",
       "already_in_party": "Lämna din nuvarande grupp först.",
       "not_party_leader": "Bara gruppledaren kan göra det."
-    }
+    },
+    "hearing": "Hörselavstånd",
+    "rangeBlocks_one": "{{count}} block",
+    "rangeBlocks_other": "{{count}} block",
+    "rangeHelp": "Full volym upp till {{near}}, sedan allt svagare, tyst bortom {{far}}."
   },
   "presence": {
     "online": "Online",
